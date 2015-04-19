@@ -223,5 +223,9 @@ sqlite.dll
 theforgottenserver.exe
 zlib1.dll
 realmap.otbm
+darkkoniamap.otbm
+moonlightmap.otbm
+testmap.otbm
+forgottenmap.otbm
 map.rar
 data/world/
