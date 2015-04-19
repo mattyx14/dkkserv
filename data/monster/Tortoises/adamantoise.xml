@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<monster name="adamantoisee" nameDescription="a adamantoise" race="blood" experience="12750" speed="300" manacost="0">
+  <health now="9300" max="9300"/>
+  <look type="198" head="0" body="0" legs="0" feet="0" corpse="6073"/>
+  <targetchange interval="5000" chance="8"/>
+  <strategy attack="100" defense="0"/>
+  <flags>
+    <flag summonable="0"/>
+    <flag attackable="1"/>
+    <flag hostile="1"/>
+    <flag illusionable="0"/>
+    <flag convinceable="0"/>
+    <flag pushable="0"/>
+    <flag canpushitems="1"/>
+    <flag canpushcreatures="1"/>
+    <flag staticattack="90"/>
+    <flag targetdistance="1"/>
+    <flag runonhealth="0"/>
+  </flags>
+<attacks>
+    <attack name="melee" interval="2000" min="-300" max="-2200"/>
+</attacks>
+  <defenses armor="18" defense="18"/>
+  <elements>
+	<element physicalPercent="43"/>
+	<element earthPercent="42"/>
+	<element icePercent="40"/>
+	<element deathPercent="40"/>
+	<element holyPercent="40"/>
+	<element firePercent="-9"/>
+	<element energyPercent="100"/>
+  </elements>
+  <immunities>
+    <immunity lifedrain="1"/>
+    <immunity paralyze="1"/>
+    <immunity outfit="1"/>
+    <immunity drunk="1"/>
+    <immunity invisible="1"/>
+  </immunities>
+  <summons maxSummons="2">
+    <summon name="land turtle" interval="1000" chance="6"/>
+  </summons>
+  <loot>
+    <item id="2148" countmax="80" chance1="100000" chancemax="0"/>
+    <item id="2148" countmax="20" chance1="100000" chancemax="0"/>
+    <item id="5678" countmax="3" chance1="14000" chancemax="0"/>
+    <item id="2667" countmax="3" chance1="10000" chancemax="0"/>
+    <item id="2789" countmax="4" chance1="2000" chancemax="0"/>
+    <item id="2391" chance="2000"/>
+    <item id="16095" chance="800"/>
+    <item id="2787" countmax="2" chance1="15000" chancemax="0"/>
+    <item id="2671" countmax="2" chance1="17000" chancemax="0"/>
+  </loot>
+</monster>

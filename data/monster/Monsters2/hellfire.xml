@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<monster name="hellfire" nameDescription="a hellfire" race="fire" experience="16200" speed="260" manacost="0">
+  <health now="16800" max="16800"/>
+  <look type="243" corpse="6324"/>
+  <targetchange interval="5000" chance="8"/>
+  <strategy attack="100" defense="0"/>
+  <flags>
+    <flag summonable="0"/>
+    <flag attackable="1"/>
+    <flag hostile="1"/>
+    <flag illusionable="1"/>
+    <flag convinceable="0"/>
+    <flag pushable="0"/>
+    <flag canpushitems="1"/>
+    <flag canpushcreatures="1"/>
+    <flag targetdistance="1"/>
+    <flag staticattack="90"/>
+    <flag runonhealth="0"/>
+  </flags>
+  <attacks>
+    <attack name="melee" interval="2000" min="-30" max="-420"/>
+    <attack name="firefield" interval="1000" chance="10" range="7" radius="4" target="0">
+      <attribute key="shootEffect" value="fire"/>
+    </attack>
+   <attack name="fire" interval="1000" chance="15" range="5" length="4" spread="2" min="-1700" max="-2415">
+      <attribute key="areaEffect" value="fireattack"/>
+    </attack>
+   <attack name="fire" interval="1000" chance="40" range="7" radius="3" target="0" min="-450" max="-750">
+	<attribute key="areaEffect" value="explosionarea"/>
+	</attack>
+  	</attacks>
+  <defenses armor="25" defense="25">
+ </defenses>
+  <immunities>
+    <immunity physical="0"/>
+    <immunity energy="0"/>
+    <immunity fire="1"/>
+    <immunity poison="1"/>
+    <immunity lifedrain="1"/>
+    <immunity paralyze="1"/>
+    <immunity outfit="1"/>
+    <immunity drunk="1"/>
+    <immunity invisible="1"/>
+  </immunities>
+  <voices interval="5000" chance="10">
+  </voices>
+</monster>

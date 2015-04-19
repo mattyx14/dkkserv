@@ -1,0 +1,18 @@
+local combat = createCombatObject()
+setCombatParam(combat, COMBAT_PARAM_EFFECT, CONST_ME_MAGIC_BLUE)
+setCombatParam(combat, COMBAT_PARAM_AGGRESSIVE, 0)
+
+local condition = createConditionObject(CONDITION_ATTRIBUTES)
+setConditionParam(condition, CONDITION_PARAM_TICKS, 25000)
+setConditionParam(condition, CONDITION_PARAM_SKILL_DISTANCEPERCENT, 150)
+setConditionParam(condition, CONDITION_PARAM_BUFF, TRUE)
+setCombatCondition(combat, condition)
+
+local exhaust = createConditionObject(CONDITION_EXHAUST)
+setConditionParam(exhaust, CONDITION_PARAM_SUBID, 2)
+setConditionParam(exhaust, CONDITION_PARAM_TICKS, 1000)
+setCombatCondition(combat, exhaust)
+
+function onCastSpell(cid, var)
+	return doCombat(cid, combat, var)
+end

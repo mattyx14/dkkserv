@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Metal Babble" nameDescription="a metal babble" race="undead" experience="30000" speed="250" manacost="0">
+	<health now="3900" max="3900"/>
+	<look type="316" corpse="9964"/>
+	<targetchange interval="5000" chance="8"/>
+	<strategy attack="100" defense="0"/>
+	
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="0"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="85"/>
+		<flag runonhealth="0"/>
+	</flags>
+	
+	<attacks>
+    		<attack name="melee" interval="2000" min="-330" max="-1800"/>
+		<attack name="energy" interval="3000" chance="5" range="5" target="1" min="-300" max="-690">
+			<attribute key="areaEffect" value="energy"/>
+			<attribute key="shootEffect" value="energy"/>
+		</attack>
+	</attacks>
+	
+	<defenses armor="20" defense="20">
+		<defense name="speed" interval="1000" chance="10" speedchange="250" duration="8000">
+			<attribute key="areaEffect" value="redshimmer"/>
+		</defense>
+		<defense name="healing" interval="1000" chance="14" min="0" max="0">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+	</defenses>
+  <immunities>
+    <immunity invisible="1"/>
+    <immunity paralyze="1"/>
+  </immunities>
+	<elements>
+		<element firePercent="98"/>
+		<element earthPercent="98"/>
+		<element icePercent="98"/>
+		<element physicalPercent="98"/>
+		<element holyPercent="98"/>
+		<element deathPercent="98"/>
+		<element energyPercent="98"/>
+	</elements>
+	
+	<voices interval="5000" chance="10">
+		<voice sentence="Crackle"/>
+	</voices>
+	
+	<loot>
+		<item id="2152" countmax="100" chance1="100000" chancemax="0"/> -- platinum
+		<item id="2152" countmax="95" chance1="100000" chancemax="0"/> -- platinum
+		<item id="2152" countmax="85" chance1="100000" chancemax="0"/> -- platinum
+		<item id="2152" countmax="75" chance1="100000" chancemax="0"/> -- platinum
+		<item id="2152" countmax="65" chance1="100000" chancemax="0"/> -- platinum
+		<item id="2152" countmax="55" chance1="100000" chancemax="0"/> -- platinum
+		<item id="15920" chance="500"/> --magic metal armor
+	</loot>
+</monster>

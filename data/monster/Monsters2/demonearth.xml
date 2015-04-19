@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Toxiros" nameDescription="a Toxiros" race="VENOM" experience="8800" speed="390" manacost="10000">
+  <health now="9000" max="9000"/>
+  <look type="12" head="19" body="83" legs="115" feet="96" corpse="6068"/>
+  <targetchange interval="5000" chance="8"/>
+  <strategy attack="100" defense="0"/>
+  <flags>
+    <flag summonable="0"/>
+    <flag attackable="1"/>
+    <flag hostile="1"/>
+    <flag illusionable="0"/>
+    <flag convinceable="0"/>
+    <flag pushable="0"/>
+    <flag canpushitems="1"/>
+    <flag canpushcreatures="1"/>
+    <flag targetdistance="1"/>
+    <flag staticattack="90"/>
+    <flag runonhealth="0"/>
+  </flags>
+  <attacks>
+    <attack name="melee" interval="2000" min="-60" max="-600"/>
+
+    <attack name="poison" interval="1000" chance="14" range="7" radius="7" target="1" min="-190" max="-400">
+      <attribute key="shootEffect" value="EARTH"/>
+      <attribute key="areaEffect" value="STONES"/>
+    </attack>
+    <attack name="poison" interval="1500" chance="14" range="7" radius="7" target="1" min="-190" max="-400">
+      <attribute key="shootEffect" value="EARTH"/>
+      <attribute key="areaEffect" value="BIGPLANTS"/>
+    </attack>
+    <attack name="poison" interval="1400" chance="30" length="8" spread="0" min="-250" max="-420">
+      <attribute key="areaEffect" value="CARNIPHILA"/>
+    </attack>
+
+  </attacks>
+  <defenses armor="50" defense="55">
+    <defense name="healing" interval="1000" chance="15" min="90" max="150">
+      <attribute key="areaEffect" value="blueshimmer"/>
+    </defense>
+  </defenses>
+  <summons maxSummons="1">
+    <summon name="earth elemental" interval="1000" chance="10" max="1"/>
+  </summons>
+  <elements>
+	<element firePercent="100"/>
+	<element physicalPercent="0"/>
+	<element earthpercent="20"/>
+	<element energyPercent="20"/>
+	<element deathPercent="20"/>
+	<element icePercent="-30"/>
+	<element holyPercent="-20"/>
+  </elements>
+  <immunities>
+    <immunity lifedrain="1"/>
+    <immunity paralyze="1"/>
+    <immunity invisible="1"/>
+  </immunities>
+  <voices interval="5000" chance="10">
+    <voice sentence="MUHAHAHAHA!" yell="1"/>
+    <voice sentence="I SMELL FEEEEEAAAR!" yell="1"/>
+    <voice sentence="CHAMEK ATH UTHUL ARAK!" yell="1"/>
+    <voice sentence="Your resistance is futile!"/>
+    <voice sentence="Your soul will be mine!" yell="0"/>
+  </voices>
+<loot>
+ 	<item id="2152" countmax="2" chance1="9000" chancemax="0"/>
+ 	<item id="2152" countmax="4" chance1="12000" chancemax="0"/>
+    	<item id="7368" countmax="15" chance1="7000" chancemax="30"/>
+    	<item id="6529" countmax="20" chance1="9000" chancemax="8"/> -- Infernal Bolt
+ 	<item id="2514" chance="500"/> --mastermind shield
+ 	<item id="2432" chance="1200"/> --fire axe
+ 	<item id="2472" chance="130"/> --magic plate armor
+ 	<item id="7429" chance="230"/> --blessed sceptre
+ 	<item id="5906" countmax="1" chance="1000"/> -- demon dust
+	<item id="5954" countmax="1" chance="1000"/> -- demon horn
+        <item id="2164" chance="3200"/> --might ring
+        <item id="2176" chance="3000"/> --orb
+        <item id="8473" chance="15000"/> --Spirit Potion
+        <item id="8473" chance="15000"/> --Spirit Potion
+        <item id="8473" chance="15000"/> --Spirit Potion
+ 	<item id="15924" chance="502"/> --Poison Staff
+        <item id="1982" chance="1300"/> --purpel tome
+        <item id="2165" chance="2400"/> --stealth ring
+ 	<item id="1987" chance="100000">
+ 	<inside>
+        <item id="2214" chance="500"/> --ring of healing
+        <item id="2396" chance="2500"/> --ice rapier
+        <item id="2179" chance="1100"/> --golden ring
+        <item id="2795" countmax="6" chance="20000"/>
+  	<item id="2678" countmax="3" chance1="10000" chancemax="0"/>
+ 	<item id="2152" countmax="1" chance1="100000" chancemax="0"/>
+ 	<item id="2151" countmax="4" chance1="4000" chancemax="0"/>
+ 	<item id="2462" chance="1200"/> --devil helmet
+	<item id="2149" countmax="3" chance1="11000" chancemax="0"/>
+ 	<item id="2171" chance="800"/> --platinum amulet
+ 	<item id="2387" chance="20000"/> --double axe
+ 	<item id="2470" chance="400"/> --golden legs
+ 	<item id="2520" chance="2500"/> --demon shield
+ 	<item id="2173" chance="502"/> --aol
+ 	<item id="7390" chance="130"/> --justice seeker
+ 	<item id="2418" chance="1500"/> --golden sickle
+ 	<item id="2377" chance="3333"/> --two-handed sword
+ 	</inside>
+ 	</item>
+</loot>
+</monster>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+ <monster name="Dracola" nameDescription="Dracola" race="undead" experience="15000" speed="410" manacost="0">
+  <health now="15000" max="15000" /> 
+  <look type="231" head="0" body="0" legs="0" feet="0" corpse="6307" /> 
+  <targetchange interval="5000" chance="8"/>
+  <strategy attack="100" defense="0"/>
+  <flags>
+    <flag summonable="0"/>
+    <flag attackable="1"/>
+    <flag hostile="1"/>
+    <flag illusionable="0"/>
+    <flag convinceable="0"/>
+    <flag pushable="0"/>
+    <flag canpushitems="1"/>
+    <flag canpushcreatures="1"/>
+    <flag targetdistance="1"/>
+    <flag staticattack="90"/>
+    <flag runonhealth="0"/>
+  </flags>
+  <attacks>
+    <attack name="melee" interval="2000" min="-0" max="-880"/>
+    <attack name="fire" interval="1000" chance="10" range="7" radius="4" target="1" min="-300" max="-420">
+      <attribute key="shootEffect" value="fire"/>
+      <attribute key="areaEffect" value="redspark"/>
+    </attack>
+    <attack name="fire" interval="3000" chance="17" length="8" spread="3" min="-500" max="-600">
+      <attribute key="areaEffect" value="firearea"/>
+    </attack>
+    <attack name="poison" interval="2000" chance="12" length="8" spread="3" min="-350" max="-685">
+      <attribute key="areaEffect" value="poison"/>
+    </attack>
+    <attack name="lifedrain" interval="2000" chance="10" radius="6" target="0" min="-80" max="-100">
+      <attribute key="areaEffect" value="poff"/>
+    </attack>
+    <attack name="lifedrain" interval="3000" chance="25" range="7" min="-80" max="-150">
+      <attribute key="areaEffect" value="redshimmer"/>
+  </attack>
+  </attacks>
+  <defenses armor="15" defense="15">
+  </defenses>
+  <immunities>
+  <immunity physical="0" /> 
+  <immunity energy="0" /> 
+  <immunity fire="1" /> 
+  <immunity poison="1" /> 
+  <immunity lifedrain="0" /> 
+  <immunity paralyze="1" /> 
+  <immunity outfit="0" /> 
+  <immunity drunk="0" /> 
+  <immunity invisible="1" /> 
+  </immunities>
+
+ <voices interval="2000" chance="5">
+  <voice sentence="FEEEED MY ETERNAL HUNGER!" /> 
+  </voices>
+
+	<summons maxSummons="1">
+  <summon name="undeag dragon" interval="2000" chance="1" /> 
+  </summons>
+
+<loot>
+  	<item id="2152" countmax="2" chance1="20000" chancemax="0" /> platinum c
+  	<item id="2148" countmax="100" chance1="70000" chancemax="0" /> gold 
+  	<item id="6500" countmax="1" chance1="1000" chancemax="0" /> demoniac
+  	<item id="2236" chance="20000" /> torn book
+  		<item id="1987" chance="100000"> //bag
+<inside>
+  	<item id="2260" chance="20000" />blank r
+	<item id="2547" countmax="1" chance1="3800" chancemax="0" /> power bolt
+	<item id="2413" chance="6666" /> broad sword
+   	<item id="5944" countmax="1" chance1="3800" chancemax="0" /> soul orb
+</inside>
+</item>
+  </loot>
+
+</monster>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Collossus" nameDescription="a Collossus" race="blood" experience="25000" speed="330" manacost="0">
+  <health now="120200" max="120200"/>
+  <look type="201" corpse="5995"/>
+  <targetchange interval="5000" chance="8"/>
+  <strategy attack="100" defense="0"/>
+  <flags>
+    <flag summonable="0"/>
+    <flag attackable="1"/>
+    <flag hostile="1"/>
+    <flag illusionable="0"/>
+    <flag convinceable="0"/>
+    <flag pushable="0"/>
+    <flag canpushitems="1"/>
+    <flag canpushcreatures="1"/>
+    <flag targetdistance="1"/>
+    <flag staticattack="90"/>
+    <flag runonhealth="2500"/>
+  </flags>
+  <attacks>
+    <attack name="melee" interval="2000" skill="150" attack="159"/>
+    <attack name="manadrain" interval="1000" chance="13" range="7" min="-300" max="-600"/>
+    <attack name="manadrain" interval="1000" chance="6" radius="5" target="0" min="-150" max="-350">
+      <attribute key="areaEffect" value="poison"/>
+    </attack>
+    <attack name="strength" interval="1000" chance="6" radius="5" target="0">
+      <attribute key="areaEffect" value="blackspark"/>
+    </attack>
+    <attack name="fire" interval="1000" chance="34" range="7" radius="7" target="1" min="-310" max="-600">
+      <attribute key="shootEffect" value="fire"/>
+      <attribute key="areaEffect" value="firearea"/>
+    </attack>
+    <attack name="firefield" interval="1000" chance="10" range="7" radius="4" target="1">
+      <attribute key="shootEffect" value="fire"/>
+    </attack>
+    <attack name="energy" interval="1000" chance="15" length="8" spread="0" min="-500" max="-850">
+      <attribute key="areaEffect" value="energy"/>
+    </attack>
+  </attacks>
+  <defenses armor="40" defense="45">
+    <defense name="healing" interval="1000" chance="9" min="200" max="500">
+      <attribute key="areaEffect" value="blueshimmer"/>
+    </defense>
+    <defense name="healing" interval="1000" chance="17" min="100" max="200">
+      <attribute key="areaEffect" value="blueshimmer"/>
+    </defense>
+    <defense name="speed" interval="1000" chance="5" speedchange="400" duration="7000">
+      <attribute key="areaEffect" value="redshimmer"/>
+    </defense>
+  </defenses>
+  <immunities>
+    <immunity physical="0"/>
+    <immunity energy="1"/>
+    <immunity fire="1"/>
+    <immunity poison="1"/>
+    <immunity lifedrain="1"/>
+    <immunity paralyze="1"/>
+    <immunity outfit="1"/>
+    <immunity drunk="1"/>
+    <immunity invisible="1"/>
+  </immunities>
+	<summons maxSummons="3">
+    <summon name="demon" interval="1000" chance="10" max="3"/>
+  </summons>
+  <voices interval="5000" chance="10">
+    <voice sentence="PRAISED BE MY MASTERS, THE RUTHLESS SEVEN!" yell="1"/>
+    <voice sentence="YOU ARE DOOMED!" yell="1"/>
+    <voice sentence="ORSHABAAL IS BACK!" yell="1"/>
+    <voice sentence="Be prepared for the day my masters will come for you!"/>
+    <voice sentence="SOULS FOR ORSHABAAL!" yell="1"/>
+  </voices>
+  <loot>
+    <item id="2148" countmax="100" chance1="100000" chancemax="0"/>
+    <item id="2148" countmax="25" chance1="100000" chancemax="0"/>
+    <item id="2377" chance="3333"/>
+    <item id="2188" chance="1000" /> -- wand of plague
+    <item id="2522" chance="433"/>
+    <item id="2393" chance="959"/>
+    <item id="2432" chance="3000"/>
+    <item id="2472" chance="250"/>
+    <item id="3976" countmax="10" chance1="50000" chancemax="0"/>
+    <item id="5906" countmax="1" chance1="1000" chancemax="0"/>
+    <item id="5954" countmax="1" chance1="1000" chancemax="0"/>
+    <item id="2182" chance="1333" /> -- snakebite rod
+    <item id="1987" chance="100000">
+      <inside>
+        <item id="2421" chance="1000"/>
+        <item id="2678" countmax="3" chance1="10000" chancemax="0"/>
+        <item id="2148" countmax="100" chance1="100000" chancemax="0"/>
+        <item id="2151" countmax="4" chance1="4000" chancemax="0"/>
+        <item id="2462" chance="755"/>
+        <item id="2149" countmax="3" chance1="1428" chancemax="0"/>
+        <item id="2171" chance="2333"/>
+        <item id="2387" chance="6666"/>
+        <item id="2470" chance="500"/>
+        <item id="2520" chance="850"/>
+        <item id="2418" chance="833"/>
+      </inside>
+    </item>
+  </loot>
+</monster>

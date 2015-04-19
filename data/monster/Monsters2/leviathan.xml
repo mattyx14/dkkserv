@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="leviathan" nameDescription="the leviathan" race="undead" experience="300100" speed="900" manacost="0" script="leviathan.lua">
+  <health now="2500900" max="2500900"/>
+  <look type="275" head="20" body="30" legs="40" feet="50" corpse="8307"/>
+  <targetchange interval="5000" chance="8"/>
+  <strategy attack="65" defense="35"/>
+  <flags>
+    <flag summonable="0"/>
+    <flag attackable="1"/>
+    <flag hostile="1"/>
+    <flag illusionable="0"/>
+    <flag convinceable="0"/>
+    <flag pushable="0"/>
+    <flag canpushitems="1"/>
+    <flag canpushcreatures="1"/>
+    <flag targetdistance="1"/>
+    <flag staticattack="65"/>
+    <flag runonhealth="0"/>
+  </flags>
+  <attacks>
+    <attack name="melee" interval="2000" min="-500" max="-3500"/>
+    <attack name="ice" interval="1000" chance="15" range="30" radius="4" target="1" min="-420" max="-880">
+      <attribute key="shootEffect" value="ice"/>
+      <attribute key="areaEffect" value="ICEAREA"/>
+    </attack>
+    <attack name="ice" interval="1000" chance="20" radius="4" range="30" target="1" min="-300" max="-550">
+      <attribute key="areaEffect" value="ICETORNADO"/>
+    </attack>
+    <attack name="ice" interval="1000" chance="80" radius="4" range="30" target="1" min="0" max="-150">
+      <attribute key="areaEffect" value="ICETORNADO"/>
+    </attack>
+	<attack name="ice" interval="1000" chance="25" length="7" target="1" spread="3" min="-400" max="-860">
+      <attribute key="areaEffect" value="ICEATTACK"/>
+    </attack>
+    <attack name="ice" interval="1000" chance="40" range="30" radius="7" target="1" min="-360" max="-450">
+      <attribute key="shootEffect" value="ice"/>
+      <attribute key="areaEffect" value="GIANTICE"/>
+    </attack>
+	<attack name="ice" interval="1000" chance="30" range="30" radius="3" min="-200" max="-500">
+  <attribute key="areaEffect" value="ICEAREA"/>
+</attack>
+  </attacks>
+  <defenses armor="22" defense="35">
+    <defense name="healing" interval="1000" chance="50" min="1900" max="2050">
+      <attribute key="areaEffect" value="blueshimmer"/>
+    </defense>
+  </defenses>
+  <immunities>
+    <immunity physical="0"/>
+    <immunity energy="0"/>
+    <immunity fire="1"/>
+    <immunity poison="0"/>
+    <immunity holy="0"/>
+    <immunity death="0"/>
+    <immunity ice="1"/>
+    <immunity lifedrain="1"/>
+    <immunity paralyze="1"/>
+    <immunity outfit="1"/>
+    <immunity drunk="1"/>
+    <immunity invisible="1"/>
+  </immunities>
+<elements>
+<element firePercent="40"/>
+<element icePercent="40"/>
+<element earthPercent="40"/>
+<element energyPercent="40"/>
+<element holyPercent="40"/>
+<element deathPercent="40"/>
+</elements>
+  <voices interval="5000" chance="10">
+    <voice sentence="ZCHHHHH" yell="1"/>
+    <voice sentence="I WILL SET THE WORLD IN FIRE!" yell="1"/>
+    <voice sentence="I WILL PROTECT MY BROOD!" yell="1"/>
+  </voices>
+	<loot>
+      <item id="2148" countmax="100" chance="40000"/>		<!-- gold coin -->
+      <item id="2146" countmax="8" chance="10000"/>			<!-- small saphire -->
+      <item id="2666" countmax="6" chance="20000"/>			<!-- meat -->
+      <item id="7391" chance="1300"/>						<!-- Thaian Sword -->
+      <item id="7888" chance="5000"/>						<!-- glacier amulet -->
+      <item id="1987" chance="100000">
+		<inside>
+		  <item id="2672" countmax="6" chance="20000"/>		<!-- dragon ham -->
+		  <item id="2148" countmax="100" chance="40000"/>	<!-- gold coin -->
+		  <item id="2158" chance="5000"/>					<!-- blue gem -->
+		  <item id="5741" chance="7000"/>					<!-- skull helmet -->
+		  <item id="2280" chance="99999"/>					<!-- Clean Rune -->
+		</inside>
+	  </item>
+	</loot> 
+</monster>

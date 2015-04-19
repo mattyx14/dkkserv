@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Ra" nameDescription="a Ra" race="undead" experience="1599999" speed="370" manacost="0">
+  <health now="480200" max="480200"/>
+  <look type="12" head="0" body="123" legs="97" feet="94" corpse="6068"/>
+  <targetchange interval="5000" chance="8"/>
+  <strategy attack="100" defense="45"/>
+  <flags>
+    <flag summonable="0"/>
+    <flag attackable="1"/>
+    <flag hostile="1"/>
+    <flag illusionable="0"/>
+    <flag convinceable="0"/>
+    <flag pushable="0"/>
+    <flag canpushitems="1"/>
+    <flag canpushcreatures="1"/>
+    <flag targetdistance="1"/>
+    <flag staticattack="90"/>
+    <flag runonhealth="4000"/>
+  </flags>
+  <attacks>
+    <attack name="melee" interval="2000" min="-100" max="-3500"/>
+    <attack name="manadrain" interval="1000" chance="25" radius="5" target="0" min="-950" max="-1050">
+      <attribute key="areaEffect" value="SMALLCLOUDS"/>
+    </attack>
+    <attack name="manadrain" interval="1000" chance="5" range="7" min="-60" max="-300"/>
+    <attack name="manadrain" interval="1000" chance="10" radius="5" target="0" min="-150" max="-350">
+      <attribute key="areaEffect" value="SMALLCLOUDS"/>
+    </attack>
+    <attack name="strength" interval="1000" chance="6" radius="6" target="0">
+      <attribute key="areaEffect" value="GROUNDSHAKER"/>
+    </attack>
+    <attack name="fire" interval="1800" chance="34" range="7" radius="7" target="1" min="-1010" max="-2650">
+      <attribute key="areaEffect" value="mortarea"/>
+    </attack>
+    <attack name="fire" interval="1000" chance="15" length="8" spread="0" min="-999" max="-1250">
+      <attribute key="areaEffect" value="BIGCLOUDS"/>
+    </attack>
+    <attack name="speed" interval="1000" chance="20" range="10" radius="3" target="1" speedchange="-700" duration="50000">
+      <attribute key="areaEffect" value="FIREATTACK"/>
+    </attack>
+  </attacks>
+  <defenses armor="40" defense="45">
+    <defense name="healing" interval="500" chance="9" min="700" max="1010">
+      <attribute key="areaEffect" value="blueshimmer"/>
+    </defense>
+    <defense name="healing" interval="600" chance="17" min="4200" max="13900">
+      <attribute key="areaEffect" value="blueshimmer"/>
+    </defense>
+    <defense name="speed" interval="600" chance="50" speedchange="830" duration="7000">
+      <attribute key="areaEffect" value="redshimmer"/>
+    </defense>
+    <defense name="invisible" interval="1000" chance="20" duration="25000"> --each 7 sec invi duration 5 sec
+      <attribute key="areaEffect" value="TELEPORT"/>
+    </defense>
+  </defenses>
+  <immunities>
+    <immunity physical="0"/>
+    <immunity energy="1"/>
+    <immunity fire="1"/>
+    <immunity poison="1"/>
+    <immunity lifedrain="1"/>
+    <immunity paralyze="1"/>
+    <immunity outfit="1"/>
+    <immunity drunk="1"/>
+    <immunity ice="1"/>
+    <immunity invisible="1"/>
+  </immunities>
+<elements>
+<element firePercent="10"/>
+<element icePercent="10"/>
+<element earthPercent="10"/>
+<element energyPercent="10"/>
+<element holyPercent="10"/>
+<element deathPercent="10"/>
+</elements>
+
+  	<summons maxSummons="3">
+		<summon name="demon" interval="50000" chance="100"/>
+				<summon name="demon" interval="50000" chance="100"/>
+						<summon name="demon" interval="50000" chance="100"/>
+	</summons>
+  <voices interval="5000" chance="10">
+    <voice sentence="PRAISED BE MY MASTERS, THE RUTHLESS SEVEN!" yell="1"/>
+    <voice sentence="YOU ARE DOOMED!" yell="1"/>
+    <voice sentence="RA IS BACK!" yell="1"/>
+    <voice sentence="Be prepared for the day my masters will come for you!"/>
+    <voice sentence="SOULS FOR RA!" yell="1"/>
+  </voices>
+<loot>
+<item id="2148" chance="100000" countmax="100" /> -- gold coin
+<item id="2148" chance="50000" countmax="90" /> -- gold coin
+<item id="2143" chance="10000" countmax="5" /> -- white pear
+<item id="6528" chance="3429" /> -- ice rapierl
+<item id="2396" chance="19429" /> -- ice rapier
+<item id="2462" chance="20000" /> -- devil helmet
+<item id="2214" chance="16000" /> -- ring of healing
+<item id="2003" chance="100000" > -- bag
+<inside>
+	<item id="2495" chance="6000" /> -- demon legs
+	<item id="2387" chance="20000" /> -- double axe
+	<item id="2393" chance="60000" /> -- giant sword
+	<item id="2195" chance="16033" /> -- boots of haste
+	<item id="2421" chance="7000" /> -- thunder hammer
+	<item id="2522" chance="14000" /> -- great shield
+	<item id="2523" chance="13000" /> -- blessed shield
+	<item id="2192" chance="24000" /> -- crystal ball
+</inside>
+</item>
+</loot>
+</monster>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+ <monster name="Death Bringer" nameDescription="a Death Bringer" race="undead" experience="585000" speed="480" manacost="0">
+  <health now="555000" max="555000" /> 
+  <look type="231" head="0" body="0" legs="0" feet="0" corpse="6307" /> 
+  <strategy attack="80" defense="50"/>
+  <targetchange speed="0" chance="8"/>
+  <flags>
+    <flag canpushitems="1"/>
+    <flag canpushcreatures="1"/>
+    <flag hostile="1"/>
+    <flag attackable="1"/>
+    <flag illusionable="1"/>
+    <flag pushable="0"/>
+    <flag staticattack="90"/>
+    <flag targetdistance="1"/>
+  </flags>
+  <attacks>
+    <attack name="melee" interval="2000" skill="180" attack="150"/>
+    <attack name="fire" interval="2200" chance="20" range="7" radius="4" target="1" min="-800" max="-1395">
+      <attribute key="shootEffect" value="holy"/>
+      <attribute key="areaEffect" value="HOLYDAMAGE"/>
+    </attack>
+    <attack name="death" interval="1000" chance="10" range="7" radius="4" target="1" min="-800" max="-1500">
+      <attribute key="shootEffect" value="DEATH"/>
+      <attribute key="areaEffect" value="mortarea"/>
+    </attack>
+    <attack name="poison" interval="2000" chance="20" range="7" radius="4" target="1" min="-720" max="-890">
+      <attribute key="shootEffect" value="EARTH"/>
+      <attribute key="areaEffect" value="BIGPLANTS"/>
+    </attack>
+    <attack name="poison" interval="1900" chance="23" range="7" radius="4" target="1" min="-550" max="-780">
+      <attribute key="shootEffect" value="EARTH"/>
+      <attribute key="areaEffect" value="BIGPLANTS"/>
+    </attack>
+    <attack name="fire" interval="1700" chance="20" length="8" spread="4" min="-500" max="-800">
+      <attribute key="areaEffect" value="firearea"/>
+    </attack>
+    <attack name="speed" interval="2000" chance="40" radius="6" target="1" duration="60000" speedchange="-1250">
+      <attribute key="shootEffect" value="holy"/>
+      <attribute key="areaEffect" value="HOLYDAMAGE"/>
+    </attack>
+    <attack name="poison" interval="1600" chance="20" length="8" spread="4" min="-200" max="-985">
+      <attribute key="areaEffect" value="STONES"/>
+    </attack>
+    <attack name="lifedrain" interval="1800" chance="20" length="8" spread="4" min="-300" max="-800">
+      <attribute key="shootEffect" value="DEATH"/>
+      <attribute key="areaEffect" value="mortarea"/>
+    </attack>
+    <attack name="drowncondition" interval="1000" chance="20" length="8" spread="3">
+      <attribute key="areaEffect" value="mortarea"/>
+    </attack>
+  </attacks>
+  <defenses armor="40" defense="39" /> 
+  <immunities>
+  <immunity physical="0" /> 
+  <immunity energy="0" /> 
+  <immunity fire="1" /> 
+  <immunity poison="1" /> 
+  <immunity lifedrain="1" /> 
+  <immunity paralyze="1" /> 
+  <immunity outfit="1" /> 
+  <immunity drunk="1" /> 
+  <immunity death="1" /> 
+  <immunity invisible="1" />
+  <immunity holy="0" />
+  <immunity ice="0" />   
+  </immunities>
+ <voices interval="2000" chance="5">
+  <voice sentence="?" /> 
+ </voices>
+  <summons maxSummons="5">
+    <summon name="undead dragon" interval="3000" chance="80" max="5"/>
+  </summons>
+  <loot>
+  	<item id="2160" countmax="12" chance1="25000" chancemax="0" /> --platinum coin
+  	<item id="6500" countmax="100" chance1="21000" chancemax="0" /> --demonic essence
+	<item id="6546" chance="100000" /> --dracola's eye
+  </loot>
+</monster>

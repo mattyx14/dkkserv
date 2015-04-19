@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Infernus" nameDescription="a Infernus" race="undead" experience="333320" speed="370" manacost="0">
+  <health now="580200" max="580200"/>
+  <look type="201" corpse="5995"/>
+  <targetchange interval="10000" chance="20"/>
+  <strategy attack="100" defense="0"/>
+  <flags>
+    <flag summonable="0"/>
+    <flag attackable="1"/>
+    <flag hostile="1"/>
+    <flag illusionable="0"/>
+    <flag convinceable="0"/>
+    <flag pushable="0"/>
+    <flag canpushitems="1"/>
+    <flag canpushcreatures="1"/>
+    <flag staticattack="98"/>
+    <flag targetdistance="1"/>
+    <flag runonhealth="0"/>
+  </flags>
+  <attacks>
+    <attack name="melee" interval="2000" min="0" max="-3000"/>
+    <attack name="manadrain" interval="1000" chance="7" range="7" min="-300" max="-600"/>
+    <attack name="manadrain" interval="1000" chance="6" radius="5" target="0" min="-150" max="-350">
+      <attribute key="areaEffect" value="HOLYDAMAGE"/>
+    </attack>
+    <attack name="fire" interval="1500" chance="6" radius="5" target="0">
+      <attribute key="areaEffect" value="GROUNDSHAKER"/>
+    </attack>
+    <attack name="energy" interval="1000" chance="70" length="9" spread="0" min="-1020" max="-2980">
+      <attribute key="areaEffect" value="PURPLEENERGY"/>
+    </attack>
+    <attack name="holy" interval="1000" chance="34" range="7" radius="5" target="1" min="-710" max="-950">
+      <attribute key="shootEffect" value="holy"/>
+      <attribute key="areaEffect" value="HOLYDAMAGE"/>
+    </attack>
+    <attack name="firefield" interval="1900" chance="10" range="7" radius="4" target="1">
+      <attribute key="shootEffect" value="fire"/>
+    </attack>
+    <attack name="energy" interval="1000" chance="15" range="7" radius="5" min="-800" max="-1000">
+      <attribute key="areaEffect" value="BIGCLOUDS"/>
+    </attack>
+  </attacks>
+  <defenses armor="40" defense="45">
+    <defense name="healing" interval="500" chance="10" min="200" max="500">
+      <attribute key="areaEffect" value="blueshimmer"/>
+    </defense>
+    <defense name="healing" interval="1000" chance="10" min="100" max="12000">
+      <attribute key="areaEffect" value="blueshimmer"/>
+    </defense>
+    <defense name="speed" interval="1000" chance="100" speedchange="400" duration="15000">
+      <attribute key="areaEffect" value="redshimmer"/>
+    </defense>
+  </defenses>
+  <elements>
+	<element firePercent="100"/>
+	<element physicalPercent="20"/>
+	<element earthpercent="20"/>
+	<element energyPercent="100"/>
+	<element deathPercent="20"/>
+	<element icePercent="20"/>
+	<element holyPercent="20"/>
+  </elements>
+  <immunities>
+    <immunity lifedrain="1"/>
+    <immunity paralyze="1"/>
+    <immunity invisible="1"/>
+  </immunities>
+
+  	<summons maxSummons="4">
+		<summon name="demon" interval="50000" chance="100"/>
+				<summon name="demon" interval="50000" chance="100"/>
+						<summon name="demon" interval="50000" chance="100"/>
+								<summon name="demon" interval="50000" chance="100"/>
+	</summons>
+  <voices interval="5000" chance="10">
+    <voice sentence="PRAISED BE MY MASTERS, THE RUTHLESS SEVEN!" yell="1"/>
+    <voice sentence="YOU ARE DOOMED!" yell="1"/>
+    <voice sentence="INFERNUS IS BACK!" yell="1"/>
+    <voice sentence="Be prepared for the day my masters will come for you!"/>
+    <voice sentence="SOULS FOR INFERNUS!" yell="1"/>
+  </voices>
+<loot>
+<item id="2160" chance="100000" countmax="12" /> -- crystal coin
+<item id="2514" chance="18000" /> -- mastermind shield
+<item id="6300" chance="12000" /> -- death ring
+<item id="5943" chance="27000" /> -- morgaroth hearts
+<item id="2495" chance="99999" /> -- Demon Legs
+<item id="15923" chance="99999" /> -- Loot Cambiable
+<item id="8926" chance="99999" /> -- demonwing axe
+<item id="2003" chance="100000" > -- bag
+<inside>
+	<item id="7431" chance="6000" /> -- demonbone
+	<item id="2393" chance="60000" /> -- giant sword
+	<item id="8906" chance="60000" /> -- Fiery Rainbow shield
+	<item id="2195" chance="14033" /> -- boots of haste
+</inside>
+</item>
+</loot>
+</monster>

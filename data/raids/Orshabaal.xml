@@ -1,0 +1,6 @@
+<raid>
+<announce delay="0" message="Orshabaal minions are working on his return to the World. LEAVE Fynn Grounds at once, mortals."/>
+<announce delay="300000" message="Orshabaal is about to make his way into the mortal realm. Run for your lives!"/>
+<announce delay="400000" message="Orshabaal has been summoned from hell to plague the lands of mortals again."/>
+<singlespawn delay="400000" name="Orshabaal" x="941" y="1008" z="7" />
+</raid>

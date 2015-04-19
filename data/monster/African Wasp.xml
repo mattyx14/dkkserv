@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="African Wasp" nameDescription="a African Wasp" race="VENOM" experience="9500" speed="480" manacost="20080">
+  <health now="73035" max="73035"/>
+  <look type="44" head="20" body="30" legs="40" feet="50" corpse="5989"/>
+  <targetchange interval="5000" chance="8"/>
+  <strategy attack="95" defense="50"/>
+  <flags>
+    <flag summonable="0"/>
+    <flag attackable="1"/>
+    <flag hostile="1"/>
+    <flag illusionable="1"/>
+    <flag convinceable="0"/>
+    <flag pushable="1"/>
+    <flag canpushitems="0"/>
+    <flag canpushcreatures="0"/>
+    <flag targetdistance="1"/>
+    <flag staticattack="90"/>
+    <flag runonhealth="0"/>
+  </flags>
+  <attacks>
+    <attack name="melee" interval="2000" min="-100" max="-1250"/>
+    <attack name="poisonfield" interval="1000" chance="17" range="7" radius="2" target="1">
+      <attribute key="shootEffect" value="poison"/>
+    </attack>
+  </attacks>
+  <defenses armor="99" defense="99">
+    <defense name="healing" interval="1000" chance="17" min="825" max="1275">
+      <attribute key="areaEffect" value="blueshimmer"/>
+    </defense>
+    <defense name="speed" interval="1000" chance="5" speedchange="620" duration="7000">
+      <attribute key="areaEffect" value="redshimmer"/>
+    </defense>
+  </defenses>
+  <immunities>
+    <immunity physical="0"/>
+    <immunity energy="0"/>
+    <immunity fire="1"/>
+    <immunity poison="1"/>
+    <immunity lifedrain="1"/>
+    <immunity paralyze="0"/>
+    <immunity outfit="1"/>
+    <immunity drunk="1"/>
+    <immunity invisible="1"/>
+  </immunities>
+	<summons maxSummons="5">
+    <summon name="wasp" interval="1000" chance="10" max="5"/>
+  </summons>
+  <loot>
+ 	<item id="2160" countmax="100" chance1="100000" chancemax="95"/>
+ 	<item id="2514" chance="55500"/> --mastermind shield
+ 	<item id="2472" chance="55130"/> --magic plate armor
+ 	<item id="2470" chance="400"/> --golden legs
+  </loot>
+</monster>

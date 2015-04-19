@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<monster name="wyrm" nameDescription="a wyrm" race="fire" experience="3050" speed="250" manacost="0">
+<health now="2020" max="2020"/>
+<look type="291" head="20" body="30" legs="40" feet="50" corpse="8941"/>
+<targetchange interval="5000" chance="8"/>
+<strategy attack="100" defense="0"/>
+
+  	<flags>
+    	<flag summonable="0"/>
+    	<flag attackable="1"/>
+    	<flag hostile="1"/>
+    	<flag illusionable="1"/>
+    	<flag convinceable="0"/>
+    	<flag pushable="0"/>
+    	<flag canpushitems="1"/>
+    	<flag canpushcreatures="1"/>
+    	<flag targetdistance="1"/>
+    	<flag staticattack="90"/>
+    	<flag runonhealth="300"/>
+  	</flags>
+
+  	<attacks>
+	<attack name="melee" interval="2000" min="-50" max="-115"/>
+    	<attack name="energy" interval="1000" chance="10" range="7" radius="4" target="1" min="-80" max="-180">
+      		<attribute key="shootEffect" value="energy"/>
+      		<attribute key="areaEffect" value="PURPLEENERGY"/>
+    		</attack>
+    	<attack name="energy" interval="1500" chance="15" range="7" radius="4" target="0" min="-80" max="-180">
+      		<attribute key="areaEffect" value="POFF"/>
+    		</attack>
+	<attack name="energy" interval="2000" chance="20" length="7" spread="3" min="-100" max="-260">
+      		<attribute key="areaEffect" value="YELLOWENERGY"/>
+    		</attack>
+  		</attacks>
+  	<defenses armor="25" defense="35">
+    	<defense name="healing" interval="1000" chance="25" min="100" max="200">
+      		<attribute key="areaEffect" value="blueshimmer"/>
+    		</defense>
+  		</defenses>
+  	<immunities>
+      		<immunity physical="0"/>
+      		<immunity energy="1"/>
+      		<immunity fire="0"/>
+      		<immunity poison="1"/>
+      		<immunity lifedrain="0"/>
+      		<immunity paralyze="1"/>
+      		<immunity outfit="0"/>
+      		<immunity drunk="0"/>
+      		<immunity invisible="1"/>
+    	</immunities>
+	<elements>
+		<element firePercent="100"/>
+		<element icePercent="-10"/>
+		<element earthPercent="10"/>
+		<element energyPercent="0"/>
+		<element holyPercent="0"/>
+		<element deathPercent="-10"/>
+	</elements>
+    	<voices interval="2000" chance="5">
+      		<voice sentence="GRRR!"/>
+      		<voice sentence="GROOOOAAAAAAAAR!"/>
+    	</voices>
+    <loot>
+      <item id="2672" countmax="3" chance1="9000" chancemax="0"/>
+      <item id="2148" countmax="200" chance1="6000" chancemax="0"/>
+    <item id="3976" countmax="10" chance1="50000" chancemax="0"/>
+    <item id="2672" countmax="2" chance1="20000" chancemax="0"/>
+    <item id="2152" countmax="2" chance1="100000" chancemax="0"/>
+      <item id="2647" chance="1222"/>
+      <item id="8871" chance="1990"/>
+      <item id="2546" countmax="10" chance1="6000" chancemax="0"/>
+      <item id="1987" chance="10000">
+        <inside>
+          <item id="2148" countmax="200" chance1="100000" chancemax="0"/>
+          <item id="7430" chance="1554"/>
+          <item id="7588" chance="5332"/>
+          <item id="8921" chance="3999"/>
+		  <item id="8871" chance="1000"/>
+		  <item id="7430" chance="1200"/>
+        </inside>
+      </item>
+    </loot>
+  	</monster>

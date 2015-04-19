@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Felipe" script="data/npc/scripts/default.lua" walkinterval="0" skull="green" floorchange="0">
+	<health now="150" max="150"/>
+	<look type="266" head="10" body="122" legs="19" feet="10"/>
+    <parameters>
+        <parameter key="module_travel" value="1"/>
+		<parameter key="message_greet" value="Hello |PLAYERNAME|. If you don't know where to flow, say {revert ws}."/>
+		<parameter key="message_farewell" value="Cya Later." />
+			<parameter key="travel_destinations" value="revert ws,942,984,9,12000000;"/>
+    </parameters>
+</npc>

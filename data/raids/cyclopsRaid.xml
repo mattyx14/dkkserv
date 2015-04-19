@@ -1,0 +1,16 @@
+<raid>
+<announce delay="1000" type="event" message="Attack Giant Creatures on Anshara!" />
+<announce delay="60000" type="event" message="The Giant are coming! Defend the Anshara Desert!" />
+
+  <!--Area Spawns-->
+  <areaspawn delay="60000" fromx="656" fromy="376" fromz="7" tox="749" toy="462" toz="7">
+    <monster name="cyclops" amount="120" />
+    <monster name="cyclops" amount="90" />
+    <monster name="behemoth" amount="20" />
+    <monster name="cyclops smith" amount="75" />
+    <monster name="cyclops drone" amount="88" />
+    <monster name="Stonecracker" amount="10" />
+    <monster name="lithermoth" amount="5" />
+  </areaspawn>
+
+</raid>

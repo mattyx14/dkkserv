@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Goshnar" nameDescription="king goshnar" race="blood" experience="4000" speed="554" manacost="0">
+	<health now="10000" max="10000"/>
+	<look type="2" head="0" body="0" legs="0" feet="0" corpse="2967"/>
+	<targetchange interval="2000" chance="5"/>
+	<strategy attack="70" defense="15"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="72" attack="68"/>
+		<attack name="physical" interval="10000" chance="50" range="7" min="-100" max="-160">
+			<attribute key="shootEffect" value="throwingstar"/>
+		</attack>
+	</attacks>
+	<defenses armor="28" defense="55">
+		<defense name="speed" interval="3000" chance="30" speedchange="650" duration="20000">
+			<attribute key="areaEffect" value="redshimmer"/>
+		</defense>
+  	</defenses>
+	<immunities>
+		<immunity physical="0"/>
+		<immunity energy="0"/>
+		<immunity fire="1"/>
+		<immunity poison="0"/>
+		<immunity lifedrain="0"/>
+		<immunity paralyze="0"/>
+		<immunity outfit="1"/>
+		<immunity drunk="1"/>
+		<immunity invisible="1"/>
+	</immunities>
+	<summons maxSummons="1">
+		<summon name="goshnar" interval="2000" chance="50" max="1"/>
+	</summons>
+	<voices interval="5000" chance="10">
+		<voice sentence="Renat Ulderek."/>
+		<voice sentence="Ikem King Zambo."/>
+	</voices>
+	<loot capacity="800">
+		<item id="2465" countmax="1" chance="1000"/>
+		<item id="2478" countmax="1" chance="10000"/>
+		<item id="2497" countmax="1" chance="200"/>
+		<item id="2490" countmax="1" chance="1500"/>
+		<item id="2434" countmax="1" chance="200"/>
+		<item id="2667" countmax="2" chance="10000"/>
+		<item id="2148" countmax="45" chance="19000"/>
+		<item id="2666" countmax="2" chance="20000"/>
+		<item id="2428" countmax="1" chance="15000"/>
+		<item id="2463" countmax="1" chance="6000"/>
+		<item id="2647" countmax="1" chance="4000"/>
+		<item id="2200" countmax="1" chance="2000"/>
+		<item id="2419" countmax="1" chance="12000"/>
+		<item id="2165" countmax="1" chance="100"/>
+		<item id="2399" countmax="40" chance="30000"/>
+		<item id="2377" countmax="1" chance="2000"/>
+	</loot>
+</monster>

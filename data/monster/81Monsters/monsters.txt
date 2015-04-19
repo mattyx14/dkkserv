@@ -1,0 +1,7 @@
+	<!-- 8.10 Monsters -->
+	<monster name="Cat" file="cat.xml"/>
+	<monster name="Cyclops Drone" file="cyclops drone.xml"/>
+	<monster name="Cyclops Smith" file="cyclops smith.xml"/>
+	<monster name="Dragon Hatchling" file="dragon hatchling.xml"/>
+	<monster name="Squirrel" file="squirrel.xml"/>
+	<monster name="Troll Champion" file="troll champion.xml"/>

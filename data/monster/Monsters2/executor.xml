@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="executor" nameDescription="a executor" race="undead" experience="16500" speed="310" manacost="0">
+  <health now="8200" max="8200"/>
+  <look type="233" corpse="6316"/>
+  <targetchange interval="2000" chance="8"/>
+  <strategy attack="80" defense="10"/>
+  <flags>
+    <flag summonable="0"/>
+    <flag attackable="1"/>
+    <flag hostile="1"/>
+    <flag illusionable="1"/>
+    <flag convinceable="0"/>
+    <flag pushable="0"/>
+    <flag canpushitems="1"/>
+    <flag canpushcreatures="1"/>
+    <flag targetdistance="1"/>
+    <flag staticattack="90"/>
+    <flag runonhealth="0"/>
+  </flags>
+  <attacks>
+    <attack name="melee" interval="2000" min="-420" max="-450"/>
+    <attack name="death" interval="2000" chance="40" range="7" radius="4" target="1" min="-350" max="-700">
+      <attribute key="shootEffect" value="death"/>
+      <attribute key="areaEffect" value="mortarea"/>
+    </attack>
+    <attack name="speed" interval="1000" chance="40" range="7" speedchange="-600" duration="20000">
+      <attribute key="areaEffect" value="redshimmer"/>
+    </attack>
+  </attacks>
+  <defenses armor="15" defense="15">
+    <defense name="healing" interval="1000" chance="50" min="350" max="700">
+      <attribute key="areaEffect" value="blueshimmer"/>
+    </defense>
+    <defense name="invisible" interval="10000" chance="50" duration="2000">
+      <attribute key="areaEffect" value="redshimmer"/>
+    </defense>
+
+    <defense name="speed" interval="1000" chance="12" speedchange="380" duration="30000">
+      <attribute key="areaEffect" value="redshimmer"/>
+    </defense>
+  </defenses>
+
+  <immunities>
+    <immunity physical="0"/>
+    <immunity holy="0"/>
+    <immunity ice="0"/>
+    <immunity energy="1"/>
+    <immunity fire="1"/>
+    <immunity poison="1"/>
+    <immunity lifedrain="1"/>
+    <immunity paralyze="1"/>
+    <immunity outfit="1"/>
+    <immunity drunk="1"/>
+    <immunity death="1"/>
+    <immunity invisible="1"/>
+  </immunities>
+
+  <voices interval="5000" chance="10">
+    <voice sentence="Executor!"/>
+  </voices>
+
+<loot>
+<item id="2148" chance="100000" countmax="100" /> -- gold coin
+<item id="2148" chance="100000" countmax="100" /> -- gold coin
+<item id="2394" chance="6667"/> -- morning star
+<item id="2173" chance="900"/> -- aol
+    <item id="2498" chance="1008"/>
+    <item id="2466" chance="888"/>
+<item id="1987" chance="100000"> --Bag
+<inside>
+<item id="6558" chance="2222"/> -- concentrated demonic blood
+<item id="2387" chance="5000"/> -- double axe
+<item id="2226" chance="10000" /> -- fishbone
+<item id="5741" chance="1500"/> -- skullhelm
+    <item id="2466" chance="1088"/>
+<item id="2145" chance="2222" countmax="3" /> -- small diamond
+<item id="3976" chance="20000" countmax="25" /> -- worm
+</inside>
+</item>
+</loot>
+
+</monster>

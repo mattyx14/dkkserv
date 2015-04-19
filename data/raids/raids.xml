@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<raids>
+	<raid name="Ghazbaran" 	file="Ghazbaran.xml" 		interval2="22" margin="0" enabled="no"/>
+	<raid name="Morgaroth" 	file="Morgaroth.xml" 		interval2="22" margin="0" enabled="no"/>
+	<raid name="Orshabaal" 	file="Orshabaal.xml" 		interval2="22" margin="0" enabled="no"/>
+	<raid name="Ferumbras" 	file="Ferumbras.xml" 		interval2="22" margin="0" enabled="no"/>
+	<raid name="verminor" 	file="verminor.xml" 		interval2="22" margin="0" enabled="no"/>
+	<raid name="azerus" 	file="azerus.xml" 		interval2="22" margin="0" enabled="no"/>
+	<raid name="infernus" 	file="infernus.xml" 		interval2="22" margin="0" enabled="no"/>
+
+	<raid name="apes" 	file="ApeRaid.xml" 		interval2="22" margin="0" enabled="no"/>
+	<raid name="scarabs" 	file="scarabs.xml" 		interval2="22" margin="0" enabled="no"/>
+	<raid name="quaras" 	file="QuaraRaid.xml" 		interval2="22" margin="0" enabled="no"/>
+	<raid name="pirates" 	file="PirateRaid.xml" 		interval2="22" margin="0" enabled="no"/>
+	<raid name="orcs" 	file="OrcRaid.xml" 		interval2="22" margin="0" enabled="no"/>
+	<raid name="elfs" 	file="ElvesRaid.xml" 		interval2="22" margin="0" enabled="no"/>
+	<raid name="cyclops" 	file="cyclopsRaid.xml" 		interval2="22" margin="0" enabled="no"/>
+	<raid name="hero" 	file="HeroRaid.xml" 		interval2="22" margin="0" enabled="no"/>
+</raids>

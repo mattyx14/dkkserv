@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<stages>
+	<world id="0">
+	<stage minlevel="1" maxlevel="10" multiplier="8"/>
+	<stage minlevel="11" maxlevel="50" multiplier="6"/>
+	<stage minlevel="51" maxlevel="100" multiplier="5"/>
+	<stage minlevel="101" maxlevel="110" multiplier="8"/>
+	<stage minlevel="111" maxlevel="150" multiplier="6"/>
+	<stage minlevel="150" maxlevel="200" multiplier="5"/>
+	<stage minlevel="201" maxlevel="210" multiplier="8"/>
+	<stage minlevel="211" maxlevel="250" multiplier="5"/>
+	<stage minlevel="251" maxlevel="300" multiplier="4"/>
+	<stage minlevel="301" maxlevel="310" multiplier="8"/>
+	<stage minlevel="311" maxlevel="350" multiplier="5"/>
+	<stage minlevel="351" maxlevel="400" multiplier="4"/>
+	<stage minlevel="401" maxlevel="410" multiplier="8"/>
+	<stage minlevel="411" maxlevel="450" multiplier="6"/>
+	<stage minlevel="451" maxlevel="500" multiplier="5"/>
+	<stage minlevel="501" maxlevel="510" multiplier="8"/>
+	<stage minlevel="511" maxlevel="550" multiplier="6"/>
+	<stage minlevel="551" maxlevel="600" multiplier="5"/>
+	<stage minlevel="601" maxlevel="700" multiplier="8"/>
+	<stage minlevel="701" multiplier="4"/>
+	</world>
+	<world id="1">
+	<stage minlevel="1" maxlevel="10" multiplier="8"/>
+	<stage minlevel="11" maxlevel="50" multiplier="6"/>
+	<stage minlevel="51" maxlevel="100" multiplier="5"/>
+	<stage minlevel="101" maxlevel="110" multiplier="8"/>
+	<stage minlevel="111" maxlevel="150" multiplier="6"/>
+	<stage minlevel="150" maxlevel="200" multiplier="5"/>
+	<stage minlevel="201" maxlevel="210" multiplier="8"/>
+	<stage minlevel="211" maxlevel="250" multiplier="5"/>
+	<stage minlevel="251" maxlevel="300" multiplier="4"/>
+	<stage minlevel="301" maxlevel="310" multiplier="8"/>
+	<stage minlevel="311" maxlevel="350" multiplier="5"/>
+	<stage minlevel="351" maxlevel="400" multiplier="4"/>
+	<stage minlevel="401" maxlevel="410" multiplier="8"/>
+	<stage minlevel="411" maxlevel="450" multiplier="6"/>
+	<stage minlevel="451" maxlevel="500" multiplier="5"/>
+	<stage minlevel="501" maxlevel="510" multiplier="8"/>
+	<stage minlevel="511" maxlevel="550" multiplier="6"/>
+	<stage minlevel="551" maxlevel="600" multiplier="5"/>
+	<stage minlevel="601" maxlevel="700" multiplier="8"/>
+	<stage minlevel="701" multiplier="4"/>
+	</world>
+</stages>

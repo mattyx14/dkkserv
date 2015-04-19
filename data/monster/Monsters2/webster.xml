@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Webster" nameDescription="a webster" race="undead" experience="4000" speed="290" manacost="0">
+  <health now="2850" max="2850"/>
+  <look type="263" head="0" body="0" legs="0" feet="0" corpse="7344"/>
+  <targetchange interval="5000" chance="8"/>
+  <strategy attack="100" defense="0"/>
+  <flags>
+    <flag summonable="1"/>
+    <flag attackable="1"/>
+    <flag hostile="1"/>
+    <flag illusionable="1"/>
+    <flag convinceable="1"/>
+    <flag pushable="0"/>
+    <flag canpushitems="1"/>
+    <flag canpushcreatures="1"/>
+    <flag targetdistance="1"/>
+    <flag staticattack="90"/>
+    <flag runonhealth="0"/>
+  </flags>
+  <attacks>
+    	<attack name="melee" interval="2000" min="-0" max="-388"/>
+    	<attack name="speed" interval="2000" chance="20" range="7" radius="3" target="1" speedchange="-550" duration="8000">
+        	<attribute key="areaEffect" value="ICEATTACK"/>
+		<attribute key="shootEffect" value="ice"/>
+    	</attack>
+    	<attack name="ice" interval="1800" chance="75" min="-83" max="-280" target="0" range="7">
+		<attribute key="shootEffect" value="ice"/>
+      		<attribute key="areaEffect" value="ICETORNADO"/>
+	</attack>
+    	<attack name="ice" interval="2000" chance="25" range="7" radius="4" target="1" min="-80" max="-180">
+     		 <attribute key="shootEffect" value="ice"/>
+     		 <attribute key="areaEffect" value="ICEATTACK"/>
+    	</attack>
+  	</attacks>
+  	<defenses armor="29" defense="34">
+    	<defense name="speed" interval="5000" chance="500" duration="2500" speedchange="700">
+		<attribute key="areaEffect" value="redshimmer"/>
+	</defense>
+	</defenses>
+  <immunities>
+    <immunity physical="0"/>
+    <immunity energy="0"/>
+    <immunity fire="1"/>
+    <immunity poison="1"/>
+    <immunity lifedrain="0"/>
+    <immunity paralyze="1"/>
+    <immunity outfit="1"/>
+    <immunity ice="1"/>
+    <immunity drunk="1"/>
+    <immunity invisible="1"/>
+  </immunities>
+
+<voices interval="2000" chance="5">
+    <voice sentence="Screeech!"/>
+  </voices>
+
+  <loot>
+    <item id="2148" countmax="95" chance1="100000" chancemax="0"/> --Gold Coins
+    <item id="2463" chance="3333"/> --Plate Armor
+    <item id="2476" chance="1428"/> --Knight Armor
+    <item id="2457" chance="3555"/> --Steel Helmet
+    <item id="2445" chance="1111"/> --Crystal Mace
+    <item id="2171" chance="1222"/> --Platinum Amulet
+    <item id="7437" chance="1777"/> --Sapphire Hammer
+    <item id="1987" chance="100000"> --Bag
+      <inside>
+        <item id="7449" chance="1555"/> --Crystal Sword
+        <item id="2477" chance="1000"/> --Knight Legs
+        <item id="7364" countmax="7" chance1="1777" chancemax="0"/> --Sniper Arrows
+        <item id="7290" chance="1333"/> --Shard
+      </inside>
+    </item>
+  </loot>
+
+</monster>

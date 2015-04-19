@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<monster name="Sub Zero" nameDescription="the Sub Zero" experience="4500" speed="380" race="Undead">
+  <health now="4800" max="4800"/>
+  <look type="294" head="124" body="122" legs="0" feet="132" addons="0" corpse="6080"/>
+  <targetchange interval="5000" chance="8"/>
+  <strategy attack="100" defense="0"/>
+  <flags>
+    <flag summonable="0"/>
+    <flag attackable="1"/>
+    <flag hostile="1"/>
+    <flag illusionable="0"/>
+    <flag convinceable="0"/>
+    <flag pushable="0"/>
+    <flag canpushitems="1"/>
+    <flag canpushcreatures="1"/>
+    <flag targetdistance="1"/>
+    <flag staticattack="90"/>
+    <flag runonhealth="0"/>
+  </flags>
+  <attacks>
+    <attack name="melee" interval="2000" chance="100" min="-200" max="-800"/>
+    <attack name="ice" interval="1900" chance="45" min="-250" max="-420" range="8" radius="6" target="1">
+      <attribute key="areaEffect" value="icetornado"/>
+      <attribute key="shootEffect" value="ice"/>
+    </attack>
+    <attack name="ice" interval="1800" chance="15" min="-230" max="-355" range="7" radius="5" target="0">
+      <attribute key="areaEffect" value="iceattack"/>
+    </attack>
+  </attacks>
+  <defenses defense="45" armor="10"/>
+  <immunities>
+    <immunity name="earth"/>
+    <immunity name="energy"/>
+    <immunity name="lifedrain"/>
+    <immunity name="outfit"/>
+    <immunity name="ice"/>
+    <immunity name="fire"/>
+    <immunity name="invisible"/>
+    <immunity name="drown"/>
+    <immunity name="drunk"/>
+  </immunities>
+  <voices speed="2200" chance="75">
+    <voice sentence="MWAHAHAHAH" yell="1"/>
+    <voice sentence="Rawr!" yell="1"/>
+  </voices>
+  <loot>
+      <item id="1987" chance="100000">
+      <inside>
+        <item id="2148" countmax="100" chance="35250"/>
+        <item id="2160" countmax="8" chance="300"/>
+        <item id="2273" countmax="10" chance="9900"/>
+        <item id="2488" countmax="1" chance="1220"/>
+        <item id="2656" countmax="1" chance="900"/>
+      </inside>
+    </item>
+  </loot>
+</monster>

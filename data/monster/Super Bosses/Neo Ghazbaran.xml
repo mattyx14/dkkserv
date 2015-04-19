@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <monster name="Neo Ghazbaran" tp="1" nameDescription="Lord of Triangle of Terror" race="undead" experience="12759541" speed="200" manacost="0">
+    <health now="1350000" max="1350000"/>
+    <look type="12" head="0" body="85" legs="58" feet="94" corpse="6068"/>
+  <targetchange interval="5000" chance="8"/>
+  <strategy attack="100" defense="0"/>
+  <flags>
+    <flag summonable="0"/>
+    <flag attackable="1"/>
+    <flag hostile="1"/>
+    <flag illusionable="0"/>
+    <flag convinceable="0"/>
+    <flag pushable="0"/>
+    <flag canpushitems="1"/>
+    <flag canpushcreatures="1"/>
+    <flag targetdistance="1"/>
+    <flag staticattack="90"/>
+    <flag runonhealth="30000"/>
+  </flags>
+  <attacks>
+    	<attack name="melee" interval="2000" min="-700" max="-3300"/>
+    	<attack name="manadrain" interval="2500" chance="13" range="7" min="-700" max="-900"/>
+     	<attack name="manadrain" interval="1800" chance="6" radius="5" target="0" min="-250" max="-350">
+      		<attribute key="areaEffect" value="yellowspark"/>
+    		</attack>
+   	<attack name="energy" interval="1800" chance="13" radius="4" target="0" min="-950" max="-1490">
+		<attribute key="areaEffect" value="energyarea" /> 
+    		</attack>
+   	<attack name="energy" interval="1500" chance="13" radius="4" target="0" min="-50" max="-90">
+		<attribute key="areaEffect" value="yellowspark" /> 
+    		</attack>
+    	<attack name="melee" interval="2100" chance="30" length="8" spread="0" min="-800" max="-1520">
+      		<attribute key="areaEffect" value="mortarea"/>
+    		</attack>
+    	<attack name="speed" interval="1500" chance="13" radius="4" target="1" speedchange="-900" duration="20000">
+      		<attribute key="areaEffect" value="yellowbubble"/>
+    		</attack>
+    	<attack name="energy" interval="2100" chance="25" range="7" target="1" min="-400" max="-620">
+      		<attribute key="shootEffect" value="energy"/>
+      		<attribute key="areaEffect" value="energyarea"/>
+    		</attack>
+    	<attack name="energy" interval="2000" chance="13" length="8" spread="0" min="-845" max="-905">
+      		<attribute key="areaEffect" value="energy"/>
+   		</attack>
+    	<attack name="energy" interval="1900" chance="13" range="8" radius="9" target="1" min="-950" max="-1750">
+      		<attribute key="shootEffect" value="energy"/>
+      		<attribute key="areaEffect" value="energyarea"/>
+    		</attack>
+  	</attacks>
+	<defenses armor="130" defense="130">
+	<defense name="healing" interval="1000" chance="10" min="5500" max="9500">
+		<attribute key="areaEffect" value="blueshimmer" /> 
+		</defense>
+	<defense name="healing" interval="1000" chance="25" min="1000" max="1700">
+		<attribute key="areaEffect" value="blueshimmer" /> 
+		</defense>
+	<defense name="speed" interval="1000" chance="15" speedchange="9000" duration="7000">
+		<attribute key="areaEffect" value="redshimmer" /> 
+	</defense>
+	</defenses>
+
+	<immunities>
+      		<immunity physical="0"/>
+      		<immunity energy="1"/>
+      		<immunity fire="1"/>
+      		<immunity poison="1"/>
+      		<immunity lifedrain="1"/>
+      		<immunity paralyze="1"/>
+      		<immunity outfit="1"/>
+      		<immunity drunk="1"/>
+      		<immunity invisible="1"/>
+    		</immunities>
+
+	<summons maxSummons="2">
+      		<summon name="orshabaal" interval="1000" chance="3000"/>
+    		</summons>
+
+    	<voices interval="5000" chance="10">
+      		<voice sentence="Give me your Soul!"/>
+      		<voice sentence="Terror attack!"/>
+    		</voices>
+
+  <loot>
+  <item id="7382" chance="100000" countmax="1" /> -- DEMON RAGE
+  <item id="2160" chance="50000" countmax="75" /> -- crystal coin
+  <item id="2143" chance="5000" countmax="5" /> -- white pearl
+  <item id="2396" chance="1429" /> -- ice rapier
+  <item id="2496" chance="6000" /> -- HORNED HELMET
+  <item id="2494" chance="4000" /> -- DEMON ARMOR
+  <item id="2495" chance="3000" /> -- DEMON LEGS
+  <item id="7489" chance="2000" /> -- DEMON LEGS
+  <item id="2358" chance="11000" /> -- 2XBOOTS OF HASTE
+  <item id="7431" chance="83000" /> -- Demonbone
+  <item id="2214" chance="4000" /> -- ring of healing
+  <item id="1987" chance="100000" > -- bag
+  <inside>
+      <item id="2387" chance="10000" /> -- double axe
+      <item id="2393" chance="2800" /> -- giant sword
+      <item id="2195" chance="3333" /> -- boots of haste
+      <item id="15874" chance="5009" /> -- Holy arrow
+      <item id="15876" chance="5509" /> -- Abbaddon Axe
+      <item id="2192" chance="4000" /> -- crystal ball
+  </inside>
+  </item>
+  </loot>
+  </monster>

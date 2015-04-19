@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="The Halloween Hare" nameDescription="The Halloween Hare" race="blood" experience="0" speed="150" manacost="0">
+	<health now="2000" max="2000"/>
+	<look type="74" head="0" body="0" legs="0" feet="0"/>
+	<targetchange interval="2000" chance="5"/>
+  <strategy attack="0" defense="0"/>
+  <flags>
+    <flag summonable="0"/>
+    <flag attackable="1"/>
+    <flag hostile="1"/>
+    <flag illusionable="0"/>
+    <flag convinceable="0"/>
+    <flag pushable="0"/>
+    <flag canpushitems="0"/>
+    <flag canpushcreatures="0"/>
+	<flag targetdistance="2"/>
+    <flag staticattack="90"/>
+    <flag runonhealth="0"/>
+  </flags>
+  <attacks>
+		<attack name="melee" interval="5000" skill="0" attack="0"/>
+		<attack name="outfit" interval="5000" radius="7" chance="6" monster="bat" duration="1600000">
+			<attribute key="areaEffect" value="yellowspark"/>
+		</attack>
+		<attack name="outfit" interval="5000" radius="7" chance="15" item="16005" duration="1600000">
+			<attribute key="areaEffect" value="yellowspark"/>
+		</attack>
+		<attack name="outfit" interval="5000" radius="7" chance="20" monster="calabaza" duration="1600000">
+			<attribute key="areaEffect" value="yellowspark"/>
+		</attack>
+		<attack name="outfit" interval="5000" radius="7" chance="5" monster="Thornback tortoise" duration="1600000">
+			<attribute key="areaEffect" value="yellowspark"/>
+		</attack>
+		<attack name="outfit" interval="5000" radius="7" chance="6" monster="Assassin Mort" duration="1600000">
+			<attribute key="areaEffect" value="yellowspark"/>
+		</attack>
+		<attack name="outfit" interval="5000" radius="7" chance="6" monster="warlock" duration="1600000">
+			<attribute key="areaEffect" value="yellowspark"/>
+		</attack>
+		<attack name="outfit" interval="5000" radius="7" chance="5" monster="witch" duration="1600000">
+			<attribute key="areaEffect" value="yellowspark"/>
+		</attack>
+		<attack name="outfit" interval="5000" radius="7" chance="5" monster="necromancer" duration="1600000">
+			<attribute key="areaEffect" value="yellowspark"/>
+		</attack>
+		<attack name="outfit" interval="5000" radius="7" chance="5" monster="Ra" duration="1600000">
+			<attribute key="areaEffect" value="yellowspark"/>
+		</attack>
+		<attack name="outfit" interval="5000" radius="3" chance="5" monster="Curserd Girld" duration="1600000">
+			<attribute key="areaEffect" value="yellowspark"/>
+		</attack>
+		<attack name="outfit" interval="5000" radius="7" chance="5" monster="braindeath" duration="1600000">
+			<attribute key="areaEffect" value="yellowspark"/>
+		</attack>
+		<attack name="outfit" interval="5000" radius="7" chance="5" monster="ghost" duration="1600000">
+			<attribute key="areaEffect" value="yellowspark"/>
+		</attack>
+		<attack name="outfit" interval="5000" radius="7" chance="5" monster="minotaur mage" duration="1600000">
+			<attribute key="areaEffect" value="yellowspark"/>
+		</attack>
+		<attack name="outfit" interval="5000" radius="7" chance="5" monster="green frog" duration="1600000">
+			<attribute key="areaEffect" value="yellowspark"/>
+		</attack>
+		<attack name="outfit" interval="5000" radius="7" chance="5" monster="parrot" duration="1600000">
+			<attribute key="areaEffect" value="yellowspark"/>
+		</attack>
+		<attack name="outfit" interval="5000" radius="7" chance="5" monster="bog rider" duration="1600000">
+			<attribute key="areaEffect" value="yellowspark"/>
+		</attack>
+		<attack name="outfit" interval="5000" radius="7" chance="5" monster="satan" duration="1600000">
+			<attribute key="areaEffect" value="yellowspark"/>
+		</attack>
+		<attack name="outfit" interval="5000" radius="7" chance="5" monster="Shinryu" duration="1600000">
+			<attribute key="areaEffect" value="yellowspark"/>
+		</attack>
+		<attack name="outfit" interval="5000" radius="7" chance="5" monster="sniper" duration="1600000">
+			<attribute key="areaEffect" value="yellowspark"/>
+		</attack>
+		<attack name="outfit" interval="5000" radius="7" chance="5" monster="Rotworm Queen" duration="1600000">
+			<attribute key="areaEffect" value="yellowspark"/>
+		</attack>
+		<attack name="outfit" interval="5000" radius="7" chance="5" monster="crypt shambler" duration="1600000">
+			<attribute key="areaEffect" value="yellowspark"/>
+		</attack>
+		<attack name="outfit" interval="5000" radius="7" chance="5" monster="demon" duration="1600000">
+			<attribute key="areaEffect" value="yellowspark"/>
+		</attack>
+		<attack name="outfit" interval="5000" radius="7" chance="15" item="2096" duration="1600000">
+			<attribute key="areaEffect" value="yellowspark"/>
+		</attack>
+	</attacks>
+	<defenses armor="999" defense="999">
+	</defenses>
+	<immunities>
+	<immunity name="physical"/>
+	<immunity name="energy"/>
+	<immunity name="fire"/>
+	<immunity name="poison"/>
+	<immunity name="drown"/>
+	<immunity name="holy"/>
+	<immunity name="death"/>
+	<immunity name="ice"/>
+	<immunity name="lifedrain"/>
+	<immunity name="paralyze"/>
+	<immunity name="outfit"/>
+	<immunity name="drunk"/>
+	<immunity name="invisible"/>
+	</immunities>
+</monster>
