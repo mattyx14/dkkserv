@@ -11,6 +11,11 @@ Storage = {
 	QuestChests = {
 		-- Todo: Move to a seperate range
 		MagmaRing = 2003,
-		FrozenPlate = 2004,
-	}
+		FrozenPlate = 2004
+	},
+	Aranas = 2005,
+	Infierno = 2006,
+	Beholder = 2007,
+	BeholderTwo = 2008,
+	Ironore = 2009
 }
