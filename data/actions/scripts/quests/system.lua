@@ -1,6 +1,8 @@
 local specialQuests = {
 	[2001] = Storage.Annihilator.AnnihilatorDone,
-	[2002] = Storage.Annihilator.AnnihilatorTwo
+	[2002] = Storage.Annihilator.AnnihilatorTwo,
+	[2010] = Storage.DemonOakChest,
+	[2011] = Storage.POI
 }
 
 local questsExperience = {

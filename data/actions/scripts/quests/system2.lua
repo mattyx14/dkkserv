@@ -1,5 +1,5 @@
 local quest = {
-	[2003] = {Storage.QuestChests.MagmaRing, 7708, 1}
+	[2003] = {Storage.QuestChests.MagmaRing, 7708, 1},
 	[2004] = {Storage.QuestChests.FrozenPlate, 8887, 1},
 	[2005] = {
 		{Storage.QuestChests.Aranas, 2469, 1},
@@ -26,10 +26,43 @@ local quest = {
 		{Storage.QuestChests.Ironore, 5880, 15},
 		{Storage.QuestChests.Ironore, 5890, 50}
 	},
+	[2012] = {
+		{Storage.JesterOutfit, 7957, 1},
+		{Storage.JesterOutfit, 7958, 1}
+	},
+	[2013] = {
+		{Storage.NomadOutfit, 5917, 1}
+	},
+	[2014] = {
+		{Storage.PirateOutfit, 6096, 1}
+	},
+	[2015] = {
+		{Storage.ShamanOutfit, 3961, 1},
+		{Storage.ShamanOutfit, 2501, 1},
+		{Storage.ShamanOutfit, 3982, 1}
+	},
+	[2016] = {
+		{Storage.YalaharianOutfit, 9776, 1},
+		{Storage.YalaharianOutfit, 9777, 1},
+		{Storage.YalaharianOutfit, 9778, 1}
+	}
+	--[[
+	[] = {
+		{},
+		{}
+	}
+	]]
 }
 
 function onUse(cid,item,fromPosition,itemEx,toPosition)
-local config = quest[item.uid]
+	if(getBooleanFromString(getConfigValue('enableProtectionQuestForGM'))) then
+		if(getPlayerCustomFlagValue(cid, PLAYERCUSTOMFLAG_GAMEMASTERPRIVILEGES)) then
+			doSendMagicEffect(getCreaturePosition(cid), CONST_ME_POFF, cid)
+			return true
+		end
+	end
+
+	local config = quest[item.uid]
 	if getPlayerStorageValue(cid, config[1]) == -1 and getPlayerFreeCap(cid) >= (getItemWeightById(.. getItemNameById(item.uid) ..)) then
 		setPlayerStorageValue(cid,config[1], 1)
 		doPlayerAddItem(cid, config[2], config[3])

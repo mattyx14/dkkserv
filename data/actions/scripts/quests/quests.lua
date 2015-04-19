@@ -1,4 +1,8 @@
 function onUse(cid, item, fromPosition, itemEx, toPosition)
+	if item.actionid == 3000 then
+		return false
+	end
+
 	if(getBooleanFromString(getConfigValue('enableProtectionQuestForGM'))) then
 		if(getPlayerCustomFlagValue(cid, PLAYERCUSTOMFLAG_GAMEMASTERPRIVILEGES)) then
 			doSendMagicEffect(getCreaturePosition(cid), CONST_ME_POFF, cid)
