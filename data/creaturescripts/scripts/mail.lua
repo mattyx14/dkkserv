@@ -1,7 +1,7 @@
-function onReceiveMail(cid, sender, item, openBox)
-	if(openBox == TRUE) then
+function onMailReceive(cid, target, item, openBox)
+	if(openBox) then
 		doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "New mail has arrived.")
 	end
 
-	return TRUE
+	return true
 end
