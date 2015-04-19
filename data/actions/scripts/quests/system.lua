@@ -1,5 +1,18 @@
 local specialQuests = {
-	[2001] = Storage.Annihilator.AnnihilatorDone
+	[2001] = Storage.Annihilator.AnnihilatorDone,
+	[2002] = Storage.Annihilator.AnnihilatorTwo,
+	[2003] = {
+		items = {
+			{itemId = 7708}
+		},
+		storage = Storage.QuestChests.MagmaRing
+	},
+	[2004] = {
+		items = {
+			{itemId = 8887}
+		},
+		storage = Storage.QuestChests.FrozenPlate
+	},
 }
 
 local questsExperience = {

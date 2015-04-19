@@ -144,11 +144,6 @@
 	<action uniqueid="6528" event="script" value="darkkonia/poi/poichest.lua"/>
 	<action uniqueid="7454" event="script" value="darkkonia/poi/poichest.lua"/>
 	<action uniqueid="8901" event="script" value="darkkonia/poi/poichest.lua"/>
-	<action uniqueid="8903" event="script" value="darkkonia/anihielo/frozchest.lua"/>
-	<action uniqueid="7777" event="script" value="darkkonia/anihielo/frozchest.lua"/>
-	<action uniqueid="8858" event="script" value="darkkonia/anihielo/frozchest.lua"/>
-	<action uniqueid="7765" event="script" value="darkkonia/anihielo/frozchest.lua"/>
-	<action uniqueid="7772" event="script" value="darkkonia/anihielo/frozchest.lua"/>
 	<action uniqueid="10009" event="script" value="darkkonia/quest_element.lua"/>
 	<action uniqueid="59992" event="script" value="darkkonia/quest_barbarian.lua"/>
 	<action uniqueid="10002" event="script" value="darkkonia/bagquest/aranas.lua"/>
@@ -161,8 +156,6 @@
 	<action uniqueid="10502" event="script" value="darkkonia/vocquest/vocation quest80.lua"/>
 	<action uniqueid="10503" event="script" value="darkkonia/vocquest/vocation emerald.lua"/>
 	<action uniqueid="10504" event="script" value="darkkonia/vocquest/vocation hellforged.lua"/>
-	<action uniqueid="7708" event="script" value="darkkonia/arena/magma_ring.lua"/>
-	<action uniqueid="8887" event="script" value="darkkonia/arena/frozen_plate.lua"/>
 	<action uniqueid="39900" event="script" value="darkkonia/arena/arenaboss0.lua" />
 	<action uniqueid="39901" event="script" value="darkkonia/arena/arenaboss1.lua" />
 	<action uniqueid="39902" event="script" value="darkkonia/arena/arenaboss2.lua" />
