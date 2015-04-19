@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <actions>
-	<!-- Customs DarkKonia Items -->
+	<!-- Quest -->
 	<action actionid="2000" event="script" value="quests/system.lua"/>
-	<action uniqueid="16022" event="script" value="customquest/vampireglove.lua"/>
-	<action uniqueid="16116" event="script" value="customquest/DragoonPlate.lua"/>
-	<action uniqueid="16099" event="script" value="customquest/mastermagicianstaff.lua"/>
-	<!-- Arena -->
-	<action uniqueid="7708" event="script" value="arena/magma_ring.lua"/>
-	<action uniqueid="8887" event="script" value="arena/frozen_plate.lua"/>
-
-	<!-- Trajes de addon -->
-	<action uniqueid="30030" event="script" value="DarkKonia Quest/trajes/yalahar.lua"/>
-	<action uniqueid="30027" event="script" value="DarkKonia Quest/trajes/jester.lua"/>
-	<action uniqueid="6096" event="script" value="DarkKonia Quest/trajes/pirate.lua"/>
-	<action uniqueid="3982" event="script" value="DarkKonia Quest/trajes/shaman.lua"/>
-	<action uniqueid="5917" event="script" value="DarkKonia Quest/trajes/nomad.lua"/>
 
 	<!-- Others -->
 	<action uniqueid="30015" event="script" value="quests/annihilator.lua"/>
@@ -93,167 +80,6 @@
 	<action itemid="5791" event="script" value="other/stuffeddragon.lua"/>
 	<action itemid="6566" event="script" value="other/stuffeddragon.lua"/>
 	<action itemid="1877" event="script" value="other/watch.lua"/>
-
-	<!-- Demon Oak Quest -->
-	<action uniqueid="2415" event="script" value="demon oak/demonoakchest.lua"/>
-	<action uniqueid="2390" event="script" value="demon oak/demonoakchest.lua"/>
-	<action uniqueid="2453" event="script" value="demon oak/demonoakchest.lua"/>
-	<action uniqueid="8854" event="script" value="demon oak/demonoakchest.lua"/>
-	<action uniqueid="8918" event="script" value="demon oak/demonoakchest.lua"/>
-
-	<!-- POI Quest -->
-	<action uniqueid="8857" event="script" value="poi/poichest.lua"/>
-	<action uniqueid="7422" event="script" value="poi/poichest.lua"/>
-	<action uniqueid="6528" event="script" value="poi/poichest.lua"/>
-	<action uniqueid="7454" event="script" value="poi/poichest.lua"/>
-	<action uniqueid="8901" event="script" value="poi/poichest.lua"/>
-
-	<!-- anihielo Quest -->
-	<action uniqueid="8903" event="script" value="anihielo/frozchest.lua"/>
-	<action uniqueid="7777" event="script" value="anihielo/frozchest.lua"/>
-	<action uniqueid="8858" event="script" value="anihielo/frozchest.lua"/>
-	<action uniqueid="7765" event="script" value="anihielo/frozchest.lua"/>
-	<action uniqueid="7772" event="script" value="anihielo/frozchest.lua"/>
-
-	<!-- Demon Oak -->	
-	<action itemid="8293" event="script" value="demon oak/hallowed_axe.lua"/>
-	<action uniqueid="30330" event="script" value="demon oak/grave_room.lua" />
-
-	<!-- Objet Quest -->
-	<action uniqueid="10009" event="script" value="quest_element.lua"/>
-	<action uniqueid="59992" event="script" value="quest_barbarian.lua"/>
-
-	<!-- Elementos Quest -->
-	<action itemid="2280" event="script" value="runaclearall.lua" allowfaruse="1" blockwalls="1"/>
-
-	<!-- Thunder Quest -->
-
-	<!-- Quaras Quest -->
-
-	<!-- POI Quest -->
-
-	<!-- AnniIcy Quest -->
-
-	<!-- AnniFirst Quest -->
-	<action uniqueid="2400" event="script" value="DarkKonia Quest/annichest.lua"/>
-	<action uniqueid="2421" event="script" value="DarkKonia Quest/annichest.lua"/>
-	<action uniqueid="2431" event="script" value="DarkKonia Quest/annichest.lua"/>
-	<action uniqueid="15880" event="script" value="DarkKonia Quest/annichest.lua"/>
-
-	<!-- Arena Quest -->
-
-	<!-- Bag Quest -->
-	<action uniqueid="10002" event="script" value="bagquest/aranas.lua"/>
-	<action uniqueid="10003" event="script" value="bagquest/infierno.lua"/>
-	<action uniqueid="10004" event="script" value="bagquest/beholder.lua"/>
-	<action uniqueid="10005" event="script" value="bagquest/beholderdos.lua"/>
-	<action uniqueid="10006" event="script" value="bagquest/ironore.lua"/>
-
-			10007 Ocupados
-			10008 Ocupados
-
-	<!-- Voc Quest -->
-	<action uniqueid="10100" event="script" value="vocquest/vocation hellgorak.lua"/>
-
-	<!-- Voc Quest DP -->
-	<action uniqueid="10500" event="script" value="vocquest/vocation quest50.lua"/>
-	<action uniqueid="10502" event="script" value="vocquest/vocation quest80.lua"/>
-
-	<!-- Voc Quest Jorvik -->
-	<action uniqueid="10503" event="script" value="vocquest/vocation emerald.lua"/>
-	<action uniqueid="10504" event="script" value="vocquest/vocation hellforged.lua"/>
-
-	<!-- Trecientos Quest -->
-	<action uniqueid="15889" event="script" value="DarkKonia Quest/uno.lua"/>
-	<action uniqueid="15883" event="script" value="DarkKonia Quest/dos.lua"/>
-	<action uniqueid="15885" event="script" value="DarkKonia Quest/tres.lua"/>
-
-	<!-- DarkKonia Actions -->
-	<action uniqueid="39900" event="script" value="arena/arenaboss0.lua" />
-	<action uniqueid="39901" event="script" value="arena/arenaboss1.lua" />
-	<action uniqueid="39902" event="script" value="arena/arenaboss2.lua" />
-	<action uniqueid="39903" event="script" value="arena/arenaboss3.lua" />
-	<action uniqueid="39904" event="script" value="arena/arenaboss4.lua" />
-	<action uniqueid="39905" event="script" value="arena/arenaboss5.lua" />
-	<action uniqueid="39906" event="script" value="arena/arenaboss6.lua" />
-	<action uniqueid="39907" event="script" value="arena/arenaboss7.lua" />
-	<action uniqueid="39908" event="script" value="arena/arenaboss8.lua" />
-	<action uniqueid="39909" event="script" value="arena/arenaboss9.lua" />
-	<action actionid="4826" event="script" value="arena/arenaswitch.lua" />
-
-	<!-- AnniTres Actions -->
-	<action uniqueid="39911" event="script" value="annitres/annitres.lua" />
-
-	<!-- AnniTres Actions -->
-	<action uniqueid="39912" event="script" value="element/leviathan.lua" />
-
-	<!-- Quest Parte -->
-	<action uniqueid="4564" event="script" value="custom quest/gate1.lua" />
-	<action uniqueid="4565" event="script" value="custom quest/gate2.lua" />
-	<action uniqueid="4566" event="script" value="custom quest/gate3.lua" />
-	<action uniqueid="4567" event="script" value="custom quest/gate4.lua" />
-	<action uniqueid="4568" event="script" value="custom quest/gkate1.lua" />
-	<action uniqueid="4569" event="script" value="custom quest/gkate2.lua" />
-	<action uniqueid="4570" event="script" value="custom quest/gkate3.lua" />
-	<action uniqueid="4571" event="script" value="custom quest/gkate4.lua" />
-	<action uniqueid="4572" event="script" value="custom quest/gkate5.lua" />
-	<action uniqueid="4573" event="script" value="custom quest/gkate6.lua" />
-	<action uniqueid="4574" event="script" value="custom quest/gkate7.lua" />
-	<action uniqueid="4562" event="script" value="custom quest/demon helmet quest.lua" />
-	<action uniqueid="4563" event="script" value="custom quest/piraterock.lua" />
-
-	<!-- AutoSeller -->
-	<action actionid="3504" event="script" value="autoseller/life ring.lua" />
-	<action actionid="3506" event="script" value="autoseller/ring of healing.lua" />
-	<action actionid="3508" event="script" value="autoseller/stone skin amulet.lua" />
-	<action actionid="3510" event="script" value="autoseller/dragonham.lua" />
-	<action actionid="3511" event="script" value="autoseller/meat.lua" />
-	<action actionid="3512" event="script" value="autoseller/fish.lua" />
-	<action actionid="3513" event="script" value="autoseller/ham.lua" />
-	<action actionid="3514" event="script" value="autoseller/parcel.lua" />
-	<action actionid="3515" event="script" value="autoseller/label.lua" />
-	<action actionid="3516" event="script" value="autoseller/letter.lua" />
-	<action actionid="3517" event="script" value="autoseller/bolts.lua" />
-	<action actionid="3518" event="script" value="autoseller/pbolts.lua" />
-	<action actionid="3519" event="script" value="autoseller/bow.lua" />
-	<action actionid="3520" event="script" value="autoseller/crossbow.lua" />
-	<action actionid="3521" event="script" value="autoseller/arrows.lua" />
-	<action actionid="2808" event="script" value="custom quest/spear.lua" /> --spears
-	<action actionid="2809" event="script" value="custom quest/dsm.lua" /> --dsm
-	<action actionid="2810" event="script" value="custom quest/carmor.lua" /> --carmor
-	<action actionid="2811" event="script" value="custom quest/dlance.lua" /> --dlance
-	<action actionid="2812" event="script" value="custom quest/gs.lua" /> --Gs
-
-	<!-- AutoSeller -->
-	<action actionid="10550" event="script" value="runes/sellerbp.lua" />
-	<action actionid="10551" event="script" value="runes/sellerbp.lua" />
-	<action actionid="10552" event="script" value="runes/sellerbp.lua" />
-	<action actionid="10553" event="script" value="runes/sellerbp.lua" />
-	<action actionid="10554" event="script" value="runes/sellerbp.lua" />
-	<action actionid="10555" event="script" value="runes/sellerbp.lua" />
-	<action actionid="10556" event="script" value="runes/sellerbp.lua" />
-	<action actionid="10557" event="script" value="runes/sellerbp.lua" />
-	<action actionid="10558" event="script" value="runes/sellerbp.lua" />
-	<action actionid="10559" event="script" value="runes/sellerbp.lua" />
-	<action actionid="10560" event="script" value="runes/sellerbp.lua" />
-	<action actionid="10561" event="script" value="runes/sellerbp.lua" />
-	<action actionid="10562" event="script" value="runes/sellerbp.lua" />
-	<action actionid="10563" event="script" value="runes/sellerbp.lua" />
-	<action actionid="10564" event="script" value="runes/sellerbp.lua" />
-	<action actionid="10565" event="script" value="runes/sellerbp.lua" />
-	<action actionid="10566" event="script" value="runes/sellerbp.lua" />
-	<action actionid="10567" event="script" value="runes/sellerbp.lua" />
-	<action actionid="10568" event="script" value="runes/sellerbp.lua" />
-	<action actionid="10569" event="script" value="runes/sellerbp.lua" />
-
-	<!-- Anniquiladores -->
-	<action uniqueid="30016" event="script" value="quests/annihilator3.lua"/>
-	<action uniqueid="30017" event="script" value="quests/annihilatorfrost.lua"/>
-	<action uniqueid="60018" event="script" value="quests/annihilatorfist.lua"/>
-	<action uniqueid="5712" event="script" value="custom quest/Ferumbrasquest.lua"/>
-	<action uniqueid="5714" event="script" value="custom quest/cc80.lua"/>
-	<action uniqueid="5715" event="script" value="custom quest/cc100.lua"/>
-	<action uniqueid="5716" event="script" value="custom quest/ccquest.lua"/>
 
 	<!-- Tools -->
 	<action itemid="2420" event="script" value="tools/machete.lua"/>
@@ -411,18 +237,85 @@
 	<action itemid="9973" event="function" value="increaseItemId"/>
 	<action itemid="9974" event="function" value="decreaseItemId"/>
 
-	<!-- Spellbooks -->
-	<action itemid="2175" event="script" value="other/spellbook.lua"/>
-	<action itemid="2217" event="script" value="other/spellbook.lua"/>
-	<action itemid="6120" event="script" value="other/spellbook.lua"/>
-	<action fromid="8900" toid="8904" event="script" value="other/spellbook.lua"/>
-	<action itemid="8918" event="script" value="other/spellbook.lua"/>
-	<action itemid="1981" event="buffer"><![CDATA[
-		if(item.actionid >= 150 and item.actionid <= 158) then
-			doShowTextDialog(cid, item.itemid, getHighscoreString((item.actionid - 150)))
-		else
-			_result = FALSE
-		end
-	]]></action>
-
+	<!-- Customs DarkKonia Items
+	<action uniqueid="16022" event="script" value="customquest/vampireglove.lua"/>
+	<action uniqueid="16116" event="script" value="customquest/DragoonPlate.lua"/>
+	<action uniqueid="16099" event="script" value="customquest/mastermagicianstaff.lua"/>
+	<action uniqueid="2415" event="script" value="demon oak/demonoakchest.lua"/>
+	<action uniqueid="2390" event="script" value="demon oak/demonoakchest.lua"/>
+	<action uniqueid="2453" event="script" value="demon oak/demonoakchest.lua"/>
+	<action uniqueid="8854" event="script" value="demon oak/demonoakchest.lua"/>
+	<action uniqueid="8918" event="script" value="demon oak/demonoakchest.lua"/>
+	<action itemid="8293" event="script" value="demon oak/hallowed_axe.lua"/>
+	<action uniqueid="30330" event="script" value="demon oak/grave_room.lua" />
+	<action uniqueid="8857" event="script" value="poi/poichest.lua"/>
+	<action uniqueid="7422" event="script" value="poi/poichest.lua"/>
+	<action uniqueid="6528" event="script" value="poi/poichest.lua"/>
+	<action uniqueid="7454" event="script" value="poi/poichest.lua"/>
+	<action uniqueid="8901" event="script" value="poi/poichest.lua"/>
+	<action uniqueid="8903" event="script" value="anihielo/frozchest.lua"/>
+	<action uniqueid="7777" event="script" value="anihielo/frozchest.lua"/>
+	<action uniqueid="8858" event="script" value="anihielo/frozchest.lua"/>
+	<action uniqueid="7765" event="script" value="anihielo/frozchest.lua"/>
+	<action uniqueid="7772" event="script" value="anihielo/frozchest.lua"/>
+	<action uniqueid="10009" event="script" value="quest_element.lua"/>
+	<action uniqueid="59992" event="script" value="quest_barbarian.lua"/>
+	<action uniqueid="10002" event="script" value="bagquest/aranas.lua"/>
+	<action uniqueid="10003" event="script" value="bagquest/infierno.lua"/>
+	<action uniqueid="10004" event="script" value="bagquest/beholder.lua"/>
+	<action uniqueid="10005" event="script" value="bagquest/beholderdos.lua"/>
+	<action uniqueid="10006" event="script" value="bagquest/ironore.lua"/>
+	<action uniqueid="10100" event="script" value="vocquest/vocation hellgorak.lua"/>
+	<action uniqueid="10500" event="script" value="vocquest/vocation quest50.lua"/>
+	<action uniqueid="10502" event="script" value="vocquest/vocation quest80.lua"/>
+	<action uniqueid="10503" event="script" value="vocquest/vocation emerald.lua"/>
+	<action uniqueid="10504" event="script" value="vocquest/vocation hellforged.lua"/>
+	<action uniqueid="7708" event="script" value="arena/magma_ring.lua"/>
+	<action uniqueid="8887" event="script" value="arena/frozen_plate.lua"/>
+	<action uniqueid="39900" event="script" value="arena/arenaboss0.lua" />
+	<action uniqueid="39901" event="script" value="arena/arenaboss1.lua" />
+	<action uniqueid="39902" event="script" value="arena/arenaboss2.lua" />
+	<action uniqueid="39903" event="script" value="arena/arenaboss3.lua" />
+	<action uniqueid="39904" event="script" value="arena/arenaboss4.lua" />
+	<action uniqueid="39905" event="script" value="arena/arenaboss5.lua" />
+	<action uniqueid="39906" event="script" value="arena/arenaboss6.lua" />
+	<action uniqueid="39907" event="script" value="arena/arenaboss7.lua" />
+	<action uniqueid="39908" event="script" value="arena/arenaboss8.lua" />
+	<action uniqueid="39909" event="script" value="arena/arenaboss9.lua" />
+	<action actionid="4826" event="script" value="arena/arenaswitch.lua" />
+	<action uniqueid="4564" event="script" value="custom quest/gate1.lua" />
+	<action uniqueid="4565" event="script" value="custom quest/gate2.lua" />
+	<action uniqueid="4566" event="script" value="custom quest/gate3.lua" />
+	<action uniqueid="4567" event="script" value="custom quest/gate4.lua" />
+	<action uniqueid="4568" event="script" value="custom quest/gkate1.lua" />
+	<action uniqueid="4569" event="script" value="custom quest/gkate2.lua" />
+	<action uniqueid="4570" event="script" value="custom quest/gkate3.lua" />
+	<action uniqueid="4571" event="script" value="custom quest/gkate4.lua" />
+	<action uniqueid="4572" event="script" value="custom quest/gkate5.lua" />
+	<action uniqueid="4573" event="script" value="custom quest/gkate6.lua" />
+	<action uniqueid="4574" event="script" value="custom quest/gkate7.lua" />
+	<action uniqueid="4562" event="script" value="custom quest/demon helmet quest.lua" />
+	<action uniqueid="4563" event="script" value="custom quest/piraterock.lua" />
+	<action uniqueid="5712" event="script" value="custom quest/Ferumbrasquest.lua"/>
+	<action uniqueid="5714" event="script" value="custom quest/cc80.lua"/>
+	<action uniqueid="5715" event="script" value="custom quest/cc100.lua"/>
+	<action uniqueid="5716" event="script" value="custom quest/ccquest.lua"/>
+	<action uniqueid="30030" event="script" value="DarkKonia Quest/trajes/yalahar.lua"/>
+	<action uniqueid="30027" event="script" value="DarkKonia Quest/trajes/jester.lua"/>
+	<action uniqueid="6096" event="script" value="DarkKonia Quest/trajes/pirate.lua"/>
+	<action uniqueid="3982" event="script" value="DarkKonia Quest/trajes/shaman.lua"/>
+	<action uniqueid="5917" event="script" value="DarkKonia Quest/trajes/nomad.lua"/>
+	<action uniqueid="2400" event="script" value="DarkKonia Quest/annichest.lua"/>
+	<action uniqueid="2421" event="script" value="DarkKonia Quest/annichest.lua"/>
+	<action uniqueid="2431" event="script" value="DarkKonia Quest/annichest.lua"/>
+	<action uniqueid="15880" event="script" value="DarkKonia Quest/annichest.lua"/>
+	<action uniqueid="15889" event="script" value="DarkKonia Quest/uno.lua"/>
+	<action uniqueid="15883" event="script" value="DarkKonia Quest/dos.lua"/>
+	<action uniqueid="15885" event="script" value="DarkKonia Quest/tres.lua"/>
+	<action uniqueid="30016" event="script" value="quests/annihilator3.lua"/>
+	<action uniqueid="30017" event="script" value="quests/annihilatorfrost.lua"/>
+	<action uniqueid="60018" event="script" value="quests/annihilatorfist.lua"/>
+	<action uniqueid="39911" event="script" value="annitres/annitres.lua" />
+	<action uniqueid="39912" event="script" value="element/leviathan.lua" />
+	-->
 </actions>
