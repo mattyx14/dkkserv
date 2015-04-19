@@ -30,7 +30,7 @@ function createClass(parent)
 
 		return false
 	end
-	
+
 	function newClass:setAttributes(attributes)
 		for k, v in pairs(attributes) do
 			newClass[k] = v
@@ -39,8 +39,3 @@ function createClass(parent)
 
 	return newClass
 end
-
-dofile(getDataDir() .. "lib/constant.lua")
-dofile(getDataDir() .. "lib/function.lua")
-dofile(getDataDir() .. "lib/compat.lua")
-dofile(getDataDir() .. "lib/database.lua")

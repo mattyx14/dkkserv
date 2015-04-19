@@ -1,51 +1,56 @@
-local playerPosition =
-{
-	{x = 976, y = 1068, z = 8, stackpos = STACKPOS_TOP_CREATURE},
-	{x = 976, y = 1067, z = 8, stackpos = STACKPOS_TOP_CREATURE},
-	{x = 976, y = 1066, z = 8, stackpos = STACKPOS_TOP_CREATURE},
-	{x = 976, y = 1065, z = 8, stackpos = STACKPOS_TOP_CREATURE}
+local config = {
+	daily = "no", -- allow only one enter per day? (like in global Tibia)
+	level = 100,
+	storage = 30015,
+	entry =
+	{
+		{x = 247, y = 659, z = 13},
+		{x = 247, y = 660, z = 13},
+		{x = 247, y = 661, z = 13},
+		{x = 247, y = 662, z = 13}
+	},
+	destination =
+	{
+		{x = 189, y = 650, z = 13},
+		{x = 189, y = 651, z = 13},
+		{x = 189, y = 652, z = 13},
+		{x = 189, y = 653, z = 13}
+	}
 }
 
-local newPosition =
-{
-	{x = 1233, y = 1048, z = 10},
- 	{x = 1232, y = 1048, z = 10},
-	{x = 1231, y = 1048, z = 10},
-	{x = 1230, y = 1048, z = 10}
-}
-
--- Do not modify the declaration lines below.
-local player = {0, 0, 0, 0}
-local failed = TRUE
-local count = 0
-
+config.daily = getBooleanFromString(config.daily)
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-	if item.itemid == 1945 then
-		for i = 1, 4 do
-			failed = TRUE
-			player[i] = getThingfromPos(playerPosition[i])
-			if player[i].itemid > 0 then
-				if isPlayer(player[i].uid) == TRUE then
-					if getPlayerStorageValue(player[i].uid, 30015) == -1 then
-						if getPlayerLevel(player[i].uid) >= 100 then
-							failed = FALSE
-						end
-					end
-				end
-			end
-			if failed == TRUE then
-				doPlayerSendCancel(cid, "Sorry, not possible.")
-				return TRUE
-			end
+	if(item.itemid == 1946) then
+		if(config.daily) then
+			doPlayerSendDefaultCancel(cid, RETURNVALUE_NOTPOSSIBLE)
+		else
+			doTransformItem(item.uid, item.itemid - 1)
 		end
-		for i = 1, 4 do
-			doSendMagicEffect(playerPosition[i], CONST_ME_POFF)
-			doTeleportThing(player[i].uid, newPosition[i], FALSE)
-			doSendMagicEffect(newPosition[i], CONST_ME_ENERGYAREA)
-		end
-		doTransformItem(item.uid, item.itemid + 1)
-	elseif item.itemid == 1946 then
-		doPlayerSendCancel(cid, "Sorry, not possible.")
+
+		return true
 	end
-	return TRUE
+
+	if(item.itemid ~= 1945) then
+		return true
+	end
+
+	local players = {}
+	for _, position in ipairs(config.entry) do
+		local pid = getTopCreature(position).uid
+		if(pid == 0 or not isPlayer(pid) or getCreatureStorage(pid, config.storage) > 0 or getPlayerLevel(pid) < config.level) then
+			doPlayerSendDefaultCancel(cid, RETURNVALUE_NOTPOSSIBLE)
+			return true
+		end
+
+		table.insert(players, pid)
+	end
+
+	for i, pid in ipairs(players) do
+		doSendMagicEffect(config.entry[i], CONST_ME_POFF)
+		doTeleportThing(pid, config.destination[i], false)
+		doSendMagicEffect(config.destination[i], CONST_ME_ENERGYAREA)
+	end
+
+	doTransformItem(item.uid, item.itemid + 1)
+	return true
 end
