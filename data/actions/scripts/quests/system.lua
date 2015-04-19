@@ -1,5 +1,5 @@
 local specialQuests = {
-	[2001] = 30015 --Annihilator
+	[2001] = Storage.Annihilator.AnnihilatorDone
 }
 
 local questsExperience = {
