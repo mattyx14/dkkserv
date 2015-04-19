@@ -8,7 +8,7 @@ local quest = {
 	[2006] = {
 		{Storage.QuestChests.Inferno, 5909, 15},
 		{Storage.QuestChests.Inferno, 5910, 15},
-		{Storage.QuestChests.Inferno, 5910, 15}
+		{Storage.QuestChests.Inferno, 5910, 15},
 		{Storage.QuestChests.Inferno, 5910, 15},
 		{Storage.QuestChests.Inferno, 5910, 15},
 		{Storage.QuestChests.Inferno, 5910, 15}
