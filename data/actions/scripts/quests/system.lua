@@ -1,48 +1,6 @@
 local specialQuests = {
 	[2001] = Storage.Annihilator.AnnihilatorDone,
-	[2002] = Storage.Annihilator.AnnihilatorTwo,
-	[2003] = {
-		items = {
-			{itemId = 7708}
-		},
-		storage = Storage.QuestChests.MagmaRing
-	},
-	[2004] = {
-		items = {
-			{itemId = 8887}
-		},
-		storage = Storage.QuestChests.FrozenPlate
-	},
-	[2005] = {
-		items = {
-			{itemId = 2469, itemId = 2506}
-		},
-		storage = Storage.QuestChests.Aranas
-	},
-	[2006] = {
-		items = {
-			{itemId = {5909, 15}, itemId = {5910, 15}, itemId = {5911, 15}, itemId = {5912, 15}, itemId = {5913, 15}, itemId = {5914, 15}}
-		},
-		storage = Storage.QuestChests.Inferno
-	},
-	[2007] = {
-		items = {
-			{itemId = {5898, 15}, itemId = {6549, 5}}
-		},
-		storage = Storage.QuestChests.Beholder
-	},
-	[2008] = {
-		items = {
-			{itemId = {5898, 15}, itemId = {6549, 5}}
-		},
-		storage = Storage.QuestChests.BeholderTwo
-	},
-	[2009] = {
-		items = {
-			{itemId = {5880, 15}, itemId = {5890, 50}}
-		},
-		storage = Storage.QuestChests.Ironore
-	}
+	[2002] = Storage.Annihilator.AnnihilatorTwo
 }
 
 local questsExperience = {
