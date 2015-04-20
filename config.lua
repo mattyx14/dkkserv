@@ -1,15 +1,15 @@
 -- The OTX Server Config
 
 	-- Owner Data
-	ownerName = ""
-	ownerEmail = ""
-	url = ""
-	location = ""
+	ownerName = "Martyx"
+	ownerEmail = "martyx@otland.net"
+	url = "http://darkkonia.sytes.net"
+	location = "USA"
 
 	-- Messages
-	motd = "Welcome to the OTX Server!"
-	serverName = "OTXSERVER"
-	loginMessage = "Welcome to The OTX Server!"
+	motd = "Welcome to the DarkKonia Fantasy Server!"
+	serverName = "DARKKONIA"
+	loginMessage = "Welcome to the DarkKonia Fantasy Server!"
 	displayGamemastersWithOnlineCommand = false
 
 	-- MySql
@@ -37,54 +37,54 @@
 	loginOnlyWithLoginServer = false
 
 	-- Account manager
-	accountManager = true
+	accountManager = false
 	namelockManager = true
-	newPlayerChooseVoc = true
-	newPlayerSpawnPosX = 159
-	newPlayerSpawnPosY = 387
-	newPlayerSpawnPosZ = 6
-	newPlayerTownId = 2
-	newPlayerLevel = 8
+	newPlayerChooseVoc = false
+	newPlayerSpawnPosX = 942
+	newPlayerSpawnPosY = 997
+	newPlayerSpawnPosZ = 7
+	newPlayerTownId = 1
+	newPlayerLevel = 10
 	newPlayerMagicLevel = 0
 	generateAccountNumber = false
 	generateAccountSalt = true
 
 	-- Limits on frags / Time
 	fragsLimit = 24 * 60 * 60
-	fragsSecondLimit = 7 * 24 * 60 * 60
-	fragsThirdLimit = 30 * 24 * 60 * 60
+	fragsSecondLimit = 2 * 24 * 60 * 60
+	fragsThirdLimit = 3 * 24 * 60 * 60
 
 	-- Red Skull Config
-	fragsToRedSkull = 3
-	fragsSecondToRedSkull = 5
-	fragsThirdToRedSkull = 10
-	redSkullLength = 3 * 24 * 60 * 60
+	fragsToRedSkull = 4
+	fragsSecondToRedSkull = 6
+	fragsThirdToRedSkull = 8
+	redSkullLength = 6 * 24 * 60 * 60
 
 	-- Black Skull Config
-	fragsToBlackSkull = 6
-	fragsSecondToBlackSkull = 10
-	fragsThirdToBlackSkull = 20
+	fragsToBlackSkull = 8
+	fragsSecondToBlackSkull = 12
+	fragsThirdToBlackSkull = 16
 	blackSkulledDeathHealth = 40
 	blackSkulledDeathMana = 0
-	blackSkullLength = 6 * 24 * 60 * 60
+	blackSkullLength = 12 * 24 * 60 * 60
 	useBlackSkull = true
 
 	-- Banishment Config
 	-- killsBanLength works only if useBlackSkull option is disabled.
-	notationsToBan = 3
-	warningsToFinalBan = 4
-	warningsToDeletion = 5
-	banLength = 7 * 24 * 60 * 60
-	killsBanLength = 7 * 24 * 60 * 60
-	finalBanLength = 30 * 24 * 60 * 60
+	notationsToBan = 2
+	warningsToFinalBan = 1
+	warningsToDeletion = 2
+	banLength = 2 * 24 * 60 * 60
+	killsBanLength = 3 * 24 * 60 * 60
+	finalBanLength = 5 * 24 * 60 * 60
 	ipBanLength = 1 * 24 * 60 * 60
-	fragsToBanishment = 7
-	fragsSecondToBanishment = 21
-	fragsThirdToBanishment = 41
+	fragsToBanishment = 6
+	fragsSecondToBanishment = 9
+	fragsThirdToBanishment = 12
 
 	-- Battle
 	-- NOTE: showHealth/ManaChangeForMonsters inherites from showHealth/ManaChange.
-	protectionLevel = 1
+	protectionLevel = 6
 	pvpTileIgnoreLevelAndVocationProtection = true
 	allowFightback = true
 	pzLocked = 60 * 1000
@@ -106,7 +106,7 @@
 	stopAttackingAtExit = true
 	loginProtectionPeriod = 10 * 1000
 	deathLostPercent = 10
-	stairhopDelay = 2 * 1000
+	stairhopDelay = 1 * 1500
 	pushCreatureDelay = 2 * 1000
 	deathContainerId = 1987
 	gainExperienceColor = 215
@@ -129,20 +129,21 @@
 		-- Battle
 		optionalWarAttackableAlly = true
 		fistBaseAttack = 7
-		criticalHitChance = 7
+		criticalHitChance = 9
 		noDamageToGuildMates = false
 			-- if true then no damage, if false then damage
 		noDamageToPartyMembers = false
 			-- if true then no damage, if false then damage
 
-		-- Rook System
-		rookLevelTo = 5
-		rookLevelToLeaveRook = 8
-		rookTownId = 1
-		useRookSystem = true
-
 		-- Paralyze delay
-		paralyzeDelay = 1500
+		paralyzeDelay = 2000
+		paralyzeDelayMonster = 2000
+
+		-- Rook System
+		rookLevelTo = 6
+		rookLevelToLeaveRook = 8
+		rookTownId = 14
+		useRookSystem = true
 
 		-- GUI
 		premiumDaysToAddByGui = 10
@@ -152,7 +153,7 @@
 		useCapacity = true
 		defaultDepotSize = 500
 		defaultDepotSizePremium = 1000
-		enableProtectionQuestForGM = true
+		enableProtectionQuestForGM = false
 		cleanItemsInMap = false
 		playerFollowExhaust = 2000
 
@@ -168,9 +169,7 @@
 		NoShareExpSummonMonster = false
 
 		-- Others
-		-- gmAnonymousInChanel = 0 - normal; 1 - in help channel; 2 - all channels
 		enableLootBagDisplay = false
-		serverPreview = false
 		useRunesRequirements = true
 		highscoreDisplayPlayers = 10
 		updateHighscoresAfterMinutes = 60
@@ -180,10 +179,10 @@
 
 		-- Advanced Version
 		-- Note: If you use another protocol than the one we set as you will have functional failures.
-		manualVersionConfig = false
-		versionMin = 1036
-		versionMax = 1036
-		versionMsg = "Only clients with protocol 10.36 allowed!"
+		manualVersionConfig = true
+		versionMin = 1035
+		versionMax = 1035
+		versionMsg = "Only clients with protocol 10.35 or DarkKonia Fantasy Client allowed!"
 
 	-- Connection config
 	loginTries = 20
@@ -196,7 +195,7 @@
 	replaceKickOnLogin = true
 	forceSlowConnectionsToDisconnect = false
 	premiumPlayerSkipWaitList = true
-	packetsPerSecond = 50
+	packetsPerSecond = 20
 	loginProtectionTime = 10
 
 	-- Deathlist
@@ -206,7 +205,7 @@
 	maxDeathRecords = 5
 
 	-- Guilds
-	ingameGuildManagement = true
+	ingameGuildManagement = false
 	levelToFormGuild = 20
 	premiumDaysToFormGuild = 0
 	guildNameMinLength = 4
@@ -220,11 +219,11 @@
 	buyableAndSellableHouses = true
 	houseNeedPremium = true
 	bedsRequirePremium = true
-	levelToBuyHouse = 20
+	levelToBuyHouse = 80
 	housesPerAccount = 1
 	houseRentAsPrice = false
 	housePriceAsRent = false
-	housePriceEachSquare = 1000
+	housePriceEachSquare = 3000
 	houseRentPeriod = "weekly"
 	houseCleanOld = 8 * 24 * 60 * 60
 	guildHalls = true
@@ -244,12 +243,12 @@
 	-- Map
 	-- NOTE: storeTrash costs more memory, but will perform alot faster cleaning.
 	-- houseDataStorage usage may be found at how-use-internal-functions.log
-	mapAuthor = "Komic"
-	randomizeTiles = true
+	mapAuthor = "Mattyx14"
+	randomizeTiles = false
 	houseDataStorage = "binary-tilebased"
 	storeTrash = true
 	cleanProtectedZones = true
-	mapName = "forgotten.otbm"
+	mapName = "moonlightmap.otbm"
 		-- For Windows(compiled with MSVC) and Linux use:
 		-- OTX Server use default GroundCache
 		-- GroundCache mode save memory: __GROUND_CACHE__
@@ -258,14 +257,14 @@
 
 	-- Mailbox
 	mailMaxAttempts = 5
-	mailBlockPeriod = 30 * 60 * 1000
-	mailAttemptsFadeTime = 5 * 60 * 1000
-	mailboxDisabledTowns = ""
+	mailBlockPeriod = 60 * 60 * 1000
+	mailAttemptsFadeTime = 10 * 60 * 1000
+	mailboxDisabledTowns = "14"
 		-- Example disable rook depot (temple) "4"
-		-- mailboxDisabledTowns = "4"
+		-- mailboxDisabledTowns = "-1"
 
 	-- Market
-	marketEnabled = true
+	marketEnabled = false
 	marketOfferDuration = 30 * 24 * 60 * 60
 	premiumToCreateMarketOffer = true
 	checkExpiredMarketOffersEachMinutes = 60
@@ -282,7 +281,7 @@
 	startupDatabaseOptimization = true
 	removePremiumOnInit = true
 	confirmOutdatedVersion = false
-	skipItemsVersionCheck = false
+	skipItemsVersionCheck = true
 
 	-- Muted buffer
 	maxMessageBuffer = 4
@@ -315,13 +314,13 @@
 	ghostModeSpellEffects = true
 
 	-- Limits
-	idleWarningTime = 14 * 60 * 1000
-	idleKickTime = 15 * 60 * 1000
+	idleWarningTime = 15 * 60 * 1000
+	idleKickTime = 16 * 60 * 1000
 	expireReportsAfterReads = 1
 	playerQueryDeepness = -1
 	protectionTileLimit = 10
 	houseTileLimit = 10
-	tileLimit = 7
+	tileLimit = 10
 
 	-- Premium-related
 	freePremium = false
@@ -339,19 +338,19 @@
 	fairFightTimeRange = 60
 
 	-- Rates
-	experienceStages = false
-	rateExperience = 5.0
+	experienceStages = true
+	rateExperience = 3.0
 	rateExperienceFromPlayers = 0
-	levelToOfflineTraining = 8
-	rateSkill = 1.0
-	rateSkillOffline = 0.5
-	rateMagic = 1.0
-	rateMagicOffline = 0.5
+	levelToOfflineTraining = 10
+	rateSkill = 95.0
+	rateSkillOffline = 95.0
+	rateMagic = 3.0
+	rateMagicOffline = 3.0
 	rateLoot = 2.0
 	rateSpawnMin = 1
 	rateSpawnMax = 1
 	formulaLevel = 5.0
-	formulaMagic = 1.0
+	formulaMagic = 1.5
 		-- Monster rates
 		rateMonsterHealth = 1.0
 		rateMonsterMana = 1.0
@@ -378,13 +377,13 @@
 	experienceShareRadiusY = 30
 	experienceShareRadiusZ = 1
 	experienceShareLevelDifference = 2 / 3
-	extraPartyExperienceLimit = 20
-	extraPartyExperiencePercent = 5
+	extraPartyExperienceLimit = 10
+	extraPartyExperiencePercent = 1
 	experienceShareActivity = 2 * 60 * 1000
 
 	-- Global save
 	globalSaveEnabled = false
-	globalSaveHour = 8
+	globalSaveHour = 15
 	globalSaveMinute = 0
 	shutdownAtGlobalSave = true
 	cleanMapAtGlobalSave = false
@@ -396,9 +395,9 @@
 	deSpawnRadius = 50
 
 	-- Summons
-	maxPlayerSummons = 2
-	teleportAllSummons = false
-	teleportPlayerSummons = true
+	maxPlayerSummons = 0
+	teleportAllSummons = true
+	teleportPlayerSummons = false
 
 	-- Logs
 	disableLuaErrors = false
