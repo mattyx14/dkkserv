@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<raid>
+	<announce delay="0" type="Event" message="The demon cave on Fynn slowly becomes active once again."/>
+	<announce delay="300000" type="Event" message="There is an evil presence at the demon cave of Fynn."/>
+	<announce delay="600000" type="Event" message="Morgaroth Summoned have called an ancient evil into the demon cave on Fynn. Beware of its power mortals."/>
+	<singlespawn delay="600000" name="Morgaroth" x="1049" y="1163" z="15"/>
+</raid>

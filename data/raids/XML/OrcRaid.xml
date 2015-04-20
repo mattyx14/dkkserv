@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<raid>
+	<announce delay="0" type="Event" message="Orc activity near Great Kingdom reported! Beware!"/>
+	<announce delay="60000" type="Event" message="The orcs are coming! Defend the Karmia Ville!"/>
+	<areaspawn delay="60000" fromx="209" fromy="836" fromz="7" tox="294" toy="883" toz="7">
+		<monster name="Orc" amount="20"/>
+		<monster name="Orc Spearman" amount="20"/>
+		<monster name="Orc Warrior" amount="70"/>
+		<monster name="Orc Rider" amount="60"/>
+		<monster name="Orc Berserker" amount="60"/>
+		<monster name="Orc Leader" amount="55"/>
+		<monster name="Orc Warlord" amount="50"/>
+	</areaspawn>
+</raid>

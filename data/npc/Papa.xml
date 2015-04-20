@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<npc name="AntriCristus XVI" script="data/npc/scripts/papa.lua" walkinterval="2000" skull="green" floorchange="0">
-	<health now="100" max="100"/>
-	<look type="57" head="38" body="58" legs="58" feet="58"/>
-	<parameters>
-		<parameter key="message_greet" value="Hello |PLAYERNAME|, I can join in marriage, say {marry}. If you do not know how to join in marriage, follow these steps, {PLAYER1: Hi - PLAYER1: marry - PLAYER1: yes - PLAYER1: NAME_OF_PLAYER2 -- PLAYER2: Hi - PLAYER2: marry - PLAYER2: yes - PLAYER2: proceed}."/>
-	</parameters>
-</npc>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<raid>
+	<announce delay="0" type="Event" message="Elfs has been sighted near Settmour!"/>
+	<announce delay="60000" type="Event" message="Prince Almirith has sent an hord of elves from the Elf Fortress of Envior."/>
+	<areaspawn delay="60000" fromx="160" fromy="581" fromz="7" tox="274" toy="672" toz="7">
+		<monster name="Elf" amount="180"/>
+		<monster name="Elf Scout" amount="130"/>
+		<monster name="Elf Arcanist" amount="90"/>
+	</areaspawn>
+</raid>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<raid>
+	<announce delay="0" type="Event" message="Unusual frequent scarab sightings at the gates of Samaransa Ville - Anshara Desert"/>
+	<announce delay="30000" type="Event" message="Ancient scarabs are leading an attack on Samaransa Ville - Anshara Desert."/>
+	<!--Area Spawns /Samaransa Ville-->
+	<areaspawn delay="30000" fromx="298" fromy="1256" fromz="7" tox="346" toy="1314" toz="7">
+		<monster name="scarab" amount="20"/>
+		<monster name="ancient scarab" amount="15"/>
+	</areaspawn>
+
+	<!--Area Spawns /Anshara Desert-->
+	<areaspawn delay="30000" fromx="649" fromy="343" fromz="7" tox="769" toy="382" toz="7">
+		<monster name="scarab" amount="30"/>
+		<monster name="ancient scarab" amount="20"/>
+	</areaspawn>
+</raid>

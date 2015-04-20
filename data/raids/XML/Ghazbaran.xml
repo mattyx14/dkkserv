@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<raid>
+	<announce delay="0" type="Event" message="An ancient evil is awakening in the Jorvik frozen cave."/>
+	<announce delay="300000" type="Event" message="Demonic entities are entering the mortal realm in the Jorvik frozen cave."/>
+	<announce delay="600000" type="Event" message="Ghazbaran Summoned The demonic master has revealed itself in the Jorvik frozen cave."/>
+	<singlespawn delay="600000" name="Ghazbaran" x="1076" y="624" z="8"/>
+	<singlespawn delay="600000" name="Demonfrost" x="1067" y="622" z="8"/>
+	<singlespawn delay="600000" name="Demonfrost" x="1068" y="627" z="8"/>
+</raid>

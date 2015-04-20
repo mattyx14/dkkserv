@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Snowman" script="default.lua" skull="green" floorchange="0" walkinterval="0">
+	<health now="150" max="150"/>
+	<look typeex="7172"/>
+	<parameters>
+		<parameter key="module_travel" value="1"/>
+		<parameter key="message_greet" value="Hola |PLAYERNAME|. JOJOJO - Yo no soy santa pero te puedo llevar a {santa ville}."/>
+		<parameter key="message_farewell" value="Good Bye." />
+		<parameter key="travel_destinations" value="santa ville,883,753,7,0;"/>
+	</parameters>
+</npc>

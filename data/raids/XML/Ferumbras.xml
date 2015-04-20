@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<raid>
+	<announce delay="0" type="Event" message="The seals on Ferumbras old cidatel at the Forgotten City are glowing. Prepare for HIS return mortals."/>
+	<announce delay="1200000" type="Event" message="Ferumbras has returned to his citadel once more. Stop him before its too late."/>
+	<!--Area Spawns-->
+	<singlespawn delay="0" name="Infernatil" x="484" y="378" z="5"/>
+	<areaspawn delay="200000" fromx="478" fromy="365" fromz="4" tox="491" toy="375" toz="4">
+		<monster name="Demon Fire" amount="5"/>
+		<monster name="Fury" amount="8"/>
+		<monster name="Hellhound" amount="5"/>
+	</areaspawn>
+	<areaspawn delay="300000" fromx="478" fromy="365" fromz="4" tox="491" toy="375" toz="4">
+		<monster name="Demon Fire" amount="4"/>
+		<monster name="Hellhound" amount="4"/>
+		<monster name="Fury" amount="6"/>
+	</areaspawn>
+	<areaspawn delay="600000" fromx="478" fromy="365" fromz="4" tox="491" toy="375" toz="4">
+		<monster name="Demon Fire" amount="7"/>
+		<monster name="Hellhound" amount="6"/>
+		<monster name="Fury" amount="9"/>
+	</areaspawn>
+	<areaspawn delay="900000" fromx="478" fromy="365" fromz="4" tox="491" toy="375" toz="4">
+		<monster name="orshabaal" amount="8"/>
+		<monster name="Fury" amount="4"/>
+		<monster name="Hellhound" amount="4"/>
+	</areaspawn>
+	<singlespawn delay="1200000" name="Ferumbras" x="485" y="369" z="4"/>
+</raid>

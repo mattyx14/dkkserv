@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<raid>
+	<announce delay="0" type="Event" message="Heroes and Gladiators are breaking their cells arrive to attack."/>
+	<announce delay="40000" type="Event" message="Attack without mercy!!!!" />
+	<areaspawn delay="40000" fromx="887" fromy="967" fromz="7" tox="983" toy="1027" toz="7">
+		<monster name="bandit" amount="100"/>
+		<monster name="assassin" amount="50"/>
+		<monster name="hero" amount="55" />
+		<monster name="gladiator" amount="30"/>
+	</areaspawn>
+</raid>

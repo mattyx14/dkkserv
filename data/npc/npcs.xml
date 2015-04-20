@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npcs>
+	<npc name="Aldo" file="Aldo.xml"/>
+	<npc name="Alexander" file="Alexander.xml"/>
+	<npc name="Britany" file="Britany.xml"/>
+	<npc name="Cityguard" file="cityguard.xml"/>
+	<npc name="Dimral" file="Dimral.xml"/>
+	<npc name="Jomnig" file="Jomnig.xml"/>
+	<npc name="Lola" file="Lola.xml"/>
+	<npc name="Lutther" file="Lutther.xml"/>
+	<npc name="Milton" file="Milton.xml"/>
+	<npc name="Snowman" file="monito.xml"/>
+	<npc name="Nayib" file="Nayib.xml"/>
+	<npc name="Nimral" file="Nimral.xml"/>
+	<npc name="Oldrak" file="Oldrak.xml"/>
+	<npc name="Yan" file="Yan.xml"/>
+	<npc name="Remuls" file="Remuls.xml"/>
+	<npc name="Rikon" file="Rikon.xml"/>
+	<npc name="Riona" file="Riona.xml"/>
+	<npc name="Robert" file="Robert.xml"/>
+	<npc name="Ruby" file="Ruby.xml"/>
+	<npc name="Santa Claus" file="Santa Claus.xml"/>
+	<npc name="Silkos" file="Silkos.xml"/>
+	<npc name="Stevan" file="Stevan.xml"/>
+	<npc name="Via Libre" file="Via Libre.xml"/>
+	<npc name="Josue" file="Josue.xml"/>
+	<npc name="Yesenia" file="Yesenia.xml"/>
+</npcs>

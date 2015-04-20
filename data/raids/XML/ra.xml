@@ -1,0 +1,25 @@
+<raid>
+	<announce delay="0" type="Event" message="Demons to breaking into colisseum of Anshara."/>
+	<announce delay="1200000" type="Event" message="Ra to breaking into colliseum of Anshara."/>
+	<!--Area Spawns-->
+	<areaspawn delay="100000" fromx="688" fromy="373" fromz="13" tox="721" toy="386" toz="13">
+		<monster name="Demon Fire" amount="5"/>
+		<monster name="Fury" amount="8"/>
+		<monster name="Hellhound" amount="10"/>
+	</areaspawn>
+	<areaspawn delay="300000" fromx="729" fromy="373" fromz="14" tox="741" toy="385" toz="15">
+		<monster name="Demon Fire" amount="5"/>
+		<monster name="Hellhound" amount="2"/>
+		<monster name="Fury" amount="4"/>
+	</areaspawn>
+	<areaspawn delay="600000" fromx="729" fromy="373" fromz="14" tox="741" toy="385" toz="15">
+		<monster name="Demon Fire" amount="5"/>
+		<monster name="Hellhound" amount="3"/>
+		<monster name="Fury" amount="3"/>
+	</areaspawn>
+	<areaspawn delay="900000" fromx="729" fromy="373" fromz="14" tox="741" toy="385" toz="15">
+		<monster name="orshabaal" amount="3"/>
+		<monster name="Fury" amount="1"/>
+	</areaspawn>
+	<singlespawn delay="1200000" name="Ra" x="735" y="379" z="14"/>
+</raid>

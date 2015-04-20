@@ -3,10 +3,10 @@
 
 if(NpcSystem == nil) then
 	-- Loads the underlying classes of the npcsystem.
-	dofile('data/npc/lib/npcsystem/keywordhandler.lua')
-	dofile('data/npc/lib/npcsystem/queue.lua')
-	dofile('data/npc/lib/npcsystem/npchandler.lua')
-	dofile('data/npc/lib/npcsystem/modules.lua')
+	dofile(getDataDir() .. 'npc/lib/npcsystem/keywordhandler.lua')
+	dofile(getDataDir() .. 'npc/lib/npcsystem/queue.lua')
+	dofile(getDataDir() .. 'npc/lib/npcsystem/npchandler.lua')
+	dofile(getDataDir() .. 'npc/lib/npcsystem/modules.lua')
 
 	-- Global npc constants:
 
@@ -157,10 +157,8 @@ if(NpcSystem == nil) then
 			local ret = NpcSystem.getParameter(parameter)
 			if(ret ~= nil) then
 				local number = tonumber(ret)
-				if(number ~= 0 and module.parseParameters ~= nil) then
-					local instance = module:new()
-					npcHandler:addModule(instance)
-					instance:parseParameters()
+				if(number ~= nil and number ~= 0) then
+					npcHandler:addModule(module:new())
 				end
 			end
 		end

@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<npc name="Chikis" script="data/npc/scripts/marriage.lua" walkinterval="2000" skull="green" floorchange="0">
-	<health now="100" max="100"/>
-	<look type="57" head="38" body="58" legs="58" feet="58"/>
-</npc>

@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <raids>
-	<raid name="Ghazbaran" 	file="Ghazbaran.xml" 		interval2="22" margin="0" enabled="no"/>
-	<raid name="Morgaroth" 	file="Morgaroth.xml" 		interval2="22" margin="0" enabled="no"/>
-	<raid name="Orshabaal" 	file="Orshabaal.xml" 		interval2="22" margin="0" enabled="no"/>
-	<raid name="Ferumbras" 	file="Ferumbras.xml" 		interval2="22" margin="0" enabled="no"/>
-	<raid name="verminor" 	file="verminor.xml" 		interval2="22" margin="0" enabled="no"/>
-	<raid name="azerus" 	file="azerus.xml" 		interval2="22" margin="0" enabled="no"/>
-	<raid name="infernus" 	file="infernus.xml" 		interval2="22" margin="0" enabled="no"/>
-
-	<raid name="apes" 	file="ApeRaid.xml" 		interval2="22" margin="0" enabled="no"/>
-	<raid name="scarabs" 	file="scarabs.xml" 		interval2="22" margin="0" enabled="no"/>
-	<raid name="quaras" 	file="QuaraRaid.xml" 		interval2="22" margin="0" enabled="no"/>
-	<raid name="pirates" 	file="PirateRaid.xml" 		interval2="22" margin="0" enabled="no"/>
-	<raid name="orcs" 	file="OrcRaid.xml" 		interval2="22" margin="0" enabled="no"/>
-	<raid name="elfs" 	file="ElvesRaid.xml" 		interval2="22" margin="0" enabled="no"/>
-	<raid name="cyclops" 	file="cyclopsRaid.xml" 		interval2="22" margin="0" enabled="no"/>
-	<raid name="hero" 	file="HeroRaid.xml" 		interval2="22" margin="0" enabled="no"/>
+	<raid name="Ghazbaran" file="XML/Ghazbaran.xml" interval2="150" margin="0" enabled="no"/>
+	<raid name="Morgaroth" file="XML/Morgaroth.xml" interval2="150" margin="0" enabled="no"/>
+	<raid name="Orshabaal" file="XML/Orshabaal.xml" interval2="150" margin="0" enabled="no"/>
+	<raid name="Ferumbras" file="XML/Ferumbras.xml" interval2="150" margin="0" enabled="no"/>
+	<raid name="verminor" file="XML/verminor.xml" interval2="150" margin="0" enabled="no"/>
+	<raid name="azerus" file="XML/azerus.xml" interval2="150" margin="0" enabled="no"/>
+	<raid name="infernos" file="XML/infernos.xml" interval2="150" margin="0" enabled="no"/>
+	<raid name="Lucifer" file="XML/Lucifer.xml" interval2="150" margin="0" enabled="no"/>
+	<raid name="ape" file="XML/ApeRaid.xml" interval2="150" margin="0" enabled="no"/>
+	<raid name="quara" file="XML/QuaraRaid.xml" interval2="150" margin="0" enabled="no"/>
+	<raid name="pirate" file="XML/PirateRaid.xml" interval2="150" margin="0" enabled="no"/>
+	<raid name="orc" file="XML/OrcRaid.xml" interval2="150" margin="0" enabled="no"/>
+	<raid name="elfs" file="XML/ElvesRaid.xml" interval2="150" margin="0" enabled="no"/>
+	<raid name="cyclop" file="XML/cyclopsRaid.xml" interval2="150" margin="0" enabled="no"/>
+	<raid name="hero" file="XML/HeroRaid.xml" interval2="150" margin="0" enabled="no"/>
+	<raid name="demon" file="XML/DemonRaid.xml" interval2="150" margin="0" enabled="no"/>
+	<raid name="spider" file="XML/GSRaid.xml" interval2="150" margin="0" enabled="no"/>
+	<raid name="scarabs" file="XML/Scarabs.xml" interval2="150" margin="0" enabled="no"/>
+	<raid name="panda" file="XML/PandaRaid.xml" interval2="150" margin="0" enabled="no"/>
+	<raid name="Ra" file="XML/ra.xml" interval2="150" margin="0" enabled="no"/>
 </raids>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<raid>
+	<announce delay="0" type="Event" message="Apes are climbing over the walls and are attacking the Samaransa Desert!"/>
+	<areaspawn delay="1000" fromx="298" fromy="1256" fromz="7" tox="346" toy="1314" toz="7">
+		<monster name="sibang" amount="20"/>
+		<monster name="kongra" amount="30"/>
+		<monster name="merlkin" amount="25"/>
+	</areaspawn>
+</raid>

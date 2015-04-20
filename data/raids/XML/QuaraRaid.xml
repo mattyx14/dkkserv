@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<raid>
+	<announce delay="0" type="Event" message="Something is moving in the depths of the sea around AlefGard."/>
+	<announce delay="40000" type="Event" message="Unusual numerous Quara fin have been sighted in the seas around AlefGard."/>
+	<announce delay="60000" type="Event" message="Quaras emerged from the sea, AlefGard is under attack!"/>
+	<areaspawn delay="60000" fromx="774" fromy="1240" fromz="7" tox="851" toy="1299" toz="7">
+		<monster name="quara hydromancer scout" amount="25"/>
+		<monster name="quara mantassin scout" amount="30"/>
+		<monster name="quara predator scout" amount="25"/>
+		<monster name="thul" amount="4"/>
+	</areaspawn>
+</raid>

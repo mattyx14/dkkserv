@@ -1,5 +1,0 @@
-<raid>
-<announce delay="0" message="The Infernus is at hand." />
-<announce delay="200000" message="Infernus have gathered in the cave orshabaal for their mating season. Under Magical Town!" />
-<singlespawn delay="200000" name="Infernus" x="572" y="1417" z="14" />
-</raid>

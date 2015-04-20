@@ -1,6 +1,0 @@
-<raid>
-<announce delay="0" message="Azerus is shaking, prepare for the worst." />
-<announce delay="150000" message="Diablo is about to use evil souls to release hell at Varkhal." />
-<announce delay="300000" message="Azerus has turned into hell!" />
-<singlespawn delay="300000" name="Azerus" x="1468" y="778" z="12" />
-</raid>
