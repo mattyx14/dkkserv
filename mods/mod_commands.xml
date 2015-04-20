@@ -1,0 +1,1026 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mod name="Commands Mods" version="1.0" author="Martyx" contact="martyx@otland.net" enabled="yes">
+	<changelog><![CDATA[
+		* [16/10/2010 v1.0] Command Portal /portal
+			1.1 - Ammount persons
+		* [16/10/2010 v1.0] Command Guild Outfit /go
+			1.1 - Exahust 10 seconds
+		* [16/10/2010 v1.0] Command Guild Cast /bg
+			1.1 - Exahust 10 seconds
+		* [16/10/2010 v1.0] Command Save Player /saveme
+			1.1 - Exahust 30 seconds
+		* [16/10/2010 v1.0] Command Buy Items /buy
+		* [16/10/2010 v1.0] Command Buy Premium /buypremium
+		* [16/10/2010 v1.0] Command Animated Smiles /alll
+			1.1 - Updated. Added new smiles, shortened
+		* [16/10/2010 v1.0] Command Viewer all spells /spells
+		* [16/10/2010 v1.0] Command set full stamina /stamina
+		* [16/10/2010 v1.0] Command give all blessings /bless
+			1.1 - Added pvpBless and tuned command + added checkbless command
+		* [04/06/2012 v1.0] Command refill boots !refill
+		* [27/06/2012 v1.0] Command makesay player
+		* [27/06/2012 v1.0] Command teleport player to temple
+			1.1 - /tpall command for admins to send multiTowns
+		* [07/07/2012 v1.0] Command Powergamers
+		* [07/07/2012 v1.0] Command Exp
+		* [07/07/2012 v1.0] Command marry more info en description command
+	]]></changelog>
+
+	<!-- Powergamers command -->
+	<talkaction words="!powergamers" event="script"><![CDATA[
+		domodlib("config_power")
+			local f, final, result = 0, "", db.getResult("SELECT `player_storage`.`value`, `players`.`name` FROM `players`, `player_storage` WHERE `player_storage`.`key` = " .. config.storage .. " AND `players`.`id` = `player_storage`.`player_id`;")
+			while true do
+				final = final .. "[" .. result:getDataString("name") .. "] - Exp: " .. result:getDataInt("value") .. "\n"
+				f = f + 1
+				if not result:next() or f > config.maxPlayers then
+					break
+				end
+			end
+
+			result:free()
+			return doShowTextDialog(cid, ITEM_BOOK, final)
+	]]></talkaction>
+
+	<!-- Exp command -->
+	<config name="command-exp-config"><![CDATA[
+		experienceHistory = "no"
+		exhaust = 1 -- in minutes
+		storage = 80008 -- storage value used to save exhaustion
+	]]></config>
+
+	<talkaction words="!exp" event="script"><![CDATA[
+		domodlib('command-exp-config')
+
+		local config = {
+			experienceHistory = getBooleanFromString(experienceHistory),
+			exhaustion = exhaust,
+			storage = storage
+		}
+
+		function onSay(cid, words, param, channel)
+			if(exhaustion.check(cid, config.storage)) then
+				doPlayerSendCancel(cid, "You can view exp only once per " .. config.exhaustion .. " minute.")
+				return true
+			end
+
+			param = param:trim()
+			if(param == '') then
+				doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_BLUE, "You need " .. getExperienceForLevel(getPlayerLevel(cid) + 1) - getPlayerExperience(cid) ..
+					" experience to gain next level." .. (config.experienceHistory and
+						(" Today you have gained " .. getPlayerTodayExperience(cid) .. " experience points" ..
+						", and your experience record is " .. getPlayerExperienceRecord(cid) .. " experience points") or "") .. ".")
+
+				exhaustion.set(cid, config.storage, config.exhaustion * 60)
+				return true
+			end
+
+			local mid = getCreatureByName(param)
+			if(isMonster(mid)) then
+				local playerLevel = getPlayerLevel(cid)
+				doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_BLUE, 'To gain next level you need to kill '..string.sub((getExperienceForLevel(playerLevel + 1)- getPlayerExperience(cid)) / (getMonsterInfo(param).experience * getExperienceStage(playerLevel)), 1, 4)..' '..param..'\'s')
+				exhaustion.set(cid, config.storage, config.exhaustion * 60)
+			end
+
+			return true
+		end
+	]]></talkaction>
+
+	<!-- Marry command -->
+	<description>
+		This mod adds a new command to the server that allows peoples to take a wedding using command.
+		Usage is very simple:
+			/marry name (one person initiates it, and after that second person have to accept it)
+			/marry divorce (take a divorce with your partner (if you have any))
+	</description>
+
+	<config name="command-marry-config"><![CDATA[
+		storage = 3009
+		allowHomoWedding = false -- allow marriages of players with same gender?
+		blockedAccess = 3 -- access of the same or higher value can't take a wedding (by default: 4 - don't allow gamemasters)
+	]]></config>
+
+	<talkaction words="/marry;!marry" event="script"><![CDATA[
+		domodlib('command-marry-config')
+
+		local config = {
+			storage = storage,
+			allowHomoWedding = getBooleanFromString(allowHomoWedding),
+			blockedAccess = blockedAccess
+		}
+
+		local function hearthEffect(cid)
+			if(isPlayer(cid)) then
+				doSendMagicEffect(getCreaturePosition(cid), CONST_ME_HEARTS)
+			end
+		end
+
+		local function internalMarried(cid, pid, guid)
+			doPlayerSetPartner(cid, guid)
+			doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "*CONGRATULATIONS!*\nYou are now married with " .. getCreatureName(pid) .. ".")
+			doSendMagicEffect(getCreaturePosition(cid), CONST_ME_HEARTS)
+		end
+
+		function onSay(cid, words, param, channel)
+			if(param == '') then
+				doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_BLUE, "Command param required.\nUsage: !marry playerName")
+				return true
+			end
+
+			if(isInArray({"divorce", "leave"}, param:lower())) then
+				local partnerGUID = getPlayerPartner(cid)
+				if(not partnerGUID or partnerGUID == 0) then
+					doPlayerSendCancel(cid, "You're not married yet.")
+					return true
+				end
+
+				local pid = getPlayerByName(getPlayerNameByGUID(partnerGUID, false, false))
+				if(not pid or pid == 0) then
+					doPlayerSendCancel(cid, "Your partner must be online to get divorced.")
+				else
+					local targetPartnerGUID = getPlayerPartner(pid)
+					if(targetPartnerGUID == getPlayerGUID(cid)) then
+						doPlayerSendTextMessage(pid, MESSAGE_INFO_DESCR, "Your marriage has been divorced.")
+						doPlayerSetPartner(pid, 0)
+					end
+
+					doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "Your marriage has been divorced.")
+					doPlayerSetPartner(cid, 0)
+				end
+
+				return true
+			end
+
+			local pid = getPlayerByNameWildcard(param)
+			if(not pid or (isPlayerGhost(pid) and getPlayerGhostAccess(pid) > getPlayerGhostAccess(cid))) then
+				doPlayerSendCancel(cid, "Player " .. param .. " not found.")
+				return true
+			end
+
+			if(config.blockedAccess > 0 and (getPlayerAccess(pid) >= config.blockedAccess or getPlayerAccess(cid) >= config.blockedAccess)) then
+				doPlayerSendCancel(cid, "You cannot marry this person.")
+				return true
+			end
+
+			if(getPlayerGUID(cid) == getPlayerGUID(pid)) then
+				doPlayerSendCancel(cid, "You cannot be self married.")
+				return true
+			end
+
+			local sex, targetSex = getPlayerSex(cid), getPlayerSex(pid)
+			if(not config.allowHomoWedding and sex == targetSex) then
+				doPlayerSendCancel(cid, "Sorry, for this time we do not allow to take marriage with same gender (sex) as you got. Please marry with someone else.")
+				doSendMagicEffect(getPlayerPosition(cid),CONST_ME_POFF)
+				return true
+			end
+
+			local guid, targetGUID = getPlayerGUID(cid), getPlayerGUID(pid)
+			if(getPlayerPartner(cid) == targetGUID) then
+				doPlayerSendCancel(cid, "You are already married with this person.")
+				return true
+			end
+
+			local pos, targetPos = getCreaturePosition(cid), getCreaturePosition(pid)
+			if(getDistanceBetween(pos, targetPos) > 1) then
+				doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, getCreatureName(cid) .. " tells you to move closer.")
+				doSendMagicEffect(getPlayerPosition(cid), CONST_ME_POFF)
+				return true
+			end
+
+			if(getPlayerStorageValue(pid, config.storage) ~= guid) then
+				setPlayerStorageValue(cid, config.storage, targetGUID)
+				doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "Your proposition has been sent to " .. getCreatureName(pid) .. ".")
+				local playerName = getCreatureName(cid)
+				doPlayerSendTextMessage(pid, MESSAGE_INFO_DESCR, playerName .. " want be married with you. Use '!marry " .. playerName .. "' to accept.")
+				return true
+			end
+
+			internalMarried(cid, pid, targetGUID)
+			internalMarried(pid, cid, guid)
+			return true
+		end
+	]]></talkaction>
+
+	<!-- Make say Player -->
+	<talkaction log="yes" group="4" access="3" words="/makesay" event="script"><![CDATA[
+		function onSay(cid, words, param)
+		local param2 = string.explode(param, ",")
+		if(param2[1] ~= nil) then
+			local pname = getPlayerByNameWildcard(param2[1])
+			if(param2[2] ~= nil) then
+				text = param2[2]
+			end
+				doCreatureSay(pname, text, TALKTYPE_SAY)
+			else
+				doPlayerSendCancel(cid, "Failed. Please try again.")
+			end
+
+			return true
+		end
+	]]></talkaction>
+
+	<!-- Teleport Town AllPlayers -->
+	<description><![CDATA[
+		Change local temple for any position the your principal towns (Fynn, Karmia and Anshara)
+	]]></description>
+
+	<talkaction log="yes" group="4" access="3" words="/tpall" event="script"><![CDATA[
+		function onSay(cid, words, param, channel)
+			local temple = {
+				groupID = 4, -- Protect GroupID 1,2,3,4 = GOD
+				fynn = {x = 942, y = 997, z = 7},
+				karmia = {x = 199, y = 895, z = 7},
+				anshara = {x = 719, y = 406, z = 7}
+			}
+
+			for _, cid in ipairs(getPlayersOnline()) do
+				if (getPlayerGroupId(cid) == temple.groupID) then
+					if(param == '') then
+						doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "HELP: Use /tpall x,y,z or /tpall fynn or /tpall kamia or /tpall anshara.")
+						return true
+					end
+
+					for _, cid in ipairs(getPlayersOnline()) do
+						if (getPlayerGroupId(cid) < temple.groupID) then
+							if(param == 'fynn') then
+								doTeleportThing(cid, temple.fynn)
+								doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "All players have been teleported to fynn.")
+								doSendMagicEffect(getCreaturePosition(cid), CONST_ME_FIREWORK_YELLOW)
+							elseif(param == 'karmia') then
+								doTeleportThing(cid, temple.karmia)
+								doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "All players have been teleported to karmia.")
+								doSendMagicEffect(getCreaturePosition(cid), CONST_ME_FIREWORK_YELLOW)
+							elseif(param == 'anshara') then
+								doTeleportThing(cid, temple.anshara)
+								doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "All players have been teleported to fynn.")
+								doSendMagicEffect(getCreaturePosition(cid), CONST_ME_FIREWORK_YELLOW)
+							else
+							local t = string.explode(param, ",")
+								doTeleportThing(cid, { x = t[1], y = t[2], z = t[3] } )
+								doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "All players have been teleported to the coords [X:"..t[1].."], [Y:"..t[2].."], [Z:"..t[3].."]")
+								doSendMagicEffect(getCreaturePosition(cid), CONST_ME_FIREWORK_YELLOW)
+							end
+						end
+					end
+				end
+			end
+
+			return true
+		end
+	]]></talkaction>
+
+	<!-- Set outfit Guild Leader at Guild -->
+	<config name="guild-outfit-config"><![CDATA[
+		exhaust = 30 -- in seconds
+		storage = 3002 -- storage value used to save exhaustion
+	]]></config>
+
+	<talkaction words="/go" event="script"><![CDATA[
+		domodlib('guild-outfit-config')
+
+		local config = {
+			exhaustion = exhaust,
+			storage = storage
+		}
+
+		function onSay(cid, words, param, channel)
+			if(exhaustion.check(cid, config.storage)) then
+				doPlayerSendCancel(cid, "You can change outfit only 1 time per " .. config.exhaustion .. " seconds.")
+				return true
+			end
+
+			local playerGuild = getPlayerGuildId(cid)
+			if(not playerGuild or playerGuild == 0) then
+				doPlayerSendCancel(cid, "Sorry, you're not in a guild.")
+				return true
+			end
+
+			if(getPlayerGuildLevel(cid) < GUILDLEVEL_LEADER) then
+				doPlayerSendCancel(cid, "You have to be Leader of your guild to change outfits!")
+				return true
+			end
+
+			local outfit, members = getCreatureOutfit(cid), 0
+			local message = "*Guild* Your outfit has been changed by leader. (" .. getCreatureName(cid) .. ")"
+			for _, tid in ipairs(getPlayersOnline()) do
+				if(getPlayerGuildId(tid) == playerGuild and cid ~= tid) then
+					local newOutfit = outfit
+					if(not canPlayerWearOutfit(tid, outfit.lookType, outfit.lookAddons)) then
+						local tmpOutfit = getCreatureOutfit(tid)
+						newOutfit.lookAddons = 0--tmpOutfit.lookAddons
+						if(not canPlayerWearOutfit(tid, outfit.lookType, 0)) then
+							newOutfit.lookType = tmpOutfit.lookType
+						end
+					end
+
+					doSendMagicEffect(getCreaturePosition(tid), 66)
+					doCreatureChangeOutfit(tid, newOutfit)
+					doPlayerSendTextMessage(tid, MESSAGE_INFO_DESCR, message)
+					members = members + 1
+				end
+			end
+
+			exhaustion.set(cid, config.storage, config.exhaustion)
+			doPlayerSendCancel(cid, "Guild members outfit has been changed. (Total: " .. members .. ")")
+			return true
+		end
+	]]></talkaction>
+
+	<!-- Command Broadcast Guild System -->
+	<config name="guild-broadcast-config"><![CDATA[
+		exhaust = 10 -- in seconds
+		storage = 3001 -- storage value used to save exhaustion
+		storageColor = 3002 -- storage value used to save previously used message color
+	]]></config>
+
+	<talkaction words="/bg" event="script"><![CDATA[
+		domodlib('guild-broadcast-config')
+
+		local config = {
+			exhaustion = exhaust,
+			storage = storage,
+			storageColor = storageColor
+		}
+
+		function onSay(cid, words, param, channel)
+			if(exhaustion.check(cid, config.storage)) then
+				doPlayerSendCancel(cid, "You can broadcast message only once per " .. config.exhaustion .. " seconds.")
+				return true
+			end
+
+			if(param == '') then
+				doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_BLUE, "You need to type a message to broadcast!")
+				return true
+			end
+
+			local playerGuild = getPlayerGuildId(cid)
+			if(playerGuild == FALSE) then
+				doPlayerSendCancel(cid, "Sorry, you're not in a guild.");
+				return true
+			end
+
+			if(getPlayerGuildLevel(cid) < GUILDLEVEL_VICE) then
+				doPlayerSendCancel(cid, "You have to be at least Vice-Leader to guildcast!")
+				return true
+			end
+
+			local messageType = MESSAGE_STATUS_WARNING
+			local t = string.explode(param, ";")
+			if(not t[2]) then
+				if(getPlayerStorageValue(cid, config.storageColor) ~= -1) then
+					messageType = getPlayerStorageValue(cid, config.storageColor)
+				end
+			else
+				if(MESSAGE_TYPES[t[1]] ~= nil) then
+					messageType = MESSAGE_TYPES[t[1]]
+				end
+				param = t[2]
+			end
+
+			if(messageType < MESSAGE_FIRST or messageType > MESSAGE_LAST) then
+				messageType = MESSAGE_STATUS_WARNING
+				--setPlayerStorageValue(cid, MESSAGE_STATUS_WARNING, messageType)
+				--doPlayerSendCancel(cid, "Unknown message type.")
+				--return true
+			end
+
+			local players = getPlayersOnline()
+			local message = "*Guild* " .. getCreatureName(cid) .. " [" .. getPlayerLevel(cid) .. "]:\n" .. param
+			local members = 0
+			for i, tid in ipairs(players) do
+				if(getPlayerGuildId(tid) == playerGuild) then
+					doPlayerSendTextMessage(tid, messageType, message)
+					members = members + 1
+				end
+			end
+
+			setPlayerStorageValue(cid, config.storageColor, messageType)
+			exhaustion.set(cid, config.storage, config.exhaustion)
+			doPlayerSendCancel(cid, "Message sent to your guild members. (Total: " .. members .. ")")
+			return true
+		end
+	]]></talkaction>
+
+	<!-- Command Set Save at Player -->
+	<config name="command-save-config"><![CDATA[
+		exhaust = 1 -- in minutes
+		storage = 3003 -- storage value used to save exhaustion
+	]]></config>
+
+	<talkaction words="/saveme" event="script"><![CDATA[
+		domodlib('command-save-config')
+
+		local config = {
+			exhaustion = exhaust,
+			storage = storage
+		}
+
+		function onSay(cid, words, param, channel)
+			if(exhaustion.check(cid, config.storage)) then
+				doPlayerSendCancel(cid, "You can save yourself only once per " .. config.exhaustion .. " minutes.")
+				return true
+			end
+
+			if(doPlayerSave(cid)) then
+				doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_BLUE, "Your character has been succesfully saved.")
+				exhaustion.set(cid, config.storage, config.exhaustion * 60)
+			else
+				doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_BLUE, "Error while saving your character. Please try again later.")
+			end
+
+			return true
+		end
+	]]></talkaction>
+
+	<!-- Command buy articles for fast access -->
+	<config name="command-buy-config"><![CDATA[
+		items = {
+			['brown backpack'] = {
+				cost = 500, id = 1988
+			},
+			['green backpack'] = {
+				cost = 500, id = 1998
+			},
+			['yellow backpack'] = {
+				cost = 500, id = 1999
+			},
+			['red backpack'] = {
+				cost = 500, id = 2000
+			},
+			['purple backpack'] = {
+				cost = 500, id = 2001
+			},
+			['grey backpack'] = {
+				cost = 500, id = 2003
+			},
+			['blue backpack'] = {
+				cost = 500, id = 2002
+			},
+			['gold backpack'] = {
+				cost = 500, id = 2004
+			},
+			['amulet of loss'] = {
+				cost = 300000, id = 2173
+			},
+			['rope'] = {
+				cost = 500, id = 2120
+			},
+			['shovel'] = {
+				cost = 500, id = 2554
+			},
+			['machete'] = {
+				cost = 500, id = 2420
+			},
+			['fishing rod'] = {
+				cost = 500, id = 2580
+			}
+		}
+	]]></config>
+
+	<talkaction words="/buy;!buy" event="script"><![CDATA[
+		domodlib('command-buy-config')
+		local config = {
+			storage = 89357,
+			exhaustion = 5,
+			items = items
+		}
+
+		function onSay(cid, words, param, channel)
+			if(exhaustion.check(cid, config.storage)) then
+				doPlayerSendCancel(cid, "You can buy  " .. config.exhaustion .. " seconds.")
+				return true
+			end
+
+			if(param == '') then
+				local str = ""
+				for name, options in pairs(config.items) do
+					str = str .. "\n" .. name
+				end
+
+				doPlayerPopupFYI(cid, "/buy or !buy:\n\n" .. str)
+				return true
+			end
+
+			local item = config.items[param]
+			if(item ~= nil) then
+				if(not doPlayerRemoveMoney(cid, item.cost)) then
+					doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "Not enough money to buy " .. param .. ".\n(" .. item.cost .. "gp)")
+					return true
+				end
+
+				local amount = item.amount and item.amount or 1
+				doPlayerAddItem(cid, item.id, amount)
+				doSendMagicEffect(getCreaturePosition(cid), CONST_ME_GIFT_WRAPS)
+				exhaustion.set(cid, config.storage, config.exhaustion * 60)
+			else
+				doPlayerSendCancel(cid, "Item not found. Use '!buy' to see the list.")
+			end
+
+			return true
+		end
+	]]></talkaction>
+
+	<!-- Buy Premium Command -->
+	<config name="buypremium_config"><![CDATA[
+		config = {
+			days = 10,
+			cost = 10000,
+			maxDays = 30
+		}
+	]]></config>
+
+	<talkaction words="/buypremium;!buypremium;/pacc;!pacc" event="buffer"><![CDATA[
+		domodlib('buypremium_config')
+		if(getPlayerPremiumDays(cid) > config.maxDays) then
+			doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "You can not buy more than " .. config.days + config.maxDays .. " days of Premium Account.")
+			doSendMagicEffect(getPlayerPosition(cid), CONST_ME_POFF)
+			return
+		end
+
+		if(not doPlayerRemoveMoney(cid, config.cost)) then
+			doPlayerSendCancel(cid, "You don't have enough money, " .. config.days .. " days premium account costs " .. config.cost .. " gold coins.")
+			doSendMagicEffect(getPlayerPosition(cid), CONST_ME_POFF)
+			return
+		end
+
+		doPlayerAddPremiumDays(cid, config.days)
+		doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "You have bought " .. config.days .. " days of premium account.")
+	]]></talkaction>
+
+	<!-- Animated Smiles -->
+	<config name="animated-smiles-config"><![CDATA[
+		exhaust = 1 -- in seconds
+		storage = 3000 -- storage value used to save exhaustion
+	]]></config>
+
+	<talkaction words="xd, :d, ;d, =d, xp, :p, ;p, =p, :o, ;o, ;s, :s, :/, ;/, :*, ;*, =*, :>, ;>, :), ;), =), :(, ;(, =(, :[, ;[, :], ;], :@, ;@, ^^, ^.^, -.-" separator="," logged="no" hidden="yes" case-sensitive="no" event="script"><![CDATA[
+		domodlib('animated-smiles-config')
+
+		local config = {
+			exhaustion = exhaust,
+			storage = storage
+		}
+
+		function onSay(cid, words, param, channel)
+			if(channel ~= CHANNEL_DEFAULT) then
+				return false
+			end
+
+			if(exhaustion.check(cid, config.storage)) then -- prevent spam
+				return true
+			end
+
+			if(isInArray({":*", ";*", "=*"}, words)) then
+				doSendMagicEffect(getCreaturePosition(cid), CONST_ME_HEARTS)
+			end
+
+			exhaustion.set(cid, config.storage, config.exhaustion)
+			doCreatureSay(cid, words, TALKTYPE_ORANGE_1)
+			return true
+		end
+	]]></talkaction>
+
+	<!-- Create Portal Command -->
+	<description>
+		---makes a portal to a location for a specified number of people
+			ex. /portal x, y, z, amount of people
+			ex. /portal 192, 168, 7, 3
+	</description>
+
+	<talkaction words="/portal" group="4" access="3" event="script"><![CDATA[
+		function onSay(cid, words, param)
+			param = param.explode(param, ',')
+			if param then
+			teleport = doCreateTeleport(8632, {x=param[1], y=param[2], z=param[3]}, getPlayerPosition(cid))
+				doItemSetAttribute(teleport, "description", 'The portal may enter '..param[4]..' people left.')
+				doItemSetAttribute(teleport, "aid", 100+param[4])
+			else
+				doPlayerSendCancel(cid, "You must set param.")
+			end
+			return true
+		end
+	]]></talkaction>
+
+	<movement type="StepIn" itemid="8632" event="script"><![CDATA[
+		function onStepIn(cid, item, position, fromPosition)
+			if item.actionid > 100 then
+				doItemSetAttribute(item.uid, "description", 'The portal may enter '..(item.actionid-101)..' people left.')
+				doItemSetAttribute(item.uid, "aid", item.actionid-1)
+			elseif item.actionid == 100 then
+				doBroadcastMessage("The Portal has ran out of energy and collapsed.", MESSAGE_EVENT_ADVANCE)
+				doSendMagicEffect(position, 2)
+				doRemoveItem(item.uid, 1)
+			end
+			return true
+		end
+	]]></movement>
+
+	<!-- Command Spells Look All Spells -->
+	<talkaction words="/spells;!spells" event="script"><![CDATA[
+		function onSay(cid, words, param)
+			local t = {}
+			for i = 0, getPlayerInstantSpellCount(cid) - 1 do
+				local spell = getPlayerInstantSpellInfo(cid, i)
+				if(spell.level ~= 0) then
+					if(spell.manapercent > 0) then
+						spell.mana = spell.manapercent .. "%"
+					end
+
+					table.insert(t, spell)
+				end
+			end
+
+			table.sort(t, function(a, b) return a.level < b.level end)
+			local text, prevLevel = "", -1
+			for i, spell in ipairs(t) do
+				local line = ""
+				if(prevLevel ~= spell.level) then
+					if(i ~= 1) then
+						line = "\n"
+					end
+
+					line = line .. "Spells for Level " .. spell.level .. "\n"
+					prevLevel = spell.level
+				end
+
+				text = text .. line .. "  " .. spell.words .. " - " .. spell.name .. " : " .. spell.mana .. "\n"
+			end
+
+			doShowTextDialog(cid, ITEM_BOOK, text)
+			return true
+		end
+	]]></talkaction>
+
+	<!-- Send animated text -->
+	<talkaction words="!me;/me" event="buffer" value="doCreatureSay(cid, getCreatureName(cid) .. ' ' .. param, TALKTYPE_MONSTER)"/>
+
+	<!-- Command give full set stamina -->
+	<talkaction words="/stamina;!stamina" event="script"><![CDATA[
+		function onSay(cid, words, param)
+			if getPlayerMoney(cid) >= 250000 then
+				doPlayerRemoveMoney(cid, 250000)
+				doPlayerSetStamina(cid, 2520)
+			else
+				doPlayerSendCancel(cid, "Nesesitas 25 crystal coins para llenarte la stamina.")
+			end
+
+			return true
+		end
+	]]></talkaction>
+
+	<!-- Command give all blessings -->
+	<description><![CDATA[
+		This modification adds two new commands: !bless and !blesscheck.
+		Also, action script is included (it uses unique id 32001 - can be used with items).
+	]]></description>
+
+	<config name="bless-system-config"><![CDATA[
+		blessSystem = {}
+		blessSystem.config = {
+			baseCost = 5000,
+			levelCost = 200,
+			startLevel = 30,
+			endLevel = 400
+		}
+
+		blessSystem.needPremium = getBooleanFromString(getConfigValue('blessingsOnlyPremium'))
+	]]></config>
+
+	<lib name="bless-system-lib"><![CDATA[
+		domodlib('bless-system-config')
+
+		function blessSystem.buyAllBlessings(cid)
+			local price = blessSystem.config.baseCost
+			if(getPlayerLevel(cid) > blessSystem.config.startLevel) then
+				price = (price + ((math.min(blessSystem.config.endLevel, getPlayerLevel(cid)) - blessSystem.config.startLevel) * blessSystem.config.levelCost))
+			end
+
+			price = price * 5 * 1.2
+			if(blessSystem.needPremium and not isPremium(cid)) then
+				doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "You need a premium account to use blessings.")
+				return false
+			end
+
+			for i = 1, 5 do
+				if(getPlayerBlessing(cid, i)) then
+					doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "You already have all blessings.")
+					return false
+				end
+			end
+
+			if(not doPlayerRemoveMoney(cid, price)) then
+				doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "You don't have enough money for blessings. (You need " .. price .. " gp's)")
+				return false
+			end
+
+			for i = 1, 5 do
+				doPlayerAddBlessing(cid, i)
+				doPlayerSetPVPBlessing(cid, 1)
+			end
+
+			doPlayerSendTextMessage(cid, MESSAGE_EVENT_ADVANCE, "You have been blessed by the gods!")
+			doSendMagicEffect(getCreaturePosition(cid), CONST_ME_BIGCLOUDS)
+			return true
+		end
+	]]></lib>
+
+	<talkaction words="!blesscheck;!blesstest" event="script"><![CDATA[
+		domodlib('bless-system-config')
+
+		local BLESSINGS = {"Wisdom of Solitude", "Spark of the Phoenix", "Fire of the Suns", "Spiritual Shielding", "Embrace of Tibia", "Twist of Fate"}
+		function onSay(cid, words, param)
+			local result = ""
+			for i = 1, (table.maxn(BLESSINGS) - 1) do
+				result = (getPlayerBlessing(cid, i) and result .. (result:len() > 0 and ", " or "") .. BLESSINGS[i] or result)
+			end
+
+			if(getPlayerPVPBlessing(cid)) then
+				result = result .. ", " .. BLESSINGS[table.maxn(BLESSINGS)]
+			end
+
+			return doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, result:len() > 0 and "Currently you have the following blessings: " .. result .. "." or "You do not have any blessing.")
+		end
+	]]></talkaction>
+
+	<talkaction words="!bless;/bless" event="script"><![CDATA[
+		domodlib('bless-system-config')
+		domodlib('bless-system-lib')
+
+		function onSay(cid, words, param, channel)
+			blessSystem.buyAllBlessings(cid)
+			return true
+		end
+	]]></talkaction>
+
+	<action uniqueid="32001" event="script"><![CDATA[
+		domodlib('bless-system-config')
+		domodlib('bless-system-lib')
+
+		function onUse(cid, item, fromPosition, itemEx, toPosition)
+			blessSystem.buyAllBlessings(cid)
+			return true
+		end
+	]]></action>
+
+	<!-- BANK COMMAND -->
+	<config name="mods-commands-config"><![CDATA[
+		transferDisabledVocations = {0} -- disable non vocation characters
+	]]></config>
+
+	<talkaction words="!bank;/bank" event="script"><![CDATA[
+		domodlib('mods-commands-config')
+		local config = {
+			transferDisabledVocations = transferDisabledVocations
+		}
+
+		local function validAmount(amount)
+			return (isNumber(amount) and amount > 0 and amount < 4294967296)
+		end
+
+		local function getAmount(amount, cid, f)
+			return (amount == 'all' and f(cid) or tonumber(amount))
+		end
+
+		local function getPlayerVocationByName(name)
+			local result = db.getResult("SELECT `vocation` FROM `players` WHERE `name` = " .. db.escapeString(name))
+			if(result:getID() == -1) then
+				return false
+			end
+
+			local value = result:getDataString("vocation")
+			result:free()
+			return value
+		end
+
+		function onSay(cid, words, param, channel)
+			if(param == '') then
+				doPlayerPopupFYI(cid,
+					"Bank management manual.\n\n" ..
+					"!bank or /bank balance - show your account balance\n" ..
+					"!bank or /bank deposit 100 - deposit 100 gold\n" ..
+					"!bank or /bank withdraw 50 - withdraw 50 gold\n" ..
+					"!bank or /bank transfer 30 God - transfer 30 gold to player God\n\n" ..
+					"Tip: you can also use 'all' as amount.\n" ..
+					"!bank or /bank deposit all - deposit all gold you have\n" ..
+					"!bank or /bank withdraw all - withdraw all gold from your bank account"
+				)
+				return true
+			end
+
+			local t = string.explode(param, " ", 2)
+			local command = t[1]:lower()
+			if(command == 'balance') then
+				doPlayerSendCancel(cid, "Your account balance is " .. getPlayerBalance(cid) .. " gold.")
+			elseif(command == 'deposit') then
+				if(not t[2]) then
+					doPlayerSendCancel(cid, "Amount is required.")
+					return true
+				end
+
+				local amount = getAmount(t[2], cid, getPlayerMoney)
+				if(validAmount(amount) and getPlayerMoney(cid) >= amount and doPlayerDepositMoney(cid, amount)) then
+					doPlayerSendCancel(cid, amount .. " gold has been deposited.")
+				else
+					doPlayerSendCancel(cid, "Not enough money to deposit.")
+				end
+			elseif(command == 'withdraw') then
+				if(not t[2]) then
+					doPlayerSendCancel(cid, "Amount is required.")
+					return true
+				end
+
+				local amount = getAmount(t[2], cid, getPlayerBalance)
+				if(validAmount(amount) and getPlayerBalance(cid) >= amount and doPlayerWithdrawMoney(cid, amount)) then
+					doPlayerSendCancel(cid, amount .. " gold has been withdrawn.")
+				else
+					doPlayerSendCancel(cid, "Not enough money to withdraw.")
+				end
+			elseif(command == 'transfer') then
+				if(not t[2]) then
+					doPlayerSendCancel(cid, "Amount is required.")
+					return true
+				end
+
+				if(not t[3]) then
+					doPlayerSendCancel(cid, "Player name to transfer is required.")
+					return true
+				end
+
+				local amount, target = tonumber(t[2]), t[3]
+				if(getPlayerGUID(cid) == getPlayerGUIDByName(target)) then
+					doPlayerSendCancel(cid, "You cannot transfer money to yourself.")
+				elseif(isInArray(config.transferDisabledVocations, getPlayerVocation(cid))) then
+					doPlayerSendCancel(cid, "Your vocation cannot transfer money.")
+				elseif(not validAmount(amount) or getPlayerBalance(cid) < amount) then
+					doPlayerSendCancel(cid, "Not enough money to transfer.")
+				else
+					local targetVocation = getPlayerVocationByName(target)
+					if(not playerExists(target) or not targetVocation or isInArray(config.transferDisabledVocations, targetVocation) or not doPlayerTransferMoneyTo(cid, target, amount)) then
+						doPlayerSendCancel(cid, "This player does not exist on this world or have no vocation.")
+					else
+						doPlayerSendCancel(cid, "You have transferred " .. amount .. " gold to \"" .. target .."\".")
+					end
+				end
+			else
+				doPlayerSendCancel(cid, "Invalid command usage. Use '!bank' to view manual.")
+			end
+
+			return true
+		end
+	]]></talkaction>
+
+	<!-- GiveReward Item to player -->
+	<talkaction words="/giveitem" group="4" access="3" event="script" log="yes"><![CDATA[
+		function onSay(cid, words, param, channel)
+			if(param == '') then
+				return doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_BLUE, "Command param required.")
+			end
+
+			local t = string.explode(param, ",")
+			local id = tonumber(t[1])
+			if not id then
+				id = getItemIdByName(t[1], false)
+				if not id then
+					return doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_BLUE, "Item with such name does not exist.")
+				end
+			end
+
+			t[2] = tonumber(t[2])
+			local amount = t[2] or 1
+
+			for _, pid in ipairs(getPlayersOnline()) do
+				doDecayItem(doPlayerAddItem(pid, id, amount))
+			end
+
+			return true
+		end
+	]]></talkaction>
+
+	<!-- REFILL BOOTS COMMAND -->
+	<description>
+		This mod adds a new command to the server, that can be used to refill (more precisely: change one id to another id
+			for fixed price). More items can be added by modifying 'items' table.
+	</description>
+
+	<config name="command-refill-config"><![CDATA[
+		items = {
+			["soft"] = { -- soft boots
+				id = 10021,
+				new_id = 2640,
+				price = 10000,
+				message = "Soft boots has been refilled."
+			},
+
+			["firewalker"] = { -- firewalker boots
+				id = 10022,
+				new_id = 9932,
+				price = 50000,
+				message = "Firewalker boots has been refilled."
+			}
+		}
+	]]></config>
+
+	<lib name="command-refill-lib"><![CDATA[
+		domodlib('command-refill-config')
+
+		command_refill = {
+			items = items,
+
+			buy = function (cid, name)
+				local item = command_refill.items[name]
+				if(not item) then
+					print('custom-commands.xml - invalid item name used (' .. name .. ')')
+					return false
+				end
+
+				if(getPlayerItemCount(cid, item.id) >= 1) then
+					if(getPlayerMoney(cid) >= item.price) then
+						if(doPlayerRemoveItem(cid, item.id, 1)) then
+							doPlayerBuyItem(cid, item.new_id, 1, item.price, 1)
+							if(item.message) then
+								doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, item.message)
+							end
+							return true
+						end
+					else
+						doPlayerSendCancel(cid, "Not enough money.")
+					end
+				else
+					doPlayerSendCancel(cid, "Item not found in your inventory.")
+				end
+
+				return false
+			end
+		}
+	]]></lib>
+
+	<talkaction words="!refill" event="script"><![CDATA[
+		domodlib('command-points-lib')
+
+		function onSay(cid, words, param, channel)
+			param = param:lower():trim()
+			if(param == '') then
+				local str = ""
+				for name, item in pairs(command_refill.items) do
+					str = str .. "!" .. name .. "\n"
+				end
+
+				doPlayerPopupFYI(cid, str)
+				return true
+			end
+
+			local item = command_refill.items[param]
+			if(not item) then
+				doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_BLUE, "Invalid option.")
+				return true
+			end
+
+			command_refill.buy(cid, item.name)
+			return true
+		end
+	]]></talkaction>
+
+	<talkaction words="!soft" event="script"><![CDATA[
+		domodlib('command-refill-lib')
+		function onSay(cid, words, param, channel)
+			command_refill.buy(cid, "soft")
+			return true
+		end
+	]]></talkaction>
+
+ 	<talkaction words="!firewalker" event="script"><![CDATA[
+		domodlib('command-refill-lib')
+		function onSay(cid, words, param, channel)
+			command_refill.buy(cid, "firewalker")
+			return true
+		end
+	]]></talkaction>
+
+
+	<!-- Custom Medall of Doll Addon Command FOR EVENT -->
+	<talkaction words="/addon;!addon" event="script"><![CDATA[
+		function onSay(cid, words, param)
+		local femaleOutfits = { ["citizen"]={136}, ["hunter"]={137}, ["mage"]={138}, ["knight"]={139}, ["noblewoman"]={140}, ["summoner"]={141}, ["warrior"]={142}, ["barbarian"]={147}, ["druid"]={148}, ["wizard"]={149}, ["oriental"]={150}, ["pirate"]={155}, ["assassin"]={156}, ["beggar"]={157}, ["shaman"]={158}, ["norsewoman"]={252}, ["nightmare"]={269}, ["jester"]={270}, ["brotherhood"]={279}, ["demonhunter"]={288}, ["yalaharian"]={324}, ["warmaster"]={336}, ["wayfarer"]={367} }
+		local maleOutfits = { ["citizen"]={128}, ["hunter"]={129}, ["mage"]={130}, ["knight"]={131}, ["nobleman"]={132},["summoner"]={133}, ["warrior"]={134}, ["barbarian"]={143}, ["druid"]={144}, ["wizard"]={145}, ["oriental"]={146}, ["pirate"]={151}, ["assassin"]={152}, ["beggar"]={153}, ["shaman"]={154}, ["norsewoman"]={251}, ["nightmare"]={268}, ["jester"]={273}, ["brotherhood"]={278}, ["demonhunter"]={289}, ["yalaharian"]={325}, ["warmaster"]={335}, ["wayfarer"]={366} }
+		local msg = {"Command requires GOOD param!", "You dont have Medall Addon!", "Bad param!", "Full Addon Set sucesfully added!"}
+		local param = string.lower(param)
+
+			if(getPlayerItemCount(cid, 10133) > 0) then
+				if(param ~= "" and maleOutfits[param] and femaleOutfits[param]) then
+					doPlayerRemoveItem(cid, 10133, 1)
+					doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, msg[4])
+					doSendMagicEffect(getCreaturePosition(cid), CONST_ME_GIFT_WRAPS)
+				if(getPlayerSex(cid) == 0)then
+					doPlayerAddOutfit(cid, femaleOutfits[param][1], 3)
+				else
+					doPlayerAddOutfit(cid, maleOutfits[param][1], 3)
+				end
+			else
+				doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, msg[1])
+			end
+		else
+				doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, msg[2])
+			end
+		end
+	]]></talkaction>
+</mod>

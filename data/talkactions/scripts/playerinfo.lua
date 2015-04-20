@@ -1,61 +1,38 @@
-function onSay(cid, words, param)
-if(param == "") then
-        doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_BLUE, "Command param required.")
-        return TRUE
-    end
+function onSay(cid, words, param, channel)
+	if(param == '') then
+		doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_BLUE, "Command param required.")
+		return true
+	end
 
-    local pid = getPlayerByNameWildcard(param)
-    if(pid == 0 or (isPlayerGhost(pid) == TRUE and getPlayerAccess(pid) > getPlayerAccess(cid))) then
-        doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_BLUE, "Player " .. param .. " not found.")
-        return TRUE
-    end
-local sex = ""
-if getPlayerSex(cid) == 1 then
-sex = "Male"
-else
-sex = "Female"
+	local pid = getPlayerByNameWildcard(param)
+	if(not pid or (isPlayerGhost(pid) and getPlayerGhostAccess(pid) > getPlayerGhostAccess(cid))) then
+		doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_BLUE, "Player " .. param .. " not found.")
+		return true
+	end
+
+	local tmp = {accountId = getPlayerAccountId(pid), ip = getPlayerIp(pid)}
+	local pos = getCreaturePosition(pid)
+	doPlayerPopupFYI(cid, "Information about player" ..
+		"\nName: " .. getCreatureName(pid) ..
+		"\nGUID: " .. getPlayerGUID(pid) ..
+		"\nGroup: " .. getPlayerGroupName(pid) ..
+		"\nAccess: " .. getPlayerAccess(pid) ..
+		"\nVocation: " .. getVocationInfo(getPlayerVocation(pid)).name ..
+		"\nStatus:" ..
+			"\nLevel - " .. getPlayerLevel(pid) .. ", Magic Level - " .. getPlayerMagLevel(pid) .. ", Speed - " .. getCreatureSpeed(pid) ..
+			"\nHealth - " .. getCreatureHealth(pid) .. " / " .. getCreatureMaxHealth(pid) .. ", Mana - " .. getCreatureMana(pid) .. " / " .. getCreatureMaxMana(pid) ..
+			"\nSkills:" ..
+			"\nFist - " .. getPlayerSkillLevel(pid, SKILL_FIST) .. ", Club - " .. getPlayerSkillLevel(pid, SKILL_CLUB) .. ", Sword - " .. getPlayerSkillLevel(pid, SKILL_SWORD) .. ", Axe - " .. getPlayerSkillLevel(pid, SKILL_AXE) ..
+			"\nDistance - " .. getPlayerSkillLevel(pid, SKILL_DISTANCE) .. ", Shielding - " .. getPlayerSkillLevel(pid, SKILL_SHIELD) .. ", Fishing - " .. getPlayerSkillLevel(pid, SKILL_FISHING) ..
+		"\nCoins:" ..
+			"\nCrystal - " .. getPlayerItemCount(pid, ITEM_CRYSTAL_COIN) .. ", Platinum - " .. getPlayerItemCount(pid, ITEM_PLATINUM_COIN) .. ", Gold - " .. getPlayerItemCount(pid, ITEM_GOLD_COIN) ..
+			"\nOverall amount - " .. getPlayerMoney(pid) ..
+		"\nBalance: " .. getPlayerBalance(pid) ..
+		"\nPosition: [X - " .. pos.x .. " | Y - " .. pos.y .. " | Z - " .. pos.z .. "]" ..
+		"\n\nInformation about account" ..
+		"\nName: " .. getPlayerAccount(pid) ..
+		"\nID: " .. tmp.accountId ..
+		"\nNotations: " .. getNotationsCount(tmp.accountId) ..
+		"\nIP: " .. doConvertIntegerToIp(tmp.ip) .. " (" .. tmp.ip .. ")")
+	return true
 end
-local config = {
-    accessToUse = 0,
-
-    playerName = getCreatureName(pid),
-    playerAccount = getPlayerAccount(pid),
-    playerIp = getPlayerIp(pid),
-    playerAccess = getPlayerAccess(pid),
-    playerGuild = getPlayerGuildName(pid),
-    playerGuildRank = getPlayerGuildRank(pid),
-    playerFrags = getPlayerRedSkullTicks(pid),
-    playerHealth = getCreatureHealth(pid),
-    playerMaxHealth = getCreatureMaxHealth(pid),
-    playerMana = getCreatureMana(pid),
-    playerMaxMana = getCreatureMaxMana(pid),
-    playerBaseSpeed = getCreatureBaseSpeed(pid),
-    playerSpeed = getCreatureSpeed(pid),
-    playerMaster = getCreatureMaster(pid),
-    playerLevel = getPlayerLevel(pid),
-    playerExp = getPlayerExperience(pid),
-    playerMagLevel = getPlayerMagLevel(pid),
-    playerTown = getTownName(getPlayerTown(pid)),
-    playerNotations = getNotationsCount(playerAccount),
-    playerVocation = getPlayerVocation(pid),
-    playerVocationInfo = getVocationInfo(playerVocation),
-    playerMoney = getPlayerMoney(pid),
-    playerCrystal = getPlayerItemCount(pid, 2160),
-    playerPlatinum = getPlayerItemCount(pid, 2152),
-    playerGold = getPlayerItemCount(pid, 2148),
-    playerBalance = getPlayerBalance(pid),
-    playerGroup = getPlayerGroupName(pid),
-    playerPremDays = getPlayerPremiumDays(pid)
-}
-
-if config.playerAccess >= config.accessToUse then
-
-doPlayerPopupFYI(cid, "Information about " .. config.playerName .. "\n\nInformation about account.\n\nGroup: " .. config.playerGroup .. "\nAccount: " .. config.playerAccount .. "\nIP: " .. doConvertIntegerToIp(config.playerIp) .. " (" .. config.playerIp .. ")\nAccess: " .. config.playerAccess .. "\nNotations: " .. config.playerNotations .. "\nPremium Days: " .. config.playerPremDays .. "\n\nInformation about character.\n\nName: " .. config.playerName .."\nLevel: " .. config.playerLevel .. "\nExperience: " .. config.playerExp .."\nMagic level: " .. config.playerMagLevel .. "\nVocation: " .. getVocationInfo(config.playerVocation).name .. "\nSex: " .. sex .. "\nBase speed: " .. config.playerBaseSpeed .. "\nSpeed: " .. config.playerSpeed .. "\nTown: " .. config.playerTown .. "\nUnjustified frags: " .. config.playerFrags .. "\nGuild: " .. config.playerGuild .. "\nGuild rank: " .. config.playerGuildRank .. "\nHealth: " .. config.playerHealth .. " - " .. config.playerMaxHealth .. "\nMana: " .. config.playerMana .. " - " .. config.playerMaxMana .. "\n\nSkills:\nFist: " .. getPlayerSkillLevel(cid,0) .. "\nClub: " .. getPlayerSkillLevel(cid,1) .. "\nSword: " .. getPlayerSkillLevel(cid,2) .. "\nAxe: " .. getPlayerSkillLevel(cid,3) .. "\nDistance: " .. getPlayerSkillLevel(cid,4) .. "\nShielding: " .. getPlayerSkillLevel(cid,5) .. "\nFishing: " .. getPlayerSkillLevel(cid,6) .. "\n\nMoney:\nGold: " .. config.playerGold .. "\nPlatinum: " .. config.playerPlatinum .. "\nCrystal: " .. config.playerCrystal .. "\nTotal money: " .. config.playerMoney .. "\nBank balance: " .. config.playerBalance .. " ") 
-
-else
-
-doPlayerSendTextMessage(cid,22,"You cannot execute this command.")
-    
-    end
-
-end  

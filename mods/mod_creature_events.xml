@@ -1,0 +1,808 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mod name="Creature Events Mods" version="1.0" author="Martyx" contact="martyx@otland.net" enabled="yes">
+	<changelog><![CDATA[
+		* [16/10/2010 v1.0] Advanced Rank Efect
+		* [16/10/2010 v1.0] First Vocation Items
+			1.1 - Rewrite System First Items (More Cool)
+		* [16/10/2010 v1.0] Advanced Rewards
+			1.1 - Added option to make a reward items inside container
+			1.2 - More Configurable Reward
+		* [16/10/2010 v1.0] Quest Look
+		* [16/10/2010 v1.0] Monsters Portals
+		* [16/10/2010 v1.0] Monsters Portals Arena
+		* [16/10/2010 v1.0] Save AutoPlayer 
+		* [16/10/2010 v1.0] Exp Rate
+		* [16/10/2010 v1.0] Demon Oak
+		* [17/10/2010 v1.0] Spell Reward for Level
+		* [12/11/2010 v1.0] Book Exp
+		* [27/06/2012 v1.0] Peeper Look
+		* [07/07/2012 v1.0] Powergamers
+		* [07/07/2012 v1.0] Login History
+	]]></changelog>
+
+	<!-- Powergamers command -->
+	<config name="config_power"><![CDATA[
+		config = {
+			maxPlayers = 10,
+			storage = 59310
+		}
+	]]></config>
+
+	<event type="login" name="powergames_event" event="script"><![CDATA[
+		return registerCreatureEvent(cid, "powergamers")
+	]]></event>
+
+	<event type="advance" name="powergamers" event="script"><![CDATA[
+		domodlib("config_power")
+		if getPlayerStorageValue(cid, config.storage) < 1 then
+			setPlayerStorageValue(cid, config.storage, 0)
+		end
+		return setPlayerStorageValue(cid, config.storage, getPlayerStorageValue(cid, config.storage)+getExperienceForLevel(newLevel))
+	]]></event>
+
+	<!-- Login History -->
+	<config name="login-history-config"><![CDATA[
+		expires = 30 * 24 * 60 * 60-- how long to store logs in database (default: 30 days)
+	]]></config>
+
+	<event type="login" name="login-history-in" event="buffer"><![CDATA[
+		db.executeQuery('INSERT INTO login_history (account_id, player_id, type, login, ip, date) VALUES (' .. getPlayerAccountId(cid) .. ', ' .. getPlayerGUID(cid) .. ', 1, 1, ' .. getPlayerIp(cid) .. ', ' .. os.time() .. ')')
+		_result = true
+	]]></event>
+
+	<event type="logout" name="login-history-out" event="buffer"><![CDATA[
+		db.executeQuery('INSERT INTO login_history (account_id, player_id, type, login, ip, date) VALUES (' .. getPlayerAccountId(cid) .. ', ' .. getPlayerGUID(cid) .. ', 1, 0, ' .. getPlayerIp(cid) .. ', ' .. os.time() .. ')')
+		_result = true
+	]]></event>
+
+	<globalevent name="login-history-clean" type="start" event="buffer"><![CDATA[
+		if(db.tableExists and not db.tableExists("login_history")) then
+			print("login-history.xml :: please import mysql schema first!")
+			_result = false
+			return false
+		end
+
+		domodlib('login-history-config')
+		db.executeQuery('DELETE FROM login_history WHERE date < ' .. (os.time() - expires))
+		_result = true
+	]]></globalevent>
+
+	<!-- Peeper Look -->
+	<config name="peeper-config"><![CDATA[
+		-- anonymously or display peeper name?
+		anonymous = "no"
+
+		-- ignore players with access (will not show message when they look on someone)
+		hiddenAccess = 3
+
+		-- message color (type)
+		messageType = MESSAGE_STATUS_DEFAULT
+	]]></config>
+
+	<event type="look" name="peeper-event" event="script"><![CDATA[
+		domodlib('peeper-config')
+
+		local config = {
+			anonymous = getBooleanFromString(anonymous),
+			hiddenAccess = hiddenAccess,
+			messageType = messageType
+		}
+
+		function onLook(cid, thing, position, lookDistance)
+			if(isPlayer(thing.uid) and cid ~= thing and getPlayerAccess(cid) < config.hiddenAccess) then
+				doPlayerSendTextMessage(thing.uid, config.messageType, (config.anonymous and "Someone" or getPlayerName(cid)) .. " is looking at you.")
+			end
+
+			return true
+		end
+	]]></event>
+
+	<event type="login" name="peeper-login" enabled="yes" event="buffer"><![CDATA[
+		registerCreatureEvent(cid, "peeper-event")
+		_result = true
+	]]></event>
+
+	<!-- Book Exp
+	<config name="settings"><![CDATA[
+		extraExp = 1.20
+		storage = 4567
+	]]></config>
+
+	<action itemid="1981" event="script"><![CDATA[
+		function onUse(cid, item, fromPosition, itemEx, toPosition)
+		domodlib('settings')
+			doRemoveItem(item.uid, 1)
+				doCreatureSetStorage(cid, storage, 1)
+				doPlayerSetExperienceRate(cid, extraExp)
+			return true
+		end
+	]]></action>
+
+	<event type="login" name="scroll" event="script"><![CDATA[
+		domodlib('settings')
+		function onLogin(cid)
+			if getCreatureStorage(cid, storage) > 0 then
+					doPlayerSetExperienceRate(cid, extraExp)
+			end
+			return true
+		end
+	]]></event>
+	-->
+
+	<!-- Spell Reward for level -->
+	<event type="advance" name="spell-up-event" event="script"><![CDATA[
+		local s = {
+			repeatAfterDeath = true, -- true -> player will always get the msg at lvlup | false -> player will only get the 1st time the gets the new level
+			detailedInfo = true, -- true -> player will get name, words, mana & mana% info of spells | false -> player will only get the name and the words of the spells
+			Storage = 10000, -- storage below is where the newlevel will be stored ONLY IF YOU USE repeatAfterDeath
+			messageType = 'channel', -- options: 'popUp' or 'channel'
+			channelClass = MESSAGE_EVENT_ORANGE -- this one below only used if messageType = channel
+		}
+
+		function onAdvance(cid, skill, oldlevel, newlevel)
+			if skill ~= SKILL__LEVEL or not s.repeatAfterDeath and getCreatureStorage(cid, s.Storage) >= newlevel then
+				return true 
+			end
+
+			local t = {}
+			for i = 0, getPlayerInstantSpellCount(cid) - 1 do
+			local spell = getPlayerInstantSpellInfo(cid, i)
+				if(spell.level ~= 0) and spell.level == newlevel then
+					if(spell.manapercent > 0) then
+						spell.mana = spell.manapercent .. '%'
+					end
+					table.insert(t, spell)
+				end
+			end
+
+			table.sort(t, function(a, b) return a.level < b.level end)
+			local text, prevLevel = '', -1
+			for i, spell in ipairs(t) do
+			local line = ''
+				if(prevLevel ~= spell.level) then
+					if(i ~= 1) then
+						line = '\n'
+					end
+					line = line .. 'You have just advanced to level '..newlevel..' and learned new spells!\n'
+					prevLevel = spell.level
+				end
+				text = text ..line..' ['..spell.name..'] "'..spell.words..'" '..(s.detailedInfo and 'Mana['..spell.mana..']'..(spell.mlevel > 0 and ' ML['..spell.mlevel..']' or '') or '')..'\n'
+			end
+
+			if text == '' then
+				return true
+			end
+
+			doCreatureSetStorage(cid, s.Storage, newlevel)
+			if s.messageType == 'popUp' then
+				doShowTextDialog(cid, 2175, text)
+			elseif s.messageType == 'channel' then
+				doPlayerSendTextMessage(cid, s.channelClass, text)
+			end
+
+			return true
+		end
+	]]></event>
+
+	<event type="login" name="spell-up-login" event="buffer"><![CDATA[
+		registerCreatureEvent(cid, "spell-up-event")
+		_result = true
+	]]></event>
+
+	<!-- First Items for Vocation -->
+	<description><![CDATA[
+		Custom Fist Items
+	]]></description>
+
+	<config name="firstitems_config"><![CDATA[
+		config = {
+			storage = 40046,
+			items = {}
+		}
+	]]></config>
+
+	<event type="login" name="FirstItems" event="buffer"><![CDATA[
+		domodlib('firstitems_config')
+		if(getPlayerStorageValue(cid, config.storage) > 0) then
+			return
+		end
+
+		for _, id in ipairs(config.items) do
+			doPlayerAddItem(cid, id, 1)
+		end
+
+		-- All Vocation
+			-- BackPack -- Rope -- in Backpack
+			doAddContainerItem(doPlayerAddItem(cid, 1988, 1), 2120, 1)
+			-- Brass Armor -- Body
+			doPlayerAddItem(cid, 2465, 1)
+			-- Steel Helmet -- Head
+			doPlayerAddItem(cid, 2457, 1)
+			-- Bonelord Shield -- Right Hand
+			doPlayerAddItem(cid, 2518, 1)
+
+		-- Sorcerer (Weapon)
+		if isSorcerer(cid)then
+			doPlayerAddItem(cid, 2190, 1) -- Wand of Vortex -- Left Hand
+
+		-- Druid - (Weapon)
+		elseif isDruid(cid) then
+			doPlayerAddItem(cid, 2182, 1) -- Snake Bite Rod -- Left Hand
+
+		-- Paladin - Warrior or Thief (Weapon)
+		elseif isPaladin(cid) then
+			doPlayerAddItem(cid, 2389, 5) -- Spear -- Left Hand
+
+		-- Knight (Weapon)
+		elseif isKnight(cid) then
+			doPlayerAddItem(cid, 8602, 1) -- Jagged Sword -- Left Hand
+			doPlayerSendTextMessage(cid, MESSAGE_EVENT_DEFAULT," "..getPlayerName(cid).." now have the first items of "..getPlayerVocationName(cid)..".")
+		end
+
+		-- All Vocation
+			-- Brass Legs -- in Feet
+			doPlayerAddItem(cid, 2478, 1)
+			-- Leather Boots -- in Boots
+			doPlayerAddItem(cid, 2643, 1)
+			-- Scarf -- in Necklacke
+			doPlayerAddItem(cid, 2661, 1)
+			-- Gold Coin -- in Arrows
+			doPlayerAddItem(cid, 2152, 5)
+			-- Health Potion -- in Backpack
+			doPlayerAddItem(cid, 7618, 10)
+			-- Shovel -- in Backpack
+			doPlayerAddItem(cid, 2554, 1)
+			-- Crystal Ring -- in Ring
+			doPlayerAddItem(cid, 2124, 1)
+			-- Mana Potion -- in Backpack
+			doPlayerAddItem(cid, 7620, 10)
+
+		-- Knight (Weapon) -- in Backpack
+		if isKnight(cid) then
+			doPlayerAddItem(cid, 8601, 1) -- Steel Axe
+			doPlayerAddItem(cid, 2439, 1) -- Daramanian mace
+		end
+
+		setPlayerStorageValue(cid, config.storage, 1)
+	]]></event>
+
+	<!-- Advance Rewards -->
+	<description><![CDATA[
+	more examples
+	-- {skill = SKILL_SWORD, level = 110, storage = 3102, item = 2400, message = "Take this as a reward for advancing in 120 sword fighting level!", effect = 61}
+
+	message player see when getting reward, you can also personalize it for every reward
+	-- message = "Congratulations, you advanced in {SKILL} level {LEVEL} and received {ITEM} as a reward!"
+
+	uncomment if you want to see magic effect when reward is added
+	-- effect = 30 -- magic effect id
+
+	items in a backpack
+	-- {skill = SKILL__LEVEL, level = 50, storage = 3103, item = 2000,
+	-- 		inside = {
+	-- 			{id = 2160, count = 1},
+	-- 			{id = 2152, count = 50},
+	-- 			{id = 2195}
+	-- 		}
+	-- 	}
+
+	only for specified vocations (in this case - sorcerers & druids)
+	--	{skill = SKILL_AXE, level = 50, storage = 3104, item = 7884,
+	--		callback = function(cid, reward)
+	--			return isInArray({1, 2, 5, 6}, getPlayerVocation(cid))
+	--		end
+	--	}
+
+	this one will only broadcast message (without giving any reward)
+	--	{skill = SKILL__LEVEL, level = 300, storage = 3105, message = false,
+	--		callback = function(cid, reward)
+	--			doBroadcastMessage(getCreatureName(cid) .. " has advanced to Level 300. Congratulations!", MESSAGE_EVENT_ADVANCE)
+	--			return true
+	--		end
+	--	}
+	]]></description>
+
+	<config name="advance-reward-config"><![CDATA[
+		rewards = {
+			-- Empty
+		}
+	]]></config>
+
+	<event type="advance" name="advance-reward-event" event="script"><![CDATA[
+		domodlib('advance-reward-config')
+
+		local config = {
+			rewards = rewards,
+			message = message,
+			effect = effect
+		}
+
+		function onAdvance(cid, skill, oldLevel, newLevel)
+			for _, reward in pairs(config.rewards) do
+				if(reward.skill == skill and newLevel >= reward.level
+					and getPlayerStorageValue(cid, reward.storage) ~= 1)
+				then
+					if(not reward.callback or reward.callback(cid, reward)) then
+						local continue = true
+
+						if(not reward.inside) then
+							if(reward.item and doPlayerAddItem(cid, reward.item, reward.count or 1) == false) then
+								continue = false
+							end
+						elseif(isItemContainer(reward.item)) then
+							local container = doCreateItemEx(reward.item, 1)
+							for _, item in ipairs(reward.inside) do
+								doAddContainerItem(container, item.id, item.count or 1)
+							end
+
+							if(doPlayerAddItemEx(cid, container, false) ~= RETURNVALUE_NOERROR) then
+								continue = false
+							end
+						end
+
+						if(continue) then
+							setPlayerStorageValue(cid, reward.storage, 1)
+
+							local message = reward.message or config.message
+								if(type(reward.message) == 'boolean') then
+									message = reward.message
+								end
+
+							if(message) then
+								local t = {
+									["NAME"] = getCreatureName(cid),
+									["SKILL"] = SKILL_NAMES[skill],
+									["OLDLEVEL"] = oldLevel,
+									["NEWLEVEL"] = newLevel,
+									["LEVEL"] = reward.level
+								}
+								if(reward.item) then
+									t["ITEM"] = getItemNameById(reward.item)
+								end
+
+								doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, tostring(message:gsub("{(.-)}", function(v) return t[v] end)))
+							end
+
+							local effect = reward.effect or config.effect
+							if(effect) then
+								doSendMagicEffect(getCreaturePosition(cid), effect)
+							end
+						end
+					end
+				end
+			end
+			return true
+		end
+	]]></event>
+
+	<event type="login" name="advance-reward-login" event="buffer"><![CDATA[
+		registerCreatureEvent(cid, "advance-reward-event")
+		_result = true
+	]]></event>
+
+	<!-- Quest Look -->
+	<event type="look" name="quest-look-event" event="script"><![CDATA[
+		function onLook(cid, thing, position, lookDistance)
+		local quests = {
+				20050, 20051, 20052, 20053, 20054, 
+				20055, 20056, 20057, 20058, 20059, 
+				20060, 20061, 20062, 20063, 20064, 
+				20065, 20066, 20067, 20068, 20069, 
+				20070, 20071, 20072, 20073, 20074, 
+				20075, 20076, 20077, 20078, 20079, 
+				20080, 20081, 20082, 20083, 20084, 
+				20085, 20086, 20087, 20088, 20089, 
+				20090, 20091, 30111, 30112, 9955, 
+				10503, 10504, 10521, 10522, 11238, 
+				16099, 16116, 18001, 18002, 2076, 
+				2321, 2203, 2323, 2343, 2352, 
+				2358, 2400, 2407, 2421, 2424, 
+				2431, 2432, 2434, 2436, 2451, 
+				2463, 2466, 2469, 2471, 2472, 
+				2474, 2538, 2487, 2492, 2493, 
+				2497, 2498, 2501, 2502, 2515, 
+				2517, 8886, 2520, 2522, 2523, 
+				2534, 2486, 2542, 25550, 25551, 
+				25552, 25554, 2641, 3967, 50001, 
+				50002, 50003, 50004, 50005, 50006, 
+				50007, 50008, 50009, 50015, 50011, 
+				50012, 50130, 50150, 50180, 50220, 
+				5468, 5802, 5808, 5809, 5887, 
+				5888, 5907, 5910, 5919, 5921, 
+				5924, 5940, 5943, 5945, 6099, 
+				6107, 63538, 63539, 63540, 63541, 
+				63542, 63543, 63545, 63546, 63547, 
+				63777, 63778, 7384, 7390, 7405, 
+				7406, 7413, 7421, 7428, 7451, 
+				7457, 7730, 7884, 7885, 7891, 
+				7892, 7895, 7898, 7899, 7900, 
+				7958, 8266, 8853, 8866, 8868, 
+				8869, 8880, 8884, 8900, 8906, 
+				8908, 8909, 8929, 9080, 9084, 
+				9933, 10311, 2222, 7894, 45578, 
+				10502, 8900, 5922, 3100, 3101, 
+				3102, 3103, 3104, 3105, 3106, 
+				3107, 3109, 10614, 40054, 12527, 
+				3108, 10307, 10568, 9969, 10567, 
+				12520, 3110
+			} -- Change/add numbers to the unique ids on your quest chests.
+
+		local completed = {}
+			if isPlayer(thing.uid) then
+				for i = 1, #quests do
+					if getPlayerStorageValue(thing.uid, quests[i]) > 0 then
+							table.insert(completed, 1)
+					end
+				end
+
+				doPlayerSetSpecialDescription(thing.uid, (getPlayerSex(thing.uid) == 0 and ".\nShe" or ".\nHe") .. " has completed ".. #completed .. "/" .. #quests .. " quests")
+				doPlayerSendTextMessage(cid, MESSAGE_STATUS_SMALL, getPlayerName(thing.uid) .. " has completed " .. #completed .. "/" .. #quests .. " quests.")
+			end
+
+			return true
+		end
+	]]></event>
+	<event type="login" name="quest-look-login" event="buffer"><![CDATA[
+		registerCreatureEvent(cid, "quest-look-event")
+		_result = true
+	]]></event>
+
+<!-- Monsters Portals (Bosses) -->
+	<event type="kill" name="monster-portal-event" event="script"><![CDATA[
+		local m = {
+			["chaos destroyer"] = {
+				message = "Escape through the teleport quickly before it closes!",
+				cfg = {{
+					time = 120, -- Tiempo de teleport (Segundos)
+					to = {x = 1261, y = 1111, z = 10}, -- Donde te envia el teleport
+					tp = {x = 1244, y = 1124, z = 10} -- Donde se crea el teleport
+				},}
+			},
+
+			["chaos imperor"] = {
+				message = "Escape through the teleport quickly before it closes!",
+				cfg = {{
+					time = 120, -- Tiempo de teleport (Segundos)
+					to = {x = 1660, y = 1157, z = 11}, -- Donde te envia el teleport
+					tp = {x = 1603, y = 1110, z = 11} -- Donde se crea el teleport
+				},}
+			},
+
+			["Chaos Littium"] = {
+				message = "Escape through the teleport quickly before it closes!",
+				cfg = {{
+					time = 120, -- Tiempo de teleport (Segundos)
+					to = {x = 610, y = 569, z = 14}, -- Donde te envia el teleport
+					tp = {x = 550, y = 575, z = 14} -- Donde se crea el teleport
+				},}
+			},
+
+			["Demon"] = {
+				message = "Escape through the teleport quickly before it closes!",
+				cfg = {{
+					time = 120, -- Tiempo de teleport (Segundos)
+					to = {x = 981, y = 1053, z = 10}, -- Donde te envia el teleport
+					tp = {x = 986, y = 1060, z = 10} -- Donde se crea el teleport
+				},}
+			},
+
+			["doom howl"] = {
+				message = "Escape through the teleport quickly before it closes!",
+				cfg = {{
+					time = 120, -- Tiempo de teleport (Segundos)
+					to = {x = 1668, y = 1049, z = 9}, -- Donde te envia el teleport
+					tp = {x = 1693, y = 988, z = 9} -- Donde se crea el teleport
+				},}
+			},
+
+			["evil mastermind"] = {
+				message = "Escape through the teleport quickly before it closes!",
+				cfg = {{
+					time = 120, -- Tiempo de teleport (Segundos)
+					to = {x = 1654, y = 1051, z = 9}, -- Donde te envia el teleport
+					tp = {x = 1671, y = 1069, z = 9} -- Donde se crea el teleport
+				},}
+			},
+
+			["monstor ripper"] = {
+				message = "Escape through the teleport quickly before it closes!",
+				cfg = {{
+					time = 120, -- Tiempo de teleport (Segundos)
+					to = {x = 1652, y = 1061, z = 9}, -- Donde te envia el teleport
+					tp = {x = 1694, y = 1096, z = 9} -- Donde se crea el teleport
+				},}
+			},
+
+			["incineron magna"] = {
+				message = "Escape through the teleport quickly before it closes!",
+				cfg = {{
+					time = 120, -- Tiempo de teleport (Segundos)
+					to = {x = 1652, y = 1175, z = 11}, -- Donde te envia el teleport
+					tp = {x = 1605, y = 1160, z = 11} -- Donde se crea el teleport
+				},}
+			},
+
+			["braytooh"] = {
+				message = "Escape through the teleport quickly before it closes!",
+				cfg = {{
+					time = 120, -- Tiempo de teleport (Segundos)
+					to = {x = 1047, y = 1164, z = 10}, -- Donde te envia el teleport
+					tp = {x = 1017, y = 1162, z = 10} -- Donde se crea el teleport
+				},}
+			},
+
+			["Infernos"] = {
+				message = "Escape through the teleport quickly before it closes!",
+				cfg = {{
+					time = 120, -- Tiempo de teleport (Segundos)
+					to = {x = 1255, y = 1001, z = 10}, -- Donde te envia el teleport
+					tp = {x = 1257, y = 1001, z = 10} -- Donde se crea el teleport
+				},}
+			},
+
+			["Black Knight"] = {
+				message = "Escape through the teleport quickly before it closes!",
+				cfg = {{
+					time = 120, -- Tiempo de teleport (Segundos)
+					to = {x = 1178, y = 1313, z = 8}, -- Donde te envia el teleport
+					tp = {x = 1178, y = 1303, z = 8} -- Donde se crea el teleport
+				},}
+			},
+
+			["Morgaroth"] = {
+				message = "Escape through the teleport quickly before it closes!",
+				cfg = {{
+					time = 400, -- Tiempo de teleport (Segundos)
+					to = {x = 2126, y = 919, z = 9}, -- Donde te envia el teleport
+					tp = {x = 2138, y = 928, z = 9} -- Donde se crea el teleport
+				},}
+			},
+
+			["Ra"] = {
+				message = "Escape through the teleport quickly before it closes!",
+				cfg = {{
+					time = 120, -- Tiempo de teleport (Segundos)
+					to = {x = 749, y = 380, z = 13}, -- Donde te envia el teleport
+					tp = {x = 746, y = 379, z = 14} -- Donde se crea el teleport
+				},}
+			},
+
+			["Infernatil"] = {
+				message = "Escape through the teleport quickly before it closes!",
+				cfg = {{
+					time = 1200, -- Tiempo de teleport (Segundos)
+					to = {x = 485, y = 369, z = 4}, -- Donde te envia el teleport
+					tp = {x = 485, y = 363, z = 5} -- Donde se crea el teleport
+				},}
+			},
+
+			["Ferumbras"] = {
+				message = "Escape through the teleport quickly before it closes!",
+				cfg = {{
+					time = 120, -- Tiempo de teleport (Segundos)
+					to = {x = 1809, y = 1764, z = 3}, -- Donde te envia el teleport
+					tp = {x = 485, y = 369, z = 4} -- Donde se crea el teleport
+				},}
+			}
+		}
+
+		function onKill(cid, target, damage, flags)
+			if isPlayer(target) then
+				return true
+			end
+
+			local monster = m[getCreatureName(target)]
+			if monster then
+				for i = 1, #monster.cfg do
+				local c = monster.cfg[i]
+				local function deleteTeleport()
+				local teleport = getTileItemById(c.tp, 1387).uid
+
+				if(teleport > 0) then
+					doRemoveItem(teleport)
+					doSendMagicEffect(c.tp, CONST_ME_POFF)
+				end
+
+				return true
+			end
+				doCreateTeleport(1387, c.to, c.tp)
+				doSendMagicEffect(c.tp, CONST_ME_ENERGYAREA)
+				addEvent(deleteTeleport, c.time * 1000)
+			end
+				doCreatureSay(cid, monster.message, TALKTYPE_ORANGE_1)
+			end
+
+			return true
+		end
+	]]></event>
+
+	<event type="login" name="monster-portal-login" event="buffer"><![CDATA[
+		registerCreatureEvent(cid, "monster-portal-event")
+		_result = true
+	]]></event>
+
+	<!-- Monsters Portals Arena (Bosses) -->
+	<event type="kill" name="monster-portal-arena-event" event="script"><![CDATA[
+		local m = {
+			["Sahagin Soul"] = {
+				message = "Enter the teleport quickly before it closes 10 seconds!",
+				cfg = {{
+					time = 10, -- Tiempo de teleport (Segundos)
+					to = {x = 1091, y = 711, z = 9}, -- Donde te envia el teleport
+					tp = {x = 1075, y = 683, z = 9} -- Donde se crea el teleport
+				},}
+			},
+
+			["Specter"] = {
+				message = "Enter the teleport quickly before it closes 10 seconds!",
+				cfg = {{
+					time = 10, -- Tiempo de teleport (Segundos)
+					to = {x = 1117, y = 719, z = 9}, -- Donde te envia el teleport
+					tp = {x = 1093, y = 690, z = 9} -- Donde se crea el teleport
+				},}
+			},
+
+			["Queen Lamia"] = {
+				message = "Enter the teleport quickly before it closes 10 seconds!",
+				cfg = {{
+					time = 10, -- Tiempo de teleport (Segundos)
+					to = {x = 1089, y = 737, z = 9}, -- Donde te envia el teleport
+					tp = {x = 1117, y = 703, z = 9} -- Donde se crea el teleport
+				},}
+			},
+
+			["Blizzard"] = {
+				message = "Enter the teleport quickly before it closes 10 seconds!",
+				cfg = {{
+					time = 10, -- Tiempo de teleport (Segundos)
+					to = {x = 1079, y = 720, z = 9}, -- Donde te envia el teleport
+					tp = {x = 1090, y = 718, z = 9} -- Donde se crea el teleport
+				},}
+			},
+
+			["Thundershock"] = {
+				message = "Enter the teleport quickly before it closes 10 seconds!",
+				cfg = {{
+					time = 10, -- Tiempo de teleport (Segundos)
+					to = {x = 1052, y = 745, z = 9}, -- Donde te envia el teleport
+					tp = {x = 1070, y = 727, z = 9} -- Donde se crea el teleport
+				},}
+			},
+
+			["Atlas"] = {
+				message = "Enter the teleport quickly before it closes 10 seconds!",
+				cfg = {{
+					time = 10, -- Tiempo de teleport (Segundos)
+					to = {x = 1162, y = 719, z = 9}, -- Donde te envia el teleport
+					tp = {x = 1054, y = 723, z = 9} -- Donde se crea el teleport
+				},}
+			},
+
+			["Astaroth"] = {
+				message = "Enter the teleport quickly before it closes 10 seconds!",
+				cfg = {{
+					time = 10, -- Tiempo de teleport (Segundos)
+					to = {x = 1099, y = 656, z = 8}, -- Donde te envia el teleport
+					tp = {x = 1169, y = 709, z = 9} -- Donde se crea el teleport
+				},}
+			}
+		}
+
+		function onKill(cid, target, damage, flags)
+			if isPlayer(target) then
+				return true
+			end
+
+			local monster = m[getCreatureName(target)]
+			if monster then
+				for i = 1, #monster.cfg do
+				local c = monster.cfg[i]
+				local function deleteTeleport()
+				local teleport = getTileItemById(c.tp, 1387).uid
+
+				if(teleport > 0) then
+					doRemoveItem(teleport)
+					doSendMagicEffect(c.tp, CONST_ME_POFF)
+				end
+
+				return true
+			end
+				doCreateTeleport(1387, c.to, c.tp)
+				doSendMagicEffect(c.tp, CONST_ME_ENERGYAREA)
+				addEvent(deleteTeleport, c.time * 1000)
+			end
+				doCreatureSay(cid, monster.message, TALKTYPE_ORANGE_1)
+			end
+
+			return true
+		end
+	]]></event>
+
+	<event type="login" name="monster-portal-arena-login" event="buffer"><![CDATA[
+		registerCreatureEvent(cid, "monster-portal-arena-event")
+		_result = true
+	]]></event>
+
+	<!-- Extra Exp Rate // ExpPotion -->
+	<event type="login" name="exp-rate-event" event="script"><![CDATA[
+		local config = {
+			rate = 1.8, -- 4x More Experience
+			storage = 90010
+		}
+
+		local function endExpRate(cid)
+			if isPlayer(cid) == true then
+				doPlayerSetRate(cid, SKILL__LEVEL, 1) -- config.lua rate
+				setPlayerStorageValue(cid, config.storage, -1)
+				doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_RED, "Your extra experience time has ended.")
+			end
+		end
+
+		function onLogin(cid)
+			local str = getPlayerStorageValue(cid, config.storage)
+			if(str >= 0 and (str - os.time()) > 0) then
+				doPlayerSetRate(cid, SKILL__LEVEL, config.rate)
+				doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_BLUE, "Your extra exp rate will expire at: " .. os.date("%X", str))
+				addEvent(endExpRate, (str - os.time()) * 1000, cid)
+			else
+				doPlayerSetRate(cid, SKILL__LEVEL, 1) -- config.lua rate
+				doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_RED, "You do not have any extra experience time.")
+				setPlayerStorageValue(cid, config.storage, -1)
+			end
+
+			return true
+		end
+	]]></event>
+
+	<!-- Demon Oak -->
+	<event type="logout" name="demon-oak-logout-event" event="script"><![CDATA[
+		function onLogout(cid)
+			if getCreatureStorage(cid, 36901) > 0 and getCreatureStorage(cid, 35700) < 1 then
+				doCreatureSetStorage(cid, 36901, 0)
+			end
+
+			return true
+		end
+	]]></event>
+
+	<event type="login" name="demon-oak-logout-login" event="buffer"><![CDATA[
+		registerCreatureEvent(cid, "demon-oak-logout-event")
+		_result = true
+	]]></event>
+
+	<event type="death" name="demon-oak-death-event" event="script"><![CDATA[
+		function onDeath(cid, corpse)
+			if getCreatureStorage(cid, 36901) > 0 and getCreatureStorage(cid, 35700) < 1 then
+				doCreatureSetStorage(cid, 36901, 0)
+			end
+
+			return true
+		end
+	]]></event>
+
+	<event type="login" name="demon-oak-death-login" event="buffer"><![CDATA[
+		registerCreatureEvent(cid, "demon-oak-death-event")
+		_result = true
+	]]></event>
+
+	<event type="attack" name="demon-oak-attack-event" event="buffer"><![CDATA[
+		local areaPosition = {
+			{x=568, y=624, z=7, stackpos = 255},
+			{x=589, y=640, z=7, stackpos = 255}
+		}
+
+		function onAttack(cid, target)
+			if not isPlayer(cid) or not isMonster(target) then return true end
+			if not isInRange(getCreaturePosition(cid), areaPosition[1], areaPosition[2]) and isInRange(getCreaturePosition(target), areaPosition[1], areaPosition[2]) then
+				return false
+			end
+
+			return true
+		end
+	]]></event>
+
+	<event type="login" name="demon-oak-attack-login" event="buffer"><![CDATA[
+		registerCreatureEvent(cid, "demon-oak-attack-event")
+		_result = true
+	]]></event>
+</mod>

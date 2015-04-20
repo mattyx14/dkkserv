@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Santa Claus" nameDescription="Santa Claus, the grandfather of Christmas" walkinterval="2000" floorchange="0" skull="green">
+	<health now="100" max="100"/>
+	<look type="153" head="0" body="94" legs="94" feet="95" addons="3"/>
+	<voices>
+		<voice text="Merry christmas!" interval2="50"/>
+		<voice text="Ho, ho, ho!" interval2="50"/>
+		<voice text="Jingle bells, jingle bells" interval2="50"/>
+	</voices>
+	<interaction range="3" idletime="0" defaultpublic="0">
+		<interact event="onPlayerLeave" focus="0">
+			<response text="Merry christmas!"/>
+		</interact>
+
+		<interact keywords="hi" focus="1">
+			<keywords>hello</keywords>
+			<response text="Ho, ho, ho. Hello there, |NAME|!"/>
+		</interact>
+
+		<interact keywords="bye" focus="0">
+			<keywords>farewell</keywords>
+			<response text="Merry christmas, |NAME|."/>
+		</interact>
+
+		<interact keywords="present">
+			<keywords>gift</keywords>
+			<response>
+				<action name="script">
+				<![CDATA[
+					if(getPlayerVocation(cid) == 0 and getPlayerLevel(cid) < 10) then
+						selfSay("Sorry, you are yet too young to obtain a present.", cid)
+					elseif(getPlayerStorageValue(cid, 8003) <= 0) then
+						selfSay("You have been adorable this year, {right}?", cid)
+						_state.topic = 1
+					else
+						selfSay("What? How rude! Next please...", cid)
+						selfSay("What? How rude! Next please...")
+						_state.isidle = true
+					end
+				]]>
+				</action>
+			</response>
+		</interact>
+
+		<interact keywords="right" topic="1">
+			<response>
+				<action name="script">
+				<![CDATA[
+					local presents, present = {
+						{50, 6531, 1}, -- 5% to get Santa Hat [10]
+						{50, 6512, 1}, -- 5% to get Santa Doll [30]
+						{60, 11249, 1}, --  6% to get Teddy Bear [40]
+						{160, 11115, 1}, -- 16% to get heart backpack [30]
+						{170, 2160, 10}, -- 17% to get 10 Crystal Coins [100]
+						{190, 2152, 100} -- 19% to get 100 Platinum Coins [150]
+					}, doCreateItemEx(11257, 1)
+
+					local random = math.random(1, 1000)
+					for i = 1, table.maxn(presents) do
+						local tmp = presents[i]
+						if(random <= tmp[1]) then
+							doAddContainerItem(present, tmp[2], tmp[3])
+							break
+						end
+					end
+
+					doAddContainerItem(present, 6574, 1)
+					doAddContainerItem(present, 6571, 1)
+					doAddContainerItem(present, 6570, 1)
+
+					if(getCreatureStorage(cid, 8003) > 0) then
+						selfSay("Sorry, you have already received a present! Next please...", cid)
+						selfSay("Sorry, you have already received a present! Next please...")
+
+						doRemoveItem(present, 1)
+						_state.isidle = true
+					elseif(doPlayerAddItemEx(cid, present, false) == RETURNVALUE_NOERROR) then
+						selfSay("Then here you are, my young friend. Remember about your family, they're all you've got!", cid)
+						doCreatureSetStorage(cid, 8003, 1)
+						_state.topic = 0
+					else
+						selfSay("Uhm, sorry, I didn't hear you... Could you repeat, please?", cid)
+					end
+				]]>
+				</action>
+			</response>
+		</interact>
+
+		<interact keywords="|*|" topic="1">
+			<response>
+				<action name="script">
+				<![CDATA[
+					selfSay("I give presents only to adorable kids, sorry!", cid)
+					_state.topic = 0
+				]]>
+				</action>
+			</response>
+		</interact>
+	</interaction>
+</npc>

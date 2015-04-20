@@ -1,27 +1,19 @@
-local colors = {
-	["advance"] = MESSAGE_EVENT_ADVANCE,
-	["event"] = MESSAGE_EVENT_DEFAULT,
-	["orange"] = MESSAGE_STATUS_CONSOLE_ORANGE,
-	["info"] = MESSAGE_INFO_DESCR,
-	["small"] = MESSAGE_STATUS_SMALL,
-	["blue"] = MESSAGE_STATUS_CONSOLE_BLUE,
-	["red"] = MESSAGE_STATUS_CONSOLE_RED,
-	["warning"] = MESSAGE_STATUS_WARNING,
-	["status"] = MESSAGE_STATUS_DEFAULT
-}
-
-function onSay(cid, words, param)
-	if(param == "") then
+function onSay(cid, words, param, channel)
+	if(param == '') then
 		doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_BLUE, "Command param required.")
-		return TRUE
+		return true
 	end
 
-	local t = string.explode(param, ",")
-	if(not t[2]) then
-		doBroadcastMessage(t[1])
-	elseif(doBroadcastMessage(t[2], colors[t[1]]) == LUA_ERROR) then
-		doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_BLUE, "Bad message color type.")
-		return TRUE
+	local t = string.explode(param, " ", 1)
+	if(MESSAGE_TYPES[t[1]] == nil) then
+		t = t[1] .. " " .. t[2]
 	end
-	return TRUE
+
+	if(type(t) == 'table') then
+		doBroadcastMessage(t[2], MESSAGE_TYPES[t[1]])
+	else
+		doBroadcastMessage(t)
+	end
+
+	return true
 end

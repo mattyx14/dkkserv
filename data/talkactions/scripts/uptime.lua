@@ -1,4 +1,4 @@
-function onSay(cid, words, param)
+function onSay(cid, words, param, channel)
 	local tmp = getWorldUpTime()
 	local hours = math.ceil(tmp / 3600) - 1
 	local minutes = math.ceil((tmp - (3600 * hours)) / 60)
@@ -8,5 +8,5 @@ function onSay(cid, words, param)
 	end
 
 	doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_BLUE, "Uptime: " .. hours .. " hours and " .. minutes .. " minutes.")
-	return TRUE
+	return true
 end
