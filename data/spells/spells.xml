@@ -84,12 +84,6 @@
 	<conjure name="Conjure Arrow" words="exevo con" lvl="13" mana="100" soul="1" conjureId="2544" conjureCount="10" exhaustion="1800" groups="1,1800" needlearn="0" event="function" value="conjureItem">
 		<vocation id="11;12;13;14;15"/>
 	</conjure>
-	<!--
-	<conjure name="Food" words="exevo pan" lvl="14" mana="120" soul="1" exhaustion="1800" groups="1,1800"  needlearn="0" event="function" value="conjureFood">
-		<vocation id="6;7;8;9;10"/>
-		<vocation id="11;12;13;14;15"/>
-	</conjure>
-	-->
 	<conjure name="Conjure Bolt" words="exevo con mort" lvl="17" mana="140" soul="1" prem="1" conjureId="2543" conjureCount="5" exhaustion="1800" groups="1,1800" needlearn="0" event="function" value="conjureItem">
 		<vocation id="11;12;13;14;15"/>
 	</conjure>
@@ -284,6 +278,10 @@
 	</instant>
 	<instant name="Gran Wound Cleansing" words="exana gran mort" lvl="120" manapercent="10" prem="1" selftarget="1" aggressive="0" exhaustion="1500" needlearn="0" event="script" value="healing/gran wound cleasing.lua">
 		<vocation id="19;20"/>
+	</instant>
+	<instant name="Food" words="exevo pan" lvl="14" mana="120" soul="1" aggressive="0" selftarget="1" exhaustion="2000" groups="3,2000" icon="42" needlearn="0" event="script" value="support/conjure food.lua">
+		<vocation id="6;7;8;9;10"/>
+		<vocation id="11;12;13;14;15"/>
 	</instant>
 
 	<!-- Support Spells -->
