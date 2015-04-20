@@ -1,96 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <spells>
 	<instant name="Train Party" words="utito mas sio" lvl="32" mana="60" prem="1" aggressive="0" selftarget="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="party/train.lua">
-		<vocation name="Knight" />
-		<vocation name="Elite Knight" />
-		<vocation name="WSKnight" />
-		<vocation name="WSElite Knight" />
-		<vocation name="Epic Knight" />
-		<vocation name="Lord Knight" />
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" />
-		<vocation name="WSPaladin" />
-		<vocation name="WSRoyal paladin" />
-		<vocation name="Epic Paladin" />
-		<vocation name="Sniper" />
+		<vocation id="14;15"/>
+		<vocation id="19;20"/>
 	</instant>
 	<instant name="Protect Party" words="utamo mas sio" lvl="32" mana="90" prem="1" aggressive="0" selftarget="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="party/protect.lua">
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" />
-		<vocation name="WSPaladin" />
-		<vocation name="WSRoyal paladin" />
-		<vocation name="Epic Paladin" />
-		<vocation name="Sniper" />
+		<vocation id="14;15"/>
 	</instant>
 	<instant name="Heal Party" words="utura mas sio" lvl="32" mana="120" prem="1" aggressive="0" selftarget="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="party/heal.lua">
-		<vocation name="Druid" />
-		<vocation name="Elder Druid" />
-		<vocation name="WSDruid" />
-		<vocation name="WSElder Druid" />
-		<vocation name="Epic Druid" />
-		<vocation name="Ancient Druid" />
+		<vocation id="9;10"/>
 	</instant>
 	<instant name="Enchant Party" words="utori mas sio" lvl="32" mana="120" prem="1" aggressive="0" selftarget="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="party/enchant.lua">
-		<vocation name="Sorcerer" />
-		<vocation name="Master Sorcerer" />
-		<vocation name="WSorcerer" />
-		<vocation name="WSMaster Sorcerer" />
-		<vocation name="Epic Sorcerer" />
-		<vocation name="Wizard" />
+		<vocation id="4;5"/>
 	</instant>
 	<instant name="Charge" words="utani tempo hur" lvl="100" mana="400" prem="1" aggressive="0" selftarget="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="support/charge.lua">
-		<vocation name="Knight" />
-		<vocation name="Elite Knight" />
-		<vocation name="WSKnight" />
-		<vocation name="WSElite Knight" />
-		<vocation name="Epic Knight" />
-		<vocation name="Lord Knight" />
+		<vocation id="19;20"/>
 	</instant>
 	<instant name="Swift Foot" words="utamo tempo san" lvl="100" mana="400" prem="1" aggressive="0" selftarget="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="support/swift foot.lua">
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" />
-		<vocation name="WSPaladin" />
-		<vocation name="WSRoyal paladin" />
-		<vocation name="Epic Paladin" />
-		<vocation name="Sniper" />
+		<vocation id="14;15"/>
 	</instant>
 	<instant name="Sharpshooter" words="utito tempo san" lvl="100" mana="450" prem="1" aggressive="0" selftarget="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="support/sharpshooter.lua">
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" />
-		<vocation name="WSPaladin" />
-		<vocation name="WSRoyal paladin" />
-		<vocation name="Epic Paladin" />
-		<vocation name="Sniper" />
+		<vocation id="14;15"/>
 	</instant>
 	<instant name="Protector" words="utamo tempo" lvl="100" mana="200" prem="1" aggressive="0" selftarget="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="support/protector.lua">
-		<vocation name="Knight" />
-		<vocation name="Elite Knight" />
-		<vocation name="WSKnight" />
-		<vocation name="WSElite Knight" />
-		<vocation name="Epic Knight" />
-		<vocation name="Lord Knight" />
+		<vocation id="19;20"/>
 	</instant>
 	<instant name="Blood Rage" words="utito tempo" lvl="100" mana="290" prem="1" aggressive="0" selftarget="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="support/blood rage.lua">
-		<vocation name="Knight" />
-		<vocation name="Elite Knight" />
-		<vocation name="WSKnight" />
-		<vocation name="WSElite Knight" />
-		<vocation name="Epic Knight" />
-		<vocation name="Lord Knight" />
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" />
-		<vocation name="WSPaladin" />
-		<vocation name="WSRoyal paladin" />
-		<vocation name="Epic Paladin" />
-		<vocation name="Sniper" />
+		<vocation id="14;15"/>
+		<vocation id="19;20"/>
 	</instant>
 	<conjure name="Wild Growth" words="adevo grav vita" lvl="100" mana="600" soul="5" prem="1" reagentId="2260" conjureId="2269" conjureCount="2" needlearn="0" event="function" value="conjureRune">
-		<vocation name="Druid" />
-		<vocation name="Elder Druid" />
-		<vocation name="WSDruid" />
-		<vocation name="WSElder Druid" />
-		<vocation name="Epic Druid" />
-		<vocation name="Ancient Druid" />
+		<vocation id="6;7;8;9;10"/>
 	</conjure>
 
 	<!-- Attack Runes -->
@@ -109,206 +49,75 @@
 	<instant name="Light Healing" words="exura" lvl="9" mana="25" aggressive="0" selftarget="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="healing/light healing.lua"/>
 	<instant name="Antidote" words="exana pox" lvl="10" mana="30" aggressive="0" selftarget="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="healing/antidote.lua"/>
 	<instant name="Intense Healing" words="exura gran" lvl="11" mana="70" aggressive="0" selftarget="1" exhaustion="1500" needlearn="0" event="script" value="healing/intense healing.lua">
-		<vocation name="Sorcerer" />
-		<vocation name="Master Sorcerer" />
-		<vocation name="WSorcerer" />
-		<vocation name="WSMaster Sorcerer" />
-		<vocation name="Epic Sorcerer" />
-		<vocation name="Wizard" />
-		<vocation name="Druid" />
-		<vocation name="Elder Druid" />
-		<vocation name="WSDruid" />
-		<vocation name="WSElder Druid" />
-		<vocation name="Epic Druid" />
-		<vocation name="Ancient Druid" />
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" />
-		<vocation name="WSPaladin" />
-		<vocation name="WSRoyal paladin" />
-		<vocation name="Epic Paladin" />
-		<vocation name="Sniper" />
+		<vocation id="1;2;3;4;5"/>
+		<vocation id="6;7;8;9;10"/>
+		<vocation id="11;12;13;14;15"/>
 	</instant>
 	<instant name="Heal Friend" words="exura sio" lvl="18" mana="140" prem="1" aggressive="0" needtarget="1" params="1" exhaustion="1500" needlearn="0" event="script" value="healing/heal friend.lua">
-		<vocation name="Druid" />
-		<vocation name="Elder Druid" />
-		<vocation name="WSDruid" />
-		<vocation name="WSElder Druid" />
-		<vocation name="Epic Druid" />
-		<vocation name="Ancient Druid" />
-		<vocation name="WSRoyal paladin" />
+		<vocation id="6;7;8;9;10"/>
+		<vocation id="14;15"/>
 	</instant>
 	<instant name="Ultimate Healing" words="exura vita" lvl="250" maglv="30" mana="400" aggressive="0" selftarget="1" exhaustion="1500" needlearn="0" event="script" value="healing/ultimate healing.lua">
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" />
-		<vocation name="WSPaladin" />
-		<vocation name="WSRoyal paladin" />
-		<vocation name="Epic Paladin" />
-		<vocation name="Sniper" />
+		<vocation id="6;7;8;9;10"/>
+		<vocation id="14;15"/>
 	</instant>
 	<instant name="Ultimate Healing Mort" words="exura vita +" lvl="150" maglv="60" mana="300" aggressive="0" selftarget="1" exhaustion="1500" needlearn="0" event="script" value="healing/ultimate healing_mas.lua">
-		<vocation name="Sorcerer" />
-		<vocation name="Master Sorcerer" />
-		<vocation name="WSorcerer" />
-		<vocation name="WSMaster Sorcerer" />
-		<vocation name="Epic Sorcerer" />
-		<vocation name="Wizard" />
-		<vocation name="Druid" />
-		<vocation name="Elder Druid" />
-		<vocation name="WSDruid" />
-		<vocation name="WSElder Druid" />
-		<vocation name="Epic Druid" />
-		<vocation name="Ancient Druid" />
+		<vocation id="4;5"/>
+		<vocation id="9;10"/>
 	</instant>
 	<instant name="Mass Healing" words="exura gran mas res" lvl="36" mana="150" prem="1" aggressive="0" exhaustion="1500" needlearn="0" event="script" value="healing/mass healing.lua">
-		<vocation name="Druid" />
-		<vocation name="Elder Druid" />
-		<vocation name="WSDruid" />
-		<vocation name="WSElder Druid" />
-		<vocation name="Epic Druid" />
-		<vocation name="Ancient Druid" />
+		<vocation id="6;7;8;9;10"/>
 	</instant>
 	<instant name="Divine Healing" words="exura san" lvl="35" mana="200" prem="1" selftarget="1" aggressive="0" exhaustion="1500" needlearn="0" event="script" value="healing/divine healing.lua">
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" />
-		<vocation name="WSPaladin" />
-		<vocation name="WSRoyal paladin" />
-		<vocation name="Epic Paladin" />
-		<vocation name="Sniper" />
+		<vocation id="12;13;14;15"/>
 	</instant>
 	<instant name="Wound Cleansing" words="exana mort" lvl="30" mana="65" prem="1" selftarget="1" aggressive="0" exhaustion="1500" needlearn="0" event="script" value="healing/wound cleasing.lua">
-		<vocation name="Knight" />
-		<vocation name="Elite Knight" />
-		<vocation name="WSKnight" />
-		<vocation name="WSElite Knight" />
-		<vocation name="Epic Knight" />
-		<vocation name="Lord Knight" />
+		<vocation id="17;18;19;20"/>
 	</instant>
 	<instant name="Gran Wound Cleansing" words="exana gran mort" lvl="120" manapercent="10" prem="1" selftarget="1" aggressive="0" exhaustion="1500" needlearn="0" event="script" value="healing/gran wound cleasing.lua">
-		<vocation name="Knight" />
-		<vocation name="Elite Knight" />
-		<vocation name="WSKnight" />
-		<vocation name="WSElite Knight" />
-		<vocation name="Epic Knight" />
-		<vocation name="Lord Knight" />
+		<vocation id="19;20"/>
 	</instant>
 
 	<!-- Attack Spells -->
 	<instant name="Death Strike" words="exori mort" lvl="10" mana="20" prem="1" range="5" casterTargetOrDirection="1" blockwalls="1" exhaustion="1200" needlearn="0" event="script" value="attack/death strike.lua">
-		<vocation name="Sorcerer" />
-		<vocation name="Master Sorcerer" />
-		<vocation name="WSorcerer" />
-		<vocation name="WSMaster Sorcerer" />
-		<vocation name="Epic Sorcerer" />
-		<vocation name="Wizard" />
-		<vocation name="Druid" />
-		<vocation name="Elder Druid" />
-		<vocation name="WSDruid" />
-		<vocation name="WSElder Druid" />
-		<vocation name="Epic Druid" />
-		<vocation name="Ancient Druid" />
+		<vocation id="1;2;3;4;5"/>
+		<vocation id="6;7;8;9;10"/>
 	</instant>
 	<instant name="Death Strike" words="exori mort mas" lvl="200" mana="120" prem="1" range="5" casterTargetOrDirection="1" blockwalls="1" exhaustion="1200" needlearn="0" event="script" value="attack/death strike_mas.lua">
-		<vocation name="Sorcerer" />
-		<vocation name="Master Sorcerer" />
-		<vocation name="WSorcerer" />
-		<vocation name="WSMaster Sorcerer" />
-		<vocation name="Epic Sorcerer" />
-		<vocation name="Wizard" />
-		<vocation name="Druid" />
-		<vocation name="Elder Druid" />
-		<vocation name="WSDruid" />
-		<vocation name="WSElder Druid" />
-		<vocation name="Epic Druid" />
-		<vocation name="Ancient Druid" />
+		<vocation id="4;5"/>
+		<vocation id="9;10"/>
 	</instant>
 	<instant name="Energy Strike" words="exori vis" lvl="10" mana="20" prem="1" range="5" casterTargetOrDirection="1" blockwalls="1" exhaustion="1200" needlearn="0" event="script" value="attack/energy strike.lua">
-		<vocation name="Sorcerer" />
-		<vocation name="Master Sorcerer" />
-		<vocation name="WSorcerer" />
-		<vocation name="WSMaster Sorcerer" />
-		<vocation name="Epic Sorcerer" />
-		<vocation name="Wizard" />
-		<vocation name="Druid" />
-		<vocation name="Elder Druid" />
-		<vocation name="WSDruid" />
-		<vocation name="WSElder Druid" />
-		<vocation name="Epic Druid" />
-		<vocation name="Ancient Druid" />
+		<vocation id="1;2;3;4;5"/>
+		<vocation id="6;7;8;9;10"/>
 	</instant>
 	<instant name="Fire Wave" words="exevo flam hur" lvl="18" mana="25" direction="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="attack/fire wave.lua">
-		<vocation name="Sorcerer" />
-		<vocation name="Master Sorcerer" />
-		<vocation name="WSorcerer" />
-		<vocation name="WSMaster Sorcerer" />
-		<vocation name="Epic Sorcerer" />
-		<vocation name="Wizard" />
+		<vocation id="1;2;3;4;5"/>
 	</instant>
 	<instant name="Energy Beam" words="exevo vis lux" lvl="23" mana="40" direction="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="attack/energy beam.lua">
-		<vocation name="Sorcerer" />
-		<vocation name="Master Sorcerer" />
-		<vocation name="WSorcerer" />
-		<vocation name="WSMaster Sorcerer" />
-		<vocation name="Epic Sorcerer" />
-		<vocation name="Wizard" />
+		<vocation id="1;2;3;4;5"/>
 	</instant>
 	<instant name="Great Energy Beam" words="exevo gran vis lux" lvl="29" mana="110" direction="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="attack/great energy beam.lua">
-		<vocation name="Sorcerer" />
-		<vocation name="Master Sorcerer" />
-		<vocation name="WSorcerer" />
-		<vocation name="WSMaster Sorcerer" />
-		<vocation name="Epic Sorcerer" />
-		<vocation name="Wizard" />
+		<vocation id="1;2;3;4;5"/>
 	</instant>
 	<instant name="Energy Wave" words="exevo vis hur" lvl="38" mana="170" direction="1" exhaustion="1800" groups="1,1800"  needlearn="0" event="script" value="attack/energy wave.lua">
-		<vocation name="Sorcerer" />
-		<vocation name="Master Sorcerer" />
-		<vocation name="WSorcerer" />
-		<vocation name="WSMaster Sorcerer" />
-		<vocation name="Epic Sorcerer" />
-		<vocation name="Wizard" />
+		<vocation id="1;2;3;4;5"/>
 	</instant>	
 	<instant name="Ice Strike" words="exori frigo" lvl="10" mana="20" prem="1" range="5" casterTargetOrDirection="1" blockwalls="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="attack/ice strike.lua">
-		<vocation name="Sorcerer" />
-		<vocation name="Master Sorcerer" />
-		<vocation name="WSorcerer" />
-		<vocation name="WSMaster Sorcerer" />
-		<vocation name="Epic Sorcerer" />
-		<vocation name="Wizard" />
-		<vocation name="Druid" />
-		<vocation name="Elder Druid" />
-		<vocation name="WSDruid" />
-		<vocation name="WSElder Druid" />
-		<vocation name="Epic Druid" />
-		<vocation name="Ancient Druid" />
+		<vocation id="6;7;8;9;10"/>
 	</instant>	
 	<instant name="Ice Wave" words="exevo frigo hur" lvl="18" mana="25" direction="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="attack/ice wave.lua">
-		<vocation name="Druid" />
-		<vocation name="Elder Druid" />
-		<vocation name="WSDruid" />
-		<vocation name="WSElder Druid" />
-		<vocation name="Epic Druid" />
-		<vocation name="Ancient Druid" />
+		<vocation id="6;7;8;9;10"/>
 	</instant>
 	<instant name="Terra Wave" words="exevo tera hur" lvl="38" mana="210" direction="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="attack/terra wave.lua">
-		<vocation name="Druid" />
-		<vocation name="Elder Druid" />
-		<vocation name="WSDruid" />
-		<vocation name="WSElder Druid" />
-		<vocation name="Epic Druid" />
-		<vocation name="Ancient Druid" />
+		<vocation id="6;7;8;9;10"/>
 	</instant>
 
 	<!-- Support Runes -->
 	<rune name="Destroy Field" id="2261" allowfaruse="1" charges="3" lvl="17" maglv="3" exhaustion="1800" groups="1,1800" aggressive="0" range="5" event="script" value="support/destroy field rune.lua"/>
 	<rune name="Magic Wall" id="2293" allowfaruse="1" charges="3" lvl="32" maglv="9" exhaustion="1800" groups="1,1800" aggressive="0" blocktype="all" event="script" value="support/magic wall rune.lua"/>
 	<rune name="Paralyze" id="2278" allowfaruse="1" charges="1" lvl="54" maglv="18" exhaustion="1800" groups="1,1800" mana="1400" needtarget="1" blocktype="solid" event="script" value="support/paralyze rune.lua">
-		<vocation name="Druid" />
-		<vocation name="Elder Druid" />
-		<vocation name="WSDruid" />
-		<vocation name="WSElder Druid" />
-		<vocation name="Epic Druid" />
-		<vocation name="Ancient Druid" />
-		<vocation name="Sniper" />
+		<vocation id="7;8;9;10"/>
 	</rune>
 
 	<!-- Custom Runes -->
@@ -316,7 +125,6 @@
 	<rune name="Energy Arrow" id="2281" charges="1" maglv="20" exhaustion="1800" groups="1,1800" blocktype="solid" allowfaruse="1" event="script" value="attack/energy wave.lua"/>
 	<rune name="Magic Prison" id="2272" charges="1" maglv="0" exhaustion="1800" groups="1,1800" blocktype="solid" allowfaruse="1" event="script" value="custom/magic prison.lua"/>
 	<rune name="Stealth" id="2283" charges="1" maglv="20" exhaustion="1800" groups="1,1800" blocktype="solid" allowfaruse="1" event="script" value="support/invisible.lua"/>
-	<rune name="Drunkness" id="2267" charges="1" maglv="20" exhaustion="1800" groups="1,1800" blocktype="solid" allowfaruse="1" event="script" value="custom/drunk.lua"/>
 
 	<!-- Support Spells -->
 	<instant name="Light" words="utevo lux" lvl="8" mana="20" aggressive="0" selftarget="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="support/light.lua"/>
@@ -325,1245 +133,439 @@
 	<instant name="Levitate" words="exani hur" lvl="12" mana="50" prem="1" aggressive="0" exhaustion="1800" groups="1,1800" params="1" needlearn="0" event="function" value="Levitate"/>
 	<instant name="Great Light" words="utevo gran lux" lvl="13" mana="60" aggressive="0" selftarget="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="support/great light.lua"/>
 	<instant name="Magic Shield" words="utamo vita" lvl="14" mana="50" aggressive="0" selftarget="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="support/magic shield.lua">
-		<vocation name="Sorcerer" />
-		<vocation name="Master Sorcerer" />
-		<vocation name="WSorcerer" />
-		<vocation name="WSMaster Sorcerer" />
-		<vocation name="Epic Sorcerer" />
-		<vocation name="Wizard" />
-		<vocation name="Druid" />
-		<vocation name="Elder Druid" />
-		<vocation name="WSDruid" />
-		<vocation name="WSElder Druid" />
-		<vocation name="Epic Druid" />
-		<vocation name="Ancient Druid" />
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" />
-		<vocation name="WSPaladin" />
-		<vocation name="WSRoyal paladin" />
-		<vocation name="Epic Paladin" />
-		<vocation name="Sniper" />
+		<vocation id="1;2;3;4;5"/>
+		<vocation id="6;7;8;9;10"/>
+		<vocation id="14;15"/>
 	</instant>
 	<instant name="Haste" words="utani hur" lvl="14" mana="60" prem="1" aggressive="0" selftarget="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="support/haste.lua"/>
 	<instant name="Challenge" words="exeta res" lvl="20" mana="30" prem="1" aggressive="0" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="support/challenge.lua">
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" />
-		<vocation name="WSPaladin" />
-		<vocation name="WSRoyal paladin" />
-		<vocation name="Epic Paladin" />
-		<vocation name="Sniper" />
-		<vocation name="Knight" />
-		<vocation name="Elite Knight" />
-		<vocation name="WSKnight" />
-		<vocation name="WSElite Knight" />
-		<vocation name="Epic Knight" />
-		<vocation name="Lord Knight" />
+		<vocation id="14;15"/>
+		<vocation id="16;17;18;19;20"/>
 	</instant>
 	<instant name="Strong Haste" words="utani gran hur" lvl="20" mana="100" prem="1" aggressive="0" selftarget="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="support/strong haste.lua"/>
 	<instant name="Ultimate Light" words="utevo vis lux" lvl="26" mana="140" prem="1" aggressive="0" selftarget="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="support/ultimate light.lua"/>
 	<instant name="Cancel Invisibility" words="exana ina" lvl="26" mana="200" prem="1" aggressive="0" selftarget="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="support/cancel invisibility.lua">
-		<vocation name="Sorcerer" />
-		<vocation name="Master Sorcerer" />
-		<vocation name="WSorcerer" />
-		<vocation name="WSMaster Sorcerer" />
-		<vocation name="Epic Sorcerer" />
-		<vocation name="Wizard" />
+		<vocation id="2;3;4;5"/>
 	</instant>
 	<rune name="Wild Growth" id="2269" allowfaruse="1" charges="2" lvl="27" maglv="8" exhaustion="1800" groups="1,1800" blocktype="all" script="support/wild growth rune.lua">
-		<vocation name="Druid" />
-		<vocation name="Elder Druid" />
-		<vocation name="WSDruid" />
-		<vocation name="WSElder Druid" />
-		<vocation name="Epic Druid" />
-		<vocation name="Ancient Druid" />
+		<vocation id="7;8;9;10"/>
 	</rune>
 	<instant name="Invisibility" words="utana vid" lvl="35" mana="440" aggressive="0" selftarget="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="support/invisible.lua">
-		<vocation name="Sorcerer" />
-		<vocation name="Master Sorcerer" />
-		<vocation name="WSorcerer" />
-		<vocation name="WSMaster Sorcerer" />
-		<vocation name="Epic Sorcerer" />
-		<vocation name="Wizard" />
-		<vocation name="Druid" />
-		<vocation name="Elder Druid" />
-		<vocation name="WSDruid" />
-		<vocation name="WSElder Druid" />
-		<vocation name="Epic Druid" />
-		<vocation name="Ancient Druid" />
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" />
-		<vocation name="WSPaladin" />
-		<vocation name="WSRoyal paladin" />
-		<vocation name="Epic Paladin" />
-		<vocation name="Sniper" />
+		<vocation id="1;2;3;4;5"/>
+		<vocation id="6;7;8;9;10"/>
+		<vocation id="14;15"/>
 	</instant>
 
 	<!-- Conjure Spells -->
 	<conjure name="Conjure Arrow" words="exevo con" lvl="13" mana="100" soul="1" conjureId="2544" conjureCount="10" exhaustion="1800" groups="1,1800" needlearn="0" event="function" value="conjureItem">
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" />
-		<vocation name="WSPaladin" />
-		<vocation name="WSRoyal paladin" />
-		<vocation name="Epic Paladin" />
-		<vocation name="Sniper" />
+		<vocation id="11;12;13;14;15"/>
 	</conjure>
 	<conjure name="Food" words="exevo pan" lvl="14" mana="120" soul="1" exhaustion="1800" groups="1,1800"  needlearn="0" event="function" value="conjureFood">
-		<vocation name="Druid" />
-		<vocation name="Elder Druid" />
-		<vocation name="WSDruid" />
-		<vocation name="WSElder Druid" />
-		<vocation name="Epic Druid" />
-		<vocation name="Ancient Druid" />
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" />
-		<vocation name="WSPaladin" />
-		<vocation name="WSRoyal paladin" />
-		<vocation name="Epic Paladin" />
-		<vocation name="Sniper" />
+		<vocation id="6;7;8;9;10"/>
+		<vocation id="11;12;13;14;15"/>
 	</conjure>
 	<conjure name="Conjure Bolt" words="exevo con mort" lvl="17" mana="140" soul="1" prem="1" conjureId="2543" conjureCount="5" exhaustion="1800" groups="1,1800" needlearn="0" event="function" value="conjureItem">
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" />
-		<vocation name="WSPaladin" />
-		<vocation name="WSRoyal paladin" />
-		<vocation name="Epic Paladin" />
-		<vocation name="Sniper" />
+		<vocation id="11;12;13;14;15"/>
 	</conjure>
 	<conjure name="Conjure Sniper Arrow" words="exevo con hur" lvl="250" mana="160" soul="1" prem="1" conjureId="7364" conjureCount="25" exhaustion="1800" groups="1,1800" needlearn="0" event="function" value="conjureItem">
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" />
-		<vocation name="WSPaladin" />
-		<vocation name="WSRoyal paladin" />
-		<vocation name="Epic Paladin" />
-		<vocation name="Sniper" />
-	</conjure>
-	<conjure name="Explosive Arrow" words="exevo con flam" lvl="25" mana="290" soul="1" conjureId="2546" conjureCount="8" exhaustion="1800" groups="1,1800" needlearn="0" event="function" value="conjureItem">
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" />
-		<vocation name="WSPaladin" />
-		<vocation name="WSRoyal paladin" />
-		<vocation name="Epic Paladin" />
-		<vocation name="Sniper" />
+		<vocation id="12;13;14;15"/>
 	</conjure>
 	<conjure name="Conjure Piercing Bolt" words="exevo con grav" lvl="33" mana="180" soul="1" prem="1" conjureId="7363" conjureCount="5" exhaustion="1800" groups="1,1800" needlearn="0" event="function" value="conjureItem">
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" />
-		<vocation name="WSPaladin" />
-		<vocation name="WSRoyal paladin" />
-		<vocation name="Epic Paladin" />
-		<vocation name="Sniper" />
+		<vocation id="12;13;14;15"/>
 	</conjure>
 	<conjure name="Enchant Spear" words="exeta con" lvl="45" mana="350" soul="1" prem="1" conjureId="7367" reagentId="2389" exhaustion="1800" groups="1,1800" needlearn="0" event="function" value="conjureItem">
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" />
-		<vocation name="WSPaladin" />
-		<vocation name="WSRoyal paladin" />
-		<vocation name="Epic Paladin" />
-		<vocation name="Sniper" />
+		<vocation id="11;12;13;14;15"/>
 	</conjure>
 	<conjure name="Power Bolt" words="exevo con vis" lvl="59" mana="800" soul="1" prem="1" conjureId="2547" conjureCount="10" exhaustion="1800" groups="1,1800" needlearn="0" event="function" value="conjureItem">
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" />
-		<vocation name="WSPaladin" />
-		<vocation name="WSRoyal paladin" />
-		<vocation name="Epic Paladin" />
-		<vocation name="Sniper" />
+		<vocation id="12;13;14;15"/>
 	</conjure>
 	<conjure name="Poison Field" words="adevo grav pox" lvl="14" mana="200" soul="1" reagentId="2260" conjureId="2285" conjureCount="3" exhaustion="1800" groups="1,1800" needlearn="0" event="function" value="conjureRune">
-		<vocation name="Sorcerer" />
-		<vocation name="Master Sorcerer" />
-		<vocation name="WSorcerer" />
-		<vocation name="WSMaster Sorcerer" />
-		<vocation name="Epic Sorcerer" />
-		<vocation name="Wizard" />
-		<vocation name="Druid" />
-		<vocation name="Elder Druid" />
-		<vocation name="WSDruid" />
-		<vocation name="WSElder Druid" />
-		<vocation name="Epic Druid" />
-		<vocation name="Ancient Druid" />
+		<vocation id="1;2;3;4;5"/>
+		<vocation id="6;7;8;9;10"/>
 	</conjure>
 	<conjure name="Fireball" words="adori flam" lvl="27" mana="460" soul="1" prem="1" reagentId="2260" conjureId="2302" conjureCount="5" exhaustion="1800" groups="1,1800" needlearn="0" event="function" value="conjureRune">
-		<vocation name="Sorcerer" />
-		<vocation name="Master Sorcerer" />
-		<vocation name="WSorcerer" />
-		<vocation name="WSMaster Sorcerer" />
-		<vocation name="Epic Sorcerer" />
-		<vocation name="Wizard" />
-		<vocation name="Druid" />
-		<vocation name="Elder Druid" />
-		<vocation name="WSDruid" />
-		<vocation name="WSElder Druid" />
-		<vocation name="Epic Druid" />
-		<vocation name="Ancient Druid" />
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" />
-		<vocation name="WSPaladin" />
-		<vocation name="WSRoyal paladin" />
-		<vocation name="Epic Paladin" />
-		<vocation name="Sniper" />
+		<vocation id="1;2;3;4;5"/>
+		<vocation id="6;7;8;9;10"/>
 	</conjure>
 	<conjure name="Energy Field" words="adevo grav vis" lvl="18" mana="320" soul="1" reagentId="2260" conjureId="2277" conjureCount="3" exhaustion="1800" groups="1,1800" needlearn="0" event="function" value="conjureRune">
-		<vocation name="Sorcerer" />
-		<vocation name="Master Sorcerer" />
-		<vocation name="WSorcerer" />
-		<vocation name="WSMaster Sorcerer" />
-		<vocation name="Epic Sorcerer" />
-		<vocation name="Wizard" />
-		<vocation name="Druid" />
-		<vocation name="Elder Druid" />
-		<vocation name="WSDruid" />
-		<vocation name="WSElder Druid" />
-		<vocation name="Epic Druid" />
-		<vocation name="Ancient Druid" />
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" />
-		<vocation name="WSPaladin" />
-		<vocation name="WSRoyal paladin" />
-		<vocation name="Epic Paladin" />
-		<vocation name="Sniper" />
+		<vocation id="1;2;3;4;5"/>
+		<vocation id="6;7;8;9;10"/>
+		<vocation id="11;12;13;14;15"/>
 	</conjure>
 	<conjure name="Poison Bomb" words="adevo mas pox" lvl="25" mana="520" soul="1" prem="1" reagentId="2260" conjureId="2286" conjureCount="2" exhaustion="1800" groups="1,1800" needlearn="0" event="function" value="conjureRune">
-		<vocation name="Druid" />
-		<vocation name="Elder Druid" />
-		<vocation name="WSDruid" />
-		<vocation name="WSElder Druid" />
-		<vocation name="Epic Druid" />
-		<vocation name="Ancient Druid" />
+		<vocation id="2;3;4;5"/>
+		<vocation id="7;8;9;10"/>
 	</conjure>
 	<conjure name="Firebomb" words="adevo mas flam" lvl="27" mana="600" soul="1" reagentId="2260" conjureId="2305" conjureCount="2" exhaustion="1800" groups="1,1800" needlearn="0" event="function" value="conjureRune">
-		<vocation name="Sorcerer" />
-		<vocation name="Master Sorcerer" />
-		<vocation name="WSorcerer" />
-		<vocation name="WSMaster Sorcerer" />
-		<vocation name="Epic Sorcerer" />
-		<vocation name="Wizard" />
-		<vocation name="Druid" />
-		<vocation name="Elder Druid" />
-		<vocation name="WSDruid" />
-		<vocation name="WSElder Druid" />
-		<vocation name="Epic Druid" />
-		<vocation name="Ancient Druid" />
-	</conjure>
-	<conjure name="Soulfire" words="adevo res flam" lvl="27" mana="600" soul="1" prem="1" reagentId="2260" conjureId="2308" conjureCount="3" exhaustion="1800" groups="1,1800" needlearn="0" event="function" value="conjureRune">
-		<vocation name="Sorcerer" />
-		<vocation name="Master Sorcerer" />
-		<vocation name="WSorcerer" />
-		<vocation name="WSMaster Sorcerer" />
-		<vocation name="Epic Sorcerer" />
-		<vocation name="Wizard" />
-		<vocation name="Druid" />
-		<vocation name="Elder Druid" />
-		<vocation name="WSDruid" />
-		<vocation name="WSElder Druid" />
-		<vocation name="Epic Druid" />
-		<vocation name="Ancient Druid" />
+		<vocation id="2;3;4;5"/>
+		<vocation id="7;8;9;10"/>
 	</conjure>
 	<conjure name="Energybomb" words="adevo mas vis" lvl="37" mana="880" soul="1" prem="1" reagentId="2260" conjureId="2262" conjureCount="2" exhaustion="1800" groups="1,1800" needlearn="0" event="function" value="conjureRune">
-		<vocation name="Sorcerer" />
-		<vocation name="Master Sorcerer" />
-		<vocation name="WSorcerer" />
-		<vocation name="WSMaster Sorcerer" />
-		<vocation name="Epic Sorcerer" />
-		<vocation name="Wizard" />
+		<vocation id="2;3;4;5"/>
 	</conjure>
 	<conjure name="Energy Wall" words="adevo mas grav vis" lvl="41" mana="1000" soul="1" reagentId="2260" conjureId="2279" conjureCount="4" exhaustion="1800" groups="1,1800" needlearn="0" event="function" value="conjureRune">
-		<vocation name="Sorcerer" />
-		<vocation name="Master Sorcerer" />
-		<vocation name="WSorcerer" />
-		<vocation name="WSMaster Sorcerer" />
-		<vocation name="Epic Sorcerer" />
-		<vocation name="Wizard" />
-		<vocation name="Elder Druid" />
-		<vocation name="Epic Druid" />
-		<vocation name="Ancient Druid" />
+		<vocation id="2;3;4;5"/>
 	</conjure>
 	<conjure name="Intense Healing Rune" words="adura gran" lvl="15" mana="240" soul="0" reagentId="2260" conjureId="2265" conjureCount="1" exhaustion="1800" groups="1,1800" needlearn="0" event="function" value="conjureRune">
-		<vocation name="Druid" />
-		<vocation name="Elder Druid" />
-		<vocation name="WSDruid" />
-		<vocation name="WSElder Druid" />
-		<vocation name="Epic Druid" />
-		<vocation name="Ancient Druid" />
+		<vocation id="6;7;8;9;10"/>
 	</conjure>
 	<conjure name="Ultimate Healing Rune" words="adura vita" lvl="24" mana="400" soul="1" reagentId="2260" conjureId="2273" conjureCount="1" exhaustion="1800" groups="1,1800" needlearn="0" event="function" value="conjureRune">
-		<vocation name="Druid" />
-		<vocation name="Elder Druid" />
-		<vocation name="WSDruid" />
-		<vocation name="WSElder Druid" />
-		<vocation name="Epic Druid" />
-		<vocation name="Ancient Druid" />
-	</conjure>
-	<conjure name="Convince Creature" words="adeta sio" lvl="16" mana="200" soul="1" reagentId="2260" conjureId="2290" conjureCount="1" exhaustion="1800" groups="1,1800" needlearn="0" event="function" value="conjureRune">
-		<vocation name="Druid" />
-		<vocation name="Elder Druid" />
-		<vocation name="WSDruid" />
-		<vocation name="WSElder Druid" />
-		<vocation name="Epic Druid" />
-		<vocation name="Ancient Druid" />
+		<vocation id="7;8;9;10"/>
 	</conjure>
 	<conjure name="Destroy Field" words="adito grav" lvl="17" mana="120" soul="1" reagentId="2260" conjureId="2261" conjureCount="3" exhaustion="1800" groups="1,1800" needlearn="0" event="function" value="conjureRune">
-		<vocation name="Sorcerer" />
-		<vocation name="Master Sorcerer" />
-		<vocation name="WSorcerer" />
-		<vocation name="WSMaster Sorcerer" />
-		<vocation name="Epic Sorcerer" />
-		<vocation name="Wizard" />
-		<vocation name="Druid" />
-		<vocation name="Elder Druid" />
-		<vocation name="WSDruid" />
-		<vocation name="WSElder Druid" />
-		<vocation name="Epic Druid" />
-		<vocation name="Ancient Druid" />
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" />
-		<vocation name="WSPaladin" />
-		<vocation name="WSRoyal paladin" />
-		<vocation name="Epic Paladin" />
-		<vocation name="Sniper" />
+		<vocation id="2;3;4;5"/>
+		<vocation id="7;8;9;10"/>
+		<vocation id="14;15"/>
 	</conjure>
 	<conjure name="Magic Wall" words="adevo grav tera" lvl="32" mana="750" soul="1" prem="1" reagentId="2260" conjureId="2293" conjureCount="3" exhaustion="1800" groups="1,1800" needlearn="0" event="function" value="conjureRune">
-		<vocation name="Sorcerer" />
-		<vocation name="Master Sorcerer" />
-		<vocation name="WSorcerer" />
-		<vocation name="WSMaster Sorcerer" />
-		<vocation name="Epic Sorcerer" />
-		<vocation name="Wizard" />
+		<vocation id="2;3;4;5"/>
+		<vocation id="9;10"/>
 	</conjure>
 	<conjure name="Paralyze" words="adana ani" lvl="54" mana="1400" soul="1" prem="1" reagentId="2260" conjureId="2278" conjureCount="1" exhaustion="1800" groups="1,1800" needlearn="0" event="function" value="conjureRune">
-		<vocation name="Druid" />
-		<vocation name="Elder Druid" />
-		<vocation name="WSDruid" />
-		<vocation name="WSElder Druid" />
-		<vocation name="Epic Druid" />
-		<vocation name="Ancient Druid" />
+		<vocation id="4;5"/>
+		<vocation id="7;8;9;10"/>
 	</conjure>
 
 	<!-- Attack Runes Custom -->
-	<rune name="Explosion" id="2313" mana="10" allowfaruse="1" charges="9" lvl="15" maglv="4" exhaustion="1800" groups="1,1800" blocktype="solid" event="script" value="data/runes/explo.lua"/>
-	<rune name="XExplosion" id="2312" mana="10" allowfaruse="1" charges="6" lvl="150" maglv="10" exhaustion="1800" groups="1,1800" blocktype="solid" event="script" value="data/runes/xexplo.lua"/>
-	<rune name="Tera" id="2287" allowfaruse="1" charges="9" lvl="15" maglv="4" exhaustion="1800" groups="1,1800" blocktype="solid" event="script" value="data/runes/Tera.lua"/>
-	<rune name="XTera" id="2289" allowfaruse="1" charges="6" lvl="35" maglv="6" exhaustion="1800" groups="1,1800" blocktype="solid" event="script" value="data/runes/earth.lua"/>
-	<rune name="Great Tera" id="2291" allowfaruse="1" charges="3" lvl="150" maglv="10" exhaustion="1800" groups="1,1800" blocktype="solid" event="script" value="data/runes/xearth.lua"/>
-	<rune name="XEnergy" id="2311" allowfaruse="1" charges="6" lvl="35" maglv="6" exhaustion="1800" groups="1,1800" blocktype="solid" event="script" value="data/runes/xenergy.lua"/>
-	<rune name="Great Energy" id="2310" allowfaruse="1" charges="3" lvl="150" maglv="10" exhaustion="1800" groups="1,1800" blocktype="solid" event="script" value="data/runes/xxenergy.lua"/>
-	<rune name="Great Fire" id="2304" allowfaruse="1" charges="3" lvl="150" maglv="10" exhaustion="1800" groups="1,1800" blocktype="solid" event="script" value="data/runes/xxfire.lua"/>
-	<rune name="XHoly" id="2297" allowfaruse="1" mana="15" charges="7" lvl="35" maglv="15" exhaustion="1800" groups="1,1800" blocktype="solid" event="script" value="data/runes/xdivine.lua"/>
-	<rune name="Great Holy" id="2299" allowfaruse="1" mana="15" charges="5" lvl="150" maglv="20" exhaustion="1800" groups="1,1800" blocktype="solid" event="script" value="data/runes/xxdivine.lua"/>
-	<rune name="XDeath" id="2268" allowfaruse="1" charges="3" lvl="45" maglv="12" exhaustion="1800" groups="1,1800" blocktype="solid" event="script" value="data/runes/Sudden death.lua"/>
-	<rune name="Great Death" id="2263" allowfaruse="1" charges="2" lvl="150" maglv="25" exhaustion="1800" groups="1,1800" blocktype="solid" event="script" value="data/runes/xSudden death.lua"/>
-	<rune name="XIce" id="2274" allowfaruse="1" charges="3" lvl="45" maglv="12" exhaustion="1800" groups="1,1800" blocktype="solid" event="script" value="data/runes/avalanche.lua"/>
-	<rune name="Great Ice" id="2275" allowfaruse="1" charges="2" lvl="150" maglv="25" exhaustion="1800" groups="1,1800" blocktype="solid" event="script" value="data/runes/xavalanche.lua"/>
+	<rune name="Explosion" id="2313" mana="10" allowfaruse="1" charges="9" lvl="15" maglv="4" exhaustion="1800" groups="1,1800" blocktype="solid" event="script" value="data/runes/explo.lua">
+		<vocation id="16;17;18;19;20"/>
+	</rune>
+	<rune name="XExplosion" id="2312" mana="10" allowfaruse="1" charges="6" lvl="150" maglv="10" exhaustion="1800" groups="1,1800" blocktype="solid" event="script" value="data/runes/xexplo.lua">
+		<vocation id="19;20"/>
+	</rune>
+	<rune name="Tera" id="2287" allowfaruse="1" charges="9" lvl="15" maglv="4" exhaustion="1800" groups="1,1800" blocktype="solid" event="script" value="data/runes/Tera.lua">
+		<vocation id="6;7;8;9;10"/>
+	</rune>
+	<rune name="XTera" id="2289" allowfaruse="1" charges="6" lvl="35" maglv="6" exhaustion="1800" groups="1,1800" blocktype="solid" event="script" value="data/runes/earth.lua">
+		<vocation id="7;8;9;10"/>
+	</rune>
+	<rune name="Great Tera" id="2291" allowfaruse="1" charges="3" lvl="150" maglv="10" exhaustion="1800" groups="1,1800" blocktype="solid" event="script" value="data/runes/xearth.lua">
+		<vocation id="9;10"/>
+	</rune>
+	<rune name="XEnergy" id="2311" allowfaruse="1" charges="6" lvl="35" maglv="6" exhaustion="1800" groups="1,1800" blocktype="solid" event="script" value="data/runes/xenergy.lua">
+		<vocation id="1;2;3;4;5"/>
+	</rune>
+	<rune name="Great Energy" id="2310" allowfaruse="1" charges="3" lvl="150" maglv="10" exhaustion="1800" groups="1,1800" blocktype="solid" event="script" value="data/runes/xxenergy.lua">
+		<vocation id="4;5"/>
+	</rune>
+	<rune name="Great Fire" id="2304" allowfaruse="1" charges="3" lvl="150" maglv="10" exhaustion="1800" groups="1,1800" blocktype="solid" event="script" value="data/runes/xxfire.lua">
+		<vocation id="4;5"/>
+	</rune>
+	<rune name="XHoly" id="2297" allowfaruse="1" mana="15" charges="7" lvl="35" maglv="15" exhaustion="1800" groups="1,1800" blocktype="solid" event="script" value="data/runes/xdivine.lua">
+		<vocation id="11;12;13;14;15"/>
+	</rune>
+	<rune name="Great Holy" id="2299" allowfaruse="1" mana="15" charges="5" lvl="150" maglv="20" exhaustion="1800" groups="1,1800" blocktype="solid" event="script" value="data/runes/xxdivine.lua">
+		<vocation id="14;15"/>
+	</rune>
+	<rune name="XDeath" id="2268" allowfaruse="1" charges="3" lvl="45" maglv="12" exhaustion="1800" groups="1,1800" blocktype="solid" event="script" value="data/runes/Sudden death.lua">
+		<vocation id="2;3;4;5"/>
+		<vocation id="7;8;9;10"/>
+		<vocation id="12;13;14;15"/>
+	</rune>
+	<rune name="Great Death" id="2263" allowfaruse="1" charges="2" lvl="150" maglv="25" exhaustion="1800" groups="1,1800" blocktype="solid" event="script" value="data/runes/xSudden death.lua">
+		<vocation id="4;5"/>
+		<vocation id="9;10"/>
+	</rune>
+	<rune name="XIce" id="2274" allowfaruse="1" charges="3" lvl="45" maglv="12" exhaustion="1800" groups="1,1800" blocktype="solid" event="script" value="data/runes/avalanche.lua">
+		<vocation id="7;8;9;10"/>
+	</rune>
+	<rune name="Great Ice" id="2275" allowfaruse="1" charges="2" lvl="150" maglv="25" exhaustion="1800" groups="1,1800" blocktype="solid" event="script" value="data/runes/xavalanche.lua">
+		<vocation id="9;10"/>
+	</rune>
 
 	<!-- Orden de Spells -->
 	<instant name="Gran Berserk Simple" words="exori gran mas" lvl="100" manapercent="90" prem="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="attack/bkmas.lua">
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" />
-		<vocation name="WSPaladin" />
-		<vocation name="WSRoyal paladin" />
-		<vocation name="Epic Paladin" />
-		<vocation name="Sniper" />
-		<vocation name="Knight" />
-		<vocation name="Elite Knight" />
-		<vocation name="WSKnight" />
-		<vocation name="WSElite Knight" />
-		<vocation name="Epic Knight" />
-		<vocation name="Lord Knight" />
+		<vocation id="15"/>
+		<vocation id="17;18;19;20"/>
 	</instant>
 	<instant name="Gran Berserk Doble" words="exori gran mas +" lvl="200" manapercent="45" prem="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="attack/bkmas.lua">
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" />
-		<vocation name="WSPaladin" />
-		<vocation name="WSRoyal paladin" />
-		<vocation name="Epic Paladin" />
-		<vocation name="Sniper" />
-		<vocation name="Knight" />
-		<vocation name="Elite Knight" />
-		<vocation name="WSKnight" />
-		<vocation name="WSElite Knight" />
-		<vocation name="Epic Knight" />
-		<vocation name="Lord Knight" />
+		<vocation id="15"/>
+		<vocation id="17;18;19;20"/>
 	</instant>
 	<instant name="Gran Berserk Triple" words="exori gran mas ++" lvl="300" manapercent="33" prem="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="attack/bkmas.lua">
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" />
-		<vocation name="WSPaladin" />
-		<vocation name="WSRoyal paladin" />
-		<vocation name="Epic Paladin" />
-		<vocation name="Sniper" />
-		<vocation name="Knight" />
-		<vocation name="Elite Knight" />
-		<vocation name="WSKnight" />
-		<vocation name="WSElite Knight" />
-		<vocation name="Epic Knight" />
-		<vocation name="Lord Knight" />
+		<vocation id="19;20"/>
 	</instant>
 	<instant name="Gran Berserk Quintuple" words="exori gran mas +++" lvl="400" manapercent="20" prem="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="attack/bkmas_mas.lua">
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" />
-		<vocation name="WSPaladin" />
-		<vocation name="WSRoyal paladin" />
-		<vocation name="Epic Paladin" />
-		<vocation name="Sniper" />
-		<vocation name="Knight" />
-		<vocation name="Elite Knight" />
-		<vocation name="WSKnight" />
-		<vocation name="WSElite Knight" />
-		<vocation name="Epic Knight" />
-		<vocation name="Lord Knight" />
+		<vocation id="19;20"/>
 	</instant>
 	<instant name="Divine Gran Caldera Simple" words="exevo san mas" lvl="100" manapercent="90" prem="1" selftarget="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="attack/bksan.lua">
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" />
-		<vocation name="WSPaladin" />
-		<vocation name="WSRoyal paladin" />
-		<vocation name="Epic Paladin" />
-		<vocation name="Sniper" />
-		<vocation name="Knight" />
-		<vocation name="Elite Knight" />
-		<vocation name="WSKnight" />
-		<vocation name="WSElite Knight" />
-		<vocation name="Epic Knight" />
-		<vocation name="Lord Knight" />
+		<vocation id="12;13;14;15"/>
+		<vocation id="20"/>
 	</instant>
 	<instant name="Divine Gran Caldera Doble" words="exevo san mas +" lvl="200" manapercent="45" prem="1" selftarget="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="attack/bksan.lua">
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" />
-		<vocation name="WSPaladin" />
-		<vocation name="WSRoyal paladin" />
-		<vocation name="Epic Paladin" />
-		<vocation name="Sniper" />
-		<vocation name="Knight" />
-		<vocation name="Elite Knight" />
-		<vocation name="WSKnight" />
-		<vocation name="WSElite Knight" />
-		<vocation name="Epic Knight" />
-		<vocation name="Lord Knight" />
+		<vocation id="12;13;14;15"/>
+		<vocation id="20"/>
 	</instant>
 	<instant name="Divine Gran Caldera Tripe" words="exevo san mas ++" lvl="300" manapercent="33" prem="1" selftarget="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="attack/bksan.lua">
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" />
-		<vocation name="WSPaladin" />
-		<vocation name="WSRoyal paladin" />
-		<vocation name="Epic Paladin" />
-		<vocation name="Sniper" />
-		<vocation name="Knight" />
-		<vocation name="Elite Knight" />
-		<vocation name="WSKnight" />
-		<vocation name="WSElite Knight" />
-		<vocation name="Epic Knight" />
-		<vocation name="Lord Knight" />
+		<vocation id="14;15"/>
 	</instant>
 	<instant name="Divine Gran Caldera Quintuple" words="exevo san mas +++" lvl="450" manapercent="20" prem="1" selftarget="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="attack/bksan_mas.lua">
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" />
-		<vocation name="WSPaladin" />
-		<vocation name="WSRoyal paladin" />
-		<vocation name="Epic Paladin" />
-		<vocation name="Sniper" />
-		<vocation name="Knight" />
-		<vocation name="Elite Knight" />
-		<vocation name="WSKnight" />
-		<vocation name="WSElite Knight" />
-		<vocation name="Epic Knight" />
-		<vocation name="Lord Knight" />
+		<vocation id="14;15"/>
 	</instant>
 	<instant name="Hells Core Simple" words="exevo gran mas vis" lvl="100" manapercent="90" prem="1" exhaustion="1800" groups="1,1800" selftarget="1" needlearn="0" event="script" value="attack/hells core.lua">
-		<vocation name="Sorcerer" />
-		<vocation name="Master Sorcerer" />
-		<vocation name="WSorcerer" />
-		<vocation name="WSMaster Sorcerer" />
-		<vocation name="Epic Sorcerer" />
-		<vocation name="Wizard" />
+		<vocation id="2;3;4;5"/>
 	</instant>
 	<instant name="Hells Core Doble" words="exevo gran mas vis +" lvl="200" manapercent="45" prem="1" exhaustion="1800" groups="1,1800" selftarget="1" needlearn="0" event="script" value="attack/hells core.lua">
-		<vocation name="Sorcerer" />
-		<vocation name="Master Sorcerer" />
-		<vocation name="WSorcerer" />
-		<vocation name="WSMaster Sorcerer" />
-		<vocation name="Epic Sorcerer" />
-		<vocation name="Wizard" />
+		<vocation id="2;3;4;5"/>
 	</instant>
 	<instant name="Hells Core Triple" words="exevo gran mas vis ++" lvl="300" manapercent="33" prem="1" exhaustion="1800" groups="1,1800" selftarget="1" needlearn="0" event="script" value="attack/hells core.lua">
-		<vocation name="Sorcerer" />
-		<vocation name="Master Sorcerer" />
-		<vocation name="WSorcerer" />
-		<vocation name="WSMaster Sorcerer" />
-		<vocation name="Epic Sorcerer" />
-		<vocation name="Wizard" />
+		<vocation id="4;5"/>
 	</instant>
 	<instant name="Hells Core Cruadruple" words="exevo gran mas vis +++" lvl="400" manapercent="25" prem="1" exhaustion="1800" groups="1,1800" selftarget="1" needlearn="0" event="script" value="attack/hells core.lua">
-		<vocation name="Sorcerer" />
-		<vocation name="Master Sorcerer" />
-		<vocation name="WSorcerer" />
-		<vocation name="WSMaster Sorcerer" />
-		<vocation name="Epic Sorcerer" />
-		<vocation name="Wizard" />
+		<vocation id="4;5"/>
 	</instant>
 	<instant name="Hells Core Quintuple" words="exevo gran mas vis ++++" lvl="500" manapercent="20" prem="1" exhaustion="1800" groups="1,1800" selftarget="1" needlearn="0" event="script" value="attack/hells core.lua">
-		<vocation name="Sorcerer" />
-		<vocation name="Master Sorcerer" />
-		<vocation name="WSorcerer" />
-		<vocation name="WSMaster Sorcerer" />
-		<vocation name="Epic Sorcerer" />
-		<vocation name="Wizard" />
+		<vocation id="4;5"/>
 	</instant>
 	<instant name="Groundshaker Core Simple" words="exori mas vis" lvl="100" manapercent="90" prem="1" exhaustion="1800" groups="1,1800" selftarget="1" needlearn="0" event="script" value="attack/groundshaker core.lua">
-		<vocation name="Druid" />
-		<vocation name="Elder Druid" />
-		<vocation name="WSDruid" />
-		<vocation name="WSElder Druid" />
-		<vocation name="Epic Druid" />
-		<vocation name="Ancient Druid" />
+		<vocation id="7;8;9;10"/>
 	</instant>
 	<instant name="Groundshaker Core Doble" words="exori mas vis +" lvl="200" manapercent="45" prem="1" exhaustion="1800" groups="1,1800" selftarget="1" needlearn="0" event="script" value="attack/groundshaker core.lua">
-		<vocation name="Druid" />
-		<vocation name="Elder Druid" />
-		<vocation name="WSDruid" />
-		<vocation name="WSElder Druid" />
-		<vocation name="Epic Druid" />
-		<vocation name="Ancient Druid" />
+		<vocation id="7;8;9;10"/>
 	</instant>
 	<instant name="Groundshaker Core Triple" words="exori mas vis ++" lvl="300" manapercent="33" prem="1" exhaustion="1800" groups="1,1800" selftarget="1" needlearn="0" event="script" value="attack/groundshaker core.lua">
-		<vocation name="Druid" />
-		<vocation name="Elder Druid" />
-		<vocation name="WSDruid" />
-		<vocation name="WSElder Druid" />
-		<vocation name="Epic Druid" />
-		<vocation name="Ancient Druid" />
+		<vocation id="9;10"/>
 	</instant>
 	<instant name="Groundshaker Core Cruadruple" words="exori mas vis +++" lvl="400" manapercent="25" prem="1" exhaustion="1800" groups="1,1800" selftarget="1" needlearn="0" event="script" value="attack/groundshaker core.lua">
-		<vocation name="Druid" />
-		<vocation name="Elder Druid" />
-		<vocation name="WSDruid" />
-		<vocation name="WSElder Druid" />
-		<vocation name="Epic Druid" />
-		<vocation name="Ancient Druid" />
+		<vocation id="9;10"/>
 	</instant>
 	<instant name="Groundshaker Core Quintuple" words="exori mas vis ++++" lvl="500" manapercent="20" prem="1" exhaustion="1800" groups="1,1800" selftarget="1" needlearn="0" event="script" value="attack/groundshaker core.lua">
-		<vocation name="Druid" />
-		<vocation name="Elder Druid" />
-		<vocation name="WSDruid" />
-		<vocation name="WSElder Druid" />
-		<vocation name="Epic Druid" />
-		<vocation name="Ancient Druid" />
+		<vocation id="9;10"/>
 	</instant>
 	<instant name="Whirlwind Throw" words="exori hur" lvl="10" mana="80" prem="1" range="6" needtarget="1" blockwalls="1" needweapon="1" exhaustion="1200" needlearn="0" event="script" value="attack/whirlwind throw.lua">
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" />
-		<vocation name="WSPaladin" />
-		<vocation name="WSRoyal paladin" />
-		<vocation name="Epic Paladin" />
-		<vocation name="Sniper" />
-		<vocation name="Knight" />
-		<vocation name="Elite Knight" />
-		<vocation name="WSKnight" />
-		<vocation name="WSElite Knight" />
-		<vocation name="Epic Knight" />
-		<vocation name="Lord Knight" />
+		<vocation id="16;17;18;19;20"/>
 	</instant>
 	<instant name="Whirlwind Throw" words="exori hur +" lvl="80" mana="100" prem="1" range="5" needtarget="1" blockwalls="1" needweapon="1" exhaustion="1200" needlearn="0" event="script" value="attack/whirlwind throw.lua">
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" />
-		<vocation name="WSPaladin" />
-		<vocation name="WSRoyal paladin" />
-		<vocation name="Epic Paladin" />
-		<vocation name="Sniper" />
-		<vocation name="Knight" />
-		<vocation name="Elite Knight" />
-		<vocation name="WSKnight" />
-		<vocation name="WSElite Knight" />
-		<vocation name="Epic Knight" />
-		<vocation name="Lord Knight" />
+		<vocation id="17;18;19;20"/>
 	</instant>
 	<instant name="Whirlwind Throw Doble Damage" words="exori hur mas" lvl="120" mana="30" prem="1" range="5" needtarget="1" blockwalls="1" needweapon="1" exhaustion="1200" needlearn="0" event="script" value="attack/whirlwind throw_mas.lua">
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" />
-		<vocation name="WSPaladin" />
-		<vocation name="WSRoyal paladin" />
-		<vocation name="Epic Paladin" />
-		<vocation name="Sniper" />
-		<vocation name="Knight" />
-		<vocation name="Elite Knight" />
-		<vocation name="WSKnight" />
-		<vocation name="WSElite Knight" />
-		<vocation name="Epic Knight" />
-		<vocation name="Lord Knight" />
+		<vocation id="19;20"/>
 	</instant>
 	<instant name="Divine Missile" words="exori san" lvl="10" mana="80" prem="1" casterTargetOrDirection="1" needlearn="0" lockwalls="1" exhaustion="1200" event="script" value="attack/divine missile.lua">
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" />
-		<vocation name="WSPaladin" />
-		<vocation name="WSRoyal paladin" />
-		<vocation name="Epic Paladin" />
-		<vocation name="Sniper" />
+		<vocation id="11;12;13;14;15"/>
 	</instant>
 	<instant name="Divine Missile" words="exori san +" lvl="80" mana="100" prem="1" casterTargetOrDirection="1" needlearn="0" lockwalls="1" exhaustion="1200" event="script" value="attack/divine missile.lua">
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" />
-		<vocation name="WSPaladin" />
-		<vocation name="WSRoyal paladin" />
-		<vocation name="Epic Paladin" />
-		<vocation name="Sniper" />
+		<vocation id="12;13;14;15"/>
 	</instant>
 	<instant name="Divine Missile Doble Damage" words="exori san mas" lvl="120" mana="30" prem="1" casterTargetOrDirection="1" needlearn="0" lockwalls="1" exhaustion="1200" event="script" value="attack/divine missile_mas.lua">
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" />
-		<vocation name="WSPaladin" />
-		<vocation name="WSRoyal paladin" />
-		<vocation name="Epic Paladin" />
-		<vocation name="Sniper" />
+		<vocation id="14;15"/>
 	</instant>
 	<instant name="Berserk Triple" words="exori" lvl="30" manapercent="30" prem="1" needweapon="1" lockwalls="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="attack/berserk.lua">
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" />
-		<vocation name="WSPaladin" />
-		<vocation name="WSRoyal paladin" />
-		<vocation name="Epic Paladin" />
-		<vocation name="Sniper" />
-		<vocation name="Knight" />
-		<vocation name="Elite Knight" />
-		<vocation name="WSKnight" />
-		<vocation name="WSElite Knight" />
-		<vocation name="Epic Knight" />
-		<vocation name="Lord Knight" />
+		<vocation id="17;18;19;20"/>
 	</instant>
 	<instant name="Berserk Quatruple" words="exori +" lvl="80" manapercent="25" prem="1" needweapon="1" lockwalls="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="attack/berserk.lua">
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" />
-		<vocation name="WSPaladin" />
-		<vocation name="WSRoyal paladin" />
-		<vocation name="Epic Paladin" />
-		<vocation name="Sniper" />
-		<vocation name="Knight" />
-		<vocation name="Elite Knight" />
-		<vocation name="WSKnight" />
-		<vocation name="WSElite Knight" />
-		<vocation name="Epic Knight" />
-		<vocation name="Lord Knight" />
+		<vocation id="17;18;19;20"/>
 	</instant>
 	<instant name="Berserk Quintuple" words="exori ++" lvl="100" manapercent="20" prem="1" needweapon="1" lockwalls="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="attack/berserk.lua">
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" />
-		<vocation name="WSPaladin" />
-		<vocation name="WSRoyal paladin" />
-		<vocation name="Epic Paladin" />
-		<vocation name="Sniper" />
-		<vocation name="Knight" />
-		<vocation name="Elite Knight" />
-		<vocation name="WSKnight" />
-		<vocation name="WSElite Knight" />
-		<vocation name="Epic Knight" />
-		<vocation name="Lord Knight" />
+		<vocation id="19;20"/>
 	</instant>
 	<instant name="Fierce Berserk Triple" words="exori gran" lvl="70" manapercent="30" prem="1" needweapon="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="attack/fierce berserk.lua">
-		<vocation name="Knight" />
-		<vocation name="Elite Knight" />
-		<vocation name="WSKnight" />
-		<vocation name="WSElite Knight" />
-		<vocation name="Epic Knight" />
-		<vocation name="Lord Knight" />
+		<vocation id="17;18;19;20"/>
 	</instant>
 	<instant name="Fierce Berserk Quintuple" words="exori gran +" lvl="100" manapercent="20" prem="1" needweapon="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="attack/fierce berserk.lua">
-		<vocation name="Knight" />
-		<vocation name="Elite Knight" />
-		<vocation name="WSKnight" />
-		<vocation name="WSElite Knight" />
-		<vocation name="Epic Knight" />
-		<vocation name="Lord Knight" />
+		<vocation id="19;20"/>
 	</instant>
 	<instant name="Ethereal Spear" words="exori con" lvl="10" mana="80" prem="1" range="5" needtarget="1" exhaustion="1200" blockwalls="1" needlearn="0" event="script" value="attack/ethereal spear.lua">
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" />
-		<vocation name="WSPaladin" />
-		<vocation name="WSRoyal paladin" />
-		<vocation name="Epic Paladin" />
-		<vocation name="Sniper" />
+		<vocation id="12;13;14;15"/>
 	</instant>
 	<instant name="Ethereal Spear" words="exori con +" lvl="80" mana="60" prem="1" range="5" needtarget="1" exhaustion="1200" blockwalls="1" needlearn="0" event="script" value="attack/ethereal spear.lua">
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" />
-		<vocation name="WSPaladin" />
-		<vocation name="WSRoyal paladin" />
-		<vocation name="Epic Paladin" />
-		<vocation name="Sniper" />
+		<vocation id="12;13;14;15"/>
 	</instant>
 	<instant name="Ethereal Spear Doble Damage" words="exori con mas" lvl="100" mana="100" prem="1" range="5" needtarget="1" exhaustion="1200" blockwalls="1" needlearn="0" event="script" value="attack/ethereal spear_mas.lua">
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" />
-		<vocation name="WSPaladin" />
-		<vocation name="WSRoyal paladin" />
-		<vocation name="Epic Paladin" />
-		<vocation name="Sniper" />
+		<vocation id="14;15"/>
 	</instant>
 	<instant name="Ethereal Spear Triple Damage" words="exori con mas +" lvl="150" mana="150" prem="1" range="5" needtarget="1" exhaustion="1200" blockwalls="1" needlearn="0" event="script" value="attack/ethereal spear_mas_dos.lua">
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" />
-		<vocation name="WSPaladin" />
-		<vocation name="WSRoyal paladin" />
-		<vocation name="Epic Paladin" />
-		<vocation name="Sniper" />
+		<vocation id="14;15"/>
 	</instant>
 	<instant name="Groundshaker Triple" words="exori mas" lvl="30" manapercent="30" prem="1" needweapon="1" exhaustion="1800" groups="1,1800" lockwalls="1" needlearn="0" event="script" value="attack/groundshaker.lua">
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" />
-		<vocation name="WSPaladin" />
-		<vocation name="WSRoyal paladin" />
-		<vocation name="Epic Paladin" />
-		<vocation name="Sniper" />
-		<vocation name="Knight" />
-		<vocation name="Elite Knight" />
-		<vocation name="WSKnight" />
-		<vocation name="WSElite Knight" />
-		<vocation name="Epic Knight" />
-		<vocation name="Lord Knight" />
+		<vocation id="17;18;19;20"/>
 	</instant>
 	<instant name="Groundshaker Quatruple" words="exori mas +" lvl="80" manapercent="25" prem="1" needweapon="1" exhaustion="1800" groups="1,1800" lockwalls="1" needlearn="0" event="script" value="attack/groundshaker.lua">
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" />
-		<vocation name="WSPaladin" />
-		<vocation name="WSRoyal paladin" />
-		<vocation name="Epic Paladin" />
-		<vocation name="Sniper" />
-		<vocation name="Knight" />
-		<vocation name="Elite Knight" />
-		<vocation name="WSKnight" />
-		<vocation name="WSElite Knight" />
-		<vocation name="Epic Knight" />
-		<vocation name="Lord Knight" />
+		<vocation id="17;18;19;20"/>
 	</instant>
 	<instant name="Groundshaker Quintuple" words="exori mas ++" lvl="100" manapercent="20" prem="1" needweapon="1" exhaustion="1200" lockwalls="1" needlearn="0" event="script" value="attack/groundshaker.lua">
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" />
-		<vocation name="WSPaladin" />
-		<vocation name="WSRoyal paladin" />
-		<vocation name="Epic Paladin" />
-		<vocation name="Sniper" />
-		<vocation name="Knight" />
-		<vocation name="Elite Knight" />
-		<vocation name="WSKnight" />
-		<vocation name="WSElite Knight" />
-		<vocation name="Epic Knight" />
-		<vocation name="Lord Knight" />
+		<vocation id="19;20"/>
 	</instant>
 	<instant name="Divine Caldera Triple" words="exevo san" lvl="70" manapercent="30" prem="1" selftarget="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="attack/divine caldera.lua">
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" />
-		<vocation name="WSPaladin" />
-		<vocation name="WSRoyal paladin" />
-		<vocation name="Epic Paladin" />
-		<vocation name="Sniper" />
+		<vocation id="12;13;14;15"/>
 	</instant>
 	<instant name="Divine Caldera Quintuple" words="exevo san +" lvl="100" manapercent="20" prem="1" selftarget="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="attack/divine caldera.lua">
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" />
-		<vocation name="WSPaladin" />
-		<vocation name="WSRoyal paladin" />
-		<vocation name="Epic Paladin" />
-		<vocation name="Sniper" />
+		<vocation id="12;13;14;15"/>
 	</instant>
 	<instant name="Rage of the Skies Simple" words="exevo vis gran" lvl="50" manapercent="60" selftarget="1" prem="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="attack/rage of the skies.lua">
-		<vocation name="Sorcerer" />
-		<vocation name="Master Sorcerer" />
-		<vocation name="WSorcerer" />
-		<vocation name="WSMaster Sorcerer" />
-		<vocation name="Epic Sorcerer" />
-		<vocation name="Wizard" />
+		<vocation id="2;3;4;5"/>
 	</instant>
 	<instant name="Rage of the Skies Doble" words="exevo vis gran +" lvl="75" manapercent="40" selftarget="1" prem="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="attack/rage of the skies.lua">
-		<vocation name="Sorcerer" />
-		<vocation name="Master Sorcerer" />
-		<vocation name="WSorcerer" />
-		<vocation name="WSMaster Sorcerer" />
-		<vocation name="Epic Sorcerer" />
-		<vocation name="Wizard" />
+		<vocation id="2;3;4;5"/>
 	</instant>
 	<instant name="Rage of the Skies Triple" words="exevo vis gran ++" lvl="100" manapercent="30" selftarget="1" prem="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="attack/rage of the skies.lua">
-		<vocation name="Sorcerer" />
-		<vocation name="Master Sorcerer" />
-		<vocation name="WSorcerer" />
-		<vocation name="WSMaster Sorcerer" />
-		<vocation name="Epic Sorcerer" />
-		<vocation name="Wizard" />
+		<vocation id="2;3;4;5"/>
 	</instant>
 	<instant name="Rage of the Skies Cuadruple" words="exevo vis gran +++" lvl="120" manapercent="25" selftarget="1" prem="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="attack/rage of the skies.lua">
-		<vocation name="Sorcerer" />
-		<vocation name="Master Sorcerer" />
-		<vocation name="WSorcerer" />
-		<vocation name="WSMaster Sorcerer" />
-		<vocation name="Epic Sorcerer" />
-		<vocation name="Wizard" />
+		<vocation id="4;5"/>
 	</instant>
 	<instant name="Rage of the Skies Quintuple" words="exevo vis gran ++++" lvl="150" manapercent="20" selftarget="1" prem="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="attack/rage of the skies_mas.lua">
-		<vocation name="Sorcerer" />
-		<vocation name="Master Sorcerer" />
-		<vocation name="WSorcerer" />
-		<vocation name="WSMaster Sorcerer" />
-		<vocation name="Epic Sorcerer" />
-		<vocation name="Wizard" />
+		<vocation id="4;5"/>
 	</instant>
 	<instant name="Rage of the Flames Simple" words="exevo flam gran" lvl="50" manapercent="60" selftarget="1" prem="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="attack/rage of the flames.lua">
-		<vocation name="Sorcerer" />
-		<vocation name="Master Sorcerer" />
-		<vocation name="WSorcerer" />
-		<vocation name="WSMaster Sorcerer" />
-		<vocation name="Epic Sorcerer" />
-		<vocation name="Wizard" />
+		<vocation id="2;3;4;5"/>
 	</instant>
 	<instant name="Rage of the Flames Doble" words="exevo flam gran +" lvl="75" manapercent="40" selftarget="1" prem="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="attack/rage of the flames.lua">
-		<vocation name="Sorcerer" />
-		<vocation name="Master Sorcerer" />
-		<vocation name="WSorcerer" />
-		<vocation name="WSMaster Sorcerer" />
-		<vocation name="Epic Sorcerer" />
-		<vocation name="Wizard" />
+		<vocation id="2;3;4;5"/>
 	</instant>
 	<instant name="Rage of the Flames Triple" words="exevo flam gran ++" lvl="100" manapercent="30" selftarget="1" prem="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="attack/rage of the flames.lua">
-		<vocation name="Sorcerer" />
-		<vocation name="Master Sorcerer" />
-		<vocation name="WSorcerer" />
-		<vocation name="WSMaster Sorcerer" />
-		<vocation name="Epic Sorcerer" />
-		<vocation name="Wizard" />
+		<vocation id="2;3;4;5"/>
 	</instant>
 	<instant name="Rage of the Flames Cuadruple" words="exevo flam gran +++" lvl="120" manapercent="25" selftarget="1" prem="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="attack/rage of the flames.lua">
-		<vocation name="Sorcerer" />
-		<vocation name="Master Sorcerer" />
-		<vocation name="WSorcerer" />
-		<vocation name="WSMaster Sorcerer" />
-		<vocation name="Epic Sorcerer" />
-		<vocation name="Wizard" />
+		<vocation id="4;5"/>
 	</instant>
 	<instant name="Rage of the Flames Quintuple" words="exevo flam gran ++++" lvl="150" manapercent="20" selftarget="1" prem="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="attack/rage of the flames_mas.lua">
-		<vocation name="Sorcerer" />
-		<vocation name="Master Sorcerer" />
-		<vocation name="WSorcerer" />
-		<vocation name="WSMaster Sorcerer" />
-		<vocation name="Epic Sorcerer" />
-		<vocation name="Wizard" />
+		<vocation id="4;5"/>
 	</instant>
 	<instant name="Eternal Winter Simple" words="exevo gran mas frigo" lvl="50" manapercent="60" prem="1" selftarget="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="attack/eternal winter.lua">
-		<vocation name="Druid" />
-		<vocation name="Elder Druid" />
-		<vocation name="WSDruid" />
-		<vocation name="WSElder Druid" />
-		<vocation name="Epic Druid" />
-		<vocation name="Ancient Druid" />
+		<vocation id="7;8;9;10"/>
 	</instant>
 	<instant name="Eternal Winter Doble" words="exevo gran mas frigo +" lvl="75" manapercent="40" prem="1" selftarget="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="attack/eternal winter.lua">
-		<vocation name="Druid" />
-		<vocation name="Elder Druid" />
-		<vocation name="WSDruid" />
-		<vocation name="WSElder Druid" />
-		<vocation name="Epic Druid" />
-		<vocation name="Ancient Druid" />
+		<vocation id="7;8;9;10"/>
 	</instant>
 	<instant name="Eternal Winter Triple" words="exevo gran mas frigo ++" lvl="100" manapercent="30" prem="1" selftarget="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="attack/eternal winter.lua">
-		<vocation name="Druid" />
-		<vocation name="Elder Druid" />
-		<vocation name="WSDruid" />
-		<vocation name="WSElder Druid" />
-		<vocation name="Epic Druid" />
-		<vocation name="Ancient Druid" />
+		<vocation id="7;8;9;10"/>
 	</instant>
 	<instant name="Eternal Winter Cuadruple" words="exevo gran mas frigo +++" lvl="120" manapercent="25" prem="1" selftarget="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="attack/eternal winter.lua">
-		<vocation name="Druid" />
-		<vocation name="Elder Druid" />
-		<vocation name="WSDruid" />
-		<vocation name="WSElder Druid" />
-		<vocation name="Epic Druid" />
-		<vocation name="Ancient Druid" />
+		<vocation id="9;10"/>
 	</instant>
 	<instant name="Eternal Winter Quintuple" words="exevo gran mas frigo ++++" lvl="150" manapercent="20" prem="1" selftarget="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="attack/eternal winter_mas.lua">
-		<vocation name="Druid" />
-		<vocation name="Elder Druid" />
-		<vocation name="WSDruid" />
-		<vocation name="WSElder Druid" />
-		<vocation name="Epic Druid" />
-		<vocation name="Ancient Druid" />
+		<vocation id="9;10"/>
 	</instant>
 	<instant name="Wrath of Nature Simple" words="exevo gran mas tera" lvl="50" manapercent="60" prem="1" selftarget="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="attack/wrath of nature.lua">  
-		<vocation name="Druid" />
-		<vocation name="Elder Druid" />
-		<vocation name="WSDruid" />
-		<vocation name="WSElder Druid" />
-		<vocation name="Epic Druid" />
-		<vocation name="Ancient Druid" />
+		<vocation id="7;8;9;10"/>
 	</instant>
 	<instant name="Wrath of Nature Doble" words="exevo gran mas tera +" lvl="75" manapercent="40" prem="1" selftarget="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="attack/wrath of nature.lua">  
-		<vocation name="Druid" />
-		<vocation name="Elder Druid" />
-		<vocation name="WSDruid" />
-		<vocation name="WSElder Druid" />
-		<vocation name="Epic Druid" />
-		<vocation name="Ancient Druid" />
+		<vocation id="7;8;9;10"/>
 	</instant>
 	<instant name="Wrath of Nature Triple" words="exevo gran mas tera ++" lvl="100" manapercent="30" prem="1" selftarget="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="attack/wrath of nature.lua">  
-		<vocation name="Druid" />
-		<vocation name="Elder Druid" />
-		<vocation name="WSDruid" />
-		<vocation name="WSElder Druid" />
-		<vocation name="Epic Druid" />
-		<vocation name="Ancient Druid" />
+		<vocation id="7;8;9;10"/>
 	</instant>
 	<instant name="Wrath of Nature Cuadruple" words="exevo gran mas tera +++" lvl="120" manapercent="25" prem="1" selftarget="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="attack/wrath of nature.lua">  
-		<vocation name="Druid" />
-		<vocation name="Elder Druid" />
-		<vocation name="WSDruid" />
-		<vocation name="WSElder Druid" />
-		<vocation name="Epic Druid" />
-		<vocation name="Ancient Druid" />
+		<vocation id="9;10"/>
 	</instant>
 	<instant name="Wrath of Nature Quintuple" words="exevo gran mas tera ++++" lvl="150" manapercent="20" prem="1" selftarget="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="attack/wrath of nature_mas.lua">  
-		<vocation name="Druid" />
-		<vocation name="Elder Druid" />
-		<vocation name="WSDruid" />
-		<vocation name="WSElder Druid" />
-		<vocation name="Epic Druid" />
-		<vocation name="Ancient Druid" />
+		<vocation id="9;10"/>
 	</instant>
 	<instant name="Terra Strike" words="exori tera" lvl="10" mana="20" prem="1" range="5" casterTargetOrDirection="1" blockwalls="1" exhaustion="1200" needlearn="0" event="script" value="attack/terra strike.lua">
-		<vocation name="Druid" />
-		<vocation name="Elder Druid" />
-		<vocation name="WSDruid" />
-		<vocation name="WSElder Druid" />
-		<vocation name="Epic Druid" />
-		<vocation name="Ancient Druid" />
+		<vocation id="6;7;8;9;10"/>
 	</instant>
 	<instant name="Terra Strike" words="exori tera +" lvl="40" mana="80" prem="1" range="5" casterTargetOrDirection="1" blockwalls="1" exhaustion="1200" needlearn="0" event="script" value="attack/terra strike.lua">
-		<vocation name="Druid" />
-		<vocation name="Elder Druid" />
-		<vocation name="WSDruid" />
-		<vocation name="WSElder Druid" />
-		<vocation name="Epic Druid" />
-		<vocation name="Ancient Druid" />
+		<vocation id="7;8;9;10"/>
 	</instant>
 	<instant name="Terra Strike" words="exori tera ++" lvl="80" mana="100" prem="1" range="5" casterTargetOrDirection="1" blockwalls="1" exhaustion="1200" needlearn="0" event="script" value="attack/terra strike.lua">
-		<vocation name="Druid" />
-		<vocation name="Elder Druid" />
-		<vocation name="WSDruid" />
-		<vocation name="WSElder Druid" />
-		<vocation name="Epic Druid" />
-		<vocation name="Ancient Druid" />
+		<vocation id="9;10"/>
 	</instant>
 	<instant name="Terra Strike Doble Damage" words="exori tera mas" lvl="150" mana="120" prem="1" range="5" casterTargetOrDirection="1" blockwalls="1" exhaustion="1200" needlearn="0" event="script" value="attack/terra strike_mas.lua">
-		<vocation name="Druid" />
-		<vocation name="Elder Druid" />
-		<vocation name="WSDruid" />
-		<vocation name="WSElder Druid" />
-		<vocation name="Epic Druid" />
-		<vocation name="Ancient Druid" />
+		<vocation id="9;10"/>
 	</instant>
 	<instant name="Ice Strike Doble Damage" words="exori frigo mas" lvl="150" mana="120" prem="1" range="5" casterTargetOrDirection="1" blockwalls="1" exhaustion="1200" needlearn="0" event="script" value="attack/ice strike_mas.lua">
-		<vocation name="Druid" />
-		<vocation name="Elder Druid" />
-		<vocation name="WSDruid" />
-		<vocation name="WSElder Druid" />
-		<vocation name="Epic Druid" />
-		<vocation name="Ancient Druid" />
+		<vocation id="9;10"/>
 	</instant>
 	<instant name="Flame Strike" words="exori flam" lvl="10" mana="20" prem="1" range="5" casterTargetOrDirection="1" blockwalls="1" exhaustion="1200" needlearn="0" event="script" value="attack/flame strike.lua">
-		<vocation name="Sorcerer" />
-		<vocation name="Master Sorcerer" />
-		<vocation name="WSorcerer" />
-		<vocation name="WSMaster Sorcerer" />
-		<vocation name="Epic Sorcerer" />
-		<vocation name="Wizard" />
+		<vocation id="1;2;3;4;5"/>
 	</instant>
 	<instant name="Flame Strike" words="exori flam +" lvl="40" mana="80" prem="1" range="5" casterTargetOrDirection="1" blockwalls="1" exhaustion="1200" needlearn="0" event="script" value="attack/flame strike.lua">
-		<vocation name="Sorcerer" />
-		<vocation name="Master Sorcerer" />
-		<vocation name="WSorcerer" />
-		<vocation name="WSMaster Sorcerer" />
-		<vocation name="Epic Sorcerer" />
-		<vocation name="Wizard" />
+		<vocation id="2;3;4;5"/>
 	</instant>
 	<instant name="Flame Strike" words="exori flam ++" lvl="80" mana="100" prem="1" range="5" casterTargetOrDirection="1" blockwalls="1" exhaustion="1200" needlearn="0" event="script" value="attack/flame strike.lua">
-		<vocation name="Sorcerer" />
-		<vocation name="Master Sorcerer" />
-		<vocation name="WSorcerer" />
-		<vocation name="WSMaster Sorcerer" />
-		<vocation name="Epic Sorcerer" />
-		<vocation name="Wizard" />
+		<vocation id="4;5"/>
 	</instant>
 	<instant name="Flame Strike Doble Damage" words="exori flam mas" lvl="150" mana="120" prem="1" range="5" casterTargetOrDirection="1" blockwalls="1" exhaustion="1200" needlearn="0" event="script" value="attack/flame strike_mas.lua">
-		<vocation name="Sorcerer" />
-		<vocation name="Master Sorcerer" />
-		<vocation name="WSorcerer" />
-		<vocation name="WSMaster Sorcerer" />
-		<vocation name="Epic Sorcerer" />
-		<vocation name="Wizard" />
+		<vocation id="4;5"/>
 	</instant>
 	<instant name="Energi Strike Doble Damage" words="exori vis mas" lvl="150" mana="120" prem="1" range="5" casterTargetOrDirection="1" blockwalls="1" exhaustion="1200" needlearn="0" event="script" value="attack/energy strike_mas.lua">
-		<vocation name="Sorcerer" />
-		<vocation name="Master Sorcerer" />
-		<vocation name="WSorcerer" />
-		<vocation name="WSMaster Sorcerer" />
-		<vocation name="Epic Sorcerer" />
-		<vocation name="Wizard" />
+		<vocation id="4;5"/>
 	</instant>
 
 	<!-- Conjure Spells -->
 	<conjure name="Heavy Light Missile" words="adori mas frigo" lvl="45" mana="500" soul="0" reagentId="2260" conjureId="2274" conjureCount="8" exhaustion="1800" groups="1,1800" needlearn="0" event="function" value="conjureRune">
-		<vocation name="Druid" />
-		<vocation name="Elder Druid" />
-		<vocation name="WSDruid" />
-		<vocation name="WSElder Druid" />
-		<vocation name="Epic Druid" />
-		<vocation name="Ancient Druid" />
+		<vocation id="7;8;9;10"/>
 	</conjure>
 	<conjure name="Great Moon Light Missile" words="adori frigo vis" lvl="150" mana="800" soul="0" reagentId="2260" conjureId="2275" conjureCount="6" exhaustion="1800" groups="1,1800" needlearn="0" event="function" value="conjureRune">
-		<vocation name="Druid" />
-		<vocation name="Elder Druid" />
-		<vocation name="WSDruid" />
-		<vocation name="WSElder Druid" />
-		<vocation name="Epic Druid" />
-		<vocation name="Ancient Druid" />
+		<vocation id="9;10"/>
 	</conjure>
 	<conjure name="Heavy Missile Decay" words="adori mas mort" lvl="45" mana="500" soul="0" reagentId="2260" conjureId="2268" conjureCount="8" exhaustion="1800" groups="1,1800" needlearn="0" event="function" value="conjureRune">
-		<vocation name="Sorcerer" />
-		<vocation name="Master Sorcerer" />
-		<vocation name="WSorcerer" />
-		<vocation name="WSMaster Sorcerer" />
-		<vocation name="Epic Sorcerer" />
-		<vocation name="Wizard" />
+		<vocation id="2;3;4;5"/>
 	</conjure>
 	<conjure name="Great Missile Decay" words="adori mort vis" lvl="150" mana="800" soul="0" reagentId="2260" conjureId="2263" conjureCount="6" exhaustion="1800" groups="1,1800" needlearn="0" event="function" value="conjureRune">
-		<vocation name="Sorcerer" />
-		<vocation name="Master Sorcerer" />
-		<vocation name="WSorcerer" />
-		<vocation name="WSMaster Sorcerer" />
-		<vocation name="Epic Sorcerer" />
-		<vocation name="Wizard" />
+		<vocation id="4;5"/>
 	</conjure>
 	<conjure name="Min Plage Missile" words="adori tera" lvl="15" mana="255" soul="0" reagentId="2260" conjureId="2287" conjureCount="15" exhaustion="1800" groups="1,1800" needlearn="0" event="function" value="conjureRune">
-		<vocation name="Druid" />
-		<vocation name="Elder Druid" />
-		<vocation name="WSDruid" />
-		<vocation name="WSElder Druid" />
-		<vocation name="Epic Druid" />
-		<vocation name="Ancient Druid" />
+		<vocation id="7;8;9;10"/>
 	</conjure>
 	<conjure name="Heavy Plage Missile" words="adori mas tera" lvl="37" mana="500" soul="0" reagentId="2260" conjureId="2289" conjureCount="10" exhaustion="1800" groups="1,1800" needlearn="0" event="function" value="conjureRune">
-		<vocation name="Druid" />
-		<vocation name="Elder Druid" />
-		<vocation name="WSDruid" />
-		<vocation name="WSElder Druid" />
-		<vocation name="Epic Druid" />
-		<vocation name="Ancient Druid" />
+		<vocation id="7;8;9;10"/>
 	</conjure>
 	<conjure name="Great Plage Missile" words="adori tera vis" lvl="150" mana="800" soul="0" reagentId="2260" conjureId="2291" conjureCount="6" exhaustion="1800" groups="1,1800" needlearn="0" event="function" value="conjureRune">
-		<vocation name="Druid" />
-		<vocation name="Elder Druid" />
-		<vocation name="WSDruid" />
-		<vocation name="WSElder Druid" />
-		<vocation name="Epic Druid" />
-		<vocation name="Ancient Druid" />
+		<vocation id="4;5"/>
 	</conjure>
 	<conjure name="Heavy Magic Missile" words="adori mas vis" lvl="35" mana="500" soul="0" reagentId="2260" conjureId="2311" conjureCount="9" exhaustion="1800" groups="1,1800" needlearn="0" event="function" value="conjureRune">
-		<vocation name="Sorcerer" />
-		<vocation name="Master Sorcerer" />
-		<vocation name="WSorcerer" />
-		<vocation name="WSMaster Sorcerer" />
-		<vocation name="Epic Sorcerer" />
-		<vocation name="Wizard" />
-		<vocation name="Druid" />
-		<vocation name="Elder Druid" />
-		<vocation name="WSDruid" />
-		<vocation name="WSElder Druid" />
-		<vocation name="Epic Druid" />
-		<vocation name="Ancient Druid" />
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" />
-		<vocation name="WSPaladin" />
-		<vocation name="WSRoyal paladin" />
-		<vocation name="Epic Paladin" />
-		<vocation name="Sniper" />
+		<vocation id="2;3;4;5"/>
+		<vocation id="7;8;9;10"/>
 	</conjure>
 	<conjure name="Great Magic Missile" words="adori gran vis" lvl="150" mana="800" soul="0" reagentId="2260" conjureId="2310" conjureCount="6" exhaustion="1800" groups="1,1800" needlearn="0" event="function" value="conjureRune">
-		<vocation name="Sorcerer" />
-		<vocation name="Master Sorcerer" />
-		<vocation name="WSorcerer" />
-		<vocation name="WSMaster Sorcerer" />
-		<vocation name="Epic Sorcerer" />
-		<vocation name="Wizard" />
-		<vocation name="Druid" />
-		<vocation name="Elder Druid" />
-		<vocation name="WSDruid" />
-		<vocation name="WSElder Druid" />
-		<vocation name="Epic Druid" />
-		<vocation name="Ancient Druid" />
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" />
-		<vocation name="WSPaladin" />
-		<vocation name="WSRoyal paladin" />
-		<vocation name="Epic Paladin" />
-		<vocation name="Sniper" />
+		<vocation id="2;3;4;5"/>
+		<vocation id="7;8;9;10"/>
+		<vocation id="14;15"/>
 	</conjure>
 	<conjure name="Heavy Holy Explosion" words="adori mas san" lvl="35" mana="500" soul="0" reagentId="2260" conjureId="2297" conjureCount="10" exhaustion="1800" groups="1,1800" needlearn="0" event="function" value="conjureRune">
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" />
-		<vocation name="WSPaladin" />
-		<vocation name="WSRoyal paladin" />
-		<vocation name="Epic Paladin" />
-		<vocation name="Sniper" />
+		<vocation id="12;13;14;15"/>
 	</conjure>
 	<conjure name="Great Holy Missile" words="adori san vis" lvl="150" mana="800" soul="0" reagentId="2260" conjureId="2299" conjureCount="6" exhaustion="1800" groups="1,1800" needlearn="0" event="function" value="conjureRune">
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" />
-		<vocation name="WSPaladin" />
-		<vocation name="WSRoyal paladin" />
-		<vocation name="Epic Paladin" />
-		<vocation name="Sniper" />
+		<vocation id="14;15"/>
 	</conjure>
 	<conjure name="Great Hell Missile" words="adori flam vis" lvl="70" mana="800" soul="0" reagentId="2260" conjureId="2304" conjureCount="6" exhaustion="1800" groups="1,1800" needlearn="0" event="function" value="conjureRune">
-		<vocation name="Sorcerer" />
-		<vocation name="Master Sorcerer" />
-		<vocation name="WSorcerer" />
-		<vocation name="WSMaster Sorcerer" />
-		<vocation name="Epic Sorcerer" />
-		<vocation name="Wizard" />
-		<vocation name="Druid" />
-		<vocation name="Elder Druid" />
-		<vocation name="WSDruid" />
-		<vocation name="WSElder Druid" />
-		<vocation name="Epic Druid" />
-		<vocation name="Ancient Druid" />
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" />
-		<vocation name="WSPaladin" />
-		<vocation name="WSRoyal paladin" />
-		<vocation name="Epic Paladin" />
-		<vocation name="Sniper" />
+		<vocation id="2;3;4;5"/>
+		<vocation id="7;8;9;10"/>
+		<vocation id="14;15"/>
 	</conjure>
 	<conjure name="Conjure Flash Arrow" words="exevo flash hur" exhaustion="1800" groups="1,1800" lvl="160" mana="900" prem="1" conjureId="7838" conjureCount="20" event="function" value="conjureItem">
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" />
-		<vocation name="WSPaladin" />
-		<vocation name="WSRoyal paladin" />
-		<vocation name="Epic Paladin" />
-		<vocation name="Sniper" />
-		<vocation name="Knight" />
-		<vocation name="Elite Knight" />
-		<vocation name="WSKnight" />
-		<vocation name="WSElite Knight" />
-		<vocation name="Epic Knight" />
-		<vocation name="Lord Knight" />
+		<vocation id="14;15"/>
 	</conjure>
 	<conjure name="Conjure Flamming Arrow" words="exevo flaming hur" exhaustion="1800" groups="1,1800" lvl="120" mana="800" prem="1" conjureId="7840" conjureCount="25" event="function" value="conjureItem">
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" />
-		<vocation name="WSPaladin" />
-		<vocation name="WSRoyal paladin" />
-		<vocation name="Epic Paladin" />
-		<vocation name="Sniper" />
-		<vocation name="Knight" />
-		<vocation name="Elite Knight" />
-		<vocation name="WSKnight" />
-		<vocation name="WSElite Knight" />
-		<vocation name="Epic Knight" />
-		<vocation name="Lord Knight" />
+		<vocation id="14;15"/>
 	</conjure>
 	<conjure name="Conjure Silver Arrow" words="exevo silver hur" exhaustion="1800" groups="1,1800" lvl="150" mana="800" prem="1" conjureId="7839" conjureCount="25" event="function" value="conjureItem">
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" />
-		<vocation name="WSPaladin" />
-		<vocation name="WSRoyal paladin" />
-		<vocation name="Epic Paladin" />
-		<vocation name="Sniper" />
-		<vocation name="Knight" />
-		<vocation name="Elite Knight" />
-		<vocation name="WSKnight" />
-		<vocation name="WSElite Knight" />
-		<vocation name="Epic Knight" />
-		<vocation name="Lord Knight" />
+		<vocation id="14;15"/>
 	</conjure>
 	<conjure name="Conjure Earth Arrow" words="exevo earth hur" exhaustion="1800" groups="1,1800" lvl="100" mana="650" prem="1" conjureId="7850" conjureCount="20" event="function" value="conjureItem">
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" />
-		<vocation name="WSPaladin" />
-		<vocation name="WSRoyal paladin" />
-		<vocation name="Epic Paladin" />
-		<vocation name="Sniper" />
-		<vocation name="Knight" />
-		<vocation name="Elite Knight" />
-		<vocation name="WSKnight" />
-		<vocation name="WSElite Knight" />
-		<vocation name="Epic Knight" />
-		<vocation name="Lord Knight" />
+		<vocation id="14;15"/>
 	</conjure>
 
 	<!-- Magic Items -->
 	<rune name="Holyball" mana="15" id="7735" range="7" exhaustion="1800" groups="1,1800" allowfaruse="1" lvl="60" maglv="20" blocktype="solid" event="script" value="magical_items/holyball.lua">
-		<vocation name="WSDruid" />
-		<vocation name="WSElder Druid" />
-		<vocation name="Epic Druid" />
-		<vocation name="Ancient Druid" />
+		<vocation id="9;10"/>
 	</rune>
 	<conjure name="Conjure Infernal Bolt" words="infernal con vis" exhaustion="1800" groups="1,1800" lvl="80" mana="380" prem="1" conjureId="6529" conjureCount="15" event="function" value="conjureItem">
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" />
-		<vocation name="WSPaladin" />
-		<vocation name="WSRoyal paladin" />
-		<vocation name="Epic Paladin" />
-		<vocation name="Sniper" />
+		<vocation id="14;15"/>
 	</conjure>
 	<conjure name="Explosion" words="adori hur" lvl="35" mana="700" soul="0" reagentId="2260" conjureId="2313" conjureCount="9" exhaustion="1800" groups="1,1800" needlearn="0" event="function" value="conjureRune">
-		<vocation name="Sorcerer" />
-		<vocation name="Master Sorcerer" />
-		<vocation name="WSorcerer" />
-		<vocation name="WSMaster Sorcerer" />
-		<vocation name="Epic Sorcerer" />
-		<vocation name="Wizard" />
-		<vocation name="Druid" />
-		<vocation name="Elder Druid" />
-		<vocation name="WSDruid" />
-		<vocation name="WSElder Druid" />
-		<vocation name="Epic Druid" />
-		<vocation name="Ancient Druid" />
+		<vocation id="2;3;4;5"/>
+		<vocation id="7;8;9;10"/>
+		<vocation id="14;15"/>
 	</conjure>
 	<conjure name="Great Explosion" words="adori mas hur" lvl="150" mana="1200" soul="0" reagentId="2260" conjureId="2312" conjureCount="6" exhaustion="1800" groups="1,1800" needlearn="0" event="function" value="conjureRune">
-		<vocation name="Sorcerer" />
-		<vocation name="Master Sorcerer" />
-		<vocation name="WSorcerer" />
-		<vocation name="WSMaster Sorcerer" />
-		<vocation name="Epic Sorcerer" />
-		<vocation name="Wizard" />
-		<vocation name="Druid" />
-		<vocation name="Elder Druid" />
-		<vocation name="WSDruid" />
-		<vocation name="WSElder Druid" />
-		<vocation name="Epic Druid" />
-		<vocation name="Ancient Druid" />
+		<vocation id="4;5"/>
+		<vocation id="9;10"/>
 	</conjure>
 
 	<!-- Healing Runes -->
 	<rune name="Intense Healing Rune" id="2265" allowfaruse="1" charges="3" lvl="180" range="4" maglv="10" exhaustion="1800" groups="1,1800" aggressive="0" needtarget="0" blocktype="solid" event="script" value="healing/intense healing rune.lua">
-		<vocation name="Knight" showInDescription="0"/>
-		<vocation name="Elite Knight" showInDescription="0"/>
-		<vocation name="WSKnight" showInDescription="0"/>
-		<vocation name="WSElite Knight" showInDescription="0"/>
-		<vocation name="Epic Knight" showInDescription="0"/>
-		<vocation name="Lord Knight" showInDescription="0"/>
-		<vocation name="Paladin" showInDescription="0"/>
-		<vocation name="Royal Paladin" showInDescription="0"/>
-		<vocation name="WSPaladin" showInDescription="0"/>
-		<vocation name="WSRoyal paladin" showInDescription="0"/>
-		<vocation name="Epic Paladin" showInDescription="0"/>
-		<vocation name="Sniper" showInDescription="0"/>
+		<vocation name="Sniper"/>
+		<vocation id="15" showInDescription="0"/>
+		<vocation name="Lord Knight"/>
+		<vocation id="20" showInDescription="0"/>
 	</rune>
 	<rune name="Ultimate Healing Rune" id="2273" allowfaruse="1" charges="3" lvl="220" maglv="10" range="4" exhaustion="1800" groups="1,1800" aggressive="0" needtarget="0" blocktype="solid" event="script" value="healing/ultimate healing rune.lua">
-		<vocation name="Knight" showInDescription="0"/>
-		<vocation name="Elite Knight" showInDescription="0"/>
-		<vocation name="WSKnight" showInDescription="0"/>
-		<vocation name="WSElite Knight" showInDescription="0"/>
-		<vocation name="Epic Knight" showInDescription="0"/>
-		<vocation name="Lord Knight" showInDescription="0"/>
-		<vocation name="Paladin" showInDescription="0"/>
-		<vocation name="Royal Paladin" showInDescription="0"/>
-		<vocation name="WSPaladin" showInDescription="0"/>
-		<vocation name="WSRoyal paladin" showInDescription="0"/>
-		<vocation name="Epic Paladin" showInDescription="0"/>
-		<vocation name="Sniper" showInDescription="0"/>
+		<vocation name="Sniper"/>
+		<vocation id="15" showInDescription="0"/>
+		<vocation name="Lord Knight"/>
+		<vocation id="20" showInDescription="0"/>
 	</rune>
 </spells>
