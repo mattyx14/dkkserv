@@ -1,15 +1,14 @@
-function onStepOut(cid, item, position, fromPosition)
-	addEvent(transformBack, 10000, {oldItemID = item.itemid, _position = position})
-	if item.itemid == 670 then
-		doTransformItem(item.uid, 6594)
-	else
-		doTransformItem(item.uid, item.itemid + 15)
-	end
-	return TRUE
-end
+TILE_SNOW = 670
+TILE_FOOTPRINT_I = 6594
 
-function transformBack(parameters)
-	parameters._position.stackpos = 0
-	doTransformItem(getThingfromPos(parameters._position).uid, parameters.oldItemID)
-	return TRUE
+function onStepOut(cid, item, position, fromPosition)
+	if(isPlayerGhost(cid)) == false then
+		if(item.itemid == TILE_SNOW) then
+			doDecayItem(doCreateItem(TILE_FOOTPRINT_I, fromPosition))
+		else
+			doDecayItem(doCreateItem(item.itemid + 15, fromPosition))
+		end
+	end
+
+	return true
 end

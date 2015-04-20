@@ -2,7 +2,7 @@ local combat = createCombatObject()
 setCombatParam(combat, COMBAT_PARAM_BLOCKARMOR, 1)
 setCombatParam(combat, COMBAT_PARAM_TYPE, COMBAT_PHYSICALDAMAGE)
 setCombatParam(combat, COMBAT_PARAM_DISTANCEEFFECT, CONST_ANI_GREENSTAR)
-setCombatFormula(combat, COMBAT_FORMULA_SKILL, 0.3, 0, 1.0, 0)
+setCombatFormula(combat, COMBAT_FORMULA_SKILL, 0, 0, 1.0, 0)
 
 local xCombat = createCombatObject()
 setCombatParam(xCombat, COMBAT_PARAM_TYPE, COMBAT_EARTHDAMAGE)
@@ -15,8 +15,8 @@ setCombatCondition(xCombat, condition)
 
 function onUseWeapon(cid, var)
 	local ret = doCombat(cid, combat, var)
-	if(ret == LUA_ERROR) then
-		return LUA_ERROR
+	if(not ret) then
+		return false
 	end
 
 	local target = variantToNumber(var)
@@ -27,5 +27,6 @@ function onUseWeapon(cid, var)
 			ret = doCombat(cid, xCombat, var)
 		end
 	end
+
 	return ret
 end

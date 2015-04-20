@@ -1,7 +1,5 @@
-
-
 function onStepIn(cid, item, pos)
-	doSendAnimatedText(pos, "Chosf!", 192)
-	--doSendMagicEffect(pos, 15)
-	return 1
+	doCreatureSay(cid, "Chosfffs", TALKTYPE_MONSTER_SAY)
+	doSendMagicEffect(pos, CONST_ME_POFF)
+	return true
 end
