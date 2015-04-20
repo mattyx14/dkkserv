@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Mutated Rat" nameDescription="a mutated rat" race="blood" experience="2850" speed="245" manacost="0">
-	<health now="1850" max="1850"/>
+<monster name="Mutated Rat" nameDescription="a mutated rat" race="blood" experience="2450" speed="245" manacost="0">
+	<health now="1550" max="1550"/>
 	<look type="305" corpse="9871"/>
 	<targetchange interval="5000" chance="8"/>
 	<strategy attack="100" defense="0"/>
@@ -18,24 +18,27 @@
 		<flag runonhealth="0"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="75" attack="95" poison="300"/>
-		<attack name="earth" interval="2000" chance="18" range="7" min="-95" max="-285">
+		<attack name="melee" interval="2000" skill="60" attack="70" poison="300"/>
+		<attack name="earth" interval="2000" chance="18" range="7" min="-105" max="-225">
 			<attribute key="shootEffect" value="poison"/>
 		</attack>
-		<attack name="poisoncondition" interval="3000" chance="20" length="8" spread="0" min="-90" max="-300">      
-			<attribute key="areaEffect" value="smallplants"/>    
+		<attack name="poisoncondition" interval="3000" chance="20" length="8" spread="0" min="-30" max="-100">
+			<attribute key="areaEffect" value="smallplants"/>
 		</attack> 
-		<attack name="speed" interval="3000" chance="10" range="7" target="1" duration="30000" speedchange="-600">      
-			<attribute key="areaEffect" value="redshimmer"/>    
+		<attack name="Paralyze" interval="3000" chance="17" range="7" target="1">
+			<attribute key="areaEffect" value="redshimmer"/>
 		</attack> 
 		<attack name="lifedrain" interval="1000" chance="10" range="7" radius="3" target="0" min="-0" max="-50">
 			<attribute key="areaEffect" value="redshimmer"/>
-		</attack>	
+		</attack>
 	</attacks>
 	<defenses armor="30" defense="30"/>
 	<elements>
-		<element firePercent="100"/>
-		<element holyPercent="-10"/>
+		<element firePercent="20"/>
+		<element energyPercent="20"/>
+		<element icePercent="100"/>
+		<element deathPercent="20"/>
+		<element earthPercent="80"/>
 	</elements>
 	<immunities>
 		<immunity death="1"/>
@@ -51,20 +54,19 @@
 		<voice sentence="Fcccccchhhhhh"/>
 	</voices>
 	<loot>
-		<item id="2148" countmax="65" chance1="100000" chancemax="0"/> <!-- gps -->
-		<item id="2148" countmax="65" chance1="100000" chancemax="0"/> <!-- gps -->
-		<item id="2320" chance="10000"/> <!-- skull -->
-		<item id="2335" chance="13500"/> <!-- moldy cheese -->
-		<item id="2799" chance="12500"/> <!-- stone herb -->
-		<item id="2796" countmax="1" chance1="3000"/> <!-- green mushroom -->
-		<item id="7618" chance="1500"/> <!-- hp -->
-		<item id="1987" chance="100000"> <!-- bag -->
+		<item id="2235" chance="850" /><!-- moldy cheese -->
+		<item id="2229" chance="20825" /><!-- skull -->
+		<item id="2799" chance="4300" /><!-- stone herb -->
+		<item id="2381" chance="2850" /><!-- halberd -->
+		<item id="10585" chance="4200" /><!-- mutated rat tail -->
+		<item id="2152" countmax="2" chance="23100" /><!-- platinum coin -->
+		<item id="2510" chance="4225" /><!-- plate shield -->
+		<item id="1987" chance="100000"><!-- bag -->
 			<inside>
-				<item id="2510" countmax="1" chance1="4000"/> <!-- plate shield -->
-				<item id="2381" chance="3000"/> <!-- halberd -->
-				<item id="2165" chance="1500"/> <!-- stealth ring -->        
-				<item id="8900" chance="300"/> <!-- spellbook of enlightenment -->
-				<item id="2528" chance="200"/> <!-- tower shield -->
+				<item id="7618" countmax="2" chance="2450" /><!-- health potion -->
+				<item id="2796" chance="1450" /><!-- green mushroom -->
+				<item id="2165" chance="1450" /><!-- stealth ring -->
+				<item id="2528" chance="1175" /><!-- tower shield -->
 			</inside>
 		</item>
 	</loot>

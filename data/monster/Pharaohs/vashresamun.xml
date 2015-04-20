@@ -1,82 +1,67 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<monster name="vashresamun" nameDescription="a vashresamun" race="UNDEAD" experience="7500" speed="340" manacost="0">
-  <health now="4000" max="4000"/>
-  <look type="90" head="20" body="30" legs="40" feet="50" corpse="6025"/>
-  <targetchange interval="5000" chance="8"/>
-  <strategy attack="100" defense="0"/>
-  <flags>
-    <flag summonable="0"/>
-    <flag attackable="1"/>
-    <flag hostile="1"/>
-    <flag illusionable="0"/>
-    <flag convinceable="0"/>
-    <flag pushable="0"/>
-    <flag canpushitems="1"/>
-    <flag canpushcreatures="1"/>
-    <flag targetdistance="1"/>
-    <flag staticattack="90"/>
-    <flag runonhealth="0"/>
-  </flags>
-  <attacks>
-    <attack name="melee" interval="2000" min="-80" max="-300" poison="65"/>
-
-    <attack name="lifedrain" interval="2000" chance="30" radius="5" target="0" min="-200" max="-750">
-      <attribute key="areaEffect" value="purplenote"/>
-    </attack>
-  </attacks>
-  <defenses armor="20" defense="35">
-    <defense name="healing" interval="1000" chance="20" min="60" max="450">
-      <attribute key="areaEffect" value="blueshimmer"/>
-    </defense>
-     <defense name="speed" interval="1000" chance="12" range="7" speedchange="350" duration="30000">
-      <attribute key="areaEffect" value="redshimmer"/>
-    </defense>
-  </defenses>
-  <immunities>
-    <immunity physical="0"/>
-    <immunity energy="0"/>
-    <immunity fire="0"/>
-    <immunity death="1"/>
-    <immunity poison="0"/>
-    <immunity lifedrain="1"/>
-    <immunity paralyze="1"/>
-    <immunity outfit="1"/>
-    <immunity drunk="1"/>
-    <immunity invisible="1"/>
-  </immunities>
-  <summons maxSummons="3">
-    <summon name="banshee" interval="2000" chance="20" max="3"/>
-  </summons>
-  <voices interval="5000" chance="10">
-    <voice sentence="Heheheheee!"/>
-    <voice sentence="Come my maidens, we have visitors!"/>
-    <voice sentence="Are you enjoying my music?"/>
-    <voice sentence="Dance a dance of death for me!"/>
-    <voice sentence="If music is the food of death, drop dead."/>
-    <voice sentence="Chakka Chakka!"/>
-  </voices>
-  <loot>
-    <item id="2148" countmax="100" chance1="100000" chancemax="0"/>
-    <item id="2176" chance="2000"/>
-    <item id="2424" chance="400"/>
-    <item id="2148" countmax="100" chance1="100000" chancemax="0"/>
-    <item id="1987" chance="100000">
-      <inside>
-        <item id="2148" countmax="70" chance1="100000" chancemax="0"/>
-        <item id="2550" chance="10000"/>
-        <item id="2688" countmax="5" chance1="4000" chancemax="0"/>
-        <item id="2540" chance="900"/>
-        <item id="2539" chance="200"/>
-        <item id="2533" chance="400"/>
-        <item id="2486" chance="300"/>
-        <item id="2658" chance="100"/>
-        <item id="2445" chance="600"/>
-        <item id="2189" chance="800"/>
-        <item id="2147" countmax="2" chance1="4000" chancemax="0"/>
-        <item id="2678" countmax="4" chance1="4000" chancemax="0"/>
-        <item id="2148" countmax="100" chance1="100000" chancemax="0"/>
-        <item id="2690" countmax="4" chance1="4000" chancemax="0"/>
-      </inside>
-    </item>
-  </loot>
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Vashresamun" nameDescription="a vashresamun" race="undead" experience="7050" speed="340" manacost="0">
+	<health now="4000" max="4000"/>
+	<look type="90" corpse="6025"/>
+	<targetchange interval="5000" chance="8"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="40" attack="80" poison="65"/>
+		<attack name="lifedrain" interval="2000" chance="30" radius="5" target="0" min="-200" max="-750">
+			<attribute key="areaEffect" value="purplenote"/>
+		</attack>
+	</attacks>
+	<defenses armor="20" defense="35">
+		<defense name="healing" interval="1000" chance="20" min="60" max="450">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+		<defense name="speed" interval="1000" chance="12" range="7" speedchange="350" duration="30000">
+			<attribute key="areaEffect" value="redshimmer"/>
+		</defense>
+	</defenses>
+	<elements>
+		<element deathPercent="100"/>
+		<element icePercent="20"/>
+		<element firePercent="20"/>
+		<element energyPercent="20"/>
+	</elements>
+	<immunities>
+		<immunity invisible="1"/>
+	</immunities>
+	<summons maxSummons="2">
+		<summon name="Banshee" interval="2000" chance="20" max="2"/>
+	</summons>
+	<voices interval="5000" chance="10">
+	<voice sentence="Come my maidens, we have visitors!"/>
+		<voice sentence="Are you enjoying my music?"/>
+		<voice sentence="If music is the food of death, drop dead."/>
+	</voices>
+	<loot>
+		<item id="2152" countmax="7" chance="27100" /><!-- platinum coin -->
+		<item id="2349" chance="100000" /><!-- blue note -->
+		<item id="7590" countmax="2" chance="9325" /><!-- great mana potion -->
+		<item id="2143" chance="7700" /><!-- white pearl -->
+		<item id="2072" chance="8250" /><!-- lute -->
+		<item id="2139" chance="275" /><!-- ancient tiara -->
+		<item id="1987" chance="100000"><!-- bag -->
+			<inside>
+				<item id="2074" chance="275" /><!-- panpipes -->
+				<item id="2656" chance="875" /><!-- blue robe -->
+				<item id="2445" chance="1550" /><!-- crystal mace -->
+				<item id="2124" chance="825" /><!-- crystal ring -->
+			</inside>
+		</item>
+	</loot>
 </monster>

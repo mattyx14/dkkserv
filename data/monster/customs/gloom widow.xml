@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<monster name="gloom widow" nameDescription="a gloom widow" race="VENOM" experience="11600" speed="280" manacost="0">
+	<health now="11300" max="11300"/>
+	<look type="347" corpse="11310"/>
+	<targetchange interval="5000" chance="8"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag targetdistance="1"/>
+		<flag lightlevel="0"/>
+		<flag lightcolor="0"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" min="-150" max="-500"/>
+		<attack name="poisonfield" interval="1000" chance="17" range="7" radius="3" target="1">
+			<attribute key="shootEffect" value="poison"/>
+		</attack>
+		<attack name="earth" interval="1000" chance="30" range="7" min="-115" max="-435">
+			<attribute key="shootEffect" value="EARTH"/>
+			<attribute key="areaEffect" value="PLANTATTACK"/>
+		</attack>
+	</attacks>
+	<defenses armor="20" defense="20">
+		<defense name="speed" interval="1000" chance="6" speedchange="310" duration="20000">
+			<attribute key="areaEffect" value="redshimmer"/>
+		</defense>
+		<defense name="outfit" interval="1000" chance="10" monster="spider" duration="7000">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+	</defenses>
+	<immunities>
+		<immunity lifedrain="1"/>
+		<immunity paralyze="1"/>
+		<immunity outfit="1"/>
+		<immunity drunk="1"/>
+		<inmunity invisible="1"/>
+	</immunities>
+	<summons maxSummons="3">
+		<summon name="tarantula" interval="1000" chance="50" max="3"/>
+	</summons>
+	<elements>
+		<element physicalPercent="30"/>
+		<element energyPercent="20"/>
+		<element earthPercent="100"/>
+		<element icePercent="20"/>
+		<element holyPercent="20"/>
+		<element deathPercent="30"/>
+		<element firePercent="100"/>
+	</elements>
+	<loot>
+		<item id="2169" chance="700"/> -- time ring
+		<item id="2148" countmax="50" chance1="100000" chancemax="0"/> -- gold coin
+		<item id="2463" chance="4000"/> -- plate armor :: Arm 10
+		<item id="2171" chance="400"/> -- platinum amulet :: Arm 2
+		<item id="7434" chance="130"/> -- royal axe :: Def 25 :: Atk 47
+		<item id="2459" chance="20000"/> -- iron helmet :: Arm 5
+		<item id="5879" countmax="1" chance1="9500" chancemax="1"/> -- giant spider silk
+		<item id="1987" chance="10000"> -- bag
+			<inside>
+				<item id="2148" countmax="40" chance1="100000" chancemax="0"/> -- gold coin
+				<item id="2457" chance="5000"/> -- steel helmet :: Arm 6
+				<item id="2476" chance="700"/> -- knight armor :: Arm 12
+				<item id="2477" chance="500"/> -- knight legs :: Arm 8
+				<item id="2478" chance="10000"/> -- brass legs :: Arm 5
+				<item id="2169" chance="800"/> -- time ring
+				<item id="7434" chance="130"/> -- royal axe :: Def 25 :: Atk 47
+				<item id="2472" chance="930"/> -- magic plate armor :: Arm 19
+			</inside>
+		</item>
+	</loot>
+</monster>

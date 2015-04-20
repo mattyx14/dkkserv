@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Firelord" nameDescription="a firelord" race="UNDEAD" experience="6500" speed="280" manacost="0">
+	<health now="8200" max="8200"/>
+	<look type="243" corpse="8964"/>
+	<targetchange interval="5000" chance="10"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="80" attack="120"/>
+		<attack name="manadrain" interval="2000" chance="15" range="7" min="-0" max="-120">
+			<attribute key="shootEffect" value="suddendeath"/>
+		</attack>
+		<attack name="fire" interval="2500" chance="60" range="7" radius="7" target="1" min="-150" max="-250">
+			<attribute key="shootEffect" value="fire"/>
+			<attribute key="areaEffect" value="firearea"/>
+		</attack>
+		<attack name="firefield" interval="1000" chance="15" range="7" radius="1" target="1">
+			<attribute key="shootEffect" value="fire"/>
+		</attack>
+		<attack name="fire" interval="1000" chance="10" length="8" spread="0" min="-300" max="-460">
+			<attribute key="areaEffect" value="FIREATTACK"/>
+		</attack>
+		<attack name="fire" interval="3000" chance="7" range="3" radius="1" target="1" min="-210" max="-300">
+			<attribute key="shootEffect" value="fire"/>
+			<attribute key="areaEffect" value="firearea"/>
+		</attack>
+		<attack name="Paralyze" interval="5000" chance="17" range="7" target="1">
+			<attribute key="areaEffect" value="redshimmer"/>
+		</attack>
+	</attacks>
+	<defenses armor="30" defense="30">
+		<defense name="healing" interval="2000" chance="10" min="90" max="200">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+		<defense name="speed" interval="1000" chance="5" speedchange="320" duration="20000">
+			<attribute key="areaEffect" value="redshimmer"/>
+		</defense>
+	</defenses>
+	<immunities>
+		<immunity paralyze="1"/>
+		<immunity outfit="1"/>
+		<immunity drunk="1"/>
+		<immunity invisible="1"/>
+	</immunities>
+	<elements>
+		<element deathPercent="100"/>
+		<element earthPercent="100"/>
+		<element firePercent="100"/>
+		<element icePercent="50"/>
+		<element energyPercent="50"/>
+		<element physicalPercent="50"/>
+		<element holyPercent="50"/>
+	</elements>
+	<summons maxSummons="2">
+		<summon name="fire elemental" interval="1000" chance="20" max="2"/>
+	</summons>
+	<voices interval="5000" chance="10">
+		<voice sentence="MUHAHAHAHA!" yell="1"/>
+		<voice sentence="I SMELL FEEEEEAAAR!" yell="1"/>
+		<voice sentence="CHAMEK ATH UTHUL ARAK!" yell="1"/>
+		<voice sentence="Your resistance is futile!"/>
+		<voice sentence="Your soul will be mine!" yell="0"/>
+	</voices>
+</monster>

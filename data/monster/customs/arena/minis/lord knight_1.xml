@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Lord knight" nameDescription="a lord knight" race="blood" experience="9250" speed="450" manacost="0">
+	<health now="6800" max="6800"/>
+	<look type="134" head="114" body="0" legs="114" feet="115" addons="3" corpse="6080"/>
+	<targetchange interval="5000" chance="8"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" min="-180" max="-755"/>
+		<attack name="physical" interval="2500" chance="20" range="7" min="-165" max="-345">
+			<attribute key="shootEffect" value="EARTH"/>
+		</attack>
+		<attack name="physical" interval="3000" chance="15" range="7" radius="4" target="0" min="-230" max="-555">
+			<attribute key="areaEffect" value="GROUNDSHAKER"/>
+		</attack>
+	</attacks>
+	<defenses armor="30" defense="20">
+		<defense name="healing" interval="1000" chance="10" min="80" max="250">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+	</defenses>
+	<voices interval="5000" chance="10">
+		<voice sentence="MINE!" yell="1"/>
+		<voice sentence="NO MERCY!" yell="1"/>
+		<voice sentence="Terror!"/>
+		<voice sentence="Yeahhh!"/>
+	</voices>
+	<immunities>
+		<immunity paralyze="1"/>
+		<immunity outfit="1"/>
+		<immunity drunk="1"/>
+		<immunity invisible="1"/>
+	</immunities>
+	<elements>
+		<element deathPercent="100"/>
+		<element earthPercent="100"/>
+		<element firePercent="100"/>
+		<element icePercent="100"/>
+		<element energyPercent="100"/>
+		<element physicalPercent="100"/>
+		<element holyPercent="50"/>
+	</elements>
+</monster>

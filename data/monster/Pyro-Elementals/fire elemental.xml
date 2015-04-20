@@ -1,40 +1,49 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<monster name="Fire Elemental" nameDescription="a fire elemental" race="fire" experience="280" speed="220" manacost="650">
-  <health now="280" max="280"/>
-  <look type="49" corpse="1492"/>
-  <targetchange interval="5000" chance="8"/>
-  <strategy attack="100" defense="0"/>
-  <flags>
-    <flag summonable="1"/>
-    <flag attackable="1"/>
-    <flag hostile="1"/>
-    <flag illusionable="1"/>
-    <flag convinceable="1"/>
-    <flag pushable="0"/>
-    <flag canpushitems="1"/>
-    <flag canpushcreatures="0"/>
-    <flag targetdistance="1"/>
-    <flag staticattack="90"/>
-    <flag runonhealth="0"/>
-  </flags>
-  <attacks>
-    <attack name="melee" interval="2000" skill="38" attack="38"/>
-    <attack name="fire" interval="1000" chance="16" range="7" radius="2" target="1" min="-55" max="-155">
-      <attribute key="shootEffect" value="fire"/>
-      <attribute key="areaEffect" value="firearea"/>
-    </attack>
-    <attack name="firefield" interval="1000" chance="14" range="7" radius="1" target="1">
-      <attribute key="shootEffect" value="fire"/>
-    </attack>
-  </attacks>
-  <defenses armor="0" defense="0"/>
-  <elements>
-  <element icePercent="-25"/>
-  </elements>
-  <immunities>
-    <immunity fire="1"/>
-    <immunity physical="0"/>
-	<immunity death="1"/>
-	<immunity invisible="1"/>
-  </immunities>
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Fire Elemental" nameDescription="a fire elemental" race="fire" experience="220" speed="200" manacost="690">
+	<health now="280" max="280"/>
+	<look type="49" corpse="8964"/>
+	<targetchange interval="5000" chance="8"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="1"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="0"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="30" attack="50"/>
+		<attack name="fire" interval="4000" chance="25" range="7" radius="2" target="1" min="-55" max="-160">
+			<attribute key="shootEffect" value="fire"/>
+			<attribute key="areaEffect" value="firearea"/>
+		</attack>
+		<attack name="firefield" interval="4000" chance="34" range="7" radius="1" target="1">
+			<attribute key="shootEffect" value="fire"/>
+		</attack>
+	</attacks>
+	<defenses armor="18" defense="20"/>
+	<elements>
+		<element firePercent="100"/>
+		<element deathPercent="25"/>
+		<element icePercent="25"/>
+	</elements>
+	<immunities>
+		<immunity paralyze="1"/>
+		<immunity invisible="1"/>
+	</immunities>
+	<loot>
+		<item id="2152" countmax="2" chance="31350" /><!-- platinum coin -->
+		<item id="8304" chance="800" /><!-- eternal flames -->
+		<item id="1987" chance="100000"><!-- bag -->
+			<inside>
+				<item id="10553" chance="150" /><!-- fiery heart -->
+			</inside>
+		</item>
+	</loot>
 </monster>

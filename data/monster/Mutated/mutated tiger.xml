@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Mutated Tiger" nameDescription="a mutated tiger" race="blood" experience="750" speed="245" manacost="0">
+<monster name="Mutated Tiger" nameDescription="a mutated tiger" race="blood" experience="950" speed="245" manacost="0">
 	<health now="1100" max="1100"/>
 	<look type="318" corpse="9913"/>
 	<targetchange interval="5000" chance="8"/>
@@ -19,9 +19,9 @@
 	</flags>
 	<attacks>
 		<attack name="melee" interval="2000" skill="65" attack="65"/>
-		<attack name="physical" interval="3000" chance="20" length="8" spread="3" min="-30" max="-130">      
-			<attribute key="areaEffect" value="redspark"/>    
-		</attack> 	
+		<attack name="physical" interval="3000" chance="20" length="8" spread="3" min="-30" max="-130">
+			<attribute key="areaEffect" value="redspark"/>
+		</attack>
 	</attacks>
 	<defenses armor="30" defense="30">
 		<defense name="invisible" interval="1000" chance="25" duration="9000">
@@ -35,8 +35,8 @@
 		<element firePercent="20"/>
 		<element energyPercent="20"/>
 		<element icePercent="20"/>
-		<element deathPercent="-15"/>
-		<element earthPercent="80"/>
+		<element deathPercent="20"/>
+		<element earthPercent="100"/>
 	</elements>
 	<immunities>
 		<immunity paralyze="1"/>
@@ -48,16 +48,17 @@
 		<voice sentence="CHHHHHHHHHHH"/>
 	</voices>
 	<loot>
-		<item id="2148" countmax="96" chance1="100000" chancemax="0"/> <!-- gps -->
-		<item id="2666" countmax="4" chance1="100000" chancemax="0"/> <!-- meat -->
-		<item id="7588" chance="900"/> <!-- shp -->
-		<item id="1987" chance="100000"> <!-- bag -->
+		<item id="2152" countmax="2" chance="44925" /><!-- platinum coin -->
+		<item id="2666" chance="31250" /><!-- meat -->
+		<item id="11210" chance="11600" /><!-- striped fur -->
+		<item id="2168" chance="5675" /><!-- life ring -->
+		<item id="11228" chance="3425" /><!-- sabretooth -->
+		<item id="7436" chance="175" /><!-- angelic axe -->
+		<item id="1987" chance="100000"><!-- bag -->
 			<inside>
-				<item id="2509" countmax="1" chance1="4000"/> <!-- steel shield -->
-				<item id="2515" chance="700"/> <!-- guardian shield -->
-				<item id="2168" chance="800"/> <!-- life ring -->        
-				<item id="7454" chance="300"/> <!-- glorius axe -->
-				<item id="7436" chance="200"/> <!-- angelic axe -->
+				<item id="2515" chance="1150" /><!-- guardian shield -->
+				<item id="7588" countmax="2" chance="1025" /><!-- strong health potion -->
+				<item id="2509" chance="21100" /><!-- steel shield -->
 			</inside>
 		</item>
 	</loot>

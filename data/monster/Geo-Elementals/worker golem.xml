@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Worker Golem" nameDescription="a worker golem" race="energy" experience="2250" speed="270" manacost="0">
+	<health now="2000" max="2000"/>
+	<look type="304" corpse="9801"/>
+	<targetchange interval="5000" chance="8"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="80" attack="100"/>
+		<attack name="physical" interval="1000" chance="14" range="7" min="-0" max="-195">
+			<attribute key="shootEffect" value="explosion"/>
+		</attack>
+	</attacks>
+	<defenses armor="40" defense="45">
+		<defense name="healing" interval="1000" chance="20" min="100" max="220">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+	</defenses>
+	<elements>
+		<element earthPercent="50"/>
+		<element holyPercent="50"/>
+		<element energyPercent="-5"/>
+		<element physicalPercent="10"/>
+		<element icePercent="10"/>
+		<element deathPercent="10"/>
+	</elements>
+	<immunities>
+		<immunity invisible="1"/>
+		<immunity paralyze="1"/>
+	</immunities>
+	<voices interval="2500" chance="10">
+		<voice sentence="INTRUDER ALARM!"/>
+		<voice sentence="klonk klonk klonk"/>
+		<voice sentence="Rrrtttarrrttarrrtta"/>
+		<voice sentence="Awaiting orders."/>
+		<voice sentence="Secret objective complete."/>
+	</voices>
+	<loot>
+		<item id="9690" chance="975" /><!-- gear wheel -->
+		<item id="2152" countmax="3" chance="31450" /><!-- platinum coin -->
+		<item id="8309" countmax="5" chance="3450" /><!-- nail -->
+		<item id="10572" chance="1900" /><!-- gear crystal -->
+		<item id="2391" chance="1000" /><!-- war hammer -->
+		<item id="2145" countmax="2" chance="775" /><!-- small diamond -->
+		<item id="7591" countmax="2" chance="2150" /><!-- great health potion -->
+		<item id="5880" chance="975" /><!-- iron ore -->
+		<item id="9976" chance="1125" /><!-- crystal pedestal -->
+		<item id="7439" chance="825" /><!-- berserk potion -->
+		<item id="1987" chance="100000"><!-- bag -->
+			<inside>
+				<item id="9808" chance="1200" /><!-- rusty armor -->
+				<item id="8472" countmax="2" chance="3600" /><!-- great spirit potion -->
+				<item id="9811" chance="1125" /><!-- rusty legs -->
+				<item id="7590" countmax="2" chance="1375" /><!-- great mana potion -->
+				<item id="2164" chance="1500" /><!-- might ring -->
+				<item id="7428" chance="1100" /><!-- bonebreaker -->
+				<item id="7452" chance="1650" /><!-- spiked squelcher -->
+			</inside>
+		</item>
+	</loot>
+</monster>

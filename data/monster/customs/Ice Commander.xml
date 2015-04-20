@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<monster name="Ixedon" nameDescription="a Ixcedon" experience="12500" speed="360" race="Undead">
+	<health now="12900" max="12900"/>
+	<look type="134" head="0" body="85" legs="114" feet="114" addons="3" corpse="6080"/>
+	<strategy attack="100" defense="0"/>
+	<targetchange speed="1" chance="8"/>
+	<flags>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag hostile="1"/>
+		<flag attackable="1"/>
+		<flag staticattack="90"/>
+		<flag targetdistance="1"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" chance="100" min="-180" max="-490" range="1"/>
+		<attack name="ice" interval="1900" chance="45" min="-250" max="-420" range="8" radius="6" target="1">
+			<attribute key="areaEffect" value="icetornado"/>
+			<attribute key="shootEffect" value="ice"/>
+		</attack>
+		<attack name="ice" interval="1800" chance="15" min="-230" max="-355" range="7" radius="5" target="0">
+			<attribute key="areaEffect" value="iceattack"/>
+		</attack>
+	</attacks>
+	<defenses defense="20" armor="30">
+		<defense name="healing" interval="1000" chance="10" min="100" max="250">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+	</defenses>
+	<elements>
+		<element firePercent="100"/>
+		<element earthPercent="100"/>
+		<element deathPercent="50"/>
+		<element icePercent="100"/>
+		<element holyPercent="30"/>
+		<element physicalPercent="30"/>
+	</elements>
+	<immunities>
+		<immunity lifedrain="1"/>
+		<immunity paralyze="1"/>
+		<immunity outfit="1"/>
+		<immunity drunk="1"/>
+		<immunity invisible="1"/>
+		<immunity drown="1"/>
+	</immunities>
+	<voices interval="10000" speed="1000" chance="10">
+		<voice sentence="He suffers while die!" yell="1"/>
+		<voice sentence="We ceases cold!" yell="1"/>
+	</voices>
+	<summons maxSummons="1">
+		<summon name="ice witch" interval="2500" chance="10" max="1"/>
+	</summons>
+	<loot>
+		<item id="2472" countmax="1" chance="130"/> -- magic plate armor :: Arm 19
+		<item id="2514" countmax="1" chance="500"/> -- mastermind shield :: Def 38
+		<item id="7368" countmax="30" chance="7000"/> -- assassin star :: Atk 62
+		<item id="1987" countmax="1" chance="100000"> -- bag
+			<inside>
+				<item id="2173" countmax="1" chance="502"/> -- amulet of loss
+				<item id="2396" countmax="1" chance="2500"/> -- ice rapier :: Atk 150 :: Def 1
+				<item id="8472" chance="567" /> -- great spirit potion
+				<item id="8473" chance="15000"/> -- ultimate health potion
+				<item id="8473" chance="15000"/> -- ultimate health potion
+				<item id="8473" chance="15000"/> -- ultimate health potion
+				<item id="2470" countmax="1" chance="400"/> -- golden legs :: Arm 10
+			</inside>
+		</item>
+	</loot>
+</monster>

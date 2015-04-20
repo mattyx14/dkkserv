@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="annihilon" nameDescription="annihilon" race="fire" experience="100000" speed="380" manacost="0">
+<monster name="Annihilon" nameDescription="annihilon" race="fire" experience="10000" speed="380" manacost="0">
 	<health now="60000" max="60000"/>
 	<look type="12" head="19" body="104" legs="96" feet="96" corpse="6068"/>
 	<targetchange interval="5000" chance="8"/>
@@ -42,9 +42,9 @@
 		</defense>
 	</defenses>
 	<elements>
+		<element energyPercent="96"/>
 		<element icePercent="20"/>
-		<element deathPercent="20"/>
-		<element firePercent="-15"/>
+		<element earthPercent="-5"/>
 	</elements>
 	<immunities>
 		<immunity lifedrain="1"/>
@@ -54,16 +54,41 @@
 		<voice sentence="Annihilation!" yell="1"/>
 	</voices>
 	<loot>
-		<item id="2148" countmax="100" chance1="100000" chancemax="0"/>
-		<item id="2148" countmax="50" chance1="100000" chancemax="0"/>
-		<item id="2150" countmax="20" chance1="5515" chancemax="0"/> --Small amethyst
-		<item id="2520" chance="7000"/> --Fire AXe
-		<item id="1987" chance="100000">
-		<inside>
-			<item id="2158" chance="4300"/> --Blue gem
-			<item id="2520" chance="7600"/> --Demon shield
-			<item id="2165" chance="10000"/> --stealth ring
-		</inside>
+		<item id="7591" chance="19100" /><!-- great health potion -->
+		<item id="2152" countmax="25" chance="10725" /><!-- platinum coin -->
+		<item id="2515" chance="10300" /><!-- guardian shield -->
+		<item id="7840" countmax="99" chance="8400" /><!-- flaming arrow -->
+		<item id="1988" chance="100000"><!-- bag -->
+			<inside>
+				<item id="2153" chance="17650" /><!-- violet gem -->
+				<item id="2381" chance="27950" /><!-- halberd -->
+				<item id="2156" chance="19125" /><!-- red gem -->
+				<item id="7590" chance="20575" /><!-- great mana potion -->
+				<item id="2528" chance="14700" /><!-- tower shield -->
+				<item id="9971" chance="16175" /><!-- gold ingot -->
+				<item id="2452" chance="35300" /><!-- heavy mace -->
+				<item id="2154" chance="25000" /><!-- yellow gem -->
+				<item id="2427" chance="17650" /><!-- guardian halberd -->
+				<item id="7368" countmax="50" chance="8625" /><!-- assassin star -->
+				<item id="2158" chance="17650" /><!-- blue gem -->
+				<item id="7439" chance="20575" /><!-- berserk potion -->
+				<item id="8928" chance="4400" /><!-- obsidian truncheon -->
+				<item id="5954" countmax="2" chance="9550" /><!-- demon horn -->
+				<item id="7632" countmax="2" chance="22800" /><!-- giant shimmering pearl -->
+				<item id="8473" chance="10275" /><!-- ultimate health potion -->
+				<item id="2547" countmax="82" chance="9000" /><!-- power bolt -->
+				<item id="2155" chance="20600" /><!-- green gem -->
+				<item id="7366" countmax="70" chance="13675" /><!-- viper star -->
+				<item id="7421" chance="4400" /><!-- onyx flail -->
+				<item id="7440" chance="16175" /><!-- mastermind potion -->
+				<item id="2520" chance="5875" /><!-- demon shield -->
+				<item id="8929" chance="1475" /><!-- the stomper -->
+				<item id="2514" chance="2950" /><!-- mastermind shield -->
+				<item id="7387" chance="4400" /><!-- diamond sceptre -->
+				<item id="2519" chance="5875" /><!-- crown shield -->
+				<item id="8472" chance="5875" /><!-- great spirit potion -->
+				<item id="7431" chance="1475" /><!-- demonbone -->
+			</inside>
 		</item>
 	</loot>
 </monster>

@@ -9,10 +9,24 @@
 		<flag staticattack="78"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" min="-5" max="-45"/>
-		<attack name="physical" interval="1000" chance="80" range="5" radius="1" target="1" min="0" max="-50">
+		<attack name="melee" interval="2000" skill="30" attack="40"/>
+		<attack name="physical" interval="2000" chance="20" range="5" radius="1" target="1" min="0" max="-50">
 			<attribute key="shootEffect" value="smallstone"/>
 		</attack>
 	</attacks>
-	<defenses armor="15" defense="17"/>
+	<defenses armor="15" defense="17">
+		<defense name="speed" interval="2000" chance="15" speedchange="260" duration="5000">
+			<attribute key="areaEffect" value="redshimmer"/>
+		</defense>
+	</defenses>
+	<elements>
+		<element firePercent="-5"/>
+		<element earthPercent="-10"/>
+		<element deathPercent="-5"/>
+	</elements>
+	<voices interval="2000" chance="5">
+		<voice sentence="Hicks!"/>
+		<voice sentence="Stand still! Both of you! hicks"/>
+		<voice sentence="This victory will earn me a casket of beer."/>
+	</voices>
 </monster>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Serpent Spawn" nameDescription="a serpent spawn" race="venom" experience="2350" speed="240" manacost="0">
+	<health now="3000" max="3000"/>
+	<look type="220" corpse="4323"/>
+	<targetchange interval="5000" chance="8"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="275"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="40" attack="100"/>
+		<attack name="earth" interval="1000" chance="33" range="7" min="-100" max="-300">
+			<attribute key="shootEffect" value="poison"/>
+			<attribute key="areaEffect" value="greenspark"/>
+		</attack>
+		<attack name="outfit" interval="1000" chance="1" range="7" item="3976" duration="4000">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</attack>
+		<attack name="Paralyze" interval="1000" chance="17" range="7" target="1">
+			<attribute key="shootEffect" value="poison"/>
+			<attribute key="areaEffect" value="greenbubble"/>
+		</attack>
+		<attack name="lifedrain" interval="2000" chance="15" length="8" spread="0" min="-150" max="-400">
+			<attribute key="areaEffect" value="rednote"/>
+		</attack>
+		<attack name="earth" interval="3000" chance="17" length="8" spread="3" min="-50" max="-500">
+			<attribute key="areaEffect" value="poison"/>
+		</attack>
+		<attack name="outfit" interval="1000" chance="15" range="7" item="3976" duration="12000">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</attack>
+	</attacks>
+	<defenses armor="18" defense="25">
+		<defense name="healing" interval="1000" chance="17" min="300" max="500">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+		<defense name="speed" interval="1000" chance="9" speedchange="320" duration="5000">
+			<attribute key="areaEffect" value="redshimmer"/>
+		</defense>
+	</defenses>
+	<elements>
+		<element earthPercent="100"/>
+		<element icePercent="20"/>
+		<element firePercent="-10"/>
+		<element energyPercent="-10"/>
+	</elements>
+	<immunities>
+		<immunity paralyze="1"/>
+		<immunity invisible="1"/>
+	</immunities>
+	<voices interval="5000" chance="10">
+		<voice sentence="Sssssouls for the one"/>
+		<voice sentence="HISSSS" yell="1"/>
+		<voice sentence="Tsssse one will risssse again"/>
+		<voice sentence="I bring your deathhh, mortalssss"/>
+	</voices>
+	<loot>
+		<item id="2152" countmax="4" chance="37000" /><!-- platinum coin -->
+		<item id="2473" chance="1175" /><!-- viking helmet -->
+		<item id="2796" chance="18025" /><!-- green mushroom -->
+		<item id="2547" countmax="3" chance="5625" /><!-- power bolt -->
+		<item id="2167" chance="5900" /><!-- energy ring -->
+		<item id="2479" chance="650" /><!-- strange helmet -->
+		<item id="2146" chance="11950" /><!-- small sapphire -->
+		<item id="1950" chance="850" /><!-- book -->
+		<item id="7590" countmax="3" chance="1900" /><!-- great mana potion -->
+		<item id="2177" chance="925" /><!-- life crystal -->
+		<item id="2168" chance="5900" /><!-- life ring -->
+		<item id="2475" chance="1675" /><!-- warrior helmet -->
+		<item id="2182" chance="1075" /><!-- snakebite rod -->
+		<item id="2033" chance="3175" /><!-- golden mug -->
+		<item id="1987" chance="100000"><!-- bag -->
+			<inside>
+				<item id="7365" countmax="3" chance="1150" /><!-- onyx arrow -->
+				<item id="7456" chance="1900" /><!-- noble axe -->
+				<item id="3971" chance="1325" /><!-- charmer's tiara -->
+				<item id="2528" chance="1700" /><!-- tower shield -->
+				<item id="8902" chance="1125" /><!-- spellbook of mind control -->
+				<item id="8880" chance="75" /><!-- swamplair armor -->
+				<item id="2498" chance="1050" /><!-- royal helmet -->
+				<item id="2487" chance="1575" /><!-- crown armor -->
+				<item id="10611" chance="13125" /><!-- snake skin -->
+				<item id="11230" chance="800" /><!-- winged tail -->
+			</inside>
+		</item>
+	</loot>
+</monster>

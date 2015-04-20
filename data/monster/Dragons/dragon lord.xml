@@ -1,79 +1,83 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<monster name="dragon lord" nameDescription="a dragon lord" race="blood" experience="3400" speed="240" manacost="0">
-  <health now="2000" max="2000"/>
-  <look type="39" head="20" body="30" legs="40" feet="50" corpse="5984"/>
-  <targetchange interval="5000" chance="8"/>
-  <strategy attack="100" defense="0"/>
-  <flags>
-    <flag summonable="0"/>
-    <flag attackable="1"/>
-    <flag hostile="1"/>
-    <flag illusionable="1"/>
-    <flag convinceable="0"/>
-    <flag pushable="0"/>
-    <flag canpushitems="1"/>
-    <flag canpushcreatures="1"/>
-    <flag targetdistance="1"/>
-    <flag staticattack="90"/>
-    <flag runonhealth="300"/>
-  </flags>
-  <attacks>
-    <attack name="melee" interval="2000" min="-80" max="-250"/>
-    <attack name="fire" interval="2000" chance="20" range="7" radius="4" target="1" min="-60" max="-180">
-      <attribute key="shootEffect" value="fire"/>
-      <attribute key="areaEffect" value="firearea"/>
-    </attack>
-    <attack name="firefield" interval="1000" chance="17" range="7" radius="4" target="1">
-      <attribute key="shootEffect" value="fire"/>
-    </attack>
-    <attack name="fire" interval="3000" chance="20" length="8" spread="3" min="-70" max="-250">
-      <attribute key="areaEffect" value="firearea"/>
-    </attack>
-  </attacks>
-  <defenses armor="22" defense="35">
-    <defense name="healing" interval="1000" chance="25" min="57" max="93">
-      <attribute key="areaEffect" value="blueshimmer"/>
-    </defense>
-  </defenses>
-  <elements>
-	<element firePercent="100"/>
-	<element earthPercent="90"/>
-	<element energyPercent="20"/>
-	<element icePercent="-10"/>
-	<element energyPercent="-25"/>
-  </elements>
-  <immunities>
-    <immunity paralyze="1"/>
-    <immunity invisible="1"/>
-  </immunities>
-  <voices interval="5000" chance="10">
-    <voice sentence="ZCHHHHH" yell="1"/>
-    <voice sentence="YOU WILL BURN!" yell="1"/>
-  </voices>  <loot>
-    <item id="2148" countmax="100" chance1="100000" chancemax="0"/>
-    <item id="2672" countmax="2" chance1="20000" chancemax="0"/>
-    <item id="2033" chance="1818"/>
-    <item id="1976" chance="3333"/>
-    <item id="2413" chance="5000"/>
-    <item id="2498" chance="888"/>
-    <item id="2492" chance="733"/>
-    <item id="7378" countmax="2" chance1="2000" chancemax="0"/>
-    <item id="2546" countmax="5" chance1="2500" chancemax="0"/>
-    <item id="2547" countmax="10" chance1="2222" chancemax="0"/>
-    <item id="2796" countmax="1" chance1="6666" chancemax="0"/>
-    <item id="5948" countmax="1" chance1="5000" chancemax="0"/>
-    <item id="1987" chance="100000">
-      <inside>
-        <item id="2148" countmax="100" chance1="100000" chancemax="0"/>
-        <item id="2149" countmax="2" chance1="833" chancemax="0"/>
-        <item id="2392" chance="1428"/>
-        <item id="2146" countmax="2" chance1="2222" chancemax="0"/>
-        <item id="2528" chance="1333"/>
-        <item id="7402" chance="1033"/>
-        <item id="2414" chance="909"/>
-        <item id="5882" countmax="1" chance1="5000" chancemax="0"/>
-      </inside>
-    </item>
-  </loot>
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Dragon Lord" nameDescription="a dragon lord" race="blood" experience="2000" speed="240" manacost="0">
+	<health now="2100" max="2100"/>
+	<look type="39" corpse="5984"/>
+	<targetchange interval="5000" chance="8"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="1"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="300"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="100" attack="68"/>
+		<attack name="fire" interval="2000" chance="15" range="7" radius="4" target="1" min="-100" max="-200">
+			<attribute key="shootEffect" value="fire"/>
+			<attribute key="areaEffect" value="firearea"/>
+		</attack>
+		<attack name="fire" interval="1000" chance="12" length="8" spread="3" min="-150" max="-250">
+			<attribute key="shootEffect" value="fire"/>
+			<attribute key="areaEffect" value="firearea"/>
+		</attack>
+		<attack name="fire" interval="3000" chance="20" length="8" spread="3" min="-70" max="-250">
+			<attribute key="areaEffect" value="firearea"/>
+			<attribute key="areaEffect" value="firearea"/>
+		</attack>
+		<attack name="firefield" interval="4000" chance="20" range="7" radius="4" target="1">
+			<attribute key="shootEffect" value="fire"/>
+			<attribute key="areaEffect" value="firearea"/>
+		</attack>
+	</attacks>
+	<defenses armor="22" defense="35">
+		<defense name="healing" interval="5000" chance="40" min="60" max="100">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+	</defenses>
+	<elements>
+		<element earthPercent="80"/>
+		<element energyPercent="20"/>
+		<element icePercent="-10"/>
+	</elements>
+	<immunities>
+		<immunity fire="1"/>
+		<immunity paralyze="1"/>
+		<immunity invisible="1"/>
+	</immunities>
+	<voices interval="5000" chance="10">
+		<voice sentence="ZCHHHHH" yell="1"/>
+		<voice sentence="YOU WILL BURN!" yell="1"/>
+	</voices>
+	<loot>
+		<item id="2152" countmax="4" chance="33025" /><!-- platinum coin -->
+		<item id="2672" chance="71575" /><!-- dragon ham -->
+		<item id="2796" chance="11950" /><!-- green mushroom -->
+		<item id="2146" chance="4875" /><!-- small sapphire -->
+		<item id="5882" chance="2100" /><!-- red dragon scale -->
+		<item id="2547" countmax="7" chance="3675" /><!-- power bolt -->
+		<item id="2167" chance="5100" /><!-- energy ring -->
+		<item id="7402" chance="1100" /><!-- dragon slayer -->
+		<item id="7378" countmax="3" chance="6075" /><!-- royal spear -->
+		<item id="1950" chance="8850" /><!-- book -->
+		<item id="2033" chance="2900" /><!-- golden mug -->
+		<item id="1987" chance="100000"><!-- bag -->
+			<inside>
+				<item id="2498" chance="1225" /><!-- royal helmet -->
+				<item id="2528" chance="1325" /><!-- tower shield -->
+				<item id="7588" countmax="3" chance="1900" /><!-- strong health potion -->
+				<item id="5948" chance="2975" /><!-- red dragon leather -->
+				<item id="2392" chance="3325" /><!-- fire sword -->
+				<item id="2479" chance="1350" /><!-- strange helmet -->
+				<item id="2492" chance="875" /><!-- dragon scale mail -->
+				<item id="7399" chance="1215" /><!-- dragon lord trophy -->
+			</inside>
+		</item>
+	</loot>
 </monster>
-

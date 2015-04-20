@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="frost dragon hatchling" nameDescription="a frost dragon hatchling" race="blood" experience="745" speed="170" manacost="0">
-	<health now="800" max="800"/>
-	<look type="283" head="0" body="0" legs="0" feet="0" corpse="7969"/>
+<monster name="Frost Dragon Hatchling" nameDescription="a frost dragon hatchling" race="blood" experience="945" speed="170" manacost="800">
+	<health now="850" max="850"/>
+	<look type="283" corpse="7969"/>
 	<targetchange interval="2000" chance="5"/>
 	<strategy attack="70" defense="10"/>
 	<flags>
@@ -14,42 +14,48 @@
 		<flag canpushitems="1"/>
 		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
 		<flag runonhealth="80"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="60" attack="40"/>
-		<attack name="ice" interval="1000" chance="12" length="8" spread="3" min="-50" max="-160">
-			<attribute key="areaEffect" value="firearea"/>
+		<attack name="melee" interval="2000" skill="70" attack="40"/>
+		<attack name="ice" interval="1500" chance="12" length="8" spread="3" min="-60" max="-110">
+			<attribute key="areaEffect" value="icearea"/>
 		</attack>
-		<attack name="ice" interval="1000" chance="15" range="7" min="-60" max="-120">
-			<attribute key="shootEffect" value="ice"/>
+		<attack name="ice" interval="1000" chance="15" range="7" radius="4" target="1" min="-55" max="-105">
+			<attribute key="shootEffect" value="smallice"/>
+			<attribute key="areaEffect" value="icearea"/>
+		</attack>
+		<attack name="Paralyze" interval="5000" chance="17" range="7" target="1">
+			<attribute key="areaEffect" value="redshimmer"/>
 		</attack>
 	</attacks>
-	<defenses armor="25" defense="38">
+	<defenses armor="25" defense="35">
+		<defense name="healing" interval="5000" chance="40" min="30" max="60">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
 	</defenses>
 	<elements>
-		<element firePercent="100"/>
-		<element earthPercent="100"/>
-		<element icePercent="100"/>
 		<element energyPercent="-5"/>
 	</elements>
 	<immunities>
+		<immunity fire="1"/>
 		<immunity lifedrain="1"/>
-		<immunity paralyze="1"/>
-		<immunity invisible="1"/>
+		<immunity ice="1"/>
+		<immunity earth="1"/>
 	</immunities>
-	<voices interval="5000" chance="50">
+	<voices interval="5000" chance="10">
 		<voice sentence="Rooawwrr" yell="0"/>
 		<voice sentence="Fchu?" yell="0"/>
 	</voices>
-	<loot capacity="800">
-		<item id="7618" countmax="1" chance="5000"/>
-		<item id="2672" countmax="1" chance="5000"/>
-		<item id="2148" countmax="26" chance="100000"/>
-    <item id="1987" chance="100000">
-      <inside>
-        <item id="2148" countmax="25" chance1="100000" chancemax="0"/>
-      </inside>
-	</item>
+	<loot>
+		<item id="10578" chance="5025" /><!-- frosty heart -->
+		<item id="2672" chance="79300" /><!-- dragon ham -->
+		<item id="1987" chance="100000"><!-- bag -->
+			<inside>
+				<item id="2148" countmax="54" chance="31300" /><!-- gold coin -->
+				<item id="7618" chance="1625" /><!-- health potion -->
+			</inside>
+		</item>
 	</loot>
 </monster>

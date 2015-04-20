@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Lizard Dragon Priest" nameDescription="a lizard dragon priest" race="blood" experience="1200" speed="320" manacost="0">
+	<health now="1450" max="1450"/>
+	<look type="339" corpse="11277"/>
+	<targetchange interval="5000" chance="8"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="1"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="0"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="50"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="30" attack="25"/>
+		<attack name="fire" interval="2000" chance="20" length="8" spread="3" min="-125" max="-190">
+			<attribute key="areaEffect" value="firearea"/>
+		</attack>
+		<attack name="Paralyze" interval="2000" chance="17" range="7" target="1">
+			<attribute key="shootEffect" value="fire"/>
+		</attack>
+	</attacks>
+	<defenses armor="25" defense="25">
+		<defense name="healing" interval="2000" chance="20" min="200" max="400">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+		<defense name="invisible" interval="2000" chance="15" duration="4000">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+	</defenses>
+	<elements>
+		<element firePercent="45"/>
+	</elements>
+	<immunities>
+		<immunity earth="1"/>
+		<immunity invisible="1"/>
+	</immunities>
+	<summons maxSummons="2">
+		<summon name="Dragon Hatchling" interval="2000" chance="20" max="2"/>
+	</summons>
+	<loot>
+		<item id="5876" chance="900" /><!-- lizard leather -->
+		<item id="2150" chance="825" /><!-- small amethyst -->
+		<item id="11361" chance="10500" /><!-- dragon priest's wandtip -->
+		<item id="2152" countmax="3" chance="37575" /><!-- platinum coin -->
+		<item id="2181" chance="2000" /><!-- terra rod -->
+		<item id="11245" chance="1225" /><!-- bunch of ripe rice -->
+		<item id="11303" chance="700" /><!-- zaoan shoes -->
+		<item id="1987" chance="100000"><!-- bag -->
+			<inside>
+				<item id="7590" countmax="4" chance="1825" /><!-- great mana potion -->
+				<item id="2168" chance="825" /><!-- life ring -->
+				<item id="5881" chance="1000" /><!-- lizard scale -->
+				<item id="11356" chance="350" /><!-- zaoan robe -->
+				<item id="2154" chance="825" /><!-- yellow gem -->
+			</inside>
+		</item>
+	</loot>
+</monster>

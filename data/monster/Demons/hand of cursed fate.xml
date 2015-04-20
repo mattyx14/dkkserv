@@ -1,72 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="hand of cursed fate" nameDescription="a hand of cursed fate" race="blood" experience="12850" speed="250" manacost="0">
-  <health now="10500" max="10500"/>
-  <look type="230" corpse="6312"/>
-  <targetchange interval="5000" chance="8"/>
-  <strategy attack="100" defense="0"/>
-  <flags>
-    <flag summonable="0"/>
-    <flag attackable="1"/>
-    <flag hostile="1"/>
-    <flag illusionable="1"/>
-    <flag convinceable="0"/>
-    <flag pushable="0"/>
-    <flag canpushitems="1"/>
-    <flag canpushcreatures="1"/>
-    <flag targetdistance="1"/>
-    <flag staticattack="70"/>
-    <flag runonhealth="3100"/>
-  </flags>
-  <attacks>
-    <attack name="melee" interval="2000" skill="90" attack="90"/>
-	    <attack name="manadrain" interval="2000" chance="22" range="7" min="-150" max="-900">
-      <attribute key="areaEffect" value="blueshimmer"/>
-  </attack>
-    <attack name="lifedrain" interval="2000" chance="20" range="7" min="-150" max="-840">
-      <attribute key="areaEffect" value="blueshimmer"/>
-  </attack>
-  </attacks>
-  <defenses armor="25" defense="35">
-    <defense name="healing" interval="2000" chance="50" min="150" max="255">
-      <attribute key="areaEffect" value="blueshimmer"/>
-    </defense>
-    <defense name="speed" interval="2000" chance="12" speedchange="400" duration="8000">
-      <attribute key="areaEffect" value="redshimmer"/>
-    </defense>
-	    <defense name="invisible" interval="3000" chance="20" duration="4000">
-      <attribute key="areaEffect" value="blueshimmer"/>
-    </defense>
-  </defenses>
-  <elements>
-		<element icePercent="-15"/>
-		<element holyPercent="-15"/>
-</elements>
-  <immunities>
-    <immunity physical="0"/>
-	<immunity death="1"/>
-    <immunity energy="1"/>
-    <immunity fire="1"/>
-    <immunity poison="1"/>
-    <immunity paralyze="1"/>
-    <immunity invisible="1"/>
-  </immunities>
-  <voices interval="5000" chance="10">
-
-  </voices>
-  <loot>
-   <item id="2148" countmax="100" chance1="100000" chancemax="0"/> --Gold Coin
-   <item id="2654" chance="35000"/> --Cape
-   <item id="2152" countmax="1" chance1="50000" chancemax="0"/> --Platinum Coin
-   <item id="2187" chance="1800" /> -- wand of Inferno
-      <item id="8974" chance="1300" /> -- Oracle figurine
-   <item id="1987" chance="100000"> --Bag
-            <inside>
-              <item id="2148" countmax="65" chance1="100000" chancemax="0"/> --Gold Coin
-              <item id="6500" countmax="1" chance1="2500" chancemax="0"/> --Concentrated Demonic Blood
-              <item id="2153" chance="1666"/> --Violet Gem
-			  <item id="7414" chance="1300"/> --Abyss Hammer
-            </inside>
-        </item>
-   </loot>
-
+<monster name="Hand of Cursed Fate" nameDescription="a hand of cursed fate" race="blood" experience="7500" speed="300" manacost="0">
+	<health now="7500" max="7500"/>
+	<look type="230" corpse="6312"/>
+	<targetchange interval="5000" chance="8"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="1"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="85"/>
+		<flag runonhealth="1500"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="80" attack="120" poison="380"/>
+		<attack name="manadrain" interval="2000" chance="25" range="7" min="0" max="-926">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</attack>
+		<attack name="drunk" interval="1000" chance="12" range="1" target="1"/>
+		<attack name="lifedrain" interval="2000" chance="10" range="7" min="0" max="-883">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</attack>
+	</attacks>
+	<defenses armor="25" defense="35">
+		<defense name="invisible" interval="2000" chance="10" duration="6000">
+			<attribute key="areaEffect" value="redshimmer"/>
+		</defense>
+		<defense name="healing" interval="2000" chance="20" min="100" max="250">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+		<defense name="speed" interval="1000" chance="35" speedchange="380" duration="6000">
+			<attribute key="areaEffect" value="redshimmer"/>
+		</defense>
+	</defenses>
+	<elements>
+		<element deathPercent="100"/>
+		<element firePercent="100"/>
+		<element energyPercent="50"/>
+		<element earthPercent="50"/>
+		<element icePercent="10"/>
+		<element holyPercent="25"/>
+	</elements>
+	<immunities>
+		<immunity paralyze="1"/>
+		<immunity invisible="1"/>
+	</immunities>
+	<loot>
+		<item id="2152" countmax="8" chance="7375" /><!-- platinum coin -->
+		<item id="6558" countmax="3" chance="23100" /><!-- concentrated demonic blood -->
+		<item id="6500" chance="7900" /><!-- demonic essence -->
+		<item id="2167" chance="1750" /><!-- energy ring -->
+		<item id="7365" countmax="3" chance="9950" /><!-- onyx arrow -->
+		<item id="5669" chance="875" /><!-- mysterious voodoo skull -->
+		<item id="1987" chance="100000"><!-- bag -->
+			<inside>
+				<item id="2187" chance="3875" /><!-- wand of inferno -->
+				<item id="2476" chance="3750" /><!-- knight armor -->
+				<item id="2146" countmax="3" chance="4100" /><!-- small sapphire -->
+				<item id="2200" chance="1750" /><!-- protection amulet -->
+				<item id="2153" chance="1875" /><!-- violet gem -->
+				<item id="6300" chance="1875" /><!-- death ring -->
+				<item id="2487" chance="2750" /><!-- crown armor -->
+			</inside>
+		</item>
+	</loot>
 </monster>

@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Pyramo" nameDescription="a Pyramo" race="fire" experience="10500" speed="360" manacost="0">
+	<health now="9900" max="9900"/>
+	<look type="134" head="0" body="132" legs="132" feet="114" addons="2" corpse="6080"/>
+	<targetchange interval="2000" chance="0"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="1"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="0"/>
+		<flag canpushcreatures="0"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" min="-180" max="-790"/>
+		<attack name="fire" interval="1500" chance="45" range="8" radius="2" target="1" min="-250" max="-420">
+			<attribute key="shootEffect" value="flammingarrow"/>
+			<attribute key="areaEffect" value="FIREATTACK"/>
+		</attack>
+		<attack name="fire" interval="2400" chance="15" range="7" radius="3" target="0" min="-230" max="-355">
+			<attribute key="areaEffect" value="firearea"/>
+		</attack>
+		<attack name="fire" interval="1900" chance="15" range="7" radius="3" target="0" min="-230" max="-355">
+			<attribute key="areaEffect" value="STONES"/>
+		</attack>
+	</attacks>
+	<defenses armor="30" defense="20">
+		<defense name="healing" interval="1000" chance="10" min="100" max="250">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+	</defenses>
+	<immunities>
+		<immunity energy="1"/>
+		<immunity fire="1"/>
+		<immunity poison="1"/>
+		<immunity lifedrain="1"/>
+		<immunity paralyze="1"/>
+		<immunity outfit="1"/>
+		<immunity drunk="1"/>
+		<immunity invisible="1"/>
+	</immunities>
+	<voices interval="5000" chance="10">
+		<voice sentence="Terror!"/>
+		<voice sentence="Yeahhh!"/>
+	</voices>
+	<loot>
+		<item id="2152" countmax="2" chance1="9000" chancemax="0"/> -- platinum coin
+		<item id="2152" countmax="4" chance1="12000" chancemax="0"/> -- platinum coin
+		<item id="7368" countmax="15" chance1="7000" chancemax="30"/> -- assassin star :: Atk 62
+		<item id="2514" chance="500"/> -- mastermind shield :: Def 38
+		<item id="2472" chance="130"/> -- magic plate armor :: Arm 19
+		<item id="2164" chance="3200"/> -- might ring
+		<item id="2176" chance="3000"/> -- orb
+		<item id="8472" chance="15000"/> -- great spirit potion
+		<item id="8472" chance="15000"/> -- great spirit potion
+		<item id="8473" chance="15000"/> -- ultimate health potion
+		<item id="7758" chance="1300"/> -- war hammer :: Def 10 :: Atk 45
+		<item id="1982" chance="1300"/> -- purple tome
+		<item id="2165" chance="2400"/> -- stealth ring
+		<item id="1987" chance="100000"> -- bag
+			<inside>
+				<item id="2214" chance="500"/> -- ring of healing
+				<item id="2396" chance="2500"/> -- ice rapier :: Atk 150 :: Def 1
+				<item id="2179" chance="1100"/> -- gold ring
+				<item id="2795" countmax="6" chance="20000"/> -- fire mushroom
+				<item id="2678" countmax="3" chance1="10000" chancemax="0"/> -- coconut
+				<item id="2152" countmax="1" chance1="100000" chancemax="0"/> -- platinum coin
+				<item id="2151" countmax="4" chance1="4000" chancemax="0"/> -- talon
+				<item id="2149" countmax="3" chance1="11000" chancemax="0"/> -- small emerald
+				<item id="2171" chance="800"/> -- platinum amulet :: Arm 2
+				<item id="2470" chance="400"/> -- golden legs :: Arm 10
+				<item id="2173" chance="502"/> -- amulet of loss
+				<item id="2377" chance="3333"/> -- two handed sword :: Def 25 :: Atk 30
+			</inside>
+		</item>
+	</loot>
+</monster>

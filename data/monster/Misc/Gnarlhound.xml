@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Gnarlhound" nameDescription="a gnarlhound" race="blood" experience="2860" speed="206" manacost="0">
+	<health now="1908" max="1908"/>
+	<look type="341" corpse="11247"/>
+	<targetchange interval="5000" chance="8"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="465"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="1"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="0"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="90" attack="100"/>
+	</attacks>
+	<defenses armor="1" defense="3"/>
+	<voices interval="5000" chance="10">
+		<voice sentence="Gnarlll!"/>
+		<voice sentence="Grrrrrr!"/>
+	</voices>
+	<loot>
+		<item id="2666" chance="38350" /><!-- meat -->
+		<item id="3976" countmax="3" chance="33700" /><!-- worm -->
+		<item id="11324" chance="19600" /><!-- shaggy tail -->
+	</loot>
+</monster>

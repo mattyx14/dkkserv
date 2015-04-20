@@ -1,58 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="energy elemental" nameDescription="a energy elemental" race="undead" experience="5250" speed="280" manacost="0">
-  <health now="2840" max="2840"/>
-  <look type="293" corpse="8966"/>
-  <targetchange interval="5000" chance="8"/>
-  <strategy attack="100" defense="0"/>
-  <flags>
-    <flag summonable="0"/>
-    <flag attackable="1"/>
-    <flag hostile="1"/>
-    <flag illusionable="1"/>
-    <flag convinceable="0"/>
-    <flag pushable="0"/>
-    <flag canpushitems="1"/>
-    <flag canpushcreatures="0"/>
-    <flag targetdistance="1"/>
-    <flag staticattack="90"/>
-    <flag runonhealth="0"/>
-  </flags>
-  <attacks>
-    <attack name="melee" interval="2000" skill="85" attack="95"/>
-<attack name="energy" interval="2000" chance="20" range="6" radius="2" target="1" min="-168" max="-220">
-  <attribute key="shootEffect" value="energy"/>
-  <attribute key="areaEffect" value="purpleenergy"/>
-    </attack>
-    <attack name="energy" interval="1000" chance="11" range="3" target="1" min="0" max="-130">
-      <attribute key="areaEffect" value="energy"/>
-    </attack>
-	<attack name="energycondition" interval="1000" chance="15" radius="3" target="0">
-	<atttribute key="areaEffect" value="yellowenergy"/>
-	</attack>
-</attacks>
-    <defenses armor="50" defense="50">
-    <defense name="healing" interval="2000" chance="15" min="90" max="150">
-      <attribute key="areaEffect" value="blueshimmer"/>
-    </defense>
-  </defenses>
-<elements>
-		<element physicalPercent="0"/>
-		<element holyPercent="15"/>
-		<element death="17"/>
-		<element earth="-35"/>
-</elements>
-  <immunities>
-    <immunity ice="1"/>
-	<immunity fire="1"/>
-    <immunity energy="1"/>
-    <immunity invisible="1"/>
-  </immunities>
-    <loot>
-   <item id="2148" countmax="100" chance1="100000" chancemax="0"/> --Gold Coin
-   <item id="8303" chance="1500" countmax="2" /> --Energy Soil
-   <item id="7439" chance="2100"/> --Berserk potion
-   <item id="2150" countmax="3" chance1="4500" chancemax="0"/> --Small Amethyst
-   <item id="8920" chance="1000"/> --Wand of Starstorm
-   <item id="8908" chance="800"/>
-   </loot>
-  </monster>
+<monster name="Energy Elemental" nameDescription="an energy elemental" race="undead" experience="2450" speed="250" manacost="0">
+	<health now="3500" max="3500"/>
+	<look type="293" corpse="8966"/>
+	<targetchange interval="20000" chance="15"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag staticattack="85"/>
+		<flag lightlevel="0"/>
+		<flag lightcolor="0"/>
+		<flag targetdistance="1"/>
+		<flag runonhealth="1"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" min="-220" max="-300"/>
+		<attack name="Paralyze" interval="1000" chance="17" range="7" target="1">
+			<attribute key="shootEffect" value="energy"/>
+			<attribute key="areaEffect" value="PURPLEENERGY"/>
+		</attack>
+		<attack name="energy" interval="2000" chance="20" range="6" radius="2" target="1" min="-168" max="-220">
+			<attribute key="shootEffect" value="energy"/>
+			<attribute key="areaEffect" value="purpleenergy"/>
+		</attack>
+		<attack name="energy" interval="1000" chance="11" range="3" target="1" min="0" max="-130">
+			<attribute key="areaEffect" value="energy"/>
+		</attack>
+		<attack name="energycondition" interval="1000" chance="15" radius="3" target="0">
+			<atttribute key="areaEffect" value="yellowenergy"/>
+		</attack>
+	</attacks>
+	<defenses armor="50" defense="50">
+		<defense name="healing" interval="2000" chance="15" min="90" max="150">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+	</defenses>
+	<elements>
+		<element physicalPercent="35"/>
+		<element holyPercent="5"/>
+		<element death="5"/>
+		<element earth="-15"/>
+	</elements>
+	<immunities>
+		<immunity ice="1"/>
+		<immunity fire="1"/>
+		<immunity energy="1"/>
+		<immunity invisible="1"/>
+		<immunity paralyze="1"/>
+	</immunities>
+	<loot>
+		<item id="2152" countmax="3" chance="42975" /><!-- platinum coin -->
+		<item id="7449" chance="6125" /><!-- crystal sword -->
+		<item id="7620" countmax="3" chance="10625" /><!-- mana potion -->
+		<item id="7838" countmax="10" chance="6150" /><!-- flash arrow -->
+		<item id="7589" countmax="4" chance="8750" /><!-- strong mana potion -->
+		<item id="2399" countmax="5" chance="5925" /><!-- throwing star -->
+		<item id="2425" chance="4100" /><!-- obsidian lance -->
+		<item id="2150" countmax="2" chance="3825" /><!-- small amethyst -->
+		<item id="1987" chance="100000"><!-- bag -->
+			<inside>
+				<item id="2515" chance="1400" /><!-- guardian shield -->
+				<item id="2167" chance="1450" /><!-- energy ring -->
+				<item id="2124" chance="2075" /><!-- crystal ring -->
+				<item id="2170" chance="1850" /><!-- silver amulet -->
+				<item id="2189" chance="1625" /><!-- wand of cosmic energy -->
+			</inside>
+		</item>
+	</loot>
+</monster>

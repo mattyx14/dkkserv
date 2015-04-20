@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Atlas" nameDescription="a atlas" race="undead" experience="30580" speed="380" manacost="0">
+	<health now="60000" max="60000"/>
+	<look type="277" corpse="7349"/>
+	<targetchange interval="5000" chance="8"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" min="-650" max="-1050"/>
+		<attack name="drown" interval="1000" chance="25" range="7" min="-570" max="-1000">
+			<attribute key="areaEffect" value="GROUNDSHAKER"/>
+		</attack>
+		<attack name="Paralyze" interval="3000" chance="17" range="7" target="1">
+			<attribute key="shootEffect" value="REDSTAR"/>
+			<attribute key="areaEffect" value="GROUNDSHAKER"/>
+		</attack>
+		<attack name="drown" interval="2000" chance="15" range="7" radius="3" target="0" min="-515" max="-855">
+			<attribute key="areaEffect" value="GROUNDSHAKER"/>
+		</attack>
+		<attack name="drown" interval="2000" chance="15" range="7" radius="3" target="0" min="-515" max="-855">
+			<attribute key="areaEffect" value="GROUNDSHAKER"/>
+		</attack>
+	</attacks>
+	<defenses armor="30" defense="20">
+		<defense name="healing" interval="2000" min="480" max="550">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+	</defenses>
+	<immunities>
+		<immunity paralyze="1"/>
+		<immunity outfit="1"/>
+		<immunity drunk="1"/>
+		<immunity invisible="1"/>
+	</immunities>
+	<elements>
+		<element deathPercent="100"/>
+		<element earthPercent="100"/>
+		<element firePercent="100"/>
+		<element icePercent="100"/>
+		<element energyPercent="100"/>
+		<element physicalPercent="100"/>
+		<element holyPercent="50"/>
+	</elements>
+	<summons maxSummons="7">
+		<summon name="Lord Knight_1" interval="1000" max="7"/>
+	</summons>
+</monster>

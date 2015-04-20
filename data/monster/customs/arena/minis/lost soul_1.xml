@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Lost Soul" nameDescription="a lost soul" race="undead" experience="9000" speed="250" manacost="0">
+	<health now="8800" max="8800"/>
+	<look type="232" corpse="6310"/>
+	<targetchange interval="5000" chance="8"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="1"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" min="-50" max="-440"/>
+		<attack name="lifedrain" interval="1800" chance="30" range="7" radius="4" target="0" min="-150" max="-250">
+			<attribute key="shootEffect" value="DEATH"/>
+			<attribute key="areaEffect" value="MORTAREA"/>
+		</attack>
+		<attack name="death" interval="1800" chance="40" range="7" radius="4" min="-300" max="-420">
+			<attribute key="areaEffect" value="SMALLCLOUDS"/>
+		</attack>
+		<attack name="Paralyze" interval="2300" chance="17" range="7" target="1">
+			<attribute key="areaEffect" value="STONES"/>
+		</attack>
+		<attack name="death" interval="1900" chance="20" range="7" radius="4" target="0" min="-100" max="-220">
+				<attribute key="areaEffect" value="POFF"/>
+		</attack>
+	</attacks>
+	<defenses armor="25" defense="35">
+		<defense name="speed" interval="1000" chance="35" speedchange="370" duration="30000">
+			<attribute key="areaEffect" value="redshimmer"/>
+		</defense>
+	</defenses>
+	<elements>
+		<element deathPercent="100"/>
+		<element earthPercent="50"/>
+		<element firePercent="50"/>
+		<element icePercent="50"/>
+		<element energyPercent="50"/>
+		<element physicalPercent="50"/>
+		<element holyPercent="50"/>
+	</elements>
+	<immunities>
+		<immunity paralyze="1"/>
+		<immunity outfit="1"/>
+		<immunity drunk="1"/>
+		<immunity invisible="1"/>
+	</immunities>
+	<voices interval="5000" chance="30">
+		<voice sentence="Forgive Meeeee!"/>
+		<voice sentence="Mouuuurn meeee!"/>
+	</voices>
+</monster>

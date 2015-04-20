@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<monster name="aquagel" nameDescription="a aquagel" race="undead" experience="12050" speed="1100" manacost="0">
+	<health now="9800" max="9800"/>
+	<look type="286" corpse="10499" corpseAid="101"/>
+	<targetchange interval="5000" chance="8"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag staticattack="90"/>
+		<flag targetdistance="1"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" min="-160" max="-420"/>
+		<attack name="ice" interval="1000" chance="20" range="7" radius="2" target="0" min="-255" max="-260">
+			<attribute key="areaEffect" value="WATERSPLASH"/>
+		</attack>
+		<attack name="ice" interval="1000" chance="30" range="7" min="-50" max="-140">
+			<attribute key="shootEffect" value="ice"/>
+			<attribute key="areaEffect" value="WATERSPLASH"/>
+		</attack>
+		<attack name="ice" interval="1000" chance="15" range="7" radius="2" target="0" min="-255" max="-350">
+			<attribute key="areaEffect" value="WATERSPLASH"/>
+		</attack>
+	</attacks>
+	<defenses armor="20" defense="22">
+		<defense name="healing" interval="1000" chance="17" min="30" max="50">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+	</defenses>
+	<loot>
+		<item id="8902" chance="8000" /> -- spellbook of mind control :: Def 16
+	</loot>
+	<immunities>
+		<immunity lifedrain="1"/>
+		<immunity paralyze="1"/>
+		<immunity outfit="1"/>
+		<immunity drunk="1"/>
+		<immunity invisible="1"/>
+		<immunity drown="1"/>
+	</immunities>
+	<elements>
+		<element earthPercent="100"/>
+		<element icePercent="100"/>
+		<element holyPercent="20"/>
+		<element energyPercent="15"/>
+		<element physicalPercent="10"/>
+		<element firePercent="100"/>
+	</elements>
+</monster>

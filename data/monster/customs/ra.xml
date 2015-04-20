@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Ra" description="a ra" experience="14099595" speed="370" race="undead">
+	<health now="1880200" max="1880200"/>
+	<look type="12" head="0" body="123" legs="97" feet="94" corpse="6068"/>
+	<targetchange interval="5000" chance="8"/>
+	<strategy attack="100" defense="45"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="4000"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="280" attack="300"/>
+		<attack name="manadrain" interval="1000" chance="25" radius="5" target="0" min="-950" max="-1850">
+			<attribute key="areaEffect" value="SMALLCLOUDS"/>
+		</attack>
+		<attack name="drown" interval="1000" chance="5" range="7" min="-1160" max="-1300"/>
+		<attack name="manadrain" interval="1000" chance="10" radius="5" target="0" min="-150" max="-350">
+			<attribute key="areaEffect" value="SMALLCLOUDS"/>
+		</attack>
+		<attack name="effect" interval="1000" chance="6" radius="6" target="0">
+			<attribute key="areaEffect" value="GROUNDSHAKER"/>
+		</attack>
+		<attack name="death" interval="1000" chance="34" range="7" radius="7" target="1" min="-1710" max="-2950">
+			<attribute key="areaEffect" value="mortarea"/>
+		</attack>
+		<attack name="energy" interval="1000" chance="15" length="8" spread="0" min="-1399" max="-1450">
+			<attribute key="areaEffect" value="BIGCLOUDS"/>
+		</attack>
+		<attack name="speed" interval="1000" chance="20" range="10" radius="3" target="1" speedchange="-700" duration="50000">
+			<attribute key="areaEffect" value="FIREATTACK"/>
+		</attack>
+	</attacks>
+	<defenses armor="40" defense="45">
+		<defense name="healing" interval="500" chance="20" min="700" max="1010">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+		<defense name="healing" interval="1000" chance="5" min="7200" max="10900">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+		<defense name="speed" interval="600" chance="50" speedchange="630" duration="7000">
+			<attribute key="areaEffect" value="redshimmer"/>
+		</defense>
+		<defense name="invisible" interval="1000" chance="10" duration="7000"> --each 7 sec invi duration 5 sec
+			<attribute key="areaEffect" value="TELEPORT"/>
+		</defense>
+	</defenses>
+	<immunities>
+		<immunity lifedrain="1"/>
+		<immunity paralyze="1"/>
+		<immunity outfit="1"/>
+		<immunity drunk="1"/>
+		<immunity invisible="1"/>
+	</immunities>
+	<elements>
+		<element firePercent="100"/>
+		<element earthPercent="100"/>
+	</elements>
+	<summons maxSummons="2">
+		<summon name="Demon Fire" interval="50000" chance="100"/>
+	</summons>
+	<loot>
+		<item id="2160" chance="100000" countmax="100" /> -- gold coin
+		<item id="2160" chance="50000" countmax="90" /> -- crystal coin
+		<item id="2160" chance="10000" countmax="5" /> -- crystal coin
+	</loot>
+</monster>

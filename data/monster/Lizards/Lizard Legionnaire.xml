@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Lizard Legionnaire" nameDescription="a lizard legionnaire" race="blood" experience="2100" speed="220" manacost="0">
+	<health now="1400" max="1400"/>
+	<look type="338" corpse="11273"/>
+	<targetchange interval="5000" chance="8"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="1"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="0"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="150"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="50" attack="50"/>
+		<attack name="physical" interval="2000" chance="25" range="7" min="-0" max="-310">
+			<attribute key="shootEffect" value="spear"/>
+		</attack>
+	</attacks>
+	<defenses armor="25" defense="25">
+	</defenses>
+	<elements>
+		<element firePercent="45"/>
+		<element icePercent="-15"/>
+	</elements>
+	<immunities>
+		<immunity earth="1"/>
+		<immunity invisible="1"/>
+	</immunities>
+	<voices interval="5000" chance="10">
+		<voice sentence="Tssss!"/>
+	</voices>
+	<loot>
+		<item id="11245" chance="950" /><!-- bunch of ripe rice -->
+		<item id="11323" chance="925" /><!-- zaoan halberd -->
+		<item id="11335" chance="9925" /><!-- broken halberd -->
+		<item id="5876" chance="1125" /><!-- lizard leather -->
+		<item id="5881" chance="1000" /><!-- lizard scale -->
+		<item id="2152" countmax="1" chance="38550" /><!-- platinum coin -->
+		<item id="7618" chance="425" /><!-- health potion -->
+		<item id="11303" chance="375" /><!-- zaoan shoes -->
+		<item id="1987" chance="100000"><!-- bag -->
+			<inside>
+				<item id="11305" chance="125" /><!-- drakinata -->
+				<item id="11334" chance="825" /><!-- legionnaire flags -->
+				<item id="2145" chance="275" /><!-- small diamond -->
+				<item id="11206" chance="550" /><!-- red lantern -->
+				<item id="11301" chance="75" /><!-- zaoan armor -->
+				<item id="11336" chance="925" /><!-- lizard trophy -->
+			</inside>
+		</item>
+	</loot>
+</monster>

@@ -1,61 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <monster name="Frozard" species="human" nameDescription="Frozard" race="blood" experience="7500" speed="370" manacost="0">
-    <health now="7100" max="7100"/>
-  <look type="251" head="11" body="9" legs="11" feet="85" addons="3" corpse="6080"/>
-  <targetchange interval="5000" chance="8"/>
-  <strategy attack="100" defense="0"/>
-  <flags>
-    <flag summonable="0"/>
-    <flag attackable="1"/>
-    <flag hostile="1"/>
-    <flag illusionable="0"/>
-    <flag convinceable="0"/>
-    <flag pushable="0"/>
-    <flag canpushitems="1"/>
-    <flag canpushcreatures="1"/>
-    <flag targetdistance="1"/>
-    <flag staticattack="90"/>
-    <flag runonhealth="0"/>
-  </flags>
-  <attacks>
-	<attack name="melee" interval="2000" min="-350" max="-450"/>
-	<attack name="ice" interval="3000" chance="50" target="1" min="-100" max="-400">
-      		<attribute key="shootEffect" value="ice"/>
-      		<attribute key="areaEffect" value="ICETORNADO"/>
-	</attack>
-	<attack name="ice" interval="1000" chance="15" target="1" range="7" min="-170" max="-200">
-		<attribute key="shootEffect" value="ice"/>
-      		<attribute key="areaEffect" value="ICEATTACK"/>
-	</attack>
+	<monster name="Frozard" species="human" nameDescription="Frozard" race="blood" experience="7500" speed="370" manacost="0">
+	<health now="7100" max="7100"/>
+	<look type="251" head="11" body="9" legs="11" feet="85" addons="3" corpse="6080"/>
+	<targetchange interval="5000" chance="8"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" min="-450" max="-750"/>
+		<attack name="ice" interval="3000" chance="50" target="1" min="-300" max="-400">
+			<attribute key="shootEffect" value="ice"/>
+			<attribute key="areaEffect" value="ICETORNADO"/>
+		</attack>
+		<attack name="ice" interval="1000" chance="15" target="1" range="7" min="-270" max="-300">
+			<attribute key="shootEffect" value="ice"/>
+			<attribute key="areaEffect" value="ICEATTACK"/>
+		</attack>
 	</attacks>
-    <defenses armor="51" defense="52"/>
+	<defenses armor="51" defense="52"/>
 	<elements>
 		<element firePercent="100"/>
 		<element icePercent="100"/>
 		<element earthPercent="100"/>
-		<element holyPercent="23"/>
-		<element deathPercent="-11"/>
-		<element physicalPercent="-17"/>
+		<element holyPercent="50"/>
+		<element deathPercent="50"/>
+		<element physicalPercent="50"/>
 	</elements>
-    <immunities>
-      <immunity paralyze="1"/>
-      <immunity invisible="1"/>
-    </immunities>
-  <loot>
-    <item id="2148" countmax="27" chance1="100000" chancemax="0"/>
-    <item id="2120" chance="20000"/>
-    <item id="2120" chance="6666"/>
-    <item id="2120" chance="3333"/>
-    <item id="2691" chance="4000"/>
-    <item id="5913" chance="2000"/>
-    <item id="1987" chance="100000">
-      <inside>
-        <item id="7290" chance="4000"/>
-        <item id="7463" chance="6666"/>
-        <item id="7386" chance="6666"/>
-        <item id="7458" chance="1000"/>
-        <item id="2173" chance="500"/>
-      </inside>
-    </item>
-  </loot>
-  </monster>
+	<immunities>
+		<immunity paralyze="1"/>
+		<immunity invisible="1"/>
+	</immunities>
+	<loot>
+		<item id="2148" countmax="27" chance1="100000" chancemax="0"/> -- gold coin
+		<item id="2120" chance="20000"/> -- rope
+		<item id="2120" chance="6666"/> -- rope
+		<item id="2120" chance="3333"/> -- rope
+		<item id="2691" chance="4000"/> -- brown bread
+		<item id="5913" chance="2000"/> -- brown piece of cloth
+		<item id="1987" chance="100000"> -- bag
+			<inside>
+				<item id="7290" chance="4000"/> -- shard
+				<item id="7463" chance="6666"/> -- mammoth fur cape :: Arm 10
+				<item id="7458" chance="1000"/> -- fur cap :: Arm 3
+				<item id="2173" chance="500"/> -- amulet of loss
+			</inside>
+		</item>
+	</loot>
+</monster>

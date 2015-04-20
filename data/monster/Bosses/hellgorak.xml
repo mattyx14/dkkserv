@@ -52,21 +52,20 @@
 		<immunity invisible="1"/>
 	</immunities>
 	<voices interval="5000" chance="0">
-		<voice sentence="??" yell="1"/>
-		<voice sentence="??" yell="1"/>
+		<voice sentence="I'll sacrifice yours souls to seven!"/>
+		<voice sentence="I'm bad news for you mortals!"/>
+		<voice sentence="No man can defeat me!"/>
+		<voice sentence="Your puny skills are no match for me."/>
+		<voice sentence="I smell your fear."/>
+		<voice sentence="Delicious!"/>
 	</voices>
 	<loot>
-		<item id="2148" countmax="100" chance1="80000" chancemax="8"/>
-		<item id="2148" countmax="100" chance1="80000" chancemax="10"/>
-		<item id="2160" countmax="3" chance1="100000" chancemax="0"/>
-		<item id="2143" countmax="7" chance1="3000" chancemax="0"/> --White pearl
-		<item id="2514" chance="1650"/> --mastermind shield
-		<item id="7590" chance="7000"/> --great mana potion
-		<item id="7591" chance="7000"/> --great health potion
-		<item id="1987" chance="100000">
-		<inside>
-			<item id="7368" countmax="25" chance="100000"/> --stars
-		</inside>
-		</item>
+		<item id="2152" countmax="3" chance="22152" /><!-- platinum coin -->
+		<item id="2160" countmax="3" chance="100000"/><!-- crystal coin -->
+		<item id="2143" countmax="7" chance="3000"/><!-- white pearl -->
+		<item id="2514" chance="1650"/><!-- mastermind shield -->
+		<item id="7590" countmax="3" chance="7000"/><!-- great mana potion -->
+		<item id="7591" countmax="5" chance="7000"/><!-- great health potion -->
+		<item id="7368" countmax="25" chance="100000"/><!-- assassin star -->
 	</loot>
 </monster>

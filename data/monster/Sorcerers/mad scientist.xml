@@ -18,14 +18,14 @@
 		<flag runonhealth="0"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" min="-0" max="-35"/>
+		<attack name="melee" interval="2000" skill="25" attack="20"/>
 		<attack name="lifedrain" interval="1000" chance="35" range="7" min="-20" max="-60">
 			<attribute key="shootEffect" value="energy"/>
 			<attribute key="areaEffect" value="poff"/>
 		</attack>
-		<attack name="energy strike" interval="2000" chance="25" min="0" max="-30"/>
-		<attack name="speed" interval="3000" chance="10" range="7" target="1" duration="2000" speedchange="-300">      
-			<attribute key="areaEffect" value="redshimmer"/>    
+		<attack name="energy" interval="2000" chance="25" min="0" max="-30"/>
+		<attack name="Paralyze" interval="3000" chance="17" range="7" target="1">	
+			<attribute key="areaEffect" value="redshimmer"/>
 		</attack> 
 	</attacks>
 	<defenses armor="15" defense="20">
@@ -39,7 +39,7 @@
 		<element energyPercent="20"/>
 		<element icePercent="10"/>
 		<element holyPercent="20"/>
-		<element deathPercent="-15"/>
+		<element deathPercent="-5"/>
 	</elements>
 	<immunities>
 		<immunity invisible="1"/>
@@ -51,20 +51,17 @@
 		<voice sentence="I will study your corpse!"/>
 	</voices>
 	<loot>
-		<item id="2148" countmax="70" chance1="100000" chancemax="0"/> <!-- gps -->
-		<item id="2148" countmax="50" chance1="100000" chancemax="0"/> <!-- gps -->
-		<item id="2787" countmax="3" chance1="900" /> <!-- white mushroom -->
-		<item id="2308" chance="1500"/> <!-- powder herb -->
-		<item id="7620" chance="13500"/> <!-- mp -->
-		<item id="7618" chance="12500"/> <!-- hp -->
-		<item id="2687" countmax="3" chance1="900" /> <!-- cookie -->
-		<item id="1987" chance="100000"> <!-- bag -->
+		<item id="7618" countmax="2" chance="21000" /><!-- health potion -->
+		<item id="2152" countmax="2" chance="19850" /><!-- gold coin -->
+		<item id="7620" chance="18250" /><!-- mana potion -->
+		<item id="2687" countmax="5" chance="1050" /><!-- cookie -->
+		<item id="2787" countmax="3" chance="6375" /><!-- white mushroom -->
+		<item id="1987" chance="100000"><!-- bag -->
 			<inside>
-				<item id="7762" countmax="1" chance1="700"/> <!-- small enchanted amethyst -->
-				<item id="2177" chance="800"/> <!-- life crystal -->
-				<item id="6324" chance="800"/> <!-- cream cake -->        
-				<item id="2162" chance="800"/> <!-- magic lightwand -->
-				<item id="2195" chance="200"/> <!-- boh -->
+				<item id="2162" chance="2600" /><!-- magic light wand -->
+				<item id="2803" chance="8850" /><!-- powder herb -->
+				<item id="6394" chance="725" /><!-- cream cake -->
+				<item id="7762" chance="150" /><!-- small enchanted amethyst -->
 			</inside>
 		</item>
 	</loot>

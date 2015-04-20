@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Deepling Master Librarian" nameDescription="a deepling master librarian" race="blood" experience="1900" speed="560" manacost="0">
+	<health now="240" max="240"/>
+	<look type="443" corpse="13839"/>
+	<targetchange interval="2000" chance="50"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="1"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="0"/>
+		<flag runonhealth="60"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="34" attack="45"/>
+		<attack name="drown" interval="1000" chance="11" range="5" target="1" min ="-15" max="-100">
+			<attribute key="shootEffect" value="spear"/>
+			<attribute key="areaEffect" value="bluebubble"/>
+		</attack>
+	</attacks>
+	<defenses armor="12" defense="20"/>
+	<voices interval="3000" chance="200">
+		<voice sentence="Mmmmmoooaaaaaahaaa!!!"/>
+	</voices>
+	<loot>
+		<item id="2148" countmax="100" chance="100000"/> <!-- gold coin -->
+		<item id="2152" countmax="3" chance="50000"/> <!-- platinum coin -->
+		<item id="2667" countmax="2" chance="9090"/> <!-- fish -->
+		<item id="2146" countmax="3" chance="7692"/><!-- small sapphire -->
+		<item id="2168" chance="6250"/> <!-- life ring -->
+		<item id="5895" chance="2564"/><!-- fish fin -->
+	</loot>
+</monster>

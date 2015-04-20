@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Marill" nameDescription="a Marill" race="undead" experience="0" speed="290" manacost="0">
+	<health now="1700" max="1700"/>
+	<look type="486" corpse="14074"/>
+	<targetchange interval="5000" chance="8"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="1"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="50" attack="50"/>
+		<attack name="earth" interval="2000" chance="17" length="8" spread="3" min="-160" max="-800">
+			<attribute key="areaEffect" value="bluebubble"/>
+		</attack>
+	</attacks>
+	<defenses armor="32" defense="35"/>
+	<elements>
+		<element firePercent="80"/>
+		<element energyPercent="60"/>
+		<element icePercent="100"/>
+		<element poisonPercent="40"/>
+		<element holyPercent="60"/>
+		<element deathPercent="100"/>
+		<element physicalPercent="30"/>
+	</elements>
+	<immunities>
+		<immunity invisible="1"/>
+	</immunities>
+	<voices interval="5000" chance="10">
+		<voice sentence="psyduck"/>
+		<voice sentence="saiiaii!!"/>
+	</voices>
+</monster>

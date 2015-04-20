@@ -1,71 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="destroyer" nameDescription="a destroyer" race="blood" experience="5900" speed="270" manacost="0">
-  <health now="3700" max="3700"/>
-  <look type="236" corpse="6320"/>
-  <targetchange interval="5000" chance="8"/>
-  <strategy attack="100" defense="0"/>
-  <flags>
-    <flag summonable="0"/>
-    <flag attackable="1"/>
-    <flag hostile="1"/>
-    <flag illusionable="1"/>
-    <flag convinceable="0"/>
-    <flag pushable="0"/>
-    <flag canpushitems="1"/>
-    <flag canpushcreatures="1"/>
-    <flag targetdistance="1"/>
-    <flag staticattack="90"/>
-    <flag runonhealth="0"/>
-  </flags>
-  <attacks>
-    <attack name="melee" interval="2000" skill="95" attack="100"/>
-    <attack name="physical" interval="2000" chance="15" range="7" min="-90" max="-165">
-      <attribute key="shootEffect" value="largerock"/>
-    </attack>
-  </attacks>
-  <defenses armor="50" defense="55">
-    <defense name="speed" interval="2000" chance="7" speedchange="380" duration="8000">
-      <attribute key="areaEffect" value="redshimmer"/>
-    </defense>
-  </defenses>
-  <elements>
-		<element earthPercent="20"/>
-		<element physicalPercent="0"/>
-		<element icePercent="-10"/>
+<monster name="Destroyer" nameDescription="a destroyer" race="blood" experience="5900" speed="270" manacost="0">
+	<health now="3700" max="3700"/>
+	<look type="236" corpse="6320"/>
+	<targetchange interval="5000" chance="8"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="1"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="90" attack="90"/>
+		<attack name="physical" interval="2000" chance="10" range="6" min="-90" max="-200">
+			<attribute key="shootEffect" value="largerock"/>
+		</attack>
+	</attacks>
+	<defenses armor="30" defense="35">
+		<defense name="speed" interval="1000" chance="7" speedchange="90" duration="8000">
+			<attribute key="areaEffect" value="redshimmer"/>
+		</defense>
+	</defenses>
+	<elements>
 		<element firePercent="30"/>
-		<element deathPercent="20"/>
-		<element holyPercent="-10"/>
+		<element icePercent="100"/>
+		<element physicalPercent="50"/>
+		<element earthPercent="20"/>
+		<element energyPercent="40"/>
+		<element holyPercent="30"/>
+		<element deathPercent="50"/>
 	</elements>
-  <immunities>
-    <immunity physical="0"/>
-    <immunity energy="0"/>
-    <immunity fire="0"/>
-    <immunity poison="0"/>
-    <immunity lifedrain="1"/>
-    <immunity paralyze="1"/>
-    <immunity outfit="1"/>
-    <immunity drunk="1"/>
-    <immunity invisible="1"/>
-  </immunities>
-  <voices interval="5000" chance="10">
-    <voice sentence="Destructiooooon!"/>
-    <voice sentence="It's a good day to destroy!"/>
-  </voices>
-  <loot>
-   <item id="2148" countmax="82" chance1="100000" chancemax="0"/> --Gold Coins
-   <item id="2645" chance="2222"/> --Steel Boots
-   <item id="2152" countmax="3" chance1="20000" chancemax="0"/> --Platinum Coins
-   <item id="2393" chance="1300"/> --Giant Sword
-   <item id="5741" chance="1000"/> --Skull Helmet
-   <item id="2666" countmax="5" chance1="30000" chancemax="0"/> --Meat
-   <item id="1987" chance="100000"> --Bag
-      <inside>
-         <item id="2463" chance="6666"/> --Plate Armor
-         <item id="2416" chance="9999"/> --Crowbar
-         <item id="2489" chance="2500"/> --Dark Armor
-         <item id="2150" countmax="2" chance1="7500" chancemax="0"/> --Small Amethyst
-     </inside>
-   </item>
-
- </loot>
+	<immunities>
+		<immunity lifedrain="1"/>
+		<immunity paralyze="1"/>
+		<immunity outfit="1"/>
+		<immunity drunk="1"/>
+		<immunity invisible="1"/>
+	</immunities>
+	<voices interval="5000" chance="10">
+		<voice sentence="COME HERE AND DIE!" yell="1"/>
+		<voice sentence="Destructiooooon!"/>
+		<voice sentence="It's a good day to destroy!"/>
+	</voices>
+	<loot>
+		<item id="11215" chance="6425" /><!-- metal spike -->
+		<item id="2666" chance="54525" /><!-- meat -->
+		<item id="6500" chance="1862" /><!-- demonic essence -->
+		<item id="2150" countmax="2" chance="5550" /><!-- small amethyst -->
+		<item id="2416" chance="15700" /><!-- crowbar -->
+		<item id="2463" chance="5050" /><!-- plate armor -->
+		<item id="2553" chance="6600" /><!-- pick -->
+		<item id="2489" chance="4110" /><!-- dark armor -->
+		<item id="2645" chance="1100" /><!-- steel boots -->
+		<item id="2546" countmax="12" chance="5625" /><!-- burst arrow -->
+		<item id="1987" chance="100000"><!-- bag -->
+			<inside>
+				<item id="2152" countmax="7" chance="2500" /><!-- platinum coin -->
+				<item id="7591" countmax="2" chance="950" /><!-- great health potion -->
+				<item id="7419" chance="1750" /><!-- dreaded cleaver -->
+				<item id="5741" chance="1200" /><!-- skull helmet -->
+				<item id="2125" chance="1400" /><!-- crystal necklace -->
+				<item id="7427" chance="1150" /><!-- chaos mace -->
+				<item id="2393" chance="2550" /><!-- giant sword -->
+			</inside>
+		</item>
+	</loot>
 </monster>

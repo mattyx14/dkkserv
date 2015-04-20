@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monsters>
+	<monster name="Orisha" file="Amazons/orisha.xml"/>
+	<monster name="Abomination Fury" file="8.6/Abomination Fury.xml"/>
+	<monster name="Butterfly Infected" file="8.6/butterfly infected.xml"/>
+	<monster name="Finger Killer" file="8.6/Finger Killer.xml"/>
+	<monster name="Living Plant" file="8.6/Living Plant.xml"/>
+	<monster name="Phantom Lord" file="8.6/Phantom Lord.xml"/>
+	<monster name="Purple Turtle" file="8.6/Purple Turtle.xml"/>
+	<monster name="Triple Medusa" file="8.6/Triple Medusa.xml"/>
+	<monster name="unholy reaper" file="customs/Unholy reaper.xml"/>
+	<monster name="wall crusher" file="customs/Wall crusher.xml"/>
+</monsters>

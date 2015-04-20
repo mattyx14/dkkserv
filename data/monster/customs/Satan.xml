@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<monster name="Satan" description="a Satan" experience="14099595" speed="300" race="undead">
+	<health now="2433800" max="2433800"/>
+	<look type="539" head="0" body="0" legs="94" feet="94" corpse="6068"/>
+	<targetchange interval="5000" chance="20"/>
+	<strategy attack="90" defense="24"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="drown" interval="1000" min="-860" max="-8500"/>
+		<attack name="melee" interval="1500" min="-2060" max="-10880">
+			<attribute key="shootEffect" value="holy"/>
+			<attribute key="areaEffect" value="HOLYDAMAGE"/>
+		</attack>
+		<attack name="Paralyze" interval="1000" chance="50" range="7" radius="7" target="1">
+			<attribute key="shootEffect" value="holy"/>
+			<attribute key="areaEffect" value="HOLYDAMAGE"/>
+		</attack>
+		<attack name="drown" interval="2000" chance="30" range="7" radius="10" target="1" min="-700" max="-4200">
+			<attribute key="shootEffect" value="holy"/>
+			<attribute key="areaEffect" value="HOLYDAMAGE"/>
+		</attack>
+		<attack name="holy" interval="1000" chance="10" range="15" radius="10" target="1" min="-1710" max="-3050">
+			<attribute key="shootEffect" value="fire"/>
+			<attribute key="areaEffect" value="HOLYDAMAGE"/>
+		</attack>
+		<attack name="fire" interval="2000" chance="30" range="12" length="9" spread="7" min="-1750" max="-2850">
+			<attribute key="shootEffect" value="holy"/>
+			<attribute key="areaEffect" value="FIREATTACK"/>
+		</attack>
+		<attack name="earth" interval="2000" chance="20" range="15" length="9" spread="7" min="-1750" max="-2850">
+			<attribute key="shootEffect" value="holy"/>
+			<attribute key="areaEffect" value="SMALLPLANTS"/>
+		</attack>
+	</attacks>
+	<defenses defense="145" armor="188">
+		<defense name="healing" interval="1000" chance="40" min="1000" max="2000">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+		<defense name="healing" interval="2000" chance="4" min="10300" max="30700">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+		<defense name="speed" interval="2000" chance="30" duration="18000" speedchange="3500">
+			<attribute key="areaEffect" value="redshimmer"/>
+		</defense>
+	</defenses>
+	<immunities>
+		<immunity lifedrain="1"/>
+		<immunity paralyze="1"/>
+		<immunity outfit="1"/>
+		<immunity drunk="1"/>
+		<immunity invisible="1"/>
+	</immunities>
+	<elements>
+		<element firePercent="10"/>
+		<element icePercent="10"/>
+		<element earthPercent="10"/>
+		<element energyPercent="10"/>
+		<element holyPercent="10"/>
+		<element deathPercent="10"/>
+	</elements>
+	<summons maxSummons="2">
+		<summon name="Mini Satana fire" interval="2500" chance="20" max="2"/>
+	</summons>
+	<loot>
+		<item id="2160" chance="50000" countmax="75"/>
+	</loot>
+</monster>

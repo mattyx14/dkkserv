@@ -9,15 +9,20 @@
 		<flag staticattack="78"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" min="-5" max="-150"/>
-		<attack name="lifedrain" interval="4000" chance="50" range="5" radius="1" target="1" min="0" max="50">
+		<attack name="melee" interval="2000" skill="40" attack="60"/>
+		<attack name="lifedrain" interval="200" chance="20" range="5" radius="1" target="1" min="0" max="50">
 			<attribute key="areaEffect" value="redshimmer"/>
 		</attack>
 	</attacks>
 	<defenses armor="25" defense="26"/>
+	<elements>
+		<element earthPercent="20"/>
+		<element icePercent="20"/>
+		<element firePercent="-5"/>
+		<element holyPercent="-20"/>
+	</elements>
 	<immunities>
-		<immunity name="poison"/>
-		<immunity name="invisible"/>
+		<immunity invisible="1"/>
 	</immunities>
 	<voices interval="2000" chance="5">
 		<voice sentence="Death where are you?"/>

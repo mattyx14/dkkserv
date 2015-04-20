@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Mutated Human" nameDescription="a mutated human" race="blood" experience="2750" speed="245" manacost="0">
-	<health now="1840" max="1840"/>
+<monster name="Mutated Human" nameDescription="a mutated human" race="blood" experience="2950" speed="245" manacost="0">
+	<health now="2240" max="2240"/>
 	<look type="323" corpse="9107"/>
 	<targetchange interval="5000" chance="8"/>
 	<strategy attack="100" defense="0"/>
@@ -18,16 +18,18 @@
 		<flag runonhealth="0"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" min="-80" max="-290" poison="300"/>
-		<attack name="death" interval="3000" chance="20" length="8" spread="3" min="-90" max="-150">      
-			<attribute key="areaEffect" value="poison"/>    
-		</attack> 	
+		<attack name="melee" interval="2000" skill="70" attack="90" poison="300"/>
+		<attack name="death" interval="3000" chance="20" length="8" spread="3" min="-90" max="-190">
+			<attribute key="areaEffect" value="poison"/>
+		</attack>
 	</attacks>
 	<defenses armor="30" defense="30"/>
 	<elements>
-		<element icePercent="20"/>
 		<element firePercent="100"/>
-		<element holyPercent="-25"/>
+		<element energyPercent="20"/>
+		<element icePercent="20"/>
+		<element deathPercent="20"/>
+		<element earthPercent="80"/>
 	</elements>
 	<immunities>
 		<immunity death="1"/>
@@ -47,21 +49,20 @@
 		<voice sentence="Oh by the gods! What is this... aaaaaargh!"/>
 	</voices>
 	<loot>
-		<item id="2148" countmax="50" chance1="100000" chancemax="0"/> <!-- gps -->
-		<item id="3976" countmax="3" chance1="10000"/> <!-- worms -->
-		<item id="2671" chance="900"/> <!-- ham -->
-		<item id="2696" chance="13500"/> <!-- cheese -->
-		<item id="2226" chance="12500"/> <!-- fishbone -->
-		<item id="2484" countmax="1" chance1="3000"/> <!-- studded armor -->
-		<item id="2801" chance="1500"/> <!-- fern -->
-		<item id="1987" chance="100000"> <!-- bag -->
+		<item id="2152" countmax="3" chance="27850" /><!-- platinum coin -->
+		<item id="2226" chance="10525" /><!-- fishbone -->
+		<item id="2696" chance="8150" /><!-- cheese -->
+		<item id="2376" chance="4850" /><!-- sword -->
+		<item id="11225" chance="20525" /><!-- mutated flesh -->
+		<item id="2483" chance="7300" /><!-- scale armor -->
+		<item id="2801" chance="450" /><!-- fern -->
+		<item id="1987" chance="100000"><!-- bag -->
 			<inside>
-				<item id="2406" countmax="1" chance1="4000"/> <!-- short sword -->
-				<item id="2376" chance="3000"/> <!-- sword -->
-				<item id="2170" chance="300"/> <!-- silver amulet -->        
-				<item id="2161" chance="1500"/> <!-- strange talisman -->
-				<item id="9808" chance="2000"/> <!-- rusty armor -->
-				<item id="7910" chance="700"/> <!-- peanut -->
+				<item id="3976" countmax="2" chance="5975" /><!-- worm -->
+				<item id="9808" chance="1850" /><!-- rusty armor -->
+				<item id="2161" chance="4775" /><!-- strange talisman -->
+				<item id="7910" chance="1725" /><!-- peanut -->
+				<item id="2170" chance="1100" /><!-- silver amulet -->
 			</inside>
 		</item>
 	</loot>

@@ -1,52 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Gladiator" nameDescription="a gladiator" race="blood" experience="90" speed="200" manacost="470">
-	<health now="185" max="185"/>
-	<look type="131" head="78" body="3" legs="79" feet="114" corpse="3058"/>
-	<targetchange interval="2000" chance="0"/>
+<monster name="Gladiator" nameDescription="a gladiator" race="blood" experience="2250" speed="450" manacost="0">
+	<health now="2700" max="2700"/>
+	<look type="131" head="78" body="3" legs="79" feet="114" addons="3" corpse="6080"/>
+	<targetchange interval="5000" chance="8"/>
 	<strategy attack="100" defense="0"/>
 	<flags>
 		<flag summonable="0"/>
 		<flag attackable="1"/>
 		<flag hostile="1"/>
 		<flag illusionable="0"/>
-		<flag convinceable="1"/>
-		<flag pushable="1"/>
-		<flag canpushitems="0"/>
-		<flag canpushcreatures="0"/>
-		<flag staticattack="90"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
-		<flag runonhealth="10"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="70" attack="30"/>
+		<attack name="melee" interval="2000" min="-180" max="-320"/>
+		<attack name="physical" interval="2000" chance="20" range="7" min="-65" max="-245">
+			<attribute key="shootEffect" value="spear"/>
+		</attack>
+		<attack name="melee" interval="3000" chance="15" range="7" radius="3" target="0" min="-180" max="-255">
+			<attribute key="areaEffect" value="blackspark"/>
+		</attack>
 	</attacks>
-	<defenses armor="20" defense="22">
-		<defense name="speed" interval="1000" chance="9" speedchange="215" duration="5000">
-			<attribute key="areaEffect" value="redshimmer"/>
-		</defense>
-	</defenses>
+	<defenses armor="25" defense="30"/>
 	<elements>
-		<element holyPercent="10"/>
-		<element physicalPercent="15"/>
-		<element deathPercent="-10"/>
+		<element firePercent="25"/>
+		<element icePercent="25"/>
+		<element physicalPercent="50"/>
+		<element earthPercent="25"/>
+		<element energyPercent="25"/>
+		<element holyPercent="25"/>
+		<element deathPercent="25"/>
 	</elements>
-	<voices interval="4000" chance="10">
-		<voice sentence="You are no match for me!"/>
-		<voice sentence="Feel my prowess"/>
-		<voice sentence="Fight!"/>
-		<voice sentence="Take this!"/>
+	<immunities>
+		<immunity paralyze="1"/>
+		<immunity invisible="1"/>
+	</immunities>
+	<voices interval="5000" chance="10">
+		<voice sentence="MINE!" yell="1"/>
+		<voice sentence="NO PRISONERS!" yell="1"/>
+		<voice sentence="NO MERCY!" yell="1"/>
+		<voice sentence="By Bolg's Blood!"/>
+		<voice sentence="You're no match for me!"/>
 	</voices>
 	<loot>
-		<item id="2148" countmax="20" chance1="100000" chancemax="0"/> <!-- gp's -->
-		<item id="8872" chance="6000"/> <!-- belted cape -->  
-		<item id="2666" countmax="2" chance1="25000" chancemax="0"/>  <!-- meat -->
-		<item id="2465" chance="9500"/> <!-- nrass armor -->	
-		<item id="1987" chance="100000"> <!-- Bag -->
+		<item id="2417" chance="7000"/> -- battle hammer :: Def 14 :: Atk 24
+		<item id="2476" chance="800"/> -- knight armor :: Arm 12
+		<item id="2152" countmax="8" chance="100000"/> platinum c -- platinum coin
+		<item id="7388" chance="429"/> -- vile axe :: Def 19 :: Atk 43
+		<item id="2381" chance="1000"/> -- halberd :: Def 14 :: Atk 35
+		<item id="5885" chance="1000"/> -- warrior's sweat
+		<item id="2389" countmax="2" chance="20000"/> -- spear :: Atk 25
+		<item id="1987" chance="100000"> -- bag
 			<inside>
-				<item id="2398" chance="18000"/> <!-- mace -->
-				<item id="2459" chance="4500"/> <!-- iron helmet -->
-				<item id="2510" chance="9500"/> <!-- plate shield -->
-				<item id="2509" chance="15000"/> <!-- steel shield -->
+				<item id="2477" chance="1000"/> -- knight legs :: Arm 8
+				<item id="2691" countmax="2" chance="20000"/> -- brown bread
+				<item id="2475" countmax="1" chance="2000"/> -- warrior helmet :: Arm 8
+				<item id="2120" chance="20000"/> -- rope
+				<item id="10572" chance="1000"/> -- brocken gladiator shield
+				<item id="2430" chance="1333"/> -- knight axe :: Def 21 :: Atk 38
+				<item id="6526" chance="1666" /> <!-- skeleton decoration -->
+				<item id="2414" chance="909"/> -- dragon lance :: Def 16 :: Atk 54
+				<item id="2133" countmax="1" chance="800"/> -- ruby necklace
 			</inside>
 		</item>
 	</loot>

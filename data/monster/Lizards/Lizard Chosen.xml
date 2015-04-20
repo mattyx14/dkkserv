@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Lizard Chosen" nameDescription="a lizard chosen" race="blood" experience="2200" speed="240" manacost="0">
+	<health now="5050" max="5050"/>
+	<look type="344" corpse="11285"/>
+	<targetchange interval="5000" chance="8"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="1"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="0"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="50"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="95" attack="90"/>
+		<attack name="earth" interval="3000" chance="12" length="8" spread="3" min="-30" max="-120">
+			<attribute key="areaEffect" value="poison"/>
+		</attack>
+	</attacks>
+	<defenses armor="25" defense="25">
+		<defense name="healing" interval="2000" chance="20" max="100">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+	</defenses>
+	<elements>
+		<element firePercent="10"/>
+		<element energyPercent="20"/>
+		<element icePercent="10"/>
+	</elements>
+	<immunities>
+		<immunity earth="1"/>
+		<immunity invisible="1"/>
+	</immunities>
+	<voices interval="5000" chance="10">
+		<voice sentence="Grzzzzzzz!"/>
+	</voices>
+	<loot>
+		<item id="5881" chance="1125" /><!-- lizard scale -->
+		<item id="11303" chance="900" /><!-- zaoan shoes -->
+		<item id="7591" countmax="2" chance="2075" /><!-- great health potion -->
+		<item id="11325" chance="9975" /><!-- spiked iron ball -->
+		<item id="11327" chance="4275" /><!-- cursed shoulder spikes -->
+		<item id="1987" chance="100000"><!-- bag -->
+			<inside>
+				<item id="2152" countmax="3" chance="35975" /><!-- platinum coin -->
+				<item id="11326" chance="1975" /><!-- corrupted flag -->
+				<item id="11302" chance="775" /><!-- zaoan helmet -->
+				<item id="5876" chance="950" /><!-- lizard leather -->
+			</inside>
+		</item>
+	</loot>
+</monster>

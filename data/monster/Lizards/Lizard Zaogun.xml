@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Lizard Zaogun" nameDescription="a lizard zaogun" race="blood" experience="3100" speed="420" manacost="0">
+	<health now="2955" max="2955"/>
+	<look type="343" corpse="11281"/>
+	<targetchange interval="5000" chance="8"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="1"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="0"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="150"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="55" attack="80"/>
+		<attack name="earth" interval="2000" chance="25" range="1" radius="1" target="1" min="-220" max="-285">
+			<attribute key="areaEffect" value="poison"/>
+		</attack>
+	</attacks>
+	<defenses armor="35" defense="35">
+		<defense name="healing" interval="1000" chance="18" min="200" max="400">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+	</defenses>
+	<elements>
+		<element physicalPercent="5"/>
+		<element deathPercent="10"/>
+		<element firePercent="45"/>
+		<element energyPercent="20"/>
+		<element icePercent="15"/>
+	</elements>
+	<immunities>
+		<immunity earth="1"/>
+		<immunity invisible="1"/>
+	</immunities>
+	<loot>
+		<item id="11331" chance="10750" /><!-- zaogun shoulderplates -->
+		<item id="2152" countmax="3" chance="43800" /><!-- platinum coin -->
+		<item id="7588" countmax="3" chance="2475" /><!-- strong health potion -->
+		<item id="2149" chance="1150" /><!-- small emerald -->
+		<item id="11330" chance="625" /><!-- zaogun flag -->
+		<item id="5881" chance="800" /><!-- lizard scale -->
+		<item id="11206" chance="975" /><!-- red lantern -->
+		<item id="1987" chance="100000"><!-- bag -->
+			<inside>
+				<item id="7591" countmax="3" chance="875" /><!-- great health potion -->
+				<item id="5876" chance="1075" /><!-- lizard leather -->
+				<item id="11303" chance="275" /><!-- zaoan shoes -->
+				<item id="11304" chance="275" /><!-- zaoan legs -->
+			</inside>
+		</item>
+	</loot>
+</monster>

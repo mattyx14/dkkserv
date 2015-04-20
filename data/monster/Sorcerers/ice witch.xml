@@ -1,78 +1,68 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <monster name="Ice Warrior" nameDescription="an Ice Warrior" race="undead" experience="4180" speed="400" manacost="0">
-  <health now="3740" max="3740"/>
-  <look type="145" head="0" body="47" legs="105" feet="105" addons="1" corpse="6080"/>
-  <targetchange interval="2000" chance="0"/>
-  <strategy attack="100" defense="0"/>
-  <flags>
-    <flag summonable="0"/>
-    <flag attackable="1"/>
-    <flag hostile="1"/>
-    <flag illusionable="1"/>
-    <flag convinceable="0"/>
-    <flag pushable="0"/>
-    <flag canpushitems="0"/>
-    <flag canpushcreatures="0"/>
-    <flag targetdistance="1"/>
-    <flag staticattack="90"/>
-    <flag runonhealth="350"/>
-  </flags>
-  <attacks>
-    <attack name="melee" interval="2000" chance="100" min="-80" max="-350" range="1"/>
-    <attack name="ice" interval="1900" chance="20" min="-150" max="-390" range="8" radius="4" target="1">
-      <attribute key="areaEffect" value="icetornado"/>
-      <attribute key="shootEffect" value="ice"/>
-    </attack>
-    <attack name="ice" interval="1800" chance="10" min="-130" max="-355" range="7" radius="4" target="0">
-      <attribute key="areaEffect" value="iceattack"/>
-    </attack>
-  </attacks>
-  <defenses defense="20" armor="30">
-    <defense name="healing" interval="1000" chance="10" min="100" max="250">
-      <attribute key="areaEffect" value="blueshimmer"/>
-    </defense>
-  </defenses>
-  <immunities>
-    <immunity physical="0"/>
-    <immunity energy="0"/>
-    <immunity fire="0"/>
-    <immunity holy="0"/>
-    <immunity poison="0"/>
-    <immunity ice="1"/>
-    <immunity lifedrain="0"/>
-    <immunity paralyze="1"/>
-    <immunity outfit="1"/>
-    <immunity drunk="1"/>
-    <immunity invisible="1"/>
-  </immunities>
-<elements>
-<element firePercent="10"/>
-<element icePercent="0"/>
-<element earthPercent="10"/>
-<element energyPercent="-10"/>
-<element holyPercent="10"/>
-<element deathPercent="-10"/>
-</elements>
-  <voices interval="2000" chance="5">
-    <voice sentence="So you think you are cool?"/>
-    <voice sentence="I hope it is not too cold for you! HeHeHe."/>
-    <voice sentence="Freeze!"/>
-  </voices>
-  <loot>
-    <item id="2148" countmax="80" chance1="100000" chancemax="0"/> --Gold Coins
-    <item id="2436" chance="1222"/> --Skull Staff
-    <item id="7449" chance="1222"/> --Crystal Sword
-    <item id="7441" chance="5555"/> --Ice Cube
-    <item id="7387" chance="1444"/> --Diamond Sceptre
-    <item id="1987" chance="100000"> --Bag
-      <inside>
-        <item id="2195" chance="1444"/> --Boots of Haste
-        <item id="2445" chance="1333"/> --Crystal Mace
-        <item id="2423" chance="3333"/> --Clerical Mace
-        <item id="2796" countmax="3" chance1="9999" chancemax="0"/> --Green Mushrooms
-        <item id="2663" chance="1111"/> --Mystic Turban
-        <item id="7459" chance="1000"/> --Ear Muffs
-      </inside>
-    </item>
-  </loot>
+	<health now="3740" max="3740"/>
+	<look type="145" head="0" body="47" legs="105" feet="105" addons="1" corpse="6080"/>
+	<targetchange interval="2000" chance="0"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="1"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="0"/>
+		<flag canpushcreatures="0"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="350"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" chance="100" min="-80" max="-350" range="1"/>
+		<attack name="ice" interval="1900" chance="20" min="-150" max="-390" range="8" radius="4" target="1">
+			<attribute key="areaEffect" value="icetornado"/>
+			<attribute key="shootEffect" value="ice"/>
+		</attack>
+		<attack name="ice" interval="1800" chance="10" min="-130" max="-355" range="7" radius="4" target="0">
+			<attribute key="areaEffect" value="iceattack"/>
+		</attack>
+	</attacks>
+	<defenses defense="20" armor="30">
+		<defense name="healing" interval="1000" chance="10" min="100" max="250">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+	</defenses>
+	<immunities>
+		<immunity ice="1"/>
+		<immunity paralyze="1"/>
+		<immunity outfit="1"/>
+		<immunity drunk="1"/>
+		<immunity invisible="1"/>
+	</immunities>
+	<elements>
+		<element firePercent="10"/>
+		<element earthPercent="10"/>
+		<element energyPercent="-10"/>
+		<element holyPercent="10"/>
+		<element deathPercent="-10"/>
+	</elements>
+	<voices interval="2000" chance="5">
+		<voice sentence="So you think you are cool?"/>
+		<voice sentence="I hope it is not too cold for you! HeHeHe."/>
+		<voice sentence="Freeze!"/>
+	</voices>
+	<loot>
+		<item id="2152" countmax="2" chance="100000"/> -- platinum coin
+		<item id="7449" chance="1222"/> -- crystal sword :: Def 26 :: Atk 35
+		<item id="7441" chance="5555"/> -- ice cube
+		<item id="7387" chance="1444"/> -- diamond sceptre :: Def 18 :: Atk 34
+		<item id="1987" chance="100000"> -- bag
+			<inside>
+				<item id="2423" chance="3333"/> -- clerical mace :: Def 15 :: Atk 28
+				<item id="2796" countmax="3" chance1="9999" chancemax="0"/> -- green mushroom
+				<item id="2663" chance="1111"/> -- mystic turban :: Arm 1
+				<item id="7459" chance="1000"/> -- earmuffs :: Arm 0
+			</inside>
+		</item>
+	</loot>
 </monster>

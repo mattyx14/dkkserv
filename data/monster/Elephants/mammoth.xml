@@ -1,43 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="mammoth" nameDescription="a mammoth" race="blood" experience="110" speed="220" manacost="0">
-  <health now="190" max="190"/>
-  <look type="199" head="0" body="0" legs="0" feet="0" corpse="6074"/>
-  <targetchange interval="5000" chance="8"/>
-  <strategy attack="100" defense="0"/>
-  <flags>
-    <flag summonable="0"/>
-    <flag attackable="1"/>
-    <flag hostile="1"/>
-    <flag illusionable="0"/>
-    <flag convinceable="0"/>
-    <flag pushable="1"/>
-    <flag canpushitems="1"/>
-    <flag canpushcreatures="0"/>
-    <flag staticattack="90"/>
-    <flag targetdistance="1"/>
-    <flag runonhealth="0"/>
-  </flags>
-<attacks>
-    <attack name="melee" interval="2000" skill="45" attack="45"/>
-</attacks>
-  <defenses armor="40" defense="57"/>
-  <immunities>
-    <immunity physical="0"/>
-    <immunity energy="0"/>
-    <immunity fire="0"/>
-    <immunity poison="0"/>
-    <immunity lifedrain="0"/>
-    <immunity paralyze="0"/>
-    <immunity outfit="0"/>
-    <immunity drunk="0"/>
-    <immunity invisible="0"/>
-  </immunities>
-  <voices interval="5000" chance="10">
-    <voice sentence="Moohhhhooooo!"/>
-  </voices>
-  <loot>
-    <item id="3976" countmax="10" chance1="50000" chancemax="0"/>
-    <item id="2666" countmax="15" chance1="33333" chancemax="0"/>
-    <item id="2686" countmax="10" chance1="10000" chancemax="0"/>
-  </loot>
+<monster name="Mammoth" nameDescription="a mammoth" race="blood" experience="110" speed="220" manacost="0">
+	<health now="190" max="190"/>
+	<look type="199" corpse="6074"/>
+	<targetchange interval="5000" chance="8"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="1"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="0"/>
+		<flag staticattack="90"/>
+		<flag targetdistance="1"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="45" attack="40"/>
+	</attacks>
+	<defenses armor="40" defense="57"/>
+	<elements>
+		<element earthPercent="20"/>
+		<element icePercent="20"/>
+		<element physicalPercent="20"/>
+		<element firePercent="-10"/>
+	</elements>
+	<voices interval="5000" chance="10">
+		<voice sentence="Troooooot!"/>
+		<voice sentence="Hooooot-Toooooot!"/>
+		<voice sentence="Tooooot."/>
+	</voices>
+	<loot>
+		<item id="2671" chance="19325" /><!-- ham -->
+		<item id="11224" chance="2175" /><!-- thick fur -->
+		<item id="2148" countmax="20" chance="16025" /><!-- gold coin -->
+		<item id="1987" chance="100000"><!-- bag -->
+			<inside>
+				<item id="11238" countmax="2" chance="4850" /><!-- mammoth tusk -->
+				<item id="7432" chance="300" /><!-- furry club -->
+			</inside>
+		</item>
+	</loot>
 </monster>

@@ -45,5 +45,4 @@
 	<voices interval="5000" chance="10">
 		<voice sentence="Latrivan your fool" yell="1"/>
 	</voices>
-	<loot/>
 </monster>

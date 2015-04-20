@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Mercury Blob" nameDescription="a mercury blob" race="undead" experience="2850" speed="210" manacost="0">
+	<health now="3250" max="3250"/>
+	<look type="316" corpse="9961"/>
+	<targetchange interval="5000" chance="0"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="0"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="85"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="80" attack="80"/>
+		<attack name="holy" interval="2000" chance="25" radius="4" min="-60" max="-122">
+			<attribute key="shootEffect" value="suddendeath"/>
+			<attribute key="areaEffect" value="mortarea"/>
+		</attack>
+		<attack name="holy" interval="1000" chance="15" length="5" spread="0" min="-89" max="-94">
+			<attribute key="shootEffect" value="suddendeath"/>
+			<attribute key="areaEffect" value="mortarea"/>
+		</attack>
+	</attacks>
+	<defenses armor="10" defense="10"/>
+	<immunities>
+		<immunity death="1"/>
+		<immunity earth="1"/>
+		<immunity paralyze="1"/>
+		<immunity invisible="1"/>
+	</immunities>
+	<elements>
+		<element firePercent="15"/>
+		<element physicalPercent="15"/>
+		<element holyPercent="15"/>
+		<element icePercent="15"/>
+		<element energyPercent="15"/>
+	</elements>
+	<voices interval="5000" chance="10">
+		<voice sentence="Crackle"/>
+	</voices>
+	<loot>
+		<item id="9966" chance="16550" /><!-- glob of mercury -->
+	</loot>
+</monster>

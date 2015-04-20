@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monster name="The Hag" nameDescription="the hag" race="blood" experience="510" speed="205">
-	<health now="715" max="715"/>
+	<health now="935" max="935"/>
 	<look type="264" head="78" body="97" legs="95" feet="95" corpse="7349"/>
 	<targetchange interval="2000" chance="5"/>
 	<strategy attack="100" defense="0"/>
@@ -11,26 +11,33 @@
 		<flag targetdistance="5"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" min="-53" max="-173"/>
-		<attack name="drunk" interval="3000" chance="35" range="5" radius="1" target="1" duration="15000"/>
-		<attack name="speed" interval="4000" chance="55" radius="1" target="1" range="5" duration="12000" speed="-400">
+		<attack name="melee" interval="2000" skill="40" attack="40"/>
+		<attack name="drunk" interval="2000" chance="10" range="5" radius="1" target="1" duration="5000"/>
+		<attack name="Paralyze" interval="2000" chance="17" range="7" target="1">
 			<attribute key="areaEffect" value="redshimmer"/>
 		</attack>
 	</attacks>
 	<defenses armor="24" defense="25">
-		<defense name="healing" interval="2000" chance="35" min="95" max="155">
+		<defense name="healing" interval="2000" chance="10" min="50" max="75">
 			<attribute key="areaEffect" value="blueshimmer"/>
 		</defense>
-		<defense name="invisible" interval="3000" chance="50" duration="8000">
+		<defense name="invisible" interval="2000" chance="10" duration="8000">
 			<attribute key="areaEffect" value="blueshimmer"/>
 		</defense>
 	</defenses>
+	<elements>
+		<element firePercent="30"/>
+		<element icePercent="20"/>
+		<element energyPercent="10"/>
+		<element deathPercent="-10"/>
+		<element earthPercent="-10"/>
+	</elements>
 	<immunities>
-		<immunity name="invisible"/>
+		<immunity invisible="1"/>
 	</immunities>
 	<summons maxSummons="2">
-		<summon name="Ghost" interval="2000" chance="26"/>
-		<summon name="Crypt Shambler" interval="2000" chance="26"/>
+		<summon name="Ghost" interval="2000" chance="10"/>
+		<summon name="Crypt Shambler" interval="2000" chance="10"/>
 	</summons>
 	<voices interval="2000" chance="5">
 		<voice sentence="If you think I am to old to fight then you're wrong!"/>

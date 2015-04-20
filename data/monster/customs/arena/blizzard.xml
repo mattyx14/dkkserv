@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Blizzard" nameDescription="a blizzard" race="undead" experience="30580" speed="380" manacost="0">
+	<health now="40000" max="40000"/>
+	<look typeex="9110" corpse="7349"/>
+	<targetchange interval="5000" chance="8"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" min="-650" max="-1050"/>
+		<attack name="ice" interval="1000" chance="25" range="7" min="-570" max="-1300">
+			<attribute key="areaEffect" value="GIANTICE"/>
+		</attack>
+		<attack name="Paralyze" interval="3000" chance="17" range="7" target="1">
+			<attribute key="shootEffect" value="SMALLICE"/>
+			<attribute key="areaEffect" value="GIANTICE"/>
+		</attack>
+		<attack name="ice" interval="2000" chance="15" range="7" radius="3" target="0" min="-515" max="-855">
+			<attribute key="areaEffect" value="GIANTICE"/>
+		</attack>
+		<attack name="ice" interval="2000" chance="15" range="7" radius="3" target="0" min="-515" max="-1055">
+			<attribute key="areaEffect" value="GIANTICE"/>
+		</attack>
+	</attacks>
+	<defenses armor="30" defense="20">
+		<defense name="healing" interval="2000" min="480" max="550">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+	</defenses>
+	<immunities>
+		<immunity paralyze="1"/>
+		<immunity outfit="1"/>
+		<immunity drunk="1"/>
+		<immunity invisible="1"/>
+	</immunities>
+	<elements>
+		<element deathPercent="100"/>
+		<element earthPercent="100"/>
+		<element firePercent="100"/>
+		<element icePercent="100"/>
+		<element energyPercent="50"/>
+		<element physicalPercent="50"/>
+		<element holyPercent="50"/>
+	</elements>
+	<summons maxSummons="5">
+		<summon name="Fezarus_1" interval="1000" max="5"/>
+	</summons>
+</monster>

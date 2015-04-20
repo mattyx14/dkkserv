@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Mini Satana" nameDescription="a mini satana" race="blood" experience="8050" speed="960" manacost="0">
+	<health now="9850" max="9850"/>
+	<look type="237" corpse="6364"/>
+	<targetchange interval="5000" chance="8"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" min="-200" max="-550"/>
+		<attack name="fire" interval="2100" chance="10" range="7" radius="4" target="1" min="-150" max="-450">
+			<attribute key="shootEffect" value="fire"/>
+			<attribute key="areaEffect" value="firearea"/>
+		</attack>
+		<attack name="energy" interval="1500" chance="30" length="1" spread="0" min="-220" max="-380">
+			<attribute key="areaEffect" value="PURPLEENERGY"/>
+		</attack>
+		<attack name="fire" interval="2200" chance="34" range="7" radius="2" target="1" min="-290" max="-500">
+			<attribute key="shootEffect" value="fire"/>
+			<attribute key="areaEffect" value="firearea"/>
+		</attack>
+	</attacks>
+	<defenses armor="15" defense="15">
+		<defense name="healing" interval="1000" chance="50" min="75" max="125">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+		<defense name="speed" interval="1000" chance="40" speedchange="450" duration="40000">
+			<attribute key="areaEffect" value="redshimmer"/>
+		</defense>
+		<defense name="invisible" interval="9000" chance="50" duration="20000"> --each 4 sec invi duration 4 sec
+			<attribute key="areaEffect" value="redshimmer"/>
+		</defense>
+	</defenses>
+	<immunities>
+		<immunity energy="1"/>
+		<immunity fire="1"/>
+		<immunity poison="1"/>
+		<immunity lifedrain="1"/>
+		<immunity paralyze="1"/>
+		<immunity outfit="1"/>
+		<immunity drunk="1"/>
+		<immunity invisible="1"/>
+	</immunities>
+	<voices interval="5000" chance="10">
+		<voice sentence="Muahaha!"/>
+		<voice sentence="He he he!"/>
+	</voices>
+	<loot>
+		<item id="2148" countmax="79" chance1="100000" chancemax="0"/> -- gold coin
+		<item id="2050" chance="15000"/> -- torch
+		<item id="6558" chance="2222"/> -- concentrated demonic blood
+		<item id="2260" chance="18000"/> -- blank rune
+		<item id="2465" chance="6577"/> -- brass armor :: Arm 8
+		<item id="1987" chance="100000"> -- bag
+			<inside>
+				<item id="2548" chance="20000"/> -- pitch fork
+				<item id="2465" chance="6577"/> -- brass armor :: Arm 8
+				<item id="2185" chance="833" /> -- necrotic rod
+				<item id="2464" chance="7887"/> -- chain armor :: Arm 6
+				<item id="6500" countmax="1" chance1="7777" chancemax="0"/> -- demonic essence
+				<item id="2150" countmax="1" chance1="8888" chancemax="0"/> -- small amethyst
+				<item id="2165" chance="4555"/> -- stealth ring
+				<item id="11231" chance="1000"/> -- Book of Necromantic Rituals
+			</inside>
+		</item>
+	</loot>
+</monster>

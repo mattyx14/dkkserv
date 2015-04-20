@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Deepling Guard" nameDescription="a deepling guard" race="blood" experience="2100" speed="560" manacost="0">
+	<health now="1900" max="1900"/>
+	<look type="442" corpse="15188"/>
+	<targetchange interval="2000" chance="50"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="1"/>
+		<flag convinceable="0"/>
+		<flag pushable="1"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="0"/>
+		<flag runonhealth="60"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="10" attack="350"/>
+		<attack name="drown" interval="1000" chance="11" range="5" target="1" min ="-0" max="-200">
+			<attribute key="shootEffect" value="spear"/>
+			<attribute key="areaEffect" value="bluebubble"/>
+		</attack>
+	</attacks>
+	<defenses armor="12" defense="20">
+	<defense name="healing" interval="1000" chance="25" min="120" max="210">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+	</defenses>
+	<immunities>
+		<immunity ice="1" />
+		<immunity fire="1" />
+	</immunities>
+	<voices interval="3000" chance="200">
+		<voice sentence="Qjell afar gou jey!"/>
+		<voice sentence="QJELL NETA NA!!"/>
+	</voices>
+	<elements>
+		<element earthPercent="-20"/>
+		<element energyPercent="-20"/>
+	</elements>
+	<loot>
+		<item id="2148" countmax="90" chance="100000"/> <!-- gold coin -->
+		<item id="2148" countmax="90" chance="100000"/> <!-- gold coin -->
+		<item id="2152" countmax="2" chance="100000"/> <!-- platinum coin -->
+		<item id="7591" countmax="3" chance="14285"/> <!-- great health potion -->
+		<item id="7590" countmax="3" chance="14285"/><!-- great mana potion -->
+		<item id="2146" countmax="3" chance="9090"/><!-- small sapphire -->
+	</loot>
+</monster>

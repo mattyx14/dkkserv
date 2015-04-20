@@ -1,54 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Pirate cutthroat" nameDescription="a pirate cutthroat" race="blood" experience="210" speed="230" manacost="495">
-  <health now="325" max="325"/>
-  <look type="96" head="0" body="0" legs="0" feet="0" corpse="6080"/>
-  <targetchange interval="5000" chance="8"/>
-  <strategy attack="100" defense="0"/>
-  <flags>
-    <flag summonable="0"/>
-    <flag attackable="1"/>
-    <flag hostile="1"/>
-    <flag illusionable="0"/>
-    <flag convinceable="1"/>
-    <flag pushable="1"/>
-    <flag canpushitems="1"/>
-    <flag canpushcreatures="0"/>
-    <flag staticattack="90"/>
-    <flag targetdistance="1"/>
-    <flag runonhealth="0"/>
-  </flags>
-<attacks>
-    <attack name="melee" interval="2000" skill="50" attack="70"/>
-</attacks>
-  <defenses armor="25" defense="23"/>
-  <immunities>
-    <immunity physical="0"/>
-    <immunity energy="0"/>
-    <immunity fire="0"/>
-    <immunity poison="0"/>
-    <immunity lifedrain="0"/>
-    <immunity paralyze="0"/>
-    <immunity outfit="0"/>
-    <immunity drunk="0"/>
-    <immunity invisible="0"/>
-  </immunities>
-  <loot>
-    <item id="2148" countmax="53" chance1="50000" chancemax="0"/>
-    <item id="2483" chance="10000"/>
-    <item id="5918" chance="6666"/>
-    <item id="6095" chance="5000"/>
-    <item id="5710" chance="2500"/>
-    <item id="5553" chance="2500"/>
-    <item id="5927" chance="100000">
-      <inside>
-        <item id="5091" chance="1666"/>
-        <item id="2509" chance="4000"/>
-        <item id="5792" chance="3333"/>
-        <item id="2376" chance="6666"/>
-        <item id="6126" countmax="1" chance1="5000" chancemax="0"/>
-        <item id="6098" countmax="1" chance1="5000" chancemax="0"/>
-        <item id="6097" countmax="1" chance1="5000" chancemax="0"/>
-      </inside>
-    </item>
-  </loot>
+<monster name="Pirate Cutthroat" nameDescription="a pirate cutthroat" race="blood" experience="275" speed="230" manacost="495">
+	<health now="325" max="325"/>
+	<look type="96" corpse="6080"/>
+	<targetchange interval="5000" chance="8"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="1"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="0"/>
+		<flag staticattack="90"/>
+		<flag targetdistance="1"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="75" attack="40"/>
+		<attack name="fire" interval="1500" chance="34" range="1" radius="1" target="1" min="-0" max="-90">
+			<attribute key="areaEffect" value="explosion"/>
+		</attack>
+	</attacks>
+	<defenses armor="25" defense="23"/>
+	<elements>
+		<element earthPercent="10"/>
+		<element holyPercent="20"/>
+		<element deathPercent="-5"/>
+		<element firePercent="-5"/>
+		<element icePercent="5"/>
+	</elements>
+	<immunities>
+		<immunity invisible="1"/>
+	</immunities>
+	<voices interval="5000" chance="10">
+		<voice sentence="Give up!"/>
+		<voice sentence="Hiyaa!"/>
+		<voice sentence="Plundeeeeer!"/>
+	</voices>
+	<loot>
+		<item id="2148" countmax="49" chance="31950" /><!-- gold coin -->
+		<item id="5710" chance="1750" /><!-- light shovel -->
+		<item id="11219" chance="9800" /><!-- compass -->
+		<item id="5927" chance="1100" /><!-- pirate bag -->
+		<item id="2509" chance="2850" /><!-- steel shield -->
+		<item id="5091" chance="775" /><!-- treasure map -->
+		<item id="2483" chance="2750" /><!-- scale armor -->
+		<item id="1987" chance="100000"><!-- bag -->
+			<inside>
+				<item id="6098" chance="625" /><!-- eye patch -->
+				<item id="5918" chance="1200" /><!-- pirate knee breeches -->
+				<item id="6126" chance="450" /><!-- peg leg -->
+				<item id="6097" chance="525" /><!-- hook -->
+				<item id="5553" chance="150" /><!-- rum flask -->
+				<item id="5792" chance="50" /><!-- dice -->
+			</inside>
+		</item>
+	</loot>
 </monster>

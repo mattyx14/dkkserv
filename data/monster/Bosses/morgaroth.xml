@@ -1,92 +1,107 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <monster name="Morgaroth" nameDescription="Morgaroth" race="UNDEAD" experience="888000" speed="300" manacost="0">
-  <health now="485000" max="485000"/>
-  <look type="12" head="0" body="94" legs="79" feet="79" corpse="6068"/>
-  <targetchange interval="5000" chance="8"/>
-  <strategy attack="90" defense="20"/>
-  <flags>
-    <flag summonable="0"/>
-    <flag attackable="1"/>
-    <flag hostile="1"/>
-    <flag illusionable="0"/>
-    <flag convinceable="0"/>
-    <flag pushable="0"/>
-    <flag canpushitems="1"/>
-    <flag canpushcreatures="1"/>
-    <flag targetdistance="1"/>
-    <flag staticattack="65"/>
-    <flag runonhealth="0"/>
-  </flags>
-  <attacks>
-    <attack name="melee" interval="1500" min="-1000" max="-4530"/>
-    <attack name="manadrain" interval="1000" chance="10" range="7" min="-60" max="-575">
-      <attribute key="areaEffect" value="redshimmer"/>
-	</attack>
-    <attack name="fire" interval="1000" chance="15" range="7" radius="8" target="1" min="-700" max="-1400">
-      <attribute key="shootEffect" value="fire"/>
-      <attribute key="areaEffect" value="firearea"/>
-	</attack>
-    <attack name="energy" interval="1000" chance="25" length="8" spread="0" min="-800" max="-1450">
-      <attribute key="areaEffect" value="energyarea"/>
-	</attack>
-    <attack name="lifedrain" interval="1000" chance="25" radius="8" target="0" min="-620" max="-900">
-      <attribute key="areaEffect" value="rednote"/>
-	</attack>
-    <attack name="fire" interval="1000" chance="20" radius="8" target="0" min="-455" max="-805">
-      <attribute key="areaEffect" value="mortarea"/>
-	</attack>
-    <attack name="speed" interval="1000" chance="25" radius="4" target="1" speedchange="-800" duration="4000">
-		<attribute key="areaEffect" value="rednote"/>
+	<health now="485000" max="485000"/>
+	<look type="12" head="0" body="94" legs="79" feet="79" corpse="6068"/>
+	<targetchange interval="5000" chance="8"/>
+	<strategy attack="90" defense="20"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="65"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="1500" min="-880" max="-3530"/>
+		<attack name="manadrain" interval="1000" chance="10" range="7" min="-60" max="-575">
+			<attribute key="areaEffect" value="redshimmer"/>
 		</attack>
-</attacks>
-<defenses armor="80" defense="80">
-    <defense name="healing" interval="300" chance="5000" min="300" max="1700">
-      <attribute key="areaEffect" value="blueshimmer"/>
-    </defense>
-
-    <defense name="speed" interval="4000" chance="80" speedchange="450" duration="8000">
-      <attribute key="areaEffect" value="redshimmer"/>
-    </defense>
-  </defenses>
-<elements>
+		<attack name="fire" interval="1000" chance="15" range="7" radius="8" target="1" min="-700" max="-1400">
+			<attribute key="shootEffect" value="fire"/>
+			<attribute key="areaEffect" value="firearea"/>
+		</attack>
+		<attack name="DROWN" interval="1000" chance="25" length="8" spread="0" min="-800" max="-1450">
+			<attribute key="areaEffect" value="energyarea"/>
+		</attack>
+		<attack name="lifedrain" interval="1000" chance="25" radius="8" target="0" min="-620" max="-900">
+			<attribute key="areaEffect" value="rednote"/>
+		</attack>
+		<attack name="DROWN" interval="1000" chance="20" radius="8" target="0" min="-455" max="-805">
+			<attribute key="areaEffect" value="mortarea"/>
+		</attack>
+		<attack name="Paralyze" interval="1000" chance="17" range="7" target="1">
+			<attribute key="areaEffect" value="rednote"/>
+		</attack>
+	</attacks>
+	<defenses armor="80" defense="80">
+		<defense name="healing" interval="300" chance="5000" min="300" max="1700">
+			<attribute key="areaEffect" value="blueshimmer"/>
+	</defense>
+		<defense name="speed" interval="4000" chance="80" speedchange="450" duration="8000">
+			<attribute key="areaEffect" value="redshimmer"/>
+		</defense>
+	</defenses>
+	<elements>
 		<element physicalPercent="20"/>
 		<element icePercent="10"/>
 		<element holyPercent="-15"/>
 		<element deathPercent="35"/>
-</elements>
-  <immunities>
-    <immunity physical="0"/>
-    <immunity energy="1"/>
-    <immunity fire="1"/>
-    <immunity poison="1"/>
-    <immunity lifedrain="1"/>
-    <immunity paralyze="1"/>
-    <immunity outfit="1"/>
-    <immunity drunk="1"/>
-    <immunity invisible="1"/>
-  </immunities>
-  <summons maxSummons="4">
-    <summon name="demon" interval="1000" chance="50"/>
-  </summons>
-  <voices interval="5000" chance="10">
-    <voice sentence="MY SEED IS FEAR AND MY HARVEST ARE YOUR SOULS" yell="1"/>
-    <voice sentence="The triangle of terror will rise!"/>
-    <voice sentence="Zathroth look at the destruction i am causing in your name!"/>
-  </voices>
-<loot>
-<item id="2148" chance="100000" countmax="100" /> -- gold coin
-<item id="9971" chance="50000" countmax="8" /> -- gold ingots
-<item id="2149" chance="5500" countmax="4" /> -- small emerald
-<item id="2646" chance="90700"/> -- golden boots
-<item id="5943" chance="3400"/> -- Morgaroth Hearth
-<item id="1987" chance="100000" > -- bag
-<inside>
-	<item id="2387" chance="10000" /> -- double axe
-	<item id="2452" chance="4900" /> -- heavy mace
-	<item if="2514" chance="2000" /> -- mastermind Shield
-	<item id="2390" chance="90000" /> -- magic longsword
-	<item id="2421" chance="5009" /> -- thunder hammer
-</inside>
-</item>
-</loot>
+	</elements>
+	<immunities>
+		<immunity physical="0"/>
+		<immunity fire="1"/>
+		<immunity poison="1"/>
+		<immunity lifedrain="1"/>
+		<immunity paralyze="1"/>
+		<immunity outfit="1"/>
+		<immunity drunk="1"/>
+		<immunity invisible="1"/>
+	</immunities>
+	<summons maxSummons="4">
+		<summon name="firelord" interval="1000" chance="50"/>
+	</summons>
+	<voices interval="5000" chance="10">
+		<voice sentence="MY SEED IS FEAR AND MY HARVEST ARE YOUR SOULS" yell="1"/>
+		<voice sentence="The triangle of terror will rise!"/>
+		<voice sentence="Zathroth look at the destruction i am causing in your name!"/>
+	</voices>
+	<loot>
+		<item id="2144" chance1="99000" countmax="13" /> -- black pearl
+		<item id="2149" chance1="9900" countmax="4" /> -- small emerald
+		<item id="2112" chance="7777" /> -- teddy bear
+		<item id="2158" chance="2800"/> -- blue gem
+		<item id="2186" chance="1538" /> -- moonlight rod
+		<item id="2396" chance="1429" /> -- ice rapier :: Atk 150 :: Def 1
+		<item id="2462" chance="4700" /> -- devil helmet :: Arm 7
+		<item id="2214" chance="4000" /> -- ring of healing
+		<item id="8928" chance="5700"/> -- obsidian truncheon :: Def 40 :: Atk 75
+		<item id="2122" chance="3500"/> -- elven brooch
+		<item id="8886" chance="9050"/> -- molten plate :: Arm 19
+		<item id="6500" countmax="5" chance1="15000"/> -- firelordic essence
+		<item id="2152" chance1="75000" countmax="66"/> -- platinum coin
+		<item id="1987" chance="100000" > -- bag
+			<inside>
+				<item id="2146" countmax="9" chance1="12300"/> -- small sapphire
+				<item id="2149" countmax="12" chance1="12300"/> -- small emerald
+				<item id="2387" chance="15000" /> -- double axe :: Def 12 :: Atk 35
+				<item id="8929" chance="4300"/> -- stomper :: Def 20 :: Atk 59
+				<item id="8865" chance="6666"/> -- dark lord's cape :: Arm 11
+				<item id="2143" chance="4500" countmax="11"/> -- white pearl
+				<item id="7431" chance="7900" /> -- firelord hammer :: Def 38 :: Atk 48
+				<item id="8853" chance="9800"/> -- ironworker :: Atk 4
+				<item id="8881" chance="6800"/> -- fireborn giant armor :: Arm 15
+				<item if="2514" chance="9000" /> -- Mastermind Shield
+				<item id="5943" chance="3500"/> -- Morgaroth's heart
+				<item id="8850" chance="6500" /> -- chain bolter :: Atk 8
+				<item id="8851" chance="4800"/> -- royal crossbow :: Atk 15
+				<item id="2421" chance="7509" /> -- thunder hammer :: Def 40 :: Atk 59
+			</inside>
+		</item>
+	</loot>
 </monster>

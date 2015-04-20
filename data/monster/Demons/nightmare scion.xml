@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Nightmare Scion" nameDescription="a nightmare scion" race="blood" experience="1350" speed="360" manacost="0">
+	<health now="1400" max="1400"/>
+	<look type="321" corpse="9919"/>
+	<targetchange interval="5000" chance="10"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="250"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="50" attack="47"/>
+		<attack name="earth" interval="4000" chance="7" range="7" target="1" radius="4" min="-0" max="-180">
+			<attribute key="shootEffect" value="poison"/>
+			<attribute key="areaEffect" value="poison"/>
+		</attack>
+		<attack name="death" interval="2000" chance="15" range="2" target="1" min="-70" max="-130">
+			<attribute key="areaEffect" value="mortarea"/>
+			<attribute key="shootEffect" value="suddendeath"/>
+		</attack>
+	</attacks>
+	<defenses armor="20" defense="20">
+		<defense name="healing" interval="4000" chance="14" min="50" max="150">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+	</defenses>
+	<elements>
+		<element holyPercent="-25"/>
+		<element firePercent="20"/>
+		<element energyPercent="20"/>
+		<element icePercent="15"/>
+	</elements>
+	<immunities>
+		<immunity earth="1"/>
+		<immunity death="1"/>
+		<immunity invisible="1"/>
+	</immunities>
+	<voices interval="7500" chance="20">
+		<voice sentence="Weeeheeheee!"/>
+		<voice sentence="Pffffrrrrrrrrrrrr."/>
+		<voice sentence="Peak a boo, I killed you!"/>
+	</voices>
+	<loot>
+		<item id="11229" chance="5325" /><!-- scythe leg -->
+		<item id="8871" chance="1350" /><!-- focus cape -->
+		<item id="11223" chance="8025" /><!-- essence of a bad dream -->
+		<item id="2152" countmax="3" chance="41500" /><!-- platinum coin -->
+		<item id="2666" chance="49950" /><!-- meat -->
+		<item id="6300" chance="1325" /><!-- death ring -->
+		<item id="2491" chance="1800" /><!-- crown helmet -->
+		<item id="1987" chance="100000"><!-- bag -->
+			<inside>
+				<item id="6574" chance="1250" /><!-- bar of chocolate -->
+				<item id="2152" countmax="3" chance="550" /><!-- platinum coin -->
+				<item id="7387" chance="1300" /><!-- diamond sceptre -->
+				<item id="9941" chance="2150" /><!-- crystal of focus -->
+			</inside>
+		</item>
+	</loot>
+</monster>

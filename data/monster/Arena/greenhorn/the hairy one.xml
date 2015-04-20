@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monster name="The Hairy One" nameDescription="the hairy one" race="blood" experience="115" speed="240">
 	<health now="325" max="325"/>
-	<look type="116" head="0" body="0" legs="0" feet="0" corpse="7349"/>
+	<look type="116" corpse="6043"/>
 	<targetchange interval="60000" chance="0"/>
 	<strategy attack="100" defense="0"/>
 	<flags>
@@ -9,10 +9,31 @@
 		<flag staticattack="78"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" min="-1" max="-60"/>
+		<attack name="melee" interval="2000" skill="10" attack="70"/>
 	</attacks>
 	<defenses armor="3" defense="5"/>
+	<elements>
+		<element firePercent="20"/>
+		<element earthPercent="10"/>
+		<element energyPercent="5"/>
+		<element icePercent="-10"/>
+	</elements>
 	<voices interval="2000" chance="5">
 		<voice sentence="Hugah!"/>
+		<voice sentence="Ungh! Ungh!"/>
 	</voices>
+	<loot>
+		<item id="2152" countmax="1" chance="32550" /><!-- polatinum coin -->
+		<item id="2676" countmax="11" chance="5175" /><!-- banana -->
+		<item id="5883" chance="975" /><!-- ape fur -->
+		<item id="2463" chance="1825" /><!-- plate armor -->
+		<item id="1987" chance="100000"><!-- bag -->
+			<inside>
+				<item id="2200" chance="1200" /><!-- protection amulet -->
+				<item id="2209" chance="1150" /><!-- club ring -->
+				<item id="2166" chance="1225" /><!-- power ring -->
+				<item id="7618" countmax="3" chance="1425" /><!-- health potion -->
+			</inside>
+		</item>
+	</loot>
 </monster>
