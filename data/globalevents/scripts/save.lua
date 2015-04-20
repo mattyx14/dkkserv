@@ -7,7 +7,7 @@ local config = {
 
 local function executeSave(seconds)
 	if(isInArray(config.broadcast, seconds)) then
-		doBroadcastMessage("Server save within " .. seconds .. " seconds, please mind it may freeze!")
+		doBroadcastMessage("Server save within " .. seconds .. " seconds, please mind it may freeze!", MESSAGE_STATUS_CONSOLE_ORANGE)
 	end
 
 	if(seconds > 0) then

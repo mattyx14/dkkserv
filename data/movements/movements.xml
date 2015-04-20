@@ -1023,18 +1023,18 @@
 	<movevent type="DeEquip" itemid="22424" slot="shield" event="function" value="onDeEquipItem"/>
 
 	<!-- objets with sound -->
-	<movevent type="StepIn" itemid="2230-2234" event="script" value="basuras/objets.lua"/>
-	<movevent type="StepIn" itemid="2010" event="script" value="basuras/objets.lua"/>
-	<movevent type="StepIn" itemid="2022" event="script" value="basuras/objets.lua"/>
-	<movevent type="StepIn" itemid="2024" event="script" value="basuras/objets.lua"/>
-	<movevent type="StepIn" itemid="2226" event="script" value="basuras/objets.lua"/>
-	<movevent type="StepIn" itemid="2229" event="script" value="basuras/objets.lua"/>
-	<movevent type="StepIn" itemid="2236" event="script" value="basuras/objets.lua"/>
-	<movevent type="StepIn" itemid="2246" event="script" value="basuras/objets.lua"/>
-	<movevent type="StepIn" itemid="3060" event="script" value="basuras/objets2.lua"/>
-	<movevent type="StepIn" itemid="2219" event="script" value="basuras/basuras.lua"/>
-	<movevent type="StepIn" itemid="2220-2224" event="script" value="basuras/basuras.lua"/>
-	<movevent type="StepIn" itemid="2227" event="script" value="basuras/basuras.lua"/>
-	<movevent type="StepIn" itemid="2228" event="script" value="basuras/basuras.lua"/>
-	<movevent type="StepIn" itemid="2237-2245" event="script" value="basuras/basuras.lua"/>
+	<movevent type="StepIn" itemid="2230-2234" event="script" value="objets.lua"/>
+	<movevent type="StepIn" itemid="2010" event="script" value="objets.lua"/>
+	<movevent type="StepIn" itemid="2022" event="script" value="objets.lua"/>
+	<movevent type="StepIn" itemid="2024" event="script" value="objets.lua"/>
+	<movevent type="StepIn" itemid="2226" event="script" value="objets.lua"/>
+	<movevent type="StepIn" itemid="2229" event="script" value="objets.lua"/>
+	<movevent type="StepIn" itemid="2236" event="script" value="objets.lua"/>
+	<movevent type="StepIn" itemid="2246" event="script" value="objets.lua"/>
+	<movevent type="StepIn" itemid="3060" event="script" value="objets2.lua"/>
+	<movevent type="StepIn" itemid="2219" event="script" value="basuras.lua"/>
+	<movevent type="StepIn" itemid="2220-2224" event="script" value="basuras.lua"/>
+	<movevent type="StepIn" itemid="2227" event="script" value="basuras.lua"/>
+	<movevent type="StepIn" itemid="2228" event="script" value="basuras.lua"/>
+	<movevent type="StepIn" itemid="2237-2245" event="script" value="basuras.lua"/>
 </movements>

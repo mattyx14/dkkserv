@@ -18,7 +18,6 @@
 	<event type="think" name="SkullCheck" event="script" value="skullcheck.lua"/>
 	<event type="combat" name="partyAndGuildProtection" event="script" value="partyAndGuildProtection.lua"/>
 	<event type="login" name="recordIp" event="script" value="recordIp.lua"/>
-	<event type="kill" name="SummonKill" event="script" value="obsidianknife.lua"/>
-	<event type="login" name="obs_login" event="script" value="obsidianknife.lua"/>
+	<!-- <event type="logout" name="CastLogout" event="script" value="castlogout.lua"/> -->
 	<event type="extendedopcode" name="ExtendedOpcode" event="script" value="extendedopcode.lua"/>
 </creaturescripts>

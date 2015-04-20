@@ -84,10 +84,12 @@
 	<conjure name="Conjure Arrow" words="exevo con" lvl="13" mana="100" soul="1" conjureId="2544" conjureCount="10" exhaustion="1800" groups="1,1800" needlearn="0" event="function" value="conjureItem">
 		<vocation id="11;12;13;14;15"/>
 	</conjure>
+	<!--
 	<conjure name="Food" words="exevo pan" lvl="14" mana="120" soul="1" exhaustion="1800" groups="1,1800"  needlearn="0" event="function" value="conjureFood">
 		<vocation id="6;7;8;9;10"/>
 		<vocation id="11;12;13;14;15"/>
 	</conjure>
+	-->
 	<conjure name="Conjure Bolt" words="exevo con mort" lvl="17" mana="140" soul="1" prem="1" conjureId="2543" conjureCount="5" exhaustion="1800" groups="1,1800" needlearn="0" event="function" value="conjureItem">
 		<vocation id="11;12;13;14;15"/>
 	</conjure>
