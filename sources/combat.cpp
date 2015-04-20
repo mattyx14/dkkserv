@@ -39,7 +39,7 @@ Combat::Combat()
 	area = NULL;
 
 	formulaType = FORMULA_UNDEFINED;
-	mina = minb = maxa = maxb = minl = maxl = minm = maxm = minc = maxc = 0;
+	mina = minb = maxa = maxb = 0;
 }
 
 Combat::~Combat()
@@ -75,13 +75,8 @@ bool Combat::getMinMaxValues(Creature* creature, Creature* target, CombatParams&
 			{
 				case FORMULA_LEVELMAGIC:
 				{
-					min = (int32_t)((player->getLevel() / minl + player->getMagicLevel() * minm) * 1. * mina + minb);
-					max = (int32_t)((player->getLevel() / maxl + player->getMagicLevel() * maxm) * 1. * maxa + maxb);
-					if(minc && std::abs(min) < std::abs(minc))
-						min = minc;
-
-					if(maxc && std::abs(max) < std::abs(maxc))
-						max = maxc;
+					max = (int32_t)((player->getLevel() * 2 + player->getMagicLevel() * 3) * 1. * mina + minb);
+					min = (int32_t)((player->getLevel() * 2 + player->getMagicLevel() * 3) * 1. * maxa + maxb);
 
 					player->increaseCombatValues(min, max, params.useCharges, true);
 					return true;
@@ -106,21 +101,18 @@ bool Combat::getMinMaxValues(Creature* creature, Creature* target, CombatParams&
 					else
 						max = (int32_t)maxb;
 
-					min = (int32_t)minb;
-					if(maxc && std::abs(max) < std::abs(maxc))
-						max = maxc;
-
 					return true;
 				}
 
 				case FORMULA_VALUE:
 				{
-					min = (int32_t)minb;
-					max = (int32_t)maxb;
+					min = (int32_t)mina;
+					max = (int32_t)maxa;
 					return true;
 				}
 
 				default:
+					min = max = 0;
 					break;
 			}
 
@@ -393,10 +385,9 @@ bool Combat::isProtected(Player* attacker, Player* target)
 	return target->isProtected() || attacker->isProtected() || (attacker->checkLoginDelay() && !attacker->hasBeenAttacked(target->getID()));
 }
 
-void Combat::setPlayerCombatValues(formulaType_t _type, double _mina, double _minb, double _maxa, double _maxb, double _minl, double _maxl, double _minm, double _maxm, int32_t _minc, int32_t _maxc)
+void Combat::setPlayerCombatValues(formulaType_t _type, double _mina, double _minb, double _maxa, double _maxb)
 {
 	formulaType = _type; mina = _mina; minb = _minb; maxa = _maxa; maxb = _maxb;
-	minl = _minl; maxl = _maxl; minm = _minm; maxm = _maxm; minc = _minc; maxc = _maxc;
 }
 
 bool Combat::setParam(CombatParam_t param, uint32_t value)

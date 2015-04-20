@@ -2099,7 +2099,7 @@ void LuaInterface::registerFunctions()
 	//setCombatCallBack(combat, key, function_name)
 	lua_register(m_luaState, "setCombatCallback", LuaInterface::luaSetCombatCallBack);
 
-	//setCombatFormula(combat, type, mina, minb, maxa, maxb[, minl, maxl[, minm, maxm[, minc[, maxc]]]])
+	//setCombatFormula(combat, type, mina, minb, maxa, maxb)
 	lua_register(m_luaState, "setCombatFormula", LuaInterface::luaSetCombatFormula);
 
 	//setConditionFormula(combat, mina, minb, maxa, maxb)
@@ -6396,7 +6396,7 @@ int32_t LuaInterface::luaSetCombatCallBack(lua_State* L)
 
 int32_t LuaInterface::luaSetCombatFormula(lua_State* L)
 {
-	//setCombatFormula(combat, type, mina, minb, maxa, maxb[, minl, maxl[, minm, maxm[, minc[, maxc]]]])
+	//setCombatFormula(combat, type, mina, minb, maxa, maxb)
 	ScriptEnviroment* env = getEnv();
 	if(env->getScriptId() != EVENT_ID_LOADING)
 	{
@@ -6405,33 +6405,11 @@ int32_t LuaInterface::luaSetCombatFormula(lua_State* L)
 		return 1;
 	}
 
-	int32_t params = lua_gettop(L), minc = 0, maxc = 0;
-	if(params > 11)
-		maxc = popNumber(L);
-
-	if(params > 10)
-		minc = popNumber(L);
-
-	double minm = g_config.getDouble(ConfigManager::FORMULA_MAGIC), maxm = minm,
-		minl = g_config.getDouble(ConfigManager::FORMULA_LEVEL), maxl = minl;
-	if(params > 8)
-	{
-		maxm = popFloatNumber(L);
-		minm = popFloatNumber(L);
-	}
-
-	if(params > 6)
-	{
-		maxl = popFloatNumber(L);
-		minl = popFloatNumber(L);
-	}
-
-	double maxb = popFloatNumber(L), maxa = popFloatNumber(L),
-		minb = popFloatNumber(L), mina = popFloatNumber(L);
+	double maxb = popFloatNumber(L), maxa = popFloatNumber(L), minb = popFloatNumber(L), mina = popFloatNumber(L);
 	formulaType_t type = (formulaType_t)popNumber(L);
 	if(Combat* combat = env->getCombatObject(popNumber(L)))
 	{
-		combat->setPlayerCombatValues(type, mina, minb, maxa, maxb, minl, maxl, minm, maxm, minc, maxc);
+		combat->setPlayerCombatValues(type, mina, minb, maxa, maxb);
 		lua_pushboolean(L, true);
 	}
 	else
