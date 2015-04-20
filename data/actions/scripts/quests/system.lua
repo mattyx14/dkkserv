@@ -1,12 +1,12 @@
 local specialQuests = {
 	[2001] = Storage.Annihilator.AnnihilatorDone,
 	[2002] = Storage.Annihilator.AnnihilatorTwo,
-	[2010] = Storage.DemonOakChest,
-	[2011] = Storage.POI
+	[2003] = Storage.DemonOakChest,
+	[2004] = Storage.POI
 }
 
 local questsExperience = {
-	[30015] = 10000
+	[2005] = 10000
 }
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
