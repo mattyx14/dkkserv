@@ -159,7 +159,7 @@
 
 		-- 8.7x + config
 		useMounts = true
-		enableCooldowns = true
+		enableCooldowns = false
 		unmountPlayerInPz = true
 		monsterSpawnWalkback = true
 		allowBlockSpawn = true
