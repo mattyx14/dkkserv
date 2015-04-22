@@ -1,14 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mod name="Custom items and events" version="1.0" author="Martyx and Others" contact="martyx@otland.net" enabled="yes">
-<!-- System Items Customs -->
-	<!-- Magician Hat -->
-	<movevent type="Equip" itemid="2662" slot="head" level="50" event="function" value="onEquipItem">
-		<vocation name="Sorcerer"/>
-		<vocation name="Druid"/>
-		<vocation id="2;3;4;5;7;8;9;10" showInDescription="0"/>
-	</movevent>
-	<movevent type="DeEquip" itemid="2662" slot="head" event="function" value="onDeEquipItem"/>
-
 	<!-- Arena Monsters -->
 	<movevent type="StepIn" uniqueid="10620" event="script"><![CDATA[
 		function onStepIn(cid, item, pos)
@@ -290,4 +281,13 @@
 			return true
 		end
 	]]></movevent>
+
+	<!-- System Items Customs -->
+	<!-- Magician Hat -->
+	<movevent type="Equip" itemid="2662" slot="head" level="50" event="function" value="onEquipItem">
+		<vocation name="Sorcerer"/>
+		<vocation name="Druid"/>
+		<vocation id="2;3;4;5;7;8;9;10" showInDescription="0"/>
+	</movevent>
+	<movevent type="DeEquip" itemid="2662" slot="head" event="function" value="onDeEquipItem"/>
 </mod>
