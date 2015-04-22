@@ -15,15 +15,19 @@ local POTIONS = {
 	-- Heal
 	[8704] = {empty = 7636, splash = 42, health = {50, 100}}, -- small health potion
 	[7618] = {empty = 7636, splash = 42, health = {250, 300}}, -- health potion
-	[7588] = {empty = 7634, splash = 42, health = {350, 600}, level = 50, vocations = {3, 4, 7, 8}, vocStr = "knights and paladins"}, -- strong health potion
-	[7591] = {empty = 7635, splash = 42, health = {800, 1100}, level = 80, vocations = {3, 4, 7, 8}, vocStr = "knights and paladins"}, -- great health potion
-	[8473] = {empty = 7635, splash = 42, health = {1350, 1700}, level = 130, vocations = {3, 4, 7, 8}, vocStr = "knights and paladins"}, -- ultimate health potion
+	[7588] = {empty = 7634, splash = 42, health = {350, 600}, level = 50, vocations = {11, 12, 13, 14, 15, 16, 17, 18, 19, 20}, vocStr = "knights and paladins"}, -- strong health potion
+	[7591] = {empty = 7635, splash = 42, health = {800, 1100}, level = 80, vocations = {11, 12, 13, 14, 15, 16, 17, 18, 19, 20}, vocStr = "knights and paladins"}, -- great health potion
+	[8473] = {empty = 7635, splash = 42, health = {1350, 1700}, level = 200, vocations = {14, 15, 19, 20}, vocStr = "lord knights and snipers"}, -- ultimate health potion
+	-- MISSING POTIONS ULTRA HEALTH
+	-- [0] = {empty = 7635, splash = 42, health = {2050, 2500}, level = 300, vocations = {14, 15, 19, 20}, vocStr = "lord knights and snipers"}, -- ultimate health potion
 
 	-- Mana
 	[7620] = {empty = 7636, splash = 47, mana = {200, 240}}, -- mana potion
-	[7589] = {empty = 7634, splash = 47, mana = {350, 500}, level = 50, vocations = {1, 2, 3, 5, 6, 7}, vocStr = "sorcerers, druids and paladins"}, -- strong mana potion
-	[7590] = {empty = 7635, splash = 47, mana = {600, 800}, level = 80, vocations = {1, 2, 5, 6}, vocStr = "sorcerers and druids"}, -- great mana potion
-	[8472] = {empty = 7635, splash = 43, mana = {850, 1300}, level = 130, vocations = {1, 2, 5, 6}, vocStr = "paladins"} -- great spirit potion
+	[7589] = {empty = 7634, splash = 47, mana = {350, 500}, level = 50, vocations = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15}, vocStr = "sorcerers, druids and paladins"}, -- strong mana potion
+	[7590] = {empty = 7635, splash = 47, mana = {600, 800}, level = 80, vocations = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, vocStr = "sorcerers and druids"}, -- great mana potion
+	[8472] = {empty = 7635, splash = 43, mana = {850, 1300}, level = 200, vocations = {4, 5, 9, 10}, vocStr = "wizards and warlocks"} -- great spirit potion
+	-- MISSING POTIONS ULTRA MANA
+	-- [0] = {empty = 7635, splash = 43, mana = {1450, 2000}, level = 300, vocations = {4, 5, 9, 10}, vocStr = "wizards and warlocks"} -- great spirit potion
 }
 
 for index, potion in pairs(POTIONS) do

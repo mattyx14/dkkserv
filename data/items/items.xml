@@ -497,14 +497,15 @@
 	<item id="1293" article="a" name="stone">
 		<attribute key="weight" value="1500"/>
 	</item>
-	<item id="1294" article="a" name="small stone">
+	<item id="1294" article="a" name="small stone (Atk:57)" plural="small stones (Atk:57)">
 		<attribute key="weight" value="360"/>
-		<attribute key="attack" value="5"/>
-		<attribute key="weaponType" value="distance"/>
+		<attribute key="attack" value="57"/>
+		<attribute key="weaponType" value="ammunition"/>
 		<attribute key="shootType" value="smallstone"/>
-		<attribute key="range" value="4"/>
-		<attribute key="breakChance" value="3"/>
-		<attribute key="ammoAction" value="moveback"/>
+		<attribute key="ammoType" value="smallstone"/>
+		<attribute key="slotType" value="ammo"/>
+		<attribute key="maxHitChance" value="90"/>
+		<attribute key="ammoAction" value="removecount"/>
 	</item>
 	<item id="1295" article="a" name="stone">
 		<attribute key="weight" value="3000"/>
@@ -549,7 +550,10 @@
 	<item id="1396" name="stairs">
 		<attribute key="floorchange" value="north"/>
 	</item>
-	<item id="1397" article="a" name="mystic flame"/>
+	<item id="1397" article="a" name="mystic flame">
+		<attribute key="description" value="You can see the other side through it."/>
+		<attribute key="type" value="teleport"/>
+	</item>
 	<item id="1398" article="a" name="ramp">
 		<attribute key="floorchange" value="east"/>
 	</item>
@@ -688,14 +692,14 @@
 		<attribute key="field" value="poison">
 			<attribute key="ticks" value="5000"/>
 			<attribute key="start" value="5"/>
-			<attribute key="damage" value="100"/>
+			<attribute key="damage" value="5"/>
 		</attribute>
 	</item>
 	<item id="1491" article="an" name="energy field">
 		<attribute key="type" value="magicfield"/>
 		<attribute key="replaceable" value="0"/>
 		<attribute key="field" value="energy">
-			<attribute key="damage" value="30"/>
+			<attribute key="damage" value="25"/>
 			<attribute key="ticks" value="10000"/>
 			<attribute key="damage" value="25"/>
 		</attribute>
@@ -705,10 +709,10 @@
 		<attribute key="decayTo" value="1493"/>
 		<attribute key="duration" value="120"/>
 		<attribute key="field" value="fire">
-			<attribute key="damage" value="20"/>
+			<attribute key="damage" value="30"/>
 			<attribute key="ticks" value="10000"/>
 			<attribute key="count" value="7"/>
-			<attribute key="damage" value="10"/>
+			<attribute key="damage" value="20"/>
 		</attribute>
 	</item>
 	<item id="1493" article="a" name="fire field">
@@ -716,6 +720,7 @@
 		<attribute key="decayTo" value="1494"/>
 		<attribute key="duration" value="120"/>
 		<attribute key="field" value="fire">
+			<attribute key="damage" value="15"/>
 			<attribute key="ticks" value="10000"/>
 			<attribute key="count" value="7"/>
 			<attribute key="damage" value="10"/>
@@ -732,7 +737,7 @@
 		<attribute key="decayTo" value="0"/>
 		<attribute key="duration" value="120"/>
 		<attribute key="field" value="energy">
-			<attribute key="damage" value="30"/>
+			<attribute key="damage" value="50"/>
 			<attribute key="ticks" value="10000"/>
 			<attribute key="damage" value="25"/>
 		</attribute>
@@ -742,15 +747,16 @@
 		<attribute key="decayTo" value="0"/>
 		<attribute key="duration" value="120"/>
 		<attribute key="field" value="poison">
+			<attribute key="damage" value="25"/>
 			<attribute key="ticks" value="5000"/>
 			<attribute key="start" value="5"/>
-			<attribute key="damage" value="100"/>
+			<attribute key="damage" value="10"/>
 		</attribute>
 	</item>
 	<item id="1497" article="a" name="magic wall">
 		<attribute key="type" value="magicfield"/>
 		<attribute key="decayTo" value="0"/>
-		<attribute key="duration" value="20"/>
+		<attribute key="duration" value="15"/>
 		<attribute key="blocksolid" value="1"/>
 	</item>
 	<item id="1498" article="a" name="magic wall">
@@ -765,34 +771,34 @@
 	<item id="1500" article="a" name="fire field">
 		<attribute key="type" value="magicfield"/>
 		<attribute key="decayTo" value="1501"/>
-		<attribute key="duration" value="10"/>
+		<attribute key="duration" value="120"/>
 		<attribute key="field" value="fire">
 			<attribute key="damage" value="20"/>
 			<attribute key="ticks" value="10000"/>
 			<attribute key="count" value="7"/>
-			<attribute key="damage" value="10"/>
+			<attribute key="damage" value="100"/>
 		</attribute>
 	</item>
 	<item id="1501" article="a" name="fire field">
 		<attribute key="type" value="magicfield"/>
 		<attribute key="decayTo" value="1502"/>
-		<attribute key="duration" value="10"/>
+		<attribute key="duration" value="120"/>
 		<attribute key="field" value="fire">
 			<attribute key="ticks" value="10000"/>
 			<attribute key="count" value="7"/>
-			<attribute key="damage" value="10"/>
+			<attribute key="damage" value="100"/>
 		</attribute>
 	</item>
 	<item id="1502" article="a" name="fire field">
 		<attribute key="type" value="magicfield"/>
 		<attribute key="decayTo" value="0"/>
-		<attribute key="duration" value="10"/>
+		<attribute key="duration" value="120"/>
 		<attribute key="field" value="fire"/>
 	</item>
 	<item id="1503" article="a" name="poison gas">
 		<attribute key="type" value="magicfield"/>
 		<attribute key="decayTo" value="0"/>
-		<attribute key="duration" value="10"/>
+		<attribute key="duration" value="120"/>
 		<attribute key="field" value="poison">
 			<attribute key="ticks" value="5000"/>
 			<attribute key="start" value="5"/>
@@ -802,11 +808,11 @@
 	<item id="1504" article="an" name="energy field">
 		<attribute key="type" value="magicfield"/>
 		<attribute key="decayTo" value="0"/>
-		<attribute key="duration" value="10"/>
+		<attribute key="duration" value="120"/>
 		<attribute key="field" value="energy">
 			<attribute key="damage" value="30"/>
 			<attribute key="ticks" value="10000"/>
-			<attribute key="damage" value="25"/>
+			<attribute key="damage" value="50"/>
 		</attribute>
 	</item>
 	<item id="1505" name="smoke">
@@ -2088,8 +2094,12 @@
 		<attribute key="slotType" value="ring"/>
 	</item>
 	<item id="2125" article="a" name="crystal necklace">
+		<attribute key="absorbPercentHoly" value="-10"/>
+		<attribute key="absorbPercentEnergy" value="10"/>
 		<attribute key="weight" value="490"/>
+		<attribute key="charges" value="10"/>
 		<attribute key="slotType" value="necklace"/>
+		<attribute key="showattributes" value="1"/>
 	</item>
 	<item id="2126" article="a" name="bronze necklace">
 		<attribute key="weight" value="410"/>
@@ -2112,8 +2122,13 @@
 		<attribute key="slotType" value="necklace"/>
 	</item>
 	<item id="2131" article="a" name="star amulet">
-		<attribute key="weight" value="610"/>
+		<attribute key="weight" value="660"/>
+		<attribute key="absorbPercentHoly" value="10"/>
+		<attribute key="absorbPercentDeath" value="-10"/>
 		<attribute key="slotType" value="necklace"/>
+		<attribute key="charges" value="10"/>
+		<attribute key="showcharges" value="1"/>
+		<attribute key="showattributes" value="1"/>
 	</item>
 	<item id="2132" article="a" name="silver necklace">
 		<attribute key="weight" value="480"/>
@@ -2121,7 +2136,12 @@
 	</item>
 	<item id="2133" article="a" name="ruby necklace">
 		<attribute key="weight" value="570"/>
+		<attribute key="absorbPercentEarth" value="10"/>
+		<attribute key="absorbPercentFire" value="-10"/>
 		<attribute key="slotType" value="necklace"/>
+		<attribute key="charges" value="10"/>
+		<attribute key="showcharges" value="1"/>
+		<attribute key="showattributes" value="1"/>
 	</item>
 	<item id="2134" article="a" name="silver brooch">
 		<attribute key="weight" value="116"/>
@@ -2131,8 +2151,13 @@
 		<attribute key="slotType" value="necklace"/>
 	</item>
 	<item id="2136" article="a" name="demonbone amulet">
-		<attribute key="weight" value="690"/>
+		<attribute key="weight" value="700"/>
+		<attribute key="absorbPercentDeath" value="10"/>
+		<attribute key="absorbPercentHoly" value="-10"/>
 		<attribute key="slotType" value="necklace"/>
+		<attribute key="charges" value="10"/>
+		<attribute key="showcharges" value="1"/>
+		<attribute key="showattributes" value="1"/>
 	</item>
 	<item id="2137" name="some golden fruits">
 		<attribute key="weight" value="1070"/>
@@ -2239,13 +2264,7 @@
 		<attribute key="slotType" value="ring"/>
 		<attribute key="charges" value="20"/>
 		<attribute key="showcharges" value="1"/>
-		<attribute key="absorbPercentPhysical" value="20"/>
-		<attribute key="absorbPercentFire" value="20"/>
-		<attribute key="absorbPercentIce" value="20"/>
-		<attribute key="absorbPercentEarth" value="20"/>
-		<attribute key="absorbPercentDeath" value="20"/>
-		<attribute key="absorbPercentHoly" value="20"/>
-		<attribute key="absorbPercentEnergy" value="20"/>
+		<attribute key="absorbPercentMagic" value="20"/>
 		<attribute key="showattributes" value="1"/>
 	</item>
 	<item id="2165" article="a" name="stealth ring">
@@ -2295,7 +2314,9 @@
 		<attribute key="description" value="It is an amulet of protection."/>
 		<attribute key="weight" value="600"/>
 		<attribute key="slotType" value="necklace"/>
-		<attribute key="armor" value="2"/>
+		<attribute key="absorbPercentPhysical" value="2"/>
+		<attribute key="armor" value="3"/>
+		<attribute key="showattributes" value="1"/>
 	</item>
 	<item id="2172" article="a" name="bronze amulet">
 		<attribute key="weight" value="500"/>
@@ -2306,6 +2327,7 @@
 		<attribute key="showattributes" value="1"/>
 	</item>
 	<item id="2173" article="an" name="amulet of loss">
+		<attribute key="description" value="Prevent to Loss items."/>
 		<attribute key="weight" value="420"/>
 		<attribute key="slotType" value="necklace"/>
 		<attribute key="preventDrop" value="1"/>
@@ -2324,10 +2346,19 @@
 		<attribute key="weight" value="800"/>
 	</item>
 	<item id="2177" article="a" name="life crystal">
-		<attribute key="weight" value="263"/>
+		<attribute key="weight" value="250"/>
+		<attribute key="ammoType" value="arrow"/>
+		<attribute key="healthGain" value="5"/>
+		<attribute key="healthTicks" value="3000"/>
+		<attribute key="manaGain" value="5"/>
+		<attribute key="manaTicks" value="3000"/>
+		<attribute key="showattributes" value="1"/>
 	</item>
 	<item id="2178" article="a" name="mind stone">
 		<attribute key="weight" value="250"/>
+		<attribute key="absorbPercentDeath" value="3"/>
+		<attribute key="ammoType" value="arrow"/>
+		<attribute key="showattributes" value="1"/>
 	</item>
 	<item id="2179" article="a" name="gold ring">
 		<attribute key="weight" value="100"/>
@@ -2355,8 +2386,11 @@
 		<attribute key="shootType" value="smallice"/>
 		<attribute key="range" value="3"/>
 	</item>
-	<item id="2184" article="a" name="crystal wand">
+	<item id="2184" article="a" name="king's sceptre">
+		<attribute key="description" value="It is a magic sceptre. Your magic level by 3"/>
 		<attribute key="weight" value="2800"/>
+		<attribute key="magiclevelpoints" value="3"/>
+		<attribute key="defense" value="12"/>
 	</item>
 	<item id="2185" article="a" name="necrotic rod">
 		<attribute key="description" value="It was brought up from hell to deliver death."/>
@@ -2419,6 +2453,7 @@
 	<item id="2195" name="boots of haste">
 		<attribute key="weight" value="750"/>
 		<attribute key="slotType" value="feet"/>
+		<attribute key="armor" random_min="1" random_max="3"/>
 		<attribute key="speed" value="40"/>
 		<attribute key="showattributes" value="1"/>
 	</item>
@@ -2427,12 +2462,12 @@
 		<attribute key="slotType" value="necklace"/>
 	</item>
 	<item id="2197" article="a" name="stone skin amulet">
-		<attribute key="weight" value="700"/>
+		<attribute key="weight" value="760"/>
 		<attribute key="slotType" value="necklace"/>
-		<attribute key="charges" value="5"/>
+		<attribute key="charges" value="10"/>
 		<attribute key="showcharges" value="1"/>
-		<attribute key="absorbPercentPhysical" value="80"/>
-		<attribute key="absorbPercentDeath" value="80"/>
+		<attribute key="absorbPercentPhysical" value="50"/>
+		<attribute key="absorbPercentMagic" value="-5"/>
 		<attribute key="showattributes" value="1"/>
 	</item>
 	<item id="2198" article="an" name="elven amulet">
@@ -2440,13 +2475,7 @@
 		<attribute key="slotType" value="necklace"/>
 		<attribute key="charges" value="50"/>
 		<attribute key="showcharges" value="1"/>
-		<attribute key="absorbPercentPhysical" value="5"/>
-		<attribute key="absorbPercentFire" value="5"/>
-		<attribute key="absorbPercentIce" value="5"/>
-		<attribute key="absorbPercentEarth" value="5"/>
-		<attribute key="absorbPercentDeath" value="5"/>
-		<attribute key="absorbPercentHoly" value="5"/>
-		<attribute key="absorbPercentEnergy" value="5"/>
+		<attribute key="absorbPercentMagic" value="5"/>
 		<attribute key="showattributes" value="1"/>
 	</item>
 	<item id="2199" article="a" name="garlic necklace">
@@ -2580,7 +2609,7 @@
 		<attribute key="stopduration" value="1"/>
 		<attribute key="showduration" value="1"/>
 	</item>
-	<item id="2214" article="a" name="ring of healing">
+	<item id="2214" article="a" name="restore ring">
 		<attribute key="weight" value="80"/>
 		<attribute key="slotType" value="ring"/>
 		<attribute key="transformEquipTo" value="2216"/>
@@ -2597,7 +2626,7 @@
 		<attribute key="showduration" value="1"/>
 		<attribute key="showattributes" value="1"/>
 	</item>
-	<item id="2216" article="a" name="ring of healing">
+	<item id="2216" article="a" name="restore ring">
 		<attribute key="weight" value="100"/>
 		<attribute key="decayTo" value="0"/>
 		<attribute key="transformDeEquipTo" value="2214"/>
@@ -2613,7 +2642,10 @@
 		<attribute key="weight" value="5800"/>
 	</item>
 	<item id="2218" article="a" name="paw amulet">
-		<attribute key="weight" value="420"/>
+		<attribute key="weight" value="1000"/>
+		<attribute key="magiclevelpoints" value="10"/>
+		<attribute key="absorbPercentAll" value="-25"/>
+		<attribute key="ammoType" value="arrow"/>
 	</item>
 	<item id="2219" article="a" name="banana skin">
 		<attribute key="weight" value="30"/>
@@ -2710,26 +2742,33 @@
 	</item>
 	<item id="2260" article="a" name="blank rune">
 		<attribute key="type" value="rune"/>
-		<attribute key="weight" value="210"/>
+		<attribute key="weight" value="120"/>
 	</item>
 	<item id="2261" article="a" name="destroy field rune">
 		<attribute key="runeSpellName" value="adito grav"/>
 		<attribute key="type" value="rune"/>
-		<attribute key="weight" value="70"/>
+		<attribute key="weight" value="120"/>
 	</item>
 	<item id="2262" article="a" name="energy bomb rune">
 		<attribute key="runeSpellName" value="adevo mas vis"/>
 		<attribute key="type" value="rune"/>
-		<attribute key="weight" value="105"/>
+		<attribute key="weight" value="120"/>
 	</item>
-	<item id="2263-2264" article="a" name="spell rune">
+	<item id="2263" article="a" name="great suddendeath rune">
+		<attribute key="runeSpellName" value="adori mort vis"/>
+		<attribute key="type" value="rune"/>
+		<attribute key="weight" value="120"/>
+	</item>
+	<item id="2264" article="a" name="death strike rune">
+		<attribute key="runeSpellName" value="exori mort"/>
 		<attribute key="type" value="rune"/>
 		<attribute key="weight" value="120"/>
 	</item>
 	<item id="2265" article="a" name="intense healing rune">
+		<attribute key="description" value="This rune can only be consumed by paladins or knights of level 180 or higher."/>
 		<attribute key="runeSpellName" value="adura gran"/>
 		<attribute key="type" value="rune"/>
-		<attribute key="weight" value="210"/>
+		<attribute key="weight" value="120"/>
 	</item>
 	<item id="2266" article="a" name="cure poison rune">
 		<attribute key="runeSpellName" value="adana pox"/>
@@ -2743,12 +2782,12 @@
 	<item id="2268" article="a" name="sudden death rune">
 		<attribute key="runeSpellName" value="adori gran mort"/>
 		<attribute key="type" value="rune"/>
-		<attribute key="weight" value="70"/>
+		<attribute key="weight" value="120"/>
 	</item>
 	<item id="2269" article="a" name="wild growth rune">
 		<attribute key="runeSpellName" value="adevo grav vita"/>
 		<attribute key="type" value="rune"/>
-		<attribute key="weight" value="105"/>
+		<attribute key="weight" value="120"/>
 	</item>
 	<item id="2270" article="a" name="spell rune">
 		<attribute key="type" value="rune"/>
@@ -2764,166 +2803,211 @@
 		<attribute key="weight" value="120"/>
 	</item>
 	<item id="2273" article="an" name="ultimate healing rune">
+		<attribute key="description" value="This rune can only be consumed by paladins or knights of level 220 or higher."/>
 		<attribute key="runeSpellName" value="adura vita"/>
 		<attribute key="type" value="rune"/>
-		<attribute key="weight" value="210"/>
+		<attribute key="weight" value="120"/>
 	</item>
 	<item id="2274" article="an" name="avalanche rune">
 		<attribute key="runeSpellName" value="adori mas frigo"/>
 		<attribute key="type" value="rune"/>
-		<attribute key="weight" value="52"/>
+		<attribute key="weight" value="120"/>
 	</item>
-	<item id="2275-2276" article="a" name="spell rune">
+	<item id="2275" article="a" name="great avalanche rune">
+		<attribute key="runeSpellName" value="adori frigo vis"/>
 		<attribute key="type" value="rune"/>
 		<attribute key="weight" value="120"/>
+	</item>
+	<item id="2276" article="a" name="rune">
+		<attribute key="weight" value="120"/>
+		<attribute key="charges" value="1"/>
 	</item>
 	<item id="2277" article="an" name="energy field rune">
 		<attribute key="runeSpellName" value="adevo grav vis"/>
 		<attribute key="type" value="rune"/>
-		<attribute key="weight" value="70"/>
+		<attribute key="weight" value="120"/>
 	</item>
 	<item id="2278" article="a" name="paralyze rune">
 		<attribute key="runeSpellName" value="adana ani"/>
 		<attribute key="type" value="rune"/>
-		<attribute key="weight" value="210"/>
+		<attribute key="weight" value="120"/>
 	</item>
 	<item id="2279" article="an" name="energy wall rune">
 		<attribute key="runeSpellName" value="adevo mas grav vis"/>
 		<attribute key="type" value="rune"/>
-		<attribute key="weight" value="52"/>
+		<attribute key="weight" value="120"/>
 	</item>
-	<item id="2280-2284" article="a" name="spell rune">
+	<item id="2280" article="a" name="spell rune">
 		<attribute key="type" value="rune"/>
 		<attribute key="weight" value="120"/>
 	</item>
-	<item id="2285" article="a" name="poison field rune">
-		<attribute key="runeSpellName" value="adevo grav pox"/>
+	<item id="2281" article="a" name="rune">
 		<attribute key="type" value="rune"/>
-		<attribute key="weight" value="70"/>
+		<attribute key="weight" value="120"/>
+	</item>
+	<item id="2282" article="a" name="rune">
+		<attribute key="type" value="rune"/>
+		<attribute key="weight" value="120"/>
+	</item>
+	<item id="2283" article="a" name="rune">
+		<attribute key="type" value="rune"/>
+		<attribute key="weight" value="120"/>
+	</item>
+	<item id="2284" article="a" name="ice strike rune">
+		<attribute key="runeSpellName" value="exori frigo"/>
+		<attribute key="type" value="rune"/>
+		<attribute key="weight" value="120"/>
+	</item>
+	<item id="2285" article="a" name="terra strike rune">
+		<attribute key="type" value="rune"/>
+		<attribute key="runeSpellName" value="exori tera"/>
+		<attribute key="weight" value="120"/>
 	</item>
 	<item id="2286" article="a" name="poison bomb rune">
 		<attribute key="runeSpellName" value="adevo mas pox"/>
 		<attribute key="type" value="rune"/>
-		<attribute key="weight" value="105"/>
+		<attribute key="weight" value="120"/>
 	</item>
 	<item id="2287" article="a" name="light magic missile rune">
 		<attribute key="runeSpellName" value="adori min vis"/>
 		<attribute key="type" value="rune"/>
-		<attribute key="weight" value="21"/>
+		<attribute key="weight" value="120"/>
 	</item>
 	<item id="2288" article="a" name="stone shower rune">
 		<attribute key="runeSpellName" value="adori mas tera"/>
 		<attribute key="type" value="rune"/>
-		<attribute key="weight" value="52"/>
+		<attribute key="weight" value="120"/>
 	</item>
 	<item id="2289" article="a" name="poison wall rune">
 		<attribute key="runeSpellName" value="adevo mas grav pox"/>
 		<attribute key="type" value="rune"/>
-		<attribute key="weight" value="52"/>
+		<attribute key="weight" value="120"/>
 	</item>
 	<item id="2290" article="a" name="convince creature rune">
 		<attribute key="runeSpellName" value="adeta sio"/>
 		<attribute key="type" value="rune"/>
-		<attribute key="weight" value="210"/>
+		<attribute key="weight" value="120"/>
 	</item>
 	<item id="2291" article="a" name="chameleon rune">
 		<attribute key="runeSpellName" value="adevo ina"/>
 		<attribute key="type" value="rune"/>
-		<attribute key="weight" value="210"/>
+		<attribute key="weight" value="120"/>
 	</item>
 	<item id="2292" article="a" name="stalagmite rune">
 		<attribute key="runeSpellName" value="adori tera"/>
 		<attribute key="type" value="rune"/>
-		<attribute key="weight" value="21"/>
+		<attribute key="weight" value="120"/>
 	</item>
 	<item id="2293" article="a" name="magic wall rune">
 		<attribute key="runeSpellName" value="adevo grav tera"/>
 		<attribute key="type" value="rune"/>
-		<attribute key="weight" value="70"/>
+		<attribute key="weight" value="120"/>
 	</item>
 	<item id="2294" article="a" name="spell rune">
 		<attribute key="type" value="rune"/>
 		<attribute key="weight" value="120"/>
 	</item>
-	<item id="2295" article="a" name="holy missile rune">
-		<attribute key="runeSpellName" value="adori san"/>
+	<item id="2295" article="a" name="holy strike rune">
+		<attribute key="runeSpellName" value="exori san"/>
 		<attribute key="type" value="rune"/>
-		<attribute key="weight" value="42"/>
+		<attribute key="weight" value="120"/>
 	</item>
-	<item id="2296-2300" article="a" name="spell rune">
+	<item id="2296" article="a" name="rune">
+		<attribute key="type" value="rune"/>
+		<attribute key="weight" value="120"/>
+	</item>
+	<item id="2297" article="a" name="holy explosion rune">
+		<attribute key="type" value="rune"/>
+		<attribute key="weight" value="120"/>
+	</item>
+	<item id="2298" article="a" name="rune">
+		<attribute key="type" value="rune"/>
+		<attribute key="weight" value="120"/>
+	</item>
+	<item id="2299" article="a" name="holy great missile rune">
+		<attribute key="type" value="rune"/>
+		<attribute key="weight" value="120"/>
+	</item>
+	<item id="2300" article="a" name="rune">
 		<attribute key="type" value="rune"/>
 		<attribute key="weight" value="120"/>
 	</item>
 	<item id="2301" article="a" name="fire field rune">
 		<attribute key="runeSpellName" value="adevo grav flam"/>
 		<attribute key="type" value="rune"/>
-		<attribute key="weight" value="70"/>
+		<attribute key="weight" value="120"/>
 	</item>
 	<item id="2302" article="a" name="fireball rune">
 		<attribute key="runeSpellName" value="adori flam"/>
 		<attribute key="type" value="rune"/>
-		<attribute key="weight" value="42"/>
+		<attribute key="weight" value="120"/>
 	</item>
 	<item id="2303" article="a" name="fire wall rune">
 		<attribute key="runeSpellName" value="adevo mas grav flam"/>
 		<attribute key="type" value="rune"/>
-		<attribute key="weight" value="52"/>
+		<attribute key="weight" value="120"/>
 	</item>
 	<item id="2304" article="a" name="great fireball rune">
 		<attribute key="runeSpellName" value="adori mas flam"/>
 		<attribute key="type" value="rune"/>
-		<attribute key="weight" value="52"/>
+		<attribute key="weight" value="120"/>
 	</item>
 	<item id="2305" article="a" name="firebomb rune">
 		<attribute key="runeSpellName" value="adevo mas flam"/>
 		<attribute key="type" value="rune"/>
-		<attribute key="weight" value="105"/>
+		<attribute key="weight" value="120"/>
 	</item>
-	<item id="2306-2307" article="a" name="spell rune">
+	<item id="2306" article="a" name="rune">
+		<attribute key="type" value="rune"/>
+		<attribute key="weight" value="120"/>
+	</item>
+	<item id="2307" article="a" name="flame strike">
+		<attribute key="runeSpellName" value="exori flam"/>
 		<attribute key="type" value="rune"/>
 		<attribute key="weight" value="120"/>
 	</item>
 	<item id="2308" article="a" name="soulfire rune">
 		<attribute key="runeSpellName" value="adevo res flam"/>
 		<attribute key="type" value="rune"/>
-		<attribute key="weight" value="70"/>
+		<attribute key="weight" value="120"/>
 	</item>
-	<item id="2309" article="a" name="spell rune">
+	<item id="2309" article="a" name="energy strike">
+		<attribute key="runeSpellName" value="exori vis"/>
 		<attribute key="type" value="rune"/>
 		<attribute key="weight" value="120"/>
 	</item>
 	<item id="2310" article="a" name="desintegrate rune">
 		<attribute key="runeSpellName" value="adito tera"/>
 		<attribute key="type" value="rune"/>
-		<attribute key="weight" value="70"/>
+		<attribute key="weight" value="120"/>
 	</item>
 	<item id="2311" article="a" name="heavy magic missile rune">
 		<attribute key="runeSpellName" value="adori vis"/>
 		<attribute key="type" value="rune"/>
-		<attribute key="weight" value="21"/>
+		<attribute key="weight" value="120"/>
 	</item>
-	<item id="2312" article="a" name="spell rune">
+	<item id="2312" article="a" name="great explosion rune">
 		<attribute key="type" value="rune"/>
 		<attribute key="weight" value="120"/>
 	</item>
 	<item id="2313" article="an" name="explosion rune">
 		<attribute key="runeSpellName" value="adevo mas hur"/>
 		<attribute key="type" value="rune"/>
-		<attribute key="weight" value="35"/>
+		<attribute key="weight" value="120"/>
 	</item>
-	<item id="2314" article="a" name="spell rune">
+	<item id="2314" article="a" name="rune">
 		<attribute key="type" value="rune"/>
 		<attribute key="weight" value="120"/>
 	</item>
 	<item id="2315" article="a" name="thunderstorm rune">
 		<attribute key="runeSpellName" value="adori mas vis"/>
 		<attribute key="type" value="rune"/>
-		<attribute key="weight" value="52"/>
+		<attribute key="weight" value="120"/>
 	</item>
 	<item id="2316" article="an" name="animate dead rune">
 		<attribute key="runeSpellName" value="adana mort"/>
 		<attribute key="type" value="rune"/>
-		<attribute key="weight" value="210"/>
+		<attribute key="weight" value="120"/>
 	</item>
 	<item id="2317" article="a" name="dead human"/>
 	<item id="2318" article="a" name="family brooch">
@@ -2951,7 +3035,7 @@
 		<attribute key="description" value="You have a vague feeling that it looks somewhat silly."/>
 		<attribute key="weight" value="700"/>
 		<attribute key="armor" value="3"/>
-		<attribute key="magicpoints" value="1"/>
+		<attribute key="magiclevelpoints" value="1"/>
 		<attribute key="slotType" value="head"/>
 	</item>
 	<item id="2324" article="a" name="witchesbroom">
@@ -3031,7 +3115,7 @@
 	<item id="2343" article="a" name="helmet of the ancients">
 		<attribute key="description" value="The gem is glowing with power."/>
 		<attribute key="weight" value="2760"/>
-		<attribute key="armor" value="11"/>
+		<attribute key="armor" random_min="9" random_max="12"/>
 		<attribute key="slotType" value="head"/>
 		<attribute key="duration" value="1800"/>
 		<attribute key="decayTo" value="2342"/>
@@ -3075,11 +3159,15 @@
 		<attribute key="decayTo" value="0"/>
 		<attribute key="duration" value="86400"/>
 	</item>
-	<item id="2352" article="a" name="crystal arrow">
+	<item id="2352" article="a" name="crystal arrow (Atk:60)">
+		<attribute key="maxHitChance" value="100"/>
+		<attribute key="slotType" value="ammo"/>
 		<attribute key="description" value="This arrow seems not suitable for the use with ordinary bows. It seems to be rotting rapidly."/>
 		<attribute key="weight" value="100"/>
-		<attribute key="decayTo" value="0"/>
-		<attribute key="duration" value="86400"/>
+		<attribute key="attack" value="60"/>
+		<attribute key="weaponType" value="ammunition"/>
+		<attribute key="ammoType" value="arrow"/>
+		<attribute key="shootType" value="arrow"/>
 	</item>
 	<item id="2353" article="a" name="burning heart">
 		<attribute key="description" value="It is still beating with unholy life. It seems to be rotting rapidly."/>
@@ -3105,10 +3193,15 @@
 		<attribute key="weight" value="50"/>
 		<attribute key="slotType" value="ring"/>
 	</item>
-	<item id="2358" name="boots of waterwalking">
-		<attribute key="description" value="(This item has 5 charges left)."/>
-		<attribute key="weight" value="770"/>
+	<item id="2358" name="Xboots of haste">
+		<attribute key="weight" value="800"/>
+		<attribute key="speed" value="80"/>
+		<attribute key="healthGain" value="20"/>
+		<attribute key="manaGain" value="20"/>
+		<attribute key="healthTicks" value="1000"/>
+		<attribute key="manaTicks" value="1000"/>
 		<attribute key="slotType" value="feet"/>
+		<attribute key="showattributes" value="1"/>
 	</item>
 	<item id="2359" article="a" name="djinn's lamp">
 		<attribute key="description" value="(This item has 2 charges left)."/>
@@ -3117,7 +3210,9 @@
 	<item id="2360" article="a" name="portable hole"/>
 	<item id="2361" article="a" name="frozen starlight">
 		<attribute key="weight" value="20"/>
-		<attribute key="slotType" value="ammo"/>
+		<attribute key="absorbPercentIce" value="5"/>
+		<attribute key="ammoType" value="arrow"/>
+		<attribute key="showattributes" value="1"/>
 	</item>
 	<item id="2362" article="the" name="carrot of doom" plural="carrots of doom">
 		<attribute key="description" value="You can sense the evil power of the carrot."/>
@@ -3169,14 +3264,15 @@
 	<item id="2376" article="a" name="sword">
 		<attribute key="weight" value="3500"/>
 		<attribute key="defense" value="12"/>
-		<attribute key="attack" value="14"/>
+		<attribute key="attack" random_min="14" random_max="16"/>
+		<attribute key="extraattack" chance="10" random_min="1" random_max="2"/>
 		<attribute key="weaponType" value="sword"/>
 		<attribute key="extradef" value="1"/>
 	</item>
 	<item id="2377" article="a" name="two handed sword">
 		<attribute key="weight" value="7000"/>
 		<attribute key="defense" value="25"/>
-		<attribute key="attack" value="30"/>
+		<attribute key="attack" random_min="30" random_max="32"/>
 		<attribute key="weaponType" value="sword"/>
 		<attribute key="slotType" value="two-handed"/>
 	</item>
@@ -3202,7 +3298,7 @@
 	<item id="2381" article="a" name="halberd">
 		<attribute key="weight" value="9000"/>
 		<attribute key="defense" value="14"/>
-		<attribute key="attack" value="35"/>
+		<attribute key="attack" random_min="35" random_max="36"/>
 		<attribute key="weaponType" value="axe"/>
 		<attribute key="slotType" value="two-handed"/>
 	</item>
@@ -3243,7 +3339,7 @@
 	<item id="2387" article="a" name="double axe">
 		<attribute key="weight" value="7000"/>
 		<attribute key="defense" value="12"/>
-		<attribute key="attack" value="35"/>
+		<attribute key="attack" random_min="35" random_max="36"/>
 		<attribute key="weaponType" value="axe"/>
 		<attribute key="slotType" value="two-handed"/>
 	</item>
@@ -3254,11 +3350,11 @@
 		<attribute key="weaponType" value="axe"/>
 	</item>
 	<item id="2389" article="a" name="spear" plural="spears">
-		<attribute key="weight" value="2000"/>
-		<attribute key="attack" value="25"/>
+		<attribute key="weight" value="1000"/>
+		<attribute key="attack" value="27"/>
 		<attribute key="weaponType" value="distance"/>
 		<attribute key="shootType" value="spear"/>
-		<attribute key="range" value="3"/>
+		<attribute key="range" value="5"/>
 		<attribute key="breakChance" value="3"/>
 		<attribute key="ammoAction" value="moveback"/>
 	</item>
@@ -3266,14 +3362,13 @@
 		<attribute key="description" value="It's the magic Cyclopmania Sword."/>
 		<attribute key="weight" value="4300"/>
 		<attribute key="defense" value="40"/>
-		<attribute key="attack" value="55"/>
+		<attribute key="attack" random_min="66" random_max="69"/>
 		<attribute key="weaponType" value="sword"/>
-		<attribute key="slotType" value="two-handed"/>
 	</item>
 	<item id="2391" article="a" name="war hammer">
 		<attribute key="weight" value="8500"/>
 		<attribute key="defense" value="10"/>
-		<attribute key="attack" value="45"/>
+		<attribute key="attack" value="50"/>
 		<attribute key="weaponType" value="club"/>
 		<attribute key="slotType" value="two-handed"/>
 	</item>
@@ -3281,7 +3376,7 @@
 		<attribute key="description" value="The blade is a magic flame."/>
 		<attribute key="weight" value="2300"/>
 		<attribute key="defense" value="20"/>
-		<attribute key="attack" value="24"/>
+		<attribute key="attack" random_min="35" random_max="37"/>
 		<attribute key="elementFire" value="11"/>
 		<attribute key="weaponType" value="sword"/>
 		<attribute key="extradef" value="1"/>
@@ -3290,7 +3385,7 @@
 		<attribute key="description" value="This sword has been forged by ancient giants."/>
 		<attribute key="weight" value="18000"/>
 		<attribute key="defense" value="22"/>
-		<attribute key="attack" value="46"/>
+		<attribute key="attack" random_min="50" random_max="60"/>
 		<attribute key="weaponType" value="sword"/>
 		<attribute key="slotType" value="two-handed"/>
 	</item>
@@ -3300,20 +3395,20 @@
 		<attribute key="attack" value="25"/>
 		<attribute key="weaponType" value="club"/>
 	</item>
-	<item id="2395" article="a" name="carlin sword">
+	<item id="2395" article="a" name="fynn sword">
 		<attribute key="weight" value="4000"/>
 		<attribute key="defense" value="13"/>
 		<attribute key="extradef" value="1"/>
-		<attribute key="attack" value="15"/>
+		<attribute key="attack" random_min="1" random_max="100"/>
 		<attribute key="weaponType" value="sword"/>
 	</item>
 	<item id="2396" article="an" name="ice rapier">
 		<attribute key="description" value="A deadly but fragile weapon."/>
 		<attribute key="weight" value="1500"/>
-		<attribute key="attack" value="60"/>
+		<attribute key="attack" random_min="1" random_max="300"/>
 		<attribute key="defense" value="1"/>
 		<attribute key="weaponType" value="sword"/>
-		<attribute key="elementIce" value="18"/>
+		<attribute key="elementIce" value="30"/>
 		<attribute key="charges" value="1"/>
 	</item>
 	<item id="2397" article="a" name="longsword">
@@ -3330,10 +3425,11 @@
 	</item>
 	<item id="2399" article="a" name="throwing star" plural="throwing stars">
 		<attribute key="weight" value="200"/>
-		<attribute key="attack" value="30"/>
+		<attribute key="attack" value="50"/>
+		<attribute key="elementEarth" value="5"/>
 		<attribute key="weaponType" value="distance"/>
 		<attribute key="shootType" value="throwingstar"/>
-		<attribute key="range" value="4"/>
+		<attribute key="range" value="5"/>
 		<attribute key="breakChance" value="10"/>
 		<attribute key="ammoAction" value="moveback"/>
 	</item>
@@ -3341,7 +3437,8 @@
 		<attribute key="description" value="It's the Sword of Valor."/>
 		<attribute key="weight" value="4200"/>
 		<attribute key="defense" value="35"/>
-		<attribute key="attack" value="48"/>
+		<attribute key="attack" value="65"/>
+		<attribute key="elementHoly" value="6"/>
 		<attribute key="weaponType" value="sword"/>
 		<attribute key="extradef" value="3"/>
 	</item>
@@ -3386,17 +3483,18 @@
 		<attribute key="description" value="The blade shimmers in light blue."/>
 		<attribute key="weight" value="2900"/>
 		<attribute key="defense" value="30"/>
-		<attribute key="attack" value="36"/>
+		<attribute key="attack" value="48"/>
+		<attribute key="elementHoly" value="6"/>
 		<attribute key="weaponType" value="sword"/>
 		<attribute key="extradef" value="1"/>
 	</item>
 	<item id="2408" article="a" name="warlord sword">
 		<attribute key="description" value="Strong powers flow in this magic sword."/>
 		<attribute key="weight" value="6400"/>
-		<attribute key="defense" value="38"/>
-		<attribute key="attack" value="53"/>
-		<attribute key="weaponType" value="sword"/>
+		<attribute key="defense" value="48"/>
+		<attribute key="attack" value="70"/>
 		<attribute key="slotType" value="two-handed"/>
+		<attribute key="weaponType" value="sword"/>
 	</item>
 	<item id="2409" article="a" name="serpent sword">
 		<attribute key="weight" value="4100"/>
@@ -3411,7 +3509,7 @@
 		<attribute key="attack" value="25"/>
 		<attribute key="weaponType" value="distance"/>
 		<attribute key="shootType" value="throwingknife"/>
-		<attribute key="range" value="4"/>
+		<attribute key="range" value="5"/>
 		<attribute key="breakChance" value="7"/>
 		<attribute key="ammoAction" value="moveback"/>
 	</item>
@@ -3440,17 +3538,16 @@
 		<attribute key="description" value="The extraordinary sharp blade penetrates every armor."/>
 		<attribute key="weight" value="6700"/>
 		<attribute key="defense" value="16"/>
-		<attribute key="attack" value="47"/>
+		<attribute key="attack" value="53"/>
 		<attribute key="weaponType" value="axe"/>
 		<attribute key="slotType" value="two-handed"/>
 	</item>
 	<item id="2415" article="a" name="great axe">
 		<attribute key="description" value="A masterpiece of a dwarven smith."/>
 		<attribute key="weight" value="9000"/>
-		<attribute key="defense" value="22"/>
-		<attribute key="attack" value="52"/>
+		<attribute key="defense" value="32"/>
+		<attribute key="attack" random_min="66" random_max="70"/>
 		<attribute key="weaponType" value="axe"/>
-		<attribute key="slotType" value="two-handed"/>
 	</item>
 	<item id="2416" article="a" name="crowbar">
 		<attribute key="description" value="It may come in handy sometime."/>
@@ -3487,8 +3584,9 @@
 	<item id="2421" article="a" name="thunder hammer">
 		<attribute key="description" value="It is blessed by the gods of Tibia."/>
 		<attribute key="weight" value="12500"/>
-		<attribute key="defense" value="35"/>
-		<attribute key="attack" value="49"/>
+		<attribute key="defense" value="36"/>
+		<attribute key="attack" value="61"/>
+		<attribute key="elementEnergy" value="6"/>
 		<attribute key="weaponType" value="club"/>
 		<attribute key="extradef" value="1"/>
 	</item>
@@ -3557,17 +3655,18 @@
 	<item id="2431" article="a" name="stonecutter axe">
 		<attribute key="description" value="You feel the power of this mighty axe."/>
 		<attribute key="weight" value="9900"/>
-		<attribute key="defense" value="30"/>
-		<attribute key="attack" value="50"/>
+		<attribute key="defense" value="34"/>
+		<attribute key="attack" value="66"/>
+		<attribute key="elementEarth" value="6"/>
 		<attribute key="weaponType" value="axe"/>
 		<attribute key="extradef" value="3"/>
 	</item>
 	<item id="2432" article="a" name="fire axe">
 		<attribute key="description" value="The blade is a magic flame."/>
 		<attribute key="weight" value="4000"/>
-		<attribute key="defense" value="16"/>
-		<attribute key="attack" value="27"/>
-		<attribute key="elementFire" value="11"/>
+		<attribute key="defense" value="29"/>
+		<attribute key="attack" value="49"/>
+		<attribute key="elementFire" value="6"/>
 		<attribute key="weaponType" value="axe"/>
 		<attribute key="extradef" value="1"/>
 	</item>
@@ -3597,15 +3696,16 @@
 	<item id="2436" article="a" name="skull staff">
 		<attribute key="description" value="The staff longs for death."/>
 		<attribute key="weight" value="1700"/>
-		<attribute key="defense" value="12"/>
-		<attribute key="attack" value="36"/>
+		<attribute key="defense" value="31"/>
+		<attribute key="attack" value="47"/>
+		<attribute key="elementDeath" value="6"/>
 		<attribute key="weaponType" value="club"/>
 		<attribute key="extradef" value="1"/>
 	</item>
 	<item id="2437" article="a" name="light mace">
 		<attribute key="weight" value="4100"/>
-		<attribute key="defense" value="9"/>
-		<attribute key="attack" value="14"/>
+		<attribute key="defense" value="24"/>
+		<attribute key="attack" value="47"/>
 		<attribute key="weaponType" value="club"/>
 	</item>
 	<item id="2438" article="an" name="epee">
@@ -3614,20 +3714,19 @@
 		<attribute key="attack" value="37"/>
 		<attribute key="weaponType" value="sword"/>
 	</item>
-	<item id="2439" article="a" name="daramian mace">
+	<item id="2439" article="a" name="daramanian mace">
 		<attribute key="weight" value="6800"/>
 		<attribute key="defense" value="12"/>
 		<attribute key="attack" value="21"/>
 		<attribute key="weaponType" value="club"/>
 	</item>
-	<item id="2440" article="a" name="daramian waraxe">
+	<item id="2440" article="a" name="daramanian waraxe">
 		<attribute key="weight" value="5250"/>
 		<attribute key="defense" value="15"/>
 		<attribute key="attack" value="39"/>
 		<attribute key="weaponType" value="axe"/>
-		<attribute key="slotType" value="two-handed"/>
 	</item>
-	<item id="2441" article="a" name="daramian axe">
+	<item id="2441" article="a" name="daramanian axe">
 		<attribute key="weight" value="4100"/>
 		<attribute key="defense" value="8"/>
 		<attribute key="attack" value="17"/>
@@ -3640,9 +3739,10 @@
 		<attribute key="weaponType" value="sword"/>
 	</item>
 	<item id="2443" article="a" name="ravager's axe">
+		<attribute key="description" value="A power weapon made only for royal guards of the pharaoh."/>
 		<attribute key="weight" value="5250"/>
 		<attribute key="defense" value="14"/>
-		<attribute key="attack" value="49"/>
+		<attribute key="attack" random_min="49" random_max="50"/>
 		<attribute key="weaponType" value="axe"/>
 		<attribute key="slotType" value="two-handed"/>
 	</item>
@@ -3691,13 +3791,13 @@
 	<item id="2450" article="a" name="bone sword">
 		<attribute key="weight" value="1900"/>
 		<attribute key="defense" value="10"/>
-		<attribute key="attack" value="13"/>
+		<attribute key="attack" value="14"/>
 		<attribute key="weaponType" value="sword"/>
 	</item>
 	<item id="2451" article="a" name="djinn blade">
 		<attribute key="weight" value="2450"/>
 		<attribute key="defense" value="22"/>
-		<attribute key="attack" value="38"/>
+		<attribute key="attack" random_min="38" random_max="45"/>
 		<attribute key="weaponType" value="sword"/>
 		<attribute key="extradef" value="2"/>
 	</item>
@@ -3707,15 +3807,13 @@
 		<attribute key="defense" value="15"/>
 		<attribute key="attack" value="49"/>
 		<attribute key="weaponType" value="club"/>
-		<attribute key="slotType" value="two-handed"/>
 	</item>
 	<item id="2453" article="an" name="arcane staff">
 		<attribute key="description" value="It is enchanted with ancient magic that renders a weak staff into a powerful weapon."/>
 		<attribute key="weight" value="4000"/>
-		<attribute key="defense" value="30"/>
-		<attribute key="attack" value="50"/>
+		<attribute key="defense" value="45"/>
+		<attribute key="attack" random_min="66" random_max="68"/>
 		<attribute key="weaponType" value="club"/>
-		<attribute key="slotType" value="two-handed"/>
 	</item>
 	<item id="2454" article="a" name="war axe">
 		<attribute key="weight" value="6150"/>
@@ -3729,7 +3827,7 @@
 		<attribute key="weaponType" value="distance"/>
 		<attribute key="slotType" value="two-handed"/>
 		<attribute key="ammoType" value="bolt"/>
-		<attribute key="range" value="5"/>
+		<attribute key="range" value="7"/>
 	</item>
 	<item id="2456" article="a" name="bow">
 		<attribute key="weight" value="3100"/>
@@ -3784,8 +3882,9 @@
 		<attribute key="slotType" value="body"/>
 	</item>
 	<item id="2466" article="a" name="golden armor">
+		<attribute key="description" value="It is an enchanted armor."/>
 		<attribute key="weight" value="8000"/>
-		<attribute key="armor" value="14"/>
+		<attribute key="armor" random_min="16" random_max="17"/>
 		<attribute key="slotType" value="body"/>
 	</item>
 	<item id="2467" article="a" name="leather armor">
@@ -3800,24 +3899,29 @@
 	</item>
 	<item id="2469" name="dragon scale legs">
 		<attribute key="weight" value="4800"/>
-		<attribute key="armor" value="10"/>
+		<attribute key="armor" random_min="11" random_max="12"/>
 		<attribute key="slotType" value="legs"/>
 	</item>
 	<item id="2470" name="golden legs">
 		<attribute key="weight" value="5600"/>
-		<attribute key="armor" value="9"/>
+		<attribute key="armor" random_min="10" random_max="11"/>
 		<attribute key="slotType" value="legs"/>
 	</item>
 	<item id="2471" article="a" name="golden helmet">
 		<attribute key="description" value="It's the famous Helmet of the Stars."/>
 		<attribute key="weight" value="3200"/>
-		<attribute key="armor" value="12"/>
+		<attribute key="armor" random_min="11" random_max="12"/>
 		<attribute key="slotType" value="head"/>
+		<attribute key="absorbPercentHoly" value="5"/>
 	</item>
 	<item id="2472" article="a" name="magic plate armor">
+		<attribute key="description" value="An enchanted gem glows on the plate armor."/>
 		<attribute key="weight" value="8500"/>
-		<attribute key="armor" value="17"/>
+		<attribute key="armor" random_min="18" random_max="19"/>
 		<attribute key="slotType" value="body"/>
+		<attribute key="absorbPercentHoly" value="8"/>
+		<attribute key="absorbPercentDeath" value="8"/>
+		<attribute key="absorbPercentIce" value="8"/>
 	</item>
 	<item id="2473" article="a" name="viking helmet">
 		<attribute key="weight" value="3900"/>
@@ -3827,7 +3931,8 @@
 	<item id="2474" article="a" name="winged helmet">
 		<attribute key="description" value="It's the Helmet of Hermes."/>
 		<attribute key="weight" value="1200"/>
-		<attribute key="armor" value="10"/>
+		<attribute key="armor" random_min="13" random_max="14"/>
+		<attribute key="speed" value="20"/>
 		<attribute key="slotType" value="head"/>
 	</item>
 	<item id="2475" article="a" name="warrior helmet">
@@ -3835,12 +3940,12 @@
 		<attribute key="armor" value="8"/>
 		<attribute key="slotType" value="head"/>
 	</item>
-	<item id="2476" article="a" name="knight armor">
+	<item id="2476" article="a" name="gladiator armor">
 		<attribute key="weight" value="12000"/>
 		<attribute key="armor" value="12"/>
 		<attribute key="slotType" value="body"/>
 	</item>
-	<item id="2477" name="knight legs">
+	<item id="2477" name="gladiator legs">
 		<attribute key="weight" value="7000"/>
 		<attribute key="armor" value="8"/>
 		<attribute key="slotType" value="legs"/>
@@ -3887,17 +3992,18 @@
 	</item>
 	<item id="2486" article="a" name="noble armor">
 		<attribute key="weight" value="12000"/>
-		<attribute key="armor" value="11"/>
+		<attribute key="armor" value="10"/>
 		<attribute key="slotType" value="body"/>
+		<attribute key="absorbPercentPhysical" value="3"/>
 	</item>
 	<item id="2487" article="a" name="crown armor">
 		<attribute key="weight" value="9900"/>
-		<attribute key="armor" value="13"/>
+		<attribute key="armor" random_min="13" random_max="14"/>
 		<attribute key="slotType" value="body"/>
 	</item>
 	<item id="2488" name="crown legs">
 		<attribute key="weight" value="6500"/>
-		<attribute key="armor" value="8"/>
+		<attribute key="armor" random_min="9" random_max="10"/>
 		<attribute key="slotType" value="legs"/>
 	</item>
 	<item id="2489" article="a" name="dark armor">
@@ -3917,29 +4023,36 @@
 	</item>
 	<item id="2492" article="a" name="dragon scale mail">
 		<attribute key="weight" value="11400"/>
-		<attribute key="armor" value="15"/>
+		<attribute key="armor" random_min="15" random_max="16"/>
 		<attribute key="slotType" value="body"/>
 	</item>
 	<item id="2493" article="a" name="demon helmet">
 		<attribute key="description" value="You hear an evil whispering from inside."/>
 		<attribute key="weight" value="2950"/>
-		<attribute key="armor" value="10"/>
+		<attribute key="armor" random_min="12" random_max="16"/>
+		<attribute key="absorbPercentElements" value="5"/>
+		<attribute key="fieldabsorbPercentFire" value="20"/>
+		<attribute key="magiclevelpoints" value="1"/>
 		<attribute key="slotType" value="head"/>
 	</item>
 	<item id="2494" article="a" name="demon armor">
 		<attribute key="weight" value="8000"/>
-		<attribute key="armor" value="16"/>
+		<attribute key="armor" random_min="20" random_max="27"/>
 		<attribute key="slotType" value="body"/>
+		<attribute key="absorbPercentElements" value="5"/>
 	</item>
 	<item id="2495" name="demon legs">
 		<attribute key="weight" value="7000"/>
-		<attribute key="armor" value="9"/>
+		<attribute key="armor" random_min="13" random_max="20"/>
 		<attribute key="slotType" value="legs"/>
+		<attribute key="absorbPercentElements" value="3"/>
 	</item>
 	<item id="2496" article="a" name="horned helmet">
 		<attribute key="weight" value="5100"/>
-		<attribute key="armor" value="11"/>
+		<attribute key="armor" random_min="14" random_max="21"/>
 		<attribute key="slotType" value="head"/>
+		<attribute key="absorbPercentElements" value="5"/>
+		<attribute key="magiclevelpoints" value="1"/>
 	</item>
 	<item id="2497" article="a" name="crusader helmet">
 		<attribute key="weight" value="5200"/>
@@ -3949,19 +4062,21 @@
 	<item id="2498" article="a" name="royal helmet">
 		<attribute key="description" value="An excellent masterpiece of a smith."/>
 		<attribute key="weight" value="4800"/>
-		<attribute key="armor" value="9"/>
+		<attribute key="armor" random_min="9" random_max="10"/>
 		<attribute key="slotType" value="head"/>
 	</item>
 	<item id="2499" article="an" name="amazon helmet">
 		<attribute key="weight" value="2950"/>
-		<attribute key="armor" value="7"/>
+		<attribute key="armor" random_min="7" random_max="10"/>
 		<attribute key="slotType" value="head"/>
+		<attribute key="skillDist" value="1"/>
 	</item>
 	<item id="2500" article="an" name="amazon armor">
 		<attribute key="weight" value="4500"/>
-		<attribute key="armor" value="13"/>
+		<attribute key="armor" random_min="13" random_max="16"/>
 		<attribute key="skillDist" value="3"/>
 		<attribute key="slotType" value="body"/>
+		<attribute key="skillDist" value="1"/>
 	</item>
 	<item id="2501" article="a" name="ceremonial mask">
 		<attribute key="weight" value="4000"/>
@@ -3992,13 +4107,15 @@
 		<attribute key="slotType" value="body"/>
 	</item>
 	<item id="2506" article="a" name="dragon scale helmet">
+		<attribute key="description" value="It is made of dragon scales."/>
 		<attribute key="weight" value="3250"/>
-		<attribute key="armor" value="9"/>
+		<attribute key="armor" random_min="11" random_max="12"/>
 		<attribute key="slotType" value="head"/>
+		<attribute key="absorbPercentFire" value="5"/>
 	</item>
 	<item id="2507" name="elven legs">
 		<attribute key="weight" value="3300"/>
-		<attribute key="armor" value="4"/>
+		<attribute key="armor" value="10"/>
 		<attribute key="slotType" value="legs"/>
 	</item>
 	<item id="2508" article="a" name="native armor">
@@ -4050,8 +4167,9 @@
 	<item id="2517" article="a" name="shield of honour">
 		<attribute key="description" value="A mighty shield awarded by the gods of Tibia."/>
 		<attribute key="weight" value="5400"/>
-		<attribute key="defense" value="33"/>
+		<attribute key="defense" value="45"/>
 		<attribute key="weaponType" value="shield"/>
+		<attribute key="absorbPercentElements" value="6"/>
 	</item>
 	<item id="2518" article="a" name="bonelord shield">
 		<attribute key="weight" value="4700"/>
@@ -4077,14 +4195,15 @@
 	<item id="2522" article="a" name="great shield">
 		<attribute key="description" value="The shield is made of dragon scales."/>
 		<attribute key="weight" value="8400"/>
-		<attribute key="defense" value="38"/>
+		<attribute key="defense" value="37"/>
 		<attribute key="weaponType" value="shield"/>
 	</item>
 	<item id="2523" article="a" name="blessed shield">
 		<attribute key="description" value="The shield grants divine protection."/>
 		<attribute key="weight" value="6800"/>
-		<attribute key="defense" value="40"/>
+		<attribute key="defense" value="30"/>
 		<attribute key="weaponType" value="shield"/>
+		<attribute key="absorbPercentPhysical" value="5"/>
 	</item>
 	<item id="2524" article="an" name="ornamented shield">
 		<attribute key="description" value="Many gems sparkle on the shield."/>
@@ -4104,7 +4223,8 @@
 	</item>
 	<item id="2527" article="a" name="rose shield">
 		<attribute key="weight" value="5200"/>
-		<attribute key="defense" value="27"/>
+		<attribute key="defense" value="42"/>
+		<attribute key="absorbPercentElements" value="7"/>
 		<attribute key="weaponType" value="shield"/>
 	</item>
 	<item id="2528" article="a" name="tower shield">
@@ -4158,6 +4278,7 @@
 		<attribute key="weight" value="6200"/>
 		<attribute key="defense" value="32"/>
 		<attribute key="weaponType" value="shield"/>
+		<attribute key="skillDist" value="4"/>
 	</item>
 	<item id="2538" article="an" name="eagle shield">
 		<attribute key="weight" value="6200"/>
@@ -4165,10 +4286,12 @@
 		<attribute key="weaponType" value="shield"/>
 	</item>
 	<item id="2539" article="a" name="phoenix shield">
-		<attribute key="description" value="This shield feels warm to the touch."/>
+		<attribute key="description" value="It has 10% fire protection, but also increases damage taken from ice by 20%."/>
 		<attribute key="weight" value="3500"/>
 		<attribute key="defense" value="34"/>
 		<attribute key="weaponType" value="shield"/>
+		<attribute key="absorbPercentFire" value="10"/>
+		<attribute key="absorbPercentIce" value="-20"/>
 	</item>
 	<item id="2540" article="a" name="scarab shield">
 		<attribute key="weight" value="4700"/>
@@ -4184,51 +4307,52 @@
 		<attribute key="weight" value="5100"/>
 		<attribute key="defense" value="36"/>
 		<attribute key="weaponType" value="shield"/>
+		<attribute key="absorbPercentEnergy" value="5"/>
 	</item>
-	<item id="2543" article="a" name="bolt" plural="bolts">
+	<item id="2543" article="a" name="bolt (Atk:45)" plural="bolts (Atk:45)">
 		<attribute key="weight" value="80"/>
 		<attribute key="slotType" value="ammo"/>
-		<attribute key="attack" value="30"/>
+		<attribute key="attack" value="45"/>
 		<attribute key="maxHitChance" value="90"/>
 		<attribute key="weaponType" value="ammunition"/>
 		<attribute key="ammoType" value="bolt"/>
 		<attribute key="shootType" value="bolt"/>
 		<attribute key="ammoAction" value="removecount"/>
 	</item>
-	<item id="2544" article="an" name="arrow" plural="arrows">
+	<item id="2544" article="an" name="arrow (Atk:40)" plural="arrows (Atk:40)">
 		<attribute key="weight" value="70"/>
 		<attribute key="slotType" value="ammo"/>
-		<attribute key="attack" value="25"/>
+		<attribute key="attack" value="40"/>
 		<attribute key="maxHitChance" value="90"/>
 		<attribute key="weaponType" value="ammunition"/>
 		<attribute key="ammoType" value="arrow"/>
 		<attribute key="shootType" value="arrow"/>
 		<attribute key="ammoAction" value="removecount"/>
 	</item>
-	<item id="2545" article="a" name="poison arrow" plural="poison arrows">
+	<item id="2545" article="a" name="poison arrow (Atk:22)" plural="poison arrows (Atk:22)">
 		<attribute key="weight" value="80"/>
 		<attribute key="slotType" value="ammo"/>
-		<attribute key="attack" value="23"/>
+		<attribute key="attack" value="22"/>
 		<attribute key="maxHitChance" value="90"/>
 		<attribute key="weaponType" value="ammunition"/>
 		<attribute key="ammoType" value="arrow"/>
 		<attribute key="shootType" value="poisonarrow"/>
 		<attribute key="ammoAction" value="removecount"/>
 	</item>
-	<item id="2546" article="a" name="burst arrow" plural="burst arrows">
+	<item id="2546" article="a" name="burst arrow (Atk:28)" plural="burst arrows (Atk:28)">
 		<attribute key="weight" value="90"/>
 		<attribute key="slotType" value="ammo"/>
-		<attribute key="attack" value="27"/>
+		<attribute key="attack" value="28"/>
 		<attribute key="hitChance" value="100"/>
 		<attribute key="weaponType" value="ammunition"/>
 		<attribute key="ammoType" value="arrow"/>
 		<attribute key="shootType" value="burstarrow"/>
 		<attribute key="ammoAction" value="removecount"/>
 	</item>
-	<item id="2547" article="a" name="power bolt" plural="power bolts">
-		<attribute key="weight" value="90"/>
+	<item id="2547" article="a" name="power bolt (Atk:48)" plural="power bolts (Atk:48)">
+		<attribute key="weight" value="80"/>
 		<attribute key="slotType" value="ammo"/>
-		<attribute key="attack" value="40"/>
+		<attribute key="attack" value="48"/>
 		<attribute key="maxHitChance" value="90"/>
 		<attribute key="weaponType" value="ammunition"/>
 		<attribute key="ammoType" value="bolt"/>
@@ -4451,16 +4575,16 @@
 		<attribute key="decayTo" value="10021"/>
 		<attribute key="transformDeEquipTo" value="6132"/>
 		<attribute key="duration" value="14400"/>
-		<attribute key="healthGain" value="1"/>
+		<attribute key="healthGain" value="10"/>
 		<attribute key="healthTicks" value="2000"/>
-		<attribute key="manaGain" value="2"/>
+		<attribute key="manaGain" value="10"/>
 		<attribute key="manaTicks" value="1000"/>
 		<attribute key="showduration" value="1"/>
 		<attribute key="showattributes" value="1"/>
 	</item>
 	<item id="2641" name="patched boots">
 		<attribute key="weight" value="1000"/>
-		<attribute key="armor" value="2"/>
+		<attribute key="armor" value="3"/>
 		<attribute key="slotType" value="feet"/>
 	</item>
 	<item id="2642" name="sandals">
@@ -4478,13 +4602,19 @@
 	</item>
 	<item id="2645" name="steel boots">
 		<attribute key="weight" value="2900"/>
-		<attribute key="armor" value="3"/>
+		<attribute key="armor" random_min="3" random_max="5"/>
 		<attribute key="slotType" value="feet"/>
 	</item>
 	<item id="2646" name="golden boots">
-		<attribute key="weight" value="3100"/>
-		<attribute key="armor" value="4"/>
+		<attribute key="weight" value="3200"/>
 		<attribute key="slotType" value="feet"/>
+		<attribute key="armor" random_min="1" random_max="3"/>
+		<attribute key="absorbPercentElements" value="3"/>
+		<attribute key="healthGain" value="10"/>
+		<attribute key="healthTicks" value="2000"/>
+		<attribute key="manaGain" value="10"/>
+		<attribute key="manaTicks" value="1000"/>
+		<attribute key="showattributes" value="1"/>
 	</item>
 	<item id="2647" name="plate legs">
 		<attribute key="weight" value="5000"/>
@@ -4535,8 +4665,9 @@
 	<item id="2656" article="a" name="blue robe">
 		<attribute key="description" value="It is a magic robe."/>
 		<attribute key="weight" value="2200"/>
-		<attribute key="armor" value="11"/>
+		<attribute key="armor" random_min="11" random_max="13"/>
 		<attribute key="slotType" value="body"/>
+		<attribute key="magiclevelpoints" value="2"/>
 	</item>
 	<item id="2657" article="a" name="simple dress">
 		<attribute key="weight" value="1000"/>
@@ -4552,8 +4683,9 @@
 	</item>
 	<item id="2660" article="a" name="ranger's cloak">
 		<attribute key="weight" value="4800"/>
-		<attribute key="armor" value="7"/>
+		<attribute key="armor" random_min="7" random_max="10"/>
 		<attribute key="slotType" value="body"/>
+		<attribute key="skillDist" value="2"/>
 	</item>
 	<item id="2661" article="a" name="scarf">
 		<attribute key="weight" value="200"/>
@@ -4564,6 +4696,7 @@
 		<attribute key="weight" value="750"/>
 		<attribute key="armor" value="1"/>
 		<attribute key="slotType" value="head"/>
+		<attribute key="magiclevelpoints" value="1"/>
 	</item>
 	<item id="2663" article="a" name="mystic turban">
 		<attribute key="description" value="Something is strange about this turban."/>
@@ -5129,14 +5262,14 @@
 		<attribute key="corpseType" value="undead"/>
 	</item>
 	<item id="2857" article="a" name="dead giant spider">
-		<attribute key="containerSize" value="14"/>
+		<attribute key="containerSize" value="15"/>
 		<attribute key="decayTo" value="2858"/>
 		<attribute key="duration" value="900"/>
 		<attribute key="corpseType" value="venom"/>
 		<attribute key="fluidSource" value="slime"/>
 	</item>
 	<item id="2858" article="a" name="dead giant spider">
-		<attribute key="containerSize" value="14"/>
+		<attribute key="containerSize" value="15"/>
 		<attribute key="decayTo" value="2859"/>
 		<attribute key="duration" value="900"/>
 		<attribute key="corpseType" value="venom"/>
@@ -5672,7 +5805,12 @@
 		<attribute key="weight" value="50000"/>
 	</item>
 	<item id="2949" article="a" name="mummy disguise">
-		<attribute key="weight" value="900"/>
+		<attribute key="type" value="container"/>
+		<attribute key="weight" value="1000"/>
+		<attribute key="containerSize" value="10"/>
+		<attribute key="decayTo" value="2950"/>
+		<attribute key="duration" value="900"/>
+		<attribute key="corpseType" value="undead"/>
 	</item>
 	<item id="2950" article="a" name="mummy disguise">
 		<attribute key="weight" value="1000"/>
@@ -7126,6 +7264,14 @@
 		<attribute key="description" value="Use it in your house to construct a small table."/>
 		<attribute key="weight" value="2500"/>
 	</item>
+	<item id="3909" article="a" name="furniture package">
+		<attribute key="description" value="It is a kit for a big table."/>
+		<attribute key="weight" value="2500"/>
+	</item>
+	<item id="3910" article="a" name="furniture package">
+		<attribute key="description" value="It is a kit for a square table."/>
+		<attribute key="weight" value="2500"/>
+	</item>
 	<item id="3911" article="a" name="big table kit">
 		<attribute key="description" value="Use it in your house to construct a big table."/>
 		<attribute key="weight" value="3500"/>
@@ -7234,6 +7380,10 @@
 		<attribute key="description" value="Use it in your house to reveal an indoor plant."/>
 		<attribute key="weight" value="3000"/>
 	</item>
+	<item id="3938" article="a" name="furniture package">
+		<attribute key="description" value="It is a kit for a large trunk."/>
+		<attribute key="weight" value="2500"/>
+	</item>
 	<item id="3939" article="a" name="camouflage bag">
 		<attribute key="weight" value="800"/>
 		<attribute key="containerSize" value="8"/>
@@ -7254,7 +7404,7 @@
 	<item id="3947" article="a" name="wall lamp">
 		<attribute key="transformUseTo" value="3948"/>
 	</item>
-	<item id="3948" article="a" name="lit wall lamp">
+	<item id="3948" article="a" name="lit wall lamp" >
 		<attribute key="transformUseTo" value="3947"/>
 	</item>
 	<item id="3949" article="a" name="wall lamp"/>
@@ -7289,7 +7439,7 @@
 		<attribute key="duration" value="60"/>
 	</item>
 	<item id="3960" article="an" name="old and used backpack">
-		<attribute key="description" value="A label on the backpack reads: Property of Sam, Thais."/>
+		<attribute key="description" value="A label on the backpack reads: Property of Sam, Misidia."/>
 		<attribute key="weight" value="1800"/>
 		<attribute key="containerSize" value="20"/>
 		<attribute key="slotType" value="backpack"/>
@@ -7299,7 +7449,7 @@
 		<attribute key="weight" value="4100"/>
 		<attribute key="defense" value="30"/>
 		<attribute key="extradef" value="2"/>
-		<attribute key="attack" value="40"/>
+		<attribute key="attack" random_min="40" random_max="46"/>
 		<attribute key="weaponType" value="club"/>
 	</item>
 	<item id="3962" article="a" name="beastslayer axe">
@@ -7327,7 +7477,7 @@
 		<attribute key="attack" value="32"/>
 		<attribute key="weaponType" value="distance"/>
 		<attribute key="shootType" value="huntingspear"/>
-		<attribute key="range" value="3"/>
+		<attribute key="range" value="5"/>
 		<attribute key="breakChance" value="6"/>
 		<attribute key="ammoAction" value="moveback"/>
 	</item>
@@ -7365,7 +7515,7 @@
 	</item>
 	<item id="3972" article="a" name="bonelord helmet">
 		<attribute key="weight" value="4600"/>
-		<attribute key="armor" value="7"/>
+		<attribute key="armor" random_min="7" random_max="10"/>
 		<attribute key="slotType" value="head"/>
 	</item>
 	<item id="3973" article="a" name="tusk shield">
@@ -7399,11 +7549,7 @@
 		<attribute key="weight" value="350"/>
 		<attribute key="slotType" value="legs"/>
 	</item>
-	<item id="3984" name="jungle grass">
-		<attribute key="decayTo" value="3985"/>
-		<attribute key="duration" value="240"/>
-	</item>
-	<item id="3985" name="jungle grass"/>
+	<item id="3984-3985" name="jungle grass"/>
 	<item id="3986-4005" article="a" name="thorn bush"/>
 	<item id="4006" article="an" name="orange tree"/>
 	<item id="4007" article="a" name="thread tree"/>
@@ -7453,11 +7599,7 @@
 	<item id="4185" article="a" name="large pearl flower"/>
 	<item id="4186-4201" article="a" name="log"/>
 	<item id="4202-4207" article="a" name="vine"/>
-	<item id="4208" article="a" name="jungle maw"/>
-	<item id="4209" article="a" name="jungle maw">
-		<attribute key="decayTo" value="4208"/>
-		<attribute key="duration" value="600"/>
-	</item>
+	<item id="4208-4209" article="a" name="jungle maw"/>
 	<item id="4210-4215" article="a" name="log"/>
 	<item id="4216-4222" article="a" name="small trunk"/>
 	<item id="4223-4238" article="a" name="branch"/>
@@ -7885,14 +8027,14 @@
 		<attribute key="corpseType" value="venom"/>
 	</item>
 	<item id="4323" article="a" name="dead serpent spawn">
-		<attribute key="containerSize" value="20"/>
+		<attribute key="containerSize" value="10"/>
 		<attribute key="decayTo" value="4324"/>
 		<attribute key="duration" value="900"/>
 		<attribute key="corpseType" value="blood"/>
 		<attribute key="fluidSource" value="blood"/>
 	</item>
 	<item id="4324" article="a" name="dead serpent spawn">
-		<attribute key="containerSize" value="20"/>
+		<attribute key="containerSize" value="10"/>
 		<attribute key="decayTo" value="4325"/>
 		<attribute key="duration" value="600"/>
 		<attribute key="corpseType" value="blood"/>
@@ -8211,12 +8353,8 @@
 	<item id="4988-4989" article="a" name="cleat"/>
 	<item id="4990" article="a" name="white flag"/>
 	<item id="4991" article="a" name="pirate flag"/>
-	<item id="4992" article="an" name="dead butterfly">
-		<attribute key="decayTo" value="0"/>
-		<attribute key="weight" value="20"/>
-	</item>
-	<item id="4993-4994" article="an" name="dead butterfly">
-		<attribute key="weight" value="20"/>
+	<item id="4992-4994" article="an" name="exotic butterfly">
+		<attribute key="weight" value="100"/>
 	</item>
 	<item id="4995" article="an" name="ice stalagmite"/>
 	<item id="4996" article="a" name="big anphora"/>
@@ -8728,6 +8866,9 @@
 	<item id="5468" article="a" name="fire bug">
 		<attribute key="description" value="This strange creature has the tendency to set certain things on fire."/>
 		<attribute key="weight" value="3050"/>
+		<attribute key="absorbPercentFire" value="5"/>
+		<attribute key="ammoType" value="arrow"/>
+		<attribute key="showattributes" value="1"/>
 	</item>
 	<item id="5469-5470" article="a" name="distilling machine"/>
 	<item id="5471" article="a" name="sugar cane"/>
@@ -9191,7 +9332,11 @@
 		<attribute key="type" value="door"/>
 	</item>
 	<item id="5750-5754" name="rocks"/>
-	<item id="5755-5761" article="a" name="turtle"/>
+	<item id="5755" name="turtle"/>
+	<item id="5756" name="turtle">
+		<attribute key="type" value="teleport"/>
+	</item>
+	<item id="5757-5761" article="a" name="turtle"/>
 	<item id="5762" article="a" name="dead quara">
 		<attribute key="containerSize" value="10"/>
 		<attribute key="corpseType" value="blood"/>
@@ -9266,8 +9411,8 @@
 		<attribute key="slotType" value="two-handed"/>
 		<attribute key="ammoType" value="bolt"/>
 		<attribute key="range" value="6"/>
-		<attribute key="hitChance" value="2"/>
-		<attribute key="attack" value="2"/>
+		<attribute key="hitChance" value="4"/>
+		<attribute key="attack" value="5"/>
 	</item>
 	<item id="5804" article="a" name="nose ring">
 		<attribute key="description" value="It was the favourite trinket of the famous Horned Fox."/>
@@ -9290,10 +9435,16 @@
 	</item>
 	<item id="5808" name="orshabaal's brain">
 		<attribute key="weight" value="3500"/>
+		<attribute key="magiclevelpoints" value="4"/>
+		<attribute key="ammoType" value="arrow"/>
+		<attribute key="showattributes" value="1"/>
 	</item>
 	<item id="5809" article="a" name="soul stone">
 		<attribute key="description" value="It contains the essence of countless tormented souls."/>
 		<attribute key="weight" value="30"/>
+		<attribute key="absorbPercentDeath" value="10"/>
+		<attribute key="ammoType" value="arrow"/>
+		<attribute key="showattributes" value="1"/>
 	</item>
 	<item id="5810" article="a" name="pirate voodoo doll">
 		<attribute key="weight" value="650"/>
@@ -9330,6 +9481,8 @@
 	<item id="5869-5874" article="a" name="swamp source"/>
 	<item id="5875" name="sniper gloves">
 		<attribute key="description" value="They are the pride of the paladin guild."/>
+		<attribute key="attack" random_min="28" random_max="33"/>
+		<attribute key="weaponType" value="fist"/>
 		<attribute key="weight" value="400"/>
 	</item>
 	<item id="5876" article="a" name="lizard leather" plural="lizard leathers">
@@ -9356,8 +9509,8 @@
 	<item id="5883" article="an" name="ape fur" plural="ape furs">
 		<attribute key="weight" value="120"/>
 	</item>
-	<item id="5884" name="spirit container">
-		<attribute key="description" value="It contains pure fighting spirit."/>
+	<item id="5884" article="a" name="ectoplasm container">
+		<attribute key="description" value="It is filled with ectoplasm."/>
 		<attribute key="weight" value="600"/>
 	</item>
 	<item id="5885" article="a" name="flask of warrior's sweat">
@@ -9427,10 +9580,11 @@
 		<attribute key="weight" value="80"/>
 		<attribute key="description" value="Some people swear it makes an excellent glue."/>
 	</item>
-	<item id="5903" name="ferumbras' hat">
-		<attribute key="description" value="It is the proof that Ferumbras has fallen. For now. The Edron Academy should be interested in this."/>
+	<item id="5903" name="ferumbra's hat">
+		<attribute key="description" value="It is the proof that Ferumbras has fallen. For now. The Karmia Academy should be interested in this."/>
 		<attribute key="weight" value="850"/>
-		<attribute key="armor" value="1"/>
+		<attribute key="armor" random_min="1" random_max="5"/>
+		<attribute key="magiclevelpoints" value="4"/>
 		<attribute key="slotType" value="head"/>
 	</item>
 	<item id="5904" article="a" name="magic sulphur" plural="magic sulphurs">
@@ -9446,8 +9600,12 @@
 		<attribute key="weight" value="100"/>
 	</item>
 	<item id="5907" article="a" name="slingshot">
-		<attribute key="description" value="A hermit near Carlin might be able to tell you more about it."/>
+		<attribute key="description" value="A hermit near Fynn might be able to tell you more about it."/>
 		<attribute key="weight" value="200"/>
+		<attribute key="weaponType" value="distance"/>
+		<attribute key="slotType" value="two-handed"/>
+		<attribute key="range" value="5"/>
+		<attribute key="ammoType" value="smallstone"/>
 	</item>
 	<item id="5908" article="an" name="obsidian knife">
 		<attribute key="description" value="Sharp and light, this is a useful tool for tanners, doctors and assassins."/>
@@ -9583,15 +9741,17 @@
 		<attribute key="description" value="Many mighty priests of Tibia have blessed this stake."/>
 		<attribute key="weight" value="500"/>
 	</item>
-	<item id="5943" article="a" name="Morgaroth's heart">
+	<item id="5943" article="the" name="Morgaroth's heart">
 		<attribute key="weight" value="3500"/>
+		<attribute key="absorbPercentPhysical" value="8"/>
+		<attribute key="ammoType" value="arrow"/>
+		<attribute key="showattributes" value="1"/>
 	</item>
 	<item id="5944" article="a" name="soul orb" plural="soul orbs">
 		<attribute key="description" value="This strange object seems to be made of half spirit, half metal. It is unknown by most smiths."/>
 		<attribute key="weight" value="20"/>
 	</item>
-	<item id="5945" article="a" name="coral comb">
-		<attribute key="description" value="It once belonged to a mermaid."/>
+	<item id="5945" article="a" name="comb">
 		<attribute key="weight" value="450"/>
 	</item>
 	<item id="5946" article="a" name="comb">
@@ -9635,14 +9795,14 @@
 		<attribute key="weight" value="120"/>
 	</item>
 	<item id="5958" article="a" name="winning lottery ticket">
-		<attribute key="description" value="You were lucky! Go claim your prize at the potion store in Edron."/>
+		<attribute key="description" value="You were lucky! Go claim your prize at the potion store in Karmia."/>
 		<attribute key="weight" value="120"/>
 	</item>
 	<!-- 5959 is empty -->
 	<item id="5960" article="a" name="dead troll">
 		<attribute key="containerSize" value="10"/>
 		<attribute key="decayTo" value="3067"/>
-		<attribute key="duration" value="10"/>
+		<attribute key="duration" value="600"/>
 		<attribute key="corpseType" value="blood"/>
 		<attribute key="fluidSource" value="blood"/>
 	</item>
@@ -9756,7 +9916,7 @@
 		<attribute key="corpseType" value="undead"/>
 	</item>
 	<item id="5977" article="a" name="dead giant spider">
-		<attribute key="containerSize" value="14"/>
+		<attribute key="containerSize" value="15"/>
 		<attribute key="decayTo" value="2857"/>
 		<attribute key="duration" value="10"/>
 		<attribute key="corpseType" value="venom"/>
@@ -10548,13 +10708,13 @@
 		<attribute key="description" value="It belonged once to a pirate."/>
 		<attribute key="weight" value="150"/>
 	</item>
-	<item id="6099" name="Brutus Bloodbeard's hat">
+	<item id="6099" name="old brutus bloodbeard's hat">
 		<attribute key="weight" value="1250"/>
 	</item>
-	<item id="6100" article="the" name="Lethal Lissy's shirt">
+	<item id="6100" name="old lethal lissy's shirt">
 		<attribute key="weight" value="2000"/>
 	</item>
-	<item id="6101" name="Ron the Ripper's sabre">
+	<item id="6101" name="old ron the ripper's sabre">
 		<attribute key="weight" value="2500"/>
 		<attribute key="defense" value="10"/>
 		<attribute key="attack" value="12"/>
@@ -10886,7 +11046,6 @@
 		<attribute key="transformDeEquipTo" value="6300"/>
 		<attribute key="duration" value="480"/>
 		<attribute key="armor" value="1"/>
-		<attribute key="absorbPercentDeath" value="5"/>
 		<attribute key="skillShield" value="-10"/>
 		<attribute key="showduration" value="1"/>
 	</item>
@@ -11298,7 +11457,8 @@
 	<item id="6391" article="a" name="nightmare shield">
 		<attribute key="description" value="It was crafted by the ancient order of the nightmare knights."/>
 		<attribute key="weight" value="3200"/>
-		<attribute key="defense" value="37"/>
+		<attribute key="defense" value="39"/>
+		<attribute key="absorbPercentManaDrain" value="10"/>
 		<attribute key="weaponType" value="shield"/>
 	</item>
 	<item id="6392" article="a" name="hawser">
@@ -11321,7 +11481,8 @@
 	<item id="6433" article="a" name="necromancer shield">
 		<attribute key="description" value="It is enchanted with unholy, necromantic powers."/>
 		<attribute key="weight" value="3200"/>
-		<attribute key="defense" value="37"/>
+		<attribute key="defense" value="39"/>
+		<attribute key="absorbPercentManaDrain" value="10"/>
 		<attribute key="weaponType" value="shield"/>
 	</item>
 	<item id="6434" article="a" name="blue tapestry"/>
@@ -11500,19 +11661,17 @@
 		<attribute key="description" value="This holy blade was forged of shattered dreams."/>
 		<attribute key="weight" value="6400"/>
 		<attribute key="defense" value="38"/>
-		<attribute key="attack" value="50"/>
+		<attribute key="attack" random_min="57" random_max="60"/>
 		<attribute key="weaponType" value="sword"/>
-		<attribute key="slotType" value="two-handed"/>
 	</item>
-	<item id="6529" article="an" name="infernal bolt" plural="infernal bolts">
+	<item id="6529" article="an" name="infernal bolt (Atk:60)" plural="infernal bolts (Atk:60)">
 		<attribute key="weight" value="90"/>
 		<attribute key="slotType" value="ammo"/>
-		<attribute key="attack" value="72"/>
-		<attribute key="maxHitChance" value="91"/>
+		<attribute key="attack" value="60"/>
+		<attribute key="maxHitChance" value="90"/>
 		<attribute key="weaponType" value="ammunition"/>
 		<attribute key="ammoType" value="bolt"/>
 		<attribute key="shootType" value="infernalbolt"/>
-		<attribute key="ammoAction" value="removecount"/>
 	</item>
 	<item id="6530" article="a" name="pair of old worn soft boots">
 		<attribute key="description" value="Someone specialised in shoes might be able to repair them for you."/>
@@ -11588,7 +11747,7 @@
 	<item id="6553" article="a" name="ruthless axe">
 		<attribute key="weight" value="5800"/>
 		<attribute key="defense" value="15"/>
-		<attribute key="attack" value="50"/>
+		<attribute key="attack" random_min="54" random_max="55"/>
 		<attribute key="weaponType" value="axe"/>
 		<attribute key="slotType" value="two-handed"/>
 	</item>
@@ -11608,10 +11767,17 @@
 	</item>
 	<item id="6561" article="a" name="ceremonial ankh">
 		<attribute key="weight" value="500"/>
+		<attribute key="absorbPercentHoly" value="5"/>
+		<attribute key="ammoType" value="arrow"/>
+		<attribute key="showattributes" value="1"/>
 	</item>
 	<item id="6562-6565" article="a" name="roof"/>
 	<item id="6566" article="a" name="stuffed dragon">
 		<attribute key="weight" value="850"/>
+		<attribute key="absorbPercentFire" value="5"/>
+		<attribute key="absorbPercentIce" value="-5"/>
+		<attribute key="ammoType" value="arrow"/>
+		<attribute key="showattributes" value="1"/>
 	</item>
 	<item id="6567" article="a" name="santa doll">
 		<attribute key="weight" value="750"/>
@@ -11658,77 +11824,18 @@
 	<item id="6594" name="snow">
 		<attribute key="description" value="Someone must have walked here recently."/>
 		<attribute key="decayTo" value="670"/>
-		<attribute key="duration" value="10"/>
+		<attribute key="duration" value="30"/>
 	</item>
-	<item id="6595" name="snow">
+	<item id="6595-6597" name="snow">
 		<attribute key="description" value="Someone must have walked here recently."/>
-		<attribute key="decayTo" value="6580"/>
-		<attribute key="duration" value="10"/>
-	</item>
-	<item id="6596" name="snow">
-		<attribute key="description" value="Someone must have walked here recently."/>
-		<attribute key="decayTo" value="6581"/>
-		<attribute key="duration" value="10"/>
-	</item>
-	<item id="6597" name="snow">
-		<attribute key="description" value="Someone must have walked here recently."/>
-		<attribute key="decayTo" value="6582"/>
-		<attribute key="duration" value="10"/>
 	</item>
 	<item id="6598" name="snow">
 		<attribute key="description" value="Someone must have walked here recently."/>
-		<attribute key="decayTo" value="6583"/>
+		<attribute key="decayTo" value="6594"/>
 		<attribute key="duration" value="10"/>
 	</item>
-	<item id="6599" name="snow">
+	<item id="6599-6608" name="snow">
 		<attribute key="description" value="Someone must have walked here recently."/>
-		<attribute key="decayTo" value="6584"/>
-		<attribute key="duration" value="10"/>
-	</item>
-	<item id="6600" name="snow">
-		<attribute key="description" value="Someone must have walked here recently."/>
-		<attribute key="decayTo" value="6585"/>
-		<attribute key="duration" value="10"/>
-	</item>
-	<item id="6601" name="snow">
-		<attribute key="description" value="Someone must have walked here recently."/>
-		<attribute key="decayTo" value="6586"/>
-		<attribute key="duration" value="10"/>
-	</item>
-	<item id="6602" name="snow">
-		<attribute key="description" value="Someone must have walked here recently."/>
-		<attribute key="decayTo" value="6587"/>
-		<attribute key="duration" value="10"/>
-	</item>
-	<item id="6603" name="snow">
-		<attribute key="description" value="Someone must have walked here recently."/>
-		<attribute key="decayTo" value="6588"/>
-		<attribute key="duration" value="10"/>
-	</item>
-	<item id="6604" name="snow">
-		<attribute key="description" value="Someone must have walked here recently."/>
-		<attribute key="decayTo" value="6589"/>
-		<attribute key="duration" value="10"/>
-	</item>
-	<item id="6605" name="snow">
-		<attribute key="description" value="Someone must have walked here recently."/>
-		<attribute key="decayTo" value="6590"/>
-		<attribute key="duration" value="10"/>
-	</item>
-	<item id="6606" name="snow">
-		<attribute key="description" value="Someone must have walked here recently."/>
-		<attribute key="decayTo" value="6591"/>
-		<attribute key="duration" value="10"/>
-	</item>
-	<item id="6607" name="snow">
-		<attribute key="description" value="Someone must have walked here recently."/>
-		<attribute key="decayTo" value="6592"/>
-		<attribute key="duration" value="10"/>
-	</item>
-	<item id="6608" name="snow">
-		<attribute key="description" value="Someone must have walked here recently."/>
-		<attribute key="decayTo" value="6593"/>
-		<attribute key="duration" value="10"/>
 	</item>
 	<item id="6609" name="snow drift"/>
 	<item id="6610-6626" name="snow"/>
@@ -12545,31 +12652,31 @@
 	<item id="7359-7360" article="a" name="fire"/>
 	<item id="7361" name="ash"/>
 	<item id="7362" article="a" name="sarcophagus"/>
-	<item id="7363" article="a" name="piercing bolt" plural="piercing bolts">
+	<item id="7363" article="a" name="piercing bolt (Atk:58)" plural="piercing bolts (Atk:58)">
 		<attribute key="weight" value="80"/>
 		<attribute key="slotType" value="ammo"/>
-		<attribute key="attack" value="33"/>
+		<attribute key="attack" value="58"/>
 		<attribute key="maxHitChance" value="90"/>
 		<attribute key="weaponType" value="ammunition"/>
 		<attribute key="ammoType" value="bolt"/>
 		<attribute key="shootType" value="piercingbolt"/>
 		<attribute key="ammoAction" value="removecount"/>
 	</item>
-	<item id="7364" article="a" name="sniper arrow" plural="sniper arrows">
+	<item id="7364" article="a" name="rare arrow (Atk:68)" plural="rare's arrows (Atk:68)">
 		<attribute key="weight" value="70"/>
 		<attribute key="slotType" value="ammo"/>
-		<attribute key="attack" value="28"/>
+		<attribute key="attack" value="68"/>
 		<attribute key="maxHitChance" value="100"/>
 		<attribute key="weaponType" value="ammunition"/>
 		<attribute key="ammoType" value="arrow"/>
 		<attribute key="shootType" value="sniperarrow"/>
 		<attribute key="ammoAction" value="removecount"/>
 	</item>
-	<item id="7365" article="an" name="onyx arrow" plural="onyx arrows">
+	<item id="7365" article="an" name="onyx arrow (Atk:66)" plural="onyx arrows (Atk:66)">
 		<attribute key="weight" value="70"/>
 		<attribute key="slotType" value="ammo"/>
-		<attribute key="attack" value="38"/>
-		<attribute key="maxHitChance" value="90"/>
+		<attribute key="attack" value="66"/>
+		<attribute key="maxHitChance" value="95"/>
 		<attribute key="weaponType" value="ammunition"/>
 		<attribute key="ammoType" value="arrow"/>
 		<attribute key="shootType" value="onyxarrow"/>
@@ -12580,26 +12687,29 @@
 		<attribute key="attack" value="28"/>
 		<attribute key="weaponType" value="distance"/>
 		<attribute key="shootType" value="greenstar"/>
-		<attribute key="range" value="4"/>
-		<attribute key="breakChance" value="9"/>
+		<attribute key="maxHitChance" value="95"/>
+		<attribute key="range" value="5"/>
+		<attribute key="breakChance" value="2"/>
 		<attribute key="ammoAction" value="moveback"/>
 	</item>
 	<item id="7367" article="an" name="enchanted spear" plural="enchanted spears">
-		<attribute key="weight" value="2000"/>
-		<attribute key="attack" value="38"/>
+		<attribute key="weight" value="1500"/>
+		<attribute key="attack" value="47"/>
 		<attribute key="weaponType" value="distance"/>
 		<attribute key="shootType" value="enchantedspear"/>
-		<attribute key="range" value="4"/>
-		<attribute key="breakChance" value="1"/>
+		<attribute key="maxHitChance" value="95"/>
+		<attribute key="range" value="5"/>
+		<attribute key="breakChance" value="2"/>
 		<attribute key="ammoAction" value="moveback"/>
 	</item>
 	<item id="7368" article="an" name="assassin star" plural="assassin stars">
 		<attribute key="weight" value="200"/>
-		<attribute key="attack" value="65"/>
+		<attribute key="attack" value="66"/>
 		<attribute key="weaponType" value="distance"/>
 		<attribute key="shootType" value="redstar"/>
+		<attribute key="maxHitChance" value="95"/>
 		<attribute key="range" value="4"/>
-		<attribute key="breakChance" value="33"/>
+		<attribute key="breakChance" value="2"/>
 		<attribute key="ammoAction" value="moveback"/>
 	</item>
 	<item id="7369" article="a" name="golden goblet">
@@ -12638,12 +12748,12 @@
 		<attribute key="weight" value="100"/>
 	</item>
 	<item id="7378" article="a" name="royal spear" plural="royal spears">
-		<attribute key="weight" value="2500"/>
-		<attribute key="attack" value="35"/>
+		<attribute key="weight" value="1300"/>
+		<attribute key="attack" value="44"/>
 		<attribute key="weaponType" value="distance"/>
 		<attribute key="shootType" value="royalspear"/>
-		<attribute key="range" value="3"/>
-		<attribute key="breakChance" value="3"/>
+		<attribute key="range" value="5"/>
+		<attribute key="breakChance" value="2"/>
 		<attribute key="ammoAction" value="moveback"/>
 	</item>
 	<item id="7379" name="brutetamer's staff">
@@ -12672,14 +12782,14 @@
 	<item id="7382" article="a" name="demonrage sword">
 		<attribute key="weight" value="15000"/>
 		<attribute key="defense" value="22"/>
-		<attribute key="attack" value="47"/>
+		<attribute key="attack" random_min="47" random_max="57"/>
 		<attribute key="weaponType" value="sword"/>
 		<attribute key="slotType" value="two-handed"/>
 	</item>
 	<item id="7383" article="a" name="relic sword">
 		<attribute key="weight" value="4800"/>
 		<attribute key="defense" value="24"/>
-		<attribute key="attack" value="42"/>
+		<attribute key="attack" value="54"/>
 		<attribute key="weaponType" value="sword"/>
 		<attribute key="extradef" value="1"/>
 	</item>
@@ -12694,16 +12804,13 @@
 	<item id="7385" article="a" name="crimson sword">
 		<attribute key="description" value="Its blade is very notchy."/>
 		<attribute key="weight" value="3600"/>
-		<attribute key="defense" value="10"/>
-		<attribute key="attack" value="18"/>
+		<attribute key="defense" value="20"/>
+		<attribute key="extradef" value="1"/>
+		<attribute key="attack" value="28"/>
 		<attribute key="weaponType" value="sword"/>
 	</item>
 	<item id="7386" article="a" name="mercenary sword">
-		<attribute key="weight" value="6800"/>
-		<attribute key="defense" value="27"/>
-		<attribute key="attack" value="43"/>
-		<attribute key="weaponType" value="sword"/>
-		<attribute key="slotType" value="two-handed"/>
+		<attribute key="description" value="The beautiful decoration sword."/>
 	</item>
 	<item id="7387" article="a" name="diamond sceptre">
 		<attribute key="description" value="The beautiful jewel on the top of this sceptre is sharp enough to cut through glass."/>
@@ -12715,7 +12822,7 @@
 	<item id="7388" article="a" name="vile axe">
 		<attribute key="weight" value="5200"/>
 		<attribute key="defense" value="19"/>
-		<attribute key="attack" value="43"/>
+		<attribute key="attack" value="45"/>
 		<attribute key="weaponType" value="axe"/>
 		<attribute key="extradef" value="3"/>
 	</item>
@@ -12731,14 +12838,16 @@
 		<attribute key="description" value="This sword is only granted to a warlord of the Svargrond arena."/>
 		<attribute key="weight" value="5000"/>
 		<attribute key="defense" value="24"/>
-		<attribute key="attack" value="47"/>
+		<attribute key="attack" value="57"/>
+		<attribute key="elementHoly" value="6"/>
 		<attribute key="weaponType" value="sword"/>
 		<attribute key="extradef" value="3"/>
 	</item>
-	<item id="7391" article="a" name="thaian sword">
+	<item id="7391" article="a" name="blade the legend">
+		<attribute key="description" value="Holy sword with the legend of Mysidia inscribed."/>
 		<attribute key="weight" value="6100"/>
-		<attribute key="defense" value="29"/>
-		<attribute key="attack" value="45"/>
+		<attribute key="defense" value="45"/>
+		<attribute key="attack" random_min="74" random_max="82"/>
 		<attribute key="weaponType" value="sword"/>
 	</item>
 	<item id="7392" article="an" name="orcish maul">
@@ -12779,7 +12888,7 @@
 	<item id="7402" article="a" name="dragon slayer">
 		<attribute key="weight" value="8200"/>
 		<attribute key="defense" value="28"/>
-		<attribute key="attack" value="44"/>
+		<attribute key="attack" value="50"/>
 		<attribute key="weaponType" value="sword"/>
 		<attribute key="slotType" value="two-handed"/>
 	</item>
@@ -12800,24 +12909,21 @@
 	<item id="7405" article="a" name="havoc blade">
 		<attribute key="weight" value="7200"/>
 		<attribute key="defense" value="34"/>
-		<attribute key="attack" value="49"/>
+		<attribute key="attack" value="55"/>
 		<attribute key="weaponType" value="sword"/>
-		<attribute key="slotType" value="two-handed"/>
 	</item>
 	<item id="7406" article="a" name="blacksteel sword">
 		<attribute key="description" value="This sword is only granted to a greenhorn of the Svargrond arena."/>
 		<attribute key="weight" value="5900"/>
-		<attribute key="defense" value="22"/>
-		<attribute key="attack" value="42"/>
+		<attribute key="defense" value="24"/>
+		<attribute key="attack" value="44"/>
 		<attribute key="weaponType" value="sword"/>
-		<attribute key="slotType" value="two-handed"/>
 	</item>
 	<item id="7407" article="a" name="haunted blade">
 		<attribute key="weight" value="3100"/>
 		<attribute key="defense" value="12"/>
-		<attribute key="attack" value="40"/>
+		<attribute key="attack" value="50"/>
 		<attribute key="weaponType" value="sword"/>
-		<attribute key="slotType" value="two-handed"/>
 	</item>
 	<item id="7408" article="a" name="wyvern fang">
 		<attribute key="weight" value="2000"/>
@@ -12828,16 +12934,19 @@
 	</item>
 	<item id="7409" article="an" name="northern star">
 		<attribute key="weight" value="4200"/>
-		<attribute key="defense" value="15"/>
+		<attribute key="defense" value="30"/>
 		<attribute key="extradef" value="1"/>
-		<attribute key="attack" value="42"/>
+		<attribute key="attack" value="46"/>
 		<attribute key="weaponType" value="club"/>
 	</item>
 	<item id="7410" article="a" name="queen's sceptre">
+		<attribute key="description" value="It is a magic sceptre. Your magic level by 2"/>
 		<attribute key="weight" value="2300"/>
-		<attribute key="defense" value="19"/>
-		<attribute key="attack" value="43"/>
-		<attribute key="weaponType" value="club"/>
+		<attribute key="magiclevelpoints" value="3"/>
+		<attribute key="defense" value="12"/>
+		<attribute key="attack" value="50"/>
+		<attribute key="weaponType" value="fist"/>
+		<attribute key="dualWield" value="1"/>
 	</item>
 	<item id="7411" article="an" name="ornamented axe">
 		<attribute key="weight" value="6150"/>
@@ -12849,7 +12958,7 @@
 	<item id="7412" article="a" name="butcher's axe">
 		<attribute key="weight" value="6300"/>
 		<attribute key="defense" value="24"/>
-		<attribute key="attack" value="41"/>
+		<attribute key="attack" value="49"/>
 		<attribute key="weaponType" value="axe"/>
 		<attribute key="extradef" value="-2"/>
 	</item>
@@ -12900,7 +13009,7 @@
 	<item id="7419" article="a" name="dreaded cleaver">
 		<attribute key="weight" value="3800"/>
 		<attribute key="defense" value="19"/>
-		<attribute key="attack" value="40"/>
+		<attribute key="attack" value="48"/>
 		<attribute key="weaponType" value="axe"/>
 		<attribute key="extradef" value="-3"/>
 	</item>
@@ -12917,19 +13026,18 @@
 		<attribute key="attack" value="45"/>
 		<attribute key="weaponType" value="club"/>
 	</item>
-	<item id="7422" name="jade hammer">
+	<item id="7422" article="the" name="jade hammer">
 		<attribute key="weight" value="3200"/>
 		<attribute key="defense" value="20"/>
-		<attribute key="attack" value="46"/>
+		<attribute key="attack" random_min="57" random_max="60"/>
 		<attribute key="weaponType" value="club"/>
 		<attribute key="extradef" value="1"/>
 	</item>
 	<item id="7423" article="a" name="skullcrusher">
 		<attribute key="weight" value="12000"/>
 		<attribute key="defense" value="20"/>
-		<attribute key="attack" value="51"/>
+		<attribute key="attack" random_min="70" random_max="72"/>
 		<attribute key="weaponType" value="club"/>
-		<attribute key="slotType" value="two-handed"/>
 	</item>
 	<item id="7424" article="a" name="lunar staff">
 		<attribute key="weight" value="3800"/>
@@ -12956,7 +13064,7 @@
 		<attribute key="description" value="Only those who have descended to the deepest depths may wield this hammer without it cursing them."/>
 		<attribute key="weight" value="6300"/>
 		<attribute key="defense" value="21"/>
-		<attribute key="attack" value="44"/>
+		<attribute key="attack" value="48"/>
 		<attribute key="weaponType" value="club"/>
 		<attribute key="slotType" value="two-handed"/>
 	</item>
@@ -12972,7 +13080,8 @@
 		<attribute key="description" value="This sceptre is only granted to a warlord of the Svargrond arena."/>
 		<attribute key="weight" value="3900"/>
 		<attribute key="defense" value="21"/>
-		<attribute key="attack" value="47"/>
+		<attribute key="attack" value="57"/>
+		<attribute key="elementHoly" value="6"/>
 		<attribute key="weaponType" value="club"/>
 		<attribute key="extradef" value="3"/>
 	</item>
@@ -12980,14 +13089,14 @@
 		<attribute key="description" value="Small flames are dancing around this strange weapon."/>
 		<attribute key="weight" value="1800"/>
 		<attribute key="defense" value="18"/>
-		<attribute key="attack" value="35"/>
+		<attribute key="attack" random_min="35" random_max="40"/>
 		<attribute key="weaponType" value="club"/>
 	</item>
 	<item id="7431" article="a" name="demonbone">
 		<attribute key="weight" value="18000"/>
 		<attribute key="defense" value="38"/>
 		<attribute key="extradef" value="-2"/>
-		<attribute key="attack" value="48"/>
+		<attribute key="attack" random_min="48" random_max="65"/>
 		<attribute key="weaponType" value="club"/>
 	</item>
 	<item id="7432" article="a" name="furry club">
@@ -13008,14 +13117,15 @@
 		<attribute key="description" value="This axe is only granted to a warlord of the Svarground arena."/>
 		<attribute key="weight" value="9200"/>
 		<attribute key="defense" value="25"/>
-		<attribute key="attack" value="47"/>
+		<attribute key="attack" value="57"/>
+		<attribute key="elementHoly" value="6"/>
 		<attribute key="weaponType" value="axe"/>
 		<attribute key="extradef" value="3"/>
 	</item>
 	<item id="7435" article="an" name="impaler">
 		<attribute key="weight" value="8200"/>
 		<attribute key="defense" value="25"/>
-		<attribute key="attack" value="49"/>
+		<attribute key="attack" value="50"/>
 		<attribute key="weaponType" value="axe"/>
 		<attribute key="extradef" value="-2"/>
 	</item>
@@ -13095,7 +13205,7 @@
 	<item id="7451" article="a" name="shadow sceptre">
 		<attribute key="weight" value="4100"/>
 		<attribute key="defense" value="17"/>
-		<attribute key="attack" value="39"/>
+		<attribute key="attack" value="42"/>
 		<attribute key="weaponType" value="club"/>
 	</item>
 	<item id="7452" article="a" name="spiked squelcher">
@@ -13115,9 +13225,8 @@
 	<item id="7454" name="glorious axe">
 		<attribute key="weight" value="9500"/>
 		<attribute key="defense" value="23"/>
-		<attribute key="attack" value="40"/>
+		<attribute key="attack" random_min="57" random_max="60"/>
 		<attribute key="weaponType" value="axe"/>
-		<attribute key="slotType" value="two-handed"/>
 	</item>
 	<item id="7455" article="a" name="mythril axe">
 		<attribute key="weight" value="5500"/>
@@ -13129,7 +13238,7 @@
 	<item id="7456" article="a" name="noble axe">
 		<attribute key="weight" value="3800"/>
 		<attribute key="defense" value="22"/>
-		<attribute key="attack" value="39"/>
+		<attribute key="attack" value="48"/>
 		<attribute key="weaponType" value="axe"/>
 	</item>
 	<item id="7457" article="a" name="fur boots">
@@ -13161,6 +13270,7 @@
 		<attribute key="weight" value="5100"/>
 		<attribute key="armor" value="6"/>
 		<attribute key="slotType" value="head"/>
+		<attribute key="absorbPercentIce" value="2"/>
 	</item>
 	<item id="7462" article="a" name="ragnir helmet">
 		<attribute key="weight" value="3100"/>
@@ -13223,6 +13333,7 @@
 		<attribute key="weight" value="1250"/>
 	</item>
 	<item id="7488" article="a" name="special flask">
+		<attribute key="description" value="This and special item of DarkKonia Series."/>
 		<attribute key="weight" value="180"/>
 	</item>
 	<item id="7489" article="a" name="special flask">
@@ -13378,29 +13489,29 @@
 		<attribute key="description" value="It's from an undead jester, so open at own risk."/>
 		<attribute key="weight" value="800"/>
 	</item>
-	<item id="7588" article="a" name="strong health potion">
+	<item id="7588" article="a" name="restore strong potion">
 		<attribute key="description" value="This potion can only be consumed by knights and paladins of level 50 or higher."/>
-		<attribute key="weight" value="290"/>
+		<attribute key="weight" value="120"/>
 	</item>
-	<item id="7589" article="a" name="strong mana potion">
+	<item id="7589" article="a" name="spirit strong potion">
 		<attribute key="description" value="This potion can only be consumed by sorcerers, druids and paladins of level 50 or higher."/>
-		<attribute key="weight" value="290"/>
+		<attribute key="weight" value="120"/>
 	</item>
-	<item id="7590" article="a" name="great mana potion">
+	<item id="7590" article="a" name="spirit great potion">
 		<attribute key="description" value="This potion can only be consumed by sorcerers and druids of level 80 or higher."/>
-		<attribute key="weight" value="310"/>
+		<attribute key="weight" value="150"/>
 	</item>
-	<item id="7591" article="a" name="great health potion">
-		<attribute key="description" value="This potion can only be consumed by knights of level 80 or higher."/>
-		<attribute key="weight" value="310"/>
+	<item id="7591" article="a" name="restore great potion">
+		<attribute key="description" value="This potion can only be consumed by knights and paladins of level 80 or higher."/>
+		<attribute key="weight" value="150"/>
 	</item>
 	<item id="7592-7617" article="a" name="tent"/>
-	<item id="7618" article="a" name="health potion">
-		<attribute key="weight" value="270"/>
+	<item id="7618" article="a" name="restore potion">
+		<attribute key="weight" value="110"/>
 	</item>
 	<item id="7619" article="a" name="tent"/>
-	<item id="7620" article="a" name="mana potion">
-		<attribute key="weight" value="270"/>
+	<item id="7620" article="a" name="spirit potion">
+		<attribute key="weight" value="110"/>
 	</item>
 	<item id="7621" article="a" name="dead dragon hatchling">
 		<attribute key="containerSize" value="10"/>
@@ -13731,8 +13842,9 @@
 	<item id="7728-7729"/>
 	<item id="7730" name="blue legs">
 		<attribute key="weight" value="1800"/>
-		<attribute key="armor" value="8"/>
+		<attribute key="armor" random_min="8" random_max="10"/>
 		<attribute key="slotType" value="legs"/>
+		<attribute key="magiclevelpoints" value="1"/>
 	</item>
 	<item id="7731" name="elvenhair rope">
 		<attribute key="weight" value="600"/>
@@ -13822,16 +13934,12 @@
 		<attribute key="decayTo" value="7384"/>
 		<attribute key="showcharges" value="1"/>
 	</item>
-	<item id="7747" article="a" name="blacksteel sword">
+	<item id="7747" article="a" name="assassin sword">
 		<attribute key="weight" value="5900"/>
-		<attribute key="defense" value="22"/>
-		<attribute key="attack" value="42"/>
+		<attribute key="defense" value="32"/>
+		<attribute key="attack" value="45"/>
 		<attribute key="weaponType" value="sword"/>
-		<attribute key="slotType" value="two-handed"/>
 		<attribute key="elementFire" value="7"/>
-		<attribute key="charges" value="1000"/>
-		<attribute key="decayTo" value="7406"/>
-		<attribute key="showcharges" value="1"/>
 	</item>
 	<item id="7748" article="a" name="dragon slayer">
 		<attribute key="weight" value="8200"/>
@@ -13909,15 +14017,13 @@
 		<attribute key="decayTo" value="2423"/>
 		<attribute key="showcharges" value="1"/>
 	</item>
-	<item id="7755" article="a" name="crystal mace">
-		<attribute key="weight" value="8000"/>
-		<attribute key="defense" value="16"/>
-		<attribute key="attack" value="38"/>
-		<attribute key="weaponType" value="club"/>
-		<attribute key="elementFire" value="7"/>
-		<attribute key="charges" value="1000"/>
-		<attribute key="decayTo" value="2445"/>
-		<attribute key="showcharges" value="1"/>
+	<item id="7755" article="a" name="infernos staff">
+		<attribute key="weight" value="5000"/>
+		<attribute key="defense" value="27"/>
+		<attribute key="attack" random_min="50" random_max="70"/>
+		<attribute key="defense" value="10"/>
+		<attribute key="weaponType" value="fist"/>
+		<attribute key="dualWield" value="1"/>
 	</item>
 	<item id="7756" article="a" name="cranial basher">
 		<attribute key="weight" value="7800"/>
@@ -14008,16 +14114,13 @@
 		<attribute key="decayTo" value="7406"/>
 		<attribute key="showcharges" value="1"/>
 	</item>
-	<item id="7767" article="a" name="dragon slayer">
-		<attribute key="weight" value="8200"/>
-		<attribute key="defense" value="28"/>
-		<attribute key="attack" value="44"/>
+	<item id="7767" article="a" name="scarched sword">
+		<attribute key="weight" value="3500"/>
+		<attribute key="defense" value="25"/>
+		<attribute key="attack" value="68"/>
+		<attribute key="elementIce" value="6"/>
 		<attribute key="weaponType" value="sword"/>
-		<attribute key="slotType" value="two-handed"/>
-		<attribute key="elementIce" value="9"/>
-		<attribute key="charges" value="1000"/>
-		<attribute key="decayTo" value="7402"/>
-		<attribute key="showcharges" value="1"/>
+		<attribute key="extradef" value="2"/>
 	</item>
 	<item id="7768" article="a" name="barbarian axe">
 		<attribute key="weight" value="5100"/>
@@ -14063,16 +14166,12 @@
 		<attribute key="decayTo" value="7380"/>
 		<attribute key="showcharges" value="1"/>
 	</item>
-	<item id="7772" article="a" name="war axe">
+	<item id="7772" article="a" name="scarched axe">
 		<attribute key="weight" value="6150"/>
 		<attribute key="defense" value="10"/>
-		<attribute key="attack" value="48"/>
+		<attribute key="attack" value="68"/>
+		<attribute key="elementIce" value="6"/>
 		<attribute key="weaponType" value="axe"/>
-		<attribute key="slotType" value="two-handed"/>
-		<attribute key="elementIce" value="10"/>
-		<attribute key="charges" value="1000"/>
-		<attribute key="decayTo" value="2454"/>
-		<attribute key="showcharges" value="1"/>
 	</item>
 	<item id="7773" article="a" name="clerical mace">
 		<attribute key="weight" value="5800"/>
@@ -14094,16 +14193,12 @@
 		<attribute key="decayTo" value="2445"/>
 		<attribute key="showcharges" value="1"/>
 	</item>
-	<item id="7775" article="a" name="cranial basher">
-		<attribute key="weight" value="7800"/>
-		<attribute key="defense" value="20"/>
-		<attribute key="attack" value="44"/>
+	<item id="7775" article="a" name="scarched hammer">
+		<attribute key="weight" value="8500"/>
+		<attribute key="defense" value="10"/>
+		<attribute key="attack" value="68"/>
+		<attribute key="elementIce" value="6"/>
 		<attribute key="weaponType" value="club"/>
-		<attribute key="extradef" value="-2"/>
-		<attribute key="elementIce" value="8"/>
-		<attribute key="charges" value="1000"/>
-		<attribute key="decayTo" value="7415"/>
-		<attribute key="showcharges" value="1"/>
 	</item>
 	<item id="7776" article="an" name="orcish maul">
 		<attribute key="weight" value="5400"/>
@@ -14372,30 +14467,30 @@
 	<item id="7828" article="an" name="astro clock"/>
 	<item id="7829-7832" article="an" name="astronomical map"/>
 	<item id="7833-7837" article="a" name="ground"/>
-	<item id="7838" article="a" name="flash arrow" plural="flash arrows">
+	<item id="7838" article="a" name="flash arrow (Atk:60)" plural="flash arrows (Atk:60)">
 		<attribute key="weight" value="70"/>
 		<attribute key="slotType" value="ammo"/>
-		<attribute key="attack" value="25"/>
+		<attribute key="attack" value="60"/>
 		<attribute key="maxHitChance" value="90"/>
 		<attribute key="weaponType" value="ammunition"/>
 		<attribute key="ammoType" value="arrow"/>
 		<attribute key="ammoAction" value="removecount"/>
 		<attribute key="shootType" value="flasharrow"/>
 	</item>
-	<item id="7839" article="a" name="shiver arrow" plural="shiver arrows">
+	<item id="7839" article="a" name="shiver arrow (Atk:60)" plural="shiver arrows (Atk:60)">
 		<attribute key="weight" value="70"/>
 		<attribute key="slotType" value="ammo"/>
-		<attribute key="attack" value="25"/>
+		<attribute key="attack" value="60"/>
 		<attribute key="maxHitChance" value="90"/>
 		<attribute key="weaponType" value="ammunition"/>
 		<attribute key="ammoType" value="arrow"/>
 		<attribute key="ammoAction" value="removecount"/>
 		<attribute key="shootType" value="shiverarrow"/>
 	</item>
-	<item id="7840" article="a" name="flaming arrow" plural="flaming arrows">
+	<item id="7840" article="a" name="flaming arrow (Atk:60)" plural="flaming arrows (Atk:60)">
 		<attribute key="weight" value="70"/>
 		<attribute key="slotType" value="ammo"/>
-		<attribute key="attack" value="25"/>
+		<attribute key="attack" value="60"/>
 		<attribute key="maxHitChance" value="90"/>
 		<attribute key="weaponType" value="ammunition"/>
 		<attribute key="ammoType" value="arrow"/>
@@ -14446,11 +14541,10 @@
 		<attribute key="duration" value="600"/>
 		<attribute key="corpseType" value="blood"/>
 	</item>
-	<item id="7850" article="an" name="earth arrow" plural="earth arrows">
+	<item id="7850" article="an" name="mud arrow (Atk:60)" plural="mud arrows (Atk:60)">
 		<attribute key="weight" value="70"/>
 		<attribute key="slotType" value="ammo"/>
-		<attribute key="attack" value="14"/>
-		<attribute key="elementEarth" value="14"/>
+		<attribute key="attack" value="60"/>
 		<attribute key="maxHitChance" value="90"/>
 		<attribute key="weaponType" value="ammunition"/>
 		<attribute key="ammoType" value="arrow"/>
@@ -14535,16 +14629,12 @@
 		<attribute key="decayTo" value="2430"/>
 		<attribute key="showcharges" value="1"/>
 	</item>
-	<item id="7861" article="a" name="heroic axe">
+	<item id="7861" article="a" name="holy crusader">
+		<attribute key="description" value="Obtenible via Donation."/>
+		<attribute key="attack" value="65"/>
 		<attribute key="weight" value="6100"/>
 		<attribute key="defense" value="24"/>
-		<attribute key="attack" value="44"/>
 		<attribute key="weaponType" value="axe"/>
-		<attribute key="extradef" value="1"/>
-		<attribute key="elementEarth" value="9"/>
-		<attribute key="charges" value="1000"/>
-		<attribute key="decayTo" value="7389"/>
-		<attribute key="showcharges" value="1"/>
 	</item>
 	<item id="7862" article="a" name="headchopper">
 		<attribute key="weight" value="4500"/>
@@ -14568,15 +14658,12 @@
 		<attribute key="decayTo" value="2454"/>
 		<attribute key="showcharges" value="1"/>
 	</item>
-	<item id="7864" article="a" name="clerical mace">
+	<item id="7864" article="a" name="enchanted star">
 		<attribute key="weight" value="5800"/>
-		<attribute key="defense" value="15"/>
-		<attribute key="attack" value="28"/>
-		<attribute key="weaponType" value="club"/>
+		<attribute key="defense" value="10"/>
+		<attribute key="attack" value="45"/>
 		<attribute key="elementEarth" value="5"/>
-		<attribute key="charges" value="1000"/>
-		<attribute key="decayTo" value="2423"/>
-		<attribute key="showcharges" value="1"/>
+		<attribute key="weaponType" value="club"/>
 	</item>
 	<item id="7865" article="a" name="crystal mace">
 		<attribute key="weight" value="8000"/>
@@ -14665,16 +14752,12 @@
 		<attribute key="decayTo" value="7406"/>
 		<attribute key="showcharges" value="1"/>
 	</item>
-	<item id="7873" article="a" name="dragon slayer">
+	<item id="7873" article="a" name="decapitator">
+		<attribute key="description" value="Obtenible via Donation."/>
+		<attribute key="attack" value="65"/>
 		<attribute key="weight" value="8200"/>
 		<attribute key="defense" value="28"/>
-		<attribute key="attack" value="44"/>
 		<attribute key="weaponType" value="sword"/>
-		<attribute key="slotType" value="two-handed"/>
-		<attribute key="elementEnergy" value="9"/>
-		<attribute key="charges" value="1000"/>
-		<attribute key="decayTo" value="7402"/>
-		<attribute key="showcharges" value="1"/>
 	</item>
 	<item id="7874" article="a" name="barbarian axe">
 		<attribute key="weight" value="5100"/>
@@ -14731,15 +14814,9 @@
 		<attribute key="decayTo" value="2454"/>
 		<attribute key="showcharges" value="1"/>
 	</item>
-	<item id="7879" article="a" name="clerical mace">
+	<item id="7879" article="a" name="thunderios star">
+		<attribute key="description" value="Decoration item."/>
 		<attribute key="weight" value="5800"/>
-		<attribute key="defense" value="15"/>
-		<attribute key="attack" value="28"/>
-		<attribute key="weaponType" value="club"/>
-		<attribute key="elementEnergy" value="5"/>
-		<attribute key="charges" value="1000"/>
-		<attribute key="decayTo" value="2423"/>
-		<attribute key="showcharges" value="1"/>
 	</item>
 	<item id="7880" article="a" name="crystal mace">
 		<attribute key="weight" value="8000"/>
@@ -14751,16 +14828,12 @@
 		<attribute key="decayTo" value="2445"/>
 		<attribute key="showcharges" value="1"/>
 	</item>
-	<item id="7881" article="a" name="cranial basher">
+	<item id="7881" article="a" name="skullcrusher">
+		<attribute key="description" value="Obtenible via Donation."/>
+		<attribute key="attack" value="65"/>
 		<attribute key="weight" value="7800"/>
 		<attribute key="defense" value="20"/>
-		<attribute key="attack" value="44"/>
 		<attribute key="weaponType" value="club"/>
-		<attribute key="extradef" value="-2"/>
-		<attribute key="elementEnergy" value="8"/>
-		<attribute key="charges" value="1000"/>
-		<attribute key="decayTo" value="7415"/>
-		<attribute key="showcharges" value="1"/>
 	</item>
 	<item id="7882" article="an" name="orcish maul">
 		<attribute key="weight" value="5400"/>
@@ -15248,10 +15321,10 @@
 		<attribute key="weight" value="100"/>
 	</item>
 	<item id="8266" name="koshei's ancient amulet">
-		<attribute key="weight" value="550"/>
+		<attribute key="description" value="The effects of this amulet are unknown."/>
+		<attribute key="weight" value="500"/>
 		<attribute key="slotType" value="necklace"/>
-		<attribute key="absorbPercentDeath" value="8"/>
-		<attribute key="absorbPercentHoly" value="-50"/>
+		<attribute key="absorbPercentDeath" value="20"/>
 		<attribute key="showattributes" value="1"/>
 	</item>
 	<item id="8267" article="a" name="parchment">
@@ -15456,16 +15529,16 @@
 	<item id="8447-8458" name="earth"/>
 	<item id="8459" article="a" name="strange statue"/>
 	<item id="8460-8471" name="earth"/>
-	<item id="8472" article="a" name="great spirit potion">
-		<attribute key="description" value="This potion can only be consumed by paladins of level 80 or higher."/>
-		<attribute key="weight" value="310"/>
+	<item id="8472" article="a" name="spirit ultimate potion">
+		<attribute key="description" value="This potion can only be consumed by sorcerer and druids of level 200 or higher."/>
+		<attribute key="weight" value="180"/>
 	</item>
-	<item id="8473" article="an" name="ultimate health potion">
-		<attribute key="description" value="This potion can only be consumed by knights of level 130 or higher."/>
-		<attribute key="weight" value="310"/>
+	<item id="8473" article="an" name="restore ultimate potion">
+		<attribute key="description" value="This potion can only be consumed by knights and paladins of level 200 or higher."/>
+		<attribute key="weight" value="180"/>
 	</item>
 	<item id="8474" article="an" name="antidote potion">
-		<attribute key="weight" value="265"/>
+		<attribute key="weight" value="105"/>
 	</item>
 	<item id="8475-8517" article="a" name="stone wall"/>
 	<item id="8518-8525" article="a" name="decorated stone wall"/>
@@ -15669,7 +15742,9 @@
 	<item id="8625-8626" article="a" name="dwarven statue"/>
 	<item id="8627-8630" article="a" name="bone"/>
 	<item id="8631" article="a" name="burning wall"/>
-	<item id="8632" article="a" name="water vortex"/>
+	<item id="8632" article="a" name="water vortex">
+		<attribute key="type" value="teleport"/>
+	</item>
 	<item id="8633-8636" article="a" name="large crystal"/>
 	<item id="8637-8640" name="crystal"/>
 	<item id="8641-8642" article="a" name="crucible"/>
@@ -15743,8 +15818,8 @@
 		<attribute key="weight" value="1300"/>
 	</item>
 	<item id="8703" article="a" name="coffin"/>
-	<item id="8704" article="a" name="small health potion">
-		<attribute key="weight" value="265"/>
+	<item id="8704" article="a" name="small restore potion">
+		<attribute key="weight" value="85"/>
 	</item>
 	<item id="8707" article="your" name="student book">
 		<attribute key="description" value="Write down important notes in here."/>
@@ -15839,10 +15914,10 @@
 	</item>
 	<item id="8762" name="letter to Chantalle" article="a">
 		<attribute key="weight" value="10"/>
-		<attribute key="description" value="Carina from Venore tells Chantalle that the 'precious necklace' she loved so much is still for sale."/>
+		<attribute key="description" value="Carina from Vinor tells Chantalle that the 'precious necklace' she loved so much is still for sale."/>
 	</item>
 	<item id="8763" article="a" name="compromising letter">
-		<attribute key="description" value="The letter from Carlin proves that Arnold is a born Bonecrusher."/>
+		<attribute key="description" value="The letter from Fynn proves that Arnold is a born Bonecrusher."/>
 		<attribute key="weight" value="10"/>
 	</item>
 	<item id="8764" article="a" name="goldfish bowl">
@@ -15857,7 +15932,7 @@
 		<attribute key="weight" value="500"/>
 	</item>
 	<item id="8768" article="a" name="letter to Chantalle">
-		<attribute key="description" value="Carina from Venore tells Chantalle that the 'precious necklace' she loved so much is still for sale."/>
+		<attribute key="description" value="Carina from Vinor tells Chantalle that the 'precious necklace' she loved so much is still for sale."/>
 		<attribute key="weight" value="10"/>
 	</item>
 	<item id="8769" article="a" name="closed door">
@@ -15960,16 +16035,16 @@
 		<attribute key="weaponType" value="distance"/>
 		<attribute key="ammoType" value="bolt"/>
 		<attribute key="range" value="3"/>
-		<attribute key="attack" value="4"/>
+		<attribute key="attack" value="8"/>
 	</item>
 	<item id="8851" article="a" name="royal crossbow">
 		<attribute key="weight" value="12000"/>
 		<attribute key="slotType" value="two-handed"/>
 		<attribute key="weaponType" value="distance"/>
 		<attribute key="ammoType" value="bolt"/>
-		<attribute key="range" value="6"/>
-		<attribute key="hitChance" value="3"/>
-		<attribute key="attack" value="5"/>
+		<attribute key="range" value="7"/>
+		<attribute key="hitChance" value="20"/>
+		<attribute key="attack" value="15"/>
 	</item>
 	<item id="8852" article="the" name="devileye">
 		<attribute key="weight" value="5500"/>
@@ -15977,7 +16052,7 @@
 		<attribute key="weaponType" value="distance"/>
 		<attribute key="ammoType" value="bolt"/>
 		<attribute key="range" value="6"/>
-		<attribute key="hitChance" value="-20"/>
+		<attribute key="hitChance" value="-5"/>
 		<attribute key="attack" value="20"/>
 	</item>
 	<item id="8853" article="the" name="ironworker">
@@ -15994,8 +16069,8 @@
 		<attribute key="weaponType" value="distance"/>
 		<attribute key="ammoType" value="arrow"/>
 		<attribute key="range" value="7"/>
-		<attribute key="hitChance" value="5"/>
-		<attribute key="attack" value="3"/>
+		<attribute key="hitChance" value="10"/>
+		<attribute key="attack" value="20"/>
 	</item>
 	<item id="8855" article="a" name="composite hornbow">
 		<attribute key="weight" value="5200"/>
@@ -16012,7 +16087,9 @@
 		<attribute key="weaponType" value="distance"/>
 		<attribute key="ammoType" value="arrow"/>
 		<attribute key="range" value="7"/>
-		<attribute key="hitChance" value="7"/>
+		<attribute key="hitChance" value="20"/>
+		<attribute key="attack" value="22"/>
+		<attribute key="skillDist" value="5"/>
 	</item>
 	<item id="8857" article="a" name="silkweaver bow">
 		<attribute key="weight" value="2200"/>
@@ -16022,13 +16099,14 @@
 		<attribute key="range" value="6"/>
 		<attribute key="hitChance" value="3"/>
 	</item>
-	<item id="8858" name="elethriel's elemental bow">
+	<item id="8858" article="a" name="scarched elemental bow">
 		<attribute key="weight" value="4400"/>
 		<attribute key="slotType" value="two-handed"/>
 		<attribute key="weaponType" value="distance"/>
 		<attribute key="ammoType" value="arrow"/>
-		<attribute key="range" value="4"/>
-		<attribute key="attack" value="7"/>
+		<attribute key="range" value="7"/>
+		<attribute key="hitChance" value="10"/>
+		<attribute key="attack" value="20"/>
 	</item>
 	<item id="8859" name="spider fangs">
 		<attribute key="weight" value="50"/>
@@ -16045,7 +16123,7 @@
 	<item id="8865" article="a" name="dark lord's cape">
 		<attribute key="description" value="There is a dark aura surrounding it."/>
 		<attribute key="weight" value="2900"/>
-		<attribute key="armor" value="11"/>
+		<attribute key="armor" random_min="17" random_max="18"/>
 		<attribute key="absorbPercentDeath" value="8"/>
 		<attribute key="absorbPercentHoly" value="-8"/>
 		<attribute key="slotType" value="body"/>
@@ -16061,7 +16139,7 @@
 	<item id="8867" article="a" name="dragon robe">
 		<attribute key="description" value="It is covered with runic symbols."/>
 		<attribute key="weight" value="2850"/>
-		<attribute key="armor" value="12"/>
+		<attribute key="armor" random_min="12" random_max="19"/>
 		<attribute key="absorbPercentFire" value="12"/>
 		<attribute key="absorbPercentIce" value="-12"/>
 		<attribute key="slotType" value="body"/>
@@ -16082,16 +16160,16 @@
 		<attribute key="slotType" value="body"/>
 	</item>
 	<item id="8870" article="a" name="spirit cloak">
-		<attribute key="armor" value="8"/>
+		<attribute key="armor" random_min="8" random_max="14"/>
 		<attribute key="slotType" value="body"/>
 		<attribute key="weight" value="2650"/>
-		<attribute key="magicpoints" value="1"/>
+		<attribute key="magiclevelpoints" value="4"/>
 	</item>
 	<item id="8871" article="a" name="focus cape">
 		<attribute key="weight" value="2100"/>
 		<attribute key="armor" value="9"/>
 		<attribute key="slotType" value="body"/>
-		<attribute key="magicpoints" value="1"/>
+		<attribute key="magiclevelpoints" value="1"/>
 	</item>
 	<item id="8872" article="a" name="belted cape">
 		<attribute key="weight" value="3500"/>
@@ -16182,11 +16260,10 @@
 		<attribute key="absorbPercentHoly" value="-10"/>
 	</item>
 	<item id="8886" article="a" name="molten plate">
-		<attribute key="armor" value="13"/>
+		<attribute key="armor" random_min="20" random_max="30"/>
 		<attribute key="slotType" value="body"/>
 		<attribute key="weight" value="7500"/>
-		<attribute key="absorbPercentFire" value="7"/>
-		<attribute key="absorbPercentIce" value="-7"/>
+		<attribute key="absorbPercentElements" value="7"/>
 	</item>
 	<item id="8887" article="a" name="frozen plate">
 		<attribute key="armor" value="13"/>
@@ -16196,36 +16273,41 @@
 		<attribute key="absorbPercentEnergy" value="-7"/>
 	</item>
 	<item id="8888" article="a" name="master archer's armor">
-		<attribute key="armor" value="15"/>
+		<attribute key="armor" value="18"/>
 		<attribute key="slotType" value="body"/>
 		<attribute key="weight" value="6900"/>
-		<attribute key="skillDist" value="3"/>
+		<attribute key="skillDist" value="4"/>
+		<attribute key="skillSword" value="4"/>
 	</item>
 	<item id="8889" article="a" name="skullcracker armor">
 		<attribute key="weight" value="11000"/>
-		<attribute key="armor" value="14"/>
+		<attribute key="armor" random_min="17" random_max="18"/>
 		<attribute key="absorbPercentDeath" value="5"/>
-		<attribute key="absorbPercentHoly" value="-5"/>
 		<attribute key="slotType" value="body"/>
+		<attribute key="skillSword" value="2"/>
+		<attribute key="skillAxe" value="2"/>
+		<attribute key="skillClub" value="2"/>
 	</item>
 	<item id="8890" article="a" name="robe of the underworld">
 		<attribute key="armor" value="12"/>
+		<attribute key="armor" random_min="12" random_max="13"/>
+		<attribute key="absorbPercentDeath" value="5"/>
+		<attribute key="absorbPercentIce" value="5"/>
 		<attribute key="slotType" value="body"/>
-		<attribute key="weight" value="3100"/>
-		<attribute key="absorbPercentDeath" value="12"/>
-		<attribute key="absorbPercentHoly" value="-12"/>
+		<attribute key="magiclevelpoints" value="2"/>
 	</item>
 	<item id="8891" article="a" name="paladin armor">
-		<attribute key="armor" value="12"/>
-		<attribute key="slotType" value="body"/>
 		<attribute key="weight" value="6500"/>
+		<attribute key="armor" random_min="16" random_max="17"/>
+		<attribute key="absorbPercentHoly" value="5"/>
+		<attribute key="slotType" value="body"/>
 		<attribute key="skillDist" value="2"/>
 	</item>
 	<item id="8892" article="an" name="ethno coat">
 		<attribute key="armor" value="7"/>
 		<attribute key="slotType" value="body"/>
 		<attribute key="weight" value="2550"/>
-		<attribute key="magicpoints" value="1"/>
+		<attribute key="magiclevelpoints" value="1"/>
 	</item>
 	<item id="8893" name=""/>
 	<item id="8894-8897" article="a" name="mysterious machine"/>
@@ -16233,35 +16315,35 @@
 	<item id="8900" article="a" name="spellbook of enlightenment">
 		<attribute key="description" value="It shows your spells and can also shield against attacks when worn."/>
 		<attribute key="weight" value="1950"/>
-		<attribute key="magicpoints" value="1"/>
+		<attribute key="magiclevelpoints" value="2"/>
 		<attribute key="defense" value="18"/>
 		<attribute key="weaponType" value="shield"/>
 	</item>
 	<item id="8901" article="a" name="spellbook of warding">
 		<attribute key="description" value="It shows your spells and can also shield against attacks when worn."/>
 		<attribute key="weight" value="2100"/>
-		<attribute key="magicpoints" value="1"/>
+		<attribute key="magiclevelpoints" value="4"/>
 		<attribute key="defense" value="22"/>
 		<attribute key="weaponType" value="shield"/>
 	</item>
 	<item id="8902" article="a" name="spellbook of mind control">
 		<attribute key="description" value="It shows your spells and can also shield against attacks when worn."/>
 		<attribute key="weight" value="2450"/>
-		<attribute key="magicpoints" value="2"/>
+		<attribute key="magiclevelpoints" value="1"/>
 		<attribute key="defense" value="16"/>
 		<attribute key="weaponType" value="shield"/>
 	</item>
 	<item id="8903" article="a" name="spellbook of lost souls">
 		<attribute key="description" value="It shows your spells and can also shield against attacks when worn."/>
 		<attribute key="weight" value="2560"/>
-		<attribute key="magicpoints" value="2"/>
+		<attribute key="magiclevelpoints" value="4"/>
 		<attribute key="defense" value="20"/>
 		<attribute key="weaponType" value="shield"/>
 	</item>
 	<item id="8904" article="a" name="spellscroll of prophecies">
 		<attribute key="description" value="It shows your spells and can also shield against attacks when worn."/>
 		<attribute key="weight" value="2650"/>
-		<attribute key="magicpoints" value="3"/>
+		<attribute key="magiclevelpoints" value="3"/>
 		<attribute key="defense" value="12"/>
 		<attribute key="weaponType" value="shield"/>
 	</item>
@@ -16270,51 +16352,53 @@
 		<attribute key="weight" value="6900"/>
 		<attribute key="defense" value="30"/>
 		<attribute key="weaponType" value="shield"/>
+		<attribute key="absorbPercentElements" value="8"/>
 	</item>
 	<item id="8906" article="a" name="fiery rainbow shield">
 		<attribute key="description" value="It has been temporarily imbued with fire magic and boosts your shielding skill."/>
 		<attribute key="weight" value="6900"/>
 		<attribute key="defense" value="36"/>
 		<attribute key="weaponType" value="shield"/>
-		<attribute key="duration" value="1200"/>
-		<attribute key="decayTo" value="8905"/>
-		<attribute key="skillShield" value="3"/>
+		<attribute key="skillShield" value="8"/>
+		<attribute key="absorbPercentFire" value="25"/>
+		<attribute key="absorbPercentIce" value="-75"/>
 	</item>
 	<item id="8907" article="an" name="icy rainbow shield">
 		<attribute key="description" value="It has been temporarily imbued with ice magic and has a greatly increased shielding value."/>
 		<attribute key="weight" value="6900"/>
 		<attribute key="defense" value="39"/>
 		<attribute key="weaponType" value="shield"/>
-		<attribute key="duration" value="1200"/>
-		<attribute key="decayTo" value="8905"/>
+		<attribute key="absorbPercentIce" value="25"/>
+		<attribute key="absorbPercentFire" value="-75"/>
 	</item>
 	<item id="8908" article="a" name="sparking rainbow shield">
 		<attribute key="description" value="It has been temporarily imbued with energy magic and increases your speed."/>
 		<attribute key="weight" value="6900"/>
 		<attribute key="defense" value="36"/>
 		<attribute key="weaponType" value="shield"/>
-		<attribute key="duration" value="1200"/>
-		<attribute key="decayTo" value="8905"/>
 		<attribute key="speed" value="20"/>
+		<attribute key="absorbPercentEnergy" value="25"/>
+		<attribute key="absorbPercentEarth" value="-75"/>
 	</item>
 	<item id="8909" article="a" name="terran rainbow shield">
 		<attribute key="description" value="It has been temporarily imbued with earth magic and boosts your regeneration."/>
 		<attribute key="weight" value="6900"/>
 		<attribute key="defense" value="37"/>
 		<attribute key="weaponType" value="shield"/>
-		<attribute key="duration" value="1200"/>
-		<attribute key="decayTo" value="8905"/>
 		<attribute key="healthGain" value="1"/>
 		<attribute key="healthTicks" value="3000"/>
 		<attribute key="manaGain" value="4"/>
 		<attribute key="manaTicks" value="3000"/>
+		<attribute key="absorbPercentEarth" value="25"/>
+		<attribute key="absorbPercentEnergy" value="-75"/>
 	</item>
 	<item id="8910" article="an" name="underworld rod">
 		<attribute key="description" value="No one knows which hell this unholy rod comes from."/>
 		<attribute key="weight" value="2900"/>
 		<attribute key="weaponType" value="wand"/>
 		<attribute key="shootType" value="death"/>
-		<attribute key="range" value="3"/>
+		<attribute key="range" value="4"/>
+		<attribute key="dualWield" value="1"/>
 	</item>
 	<item id="8911" article="a" name="northwind rod">
 		<attribute key="description" value="It was made by one of the shamans in Svargrond and symbolises an icy mammoth."/>
@@ -16334,19 +16418,19 @@
 	<item id="8918" article="a" name="spellbook of dark mysteries">
 		<attribute key="description" value="It shows your spells and can also shield against attacks when worn."/>
 		<attribute key="weight" value="2850"/>
-		<attribute key="magicpoints" value="3"/>
+		<attribute key="magiclevelpoints" value="5"/>
 		<attribute key="defense" value="16"/>
 		<attribute key="weaponType" value="shield"/>
 	</item>
 	<item id="8919" article="a" name="spell rune">
-		<attribute key="description" value="It is Yandur's healing rune. You can't remove it from his house, but you may use it."/>
+		<attribute key="description" value="It is Yandur's restore rune. You can't remove it from his house, but you may use it."/>
 	</item>
 	<item id="8920" article="a" name="wand of starstorm">
 		<attribute key="description" value="It is sparkling with universal energy."/>
 		<attribute key="weight" value="2550"/>
 		<attribute key="weaponType" value="wand"/>
 		<attribute key="shootType" value="energy"/>
-		<attribute key="range" value="3"/>
+		<attribute key="range" value="4"/>
 	</item>
 	<item id="8921" article="a" name="wand of draconia">
 		<attribute key="description" value="This wand holds the spirit and soul of a dragon lord."/>
@@ -16360,7 +16444,8 @@
 		<attribute key="weight" value="2850"/>
 		<attribute key="weaponType" value="wand"/>
 		<attribute key="shootType" value="death"/>
-		<attribute key="range" value="3"/>
+		<attribute key="range" value="4"/>
+		<attribute key="dualWield" value="1"/>
 	</item>
 	<item id="8923" name="ranger legs">
 		<attribute key="weight" value="3500"/>
@@ -16370,56 +16455,55 @@
 	<item id="8924" article="a" name="hellforged axe">
 		<attribute key="weight" value="8800"/>
 		<attribute key="defense" value="28"/>
-		<attribute key="attack" value="51"/>
+		<attribute key="attack" random_min="53" random_max="55"/>
 		<attribute key="weaponType" value="axe"/>
 		<attribute key="extradef" value="2"/>
 	</item>
 	<item id="8925" article="a" name="solar axe">
 		<attribute key="weight" value="11000"/>
 		<attribute key="defense" value="29"/>
-		<attribute key="attack" value="52"/>
+		<attribute key="attack" random_min="70" random_max="74"/>
 		<attribute key="weaponType" value="axe"/>
 		<attribute key="extradef" value="3"/>
 	</item>
 	<item id="8926" article="a" name="demonwing axe">
 		<attribute key="weight" value="12000"/>
 		<attribute key="defense" value="20"/>
-		<attribute key="attack" value="53"/>
+		<attribute key="attack" random_min="77" random_max="82"/>
 		<attribute key="weaponType" value="axe"/>
 		<attribute key="slotType" value="two-handed"/>
 	</item>
 	<item id="8927" article="a" name="dark trinity mace">
 		<attribute key="weight" value="9900"/>
 		<attribute key="defense" value="32"/>
-		<attribute key="attack" value="51"/>
+		<attribute key="attack" random_min="53" random_max="55"/>
 		<attribute key="weaponType" value="club"/>
 		<attribute key="extradef" value="-1"/>
 	</item>
 	<item id="8928" article="an" name="obsidian truncheon">
 		<attribute key="weight" value="6500"/>
-		<attribute key="defense" value="30"/>
-		<attribute key="attack" value="50"/>
+		<attribute key="defense" value="40"/>
+		<attribute key="attack" random_min="75" random_max="80"/>
 		<attribute key="weaponType" value="club"/>
 		<attribute key="extradef" value="2"/>
 	</item>
 	<item id="8929" article="the" name="stomper">
 		<attribute key="weight" value="11500"/>
 		<attribute key="defense" value="20"/>
-		<attribute key="attack" value="51"/>
-		<attribute key="weaponType" value="club"/>
-		<attribute key="slotType" value="two-handed"/>
+		<attribute key="attack" random_min="54" random_max="56"/>
+		<attribute key="weaponType" value="fist"/>
 	</item>
 	<item id="8930" article="an" name="emerald sword">
 		<attribute key="weight" value="4100"/>
 		<attribute key="defense" value="33"/>
-		<attribute key="attack" value="49"/>
+		<attribute key="attack" random_min="53" random_max="55"/>
 		<attribute key="weaponType" value="sword"/>
 		<attribute key="extradef" value="3"/>
 	</item>
-	<item id="8931" article="the" name="epiphany">
-		<attribute key="weight" value="4500"/>
-		<attribute key="defense" value="35"/>
-		<attribute key="attack" value="50"/>
+	<item id="8931" article="a" name="flame blade">
+		<attribute key="weight" value="6700"/>
+		<attribute key="defense" value="30"/>
+		<attribute key="attack" random_min="69" random_max="72"/>
 		<attribute key="weaponType" value="sword"/>
 		<attribute key="extradef" value="3"/>
 	</item>
@@ -16512,7 +16596,7 @@
 		<attribute key="corpseType" value="blood"/>
 	</item>
 	<item id="8945" article="a" name="textbook">
-		<attribute key="description" value="It contains the script to a piece performed in the theatre of Carlin."/>
+		<attribute key="description" value="It contains the script to a piece performed in the theatre of Fynn."/>
 		<attribute key="weight" value="1300"/>
 	</item>
 	<item id="8946" article="the" name="remains of a wisp">
@@ -16652,6 +16736,12 @@
 		<attribute key="containerSize" value="14"/>
 		<attribute key="decayTo" value="0"/>
 		<attribute key="duration" value="500"/>
+	</item>
+	<item id="8968" article="the" name="remains of an elemental">
+		<attribute key="containerSize" value="5"/>
+		<attribute key="decayTo" value="0"/>
+		<attribute key="duration" value="300"/>
+		<attribute key="corpseType" value="undead"/>
 	</item>
 	<item id="8969" article="the" name="remains of an elemental">
 		<attribute key="weight" value="10000"/>
@@ -16798,6 +16888,7 @@
 	</item>
 	<item id="9081" article="a" name="parcel">
 		<attribute key="weight" value="1800"/>
+		<attribute key="type" value="container"/>
 		<attribute key="containerSize" value="10"/>
 	</item>
 	<item id="9082" article="a" name="dead troll">
@@ -17272,7 +17363,7 @@
 	<item id="9674" article="a" name="bottle of bug milk">
 		<attribute key="weight" value="280"/>
 	</item>
-	<item id="9675" article="a" name="sample of venorean spice">
+	<item id="9675" article="a" name="sample of Vinoran spice">
 		<attribute key="weight" value="500"/>
 	</item>
 	<item id="9676" article="a" name="sample of sand wasp honey">
@@ -17414,22 +17505,21 @@
 	</item>
 	<item id="9776" article="a" name="yalahari armor">
 		<attribute key="weight" value="7000"/>
-		<attribute key="armor" value="16"/>
+		<attribute key="armor" random_min="19" random_max="23"/>
 		<attribute key="slotType" value="body"/>
-		<attribute key="absorbPercentDeath" value="3"/>
+		<attribute key="absorbPercentElements" value="3"/>
 	</item>
 	<item id="9777" article="a" name="yalahari leg piece">
 		<attribute key="weight" value="6500"/>
-		<attribute key="armor" value="8"/>
+		<attribute key="armor" random_min="12" random_max="15"/>
 		<attribute key="slotType" value="legs"/>
-		<attribute key="absorbPercentDeath" value="5"/>
-		<attribute key="skillDist" value="2"/>
+		<attribute key="absorbPercentElements" value="3"/>
 	</item>
 	<item id="9778" article="a" name="yalahari mask">
 		<attribute key="weight" value="3500"/>
-		<attribute key="armor" value="5"/>
+		<attribute key="armor" random_min="13" random_max="16"/>
 		<attribute key="slotType" value="head"/>
-		<attribute key="magicpoints" value="2"/>
+		<attribute key="absorbPercentElements" value="3"/>
 	</item>
 	<item id="9779" article="a" name="crystal column"/>
 	<item id="9784-9791" article="a" name="crystal column"/>
@@ -17461,15 +17551,25 @@
 		<attribute key="duration" value="600"/>
 		<attribute key="corpseType" value="venom"/>
 	</item>
-	<item id="9808-9810" article="a" name="rusty armor">
+	<item id="9808" article="a" name="rusty armor">
 		<attribute key="description" value="If you can remove the rust layer and dirt from the armor you will be able to see what it is."/>
-		<attribute key="weight" value="12000"/>
+		<attribute key="weight" value="10000"/>
+		<attribute key="armor" value="1"/>
+		<attribute key="slotType" value="body"/>
+	</item>
+	<item id="9810" article="a" name="rusty armor">
+		<attribute key="description" value="If you can remove the rust layer and dirt from the armor you will be able to see what it is."/>
+		<attribute key="weight" value="10000"/>
+		<attribute key="armor" value="1"/>
+		<attribute key="slotType" value="body"/>
 	</item>
 	<item id="9811-9813" article="a" name="rusty legs">
 		<attribute key="description" value="If you can remove the rust layer and dirt from the legs you will be able to see what it is."/>
-		<attribute key="weight" value="7000"/>
+		<attribute key="weight" value="2800"/>
+		<attribute key="armor" value="1"/>
+		<attribute key="slotType" value="legs"/>
 	</item>
-	<item id="9814-9816" article="a" name="rusty shield">
+	<item id="9814-9815" article="a" name="rusty shield">
 		<attribute key="description" value="If you can remove the rust layer and dirt from the shields you will be able to see what it is."/>
 		<attribute key="weight" value="2800"/>
 		<attribute key="defense" value="1"/>
@@ -17778,7 +17878,7 @@
 		<attribute key="weight" value="950"/>
 		<attribute key="armor" value="2"/>
 		<attribute key="slotType" value="feet"/>
-		<attribute key="fieldAbsorbPercentFire" value="90"/>
+		<attribute key="absorbPercentFire" value="10"/>
 		<attribute key="decayTo" value="10022"/>
 		<attribute key="transformDeEquipTo" value="9933"/>
 		<attribute key="duration" value="3600"/>
@@ -17865,11 +17965,11 @@
 	<item id="9956" article="a" name="magical torch">
 		<attribute key="description" value="Light all important locations given to you by Lucius before one of the basins stops burning."/>
 		<attribute key="weight" value="1800"/>
+		<attribute key="defense" value="25"/>
 		<attribute key="speed" value="50"/>
 		<attribute key="decayTo" value="0"/>
 		<attribute key="duration" value="86400"/>
 		<attribute key="showduration" value="1"/>
-		<attribute key="slotType" value="ammo"/>
 	</item>
 	<item id="9957" article="a" name="yalahar coal basin"/>
 	<item id="9958" article="a" name="royal tapestry">
@@ -18126,13 +18226,13 @@
 		<attribute key="weight" value="600"/>
 		<attribute key="armor" value="3"/>
 		<attribute key="slotType" value="head"/>
-		<attribute key="magicpoints" value="1"/>
+		<attribute key="magiclevelpoints" value="1"/>
 	</item>
 	<item id="10017" article="a" name="football"/>
 	<item id="10018" article="a" name="voodoo doll">
 		<attribute key="weight" value="650"/>
 	</item>
-	<item id="10020" article="a" name="dragon claw">
+	<item id="10020" article="a" name="red dragon claw">
 		<attribute key="description" value="It is the claw of Demodras."/>
 		<attribute key="weight" value="1250"/>
 	</item>
@@ -18397,7 +18497,7 @@
 		<attribute key="writeable" value="1"/>
 		<attribute key="maxTextLen" value="128"/>
 	</item>
-	<item id="10133" article="a" name="gold medal">
+	<item id="10133" article="a" name="medald addon">
 		<attribute key="weight" value="1240"/>
 	</item>
 	<item id="10134" article="a" name="silver medal">
@@ -18504,7 +18604,7 @@
 	<item id="10197" article="a" name="limestone railing"/>
 	<item id="10198-10203" article="a" name="limestone pillar"/>
 	<item id="10204-10207" article="a" name="limestone wall"/>
-	<item id="10209" article="a" name="Carlin banner"/>
+	<item id="10209" article="a" name="Fynn banner"/>
 	<item id="10210-10212" article="a" name="limestone wall"/>
 	<item id="10213-10217" article="a" name="limestone pedestal"/>
 	<item id="10218" article="an" name="bonfire amulet">
@@ -18512,7 +18612,7 @@
 		<attribute key="weight" value="700"/>
 		<attribute key="slotType" value="necklace"/>
 		<attribute key="charges" value="5"/>
-		<attribute key="absorbPercentPhysical" value="60"/>
+		<attribute key="absorbPercentPhysical" value="7"/>
 		<attribute key="absorbPercentFire" value="40"/>
 		<attribute key="showcharges" value="1"/>
 	</item>
@@ -18522,7 +18622,7 @@
 		<attribute key="slotType" value="necklace"/>
 		<attribute key="charges" value="5"/>
 		<attribute key="showcharges" value="1"/>
-		<attribute key="absorbPercentPhysical" value="60"/>
+		<attribute key="absorbPercentPhysical" value="7"/>
 		<attribute key="absorbPercentEarth" value="40"/>
 	</item>
 	<item id="10220" article="a" name="leviathan's amulet">
@@ -18531,8 +18631,8 @@
 		<attribute key="slotType" value="necklace"/>
 		<attribute key="charges" value="5"/>
 		<attribute key="showcharges" value="1"/>
-		<attribute key="absorbPercentPhysical" value="60"/>
-		<attribute key="absorbPercentIce" value="40"/>
+		<attribute key="absorbPercentPhysical" value="7"/>
+		<attribute key="absorbPercentIce" value="10"/>
 	</item>
 	<item id="10221" article="a" name="shockwave amulet">
 		<attribute key="description" value="It tickles your neck in a rather pleasant way and absorbs loads of damage."/>
@@ -18540,8 +18640,8 @@
 		<attribute key="slotType" value="necklace"/>
 		<attribute key="charges" value="5"/>
 		<attribute key="showcharges" value="1"/>
-		<attribute key="absorbPercentPhysical" value="60"/>
-		<attribute key="absorbPercentEnergy" value="40"/>
+		<attribute key="absorbPercentPhysical" value="7"/>
+		<attribute key="absorbPercentEnergy" value="10"/>
 	</item>
 	<item id="10223" article="a" name="mechanical fishing rod">
 		<attribute key="weight" value="920"/>
@@ -18763,9 +18863,11 @@
 		<attribute key="attack" value="10"/>
 		<attribute key="weaponType" value="sword"/>
 	</item>
-	<item id="10305" name="holy icon">
-		<attribute key="description" value="It is said that you can break a mighty evil spell with it."/>
-		<attribute key="weight" value="500"/>
+	<item id="10305" name="ancient's ankh">
+		<attribute key="weight" value="3500"/>
+		<attribute key="magiclevelpoints" value="6"/>
+		<attribute key="ammoType" value="arrow"/>
+		<attribute key="showattributes" value="1"/>
 	</item>
 	<item id="10306" name="fan doll of king Tibianus">
 		<attribute key="description" value="The small label reads: For my greatest admirer."/>
@@ -18783,25 +18885,29 @@
 		<attribute key="description" value="It's like a glove and you can't wear a ring on it. You are not sure if you should really put it on."/>
 		<attribute key="weight" value="500"/>
 		<attribute key="slotType" value="ring"/>
+		<attribute key="decayTo" value="10311"/>
 		<attribute key="transformDeEquipTo" value="10310"/>
+		<attribute key="duration" value="600"/>
+		<attribute key="showduration" value="1"/>
+		<attribute key="speed" value="120"/>
+		<attribute key="stopduration" value="1"/>
+		<attribute key="showattributes" value="1"/>
 	</item>
 	<item id="10310" article="a" name="claw of 'The Noxious Spawn'">
 		<attribute key="description" value="It's like a glove and you can't wear a ring on it. You are not sure if you should really put it on."/>
 		<attribute key="weight" value="500"/>
 		<attribute key="slotType" value="ring"/>
 		<attribute key="transformEquipTo" value="10309"/>
+		<attribute key="stopduration" value="1"/>
+		<attribute key="showduration" value="1"/>
 	</item>
 	<item id="10311" article="a" name="claw of 'The Noxious Spawn'">
 		<attribute key="description" value="It's like a glove and you can't wear a ring on it. You are not sure if you should really put it on."/>
 		<attribute key="weight" value="500"/>
-		<attribute key="slotType" value="ring"/>
-		<attribute key="transformDeEquipTo" value="10312"/>
 	</item>
 	<item id="10312" article="a" name="claw of 'The Noxious Spawn'">
 		<attribute key="description" value="It's like a glove and you can't wear a ring on it. You are not sure if you should really put it on."/>
 		<attribute key="weight" value="500"/>
-		<attribute key="slotType" value="ring"/>
-		<attribute key="transformEquipTo" value="10309"/>
 	</item>
 	<item id="10313" article="an" name="incredible mumpiz slayer">
 		<attribute key="description" value="This magnificent weapon was forged to slay arch mumpiz demons with a single blow."/>
@@ -18910,7 +19016,7 @@
 	<item id="10398-10404" name="pavement"/>
 	<item id="10405-10416" article="a" name="wooden floor"/>
 	<item id="10417-10428" name="pavement"/>
-	<item id="10429-10430" article="a" name="Carlin shield"/>
+	<item id="10429-10430" article="a" name="Fynn shield"/>
 	<item id="10431-10432" article="a" name="serpent shield"/>
 	<item id="10433-10434" article="a" name="stone ledge"/>
 	<item id="10435" article="a" name="stone wall"/>
@@ -19186,7 +19292,16 @@
 	</item>
 	<item id="10544-10545" article="a" name="telescope"/>
 	<item id="10546" article="a" name="magic wall"/>
-	<item id="10547" article="an" name="energy field"/>
+	<item id="10547" article="an" name="energy field">
+		<attribute key="type" value="magicfield"/>
+		<attribute key="decayTo" value="0"/>
+		<attribute key="duration" value="120"/>
+		<attribute key="field" value="energy">
+			<attribute key="damage" value="100"/>
+			<attribute key="ticks" value="10000"/>
+			<attribute key="damage" value="25"/>
+		</attribute>
+	</item>
 	<item id="10548" article="a" name="scarab pincers" plural="scarab pincers">
 		<attribute key="weight" value="230"/>
 	</item>
@@ -19338,7 +19453,7 @@
 		<attribute key="weight" value="100"/>
 	</item>
 	<item id="10613" name="plans for a strange device">
-		<attribute key="description" value="You should bring them to Spectulus in Edron."/>
+		<attribute key="description" value="You should bring them to Spectulus in Karmia."/>
 		<attribute key="weight" value="250"/>
 	</item>
 	<item id="10614" article="a" name="rare crystal">
@@ -19380,8 +19495,8 @@
 	<item id="10741-10743" article="a" name="trollhair plants"/>
 	<item id="10744-10751" article="a" name="plant's hedge"/>
 	<item id="10752-10759" article="a" name="diabolic's hedge"/>
-	<item id="10760" article="a" name="flask of poison">
-		<attribute key="description" value="This poison is meant to weaken the enemy and should be used on the rice fields near Chaochai."/>
+	<item id="10760" article="a" name="flask with beaver bait">
+		<attribute key="description" value="It smells like a mixture of wood and fish. Phew"/>
 		<attribute key="weight" value="180"/>
 	</item>
 	<item id="10761-10762" article="a" name="wild wine"/>
@@ -19549,7 +19664,8 @@
 	</item>
 	<item id="10986" article="a" name="fire field">
 		<attribute key="type" value="magicfield"/>
-		<attribute key="replaceable" value="0"/>
+		<attribute key="decayTo" value="10987"/>
+		<attribute key="duration" value="120"/>
 		<attribute key="field" value="fire">
 			<attribute key="damage" value="20"/>
 			<attribute key="ticks" value="10000"/>
@@ -19559,7 +19675,8 @@
 	</item>
 	<item id="10987" article="a" name="fire field">
 		<attribute key="type" value="magicfield"/>
-		<attribute key="replaceable" value="0"/>
+		<attribute key="decayTo" value="10988"/>
+		<attribute key="duration" value="120"/>
 		<attribute key="field" value="fire">
 			<attribute key="damage" value="10"/>
 			<attribute key="ticks" value="10000"/>
@@ -19569,7 +19686,8 @@
 	</item>
 	<item id="10988" article="a" name="fire field">
 		<attribute key="type" value="magicfield"/>
-		<attribute key="replaceable" value="0"/>
+		<attribute key="decayTo" value="0"/>
+		<attribute key="duration" value="120"/>
 		<attribute key="field" value="fire">
 			<attribute key="damage" value="5"/>
 			<attribute key="ticks" value="10000"/>
@@ -19646,8 +19764,8 @@
 		<attribute key="decayTo" value="0"/>
 		<attribute key="duration" value="45"/>
 	</item>
-	<item id="11100" article="a" name="flask with beaver bait">
-		<attribute key="description" value="It smells like a mixture of wood and fish. Phew"/>
+	<item id="11100" article="a" name="flask of poison">
+		<attribute key="description" value="This poison is meant to weaken the enemy and should be used on the rice fields near Chaochai."/>
 		<attribute key="weight" value="180"/>
 	</item>
 	<item id="11101" article="a" name="tactical map">
@@ -19706,14 +19824,17 @@
 		<attribute key="weight" value="500"/>
 	</item>
 	<item id="11117" name="crystal boots">
-		<attribute key="armor" value="3"/>
-		<attribute key="absorbPercentIce" value="3"/>
-		<attribute key="absorbPercentEnergy" value="-3"/>
+		<attribute key="weight" value="800"/>
+		<attribute key="speed" value="80"/>
+		<attribute key="healthGain" value="50"/>
+		<attribute key="manaGain" value="50"/>
+		<attribute key="healthTicks" value="1000"/>
+		<attribute key="manaTicks" value="1000"/>
 		<attribute key="slotType" value="feet"/>
-		<attribute key="weight" value="1850"/>
+		<attribute key="showattributes" value="1"/>
 	</item>
 	<item id="11118" name="dragon scale boots">
-		<attribute key="armor" value="3"/>
+		<attribute key="armor" random_min="3" random_max="7"/>
 		<attribute key="absorbPercentFire" value="3"/>
 		<attribute key="absorbPercentIce" value="-3"/>
 		<attribute key="slotType" value="feet"/>
@@ -20047,13 +20168,15 @@
 	<item id="11257" article="a" name="heavy ball">
 		<attribute key="weight" value="670"/>
 	</item>
-	<item id="11258" article="a" name="phoenix charm">
-		<attribute key="description" value="The Spark of the Phoenix is contained in it."/>
-		<attribute key="weight" value="1000"/>
-	</item>
-	<item id="11259" article="a" name="unity charm">
+	<!-- <item id="11259" article="a" name="unity charm">
 		<attribute key="description" value="The Embrace of Tibia is contained in it."/>
 		<attribute key="weight" value="1000"/>
+	</item> -->
+	<item id="11259" article="a" name="talisman of dark mysteries">
+		<attribute key="description" value="Is the Mystic Talisman."/>
+		<attribute key="weight" value="2850"/>
+		<attribute key="magiclevelpoints" value="10"/>
+		<attribute key="ammoType" value="arrow"/>
 	</item>
 	<item id="11260" article="a" name="spiritual charm">
 		<attribute key="description" value="The Spiritual Shielding is contained in it."/>
@@ -20243,14 +20366,13 @@
 	<item id="11306" article="a" name="sais">
 		<attribute key="weight" value="5000"/>
 		<attribute key="defense" value="27"/>
-		<attribute key="attack" value="45"/>
-		<attribute key="weaponType" value="sword"/>
-		<attribute key="slotType" value="two-handed"/>
+		<attribute key="attack" random_min="65" random_max="68"/>
+		<attribute key="weaponType" value="fist"/>
 	</item>
 	<item id="11307" article="a" name="zaoan sword">
 		<attribute key="weight" value="4900"/>
-		<attribute key="defense" value="18"/>
-		<attribute key="attack" value="43"/>
+		<attribute key="defense" value="25"/>
+		<attribute key="attack" value="51"/>
 		<attribute key="weaponType" value="sword"/>
 		<attribute key="extradef" value="2"/>
 	</item>
@@ -20264,9 +20386,8 @@
 	<item id="11309" article="a" name="twin hooks">
 		<attribute key="weight" value="5000"/>
 		<attribute key="defense" value="22"/>
-		<attribute key="attack" value="32"/>
-		<attribute key="weaponType" value="axe"/>
-		<attribute key="slotType" value="two-handed"/>
+		<attribute key="attack" random_min="57" random_max="60"/>
+		<attribute key="weaponType" value="fist"/>
 	</item>
 	<item id="11310" article="a" name="dead wailing widow">
 		<attribute key="containerSize" value="10"/>
@@ -20509,7 +20630,7 @@
 	<item id="11368" article="a" name="jade hat">
 		<attribute key="weight" value="900"/>
 		<attribute key="armor" value="4"/>
-		<attribute key="magicpoints" value="1"/>
+		<attribute key="magiclevelpoints" value="3"/>
 		<attribute key="slotType" value="head"/>
 	</item>
 	<item id="11369" article="a" name="terramite shell">
@@ -21011,8 +21132,17 @@
 		<attribute key="weight" value="1000"/>
 	</item>
 	<item id="12305-12315" article="a" name="corrupted plantation"/>
-	<item id="12318" article="a" name="replica of the sceptre">
+	<!-- <item id="12318" article="a" name="replica of the sceptre">
 		<attribute key="weight" value="1400"/>
+	</item> -->
+	<item id="12318" article="a" name="ancients staff">
+		<attribute key="description" value="It is a magic sceptre. Your magic level by 11"/>
+		<attribute key="weight" value="2800"/>
+		<attribute key="weaponType" value="wand"/>
+		<attribute key="shootType" value="smallholy"/>
+		<attribute key="magiclevelpoints" value="11"/>
+		<attribute key="range" value="3"/>
+		<attribute key="showattributes" value="1"/>
 	</item>
 	<item id="12320" article="a" name="flask of plant poison">
 		<attribute key="description" value="This plant poison is meant to destroy the growths near the Keeper's lair deep beneath the gardens."/>
@@ -21041,7 +21171,17 @@
 		<attribute key="weight" value="180"/>
 	</item>
 	<item id="12329-12333" article="a" name="corrupted plantation"/>
-	<item id="12334-12335" article="a" name="poison field"/>
+	<item id="12334" article="a" name="poison field">
+		<attribute key="type" value="magicfield"/>
+		<attribute key="decayTo" value="0"/>
+		<attribute key="duration" value="120"/>
+		<attribute key="field" value="poison">
+			<attribute key="ticks" value="5000"/>
+			<attribute key="start" value="5"/>
+			<attribute key="damage" value="5"/>
+		</attribute>
+	</item>
+	<item id="12335" article="a" name="poison field"/>
 	<item id="12350-12360" article="a" name="sleeping dragon"/>
 	<item id="12382" article="a" name="scribbled sheet of paper">
 		<attribute key="description" value="Only a single word is scribbled on the sheet: SOLOSARASATIQUARIUM."/>
@@ -21286,8 +21426,16 @@
 	<item id="12504" article="a" name="strong sinew">
 		<attribute key="weight" value="35"/>
 	</item>
-	<item id="12505" article="an" name="old iron">
+	<!-- <item id="12505" article="an" name="old iron">
 		<attribute key="weight" value="222"/>
+	</item> -->
+	<item id="12505" article="an" name="metal iron">
+		<attribute key="description" value="Life."/>
+		<attribute key="weight" value="200"/>
+		<attribute key="ammoType" value="arrow"/>
+		<attribute key="healthGain" value="50"/>
+		<attribute key="healthTicks" value="3000"/>
+		<attribute key="showattributes" value="1"/>
 	</item>
 	<item id="12506" article="a" name="flexible dragon scale">
 		<attribute key="weight" value="80"/>
@@ -21295,9 +21443,16 @@
 	<item id="12507" article="a" name="mystic root">
 		<attribute key="weight" value="60"/>
 	</item>
-	<item id="12508" article="a" name="magic crystal">
-		<attribute key="description" value="It is able to store memories and thoughts."/>
+	<!-- <item id="12508" article="a" name="magic crystal">
 		<attribute key="weight" value="140"/>
+	</item> -->
+	<item id="12508" article="a" name="magic crystal">
+		<attribute key="description" value="Hope."/>
+		<attribute key="weight" value="200"/>
+		<attribute key="ammoType" value="arrow"/>
+		<attribute key="manaGain" value="50"/>
+		<attribute key="manaTicks" value="3000"/>
+		<attribute key="showattributes" value="1"/>
 	</item>
 	<item id="12509" article="a" name="magic portal">
 		<attribute key="description" value="You can see the other side through it."/>
@@ -21362,11 +21517,11 @@
 		<attribute key="weight" value="300"/>
 	</item>
 	<item id="12559" article="a" name="silver rune emblem">
-		<attribute key="description" value="It's an adorned ultimate healing rune."/>
+		<attribute key="description" value="It's an adorned ultimate restore rune."/>
 		<attribute key="weight" value="120"/>
 	</item>
 	<item id="12560" article="a" name="golden rune emblem">
-		<attribute key="description" value="It's an adorned ultimate healing rune."/>
+		<attribute key="description" value="It's an adorned ultimate restore rune."/>
 		<attribute key="weight" value="120"/>
 	</item>
 	<item id="12561" article="a" name="silver rune emblem">
@@ -21553,11 +21708,19 @@
 		<attribute key="description" value="It's an adorned fire field rune."/>
 		<attribute key="weight" value="120"/>
 	</item>
-	<item id="12607" article="an" name="elite draken mail">
+	<!-- <item id="12607" article="an" name="elite draken mail">
 		<attribute key="weight" value="12000"/>
 		<attribute key="armor" value="15"/>
 		<attribute key="slotType" value="body"/>
 		<attribute key="speed" value="20"/>
+	</item> -->
+	<item id="12607" article="a" name="hero's armor">
+		<attribute key="description" value="The armor holy divine protection."/>
+		<attribute key="weight" value="6000"/>
+		<attribute key="armor" random_min="1" random_max="40"/>
+		<attribute key="absorbPercentElements" value="8"/>
+		<attribute key="slotType" value="body"/>
+		<attribute key="showattributes" value="1"/>
 	</item>
 	<item id="12608" article="a" name="broken key ring">
 		<attribute key="weight" value="50"/>
@@ -21646,7 +21809,7 @@
 	<item id="12630" article="a" name="cobra crown">
 		<attribute key="weight" value="850"/>
 		<attribute key="armor" value="3"/>
-		<attribute key="magicpoints" value="2"/>
+		<attribute key="magiclevelpoints" value="2"/>
 		<attribute key="absorbPercentEarth" value="5"/>
 		<attribute key="absorbPercentFire" value="-5"/>
 		<attribute key="slotType" value="head"/>
@@ -21698,24 +21861,34 @@
 	<item id="12641" article="a" name="cheese cookie">
 		<attribute key="weight" value="10"/>
 	</item>
-	<item id="12642" article="a" name="royal draken mail">
-		<attribute key="weight" value="13000"/>
-		<attribute key="armor" value="16"/>
+	<item id="12642" article="a" name="war mail">
+		<attribute key="weight" value="30000"/>
+		<attribute key="armor" random_min="20" random_max="25"/>
 		<attribute key="slotType" value="body"/>
-		<attribute key="skillShield" value="3"/>
-		<attribute key="absorbPercentPhysical" value="5"/>
+		<attribute key="skillShield" value="10"/>
+		<attribute key="skillSword" value="10"/>
+		<attribute key="skillAxe" value="10"/>
+		<attribute key="skillClub" value="10"/>
+		<attribute key="showattributes" value="1"/>
 	</item>
 	<item id="12643" article="a" name="royal scale robe">
 		<attribute key="weight" value="4500"/>
 		<attribute key="armor" value="12"/>
 		<attribute key="slotType" value="body"/>
-		<attribute key="magicpoints" value="2"/>
+		<attribute key="magiclevelpoints" value="2"/>
 		<attribute key="absorbPercentFire" value="5"/>
 	</item>
-	<item id="12644" article="a" name="shield of corruption">
+	<!-- <item id="12644" article="a" name="shield of corruption">
 		<attribute key="weight" value="4900"/>
 		<attribute key="defense" value="36"/>
 		<attribute key="skillSword" value="3"/>
+		<attribute key="weaponType" value="shield"/>
+	</item> -->
+	<item id="12644" article="a" name="hero's shield">
+		<attribute key="description" value="The shield holy divine protection."/>
+		<attribute key="weight" value="6800"/>
+		<attribute key="defense" random_min="1" random_max="40"/>
+		<attribute key="absorbPercentElements" value="8"/>
 		<attribute key="weaponType" value="shield"/>
 		<attribute key="showattributes" value="1"/>
 	</item>
@@ -21726,32 +21899,48 @@
 		<attribute key="absorbPercentDeath" value="3"/>
 		<attribute key="skillDist" value="1"/>
 	</item>
-	<item id="12646" name="draken boots">
+	<!-- <item id="12646" name="draken boots">
 		<attribute key="armor" value="3"/>
 		<attribute key="speed" value="30"/>
 		<attribute key="weight" value="2500"/>
 		<attribute key="slotType" value="feet"/>
+	</item> -->
+	<item id="12646" name="hero's boots">
+		<attribute key="weight" value="750"/>
+		<attribute key="slotType" value="feet"/>
+		<attribute key="armor" random_min="1" random_max="2"/>
+		<attribute key="speed" value="120"/>
+		<attribute key="showattributes" value="1"/>
 	</item>
 	<item id="12647" article="a" name="snake god's wristguard">
 		<attribute key="description" value="It shows your spells and can also shield against attacks when worn."/>
 		<attribute key="weight" value="2800"/>
-		<attribute key="magicpoints" value="3"/>
+		<attribute key="magiclevelpoints" value="3"/>
 		<attribute key="defense" value="14"/>
 		<attribute key="weaponType" value="shield"/>
 	</item>
-	<item id="12648" article="a" name="snake god's sceptre">
-		<attribute key="weight" value="12000"/>
-		<attribute key="defense" value="29"/>
-		<attribute key="attack" value="48"/>
-		<attribute key="weaponType" value="club"/>
-		<attribute key="extradef" value="3"/>
+	<item id="12648" article="a" name="wizards staff">
+		<attribute key="description" value="It is a magic sceptre. Your magic level by 10"/>
+		<attribute key="weight" value="2800"/>
+		<attribute key="weaponType" value="wand"/>
+		<attribute key="shootType" value="smallholy"/>
+		<attribute key="magiclevelpoints" value="10"/>
+		<attribute key="range" value="4"/>
+		<attribute key="showattributes" value="1"/>
 	</item>
-	<item id="12649" article="a" name="blade of corruption">
+	<!-- <item id="12649" article="a" name="blade of corruption">
 		<attribute key="weight" value="6400"/>
 		<attribute key="defense" value="29"/>
 		<attribute key="attack" value="48"/>
 		<attribute key="weaponType" value="sword"/>
-		<attribute key="extradef" value="2"/>
+		<attribute key="extradef" value="3"/>
+	</item> -->
+	<item id="12649" article="a" name="hero's blade">
+		<attribute key="description" value="Holy sword with the legend of Fynn inscribed."/>
+		<attribute key="weight" value="6100"/>
+		<attribute key="defense" random_min="45" random_max="60"/>
+		<attribute key="attack" random_min="1" random_max="100"/>
+		<attribute key="weaponType" value="sword"/>
 	</item>
 	<item id="12650" article="a" name="snake god trophy">
 		<attribute key="weight" value="500"/>
@@ -21805,8 +21994,7 @@
 	<item id="12664-12665" name="treasure chest">
 		<attribute key="containerSize" value="20"/>
 	</item>
-	<item id="12666" name="gamemaster doll">
-		<attribute key="description" value="It was awarded in memory of the dedicated service of Tibia's gamemaster team."/>
+	<item id="12666" article="a" name="ProVoc doll">
 		<attribute key="weight" value="1500"/>
 	</item>
 	<item id="12667-12668" name="phoenix statue">
@@ -21893,13 +22081,8 @@
 	<item id="12796-12797" article="a" name="wooden trunk">
 		<attribute key="containerSize" value="20"/>
 	</item>
-	<item id="12798" article="a" name="soup kettle"/>
-	<item id="12799" article="a" name="cabinet">
-		<attribute key="rotateTo" value="12800"/>
-		<attribute key="containerSize" value="8"/>
-	</item>
-	<item id="12800" article="a" name="cabinet">
-		<attribute key="rotateTo" value="12799"/>
+	<item id="12798" article="a" name="barbecue"/>
+	<item id="12799-12780" article="a" name="cabinet">
 		<attribute key="containerSize" value="8"/>
 	</item>
 	<item id="12801" article="a" name="barbecue"/>
@@ -22130,32 +22313,32 @@
 		<attribute key="weight" value="200"/>
 	</item>
 	<item id="13239" name="bunch of winterberries">
-		<attribute key="description" value="This berry is not edible in its raw form. Maybe Emilie of the Winterberry Society in Thais can help."/>
+		<attribute key="description" value="This berry is not edible in its raw form. Maybe Emilie of the Winterberry Society in Misidia can help."/>
 		<attribute key="weight" value="200"/>
 	</item>
 	<item id="13247" name="hunting horn">
-		<attribute key="description" value="A hermit near Carlin might be able to tell you more about it."/>
+		<attribute key="description" value="A hermit near Fynn might be able to tell you more about it."/>
 		<attribute key="weight" value="200"/>
 	</item>
 	<item id="13288-13289" article="a" name="huge cauldron"/>
 	<item id="13291" name="maxilla maximus">
-		<attribute key="description" value="A hermit near Carlin might be able to tell you more about it."/>
+		<attribute key="description" value="A hermit near Fynn might be able to tell you more about it."/>
 		<attribute key="weight" value="200"/>
 	</item>
 	<item id="13292" article="a" name="tin key">
-		<attribute key="description" value="A hermit near Carlin might be able to tell you more about it."/>
+		<attribute key="description" value="A hermit near Fynn might be able to tell you more about it."/>
 		<attribute key="weight" value="200"/>
 	</item>
 	<item id="13293" article="a" name="leather whip">
-		<attribute key="description" value="A hermit near Carlin might be able to tell you more about it."/>
+		<attribute key="description" value="A hermit near Fynn might be able to tell you more about it."/>
 		<attribute key="weight" value="200"/>
 	</item>
 	<item id="13294" article="a" name="harness">
-		<attribute key="description" value="A hermit near Carlin might be able to tell you more about it."/>
+		<attribute key="description" value="A hermit near Fynn might be able to tell you more about it."/>
 		<attribute key="weight" value="200"/>
 	</item>
 	<item id="13295" article="a" name="reins">
-		<attribute key="description" value="A hermit near Carlin might be able to tell you more about it."/>
+		<attribute key="description" value="A hermit near Fynn might be able to tell you more about it."/>
 		<attribute key="weight" value="200"/>
 	</item>
 	<item id="13296" name="draptor scales">
@@ -22165,7 +22348,7 @@
 		<attribute key="weight" value="1400"/>
 	</item>
 	<item id="13298" article="a" name="carrot on a stick">
-		<attribute key="description" value="A hermit near Carlin might be able to tell you more about it."/>
+		<attribute key="description" value="A hermit near Fynn might be able to tell you more about it."/>
 		<attribute key="weight" value="200"/>
 	</item>
 	<item id="13299" article="a" name="stampor horn">
@@ -22187,12 +22370,12 @@
 		<attribute key="weight" value="112"/>
 	</item>
 	<item id="13305" article="a" name="giant shrimp">
-		<attribute key="description" value="A hermit near Carlin might be able to tell you more about it."/>
+		<attribute key="description" value="A hermit near Fynn might be able to tell you more about it."/>
 		<attribute key="weight" value="200"/>
 	</item>
 	<item id="13306" article="a" name="inoperative tin lizzard"/>
 	<item id="13307" article="a" name="sweet smelling bait">
-		<attribute key="description" value="A hermit near Carlin might be able to tell you more about it."/>
+		<attribute key="description" value="A hermit near Fynn might be able to tell you more about it."/>
 		<attribute key="weight" value="200"/>
 	</item>
 	<item id="13308" article="a" name="dead boar">
@@ -22303,7 +22486,7 @@
 	</item>
 	<item id="13325" article="a" name="dead midnight panther">
 		<attribute key="containerSize" value="10"/>
-		<attribute key="decayTo" value="13336"/>
+		<attribute key="decayTo" value="0"/>
 		<attribute key="duration" value="600"/>
 		<attribute key="corpseType" value="blood"/>
 	</item>
