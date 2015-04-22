@@ -14,7 +14,7 @@ end
 
 setCombatCallback(combat, CALLBACK_PARAM_SKILLVALUE, "getSpellDamage")
 
-local area = createCombatArea(AREA_CIRCLE3X3)
+local area = createCombatArea(AREA_CIRCLE2X2)
 setCombatArea(combat, area)
 
 function onCastSpell(cid, var)

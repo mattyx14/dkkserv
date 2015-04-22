@@ -327,12 +327,14 @@
 	<instant name="Fire Wave" words="exevo flam hur" lvl="18" mana="25" direction="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="attack/fire wave.lua">
 		<vocation id="1;2;3;4;5"/>
 	</instant>
-	<instant name="Energy Beam" words="exevo vis lux" lvl="23" mana="40" direction="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="attack/energy beam.lua">
-		<vocation id="1;2;3;4;5"/>
-	</instant>
-	<instant name="Great Energy Beam" words="exevo gran vis lux" lvl="29" mana="110" direction="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="attack/great energy beam.lua">
-		<vocation id="1;2;3;4;5"/>
-	</instant>
+	<!-- FIX IT
+		<instant name="Energy Beam" words="exevo vis lux" lvl="23" mana="40" direction="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="attack/energy beam.lua">
+			<vocation id="1;2;3;4;5"/>
+		</instant>
+		<instant name="Great Energy Beam" words="exevo gran vis lux" lvl="29" mana="110" direction="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="attack/great energy beam.lua">
+			<vocation id="1;2;3;4;5"/>
+		</instant>
+	-->
 	<instant name="Energy Wave" words="exevo vis hur" lvl="38" mana="170" direction="1" exhaustion="1800" groups="1,1800"  needlearn="0" event="script" value="attack/energy wave.lua">
 		<vocation id="1;2;3;4;5"/>
 	</instant>	
@@ -522,7 +524,7 @@
 	<instant name="Wrath of Nature Cuadruple" words="exevo gran mas tera +++" lvl="120" manapercent="25" prem="1" selftarget="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="attack/wrath of nature.lua">  
 		<vocation id="9;10"/>
 	</instant>
-	<instant name="Wrath of Nature Quintuple" words="exevo gran mas tera ++++" lvl="150" manapercent="20" prem="1" selftarget="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="attack/wrath of nature_mas.lua">  
+	<instant name="Wrath of Nature Quintuple" words="exevo gran mas tera ++++" lvl="150" manapercent="20" prem="1" selftarget="1" exhaustion="1800" groups="1,1800" needlearn="0" event="script" value="attack/wrath of nature_mas.lua">
 		<vocation id="9;10"/>
 	</instant>
 	<instant name="Terra Strike" words="exori tera" lvl="10" mana="20" prem="1" range="5" casterTargetOrDirection="1" blockwalls="1" exhaustion="1200" needlearn="0" event="script" value="attack/terra strike.lua">
