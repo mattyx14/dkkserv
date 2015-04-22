@@ -182,7 +182,7 @@
 	</melee>
 	<melee id="7873" level="150" unproperly="1" event="function" value="default">
 		<vocation name="Lord Knight"/>
-		<vocation id="12;21;24" showInDescription="0"/>
+		<vocation id="17;18;19;20" showInDescription="0"/>
 	</melee>
 
 	<!-- Axes -->
@@ -272,7 +272,7 @@
 	<melee id="7860" level="25" unproperly="1" event="function" value="default"/>
 	<melee id="7861" level="150" unproperly="1" event="function" value="default">
 		<vocation name="Lord Knight"/>
-		<vocation id="12;21;24" showInDescription="0"/>
+		<vocation id="17;18;19;20" showInDescription="0"/>
 	</melee>
 	<melee id="7862" level="35" unproperly="1" event="function" value="default">
 		<vocation name="Knight"/>
@@ -350,15 +350,19 @@
 	</melee>
 	<melee id="8928" level="100" unproperly="1" event="function" value="default"/>
 	<melee id="8929" level="100" unproperly="1" event="function" value="default">
-		<vocation name="Magician"/>
-		<vocation id="4;7;10;13;16;19;22" showInDescription="0"/>
+		<vocation name="Druid"/>
+		<vocation id="7;8;9;10" showInDescription="0"/>
+		<vocation name="Sorcerer"/>
+		<vocation id="2;3;4;5" showInDescription="0"/>
 	</melee>
 	<melee id="8927" level="120" unproperly="1" event="function" value="default"/>
 		<!-- Fire -->
 	<melee id="7754" level="20" unproperly="1" event="function" value="default"/>
 	<melee id="7755" level="150" unproperly="1" event="function" value="default">
-		<vocation name="Magician"/>
-		<vocation id="4;7;10;13;16;19;22" showInDescription="0"/>
+		<vocation name="Druid"/>
+		<vocation id="7;8;9;10" showInDescription="0"/>
+		<vocation name="Sorcerer"/>
+		<vocation id="2;3;4;5" showInDescription="0"/>
 	</melee>
 	<melee id="7756" level="60" unproperly="1" event="function" value="default"/>
 	<melee id="7757" level="35" unproperly="1" event="function" value="default"/>
@@ -388,7 +392,7 @@
 	<melee id="7880" level="35" unproperly="1" event="function" value="default"/>
 	<melee id="7881" level="150" unproperly="1" event="function" value="default">
 		<vocation name="Lord Knight"/>
-		<vocation id="12;21;24" showInDescription="0"/>
+		<vocation id="17;18;19;20" showInDescription="0"/>
 	</melee>
 	<melee id="7882" level="35" unproperly="1" event="function" value="default"/>
 	<melee id="7883" level="50" unproperly="1" event="function" value="default">

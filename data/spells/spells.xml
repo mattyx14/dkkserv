@@ -43,7 +43,7 @@
 	<rune name="Tera" id="2287" allowfaruse="1" charges="9" lvl="15" maglv="4" exhaustion="1800" groups="1,1800" blocktype="solid" event="script" value="data/runes/Tera.lua">
 		<vocation id="6;7;8;9;10"/>
 	</rune>
-	<rune name="XTera" id="2289" allowfaruse="1" charges="6" lvl="35" maglv="6" exhaustion="1800" groups="1,1800" blocktype="solid" event="script" value="data/runes/earth.lua">
+	<rune name="XTera" id="2289" allowfaruse="1" charges="6" lvl="35" maglv="6" exhaustion="1800" groups="1,1800" blocktype="solid" event="script" value="data/runes/Earth.lua">
 		<vocation id="7;8;9;10"/>
 	</rune>
 	<rune name="Great Tera" id="2291" allowfaruse="1" charges="3" lvl="150" maglv="10" exhaustion="1800" groups="1,1800" blocktype="solid" event="script" value="data/runes/xearth.lua">
