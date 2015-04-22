@@ -7,7 +7,7 @@ local statue = {
 }
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-	if item.actionid == 1000 then
+	if isPlayerPzLocked(cid) then
 		return false
 	end
 
@@ -16,12 +16,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		return false
 	end
 
-	if getPlayerPremiumDays(cid) > 0 then
-		doPlayerSetOfflineTrainingSkill(cid, statue[item.itemid])
-		doRemoveCreature(cid)
-	else
-		doPlayerSendDefaultCancel(cid, RETURNVALUE_YOUNEEDPREMIUMACCOUNT)
-	end
-
+	doPlayerSetOfflineTrainingSkill(cid, statue[item.itemid])
+	doRemoveCreature(cid)
 	return true
 end

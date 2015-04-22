@@ -5,7 +5,7 @@
 
 	<!-- Quests -->
 	<action actionid="2000-2005" event="script" value="quests/system.lua"/>
-	<action itemid="1740;1747-1749" event="script" value="quests/quests.lua"/>
+	<action itemid="1738-1741;1746-1749;5675-5676;7160-7161;7707;8587;12664" event="script" value="quests/quests.lua"/>
 
 	<!-- Text -->
 	<action itemid="1957;7722;10122" event="script" value="other/text.lua"/>
@@ -127,4 +127,34 @@
 
 	<!-- OffLineTrain System -->
 	<action itemid="18488-18492" event="script" value="other/offlinetraining.lua"/>
+
+	<!-- Moonlight Quest // Outfits // -->
+	<action uniqueid="50001" event="script" value="moonlight quest/outfitquest/oriental.lua"/>
+	<action uniqueid="50002" event="script" value="moonlight quest/outfitquest/pirate.lua"/>
+	<action uniqueid="50003" event="script" value="moonlight quest/outfitquest/assassin.lua"/>
+	<action uniqueid="50004" event="script" value="moonlight quest/outfitquest/beggar.lua"/>
+	<action uniqueid="50005" event="script" value="moonlight quest/outfitquest/shaman.lua"/>
+	<action uniqueid="50008" event="script" value="moonlight quest/outfitquest/jester.lua"/>
+	<action uniqueid="50011" event="script" value="moonlight quest/outfitquest/yalaharian.lua"/>
+	<action uniqueid="4562" event="script" value="moonlight quest/demon helmet quest.lua"/>
+	<action uniqueid="4563" event="script" value="moonlight quest/gates/piraterock.lua"/>
+	<action uniqueid="4564" event="script" value="moonlight quest/gates/gate1.lua"/>
+	<action uniqueid="4565" event="script" value="moonlight quest/gates/gate2.lua"/>
+	<action uniqueid="4566" event="script" value="moonlight quest/gates/gate3.lua"/>
+	<action uniqueid="4567" event="script" value="moonlight quest/gates/gate4.lua"/>
+	<action uniqueid="4568" event="script" value="moonlight quest/gates/ferumbraswall.lua"/>
+	<action uniqueid="4569" event="script" value="moonlight quest/gates/ferumbraswall_2.lua"/>
+	<action uniqueid="59992" event="script" value="moonlight quest/gates/crystal arrow.lua"/>
+	<action itemid="5879" event="script" value="customs/telarana.lua"/>
+	<action actionid="12901-12927" event="script" value="chestquestcustom.lua"/>
+
+	<!-- Demon Oak -->
+	<action itemid="8293" event="script" value="demonOak.lua"/>
+	<action uniqueid="55100" event="script" value="demonOakGravestone.lua"/>
+
+	<!-- Arena -->
+	<action uniqueid="4826" event="script" value="moonlight quest/gates/arenaswitch.lua"/>
+
+	<!-- Older Mystical Potion -->
+	<action itemid="11261" event="script" value="donator/exp.lua"/>
 </actions>
