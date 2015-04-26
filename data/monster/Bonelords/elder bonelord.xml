@@ -41,7 +41,7 @@
 		<attack name="manadrain" interval="1000" chance="6" range="7" min="-20" max="-40">
 			<attribute key="areaEffect" value="redshimmer"/>
 		</attack>
-		<attack name="Paralyze" interval="1000" chance="17" range="7" target="1">
+		<attack name="Paralyze" interval="2500" chance="17" range="7" target="1">
 			<attribute key="areaEffect" value="redshimmer"/>
 		</attack>
 	</attacks>

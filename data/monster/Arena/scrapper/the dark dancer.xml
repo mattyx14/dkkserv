@@ -12,7 +12,7 @@
 	</flags>
 	<attacks>
 		<attack name="melee" interval="2000" skill="20" attack="30" poison="220"/>
-		<attack name="Paralyze" interval="2000" chance="17" range="7" target="1">
+		<attack name="Paralyze" interval="2500" chance="17" range="7" target="1">
 			<attribute key="areaEffect" value="redshimmer"/>
 		</attack>
 		<attack name="manadrain" interval="2000" chance="10" radius="1" target="1" range="5" min="-0" max="-105">

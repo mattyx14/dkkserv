@@ -19,7 +19,7 @@
 	</flags>
 	<attacks>
 		<attack name="melee" interval="2000" skill="50" attack="30" poison="80"/>
-		<attack name="Paralyze" interval="3000" chance="17" range="7" target="1">
+		<attack name="Paralyze" interval="2500" chance="17" range="7" target="1">
 			<attribute key="areaEffect" value="sleep"/>
 		</attack>
 		<attack name="holy" interval="3000" chance="10" range="4" radius="1" target="1" min="-60" max="-170">

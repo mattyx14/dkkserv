@@ -22,7 +22,7 @@
 		<attack name="lifedrain" interval="2000" chance="20" range="1" min="-55" max="-105">
 			<attribute key="areaEffect" value="redshimmer"/>
 		</attack>
-		<attack name="Paralyze" interval="2000" chance="17" range="7" target="1">
+		<attack name="Paralyze" interval="2500" chance="17" range="7" target="1">
 			<attribute key="areaEffect" value="redshimmer"/>
 		</attack>
 	</attacks>

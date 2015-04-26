@@ -24,7 +24,7 @@
 			<attribute key="shootEffect" value="ice"/>
 			<attribute key="areaEffect" value="energy"/>
 		</attack>
-		<attack name="Paralyze" interval="2000" chance="17" range="7" target="1">
+		<attack name="Paralyze" interval="2500" chance="17" range="7" target="1">
 			<attribute key="areaEffect" value="poff"/>
 		</attack>
 		<attack name="energy" interval="1000" chance="25" range="7" target="1" min="-60" max="-150">

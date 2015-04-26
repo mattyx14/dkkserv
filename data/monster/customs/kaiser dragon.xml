@@ -45,7 +45,7 @@
 			<attribute key="shootEffect" value="fire"/>
 			<attribute key="areaEffect" value="firearea"/>
 		</attack>
-		<attack name="Paralyze" interval="1000" chance="17" range="7" target="1">
+		<attack name="Paralyze" interval="2500" chance="17" range="7" target="1">
 			<attribute key="areaEffect" value="mortarea"/>
 		</attack>
 		<attack name="drowncondition" interval="1000" chance="20" length="4" spread="2">

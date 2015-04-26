@@ -20,7 +20,7 @@
 	</flags>
 	<attacks>
 		<attack name="melee" interval="2000" skill="100" attack="40"/>
-		<attack name="Paralyze" interval="1000" chance="17" range="7" target="1">
+		<attack name="Paralyze" interval="2500" chance="17" range="7" target="1">
 			<attribute key="areaEffect" value="ICETORNADO"/>
 		</attack>
 		<attack name="physical" interval="1000" chance="15" range="7" min="-0" max="-85">

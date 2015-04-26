@@ -13,7 +13,7 @@
 	<attacks>
 		<attack name="melee" interval="2000" skill="40" attack="40"/>
 		<attack name="drunk" interval="2000" chance="10" range="5" radius="1" target="1" duration="5000"/>
-		<attack name="Paralyze" interval="2000" chance="17" range="7" target="1">
+		<attack name="Paralyze" interval="2500" chance="17" range="7" target="1">
 			<attribute key="areaEffect" value="redshimmer"/>
 		</attack>
 	</attacks>

@@ -26,7 +26,7 @@
 		<attack name="earth" interval="1800" chance="40" range="7" radius="4" min="-300" max="-420">
 			<attribute key="areaEffect" value="SMALLCLOUDS"/>
 		</attack>
-		<attack name="Paralyze" interval="2300" chance="17" range="7" target="1">
+		<attack name="Paralyze" interval="2500" chance="17" range="7" target="1">
 			<attribute key="areaEffect" value="STONES"/>
 		</attack>
 		<attack name="death" interval="1900" chance="20" range="7" radius="4" target="0" min="-100" max="-220">

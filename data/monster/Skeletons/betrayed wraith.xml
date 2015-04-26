@@ -22,7 +22,7 @@
 		<attack name="earth" interval="3000" chance="17" length="6" spread="3" min="-100" max="-350">
 			<attribute key="areaEffect" value="yellowbubble"/>
 		</attack>
-		<attack name="Paralyze" interval="1000" chance="17" range="7" target="1">
+		<attack name="Paralyze" interval="2500" chance="17" range="7" target="1">
 			<attribute key="areaEffect" value="redshimmer"/>
 		</attack>
 	</attacks>

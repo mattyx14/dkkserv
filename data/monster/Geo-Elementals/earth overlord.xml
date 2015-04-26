@@ -26,7 +26,7 @@
 		<attack name="earth" interval="1000" chance="9" radius="6" min="0" max="-490">
 			<attribute key="areaEffect" value="bigplants"/>
 		</attack>
-		<attack name="Paralyze" interval="2000" chance="17" range="7" target="1">
+		<attack name="Paralyze" interval="2500" chance="17" range="7" target="1">
 			<attribute key="areaEffect" value="redshimmer"/>
 		</attack>
 	</attacks>

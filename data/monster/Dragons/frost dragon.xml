@@ -33,7 +33,7 @@
 		<attack name="ice" interval="2000" chance="0" range="7" radius="3" target="0" min="-0" max="-70">
 			<attribute key="areaEffect" value="ICETORNADO"/>
 		</attack>
-		<attack name="Paralyze" interval="4000" chance="17" range="7" target="1">
+		<attack name="Paralyze" interval="2500" chance="17" range="7" target="1">
 			<attribute key="areaEffect" value="ICETORNADO"/>
 		</attack>
 	</attacks>

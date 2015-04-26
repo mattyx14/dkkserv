@@ -23,7 +23,7 @@
 			<attribute key="areaEffect" value="ICETORNADO"/>
 			<attribute key="shootEffect" value="ice"/>
 		</attack>
-		<attack name="Paralyze" interval="1800" chance="17" range="7" target="1">
+		<attack name="Paralyze" interval="2500" chance="17" range="7" target="1">
 			<attribute key="areaEffect" value="greenbubble"/>
 			<attribute key="areaEffect" value="ICEATTACK"/>
 		</attack>

@@ -23,7 +23,7 @@
 		<attack name="physical" interval="4000" chance="10" radius="2" target="1" range="7" min="-0" max="-130">
 			<attribute key="areaEffect" value="whitenote"/>
 		</attack>
-		<attack name="Paralyze" interval="4000" chance="17" range="7" target="1">
+		<attack name="Paralyze" interval="2500" chance="17" range="7" target="1">
 			<attribute key="areaEffect" value="whitenote"/>
 		</attack>
 		<attack name="poisonfield" interval="2000" chance="10" range="7" radius="3" target="1">

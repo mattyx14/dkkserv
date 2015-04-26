@@ -22,7 +22,7 @@
 		<attack name="drown" interval="1000" chance="25" range="7" min="-470" max="-900">
 			<attribute key="areaEffect" value="STONES"/>
 		</attack>
-		<attack name="Paralyze" interval="3000" chance="17" range="7" target="1">
+		<attack name="Paralyze" interval="2500" chance="17" range="7" target="1">
 			<attribute key="shootEffect" value="SMALLEARTH"/>
 			<attribute key="areaEffect" value="STONES"/>
 		</attack>

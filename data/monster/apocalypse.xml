@@ -22,7 +22,7 @@
 		<attack name="melee" interval="3000" chance="20" range="7" radius="3" target="0" min="-200" max="-600">
 			<attribute key="areaEffect" value="blackspark"/>
 		</attack>
-		<attack name="paralyze" interval="3000" chance="20" target="1">
+		<attack name="Paralyze" interval="2500" chance="20" target="1">
 			<attribute key="areaEffect" value="redshimmer"/>
 		</attack>
 		<attack name="fire" interval="4500" chance="50" range="7" radius="7" target="1" min="-400" max="-1500">

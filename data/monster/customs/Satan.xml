@@ -23,7 +23,7 @@
 			<attribute key="shootEffect" value="holy"/>
 			<attribute key="areaEffect" value="HOLYDAMAGE"/>
 		</attack>
-		<attack name="Paralyze" interval="1000" chance="50" range="7" radius="7" target="1">
+		<attack name="Paralyze" interval="2500" chance="50" range="7" radius="7" target="1">
 			<attribute key="shootEffect" value="holy"/>
 			<attribute key="areaEffect" value="HOLYDAMAGE"/>
 		</attack>

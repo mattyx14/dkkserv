@@ -39,7 +39,7 @@
 		<attack name="fire" interval="1000" chance="12" radius="6" target="0" min="-460" max="-600">
 			<attribute key="areaEffect" value="explosionarea"/>
 		</attack>
-		<attack name="Paralyze" interval="1000" chance="17" range="7" target="1">
+		<attack name="Paralyze" interval="2500" chance="17" range="7" target="1">
 			<attribute key="areaEffect" value="poison"/>
 		</attack>
 		<attack name="drunk" interval="1000" chance="8" range="7">

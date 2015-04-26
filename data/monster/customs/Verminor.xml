@@ -34,7 +34,7 @@
 		<attack name="earth" interval="2100" chance="17" length="4" spread="3" min="-400" max="-850">
 			<attribute key="areaEffect" value="yellowbubble"/>
 		</attack>
-		<attack name="Paralyze" interval="1000" chance="17" range="7" target="1">
+		<attack name="Paralyze" interval="2500" chance="17" range="7" target="1">
 			<attribute key="areaEffect" value="BIGPLANTS"/>
 		</attack>
 		<attack name="earth" interval="2300" chance="15" range="7" radius="3" target="0" min="-500" max="-900">

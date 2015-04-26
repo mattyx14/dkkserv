@@ -22,7 +22,7 @@
 		<attack name="fire" interval="6000" chance="80" radius="3" min="0" max="-120">
 			<attribute key="areaEffect" value="energy"/>
 		</attack>
-		<attack name="Paralyze" interval="3500" chance="17" range="7" target="1">
+		<attack name="Paralyze" interval="2500" chance="17" range="7" target="1">
 			<attribute key="areaEffect" value="redshimmer"/>
 		</attack>
 		<attack name="physical" interval="6000" chance="40" radius="1" target="1" range="5" min="-20" max="-100">

@@ -23,7 +23,7 @@
 			<attribute key="shootEffect" value="fire"/>
 		</attack>
 		<attack name="manadrain" interval="2400" chance="17" range="7" min="-35" max="-75"/>
-		<attack name="Paralyze" interval="1000" chance="17" range="7" target="1">
+		<attack name="Paralyze" interval="2500" chance="17" range="7" target="1">
 			<attribute key="areaEffect" value="redshimmer"/>
 		</attack>
 		<attack name="fire" interval="2000" chance="45" range="7" radius="3" target="1" min="-50" max="-250">
@@ -36,7 +36,7 @@
 		<attack name="energy" interval="1800" chance="25" length="8" spread="0" min="-135" max="-355">
 			<attribute key="areaEffect" value="BIGCLOUDS"/>
 		</attack>
-		<attack name="Paralyze" interval="1000" chance="17" range="7" target="1">
+		<attack name="Paralyze" interval="2500" chance="17" range="7" target="1">
 			<attribute key="areaEffect" value="redshimmer"/>
 		</attack>
 	</attacks>

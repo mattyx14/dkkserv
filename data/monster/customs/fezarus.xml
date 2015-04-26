@@ -33,7 +33,7 @@
 		<attack name="earth" interval="1800" chance="20" range="3" radius="5" target="1" min="-250" max="-400">
 			<attribute key="areaEffect" value="BIGPLANTS"/>
 			</attack>
-		<attack name="Paralyze" interval="1500" chance="17" range="7" target="1">
+		<attack name="Paralyze" interval="2500" chance="17" range="7" target="1">
 			<attribute key="areaEffect" value="ICETORNADO"/>
 		</attack>
 	</attacks>

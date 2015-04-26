@@ -19,7 +19,7 @@
 	</flags>
 	<attacks>
 		<attack name="melee" interval="2000" skill="80" attack="90"/>
-		<attack name="Paralyze" interval="1000" chance="17" range="7" target="1">
+		<attack name="Paralyze" interval="2500" chance="17" range="7" target="1">
 			<attribute key="areaEffect" value="poison"/>
 		</attack>
 		<attack name="earth" interval="2000" chance="15" target="0" radius="4" min="-200" max="-350">

@@ -26,7 +26,7 @@
 		<attack name="physical" interval="1000" chance="100" radius="2" target="0" min="-100" max="-175">
 			<attribute key="shootEffect" value="smallearth"/>
 		</attack>
-		<attack name="Paralyze" interval="5000" chance="17" range="7" target="1">
+		<attack name="Paralyze" interval="2500" chance="17" range="7" target="1">
 			<attribute key="shootEffect" value="poison"/>
 			<attribute key="areaEffect" value="smallplants"/>
 		</attack>

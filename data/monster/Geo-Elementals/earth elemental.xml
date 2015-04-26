@@ -26,7 +26,7 @@
 		<attack name="poisoncondition" interval="1000" chance="10" length="6" spread="0" min="0" max="-260">
 			<attribute key="areaEffect" value="groundshaker"/>
 		</attack>
-		<attack name="Paralyze" interval="2000" chance="17" range="7" target="1">
+		<attack name="Paralyze" interval="2500" chance="17" range="7" target="1">
 			<attribute key="areaEffect" value="redshimmer"/>
 		</attack>
 	</attacks>

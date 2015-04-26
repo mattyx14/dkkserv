@@ -19,7 +19,7 @@
 	</flags>
 	<attacks>
 		<attack name="melee" interval="2000" skill="50" attack="50" poison="20"/>
-		<attack name="Paralyze" interval="2000" chance="17" range="7" target="1">
+		<attack name="Paralyze" interval="2500" chance="17" range="7" target="1">
 			<attribute key="shootEffect" value="death"/>
 			<attribute key="areaEffect" value="mortarea"/>
 		</attack>

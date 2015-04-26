@@ -26,7 +26,7 @@
 			<attribute key="shootEffect" value="smallice"/>
 			<attribute key="areaEffect" value="icearea"/>
 		</attack>
-		<attack name="Paralyze" interval="5000" chance="17" range="7" target="1">
+		<attack name="Paralyze" interval="2500" chance="17" range="7" target="1">
 			<attribute key="areaEffect" value="redshimmer"/>
 		</attack>
 	</attacks>

@@ -33,7 +33,7 @@
 		<attack name="energy" interval="1800" chance="25" length="8" spread="0" min="-165" max="-245">
 			<attribute key="areaEffect" value="BIGCLOUDS"/>
 		</attack>
-		<attack name="Paralyze" interval="1000" chance="17" range="7" target="1">
+		<attack name="Paralyze" interval="2500" chance="17" range="7" target="1">
 			<attribute key="areaEffect" value="redshimmer"/>
 		</attack>
 	</attacks>

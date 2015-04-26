@@ -22,7 +22,7 @@
 		<attack name="physical" interval="2000" chance="10" range="7" min="-0" max="-135">
 			<attribute key="shootEffect" value="smallstone"/>
 		</attack>
-		<attack name="Paralyze" interval="2000" chance="17" range="7" target="1">
+		<attack name="Paralyze" interval="2500" chance="17" range="7" target="1">
 			<attribute key="areaEffect" value="sleep"/>
 		</attack>
 		<attack name="physical" interval="2000" chance="10" length="5" spread="6" min="-0" max="-170">

@@ -19,7 +19,7 @@
 	</flags>
 	<attacks>
 		<attack name="melee" interval="1500" skill="40" attack="350"/>
-		<attack name="Paralyze" interval="2000" chance="10" range="7" min="-0" max="-120"/>
+		<attack name="Paralyze" interval="2500" chance="10" range="7" min="-0" max="-120"/>
 		<attack name="fire" interval="2000" chance="10"  range="7" radius="7" target="1" min="-100" max="-200">
 			<attribute key="shootEffect" value="fire"/>
 			<attribute key="areaEffect" value="firearea"/>
@@ -34,7 +34,7 @@
 		<attack name="energy" interval="2000"  chance="10"  length="8" spread="0" min="-400" max="-560">
 			<attribute key="areaEffect" value="purpleenergy"/>
 		</attack>
-		<attack name="Paralyze" interval="2000" chance="10" range="7" target="1">
+		<attack name="Paralyze" interval="2500" chance="10" range="7" target="1">
 			<attribute key="areaEffect" value="redshimmer"/>
 		</attack>
 	</attacks>

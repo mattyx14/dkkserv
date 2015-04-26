@@ -36,7 +36,7 @@
 		<attack name="death" interval="3000" chance="17" length="7" spread="3" min="-400" max="-850">
 			<attribute key="areaEffect" value="mortarea"/>
 		</attack>
-		<attack name="Paralyze" interval="2000" chance="17" range="7" target="1">
+		<attack name="Paralyze" interval="2500" chance="17" range="7" target="1">
 			<attribute key="areaEffect" value="mortarea"/>
 		</attack>
 		<attack name="death" interval="3000" chance="15" range="7" radius="3" target="0" min="-100" max="-200">

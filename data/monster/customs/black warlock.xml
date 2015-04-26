@@ -23,7 +23,7 @@
 			<attribute key="shootEffect" value="energy"/>
 		</attack>
 		<attack name="manadrain" interval="1000" chance="15" range="7" min="-35" max="-75"/>
-		<attack name="Paralyze" interval="1000" chance="17" range="7" target="1">
+		<attack name="Paralyze" interval="2500" chance="17" range="7" target="1">
 			<attribute key="areaEffect" value="energyarea"/>
 		</attack>
 		<attack name="energy" interval="1000" chance="20" range="7" radius="3" target="1" min="-350" max="-420">

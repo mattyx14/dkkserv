@@ -20,7 +20,7 @@
 	<attacks>
 		<attack name="melee" interval="2000" skill="50" attack="28" poison="65"/>
 		<attack name="lifedrain" interval="1000" chance="15" range="1" min="-30" max="-40"/>
-		<attack name="Paralyze" interval="1000" chance="17" range="7" target="1">
+		<attack name="Paralyze" interval="2500" chance="17" range="7" target="1">
 			<attribute key="areaEffect" value="redshimmer"/>
 		</attack>
 	</attacks>
