@@ -312,15 +312,15 @@
 	</instant>
 
 	<!-- Attack Spells -->
-	<instant name="Death Strike" words="exori mort" lvl="10" mana="20" prem="1" range="5" casterTargetOrDirection="1" blockwalls="1" exhaustion="1200" needlearn="0" event="script" value="attack/death strike.lua">
+	<instant name="Death Strike" words="exori mort" lvl="10" mana="20" prem="1" range="5" casterTargetOrDirection="1" blockwalls="1" exhaustion="1000" groups="1,1000" needlearn="0" event="script" value="attack/death strike.lua">
 		<vocation id="1;2;3;4;5"/>
 		<vocation id="6;7;8;9;10"/>
 	</instant>
-	<instant name="Death Strike" words="exori mort mas" lvl="200" mana="120" prem="1" range="5" casterTargetOrDirection="1" blockwalls="1" exhaustion="1200" needlearn="0" event="script" value="attack/death strike_mas.lua">
+	<instant name="Death Strike" words="exori mort mas" lvl="200" mana="120" prem="1" range="5" casterTargetOrDirection="1" blockwalls="1" exhaustion="1000" groups="1,1000" needlearn="0" event="script" value="attack/death strike_mas.lua">
 		<vocation id="4;5"/>
 		<vocation id="9;10"/>
 	</instant>
-	<instant name="Energy Strike" words="exori vis" lvl="10" mana="20" prem="1" range="5" casterTargetOrDirection="1" blockwalls="1" exhaustion="1200" needlearn="0" event="script" value="attack/energy strike.lua">
+	<instant name="Energy Strike" words="exori vis" lvl="10" mana="20" prem="1" range="5" casterTargetOrDirection="1" blockwalls="1" exhaustion="1000" groups="1,1000" needlearn="0" event="script" value="attack/energy strike.lua">
 		<vocation id="1;2;3;4;5"/>
 		<vocation id="6;7;8;9;10"/>
 	</instant>
@@ -407,22 +407,22 @@
 	<instant name="Groundshaker Core Quintuple" words="exori mas vis ++++" lvl="500" manapercent="20" prem="1" exhaustion="1000" groups="1,1000" selftarget="1" needlearn="0" event="script" value="attack/groundshaker core.lua">
 		<vocation id="9;10"/>
 	</instant>
-	<instant name="Whirlwind Throw" words="exori hur" lvl="10" mana="80" prem="1" range="6" needtarget="1" blockwalls="1" needweapon="1" exhaustion="1200" needlearn="0" event="script" value="attack/whirlwind throw.lua">
+	<instant name="Whirlwind Throw" words="exori hur" lvl="10" mana="80" prem="1" range="6" needtarget="1" blockwalls="1" needweapon="1" exhaustion="1000" groups="1,1000" needlearn="0" event="script" value="attack/whirlwind throw.lua">
 		<vocation id="16;17;18;19;20"/>
 	</instant>
-	<instant name="Whirlwind Throw" words="exori hur +" lvl="80" mana="100" prem="1" range="5" needtarget="1" blockwalls="1" needweapon="1" exhaustion="1200" needlearn="0" event="script" value="attack/whirlwind throw.lua">
+	<instant name="Whirlwind Throw" words="exori hur +" lvl="80" mana="100" prem="1" range="5" needtarget="1" blockwalls="1" needweapon="1" exhaustion="1000" groups="1,1000" needlearn="0" event="script" value="attack/whirlwind throw.lua">
 		<vocation id="17;18;19;20"/>
 	</instant>
-	<instant name="Whirlwind Throw Doble Damage" words="exori hur mas" lvl="120" mana="30" prem="1" range="5" needtarget="1" blockwalls="1" needweapon="1" exhaustion="1200" needlearn="0" event="script" value="attack/whirlwind throw_mas.lua">
+	<instant name="Whirlwind Throw Doble Damage" words="exori hur mas" lvl="120" mana="30" prem="1" range="5" needtarget="1" blockwalls="1" needweapon="1" exhaustion="1000" groups="1,1000" needlearn="0" event="script" value="attack/whirlwind throw_mas.lua">
 		<vocation id="19;20"/>
 	</instant>
-	<instant name="Divine Missile" words="exori san" lvl="10" mana="80" prem="1" casterTargetOrDirection="1" needlearn="0" lockwalls="1" exhaustion="1200" event="script" value="attack/divine missile.lua">
+	<instant name="Divine Missile" words="exori san" lvl="10" mana="80" prem="1" casterTargetOrDirection="1" needlearn="0" lockwalls="1" exhaustion="1000" groups="1,1000" event="script" value="attack/divine missile.lua">
 		<vocation id="11;12;13;14;15"/>
 	</instant>
-	<instant name="Divine Missile" words="exori san +" lvl="80" mana="100" prem="1" casterTargetOrDirection="1" needlearn="0" lockwalls="1" exhaustion="1200" event="script" value="attack/divine missile.lua">
+	<instant name="Divine Missile" words="exori san +" lvl="80" mana="100" prem="1" casterTargetOrDirection="1" needlearn="0" lockwalls="1" exhaustion="1000" groups="1,1000" event="script" value="attack/divine missile.lua">
 		<vocation id="12;13;14;15"/>
 	</instant>
-	<instant name="Divine Missile Doble Damage" words="exori san mas" lvl="120" mana="30" prem="1" casterTargetOrDirection="1" needlearn="0" lockwalls="1" exhaustion="1200" event="script" value="attack/divine missile_mas.lua">
+	<instant name="Divine Missile Doble Damage" words="exori san mas" lvl="120" mana="30" prem="1" casterTargetOrDirection="1" needlearn="0" lockwalls="1" exhaustion="1000" groups="1,1000" event="script" value="attack/divine missile_mas.lua">
 		<vocation id="14;15"/>
 	</instant>
 	<instant name="Berserk Triple" words="exori" lvl="30" manapercent="30" prem="1" needweapon="1" lockwalls="1" exhaustion="1000" groups="1,1000" needlearn="0" event="script" value="attack/berserk.lua">
@@ -440,16 +440,16 @@
 	<instant name="Fierce Berserk Quintuple" words="exori gran +" lvl="100" manapercent="20" prem="1" needweapon="1" exhaustion="1000" groups="1,1000" needlearn="0" event="script" value="attack/fierce berserk.lua">
 		<vocation id="19;20"/>
 	</instant>
-	<instant name="Ethereal Spear" words="exori con" lvl="10" mana="80" prem="1" range="5" needtarget="1" exhaustion="1200" blockwalls="1" needlearn="0" event="script" value="attack/ethereal spear.lua">
+	<instant name="Ethereal Spear" words="exori con" lvl="10" mana="80" prem="1" range="5" needtarget="1" exhaustion="1000" groups="1,1000" blockwalls="1" needlearn="0" event="script" value="attack/ethereal spear.lua">
 		<vocation id="12;13;14;15"/>
 	</instant>
-	<instant name="Ethereal Spear" words="exori con +" lvl="80" mana="60" prem="1" range="5" needtarget="1" exhaustion="1200" blockwalls="1" needlearn="0" event="script" value="attack/ethereal spear.lua">
+	<instant name="Ethereal Spear" words="exori con +" lvl="80" mana="60" prem="1" range="5" needtarget="1" exhaustion="1000" groups="1,1000" blockwalls="1" needlearn="0" event="script" value="attack/ethereal spear.lua">
 		<vocation id="12;13;14;15"/>
 	</instant>
-	<instant name="Ethereal Spear Doble Damage" words="exori con mas" lvl="100" mana="100" prem="1" range="5" needtarget="1" exhaustion="1200" blockwalls="1" needlearn="0" event="script" value="attack/ethereal spear_mas.lua">
+	<instant name="Ethereal Spear Doble Damage" words="exori con mas" lvl="100" mana="100" prem="1" range="5" needtarget="1" exhaustion="1000" groups="1,1000" blockwalls="1" needlearn="0" event="script" value="attack/ethereal spear_mas.lua">
 		<vocation id="14;15"/>
 	</instant>
-	<instant name="Ethereal Spear Triple Damage" words="exori con mas +" lvl="150" mana="150" prem="1" range="5" needtarget="1" exhaustion="1200" blockwalls="1" needlearn="0" event="script" value="attack/ethereal spear_mas_dos.lua">
+	<instant name="Ethereal Spear Triple Damage" words="exori con mas +" lvl="150" mana="150" prem="1" range="5" needtarget="1" exhaustion="1000" groups="1,1000" blockwalls="1" needlearn="0" event="script" value="attack/ethereal spear_mas_dos.lua">
 		<vocation id="14;15"/>
 	</instant>
 	<instant name="Groundshaker Triple" words="exori mas" lvl="30" manapercent="30" prem="1" needweapon="1" exhaustion="1000" groups="1,1000" lockwalls="1" needlearn="0" event="script" value="attack/groundshaker.lua">
@@ -458,7 +458,7 @@
 	<instant name="Groundshaker Quatruple" words="exori mas +" lvl="80" manapercent="25" prem="1" needweapon="1" exhaustion="1000" groups="1,1000" lockwalls="1" needlearn="0" event="script" value="attack/groundshaker.lua">
 		<vocation id="17;18;19;20"/>
 	</instant>
-	<instant name="Groundshaker Quintuple" words="exori mas ++" lvl="100" manapercent="20" prem="1" needweapon="1" exhaustion="1200" lockwalls="1" needlearn="0" event="script" value="attack/groundshaker.lua">
+	<instant name="Groundshaker Quintuple" words="exori mas ++" lvl="100" manapercent="20" prem="1" needweapon="1" exhaustion="1000" groups="1,1000" lockwalls="1" needlearn="0" event="script" value="attack/groundshaker.lua">
 		<vocation id="19;20"/>
 	</instant>
 	<instant name="Divine Caldera Triple" words="exevo san" lvl="70" manapercent="30" prem="1" selftarget="1" exhaustion="1000" groups="1,1000" needlearn="0" event="script" value="attack/divine caldera.lua">
@@ -527,34 +527,34 @@
 	<instant name="Wrath of Nature Quintuple" words="exevo gran mas tera ++++" lvl="150" manapercent="20" prem="1" selftarget="1" exhaustion="1000" groups="1,1000" needlearn="0" event="script" value="attack/wrath of nature_mas.lua">
 		<vocation id="9;10"/>
 	</instant>
-	<instant name="Terra Strike" words="exori tera" lvl="10" mana="20" prem="1" range="5" casterTargetOrDirection="1" blockwalls="1" exhaustion="1200" needlearn="0" event="script" value="attack/terra strike.lua">
+	<instant name="Terra Strike" words="exori tera" lvl="10" mana="20" prem="1" range="5" casterTargetOrDirection="1" blockwalls="1" exhaustion="1000" groups="1,1000" needlearn="0" event="script" value="attack/terra strike.lua">
 		<vocation id="6;7;8;9;10"/>
 	</instant>
-	<instant name="Terra Strike" words="exori tera +" lvl="40" mana="80" prem="1" range="5" casterTargetOrDirection="1" blockwalls="1" exhaustion="1200" needlearn="0" event="script" value="attack/terra strike.lua">
+	<instant name="Terra Strike" words="exori tera +" lvl="40" mana="80" prem="1" range="5" casterTargetOrDirection="1" blockwalls="1" exhaustion="1000" groups="1,1000" needlearn="0" event="script" value="attack/terra strike.lua">
 		<vocation id="7;8;9;10"/>
 	</instant>
-	<instant name="Terra Strike" words="exori tera ++" lvl="80" mana="100" prem="1" range="5" casterTargetOrDirection="1" blockwalls="1" exhaustion="1200" needlearn="0" event="script" value="attack/terra strike.lua">
+	<instant name="Terra Strike" words="exori tera ++" lvl="80" mana="100" prem="1" range="5" casterTargetOrDirection="1" blockwalls="1" exhaustion="1000" groups="1,1000" needlearn="0" event="script" value="attack/terra strike.lua">
 		<vocation id="9;10"/>
 	</instant>
-	<instant name="Terra Strike Doble Damage" words="exori tera mas" lvl="150" mana="120" prem="1" range="5" casterTargetOrDirection="1" blockwalls="1" exhaustion="1200" needlearn="0" event="script" value="attack/terra strike_mas.lua">
+	<instant name="Terra Strike Doble Damage" words="exori tera mas" lvl="150" mana="120" prem="1" range="5" casterTargetOrDirection="1" blockwalls="1" exhaustion="1000" groups="1,1000" needlearn="0" event="script" value="attack/terra strike_mas.lua">
 		<vocation id="9;10"/>
 	</instant>
-	<instant name="Ice Strike Doble Damage" words="exori frigo mas" lvl="150" mana="120" prem="1" range="5" casterTargetOrDirection="1" blockwalls="1" exhaustion="1200" needlearn="0" event="script" value="attack/ice strike_mas.lua">
+	<instant name="Ice Strike Doble Damage" words="exori frigo mas" lvl="150" mana="120" prem="1" range="5" casterTargetOrDirection="1" blockwalls="1" exhaustion="1000" groups="1,1000" needlearn="0" event="script" value="attack/ice strike_mas.lua">
 		<vocation id="9;10"/>
 	</instant>
-	<instant name="Flame Strike" words="exori flam" lvl="10" mana="20" prem="1" range="5" casterTargetOrDirection="1" blockwalls="1" exhaustion="1200" needlearn="0" event="script" value="attack/flame strike.lua">
+	<instant name="Flame Strike" words="exori flam" lvl="10" mana="20" prem="1" range="5" casterTargetOrDirection="1" blockwalls="1" exhaustion="1000" groups="1,1000" needlearn="0" event="script" value="attack/flame strike.lua">
 		<vocation id="1;2;3;4;5"/>
 	</instant>
-	<instant name="Flame Strike" words="exori flam +" lvl="40" mana="80" prem="1" range="5" casterTargetOrDirection="1" blockwalls="1" exhaustion="1200" needlearn="0" event="script" value="attack/flame strike.lua">
+	<instant name="Flame Strike" words="exori flam +" lvl="40" mana="80" prem="1" range="5" casterTargetOrDirection="1" blockwalls="1" exhaustion="1000" groups="1,1000" needlearn="0" event="script" value="attack/flame strike.lua">
 		<vocation id="2;3;4;5"/>
 	</instant>
-	<instant name="Flame Strike" words="exori flam ++" lvl="80" mana="100" prem="1" range="5" casterTargetOrDirection="1" blockwalls="1" exhaustion="1200" needlearn="0" event="script" value="attack/flame strike.lua">
+	<instant name="Flame Strike" words="exori flam ++" lvl="80" mana="100" prem="1" range="5" casterTargetOrDirection="1" blockwalls="1" exhaustion="1000" groups="1,1000" needlearn="0" event="script" value="attack/flame strike.lua">
 		<vocation id="4;5"/>
 	</instant>
-	<instant name="Flame Strike Doble Damage" words="exori flam mas" lvl="150" mana="120" prem="1" range="5" casterTargetOrDirection="1" blockwalls="1" exhaustion="1200" needlearn="0" event="script" value="attack/flame strike_mas.lua">
+	<instant name="Flame Strike Doble Damage" words="exori flam mas" lvl="150" mana="120" prem="1" range="5" casterTargetOrDirection="1" blockwalls="1" exhaustion="1000" groups="1,1000" needlearn="0" event="script" value="attack/flame strike_mas.lua">
 		<vocation id="4;5"/>
 	</instant>
-	<instant name="Energi Strike Doble Damage" words="exori vis mas" lvl="150" mana="120" prem="1" range="5" casterTargetOrDirection="1" blockwalls="1" exhaustion="1200" needlearn="0" event="script" value="attack/energy strike_mas.lua">
+	<instant name="Energi Strike Doble Damage" words="exori vis mas" lvl="150" mana="120" prem="1" range="5" casterTargetOrDirection="1" blockwalls="1" exhaustion="1000" groups="1,1000" needlearn="0" event="script" value="attack/energy strike_mas.lua">
 		<vocation id="4;5"/>
 	</instant>
 </spells>
