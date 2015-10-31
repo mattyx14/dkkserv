@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<raid>
-	<announce delay="0" type="Event" message="Terror ... Terror ..."/>
-	<announce delay="300000" type="Event" message="Lucifer Summoned. Volcan of Anshara."/>
-	<singlespawn delay="300000" name="Lucifer" x="616" y="354" z="9"/>
-</raid>

@@ -1,435 +1,106 @@
 -- The OTX Server Config
 
-	-- Owner Data
-	ownerName = "Martyx"
-	ownerEmail = "martyx@otland.net"
-	url = "http://darkkonia.sytes.net"
-	location = "USA"
-
-	-- Messages
-	motd = "Welcome to the DarkKonia Fantasy Server!"
-	serverName = "DARKKONIA"
-	loginMessage = "Welcome to the DarkKonia Fantasy Server!"
-	displayGamemastersWithOnlineCommand = false
-
-	-- MySql
-	sqlType = "sqlite"
-	sqlHost = "127.0.0.1"
-	sqlPort = 3306
-	sqlUser = "root"
-	sqlPass = ""
-	sqlDatabase = ""
-	sqlFile = "schemas/otxserver.s3db"
-	sqlKeepAlive = 0
-	mysqlReadTimeout = 10
-	mysqlWriteTimeout = 10
-	mysqlReconnectionAttempts = 5
-	encryptionType = "sha1" --// encryptionType can be (plain, md5, sha1, sha256 or sha512).
-
-	-- World / Ip / Port
-	worldId = 0
-	ip = "127.0.0.1"
-	worldType = "open"
-	bindOnlyGlobalAddress = false
-	loginPort = 7171
-	gamePort = "7172"
-	statusPort = 7171
-	loginOnlyWithLoginServer = false
-
-	-- Account manager
-	accountManager = false
-	namelockManager = true
-	newPlayerChooseVoc = false
-	newPlayerSpawnPosX = 942
-	newPlayerSpawnPosY = 997
-	newPlayerSpawnPosZ = 7
-	newPlayerTownId = 1
-	newPlayerLevel = 10
-	newPlayerMagicLevel = 0
-	generateAccountNumber = false
-	generateAccountSalt = true
-
-	-- Limits on frags / Time
-	fragsLimit = 24 * 60 * 60
-	fragsSecondLimit = 2 * 24 * 60 * 60
-	fragsThirdLimit = 3 * 24 * 60 * 60
-
-	-- Red Skull Config
-	fragsToRedSkull = 4
-	fragsSecondToRedSkull = 6
-	fragsThirdToRedSkull = 8
-	redSkullLength = 6 * 24 * 60 * 60
-
-	-- Black Skull Config
-	fragsToBlackSkull = 8
-	fragsSecondToBlackSkull = 12
-	fragsThirdToBlackSkull = 16
-	blackSkulledDeathHealth = 40
-	blackSkulledDeathMana = 0
-	blackSkullLength = 12 * 24 * 60 * 60
-	useBlackSkull = true
-
-	-- Banishment Config
-	-- killsBanLength works only if useBlackSkull option is disabled.
-	notationsToBan = 2
-	warningsToFinalBan = 1
-	warningsToDeletion = 2
-	banLength = 2 * 24 * 60 * 60
-	killsBanLength = 3 * 24 * 60 * 60
-	finalBanLength = 5 * 24 * 60 * 60
-	ipBanLength = 1 * 24 * 60 * 60
-	fragsToBanishment = 6
-	fragsSecondToBanishment = 9
-	fragsThirdToBanishment = 12
-
-	-- Battle
-	-- NOTE: showHealth/ManaChangeForMonsters inherites from showHealth/ManaChange.
-	protectionLevel = 6
-	pvpTileIgnoreLevelAndVocationProtection = true
-	allowFightback = true
-	pzLocked = 60 * 1000
-	huntingDuration = 60 * 1000
-	criticalHitMultiplier = 1
-	displayCriticalHitNotify = true
-	removeWeaponAmmunition = true
-	removeWeaponCharges = true
-	removeRuneCharges = true
+	-- Combat settings
+	-- NOTE: valid values for worldType are: "pvp", "no-pvp" and "pvp-enforced"
+	worldType = "pvp"
+	hotkeyAimbotEnabled = true
+	protectionLevel = 1
+	killsToRedSkull = 3
+	killsToBlackSkull = 6
+	pzLocked = 1 * 60 * 1000
+	removeChargesFromRunes = true
+	timeToDecreaseFrags = 24 * 60 * 60 * 1000
 	whiteSkullTime = 15 * 60 * 1000
-	advancedFragList = true
-	useFragHandler = true
-	noDamageToSameLookfeet = false
-	showHealthChange = true
-	showManaChange = true
-	showHealthChangeForMonsters = true
-	showManaChangeForMonsters = true
-	fieldOwnershipDuration = 5 * 1000
-	stopAttackingAtExit = true
-	loginProtectionPeriod = 10 * 1000
-	deathLostPercent = 10
-	stairhopDelay = 1 * 1500
-	pushCreatureDelay = 2 * 1000
-	deathContainerId = 1987
-	gainExperienceColor = 215
-	addManaSpentInPvPZone = true
-	recoverManaAfterDeathInPvPZone = true
-	squareColor = 0
+	stairJumpExhaustion = 2 * 1000
+	experienceByKillingPlayers = false
+	expFromPlayersLevelRange = 75
 
-	-- RSA
-	-- NOTE: These should not be changed unless you know what your doing!
-	-- Prime1 - known as p; Prime2 - known as q; Public - known as e;
-	-- Modulus - known as n; Private - known as d.
-	-- How make custom client with custom RSA Key: http://vapus.net/customclient
-	rsaPrime1 = "14299623962416399520070177382898895550795403345466153217470516082934737582776038882967213386204600674145392845853859217990626450972452084065728686565928113"
-	rsaPrime2 = "7630979195970404721891201847792002125535401292779123937207447574596692788513647179235335529307251350570728407373705564708871762033017096809910315212884101"
-	rsaPublic = "65537"
-	rsaModulus = "109120132967399429278860960508995541528237502902798129123468757937266291492576446330739696001110603907230888610072655818825358503429057592827629436413108566029093628212635953836686562675849720620786279431090218017681061521755056710823876476444260558147179707119674283982419152118103759076030616683978566631413"
-	rsaPrivate = "46730330223584118622160180015036832148732986808519344675210555262940258739805766860224610646919605860206328024326703361630109888417839241959507572247284807035235569619173792292786907845791904955103601652822519121908367187885509270025388641700821735345222087940578381210879116823013776808975766851829020659073"
-
-	-- OTX Server Extras Features
-		-- Battle
-		optionalWarAttackableAlly = true
-		fistBaseAttack = 7
-		criticalHitChance = 9
-		noDamageToGuildMates = false
-			-- if true then no damage, if false then damage
-		noDamageToPartyMembers = false
-			-- if true then no damage, if false then damage
-
-		-- Paralyze delay
-		paralyzeDelay = 2000
-		paralyzeDelayMonster = 2000
-
-		-- Rook System
-		rookLevelTo = 6
-		rookLevelToLeaveRook = 8
-		rookTownId = 14
-		useRookSystem = true
-
-		-- GUI
-		premiumDaysToAddByGui = 10
-
-		-- Depot and Miscellaneous
-		-- set playerFollowExhaust to 2000 if someone causes lags and kicks by following unreachable creatures too often
-		useCapacity = true
-		defaultDepotSize = 500
-		defaultDepotSizePremium = 1000
-		enableProtectionQuestForGM = false
-		cleanItemsInMap = false
-		playerFollowExhaust = 2000
-
-		-- 8.7x + config
-		useMounts = true
-		enableCooldowns = false
-		unmountPlayerInPz = true
-		monsterSpawnWalkback = true
-		allowBlockSpawn = true
-		classicEquipmentSlots = false
-
-		-- Summons and monsters
-		NoShareExpSummonMonster = false
-
-		-- Others
-		enableLootBagDisplay = false
-		useRunesRequirements = true
-		highscoreDisplayPlayers = 10
-		updateHighscoresAfterMinutes = 60
-		attackImmediatelyAfterLoggingIn = false
-		exhaustionNPC = true
-		exhaustionInSecondsNPC = 0.5
-
-		-- Advanced Version
-		-- Note: If you use another protocol than the one we set as you will have functional failures.
-		manualVersionConfig = true
-		versionMin = 1035
-		versionMax = 1035
-		versionMsg = "Only clients with protocol 10.35 or DarkKonia Fantasy Client allowed!"
-
-	-- Connection config
-	loginTries = 20
-	retryTimeout = 5 * 1000
-	loginTimeout = 60 * 1000
-	maxPlayers = 200
+	-- Connection Config
+	-- NOTE: maxPlayers set to 0 means no limit
+	ip = "127.0.0.1"
+	bindOnlyGlobalAddress = false
+	loginProtocolPort = 7171
+	gameProtocolPort = 7172
+	statusProtocolPort = 7171
+	maxPlayers = 0
+	motd = "Welcome to The OTX Server!"
 	onePlayerOnlinePerAccount = true
-	allowClones = 0
-	statusTimeout = 1000
+	allowClones = false
+	allowWalkthrough = true
+	serverName = "OTXSERVER"
+	statusTimeout = 1 * 1000
 	replaceKickOnLogin = true
-	forceSlowConnectionsToDisconnect = false
-	premiumPlayerSkipWaitList = true
-	packetsPerSecond = 20
-	loginProtectionTime = 10
+	maxPacketsPerSecond = 25
 
-	-- Deathlist
-	deathListEnabled = true
-	deathListRequiredTime = 1 * 60 * 1000
-	deathAssistCount = 20
-	maxDeathRecords = 5
-
-	-- Guilds
-	ingameGuildManagement = false
-	levelToFormGuild = 20
-	premiumDaysToFormGuild = 0
-	guildNameMinLength = 4
-	guildNameMaxLength = 20
-
-	-- Highscores
-	highscoreDisplayPlayers = 15
-	updateHighscoresAfterMinutes = 60
+	-- Deaths
+	-- NOTE: Leave deathLosePercent as -1 if you want to use the default
+	-- death penalty formula. For the old formula, set it to 10. For
+	-- no skill/experience loss, set it to 0.
+	deathLosePercent = -1
 
 	-- Houses
-	buyableAndSellableHouses = true
-	houseNeedPremium = true
-	bedsRequirePremium = true
-	levelToBuyHouse = 80
-	housesPerAccount = 1
-	houseRentAsPrice = false
-	housePriceAsRent = false
-	housePriceEachSquare = 3000
-	houseRentPeriod = "weekly"
-	houseCleanOld = 8 * 24 * 60 * 60
-	guildHalls = true
-	houseSkipInitialRent = true
-	houseProtection = true
+	-- NOTE: set housePriceEachSQM to -1 to disable the ingame buy house functionality
+	housePriceEachSQM = 1000
+	houseRentPeriod = "never"
 
-	-- Item usage
+	-- Item Usage
 	timeBetweenActions = 200
 	timeBetweenExActions = 1000
-	timeBetweenCustomActions = 500
-	checkCorpseOwner = true
-	hotkeyAimbotEnabled = true
-	maximumDoorLevel = 999
-	tradeLimit = 100
-	canOnlyRopePlayers = false
 
 	-- Map
-	-- NOTE: storeTrash costs more memory, but will perform alot faster cleaning.
-	-- houseDataStorage usage may be found at how-use-internal-functions.log
-	mapAuthor = "Mattyx14"
-	randomizeTiles = false
-	houseDataStorage = "binary-tilebased"
-	storeTrash = true
-	cleanProtectedZones = true
-	mapName = "moonlightmap.otbm"
-		-- For Windows(compiled with MSVC) and Linux use:
-		-- OTX Server use default GroundCache
-		-- GroundCache mode save memory: __GROUND_CACHE__
-			-- forgotten map on normal mode use memory: 361,512 KB
-			-- forgotten map with groundCache mode use memory: 334,124 KB
-
-	-- Mailbox
-	mailMaxAttempts = 5
-	mailBlockPeriod = 60 * 60 * 1000
-	mailAttemptsFadeTime = 10 * 60 * 1000
-	mailboxDisabledTowns = "14"
-		-- Example disable rook depot (temple) "4"
-		-- mailboxDisabledTowns = "-1"
+	-- NOTE: set mapName WITHOUT .otbm at the end
+	mapName = "forgotten"
+	mapAuthor = "Komic"
 
 	-- Market
-	marketEnabled = false
 	marketOfferDuration = 30 * 24 * 60 * 60
 	premiumToCreateMarketOffer = true
 	checkExpiredMarketOffersEachMinutes = 60
 	maxMarketOffersAtATimePerPlayer = 100
 
-	-- Startup
-	-- For Linux use "-1" is default
-	-- daemonize works only on *nix, same as niceLevel
-	daemonize = false
-	defaultPriority = "higher"
-	niceLevel = 5
-	serviceThreads = 1
-	coresUsed = "-1" -- ("0, 1, 2, 3") -- For QuadCore ONLY Windows
-	startupDatabaseOptimization = true
-	removePremiumOnInit = true
-	confirmOutdatedVersion = false
-	skipItemsVersionCheck = true
+	-- MySQL
+	mysqlHost = "127.0.0.1"
+	mysqlUser = "root"
+	mysqlPass = "master"
+	mysqlDatabase = "darkkonia"
+	mysqlPort = 3306
+	mysqlSock = ""
 
-	-- Muted buffer
-	maxMessageBuffer = 4
-
-	-- Miscellaneous
-	dataDirectory = "data/"
-	logsDirectory = "data/logs/"
-	disableOutfitsForPrivilegedPlayers = false
-	bankSystem = true
-	spellNameInsteadOfWords = false
-	emoteSpells = true
-	unifiedSpells = true
-	promptExceptionTracerErrorBox = true
-	storePlayerDirection = false
-	savePlayerData = true
-	monsterLootMessage = 3
-	monsterLootMessageType = 21
-	separateViplistPerCharacter = false
-	vipListDefaultLimit = 20
-	vipListDefaultPremiumLimit = 100
-
-	-- Outfits
+	-- Misc.
 	allowChangeOutfit = true
-	allowChangeColors = true
-	allowChangeAddons = true
-	addonsOnlyPremium = true
-
-	-- Ghost mode
-	ghostModeInvisibleEffect = false
-	ghostModeSpellEffects = true
-
-	-- Limits
-	idleWarningTime = 15 * 60 * 1000
-	idleKickTime = 16 * 60 * 1000
-	expireReportsAfterReads = 1
-	playerQueryDeepness = -1
-	protectionTileLimit = 10
-	houseTileLimit = 10
-	tileLimit = 10
-
-	-- Premium-related
 	freePremium = false
-	premiumForPromotion = true
-	updatePremiumStateAtStartup = true
-
-	-- Blessings
-	blessings = true
-	blessingOnlyPremium = true
-	blessingReductionBase = 30
-	blessingReductionDecrement = 5
-	eachBlessReduction = 8
-	useFairfightReduction = true
-	pvpBlessingThreshold = 40
-	fairFightTimeRange = 60
+	kickIdlePlayerAfterMinutes = 15
+	maxMessageBuffer = 4
+	emoteSpells = true
+	classicEquipmentSlots = false
 
 	-- Rates
-	experienceStages = true
-	rateExperience = 3.0
-	rateExperienceFromPlayers = 0
-	levelToOfflineTraining = 10
-	rateSkill = 95.0
-	rateSkillOffline = 95.0
-	rateMagic = 3.0
-	rateMagicOffline = 3.0
-	rateLoot = 2.0
-	rateSpawnMin = 1
-	rateSpawnMax = 1
-	formulaLevel = 5.0
-	formulaMagic = 1.5
-		-- Monster rates
-		rateMonsterHealth = 1.0
-		rateMonsterMana = 1.0
-		rateMonsterAttack = 1.0
-		rateMonsterDefense = 1.0
+	-- NOTE: rateExp is not used if you have enabled stages in data/XML/stages.xml
+	rateExp = 1
+	rateSkill = 3
+	rateLoot = 2
+	rateMagic = 3
+	rateSpawn = 1
 
-	-- Experience from players
-	minLevelThresholdForKilledPlayer = 0.9
-	maxLevelThresholdForKilledPlayer = 1.1
-
-	-- Stamina System
-	rateStaminaLoss = 1
-	rateStaminaGain = 3
-	rateStaminaThresholdGain = 12
-	staminaRatingLimitTop = 40 * 60
-	staminaRatingLimitBottom = 14 * 60
-	staminaLootLimit = 14 * 60
-	rateStaminaAboveNormal = 1.5
-	rateStaminaUnderNormal = 0.5
-	staminaThresholdOnlyPremium = true
-
-	-- Party System
-	experienceShareRadiusX = 30
-	experienceShareRadiusY = 30
-	experienceShareRadiusZ = 1
-	experienceShareLevelDifference = 2 / 3
-	extraPartyExperienceLimit = 10
-	extraPartyExperiencePercent = 1
-	experienceShareActivity = 2 * 60 * 1000
-
-	-- Global save
-	globalSaveEnabled = false
-	globalSaveHour = 15
-	globalSaveMinute = 0
-	shutdownAtGlobalSave = true
-	cleanMapAtGlobalSave = false
-
-	-- Spawns
-	minRateSpawn = 1
-	maxRateSpawn = 3
+	-- Monsters
 	deSpawnRange = 2
 	deSpawnRadius = 50
 
-	-- Summons
-	maxPlayerSummons = 0
-	teleportAllSummons = true
-	teleportPlayerSummons = false
+	-- Stamina
+	staminaSystem = true
 
-	-- Logs
-	disableLuaErrors = false
-	adminLogs = true
-	displayPlayersLogging = true
-	prefixChannelLogs = ""
-	runFile = "server/run.log"
-	outputLog = "server/out.log"
-	truncateLogOnStartup = false
-	logPlayersStatements = false
+	-- Scripts
+	warnUnsafeScripts = true
+	convertUnsafeScripts = true
 
-	-- Manager
-	-- NOTE: managerPassword left blank disables manager.
-	managerPort = 7171
-	managerLogs = true
-	managerPassword = ""
-	managerLocalhostOnly = true
-	managerConnectionsLimit = 1
+	-- Startup
+	-- NOTE: defaultPriority only works on Windows and sets process
+	-- priority, valid values are: "normal", "above-normal", "high"
+	defaultPriority = "high"
+	startupDatabaseOptimization = true
 
-	-- Admin
-	-- NOTE: adminPassword left blank disables manager.
-	-- Set to anything if you set adminRequireLogin to false.
-	-- adminEncryption available options: rsa1024xtea;
-	-- remember to set correct data!
-	adminPort = 7171
-	adminPassword = ""
-	adminLocalhostOnly = true
-	adminConnectionsLimit = 1
-	adminRequireLogin = true
-	adminEncryption = ""
-	adminEncryptionData = ""
-
-	-- Don't edit use at your own risk
-	saveGlobalStorage = false
-	bufferMutedOnSpellFailure = false
+	-- Status server information
+	ownerName = "Mattyx14"
+	ownerEmail = "darkylive@live.com.mx"
+	url = "https://github.com/mattyx14"
+	location = "Mexico"

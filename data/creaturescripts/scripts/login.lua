@@ -1,53 +1,36 @@
-local config = {
-	loginMessage = getConfigValue('loginMessage'),
-	useFragHandler = getBooleanFromString(getConfigValue('useFragHandler'))
-}
-
-function onLogin(cid)
-	local loss = getConfigValue('deathLostPercent')
-	if(loss ~= nil) then
-		doPlayerSetLossPercent(cid, PLAYERLOSS_EXPERIENCE, loss * 10)
-	end
-
-	local accountManager = getPlayerAccountManager(cid)
-	if(accountManager == MANAGER_NONE) then
-		local lastLogin, str = getPlayerLastLoginSaved(cid), config.loginMessage
-		if(lastLogin > 0) then
-			doPlayerSendTextMessage(cid, MESSAGE_STATUS_DEFAULT, str)
-			str = "Your last visit was on " .. os.date("%a %b %d %X %Y", lastLogin) .. "."
-		else
-			str = str .. " Please choose your outfit."
-			doPlayerSendOutfitWindow(cid)
+function onLogin(player)
+	local loginStr = "Welcome to " .. configManager.getString(configKeys.SERVER_NAME) .. "!"
+	if player:getLastLoginSaved() <= 0 then
+		loginStr = loginStr .. " Please choose your outfit."
+		player:sendOutfitWindow()
+	else
+		if loginStr ~= "" then
+			player:sendTextMessage(MESSAGE_STATUS_DEFAULT, loginStr)
 		end
 
-		doPlayerSendTextMessage(cid, MESSAGE_STATUS_DEFAULT, str)
-	elseif(accountManager == MANAGER_NAMELOCK) then
-		addEvent(valid(doCreatureSay), 500, cid, "Hello, it appears that your character has been locked for name violating rules, what new name would you like to have?", TALKTYPE_PRIVATE_NP, true, cid)
-	elseif(accountManager == MANAGER_ACCOUNT) then
-		addEvent(valid(doCreatureSay), 500, cid, "Hello, type {account} to manage your account. If you would like to start over, type {cancel} anywhere.", TALKTYPE_PRIVATE_NP, true, cid)
-	else
-		addEvent(valid(doCreatureSay), 500, cid, "Hello, type {account} to create an account or {recover} to recover an account.", TALKTYPE_PRIVATE_NP, true, cid)
+		loginStr = string.format("Your last visit was on %s.", os.date("%a %b %d %X %Y", player:getLastLoginSaved()))
+	end
+	player:sendTextMessage(MESSAGE_STATUS_DEFAULT, loginStr)
+
+	-- Stamina
+	nextUseStaminaTime[player.uid] = 0
+
+	-- Promotion
+	local vocation = player:getVocation()
+	local promotion = vocation:getPromotion()
+	if player:isPremium() then
+		local value = player:getStorageValue(STORAGEVALUE_PROMOTION)
+		if not promotion and value ~= 1 then
+			player:setStorageValue(STORAGEVALUE_PROMOTION, 1)
+		elseif value == 1 then
+			player:setVocation(promotion)
+		end
+	elseif not promotion then
+		player:setVocation(vocation:getDemotion())
 	end
 
-	if(not isPlayerGhost(cid)) then
-		doSendMagicEffect(getCreaturePosition(cid), CONST_ME_TELEPORT)
-	end
-
-	registerCreatureEvent(cid, "Idle")
-	registerCreatureEvent(cid, "Mail")
-	if(getPlayerOperatingSystem(cid) >= CLIENTOS_OTCLIENT_LINUX) then
-		registerCreatureEvent(cid, "ExtendedOpcode")
-	end
-
-	registerCreatureEvent(cid, "ReportBug")
-	registerCreatureEvent(cid, "ThankYou")
-	if(config.useFragHandler) then
-		registerCreatureEvent(cid, "SkullCheck")
-	end
-
-	registerCreatureEvent(cid, "GuildEvents")
-	registerCreatureEvent(cid, "AdvanceSave")
-	registerCreatureEvent(cid, "recordIp")
-	registerCreatureEvent(cid, "partyAndGuildProtection")
+	-- Events
+	player:registerEvent("PlayerDeath")
+	player:registerEvent("DropLoot")
 	return true
 end

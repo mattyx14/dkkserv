@@ -1,14 +1,34 @@
-function onSay(cid, words, param, channel)
-	param = tonumber(param)
-	if(not param or param < 0 or param > CONST_ANI_LAST) then
-		doPlayerSendCancel(cid, "Numeric param may not be lower than 0 and higher than " .. CONST_ANI_LAST .. ".")
+function onSay(player, words, param)
+	if not player:getGroup():getAccess() then
 		return true
 	end
 
-	local position = getCreaturePosition(cid)
-	for i = 1, 30 do
-		doSendDistanceShoot(position, {x = position.x + math.random(-7, 7), y = position.y + math.random(-5, 5), z = position.z}, param)
+	local effect = tonumber(param)
+	if not Game.hasDistanceEffect(effect) then
+		player:sendCancelMessage("Invalid effect id.")
+		return false
 	end
 
-	return true
+	local position = player:getPosition()
+	local toPositionLow = {z = position.z}
+	local toPositionHigh = {z = position.z}
+
+	toPositionLow.x = position.x - 7
+	toPositionHigh.x = position.x + 7
+	for i = -5, 5 do
+		toPositionLow.y = position.y + i
+		toPositionHigh.y = toPositionLow.y
+		position:sendDistanceEffect(toPositionLow, effect)
+		position:sendDistanceEffect(toPositionHigh, effect)
+	end
+
+	toPositionLow.y = position.y - 5
+	toPositionHigh.y = position.y + 5
+	for i = -6, 6 do
+		toPositionLow.x = position.x + i
+		toPositionHigh.x = toPositionLow.x
+		position:sendDistanceEffect(toPositionLow, effect)
+		position:sendDistanceEffect(toPositionHigh, effect)
+	end
+	return false
 end

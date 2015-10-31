@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<raid>
-	<announce delay="0" type="Event" message="Pandas appeared in Mer Jungle"/>
-	<areaspawn delay="10000" fromx="997" fromy="1162" fromz="7" tox="1025" toy="1182" toz="7">
-		<monster name="Panda" amount="15"/>
-	</areaspawn>
-</raid>

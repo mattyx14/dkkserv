@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<npc name="Lutther" nameDescription="Lutther, the repair one type boots" script="bootmakerfire.lua" walkinterval="2000" skull="green" floorchange="0">
-	<health now="150" max="150"/>
-	<look type="134" head="0" body="132" legs="94" feet="114" corpse="2212" addons="3"/>
-	<parameters>
-		<parameter key="module_travel" value="1"/>
-		<parameter key="message_greet" value="Hello |PLAYERNAME|. I repair Firewalker Boots"/>
-	</parameters>
-</npc>

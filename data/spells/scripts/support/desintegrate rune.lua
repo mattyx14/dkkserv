@@ -1,28 +1,32 @@
-local function doRemoveObject(cid, pos)
-	pos.stackpos = 255
-	local object = getThingFromPos(pos)
-	if(object.uid > 65535 and not isCreature(object.uid) and isMovable(object.uid) and object.actionid == 0 and not getTileInfo(pos).protection) then
-		doRemoveItem(object.uid)
-		doSendMagicEffect(pos, CONST_ME_BLOCKHIT)
-		return true
+local dead_human = {
+	3058, 3059, 3060, 3061, 3064, 3065, 3066
+}
+
+function onCastSpell(creature, variant, isHotkey)
+	local position = Variant.getPosition(variant)
+	local tile = Tile(position)
+	local targetItem = tile and tile:getTopVisibleThing()
+
+	if targetItem and not targetItem:isCreature() then
+		local desintegrate = false
+		while not desintegrate
+			and not isInArray(dead_human, targetItem:getId())
+			and targetItem:getType():isMovable()
+			and targetItem:getUniqueId() > 65535
+			and targetItem:getActionId() == 0
+		do
+			targetItem:remove()
+			desintegrate = true
+			targetItem = tile:getTopVisibleThing()
+		end
+
+		if desintegrate then
+			position:sendMagicEffect(CONST_ME_BLOCKHIT)
+			return true
+		end
 	end
 
-	doPlayerSendDefaultCancel(cid, RETURNVALUE_NOTPOSSIBLE)
-	doSendMagicEffect(getPlayerPosition(cid), CONST_ME_POFF)
-	return false
-end
-
-function onCastSpell(cid, var)
-	local pos = variantToPosition(var)
-	if(pos.x == CONTAINER_POSITION) then
-		pos = getThingPos(cid)
-	end
-
-	if(pos.x ~= 0 and pos.y ~= 0) then
-		return doRemoveObject(cid, pos)
-	end
-
-	doPlayerSendDefaultCancel(cid, RETURNVALUE_NOTPOSSIBLE)
-	doSendMagicEffect(getPlayerPosition(cid), CONST_ME_POFF)
+	creature:sendCancelMessage(RETURNVALUE_NOTPOSSIBLE)
+	creature:getPosition():sendMagicEffect(CONST_ME_POFF)
 	return false
 end

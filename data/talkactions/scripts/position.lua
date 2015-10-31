@@ -1,18 +1,10 @@
-local config = {
-	access = 3 -- to see other players position
-}
-
-function onSay(cid, words, param, channel)
-	local pid = cid
-	if(param ~= '' and getPlayerAccess(cid) >= config.access) then
-		pid = getPlayerByNameWildcard(param)
-		if(not pid or (isPlayerGhost(pid) and getPlayerGhostAccess(pid) > getPlayerGhostAccess(cid))) then
-			doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_BLUE, "Player " .. param .. " is not currently online.")
-			return true
-		end
+function onSay(player, words, param)
+	if player:getGroup():getAccess() and param ~= "" then
+		local split = param:split(",")
+		player:teleportTo(Position(split[1], split[2], split[3]))
+	else
+		local position = player:getPosition()
+		player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, "Your current position is: " .. position.x .. ", " .. position.y .. ", " .. position.z .. ".")
 	end
-
-	local position = getCreaturePosition(pid)
-	doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_BLUE, (pid == cid and "Your" or getCreatureName(pid)) .. " current position is [X: " .. position.x .. " | Y: " .. position.y .. " | Z: " .. position.z .. "]")
-	return true
+	return false
 end

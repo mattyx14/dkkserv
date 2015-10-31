@@ -1,28 +1,38 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-	if(getBooleanFromString(getConfigValue('enableProtectionQuestForGM'))) then
-		if(getPlayerCustomFlagValue(cid, PLAYERCUSTOMFLAG_GAMEMASTERPRIVILEGES)) then
-			doSendMagicEffect(getCreaturePosition(cid), CONST_ME_POFF, cid)
-			return true
-		end
-	end
-
-	if item.uid > 1000 and item.uid < 23568 then
-		local itemWeight = getItemWeightById(item.uid, 1)
-		local playerCap = getPlayerFreeCap(cid)
-		if getPlayerStorageValue(cid, item.uid) == -1 then
-			if playerCap >= itemWeight then
-				doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, 'You have found a ' .. getItemNameById(item.uid) .. '.')
-				doPlayerAddItem(cid, item.uid ,1)
-				setPlayerStorageValue(cid, item.uid, 1)
-			else
-				doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, 'You have found a ' .. getItemNameById(item.uid) .. ' weighing ' .. itemWeight .. ' oz it\'s too heavy.')
-			end
-		else
-			doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "It is empty.")
-		end
-	else
+local annihilatorReward = {1990, 2400, 2431, 2494}
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
+	if item.uid <= 1000 or item.uid > 22700 then
 		return false
 	end
 
+	local itemType = ItemType(item.itemid)
+	local itemWeight = itemType:getWeight()
+	local playerCap = player:getFreeCapacity()
+	if isInArray(annihilatorReward, item.uid) then
+		if player:getStorageValue(30015) == -1 then
+			if playerCap >= itemWeight then
+				if item.uid == 1990 then
+					player:addItem(1990, 1):addItem(2326, 1)
+				else
+					player:addItem(item.uid, 1)
+				end
+				player:sendTextMessage(MESSAGE_INFO_DESCR, 'You have found a ' .. itemType:getName() .. '.')
+				player:setStorageValue(30015, 1)
+			else
+				player:sendTextMessage(MESSAGE_INFO_DESCR, 'You have found a ' .. itemType:getName() .. ' weighing ' .. itemWeight .. ' oz it\'s too heavy.')
+			end
+		else
+			player:sendTextMessage(MESSAGE_INFO_DESCR, "It is empty.")
+		end
+	elseif player:getStorageValue(item.uid) == -1 then
+		if playerCap >= itemWeight then
+			player:sendTextMessage(MESSAGE_INFO_DESCR, 'You have found a ' .. itemType:getName() .. '.')
+			player:addItem(item.uid, 1)
+			player:setStorageValue(item.uid, 1)
+		else
+			player:sendTextMessage(MESSAGE_INFO_DESCR, 'You have found a ' .. itemType:getName() .. ' weighing ' .. itemWeight .. ' oz it\'s too heavy.')
+		end
+	else
+		player:sendTextMessage(MESSAGE_INFO_DESCR, "It is empty.")
+	end
 	return true
 end

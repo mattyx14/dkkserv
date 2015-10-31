@@ -1,84 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Kreebosh the Exile" nameDescription="kreebosh the exile" race="blood" experience="350" speed="270">
-	<health now="1880" max="1880"/>
-	<look type="103" corpse="6016"/>
-	<targetchange interval="5000" chance="8"/>
-	<strategy attack="100" defense="0"/>
+<monster name="Kreebosh the Exile" nameDescription="kreebosh the exile" race="blood" experience="350" speed="270" manacost="0">
+	<health now="880" max="880" />
+	<look type="103" corpse="7349" />
 	<flags>
-		<flag summonable="0"/>
-		<flag attackable="1"/>
-		<flag hostile="1"/>
-		<flag illusionable="0"/>
-		<flag convinceable="0"/>
-		<flag pushable="0"/>
-		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
-		<flag targetdistance="1"/>
-		<flag staticattack="90"/>
-		<flag runonhealth="0"/>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag targetdistance="1" />
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" min="-1" max="-100"/>
+		<attack name="melee" interval="2000" skill="30" attack="50" />
 		<attack name="fire" interval="6000" chance="80" radius="3" min="0" max="-120">
-			<attribute key="areaEffect" value="energy"/>
+			<attribute key="areaEffect" value="energy" />
 		</attack>
-		<attack name="Paralyze" interval="2500" chance="17" range="7" target="1">
-			<attribute key="areaEffect" value="redshimmer"/>
+		<attack name="speed" interval="3500" chance="35" radius="1" target="1" range="5" duration="20000" speed="-450">
+			<attribute key="areaEffect" value="redshimmer" />
 		</attack>
 		<attack name="physical" interval="6000" chance="40" radius="1" target="1" range="5" min="-20" max="-100">
-			<attribute key="areaEffect" value="mortarea"/>
-			<attribute key="shootEffect" value="suddendeath"/>
+			<attribute key="areaEffect" value="mortarea" />
+			<attribute key="shootEffect" value="suddendeath" />
 		</attack>
 		<attack name="energy" interval="5000" chance="20" radius="1" target="1" range="5" min="-40" max="-200">
-			<attribute key="areaEffect" value="firearea"/>
-			<attribute key="shootEffect" value="energy"/>
+			<attribute key="areaEffect" value="firearea" />
+			<attribute key="shootEffect" value="energy" />
 		</attack>
-		<attack name="drunk" interval="1000" chance="20" range="5" radius="1" target="1" duration="30000"/>
+		<attack name="drunk" interval="1000" chance="20" range="5" radius="1" target="1" duration="30000" />
 		<attack name="outfit" interval="2000" chance="50" range="5" radius="1" target="1" duration="60000" monster="Rat">
-			<attribute key="areaEffect" value="greenshimmer"/>
+			<attribute key="areaEffect" value="greenshimmer" />
 		</attack>
 	</attacks>
-	<defenses armor="15" defense="20">
-		<defense name="healing" interval="1000" chance="15" min="50" max="80">
-			<attribute key="areaEffect" value="blueshimmer"/>
-		</defense>
-	</defenses>
+	<defenses armor="30" defense="40" />
+	<elements>
+		<element energyPercent="55" />
+		<element deathPercent="-10" />
+	</elements>
 	<immunities>
-		<immunity energy="1"/>
-		<immunity fire="1"/>
-		<immunity poison="1"/>
-		<immunity lifedrain="1"/>
-		<immunity paralyze="1"/>
-		<immunity outfit="1"/>
-		<immunity drunk="1"/>
-		<immunity invisible="1"/>
+		<immunity outfit="1" />
+		<immunity drunk="1" />
+		<immunity invisible="1" />
 	</immunities>
 	<summons maxSummons="2">
-		<summon name="green djinn" interval="1000" chance="15" max="2"/>
+		<summon name="Green Djinn" interval="5000" chance="20" />
 	</summons>
-	<voices interval="5000" chance="10">
-		<voice sentence="I grant you a deathwish!"/>
-		<voice sentence="Muhahahaha!"/>
-		<voice sentence="I wish you a merry trip to hell!"/>
-		<voice sentence="Tell me your last wish!"/>
-		<voice sentence="Good wishes are for fairytales"/>
+	<voices interval="5000" chance="5">
+		<voice sentence="I bet you wish you weren't here." />
 	</voices>
-	<loot>
-		<item id="2155" countmax="1" chance="100"/> -- green gem
-		<item id="2148" countmax="60" chance1="100000" chancemax="0"/> -- gold coin
-		<item id="2673" countmax="4" chance1="6666" chancemax="0"/> -- pear
-		<item id="2044" chance="10000"/> -- lamp
-		<item id="1987" chance="100000"> -- bag
-		<item id="7378" countmax="2" chance1="2000" chancemax="0"/> -- royal spear :: Atk 50
-		<item id="2063" chance="20000"/> -- small oil lamp
-			<inside>
-				<item id="2149" countmax="2" chance="7000"/> -- small emerald
-				<item id="2663" chance="200"/> -- mystic turban :: Arm 1
-				<item id="1860" countmax="1" chance="2500"/> -- green tapestry
-				<item id="2148" countmax="15" chance1="80000" chancemax="0"/> -- gold coin
-				<item id="2442" chance="2000"/> -- heavy machete :: Def 10 :: Atk 16
-				<item id="2187" chance="1111" /> -- wand of inferno
-			</inside>
-		</item>
-	</loot>
 </monster>

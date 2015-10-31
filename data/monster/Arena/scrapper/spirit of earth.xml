@@ -1,51 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monster name="Spirit of Earth" nameDescription="the spirit of earth" race="undead" experience="800" speed="180" manacost="0">
-	<health now="1285" max="1285"/>
-	<look type="67" corpse="7349"/>
-	<targetchange interval="2000" chance="5"/>
-	<strategy attack="100" defense="0"/>
+	<health now="1294" max="1294" />
+	<look type="67" corpse="7349" />
 	<flags>
-		<flag summonable="0"/>
-		<flag attackable="1"/>
-		<flag hostile="1"/>
-		<flag illusionable="1"/>
-		<flag convinceable="0"/>
-		<flag pushable="0"/>
-		<flag canpushitems="1"/>
-		<flag canpushcreatures="1"/>
-		<flag targetdistance="1"/>
-		<flag staticattack="78"/>
-		<flag runonhealth="0"/>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag targetdistance="1" />
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="50" attack="60"/>
-		<attack name="physical" interval="2000" chance="10" range="7" min="-0" max="-135">
-			<attribute key="shootEffect" value="smallstone"/>
-		</attack>
-		<attack name="Paralyze" interval="2500" chance="17" range="7" target="1">
-			<attribute key="areaEffect" value="sleep"/>
-		</attack>
-		<attack name="physical" interval="2000" chance="10" length="5" spread="6" min="-0" max="-170">
-			<attribute key="areaEffect" value="groundshaker"/>
-		</attack>
-		<attack name="lifedrain" interval="2000" chance="20" radius="3" target="0" min="-0" max="-160">
-			<attribute key="areaEffect" value="poff"/>
-		</attack>
-		<attack name="poisoncondition" interval="2000" chance="10" spread="0" length="6" poison="220">
-			<attribute key="areaEffect" value="poison"/>
-		</attack>	
+		<attack name="melee" interval="2000" skill="50" attack="60" />
 	</attacks>
-	<defenses armor="30" defense="32"/>
+	<defenses armor="30" defense="32" />
 	<elements>
-		<element energyPercent="50"/>
-		<element deathPercent="30"/>
-		<element firePercent="-10"/>
+		<element energyPercent="50" />
+		<element firePercent="-5" />
 	</elements>
 	<immunities>
-		<immunity invisible="1"/>
-		<immunity earth="1"/>
+		<immunity outfit="1" />
+		<immunity drunk="1" />
+		<immunity invisible="1" />
 	</immunities>
 	<voices interval="5000" chance="5">
-		<voice sentence="Show your strengh ... or perish."/>
+		<voice sentence="Show your strengh ... or perish." />
 	</voices>
 </monster>

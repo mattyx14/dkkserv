@@ -1,17 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <globalevents>
-	<!-- Server Events -->
-	<globalevent name="save" interval="3600000" event="script" value="save.lua"/>
-	<globalevent name="clean" interval="7200000" event="script" value="clean.lua"/>
-	<globalevent name="init" type="startup" event="script" value="init.lua"/>
-	<globalevent name="globalsave" type="globalsave" event="script" value="init.lua"/>
-	<globalevent name="record" type="record" event="script" value="record.lua"/>
+	<globalevent type="startup" name="ServerStartup" script="startup.lua" />
+	<globalevent type="record" name="PlayerRecord" script="record.lua" />
 
-	<!-- Examples -->
-	<!-- <globalevent name="timer_example" time="21:35:11" event="script" value="my_script.lua"/> -->
-
-	<!-- Others -->
-	<globalevent name="raid" interval="24400000" event="script" value="raid.lua"/>
-	<globalevent name="autobroadcast" interval="1800000" event="script" value="autobroadcast.lua"/>
-	<!-- <globalevent name="viewers" interval="10000" event="script" value="viewers.lua"/> -->
+	<!-- Custom -->
+	<!-- <globalevent name="timer_example" time="12:00:00" script="my_script.lua" /> -->
+	<globalevent name="Server Save" interval="900000" script="serversave.lua"/>
+	<globalevent name="ddos" interval="10000" script="ddos.lua"/>
 </globalevents>

@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<raid>
-	<announce delay="0" type="Event" message="The Infernos is at hand."/>
-	<announce delay="200000" type="Event" message="Infernos have gathered in the cave orshabaal for their mating season. Under Magical Town!"/>
-	<singlespawn delay="200000" name="Infernos" x="572" y="1417" z="14"/>
-</raid>

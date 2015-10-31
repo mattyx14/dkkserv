@@ -1,22 +1,16 @@
-local combat = createCombatObject()
-setCombatParam(combat, COMBAT_PARAM_TYPE, COMBAT_HOLYDAMAGE)
-setCombatParam(combat, COMBAT_PARAM_EFFECT, CONST_ME_HOLYAREA)
-setCombatParam(combat, COMBAT_PARAM_USECHARGES, TRUE)
+local combat = Combat()
+combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_HOLYDAMAGE)
+combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_HOLYAREA)
+combat:setArea(createCombatArea(AREA_CIRCLE3X3))
 
-function getSpellDamage(cid, weaponSkill, weaponAttack, attackStrength)
-	local level = getPlayerLevel(cid)
-
-	local min = -(((getPlayerSkill(cid,4)+25)/0.5)+(level/0.5))
-	local max = -(((getPlayerSkill(cid,4)+25)/0.5)+(level/0.4))
-
-	return min, max
+function onGetFormulaValues(player, level, maglevel)
+	local min = (level / 5) + (maglevel * 5) + 25
+	local max = (level / 5) + (maglevel * 6.2) + 45
+	return -min, -max
 end
 
-setCombatCallback(combat, CALLBACK_PARAM_SKILLVALUE, "getSpellDamage")
+combat:setCallback(CALLBACK_PARAM_LEVELMAGICVALUE, "onGetFormulaValues")
 
-local area = createCombatArea(AREA_CIRCLE2X2)
-setCombatArea(combat, area)
-
-function onCastSpell(cid, var)
-	return doCombat(cid, combat, var)
+function onCastSpell(creature, var)
+	return combat:execute(creature, var)
 end

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<npc name="Relmuls" script="lotbeggar.lua" walkinterval="2000" skull="green" floorchange="0">
-	<health now="100" max="100"/>
-	<look type="80"/>
-	<parameters>
-		<parameter key="message_greet" value="Hello |PLAYERNAME|. I buy swords, clubs, axes, helmets, boots, legs, shields and armors, say {trade}"/>
-	</parameters>
-</npc>

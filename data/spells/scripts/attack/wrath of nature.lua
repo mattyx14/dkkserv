@@ -1,20 +1,16 @@
-local combat = createCombatObject()
-setCombatParam(combat, COMBAT_PARAM_TYPE, COMBAT_EARTHDAMAGE)
-setCombatParam(combat, COMBAT_PARAM_EFFECT, CONST_ME_BIGPLANTS)
+local combat = Combat()
+combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_EARTHDAMAGE)
+combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_PLANTATTACK)
+combat:setArea(createCombatArea(AREA_CROSS6X6))
 
-function onGetFormulaValues(cid, level, maglevel)
-	min = -(maglevel*7) -level/5 *.2
-	max = -(maglevel*12) -level/5 *.1
-	
-	return min, max
+function onGetFormulaValues(player, level, maglevel)
+	local min = (level / 5) + (maglevel * 3) + 32
+	local max = (level / 5) + (maglevel * 9) + 40
+	return -min, -max
 end
 
-setCombatCallback(combat, CALLBACK_PARAM_LEVELMAGICVALUE, "onGetFormulaValues")
+combat:setCallback(CALLBACK_PARAM_LEVELMAGICVALUE, "onGetFormulaValues")
 
-
-local area = createCombatArea(AREA_CROSS6X6)
-setCombatArea(combat, area)
-
-function onCastSpell(cid, var)
-	return doCombat(cid, combat, var)
+function onCastSpell(creature, var)
+	return combat:execute(creature, var)
 end

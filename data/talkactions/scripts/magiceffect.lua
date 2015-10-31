@@ -1,10 +1,14 @@
-function onSay(cid, words, param, channel)
-	param = tonumber(param)
-	if(not param or param < 0 or param > CONST_ME_LAST) then
-		doPlayerSendCancel(cid, "Numeric param may not be lower than 0 and higher than " .. CONST_ME_LAST .. ".")
+function onSay(player, words, param)
+	if not player:getGroup():getAccess() then
 		return true
 	end
 
-	doSendMagicEffect(getCreaturePosition(cid), param)
-	return true
+	local effect = tonumber(param)
+	if not Game.hasEffect(effect) then
+		player:sendCancelMessage("Invalid effect id.")
+		return false
+	end
+
+	player:getPosition():sendMagicEffect(tonumber(param))
+	return false
 end

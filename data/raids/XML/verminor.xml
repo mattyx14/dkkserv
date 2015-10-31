@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<raid>
-	<announce delay="0" type="Event" message="The mating season of the Verminor is at hand. Leave the Monty Fields as fast as you can."/>
-	<announce delay="200000" type="Event" message="Verminor have gathered in the Monty Fields for their mating season. Beware!"/>
-	<singlespawn delay="200000" name="verminor" x="485" y="1440" z="13"/>
-</raid>
