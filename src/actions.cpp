@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2015  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -263,11 +263,7 @@ Action* Actions::getAction(const Item* item)
 	}
 
 	//rune items
-	Action* runeSpell = g_spells->getRuneSpell(item->getID());
-	if (runeSpell) {
-		return runeSpell;
-	}
-	return nullptr;
+	return g_spells->getRuneSpell(item->getID());
 }
 
 ReturnValue Actions::internalUseItem(Player* player, const Position& pos, uint8_t index, Item* item, bool isHotkey)

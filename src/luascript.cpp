@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2015  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -10949,14 +10949,21 @@ int LuaScriptInterface::luaCombatCreate(lua_State* L)
 int LuaScriptInterface::luaCombatSetParameter(lua_State* L)
 {
 	// combat:setParameter(key, value)
-	uint32_t value = getNumber<uint32_t>(L, 3);
-	CombatParam_t key = getNumber<CombatParam_t>(L, 2);
 	Combat* combat = getUserdata<Combat>(L, 1);
-	if (combat) {
-		pushBoolean(L, combat->setParam(key, value));
-	} else {
+	if (!combat) {
 		lua_pushnil(L);
+		return 1;
 	}
+
+	CombatParam_t key = getNumber<CombatParam_t>(L, 2);
+	uint32_t value;
+	if (isBoolean(L, 3)) {
+		value = getBoolean(L, 3) ? 1 : 0;
+	} else {
+		value = getNumber<uint32_t>(L, 3);
+	}
+	combat->setParam(key, value);
+	pushBoolean(L, true);
 	return 1;
 }
 

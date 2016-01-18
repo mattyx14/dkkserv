@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2015  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -358,7 +358,7 @@ class LuaScriptInterface
 		// Is
 		inline static bool isNumber(lua_State* L, int32_t arg)
 		{
-			return lua_isnumber(L, arg) != 0;
+			return lua_type(L, arg) == LUA_TNUMBER;
 		}
 		inline static bool isString(lua_State* L, int32_t arg)
 		{
