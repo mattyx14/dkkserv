@@ -2,9 +2,9 @@
 -- NOTE: valid values for worldType are: "pvp", "no-pvp" and "pvp-enforced"
 worldType = "pvp"
 hotkeyAimbotEnabled = true
-protectionLevel = 1
-killsToRedSkull = 3
-killsToBlackSkull = 6
+protectionLevel = 50
+killsToRedSkull = 5
+killsToBlackSkull = 8
 pzLocked = 60 * 1000
 removeChargesFromRunes = true
 timeToDecreaseFrags = 24 * 60 * 60 * 1000
@@ -15,19 +15,23 @@ expFromPlayersLevelRange = 75
 
 -- Connection Config
 -- NOTE: maxPlayers set to 0 means no limit
-ip = "127.0.0.1"
+ip = "darkkonia.sytes.net"
 bindOnlyGlobalAddress = false
 loginProtocolPort = 7171
 gameProtocolPort = 7172
 statusProtocolPort = 7171
-maxPlayers = 0
+maxPlayers = 100
 motd = "Welcome to The DarkKonia Fantasy Server!"
 onePlayerOnlinePerAccount = true
 allowClones = false
 serverName = "FANTASY"
-statusTimeout = 5 * 1000
+statusTimeout = 1 * 1000
 replaceKickOnLogin = true
 maxPacketsPerSecond = 25
+
+-- Casting System 
+enableLiveCasting = true
+liveCastPort = 7173
 
 -- Deaths
 -- NOTE: Leave deathLosePercent as -1 if you want to use the default
@@ -37,7 +41,7 @@ deathLosePercent = -1
 
 -- Houses
 -- NOTE: set housePriceEachSQM to -1 to disable the ingame buy house functionality
-housePriceEachSQM = 1000
+housePriceEachSQM = 2000
 houseRentPeriod = "weekly"
 
 -- Item Usage
@@ -70,6 +74,9 @@ kickIdlePlayerAfterMinutes = 15
 maxMessageBuffer = 4
 emoteSpells = true
 classicEquipmentSlots = false
+allowWalkthrough = false
+coinPacketSize = 25
+coinImagesURL = "http://some.url/images/store"
 
 -- Rates
 -- NOTE: rateExp is not used if you have enabled stages in data/XML/stages.xml
@@ -78,6 +85,12 @@ rateSkill = 3
 rateLoot = 2
 rateMagic = 3
 rateSpawn = 1
+
+-- Critical hits
+-- NOTE: criticalChance and extraPercent are percentages, not absolute values.
+-- extraPercent is the extra percentage of the damage to be added.
+criticalChance = 1
+criticalExtra = 100
 
 -- Monsters
 deSpawnRange = 2

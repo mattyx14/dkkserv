@@ -31,9 +31,9 @@ extern ConfigManager g_config;
 extern Weapons* g_weapons;
 
 Weapons::Weapons():
-	m_scriptInterface("Weapon Interface")
+	scriptInterface("Weapon Interface")
 {
-	m_scriptInterface.initState();
+	scriptInterface.initState();
 }
 
 Weapons::~Weapons()
@@ -61,12 +61,12 @@ void Weapons::clear()
 	}
 	weapons.clear();
 
-	m_scriptInterface.reInitState();
+	scriptInterface.reInitState();
 }
 
 LuaScriptInterface& Weapons::getScriptInterface()
 {
-	return m_scriptInterface;
+	return scriptInterface;
 }
 
 std::string Weapons::getScriptBaseName() const
@@ -86,7 +86,7 @@ void Weapons::loadDefaults()
 			case WEAPON_AXE:
 			case WEAPON_SWORD:
 			case WEAPON_CLUB: {
-				WeaponMelee* weapon = new WeaponMelee(&m_scriptInterface);
+				WeaponMelee* weapon = new WeaponMelee(&scriptInterface);
 				weapon->configureWeapon(it);
 				weapons[i] = weapon;
 				break;
@@ -98,7 +98,7 @@ void Weapons::loadDefaults()
 					continue;
 				}
 
-				WeaponDistance* weapon = new WeaponDistance(&m_scriptInterface);
+				WeaponDistance* weapon = new WeaponDistance(&scriptInterface);
 				weapon->configureWeapon(it);
 				weapons[i] = weapon;
 				break;
@@ -113,11 +113,11 @@ void Weapons::loadDefaults()
 Event* Weapons::getEvent(const std::string& nodeName)
 {
 	if (strcasecmp(nodeName.c_str(), "melee") == 0) {
-		return new WeaponMelee(&m_scriptInterface);
+		return new WeaponMelee(&scriptInterface);
 	} else if (strcasecmp(nodeName.c_str(), "distance") == 0) {
-		return new WeaponDistance(&m_scriptInterface);
+		return new WeaponDistance(&scriptInterface);
 	} else if (strcasecmp(nodeName.c_str(), "wand") == 0) {
-		return new WeaponWand(&m_scriptInterface);
+		return new WeaponWand(&scriptInterface);
 	}
 	return nullptr;
 }
@@ -142,16 +142,17 @@ int32_t Weapons::getMaxMeleeDamage(int32_t attackSkill, int32_t attackValue)
 //players
 int32_t Weapons::getMaxWeaponDamage(uint32_t level, int32_t attackSkill, int32_t attackValue, float attackFactor)
 {
-	return static_cast<int32_t>(std::ceil((2 * (attackValue * (attackSkill + 5.8) / 25 + (level - 1) / 10.)) / attackFactor));
+	return static_cast<int32_t>(std::ceil((2.5 * (attackValue * (attackSkill + 6) / 15 + (level - 1) / 10)) / attackFactor));
 }
 
 Weapon::Weapon(LuaScriptInterface* _interface) :
 	Event(_interface)
 {
-	m_scripted = false;
+	scripted = false;
 	id = 0;
 	level = 0;
 	magLevel = 0;
+	skillLevel = 0;
 	mana = 0;
 	manaPercent = 0;
 	soul = 0;
@@ -185,6 +186,10 @@ bool Weapon::configureEvent(const pugi::xml_node& node)
 
 	if ((attr = node.attribute("mana"))) {
 		mana = pugi::cast<uint32_t>(attr.value());
+	}
+
+	if ((attr = node.attribute("skill"))) {
+		skillLevel = pugi::cast<uint32_t>(attr.value());
 	}
 
 	if ((attr = node.attribute("manapercent"))) {
@@ -266,6 +271,10 @@ bool Weapon::configureEvent(const pugi::xml_node& node)
 		wieldInfo |= WIELDINFO_MAGLV;
 	}
 
+	if (getReqSkillLv() > 0) {
+		wieldInfo |= WIELDINFO_SKILL;
+	}
+
 	if (!vocationString.empty()) {
 		wieldInfo |= WIELDINFO_VOCREQ;
 	}
@@ -280,6 +289,7 @@ bool Weapon::configureEvent(const pugi::xml_node& node)
 		it.vocationString = vocationString;
 		it.minReqLevel = getReqLevel();
 		it.minReqMagicLevel = getReqMagLv();
+		it.minReqSkillLevel = getReqSkillLv();
 	}
 
 	configureWeapon(Item::items[id]);
@@ -335,7 +345,6 @@ int32_t Weapon::playerWeaponCheck(Player* player, Creature* target, uint8_t shoo
 		if (auto chance = g_config.getNumber(ConfigManager::CRITICAL_HIT_CHANCE)) {
 			if (boolean_random(static_cast<double>(chance) / 100.0)) {
 				damageModifier += g_config.getNumber(ConfigManager::CRITICAL_HIT_EXTRA);
-				std::cout << "Critical hit!" << std::endl;
 			}
 		}
 
@@ -344,6 +353,10 @@ int32_t Weapon::playerWeaponCheck(Player* player, Creature* target, uint8_t shoo
 		}
 
 		if (player->getMagicLevel() < getReqMagLv()) {
+			damageModifier = (isWieldedUnproperly() ? damageModifier / 2 : 0);
+		}
+
+		if (player->getSkillLevel(player->getWeaponType()) < getReqSkillLv()) {
 			damageModifier = (isWieldedUnproperly() ? damageModifier / 2 : 0);
 		}
 		return damageModifier;
@@ -395,7 +408,7 @@ bool Weapon::useFist(Player* player, Creature* target)
 
 void Weapon::internalUseWeapon(Player* player, Item* item, Creature* target, int32_t damageModifier) const
 {
-	if (m_scripted) {
+	if (scripted) {
 		LuaVariant var;
 		var.type = VARIANT_NUMBER;
 		var.number = target->getID();
@@ -420,7 +433,7 @@ void Weapon::internalUseWeapon(Player* player, Item* item, Creature* target, int
 
 void Weapon::internalUseWeapon(Player* player, Item* item, Tile* tile) const
 {
-	if (m_scripted) {
+	if (scripted) {
 		LuaVariant var;
 		var.type = VARIANT_TARGETPOSITION;
 		var.pos = tile->getPosition();
@@ -454,13 +467,13 @@ void Weapon::onUsedWeapon(Player* player, Item* item, Tile* destTile) const
 	}
 
 	if (breakChance != 0 && uniform_random(1, 100) <= breakChance) {
-		decrementItemCount(item);
+		Weapon::decrementItemCount(item);
 		return;
 	}
 
 	switch (action) {
 		case WEAPONACTION_REMOVECOUNT:
-			decrementItemCount(item);
+			Weapon::decrementItemCount(item);
 			break;
 
 		case WEAPONACTION_REMOVECHARGE: {
@@ -496,25 +509,25 @@ uint32_t Weapon::getManaCost(const Player* player) const
 bool Weapon::executeUseWeapon(Player* player, const LuaVariant& var) const
 {
 	//onUseWeapon(player, var)
-	if (!m_scriptInterface->reserveScriptEnv()) {
+	if (!scriptInterface->reserveScriptEnv()) {
 		std::cout << "[Error - Weapon::executeUseWeapon] Call stack overflow" << std::endl;
 		return false;
 	}
 
-	ScriptEnvironment* env = m_scriptInterface->getScriptEnv();
-	env->setScriptId(m_scriptId, m_scriptInterface);
+	ScriptEnvironment* env = scriptInterface->getScriptEnv();
+	env->setScriptId(scriptId, scriptInterface);
 
-	lua_State* L = m_scriptInterface->getLuaState();
+	lua_State* L = scriptInterface->getLuaState();
 
-	m_scriptInterface->pushFunction(m_scriptId);
+	scriptInterface->pushFunction(scriptId);
 	LuaScriptInterface::pushUserdata<Player>(L, player);
 	LuaScriptInterface::setMetatable(L, -1, "Player");
-	m_scriptInterface->pushVariant(L, var);
+	scriptInterface->pushVariant(L, var);
 
-	return m_scriptInterface->callFunction(2);
+	return scriptInterface->callFunction(2);
 }
 
-void Weapon::decrementItemCount(Item* item) const
+void Weapon::decrementItemCount(Item* item)
 {
 	uint16_t count = item->getItemCount();
 	if (count > 1) {
@@ -789,7 +802,7 @@ bool WeaponDistance::useWeapon(Player* player, Item* item, Creature* target) con
 			for (const auto& dir : destList) {
 				// Blocking tiles or tiles without ground ain't valid targets for spears
 				Tile* tmpTile = g_game.map.getTile(destPos.x + dir.first, destPos.y + dir.second, destPos.z);
-				if (tmpTile && !tmpTile->hasProperty(CONST_PROP_IMMOVABLEBLOCKSOLID) && tmpTile->getGround() != nullptr) {
+				if (tmpTile && !tmpTile->hasFlag(TILESTATE_IMMOVABLEBLOCKSOLID) && tmpTile->getGround() != nullptr) {
 					destTile = tmpTile;
 					break;
 				}

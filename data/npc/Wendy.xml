@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Wendy" script="loot.lua" walkinterval="2000" floorchange="0" speechbubble="0" skull="green">
+	<health now="150" max="150"/>
+	<look type="139" head="132" body="79" legs="97" feet="132" addons="3"/>
+	<parameters>
+		<parameter key="module_shop" value="1"/>
+		<parameter key="message_greet" value="Hello |PLAYERNAME|. I buy swords, clubs, axes, helmets, boots, legs, shields and armors."/>
+		<parameter key="shop_sellable" value="boots of haste,2195,28000; sparking rainbow shield,8908,25000; ancient shield,2532,900; beholder shield,2518,300; bone shield,2541,80; black shield,2529,800; crown shield,2519,8000; dark shield,2521,400; demon shield,2520,35000; dragon shield,2516,4000; dwarven shield,2525,170; mastermind shield,2514,100000; medusa shield,2536,12000; necromancer shield,6433,200000; norse shield,7460,300; phoenix shield,2539,15000; scarab shield,2540,2000; steel shield,2509,90; tortoise shield,6131,150; tower shield,2528,8000; assassin star,7368,1500; vampire shield,2534,15000;"/>
+	</parameters>
+</npc>

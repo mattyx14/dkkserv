@@ -270,9 +270,6 @@ class Player final : public Creature, public Cylinder
 		const GuildWarList& getGuildWarList() const {
 			return guildWarList;
 		}
-		void setGuildWarList(GuildWarList guildWarList) {
-			this->guildWarList = guildWarList;
-		}
 
 		Vocation* getVocation() const {
 			return vocation;
@@ -511,9 +508,10 @@ class Player final : public Creature, public Cylinder
 		void addConditionSuppressions(uint32_t conditions);
 		void removeConditionSuppressions(uint32_t conditions);
 
+		DepotChest* createDepots();
 		DepotChest* getDepotChest(uint32_t depotId, bool autoCreate);
 		DepotLocker* getDepotLocker(uint32_t depotId);
-		void onReceiveMail();
+		void onReceiveMail() const;
 		bool isNearDepotBox() const;
 
 		bool canSee(const Position& pos) const final;
@@ -1104,9 +1102,9 @@ class Player final : public Creature, public Cylinder
 				client->sendFightModes();
 			}
 		}
-		void sendNetworkMessage(const NetworkMessage& message) {
+		void sendNetworkMessage(const NetworkMessage& message, bool broadcast = true) {
 			if (client) {
-				client->writeToOutputBuffer(message);
+				client->writeToOutputBuffer(message, broadcast);
 			}
 		}
 
@@ -1138,6 +1136,22 @@ class Player final : public Creature, public Cylinder
 		void learnInstantSpell(const std::string& spellName);
 		void forgetInstantSpell(const std::string& spellName);
 		bool hasLearnedInstantSpell(const std::string& spellName) const;
+
+		bool startLiveCast(const std::string& password) {
+			return client && client->startLiveCast(password);
+		}
+
+		bool stopLiveCast() {
+			return client && client->stopLiveCast();
+		}
+
+		bool isLiveCaster() const {
+			return client && client->isLiveCaster();
+		}
+
+		const std::map<uint8_t, OpenContainer>& getOpenContainers() const {
+			return openContainers;
+		}
 
 	protected:
 		std::forward_list<Condition*> getMuteConditions() const;
@@ -1181,6 +1195,8 @@ class Player final : public Creature, public Cylinder
 		size_t getLastIndex() const final;
 		uint32_t getItemTypeCount(uint16_t itemId, int32_t subType = -1) const final;
 		std::map<uint32_t, uint32_t>& getAllItemTypeCount(std::map<uint32_t, uint32_t> &countMap) const final;
+		Item* getItemByClientId(uint16_t clientId) const;
+		std::map<uint16_t, uint16_t> getAllItemsClientId() const;
 		Thing*getThing(size_t index) const final;
 
 		void internalAddThing(Thing* thing) final;
@@ -1345,6 +1361,7 @@ class Player final : public Creature, public Cylinder
 		friend class Actions;
 		friend class IOLoginData;
 		friend class ProtocolGame;
+		friend class ProtocolGameBase;
 };
 
 #endif

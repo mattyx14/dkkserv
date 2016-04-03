@@ -91,6 +91,17 @@ shopModule:addSellableItem({'hailstorm rod', 'hailstorm'}, 2183, 7500, 'hailstor
 shopModule:addSellableItem({'springsprout rod', 'springsprout'}, 8912, 9000, 'springsprout rod')
 shopModule:addSellableItem({'underworld rod', 'underworld'}, 8910, 11000, 'underworld rod')
 
+shopModule:addSellableItem({'crystal ring'}, 2124, 2000, 'crystal ring')
+shopModule:addSellableItem({'hibiscus dress'}, 8873, 5000, 'hibiscus dress')
+shopModule:addSellableItem({'crystal of balance'}, 9942, 15000, 'crystal of balance')
+shopModule:addSellableItem({'energy soil'}, 8303, 30000, 'energy soil')
+shopModule:addSellableItem({'gold ingot'}, 9971, 10000, 'gold ingot')
+shopModule:addSellableItem({'glob of acid slime'}, 9967, 1000, 'glob of acid slime')
+shopModule:addSellableItem({'glob of tar'}, 9968, 1000, 'glob of tar')
+shopModule:addSellableItem({'nails'}, 8309, 100, 'nails')
+
+shopModule:addBuyableItem({'amulet of loss', 'aol'}, 2173, 50000, 'amulet of loss')
+
 
 function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
@@ -108,7 +119,7 @@ function creatureSayCallback(cid, type, msg)
 	if msgcontains(msg, 'first rod') or msgcontains(msg, 'first wand') then
 		local vocationId = player:getVocation():getId()
 		if isInArray({1, 2, 5, 6}, vocationId) then
-			if player:getStorageValue(30002) == -1 then
+			if player:getStorageValue(3050) == -1 then
 				selfSay('So you ask me for a {' .. ItemType(items[vocationId]):getName() .. '} to begin your advanture?', cid)
 				npcHandler.topic[cid] = 1
 			else
@@ -121,12 +132,21 @@ function creatureSayCallback(cid, type, msg)
 		if npcHandler.topic[cid] == 1 then
 			player:addItem(items[vocationId], 1)
 			selfSay('Here you are young adept, take care yourself.', cid)
-			player:setStorageValue(30002, 1)
+			player:setStorageValue(3050, 1)
 		end
 		npcHandler.topic[cid] = 0
 	elseif msgcontains(msg, 'no') and npcHandler.topic[cid] == 1 then
 		selfSay('Ok then.', cid)
 		npcHandler.topic[cid] = 0
+	elseif isInArray({"vial", "ticket", "bonus"}, msg) then
+		if player:removeItem(7634, 100) or player:removeItem(7635, 100) or player:removeItem(7636, 100) then
+			npcHandler:say("Alright, thank you very much! Here is your lottery ticket, good luck. Would you like to deposit more vials that way?", cid)
+			player:addItem(5957, 1)
+			npcHandler.topic[cid] = 0
+		else
+			npcHandler:say("Sorry, but you don't have 100 empty flasks or vials of the SAME kind and thus don't qualify for the lottery. Would you like to deposit the vials you have as usual and receive 5 gold per vial?", cid)
+			npcHandler.topic[cid] = 0
+		end
 	end
 
 	return true

@@ -48,13 +48,12 @@ MuteCountMap Player::muteCountMap;
 uint32_t Player::playerAutoID = 0x10000000;
 
 Player::Player(ProtocolGame_ptr p) :
-	Creature(), inventory(), varSkills(), varStats(), inventoryAbilities()
+	Creature(), inventory(), client(p), varSkills(), varStats(), inventoryAbilities()
 {
-	client = p;
 	isConnecting = false;
 
 	accountNumber = 0;
-	setVocation(0);
+	vocation = nullptr;
 	capacity = 40000;
 	mana = 0;
 	manaMax = 0;
@@ -135,7 +134,7 @@ Player::Player(ProtocolGame_ptr p) :
 	idleTime = 0;
 
 	skullTicks = 0;
-	setParty(nullptr);
+	party = nullptr;
 
 	bankBalance = 0;
 
@@ -153,6 +152,9 @@ Player::Player(ProtocolGame_ptr p) :
 	lastQuestlogUpdate = 0;
 
 	inventoryWeight = 0;
+	operatingSystem = CLIENTOS_NONE;
+	secureMode = false;
+	guid = 0;
 }
 
 Player::~Player()
@@ -422,7 +424,7 @@ void Player::getShieldAndWeapon(const Item*& shield, const Item*& weapon) const
 				break;
 
 			case WEAPON_SHIELD: {
-				if (!shield || (shield && item->getDefense() > shield->getDefense())) {
+				if (!shield || item->getDefense() > shield->getDefense()) {
 					shield = item;
 				}
 				break;
@@ -820,8 +822,12 @@ bool Player::canWalkthrough(const Creature* creature) const
 	}
 
 	const Player* player = creature->getPlayer();
-	if (!player || !g_config.getBoolean(ConfigManager::ALLOW_WALKTHROUGH)) {
+	if (!player) {
 		return false;
+	}
+
+	if ((player->isAttackable() && (player->getLevel() < (uint32_t)g_config.getNumber(ConfigManager::PROTECTION_LEVEL)))) {
+		return true;
 	}
 
 	const Tile* playerTile = player->getTile();
@@ -856,7 +862,7 @@ bool Player::canWalkthroughEx(const Creature* creature) const
 	}
 
 	const Player* player = creature->getPlayer();
-	if (!player || !g_config.getBoolean(ConfigManager::ALLOW_WALKTHROUGH)) {
+	if (!player) {
 		return false;
 	}
 
@@ -864,7 +870,7 @@ bool Player::canWalkthroughEx(const Creature* creature) const
 	return playerTile && playerTile->hasFlag(TILESTATE_PROTECTIONZONE);
 }
 
-void Player::onReceiveMail()
+void Player::onReceiveMail() const
 {
 	if (isNearDepotBox()) {
 		sendTextMessage(MESSAGE_EVENT_ADVANCE, "New mail has arrived.");
@@ -889,6 +895,17 @@ bool Player::isNearDepotBox() const
 	return false;
 }
 
+DepotChest* Player::createDepots()
+{
+	DepotChest* depotChests = new DepotChest(ITEM_DEPOT);
+	depotChests->incrementReferenceCounter();
+	depotChests->setMaxDepotItems(getMaxDepotItems());
+	for (uint32_t index = 1; index <= 17; ++index) {
+		depotChests->internalAddThing(getDepotChest(18 - index, true));
+	}
+	return depotChests;
+}
+
 DepotChest* Player::getDepotChest(uint32_t depotId, bool autoCreate)
 {
 	auto it = depotChests.find(depotId);
@@ -900,9 +917,8 @@ DepotChest* Player::getDepotChest(uint32_t depotId, bool autoCreate)
 		return nullptr;
 	}
 
-	DepotChest* depotChest = new DepotChest(ITEM_DEPOT);
+	DepotChest* depotChest = new DepotChest(DEPOT_CHEST_NULL + depotId, true);
 	depotChest->incrementReferenceCounter();
-	depotChest->setMaxDepotItems(getMaxDepotItems());
 	depotChests[depotId] = depotChest;
 	return depotChest;
 }
@@ -919,7 +935,7 @@ DepotLocker* Player::getDepotLocker(uint32_t depotId)
 	depotLocker->setDepotId(depotId);
 	depotLocker->internalAddThing(Item::CreateItem(ITEM_MARKET));
 	depotLocker->internalAddThing(inbox);
-	depotLocker->internalAddThing(getDepotChest(depotId, true));
+	depotLocker->internalAddThing(createDepots());
 	depotLockerMap[depotId] = depotLocker;
 	return depotLocker;
 }
@@ -1385,11 +1401,6 @@ void Player::onCreatureMove(Creature* creature, const Tile* newTile, const Posit
 				addCondition(condition);
 			}
 		}
-	}
-
-	// unset editing house
-	if (editHouse && !newTile->hasFlag(TILESTATE_HOUSE)) {
-		editHouse = nullptr;
 	}
 }
 
@@ -3043,6 +3054,46 @@ std::map<uint32_t, uint32_t>& Player::getAllItemTypeCount(std::map<uint32_t, uin
 	return countMap;
 }
 
+Item* Player::getItemByClientId(uint16_t clientId) const
+{
+	for (int32_t i = CONST_SLOT_FIRST; i <= CONST_SLOT_LAST; i++) {
+		Item* item = inventory[i];
+		if (!item) {
+			continue;
+			
+		}
+		if (item->getClientID() == clientId) {
+			return item;
+		}
+		if (Container* container = item->getContainer()) {
+			for (ContainerIterator it = container->iterator(); it.hasNext(); it.advance()) {
+				if ((*it)->getClientID() == clientId) {
+					return (*it);
+				}
+			}
+		}
+	}
+	return nullptr;
+}
+
+std::map<uint16_t, uint16_t> Player::getAllItemsClientId() const
+{
+	std::map<uint16_t, uint16_t> itemList;
+	for (int32_t i = CONST_SLOT_FIRST; i <= CONST_SLOT_LAST; i++) {
+		Item* item = inventory[i];
+		if (!item) {
+			continue;
+		}
+		itemList.emplace(item->getClientID(), Item::countByType(item, -1));
+		if (Container* container = item->getContainer()) {
+			for (ContainerIterator it = container->iterator(); it.hasNext(); it.advance()) {
+				itemList.emplace((*it)->getClientID(), Item::countByType(*it, -1));
+			}
+		}
+	}
+	return itemList;
+}
+
 Thing* Player::getThing(size_t index) const
 {
 	if (index >= CONST_SLOT_FIRST && index <= CONST_SLOT_LAST) {
@@ -3504,7 +3555,6 @@ void Player::onAttackedCreature(Creature* target)
 {
 	Creature::onAttackedCreature(target);
 
-	// Fix avoid pz in pvp zones
 	if (target && target->getZone() == ZONE_PVP) {
 		return;
 	}
@@ -4572,9 +4622,9 @@ size_t Player::getMaxDepotItems() const
 	if (group->maxDepotItems != 0) {
 		return group->maxDepotItems;
 	} else if (isPremium()) {
-		return 2000;
+		return 10000;
 	}
-	return 1000;
+	return 2000;
 }
 
 std::forward_list<Condition*> Player::getMuteConditions() const

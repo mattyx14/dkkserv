@@ -329,7 +329,7 @@ enum TextColor_t : uint8_t {
 	TEXTCOLOR_DARKRED = 108,
 	TEXTCOLOR_LIGHTGREY = 129,
 	TEXTCOLOR_SKYBLUE = 143,
-	TEXTCOLOR_PURPLE = 154,
+	TEXTCOLOR_PURPLE = 155,
 	TEXTCOLOR_RED = 180,
 	TEXTCOLOR_ORANGE = 198,
 	TEXTCOLOR_YELLOW = 210,
@@ -388,8 +388,9 @@ enum WeaponAction_t : uint8_t {
 enum WieldInfo_t {
 	WIELDINFO_LEVEL = 1 << 0,
 	WIELDINFO_MAGLV = 1 << 1,
-	WIELDINFO_VOCREQ = 1 << 2,
-	WIELDINFO_PREMIUM = 1 << 3,
+	WIELDINFO_SKILL = 1 << 2,
+	WIELDINFO_VOCREQ = 1 << 3,
+	WIELDINFO_PREMIUM = 1 << 4,
 };
 
 enum Skulls_t : uint8_t {
@@ -428,6 +429,7 @@ enum GuildEmblems_t : uint8_t {
 
 enum item_t : uint16_t {
 	ITEM_BROWSEFIELD = 460, // for internal use
+	DEPOT_CHEST_NULL = 25452, // for internal use
 
 	ITEM_FIREFIELD_PVP_FULL = 1487,
 	ITEM_FIREFIELD_PVP_MEDIUM = 1488,
@@ -523,7 +525,12 @@ enum PlayerFlags : uint64_t {
 
 #define CHANNEL_GUILD 0x00
 #define CHANNEL_PARTY 0x01
+
+#define CHANNEL_CAST 0xFFFE
+
 #define CHANNEL_PRIVATE 0xFFFF
+
+const std::string LIVE_CAST_CHAT_NAME = "Live Cast Chat";
 
 //Reserved player storage key ranges
 //[10000000 - 20000000]

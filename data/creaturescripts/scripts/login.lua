@@ -32,5 +32,10 @@ function onLogin(player)
 	-- Events
 	player:registerEvent("PlayerDeath")
 	player:registerEvent("DropLoot")
+	player:registerEvent("onadvance_reward")
+
+	-- KillBoss
+	player:registerEvent("KillDemon")
+	player:registerEvent("KillGolem")
 	return true
 end

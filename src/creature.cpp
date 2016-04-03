@@ -73,6 +73,7 @@ Creature::Creature() :
 	scriptEventsBitField = 0;
 
 	hiddenHealth = false;
+	moveLocked = false;
 
 	skull = SKULL_NONE;
 
@@ -954,7 +955,6 @@ void Creature::goToFollowCreature()
 					} else {
 						hasFollowPath = false;
 					}
-
 					return;
 				}
 			}
@@ -1127,6 +1127,14 @@ void Creature::onAttacked()
 void Creature::onAttackedCreatureDrainHealth(Creature* target, int32_t points)
 {
 	target->addDamagePoints(this, points);
+}
+
+void Creature::onAttackedCreatureKilled(Creature* target)
+{
+	if (target != this) {
+		uint64_t gainExp = target->getGainedExperience(this);
+		onGainExperience(gainExp, target);
+	}
 }
 
 bool Creature::onKilledCreature(Creature* target, bool)

@@ -212,6 +212,7 @@ class ItemType
 		uint32_t wieldInfo;
 		uint32_t minReqLevel;
 		uint32_t minReqMagicLevel;
+		uint32_t minReqSkillLevel;
 		uint32_t charges;
 		int32_t maxHitChance;
 		int32_t decayTo;
@@ -245,6 +246,7 @@ class ItemType
 		RaceType_t corpseType;
 		FluidTypes_t fluidSource;
 
+		uint8_t floorChange;
 		uint8_t alwaysOnTopOrder;
 		uint8_t lightLevel;
 		uint8_t lightColor;
@@ -252,13 +254,6 @@ class ItemType
 		int8_t hitChance;
 
 		bool forceUse;
-		bool floorChangeDown;
-		bool floorChangeNorth;
-		bool floorChangeSouth;
-		bool floorChangeSouthAlt;
-		bool floorChangeEast;
-		bool floorChangeEastAlt;
-		bool floorChangeWest;
 		bool hasHeight;
 		bool walkStack;
 		bool blockSolid;

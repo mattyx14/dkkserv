@@ -85,12 +85,12 @@ class MoveEvents final : public BaseEvents
 
 		MoveEvent* getEvent(Item* item, MoveEvent_t eventType, slots_t slot);
 
-		MoveListMap m_uniqueIdMap;
-		MoveListMap m_actionIdMap;
-		MoveListMap m_itemIdMap;
-		MovePosListMap m_positionMap;
+		MoveListMap uniqueIdMap;
+		MoveListMap actionIdMap;
+		MoveListMap itemIdMap;
+		MovePosListMap positionMap;
 
-		LuaScriptInterface m_scriptInterface;
+		LuaScriptInterface scriptInterface;
 };
 
 typedef uint32_t (StepFunction)(Creature* creature, Item* item, const Position& pos, const Position& fromPos);
@@ -130,6 +130,9 @@ class MoveEvent final : public Event
 		uint32_t getReqMagLv() const {
 			return reqMagLevel;
 		}
+		uint32_t getReqSkillLv() const {
+			return reqSkillLevel;
+		}
 		bool isPremium() const {
 			return premium;
 		}
@@ -154,7 +157,7 @@ class MoveEvent final : public Event
 		static EquipFunction EquipItem;
 		static EquipFunction DeEquipItem;
 
-		MoveEvent_t m_eventType;
+		MoveEvent_t eventType;
 		StepFunction* stepFunction;
 		MoveFunction* moveFunction;
 		EquipFunction* equipFunction;
@@ -163,6 +166,7 @@ class MoveEvent final : public Event
 		//onEquip information
 		uint32_t reqLevel;
 		uint32_t reqMagLevel;
+		uint32_t reqSkillLevel;
 		bool premium;
 		std::string vocationString;
 		uint32_t wieldInfo;

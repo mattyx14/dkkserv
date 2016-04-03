@@ -6,3 +6,4 @@ dofile('data/lib/compat/compat.lua')
 
 -- Custom
 dofile('data/lib/custom/custom.lua')
+dofile('data/lib/custom/storages.lua')

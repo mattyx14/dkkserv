@@ -816,15 +816,13 @@ std::string Item::getDescription(const ItemType& it, int32_t lookDistance,
 
 	if (it.isRune()) {
 		if (it.runeLevel > 0 || it.runeMagLevel > 0) {
-			int32_t tmpSubType = subType;
-
-			if (item) {
-				tmpSubType = item->getSubType();
-			}
-
-			s << ". " << (it.stackable && tmpSubType > 1 ? "They" : "It") << " can only be used by ";
-
 			if (RuneSpell* rune = g_spells->getRuneSpell(it.id)) {
+				int32_t tmpSubType = subType;
+				if (item) {
+					tmpSubType = item->getSubType();
+				}
+				s << ". " << (it.stackable && tmpSubType > 1 ? "They" : "It") << " can only be used by ";
+
 				const VocSpellMap& vocMap = rune->getVocMap();
 				std::vector<Vocation*> showVocMap;
 
@@ -1207,7 +1205,7 @@ std::string Item::getDescription(const ItemType& it, int32_t lookDistance,
 			s << ')';
 		}
 	} else if (it.isContainer() || (item && item->getContainer())) {
-		int volume = 0;
+		uint32_t volume = 0;
 		if (!item || !item->hasAttribute(ITEM_ATTRIBUTE_UNIQUEID)) {
 			if (it.isContainer()) {
 				volume = it.maxItems;
@@ -1355,7 +1353,7 @@ std::string Item::getDescription(const ItemType& it, int32_t lookDistance,
 			s << "premium ";
 		}
 
-		if (it.wieldInfo & WIELDINFO_VOCREQ) {
+		if (!it.vocationString.empty()) {
 			s << it.vocationString;
 		} else {
 			s << "players";
@@ -1367,12 +1365,36 @@ std::string Item::getDescription(const ItemType& it, int32_t lookDistance,
 
 		if (it.wieldInfo & WIELDINFO_MAGLV) {
 			if (it.wieldInfo & WIELDINFO_LEVEL) {
-				s << " and";
+				if (it.wieldInfo & WIELDINFO_SKILL) {
+					s << ",";
+				} else {
+					s << " and";
+				}
 			} else {
 				s << " of";
 			}
 
 			s << " magic level " << it.minReqMagicLevel << " or higher";
+		}
+
+		if (it.wieldInfo & WIELDINFO_SKILL) {
+			if (it.wieldInfo & WIELDINFO_MAGLV || it.wieldInfo & WIELDINFO_LEVEL) {
+				s << " and";
+			} else {
+				s << " of";
+			}
+
+			if (it.weaponType == WEAPON_SWORD) {
+				s << " sword";
+			} else if (it.weaponType == WEAPON_CLUB) {
+				s << " club";
+			} else if (it.weaponType == WEAPON_AXE) {
+				s << " axe";
+			} else if (it.weaponType == WEAPON_DISTANCE) {
+				s << " distance";
+			}
+
+			s << " fighting " << it.minReqSkillLevel << " or higher";
 		}
 
 		s << '.';
@@ -1523,7 +1545,7 @@ bool Item::canDecay() const
 	return true;
 }
 
-int32_t Item::getWorth() const
+uint32_t Item::getWorth() const
 {
 	switch (id) {
 		case ITEM_GOLD_COIN:
