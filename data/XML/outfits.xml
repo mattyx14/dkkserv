@@ -3,10 +3,10 @@
 	<!-- Female outfits -->
 	<outfit type="0" looktype="136" name="Citizen" premium="no" unlocked="yes" enabled="yes" />
 	<outfit type="0" looktype="137" name="Hunter" premium="no" unlocked="yes" enabled="yes" />
-	<outfit type="0" looktype="138" name="Mage" premium="no" unlocked="yes" enabled="yes" />
+	<outfit type="0" looktype="141" name="Mage" premium="no" unlocked="yes" enabled="yes" />
 	<outfit type="0" looktype="139" name="Knight" premium="no" unlocked="yes" enabled="yes" />
 	<outfit type="0" looktype="140" name="Noblewoman" premium="yes" unlocked="yes" enabled="yes" />
-	<outfit type="0" looktype="141" name="Summoner" premium="yes" unlocked="yes" enabled="yes" />
+	<outfit type="0" looktype="138" name="Summoner" premium="yes" unlocked="yes" enabled="yes" />
 	<outfit type="0" looktype="142" name="Warrior" premium="yes" unlocked="yes" enabled="yes" />
 	<outfit type="0" looktype="147" name="Barbarian" premium="yes" unlocked="yes" enabled="yes" />
 	<outfit type="0" looktype="148" name="Druid" premium="yes" unlocked="yes" enabled="yes" />
