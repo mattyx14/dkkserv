@@ -64,10 +64,8 @@
 		<item id="2156" chance="15000" /><!-- red gem -->
 		<item id="6300" chance="2170" /><!-- death ring -->
 		<item id="6526" chance="1250" /><!-- skeleton decoration -->
-		<item id="2436" chance="850" /><!-- skull staff -->
 		<item id="5741" chance="170" /><!-- skull helmet -->
 		<item id="7407" chance="740" /><!-- haunted blade -->
 		<item id="11233" chance="33010" /><!--unholy bone -->
-		<item id="2528" chance="740" /><!--tower shield -->
 	</loot>
 </monster>

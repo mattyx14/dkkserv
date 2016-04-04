@@ -71,7 +71,6 @@
 		<item id="2145" countmax="2" chance="1020" />	<!-- small diamond -->
 		<item id="9809" chance="1010" />					<!-- rusty armor (semi-rare) -->
 		<item id="9837" chance="970" />					<!-- velvet tapestry -->
-		<item id="2195" chance="220" />					<!-- boots of haste -->
 		<item id="7733" chance="200" />					<!-- flower bouquet -->
 		<item id="5670" chance="170" />					<!-- mysterious voodo skull -->
 		<item id="9447" chance="60" />					<!-- blood goblet -->

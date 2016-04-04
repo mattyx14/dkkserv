@@ -75,12 +75,10 @@
 		<item id="2214" chance="1540" />						<!-- ring of healing -->
 		<item id="2479" chance="740" />						<!-- strange helmet -->
 		<item id="2154" chance="690" />						<!-- yellow gem -->
-		<item id="2436" chance="550" />						<!-- skull staff -->
 		<item id="2171" chance="450" />						<!-- platinum amulet -->
 		<item id="2535" chance="350" />						<!-- castle shield -->
 		<item id="2178" chance="350" />						<!-- mind stone -->
 		<item id="7893" chance="200" />						<!-- lightning boots -->
-		<item id="2656" chance="150" />						<!-- blue robe -->
 		<item id="13291" chance="100" />						<!-- maximila maximus -->
 	</loot>
 </monster>

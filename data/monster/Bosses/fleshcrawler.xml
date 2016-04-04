@@ -55,7 +55,6 @@
 		<item id="7588" chance="43330" /><!-- strong health potion -->
 		<item id="8912" chance="75560" /><!-- springsprout rod -->
 		<item id="2540" chance="43890" /><!-- scarab shield -->
-		<item id="7426" chance="30560" /><!-- amber staff -->
 		<item id="12424" chance="14440" /><!-- ornamented brooch -->
 	</loot>
 </monster>

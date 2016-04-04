@@ -60,10 +60,7 @@
 		<item id="18420" chance="8880" />					<!-- red crystal fragment -->
 		<item id="18414" chance="5430" />					<!-- violet crystal shard -->
 		<item id="2392" chance="3300" />						<!-- fire sword -->
-		<item id="2432" chance="2180" />						<!-- fire axe -->
 		<item id="18409" chance="1450" />					<!-- wand of everblazing -->
 		<item id="13757" chance="1270" />					<!-- coal -->
-		<item id="7894" chance="790" />						<!-- magma legs -->
-		<item id="7899" chance="700" />						<!-- magma coat -->
 	</loot>
 </monster>

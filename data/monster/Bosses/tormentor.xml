@@ -66,6 +66,5 @@
 		<item id="6526" chance="28000" />				<!-- skeleton decoration -->
 		<item id="2454" chance="14000" />				<!-- war axe -->
 		<item id="7418" chance="10000" />				<!-- nightmare blade -->
-		<item id="2195" chance="8000" />					<!-- boots of haste -->
 	</loot>
 </monster>

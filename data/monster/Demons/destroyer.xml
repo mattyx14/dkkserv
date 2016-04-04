@@ -61,9 +61,7 @@
 		<item id="2553" chance="6250" /><!-- pick -->
 		<item id="2463" chance="4347" /><!-- plate armor -->
 		<item id="2152" countmax="3" chance="4166" /><!-- platinum coin -->
-		<item id="2393" chance="1694" /><!-- giant sword -->
 		<item id="7591" chance="1136" /><!-- greath health potion -->
-		<item id="2645" chance="992" /><!-- steel boots -->
 		<item id="7427" chance="869" /><!-- chaos mace -->
 		<item id="7419" chance="833" /><!-- dreaded cleaver -->
 		<item id="2125" chance="578" /><!-- crystal necklace -->

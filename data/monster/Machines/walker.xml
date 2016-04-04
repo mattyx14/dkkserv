@@ -52,6 +52,5 @@
 		<item id="7591" chance="3230" /><!-- great health potion -->
 		<item id="7590" chance="2300" /><!-- great mana potion -->
 		<item id="23540" chance="1780" /><!-- metal spats -->
-		<item id="2645" chance="450" /><!-- steel boots -->
 	</loot>
 </monster>

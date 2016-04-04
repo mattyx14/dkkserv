@@ -48,7 +48,6 @@
 		<immunity drown="1" />
 	</immunities>
 	<loot>
-		<item id="2536" chance="100000" />				<!-- medusa shield -->
 		<item id="2152" countmax="20" chance="100000" />	<!-- platinum coin -->
 		<item id="11226" chance="100000" />				<!-- strand of medusa hair -->
 		<item id="7590" countmax="2" chance="87000" />	<!-- great mana potion -->

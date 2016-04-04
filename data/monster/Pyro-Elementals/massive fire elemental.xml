@@ -51,8 +51,6 @@
 		<item id="9809" chance="1330" /><!-- rusty armor -->
 		<item id="2187" chance="2240" /><!-- wand of inferno -->
 		<item id="7890" chance="1300" /><!-- magma amulet -->
-		<item id="7891" chance="560" /><!-- magma boots -->
 		<item id="2392" chance="530" /><!-- fire sword -->
-		<item id="7894" chance="210" /><!-- magma legs -->
 	</loot>
 </monster>

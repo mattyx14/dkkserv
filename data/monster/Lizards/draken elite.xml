@@ -68,13 +68,11 @@
 		<item id="5904" chance="2100" /><!-- magic sulphur -->
 		<item id="7404" chance="980" /><!-- assassin dagger -->
 		<item id="11307" chance="490" /><!-- zaoan sword -->
-		<item id="12646" chance="600" /><!-- draken boots -->
 		<item id="12649" chance="20" /><!-- blade of corruption -->
 		<item id="12630" chance="10" /><!-- cobra crown -->
 		<item id="11302" chance="150" /><!-- zaoan helmet -->
 		<item id="11304" chance="770" /><!-- zaoan legs -->
 		<item id="11301" chance="490" /><!-- zaoan armor -->
 		<item id="12647" chance="80" /><!-- snake god's wristguard -->
-		<item id="12607" chance="110" /><!-- elite draken mail -->
 	</loot>
 </monster>

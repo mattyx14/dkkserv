@@ -69,7 +69,6 @@
 		<item id="7413" chance="1540" /><!-- titan axe -->
 		<item id="7428" chance="1150" /><!-- bonebreaker -->
 		<item id="2169" chance="1000" /><!-- time ring -->
-		<item id="2528" chance="620" /><!-- tower shield -->
 		<item id="8878" chance="230" /><!-- crystalline armor -->
 	</loot>
 </monster>

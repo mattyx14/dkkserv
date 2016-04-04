@@ -74,11 +74,8 @@
 		<item id="2155" chance="21740" />					<!-- green gem -->
 		<item id="11307" chance="19570" />					<!-- zaoan sword -->
 		<item id="11301" chance="15220" />					<!-- zaoan armor -->
-		<item id="2492" chance="13040" />					<!-- dragon scale mail -->
-		<item id="8880" chance="10870" />					<!-- swamplair armor -->
 		<item id="12613" chance="10870" />					<!-- twiceslicer -->
 		<item id="2158" chance="8700" />						<!-- blue gem -->
-		<item id="12607" chance="8700" />					<!-- elite draken mail -->
 		<item id="2149" countmax="8" chance="8700" />		<!-- small emerald -->
 		<item id="13294" chance="4350" />					<!-- harness -->
 	</loot>

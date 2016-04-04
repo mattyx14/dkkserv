@@ -57,9 +57,7 @@
 		<item id="7589" chance="5000" />					<!-- strong mana potion -->
 		<item id="2789" chance="5000" />					<!-- brown mushroom -->
 		<item id="2187" chance="5000" />					<!-- wand of inferno -->
-		<item id="2436" chance="5000" />					<!-- skull staff -->
 		<item id="8922" chance="5000" />					<!-- wand of voodoo -->
-		<item id="7426" chance="3000" />					<!-- amber staff -->
 		<item id="6087" chance="3000" />					<!-- music sheet 1st verse -->
 		<item id="6088" chance="3000" />					<!-- music sheet 2nd verse -->
 		<item id="6089" chance="3000" />					<!-- music sheet 3rd verse -->
@@ -76,6 +74,5 @@
 		<item id="5670" chance="130" />					<!-- mysterious voodoo skull -->
 		<item id="12608" chance="100" />					<!-- broken key ring -->
 		<item id="5801" chance="100" />					<!-- jewelled backpack -->
-		<item id="2656" chance="40" />					<!-- blue robe -->
 	</loot>
 </monster>

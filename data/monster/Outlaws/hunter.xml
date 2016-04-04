@@ -47,9 +47,7 @@
 		<item id="7394" chance="190" /><!-- wolf trophy -->
 		<item id="7400" chance="70" /><!-- lion trophy -->
 		<item id="7397" chance="520" /><!-- deer trophy -->
-		<item id="5875" chance="610" /><!-- sniper gloves -->
 		<item id="2147" chance="150" /><!-- small ruby -->
-		<item id="5907" chance="120" /><!-- slingshot -->
 		<item id="12425" chance="10240" /><!-- hunter's quiver -->
 	</loot>
 </monster>

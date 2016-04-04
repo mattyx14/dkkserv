@@ -80,10 +80,8 @@
 		<item id="2033" chance="3000" /><!-- golden mug -->
 		<item id="7290" chance="550" /><!-- shard -->
 		<item id="2177" chance="520" /><!-- life crystal -->
-		<item id="2492" chance="80" /><!-- dragon scale mail -->
 		<item id="2479" chance="450" /><!-- strange helmet -->
 		<item id="2498" chance="210" /><!-- royal helmet -->
-		<item id="2528" chance="340" /><!-- tower shield -->
 		<item id="7402" chance="120" /><!-- dragon slayer -->
 		<item id="2396" chance="350" /><!-- ice rapier -->
 	</loot>

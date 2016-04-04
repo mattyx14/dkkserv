@@ -50,7 +50,6 @@
 		<item id="5880" chance="1700" /><!-- iron ore -->
 		<item id="11339" chance="720" /><!-- clay lump -->
 		<item id="11343" chance="430" /><!-- piece of marble rock -->
-		<item id="2528" chance="820" /><!-- tower shield -->
 		<item id="2427" chance="560" /><!-- guardian halberd -->
 		<item id="11307" chance="100" /><!-- zaoan sword -->
 	</loot>

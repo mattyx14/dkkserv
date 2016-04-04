@@ -62,7 +62,6 @@
 		<item id="2490" chance="1460" /><!-- dark helmet -->
 		<item id="2497" chance="100" /><!-- crusader helmet -->
 		<item id="7618" chance="350" /><!-- health potion -->
-		<item id="2430" chance="280" /><!-- knight axe -->
 		<item id="5885" chance="210" /><!-- warrior's sweat -->
 		<item id="10573" chance="5200" /><!-- broken gladiator shield -->
 	</loot>

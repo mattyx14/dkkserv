@@ -59,7 +59,7 @@
 		<immunity invisible="1" />
 	</immunities>
 	<summons maxSummons="1">
-		<summon name="Demon" interval="1000" chance="12" max="1" />
+		<summon name="fire lord" interval="1000" chance="12" max="1" />
 	</summons>
 	<voices interval="5000" chance="10">
 		<voice sentence="It's a kind of magic." />

@@ -91,7 +91,6 @@
 		<item id="2144" countmax="2" chance="22780" /><!-- black pearls -->
 		<item id="7590" chance="21490" /><!-- great mana potion -->
 		<item id="11355" chance="860" /><!-- spellweaver's robe -->
-		<item id="2466" chance="860" /><!-- golden armor -->
 		<item id="8889" chance="290" /><!-- skullcracker armor -->
 	</loot>
 </monster>

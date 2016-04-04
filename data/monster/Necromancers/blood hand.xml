@@ -68,9 +68,7 @@
 		<item id="15565" chance="710" /><!-- Red Gem -->
 		<item id="5909" chance="840" /><!-- White Piece of Cloth -->
 		<item id="2663" chance="790" /><!-- Mystic Turban -->
-		<item id="2195" chance="210" /><!-- Boots of Haste -->
 		<item id="5911" chance="500" /><!-- Red Piece of Cloth -->
-		<item id="2436" chance="130" /><!-- Skull Staff -->
 		<item id="7456" chance="10" /><!-- Noble Axe -->
 	</loot>
 </monster>

@@ -69,7 +69,6 @@
 		<item id="2165" chance="540" /><!-- stealth ring -->
 		<item id="8900" chance="290" /><!-- spellbook of enlightenment -->
 		<item id="7618" chance="560" /><!-- health potion -->
-		<item id="2528" chance="60" /><!-- tower shield -->
 		<item id="10585" chance="3770" /><!-- Mutated Rat Tail -->
 	</loot>
 </monster>

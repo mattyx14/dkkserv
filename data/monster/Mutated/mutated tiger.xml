@@ -53,8 +53,6 @@
 		<item id="11228" chance="10600" /><!-- sabretooth -->
 		<item id="2168" chance="5580" /><!-- life ring -->
 		<item id="7588" chance="6000" /><!-- strong health potion -->
-		<item id="2515" chance="380" /><!-- guardian shield -->
-		<item id="7454" chance="870" /><!-- glorius axe -->
 		<item id="7436" chance="440" /><!-- angelic axe -->
 		<item id="9959" chance="730" /><!-- Silky Tapestry -->
 	</loot>

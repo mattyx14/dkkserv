@@ -69,9 +69,6 @@
 		<item id="15565" chance="880" /><!-- Red Gem -->
 		<item id="5909" chance="3040" /><!-- White Piece of Cloth -->
 		<item id="2663" chance="2170" /><!-- Mystic Turban -->
-		<item id="2195" chance="120" /><!-- Boots of Haste -->
 		<item id="5911" chance="640" /><!-- Red Piece of Cloth -->
-		<item id="2436" chance="180" /><!-- Skull Staff -->
-		<item id="8901" chance="290" /><!-- Spellbook of Warding -->
 	</loot>
 </monster>

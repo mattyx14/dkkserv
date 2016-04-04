@@ -58,7 +58,6 @@
 		<item id="2152" countmax="9" chance="100000" /><!-- platinum coin -->
 		<item id="2392" chance="1240" /><!-- fire sword -->
 		<item id="2519" chance="1700" /><!-- crown shield -->
-		<item id="2528" chance="550" /><!-- tower shield -->
 		<item id="22363" chance="3700" /><!-- broken dream -->
 		<item id="2789" countmax="2" chance="14000" /><!-- brown mushroom -->
 		<item id="3962" chance="4260" /><!-- beastslayer axe -->

@@ -71,7 +71,6 @@
 		<item id="2396" chance="42000" />				<!-- ice rapier -->
 		<item id="2168" chance="42000" />				<!-- life ring -->
 		<item id="7443" chance="35000" />				<!-- bullseye potion -->
-		<item id="7892" chance="35000" />				<!-- glacier shoes -->
 		<item id="7440" chance="35000" />				<!-- mastermind potion -->
 		<item id="2152" chance="35000" />				<!-- platinum coin -->
 		<item id="5909" countmax="2" chance="35000" />	<!-- white piece of cloth -->
@@ -88,8 +87,6 @@
 		<item id="9971" chance="14000" />				<!-- gold ingot -->
 		<item id="7591" countmax="5" chance="14000" />	<!-- great health potion -->
 		<item id="7459" chance="14000" />				<!-- pair of earmuffs -->
-		<item id="2436" chance="14000" />				<!-- skull staff -->
-		<item id="2195" chance="7000" />					<!-- boots of haste -->
 		<item id="7902" chance="7000" />					<!-- glacier mask -->
 		<item id="5911" chance="7000" />					<!-- red piece of cloth -->
 		<item id="21699" chance="7000" />				<!-- trapped lightning -->

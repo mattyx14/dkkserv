@@ -53,7 +53,6 @@
 		<item id="15646" chance="460" /><!-- buggy backpack -->
 		<item id="15489" chance="360" /><!-- calopteryx cape -->
 		<item id="15492" chance="700" /><!-- hive scythe -->
-		<item id="2645" chance="130" /><!-- steel boots -->
 		<item id="15491" chance="310" /><!-- carapace shield -->
 	</loot>
 </monster>

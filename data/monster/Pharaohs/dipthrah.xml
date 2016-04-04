@@ -61,7 +61,6 @@
 		<item id="2178" chance="1500" /><!-- mind stone-->
 		<item id="2158" chance="1500" /><!-- blue gem -->
 		<item id="2193" chance="500" /><!-- ankh -->
-		<item id="2436" chance="500" /><!-- skull staff -->
 		<item id="2446" chance="300" /><!-- pharaoh sword -->
 		<item id="2354" chance="100000" /><!-- ornamented ankh -->
 	</loot>

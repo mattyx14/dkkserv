@@ -38,7 +38,6 @@
 		<item id="2148" countmax="94" chance="50675" /><!-- gold coin -->
 		<item id="2463" chance="35800" /><!-- plate armor -->
 		<item id="2205" chance="100000" /><!-- life ring -->
-		<item id="3982" chance="9900" /><!-- crocodile boots -->
 		<item id="2476" chance="4025" /><!-- knight armor -->
 	</loot>
 </monster>

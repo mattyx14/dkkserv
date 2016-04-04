@@ -75,13 +75,11 @@
 		<item id="2213" chance="4660" /><!-- dwarven ring -->
 		<item id="5904" chance="3000" /><!-- magic sulphur -->
 		<item id="7413" chance="2600" /><!-- titan axe -->
-		<item id="7454" chance="1870" /><!-- glorious axe -->
 		<item id="2477" chance="1910" /><!-- knight legs -->
 		<item id="2154" chance="1030" /><!-- yellow gem -->
 		<item id="18390" chance="1300" /><!-- wand of defiance -->
 		<item id="2491" chance="890" /><!-- crown helmet -->
 		<item id="8878" chance="560" /><!-- crystalline armor -->
-		<item id="2487" chance="370" /><!-- crown armor -->
 		<item id="18453" chance="300" /><!-- crystal crossbow -->
 	</loot>
 </monster>

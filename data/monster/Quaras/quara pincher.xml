@@ -51,7 +51,6 @@
 		<item id="5895" chance="1600" /><!-- fish fin -->
 		<item id="2475" chance="1350" /><!-- warrior helmet -->
 		<item id="7591" chance="10630" /><!-- great health potion -->
-		<item id="2487" chance="350" /><!-- crown armor -->
 		<item id="7897" chance="140" /><!-- glacier robe -->
 		<item id="13305" chance="80" /><!-- giant shrimp -->
 	</loot>

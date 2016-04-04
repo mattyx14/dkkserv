@@ -65,22 +65,11 @@
 		<immunity invisible="1" />
 	</immunities>
 	<summons maxSummons="2">
-		<summon name="demon" interval="4000" chance="50" />
+		<summon name="fire lord" interval="4000" chance="50" />
 	</summons>
 	<voices interval="5000" chance="30">
 		<voice sentence="I AM ZORALURK, THE DEMON WITH A THOUSAND FACES!" yell="1" />
 		<voice sentence="BRING IT, COCKROACHES!" yell="1" />
 	</voices>
-	<loot>
-		<item id="2148" chance="100000" countmax="100" /><!-- Gold Coin -->
-		<item id="2148" chance="50000" countmax="90" /><!-- Gold Coin -->
-		<item id="2143" chance="10000" countmax="5" /><!-- White Pearl -->
-		<item id="2407" chance="20000" /><!-- Haunted Blade -->
-		<item id="6530" chance="16000" /><!-- Worn Soft Boots -->
-		<item id="2641" chance="7000" /><!-- Traper Boots -->
-		<item id="2407" chance="20000" /><!-- Bright -->
-		<item id="2393" chance="60000" /><!-- Giant Sword -->
-		<item id="2195" chance="16033" /><!-- Boots of Haste -->
-		<item id="2408" chance="6000" /><!-- Warlord Sword -->
-	</loot>
+	<loot/>
 </monster>

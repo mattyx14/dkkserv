@@ -76,7 +76,6 @@
 		<item id="7590" chance="19700" /><!-- great mana potion -->
 		<item id="7591" chance="1900" /><!-- great health potion -->
 		<item id="8840" countmax="5" chance="8500" /><!-- raspberry -->
-		<item id="2436" chance="6500" /><!-- skull staff -->
 		<item id="7760" chance="4250" /><!-- small enchanted ruby -->
 		<item id="5911" chance="1420" /><!-- red piece of cloth -->
 		<item id="2167" chance="1800" /><!-- energy ring -->
@@ -85,7 +84,6 @@
 		<item id="1986" chance="300" /><!-- red tome -->
 		<item id="9971" chance="70" /><!-- gold ingot -->
 		<item id="9969" chance="820" /><!-- black skull -->
-		<item id="7891" chance="300" /><!-- magma boots -->
 		<item id="9980" chance="220" /><!-- crystal of power -->
 		<item id="2114" chance="220" /><!-- piggy bank -->
 		<item id="9958" chance="520" /><!-- royal tapestry -->

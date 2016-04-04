@@ -65,9 +65,7 @@
 		<item id="2214" chance="1190" /><!-- ring of healing -->
 		<item id="2475" chance="890" /><!-- warrior helmet -->
 		<item id="2476" chance="1000" /><!-- knight armor -->
-		<item id="2536" chance="270" /><!-- medusa shield -->
 		<item id="2498" chance="210" /><!-- royal helmet -->
-		<item id="2195" chance="130" /><!-- boots of haste -->
 		<item id="11199" chance="10120" /><!-- hydra head -->
 		<item id="8842" chance="4780" /><!-- cucumber -->
 	</loot>

@@ -60,9 +60,8 @@
 		<item id="2553" chance="650" /><!-- pick -->
 		<item id="2463" chance="3930" /><!-- plate armor -->
 		<item id="2150" countmax="5" chance="6380" /><!-- small amethyst -->
-		<item id="2645" chance="380" /><!-- steel boots -->
 		<item id="2377" chance="5980" /><!-- two handed sword -->
-		<item id="2393" chance="1006" /><!-- giant sword -->
+		<item id="2393" chance="16" /><!-- giant sword -->
 		<item id="7591" chance="5120" /><!-- great health potion -->
 		<item id="2174" chance="750" /><!-- strange symbol -->
 		<item id="5930" chance="430" /><!-- behemoth claw -->

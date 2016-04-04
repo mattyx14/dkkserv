@@ -36,6 +36,6 @@
 		</defense>
 	</defenses>
 	<summons maxSummons="1">
-		<summon name="Demon" interval="1000" chance="100" />
+		<summon name="fire lord" interval="1000" chance="100" />
 	</summons>
 </monster>

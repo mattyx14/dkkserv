@@ -43,7 +43,6 @@
 		<item id="2148" countmax="100" chance="32000" /><!-- gold coin -->
 		<item id="2148" countmax="27" chance="32000" /><!-- gold coin -->
 		<item id="2152" countmax="2" chance="4900" /><!-- platinum coin -->
-		<item id="2528" chance="1040" /><!-- tower shield -->
 		<item id="11332" chance="2990" /><!-- high guard flag -->
 		<item id="11303" chance="700" /><!-- zaoan shoes -->
 		<item id="5876" chance="1000" /><!-- lizard leather -->

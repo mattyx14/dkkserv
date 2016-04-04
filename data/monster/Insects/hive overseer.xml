@@ -65,6 +65,5 @@
 		<item id="15492" chance="1650" /><!-- hive scythe -->
 		<item id="15643" chance="830" /><!-- hive bow -->
 		<item id="15491" chance="920" /><!-- carapace shield -->
-		<item id="2645" chance="550" /><!-- steel boots -->
 	</loot>
 </monster>

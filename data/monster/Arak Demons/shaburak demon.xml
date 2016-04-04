@@ -65,7 +65,6 @@
 		<item id="2114" chance="1030" /><!-- piggy bank -->
 		<item id="7443" chance="628" /><!-- bullseye potion -->
 		<item id="2187" chance="564" /><!-- wand of inferno -->
-		<item id="7894" chance="155" /><!-- magma legs -->
 		<item id="5904" chance="81" /><!-- magic sulphur -->
 	</loot>
 </monster>

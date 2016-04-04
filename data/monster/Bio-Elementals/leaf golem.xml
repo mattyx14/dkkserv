@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Leaf Golem" nameDescription="a leaf golem" race="undead" experience="45" speed="140" manacost="390">
-	<health now="90" max="90" />
+<monster name="Leaf Golem" nameDescription="a leaf golem" race="undead" experience="750" speed="200" manacost="0">
+	<health now="900" max="900" />
 	<look type="567" corpse="21358" />
 	<targetchange interval="4000" chance="10" />
 	<flags>
@@ -15,7 +15,7 @@
 		<flag staticattack="90" />
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="35" attack="40" />
+		<attack name="melee" interval="2000" skill="100" attack="40" />
 		<attack name="physical" interval="2000" chance="15" range="7" target="1" min="0" max="-15">
 			<attribute key="shootEffect" value="smallstone" />
 		</attack>

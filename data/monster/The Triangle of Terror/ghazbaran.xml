@@ -90,15 +90,12 @@
 		<item id="7493" chance="20000" /><!-- orb -->
 		<item id="2150" countmax="17" chance="25000" /><!-- small amethyst -->
 		<item id="2146" countmax="10" chance="25000" /><!-- small sapphire -->
-		<item id="8901" chance="20000" /><!-- spellbook of warding -->
 		<item id="2179" chance="20000" /><!-- gold ring -->
 		<item id="8918" chance="20000" /><!-- spellbook of dark mysteries -->
 		<item id="7405" chance="16666" /><!-- havoc blade -->
-		<item id="8884" chance="16666" /><!-- oceanborn leviathan armor -->
 		<item id="8903" chance="16666" /><!-- spellbook of lost souls -->
 		<item id="2158" chance="14285" /><!-- blue gem -->
 		<item id="7433" chance="14285" /><!-- ravenwing -->
-		<item id="6553" chance="14285" /><!-- ruthless axe -->
 		<item id="7368" countmax="44" chance="12500" /><!-- assassin star -->
 		<item id="2520" chance="12500" /><!-- demon shield -->
 		<item id="2177" chance="12500" /><!-- life crystal -->
@@ -113,8 +110,6 @@
 		<item id="2124" chance="8333" /><!-- crystal ring -->
 		<item id="8887" chance="8333" /><!-- frozen plate -->
 		<item id="7896" chance="8333" /><!-- glacier kilt -->
-		<item id="2466" chance="8333" /><!-- golden armor -->
 		<item id="2646" chance="8333" /><!-- golden boots -->
-		<item id="2472" chance="8333" /><!-- magic plate armor -->
 	</loot>
 </monster>

@@ -70,7 +70,6 @@
 		<item id="2165" chance="400" /><!-- stealth ring -->
 		<item id="7896" chance="430" /><!-- glacier kilt -->
 		<item id="8871" chance="370" /><!-- focus cape -->
-		<item id="8884" chance="110" /><!-- leviathan's amulet -->
 		<item id="8878" chance="90" /><!-- crystalline armor -->
 	</loot>
 </monster>

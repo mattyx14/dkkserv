@@ -53,6 +53,5 @@
 		<item id="2146" chance="1000" /><!-- small sapphire -->
 		<item id="5895" chance="630" /><!-- fish fin -->
 		<item id="2479" chance="100" /><!-- strange helmet -->
-		<item id="2656" chance="50" /><!-- blue robe -->
 	</loot>
 </monster>

@@ -68,7 +68,6 @@
 		<item id="7589" countmax="2" chance="3600" /><!-- strong mana potion -->
 		<item id="2154" chance="800" /><!-- yellow gem -->
 		<item id="6300" chance="800" /><!-- death ring -->
-		<item id="2436" chance="130" /><!-- skull staff -->
 		<item id="10609" chance="100" /><!-- lump of dirt -->
 		<item id="5669" chance="100" /><!-- mysterious voodoo skull -->
 		<item id="5925" chance="50" /><!-- hardened bone -->

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="evil mastermind" nameDescription="a evil mastermind" race="undead" experience="22895" speed="270" manacost="0">
+	<health now="31225" max="31225"/>
+	<look type="256" corpse="7256"/>
+	<targetchange interval="5000" chance="8"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="1"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="0"/>
+		<flag targetdistance="5"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="120" attack="145"/>
+		<attack name="energy" interval="2000" chance="25" range="7" min="-245" max="-450">
+			<attribute key="shootEffect" value="energy"/>
+		</attack>
+		<attack name="fire" interval="2000" chance="20" range="7" min="-260" max="-330">
+			<attribute key="shootEffect" value="fire"/>
+		</attack>
+		<attack name="physical" interval="2000" chance="20" range="7" min="-270" max="-490">
+			<attribute key="shootEffect" value="suddendeath"/>
+			<attribute key="areaEffect" value="mortarea"/>
+		</attack>
+		<attack name="earth" interval="2000" chance="25" range="7" min="-230" max="-470">
+			<attribute key="shootEffect" value="poison"/>
+		</attack>
+		<attack name="lifedrain" interval="2000" chance="15" range="7" min="-375" max="-485">
+			<attribute key="areaEffect" value="redshimmer"/>
+		</attack>
+		<attack name="manadrain" interval="2000" chance="30" range="7" min="-220" max="-340">
+			<attribute key="areaEffect" value="redshimmer"/>
+		</attack>
+		<attack name="Paralyze" interval="1000" chance="17" range="7" target="1">
+			<attribute key="areaEffect" value="redshimmer"/>
+		</attack>
+	</attacks>
+	<defenses armor="13" defense="26">
+		<defense name="healing" interval="2000" chance="30" min="0" max="1">
+			<attribute key="areaEffect" value="energy"/>
+		</defense>
+	</defenses>
+		<elements>
+		<element physicalPercent="30"/>
+		<element energyPercent="45"/>
+		<element earthPercent="30"/>
+		<element firePercent="40"/>
+		<element deathPercent="40"/>
+		<element icePercent="40"/>
+		<element holyPercent="30"/>
+	</elements>
+	<immunities>
+		<immunity lifedrain="1"/>
+		<immunity paralyze="1"/>
+		<immunity outfit="1"/>
+		<immunity drunk="1"/>
+		<immunity invisible="1"/>
+		<immunity drown="1"/>
+	</immunities>
+	<summons maxSummons="3">
+		<summon name="Vampire" interval="2000" chance="10"/>
+	</summons>
+	<voices interval="5000" chance="10">
+		<voice sentence="You have disturbed my thoughts!"/>
+		<voice sentence="Let me turn you into something more useful!"/>
+		<voice sentence="Let me taste your brain!"/>
+		<voice sentence="You will be punished!"/>
+	</voices>
+	<loot>
+		<item id="2152" countmax="2" chance="9000"/>
+		<item id="2152" countmax="4" chance="12000"/>
+		<item id="7368" countmax="15" chance="7000"/>
+		<item id="2514" chance="500"/>
+		<item id="5906" countmax="3" chance="1000"/>
+		<item id="5954" countmax="2" chance="1000"/>
+		<item id="2164" chance="3200"/>
+		<item id="2176" chance="3000"/>
+		<item id="8473" countmax="3" chance="15000"/>
+		<item id="1982" chance="1300"/>
+		<item id="2165" chance="2400"/>
+		<item id="1987" chance="100000">
+			<inside>
+				<item id="2214" chance="500"/>
+				<item id="2396" chance="2500"/>
+				<item id="2179" chance="1100"/>
+				<item id="2795" countmax="6" chance="20000"/>
+				<item id="6526" chance="1666" />
+				<item id="2678" countmax="3" chance="10000"/>
+				<item id="2152" countmax="1" chance="100000"/>
+				<item id="2151" countmax="4" chance="4000"/>
+				<item id="2149" countmax="3" chance="11000"/>
+				<item id="2171" chance="800"/>
+				<item id="2173" chance="502"/>
+			</inside>
+		</item>
+	</loot>
+</monster>

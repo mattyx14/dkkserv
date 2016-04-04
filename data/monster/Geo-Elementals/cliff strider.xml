@@ -79,8 +79,6 @@
 		<item id="18450" chance="620" /><!-- crystalline sword -->
 		<item id="2477" chance="830" /><!-- knight legs -->
 		<item id="2158" chance="830" /><!-- blue gem -->
-		<item id="2487" chance="310" /><!-- crown armor -->
-		<item id="2645" chance="100" /><!-- steel boots -->
 		<item id="2444" chance="70" /><!-- Hammer of Wrath -->
 	</loot>
 </monster>

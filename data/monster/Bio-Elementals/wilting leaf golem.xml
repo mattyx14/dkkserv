@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Wilting Leaf Golem" nameDescription="a wilting leaf golem" race="blood" experience="145" speed="145" manacost="390">
-	<health now="380" max="380" />
+<monster name="Wilting Leaf Golem" nameDescription="a wilting leaf golem" race="undead" experience="1045" speed="200" manacost="0">
+	<health now="1380" max="1380" />
 	<look type="573" corpse="21434" />
 	<targetchange interval="4000" chance="10" />
 	<flags>
@@ -15,7 +15,7 @@
 		<flag staticattack="90" />
 	</flags>
 	<attacks>
-		<attack name="melee" interval="1500" skill="50" attack="40" poison="300" />
+		<attack name="melee" interval="1500" skill="100" attack="45" poison="300" />
 		<attack name="physical" interval="2000" chance="20" radius="1" range="7" target="1" min="0" max="-50">
 			<attribute key="shootEffect" value="largerock" />
 			<attribute key="areaEffect" value="explosion" />

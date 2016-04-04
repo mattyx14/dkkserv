@@ -79,14 +79,10 @@
 		<item id="20126" chance="11330" /><!-- Wimp Tooth Chain -->
 		<item id="11339" chance="500" /><!-- Clay Lump -->
 		<item id="2215" chance="2870" /><!-- Dwarven Ring -->
-		<item id="2515" chance="830" /><!-- Guardian Shield -->
 		<item id="7750" chance="770" /><!-- Knight Axe -->
 		<item id="7452" chance="50" /><!-- Spiked Squelcher -->
-		<item id="2528" chance="440" /><!-- Tower Shield -->
 		<item id="20109" chance="770" /><!-- buckle -->
-		<item id="2436" chance="280" /><!-- Skull Staff -->
 		<item id="7886" chance="880" /><!-- terra boots -->
-		<item id="2432" chance="330" /><!-- fire axe -->
 		<item id="7885" chance="50" /><!-- terra legs -->
 	</loot>
 </monster>

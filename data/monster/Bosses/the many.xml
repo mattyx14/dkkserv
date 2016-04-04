@@ -61,7 +61,6 @@
 		<item id="2197" chance="100000" /><!-- stone skin amulet -->
 		<item id="10523" chance="100000" /><!-- egg of the many -->
 		<item id="10219" chance="75500" /><!-- sacred tree amulet -->
-		<item id="2536" chance="75500" /><!-- medusa shield -->
 		<item id="2498" chance="25500" /><!-- royal helmet -->
 		<item id="2475" chance="75500" /><!-- warrior helmet -->
 	</loot>

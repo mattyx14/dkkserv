@@ -55,7 +55,6 @@
 		<item id="5944" chance="23000" /><!-- soul orb -->
 		<item id="7591" countmax="2" chance="10000" /><!-- great health potion -->
 		<item id="7590" countmax="2" chance="14830" /><!-- great mana potion -->
-		<item id="2645" chance="5050" /><!-- steel boots -->
 		<item id="9971" chance="3140" /><!-- gold ingot -->
 		<item id="6500" chance="8520" /><!-- demonic essence -->
 		<item id="2558" chance="5250" /><!-- saw -->
@@ -66,6 +65,5 @@
 		<item id="7412" chance="850" /><!-- butcher axe -->
 		<item id="5801" chance="1192" /><!-- jewelled backpack -->
 		<item id="7388" chance="480" /><!-- vile axe -->
-		<item id="2470" chance="30" /><!-- golden legs -->
 	</loot>
 </monster>

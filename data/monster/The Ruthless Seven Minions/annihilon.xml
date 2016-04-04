@@ -86,9 +86,7 @@
 		<item id="5954" countmax="2" chance="12830" />		<!-- demon horn -->
 		<item id="7590" chance="12390" />					<!-- great mana potion -->
 		<item id="8891" chance="10620" />					<!-- paladin armor -->
-		<item id="2528" chance="10180" />					<!-- tower shield -->
 		<item id="7387" chance="7520" />						<!-- diamond sceptre -->
-		<item id="2515" chance="7520" />						<!-- guardian shield -->
 		<item id="2514" chance="3980" />						<!-- mastermind shield -->
 		<item id="2520" chance="3540" />						<!-- demon shield -->
 		<item id="7431" chance="1770" />						<!-- demonbone -->

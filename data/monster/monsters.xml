@@ -735,6 +735,8 @@
 	<monster name="Gang Member" file="Outlaws/gang member.xml" />
 	<monster name="Gladiator" file="Outlaws/gladiator.xml" />
 	<monster name="Grave Robber" file="Outlaws/grave robber.xml" />
+	<monster name="Glooth Bandit" file="Outlaws/Glooth Bandit.xml" />
+	<monster name="Glooth Brigand" file="Outlaws/Glooth Brigand.xml" />
 	<monster name="Hero" file="Outlaws/hero.xml" />
 	<monster name="Hunter" file="Outlaws/hunter.xml" />
 	<monster name="Nomad" file="Outlaws/nomad.xml" />
@@ -928,4 +930,112 @@
 	<monster name="Wild Fury Magic" file="Wild Magics/wild fury magic.xml" />
 	<monster name="Wild Nature Magic" file="Wild Magics/wild nature magic.xml" />
 	<monster name="Wild Water Magic" file="Wild Magics/wild water magic.xml" />
+
+	<!-- 1090 Monsters -->
+	<monster name="Glooth Powered Minotaur" file="1090/Glooth Powered Minotaur.xml"/>
+	<monster name="Seacrest Serpent" file="1090/Seacrest Serpent.xml"/>
+	<monster name="Deep Terror" file="1090/Deep Terror.xml"/>
+	<monster name="Empowered Glooth Horror" file="1090/Empowered Glooth Horror.xml"/>
+	<monster name="Feeble Glooth Horror" file="1090/Feeble Glooth Horror.xml"/>
+	<monster name="Glooth Horror" file="1090/Glooth Horror.xml"/>
+	<monster name="Professor Maxxen" file="1090/Professor Maxxen.xml"/>
+	<monster name="Gloom Wolf" file="1090/Gloom Wolf.xml"/>
+	<monster name="Ghost Wolf" file="1090/Ghost Wolf.xml"/>
+	<monster name="Clomp" file="1090/Clomp.xml"/>
+	<monster name="Despair" file="1090/Despair.xml"/>
+	<monster name="Grimeleech" file="1090/Grimeleech.xml"/>
+	<monster name="Guilt" file="1090/Guilt.xml"/>
+	<monster name="Hellflayer" file="1090/Hellflayer.xml"/>
+	<monster name="Ogre Brute" file="1090/Ogre Brute.xml"/>
+	<monster name="Ogre Savage" file="1090/Ogre Savage.xml"/>
+	<monster name="Ogre Shaman" file="1090/Ogre Shaman.xml"/>
+	<monster name="Vexclaw" file="1090/Vexclaw.xml"/>
+	<monster name="Ascending Ferumbras" file="1090/Ascending Ferumbras.xml"/>
+	<monster name="Bone Capsule" file="1090/Bone Capsule.xml"/>
+
+	<!-- Customs -->
+	<!-- DarkKonia Customs -->
+	<monster name="Fezarus" file="customs/fezarus.xml"/>
+	<monster name="Toxiros" file="customs/toxiros.xml"/>
+	<monster name="Aquagel" file="customs/aquagel.xml"/>
+	<monster name="Adamantoise" file="customs/adamantoise.xml"/>
+	<monster name="Envo" file="customs/envo.xml"/>
+	<monster name="Erebus" file="customs/erebus.xml"/>
+	<monster name="Flame Eater" file="customs/flame eater.xml"/>
+	<monster name="Hellfire" file="customs/hellfire.xml"/>
+	<monster name="Ice Commander" file="customs/Ice Commander.xml"/>
+	<monster name="Land Turtle" file="customs/land turtle.xml"/>
+	<monster name="Thunder bolt" file="customs/thunder bolt.xml"/>
+	<monster name="Vinon" file="customs/vinon.xml"/>
+	<monster name="Abaddon" file="customs/abaddon.xml"/>
+	<monster name="Abyss Worm" file="customs/abyss worm.xml"/>
+	<monster name="Catrastrophe Death" file="customs/catrastrophe death.xml"/>
+	<monster name="Catrastrophe Earth" file="customs/catrastrophe earth.xml"/>
+	<monster name="Catrastrophe Energy" file="customs/catrastrophe energy.xml"/>
+	<monster name="Dark Warrior" file="customs/dark warrior.xml"/>
+	<monster name="Demon Fire" file="customs/demon fire.xml"/>
+	<monster name="Earth Eater" file="customs/earth eater.xml"/>
+	<monster name="Fire Commander" file="customs/fire commander.xml"/>
+	<monster name="Kaiser Dragon" file="customs/kaiser dragon.xml"/>
+	<monster name="Lord Knight" file="customs/lord knight.xml"/>
+	<monster name="Spirit of Fire Fire" file="customs/spirit of fire fire.xml"/>
+	<monster name="Storm Demon" file="customs/storm demon.xml"/>
+	<monster name="Storm Dragon" file="customs/storm dragon.xml"/>
+	<monster name="Trainer" file="customs/trainer.xml"/>
+	<monster name="Black Warlock" file="customs/black warlock.xml"/>
+	<monster name="Chaos Destroyer" file="customs/chaos destroyer.xml"/>
+	<monster name="Chaos Littium" file="customs/chaos littium.xml"/>
+	<monster name="Crystal Spider Ice" file="customs/crystal spider ice.xml"/>
+	<monster name="Executor" file="customs/executor.xml"/>
+	<monster name="Gloom Widow" file="customs/gloom widow.xml"/>
+	<monster name="Infernos" file="customs/infernos.xml"/>
+	<monster name="Infernatil" file="customs/infernatil.xml"/>
+	<monster name="Ixedon" file="customs/ixedon.xml"/>
+	<monster name="Lithermoth" file="customs/lithermoth.xml"/>
+	<monster name="Lord of Elements" file="customs/lord of elements.xml"/>
+	<monster name="Massive Demon Frost" file="customs/massive demon frost.xml"/>
+	<monster name="Son of Verminor Earth" file="customs/son of verminor earth.xml"/>
+	<monster name="Verminor Earth" file="customs/verminor earth.xml"/>
+	<monster name="Verminor" file="customs/verminor.xml"/>
+	<monster name="Webster Ice" file="customs/webster ice.xml"/>
+	<monster name="Yakchal" file="customs/yakchal.xml"/>
+	<monster name="Zarabustor" file="customs/zarabustor.xml"/>
+	<monster name="Demon Energy" file="customs/demon energy.xml"/>
+	<monster name="Flaremance" file="customs/flaremance.xml"/>
+	<monster name="Fury Fire" file="customs/fury fire.xml"/>
+	<monster name="Gorgimera Earth" file="customs/gorgimera earth.xml"/>
+	<monster name="Gorgimera Energy" file="customs/gorgimera energy.xml"/>
+	<monster name="Gorgimera Fire" file="customs/gorgimera fire.xml"/>
+	<monster name="Hidon" file="customs/hidon.xml"/>
+	<monster name="Ice Warrior" file="customs/ice warrior.xml"/>
+	<monster name="Massive Ice Elemental" file="customs/massive ice elemental.xml"/>
+	<monster name="Metamorph" file="customs/metamorph.xml"/>
+	<monster name="Mini Satana" file="customs/mini satana.xml"/>
+	<monster name="Poltergeist" file="customs/poltergeist.xml"/>
+	<monster name="Skeletal Horror" file="customs/skeletal horror.xml"/>
+	<monster name="Skull Dragon" file="customs/skull dragon.xml"/>
+	<monster name="Twister" file="customs/twister.xml"/>
+	<monster name="Dragon Aevis" file="customs/dragon aevis.xml"/>
+	<monster name="Mini Satana fire" file="customs/mini Satana fire.xml"/>
+	<monster name="Chaos Imperor" file="customs/chaos imperor.xml"/>
+	<monster name="Doom Howl" file="customs/doom howl.xml"/>
+	<monster name="Evil Mastermind" file="customs/evil mastermind.xml"/>
+	<monster name="Monstor Ripper" file="customs/monstor ripper.xml"/>
+	<monster name="Incineron Magna" file="customs/incineron magna.xml"/>
+	<monster name="Demon" file="Demons/demon.xml"/>
+	<monster name="Poison Eater" file="customs/poison eater.xml"/>
+	<monster name="Zathroth" file="customs/zathroth.xml"/>
+	<monster name="Lucifer" file="customs/lucifer.xml"/>
+	<monster name="Satan" file="customs/satan.xml"/>
+	<monster name="Bella" file="customs/bella.xml"/>
+	<monster name="Sand Worm" file="customs/sand worm.xml"/>
+	<monster name="Tyrant Warrior" file="customs/tyrant warrior.xml"/>
+	<monster name="Ra" file="customs/ra.xml"/>
+	<monster name="Roken Skeleton" file="customs/roken skeleton.xml"/>
+	<monster name="Leaf Golem Grom" file="customs/leaf golem grom.xml" />
+
+	<monster name="Fire Lord" file="Demons/fire lord.xml"/>
+
+	<!-- Trainers -->
+	<monster name="Training Monk" file="training monk.xml"/>
 </monsters>

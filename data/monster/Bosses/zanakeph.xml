@@ -85,7 +85,6 @@
 		<item id="2149" countmax="5" chance="33000" />		<!-- small emerald -->
 		<item id="2146" countmax="5" chance="33000" />		<!-- small sapphire -->
 		<item id="7590" countmax="3" chance="25000" />		<!-- great mana potion -->
-		<item id="2466" chance="13500" />					<!-- golden armor -->
 		<item id="13291" chance="6780" />					<!-- maxilla maximus -->
 		<item id="5741" chance="5000" />						<!-- skull helmet -->
 		<item id="8885" chance="3390" />						<!-- divine plate -->

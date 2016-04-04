@@ -58,6 +58,5 @@
 		<item id="7890" chance="920" />						<!-- magma amulet -->
 		<item id="13757" chance="890" />						<!-- coal -->
 		<item id="2392" chance="260" />						<!-- fire sword -->
-		<item id="7899" chance="130" />						<!-- magma coat -->
 	</loot>
 </monster>

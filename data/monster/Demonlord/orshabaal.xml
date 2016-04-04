@@ -59,7 +59,7 @@
 		<immunity invisible="1" />
 	</immunities>
 	<summons maxSummons="4">
-		<summon name="demon" interval="1000" chance="10" max="4" />
+		<summon name="fire lord" interval="1000" chance="10" max="4" />
 	</summons>
 	<voices interval="5000" chance="10">
 		<voice sentence="PRAISED BE MY MASTERS, THE RUTHLESS SEVEN!" />
@@ -95,20 +95,15 @@
 		<item id="2174" chance="20000" /><!-- strange symbol -->
 		<item id="2151" countmax="3" chance="20000" /><!-- talon -->
 		<item id="7368" countmax="42" chance="12500" /><!-- assassin star -->
-		<item id="2195" chance="12500" /><!-- boots of haste -->
-		<item id="2432" chance="12500" /><!-- fire axe -->
-		<item id="2470" chance="12500" /><!-- golden legs -->
 		<item id="2033" chance="12500" /><!-- golden mug -->
 		<item id="8472" chance="12500" /><!-- great spirit potion -->
 		<item id="2177" chance="12500" /><!-- life crystal -->
 		<item id="2171" chance="12500" /><!-- platinum amulet -->
 		<item id="2377" chance="12500" /><!-- two handed sword -->
-		<item id="2434" chance="6666" /><!-- dragon hammer -->
 		<item id="9971" chance="6666" /><!-- gold ingot -->
 		<item id="2418" chance="6666" /><!-- golden sickle -->
 		<item id="2155" chance="6666" /><!-- green gem -->
 		<item id="2162" chance="6666" /><!-- magic lightwand -->
-		<item id="2472" chance="6666" /><!-- magic plate armor -->
 		<item id="2514" chance="6666" /><!-- mastermind shield -->
 		<item id="2164" chance="6666" /><!-- might ring -->
 		<item id="2176" chance="6666" /><!-- orb -->

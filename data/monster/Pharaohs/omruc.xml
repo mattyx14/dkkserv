@@ -67,7 +67,6 @@
 		<item id="7591" chance="7000" /><!-- great health potion-->
 		<item id="2165" chance="5000" /><!-- stealth ring -->
 		<item id="2154" chance="5000" /><!-- yellow gem -->
-		<item id="2195" chance="1500" /><!-- boots of haste -->
 		<item id="2444" chance="300" /><!-- hammer of wrath -->
 		<item id="2352" chance="100000" /><!-- crystal arrow -->
 	</loot>

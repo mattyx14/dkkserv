@@ -70,14 +70,11 @@
 		<item id="6090" chance="490" />					<!-- music sheet 4th verse -->
 		<item id="2167" chance="450" />					<!-- energy ring -->
 		<item id="5810" chance="430" />					<!-- pirate voodoo doll -->
-		<item id="2436" chance="350" />					<!-- skull staff -->
 		<item id="2171" chance="200" />					<!-- platinum amulet -->
 		<item id="2187" chance="180" />					<!-- wand of inferno -->
 		<item id="5670" chance="130" />					<!-- mysterious voodoo skull -->
 		<item id="2114" chance="130" />					<!-- piggy bank -->
-		<item id="7426" chance="100" />					<!-- amber staff -->
 		<item id="12608" chance="100" />					<!-- broken key ring -->
 		<item id="5801" chance="100" />					<!-- jewelled backpack -->
-		<item id="2656" chance="40" />					<!-- blue robe -->
 	</loot>
 </monster>

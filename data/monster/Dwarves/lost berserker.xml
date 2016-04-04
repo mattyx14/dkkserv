@@ -73,14 +73,10 @@
 		<item id="2529" chance="640" /><!-- black shield -->
 		<item id="5904" chance="720" /><!-- magic sulphur -->
 		<item id="7452" chance="810" /><!-- spiked squelcher -->
-		<item id="2515" chance="1400" /><!-- guardian shield -->
 		<item id="2213" chance="2280" /><!-- dwarven ring -->
-		<item id="2430" chance="2070" /><!-- knight axe -->
 		<item id="11339" chance="930" /><!-- clay lump -->
 		<item id="7427" chance="550" /><!-- chaos mace -->
-		<item id="2528" chance="1002" /><!-- tower shield -->
 		<item id="7886" chance="640" /><!-- terra boots -->
-		<item id="2432" chance="380" /><!-- fire axe -->
 		<item id="2498" chance="150" /><!-- Royal helmet -->
 	</loot>
 </monster>

@@ -70,13 +70,11 @@
 		<item id="2165" chance="1300" /><!-- stealth ring -->
 		<item id="2171" chance="1000" /><!-- platinum amulet -->
 		<item id="2214" chance="3000" /><!-- ring of healing -->
-		<item id="2393" chance="2000" /><!-- giant sword -->
 		<item id="2396" chance="660" /><!-- ice rapier -->
 		<item id="2462" chance="910" /><!-- devil helmet -->
 		<item id="2497" chance="740" /><!-- crusader helmet -->
 		<item id="2519" chance="740" /><!-- crown shield -->
 		<item id="2520" chance="170" /><!-- demon shield -->
-		<item id="7382" chance="350" /><!-- demonrage sword -->
 		<item id="6550" chance="1000" /><!-- demon dust -->
 		<item id="2795" countmax="6" chance="20600" /><!-- fire mushroom -->
 		<item id="7368" countmax="10" chance="8340" /><!-- assassin star -->

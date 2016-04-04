@@ -62,6 +62,5 @@
 		<item id="2170" chance="1020" /><!-- silver amulet -->
 		<item id="2167" chance="892" /><!-- energy ring -->
 		<item id="2189" chance="636" /><!-- wand of cosmic energy -->
-		<item id="2515" chance="243" /><!-- guardian shield -->
 	</loot>
 </monster>

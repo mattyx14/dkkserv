@@ -56,15 +56,12 @@
 		<item id="2377" chance="8470" /><!-- two handed sword -->
 		<item id="2475" chance="5610" /><!-- warrior helmet -->
 		<item id="2417" chance="6980" /><!-- battle hammer -->
-		<item id="2430" chance="3280" /><!-- knight axe -->
 		<item id="2476" chance="320" /><!-- knight armor -->
 		<item id="2489" chance="1900" /><!-- dark armor -->
 		<item id="2490" chance="2330" /><!-- dark helmet -->
 		<item id="2477" chance="1050" /><!-- knight legs -->
 		<item id="2133" chance="740" /><!-- ruby necklace -->
 		<item id="2414" chance="110" /><!-- dragon lance -->
-		<item id="7895" chance="950" /><!-- lightning legs -->
 		<item id="2114" chance="210" /><!-- piggy bank -->
-		<item id="2195" chance="320" /><!-- boots of haste -->
 	</loot>
 </monster>

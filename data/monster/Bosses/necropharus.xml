@@ -65,9 +65,7 @@
 		<item id="2412" chance="10000" /><!-- katana -->
 		<item id="2229" countmax="3" chance="20000" /><!-- skull -->
 		<item id="2747" chance="20000" /><!-- grave flower -->
-		<item id="2436" chance="833" /><!-- skull staff -->
 		<item id="2663" chance="909" /><!-- mystic turban -->
-		<item id="2195" chance="666" /><!-- boots of haste -->
 		<item id="2423" chance="5000" /><!-- clerical mace -->
 	</loot>
 </monster>

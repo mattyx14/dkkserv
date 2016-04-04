@@ -65,7 +65,5 @@
 		<item id="7443" chance="400" /><!-- bullseye potion -->
 		<item id="2187" chance="800" /><!-- wand of inferno -->
 		<item id="5904" chance="620" /><!-- magic sulphur -->
-		<item id="7899" chance="100" /><!-- magma coat -->
-		<item id="2645" chance="160" /><!-- steel boots -->
 	</loot>
 </monster>

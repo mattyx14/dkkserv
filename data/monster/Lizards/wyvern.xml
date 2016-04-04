@@ -52,7 +52,6 @@
 		<item id="2146" chance="5000" /><!-- small sapphire -->
 		<item id="7588" chance="2500" /><!-- strong health potion -->
 		<item id="2187" chance="810" /><!-- wand of inferno -->
-		<item id="7408" chance="410" /><!-- wydern fang -->
 		<item id="2127" chance="540" /><!-- emerald bangle -->
 		<item id="10561" chance="12300" /><!-- wyvern talisman -->
 	</loot>

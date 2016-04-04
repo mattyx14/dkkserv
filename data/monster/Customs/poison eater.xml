@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<monster name="poison eater" nameDescription="a poison eater" race="fire" experience="12220" speed="300" manacost="0">
+	<health now="22280" max="22280"/>
+	<look type="19" corpse="1496"/>
+	<targetchange interval="5000" chance="8"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="1"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="0"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="78" attack="88"/>
+		<attack name="earth" interval="1000" chance="25" range="7" radius="2" target="1" min="-255" max="-455">
+			<attribute key="shootEffect" value="earth"/>
+			<attribute key="areaEffect" value="BIGPLANTS"/>
+		</attack>
+		<attack name="earth" interval="1000" chance="10" range="7" radius="4" target="0" min="-455" max="-655">
+			<attribute key="shootEffect" value="earth"/>
+			<attribute key="areaEffect" value="STONES"/>
+		</attack>
+		<attack name="Paralyze" interval="2000" chance="17" range="7" target="1">
+			<attribute key="areaEffect" value="BATS"/>
+		</attack>
+	</attacks>
+	<defenses armor="18" defense="20"/>
+	<immunities>
+		<immunity poison="1"/>
+		<immunity lifedrain="1"/>
+		<immunity paralyze="1"/>
+		<immunity outfit="1"/>
+		<immunity drunk="1"/>
+		<immunity invisible="1"/>
+	</immunities>
+</monster>

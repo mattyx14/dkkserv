@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<monster name="gloom widow" nameDescription="a gloom widow" race="VENOM" experience="11600" speed="280" manacost="0">
+	<health now="11300" max="11300"/>
+	<look type="347" corpse="11310"/>
+	<targetchange interval="5000" chance="8"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag targetdistance="1"/>
+		<flag lightlevel="0"/>
+		<flag lightcolor="0"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" min="-150" max="-500"/>
+		<attack name="poisonfield" interval="1000" chance="17" range="7" radius="3" target="1">
+			<attribute key="shootEffect" value="poison"/>
+		</attack>
+		<attack name="earth" interval="1000" chance="30" range="7" min="-115" max="-435">
+			<attribute key="shootEffect" value="EARTH"/>
+			<attribute key="areaEffect" value="PLANTATTACK"/>
+		</attack>
+	</attacks>
+	<defenses armor="20" defense="20">
+		<defense name="speed" interval="1000" chance="6" speedchange="310" duration="20000">
+			<attribute key="areaEffect" value="redshimmer"/>
+		</defense>
+		<defense name="outfit" interval="1000" chance="10" monster="spider" duration="7000">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+	</defenses>
+	<immunities>
+		<immunity lifedrain="1"/>
+		<immunity paralyze="1"/>
+		<immunity outfit="1"/>
+		<immunity drunk="1"/>
+		<inmunity invisible="1"/>
+	</immunities>
+	<summons maxSummons="3">
+		<summon name="tarantula" interval="1000" chance="50" max="3"/>
+	</summons>
+	<elements>
+		<element physicalPercent="30"/>
+		<element energyPercent="20"/>
+		<element earthPercent="100"/>
+		<element icePercent="20"/>
+		<element holyPercent="20"/>
+		<element deathPercent="30"/>
+		<element firePercent="100"/>
+	</elements>
+	<loot>
+		<item id="2169" chance="700"/>
+		<item id="2171" chance="400"/>
+	</loot>
+</monster>
