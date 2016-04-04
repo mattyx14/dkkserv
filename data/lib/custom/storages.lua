@@ -16,7 +16,7 @@ Storage = {
 	FerumbrasTowerAccess = 2548,
 	Missions = {
 		DjinnMission = {
-			Done = 24070
+			Done = 24073
 		},
 	},
 }

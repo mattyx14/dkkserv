@@ -6,6 +6,10 @@
 	<action actionid="2000" script="quests/system.lua" />
 	<action uniqueid="30015" script="quests/annihilator.lua" />
 
+	<!-- System Quest -->
+	<!-- Djinn Quest -->
+	<action actionid="2001" script="quests/system.lua" />
+
 	<!-- Tools -->
 	<action itemid="2120" script="tools/rope.lua" />
 	<action itemid="7731" script="tools/rope.lua" />
@@ -351,9 +355,6 @@
 	<action itemid="8293" script="quests/demon oak/demonOak.lua" />
 	<!-- <action fromuid="9008" touid="9011" script="quests/demon oak/demonOakChest.lua" /> -->
 	<action uniqueid="9007" script="quests/demon oak/demonOakGravestone.lua" />
-
-	<!-- Djinns Quest -->
-	<action fromuid="9012" touid="9015" script="quests/djinns/djinnChest.lua" />
 
 	<!-- Other -->
 	<action fromaid="50140" toaid="50144" script="oreWagons.lua" />
