@@ -7,17 +7,6 @@ function onCreatureDisappear(cid)           npcHandler:onCreatureDisappear(cid) 
 function onCreatureSay(cid, type, msg)      npcHandler:onCreatureSay(cid, type, msg)    end
 function onThink()                          npcHandler:onThink()                        end
 
-local shopModule = ShopModule:new()
-npcHandler:addModule(shopModule)
-
-shopModule:addBuyableItem({'phoenix charm'}, 11258, 20000, 'phoenix charm')
-shopModule:addBuyableItem({'unity charm'}, 11259, 20000, 'unity charm')
-shopModule:addBuyableItem({'spiritual charm'}, 11260, 20000, 'spiritual charm')
-shopModule:addBuyableItem({'twin sun charm'}, 11261, 20000, 'twin sun charm')
-shopModule:addBuyableItem({'solitude charm'}, 11262, 20000, 'solitude charm')
-shopModule:addBuyableItem({'ceremonial ankh'}, 6561, 250000, 'ceremonial ankh')
-
-
 local node1 = keywordHandler:addKeyword({'phoenix'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Do you want to buy the spark of the phoenix blessing for 10000 gold?'})
 	node1:addChildKeyword({'yes'}, StdModule.bless, {npcHandler = npcHandler, bless = 1, premium = true, cost = 10000})
 	node1:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, reset = true, text = 'Too expensive, eh?'})

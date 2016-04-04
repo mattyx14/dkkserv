@@ -3,7 +3,76 @@
 	<health now="100" max="100" />
 	<look type="133" head="39" body="122" legs="125" feet="57" addons="3" />
 	<parameters>
-		<parameter key="message_greet" value="Hello |PLAYERNAME|. I sell runes, potions, wands and rods. Say {trade}." />
+		<parameter key="message_greet" value="Hello |PLAYERNAME|. I sell runes,potions,wands and rods. Say {trade}." />
 		<parameter key="message_decline" value="Is |TOTALCOST| gold coins too much for you? Get out of here!" />
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_buyable" value="
+			animate dead,2316,375,1;
+			antidote potion,8474,50,1;
+			chameleon,2291,210,1;
+			convince creature,2290,80,1;
+			destroy field,2261,45,1;
+			explosion,2313,250,1;
+			great fireball,2304,180,1;
+			great health,7591,190,1;
+			great mana,7590,120,1;
+			great spirit,8472,190,1;
+			hailstorm rod,2183,15000,1;
+			health potion,7618,45,1;
+			heavy magic missile,2311,120,1;
+			instense healing,2265,95,1;
+			light magic missile,2287,40,1;
+			magic lightwand,2163,400,1;
+			magic wall,2293,350,1;
+			mana potion,7620,50,1;
+			moonlight rod,2186,1000,1;
+			necrotic rod,2185,5000,1;
+			northwind rod,8911,750,1;
+			paralyze,2278,700,1;
+			small health,8704,20,1;
+			snakebite rod,2182,500,1;
+			springsprout rod,8912,18000,1;
+			strong health,7588,100,1;
+			strong mana,7589,80,1;
+			spellbook,2175,150,1;
+			sudden death,2268,350,1;
+			terra rod,2181,10000,1;
+			ultimate healing,2273,175,1;
+			ultimate health,8473,310,1;
+			underworld rod',8910,22000,1;
+			wand of cosmic energy,2189,10000,1;
+			wand of decay,2188,5000,1;
+			wand of draconia,8921,7500,1;
+			wand of dragonbreath,2191,1000,1;
+			wand of inferno,2187,15000,1;
+			wand of starstorm,8920,18000,1;
+			wand of voodoo,8922,22000,1;
+			wand of vortex,2190,500,1;" />
+		<parameter key="shop_sellable" value="
+			crystal of balance,9942,1500;
+			crystal ring,2124,2000;
+			empty potion flask,7634,10;
+			empty potion flask,7635,15;
+			empty small potion flask,7636,5;
+			energy soil,8303,3000;
+			gold ingot,9971,10000;
+			hailstorm rod,2183,7500;
+			hibiscus dress,8873,5000;
+			moonlight rod,2186,500;
+			nails,8309,100;
+			necrotic rod,2185,2500;
+			northwind rod,8911,3750;
+			snakebite rod,2182,250;
+			springsprout rod,8912,9000;
+			terra rod,2181,5000;
+			underworld rod,8910,11000;
+			wand of cosmic energy,2189,5000;
+			wand of decay,2188,2500;
+			wand of draconia,8921,3750;
+			wand of dragonbreath,2191,500;
+			wand of inferno,2187,7500;
+			wand of starstorm,8920,9000;
+			wand of voodoo,8922,11000;
+			wand of vortex,2190,250;" />
 	</parameters>
 </npc>
