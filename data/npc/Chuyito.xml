@@ -56,23 +56,7 @@
 			empty small potion flask,7636,5;
 			energy soil,8303,3000;
 			gold ingot,9971,10000;
-			hailstorm rod,2183,7500;
 			hibiscus dress,8873,5000;
-			moonlight rod,2186,500;
-			nails,8309,100;
-			necrotic rod,2185,2500;
-			northwind rod,8911,3750;
-			snakebite rod,2182,250;
-			springsprout rod,8912,9000;
-			terra rod,2181,5000;
-			underworld rod,8910,11000;
-			wand of cosmic energy,2189,5000;
-			wand of decay,2188,2500;
-			wand of draconia,8921,3750;
-			wand of dragonbreath,2191,500;
-			wand of inferno,2187,7500;
-			wand of starstorm,8920,9000;
-			wand of voodoo,8922,11000;
-			wand of vortex,2190,250;" />
+			nails,8309,100;" />
 	</parameters>
 </npc>

@@ -7323,10 +7323,9 @@
 		<attribute key="description" value="A scent of death and decay sticks to this weapon." />
 		<attribute key="weight" value="4100" />
 		<attribute key="defense" value="30" />
-		<attribute key="extradef" value="2" />
-		<attribute key="attack" value="40" />
+		<attribute key="attack" value="43" />
 		<attribute key="weaponType" value="club" />
-		<attribute key="elementEarth" value="2" />
+		<attribute key="elementEarth" value="1" />
 	</item>
 	<item id="3962" article="a" name="beastslayer axe">
 		<attribute key="weight" value="6150" />
@@ -12661,9 +12660,10 @@
 	<item id="7404" article="an" name="assassin dagger">
 		<attribute key="weight" value="1700" />
 		<attribute key="defense" value="12" />
-		<attribute key="attack" value="41" />
+		<attribute key="attack" value="43" />
 		<attribute key="weaponType" value="sword" />
 		<attribute key="extradef" value="-1" />
+		<attribute key="elementHoly" value="1" />
 	</item>
 	<item id="7405" article="a" name="havoc blade">
 		<attribute key="weight" value="7200" />
@@ -23985,11 +23985,11 @@
 	</item>
 	<item id="15451" article="a" name="warrior's axe">
 		<attribute key="weight" value="8800" />
-		<attribute key="attack" value="41" />
+		<attribute key="attack" value="44" />
 		<attribute key="defense" value="10" />
 		<attribute key="weaponType" value="axe" />
 		<attribute key="extradef" value="-2" />
-		<attribute key="elementHoly" value="2" />
+		<attribute key="elementHoly" value="1" />
 	</item>
 	<item id="15452" article="a" name="deepling ridge">
 		<attribute key="weight" value="180" />

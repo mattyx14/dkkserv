@@ -13,5 +13,10 @@ Storage = {
 		AxeBlowsRight = 8290,
 		AxeBlowsFace = 8291
 	},
-	FerumbrasTowerAcces = 2548
+	FerumbrasTowerAccess = 2548,
+	Missions = {
+		DjinnMission = {
+			Done = 24070
+		},
+	},
 }

@@ -393,8 +393,10 @@
 	<!-- Djinn -->
 	<monster name="Blue Djinn" file="Djinn/blue djinn.xml" />
 	<monster name="Efreet" file="Djinn/efreet.xml" />
+	<monster name="Merikh the Slaughterer" file="Djinn/merikh the slaughterer.xml" />
 	<monster name="Green Djinn" file="Djinn/green djinn.xml" />
 	<monster name="Marid" file="Djinn/marid.xml" />
+	<monster name="Fahim the Wise" file="Djinn/fahim the wise.xml" />
 
 	<!-- Dragons -->
 	<monster name="Dragon Hatchling" file="Dragons/dragon hatchling.xml" />

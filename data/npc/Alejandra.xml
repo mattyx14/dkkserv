@@ -5,7 +5,8 @@
 	<parameters>
 		<parameter key="message_greet" value="Hello |PLAYERNAME|. I sell all kinds of objects such as ropes, shovels and product monsters. Only say {trade}."/>
 		<parameter key="module_shop" value="1" />
-		<parameter key="shop_buyable" value="backpack of holding,2365,500000,1;
+		<parameter key="shop_buyable" value="
+			backpack of holding,2365,500000,1;
 			basket,1989,6,1;
 			beach backpack,5949,20,1;
 			beach bag,5950,20,1;
@@ -45,7 +46,8 @@
 			watch,2036,20,1;
 			yellow backpack,1999,20,1;
 			yellow bag,1992,5,1;" />
-		<parameter key="shop_sellable" value="acorn,11213,100;
+		<parameter key="shop_sellable" value="
+			acorn,11213,100;
 			antlers,11214,150;
 			ape fur,5883,220;
 			baby seal doll,7183,20000;
