@@ -46,6 +46,7 @@ class ConfigManager
 			CLASSIC_EQUIPMENT_SLOTS,
 			ALLOW_WALKTHROUGH,
 			ENABLE_LIVE_CASTING,
+			ALLOW_BLOCK_SPAWN,
 
 			LAST_BOOLEAN_CONFIG /* this must be the last one */
 		};

@@ -15,6 +15,7 @@ function onSay(player, words, param)
 			.. '!addon - !addon "first citizen addon"' .. "\n"
 			.. "!buypremium" .. "\n"
 			.. "!shop" .. "\n"
+			.. "!stamina" .. "\n"
 			.. "!spells")
 		return false
 	else

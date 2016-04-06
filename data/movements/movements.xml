@@ -1147,6 +1147,13 @@
 		<vocation name="Elder Druid" showInDescription="0" />
 	</movevent>
 	<movevent event="DeEquip" itemid="22424" slot="shield" function="onDeEquipItem" />
+	<movevent event="Equip" itemid="2542" level="60" slot="shield" function="onEquipItem">
+		<vocation name="Sorcerer" />
+		<vocation name="Master Sorcerer" showInDescription="0" />
+		<vocation name="Druid" />
+		<vocation name="Elder Druid" showInDescription="0" />
+	</movevent>
+	<movevent event="DeEquip" itemid="2542" slot="shield" function="onDeEquipItem" />
 
 	<!-- DarkKonia Weapons -->
 	<movevent event="Equip" itemid="2407" slot="hand" level="90" function="onEquipItem">
@@ -1407,4 +1414,9 @@
 	<movevent event="StepIn" uniqueid="9000" script="quests/demon oak/entrance.lua" />
 	<!-- <movevent event="StepIn" itemid="8292" script="quests/demon oak/areaDamage.lua" /> -->
 	<movevent event="StepIn" fromuid="9001" touid="9005" script="quests/demon oak/squares.lua" />
+
+	<!-- Coal Basin System -->
+	<movevent event="AddItem" tileitem="1" itemid="1481" script="coalBasinSword.lua" />
+	<movevent event="AddItem" tileitem="1" itemid="1482" script="coalBasinAxe.lua" />
+	<movevent event="AddItem" tileitem="1" itemid="1483" script="coalBasinClub.lua" />
 </movements>

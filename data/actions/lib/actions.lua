@@ -8,6 +8,9 @@ local holeId = {
 local holes = {468, 481, 483, 7932}
 local others = {7932}
 
+local JUNGLE_GRASS = { 2782, 3985, 19433 }
+local WILD_GROWTH = { 1499, 11099 }
+
 function destroyItem(player, target, toPosition)
 	if target == nil or not target:isItem() then
 		return false

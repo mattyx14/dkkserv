@@ -45,7 +45,7 @@ housePriceEachSQM = 2000
 houseRentPeriod = "weekly"
 
 -- Item Usage
-timeBetweenActions = 200
+timeBetweenActions = 100
 timeBetweenExActions = 1000
 
 -- Map
@@ -77,6 +77,7 @@ classicEquipmentSlots = false
 allowWalkthrough = false
 coinPacketSize = 25
 coinImagesURL = "http://some.url/images/store"
+allowBlockSpawn = true
 
 -- Rates
 -- NOTE: rateExp is not used if you have enabled stages in data/XML/stages.xml

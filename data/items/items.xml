@@ -3217,7 +3217,7 @@
 		<attribute key="weaponType" value="axe" />
 	</item>
 	<item id="2389" article="a" name="spear">
-		<attribute key="weight" value="2000" />
+		<attribute key="weight" value="800" />
 		<attribute key="attack" value="25" />
 		<attribute key="weaponType" value="distance" />
 		<attribute key="shootType" value="spear" />
@@ -3792,6 +3792,8 @@
 		<attribute key="weight" value="8500" />
 		<attribute key="armor" value="17" />
 		<attribute key="slotType" value="body" />
+		<attribute key="skillShield" value="3" />
+		<attribute key="absorbPercentPhysical" value="5" />
 	</item>
 	<item id="2473" article="a" name="viking helmet">
 		<attribute key="weight" value="3900" />
@@ -4164,6 +4166,7 @@
 		<attribute key="weight" value="5100" />
 		<attribute key="defense" value="36" />
 		<attribute key="weaponType" value="shield" />
+		<attribute key="magiclevelpoints" value="1" />
 	</item>
 	<item id="2543" article="a" name="bolt">
 		<attribute key="weight" value="80" />
@@ -7323,9 +7326,9 @@
 		<attribute key="description" value="A scent of death and decay sticks to this weapon." />
 		<attribute key="weight" value="4100" />
 		<attribute key="defense" value="30" />
-		<attribute key="attack" value="43" />
+		<attribute key="attack" value="42" />
 		<attribute key="weaponType" value="club" />
-		<attribute key="elementEarth" value="1" />
+		<attribute key="elementEarth" value="2" />
 	</item>
 	<item id="3962" article="a" name="beastslayer axe">
 		<attribute key="weight" value="6150" />
@@ -7349,7 +7352,7 @@
 		<attribute key="slotType" value="two-handed" />
 	</item>
 	<item id="3965" article="a" name="hunting spear">
-		<attribute key="weight" value="2200" />
+		<attribute key="weight" value="1200" />
 		<attribute key="attack" value="32" />
 		<attribute key="weaponType" value="distance" />
 		<attribute key="shootType" value="huntingspear" />
@@ -8034,6 +8037,7 @@
 	<item fromid="4784" toid="4795" name="grass" />
 	<item fromid="4796" toid="4819" name="dirt" />
 	<item fromid="4820" toid="4825" name="shallow water">
+		<attribute key="type" value="trashholder" />
 		<attribute key="effect" value="bluebubble" />
 		<attribute key="allowpickupable" value="1" />
 		<attribute key="fluidSource" value="water" />
@@ -12452,7 +12456,7 @@
 		<attribute key="range" value="4" />
 	</item>
 	<item id="7367" article="an" name="enchanted spear">
-		<attribute key="weight" value="2000" />
+		<attribute key="weight" value="1500" />
 		<attribute key="attack" value="38" />
 		<attribute key="weaponType" value="distance" />
 		<attribute key="shootType" value="enchantedspear" />
@@ -12501,7 +12505,7 @@
 		<attribute key="weight" value="100" />
 	</item>
 	<item id="7378" article="a" name="royal spear">
-		<attribute key="weight" value="2500" />
+		<attribute key="weight" value="1500" />
 		<attribute key="attack" value="35" />
 		<attribute key="weaponType" value="distance" />
 		<attribute key="shootType" value="royalspear" />
@@ -12663,7 +12667,7 @@
 		<attribute key="attack" value="43" />
 		<attribute key="weaponType" value="sword" />
 		<attribute key="extradef" value="-1" />
-		<attribute key="elementHoly" value="1" />
+		<attribute key="elementDeath" value="1" />
 	</item>
 	<item id="7405" article="a" name="havoc blade">
 		<attribute key="weight" value="7200" />
@@ -15469,7 +15473,10 @@
 	<item fromid="8625" toid="8626" article="a" name="dwarven statue" />
 	<item fromid="8627" toid="8630" article="a" name="bone" />
 	<item id="8631" article="a" name="burning wall" />
-	<item id="8632" article="a" name="water vortex" />
+	<item id="8632" article="a" name="water vortex">
+		<attribute key="type" value="teleport" />
+		<attribute key="effect" value="teleport" />
+	</item>
 	<item fromid="8633" toid="8636" article="a" name="large crystal" />
 	<item fromid="8637" toid="8640" article="a" name="crystal" />
 	<item fromid="8641" toid="8642" article="a" name="crucible" />
@@ -31036,7 +31043,7 @@
 		<attribute key="shootType" value="gloothspear" />
 		<attribute key="range" value="3" />
 		<attribute key="maxHitChance" value="80" />
-		<attribute key="weight" value="2600" />
+		<attribute key="weight" value="1600" />
 	</item>
 	<item id="23535" article="a" name="glooth cape">
 		<attribute key="description" value="It can only be wielded properly by druids and sorcerers of level 40 or higher." />

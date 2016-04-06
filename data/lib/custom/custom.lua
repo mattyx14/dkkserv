@@ -175,6 +175,10 @@ function Player.isMage(self)
 	return isInArray({1, 2, 5, 6}, self:getVocation():getId())
 end
 
+function Player.isWarrior(self)
+	return isInArray({3, 7, 4, 8}, self:getVocation():getId())
+end
+
 function Player.isSorcerer(self)
 	return isInArray({1, 5}, self:getVocation():getId())
 end

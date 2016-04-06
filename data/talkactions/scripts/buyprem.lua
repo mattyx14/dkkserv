@@ -1,7 +1,7 @@
 local config = {
-	days = 10,
-	maxDays = 365,
-	price = 500000
+	days = 15,
+	maxDays = 15,
+	price = 150000
 }
 
 function onSay(player, words, param)

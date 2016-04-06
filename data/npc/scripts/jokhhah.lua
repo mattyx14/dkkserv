@@ -9,7 +9,7 @@ function onThink()                          npcHandler:onThink()                
 
 local function onTradeRequest(cid)
 	if Player(cid):getStorageValue(Storage.Missions.DjinnMission.Done) ~= 1 then
-		npcHandler:say('Sorry, but you do not complete the quest Djinn. I have to make sure that I can trust in the quality of your wares.', cid)
+		npcHandler:say('Sorry, but you do not complete the quest Djinn u need quest {mystic blade}, {heroic Axe}, {warrior staff} and {oil lamp} quest. I have to make sure that I can trust in the quality of your wares.', cid)
 		return false
 	end
 
