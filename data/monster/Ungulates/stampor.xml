@@ -54,7 +54,6 @@
 		<item id="7588" countmax="2" chance="5000" />		<!-- strong health potion -->
 		<item id="13299" chance="4920" />					<!-- stampor horn -->
 		<item id="13301" chance="3020" />					<!-- hollow stampor hoof -->
-		<item id="2391" chance="1010" />						<!-- war hammer -->
 		<item id="2476" chance="870" />						<!-- knight armor -->
 		<item id="7452" chance="160" />						<!-- spiked squelcher -->
 	</loot>

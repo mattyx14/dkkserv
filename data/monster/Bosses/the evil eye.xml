@@ -74,6 +74,5 @@
 		<item id="5898" countmax="1" chance="5000" /><!-- beholder eye -->
 		<item id="2148" countmax="90" chance="80000" /><!-- gold coin -->
 		<item id="2423" chance="5000" /><!-- clerical mace -->
-		<item id="2391" chance="1333" /><!-- war hammer -->
 	</loot>
 </monster>

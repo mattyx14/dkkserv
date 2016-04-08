@@ -1,6 +1,6 @@
 local outfits = {
 	[6096] = {6096, 'Pirate', 155, 151, 6096},
-	-- [2420] = {2420, 'Assassin', 156, 152, 2420}
+	[2662] = {2662, 'Conjurer', 635, 634, 2662}
 }
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)

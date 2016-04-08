@@ -39,10 +39,9 @@
 	<action itemid="6561" script="other/checkbless.lua" />
 	<action itemid="12424" script="other/checkbless.lua" />
 
-	<!-- Offline Training
-		<action itemid="12397" script="other/trainingbook.lua" />
-		<action fromid="18488" toid="18492" script="other/skilltrainer.lua" />
-	-->
+	<!-- Offline Training -->
+	<action itemid="12397" script="other/trainingbook.lua" />
+	<action fromid="18488" toid="18492" script="other/skilltrainer.lua" />
 
  	<!-- Taming Items -->
 	<action itemid="5907" script="other/taming.lua" />
@@ -359,7 +358,12 @@
 	<!-- Other -->
 	<action fromaid="50140" toaid="50144" script="oreWagons.lua" />
 		<!-- Other Outfits -->
+		<!-- Pirate Outfit -->
 		<action uniqueid="6096" script="quests/outfits/outfits.lua" />
 			<action uniqueid="9010" script="quests/outfits/pirateLever.lua" />
-		<action uniqueid="2420" script="quests/outfits/outfits.lua" />
+		<!-- Conjurer Outfit -->
+		<action uniqueid="2662" script="quests/outfits/outfits.lua" />
+			<action actionid="2080" script="quests/outfits/conjurerLever.lua" />
+			<action actionid="2081" script="quests/outfits/conjurerLever_two.lua" />
+			<action actionid="39512" script="quests/outfits/conjurerMirror.lua" />
 </actions>

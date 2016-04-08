@@ -4,6 +4,7 @@
 	<look type="80" />
 	<parameters>
 		<parameter key="module_shop" value="1" />
+		<parameter key="message_greet" value="Hello |PLAYERNAME|. I trade {items} for others."/>
 		<parameter key="shop_sellable" value="
 			abyss hammer,7414,20000;
 			amber staff,7426,8000;

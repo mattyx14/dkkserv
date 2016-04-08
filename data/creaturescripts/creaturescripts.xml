@@ -15,6 +15,7 @@
 	<event type="advance" name="onadvance_reward" script="onadvance_reward.lua"/>
 
 	<!-- Demon Helmet Quest -->
-	<event type="kill" name="KillDemon" script="quest/killBoss/DemonKill.lua" />
-	<event type="kill" name="KillGolem" script="quest/killBoss/LeafGolemGromKill.lua" />
+	<event type="kill" name="DemonKill" script="quest/killBoss/DemonKill.lua" />
+	<event type="kill" name="GomelKill" script="quest/killBoss/LeafGolemGromKill.lua" />
+	<event type="kill" name="ZarabustorKill" script="quest/killBoss/ZarabustorKill.lua" />
 </creaturescripts>

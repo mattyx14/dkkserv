@@ -35,7 +35,8 @@ function onLogin(player)
 	player:registerEvent("onadvance_reward")
 
 	-- KillBoss
-	player:registerEvent("KillDemon")
-	player:registerEvent("KillGolem")
+	player:registerEvent("DemonKill")
+	player:registerEvent("GomelKill")
+	player:registerEvent("ZarabustorKill")
 	return true
 end
