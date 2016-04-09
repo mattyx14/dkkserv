@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monster name="Lucifer" nameDescription="a Lucifer" race="blood" experience="6000000" speed="290" manacost="0">
 	<health now="1333800" max="1333800"/>
-	<look type="528" corpse="14197"/>
+	<look type="862" head="40" body="94" legs="0" feet="114" addons="3" corpse="0"/>
 	<targetchange interval="5000" chance="8"/>
 	<strategy attack="80" defense="50"/>
 	<flags>

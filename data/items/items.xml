@@ -15297,7 +15297,7 @@
 	<item fromid="8460" toid="8471" name="earth" />
 	<item id="8472" article="a" name="great spirit potion">
 		<attribute key="weight" value="310" />
-		<attribute key="description" value="This potion can only be consumed by paladins of level 80 or higher." />
+		<attribute key="description" value="This potion can only be consumed by paladins of level 130 or higher." />
 	</item>
 	<item id="8473" article="an" name="ultimate health potion">
 		<attribute key="weight" value="310" />
@@ -31144,7 +31144,6 @@
 		<attribute key="weight" value="2800" />
 	</item>
 	<item id="23549" article="a" name="glooth club">
-		<attribute key="description" value="It can only be wielded properly by knights of level 75 or higher." />
 		<attribute key="defense" value="1" />
 		<attribute key="attack" value="39" />
 		<attribute key="weaponType" value="club" />
@@ -31154,7 +31153,6 @@
 		<attribute key="weight" value="1900" />
 	</item>
 	<item id="23550" article="a" name="glooth blade">
-		<attribute key="description" value="It can only be wielded properly by knights of level 75 or higher." />
 		<attribute key="defense" value="1" />
 		<attribute key="attack" value="39" />
 		<attribute key="weaponType" value="sword" />
@@ -31164,7 +31162,6 @@
 		<attribute key="weight" value="1900" />
 	</item>
 	<item id="23551" article="a" name="glooth axe">
-		<attribute key="description" value="It can only be wielded properly by knights of level 75 or higher." />
 		<attribute key="defense" value="1" />
 		<attribute key="attack" value="39" />
 		<attribute key="weaponType" value="axe" />
@@ -31177,7 +31174,6 @@
 		<attribute key="weight" value="10" />
 	</item>
 	<item id="23554" article="a" name="glooth amulet">
-		<attribute key="description" value="It can only be wielded properly by sorcerers and druids of level 75 or higher." />
 		<attribute key="slotType" value="necklace" />
 		<attribute key="charges" value="20" />
 		<attribute key="showcharges" value="1" />

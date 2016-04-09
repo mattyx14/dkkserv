@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <monster name="Satan" description="a Satan" experience="14099595" speed="300" race="undead">
 	<health now="2433800" max="2433800"/>
-	<look type="539" head="0" body="0" legs="94" feet="94" corpse="6068"/>
+	<look type="862" head="0" body="0" legs="94" feet="94" corpse="6068"/>
 	<targetchange interval="5000" chance="20"/>
 	<strategy attack="90" defense="24"/>
 	<flags>

@@ -181,7 +181,6 @@
 	<monster name="Energized Raging Mage" file="Bosses/energized raging mage.xml" />
 	<monster name="Esmeralda" file="Bosses/esmeralda.xml" />
 	<monster name="Ethershreck" file="Bosses/ethershreck.xml" />
-	<monster name="Evil Mastermind" file="Bosses/evil mastermind.xml" />
 	<monster name="Fatality" file="Bosses/fatality.xml" />
 	<monster name="Fazzrah" file="Bosses/fazzrah.xml" />
 	<monster name="Fernfang" file="Bosses/fernfang.xml" />

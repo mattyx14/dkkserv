@@ -1,8 +1,8 @@
 local config = {
 	{fromPosition = Position(1046, 181, 9), toPosition = Position(1232, 287, 8), sacrificePosition = Position(1046, 182, 9), sacrificeId = 2746},
 	{fromPosition = Position(1051, 181, 9), toPosition = Position(1172, 345, 8), sacrificePosition = Position(1051, 182, 9), sacrificeId = 2744},
-	{fromPosition = Position(1056, 181, 9), toPosition = Position(1237, 407, 8), sacrificePosition = Position(1056, 182, 8), sacrificeId = 2745},
-	{fromPosition = Position(1051, 139, 9), toPosition = Position(1051, 148, 9)}
+	{fromPosition = Position(1056, 181, 9), toPosition = Position(1237, 407, 8), sacrificePosition = Position(1056, 182, 9), sacrificeId = 2745},
+	{fromPosition = Position(1051, 139, 9), toPosition = Position(1051, 148, 9), sacrificePosition = Position(1050, 137, 9), sacrificeId = 6560},
 }
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)

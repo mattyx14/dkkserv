@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monster name="Infernus" nameDescription="a Infernus" race="undead" experience="0" speed="370" manacost="0">
 	<health now="112000" max="112000"/>
-	<look type="201" corpse="5995"/>
+	<look type="862" head="98" body="96" legs="90" feet="92" addons="2" corpse="5995"/>
 	<targetchange interval="5000" chance="8"/>
 	<strategy attack="100" defense="0"/>
 	<flags>

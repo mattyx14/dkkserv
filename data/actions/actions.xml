@@ -226,8 +226,9 @@
 		<action itemid="7620" script="liquids/potions.lua" />
 		<action fromid="8472" toid="8474" script="liquids/potions.lua" />
 		<action itemid="8704" script="liquids/potions.lua" />
-			<action fromid="7439" toid="7440" script="liquids/strengthening_potions.lua" />
-			<action itemid="7443" script="liquids/strengthening_potions.lua" />
+			<action itemid="7439" script="other/strengthening_potions.lua" />
+			<action itemid="7440" script="other/strengthening_potions.lua" />
+			<action itemid="7443" script="other/strengthening_potions.lua" />
 
 	<!-- Doors -->
 	<action fromid="1209" toid="1214" script="other/doors.lua" />
@@ -366,4 +367,6 @@
 			<action actionid="2080" script="quests/outfits/conjurerLever.lua" />
 			<action actionid="2081" script="quests/outfits/conjurerLever_two.lua" />
 			<action actionid="39512" script="quests/outfits/conjurerMirror.lua" />
+		<!-- Jester Outfit -->
+		<action itemid="7478" script="quests/outfits/jesterflask.lua" />
 </actions>
