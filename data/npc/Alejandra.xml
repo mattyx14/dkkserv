@@ -10,7 +10,6 @@
 			basket,1989,6,1;
 			beach backpack,5949,20,1;
 			beach bag,5950,20,1;
-			blessed wooden stake,5942,1000000,1;
 			blue backpack,2002,20,1;
 			blue bag,1995,5,1;
 			brocade backpack,9774,10000,1;
@@ -29,8 +28,7 @@
 			green bag,1991,5,1;
 			grey backpack,2003,20,1;
 			grey bag,1996,5,1;
-			jewelled backpack,5801,300000,1;
-			obsidian knife,5908,1000000,1;
+			obsidian knife,5908,100000,1;
 			pick,2553,50,1;
 			pirate backpack,5926,20,1;
 			pirate bag,5927,5,1;
