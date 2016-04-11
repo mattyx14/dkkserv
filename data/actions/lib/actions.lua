@@ -55,6 +55,10 @@ end
 
 function onUseRope(player, item, fromPosition, target, toPosition, isHotkey)
 	local tile = Tile(toPosition)
+	if not tile then
+		return false
+	end
+
 	if isInArray(ropeSpots, tile:getGround():getId()) or tile:getItemById(14435) then
 		player:teleportTo(toPosition:moveUpstairs(), false)
 		return true
@@ -119,13 +123,30 @@ function onUseShovel(player, item, fromPosition, target, toPosition, isHotkey)
 end
 
 function onUsePick(player, item, fromPosition, target, toPosition, isHotkey)
-	if (target.uid <= 65535 or target.actionid > 0) and (target.itemid == 354 or target.itemid == 355) then
-		target:transform(392)
-		target:decay()
-		toPosition:sendMagicEffect(CONST_ME_POFF)
-		return true
+	if toPosition.x == CONTAINER_POSITION then
+		return false
 	end
-	return false
+
+	local tile = Tile(toPosition)
+	if not tile then
+		return false
+	end
+
+	local ground = tile:getGround()
+	if not ground then
+		return false
+	end
+
+	if (ground.uid > 65535 or ground.actionid == 0) and not isInArray(groundIds, ground.itemid) then
+		return false
+	end
+
+	ground:transform(392)
+	ground:decay()
+
+	toPosition.z = toPosition.z + 1
+	tile:relocateTo(toPosition)
+	return true
 end
 
 function onUseMachete(player, item, fromPosition, target, toPosition, isHotkey)
@@ -142,7 +163,7 @@ function onUseMachete(player, item, fromPosition, target, toPosition, isHotkey)
 		return true
 	end
 
-	return onDestroyItem(player, item, fromPosition, target, toPosition, isHotkey)
+	return destroyItem(player, item, fromPosition, target, toPosition, isHotkey)
 end
 
 function onUseScythe(player, item, fromPosition, target, toPosition, isHotkey)
@@ -157,5 +178,5 @@ function onUseScythe(player, item, fromPosition, target, toPosition, isHotkey)
 		return true
 	end
 
-	return onDestroyItem(player, item, fromPosition, target, toPosition, isHotkey)
+	return destroyItem(player, target, toPosition)
 end

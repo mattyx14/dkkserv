@@ -1039,4 +1039,5 @@
 
 	<!-- Trainers -->
 	<monster name="Training Monk" file="training monk.xml"/>
+	<monster name="gaz'haragoth" file="Bosses/gaz'haragoth.xml"/>
 </monsters>

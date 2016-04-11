@@ -68,7 +68,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	end
 
 	player:addCondition(exhaust)
-	target:say("Aaaah...", TALKTYPE_MONSTER_SAY)
+	doCreatureSayWithRadius(target, 'Aaaah...', TALKTYPE_MONSTER_SAY, 2, 2)
 
 	local topParent = item:getTopParent()
 	if topParent.isItem and (not topParent:isItem() or topParent.itemid ~= 460) then
