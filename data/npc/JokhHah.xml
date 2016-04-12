@@ -198,6 +198,17 @@
 			war hammer,2391,3200;
 			war horn,2079,8000;
 			witch hat,10570,5000;
-			wyvern fang,7408,1500;" />
+			wyvern fang,7408,1500;
+			glacial rod,18412,6500;
+			hailstorm rod,2183,3000;
+			moonlight rod,2186,200;
+			muck rod,18411,6000;
+			mysterious fetish,2194,50;
+			necrotic rod,2185,1000;
+			northwind rod,8911,1500;
+			snakebite rod,2182,100;
+			springsprout rod,8912,3600;
+			terra rod,2181,2000;
+			underworld rod,8910,4400;" />
 	</parameters>
 </npc>

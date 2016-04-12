@@ -42,10 +42,10 @@ local config = {
 		male = 134, female = 142, addon = 2, items = {{5880, 100}, {5887, 10}, {2475, 10}}
 	},
 	["first barbarian addon"] = {
-		male = 143, female = 147, addon = 1, items = {{5884, 1}, {5885, 1}, {5910, 50}, {5911, 50}, {5886, 10}}
+		male = 143, female = 147, addon = 1, items = {{5880, 100}, {5892, 1}, {5893, 50}, {5876, 50}}
 	},
 	["second barbarian addon"] = {
-		male = 143, female = 147, addon = 2, items = {{5880, 100}, {5892, 1}, {5893, 50}, {5876, 50}}
+		male = 143, female = 147, addon = 2, items = {{5884, 1}, {5885, 1}, {5910, 50}, {5911, 50}, {5886, 10}}
 	},
 	["first druid addon"] = {
 		male = 144, female = 148, addon = 1, items = {{5896, 50}, {5897, 50}, {10567, 15}}

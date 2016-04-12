@@ -13,6 +13,8 @@
 	<event type="advance" name="AdvanceSave" script="advance_save.lua" />
 	<event type="login" name="freebless" script="freeblesslowlevel.lua"/>
 	<event type="advance" name="onadvance_reward" script="onadvance_reward.lua"/>
+	<event type="modalwindow" name="modalMD" script="modalMD.lua"/>
+	<event type="modalwindow" name="modalAD" script="modalAD.lua"/>
 
 	<!-- Demon Helmet Quest -->
 	<event type="kill" name="DemonKill" script="quest/killBoss/DemonKill.lua" />

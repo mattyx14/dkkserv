@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Mutated Rat" nameDescription="a mutated rat" race="blood" experience="450" speed="220" manacost="0">
-	<health now="550" max="550" />
+<monster name="Mutated Rat" nameDescription="a mutated rat" race="blood" experience="1450" speed="220" manacost="0">
+	<health now="1550" max="1550" />
 	<look type="305" corpse="9871" />
 	<targetchange interval="4000" chance="10" />
 	<flags>

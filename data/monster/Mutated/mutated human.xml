@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Mutated Human" nameDescription="a mutated human" race="blood" experience="150" speed="200" manacost="0">
-	<health now="240" max="240" />
+<monster name="Mutated Human" nameDescription="a mutated human" race="blood" experience="3150" speed="200" manacost="0">
+	<health now="2400" max="2400" />
 	<look type="323" corpse="9107" />
 	<targetchange interval="4000" chance="10" />
 	<flags>
@@ -18,7 +18,7 @@
 	</flags>
 	<attacks>
 		<attack name="melee" interval="2000" skill="50" attack="30" poison="60" />
-		<attack name="death" interval="2000" chance="15" length="3" spread="1" target="0" min="-50" max="-60">
+		<attack name="death" interval="2000" chance="15" length="3" spread="1" target="0" min="-50" max="-160">
 			<attribute key="areaEffect" value="poison" />
 		</attack>
 		<attack name="poisoncondition" interval="2000" chance="20" target="1" lenght="1" spread="0" min="-190" max="-280">

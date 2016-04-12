@@ -341,7 +341,6 @@
 	<action itemid="8974" script="other/dolls.lua" />
 	<action itemid="8977" script="other/dolls.lua" />
 	<action itemid="8981" script="other/dolls.lua" />
-	<action itemid="8982" script="other/dolls.lua" />
 
 	<!-- Valuables -->
 	<action itemid="13670" script="valuables/randomitems.lua" />
@@ -358,6 +357,8 @@
 
 	<!-- Other -->
 	<action fromaid="50140" toaid="50144" script="oreWagons.lua" />
+	<action itemid="8982" script="modalAD.lua"/>
+	<action itemid="9019" script="modalMD.lua"/>
 		<!-- Other Outfits -->
 		<!-- Pirate Outfit -->
 		<action uniqueid="6096" script="quests/outfits/outfits.lua" />

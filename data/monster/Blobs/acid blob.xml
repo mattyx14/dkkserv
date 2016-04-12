@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Acid Blob" nameDescription="an acid blob" race="venom" experience="250" speed="180" manacost="0">
-	<health now="250" max="250" />
+<monster name="Acid Blob" nameDescription="an acid blob" race="venom" experience="2250" speed="220" manacost="0">
+	<health now="2500" max="2500" />
 	<look type="314" corpse="9962" />
 	<targetchange interval="5000" chance="0" />
 	<flags>
@@ -33,7 +33,7 @@
 		<immunity death="1" />
 		<immunity earth="1" />
 	</immunities>
-	<summons maxSummons="3">
+	<summons maxSummons="1">
 		<summon name="Acid Blob" interval="2000" chance="10" />
 	</summons>
 	<voices interval="5000" chance="10">

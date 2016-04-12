@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Mutated Bat" nameDescription="a mutated bat" race="blood" experience="615" speed="210" manacost="0">
-	<health now="900" max="900" />
+<monster name="Mutated Bat" nameDescription="a mutated bat" race="blood" experience="3615" speed="210" manacost="0">
+	<health now="3900" max="3900" />
 	<look type="307" corpse="9829" />
 	<targetchange interval="4000" chance="10" />
 	<flags>
@@ -21,7 +21,7 @@
 		<attack name="earth" interval="2000" chance="15" range="7" min="-70" max="-180">
 			<attribute key="shootEffect" value="poison" />
 		</attack>
-		<attack name="drown" interval="2000" chance="15" target="0" radius="6" min="-30" max="-90">
+		<attack name="drown" interval="2000" chance="15" target="0" radius="6" min="-30" max="-190">
 			<attribute key="areaEffect" value="whitenote" />
 		</attack>
 		<attack name="mutated bat curse" interval="2000" chance="10" />

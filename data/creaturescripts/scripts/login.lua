@@ -34,6 +34,10 @@ function onLogin(player)
 	player:registerEvent("DropLoot")
 	player:registerEvent("onadvance_reward")
 
+	-- Addon / Mount Doll
+	player:unregisterEvent("modalAD")
+	player:unregisterEvent("modalMD")
+
 	-- KillBoss
 	player:registerEvent("DemonKill")
 	player:registerEvent("GomelKill")

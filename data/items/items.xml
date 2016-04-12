@@ -2444,9 +2444,9 @@
 		<attribute key="decayTo" value="0" />
 		<attribute key="transformDeEquipTo" value="2168" />
 		<attribute key="duration" value="1200" />
-		<attribute key="healthGain" value="2" />
+		<attribute key="healthGain" value="20" />
 		<attribute key="healthTicks" value="6000" />
-		<attribute key="manaGain" value="8" />
+		<attribute key="manaGain" value="25" />
 		<attribute key="manaTicks" value="6000" />
 		<attribute key="showduration" value="1" />
 		<attribute key="showattributes" value="1" />
@@ -2539,9 +2539,9 @@
 		<attribute key="decayTo" value="0" />
 		<attribute key="transformDeEquipTo" value="2214" />
 		<attribute key="duration" value="450" />
-		<attribute key="healthGain" value="6" />
+		<attribute key="healthGain" value="26" />
 		<attribute key="healthTicks" value="6000" />
-		<attribute key="manaGain" value="24" />
+		<attribute key="manaGain" value="34" />
 		<attribute key="manaTicks" value="6000" />
 		<attribute key="showduration" value="1" />
 		<attribute key="showattributes" value="1" />
@@ -2956,7 +2956,9 @@
 	<item id="2333" article="a" name="letter to Markwin">
 		<attribute key="weight" value="50" />
 	</item>
-	<item id="2334" name="Santas Mailbox" />
+	<item id="2334" name="mailbox">
+		<attribute key="type" value="mailbox" />
+	</item>
 	<item id="2335" article="a" name="helmet ornament">
 		<attribute key="description" value="This item seems to be a single part of a bigger object." />
 		<attribute key="weight" value="160" />
@@ -4439,9 +4441,9 @@
 		<attribute key="decayTo" value="10021" />
 		<attribute key="transformDeEquipTo" value="6132" />
 		<attribute key="duration" value="14400" />
-		<attribute key="healthGain" value="1" />
+		<attribute key="healthGain" value="20" />
 		<attribute key="healthTicks" value="2000" />
-		<attribute key="manaGain" value="2" />
+		<attribute key="manaGain" value="25" />
 		<attribute key="manaTicks" value="1000" />
 		<attribute key="showduration" value="1" />
 		<attribute key="showattributes" value="1" />
@@ -24011,6 +24013,7 @@
 		<attribute key="attack" value="54" />
 		<attribute key="defense" value="11" />
 		<attribute key="weaponType" value="axe" />
+		<attribute key="slotType" value="two-handed" />
 	</item>
 	<item id="15455" article="a" name="deepling claw">
 		<attribute key="weight" value="180" />
@@ -24230,9 +24233,10 @@
 	</item>
 	<item id="15647" article="a" name="deepling squelcher">
 		<attribute key="weight" value="8900" />
-		<attribute key="attack" value="44" />
+		<attribute key="attack" value="39" />
 		<attribute key="defense" value="28" />
 		<attribute key="weaponType" value="club" />
+		<attribute key="slotType" value="two-handed" />
 	</item>
 	<item id="15648" article="a" name="tarsal arrow">
 		<attribute key="weight" value="70" />
@@ -31503,6 +31507,34 @@
 		<attribute key="decayTo" value="24331" />
 		<attribute key="duration" value="3" />
 		<attribute key="description" value="Only the real killers can touch me!" />
+	</item>
+	<item id="25415" article="a" name="plague bite">
+		<attribute key="weight" value="4300" />
+		<attribute key="defense" value="35" />
+		<attribute key="attack" value="73" />
+		<attribute key="weaponType" value="axe" />
+		<attribute key="slotType" value="two-handed" />
+		<attribute key="elementEarth" value="5" />
+		<attribute key="skillAxe" value="5" />
+	</item>
+	<item id="25416" article="a" name="impaler of the igniter">
+		<attribute key="description" value="Strong powers flow in this magic sword." />
+		<attribute key="weight" value="4300" />
+		<attribute key="defense" value="45" />
+		<attribute key="attack" value="70" />
+		<attribute key="weaponType" value="sword" />
+		<attribute key="slotType" value="two-handed" />
+		<attribute key="elementFire" value="6" />
+		<attribute key="skillSword" value="5" />
+	</item>
+	<item id="25418" article="a" name="maimer">
+		<attribute key="weight" value="4300" />
+		<attribute key="defense" value="45" />
+		<attribute key="attack" value="69" />
+		<attribute key="weaponType" value="club" />
+		<attribute key="slotType" value="two-handed" />
+		<attribute key="elementDeath" value="5" />
+		<attribute key="skillClub" value="5" />
 	</item>
 	<item id="25453" article="a" name="depot box of Fynn Castle" />
 	<item id="25454" article="a" name="depot box of Anshara Desert" />

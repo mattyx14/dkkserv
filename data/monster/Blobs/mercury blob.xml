@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Mercury Blob" nameDescription="a mercury blob" race="undead" experience="180" speed="180" manacost="0">
-	<health now="150" max="150" />
+<monster name="Mercury Blob" nameDescription="a mercury blob" race="undead" experience="3180" speed="220" manacost="0">
+	<health now="1500" max="1500" />
 	<look type="316" corpse="9961" />
 	<targetchange interval="5000" chance="0" />
 	<flags>
@@ -43,10 +43,7 @@
 		<element holyPercent="65" />
 		<element lifedrainPercent="80" />
 	</elements>
-	<immunities>
-		<immunity death="1" />
-	</immunities>
-	<summons maxSummons="3">
+	<summons maxSummons="1">
 		<summon name="Mercury Blob" interval="2000" chance="10" />
 	</summons>
 	<voices interval="5000" chance="10">

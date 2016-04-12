@@ -57,18 +57,12 @@
 		<vocation name="Elder Druid" />
 		<vocation name="Elite Knight" />
 	</instant>
-	<instant group="healing" spellid="145" name="Cure Burning" words="exana flam" lvl="30" mana="30" aggressive="0" selftarget="1" cooldown="6000" groupcooldown="1000" needlearn="0" script="healing/cure burning.lua">
-		<vocation name="Druid" />
-		<vocation name="Elder Druid" />
-	</instant>
+	<instant group="healing" spellid="145" name="Cure Burning" words="exana flam" lvl="30" mana="30" aggressive="0" selftarget="1" cooldown="6000" groupcooldown="1000" needlearn="0" script="healing/cure burning.lua" />
 	<instant group="healing" spellid="147" name="Cure Curse" words="exana mort" lvl="80" mana="40" aggressive="0" selftarget="1" cooldown="6000" groupcooldown="1000" needlearn="0" script="healing/cure curse.lua">
 		<vocation name="Paladin" />
 		<vocation name="Royal Paladin" />
 	</instant>
-	<instant group="healing" spellid="146" name="Cure Electrification" words="exana vis" lvl="22" mana="30" aggressive="0" selftarget="1" cooldown="6000" groupcooldown="1000" needlearn="0" script="healing/cure electrification.lua">
-		<vocation name="Druid" />
-		<vocation name="Elder Druid" />
-	</instant>
+	<instant group="healing" spellid="146" name="Cure Electrification" words="exana vis" lvl="22" mana="30" aggressive="0" selftarget="1" cooldown="6000" groupcooldown="1000" needlearn="0" script="healing/cure electrification.lua" />
 	<instant group="healing" spellid="29" name="Cure Poison" words="exana pox" lvl="10" mana="30" aggressive="0" selftarget="1" cooldown="6000" groupcooldown="1000" needlearn="0" script="healing/cure poison.lua">
 		<vocation name="Sorcerer" />
 		<vocation name="Druid" />
@@ -235,7 +229,7 @@
 		<vocation name="Elder Druid" />
 		<vocation name="Royal Paladin" />
 	</instant>
-	<instant group="healing" spellid="160" name="Intense Recovery" words="utura gran" lvl="100" mana="165" aggressive="0" selftarget="1" cooldown="60000" groupcooldown="1000" needlearn="0" script="healing/intense recovery.lua">
+	<instant group="healing" spellid="160" name="Intense Recovery" words="utura gran" lvl="80" mana="165" aggressive="0" selftarget="1" cooldown="60000" groupcooldown="1000" needlearn="0" script="healing/intense recovery.lua">
 		<vocation name="Paladin" />
 		<vocation name="Knight" />
 		<vocation name="Royal Paladin" />
@@ -337,7 +331,7 @@
 		<vocation name="Sorcerer" />
 		<vocation name="Master Sorcerer" />
 	</instant>
-	<instant group="healing" spellid="159" name="Recovery" words="utura" lvl="50" mana="75" aggressive="0" selftarget="1" cooldown="60000" groupcooldown="1000" needlearn="0" script="healing/recovery.lua">
+	<instant group="healing" spellid="159" name="Recovery" words="utura" lvl="30" mana="75" aggressive="0" selftarget="1" cooldown="60000" groupcooldown="1000" needlearn="0" script="healing/recovery.lua">
 		<vocation name="Paladin" />
 		<vocation name="Knight" />
 		<vocation name="Royal Paladin" />

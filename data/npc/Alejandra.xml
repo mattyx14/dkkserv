@@ -98,6 +98,7 @@
 			chicken feather,5890,130;
 			cliff strider claw,18428,800;
 			coal,13757,120;
+			cowbell,23575,420;
 			cobra tongue,10551,115;
 			compass,11219,145;
 			compound eye,15486,250;
@@ -172,6 +173,7 @@
 			ghostly tissue,10607,190;
 			ghoul snack,12423,160;
 			giant eye,11197,480;
+			giant pacifier,23570,480;
 			girlish hair decoration,12399,130;
 			gland,8971,500;
 			glob of acid slime,9967,125;
@@ -233,11 +235,13 @@
 			mastermind potion,7440,500;
 			metal spike,11215,420;
 			minotaur leather,5878,180;
+			minotaur horn,12428,180;
 			minotaur trophy,7401,500;
 			miraculum,12430,160;
 			mutated bat ear,10579,520;
 			mutated flesh,11225,150;
 			mutated rat tail,10585,250;
+			mooh'tah shells,23573,450;
 			mystical hourglass,10577,700;
 			necromantic robe,12431,350;
 			nettle blossom,11231,175;
@@ -251,6 +255,7 @@
 			pelvis bone,12437,130;
 			perfect behemoth fang,5893,350;
 			petrified scream,11337,350;
+			piece of archer armor,12439,130;
 			piece of crocodile leather,11196,115;
 			piece of dead brain,10580,520;
 			piece of draconian steel,5889,3000;
@@ -309,6 +314,7 @@
 			snake skin,10611,500;
 			sniper gloves,5875,2000;
 			souleater trophy,12635,7500;
+			soul orb,5944,500;
 			spellsingers seal,15421,380;
 			spider fangs,8859,110;
 			spider silk,5879,200;
@@ -362,6 +368,7 @@
 			waspoid wing,15484,290;
 			weavers wandtip,11314,350;
 			werewolf fur,11234,480;
+			warrior armor pice,12438,250;
 			white deer antlers,13533,500;
 			white deer skin,13534,345;
 			white piece of cloth,5909,200;
