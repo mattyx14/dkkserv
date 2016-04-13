@@ -1,5 +1,7 @@
 local config = {
-	[9007] = {flamePosition = Position(975, 949, 8), toPosition = Position(1034, 913, 8)}
+	[9006] = {flamePosition = Position(973, 1033, 7), toPosition = Position(973, 1034, 6), sacrificeItem = 7408},
+	[9007] = {flamePosition = Position(975, 949, 8), toPosition = Position(1034, 913, 8), sacrificeItem = 2430},
+	[9008] = {flamePosition = Position(569, 1256, 6), toPosition = Position(631, 1248, 6), sacrificeItem = 2434}
 }
 
 function onAddItem(moveitem, tileitem, position)
@@ -8,7 +10,7 @@ function onAddItem(moveitem, tileitem, position)
 		return true
 	end
 
-	if moveitem.itemid ~= 2430 then
+	if moveitem.itemid ~= targetCoalBasin.sacrificeItem then
 		position:sendMagicEffect(CONST_ME_POFF)
 		return true
 	end

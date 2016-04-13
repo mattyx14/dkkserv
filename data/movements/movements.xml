@@ -1416,7 +1416,10 @@
 	<movevent event="StepIn" fromuid="9001" touid="9005" script="quests/demon oak/squares.lua" />
 
 	<!-- Coal Basin System -->
-	<movevent event="AddItem" tileitem="1" itemid="1481" script="coalBasinSword.lua" />
-	<movevent event="AddItem" tileitem="1" itemid="1482" script="coalBasinAxe.lua" />
-	<movevent event="AddItem" tileitem="1" itemid="1483" script="coalBasinClub.lua" />
+	<movevent event="AddItem" tileitem="1" itemid="1481" script="coalBasinSacrifice.lua" />
+	<movevent event="AddItem" tileitem="1" itemid="1482" script="coalBasinSacrifice.lua" />
+	<movevent event="AddItem" tileitem="1" itemid="1483" script="coalBasinSacrifice.lua" />
+
+	<!-- Protect Tiles -->
+	<movevent event="StepIn" fromaid="5500" toaid="5600" script="storagetile.lua" />
 </movements>

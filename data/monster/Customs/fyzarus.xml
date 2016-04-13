@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<monster name="Fezarus" nameDescription="a Fezarus" race="undead" experience="10200" speed="430" manacost="10000">
+<monster name="Fyzarus" nameDescription="a fyzarus" race="undead" experience="10200" speed="430" manacost="10000">
 	<health now="9900" max="9900"/>
-	<look type="12" head="0" body="85" legs="126" feet="94" corpse="0"/>
+	<look type="12" head="40" body="94" legs="0" feet="114" corpse="0"/>
 	<targetchange interval="5000" chance="8"/>
 	<strategy attack="100" defense="0"/>
 	<flags>
@@ -19,22 +19,22 @@
 	</flags>
 	<attacks>
 		<attack name="melee" interval="2000" min="-20" max="-850"/>
-		<attack name="ice" interval="1500" chance="15" range="7" radius="7" target="1" min="-160" max="-380">
+		<attack name="fire" interval="1500" chance="15" range="7" radius="7" target="1" min="-160" max="-380">
+			<attribute key="shootEffect" value="fire"/>
+			<attribute key="areaEffect" value="blacksmoke"/>
+		</attack>
+		<attack name="fire" interval="1500" chance="25" range="7" radius="7" target="1" min="-160" max="-450">
 			<attribute key="shootEffect" value="ice"/>
-			<attribute key="areaEffect" value="ICETORNADO"/>
+			<attribute key="areaEffect" value="explosionarea"/>
 		</attack>
-		<attack name="ice" interval="1500" chance="25" range="7" radius="7" target="1" min="-160" max="-450">
-			<attribute key="shootEffect" value="ice"/>
-			<attribute key="areaEffect" value="GIANTICE"/>
+		<attack name="fire" interval="1500" chance="30" length="8" spread="0" min="-220" max="-400">
+			<attribute key="areaEffect" value="explosionarea"/>
 		</attack>
-		<attack name="ice" interval="1500" chance="30" length="8" spread="0" min="-220" max="-400">
-			<attribute key="areaEffect" value="GIANTICE"/>
-		</attack>
-		<attack name="earth" interval="1800" chance="20" range="3" radius="5" target="1" min="-250" max="-400">
-			<attribute key="areaEffect" value="BIGPLANTS"/>
+		<attack name="energy" interval="1800" chance="20" range="3" radius="5" target="1" min="-250" max="-400">
+			<attribute key="areaEffect" value="firearea"/>
 			</attack>
 		<attack name="Paralyze" interval="1500" chance="17" range="7" target="1">
-			<attribute key="areaEffect" value="ICETORNADO"/>
+			<attribute key="areaEffect" value="blacksmoke"/>
 		</attack>
 	</attacks>
 	<defenses armor="50" defense="55">
@@ -44,12 +44,12 @@
 	</defenses>
 	<elements>
 		<element physicalPercent="95"/>
-		<element energyPercent="95"/>
-		<element earthPercent="100"/>
-		<element icePercent="100"/>
+		<element energyPercent="100"/>
+		<element earthPercent="95"/>
+		<element icePercent="95"/>
 		<element holyPercent="95"/>
 		<element deathPercent="95"/>
-		<element firePercent="95"/>
+		<element firePercent="100"/>
 	</elements>
 	<immunities>
 		<immunity drown="1" />
@@ -58,9 +58,9 @@
 		<immunity invisible="1" />
 	</immunities>
 	<summons maxSummons="4">
-		<summon name="aquagel" interval="2000" chance="20" />
-		<summon name="ice witch" interval="2000" chance="15" />
-		<summon name="black warlock" interval="2000" chance="10" />
-		<summon name="frost giant" interval="2000" chance="2" />
+		<summon name="necromancer" interval="2000" chance="20" />
+		<summon name="gladiator" interval="2000" chance="15" />
+		<summon name="warlock" interval="2000" chance="10" />
+		<summon name="hero" interval="2000" chance="2" />
 	</summons>
 </monster>

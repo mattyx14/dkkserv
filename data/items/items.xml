@@ -16501,8 +16501,7 @@
 		<attribute key="weight" value="2400" />
 		<attribute key="description" value="The worlds most amazing news can be read in it. It was awarded for winning a contest." />
 	</item>
-	<item id="8982" article="a" name="norseman doll">
-		<attribute key="description" value="It is given to the winners of competitions." />
+	<item id="8982" article="a" name="outfit and addon doll">
 		<attribute key="weight" value="1000" />
 	</item>
 	<item id="8983" article="a" name="heavily bound book">
@@ -16570,7 +16569,7 @@
 		<attribute key="corpseType" value="undead" />
 	</item>
 	<item fromid="9013" toid="9018" article="a" name="fallen tree" />
-	<item id="9019" article="a" name="vampire doll">
+	<item id="9019" article="a" name="mount doll">
 		<attribute key="weight" value="940" />
 	</item>
 	<item id="9020" article="a" name="vampire lord token">
@@ -24374,7 +24373,7 @@
 		<attribute key="weight" value="7500" />
 	</item>
 	<item id="16101" article="a" name="premium scroll">
-		<attribute key="description" value="Using this scroll will add 15 days of premium time to your account once." />
+		<attribute key="description" value="Using this scroll will add 30 days of premium time to your account once." />
 		<attribute key="weight" value="0" />
 	</item>
 	<item id="16102" article="a" name="surprise nest">

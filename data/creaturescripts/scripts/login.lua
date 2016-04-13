@@ -42,5 +42,8 @@ function onLogin(player)
 	player:registerEvent("DemonKill")
 	player:registerEvent("GomelKill")
 	player:registerEvent("ZarabustorKill")
+	player:registerEvent("FyzarusKill")
+	player:registerEvent("ToxirosKill")
+	player:registerEvent("FezarusKill")
 	return true
 end

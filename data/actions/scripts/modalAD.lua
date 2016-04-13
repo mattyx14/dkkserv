@@ -55,19 +55,19 @@ function onUse(player,item, fromPosition,itemEx,toPosition,isHotkey)
 	local title = "Choose your outfit!"
 	local message = "You will receive the outfit and both addons!"
 
-	local window = ModalWindow(1000,title, message)
+	local window = ModalWindow(1000, title, message)
 	if player:getItemCount(8982) >= 1 then
-		window:addButton(100,"Confirm")
+		window:addButton(100, "Confirm")
 		window:setDefaultEnterButton(100)
 	else
 		window:setDefaultEnterButton(101)
 	end
-	window:addButton(101,"Cancel")
+	window:addButton(101, "Cancel")
 	window:setDefaultEscapeButton(101)
 
 	for i = 1,#outfits do
 		local o = outfits[i].name
-		if not player:hasOutfit(outfits[i].male,3) and not player:hasOutfit(outfits[i].female,3) then
+		if not player:hasOutfit(outfits[i].male, 3) and not player:hasOutfit(outfits[i].female, 3) then
 			if outfits[i].name == "Noble" or outfits[i].name == "Norse" then
 				if player:getSex() == 0 then
 					o = o .. "woman"
@@ -75,7 +75,7 @@ function onUse(player,item, fromPosition,itemEx,toPosition,isHotkey)
 					o = o .. "man"
 				end
 			end
-			window:addChoice(i,o)
+			window:addChoice(i, o)
 		end
 	end
 

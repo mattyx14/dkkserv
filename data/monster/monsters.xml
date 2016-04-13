@@ -1034,6 +1034,7 @@
 	<monster name="Ra" file="customs/ra.xml"/>
 	<monster name="Roken Skeleton" file="customs/roken skeleton.xml"/>
 	<monster name="Leaf Golem Grom" file="customs/leaf golem grom.xml" />
+	<monster name="Fyzarus" file="customs/fyzarus.xml" />
 
 	<monster name="Fire Lord" file="Demons/fire lord.xml"/>
 

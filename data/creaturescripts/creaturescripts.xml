@@ -20,4 +20,7 @@
 	<event type="kill" name="DemonKill" script="quest/killBoss/DemonKill.lua" />
 	<event type="kill" name="GomelKill" script="quest/killBoss/LeafGolemGromKill.lua" />
 	<event type="kill" name="ZarabustorKill" script="quest/killBoss/ZarabustorKill.lua" />
+	<event type="kill" name="FyzarusKill" script="quest/killBoss/FyzarusKill.lua" />
+	<event type="kill" name="ToxirosKill" script="quest/killBoss/ToxirosKill.lua" />
+	<event type="kill" name="FezarusKill" script="quest/killBoss/FezarusKill.lua" />
 </creaturescripts>

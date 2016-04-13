@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <monster name="Toxiros" nameDescription="a Toxiros" race="VENOM" experience="9900" speed="390" manacost="10000">
 	<health now="9200" max="9200"/>
-	<look type="12" head="19" body="83" legs="115" feet="96" corpse="6068"/>
+	<look type="12" head="19" body="83" legs="115" feet="96" corpse="0"/>
 	<targetchange interval="5000" chance="8"/>
 	<strategy attack="100" defense="0"/>
 	<flags>
@@ -40,59 +40,25 @@
 			<attribute key="areaEffect" value="blueshimmer"/>
 		</defense>
 	</defenses>
-	<summons maxSummons="1">
-		<summon name="earth elemental" interval="1000" chance="10" max="1"/>
+	<summons maxSummons="4">
+		<summon name="behemoth" interval="2000" chance="20" />
+		<summon name="stonecraker" interval="2000" chance="15" />
+		<summon name="giant spider" interval="2000" chance="10" />
+		<summon name="cyclops smith" interval="2000" chance="2" />
 	</summons>
 	<elements>
-		<element firePercent="30"/>
-		<element icePercent="30"/>
-		<element physicalPercent="30"/>
+		<element physicalPercent="95"/>
+		<element energyPercent="100"/>
 		<element earthPercent="100"/>
-		<element energyPercent="30"/>
-		<element holyPercent="30"/>
-		<element deathPercent="30"/>
+		<element icePercent="95"/>
+		<element holyPercent="95"/>
+		<element deathPercent="95"/>
+		<element firePercent="95"/>
 	</elements>
 	<immunities>
-		<immunity lifedrain="1"/>
-		<immunity paralyze="1"/>
-		<immunity outfit="1"/>
-		<immunity drunk="1"/>
-		<immunity invisible="1"/>
-		<immunity drown="1"/>
+		<immunity drown="1" />
+		<immunity lifedrain="1" />
+		<immunity paralyze="1" />
+		<immunity invisible="1" />
 	</immunities>
-	<voices interval="5000" chance="10">
-		<voice sentence="MUHAHAHAHA!" yell="1"/>
-		<voice sentence="I SMELL FEEEEEAAAR!" yell="1"/>
-		<voice sentence="CHAMEK ATH UTHUL ARAK!" yell="1"/>
-		<voice sentence="Your resistance is futile!"/>
-		<voice sentence="Your soul will be mine!" yell="0"/>
-	</voices>
-	<loot>
-		<item id="2152" countmax="2" chance="9000"/>
-		<item id="2152" countmax="4" chance="12000"/>
-		<item id="7368" countmax="15" chance="7000"/>
-		<item id="2514" chance="500"/>
-		<item id="5906" countmax="3" chance="1000"/>
-		<item id="5954" countmax="2" chance="1000"/>
-		<item id="2164" chance="3200"/>
-		<item id="2176" chance="3000"/>
-		<item id="8473" countmax="3" chance="15000"/>
-		<item id="1982" chance="1300"/>
-		<item id="2165" chance="2400"/>
-		<item id="1987" chance="100000">
-			<inside>
-				<item id="2214" chance="500"/>
-				<item id="2396" chance="2500"/>
-				<item id="2179" chance="1100"/>
-				<item id="2795" countmax="6" chance="20000"/>
-				<item id="6526" chance="1666" />
-				<item id="2678" countmax="3" chance="10000"/>
-				<item id="2152" countmax="1" chance="100000"/>
-				<item id="2151" countmax="4" chance="4000"/>
-				<item id="2149" countmax="3" chance="11000"/>
-				<item id="2171" chance="800"/>
-				<item id="2173" chance="502"/>
-			</inside>
-		</item>
-	</loot>
 </monster>
