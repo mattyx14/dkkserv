@@ -1,11 +1,11 @@
 local failPosition = {
 	[5500] = {
-		mission = 7434,
+		mission = 2432,
 		fromPosition = Position(890, 1021, 11),
 		missionName = "require fixe axe quest"
 	},
 	[5501] = {
-		mission = 7390,
+		mission = 2407,
 		fromPosition = Position(931, 1084, 11),
 		missionName = "require bright sword quest"
 	},
