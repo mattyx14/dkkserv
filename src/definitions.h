@@ -22,15 +22,15 @@
 
 #define STATUS_SERVER_NAME "OTX Server"
 #define STATUS_SERVER_VERSION "3"
-#define MINOR_VERSION "3"
-#define REVISION_VERSION "-"
-#define SOFTWARE_CODENAME "-"
+#define MINOR_VERSION "4"
+#define REVISION_VERSION "DEV"
+#define SOFTWARE_CODENAME "DARK SPECTER"
 #define STATUS_SERVER_DEVELOPERS "Mattyx14 and TFS Developers"
 #define GIT_REPO "https://github.com/mattyx14/otxserver/"
 
-#define CLIENT_VERSION_MIN 1091
-#define CLIENT_VERSION_MAX 1091
-#define CLIENT_VERSION_STR "10.91"
+#define CLIENT_VERSION_MIN 1092
+#define CLIENT_VERSION_MAX 1092
+#define CLIENT_VERSION_STR "DarkKonia Client 50.1"
 
 #ifndef __FUNCTION__
 #define __FUNCTION__ __func__
