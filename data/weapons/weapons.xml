@@ -37,15 +37,15 @@
 		<vocation name="Druid" />
 		<vocation name="Elder Druid" showInDescription="0" />
 	</wand>
-	<wand id="13872" level="40" mana="65" min="275" max="375" type="ice"> <!-- Shimmer Rod -->
+	<wand id="13872" level="100" mana="65" min="300" max="400" type="ice"> <!-- Shimmer Rod -->
 		<vocation name="Druid" />
 		<vocation name="Elder Druid" showInDescription="0" />
 	</wand>
-	<wand id="18411" level="65" mana="85" min="350" max="500" type="earth"> <!-- Muck Rod -->
+	<wand id="18411" level="270" mana="85" min="350" max="450" type="earth"> <!-- Muck Rod -->
 		<vocation name="Druid" />
 		<vocation name="Elder Druid" showInDescription="0" />
 	</wand>
-	<wand id="18412" level="65" mana="85" min="350" max="500" type="ice"> <!-- Glacial Rod -->
+	<wand id="18412" level="270" mana="85" min="350" max="450" type="ice"> <!-- Glacial Rod -->
 		<vocation name="Druid" />
 		<vocation name="Elder Druid" showInDescription="0" />
 	</wand>
@@ -87,19 +87,19 @@
 		<vocation name="Sorcerer" />
 		<vocation name="Master Sorcerer" showInDescription="0" />
 	</wand>
-	<wand id="13760" level="37" mana="65" min="275" max="375" type="death"> <!-- Wand of Dimensions -->
+	<wand id="13760" level="100" mana="65" min="300" max="400" type="death"> <!-- Wand of Dimensions -->
 		<vocation name="Sorcerer" />
 		<vocation name="Master Sorcerer" showInDescription="0" />
 	</wand>
-	<wand id="13880" level="40" mana="65" min="275" max="375" type="energy"> <!-- Shimmer Wand -->
+	<wand id="13880" level="100" mana="65" min="300" max="400" type="energy"> <!-- Shimmer Wand -->
 		<vocation name="Sorcerer" />
 		<vocation name="Master Sorcerer" showInDescription="0" />
 	</wand>
-	<wand id="18390" level="65" mana="85" min="350" max="500" type="energy"> <!-- Wand of Defiance -->
+	<wand id="18390" level="270" mana="85" min="350" max="450" type="energy"> <!-- Wand of Defiance -->
 		<vocation name="Sorcerer" />
 		<vocation name="Master Sorcerer" showInDescription="0" />
 	</wand>
-	<wand id="18409" level="65" mana="85" min="350" max="500" type="fire"> <!-- Wand of Everblazing -->
+	<wand id="18409" level="270" mana="85" min="350" max="450" type="fire"> <!-- Wand of Everblazing -->
 		<vocation name="Sorcerer" />
 		<vocation name="Master Sorcerer" showInDescription="0" />
 	</wand>

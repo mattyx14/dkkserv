@@ -4170,7 +4170,7 @@
 		<attribute key="weaponType" value="shield" />
 		<attribute key="magiclevelpoints" value="1" />
 	</item>
-	<item id="2543" article="a" name="bolt">
+	<item id="2543" article="a" name="(attack:40) bolt">
 		<attribute key="weight" value="80" />
 		<attribute key="slotType" value="ammo" />
 		<attribute key="attack" value="40" />
@@ -4179,7 +4179,7 @@
 		<attribute key="shootType" value="bolt" />
 		<attribute key="maxHitChance" value="87" />
 	</item>
-	<item id="2544" article="an" name="arrow">
+	<item id="2544" article="an" name="(attack:30) arrow">
 		<attribute key="weight" value="70" />
 		<attribute key="slotType" value="ammo" />
 		<attribute key="attack" value="30" />
@@ -4188,7 +4188,7 @@
 		<attribute key="shootType" value="arrow" />
 		<attribute key="maxHitChance" value="91" />
 	</item>
-	<item id="2545" article="a" name="poison arrow">
+	<item id="2545" article="a" name="(attack:23) poison arrow">
 		<attribute key="weight" value="80" />
 		<attribute key="slotType" value="ammo" />
 		<attribute key="attack" value="23" />
@@ -4197,7 +4197,7 @@
 		<attribute key="shootType" value="poisonarrow" />
 		<attribute key="maxHitChance" value="91" />
 	</item>
-	<item id="2546" article="a" name="burst arrow">
+	<item id="2546" article="a" name="(attack:27) burst arrow">
 		<attribute key="weight" value="90" />
 		<attribute key="slotType" value="ammo" />
 		<attribute key="attack" value="27" />
@@ -4206,7 +4206,7 @@
 		<attribute key="shootType" value="burstarrow" />
 		<attribute key="maxHitChance" value="100" />
 	</item>
-	<item id="2547" article="a" name="power bolt">
+	<item id="2547" article="a" name="(attack:45) power bolt">
 		<attribute key="weight" value="80" />
 		<attribute key="slotType" value="ammo" />
 		<attribute key="attack" value="45" />
@@ -11423,7 +11423,7 @@
 		<attribute key="elementHoly" value="5" />
 		<attribute key="skillSword" value="1" />
 	</item>
-	<item id="6529" article="an" name="infernal bolt">
+	<item id="6529" article="an" name="(attack:72) infernal bolt">
 		<attribute key="weight" value="90" />
 		<attribute key="slotType" value="ammo" />
 		<attribute key="attack" value="72" />
@@ -11669,9 +11669,10 @@
 	<item fromid="6728" toid="6738" article="an" name="ice wall" />
 	<item fromid="6739" toid="6749" article="a" name="frozen wall" />
 	<item fromid="6750" toid="6753" article="an" name="ice hut" />
-	<item fromid="6754" toid="6756" article="an" name="ice hut">
+	<item id="6754" article="an" name="ice hut">
 		<attribute key="floorchange" value="down" />
 	</item>
+	<iten fromid="6755" toid="6756" article="an" name="ice hut" />
 	<item fromid="6757" toid="6760" name="snow" />
 	<item fromid="6761" toid="6762" article="an" name="icy mountain" />
 	<item fromid="6763" toid="6767" name="ice" />
@@ -12421,7 +12422,7 @@
 		<attribute key="showduration" value="1" />
 	</item>
 	<item fromid="7361" toid="7362" article="a" name="sarcophagus" />
-	<item id="7363" article="a" name="piercing bolt">
+	<item id="7363" article="a" name="(attack:53) piercing bolt">
 		<attribute key="weight" value="80" />
 		<attribute key="slotType" value="ammo" />
 		<attribute key="attack" value="53" />
@@ -12430,7 +12431,7 @@
 		<attribute key="shootType" value="piercingbolt" />
 		<attribute key="maxHitChance" value="87" />
 	</item>
-	<item id="7364" article="a" name="sniper arrow">
+	<item id="7364" article="a" name="(attack:60) sniper arrow">
 		<attribute key="weight" value="70" />
 		<attribute key="slotType" value="ammo" />
 		<attribute key="attack" value="60" />
@@ -12439,7 +12440,7 @@
 		<attribute key="shootType" value="sniperarrow" />
 		<attribute key="maxHitChance" value="100" />
 	</item>
-	<item id="7365" article="an" name="onyx arrow">
+	<item id="7365" article="an" name="(attack:59) onyx arrow">
 		<attribute key="weight" value="70" />
 		<attribute key="slotType" value="ammo" />
 		<attribute key="attack" value="59" />
@@ -13276,7 +13277,7 @@
 	</item>
 	<item id="7591" article="a" name="great health potion">
 		<attribute key="weight" value="310" />
-		<attribute key="description" value="This potion can only be consumed by knights of level 80 or higher." />
+		<attribute key="description" value="This potion can only be consumed by paladins and knights of level 80 or higher." />
 	</item>
 	<item fromid="7592" toid="7604" name="linen" />
 	<item fromid="7605" toid="7616" article="a" name="tent" />
@@ -14188,7 +14189,7 @@
 	<item id="7828" article="an" name="astro clock" />
 	<item fromid="7829" toid="7832" article="a" name="celestial map" />
 	<item fromid="7833" toid="7837" name="dirt" />
-	<item id="7838" article="a" name="flash arrow">
+	<item id="7838" article="a" name="(attack:54 + energy 4) flash arrow">
 		<attribute key="weight" value="70" />
 		<attribute key="slotType" value="ammo" />
 		<attribute key="attack" value="54" />
@@ -14198,7 +14199,7 @@
 		<attribute key="shootType" value="flasharrow" />
 		<attribute key="maxHitChance" value="91" />
 	</item>
-	<item id="7839" article="a" name="shiver arrow">
+	<item id="7839" article="a" name="(attack:53 + ice 4) shiver arrow">
 		<attribute key="weight" value="70" />
 		<attribute key="slotType" value="ammo" />
 		<attribute key="attack" value="53" />
@@ -14208,7 +14209,7 @@
 		<attribute key="shootType" value="shiverarrow" />
 		<attribute key="maxHitChance" value="91" />
 	</item>
-	<item id="7840" article="a" name="flaming arrow">
+	<item id="7840" article="a" name="(attack:52 + fire 4) flaming arrow">
 		<attribute key="weight" value="70" />
 		<attribute key="slotType" value="ammo" />
 		<attribute key="attack" value="52" />
@@ -14257,7 +14258,7 @@
 		<attribute key="decayTo" value="7743" />
 		<attribute key="duration" value="600" />
 	</item>
-	<item id="7850" article="an" name="earth arrow">
+	<item id="7850" article="an" name="(attack:51 + earth 4) earth arrow">
 		<attribute key="weight" value="70" />
 		<attribute key="slotType" value="ammo" />
 		<attribute key="attack" value="51" />
@@ -24237,7 +24238,7 @@
 		<attribute key="weaponType" value="club" />
 		<attribute key="slotType" value="two-handed" />
 	</item>
-	<item id="15648" article="a" name="tarsal arrow">
+	<item id="15648" article="a" name="(attack:65) tarsal arrow">
 		<attribute key="weight" value="70" />
 		<attribute key="slotType" value="ammo" />
 		<attribute key="attack" value="65" />
@@ -24246,7 +24247,7 @@
 		<attribute key="shootType" value="tarsalarrow" />
 		<attribute key="maxHitChance" value="94" />
 	</item>
-	<item id="15649" article="a" name="vortex bolt">
+	<item id="15649" article="a" name="(attack:64) vortex bolt">
 		<attribute key="weight" value="80" />
 		<attribute key="slotType" value="ammo" />
 		<attribute key="attack" value="64" />
@@ -25004,7 +25005,7 @@
 		<attribute key="shootType" value="vortexbolt" />
 		<attribute key="maxHitChance" value="90" />
 	</item>
-	<item id="18304" article="a" name="crystalline arrow">
+	<item id="18304" article="a" name="(attack:62) crystalline arrow">
 		<attribute key="weight" value="75" />
 		<attribute key="slotType" value="ammo" />
 		<attribute key="attack" value="62" />
@@ -25206,7 +25207,9 @@
 		<attribute key="weaponType" value="wand" />
 		<attribute key="shootType" value="energy" />
 		<attribute key="range" value="4" />
-		<attribute key="magiclevelpoints" value="1" />
+		<attribute key="magiclevelpoints" value="3" />
+		<attribute key="defense" value="25" />
+		<attribute key="slotType" value="two-handed" />
 	</item>
 	<item id="18391" article="a" name="glowing mushroom">
 		<attribute key="weight" value="1000" />
@@ -25334,7 +25337,9 @@
 		<attribute key="weaponType" value="wand" />
 		<attribute key="shootType" value="fire" />
 		<attribute key="range" value="4" />
-		<attribute key="magiclevelpoints" value="1" />
+		<attribute key="magiclevelpoints" value="3" />
+		<attribute key="defense" value="25" />
+		<attribute key="slotType" value="two-handed" />
 	</item>
 	<item id="18410" article="a" name="prismatic shield">
 		<attribute key="weight" value="7200" />
@@ -25350,7 +25355,9 @@
 		<attribute key="weaponType" value="wand" />
 		<attribute key="shootType" value="smallearth" />
 		<attribute key="range" value="4" />
-		<attribute key="magiclevelpoints" value="1" />
+		<attribute key="magiclevelpoints" value="3" />
+		<attribute key="defense" value="25" />
+		<attribute key="slotType" value="two-handed" />
 	</item>
 	<item id="18412" article="a" name="glacial rod">
 		<attribute key="description" value="Hurls the icy essence of the Svargrond glaciers." />
@@ -25358,7 +25365,9 @@
 		<attribute key="weaponType" value="wand" />
 		<attribute key="shootType" value="smallice" />
 		<attribute key="range" value="4" />
-		<attribute key="magiclevelpoints" value="1" />
+		<attribute key="magiclevelpoints" value="3" />
+		<attribute key="defense" value="25" />
+		<attribute key="slotType" value="two-handed" />
 	</item>
 	<item id="18413" article="a" name="blue crystal shard">
 		<attribute key="weight" value="20" />
@@ -25426,7 +25435,7 @@
 	<item id="18434" article="a" name="hideous chunk">
 		<attribute key="weight" value="160" />
 	</item>
-	<item id="18435" article="a" name="prismatic bolt">
+	<item id="18435" article="a" name="(attack:66) prismatic bolt">
 		<attribute key="weight" value="85" />
 		<attribute key="slotType" value="ammo" />
 		<attribute key="attack" value="66" />
@@ -25435,7 +25444,7 @@
 		<attribute key="shootType" value="prismaticbolt" />
 		<attribute key="maxHitChance" value="90" />
 	</item>
-	<item id="18436" article="a" name="drill bolt">
+	<item id="18436" article="a" name="(attack:61) drill bolt">
 		<attribute key="weight" value="80" />
 		<attribute key="slotType" value="ammo" />
 		<attribute key="attack" value="61" />
@@ -25444,7 +25453,7 @@
 		<attribute key="shootType" value="drillbolt" />
 		<attribute key="maxHitChance" value="90" />
 	</item>
-	<item id="18437" article="a" name="envenomed arrow">
+	<item id="18437" article="a" name="(attack:60) envenomed arrow">
 		<attribute key="weight" value="70" />
 		<attribute key="slotType" value="ammo" />
 		<attribute key="attack" value="60" />

@@ -510,10 +510,6 @@
 		<vocation name="Paladin" />
 		<vocation name="Royal Paladin" />
 	</conjure>
-	<conjure group="support" spellid="176" name="Arrow Call" words="exevo infir con" lvl="1" mana="10" soul="1" conjureId="23839" conjureCount="3" cooldown="1500" groupcooldown="1500" needlearn="0" function="conjureItem">
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" />
-	</conjure>
 	<conjure group="support" spellid="48" name="Conjure Poisoned Arrow" words="exevo con pox" lvl="16" mana="130" soul="2" conjureId="2545" conjureCount="7" cooldown="1500" groupcooldown="1500" needlearn="0" function="conjureItem">
 		<vocation name="Paladin" />
 		<vocation name="Royal Paladin" />
@@ -522,15 +518,7 @@
 		<vocation name="Paladin" />
 		<vocation name="Royal Paladin" />
 	</conjure>
-	<conjure group="support" spellid="108" name="Conjure Sniper Arrow" words="exevo con hur" lvl="24" mana="160" soul="3" prem="0" conjureId="7364" conjureCount="5" cooldown="1500" groupcooldown="1500" needlearn="0" function="conjureItem">
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" />
-	</conjure>
 	<conjure group="support" spellid="49" name="Conjure Explosive Arrow" words="exevo con flam" lvl="25" mana="290" soul="3" conjureId="2546" conjureCount="8" cooldown="1500" groupcooldown="1500" needlearn="0" function="conjureItem">
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" />
-	</conjure>
-	<conjure group="support" spellid="109" name="Conjure Piercing Bolt" words="exevo con grav" lvl="33" mana="180" soul="3" prem="0" conjureId="7363" conjureCount="5" cooldown="1500" groupcooldown="1500" needlearn="0" function="conjureItem">
 		<vocation name="Paladin" />
 		<vocation name="Royal Paladin" />
 	</conjure>

@@ -956,8 +956,6 @@
 
 	<!-- Customs -->
 	<!-- DarkKonia Customs -->
-	<monster name="Fezarus" file="customs/fezarus.xml"/>
-	<monster name="Toxiros" file="customs/toxiros.xml"/>
 	<monster name="Aquagel" file="customs/aquagel.xml"/>
 	<monster name="Adamantoise" file="customs/adamantoise.xml"/>
 	<monster name="Envo" file="customs/envo.xml"/>
@@ -1034,7 +1032,12 @@
 	<monster name="Ra" file="customs/ra.xml"/>
 	<monster name="Roken Skeleton" file="customs/roken skeleton.xml"/>
 	<monster name="Leaf Golem Grom" file="customs/leaf golem grom.xml" />
+
+	<monster name="Fezarus" file="customs/fezarus.xml"/>
+	<monster name="Toxirus" file="customs/toxirus.xml"/>
 	<monster name="Fyzarus" file="customs/fyzarus.xml" />
+	<monster name="Shazarus" file="customs/shazarus.xml" />
+	<monster name="Gyyzarus" file="customs/gyyzarus.xml" />
 
 	<monster name="Fire Lord" file="Demons/fire lord.xml"/>
 

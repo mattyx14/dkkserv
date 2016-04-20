@@ -17,7 +17,7 @@
 	</flags>
 	<attacks>
 		<attack name="melee" interval="2000" skill="190" attack="199" />
-		<attack name="manadrain" interval="1000" chance="13" range="7" min="-300" max="-600" />
+		<attack name="manadrain" interval="1000" chance="13" range="7" min="-300" max="-1600" />
 		<attack name="manadrain" interval="1000" chance="6" radius="5" target="0" min="-150" max="-350">
 			<attribute key="areaEffect" value="poison" />
 		</attack>
@@ -48,8 +48,8 @@
 	</defenses>
 	<elements>
 		<element deathPercent="50" />
-		<element holyPercent="-1" />
-		<element icePercent="-1" />
+		<element holyPercent="10" />
+		<element icePercent="10" />
 	</elements>
 	<immunities>
 		<immunity fire="1" />

@@ -10,7 +10,7 @@ end
 
 function onKill(creature, target)
 	local targetMonster = target:getMonster()
-	if not targetMonster or targetMonster:getName():lower() ~= 'toxiros' then
+	if not targetMonster or targetMonster:getName():lower() ~= 'toxirus' then
 		return true
 	end
 

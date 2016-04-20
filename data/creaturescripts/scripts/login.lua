@@ -43,7 +43,7 @@ function onLogin(player)
 	player:registerEvent("GomelKill")
 	player:registerEvent("ZarabustorKill")
 	player:registerEvent("FyzarusKill")
-	player:registerEvent("ToxirosKill")
+	player:registerEvent("ToxirusKill")
 	player:registerEvent("FezarusKill")
 	return true
 end

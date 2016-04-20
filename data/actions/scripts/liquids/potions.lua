@@ -1,32 +1,32 @@
 local config = {
 	-- Health Potions
 	-- small health potion
-	[8704] = {health = {min = 60, max = 90}, emptyId = 7636}, 
+	[8704] = {health = {min = 100, max = 190}, emptyId = 7636}, 
 	-- health potion
-	[7618] = {health = {min = 205, max = 275}, emptyId = 7636},
+	[7618] = {health = {min = 200, max = 290}, emptyId = 7636},
 	-- strong health potion
-	[7588] = {health = {min = 405, max = 475}, vocations = {3, 4}, text = 'paladins and knights', level = 50, emptyId = 7634},
+	[7588] = {health = {min = 300, max = 490}, vocations = {3, 4}, text = 'paladins and knights', level = 50, emptyId = 7634},
 	-- great health potion
-	[7591] = {health = {min = 505, max = 875}, vocations = {4}, text = 'knights', level = 80, emptyId = 7635},
+	[7591] = {health = {min = 500, max = 890}, vocations = {3, 4}, text = 'paladins and knights', level = 80, emptyId = 7635},
 	-- ultimate health potion
-	[8473] = {health = {min = 905, max = 1200}, mana = {min = 128, max = 175}, vocations = {4}, text = 'knights', level = 130, emptyId = 7635},
+	[8473] = {health = {min = 900, max = 1290}, vocations = {4}, text = 'knights', level = 130, emptyId = 7635},
 	-- supreme health potion
-	[26031] = {health = {min = 1205, max = 1600}, mana = {min = 228, max = 375}, vocations = {4}, text = 'knights', level = 200, emptyId = 7635},
+	[26031] = {health = {min = 1300, max = 1690}, mana = {min = 128, max = 175}, vocations = {4}, text = 'knights', level = 200, emptyId = 7635},
 
 	-- Mana Potions
 	-- mana potion
-	[7620] = {mana = {min = 128, max = 175}, emptyId = 7636},
+	[7620] = {mana = {min = 200, max = 290}, emptyId = 7636},
 	-- strong mana potion
-	[7589] = {mana = {min = 228, max = 275}, vocations = {1, 2, 3}, text = 'sorcerers, druids and paladins', level = 50, emptyId = 7634},
+	[7589] = {mana = {min = 300, max = 490}, vocations = {1, 2, 3}, text = 'sorcerers, druids and paladins', level = 50, emptyId = 7634},
 	-- great mana potion
-	[7590] = {health = {min = 180, max = 200}, mana = {min = 505, max = 850}, vocations = {1, 2}, text = 'sorcerers and druids', level = 80, emptyId = 7635},
+	[7590] = {mana = {min = 500, max = 690}, vocations = {1, 2}, text = 'sorcerers and druids', level = 80, emptyId = 7635},
 	-- ultimate mana potion
-	[26029] = {health = {min = 2500, max = 300}, mana = {min = 800, max = 1000}, vocations = {1, 2}, text = 'sorcerers and druids', level = 150, emptyId = 7635},
+	[26029] = {mana = {min = 700, max = 890}, health = {min = 200, max = 390}, vocations = {1, 2}, text = 'sorcerers and druids', level = 150, emptyId = 7635},
 
 	-- great spirit potion
-	[8472] = {health = {min = 875, max = 1000}, mana = {min = 228, max = 278}, vocations = {3}, text = 'paladins', level = 130, emptyId = 7635},
+	[8472] = {health = {min = 500, max = 890}, vocations = {3}, text = 'paladins', level = 130, emptyId = 7635},
 	-- ultimate spirit potion
-	[26030] = {health = {min = 1075, max = 1400}, mana = {min = 328, max = 478}, vocations = {3}, text = 'paladins', level = 200, emptyId = 7635},
+	[26030] = {health = {min = 900, max = 1290}, mana = {min = 200, max = 390}, vocations = {3}, text = 'paladins', level = 200, emptyId = 7635},
 
 	-- Others Potions
 	-- antidote potion

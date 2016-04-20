@@ -43,8 +43,6 @@
 	<!-- player talkactions -->
 	<talkaction words="!buyhouse" script="buyhouse.lua" />
 	<talkaction words="!leavehouse" script="leavehouse.lua" />
-	<talkaction words="!cast on" separator=" " script="start_cast.lua" />
-	<talkaction words="!cast off" script="stop_cast.lua" />
 	<talkaction words="!report" separator=" " script="adminreport.lua"/>
 	<talkaction words="!serverinfo" script="serverinfo.lua" />
 	<talkaction words="!online" script="online.lua" />
@@ -63,5 +61,7 @@
 		<talkaction words="!x" separator=" " script="animationeffect.lua" />
 		<talkaction words="!changesex" script="changesex.lua" />
 		<talkaction words="!uptime" script="uptime.lua" />
+		<talkaction words="!cast on" separator=" " script="start_cast.lua" />
+		<talkaction words="!cast off" script="stop_cast.lua" />
 	-->
 </talkactions>

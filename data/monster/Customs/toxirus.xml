@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<monster name="Toxiros" nameDescription="a Toxiros" race="VENOM" experience="9900" speed="390" manacost="10000">
+<monster name="Toxirus" nameDescription="a toxirus" race="VENOM" experience="9900" speed="390" manacost="10000">
 	<health now="9200" max="9200"/>
 	<look type="12" head="19" body="83" legs="115" feet="96" corpse="0"/>
 	<targetchange interval="5000" chance="8"/>

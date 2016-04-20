@@ -28,6 +28,8 @@
 			necrotic rod,2185,5000,1;
 			northwind rod,8911,750,1;
 			paralyze,2278,200,1;
+			shimmer rod,13872,30000,1;
+			shimmer wand,13880,30000,1;
 			small health,8704,20,1;
 			snakebite rod,2182,500,1;
 			springsprout rod,8912,18000,1;
@@ -44,6 +46,7 @@
 			underworld rod',8910,22000,1;
 			wand of cosmic energy,2189,10000,1;
 			wand of decay,2188,5000,1;
+			wand of dimensions,13760,30000,1;
 			wand of draconia,8921,7500,1;
 			wand of dragonbreath,2191,1000,1;
 			wand of inferno,2187,15000,1;

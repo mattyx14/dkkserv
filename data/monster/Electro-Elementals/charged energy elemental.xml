@@ -43,7 +43,6 @@
 	<loot>
 		<item id="2148" countmax="100" chance="50000" /><!-- gold coin -->
 		<item id="2148" countmax="22" chance="50000" /><!-- gold coin -->
-		<item id="7838" countmax="3" chance="6250" /><!-- flash arrow -->
 		<item id="8303" chance="2063" /><!-- energy soil -->
 	</loot>
 </monster>
