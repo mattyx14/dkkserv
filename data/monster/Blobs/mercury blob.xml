@@ -34,12 +34,14 @@
 	</defenses>
 	<immunities>
 		<immunity death="1" />
+		<immunity paralyze="1" />
+		<immunity physical="1" />
+		<immunity invisible="1" />
 	</immunities>
 	<elements>
 		<element firePercent="10" />
 		<element earthPercent="65" />
 		<element icePercent="15" />
-		<element physicalPercent="5" />
 		<element holyPercent="65" />
 		<element lifedrainPercent="80" />
 	</elements>

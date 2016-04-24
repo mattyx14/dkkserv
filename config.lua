@@ -2,7 +2,7 @@
 -- NOTE: valid values for worldType are: "pvp", "no-pvp" and "pvp-enforced"
 worldType = "pvp"
 hotkeyAimbotEnabled = true
-protectionLevel = 50
+protectionLevel = 1
 killsToRedSkull = 5
 killsToBlackSkull = 8
 pzLocked = 60 * 1000
@@ -81,9 +81,9 @@ allowBlockSpawn = true
 
 -- Rates
 -- NOTE: rateExp is not used if you have enabled stages in data/XML/stages.xml
-rateExp = 5
-rateSkill = 3
-rateLoot = 2
+rateExp = 2
+rateSkill = 30
+rateLoot = 5
 rateMagic = 3
 rateSpawn = 1
 

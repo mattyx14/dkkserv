@@ -28999,6 +28999,10 @@
 	</item>
 	<item id="21252" article="a" name="vampire's signet ring">
 		<attribute key="description" value="A ring with a massive, faintly glowing seal, containing the blood of a vampire." />
+		<attribute key="slotType" value="ring" />
+		<attribute key="absorbPercentPhysical" value="4" />
+		<attribute key="absorbPercentMagic" value="4" />
+		<attribute key="showattributes" value="1" />
 		<attribute key="weight" value="10" />
 	</item>
 	<item id="21253" name="the Vampire Count's medal">
@@ -31187,7 +31191,7 @@
 	</item>
 	<item id="23554" article="a" name="glooth amulet">
 		<attribute key="slotType" value="necklace" />
-		<attribute key="charges" value="20" />
+		<attribute key="charges" value="10" />
 		<attribute key="showcharges" value="1" />
 		<attribute key="absorbPercentPhysical" value="10" />
 		<attribute key="absorbPercentMagic" value="10" />

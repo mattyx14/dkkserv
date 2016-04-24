@@ -78,7 +78,6 @@
 		<item id="7885" chance="1123" /><!-- terra legs -->
 		<item id="7884" chance="869" /><!-- terra mantle -->
 		<item id="18411" chance="680" /><!-- muck rod -->
-		<item id="18454" chance="150" /><!-- mycological bow -->
 		<item id="18393" chance="20" /><!-- mushroom backpack -->
 	</loot>
 </monster>

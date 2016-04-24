@@ -45,5 +45,7 @@ function onLogin(player)
 	player:registerEvent("FyzarusKill")
 	player:registerEvent("ToxirusKill")
 	player:registerEvent("FezarusKill")
+	player:registerEvent("VampireKill")
+	player:registerEvent("DraculaKill")
 	return true
 end

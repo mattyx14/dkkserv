@@ -19,4 +19,14 @@ Storage = {
 			Done = 24073
 		},
 	},
+	VampireQuest = {
+		zevelonDuskbringer = 8568,
+			BossStorageDusk = 10001,
+		sirValorcrest = 8569,
+			BossStorageVarlor = 10002,
+		diblisTheFair = 8570,
+			BossStorageFair = 10003,
+		arachirTheAncientOne = 8571,
+			BossStorageOne = 10004,
+	},
 }

@@ -23,4 +23,6 @@
 	<event type="kill" name="FyzarusKill" script="quest/killBoss/FyzarusKill.lua" />
 	<event type="kill" name="ToxirusKill" script="quest/killBoss/ToxirusKill.lua" />
 	<event type="kill" name="FezarusKill" script="quest/killBoss/FezarusKill.lua" />
+	<event type="kill" name="VampireKill" script="quest/killBoss/VampireKill.lua" />
+	<event type="kill" name="DraculaKill" script="quest/killBoss/DraculaKill.lua" />
 </creaturescripts>

@@ -65,7 +65,6 @@ struct summonBlock_t {
 	std::string name;
 	uint32_t chance;
 	uint32_t speed;
-	bool force = false;
 };
 
 class BaseSpell;

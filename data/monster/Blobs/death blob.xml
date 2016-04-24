@@ -29,7 +29,6 @@
 		</defense>
 	</defenses>
 	<elements>
-		<element physicalPercent="30" />
 		<element icePercent="10" />
 		<element firePercent="-10" />
 		<element holyPercent="-10" />
@@ -37,7 +36,10 @@
 	</elements>
 	<immunities>
 		<immunity death="1" />
+		<immunity physical="1" />
 		<immunity earth="1" />
+		<immunity paralyze="1" />
+		<immunity invisible="1" />
 	</immunities>
 	<summons maxSummons="1">
 		<summon name="Death Blob" interval="2000" chance="10" />

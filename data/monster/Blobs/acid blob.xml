@@ -30,8 +30,9 @@
 	</attacks>
 	<defenses armor="15" defense="15" />
 	<immunities>
-		<immunity death="1" />
 		<immunity earth="1" />
+		<immunity paralyze="1" />
+		<immunity invisible="1" />
 	</immunities>
 	<summons maxSummons="1">
 		<summon name="Acid Blob" interval="2000" chance="10" />

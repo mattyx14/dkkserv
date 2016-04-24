@@ -715,7 +715,7 @@
 		<vocation name="Paladin" />
 		<vocation name="Royal Paladin" showInDescription="0" />
 	</distance>
-	<distance id="8852" level="100" unproperly="1"> <!-- Devileye -->
+	<distance id="8852" level="200" unproperly="1"> <!-- Devileye -->
 		<vocation name="Paladin" />
 		<vocation name="Royal Paladin" showInDescription="0" />
 	</distance>
@@ -763,7 +763,7 @@
 		<vocation name="Paladin" />
 		<vocation name="Royal Paladin" showInDescription="0" />
 	</distance>
-	<distance id="18454" level="105" unproperly="1"> <!-- Mycological Bow -->
+	<distance id="18454" level="200" unproperly="1"> <!-- Mycological Bow -->
 		<vocation name="Paladin" />
 		<vocation name="Royal Paladin" showInDescription="0" />
 	</distance>

@@ -308,6 +308,7 @@
 	<monster name="Zomba" file="Bosses/zomba.xml" />
 	<monster name="Zulazza The Corruptor" file="Bosses/zulazza the corruptor.xml" />
 	<monster name="Zushuka" file="Bosses/zushuka.xml" />
+	<monster name="Dracula" file="Bosses/dracula.xml" />
 
 	<!-- Canines -->
 	<monster name="Crystal Wolf" file="Canines/crystal wolf.xml" />
@@ -875,6 +876,8 @@
 	<monster name="Young Troll" file="Trolls/young troll.xml" />
 
 	<!-- Vampires -->
+	<monster name="Arthiel" file="Vampires/arthiel.xml" />
+	<monster name="Marziel" file="Vampires/marziel.xml" />
 	<monster name="Vampire" file="Vampires/vampire.xml" />
 	<monster name="Vampire Bride" file="Vampires/vampire bride.xml" />
 	<monster name="Vampire Viscount" file="Vampires/vampire viscount.xml" />
