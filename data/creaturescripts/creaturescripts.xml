@@ -16,13 +16,7 @@
 	<event type="modalwindow" name="modalMD" script="modalMD.lua"/>
 	<event type="modalwindow" name="modalAD" script="modalAD.lua"/>
 
-	<!-- Demon Helmet Quest -->
-	<event type="kill" name="DemonKill" script="quest/killBoss/DemonKill.lua" />
-	<event type="kill" name="GomelKill" script="quest/killBoss/LeafGolemGromKill.lua" />
-	<event type="kill" name="ZarabustorKill" script="quest/killBoss/ZarabustorKill.lua" />
-	<event type="kill" name="FyzarusKill" script="quest/killBoss/FyzarusKill.lua" />
-	<event type="kill" name="ToxirusKill" script="quest/killBoss/ToxirusKill.lua" />
-	<event type="kill" name="FezarusKill" script="quest/killBoss/FezarusKill.lua" />
-	<event type="kill" name="VampireKill" script="quest/killBoss/VampireKill.lua" />
-	<event type="kill" name="DraculaKill" script="quest/killBoss/DraculaKill.lua" />
+	<!-- Kill Bosses -->
+	<event type="kill" name="KillBoss" script="KillBoss.lua" />
+	<event type="kill" name="VampireKill" script="quest/dracula/VampireKill.lua" />
 </creaturescripts>

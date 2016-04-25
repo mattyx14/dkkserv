@@ -103,7 +103,7 @@ function onSay(player, words, param)
 	end
 	player:addOutfitAddon(v["female"], v["addon"])
 	player:addOutfitAddon(v["male"], v["addon"])
-	player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Enjoy your new addons to your " .. param .. " outfit!")
+	player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Enjoy your new addon to your " .. param .. " outfit!")
 	player:getPosition():sendMagicEffect(CONST_ME_FIREWORK_YELLOW)
 	return false
 end

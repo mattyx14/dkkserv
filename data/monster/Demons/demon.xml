@@ -45,15 +45,14 @@
 	</defenses>
 	<elements>
 		<element physicalPercent="95"/>
-		<element energyPercent="100"/>
 		<element earthPercent="95"/>
 		<element icePercent="95"/>
 		<element holyPercent="95"/>
 		<element deathPercent="95"/>
-		<element firePercent="100"/>
 	</elements>
 	<immunities>
 		<immunity fire="1" />
+		<immunity energy="1" />
 		<immunity drown="1" />
 		<immunity lifedrain="1" />
 		<immunity paralyze="1" />

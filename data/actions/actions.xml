@@ -368,11 +368,13 @@
 		<action uniqueid="2662" script="quests/outfits/outfits.lua" />
 			<action actionid="2080" script="quests/outfits/conjurerLever.lua" />
 			<action actionid="2081" script="quests/outfits/conjurerLever_two.lua" />
-		<!-- Jester Outfit -->
-		<action itemid="7478" script="quests/outfits/jesterflask.lua" />
+		<!-- Jester Outfit
+		<action itemid="7478" script="quests/outfits/jesterflask.lua" /> -->
 		<!-- Death Herald Outfit -->
 		<action uniqueid="10007" script="quests/outfits/outfits.lua" />
 			<action actionid="39517" script="quests/outfits/portalDracula.lua" />
+		<!-- Assassin Outfit -->
+		<action uniqueid="9933" script="quests/outfits/outfits.lua" />
 
 	<!-- Teleport items -->
 	<action fromaid="39512" toaid="39516" script="quests/itemPortal.lua" />

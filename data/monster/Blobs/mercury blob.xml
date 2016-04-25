@@ -35,11 +35,11 @@
 	<immunities>
 		<immunity death="1" />
 		<immunity paralyze="1" />
-		<immunity physical="1" />
 		<immunity invisible="1" />
 	</immunities>
 	<elements>
 		<element firePercent="10" />
+		<element physicalPercent="10" />
 		<element earthPercent="65" />
 		<element icePercent="15" />
 		<element holyPercent="65" />

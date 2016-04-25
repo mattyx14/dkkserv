@@ -3067,17 +3067,25 @@
 		<attribute key="description" value="It is the djinn leader's sleeping lamp." />
 	</item>
 	<item id="2357" article="a" name="ring of wishes">
-		<attribute key="description" value="(This item has 3 charges left)." />
 		<attribute key="weight" value="90" />
 		<attribute key="slotType" value="ring" />
 	</item>
-	<item id="2358" name="boots of waterwalking">
-		<attribute key="description" value="(This item has 5 charges left)." />
+	<item id="2358" name="xboots of haste (faster regeneration)">
 		<attribute key="weight" value="770" />
 		<attribute key="slotType" value="feet" />
+		<attribute key="decayTo" value="6530" />
+		<attribute key="transformDeEquipTo" value="9934" />
+		<attribute key="speed" value="80" />
+		<attribute key="armor" value="3" />
+		<attribute key="duration" value="3600" />
+		<attribute key="healthGain" value="20" />
+		<attribute key="healthTicks" value="2000" />
+		<attribute key="manaGain" value="25" />
+		<attribute key="manaTicks" value="1000" />
+		<attribute key="showduration" value="1" />
+		<attribute key="showattributes" value="1" />
 	</item>
 	<item id="2359" article="a" name="djinn's lamp">
-		<attribute key="description" value="(This item has 2 charges left)." />
 		<attribute key="weight" value="600" />
 	</item>
 	<item id="2360" article="a" name="portable hole" />
@@ -4088,8 +4096,11 @@
 	</item>
 	<item id="2527" article="a" name="rose shield">
 		<attribute key="weight" value="5200" />
-		<attribute key="defense" value="27" />
+		<attribute key="defense" value="41" />
+		<attribute key="skillShield" value="4" />
 		<attribute key="weaponType" value="shield" />
+		<attribute key="showattributes" value="1" />
+		<attribute key="absorbPercentPhysical" value="7" />
 	</item>
 	<item id="2528" article="a" name="tower shield">
 		<attribute key="weight" value="8200" />
@@ -4440,10 +4451,10 @@
 		<attribute key="slotType" value="feet" />
 		<attribute key="decayTo" value="10021" />
 		<attribute key="transformDeEquipTo" value="6132" />
-		<attribute key="duration" value="14400" />
-		<attribute key="healthGain" value="20" />
+		<attribute key="duration" value="3600" />
+		<attribute key="healthGain" value="30" />
 		<attribute key="healthTicks" value="2000" />
-		<attribute key="manaGain" value="25" />
+		<attribute key="manaGain" value="35" />
 		<attribute key="manaTicks" value="1000" />
 		<attribute key="showduration" value="1" />
 		<attribute key="showattributes" value="1" />
@@ -11432,9 +11443,10 @@
 		<attribute key="shootType" value="infernalbolt" />
 		<attribute key="maxHitChance" value="91" />
 	</item>
-	<item id="6530" article="a" name="worn soft boots">
-		<attribute key="description" value="Someone specialised in shoes might be able to repair them for you." />
+	<item id="6530" article="a" name="worn xboots of haste">
+		<attribute key="description" value="They can be recharged with an enchanted sapphire." />
 		<attribute key="weight" value="800" />
+		<attribute key="slotType" value="feet" />
 	</item>
 	<item id="6531" article="a" name="santa hat">
 		<attribute key="weight" value="750" />
@@ -17483,7 +17495,7 @@
 	<item id="9932" article="a" name="firewalker boots">
 		<attribute key="description" value="Wearing these boots reduces the damage gotten from fiery ground." />
 		<attribute key="weight" value="950" />
-		<attribute key="armor" value="2" />
+		<attribute key="armor" value="3" />
 		<attribute key="slotType" value="feet" />
 		<attribute key="decayTo" value="10022" />
 		<attribute key="transformDeEquipTo" value="9933" />
@@ -17495,15 +17507,19 @@
 	<item id="9933" article="a" name="firewalker boots">
 		<attribute key="description" value="Wearing these boots reduces the damage gotten from fiery ground." />
 		<attribute key="weight" value="950" />
-		<attribute key="armor" value="2" />
+		<attribute key="armor" value="3" />
 		<attribute key="slotType" value="feet" />
 		<attribute key="transformEquipTo" value="9932" />
 		<attribute key="stopduration" value="1" />
 		<attribute key="showduration" value="1" />
 	</item>
-	<item id="9934" article="" name="old worn firewalker boots">
-		<attribute key="description" value="They can be recharged with an enchanted ruby." />
+	<item id="9934" article="a" name="xboots of haste">
 		<attribute key="weight" value="950" />
+		<attribute key="armor" value="3" />
+		<attribute key="slotType" value="feet" />
+		<attribute key="transformEquipTo" value="2358" />
+		<attribute key="stopduration" value="1" />
+		<attribute key="showduration" value="1" />
 	</item>
 	<item id="9935" article="a" name="dead gozzler">
 		<attribute key="containerSize" value="10" />
@@ -17845,7 +17861,7 @@
 		<attribute key="weight" value="1250" />
 	</item>
 	<item id="10021" name="worn soft boots">
-		<attribute key="description" value="Someone specialised in shoes might be able to repair them for you." />
+		<attribute key="description" value="They can be recharged with an enchanted sapphire." />
 		<attribute key="weight" value="800" />
 		<attribute key="slotType" value="feet" />
 	</item>

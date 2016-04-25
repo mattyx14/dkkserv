@@ -28,5 +28,7 @@ Storage = {
 			BossStorageFair = 10003,
 		arachirTheAncientOne = 8571,
 			BossStorageOne = 10004,
+
+		draculaDone = 10007
 	},
 }

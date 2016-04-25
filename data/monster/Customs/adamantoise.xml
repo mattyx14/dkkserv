@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<monster name="adamantoisee" nameDescription="a adamantoise" race="blood" experience="15750" speed="300" manacost="0">
+<monster name="Adamantoise" nameDescription="a adamantoise" race="blood" experience="15750" speed="300" manacost="0">
 	<health now="9300" max="9300"/>
 	<look type="361" head="0" body="0" legs="0" feet="0" corpse="6073"/>
 	<targetchange interval="5000" chance="8"/>
@@ -18,7 +18,8 @@
 		<flag runonhealth="0"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" min="-900" max="-2200"/>
+		<attack name="melee" interval="2000" min="-900" max="-1000"/>
+		<attack name="melee" interval="10000" min="-1000" max="-1800"/>
 	</attacks>
 	<defenses armor="18" defense="18"/>
 	<elements>
@@ -37,7 +38,7 @@
 		<immunity drunk="1"/>
 		<immunity invisible="1"/>
 	</immunities>
-	<summons maxSummons="2">
+	<summons maxSummons="1">
 		<summon name="land turtle" interval="1000" chance="6"/>
 	</summons>
 	<loot>

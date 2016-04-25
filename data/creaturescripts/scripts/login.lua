@@ -39,13 +39,7 @@ function onLogin(player)
 	player:unregisterEvent("modalMD")
 
 	-- KillBoss
-	player:registerEvent("DemonKill")
-	player:registerEvent("GomelKill")
-	player:registerEvent("ZarabustorKill")
-	player:registerEvent("FyzarusKill")
-	player:registerEvent("ToxirusKill")
-	player:registerEvent("FezarusKill")
+	player:registerEvent("KillBoss")
 	player:registerEvent("VampireKill")
-	player:registerEvent("DraculaKill")
 	return true
 end
