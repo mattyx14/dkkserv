@@ -1,6 +1,6 @@
 local holeId = {
 	294, 369, 370, 383, 392, 408, 409, 410, 427, 428, 430, 462, 469, 470, 482,
-	484, 485, 489, 924, 3135, 3136, 7933, 7938, 8170, 8286, 8285, 8284, 8281,
+	484, 485, 489, 924, 3111, 3135, 3136, 7933, 7938, 8170, 8286, 8285, 8284, 8281,
 	8280, 8279, 8277, 8276, 8567, 8585, 8596, 8595, 8249, 8250, 8251,
 	8252, 8253, 8254, 8255, 8256, 8592, 8972, 9606, 9625, 13190, 14461, 19519, 21536
 }
@@ -128,6 +128,24 @@ function onUseShovel(player, item, fromPosition, target, toPosition, isHotkey)
 end
 
 function onUsePick(player, item, fromPosition, target, toPosition, isHotkey)
+	local targetId, targetActionId = target.itemid, target.actionid
+	if targetId == 1304 then
+		if player:getStorageValue(Storage.VampireQuest.draculaDone) == 1 then
+			if targetActionId == 50058 then
+				local stoneStorage = Game.getStorageValue(Storage.VampireQuest.draculaStone)
+				if stoneStorage ~= 5 then
+					Game.setStorageValue(Storage.VampireQuest.draculaStone, math.max(0, stoneStorage) + 1)
+				elseif stoneStorage == 5 then
+					target:remove()
+					Game.setStorageValue(Storage.VampireQuest.draculaStone)
+				end
+
+				toPosition:sendMagicEffect(CONST_ME_POFF)
+				doTargetCombatHealth(0, player, COMBAT_PHYSICALDAMAGE, -1001, -1109, CONST_ME_NONE)
+			end
+		end
+	end
+
 	if toPosition.x == CONTAINER_POSITION then
 		return false
 	end

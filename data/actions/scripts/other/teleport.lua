@@ -4,7 +4,7 @@ local draw_well = 1369
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local tile = item:getTile()
 	if tile and tile:hasFlag(TILESTATE_PROTECTIONZONE) and player:isPzLocked() then
-		player:sendCancelMessage("You can not enter a protection zone after attacking another player.")
+		player:sendTextMessage(MESSAGE_STATUS_SMALL, Game.getReturnMessage(RETURNVALUE_PLAYERISPZLOCKED))
 		return false
 	end
 

@@ -18290,6 +18290,7 @@
 		<attribute key="showcharges" value="1" />
 		<attribute key="absorbPercentPhysical" value="60" />
 		<attribute key="absorbPercentIce" value="40" />
+		<attribute key="showattributes" value="1" />
 	</item>
 	<item id="10221" article="a" name="shockwave amulet">
 		<attribute key="description" value="It tickles your neck in a rather pleasant way and absorbs loads of damage." />
@@ -23113,6 +23114,7 @@
 	</item>
 	<item id="14340" article="a" name="ceremonial ankh">
 		<attribute key="weight" value="500" />
+		<attribute key="slotType" value="ammo" />
 	</item>
 	<item id="14341" article="a" name="ice cream cone">
 		<attribute key="description" value="It's the famous &quot;crispy chocolate chips&quot; flavour." />

@@ -30,5 +30,6 @@ Storage = {
 			BossStorageOne = 10004,
 
 		draculaDone = 10007
+		draculaStone = 50058,
 	},
 }

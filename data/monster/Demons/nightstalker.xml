@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Nightstalker" nameDescription="a nightstalker" experience="500" speed="260" race="undead">
-	<health now="700" max="700" />
+<monster name="Nightstalker" nameDescription="a nightstalker" experience="1300" speed="260" race="undead">
+	<health now="1700" max="1700" />
 	<targetchange speed="0" chance="8" />
 	<look type="320" corpse="9915" />
 	<flags>

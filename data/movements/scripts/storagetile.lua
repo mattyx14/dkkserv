@@ -12,7 +12,7 @@ local failPosition = {
 	[5502] = {
 		mission = 2436,
 		fromPosition = Position(724, 821, 12),
-		missionName = "require slull staff quest"
+		missionName = "require skull staff quest"
 	},
 	[5503] = {
 		mission = 3101,
@@ -52,6 +52,11 @@ local failPosition = {
 	[5590] = { -- Anshara Skull Area
 		mission = 1582,
 		fromPosition = Position(599, 371, 7),
+		missionName = "are blocked no have monsters"
+	},
+	[5591] = { -- Anshara Skull Area Two Nort
+		mission = 1583,
+		fromPosition = Position(686, 296, 6),
 		missionName = "are blocked no have monsters"
 	},
 }
