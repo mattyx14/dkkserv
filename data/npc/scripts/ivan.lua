@@ -61,6 +61,13 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler.topic[cid] = 0
 				player:addItem(10020, 1)
 			end
+		-- Sniper Gloves
+		elseif npcHandler.topic[cid] == 6 then
+			if player:removeItem(5875, 3) then
+				npcHandler:say("Cling clang!", cid)
+				npcHandler.topic[cid] = 0
+				player:addItem(5947, 1)
+			end
 	-- Soul Orb
 	elseif msgcontains(msg, "soul orbs") then
 		if player:getStorageValue(Storage.VampireQuest.draculaDone) == 1 then
@@ -85,8 +92,14 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("Firy steel it is. Need green ones' breath to melt. Or red even better. Me can make from claw. Want to trade?", cid)
 			npcHandler.topic[cid] = 5
 		end
+	-- Sniper Gloves
+	elseif msgcontains(msg, "sniper gloves") then
+		if player:getStorageValue(Storage.VampireQuest.draculaDone) == 1 then
+			npcHandler:say("Firy steel it is. Need green ones' breath to melt. Or red even better. Me can make from claw. Want to trade?", cid)
+			npcHandler.topic[cid] = 6
+		end
 	elseif isInArray({"jobs", "items"}, msg) then
-		npcHandler:say('For example I trade: {dragon shields}, {devil helmets}, {soul orbs}, {dragon claws}.', cid)
+		npcHandler:say('For example I trade: {sniper gloves}, {dragon shields}, {devil helmets}, {soul orbs}, {dragon claws}.', cid)
 		npcHandler.topic[cid] = 0
 	elseif msgcontains(msg,'no') and (npcHandler.topic[cid] >= 1 and npcHandler.topic[cid] <= 10) then
 		npcHandler:say('Ok then.', cid)
