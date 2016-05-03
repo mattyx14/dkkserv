@@ -132,12 +132,12 @@ function onUsePick(player, item, fromPosition, target, toPosition, isHotkey)
 	if targetId == 1304 then
 		if player:getStorageValue(Storage.VampireQuest.draculaDone) == 1 then
 			if targetActionId == 50058 then
-				local stoneStorage = Game.getStorageValue(Storage.VampireQuest.draculaStone)
+				local stoneStorage = Game.getStorageValue(Storage.VampireQuest.draculaDone)
 				if stoneStorage ~= 5 then
-					Game.setStorageValue(Storage.VampireQuest.draculaStone, math.max(0, stoneStorage) + 1)
+					Game.setStorageValue(Storage.VampireQuest.draculaDone, math.max(0, stoneStorage) + 1)
 				elseif stoneStorage == 5 then
 					target:remove()
-					Game.setStorageValue(Storage.VampireQuest.draculaStone)
+					Game.setStorageValue(Storage.VampireQuest.draculaDone)
 				end
 
 				toPosition:sendMagicEffect(CONST_ME_POFF)

@@ -47,6 +47,7 @@
 		<parameter key="shop_sellable" value="
 			acorn,11213,100;
 			antlers,11214,150;
+			ancient amulet,2142,450;
 			ape fur,5883,220;
 			baby seal doll,7183,20000;
 			badger fur,11216,150;
@@ -149,6 +150,7 @@
 			elven scouting glass,12420,150;
 			elvish talisman,10552,145;
 			enchanted chicken wing,5891,20000;
+			energy soil,8303,1000;
 			essence of a bad dream,11223,460;
 			eye of a deepling,13870,250;
 			eye of a weeper,18426,650;
@@ -201,6 +203,7 @@
 			high guard shoulderplates,11333,210;
 			holy ash,20130,190;
 			holy orchid,5922,190;
+			holy scarab,2140,990;
 			honeycomb,5902,140;
 			horoscope,21243,140;
 			huge chunk of crude iron,5892,15000;
@@ -231,6 +234,7 @@
 			magic sulphur,5904,8000;
 			magma clump,18424,570;
 			mammoth tusks,11238,210;
+			mantassin tail,12445,950;
 			marlin trophy,7964,5000;
 			mastermind potion,7440,500;
 			metal spike,11215,420;
@@ -275,6 +279,8 @@
 			pulverized ore,18427,500;
 			purple robe,12429,210;
 			purple tome,1982,2000;
+			quara pincer,12446,500;
+			quara bone,12447,500;
 			red dragon leather,5948,300;
 			red dragon scale,5882,300;
 			red hair dye,20135,140;
@@ -289,6 +295,7 @@
 			sandcrawler shell,11373,120;
 			sandcrawler shells,11373,240;
 			scale of corruption,12629,680;
+			scarab amulet,2135,720;
 			scarab pincers,10547,380;
 			scarab pincers,10548,220;
 			scorpion tail,10568,125;

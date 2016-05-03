@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<monster name="Ghazbaran" nameDescription="a ghazbaran" race="undead" experience="15000" speed="400" manacost="0">
-	<health now="60000" max="60000" />
+<monster name="Ghazbaran" nameDescription="a ghazbaran" race="undead" experience="700000" speed="400" manacost="0">
+	<health now="360000" max="360000"/>
 	<look type="12" head="0" body="123" legs="97" feet="94" corpse="6068" />
 	<targetchange interval="10000" chance="20" />
 	<flags>
@@ -17,35 +17,41 @@
 		<flag runonhealth="3500" />
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" min="-500" max="-2191" />
-		<attack name="melee" interval="2000" chance="40" range="7" radius="6" target="0" min="-250" max="-500">
-			<attribute key="areaEffect" value="blackspark" />
+		<attack name="melee" interval="2000" min="0" max="-3930"/>
+		<attack name="ice" interval="3000" chance="20" range="14" radius="5" target="0" min="-200" max="-380">
+			<attribute key="areaEffect" value="poff"/>
 		</attack>
-		<attack name="melee" interval="3000" chance="34" range="7" radius="1" target="1" min="-120" max="-500">
-			<attribute key="shootEffect" value="whirlwindsword" />
-			<attribute key="areaEffect" value="redspark" />
+		<attack name="physical" interval="1000" chance="15"	radius="13" target="0" min="-1100" max="-1650">
+			<attribute key="areaEffect" value="yellowspark"/>
 		</attack>
-		<attack name="energy" interval="4000" chance="30" length="8" spread="0" min="-100" max="-800">
-			<attribute key="areaEffect" value="mortarea" />
+		<attack name="manadrain" interval="1000" chance="12" radius="14" target="0" min="-1200" max="-1800">
+			<attribute key="areaEffect" value="bluebubble"/>
 		</attack>
-		<attack name="physical" interval="3000" chance="20" range="14" radius="5" target="0" min="-200" max="-480">
-			<attribute key="areaEffect" value="poff" />
+		<attack name="ice" interval="1500" chance="30" range="7" radius="5" target="0" min="-1250" max="-1500">
+			<attribute key="areaEffect" value="blackspark"/>
 		</attack>
-		<attack name="physical" interval="4000" chance="15" range="7" radius="13" target="0" min="-100" max="-650">
-			<attribute key="areaEffect" value="yellowspark" />
+		<attack name="ice" interval="1500" chance="14" range="4" target="1" radius="5" min="-1200" max="-1530">
+			<attribute key="shootEffect" value="smallice"/>
+			<attribute key="areaEffect" value="teleport"/>
 		</attack>
-		<attack name="physical" interval="4000" chance="18" radius="14" target="0" min="-200" max="-600">
-			<attribute key="areaEffect" value="bluebubble" />
+		<attack name="physical" interval="2000" chance="20" range="15" target="1" min="-1500" max="-1875">
+			<attribute key="shootEffect" value="whirlwindsword"/>
 		</attack>
-		<attack name="melee" interval="3000" chance="15" range="7" radius="4" target="0" min="-200" max="-750">
-			<attribute key="areaEffect" value="energyarea" />
+		<attack name="death" interval="1000" chance="15" length="17" spread="0" min="-1250" max="-1600">
+			<attribute key="areaEffect" value="mortarea"/>
+		</attack>
+		<attack name="ice" interval="2000" chance="18" radius="25" target="0" min="-150" max="-1700">
+			<attribute key="areaEffect" value="bigplants"/>
+		</attack>
+		<attack name="speed" interval="2000" chance="15" radius="1" target="1" speedchange="-700" duration="30000">
+			<attribute key="areaEffect" value="redshimmer" />
 		</attack>
 	</attacks>
 	<defenses armor="55" defense="65">
 		<defense name="healing" interval="3000" chance="35" min="300" max="800">
 			<attribute key="areaEffect" value="blueshimmer" />
 		</defense>
-		<defense name="speed" interval="4000" chance="80" speedchange="440" duration="6000">
+		<defense name="speed" interval="1000" chance="25" speedchange="3901" duration="3000">
 			<attribute key="areaEffect" value="redshimmer" />
 		</defense>
 	</defenses>

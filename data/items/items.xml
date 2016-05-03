@@ -3909,14 +3909,9 @@
 	<item id="2493" article="a" name="demon helmet">
 		<attribute key="description" value="You hear an evil whispering from inside." />
 		<attribute key="weight" value="2950" />
-		<attribute key="armor" value="12" />
+		<attribute key="armor" value="11" />
 		<attribute key="slotType" value="head" />
-		<attribute key="skillDist" value="2" />
-		<attribute key="skillSword" value="2" />
-		<attribute key="skillAxe" value="2" />
-		<attribute key="skillClub" value="2" />
-		<attribute key="absorbPercentMagic" value="5" />
-		<attribute key="magiclevelpoints" value="1" />
+		<attribute key="magiclevelpoints" value="2" />
 	</item>
 	<item id="2494" article="a" name="demon armor">
 		<attribute key="weight" value="8000" />
@@ -4162,8 +4157,12 @@
 	<item id="2539" article="a" name="phoenix shield">
 		<attribute key="description" value="This shield feels warm to the touch." />
 		<attribute key="weight" value="3500" />
-		<attribute key="defense" value="34" />
+		<attribute key="defense" value="36" />
 		<attribute key="weaponType" value="shield" />
+		<attribute key="skillSword" value="2" />
+		<attribute key="skillAxe" value="2" />
+		<attribute key="skillClub" value="2" />
+		<attribute key="skillShield" value="2" />
 	</item>
 	<item id="2540" article="a" name="scarab shield">
 		<attribute key="weight" value="4700" />
@@ -4456,6 +4455,7 @@
 		<attribute key="healthTicks" value="2000" />
 		<attribute key="manaGain" value="35" />
 		<attribute key="manaTicks" value="1000" />
+		<attribute key="skillDist" value="2" />
 		<attribute key="showduration" value="1" />
 		<attribute key="showattributes" value="1" />
 	</item>
@@ -9410,6 +9410,7 @@
 		<attribute key="weight" value="850" />
 		<attribute key="armor" value="1" />
 		<attribute key="slotType" value="head" />
+		<attribute key="magiclevelpoints" value="5" />
 	</item>
 	<item id="5904" article="a" name="magic sulphur">
 		<attribute key="description" value="It smells rather badly but is said to be an important catalyst for magical rituals." />
