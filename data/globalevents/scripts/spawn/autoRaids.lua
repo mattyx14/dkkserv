@@ -4,6 +4,6 @@ local raids = {
 }
 
 function onThink(interval, lastExecution, thinkInterval)
-	Game.startRaid(raids)
+	Game.startRaid(Orshabaal)
 	return true
 end

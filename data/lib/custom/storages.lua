@@ -14,6 +14,7 @@ Storage = {
 		AxeBlowsFace = 8291
 	},
 	FerumbrasTowerAccess = 2548,
+	FreeBless = 5774, -- For testings
 	Missions = {
 		DjinnMission = {
 			Done = 24073
@@ -49,5 +50,8 @@ Storage = {
 		anniQuestSovDone = 2400,
 		anniQuestThaDone = 2421,
 		anniQuestScaDone = 2431,
+		POIMission = {
+			Done = 24075
+		}
 	}
 }
