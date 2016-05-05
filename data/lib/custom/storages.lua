@@ -30,6 +30,21 @@ Storage = {
 			BossStorageOne = 10004,
 
 		draculaDone = 10007,
-		draculaStone = 50058,
+		draculaStone = 50058
 	},
+	AnniQuest = {
+		justiceSeekerDone = 7390,
+		blessedSceptreDone = 7429,
+		royalAxeDone = 7434,
+		pirateDone = 6096,
+		conjurerDone = 2662,
+		deathHeraldDone = 10008,
+		assassinDone = 9933,
+		anniKey = 1219
+	},
+	POIQuest = {
+		anniQuestSovDone = 2400,
+		anniQuestThaDone = 2421,
+		anniQuestScaDone = 2431,
+	}
 }

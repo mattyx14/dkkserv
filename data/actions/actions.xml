@@ -4,11 +4,12 @@
 	<action itemid="1740" script="quests/quests.lua" />
 	<action fromid="1747" toid="1749" script="quests/quests.lua" />
 	<action actionid="2000" script="quests/system.lua" />
-	<action uniqueid="30015" script="quests/annihilator.lua" />
 
 	<!-- System Quest -->
-	<!-- Djinn Quest -->
-	<action actionid="2001" script="quests/system.lua" />
+		<!-- Djinn Quest -->
+		<action actionid="2001" script="quests/system.lua" />
+		<!-- Anni Quest -->
+		<action actionid="2002" script="quests/system.lua" />
 
 	<!-- Tools -->
 	<action itemid="2120" script="tools/rope.lua" />
@@ -378,4 +379,7 @@
 
 	<!-- Teleport items -->
 	<action fromaid="39512" toaid="39516" script="quests/itemPortal.lua" />
+
+	<!-- Annihilator lever -->
+	<action uniqueid="2208" script="quests/annihilator.lua" />
 </actions>

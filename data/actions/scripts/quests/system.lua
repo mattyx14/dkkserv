@@ -1,5 +1,6 @@
 local specialQuests = {
 	[2001] = Storage.Missions.DjinnMission.Done,
+	[2002] = Storage.Missions.AnniQuest.Done,
 }
 
 local questsExperience = {}

@@ -1,7 +1,7 @@
 local outfits = {
 	[6096] = {6096, 'Pirate', 155, 151, 6096},
 	[2662] = {2662, 'Conjurer', 635, 634, 2662},
-	[10007] = {10007, 'Death Herald', 666, 667, 21252}, -- 10005 and 10006 is reserved storage for kill Dracula
+	[10008] = {10008, 'Death Herald', 666, 667, 21252}, -- 10005, 10006 and 10007 is reserved storage for kill Dracula
 	[9933] = {9933, 'Assassin', 156, 152, 9933},
 }
 

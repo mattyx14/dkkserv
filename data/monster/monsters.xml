@@ -1043,6 +1043,7 @@
 	<monster name="Gyyzarus" file="customs/gyyzarus.xml" />
 
 	<monster name="Fire Lord" file="Demons/fire lord.xml"/>
+	<monster name="Sokay Guardian" file="Demons/sokay guardian.xml"/>
 
 	<!-- Trainers -->
 	<monster name="Training Monk" file="training monk.xml"/>

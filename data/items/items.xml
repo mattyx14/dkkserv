@@ -31073,7 +31073,7 @@
 	</item>
 	<item id="23529" article="a" name="glooth spear">
 		<attribute key="description" value="It can only be wielded properly by players of level 60 or higher." />
-		<attribute key="attack" value="55" />
+		<attribute key="attack" value="25" />
 		<attribute key="weaponType" value="distance" />
 		<attribute key="shootType" value="gloothspear" />
 		<attribute key="range" value="3" />
@@ -31082,7 +31082,7 @@
 	</item>
 	<item id="23535" article="a" name="glooth cape">
 		<attribute key="description" value="It can only be wielded properly by druids and sorcerers of level 40 or higher." />
-		<attribute key="armor" value="9" />
+		<attribute key="armor" value="8" />
 		<attribute key="slotType" value="body" />
 		<attribute key="absorbPercentEarth" value="5" />
 		<attribute key="absorbPercentFire" value="-5" />
@@ -31183,7 +31183,7 @@
 		<attribute key="attack" value="39" />
 		<attribute key="weaponType" value="club" />
 		<attribute key="slotType" value="two-handed" />
-		<attribute key="elementEarth" value="26" />
+		<attribute key="elementEarth" value="6" />
 		<attribute key="charges" value="2" />
 		<attribute key="weight" value="1900" />
 	</item>
@@ -31192,7 +31192,7 @@
 		<attribute key="attack" value="39" />
 		<attribute key="weaponType" value="sword" />
 		<attribute key="slotType" value="two-handed" />
-		<attribute key="elementEarth" value="26" />
+		<attribute key="elementEarth" value="6" />
 		<attribute key="charges" value="2" />
 		<attribute key="weight" value="1900" />
 	</item>
@@ -31201,7 +31201,7 @@
 		<attribute key="attack" value="39" />
 		<attribute key="weaponType" value="axe" />
 		<attribute key="slotType" value="two-handed" />
-		<attribute key="elementEarth" value="1" />
+		<attribute key="elementEarth" value="6" />
 		<attribute key="charges" value="2" />
 		<attribute key="weight" value="1900" />
 	</item>
@@ -31210,7 +31210,7 @@
 	</item>
 	<item id="23554" article="a" name="glooth amulet">
 		<attribute key="slotType" value="necklace" />
-		<attribute key="charges" value="10" />
+		<attribute key="charges" value="5" />
 		<attribute key="showcharges" value="1" />
 		<attribute key="absorbPercentPhysical" value="10" />
 		<attribute key="absorbPercentMagic" value="10" />

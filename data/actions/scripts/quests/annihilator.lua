@@ -1,31 +1,43 @@
 local config = {
-	requiredLevel = 100,
-	daily = false,
-	centerDemonRoomPosition = Position(33221, 31659, 13),
+	requiredLevel = 270,
+	daily = true,
+	centerRoomPosition = Position(1231, 1048, 10),
 	playerPositions = {
-		Position(33225, 31671, 13),
-		Position(33224, 31671, 13),
-		Position(33223, 31671, 13),
-		Position(33222, 31671, 13)
+		Position(973, 1068, 9),
+		Position(974, 1068, 9),
+		Position(975, 1068, 9),
+		Position(976, 1068, 9)
 	},
 	newPositions = {
-		Position(33222, 31659, 13),
-		Position(33221, 31659, 13),
-		Position(33220, 31659, 13),
-		Position(33219, 31659, 13)
+		Position(1229, 1048, 10),
+		Position(1230, 1048, 10),
+		Position(1231, 1048, 10),
+		Position(1232, 1048, 10)
 	},
-	demonPositions = {
-		Position(33219, 31657, 13),
-		Position(33221, 31657, 13),
-		Position(33223, 31659, 13),
-		Position(33224, 31659, 13),
-		Position(33220, 31661, 13),
-		Position(33222, 31661, 13)
+	monsterPositions = {
+		Position(1229, 1046, 10),
+		Position(1231, 1046, 10),
+		Position(1230, 1050, 10),
+		Position(1232, 1050, 10),
+		Position(1233, 1048, 10),
+		Position(1234, 1048, 10)
 	}
 }
 
-
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
+	if player:getStorageValue(Storage.VampireQuest.draculaDone) == 1 and
+		player:getStorageValue(Storage.Missions.DjinnMission.Done) == 1 and
+		player:getStorageValue(Storage.AnniQuest.justiceSeekerDone) == 1 and
+		player:getStorageValue(Storage.AnniQuest.blessedSceptreDone) == 1 and
+		player:getStorageValue(Storage.AnniQuest.royalAxeDone) == 1 and
+		player:getStorageValue(Storage.AnniQuest.pirateDone) == 1 and
+		player:getStorageValue(Storage.AnniQuest.conjurerDone) == 1 and
+		player:getStorageValue(Storage.AnniQuest.deathHeraldDone) == 1 and
+		player:getStorageValue(Storage.AnniQuest.assassinDone) == 1 and
+		player:sendTextMessage(MESSAGE_STATUS_SMALL, Game.getReturnMessage(RETURNVALUE_NOTPOSSIBLE))
+		return false
+	end
+
 	if item.itemid == 1946 then
 		local storePlayers, playerTile = {}
 
@@ -44,7 +56,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 			storePlayers[#storePlayers + 1] = playerTile
 		end
 
-		local specs, spec = Game.getSpectators(config.centerDemonRoomPosition, false, false, 3, 3, 2, 2)
+		local specs, spec = Game.getSpectators(config.centerRoomPosition, false, false, 3, 3, 2, 2)
 		for i = 1, #specs do
 			spec = specs[i]
 			if spec:isPlayer() then
@@ -55,8 +67,8 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 			spec:remove()
 		end
 
-		for i = 1, #config.demonPositions do
-			Game.createMonster("Demon", config.demonPositions[i])
+		for i = 1, #config.monsterPositions do
+			Game.createMonster("Sokay Guardian", config.monsterPositions[i])
 		end
 
 		local players

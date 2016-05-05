@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Sokay Guardian" nameDescription="a sokay guardian" race="undead" experience="32200" speed="280" manacost="0">
+	<health now="32200" max="32200"/>
+	<look type="842" head="94" body="77" legs="96" feet="0" addons="3" corpse="0" />
+	<targetchange interval="4000" chance="20" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag staticattack="70" />
+		<flag runonhealth="0" />
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="100" attack="150" />
+		<attack name="manadrain" interval="2000" chance="10" range="7" min="-200" max="-300" />
+		<attack name="fire" interval="2000" chance="40" range="7" radius="7" target="1" min="-200" max="-300">
+			<attribute key="shootEffect" value="fire" />
+			<attribute key="areaEffect" value="firearea" />
+		</attack>
+		<attack name="energy" interval="2000" chance="45" range="7" radius="7" target="1" min="-200" max="-300">
+			<attribute key="shootEffect" value="energy" />
+			<attribute key="areaEffect" value="energyarea" />
+		</attack>
+		<attack name="earth" interval="2000" chance="50" range="7" radius="7" target="1" min="-200" max="-300">
+			<attribute key="shootEffect" value="poison" />
+			<attribute key="areaEffect" value="poison" />
+		</attack>
+		<attack name="firefield" interval="2000" chance="10" range="7" radius="1" target="1">
+			<attribute key="shootEffect" value="fire" />
+		</attack>
+		<attack name="energyfield" interval="2000" chance="10" range="7" radius="1" target="1">
+			<attribute key="shootEffect" value="energy" />
+		</attack>
+		<attack name="poisonfield" interval="2000" chance="10" range="7" radius="1" target="1">
+			<attribute key="shootEffect" value="poison" />
+		</attack>
+		<attack name="lifedrain" interval="2000" chance="10" length="8" spread="0" min="-200" max="-300">
+			<attribute key="areaEffect" value="purpleenergy" />
+		</attack>
+		<attack name="flame strike" interval="2000" chance="40" range="1" min="-200" max="-300">
+			<attribute key="shootEffect" value="fire" />
+		</attack>
+		<attack name="terra strike" interval="2000" chance="41" range="1" min="-200" max="-300">
+			<attribute key="shootEffect" value="poison" />
+		</attack>
+		<attack name="energy strike" interval="2000" chance="45" range="1" min="-200" max="-300">
+			<attribute key="shootEffect" value="energy" />
+		</attack>
+		<attack name="speed" interval="2000" chance="15" radius="1" target="1" speedchange="-700" duration="30000">
+			<attribute key="areaEffect" value="redshimmer" />
+		</attack>
+	</attacks>
+	<defenses armor="55" defense="55">
+		<defense name="healing" interval="2000" chance="15" min="180" max="250">
+			<attribute key="areaEffect" value="blueshimmer" />
+		</defense>
+		<defense name="speed" interval="2000" chance="15" speedchange="320" duration="5000">
+			<attribute key="areaEffect" value="redshimmer" />
+		</defense>
+	</defenses>
+	<elements>
+		<element physicalPercent="90"/>
+		<element icePercent="90"/>
+		<element holyPercent="90"/>
+		<element deathPercent="90"/>
+	</elements>
+	<immunities>
+		<immunity fire="1" />
+		<immunity energy="1" />
+		<immunity poison="1" />
+		<immunity drown="1" />
+		<immunity lifedrain="1" />
+		<immunity paralyze="1" />
+		<immunity invisible="1" />
+	</immunities>
+	<summons maxSummons="2">
+		<summon name="fire lord" interval="2000" chance="2" />
+	</summons>
+	<voices interval="5000" chance="10">
+		<voice sentence="MUHAHAHAHA!" />
+	</voices>
+</monster>
