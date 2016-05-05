@@ -1,7 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <raids>
-	<!--
-		<raid name="Testraid" file="testraid.xml" interval2="30" margin="0" />
-		executed on average once every 30 minutes
-	-->
+	<raid name="Orshabaal" file="bosses/Orshabaal.xml" interval2="1440" margin="180" />
 </raids>

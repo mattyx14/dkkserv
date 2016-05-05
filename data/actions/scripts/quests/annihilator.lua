@@ -33,7 +33,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		player:getStorageValue(Storage.AnniQuest.pirateDone) == 1 and
 		player:getStorageValue(Storage.AnniQuest.conjurerDone) == 1 and
 		player:getStorageValue(Storage.AnniQuest.deathHeraldDone) == 1 and
-		player:getStorageValue(Storage.AnniQuest.assassinDone) == 1 and
+		player:getStorageValue(Storage.AnniQuest.assassinDone) == 1 then
 		player:sendTextMessage(MESSAGE_STATUS_SMALL, Game.getReturnMessage(RETURNVALUE_NOTPOSSIBLE))
 		return false
 	end

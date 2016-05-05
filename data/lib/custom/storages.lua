@@ -40,7 +40,10 @@ Storage = {
 		conjurerDone = 2662,
 		deathHeraldDone = 10008,
 		assassinDone = 9933,
-		anniKey = 1219
+		anniKey = 1219,
+		AnnihiMission = {
+			Done = 24074
+		},
 	},
 	POIQuest = {
 		anniQuestSovDone = 2400,
