@@ -29,8 +29,8 @@
 #define GIT_REPO "https://github.com/mattyx14/otxserver/"
 
 #define CLIENT_VERSION_MIN 1092
-#define CLIENT_VERSION_MAX 1092
-#define CLIENT_VERSION_STR "DarkKonia Client 50.1"
+#define CLIENT_VERSION_MAX 1093
+#define CLIENT_VERSION_STR "DarkKonia Client 51.0"
 
 #define AUTHENTICATOR_DIGITS 6U
 #define AUTHENTICATOR_PERIOD 30U

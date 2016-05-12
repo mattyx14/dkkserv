@@ -1,6 +1,6 @@
 -- Custom Modules, created to help us in this datapack
 local travelDiscounts = {
-	['postman'] = {price = 900, storage = 12460, value = 1}
+	['postman'] = {price = 500, storage = 12460, value = 1}
 }
 
 function StdModule.travelDiscount(player, discounts)

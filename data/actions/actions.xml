@@ -372,7 +372,7 @@
 		<!-- Jester Outfit
 		<action itemid="7478" script="quests/outfits/jesterflask.lua" /> -->
 		<!-- Death Herald Outfit -->
-		<action uniqueid="10007" script="quests/outfits/outfits.lua" />
+		<action uniqueid="10008" script="quests/outfits/outfits.lua" />
 			<action actionid="39517" script="quests/outfits/portalDracula.lua" />
 		<!-- Assassin Outfit -->
 		<action uniqueid="9933" script="quests/outfits/outfits.lua" />

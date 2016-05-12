@@ -12,11 +12,12 @@ whiteSkullTime = 15 * 60 * 1000
 stairJumpExhaustion = 2 * 1000
 experienceByKillingPlayers = false
 expFromPlayersLevelRange = 75
+expertPvpMode = true
 
 -- Connection Config
 -- NOTE: maxPlayers set to 0 means no limit
 ip = "darkkonia.sytes.net"
---- ip = "127.0.0.1"
+-- ip = "127.0.0.1"
 bindOnlyGlobalAddress = false
 loginProtocolPort = 7171
 gameProtocolPort = 7172

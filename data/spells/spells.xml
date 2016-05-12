@@ -461,7 +461,12 @@
 	<!--<rune group="attack" spellid="7" name="Lightest Magic Missile" id="2287" allowfaruse="1" charges="10" lvl="1" cooldown="1500" groupcooldown="1500" maglv="0" needtarget="1" blocktype="solid" script="attack/lightest magic missile.lua" />-->
 	<rune group="attack" spellid="7" name="Lightest Missile" id="23723" allowfaruse="1" charges="10" lvl="1" cooldown="1500" groupcooldown="1500" maglv="0" needtarget="1" blocktype="solid" script="attack/lightest missile.lua" />
 	<rune group="attack" spellid="8" name="Heavy Magic Missile" id="2311" allowfaruse="1" charges="10" lvl="25" cooldown="1500" groupcooldown="1500" maglv="3" needtarget="1" blocktype="solid" script="attack/heavy magic missile.lua" />
-	<rune group="attack" spellid="18" name="Explosion" id="2313" allowfaruse="1" charges="6" lvl="31" maglv="6" cooldown="1500" groupcooldown="1500" blocktype="solid" script="attack/explosion.lua" />
+	<rune group="attack" spellid="18" name="Explosion" id="2313" allowfaruse="1" charges="6" lvl="31" maglv="6" cooldown="1500" groupcooldown="1500" blocktype="solid" script="attack/explosion.lua">
+		<vocation name="Paladin" />
+		<vocation name="Knight" />
+		<vocation name="Royal Paladin" />
+		<vocation name="Elite Knight" />
+	</rune>
 	<rune group="attack" spellid="21" name="Sudden Death" id="2268" allowfaruse="1" charges="3" lvl="45" maglv="15" cooldown="1500" groupcooldown="1500" needtarget="1" blocktype="solid" script="attack/sudden death.lua" />
 	<rune group="attack" spellid="114" name="Icicle" id="2271" allowfaruse="1" charges="5" lvl="28" maglv="4" cooldown="1500" groupcooldown="1500" needtarget="1" script="attack/icicle.lua" />
 	<rune group="attack" spellid="115" name="Avalanche" id="2274" allowfaruse="1" charges="4" lvl="30" maglv="4" cooldown="1500" groupcooldown="1500" script="attack/avalanche.lua" />
