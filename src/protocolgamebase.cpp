@@ -572,8 +572,8 @@ void ProtocolGameBase::sendAddCreature(const Creature* creature, const Position&
 		msg.addByte(0x00);
 	}
 
-	msg.addString(g_config.getString(ConfigManager::COIN_IMAGES_URL));
-	msg.addByte(g_config.getNumber(ConfigManager::COIN_PACKET_SIZE));
+	msg.addString(g_config.getString(ConfigManager::STORE_IMAGES_URL));
+	msg.add<uint16_t>(static_cast<uint16_t>(g_config.getNumber(ConfigManager::STORE_COIN_PACKET)));
 
 	writeToOutputBuffer(msg);
 

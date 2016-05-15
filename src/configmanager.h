@@ -71,7 +71,7 @@ class ConfigManager
 			MYSQL_SOCK,
 			DEFAULT_PRIORITY,
 			MAP_AUTHOR,
-			COIN_IMAGES_URL,
+			STORE_IMAGES_URL,
 
 			LAST_STRING_CONFIG /* this must be the last one */
 		};
@@ -110,7 +110,7 @@ class ConfigManager
 			MAX_PACKETS_PER_SECOND,
 			CRITICAL_HIT_CHANCE,
 			CRITICAL_HIT_EXTRA,
-			COIN_PACKET_SIZE,
+			STORE_COIN_PACKET,
 			LIVE_CAST_PORT,
 
 			LAST_INTEGER_CONFIG /* this must be the last one */
