@@ -225,6 +225,14 @@ void ProtocolGameBase::AddPlayerSkills(NetworkMessage& msg)
 		msg.add<uint16_t>(player->getBaseSkill(i));
 		msg.addByte(player->getSkillPercent(i));
 	}
+
+	for (int i = 10; i < 16; i++) {
+		msg.add<uint16_t>(i); // this is value to display
+		msg.add<uint16_t>(15); // this is 'base' value,
+		// if lower then skill then text color is green
+		// if equal to skill then text color is gray [default for skills]
+		// if higher then skill then text color is red
+	}
 }
 
 void ProtocolGameBase::AddWorldLight(NetworkMessage& msg, const LightInfo& lightInfo)
@@ -564,16 +572,11 @@ void ProtocolGameBase::sendAddCreature(const Creature* creature, const Position&
 		msg.addByte(0x00);
 	}
 
-	if (g_config.getBoolean(ConfigManager::EXPERT_PVP_MODE)) {
-		msg.addByte(0x01); // can change pvp framing option
-		msg.addByte(0x01); // expert mode button enabled
-	} else {
-		msg.addByte(0x00);
-		msg.addByte(0x00);
-	}
+	msg.addByte(0x00); // can change pvp framing option
+	msg.addByte(0x00); // expert mode button enabled
 
 	msg.addString(g_config.getString(ConfigManager::STORE_IMAGES_URL));
-	msg.add<uint16_t>(static_cast<uint16_t>(g_config.getNumber(ConfigManager::STORE_COIN_PACKET)));
+	msg.addByte(g_config.getNumber(ConfigManager::STORE_COIN_PACKET));
 
 	writeToOutputBuffer(msg);
 
@@ -638,7 +641,7 @@ void ProtocolGameBase::sendAddCreature(const Creature* creature, const Position&
 	}
 
 	sendBasicData();
-	sendInventory();
+	sendInventoryClientIds();
 	player->sendIcons();
 }
 
@@ -657,44 +660,6 @@ void ProtocolGameBase::sendBasicData()
 	msg.add<uint32_t>(std::numeric_limits<uint32_t>::max());
 	msg.addByte(player->getVocation()->getClientId());
 	msg.add<uint16_t>(0x00);
-	writeToOutputBuffer(msg);
-}
-
-void ProtocolGameBase::sendInventory()
-{
-	std::map<uint16_t, uint16_t> items = player->getAllItemsClientId();
-	NetworkMessage msg;
-	msg.addByte(0xF5);
-	msg.add<uint16_t>(items.size() + 11);
-	for (uint16_t i = 1; i <= 11; i++) {
-		msg.add<uint16_t>(i);
-		msg.addByte(0);
-		msg.add<uint16_t>(1);
-	}
-	for (const auto& it : items) {
-		msg.add<uint16_t>(it.first);
-		msg.addByte(0);
-		msg.add<uint16_t>(it.second);
-	}
-	writeToOutputBuffer(msg);
-}
-
-void ProtocolGame::sendInventory()
-{
-	std::map<uint16_t, uint16_t> items = player->getAllItemsClientId();
-	NetworkMessage msg;
-	msg.addByte(0xF5);
-	msg.add<uint16_t>(items.size() + 11);
-	for (uint16_t i = 1; i <= 11; i++) {
-		msg.add<uint16_t>(i);
-		msg.addByte(0);
-		msg.add<uint16_t>(1);
-	}
-	for (const auto& it : items) {
-		msg.add<uint16_t>(it.first);
-		msg.addByte(0);
-		msg.add<uint16_t>(it.second);
-	}
 	writeToOutputBuffer(msg);
 }
 
@@ -722,6 +687,28 @@ void ProtocolGameBase::sendInventoryItem(slots_t slot, const Item* item)
 	} else {
 		msg.addByte(0x79);
 		msg.addByte(slot);
+	}
+	writeToOutputBuffer(msg);
+}
+
+void ProtocolGameBase::sendInventoryClientIds()
+{
+	std::map<uint16_t, uint16_t> items = player->getInventoryClientIds();
+
+	NetworkMessage msg;
+	msg.addByte(0xF5);
+	msg.add<uint16_t>(items.size() + 11);
+
+	for (uint16_t i = 1; i <= 11; i++) {
+		msg.add<uint16_t>(i);
+		msg.addByte(0x00);
+		msg.add<uint16_t>(0x01);
+	}
+
+	for (const auto& it : items) {
+		msg.add<uint16_t>(it.first);
+		msg.addByte(0x00);
+		msg.add<uint16_t>(it.second);
 	}
 	writeToOutputBuffer(msg);
 }

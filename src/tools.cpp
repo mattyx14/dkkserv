@@ -937,48 +937,6 @@ size_t combatTypeToIndex(CombatType_t combatType)
 	}
 }
 
-uint16_t pvpFieldToNonPvpField(uint16_t itemId)
-{
-	switch (itemId) {
-		case ITEM_FIREFIELD_PVP_FULL: case ITEM_FIREFIELD_NOPVP_FULL: return ITEM_FIREFIELD_NOPVP_FULL;
-		case ITEM_FIREFIELD_PVP_MEDIUM: case ITEM_FIREFIELD_NOPVP_MEDIUM: return ITEM_FIREFIELD_NOPVP_MEDIUM;
-		case ITEM_FIREFIELD_PVP_SMALL: case ITEM_FIREFIELD_NOPVP_SMALL: return ITEM_FIREFIELD_NOPVP_SMALL;
-		case ITEM_POISONFIELD_PVP: case ITEM_POISONFIELD_NOPVP: return ITEM_POISONFIELD_NOPVP;
-		case ITEM_ENERGYFIELD_PVP: case ITEM_ENERGYFIELD_NOPVP: return ITEM_ENERGYFIELD_NOPVP;
-		case ITEM_MAGICWALL: case ITEM_MAGICWALL_NOPVP: return ITEM_MAGICWALL_NOPVP;
-		case ITEM_WILDGROWTH: case ITEM_WILDGROWTH_NOPVP: return ITEM_WILDGROWTH_NOPVP;
-		default: return ITEM_PVP_SAFE_NULL;
-	}
-}
-
-uint16_t nonPvpFieldToPvpField(uint16_t itemId)
-{
-	switch (itemId) {
-		case ITEM_FIREFIELD_PVP_FULL: case ITEM_FIREFIELD_NOPVP_FULL: return ITEM_FIREFIELD_PVP_FULL;
-		case ITEM_FIREFIELD_PVP_MEDIUM: case ITEM_FIREFIELD_NOPVP_MEDIUM: return ITEM_FIREFIELD_PVP_MEDIUM;
-		case ITEM_FIREFIELD_PVP_SMALL: case ITEM_FIREFIELD_NOPVP_SMALL: return ITEM_FIREFIELD_PVP_SMALL;
-		case ITEM_POISONFIELD_PVP: case ITEM_POISONFIELD_NOPVP: return ITEM_POISONFIELD_PVP;
-		case ITEM_ENERGYFIELD_PVP: case ITEM_ENERGYFIELD_NOPVP: return ITEM_ENERGYFIELD_PVP;
-		case ITEM_MAGICWALL: case ITEM_MAGICWALL_NOPVP: return ITEM_MAGICWALL;
-		case ITEM_WILDGROWTH: case ITEM_WILDGROWTH_NOPVP: return ITEM_WILDGROWTH;
-		default: return ITEM_PVP_SAFE_NULL;
-	}
-}
-
-uint16_t persistentItemToPvp(uint16_t itemId)
-{
-	switch (itemId) {
-	case ITEM_FIREFIELD_PERSISTENT_FULL: return ITEM_FIREFIELD_PVP_FULL;
-	case ITEM_FIREFIELD_PERSISTENT_MEDIUM: return ITEM_FIREFIELD_PVP_MEDIUM;
-	case ITEM_FIREFIELD_PERSISTENT_SMALL: return ITEM_FIREFIELD_PVP_SMALL;
-	case ITEM_ENERGYFIELD_PERSISTENT: return ITEM_ENERGYFIELD_PVP;
-	case ITEM_POISONFIELD_PERSISTENT: return ITEM_POISONFIELD_PVP;
-	case ITEM_MAGICWALL_PERSISTENT: return ITEM_MAGICWALL;
-	case ITEM_WILDGROWTH_PERSISTENT: return ITEM_WILDGROWTH;
-	default: return itemId;
-	}
-}
-
 CombatType_t indexToCombatType(size_t v)
 {
 	return static_cast<CombatType_t>(1 << v);
@@ -1072,6 +1030,9 @@ std::string getFirstLine(const std::string& str)
 const char* getReturnMessage(ReturnValue value)
 {
 	switch (value) {
+		case RETURNVALUE_REWARDCHESTISEMPTY:
+			return "The chest is currently empty. You did not take part in any battles in the last seven days or already claimed your reward.";
+
 		case RETURNVALUE_DESTINATIONOUTOFREACH:
 			return "Destination is out of reach.";
 

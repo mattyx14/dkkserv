@@ -1032,7 +1032,7 @@ void Game::playerMoveItem(Player* player, const Position& fromPos,
 		return;
 	}
 
-	if (!g_events->eventPlayerOnMoveItem(player, item, count, fromPos, toPos)) {
+	if (!g_events->eventPlayerOnMoveItem(player, item, count, fromPos, toPos, fromCylinder, toCylinder)) {
 		return;
 	}
 
@@ -1233,70 +1233,6 @@ ReturnValue Game::internalAddItem(Cylinder* toCylinder, Item* item, int32_t inde
 	return internalAddItem(toCylinder, item, index, flags, test, remainderCount);
 }
 
-void Game::updateSpectatorPvpStatus(Item* item, bool loop) {
-	if (item == nullptr || !item) {
-		return;
-	}
-
-	uint32_t duration = item->getDuration();
-	if (duration < 600) {
-		return;
-	}
-
-	if (!item->isMagicField()) {
-		return;
-	}
-
-	uint32_t ownerId = item->getOwner();
-	if (!ownerId) {
-		return;
-	}
-
-	Creature* owner = getCreatureByID(ownerId);
-	if (!owner) {
-		return;
-	}
-
-	Player* ownerPlayer = owner->getPlayer();
-	if (!ownerPlayer) {
-		if (owner->isSummon() && owner->getMaster()->getPlayer()) {
-			ownerPlayer = owner->getMaster()->getPlayer();
-		} else {
-			return;
-		}
-	}
-
-	Tile* tile = item->getTile();
-	if (!tile) {
-		return;
-	}
-
-	SpectatorVec list;
-	map.getSpectators(list, tile->getPosition(), true, true);
-	for (auto it : list) {
-		if (Player* tmpPlayer = it->getPlayer()) {
-
-			uint32_t requiredId = item->getID();
-			if (tmpPlayer->getItemPvpStat(item) == ITEM_IS_PVP) {
-					requiredId = nonPvpFieldToPvpField(item->getID());
-			} else {
-					requiredId = pvpFieldToNonPvpField(item->getID());;
-			}
-
-			if (requiredId == ITEM_PVP_SAFE_NULL) {
-				return; // it means item is not added to the function, no need to repeat
-			}
-			item->setID(requiredId);
-			item->setDuration(duration);
-			tmpPlayer->sendUpdateTileItem(tile, tile->getPosition(), item);
-		}
-	}
-
-	if (loop && duration > 1400) {
-		g_scheduler.addEvent(createSchedulerTask(1000, std::bind(&Game::updateSpectatorPvpStatus, this, item, true)));
-	}
-}
-
 ReturnValue Game::internalAddItem(Cylinder* toCylinder, Item* item, int32_t index,
                                   uint32_t flags, bool test, uint32_t& remainderCount)
 {
@@ -1321,7 +1257,7 @@ ReturnValue Game::internalAddItem(Cylinder* toCylinder, Item* item, int32_t inde
 	uint32_t maxQueryCount = 0;
 	ret = destCylinder->queryMaxCount(INDEX_WHEREEVER, *item, item->getItemCount(), maxQueryCount, flags);
 
-	if (ret != RETURNVALUE_NOERROR) {
+	if (ret != RETURNVALUE_NOERROR && toCylinder->getItem() && toCylinder->getItem()->getID() != ITEM_REWARD_CONTAINER) {
 		return ret;
 	}
 
@@ -2467,10 +2403,13 @@ void Game::playerUpdateHouseWindow(uint32_t playerId, uint8_t listId, uint32_t w
 	uint32_t internalListId;
 
 	House* house = player->getEditHouse(internalWindowTextId, internalListId);
-	if (house && internalWindowTextId == windowTextId && listId == 0) {
+	if (house && house->canEditAccessList(internalListId, player) && internalWindowTextId == windowTextId && listId == 0) {
 		house->setAccessList(internalListId, text);
 		player->setEditHouse(nullptr);
+		return;
 	}
+
+	player->setEditHouse(nullptr);
 }
 
 void Game::playerRequestTrade(uint32_t playerId, const Position& pos, uint8_t stackPos,
@@ -3102,38 +3041,16 @@ void Game::playerFollowCreature(uint32_t playerId, uint32_t creatureId)
 	player->setFollowCreature(getCreatureByID(creatureId));
 }
 
-void Game::playerSetFightModes(uint32_t playerId, fightMode_t fightMode, chaseMode_t chaseMode, pvpMode_t pvpMode, bool secureMode)
+void Game::playerSetFightModes(uint32_t playerId, fightMode_t fightMode, chaseMode_t chaseMode, bool secureMode)
 {
 	Player* player = getPlayerByID(playerId);
 	if (!player) {
 		return;
 	}
 
-	bool needUpdate = false;
 	player->setFightMode(fightMode);
 	player->setChaseMode(chaseMode);
-
-	if (g_config.getBoolean(ConfigManager::EXPERT_PVP_MODE) && worldType != WORLD_TYPE_PVP) {
-		if (worldType == WORLD_TYPE_NO_PVP && !secureMode) {
-			player->setSecureMode(true);
-			needUpdate = true;
-		} else if (worldType == WORLD_TYPE_PVP_ENFORCED && secureMode) {
-			player->setSecureMode(false);
-			needUpdate = true;
-		}
-	} else {
-		player->setSecureMode(secureMode);
-	}
-
-	if ((pvpMode == PVP_MODE_RED_FIST && getWorldType() != WORLD_TYPE_PVP_ENFORCED) || player->getSkull() == SKULL_BLACK) {
-		needUpdate = true;
-	} else {
-		player->setPvpMode(pvpMode);
-	}
-
-	if (needUpdate) {
-		g_scheduler.addEvent(createSchedulerTask(400, std::bind(&Player::sendFightModes, player)));
-	}
+	player->setSecureMode(secureMode);
 }
 
 void Game::playerRequestAddVip(uint32_t playerId, const std::string& name)
@@ -4793,8 +4710,8 @@ void Game::playerInviteToParty(uint32_t playerId, uint32_t invitedId)
 		return;
 	}
 
+	std::ostringstream ss;
 	if (invitedPlayer->getParty()) {
-		std::ostringstream ss;
 		ss << invitedPlayer->getName() << " is already in a party.";
 		player->sendTextMessage(MESSAGE_INFO_DESCR, ss.str());
 		return;
@@ -5100,12 +5017,12 @@ void Game::playerCreateMarketOffer(uint32_t playerId, uint8_t type, uint16_t spr
 			return;
 		}
 
-		DepotChest* depotChest = player->getDepotChest(player->getLastDepotId(), false);
-		if (!depotChest) {
+		DepotLocker* depotLocker = player->getDepotLocker(player->getLastDepotId());
+		if (!depotLocker) {
 			return;
 		}
 
-		std::forward_list<Item*> itemList = getMarketItemList(it.wareId, amount, depotChest, player->getInbox());
+		std::forward_list<Item*> itemList = getMarketItemList(it.wareId, amount, depotLocker);
 		if (itemList.empty()) {
 			return;
 		}
@@ -5239,12 +5156,12 @@ void Game::playerAcceptMarketOffer(uint32_t playerId, uint32_t timestamp, uint16
 	uint64_t totalPrice = static_cast<uint64_t>(offer.price) * amount;
 
 	if (offer.type == MARKETACTION_BUY) {
-		DepotChest* depotChest = player->getDepotChest(player->getLastDepotId(), false);
-		if (!depotChest) {
+		DepotLocker* depotLocker = player->getDepotLocker(player->getLastDepotId());
+		if (!depotLocker) {
 			return;
 		}
 
-		std::forward_list<Item*> itemList = getMarketItemList(it.wareId, amount, depotChest, player->getInbox());
+		std::forward_list<Item*> itemList = getMarketItemList(it.wareId, amount, depotLocker);
 		if (itemList.empty()) {
 			return;
 		}
@@ -5389,12 +5306,12 @@ void Game::parsePlayerExtendedOpcode(uint32_t playerId, uint8_t opcode, const st
 	}
 }
 
-std::forward_list<Item*> Game::getMarketItemList(uint16_t wareId, uint16_t sufficientCount, DepotChest* depotChest, Inbox* inbox)
+std::forward_list<Item*> Game::getMarketItemList(uint16_t wareId, uint16_t sufficientCount, DepotLocker* depotLocker)
 {
 	std::forward_list<Item*> itemList;
 	uint16_t count = 0;
 
-	std::list<Container*> containers { depotChest, inbox };
+	std::list<Container*> containers {depotLocker};
 	do {
 		Container* container = containers.front();
 		containers.pop_front();
@@ -5630,21 +5547,6 @@ void Game::removeUniqueItem(uint16_t uniqueId)
 	if (it != uniqueItems.end()) {
 		uniqueItems.erase(it);
 	}
-}
-
-void Game::sendPvpSquare(uint32_t playerId, uint32_t targetId)
-{
-	Player* player = getPlayerByID(playerId);
-	if (!player) {
-		return;
-	}
-
-	Player* target = getPlayerByID(targetId);
-	if (!target) {
-		return;
-	}
-
-	player->sendPvpActionStart(target);
 }
 
 bool Game::hasEffect(uint8_t effectId) {

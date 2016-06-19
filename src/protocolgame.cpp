@@ -36,12 +36,14 @@
 #include "ban.h"
 #include "scheduler.h"
 #include "databasetasks.h"
+#include "modules.h"
 
 extern Game g_game;
 extern ConfigManager g_config;
 extern Actions actions;
 extern CreatureEvents* g_creatureEvents;
 extern Chat* g_chat;
+extern Modules* g_modules;
 
 ProtocolGame::LiveCastsMap ProtocolGame::liveCasts;
 
@@ -487,6 +489,8 @@ void ProtocolGame::parsePacket(NetworkMessage& msg)
 		}
 	}
 
+	g_dispatcher.addTask(createTask(std::bind(&Modules::executeOnRecvbyte, g_modules, player, msg, recvbyte)));
+
 	switch (recvbyte) {
 		case 0x14: g_dispatcher.addTask(createTask(std::bind(&ProtocolGame::logout, getThis(), true, false))); break;
 		case 0x1D: addGameTask(&Game::playerReceivePingBack, player->getID()); break;
@@ -506,7 +510,6 @@ void ProtocolGame::parsePacket(NetworkMessage& msg)
 		case 0x70: addGameTaskTimed(DISPATCHER_TASK_EXPIRATION, &Game::playerTurn, player->getID(), DIRECTION_EAST); break;
 		case 0x71: addGameTaskTimed(DISPATCHER_TASK_EXPIRATION, &Game::playerTurn, player->getID(), DIRECTION_SOUTH); break;
 		case 0x72: addGameTaskTimed(DISPATCHER_TASK_EXPIRATION, &Game::playerTurn, player->getID(), DIRECTION_WEST); break;
-		case 0x77: parseEquipHotkey(msg); break;
 		case 0x78: parseThrow(msg); break;
 		case 0x79: parseLookInShop(msg); break;
 		case 0x7A: parsePlayerPurchase(msg); break;
@@ -569,6 +572,9 @@ void ProtocolGame::parsePacket(NetworkMessage& msg)
 		case 0xF7: parseMarketCancelOffer(msg); break;
 		case 0xF8: parseMarketAcceptOffer(msg); break;
 		case 0xF9: parseModalWindowAnswer(msg); break;
+
+		//case 0x77 Equip Hotkey.
+		//case 0xDF, 0xE0, 0xE1, 0xFB, 0xFC, 0xFD, 0xFE Premium Shop.
 
 		default:
 			// std::cout << "Player: " << player->getName() << " sent an unknown packet header: 0x" << std::hex << static_cast<uint16_t>(recvbyte) << std::dec << "!" << std::endl;
@@ -709,30 +715,6 @@ void ProtocolGame::parseUpdateContainer(NetworkMessage& msg)
 	addGameTask(&Game::playerUpdateContainer, player->getID(), cid);
 }
 
-void ProtocolGame::parseEquipHotkey(NetworkMessage& msg) {
-	uint16_t objectId = msg.get<uint16_t>();
-	//uint8_t data = msg.get<uint8_t>();
-	Item* item = player->getItemByClientId(objectId);
-	if (!item) {
-		return;
-	}
-	uint16_t slot = CONST_SLOT_WHEREEVER;
-	switch (item->getSlotPosition()) {
-		case CLIENT_SLOT_HEAD: slot = CONST_SLOT_HEAD; break;
-		case CLIENT_SLOT_NECKLACE: slot = CONST_SLOT_NECKLACE; break;
-		case CLIENT_SLOT_ARMOR: slot = CONST_SLOT_ARMOR; break;
-		case CLIENT_SLOT_HAND: slot = item->getWeaponType() != WEAPON_SHIELD ? CONST_SLOT_LEFT : CONST_SLOT_RIGHT; break;
-		case CLIENT_SLOT_RING: slot = CONST_SLOT_RING; break;
-		case CLIENT_SLOT_LEGS: slot = CONST_SLOT_LEGS; break;
-		case CLIENT_SLOT_FEET: slot = CONST_SLOT_FEET; break;
-		case CLIENT_SLOT_AMMO: slot = CONST_SLOT_AMMO; break;
-		default:
-			break;
-	}
-	Item* slotItem = player->getInventoryItem(static_cast<slots_t>(slot));
-	g_game.internalMoveItem(item->getParent(), player, (slotItem && slotItem == item ? CONST_SLOT_WHEREEVER : slot), item, item->getItemCount(), nullptr);
-}
-
 void ProtocolGame::parseThrow(NetworkMessage& msg)
 {
 	Position fromPos = msg.getPosition();
@@ -796,7 +778,7 @@ void ProtocolGame::parseFightModes(NetworkMessage& msg)
 	uint8_t rawFightMode = msg.getByte(); // 1 - offensive, 2 - balanced, 3 - defensive
 	uint8_t rawChaseMode = msg.getByte(); // 0 - stand while fightning, 1 - chase opponent
 	uint8_t rawSecureMode = msg.getByte(); // 0 - can't attack unmarked, 1 - can attack unmarked
-	uint8_t rawPvpMode = msg.getByte(); // pvp mode introduced in 10.0
+	// uint8_t rawPvpMode = msg.getByte(); // pvp mode introduced in 10.0
 
 	chaseMode_t chaseMode;
 	if (rawChaseMode == 1) {
@@ -814,18 +796,7 @@ void ProtocolGame::parseFightModes(NetworkMessage& msg)
 		fightMode = FIGHTMODE_DEFENSE;
 	}
 
-	pvpMode_t pvpMode;
-	if (rawPvpMode == 0) {
-		pvpMode = PVP_MODE_DOVE;
-	} else if (rawPvpMode == 1) {
-		pvpMode = PVP_MODE_WHITE_HAND;
-	} else if (rawPvpMode == 2) {
-		pvpMode = PVP_MODE_YELLOW_HAND;
-	} else {
-		pvpMode = PVP_MODE_RED_FIST;
-	}
-
-	addGameTask(&Game::playerSetFightModes, player->getID(), fightMode, chaseMode, pvpMode, rawSecureMode != 0);
+	addGameTask(&Game::playerSetFightModes, player->getID(), fightMode, chaseMode, rawSecureMode != 0);
 }
 
 void ProtocolGame::parseAttack(NetworkMessage& msg)
@@ -1393,8 +1364,8 @@ void ProtocolGame::sendMarketEnter(uint32_t depotId)
 	msg.add<uint64_t>(player->getBankBalance());
 	msg.addByte(std::min<uint32_t>(IOMarket::getPlayerOfferCount(player->getGUID()), std::numeric_limits<uint8_t>::max()));
 
-	DepotChest* depotChest = player->getDepotChest(depotId, false);
-	if (!depotChest) {
+	DepotLocker* depotLocker = player->getDepotLocker(depotId);
+	if (!depotLocker) {
 		msg.add<uint16_t>(0x00);
 		writeToOutputBuffer(msg);
 		return;
@@ -1403,7 +1374,7 @@ void ProtocolGame::sendMarketEnter(uint32_t depotId)
 	player->setInMarket(true);
 
 	std::map<uint16_t, uint32_t> depotItems;
-	std::forward_list<Container*> containerList { depotChest, player->getInbox() };
+	std::forward_list<Container*> containerList {depotLocker};
 
 	do {
 		Container* container = containerList.front();
@@ -2078,10 +2049,9 @@ void ProtocolGame::sendFightModes()
 	msg.addByte(player->fightMode);
 	msg.addByte(player->chaseMode);
 	msg.addByte(player->secureMode);
-	msg.addByte(player->pvpmode);
+	msg.addByte(PVP_MODE_DOVE);
 	writeToOutputBuffer(msg);
 }
-
 void ProtocolGame::sendMoveCreature(const Creature* creature, const Position& newPos, int32_t newStackPos, const Position& oldPos, int32_t oldStackPos, bool teleport)
 {
 	if (creature == player) {
@@ -2271,7 +2241,7 @@ void ProtocolGame::sendOutfitWindow()
 			outfit.lookType,
 			addons
 		);
-		if (protocolOutfits.size() == 100) { // Game client doesn't allow more than 100 outfits
+		if (protocolOutfits.size() == 150) { // Game client doesn't allow more than 100 outfits
 			break;
 		}
 	}

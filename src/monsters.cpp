@@ -81,6 +81,7 @@ void MonsterType::reset()
 	isHostile = true;
 	isPassive = false;
 	isBlockable = false;
+	isRewardBoss = false;
 
 	lightLevel = 0;
 	lightColor = 0;
@@ -118,6 +119,17 @@ uint32_t Monsters::getLootRandom()
 void MonsterType::createLoot(Container* corpse)
 {
 	if (g_config.getNumber(ConfigManager::RATE_LOOT) == 0) {
+		corpse->startDecaying();
+		return;
+	}
+
+	if (isRewardBoss) {
+		auto timestamp = time(nullptr);
+		Item* rewardContainer = Item::CreateItem(ITEM_REWARD_CONTAINER);
+		rewardContainer->setIntAttr(ITEM_ATTRIBUTE_DATE, timestamp);
+		corpse->setIntAttr(ITEM_ATTRIBUTE_DATE, timestamp);
+		corpse->internalAddThing(rewardContainer);
+		corpse->setRewardCorpse();
 		corpse->startDecaying();
 		return;
 	}
@@ -836,6 +848,8 @@ bool Monsters::loadMonster(const std::string& file, const std::string& monsterNa
 			const char* attrName = attr.name();
 			if (strcasecmp(attrName, "summonable") == 0) {
 				mType->isSummonable = attr.as_bool();
+			} else if (strcasecmp(attrName, "rewardboss") == 0) {
+				mType->isRewardBoss = attr.as_bool();
 			} else if (strcasecmp(attrName, "attackable") == 0) {
 				mType->isAttackable = attr.as_bool();
 			} else if (strcasecmp(attrName, "hostile") == 0) {
@@ -1165,6 +1179,7 @@ bool Monsters::loadMonster(const std::string& file, const std::string& monsterNa
 		for (auto summonNode : node.children()) {
 			int32_t chance = 100;
 			int32_t speed = 1000;
+			bool force = false;
 
 			if ((attr = summonNode.attribute("speed")) || (attr = summonNode.attribute("interval"))) {
 				speed = pugi::cast<int32_t>(attr.value());
@@ -1174,11 +1189,16 @@ bool Monsters::loadMonster(const std::string& file, const std::string& monsterNa
 				chance = pugi::cast<int32_t>(attr.value());
 			}
 
+			if ((attr = summonNode.attribute("force"))) {
+				force = attr.as_bool();
+			}
+
 			if ((attr = summonNode.attribute("name"))) {
 				summonBlock_t sb;
 				sb.name = attr.as_string();
 				sb.speed = speed;
 				sb.chance = chance;
+				sb.force = force;
 				mType->summons.emplace_back(sb);
 			} else {
 				std::cout << "[Warning - Monsters::loadMonster] Missing summon name. " << file << std::endl;
@@ -1248,6 +1268,10 @@ bool Monsters::loadLootItem(const pugi::xml_node& node, LootBlock& lootBlock)
 
 	if ((attr = node.attribute("text"))) {
 		lootBlock.text = attr.as_string();
+	}
+
+	if ((attr = node.attribute("unique"))) {
+		lootBlock.unique = attr.as_bool();
 	}
 
 	if ((attr = node.attribute("name"))) {

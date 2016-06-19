@@ -36,6 +36,8 @@
 #include "groups.h"
 #include "town.h"
 #include "mounts.h"
+#include "reward.h"
+#include "rewardchest.h"
 
 class House;
 class NetworkMessage;
@@ -79,7 +81,6 @@ enum pvpMode_t : uint8_t {
 	PVP_MODE_WHITE_HAND = 1,
 	PVP_MODE_YELLOW_HAND = 2,
 	PVP_MODE_RED_FIST = 3,
-	PVP_MODE_NONE = 4,
 };
 
 enum tradestate_t : uint8_t {
@@ -509,7 +510,12 @@ class Player final : public Creature, public Cylinder
 		void addConditionSuppressions(uint32_t conditions);
 		void removeConditionSuppressions(uint32_t conditions);
 
-		DepotChest* createDepots();
+		Reward* getReward(uint32_t rewardId, bool autoCreate);
+		void removeReward(uint32_t rewardId);
+		void getRewardList(std::vector<uint32_t>& rewards);
+		RewardChest* getRewardChest();
+
+		DepotChest* getDepotBox();
 		DepotChest* getDepotChest(uint32_t depotId, bool autoCreate);
 		DepotLocker* getDepotLocker(uint32_t depotId);
 		void onReceiveMail() const;
@@ -589,15 +595,6 @@ class Player final : public Creature, public Cylinder
 		void setSecureMode(bool mode) {
 			secureMode = mode;
 		}
-		void setPvpMode(pvpMode_t mode) {
-			pvpmode = mode;
-		}
-		pvpMode_t getPvpMode() {
-			return pvpmode;
-		}
-		pvpMode_t getPvpMode() const {
-			return pvpmode;
-		}
 
 		//combat functions
 		bool setAttackedCreature(Creature* creature) final;
@@ -654,10 +651,6 @@ class Player final : public Creature, public Cylinder
 		float getDefenseFactor() const final;
 
 		void addInFightTicks(bool pzlock = false);
-		void sendPvpActionStart(Player* player);
-		ItemPvpStat getItemPvpStat(Item* item) const;
-		bool canAttackPlayer(const Player* player) const;
-		bool hasPvpActivityWith(const Player* player, bool all = false) const;
 
 		uint64_t getGainedExperience(Creature* attacker) const final;
 
@@ -727,6 +720,15 @@ class Player final : public Creature, public Cylinder
 				}
 			}
 		}
+
+		void sendUpdateTileItem(const Tile*, const Position& pos, const Item* item, int32_t stackpos) {
+			if (client) {
+				if (stackpos != -1) {
+					client->sendUpdateTileItem(pos, stackpos, item);
+				}
+			}
+		}
+
 		void sendRemoveTileThing(const Position& pos, int32_t stackpos) {
 			if (stackpos != -1 && client) {
 				client->sendRemoveTileThing(pos, stackpos);
@@ -864,6 +866,11 @@ class Player final : public Creature, public Cylinder
 		void sendInventoryItem(slots_t slot, const Item* item) {
 			if (client) {
 				client->sendInventoryItem(slot, item);
+			}
+		}
+		void sendInventoryClientIds() {
+			if (client) {
+				client->sendInventoryClientIds();
 			}
 		}
 
@@ -1139,6 +1146,18 @@ class Player final : public Creature, public Cylinder
 		bool canDoAction() const {
 			return nextAction <= OTSYS_TIME();
 		}
+
+		void setModuleDelay(uint8_t byteortype, int16_t delay) {
+			moduleDelayMap[byteortype] = OTSYS_TIME() + delay;
+		}
+
+		bool canRunModule(uint8_t byteortype) {
+			if (!moduleDelayMap[byteortype]) {
+				return true;
+			}
+			return moduleDelayMap[byteortype] <= OTSYS_TIME();
+		}
+
 		uint32_t getNextActionTime() const;
 
 		Item* getWriteItem(uint32_t& windowTextId, uint16_t& maxWriteLen);
@@ -1210,7 +1229,7 @@ class Player final : public Creature, public Cylinder
 		uint32_t getItemTypeCount(uint16_t itemId, int32_t subType = -1) const final;
 		std::map<uint32_t, uint32_t>& getAllItemTypeCount(std::map<uint32_t, uint32_t> &countMap) const final;
 		Item* getItemByClientId(uint16_t clientId) const;
-		std::map<uint16_t, uint16_t> getAllItemsClientId() const;
+		std::map<uint16_t, uint16_t> getInventoryClientIds() const;
 		Thing*getThing(size_t index) const final;
 
 		void internalAddThing(Thing* thing) final;
@@ -1223,6 +1242,10 @@ class Player final : public Creature, public Cylinder
 		std::map<uint32_t, DepotLocker*> depotLockerMap;
 		std::map<uint32_t, DepotChest*> depotChests;
 		std::map<uint32_t, int32_t> storageMap;
+		std::map<uint8_t, int64_t> moduleDelayMap;
+
+		std::map<uint32_t, Reward*> rewardMap;
+		RewardChest* rewardChest;
 
 		std::vector<OutfitEntry> outfits;
 		GuildWarList guildWarList;
@@ -1320,7 +1343,6 @@ class Player final : public Creature, public Cylinder
 		tradestate_t tradeState;
 		chaseMode_t chaseMode;
 		fightMode_t fightMode;
-		pvpMode_t pvpmode;
 		AccountType_t accountType;
 
 		bool secureMode;
