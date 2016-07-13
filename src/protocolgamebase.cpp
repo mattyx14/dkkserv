@@ -220,18 +220,15 @@ void ProtocolGameBase::AddPlayerSkills(NetworkMessage& msg)
 {
 	msg.addByte(0xA1);
 
-	for (uint8_t i = SKILL_FIRST; i <= SKILL_LAST; ++i) {
+	for (uint8_t i = SKILL_FIRST; i <= SKILL_FISHING; ++i) {
 		msg.add<uint16_t>(std::min<int32_t>(player->getSkillLevel(i), std::numeric_limits<uint16_t>::max()));
 		msg.add<uint16_t>(player->getBaseSkill(i));
 		msg.addByte(player->getSkillPercent(i));
 	}
 
-	for (int i = 10; i < 16; i++) {
-		msg.add<uint16_t>(i); // this is value to display
-		msg.add<uint16_t>(15); // this is 'base' value,
-		// if lower then skill then text color is green
-		// if equal to skill then text color is gray [default for skills]
-		// if higher then skill then text color is red
+	for (uint8_t i = SKILL_CRITICAL_HIT_CHANCE; i <= SKILL_LAST; ++i) {
+		msg.add<uint16_t>(std::min<int32_t>(player->getSkillLevel(i), std::numeric_limits<uint16_t>::max()));
+		msg.add<uint16_t>(player->getBaseSkill(i));
 	}
 }
 
@@ -576,7 +573,7 @@ void ProtocolGameBase::sendAddCreature(const Creature* creature, const Position&
 	msg.addByte(0x00); // expert mode button enabled
 
 	msg.addString(g_config.getString(ConfigManager::STORE_IMAGES_URL));
-	msg.addByte(g_config.getNumber(ConfigManager::STORE_COIN_PACKET));
+	msg.add<uint16_t>(static_cast<uint16_t>(g_config.getNumber(ConfigManager::STORE_COIN_PACKET)));
 
 	writeToOutputBuffer(msg);
 
@@ -598,6 +595,7 @@ void ProtocolGameBase::sendAddCreature(const Creature* creature, const Position&
 	sendInventoryItem(CONST_SLOT_FEET, player->getInventoryItem(CONST_SLOT_FEET));
 	sendInventoryItem(CONST_SLOT_RING, player->getInventoryItem(CONST_SLOT_RING));
 	sendInventoryItem(CONST_SLOT_AMMO, player->getInventoryItem(CONST_SLOT_AMMO));
+	sendInventoryItem(CONST_SLOT_STORE_INBOX, player->getInventoryItem(CONST_SLOT_STORE_INBOX));
 
 	sendStats();
 	sendSkills();

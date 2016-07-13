@@ -250,7 +250,7 @@ bool ProtocolGame::startLiveCast(const std::string& password /*= ""*/)
 	}
 
 	{
-		std::lock_guard<decltype(liveCastLock)> lock {liveCastLock};
+		std::lock_guard<decltype(liveCastLock)> lock{ liveCastLock };
 		//DO NOT do any send operations here
 		liveCastName = player->getName();
 		liveCastPassword = password;
@@ -275,7 +275,7 @@ bool ProtocolGame::stopLiveCast()
 	CastSpectatorVec spectators;
 
 	{
-		std::lock_guard<decltype(liveCastLock)> lock {liveCastLock};
+		std::lock_guard<decltype(liveCastLock)> lock{ liveCastLock };
 		//DO NOT do any send operations here
 		std::swap(this->spectators, spectators);
 		isCaster.store(false, std::memory_order_relaxed);
@@ -294,11 +294,11 @@ void ProtocolGame::clearLiveCastInfo()
 {
 	static std::once_flag flag;
 	std::call_once(flag, []() {
-			assert(g_game.getGameState() == GAME_STATE_INIT);
-			std::ostringstream query;
-			query << "TRUNCATE TABLE `live_casts`;";
-			g_databaseTasks.addTask(query.str());
-		});
+		assert(g_game.getGameState() == GAME_STATE_INIT);
+		std::ostringstream query;
+		query << "TRUNCATE TABLE `live_casts`;";
+		g_databaseTasks.addTask(query.str());
+	});
 }
 
 void ProtocolGame::registerLiveCast()
@@ -1158,7 +1158,6 @@ void ProtocolGame::sendReLoginWindow(uint8_t unfairFightReduction)
 	msg.addByte(0x28);
 	msg.addByte(0x00);
 	msg.addByte(unfairFightReduction);
-
 	writeToOutputBuffer(msg);
 }
 
@@ -1374,7 +1373,7 @@ void ProtocolGame::sendMarketEnter(uint32_t depotId)
 	player->setInMarket(true);
 
 	std::map<uint16_t, uint32_t> depotItems;
-	std::forward_list<Container*> containerList {depotLocker};
+	std::forward_list<Container*> containerList{depotLocker};
 
 	do {
 		Container* container = containerList.front();
@@ -1677,7 +1676,7 @@ void ProtocolGame::sendMarketDetail(uint16_t itemId)
 		std::ostringstream ss;
 		bool separator = false;
 
-		for (uint8_t i = SKILL_FIRST; i <= SKILL_LAST; i++) {
+		for (uint8_t i = SKILL_FIRST; i <= SKILL_FISHING; i++) {
 			if (!it.abilities->skills[i]) {
 				continue;
 			}
@@ -1689,6 +1688,21 @@ void ProtocolGame::sendMarketDetail(uint16_t itemId)
 			}
 
 			ss << getSkillName(i) << ' ' << std::showpos << it.abilities->skills[i] << std::noshowpos;
+		}
+
+		for (uint8_t i = SKILL_CRITICAL_HIT_CHANCE; i <= SKILL_LAST; i++) {
+			if (!it.abilities->skills[i]) {
+				continue;
+			}
+
+			if (separator) {
+				ss << ", ";
+			}
+			else {
+				separator = true;
+			}
+
+			ss << getSkillName(i) << ' ' << std::showpos << it.abilities->skills[i] << std::noshowpos << '%';
 		}
 
 		if (it.abilities->stats[STAT_MAGICPOINTS] != 0) {
@@ -2052,6 +2066,7 @@ void ProtocolGame::sendFightModes()
 	msg.addByte(PVP_MODE_DOVE);
 	writeToOutputBuffer(msg);
 }
+
 void ProtocolGame::sendMoveCreature(const Creature* creature, const Position& newPos, int32_t newStackPos, const Position& oldPos, int32_t oldStackPos, bool teleport)
 {
 	if (creature == player) {
@@ -2241,7 +2256,7 @@ void ProtocolGame::sendOutfitWindow()
 			outfit.lookType,
 			addons
 		);
-		if (protocolOutfits.size() == 150) { // Game client doesn't allow more than 100 outfits
+		if (protocolOutfits.size() == 150) { // Game client doesn't allow more than 150 outfits
 			break;
 		}
 	}

@@ -3,6 +3,7 @@
 -- Sort it in Values -
 
 Storage = {
+	combatProtectionStorage = 50722,
 	DemonOak = {
 		Done = 1010,
 		Progress = 1013,

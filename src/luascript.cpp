@@ -1168,6 +1168,12 @@ void LuaScriptInterface::registerFunctions()
 	registerEnum(CONDITION_PARAM_SKILL_DISTANCE)
 	registerEnum(CONDITION_PARAM_SKILL_SHIELD)
 	registerEnum(CONDITION_PARAM_SKILL_FISHING)
+	registerEnum(CONDITION_PARAM_SKILL_CRITICAL_HIT_CHANCE)
+	registerEnum(CONDITION_PARAM_SKILL_CRITICAL_HIT_DAMAGE)
+	registerEnum(CONDITION_PARAM_SKILL_LIFE_LEECH_CHANCE)
+	registerEnum(CONDITION_PARAM_SKILL_LIFE_LEECH_AMOUNT)
+	registerEnum(CONDITION_PARAM_SKILL_MANA_LEECH_CHANCE)
+	registerEnum(CONDITION_PARAM_SKILL_MANA_LEECH_AMOUNT)
 	registerEnum(CONDITION_PARAM_STAT_MAXHITPOINTS)
 	registerEnum(CONDITION_PARAM_STAT_MAXMANAPOINTS)
 	registerEnum(CONDITION_PARAM_STAT_MAGICPOINTS)
@@ -1183,6 +1189,12 @@ void LuaScriptInterface::registerFunctions()
 	registerEnum(CONDITION_PARAM_SKILL_DISTANCEPERCENT)
 	registerEnum(CONDITION_PARAM_SKILL_SHIELDPERCENT)
 	registerEnum(CONDITION_PARAM_SKILL_FISHINGPERCENT)
+	registerEnum(CONDITION_PARAM_SKILL_CRITICAL_HIT_CHANCEPERCENT)
+	registerEnum(CONDITION_PARAM_SKILL_CRITICAL_HIT_DAMAGEPERCENT)
+	registerEnum(CONDITION_PARAM_SKILL_LIFE_LEECH_CHANCEPERCENT)
+	registerEnum(CONDITION_PARAM_SKILL_LIFE_LEECH_AMOUNTPERCENT)
+	registerEnum(CONDITION_PARAM_SKILL_MANA_LEECH_CHANCEPERCENT)
+	registerEnum(CONDITION_PARAM_SKILL_MANA_LEECH_AMOUNTPERCENT)
 	registerEnum(CONDITION_PARAM_BUFF_SPELL)
 	registerEnum(CONDITION_PARAM_SUBID)
 	registerEnum(CONDITION_PARAM_FIELD)
@@ -1269,6 +1281,9 @@ void LuaScriptInterface::registerFunctions()
 	registerEnum(CONST_ME_YELLOWSMOKE)
 	registerEnum(CONST_ME_GREENSMOKE)
 	registerEnum(CONST_ME_PURPLESMOKE)
+	registerEnum(CONST_ME_LIGHTNING)
+	registerEnum(CONST_ME_RAGIAZ_BONE_CAPSULE)
+	registerEnum(CONST_ME_CRITICAL_HIT)
 
 	registerEnum(CONST_ANI_NONE)
 	registerEnum(CONST_ANI_SPEAR)
@@ -1346,6 +1361,7 @@ void LuaScriptInterface::registerFunctions()
 	registerEnum(CONST_SLOT_FEET)
 	registerEnum(CONST_SLOT_RING)
 	registerEnum(CONST_SLOT_AMMO)
+	registerEnum(CONST_SLOT_STORE_INBOX)
 
 	registerEnum(GAME_STATE_STARTUP)
 	registerEnum(GAME_STATE_INIT)
@@ -1425,10 +1441,10 @@ void LuaScriptInterface::registerFunctions()
 
 	registerEnum(ITEM_BAG)
 	registerEnum(ITEM_GOLD_COIN)
-	registerEnum(ITEM_REWARD_CHEST)
-	registerEnum(ITEM_REWARD_CONTAINER)
 	registerEnum(ITEM_PLATINUM_COIN)
 	registerEnum(ITEM_CRYSTAL_COIN)
+	registerEnum(ITEM_REWARD_CHEST)
+	registerEnum(ITEM_REWARD_CONTAINER)
 	registerEnum(ITEM_AMULETOFLOSS)
 	registerEnum(ITEM_PARCEL)
 	registerEnum(ITEM_LABEL)
@@ -1503,6 +1519,12 @@ void LuaScriptInterface::registerFunctions()
 	registerEnum(SKILL_DISTANCE)
 	registerEnum(SKILL_SHIELD)
 	registerEnum(SKILL_FISHING)
+	registerEnum(SKILL_CRITICAL_HIT_CHANCE)
+	registerEnum(SKILL_CRITICAL_HIT_DAMAGE)
+	registerEnum(SKILL_LIFE_LEECH_CHANCE)
+	registerEnum(SKILL_LIFE_LEECH_AMOUNT)
+	registerEnum(SKILL_MANA_LEECH_CHANCE)
+	registerEnum(SKILL_MANA_LEECH_AMOUNT)
 	registerEnum(SKILL_MAGLEVEL)
 	registerEnum(SKILL_LEVEL)
 
@@ -1762,7 +1784,7 @@ void LuaScriptInterface::registerFunctions()
 	registerEnumIn("configKeys", ConfigManager::MYSQL_SOCK)
 	registerEnumIn("configKeys", ConfigManager::DEFAULT_PRIORITY)
 	registerEnumIn("configKeys", ConfigManager::MAP_AUTHOR)
-		registerEnumIn("configKeys", ConfigManager::STORE_IMAGES_URL)
+	registerEnumIn("configKeys", ConfigManager::STORE_IMAGES_URL)
 
 	registerEnumIn("configKeys", ConfigManager::SQL_PORT)
 	registerEnumIn("configKeys", ConfigManager::MAX_PLAYERS)
@@ -1795,8 +1817,6 @@ void LuaScriptInterface::registerFunctions()
 	registerEnumIn("configKeys", ConfigManager::MAX_MARKET_OFFERS_AT_A_TIME_PER_PLAYER)
 	registerEnumIn("configKeys", ConfigManager::EXP_FROM_PLAYERS_LEVEL_RANGE)
 	registerEnumIn("configKeys", ConfigManager::MAX_PACKETS_PER_SECOND)
-	registerEnumIn("configKeys", ConfigManager::CRITICAL_HIT_CHANCE)
-	registerEnumIn("configKeys", ConfigManager::CRITICAL_HIT_EXTRA)
 	registerEnumIn("configKeys", ConfigManager::STORE_COIN_PACKET)
 	registerEnumIn("configKeys", ConfigManager::LIVE_CAST_PORT)
 
@@ -1812,7 +1832,7 @@ void LuaScriptInterface::registerFunctions()
 	registerMethod("Game", "getSpectators", LuaScriptInterface::luaGameGetSpectators);
 	registerMethod("Game", "getPlayers", LuaScriptInterface::luaGameGetPlayers);
 	registerMethod("Game", "loadMap", LuaScriptInterface::luaGameLoadMap);
-
+	
 	registerMethod("Game", "getExperienceStage", LuaScriptInterface::luaGameGetExperienceStage);
 	registerMethod("Game", "getMonsterCount", LuaScriptInterface::luaGameGetMonsterCount);
 	registerMethod("Game", "getPlayerCount", LuaScriptInterface::luaGameGetPlayerCount);
@@ -2134,7 +2154,7 @@ void LuaScriptInterface::registerFunctions()
 	registerMethod("Player", "getReward", LuaScriptInterface::luaPlayerGetReward);
 	registerMethod("Player", "removeReward", LuaScriptInterface::luaPlayerRemoveReward);
 	registerMethod("Player", "getRewardList", LuaScriptInterface::luaPlayerGetRewardList);
-
+	
 	registerMethod("Player", "getDepotChest", LuaScriptInterface::luaPlayerGetDepotChest);
 	registerMethod("Player", "getInbox", LuaScriptInterface::luaPlayerGetInbox);
 
@@ -2269,6 +2289,8 @@ void LuaScriptInterface::registerFunctions()
 	registerMethod("Player", "startLiveCast", LuaScriptInterface::luaPlayerStartLiveCast);
 	registerMethod("Player", "stopLiveCast", LuaScriptInterface::luaPlayerStopLiveCast);
 	registerMethod("Player", "isLiveCaster", LuaScriptInterface::luaPlayerIsLiveCaster);
+
+	registerMethod("Player", "hasSecureMode", LuaScriptInterface::luaPlayerHasSecureMode);
 
 	// Monster
 	registerClass("Monster", "Creature", LuaScriptInterface::luaMonsterCreate);
@@ -7763,7 +7785,7 @@ int LuaScriptInterface::luaPlayerRemoveReward(lua_State* L)
 
 int LuaScriptInterface::luaPlayerGetRewardList(lua_State* L)
 {
-	// player:getRewardList(rewardId)
+	// player:getRewardList()
 	Player* player = getUserdata<Player>(L, 1);
 	if (!player) {
 		lua_pushnil(L);
@@ -7778,6 +7800,18 @@ int LuaScriptInterface::luaPlayerGetRewardList(lua_State* L)
 	for (const auto& rewardId : rewardVec) {
 		lua_pushnumber(L, rewardId);
 		lua_rawseti(L, -2, ++index);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaMonsterTypeIsRewardBoss(lua_State* L)
+{
+	// monsterType:isRewardBoss()
+	MonsterType* monsterType = getUserdata<MonsterType>(L, 1);
+	if (monsterType) {
+		pushBoolean(L, monsterType->isRewardBoss);
+	} else {
+		lua_pushnil(L);
 	}
 	return 1;
 }
@@ -9433,6 +9467,18 @@ int LuaScriptInterface::luaPlayerGetContainerIndex(lua_State* L)
 	Player* player = getUserdata<Player>(L, 1);
 	if (player) {
 		lua_pushnumber(L, player->getContainerIndex(getNumber<uint8_t>(L, 2)));
+	} else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaPlayerHasSecureMode(lua_State* L)
+{
+	// player:hasSecureMode()
+	Player* player = getUserdata<Player>(L, 1);
+	if (player) {
+		pushBoolean(L, player->hasSecureMode());
 	} else {
 		lua_pushnil(L);
 	}
@@ -11686,19 +11732,6 @@ int LuaScriptInterface::luaMonsterTypeIsHealthShown(lua_State* L)
 	} else {
 		lua_pushnil(L);
 	}
-	return 1;
-}
-
-int LuaScriptInterface::luaMonsterTypeIsRewardBoss(lua_State* L)
-{
-	// monsterType:isRewardBoss()
-	MonsterType* monsterType = getUserdata<MonsterType>(L, 1);
-	if (monsterType) {
-		pushBoolean(L, monsterType->isRewardBoss);
-	} else {
-		lua_pushnil(L);
-	}
-
 	return 1;
 }
 

@@ -176,7 +176,7 @@ Player::~Player()
 	for (const auto& it : rewardMap) {
 		it.second->decrementReferenceCounter();
 	}
-
+	
 	inbox->decrementReferenceCounter();
 
 	setWriteItem(nullptr);
@@ -965,7 +965,9 @@ Reward* Player::getReward(uint32_t rewardId, bool autoCreate)
 	reward->incrementReferenceCounter();
 	reward->setIntAttr(ITEM_ATTRIBUTE_DATE, rewardId);
 	rewardMap[rewardId] = reward;
+
 	g_game.internalAddItem(getRewardChest(), reward, INDEX_WHEREEVER, FLAG_NOLIMIT);
+
 	return reward;
 }
 
@@ -2776,7 +2778,7 @@ Cylinder* Player::queryDestination(int32_t& index, const Thing& thing, Item** de
 
 		std::vector<Container*> containers;
 
-		for (uint32_t slotIndex = CONST_SLOT_FIRST; slotIndex <= CONST_SLOT_LAST; ++slotIndex) {
+		for (uint32_t slotIndex = CONST_SLOT_FIRST; slotIndex <= CONST_SLOT_AMMO; ++slotIndex) {
 			Item* inventoryItem = inventory[slotIndex];
 			if (inventoryItem) {
 				if (inventoryItem == tradeItem) {
@@ -3340,7 +3342,7 @@ void Player::internalAddThing(uint32_t index, Thing* thing)
 	}
 
 	//index == 0 means we should equip this item at the most appropiate slot (no action required here)
-	if (index > 0 && index < 11) {
+	if (index > 0 && index < 12) {
 		if (inventory[index]) {
 			return;
 		}
@@ -3649,7 +3651,7 @@ void Player::onAttackedCreature(Creature* target)
 	if (target && target->getZone() == ZONE_PVP) {
 		return;
 	}
-
+	
 	if (target == this) {
 		addInFightTicks();
 		return;

@@ -26,7 +26,7 @@
 #include "game.h"
 #include "pugicast.h"
 #include "spells.h"
- #include "rewardchest.h"
+#include "rewardchest.h"
 
 extern Game g_game;
 extern Spells* g_spells;

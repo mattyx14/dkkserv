@@ -142,7 +142,7 @@ int32_t Weapons::getMaxMeleeDamage(int32_t attackSkill, int32_t attackValue)
 //players
 int32_t Weapons::getMaxWeaponDamage(uint32_t level, int32_t attackSkill, int32_t attackValue, float attackFactor)
 {
-	return static_cast<int32_t>(std::ceil((2.5 * (attackValue * (attackSkill + 6) / 18 + (level - 1) / 10)) / attackFactor));
+	return static_cast<int32_t>(std::round((level / 5) + (((((attackSkill / 4.) + 1) * (attackValue / 3.)) * 1.03) / attackFactor)));
 }
 
 Weapon::Weapon(LuaScriptInterface* interface) :
@@ -342,12 +342,6 @@ int32_t Weapon::playerWeaponCheck(Player* player, Creature* target, uint8_t shoo
 		}
 
 		int32_t damageModifier = 100;
-		if (auto chance = g_config.getNumber(ConfigManager::CRITICAL_HIT_CHANCE)) {
-			if (boolean_random(static_cast<double>(chance) / 100.0)) {
-				damageModifier += g_config.getNumber(ConfigManager::CRITICAL_HIT_EXTRA);
-			}
-		}
-
 		if (player->getLevel() < getReqLevel()) {
 			damageModifier = (isWieldedUnproperly() ? damageModifier / 2 : 0);
 		}

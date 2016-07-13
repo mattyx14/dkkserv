@@ -112,36 +112,36 @@ Item* Item::CreateItem(PropStream& propStream)
 	}
 
 	switch (id) {
-	case ITEM_FIREFIELD_PVP_FULL:
-		id = ITEM_FIREFIELD_PERSISTENT_FULL;
-		break;
+		case ITEM_FIREFIELD_PVP_FULL:
+			id = ITEM_FIREFIELD_PERSISTENT_FULL;
+			break;
 
-	case ITEM_FIREFIELD_PVP_MEDIUM:
-		id = ITEM_FIREFIELD_PERSISTENT_MEDIUM;
-		break;
+		case ITEM_FIREFIELD_PVP_MEDIUM:
+			id = ITEM_FIREFIELD_PERSISTENT_MEDIUM;
+			break;
 
-	case ITEM_FIREFIELD_PVP_SMALL:
-		id = ITEM_FIREFIELD_PERSISTENT_SMALL;
-		break;
+		case ITEM_FIREFIELD_PVP_SMALL:
+			id = ITEM_FIREFIELD_PERSISTENT_SMALL;
+			break;
 
-	case ITEM_ENERGYFIELD_PVP:
-		id = ITEM_ENERGYFIELD_PERSISTENT;
-		break;
+		case ITEM_ENERGYFIELD_PVP:
+			id = ITEM_ENERGYFIELD_PERSISTENT;
+			break;
 
-	case ITEM_POISONFIELD_PVP:
-		id = ITEM_POISONFIELD_PERSISTENT;
-		break;
+		case ITEM_POISONFIELD_PVP:
+			id = ITEM_POISONFIELD_PERSISTENT;
+			break;
 
-	case ITEM_MAGICWALL:
-		id = ITEM_MAGICWALL_PERSISTENT;
-		break;
+		case ITEM_MAGICWALL:
+			id = ITEM_MAGICWALL_PERSISTENT;
+			break;
 
-	case ITEM_WILDGROWTH:
-		id = ITEM_WILDGROWTH_PERSISTENT;
-		break;
+		case ITEM_WILDGROWTH:
+			id = ITEM_WILDGROWTH_PERSISTENT;
+			break;
 
-	default:
-		break;
+		default:
+			break;
 	}
 
 	return Item::CreateItem(id, 0);
@@ -393,259 +393,259 @@ void Item::setSubType(uint16_t n)
 Attr_ReadValue Item::readAttr(AttrTypes_t attr, PropStream& propStream)
 {
 	switch (attr) {
-	case ATTR_COUNT:
-	case ATTR_RUNE_CHARGES: {
-		uint8_t count;
-		if (!propStream.read<uint8_t>(count)) {
+		case ATTR_COUNT:
+		case ATTR_RUNE_CHARGES: {
+			uint8_t count;
+			if (!propStream.read<uint8_t>(count)) {
+				return ATTR_READ_ERROR;
+			}
+
+			setSubType(count);
+			break;
+		}
+
+		case ATTR_ACTION_ID: {
+			uint16_t actionId;
+			if (!propStream.read<uint16_t>(actionId)) {
+				return ATTR_READ_ERROR;
+			}
+
+			setActionId(actionId);
+			break;
+		}
+
+		case ATTR_UNIQUE_ID: {
+			uint16_t uniqueId;
+			if (!propStream.read<uint16_t>(uniqueId)) {
+				return ATTR_READ_ERROR;
+			}
+
+			setUniqueId(uniqueId);
+			break;
+		}
+
+		case ATTR_TEXT: {
+			std::string text;
+			if (!propStream.readString(text)) {
+				return ATTR_READ_ERROR;
+			}
+
+			setText(text);
+			break;
+		}
+
+		case ATTR_WRITTENDATE: {
+			uint32_t writtenDate;
+			if (!propStream.read<uint32_t>(writtenDate)) {
+				return ATTR_READ_ERROR;
+			}
+
+			setDate(writtenDate);
+			break;
+		}
+
+		case ATTR_WRITTENBY: {
+			std::string writer;
+			if (!propStream.readString(writer)) {
+				return ATTR_READ_ERROR;
+			}
+
+			setWriter(writer);
+			break;
+		}
+
+		case ATTR_DESC: {
+			std::string text;
+			if (!propStream.readString(text)) {
+				return ATTR_READ_ERROR;
+			}
+
+			setSpecialDescription(text);
+			break;
+		}
+
+		case ATTR_CHARGES: {
+			uint16_t charges;
+			if (!propStream.read<uint16_t>(charges)) {
+				return ATTR_READ_ERROR;
+			}
+
+			setSubType(charges);
+			break;
+		}
+
+		case ATTR_DURATION: {
+			int32_t duration;
+			if (!propStream.read<int32_t>(duration)) {
+				return ATTR_READ_ERROR;
+			}
+
+			setDuration(std::max<int32_t>(0, duration));
+			break;
+		}
+
+		case ATTR_DECAYING_STATE: {
+			uint8_t state;
+			if (!propStream.read<uint8_t>(state)) {
+				return ATTR_READ_ERROR;
+			}
+
+			if (state != DECAYING_FALSE) {
+				setDecaying(DECAYING_PENDING);
+			}
+			break;
+		}
+
+		case ATTR_NAME: {
+			std::string name;
+			if (!propStream.readString(name)) {
+				return ATTR_READ_ERROR;
+			}
+
+			setStrAttr(ITEM_ATTRIBUTE_NAME, name);
+			break;
+		}
+
+		case ATTR_ARTICLE: {
+			std::string article;
+			if (!propStream.readString(article)) {
+				return ATTR_READ_ERROR;
+			}
+
+			setStrAttr(ITEM_ATTRIBUTE_ARTICLE, article);
+			break;
+		}
+
+		case ATTR_PLURALNAME: {
+			std::string pluralName;
+			if (!propStream.readString(pluralName)) {
+				return ATTR_READ_ERROR;
+			}
+
+			setStrAttr(ITEM_ATTRIBUTE_PLURALNAME, pluralName);
+			break;
+		}
+
+		case ATTR_WEIGHT: {
+			uint32_t weight;
+			if (!propStream.read<uint32_t>(weight)) {
+				return ATTR_READ_ERROR;
+			}
+
+			setIntAttr(ITEM_ATTRIBUTE_WEIGHT, weight);
+			break;
+		}
+
+		case ATTR_ATTACK: {
+			int32_t attack;
+			if (!propStream.read<int32_t>(attack)) {
+				return ATTR_READ_ERROR;
+			}
+
+			setIntAttr(ITEM_ATTRIBUTE_ATTACK, attack);
+			break;
+		}
+
+		case ATTR_DEFENSE: {
+			int32_t defense;
+			if (!propStream.read<int32_t>(defense)) {
+				return ATTR_READ_ERROR;
+			}
+
+			setIntAttr(ITEM_ATTRIBUTE_DEFENSE, defense);
+			break;
+		}
+
+		case ATTR_EXTRADEFENSE: {
+			int32_t extraDefense;
+			if (!propStream.read<int32_t>(extraDefense)) {
+				return ATTR_READ_ERROR;
+			}
+
+			setIntAttr(ITEM_ATTRIBUTE_EXTRADEFENSE, extraDefense);
+			break;
+		}
+
+		case ATTR_ARMOR: {
+			int32_t armor;
+			if (!propStream.read<int32_t>(armor)) {
+				return ATTR_READ_ERROR;
+			}
+
+			setIntAttr(ITEM_ATTRIBUTE_ARMOR, armor);
+			break;
+		}
+
+		case ATTR_HITCHANCE: {
+			int8_t hitChance;
+			if (!propStream.read<int8_t>(hitChance)) {
+				return ATTR_READ_ERROR;
+			}
+
+			setIntAttr(ITEM_ATTRIBUTE_HITCHANCE, hitChance);
+			break;
+		}
+
+		case ATTR_SHOOTRANGE: {
+			uint8_t shootRange;
+			if (!propStream.read<uint8_t>(shootRange)) {
+				return ATTR_READ_ERROR;
+			}
+
+			setIntAttr(ITEM_ATTRIBUTE_SHOOTRANGE, shootRange);
+			break;
+		}
+
+		//these should be handled through derived classes
+		//If these are called then something has changed in the items.xml since the map was saved
+		//just read the values
+
+		//Depot class
+		case ATTR_DEPOT_ID: {
+			if (!propStream.skip(2)) {
+				return ATTR_READ_ERROR;
+			}
+			break;
+		}
+
+		//Door class
+		case ATTR_HOUSEDOORID: {
+			if (!propStream.skip(1)) {
+				return ATTR_READ_ERROR;
+			}
+			break;
+		}
+
+		//Bed class
+		case ATTR_SLEEPERGUID: {
+			if (!propStream.skip(4)) {
+				return ATTR_READ_ERROR;
+			}
+			break;
+		}
+
+		case ATTR_SLEEPSTART: {
+			if (!propStream.skip(4)) {
+				return ATTR_READ_ERROR;
+			}
+			break;
+		}
+
+		//Teleport class
+		case ATTR_TELE_DEST: {
+			if (!propStream.skip(5)) {
+				return ATTR_READ_ERROR;
+			}
+			break;
+		}
+
+		//Container class
+		case ATTR_CONTAINER_ITEMS: {
 			return ATTR_READ_ERROR;
 		}
 
-		setSubType(count);
-		break;
-	}
-
-	case ATTR_ACTION_ID: {
-		uint16_t actionId;
-		if (!propStream.read<uint16_t>(actionId)) {
+		default:
 			return ATTR_READ_ERROR;
-		}
-
-		setActionId(actionId);
-		break;
-	}
-
-	case ATTR_UNIQUE_ID: {
-		uint16_t uniqueId;
-		if (!propStream.read<uint16_t>(uniqueId)) {
-			return ATTR_READ_ERROR;
-		}
-
-		setUniqueId(uniqueId);
-		break;
-	}
-
-	case ATTR_TEXT: {
-		std::string text;
-		if (!propStream.readString(text)) {
-			return ATTR_READ_ERROR;
-		}
-
-		setText(text);
-		break;
-	}
-
-	case ATTR_WRITTENDATE: {
-		uint32_t writtenDate;
-		if (!propStream.read<uint32_t>(writtenDate)) {
-			return ATTR_READ_ERROR;
-		}
-
-		setDate(writtenDate);
-		break;
-	}
-
-	case ATTR_WRITTENBY: {
-		std::string writer;
-		if (!propStream.readString(writer)) {
-			return ATTR_READ_ERROR;
-		}
-
-		setWriter(writer);
-		break;
-	}
-
-	case ATTR_DESC: {
-		std::string text;
-		if (!propStream.readString(text)) {
-			return ATTR_READ_ERROR;
-		}
-
-		setSpecialDescription(text);
-		break;
-	}
-
-	case ATTR_CHARGES: {
-		uint16_t charges;
-		if (!propStream.read<uint16_t>(charges)) {
-			return ATTR_READ_ERROR;
-		}
-
-		setSubType(charges);
-		break;
-	}
-
-	case ATTR_DURATION: {
-		int32_t duration;
-		if (!propStream.read<int32_t>(duration)) {
-			return ATTR_READ_ERROR;
-		}
-
-		setDuration(std::max<int32_t>(0, duration));
-		break;
-	}
-
-	case ATTR_DECAYING_STATE: {
-		uint8_t state;
-		if (!propStream.read<uint8_t>(state)) {
-			return ATTR_READ_ERROR;
-		}
-
-		if (state != DECAYING_FALSE) {
-			setDecaying(DECAYING_PENDING);
-		}
-		break;
-	}
-
-	case ATTR_NAME: {
-		std::string name;
-		if (!propStream.readString(name)) {
-			return ATTR_READ_ERROR;
-		}
-
-		setStrAttr(ITEM_ATTRIBUTE_NAME, name);
-		break;
-	}
-
-	case ATTR_ARTICLE: {
-		std::string article;
-		if (!propStream.readString(article)) {
-			return ATTR_READ_ERROR;
-		}
-
-		setStrAttr(ITEM_ATTRIBUTE_ARTICLE, article);
-		break;
-	}
-
-	case ATTR_PLURALNAME: {
-		std::string pluralName;
-		if (!propStream.readString(pluralName)) {
-			return ATTR_READ_ERROR;
-		}
-
-		setStrAttr(ITEM_ATTRIBUTE_PLURALNAME, pluralName);
-		break;
-	}
-
-	case ATTR_WEIGHT: {
-		uint32_t weight;
-		if (!propStream.read<uint32_t>(weight)) {
-			return ATTR_READ_ERROR;
-		}
-
-		setIntAttr(ITEM_ATTRIBUTE_WEIGHT, weight);
-		break;
-	}
-
-	case ATTR_ATTACK: {
-		int32_t attack;
-		if (!propStream.read<int32_t>(attack)) {
-			return ATTR_READ_ERROR;
-		}
-
-		setIntAttr(ITEM_ATTRIBUTE_ATTACK, attack);
-		break;
-	}
-
-	case ATTR_DEFENSE: {
-		int32_t defense;
-		if (!propStream.read<int32_t>(defense)) {
-			return ATTR_READ_ERROR;
-		}
-
-		setIntAttr(ITEM_ATTRIBUTE_DEFENSE, defense);
-		break;
-	}
-
-	case ATTR_EXTRADEFENSE: {
-		int32_t extraDefense;
-		if (!propStream.read<int32_t>(extraDefense)) {
-			return ATTR_READ_ERROR;
-		}
-
-		setIntAttr(ITEM_ATTRIBUTE_EXTRADEFENSE, extraDefense);
-		break;
-	}
-
-	case ATTR_ARMOR: {
-		int32_t armor;
-		if (!propStream.read<int32_t>(armor)) {
-			return ATTR_READ_ERROR;
-		}
-
-		setIntAttr(ITEM_ATTRIBUTE_ARMOR, armor);
-		break;
-	}
-
-	case ATTR_HITCHANCE: {
-		int8_t hitChance;
-		if (!propStream.read<int8_t>(hitChance)) {
-			return ATTR_READ_ERROR;
-		}
-
-		setIntAttr(ITEM_ATTRIBUTE_HITCHANCE, hitChance);
-		break;
-	}
-
-	case ATTR_SHOOTRANGE: {
-		uint8_t shootRange;
-		if (!propStream.read<uint8_t>(shootRange)) {
-			return ATTR_READ_ERROR;
-		}
-
-		setIntAttr(ITEM_ATTRIBUTE_SHOOTRANGE, shootRange);
-		break;
-	}
-
-						  //these should be handled through derived classes
-						  //If these are called then something has changed in the items.xml since the map was saved
-						  //just read the values
-
-						  //Depot class
-	case ATTR_DEPOT_ID: {
-		if (!propStream.skip(2)) {
-			return ATTR_READ_ERROR;
-		}
-		break;
-	}
-
-						//Door class
-	case ATTR_HOUSEDOORID: {
-		if (!propStream.skip(1)) {
-			return ATTR_READ_ERROR;
-		}
-		break;
-	}
-
-						   //Bed class
-	case ATTR_SLEEPERGUID: {
-		if (!propStream.skip(4)) {
-			return ATTR_READ_ERROR;
-		}
-		break;
-	}
-
-	case ATTR_SLEEPSTART: {
-		if (!propStream.skip(4)) {
-			return ATTR_READ_ERROR;
-		}
-		break;
-	}
-
-						  //Teleport class
-	case ATTR_TELE_DEST: {
-		if (!propStream.skip(5)) {
-			return ATTR_READ_ERROR;
-		}
-		break;
-	}
-
-						 //Container class
-	case ATTR_CONTAINER_ITEMS: {
-		return ATTR_READ_ERROR;
-	}
-
-	default:
-		return ATTR_READ_ERROR;
 	}
 
 	return ATTR_READ_CONTINUE;
@@ -782,19 +782,19 @@ bool Item::hasProperty(ITEMPROPERTY prop) const
 {
 	const ItemType& it = items[id];
 	switch (prop) {
-	case CONST_PROP_BLOCKSOLID: return it.blockSolid;
-	case CONST_PROP_MOVEABLE: return it.moveable && !hasAttribute(ITEM_ATTRIBUTE_UNIQUEID);
-	case CONST_PROP_HASHEIGHT: return it.hasHeight;
-	case CONST_PROP_BLOCKPROJECTILE: return it.blockProjectile;
-	case CONST_PROP_BLOCKPATH: return it.blockPathFind;
-	case CONST_PROP_ISVERTICAL: return it.isVertical;
-	case CONST_PROP_ISHORIZONTAL: return it.isHorizontal;
-	case CONST_PROP_IMMOVABLEBLOCKSOLID: return it.blockSolid && (!it.moveable || hasAttribute(ITEM_ATTRIBUTE_UNIQUEID));
-	case CONST_PROP_IMMOVABLEBLOCKPATH: return it.blockPathFind && (!it.moveable || hasAttribute(ITEM_ATTRIBUTE_UNIQUEID));
-	case CONST_PROP_IMMOVABLENOFIELDBLOCKPATH: return !it.isMagicField() && it.blockPathFind && (!it.moveable || hasAttribute(ITEM_ATTRIBUTE_UNIQUEID));
-	case CONST_PROP_NOFIELDBLOCKPATH: return !it.isMagicField() && it.blockPathFind;
-	case CONST_PROP_SUPPORTHANGABLE: return it.isHorizontal || it.isVertical;
-	default: return false;
+		case CONST_PROP_BLOCKSOLID: return it.blockSolid;
+		case CONST_PROP_MOVEABLE: return it.moveable && !hasAttribute(ITEM_ATTRIBUTE_UNIQUEID);
+		case CONST_PROP_HASHEIGHT: return it.hasHeight;
+		case CONST_PROP_BLOCKPROJECTILE: return it.blockProjectile;
+		case CONST_PROP_BLOCKPATH: return it.blockPathFind;
+		case CONST_PROP_ISVERTICAL: return it.isVertical;
+		case CONST_PROP_ISHORIZONTAL: return it.isHorizontal;
+		case CONST_PROP_IMMOVABLEBLOCKSOLID: return it.blockSolid && (!it.moveable || hasAttribute(ITEM_ATTRIBUTE_UNIQUEID));
+		case CONST_PROP_IMMOVABLEBLOCKPATH: return it.blockPathFind && (!it.moveable || hasAttribute(ITEM_ATTRIBUTE_UNIQUEID));
+		case CONST_PROP_IMMOVABLENOFIELDBLOCKPATH: return !it.isMagicField() && it.blockPathFind && (!it.moveable || hasAttribute(ITEM_ATTRIBUTE_UNIQUEID));
+		case CONST_PROP_NOFIELDBLOCKPATH: return !it.isMagicField() && it.blockPathFind;
+		case CONST_PROP_SUPPORTHANGABLE: return it.isHorizontal || it.isVertical;
+		default: return false;
 	}
 }
 
@@ -808,7 +808,7 @@ uint32_t Item::getWeight() const
 }
 
 std::string Item::getDescription(const ItemType& it, int32_t lookDistance,
-	const Item* item /*= nullptr*/, int32_t subType /*= -1*/, bool addArticle /*= true*/)
+                                 const Item* item /*= nullptr*/, int32_t subType /*= -1*/, bool addArticle /*= true*/)
 {
 	const std::string* text = nullptr;
 
@@ -933,7 +933,7 @@ std::string Item::getDescription(const ItemType& it, int32_t lookDistance,
 			}
 
 			if (it.abilities) {
-				for (uint8_t i = SKILL_FIRST; i <= SKILL_LAST; i++) {
+				for (uint8_t i = SKILL_FIRST; i <= SKILL_FISHING; i++) {
 					if (!it.abilities->skills[i]) {
 						continue;
 					}
@@ -946,6 +946,20 @@ std::string Item::getDescription(const ItemType& it, int32_t lookDistance,
 					}
 
 					s << getSkillName(i) << ' ' << std::showpos << it.abilities->skills[i] << std::noshowpos;
+				}
+
+				for (uint8_t i = SKILL_CRITICAL_HIT_CHANCE; i <= SKILL_LAST; i++) {
+					if (!it.abilities->skills[i]) {
+						continue;
+					}
+
+					if (begin) {
+						begin = false;
+						s << " (";
+					} else {
+						s << ", ";
+					}
+					s << getSkillName(i) << ' ' << std::showpos << it.abilities->skills[i] << std::noshowpos << '%';
 				}
 
 				if (it.abilities->stats[STAT_MAGICPOINTS]) {
@@ -1124,7 +1138,7 @@ std::string Item::getDescription(const ItemType& it, int32_t lookDistance,
 		}
 
 		if (it.abilities) {
-			for (uint8_t i = SKILL_FIRST; i <= SKILL_LAST; i++) {
+			for (uint8_t i = SKILL_FIRST; i <= SKILL_FISHING; i++) {
 				if (!it.abilities->skills[i]) {
 					continue;
 				}
@@ -1133,6 +1147,22 @@ std::string Item::getDescription(const ItemType& it, int32_t lookDistance,
 					begin = false;
 					s << " (";
 				} else {
+					s << ", ";
+				}
+
+				s << getSkillName(i) << ' ' << std::showpos << it.abilities->skills[i] << std::noshowpos << '%';
+			}
+
+			for (uint8_t i = SKILL_CRITICAL_HIT_CHANCE; i <= SKILL_LAST; i++) {
+				if (!it.abilities->skills[i]) {
+					continue;
+				}
+
+				if (begin) {
+					begin = false;
+					s << " (";
+				}
+				else {
 					s << ", ";
 				}
 
@@ -1647,17 +1677,17 @@ bool Item::canDecay() const
 uint32_t Item::getWorth() const
 {
 	switch (id) {
-	case ITEM_GOLD_COIN:
-		return count;
+		case ITEM_GOLD_COIN:
+			return count;
 
-	case ITEM_PLATINUM_COIN:
-		return count * 100;
+		case ITEM_PLATINUM_COIN:
+			return count * 100;
 
-	case ITEM_CRYSTAL_COIN:
-		return count * 10000;
+		case ITEM_CRYSTAL_COIN:
+			return count * 10000;
 
-	default:
-		return 0;
+		default:
+			return 0;
 	}
 }
 

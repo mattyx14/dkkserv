@@ -621,6 +621,66 @@ bool ConditionAttributes::setParam(ConditionParam_t param, int32_t value)
 			return true;
 		}
 
+		case CONDITION_PARAM_SKILL_CRITICAL_HIT_CHANCE: {
+			skills[SKILL_CRITICAL_HIT_CHANCE] = value;
+			return true;
+		}
+
+		case CONDITION_PARAM_SKILL_CRITICAL_HIT_CHANCEPERCENT: {
+			skillsPercent[SKILL_CRITICAL_HIT_CHANCE] = value;
+			return true;
+		}
+
+		case CONDITION_PARAM_SKILL_CRITICAL_HIT_DAMAGE: {
+			skills[SKILL_CRITICAL_HIT_DAMAGE] = value;
+			return true;
+		}
+
+		case CONDITION_PARAM_SKILL_CRITICAL_HIT_DAMAGEPERCENT: {
+			skillsPercent[SKILL_CRITICAL_HIT_DAMAGE] = value;
+			return true;
+		}
+
+		case CONDITION_PARAM_SKILL_LIFE_LEECH_CHANCE: {
+			skills[SKILL_LIFE_LEECH_CHANCE] = value;
+			return true;
+		}
+
+		case CONDITION_PARAM_SKILL_LIFE_LEECH_CHANCEPERCENT: {
+			skillsPercent[SKILL_LIFE_LEECH_CHANCE] = value;
+			return true;
+		}
+
+		case CONDITION_PARAM_SKILL_LIFE_LEECH_AMOUNT: {
+			skills[SKILL_LIFE_LEECH_AMOUNT] = value;
+			return true;
+		}
+
+		case CONDITION_PARAM_SKILL_LIFE_LEECH_AMOUNTPERCENT: {
+			skillsPercent[SKILL_LIFE_LEECH_AMOUNT] = value;
+			return true;
+		}
+
+		case CONDITION_PARAM_SKILL_MANA_LEECH_CHANCE: {
+			skills[SKILL_MANA_LEECH_CHANCE] = value;
+			return true;
+		}
+
+		case CONDITION_PARAM_SKILL_MANA_LEECH_CHANCEPERCENT: {
+			skillsPercent[SKILL_MANA_LEECH_CHANCE] = value;
+			return true;
+		}
+
+		case CONDITION_PARAM_SKILL_MANA_LEECH_AMOUNT: {
+			skills[SKILL_MANA_LEECH_AMOUNT] = value;
+			return true;
+		}
+
+		case CONDITION_PARAM_SKILL_MANA_LEECH_AMOUNTPERCENT: {
+			skillsPercent[SKILL_MANA_LEECH_AMOUNT] = value;
+			return true;
+		}
+
 		case CONDITION_PARAM_STAT_MAXHITPOINTS: {
 			stats[STAT_MAXHITPOINTS] = value;
 			return true;

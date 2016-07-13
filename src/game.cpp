@@ -1189,7 +1189,11 @@ ReturnValue Game::internalMoveItem(Cylinder* fromCylinder, Cylinder* toCylinder,
 
 	//add item
 	if (moveItem /*m - n > 0*/) {
+		if (fromCylinder == toCylinder) {
 		toCylinder->addThing(index, moveItem);
+		} else {
+			internalAddItem(toCylinder, moveItem, INDEX_WHEREEVER, flags);
+		}
 	}
 
 	if (itemIndex != -1) {
@@ -3896,6 +3900,35 @@ bool Game::combatChangeHealth(Creature* attacker, Creature* target, CombatDamage
 		damage.primary.value = std::abs(damage.primary.value);
 		damage.secondary.value = std::abs(damage.secondary.value);
 
+		bool critical = false;
+		if (attackerPlayer) {
+			//critical damage
+			if (normal_random(0, 100) < attackerPlayer->getSkillLevel(SKILL_CRITICAL_HIT_CHANCE)) {
+				damage.primary.value = (int32_t)(damage.primary.value * (1 + (attackerPlayer->getSkillLevel(SKILL_CRITICAL_HIT_DAMAGE) / 100)));
+				critical = true;
+			}
+
+			//life leech
+			if (normal_random(0, 100) < attackerPlayer->getSkillLevel(SKILL_LIFE_LEECH_CHANCE)) {
+				CombatParams tmpParams;
+				CombatDamage tmpDamage;
+				tmpDamage.origin = ORIGIN_SPELL;
+				tmpDamage.primary.type = COMBAT_HEALING;
+				tmpDamage.primary.value = (damage.primary.value * attackerPlayer->getSkillLevel(SKILL_LIFE_LEECH_AMOUNT)) / 100;
+				Combat::doCombatHealth(nullptr, attackerPlayer, tmpDamage, tmpParams);
+			}
+
+			//mana leech
+			if (normal_random(0, 100) < attackerPlayer->getSkillLevel(SKILL_MANA_LEECH_CHANCE)) {
+				CombatParams tmpParams;
+				CombatDamage tmpDamage;
+				tmpDamage.origin = ORIGIN_SPELL;
+				tmpDamage.primary.type = COMBAT_MANADRAIN;
+				tmpDamage.primary.value = (damage.primary.value * attackerPlayer->getSkillLevel(SKILL_MANA_LEECH_AMOUNT)) / 100;
+				Combat::doCombatMana(nullptr, attackerPlayer, tmpDamage, tmpParams);
+			}
+		}
+
 		int32_t healthChange = damage.primary.value + damage.secondary.value;
 		if (healthChange == 0) {
 			return true;
@@ -4030,6 +4063,10 @@ bool Game::combatChangeHealth(Creature* attacker, Creature* target, CombatDamage
 			if (hitEffect != CONST_ME_NONE) {
 				addMagicEffect(list, targetPos, hitEffect);
 			}
+		}
+
+		if (critical) {
+			addMagicEffect(list, targetPos, CONST_ME_CRITICAL_HIT);
 		}
 
 		if (message.primary.color != TEXTCOLOR_NONE || message.secondary.color != TEXTCOLOR_NONE) {
@@ -4389,6 +4426,9 @@ void Game::resetCommandTag()
 
 void Game::shutdown()
 {
+	std::cout << "Saving game..." << std::flush;
+	saveGameState();
+
 	std::cout << "Shutting down..." << std::flush;
 
 	g_scheduler.shutdown();
@@ -5311,7 +5351,7 @@ std::forward_list<Item*> Game::getMarketItemList(uint16_t wareId, uint16_t suffi
 	std::forward_list<Item*> itemList;
 	uint16_t count = 0;
 
-	std::list<Container*> containers {depotLocker};
+	std::list<Container*> containers{depotLocker};
 	do {
 		Container* container = containers.front();
 		containers.pop_front();

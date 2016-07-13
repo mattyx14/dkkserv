@@ -99,7 +99,7 @@ bool ConfigManager::load()
 	string[LOCATION] = getGlobalString(L, "location", "");
 	string[MOTD] = getGlobalString(L, "motd", "");
 	string[WORLD_TYPE] = getGlobalString(L, "worldType", "pvp");
-	string[STORE_IMAGES_URL] = getGlobalString(L, "coinImagesURL", "http://some.url/images/store/");
+	string[STORE_IMAGES_URL] = getGlobalString(L, "coinImagesURL", "");
 
 	integer[MAX_PLAYERS] = getGlobalNumber(L, "maxPlayers");
 	integer[PZ_LOCKED] = getGlobalNumber(L, "pzLocked", 60000);
@@ -127,8 +127,6 @@ bool ConfigManager::load()
 	integer[CHECK_EXPIRED_MARKET_OFFERS_EACH_MINUTES] = getGlobalNumber(L, "checkExpiredMarketOffersEachMinutes", 60);
 	integer[MAX_MARKET_OFFERS_AT_A_TIME_PER_PLAYER] = getGlobalNumber(L, "maxMarketOffersAtATimePerPlayer", 100);
 	integer[MAX_PACKETS_PER_SECOND] = getGlobalNumber(L, "maxPacketsPerSecond", 25);
-	integer[CRITICAL_HIT_CHANCE] = getGlobalNumber(L, "criticalChance", 0);
-	integer[CRITICAL_HIT_EXTRA] = getGlobalNumber(L, "criticalExtra", 0);
 	integer[STORE_COIN_PACKET] = getGlobalNumber(L, "coinPacketSize", 25);
 	integer[LIVE_CAST_PORT] = getGlobalNumber(L, "liveCastPort", 7173);
 

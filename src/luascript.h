@@ -975,6 +975,8 @@ class LuaScriptInterface
 		static int luaPlayerGetContainerById(lua_State* L);
 		static int luaPlayerGetContainerIndex(lua_State* L);
 
+		static int luaPlayerHasSecureMode(lua_State* L);
+
 		static int32_t luaPlayerStartLiveCast(lua_State* L);
 		static int32_t luaPlayerStopLiveCast(lua_State* L);
 		static int32_t luaPlayerIsLiveCaster(lua_State* L);

@@ -611,6 +611,9 @@ MagicEffectNames magicEffectNames[] = {
 	{"yellowsmoke",		CONST_ME_YELLOWSMOKE},
 	{"greensmoke",		CONST_ME_GREENSMOKE},
 	{"purplesmoke",		CONST_ME_PURPLESMOKE},
+	{"lightning",		CONST_ME_LIGHTNING },
+	{"ragiazbonecapsule",		CONST_ME_RAGIAZ_BONE_CAPSULE},
+	{"criticalhit",		CONST_ME_CRITICAL_HIT},
 };
 
 ShootTypeNames shootTypeNames[] = {
@@ -816,6 +819,24 @@ std::string getSkillName(uint8_t skillid)
 
 		case SKILL_FISHING:
 			return "fishing";
+
+		case SKILL_CRITICAL_HIT_CHANCE:
+			return "critical hit chance";
+
+		case SKILL_CRITICAL_HIT_DAMAGE:
+			return "critical hit damage";
+
+		case SKILL_LIFE_LEECH_CHANCE:
+			return "life leech chance";
+
+		case SKILL_LIFE_LEECH_AMOUNT:
+			return "life leech amount";
+
+		case SKILL_MANA_LEECH_CHANCE:
+			return "mana leech chance";
+
+		case SKILL_MANA_LEECH_AMOUNT:
+			return "mana leech amount";
 
 		case SKILL_MAGLEVEL:
 			return "magic level";
@@ -1032,7 +1053,7 @@ const char* getReturnMessage(ReturnValue value)
 	switch (value) {
 		case RETURNVALUE_REWARDCHESTISEMPTY:
 			return "The chest is currently empty. You did not take part in any battles in the last seven days or already claimed your reward.";
-
+			
 		case RETURNVALUE_DESTINATIONOUTOFREACH:
 			return "Destination is out of reach.";
 

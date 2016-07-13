@@ -35,7 +35,6 @@ struct LootBlock {
 	int32_t subType;
 	int32_t actionId;
 	std::string text;
-	bool unique;
 	std::string name;
 	std::string article;
 	int32_t attack;
@@ -44,6 +43,7 @@ struct LootBlock {
 	int32_t armor;
 	int32_t shootRange;
 	int32_t hitChance;
+	bool unique;
 
 	std::vector<LootBlock> childLoot;
 	LootBlock() {
@@ -53,13 +53,13 @@ struct LootBlock {
 
 		subType = -1;
 		actionId = -1;
-		unique = false;
 		attack = -1;
 		defense = -1;
 		extraDefense = -1;
 		armor = -1;
 		shootRange = -1;
 		hitChance = -1;
+		unique = false;
 	}
 };
 

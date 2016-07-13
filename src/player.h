@@ -123,7 +123,7 @@ struct Skill {
 
 typedef std::map<uint32_t, uint32_t> MuteCountMap;
 
-#define PLAYER_MAX_SPEED 1500
+#define PLAYER_MAX_SPEED 3000
 #define PLAYER_MIN_SPEED 10
 
 class Player final : public Creature, public Cylinder
@@ -514,7 +514,7 @@ class Player final : public Creature, public Cylinder
 		void removeReward(uint32_t rewardId);
 		void getRewardList(std::vector<uint32_t>& rewards);
 		RewardChest* getRewardChest();
-
+		
 		DepotChest* getDepotBox();
 		DepotChest* getDepotChest(uint32_t depotId, bool autoCreate);
 		DepotLocker* getDepotLocker(uint32_t depotId);
@@ -868,6 +868,7 @@ class Player final : public Creature, public Cylinder
 				client->sendInventoryItem(slot, item);
 			}
 		}
+
 		void sendInventoryClientIds() {
 			if (client) {
 				client->sendInventoryClientIds();
@@ -1173,11 +1174,11 @@ class Player final : public Creature, public Cylinder
 		bool startLiveCast(const std::string& password) {
 			return client && client->startLiveCast(password);
 		}
-
+		
 		bool stopLiveCast() {
 			return client && client->stopLiveCast();
 		}
-
+		
 		bool isLiveCaster() const {
 			return client && client->isLiveCaster();
 		}

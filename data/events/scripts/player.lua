@@ -85,7 +85,17 @@ function Player:onLookInShop(itemType, count)
 	return true
 end
 
-function Player:onMoveItem(item, count, fromPosition, toPosition)
+function Player:onMoveItem(item, count, fromPosition, toPosition, fromCylinder, toCylinder)
+	if item:getActionId() == NOT_MOVEABLE_ACTION then
+		self:sendCancelMessage('Sorry, not possible.')
+		return false
+	end
+
+	if toPosition.x == CONTAINER_POSITION and toCylinder and toCylinder:getId() == 26052 then
+		self:sendCancelMessage(RETURNVALUE_NOTPOSSIBLE)
+		return false
+	end
+
 	if toPosition.x ~= CONTAINER_POSITION then
 		return true
 	end
@@ -112,10 +122,36 @@ function Player:onMoveItem(item, count, fromPosition, toPosition)
 		end
 	end
 
-	return true
-end
+	if toPosition.x == CONTAINER_POSITION then
+		local containerId = toPosition.y - 64
+		local container = self:getContainerById(containerId)
+		if not container then
+			return true 
+		end
 
-function Player:onMoveCreature(creature, fromPosition, toPosition)
+		-- Do not let the player insert items into either the Reward Container or the Reward Chest
+		local itemId = container:getId()
+		if itemId == ITEM_REWARD_CONTAINER or itemId == ITEM_REWARD_CHEST then
+			self:sendCancelMessage('Sorry, not possible.')
+			return false
+		end
+
+		-- The player also shouldn't be able to insert items into the boss corpse
+		local tile = Tile(container:getPosition())
+		for _, item in ipairs(tile:getItems()) do
+			if item:getAttribute(ITEM_ATTRIBUTE_CORPSEOWNER) == 2^31 - 1 and item:getName() == container:getName() then
+				self:sendCancelMessage('Sorry, not possible.')
+				return false
+			end
+		end
+	end
+
+	-- Do not let the player move the boss corpse.
+	if item:getAttribute(ITEM_ATTRIBUTE_CORPSEOWNER) == 2^31 - 1 then
+		self:sendCancelMessage('Sorry, not possible.')
+		return false
+	end
+
 	return true
 end
 
@@ -189,7 +225,7 @@ function Player:onGainExperience(source, exp, rawExp)
 		useStamina(self)
 
 		local staminaMinutes = self:getStamina()
-		if staminaMinutes > 2340 and self:isPremium() then
+		if staminaMinutes > 2400 and self:isPremium() then
 			exp = exp * 1.5
 		elseif staminaMinutes <= 840 then
 			exp = exp * 0.5

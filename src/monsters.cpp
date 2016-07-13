@@ -1188,7 +1188,7 @@ bool Monsters::loadMonster(const std::string& file, const std::string& monsterNa
 			if ((attr = summonNode.attribute("chance"))) {
 				chance = pugi::cast<int32_t>(attr.value());
 			}
-
+			
 			if ((attr = summonNode.attribute("force"))) {
 				force = attr.as_bool();
 			}
@@ -1270,10 +1270,6 @@ bool Monsters::loadLootItem(const pugi::xml_node& node, LootBlock& lootBlock)
 		lootBlock.text = attr.as_string();
 	}
 
-	if ((attr = node.attribute("unique"))) {
-		lootBlock.unique = attr.as_bool();
-	}
-
 	if ((attr = node.attribute("name"))) {
 		lootBlock.name = attr.as_string();
 	}
@@ -1304,6 +1300,10 @@ bool Monsters::loadLootItem(const pugi::xml_node& node, LootBlock& lootBlock)
 
 	if ((attr = node.attribute("hitchance"))) {
 		lootBlock.hitChance = pugi::cast<int32_t>(attr.value());
+	}
+
+	if ((attr = node.attribute("unique"))) {
+		lootBlock.unique = attr.as_bool();
 	}
 	return true;
 }
