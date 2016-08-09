@@ -363,6 +363,7 @@
 
 	<!-- Demonlord -->
 	<monster name="Orshabaal" file="Demonlord/orshabaal.xml" />
+	<monster name="Orshabaal Lord" file="Demonlord/orshabaal lord.xml" />
 
 	<!-- Demons -->
 	<monster name="Dark Torturer" file="Demons/dark torturer.xml" />

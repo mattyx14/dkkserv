@@ -1,8 +1,8 @@
 local waterIds = {493, 4608, 4609, 4610, 4611, 4612, 4613, 4614, 4615, 4616, 4617, 4618, 4619, 4620, 4621, 4622, 4623, 4624, 4625, 7236, 10499, 15401, 15402}
 local lootTrash = {2234, 2238, 2376, 2509, 2667}
 local lootCommon = {2152, 2167, 2168, 2669, 7588, 7589}
-local lootRare = {2143, 2146, 2149, 2160, 7158, 7159}
-local lootVeryRare = {10220}
+local lootRare = {2143, 2146, 2149, 7158, 7159}
+local lootVeryRare = {7632, 7633, 10220}
 local useWorms = true
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
@@ -23,7 +23,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 
 		local rareChance = math.random(1, 100)
 		if rareChance == 1 then
-			player:addItem(lootVeryRare[math.random(#lootVeryRare)], 5)
+			player:addItem(lootVeryRare[math.random(#lootVeryRare)], 1)
 		elseif rareChance <= 3 then
 			player:addItem(lootRare[math.random(#lootRare)], 1)
 		elseif rareChance <= 10 then

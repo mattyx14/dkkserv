@@ -14,6 +14,7 @@ function onSay(player, words, param)
 			.. "!buypremium" .. "\n"
 			.. "!shop" .. "\n"
 			.. "!stamina" .. "\n"
+			.. "!uptime" .. "\n"
 			.. "!spells")
 		return false
 	else

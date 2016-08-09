@@ -106,7 +106,6 @@
 	<action itemid="2162" function="increaseItemId" />
 	<action itemid="2163" function="decreaseItemId" />
 	<action itemid="2578" function="increaseItemId" />
-	<!-- <action itemid="2579" script="other/trap.lua" /> -->
 	<action itemid="3743" function="increaseItemId" />
 	<action itemid="3744" function="decreaseItemId" />
 	<action itemid="3947" function="increaseItemId" />

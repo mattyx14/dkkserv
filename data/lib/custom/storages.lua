@@ -31,7 +31,7 @@ Storage = {
 		arachirTheAncientOne = 8571,
 			BossStorageOne = 10004,
 
-		draculaDone = 10007,
+		draculaDone = 10008,
 		draculaStone = 50058
 	},
 	AnniQuest = {
@@ -42,7 +42,7 @@ Storage = {
 		conjurerDone = 2662,
 		deathHeraldDone = 10008,
 		assassinDone = 9933,
-		anniKey = 1219,
+		anniKey = 2526,
 		AnnihiMission = {
 			Done = 24074
 		},

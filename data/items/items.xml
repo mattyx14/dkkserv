@@ -2288,6 +2288,8 @@
 		<attribute key="weaponType" value="wand" />
 		<attribute key="shootType" value="smallearth" />
 		<attribute key="range" value="3" />
+		<attribute key="skillmanachance" value="5" />
+		<attribute key="skillmanaamount" value="10" />
 	</item>
 	<item id="2183" article="a" name="hailstorm rod">
 		<attribute key="description" value="It grants you the power of striking your foes with furious hailstorms." />
@@ -2340,6 +2342,8 @@
 		<attribute key="weaponType" value="wand" />
 		<attribute key="shootType" value="energy" />
 		<attribute key="range" value="3" />
+		<attribute key="skillmanachance" value="5" />
+		<attribute key="skillmanaamount" value="10" />
 	</item>
 	<item id="2191" article="a" name="wand of dragonbreath">
 		<attribute key="description" value="Legends say that this wand holds the soul of a young dragon." />
@@ -3233,6 +3237,8 @@
 		<attribute key="shootType" value="spear" />
 		<attribute key="maxHitChance" value="76" />
 		<attribute key="range" value="3" />
+		<attribute key="skillcriticalchance" value="5" />
+		<attribute key="skillcriticaldamage" value="15" />
 	</item>
 	<item id="2390" article="a" name="magic longsword">
 		<attribute key="description" value="It's the magic Cyclopmania Sword." />
@@ -3600,6 +3606,8 @@
 		<attribute key="defense" value="12" />
 		<attribute key="attack" value="21" />
 		<attribute key="weaponType" value="club" />
+		<attribute key="skillcriticalchance" value="5" />
+		<attribute key="skillcriticaldamage" value="15" />
 	</item>
 	<item id="2440" article="a" name="daramian waraxe">
 		<attribute key="weight" value="5250" />
@@ -15465,6 +15473,8 @@
 		<attribute key="defense" value="10" />
 		<attribute key="attack" value="21" />
 		<attribute key="weaponType" value="axe" />
+		<attribute key="skillcriticalchance" value="5" />
+		<attribute key="skillcriticaldamage" value="15" />
 	</item>
 	<item id="8602" article="a" name="jagged sword">
 		<attribute key="weight" value="2900" />
@@ -15472,6 +15482,8 @@
 		<attribute key="attack" value="21" />
 		<attribute key="weaponType" value="sword" />
 		<attribute key="extradef" value="1" />
+		<attribute key="skillcriticalchance" value="5" />
+		<attribute key="skillcriticaldamage" value="15" />
 	</item>
 	<item fromid="8603" toid="8604" article="a" name="wheel" />
 	<item fromid="8605" toid="8612" article="a" name="brick window" />
@@ -29553,6 +29565,11 @@
 	<item fromid="21514" toid="21515" article="a" name="strange shrine" />
 	<item id="21516" article="a" name="lift" />
 	<item id="21517" article="an" name="ornate door with a keyhole" />
+	<item id="21518" article="a" name="reward container">
+		<attribute key="containersize" value="32" />
+		<attribute key="pickupable" value="0" />
+		<attribute key="moveable" value="0" />
+	</item>
 	<item id="21536" article="a" name="hole">
 		<attribute key="floorchange" value="down" />
 	</item>
@@ -29612,7 +29629,11 @@
 		<attribute key="description" value="This board will notify you of currently active mini world changes all over Tibia." />
 	</item>
 	<item id="21584" article="a" name="reward chest">
+		<attribute key="type" value="rewardchest" />
 		<attribute key="description" value="This chest contains your rewards earned in battles." />
+		<attribute key="containersize" value="32" />
+		<attribute key="pickupable" value="0" />
+		<attribute key="moveable" value="0" />
 	</item>
 	<item id="21585" article="a" name="smoking coal">
 		<attribute key="description" value="This coal is smoking and emmits quite a stench." />

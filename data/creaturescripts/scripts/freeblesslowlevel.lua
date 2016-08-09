@@ -1,4 +1,4 @@
-local freeBlessMaxLevel = 100
+local freeBlessMaxLevel = 50
 
 function onLogin(player)
 	if player:getLevel() <= freeBlessMaxLevel then

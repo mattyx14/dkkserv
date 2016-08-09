@@ -29,88 +29,79 @@ local potions = {
 	-- First skip is for vocations(string), second skip is for level(int)!
 	stringOfVocation = "This potion can only be consumed by %s of level %d or higher", -- (Required*)
 	-- Health & Spirit Potions
-	-- Knight Potions
 	[26031] = { -- supreme health potion
 		vocations = {4, 8},
-		minLevel = 200,
-		healthToAdd = { min = 1350, max = 1650 },
+		minLevel = 130,
+		healthToAdd = { min = 1300, max = 1690 },
 		manaToAdd = { min = 128, max = 175},
 		emptyFlask = 7635
 	},
 	[8473] = { -- ultimate health potion
 		vocations = {4, 8},
 		minLevel = 130,
-		healthToAdd = { min = 900, max = 1200 },
+		healthToAdd = { min = 900, max = 1290 },
+		emptyFlask = 7635
+	},
+	[7591] = { -- great health potion
+		vocations = {4, 8},
+		minLevel = 80,
+		healthToAdd = { min = 500, max = 890},
 		emptyFlask = 7635
 	},
 
-	-- Paladin Potions
-	[26030] = { -- ultimate spitit potion
+	[26030] = { -- ultimate spirit potion
 		vocations = {3, 7},
-		minLevel = 200,
-		healthToAdd = { min = 900, max = 1100},
-		manaToAdd = { min = 200, max = 350},
+		minLevel = 130,
+		healthToAdd = { min = 900, max = 1290 },
+		manaToAdd = { min = 200, max = 390},
 		emptyFlask = 7635
 	},
 	[8472] = { -- great spitit potion
 		vocations = {3, 7},
-		minLevel = 130,
-		healthToAdd = { min = 750, max = 900},
+		minLevel = 80,
+		healthToAdd = { min = 500, max = 890},
 		emptyFlask = 7635
 	},
 
-	-- Paladin & Knight Potions
-	[7591] = { -- great health potion
-		vocations = {3, 4, 7, 8},
-		minLevel = 80,
-		healthToAdd = { min = 550, max = 700},
-		emptyFlask = 7635
-	},
 	[7588] = { -- strong health potion
 		vocations = {3, 4, 7, 8},
 		minLevel = 50,
-		healthToAdd = { min = 350, max = 500},
+		healthToAdd = { min = 300, max = 490},
 		emptyFlask = 7634
+	},
+	[7618] = { -- health potion
+		healthToAdd = { min = 200, max = 290},
+		emptyFlask = 7636
 	},
 
 	-- Mana Potions
-	-- Mage Potions
 	[26029] = { -- ultimate mana potion
 		vocations = {1, 2, 5, 6},
-		minLevel = 150,
-		healthToAdd = { min = 150, max = 250},
-		manaToAdd = { min = 700, max = 900},
+		minLevel = 80,
+		manaToAdd = { min = 700, max = 890},
+		healthToAdd = { min = 200, max = 390},
 		emptyFlask = 7635
 	},
 	[7590] = { -- great mana potion
 		vocations = {1, 2, 5, 6},
 		minLevel = 80,
-		manaToAdd = { min = 500, max = 650},
+		manaToAdd = { min = 500, max = 690},
 		emptyFlask = 7635
 	},
-
-	-- Mage and Paladin Potion
 	[7589] = { -- strong mana potion
 		vocations = {1, 2, 3, 5, 6, 7},
 		minLevel = 50,
-		manaToAdd = { min = 300, max = 450},
+		manaToAdd = { min = 300, max = 490},
 		emptyFlask = 7634
 	},
-
-	-- Normal Potions 
-	-- Healh and Mana
-	[7618] = { -- health potion
-		healthToAdd = { min = 200, max = 300},
-		emptyFlask = 7636
-	},
 	[7620] = { -- mana potion
-		manaToAdd = { min = 200, max = 300},
+		manaToAdd = { min = 200, max = 290},
 		emptyFlask = 7636
 	},
 	[8704] = { -- small health potion
-		healthToAdd = { min = 100, max = 150},
+		healthToAdd = { min = 100, max = 190},
 		emptyFlask = 7636
-	},
+	}
 }
 --[[ available custom methods!
 	combat : MetatableCombat
@@ -186,11 +177,6 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 
 				return not player:say(string.format(potions.stringOfVocation, vocationString, potion.minLevel), TALKTYPE_MONSTER_SAY)
 			end
-		end
-
-		-- Condition exists after the check!
-		if player:getCondition(CONDITION_EXHAUST_HEAL) then
-			return player:sendTextMessage(MESSAGE_STATUS_SMALL, Game.getReturnMessage(RETURNVALUE_YOUAREEXHAUSTED))
 		end
 
 		local effect = potions.effect or CONST_ME_MAGIC_BLUE

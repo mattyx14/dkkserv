@@ -54,11 +54,6 @@ local failPosition = {
 		fromPosition = Position(599, 371, 7),
 		missionName = "are blocked no have monsters"
 	},
-	[5591] = { -- Anshara Skull Area Two Nort
-		mission = 1583,
-		fromPosition = Position(686, 296, 6),
-		missionName = "are blocked no have monsters"
-	},
 }
 
 function onStepIn(creature, item, position, fromPosition)

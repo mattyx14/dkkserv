@@ -6,8 +6,8 @@ combat:setParameter(COMBAT_PARAM_USECHARGES, true)
 combat:setArea(createCombatArea(AREA_SQUARE1X1))
 
 function onGetFormulaValues(player, skill, attack, factor)
-	local min = (player:getLevel() * 1.8) + (skill * attack * 0.03) + 7
-	local max = (player:getLevel() * 2) + (skill * attack * 0.05) + 11
+	local min = (player:getLevel() * 2.3) + (skill * attack * 0.03) + 7
+	local max = (player:getLevel() * 2.8) + (skill * attack * 0.05) + 11
 	return -min, -max
 end
 

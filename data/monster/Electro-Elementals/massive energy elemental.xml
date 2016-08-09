@@ -18,12 +18,16 @@
 		<flag runonhealth="1" />
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="40" attack="70" />
+		<attack name="melee" interval="2000" min="-100" max="-530"/>
+		<attack name="Paralyze" interval="1000" chance="17" range="7" target="1">
+			<attribute key="shootEffect" value="energy"/>
+			<attribute key="areaEffect" value="PURPLEENERGY"/>
+		</attack>
 		<attack name="energy" interval="2000" chance="10" range="7" radius="2" target="1" min="-270" max="-615">
 			<attribute key="shootEffect" value="energy" />
 			<attribute key="areaEffect" value="energy" />
 		</attack>
-		<attack name="energy" interval="2000" chance="15" range="7" target="1" min="-175" max="-205">
+		<attack name="energy" interval="1000" chance="25" range="7" target="1" min="-100" max="-480">
 			<attribute key="shootEffect" value="energyball" />
 			<attribute key="areaEffect" value="energy" />
 		</attack>

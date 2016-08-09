@@ -1189,11 +1189,7 @@ ReturnValue Game::internalMoveItem(Cylinder* fromCylinder, Cylinder* toCylinder,
 
 	//add item
 	if (moveItem /*m - n > 0*/) {
-		if (fromCylinder == toCylinder) {
 		toCylinder->addThing(index, moveItem);
-		} else {
-			internalAddItem(toCylinder, moveItem, INDEX_WHEREEVER, flags);
-		}
 	}
 
 	if (itemIndex != -1) {
@@ -5351,7 +5347,7 @@ std::forward_list<Item*> Game::getMarketItemList(uint16_t wareId, uint16_t suffi
 	std::forward_list<Item*> itemList;
 	uint16_t count = 0;
 
-	std::list<Container*> containers{depotLocker};
+	std::list<Container*> containers {depotLocker};
 	do {
 		Container* container = containers.front();
 		containers.pop_front();

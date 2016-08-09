@@ -100,4 +100,6 @@
 	<mount id="98" clientid="888" name="Reed Lurker" speed="20" premium="yes" />
 	<mount id="99" clientid="889" name="Neon Sparkid" speed="20" premium="yes" />
 	<mount id="100" clientid="890" name="Vortexion" speed="20" premium="yes" />
+
+	<mount id="101" clientid="222" name="Toad" speed="20" premium="yes" />
 </mounts>

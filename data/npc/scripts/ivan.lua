@@ -99,7 +99,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 6
 		end
 	elseif isInArray({"jobs", "items"}, msg) then
-		npcHandler:say('For example I trade: {sniper gloves}, {dragon shields}, {devil helmets}, {soul orbs}, {dragon claws}.', cid)
+		npcHandler:say('For example I trade: {sniper gloves}, {dragon shields}, {devil helmets}, {soul orbs}, {dragon claws}. \nYou need complete the Dracula Quest.', cid)
 		npcHandler.topic[cid] = 0
 	elseif msgcontains(msg,'no') and (npcHandler.topic[cid] >= 1 and npcHandler.topic[cid] <= 10) then
 		npcHandler:say('Ok then.', cid)
