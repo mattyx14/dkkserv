@@ -368,13 +368,25 @@
 		<action uniqueid="2662" script="quests/outfits/outfits.lua" />
 			<action actionid="2080" script="quests/outfits/conjurerLever.lua" />
 			<action actionid="2081" script="quests/outfits/conjurerLever_two.lua" />
-		<!-- Jester Outfit
-		<action itemid="7478" script="quests/outfits/jesterflask.lua" /> -->
 		<!-- Death Herald Outfit -->
 		<action uniqueid="10008" script="quests/outfits/outfits.lua" />
 			<action actionid="39517" script="quests/outfits/portalDracula.lua" />
 		<!-- Assassin Outfit -->
 		<action uniqueid="9933" script="quests/outfits/outfits.lua" />
+		<!-- Chaos Acolyte Outfit -->
+		<action uniqueid="8820" script="quests/outfits/outfits.lua" />
+		<!-- Norse Outfit -->
+		<action uniqueid="7460" script="quests/outfits/outfits.lua" />
+		<!-- Deepling Outfit -->
+		<action uniqueid="15545" script="quests/outfits/outfits.lua" />
+		<!-- Demonhunter Outfit -->
+		<action uniqueid="7431" script="quests/outfits/outfits.lua" />
+		<!-- Brotherhood Outfit -->
+		<action uniqueid="5807" script="quests/outfits/outfits.lua" />
+		<!-- Oriental Outfit -->
+		<action uniqueid="8267" script="quests/outfits/outfits.lua" />
+		<!-- Marry Outfit -->
+		<action uniqueid="3697" script="quests/outfits/outfits.lua" />
 
 	<!-- Teleport items -->
 	<action fromaid="39512" toaid="39516" script="quests/itemPortal.lua" />

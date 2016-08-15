@@ -986,6 +986,7 @@
 	<monster name="Storm Dragon" file="customs/storm dragon.xml"/>
 	<monster name="Trainer" file="customs/trainer.xml"/>
 	<monster name="Black Warlock" file="customs/black warlock.xml"/>
+	<monster name="Black Magician" file="customs/black magician.xml"/>
 	<monster name="Chaos Destroyer" file="customs/chaos destroyer.xml"/>
 	<monster name="Chaos Littium" file="customs/chaos littium.xml"/>
 	<monster name="Crystal Spider Ice" file="customs/crystal spider ice.xml"/>

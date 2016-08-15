@@ -2,7 +2,7 @@
 -- NOTE: valid values for worldType are: "pvp", "no-pvp" and "pvp-enforced"
 worldType = "pvp"
 hotkeyAimbotEnabled = true
-protectionLevel = 1
+protectionLevel = 0
 killsToRedSkull = 5
 killsToBlackSkull = 8
 pzLocked = 60 * 1000
@@ -12,12 +12,10 @@ whiteSkullTime = 15 * 60 * 1000
 stairJumpExhaustion = 2 * 1000
 experienceByKillingPlayers = false
 expFromPlayersLevelRange = 75
-expertPvpMode = true
 
 -- Connection Config
 -- NOTE: maxPlayers set to 0 means no limit
 ip = "darkkonia.sytes.net"
--- ip = "127.0.0.1"
 bindOnlyGlobalAddress = false
 loginProtocolPort = 7171
 gameProtocolPort = 7172
@@ -31,8 +29,13 @@ statusTimeout = 1 * 1000
 replaceKickOnLogin = true
 maxPacketsPerSecond = 25
 
+-- Version
+clientVersionMin = 1100
+clientVersionMax = 1100
+clientVersionStr = "52.00"
+
 -- Casting System 
-enableLiveCasting = true
+enableLiveCasting = false
 liveCastPort = 7173
 
 -- Deaths
@@ -47,8 +50,8 @@ housePriceEachSQM = 2000
 houseRentPeriod = "weekly"
 
 -- Item Usage
-timeBetweenActions = 100
-timeBetweenExActions = 1000
+timeBetweenActions = 200
+timeBetweenExActions = 1200
 
 -- Map
 -- NOTE: set mapName WITHOUT .otbm at the end
@@ -56,7 +59,7 @@ mapName = "darkkonia"
 mapAuthor = "Mattyx14"
 
 -- Market
-marketOfferDuration = 30 * 24 * 60 * 60
+marketOfferDuration = 2 * 24 * 60 * 60
 premiumToCreateMarketOffer = false
 checkExpiredMarketOffersEachMinutes = 60
 maxMarketOffersAtATimePerPlayer = 100
@@ -78,22 +81,16 @@ emoteSpells = true
 classicEquipmentSlots = false
 allowWalkthrough = false
 coinPacketSize = 25
-coinImagesURL = "http://some.url/images/store"
+coinImagesURL = "http://darkkonia.sytes.net/"
 allowBlockSpawn = true
 
 -- Rates
 -- NOTE: rateExp is not used if you have enabled stages in data/XML/stages.xml
 rateExp = 2
-rateSkill = 30
-rateLoot = 5
-rateMagic = 3
+rateSkill = 80
+rateLoot = 4
+rateMagic = 4
 rateSpawn = 1
-
--- Critical hits
--- NOTE: criticalChance and extraPercent are percentages, not absolute values.
--- extraPercent is the extra percentage of the damage to be added.
-criticalChance = 1
-criticalExtra = 100
 
 -- Monsters
 deSpawnRange = 2

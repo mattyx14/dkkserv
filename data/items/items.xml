@@ -3823,6 +3823,9 @@
 		<attribute key="weight" value="1200" />
 		<attribute key="armor" value="10" />
 		<attribute key="slotType" value="head" />
+		<attribute key="speed" value="240" />
+		<attribute key="skillcriticalchance" value="15" />
+		<attribute key="skillcriticaldamage" value="30" />
 	</item>
 	<item id="2475" article="a" name="warrior helmet">
 		<attribute key="weight" value="6800" />
@@ -16183,6 +16186,7 @@
 		<attribute key="weight" value="3500" />
 		<attribute key="armor" value="4" />
 		<attribute key="slotType" value="legs" />
+		<attribute key="skillDist" value="1" />
 	</item>
 	<item id="8924" article="a" name="hellforged axe">
 		<attribute key="weight" value="9200" />
@@ -29028,11 +29032,11 @@
 		<attribute key="weight" value="10" />
 		<attribute key="description" value="A scroll of parchment, inscribed with an arcane incantation rite." />
 	</item>
-	<item id="21252" article="a" name="vampire's signet ring">
+	<item id="21252" article="a" name="Dracula ring">
 		<attribute key="description" value="A ring with a massive, faintly glowing seal, containing the blood of a vampire." />
 		<attribute key="slotType" value="ring" />
-		<attribute key="absorbPercentPhysical" value="4" />
-		<attribute key="absorbPercentMagic" value="4" />
+		<attribute key="absorbPercentPhysical" value="6" />
+		<attribute key="absorbPercentMagic" value="6" />
 		<attribute key="showattributes" value="1" />
 		<attribute key="weight" value="10" />
 	</item>

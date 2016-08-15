@@ -35,6 +35,10 @@ local bosses = {
 		message = "Escape through the teleport quickly before it closes!",
 		teleportToPosition = Position(1018, 1153, 10)
 	},
+	['black magician'] = {
+		message = "Escape through the teleport quickly before it closes!",
+		teleportToPosition = Position(891, 1175, 11)
+	},
 }
 
 local function removeTeleport(position)
