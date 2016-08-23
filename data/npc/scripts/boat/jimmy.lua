@@ -36,7 +36,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("Do you seek a seek a passage to {Magic Island}?", cid)
 			npcHandler.topic[cid] = 2
 		else
-			npcHandler:say("You don't complete the {Assassin Outfit} quest.", cid)
+			npcHandler:say("You don't complete the {Black Knight} quest.", cid)
 		end
 	elseif msgcontains(msg, "yes") then
 		if player:removeMoney(config.price) then

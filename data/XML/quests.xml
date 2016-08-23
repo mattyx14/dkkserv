@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <quests>
 	<quest name="DarkKonia Missions" startstorageid="2527" startstoragevalue="1">
-	<!--
+	<!-- 
 		<mission name="" storageid="" startvalue="0" endvalue="1">
 			<missionstate id="0" description="." />
 			<missionstate id="1" description=" Founded." />
@@ -39,7 +39,7 @@
 			<missionstate id="0" description="Pirate Outfit and Pirate Hat." />
 			<missionstate id="1" description="Pirate Outfit and Pirate Hat Founded." />
 		</mission>
-		<mission name="Zarabustor Coffin" storageid="6096" startvalue="0" endvalue="1">
+		<mission name="Zarabustor Coffin" storageid="2662" startvalue="0" endvalue="1">
 			<missionstate id="0" description="Conjurer Outfit and Magician Hat." />
 			<missionstate id="1" description="Conjurer Outfit and Magician Hat Founded." />
 		</mission>
@@ -51,21 +51,21 @@
 			<missionstate id="0" description="Assassin Outfit and Firewalker Boots." />
 			<missionstate id="1" description="Assassin Outfit and Firewalker Boots Founded." />
 		</mission>
-		<mission name="Dracula Ring Statue" storageid="10008" startvalue="0" endvalue="1">
+		<mission name="Dracula Statue" storageid="10008" startvalue="0" endvalue="1">
 			<missionstate id="0" description="Death Herald Outfit and Dracula Ring." />
 			<missionstate id="1" description="Death Herald Outfit and Dracula Ring Founded." />
 		</mission>
 	</quest>
 	<quest name="DarkKonia Quest" startstorageid="2526" startstoragevalue="1">
-	<!--
+	<!-- 
 		<mission name="" storageid="" startvalue="0" endvalue="1">
 			<missionstate id="0" description="." />
 			<missionstate id="1" description=" Complete." />
 		</mission>
 	-->
 		<mission name="Rose Shield Quest" storageid="12527" startvalue="0" endvalue="1">
-			<missionstate id="0" description="." />
-			<missionstate id="1" description=" Complete." />
+			<missionstate id="0" description="Rose Shield Quest." />
+			<missionstate id="1" description="Rose Shield Quest Complete." />
 		</mission>
 		<mission name="Leather Whip Quest" storageid="13293" startvalue="0" endvalue="1">
 			<missionstate id="0" description="Leather Whip Quest." />
@@ -91,11 +91,7 @@
 			<missionstate id="0" description="Bright Sword Quest." />
 			<missionstate id="1" description="Bright Sword Quest Complete." />
 		</mission>
-		<mission name="Djinn Chest II" storageid="24070" startvalue="0" endvalue="1">
-			<missionstate id="0" description="Djinn Chest." />
-			<missionstate id="1" description="Djinn Chest Complete." />
-		</mission>
-		<mission name="Djinn Chest I" storageid="24071" startvalue="0" endvalue="1">
+		<mission name="Djinn Chest" storageid="24073" startvalue="0" endvalue="1">
 			<missionstate id="0" description="Djinn Chest." />
 			<missionstate id="1" description="Djinn Chest Complete." />
 		</mission>
@@ -163,9 +159,9 @@
 			<missionstate id="0" description="Patchet Boots Quest." />
 			<missionstate id="1" description="Patchet Boots Quest Complete." />
 		</mission>
-		<mission name="Protection Quest" storageid="45578" startvalue="0" endvalue="1">
-			<missionstate id="0" description="Protection Quest." />
-			<missionstate id="1" description="Protection Quest Complete." />
+		<mission name="Protection Chest" storageid="45578" startvalue="0" endvalue="1">
+			<missionstate id="0" description="Protection Chest Quest." />
+			<missionstate id="1" description="Protection Chest Quest Complete." />
 		</mission>
 		<mission name="The Pits of Inferno Quest" storageid="50009" startvalue="0" endvalue="1">
 			<missionstate id="0" description="The Pits of Inferno Quest." />
@@ -191,9 +187,9 @@
 			<missionstate id="0" description="Items of Steel Quest." />
 			<missionstate id="1" description="Items of Steel Quest Complete." />
 		</mission>
-		<mission name="Slingshot Quest" storageid="5907" startvalue="0" endvalue="1">
-			<missionstate id="0" description="Slingshot Quest." />
-			<missionstate id="1" description="Slingshot Quest Complete." />
+		<mission name="Slingshot Chest Quest" storageid="5907" startvalue="0" endvalue="1">
+			<missionstate id="0" description="Slingshot Chest Quest." />
+			<missionstate id="1" description="Slingshot Chest Quest Complete." />
 		</mission>
 		<mission name="Crystal Arrow Quest" storageid="2352" startvalue="0" endvalue="1">
 			<missionstate id="0" description="Crystal Arrow Quest." />

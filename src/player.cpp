@@ -2264,11 +2264,27 @@ void Player::death(Creature* lastHitCreature)
 
 bool Player::dropCorpse(Creature* lastHitCreature, Creature* mostDamageCreature, bool lastHitUnjustified, bool mostDamageUnjustified)
 {
-	if (getZone() == ZONE_PVP) {
-		setDropLoot(true);
-		return false;
+	if (getZone() != ZONE_PVP) {
+		return Creature::dropCorpse(lastHitCreature, mostDamageCreature, lastHitUnjustified, mostDamageUnjustified);
 	}
-	return Creature::dropCorpse(lastHitCreature, mostDamageCreature, lastHitUnjustified, mostDamageUnjustified);
+
+	Player* lastHitPlayer = nullptr;
+	if (lastHitCreature) {
+		lastHitPlayer = lastHitCreature->getPlayer();
+		if (!lastHitPlayer) {
+			Creature* lastHitMaster = lastHitCreature->getMaster();
+			if (lastHitMaster) {
+				lastHitPlayer = lastHitMaster->getPlayer();
+			}
+		}
+	}
+
+	if (!lastHitPlayer) {
+		return Creature::dropCorpse(lastHitCreature, mostDamageCreature, lastHitUnjustified, mostDamageUnjustified);
+	}
+
+	setDropLoot(true);
+	return false;
 }
 
 Item* Player::getCorpse(Creature* lastHitCreature, Creature* mostDamageCreature)
@@ -2362,11 +2378,6 @@ bool Player::removeVIP(uint32_t vipGuid)
 
 bool Player::addVIP(uint32_t vipGuid, const std::string& vipName, VipStatus_t status)
 {
-	if (guid == vipGuid) {
-		sendTextMessage(MESSAGE_STATUS_SMALL, "You cannot add yourself.");
-		return false;
-	}
-
 	if (VIPList.size() >= getMaxVIPEntries() || VIPList.size() == 200) { // max number of buddies is 200 in 9.53
 		sendTextMessage(MESSAGE_STATUS_SMALL, "You cannot add more buddies.");
 		return false;
@@ -2387,10 +2398,6 @@ bool Player::addVIP(uint32_t vipGuid, const std::string& vipName, VipStatus_t st
 
 bool Player::addVIPInternal(uint32_t vipGuid)
 {
-	if (guid == vipGuid) {
-		return false;
-	}
-
 	if (VIPList.size() >= getMaxVIPEntries() || VIPList.size() == 200) { // max number of buddies is 200 in 9.53
 		return false;
 	}

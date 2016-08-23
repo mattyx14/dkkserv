@@ -1,6 +1,5 @@
 local config = {
 	requiredLevel = 270,
-	daily = true,
 	centerRoomPosition = Position(1231, 1048, 10),
 	playerPositions = {
 		Position(973, 1068, 9),
@@ -78,11 +77,6 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 			players:teleportTo(config.newPositions[i])
 			config.newPositions[i]:sendMagicEffect(CONST_ME_ENERGYAREA)
 			players:setDirection(DIRECTION_EAST)
-		end
-	elseif item.itemid == 1945 then
-		if config.daily then
-			player:sendTextMessage(MESSAGE_STATUS_SMALL, Game.getReturnMessage(RETURNVALUE_NOTPOSSIBLE))
-			return true
 		end
 	end
 

@@ -3244,7 +3244,7 @@
 		<attribute key="description" value="It's the magic Cyclopmania Sword." />
 		<attribute key="weight" value="4300" />
 		<attribute key="defense" value="40" />
-		<attribute key="attack" value="65" />
+		<attribute key="attack" value="70" />
 		<attribute key="weaponType" value="sword" />
 		<attribute key="slotType" value="two-handed" />
 		<attribute key="elementDeath" value="5" />
@@ -3375,7 +3375,7 @@
 		<attribute key="description" value="Strong powers flow in this magic sword." />
 		<attribute key="weight" value="4300" />
 		<attribute key="defense" value="45" />
-		<attribute key="attack" value="65" />
+		<attribute key="attack" value="72" />
 		<attribute key="weaponType" value="sword" />
 		<attribute key="slotType" value="two-handed" />
 		<attribute key="elementHoly" value="6" />
@@ -3430,7 +3430,7 @@
 		<attribute key="description" value="A masterpiece of a dwarven smith." />
 		<attribute key="weight" value="4300" />
 		<attribute key="defense" value="30" />
-		<attribute key="attack" value="67" />
+		<attribute key="attack" value="73" />
 		<attribute key="weaponType" value="axe" />
 		<attribute key="slotType" value="two-handed" />
 		<attribute key="elementDeath" value="5" />
@@ -16208,7 +16208,7 @@
 	<item id="8926" article="a" name="demonwing axe">
 		<attribute key="weight" value="4300" />
 		<attribute key="defense" value="35" />
-		<attribute key="attack" value="67" />
+		<attribute key="attack" value="74" />
 		<attribute key="weaponType" value="axe" />
 		<attribute key="slotType" value="two-handed" />
 		<attribute key="elementHoly" value="5" />
@@ -16217,7 +16217,7 @@
 	<item id="8927" article="a" name="dark trinity mace">
 		<attribute key="weight" value="4300" />
 		<attribute key="defense" value="45" />
-		<attribute key="attack" value="64" />
+		<attribute key="attack" value="69" />
 		<attribute key="weaponType" value="club" />
 		<attribute key="slotType" value="two-handed" />
 		<attribute key="elementDeath" value="5" />
@@ -23924,7 +23924,7 @@
 	<item id="15414" article="an" name="ornate mace">
 		<attribute key="weight" value="4300" />
 		<attribute key="defense" value="50" />
-		<attribute key="attack" value="64" />
+		<attribute key="attack" value="70" />
 		<attribute key="weaponType" value="club" />
 		<attribute key="slotType" value="two-handed" />
 		<attribute key="elementHoly" value="6" />

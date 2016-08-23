@@ -24,19 +24,20 @@ end
 
 function onStepIn(creature, item, position, fromPosition)
 	if not isWalkable(item) then
-		if creature:isPlayer() then
-			local safePosition = creature:getTown():getTemplePosition()
-
-			if position.x == fromPosition.x and position.y == fromPosition.y and position.z == fromPosition.z then
-				creature:teleportTo(safePosition, false)
+		if position == fromPosition then
+			local temple = creature:getTown():getTemplePosition()
+			if creature:isPlayer() then
+				creature:teleportTo(temple, false)
 				return true
 			elseif not isPositionSafe(fromPosition) then
-				creature:teleportTo(safePosition, false)
+				creature:teleportTo(temple, false)
 				return true
-			end		  
+			else
+				creature:remove()
+			end
+		else
+			creature:teleportTo(fromPosition, false)
 		end
-
-		creature:teleportTo(fromPosition, false)
 	end
 	return true
 end
