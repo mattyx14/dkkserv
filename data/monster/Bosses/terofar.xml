@@ -1,27 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Terofar" nameDescription="a Terofar" race="blood" experience="0" speed="380" manacost="220">
-	<health now="15" max="15" />
-	<look type="74" corpse="6017" />
-	<targetchange interval="5000" chance="20" />
+<monster name="Terofar" nameDescription="Terofar" race="blood" experience="24000" speed="440" manacost="0">
+	<health now="25000" max="25000"/>
+	<look type="12" head="19" body="0" legs="77" feet="79" addons="0" corpse="6068"/>
+	<targetchange interval="2000" chance="25"/>
 	<flags>
-		<flag summonable="1" />
-		<flag attackable="1" />
-		<flag hostile="0" />
-		<flag illusionable="1" />
-		<flag convinceable="1" />
-		<flag pushable="1" />
-		<flag canpushitems="0" />
-		<flag canpushcreatures="0" />
-		<flag targetdistance="1" />
-		<flag staticattack="90" />
-		<flag runonhealth="15" />
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag staticattack="90"/>
+		<flag targetdistance="1"/>
+		<flag runonhealth="0"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="0" attack="0" />
+		<attack name="melee" interval="2000" skill="180" attack="100"/>
+		<attack name="terofar skill reducer 1" interval="2000" chance="22"/>
+		<attack name="terofar skill reducer 2" interval="2000" chance="22"/>
+        <attack name="terofar curse" interval="1000" chance="100" range="7"/>
+		<attack name="death" interval="2000" chance="30" length="8" spread="0" min="-700" max="-1725">
+			<attribute key="areaEffect" value="smallclouds"/>
+		</attack>
+        <attack name="physical" interval="2000" chance="18" radius="1" range="7" target="1" min="-0" max="-750">
+            <attribute key="shootEffect" value="whirlwindaxe"/>
+        </attack>
 	</attacks>
-	<defenses armor="1" defense="2" />
+	<defenses armor="55" defense="65">
+		<defense name="terofar heal" interval="2000" chance="30"/>
+		<defense name="speed" interval="2000" chance="18" speedchange="784" duration="7000">
+			<attribute key="areaEffect" value="greenshimmer"/>
+		</defense>
+	</defenses>
+	<elements>
+		<element physicalPercent="50"/>
+		<element deathPercent="50"/>
+		<element energyPercent="50"/>
+		<element firePercent="50"/>
+		<element icePercent="50"/>
+		<element holyPercent="50"/>
+	</elements>
+	<immunities>
+		<immunity poison="1"/>
+		<immunity lifedrain="1"/>
+		<immunity paralyze="1"/>
+		<immunity outfit="1"/>
+		<immunity drunk="1"/>
+		<immunity invisible="1"/>
+	</immunities>
+	<voices interval="2000" chance="5">
+		<voice sentence="IT TOOK AN ARMY OF YOUR KIND TO DEFEAT THE WARDEN. NOW YOU ARE ALONE!" yell="1"/>
+		<voice sentence="FEELS GOOD TO BE BACK IN ACTION!" yell="1"/>
+		<voice sentence="THE WARDS ARE FAILING! MY ESCAPE IS ONLY A MATTER OF TIME!" yell="1"/>
+	</voices>
 	<loot>
-		<item id="2684" countmax="2" chance="9000" /><!-- carrot -->
-		<item id="2666" countmax="2" chance="20000" /><!-- meat -->
+		<item id="18413" countmax="8" chance="30910"/><!-- blue crystal shard -->
+		<item id="2158" chance="12730"/><!-- blue gem -->
+		<item id="2195" chance="5450"/><!-- boots of haste -->
+		<item id="22396" countmax="1" chance="100000"/><!-- cluster of solace -->
+		<item id="2519" chance="14550"/><!-- crown shield -->
+		<item id="5954" countmax="1" chance="100000"/><!-- demon horn -->
+		<item id="2520" chance="1820"/><!-- demon shield -->
+		<item id="6500" countmax="1" chance="100000"/><!-- demonic essence -->
+		<item id="22397" countmax="1" chance="100000"/><!-- dream matter -->
+		<item id="22610" chance="12730"/><!-- dream warden mask -->
+		<item id="8882" chance="1000"/><!-- earthborn titan armor -->
+		<item id="7632" countmax="1" chance="52730"/><!-- giant shimmering pearl -->
+		<item id="7633" countmax="1" chance="52730"/><!-- giant shimmering pearl -->
+		<item id="9971" countmax="1" chance="9090"/><!-- gold ingot -->
+		<item id="7590" countmax="10" chance="34550"/><!-- great mana potion -->
+		<item id="8472" countmax="10" chance="34550"/><!-- great spirit potion -->
+		<item id="18415" countmax="8" chance="36360"/><!-- green crystal shard -->
+		<item id="2155" chance="21820"/><!-- green gem -->
+		<item id="8877" chance="1820"/><!-- lavos armor -->
+		<item id="2472" chance="1500"/><!-- magic plate armor -->
+		<item id="8891" chance="16360"/><!-- paladin armor -->
+		<item id="2152" countmax="60" chance="100000"/><!-- platinum coin -->
+		<item id="2498" chance="3640"/><!-- royal helmet -->
+		<item id="5741" chance="3640"/><!-- skull helmet -->
+		<item id="2150" countmax="25" chance="14550"/><!-- small amethyst -->
+		<item id="2145" countmax="25" chance="16360"/><!-- small diamond -->
+		<item id="2149" countmax="25" chance="14550"/><!-- small emerald -->
+		<item id="2147" countmax="25" chance="9090"/><!-- small ruby -->
+		<item id="2146" countmax="25" chance="23640"/><!-- small sapphire -->
+		<item id="9970" countmax="25" chance="18180"/><!-- small topaz -->
+		<item id="2645" chance="5450"/><!-- steel boots -->
+		<item id="7886" chance="12730"/><!-- terra boots -->
+		<item id="8473" countmax="10" chance="30910"/><!-- ultimate health potion -->
+		<item id="22598" countmax="1" chance="100000"/><!-- unrealized dream -->
+		<item id="18414" countmax="8" chance="32730"/><!-- violet crystal shard -->
+		<item id="8879" chance="1820"/><!-- voltage armor -->
 	</loot>
 </monster>

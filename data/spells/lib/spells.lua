@@ -7,6 +7,12 @@ AREA_WAVE3 = {
 {0, 3, 0}
 }
 
+AREA_SHORTWAVE3 = {
+{1, 1, 1},
+{1, 1, 1},
+{0, 3, 0}
+}
+
 AREA_WAVE4 = {
 {1, 1, 1, 1, 1},
 {0, 1, 1, 1, 0},
@@ -198,8 +204,24 @@ AREA_SQUARE1X1 = {
 }
 
 -- Walls
+AREA_WALLFIELD_5 = {
+{1, 1, 3, 1, 1}
+}
+
 AREA_WALLFIELD = {
 {1, 1, 3, 1, 1}
+}
+
+AREA_WALLFIELD_7 = {
+{1, 1, 1, 3, 1, 1, 1}
+}
+
+AREADIAGONAL_WALLFIELD_9 = {
+{0, 0, 0, 0, 1},
+{0, 0, 0, 1, 1},
+{0, 1, 3, 1, 0},
+{1, 1, 0, 0, 0},
+{1, 0, 0, 0, 0},
 }
 
 AREADIAGONAL_WALLFIELD = {
@@ -208,6 +230,16 @@ AREADIAGONAL_WALLFIELD = {
 {0, 1, 3, 1, 0},
 {1, 1, 0, 0, 0},
 {1, 0, 0, 0, 0},
+}
+
+AREADIAGONAL_WALLFIELD_13 = {
+{0, 0, 0, 0, 0, 0, 1},
+{0, 0, 0, 0, 0, 1, 1},
+{0, 0, 0, 0, 1, 1, 0},
+{0, 0, 1, 3, 1, 0, 0},
+{0, 1, 1, 0, 0, 0, 0},
+{1, 1, 0, 0, 0, 0, 0},
+{1, 0, 0, 0, 0, 0, 0},
 }
 
 -- Spells-only arrays
@@ -248,3 +280,190 @@ CORPSES = {
 
 -- This array contains all destroyable field items
 FIELDS = {1487,1488,1489,1490,1491,1492,1493,1494,1495,1496,1500,1501,1502,1503,1504}
+
+function getCreaturesInAreaLess3(centerPos, playersOnly, width, height, fromZ, toZ)
+	if fromZ == nil then
+		fromZ = centerPos.z
+	end
+
+	if toZ == nil then
+		toZ = centerPos.z
+	end
+
+	local spectators = {}
+	width = width - 1
+	height = height - 1
+	for x = centerPos.x, centerPos.x + width do
+		for y = centerPos.y, centerPos.y + height do
+			for z = fromZ, toZ do
+				local pos = Position(x, y, z)
+				local tile = Tile(pos)
+				if tile then
+					local creatures = tile:getCreatures()
+					for _, creature in ipairs(creatures) do
+						if playersOnly then
+							if creature:isPlayer() then
+								table.insert(spectators, creature)
+							end
+						else
+							table.insert(spectators, creature)
+						end
+					end
+				end
+			end
+		end
+	end
+
+	return spectators
+end
+
+function getCreaturesInArea(centerPos, playersOnly, width, height, fromZ, toZ)
+	if fromZ == nil then
+		fromZ = centerPos.z
+	end
+
+	if toZ == nil then
+		toZ = centerPos.z
+	end
+
+	if (width < 3) or (height < 3) then
+		return getCreaturesInAreaLess3(centerPos, playersOnly, width, height, fromZ, toZ)
+	end
+
+	local tmpPos = Position(centerPos.x, centerPos.y, centerPos.z)
+	tmpPos.x = tmpPos.x + 1
+	tmpPos.y = tmpPos.y + 1
+	width = width - 2
+	height = height - 2
+	local spectators = {}
+	for z = fromZ, toZ do
+		tmpPos.z = z
+		local result = Game.getSpectators(tmpPos, false, playersOnly, 1, width, 1, height)
+		for _, creature in ipairs(result) do
+			table.insert(spectators, creature)
+		end
+	end
+
+	return spectators
+end
+
+function buildRectArea(fromPos, toPos)
+	local area = {}
+	area.position = fromPos
+	area.width = toPos.x - fromPos.x
+	area.height = toPos.y - fromPos.y
+	area.fromZ = fromPos.z
+	area.toZ = toPos.z
+
+	return area
+end
+
+function MonsterSpellIsFriendMonster(creature)
+	return creature:isMonster() and ((creature:getMaster() == nil) or not creature:getMaster():isPlayer())
+end
+
+function MonsterSpellSummonMonster(master, monsterName, position, setMaster, extended, force)
+end
+
+function Creature.getHealthPercent(self)
+	return (self:getHealth() / self:getMaxHealth()) * 100
+end
+
+--it only count friend monsters(that are monsters and are not a player summon)
+function MonsterSpellGetSummonsInArea(master, checkIsMaster, checkName, checkWithoutMaster, minRangeX, maxRangeX, minRangeY, maxRangeY)
+	local checkNameType = type(checkName)
+	if checkNameType == "string" then
+		if checkName ~= "" then
+			checkName = {checkName}
+		else
+			checkName = {}
+		end
+	elseif not checkNameType == "table" then
+		return
+	end
+
+	local spectators = Game.getSpectators(master:getPosition(), false, false, minRangeX, maxRangeX, minRangeY, maxRangeY)
+	local ret = {}
+	for _, spectator in ipairs(spectators) do
+		if MonsterSpellIsFriendMonster(spectator) and (not checkIsMaster or (spectator:getMaster() == master)) and (#checkName == 0 or isInArray(checkName, spectator:getName())) and (not checkWithoutMaster or not spectator:getMaster()) then
+			table.insert(ret, spectator)
+		end
+	end
+
+	return ret
+end
+
+function MonsterSpellCreateSkillReducerCombatList(minPercent, maxPercent, callback)
+	local ret = {}
+
+	for percent = minPercent, maxPercent do
+		local combat = Combat()
+
+		callback(combat, percent)
+
+		ret[percent] = combat
+	end
+
+	return function()
+		local rndValue = math.random(minPercent, maxPercent)
+		-- print("MonsterSpellCreateSkillReducerCombatList percent: " .. rndValue)
+		return ret[rndValue]
+	end
+end
+
+function MonsterSpellCreateCursedCombatList(minDamage, maxDamage, increaseValue, minCount, maxCount, multiplier, delay, callback)
+	local ret = {}
+	for damage = minDamage, maxDamage, increaseValue do
+		for count = minCount, maxCount do
+			local combat = Combat()
+
+			callback(combat, damage)
+
+			local condition = Condition(CONDITION_CURSED)
+			condition:setParameter(CONDITION_PARAM_DELAYED, true)
+
+			local value = damage
+			for _ = 1, count do
+				condition:addDamage(1, delay, -value)
+				value = value * multiplier
+			end
+
+			combat:setCondition(condition)
+
+			table.insert(ret, combat)
+		end
+	end
+
+	return function()
+		return ret[math.random(#ret)]
+	end
+end
+
+--stop all the addEvents to prevent crash(all conditions, areas and combats are deleted when reloading spells)
+if SPELLS_GLOBAL_ADD_EVENTS_LIST then
+	for _, eventId in ipairs(SPELLS_GLOBAL_ADD_EVENTS_LIST) do
+		stopEvent(eventId)
+	end
+end
+
+SPELLS_GLOBAL_ADD_EVENTS_LIST = {}
+
+--we should use this function to prevent crashs while reloading spells
+function SpellAddEvent(...)
+	local eventId = addEvent(...)
+	if eventId then
+		table.insert(SPELLS_GLOBAL_ADD_EVENTS_LIST, eventId)
+	end
+
+	return eventId
+end
+
+
+SPELL_VOCATION_KNIGHT = {4, 8}
+SPELL_VOCATION_PALADIN = {3, 7}
+SPELL_VOCATION_DRUID = {2, 6}
+SPELL_VOCATION_SORCERER = {1, 5}
+SPELL_VOCATION_MAGE = {1, 2, 5, 6}
+
+DEFAULT_CONDITION_COMBAT_SUB_ID = 8888888
+DEFAULT_CONDITION_HEAL_SUB_ID = 8888889

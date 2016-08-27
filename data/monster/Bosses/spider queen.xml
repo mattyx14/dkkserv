@@ -1,35 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Spider Queen" nameDescription="a spider queen" race="venom" experience="240" speed="280">
-	<health now="500" max="500" />
-	<look type="219" corpse="6060" />
-	<targetchange interval="5000" chance="8" />
+<monster name="Spider Queen" nameDescription="a spider queen" race="venom" experience="120" speed="380" manacost="0">
+	<health now="225" max="225"/>
+	<look type="219" corpse="6060"/>
+	<targetchange interval="2000" chance="8"/>
 	<flags>
-		<flag summonable="0" />
-		<flag attackable="0" />
-		<flag hostile="1" />
-		<flag illusionable="1" />
-		<flag convinceable="0" />
-		<flag pushable="0" />
-		<flag canpushitems="1" />
-		<flag canpushcreatures="0" />
-		<flag targetdistance="1" />
-		<flag staticattack="90" />
-		<flag runonhealth="0" />
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="0"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="60" attack="40" poison="80" />
+		<attack name="outfit" interval="2000" chance="100" target="1" range="7" item="7556" duration="25000">
+			<attribute key="shootEffect" value="poison"/>
+			<attribute key="areaEffect" value="greenspark"/>
+		</attack>
 	</attacks>
+	<defenses armor="15" defense="17"/>
 	<immunities>
-		<immunity energy="1" />
-		<immunity fire="1" />
-		<immunity ice="1" />
-		<immunity physical="1" />
-		<immunity drown="1" />
-		<immunity death="1" />
-		<immunity holy="1" />
-		<immunity outfit="1" />
-		<immunity drunk="1" />
-		<immunity invisible="1" />
-		<immunity earth="1" />
+		<immunity name="physical"/>
+		<immunity name="death"/>
+		<immunity name="holy"/>
+		<immunity name="ice"/>
+		<immunity name="energy"/>
+		<immunity name="fire"/>
+		<immunity name="poison"/>
+		<immunity name="drown"/>
+		<immunity name="lifedrain"/>
+		<immunity name="paralyze"/>
+		<immunity name="drunk"/>
 	</immunities>
 </monster>

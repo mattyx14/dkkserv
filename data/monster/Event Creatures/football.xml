@@ -2,7 +2,7 @@
 <monster name="Football" nameDescription="a football" race="undead" experience="5" speed="200" manacost="0">
 	<health now="100" max="100" />
 	<look typeex="2109" />
-	<targetchange interval="4000" chance="10" />
+	<targetchange interval="2000" chance="10" />
 	<flags>
 		<flag summonable="0" />
 		<flag attackable="1" />

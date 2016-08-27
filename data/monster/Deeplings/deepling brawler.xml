@@ -1,45 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Deepling Brawler" nameDescription="a deepling brawler" race="blood" experience="260" speed="190" manacost="0">
-	<health now="380" max="380" />
-	<look type="470" corpse="13840" />
-	<targetchange interval="4000" chance="10" />
+<monster name="Deepling Brawler" nameDescription="a deepling brawler" race="blood" experience="260" speed="130" manacost="0">
+	<health now="380" max="380"/>
+	<look type="470" corpse="15500"/>
+	<targetchange interval="2000" chance="2"/>
 	<flags>
-		<flag summonable="0" />
-		<flag attackable="1" />
-		<flag hostile="1" />
-		<flag illusionable="0" />
-		<flag convinceable="0" />
-		<flag pushable="1" />
-		<flag canpushitems="1" />
-		<flag canpushcreatures="1" />
-		<flag targetdistance="0" />
-		<flag runonhealth="40" />
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag staticattack="90"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag runonhealth="0"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="40" attack="40" />
-		<attack name="drown" interval="2000" chance="15" range="7" target="1" min ="-60" max="-120">
-			<attribute key="shootEffect" value="spear" />
-			<attribute key="areaEffect" value="bluebubble" />
+		<attack name="melee" interval="2000" skill="50" attack="40"/>
+		<attack name="physical" interval="2000" chance="11" range="5" target="1" min ="-0" max="-100">
+			<attribute key="shootEffect" value="spear"/>
+			<attribute key="areaEffect" value="bluebubble"/>
 		</attack>
 	</attacks>
-	<defenses armor="15" defense="15" />
-	<elements>
-		<element energyPercent="-10" />
-		<element earthPercent="-1" />
-	</elements>
-	<immunities>
-		<immunity invisible="1" />
-		<immunity paralyze="1" />
-		<immunity drown="1" />
-		<immunity fire="1" />
-	</immunities>
+	<defenses armor="8" defense="12"/>
 	<loot>
-		<item id="2148" countmax="44" chance="61000" /> <!-- gold coin -->
-		<item id="15430" chance="14500" /><!-- deepling scales -->
-		<item id="13870" chance="6600" /><!-- eye of a deepling -->
-		<item id="13838" chance="2940" /> <!-- heavy trident -->
-		<item id="13870" chance="6620" /><!-- eye of a deepling -->
-		<item id="5895" chance="740" /><!-- fish fin -->
-		<item id="2667" countmax="3" chance="19120" /><!-- fish-->
+		<item id="2148" countmax="45" chance="75000"/> <!-- gold coin -->
+		<item id="2667" countmax="3" chance="12000"/> <!-- fish -->
+		<item id="15430" chance="6900"/> <!-- deepling scales -->
+		<item id="13838" chance="510"/> <!-- heavy trident -->
+		<item id="5895" chance="350"/><!-- fish fin -->
+		<item id="13870" chance="280"/><!-- eye of a deepling -->
+		<item id="2149" chance="110"/> <!-- small emerald -->
 	</loot>
 </monster>

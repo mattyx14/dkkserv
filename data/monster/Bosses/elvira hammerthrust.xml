@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Elvira Hammerthrust" nameDescription="Elvira Hammerthrust" race="blood" experience="165" speed="200" manacost="0">
+	<health now="245" max="245"/>
+	<look type="70" corpse="6013"/>
+	<targetchange interval="2000" chance="5"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="30" attack="70"/>
+	</attacks>
+	<defenses armor="15" defense="44"/>
+	<elements>
+		<element earthPercent="20"/>
+		<element physicalPercent="10"/>
+		<element firePercent="-5"/>
+		<element deathPercent="-5"/>
+	</elements>
+	<immunities>
+		<immunity invisible="1"/>
+	</immunities>
+	<voices interval="2000" chance="5">
+		<voice sentence="Let us leave safely and maybe we'll give you a few coins."/>
+	</voices>
+	<loot>
+		<item id="14903" chance="100000"/><!-- bag with stolen gold -->
+		<item id="2152" countmax="100" chance="50000"/><!-- platinum coin coin -->
+	</loot>
+</monster>

@@ -1,54 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Clay Guardian" nameDescription="a clay guardian" race="undead" experience="400" speed="210" manacost="0">
-	<health now="625" max="625" />
-	<look type="333" corpse="13972" />
-	<targetchange interval="4000" chance="10" />
+<monster name="Clay Guardian" nameDescription="a clay guardian" race="undead" experience="400" speed="230" manacost="0">
+	<health now="625" max="625"/>
+	<look type="333" corpse="13972"/>
+	<targetchange interval="2000" chance="8"/>
 	<flags>
-		<flag summonable="0" />
-		<flag attackable="1" />
-		<flag hostile="1" />
-		<flag illusionable="1" />
-		<flag convinceable="0" />
-		<flag pushable="0" />
-		<flag canpushitems="1" />
-		<flag canpushcreatures="1" />
-		<flag targetdistance="1" />
-		<flag staticattack="60" />
-		<flag runonhealth="0" />
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="40" attack="50" />
-		<attack name="earth" interval="2000" chance="20" range="7" min="-30" max="-150">
-			<attribute key="shootEffect" value="smallearth" />
-			<attribute key="areaEffect" value="greenbubble" />
-		</attack>
-		<attack name="earth" interval="2000" chance="50" target="0" radius="3" min="-20" max="-30">
-			<attribute key="areaEffect" value="poff" />
-		</attack>
+      	<attack name="melee" interval="2000" skill="50" attack="40"/>
+    	<attack name="poison" interval="2000" chance="17" range="7" min="-30" max="-150">
+      		<attribute key="shootEffect" value="earth" />
+      		<attribute key="areaEffect" value="greenbubble" />
+    	</attack>
+    	<attack name="poison" interval="2000" chance="22" radius="3" target="0" min="-15" max="-30">
+      		<attribute key="areaEffect" value="poff" />
+    	</attack>
 	</attacks>
-	<defenses armor="25" defense="25">
-		<defense name="healing" interval="2000" chance="10" min="40" max="130">
-			<attribute key="areaEffect" value="blueshimmer" />
-		</defense>
-	</defenses>
+	<defenses armor="32" defense="41">
+    	<defense name="healing" interval="2000" chance="16" min="60" max="90">
+      		<attribute key="areaEffect" value="groundshaker" />
+    	</defense>
+  	</defenses>
 	<elements>
-		<element physicalPercent="40" />
-		<element deathPercent="50" />
-		<element icePercent="50" />
-		<element firePercent="-5" />
+		<element physicalPercent="25"/>
+		<element deathPercent="40"/>
+		<element energyPercent="30"/>
+		<element icePercent="35"/>
 	</elements>
 	<immunities>
-		<immunity earth="1" />
-		<immunity invisible="1" />
+		<immunity earth="1"/>
+		<immunity invisible="1"/>
 	</immunities>
 	<loot>
-		<item id="2148" countmax="100" chance="50000" /><!-- gold coin -->
-		<item id="2148" countmax="63" chance="50000" /><!-- gold coin -->
-		<item id="11222" chance="25000" /><!-- lump of earth -->
-		<item id="2260" chance="25000" /><!-- blank rune -->
-		<item id="1294" countmax="10" chance="10000" /><!-- small stone -->
-		<item id="7850" countmax="8" chance="5555" /><!-- earth arrow -->
-		<item id="11339" chance="1100" /><!-- clay lump -->
-		<item id="9970" chance="320" /><!-- small topaz -->
+		<item id="2260" chance="25860"/><!-- blank rune -->
+		<item id="2148" countmax="163" chance="97930"/><!-- gold coin -->
+		<item id="11222" chance="25390"/><!-- lump of earth -->
+		<item id="1294" countmax="10" chance="10410"/><!-- small stone -->
+		<item id="7850" countmax="8" chance="5520"/><!-- earth arrow -->
+		<item id="11339" chance="1100"/><!-- clay lump -->
+		<item id="9970" chance="320"/><!-- small topaz -->
 	</loot>
 </monster>

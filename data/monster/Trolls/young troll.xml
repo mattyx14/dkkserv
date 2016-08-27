@@ -1,29 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Young Troll" nameDescription="a young troll" race="blood" experience="12" speed="380" manacost="0">
-	<health now="30" max="30" />
-	<look type="15" corpse="5960" />
-	<targetchange interval="5000" chance="20" />
+<monster name="Young Troll" nameDescription="a young troll" race="blood" experience="12" speed="116" manacost="0">
+	<health now="30" max="30"/>
+	<look type="15" corpse="5960"/>
+	<targetchange interval="2000" chance="0"/>
 	<flags>
-		<flag summonable="0" />
-		<flag attackable="1" />
-		<flag hostile="1" />
-		<flag illusionable="0" />
-		<flag convinceable="0" />
-		<flag pushable="1" />
-		<flag canpushitems="0" />
-		<flag canpushcreatures="0" />
-		<flag targetdistance="1" />
-		<flag staticattack="90" />
-		<flag runonhealth="15" />
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="1"/>
+		<flag convinceable="0"/>
+		<flag pushable="1"/>
+		<flag canpushitems="0"/>
+		<flag canpushcreatures="0"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="10"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" min="0" max="-10" />
+		<attack name="melee" interval="2000" skill="10" attack="7"/>
 	</attacks>
-	<defenses armor="1" defense="2" />
+	<defenses armor="1" defense="3"/>
+	<voices interval="2000" chance="5">
+		<voice sentence="Grrrr"/>
+		<voice sentence="Groar"/>
+		<voice sentence="Gruntz!"/>
+		<voice sentence="Hmmm, bugs."/>
+		<voice sentence="Hmmm, dogs."/>
+	</voices>
 	<loot>
-		<item id="2148" countmax="12" chance="58000" />	<!-- gold coin -->
-		<item id="2666" chance="14000" />				<!-- meat -->
-		<item id="2120" chance="10000" />				<!-- rope -->
-		<item id="2448" chance="3000" />					<!-- studded club -->
+		<item id="10606" chance="2220"/><!-- bunch of troll hair -->
+		<item id="2148" countmax="5" chance="68890"/><!-- gold coin -->
+		<item id="2643" chance="4440"/><!-- leather boots -->
+		<item id="2461" chance="4440"/><!-- leather helmet -->
+		<item id="2666" chance="28150"/><!-- meat -->
+		<item id="2120" chance="6670"/><!-- rope -->
+		<item id="2389" chance="6670"/><!-- spear -->
+		<item id="2512" chance="2960"/><!-- wooden shield -->
 	</loot>
 </monster>

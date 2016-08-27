@@ -1,83 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Defiler" nameDescription="a defiler" race="venom" experience="6000" speed="230" manacost="0">
-	<health now="8200" max="8200" />
-	<look type="238" corpse="6532" />
-	<targetchange interval="4000" chance="10" />
-	<flags>
-		<flag summonable="0" />
-		<flag attackable="1" />
-		<flag hostile="1" />
-		<flag illusionable="1" />
-		<flag convinceable="0" />
-		<flag pushable="0" />
-		<flag canpushitems="1" />
-		<flag canpushcreatures="1" />
-		<flag targetdistance="1" />
-		<flag staticattack="80" />
-		<flag runonhealth="85" />
-	</flags>
-	<attacks>
-		<attack name="melee" interval="2000" skill="70" attack="130" />
-		<attack name="manadrain" interval="2000" chance="10" range="7" min="0" max="-120" />
-		<attack name="poison" interval="2000" chance="20" range="7" radius="7" target="1" min="-150" max="-250">
-			<attribute key="shootEffect" value="poison" />
-		</attack>
-		<attack name="poisoncondition" interval="2000" chance="15" target="0" radius="7" range="7" min="-400" max="-640">
-			<attribute key="areaEffect" value="greenspark" />
-		</attack>
-		<attack name="poisonfield" interval="2000" chance="10" range="7" radius="1" target="1">
-			<attribute key="shootEffect" value="poison" />
-		</attack>
-		<attack name="poison" interval="2000" chance="20" radius="3" target="0" min="-300" max="-490">
-			<attribute key="areaEffect" value="poison" />
-		</attack>
-		<attack name="poisoncondition" interval="2000" chance="10" length="8" spread="3" min="-300" max="-800">
-			<attribute key="areaEffect" value="smallplants" />
-		</attack>
-		<attack name="speed" interval="2000" chance="15" length="8" spread="3" speedchange="-700" duration="15000" >
-			<attribute key="areaEffect" value="smallclouds" />
-		</attack>
-	</attacks>
-	<defenses armor="55" defense="55">
-		<defense name="healing" interval="2000" chance="15" min="180" max="250">
-			<attribute key="areaEffect" value="blueshimmer" />
-		</defense>
-		<defense name="speed" interval="2000" chance="15" speedchange="280" duration="5000">
-			<attribute key="areaEffect" value="redshimmer" />
-		</defense>
-	</defenses>
-	<elements>
-		<element energyPercent="10" />
-		<element icePercent="20" />
-		<element firePercent="-25" />
-	</elements>
-	<immunities>
-		<immunity earth="1" />
-		<immunity paralyze="1" />
-		<immunity invisible="1" />
-	</immunities>
-	<voices interval="5000" chance="10">
-		<voice sentence="Blubb" />
-		<voice sentence="Blubb Blubb" />
+<monster name="Defiler" nameDescription="a defiler" race="venom" experience="3700" speed="160" manacost="0">
+	<health now="3650" max="3650"/>
+	<look type="238" corpse="6532"/>
+  <targetchange interval="2000" chance="3" />
+  <flags>
+    <flag summonable="0" />
+    <flag attackable="1" />
+    <flag hostile="1" />
+    <flag illusionable="1" />
+    <flag convinceable="0" />
+    <flag pushable="0" />
+    <flag canpushitems="1" />
+    <flag canpushcreatures="1" />
+    <flag targetdistance="1" />
+    <flag staticattack="90" />
+    <flag runonhealth="85" />
+  </flags>
+  <attacks>
+    <attack name="melee" interval="2000" skill="50" attack="80" poison="300" />
+    <attack name="lifedrain" interval="2000" chance="13" target="1" range="7" min="-160" max="-295">
+      <attribute key="areaEffect" value="greenspark" />
+      <attribute key="shootEffect" value="poison" />
+    </attack>
+    <attack name="defiler paralyze 3" interval="2000" chance="9"/>
+    <attack name="defiler paralyze 1" interval="2000" chance="6"/>
+    <attack name="defiler paralyze 2" interval="2000" chance="8"/>
+    <attack name="poisoncondition" interval="2000" chance="10" radius="8" target="0" start="32" min="-300" max="-500">
+      <attribute key="areaEffect" value="greenspark" />
+    </attack>
+    <attack name="poisoncondition" interval="2000" chance="10" length="8" spread="3" start="32" min="-400" max="-725">
+      <attribute key="areaEffect" value="smallplants" />
+    </attack>
+    <attack name="earth" interval="2000" chance="14" radius="3" target="0" min="-120" max="-170">
+      <attribute key="areaEffect" value="poison" />
+    </attack>
+  </attacks>
+  <defenses armor="47" defense="61">
+    <defense name="healing" interval="2000" chance="15" min="250" max="450">
+      <attribute key="areaEffect" value="greenshimmer" />
+    </defense>
+  </defenses>
+  <elements>
+    <element energyPercent="10" />
+    <element icePercent="20" />
+    <element firePercent="-25" />
+  </elements>
+  <immunities>
+    <immunity paralyze="1" />
+    <immunity earth="1" />
+    <immunity lifedrain="1" />
+    <immunity invisible="1" />
+    <immunity drunk="1" />
+  </immunities>
+
+	<voices interval="2000" chance="5">
+		<voice sentence="Blubb"/>
+		<voice sentence="Blubb Blubb"/>
 	</voices>
-	<summons maxSummons="1">
-		<summon name="earth elemental" interval="2000" chance="10" />
-	</summons>
 	<loot>
-		<item id="2152" countmax="6" chance="100000" /><!-- platinum coin -->
-		<item id="8473" countmax="3" chance="20000" /><!-- ultimate health potion -->
-		<item id="7590" countmax="3" chance="14285" /><!-- great mana potion -->
-		<item id="2387" chance="14285" /><!-- double axe -->
-		<item id="2149" chance="10000" /><!-- small emerald -->
-		<item id="7368" countmax="5" chance="5263" /><!-- assassin star -->
-		<item id="2151" chance="3571" /><!-- talon -->
-		<item id="2176" chance="2854" /><!-- orb -->
-		<item id="2165" chance="1333" /><!-- stealth ring -->
-		<item id="2179" chance="1010" /><!-- gold ring -->
-		<item id="2171" chance="813" /><!-- platinum amulet -->
-		<item id="2214" chance="473" /><!-- ring of healing -->
-		<item id="2470" chance="413" /><!-- golden legs -->
-		<item id="2514" chance="389" /><!-- mastermind shield -->
-		<item id="2164" chance="170" /><!-- might ring -->
+		<item id="2148" countmin="3" countmax="272" chance="100000"/><!-- gold coin -->
+		<item id="2152" countmax="6" chance="95660"/><!-- platinum coin -->
+		<item id="6500" chance="20340"/><!-- demonic essence -->
+		<item id="5944" chance="20130"/><!-- soul orb -->
+		<item id="9967" chance="14190"/><!-- glob of acid slime -->
+		<item id="9968" chance="11550"/><!-- glob of tar -->
+		<item id="2151" chance="5930"/><!-- talon -->
+		<item id="2149" countmax="3" chance="5400"/><!-- small emeralds -->
+		<item id="2147" countmax="2" chance="2750"/><!-- small rubies -->
+		<item id="2145" countmax="2" chance="2650"/><!-- small diamond -->
+		<item id="6300" chance="2440"/><!-- death ring -->
+		<item id="2156" chance="1590"/><!-- red gem -->
+		<item id="2154" chance="1380"/><!-- yellow gem -->
+		<item id="2155" chance="640"/><!-- green gem -->
+		<item id="2158" chance="320"/><!-- blue gem -->
 	</loot>
 </monster>

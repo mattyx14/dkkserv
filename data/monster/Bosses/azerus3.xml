@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Azerus" nameDescription="Azerus" race="undead" experience="0" speed="286" manacost="0">
+	<health now="7500" max="7500"/>
+	<look type="309" corpse="0"/>
+	<targetchange interval="2000" chance="7"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="90" attack="40"/>
+		<attack name="fire" interval="2000" chance="20" range="7" radius="1" target="1" min="-200" max="-350">
+			<attribute key="shootEffect" value="fire"/>
+			<attribute key="areaEffect" value="fire"/>
+		</attack>
+		<attack name="fire" interval="2000" chance="20" length="8" spread="0" target="0" min="-250" max="-900">
+			<attribute key="areaEffect" value="teleport"/>
+		</attack>
+		<attack name="azerus soulfire 1" interval="2000" chance="20"/>
+		<attack name="azerus soulfire 2" interval="2000" chance="20"/>
+		<attack name="drunk" interval="2000" chance="20" range="7" radius="1" target="1" duration="15000">
+			<attribute key="shootEffect" value="suddendeath"/>
+			<attribute key="areaEffect" value="stun"/>
+		</attack>
+	</attacks>
+	<defenses armor="33" defense="43">
+		<defense name="healing" interval="2000" chance="40" min="10000" max="10000">
+			<attribute key="areaEffect" value="redshimmer"/>
+		</defense>
+		<defense name="healing" interval="2000" chance="35">
+			<attribute key="areaEffect" value="redspark"/>
+		</defense>
+		<defense name="azerus summon 3" interval="2000" chance="19"/>
+	</defenses>
+	<elements>
+		<element earthPercent="95"/>
+		<element energyPercent="95"/>
+		<element holyPercent="95"/>
+		<element deathPercent="95"/>
+		<element firePercent="95"/>
+		<element icePercent="95"/>
+		<element earthPercent="95"/>
+	</elements>
+	<immunities>
+		<immunity paralyze="1"/>
+		<immunity physical="1"/>
+		<immunity invisible="1"/>
+	</immunities>
+	<voices interval="2000" chance="5">
+		<voice sentence="The master will grant me unlimited power!"/>
+		<voice sentence="The ultimate will finally consume this unworthy existence!"/>
+		<voice sentence="My master and I will tear down the barriers and join the ultimate in its realm!"/>
+		<voice sentence="You fools can not stop HIM who lurks behind reality!"/>
+		<voice sentence="He who has returned from beyond has taught me secrets you can't even grasp!"/>
+	</voices>
+	<loot>
+	</loot>
+</monster>

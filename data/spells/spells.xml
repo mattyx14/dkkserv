@@ -724,69 +724,511 @@
 	<instant spellid="74" name="House Kick" words="alana sio" params="1" aggressive="0" function="houseKick" />
 
 	<!-- Monster Spells -->
-	<instant name="ghastly dragon curse" words="###1" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/ghastly dragon curse.lua" />
-	<instant name="djinn electrify" words="###2" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/djinn electrify.lua" />
-	<instant name="energy elemental electrify" words="###3" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/energy elemental electrify.lua" />
-	<instant name="massive energy elemental electrify" words="###4" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/massive energy elemental electrify.lua" />
-	<instant name="massive fire elemental soulfire" words="###5" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/massive fire elemental soulfire.lua" />
-	<instant name="hellfire fighter soulfire" words="###6" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/hellfire fighter soulfire.lua" />
-	<instant name="hellspawn soulfire" words="###7" aggressive="1" blockwalls="1" range="7" needtarget="1" needlearn="1" script="monster/hellspawn soulfire.lua" />
-	<instant name="spectre drown" words="###8" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/spectre drown.lua" />
-	<instant name="phantasm drown" words="###9" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/phantasm drown.lua" />
-	<instant name="undead dragon curse" words="###10" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/undead dragon curse.lua" />
-	<instant name="draken abomination curse" words="###11" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/draken abomination curse.lua" />
-	<instant name="lancer beetle curse" words="###12" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/lancer beetle curse.lua" />
-	<instant name="lizard magistratus curse" words="###13" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/lizard magistratus curse.lua" />
-	<instant name="death blob curse" words="###14" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/death blob curse.lua" />
-	<instant name="choking fear drown" words="###15" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/choking fear drown.lua" />
-	<instant name="blightwalker curse" words="###16" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/blightwalker curse.lua" />
-	<instant name="sea serpent drown" words="###17" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/sea serpent drown.lua" />
-	<instant name="young sea serpent drown" words="###18" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/young sea serpent drown.lua" />
-	<instant name="quara constrictor freeze" words="###19" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/quara constrictor freeze.lua" />
-	<instant name="quara constrictor electrify" words="###20" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/quara constrictor electrify.lua" />
-	<instant name="cliff strider electrify" words="###21" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/cliff strider electrify.lua" />
-	<instant name="war golem electrify" words="###22" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/war golem electrify.lua" />
-	<instant name="souleater drown" words="###23" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/souleater drown.lua" />
-	<instant name="mutated bat curse" words="###24" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/mutated bat curse.lua" />
-	<instant name="vulcongra soulfire" words="###25" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/vulcongra soulfire.lua" />
-	<instant name="lava golem soulfire" words="###26" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/lava golem soulfire.lua" />
-	<instant name="magma crawler soulfire" words="###27" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/magma crawler soulfire.lua" />
-	<instant name="war golem skill reducer" words="###28" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/war golem skill reducer.lua" />
-	<instant name="silencer skill reducer" words="###29" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/silencer skill reducer.lua" />
-	<instant name="warlock skill reducer" words="###30" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/warlock skill reducer.lua" />
-	<instant name="cliff strider skill reducer" words="###31" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/cliff strider skill reducer.lua" />
-	<instant name="stampor skill reducer" words="###32" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/stampor skill reducer.lua" />
-	<instant name="diabolic imp skill reducer" words="###33" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/diabolic imp skill reducer.lua" />
-	<instant name="dark torturer skill reducer" words="###34" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/dark torturer skill reducer.lua" />
-	<instant name="forest fury skill reducer" words="###35" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/forest fury skill reducer.lua" />
-	<instant name="demon outcast skill reducer" words="###36" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/demon outcast skill reducer.lua" />
-	<instant name="fury skill reducer" words="###37" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/fury skill reducer.lua" />
-	<instant name="barbarian brutetamer skill reducer" words="###38" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/barbarian brutetamer skill reducer.lua" />
-	<instant name="deepling spellsinger skill reducer" words="###39" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/deepling spellsinger skill reducer.lua" />
-	<instant name="werewolf skill reducer" words="###40" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/werewolf skill reducer.lua" />
-	<instant name="ice golem skill reducer" words="###41" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/ice golem skill reducer.lua" />
-	<instant name="feversleep skill reducer" words="###42" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/feversleep skill reducer.lua" />
-	<instant name="shock head skill reducer 1" words="###43" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/shock head skill reducer 1.lua" />
-	<instant name="shock head skill reducer 2" words="###44" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/shock head skill reducer 2.lua" />
-	<instant name="enslaved dwarf skill reducer 1" words="###45" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/enslaved dwarf skill reducer 1.lua" />
-	<instant name="enslaved dwarf skill reducer 2" words="###46" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/enslaved dwarf skill reducer 2.lua" />
-	<instant name="djinn cancel invisibility" words="###47" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/djinn cancel invisibility.lua" />
-	<instant name="betrayed wraith skill reducer" words="###48" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/betrayed wraith skill reducer.lua" />
-	<instant name="pirate corsair skill reducer" words="###49" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/pirate corsair skill reducer.lua" />
-	<instant name="medusa paralyze" words="###152" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/medusa paralyze.lua" />
-	<instant name="hellgorak skill reducer" words="###158" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/hellgorak skill reducer.lua" />
-	<instant name="mooh'tah master skill reducer" words="###190" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/mooh'tah master skill reducer.lua" />
-	<instant name="dreadbeast skill reducer" words="###297"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/dreadbeast skill reducer.lua" />
-	<instant name="frazzlemaw paralyze" words="###356" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/frazzlemaw paralyze.lua" />
-	<instant name="minotaur amazon paralyze" words="###363" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1"  script="monster/minotaur amazon paralyze.lua" />
-	<instant name="worm priestess paralyze" words="###364" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1"  script="monster/worm priestess paralyze.lua" />
-	<instant name="devourer wave" words="###365" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/devourer wave.lua" />
-	<instant name="devourer paralyze" words="###366" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/devourer paralyze.lua" />
-	<instant name="rot elemental paralyze" words="###367" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/rot elemental paralyze.lua" />
-	<instant name="rustheap golem electrify" words="###368" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/rustheap golem electrify.lua" />
-	<instant name="rustheap golem wave" words="###369" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/rustheap golem wave.lua" />
-	<instant name="metal gargoyle curse" words="###370" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/metal gargoyle curse.lua" />
-	<instant name="walker skill reducer" words="##371" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/walker skill reducer.lua" />
-	<instant name="glooth anemone summon" words="##372" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/glooth anemone summon.lua" />
-	<instant name="seacrest serpent wave" words="###373" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/seacrest serpent wave.lua" />
+		<!--dragons-->
+		<instant name="ghastly dragon paralyze" words="###113"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/dragons/ghastly dragon paralyze.lua"/>
+		<instant name="ghastly dragon wave" words="###114" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/dragons/ghastly dragon wave.lua"/>
+		<instant name="ghastly dragon curse" words="###115"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/dragons/ghastly dragon curse.lua"/>
+		<instant name="dragonling wave" words="###246" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/dragons/dragonling wave.lua"/>
+		<instant name="dragonling paralyze" words="###247" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/dragons/dragonling paralyze.lua"/>
+		<instant name="frost dragon paralyze 1" words="###248" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/dragons/frost dragon paralyze 1.lua"/>
+		<instant name="frost dragon paralyze 2" words="###249" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/dragons/frost dragon paralyze 2.lua"/>
+		<instant name="frost dragon paralyze 3" words="###250" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/dragons/frost dragon paralyze 3.lua"/>
+		<instant name="wyrm wave" words="###251" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/dragons/wyrm wave.lua"/>
+		<instant name="elder wyrm wave" words="###308" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/dragons/elder wyrm wave.lua"/>
+		<instant name="elder wyrm electrify" words="###309" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/dragons/elder wyrm electrify.lua"/>
+		<instant name="undead dragon curse" words="###10"  direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/dragons/undead dragon curse.lua"/>
+
+		<!--djinn-->
+		<instant name="djinn electrify"  words="###2"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/djinn/djinn electrify.lua"/>
+		<instant name="djinn cancel invisibility" words="###47"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/djinn/djinn cancel invisibility.lua"/>
+		<instant name="djinn electrify 2"  words="###52"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/djinn/djinn electrify 2.lua"/>
+		<instant name="djinn paralyze" words="###55"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/djinn/djinn paralyze.lua"/>
+
+		<!--demonlord-->
+		<instant name="orshabaal skill reducer" words="###200" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/demonlord/orshabaal skill reducer.lua"/>
+
+		<!--demons-->
+		<instant name="fury paralyze" words="###168" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/demons/fury paralyze.lua"/>
+		<instant name="fury skill reducer 1" words="###37"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/demons/fury skill reducer 1.lua"/>
+		<instant name="fury skill reducer 2" words="###169" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/demons/fury skill reducer 2.lua"/>	
+		<instant name="demon paralyze" words="###239" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/demons/demon paralyze.lua"/>
+		<instant name="demon summon" words="###240" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/demons/demon summon.lua"/>
+		<instant name="plaguesmith wave" words="###242" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/demons/plaguesmith wave.lua"/>
+		<instant name="plaguesmith paralyze" words="###243" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/demons/plaguesmith paralyze.lua"/>
+		<instant name="shadow hound curse" words="###245" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/demons/shadow hound curse.lua"/>
+		<instant name="rift brood electrify" words="###295"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/demons/rift brood electrify.lua"/>
+		<instant name="hellspawn soulfire" words="###7" aggressive="1" blockwalls="1" range="7" needtarget="1" needlearn="1" script="monster/demons/hellspawn soulfire.lua"/>
+		<instant name="diabolic imp skill reducer" words="###33"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/demons/diabolic imp skill reducer.lua"/>
+		<instant name="dark torturer skill reducer" words="###34" direction="1"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/demons/dark torturer skill reducer.lua"/>
+		<instant name="nightstalker paralyze" words="###241" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/demons/nightstalker paralyze.lua"/>
+
+		<!--ghosts-->
+		<instant name="souleater wave" words="###306" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/ghosts/souleater wave.lua"/>
+		<instant name="souleater drown" words="###23" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/ghosts/souleater drown.lua"/>	
+		<instant name="spectre drown" words="###8"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/ghosts/spectre drown.lua"/>
+		<instant name="phantasm drown" words="###9" direction="1"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/ghosts/phantasm drown.lua"/>
+		<instant name="white shade paralyze" words="###266" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/ghosts/white shade paralyze.lua"/>
+
+		<!--lizards-->
+		<instant name="draken abomination curse" words="###11" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/lizards/draken abomination curse.lua"/>
+		<instant name="draken abomination summon" words="###278" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/lizards/draken abomination summon.lua"/>
+		<instant name="lizard wave" words="###283" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/lizards/lizard wave.lua"/>
+		<instant name="lizard wave 2" words="###284" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/lizards/lizard wave 2.lua"/>
+		<instant name="lizard magistratus curse" words="###13" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/lizards/lizard magistratus curse.lua"/>
+		<instant name="lizard dragon priest summon" words="###138" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/lizards/lizard dragon priest summon.lua"/>
+		<instant name="draken elite soulfire" words="###201" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/lizards/draken elite soulfire.lua"/>
+		<instant name="wyvern drunk" words="###279" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/lizards/wyvern drunk.lua"/>
+
+		<!--insects-->
+		<instant name="brimstone bug wave" words="###210" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/insects/brimstone bug wave.lua"/>
+		<instant name="brimstone bug paralyze" words="###211" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/insects/brimstone bug paralyze.lua"/>
+		<instant name="lancer beetle skill reducer" words="###218" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/insects/lancer beetle skill reducer.lua"/>	
+		<instant name="lancer beetle curse" words="###12"   aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/insects/lancer beetle curse.lua"/>
+		<instant name="ancient scarab paralyze" words="###118"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/insects/ancient scarab paralyze.lua"/>
+
+		<!--blobs-->
+		<instant name="death blob curse" words="###14"  aggressive="1"  blockwalls="1" needtarget="1" needlearn="1" script="monster/blobs/death blob curse.lua"/>
+
+		<!--dreamhaunters-->
+		<instant name="choking fear drown" words="###15"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/dreamhaunters/choking fear drown.lua"/>
+		<instant name="choking fear paralyze" words="###357" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/dreamhaunters/choking fear paralyze.lua"/>
+		<instant name="shock head skill reducer 1" words="###43"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/dreamhaunters/shock head skill reducer 1.lua"/>
+		<instant name="shock head skill reducer 2" words="###44"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/dreamhaunters/shock head skill reducer 2.lua"/>
+		<instant name="shock head paralyze" words="###359" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/dreamhaunters/shock head paralyze.lua"/>
+		<instant name="silencer skill reducer" words="###29"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/dreamhaunters/silencer skill reducer.lua"/>
+		<instant name="demon outcast skill reducer" words="###36"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/dreamhaunters/demon outcast skill reducer.lua"/>
+		<instant name="feversleep skill reducer" words="###42"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/dreamhaunters/feversleep skill reducer.lua"/>
+		<instant name="frazzlemaw paralyze" words="###356" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/dreamhaunters/frazzlemaw paralyze.lua"/>
+		<instant name="retching horror paralyze" words="###358" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/dreamhaunters/retching horror paralyze.lua"/>
+
+		<!--undead humanoids-->
+		<instant name="blightwalker curse" words="###16"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/undead humanoids/blightwalker curse.lua"/>
+		<instant name="blightwalker paralyze" words="###209" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/undead humanoids/blightwalker paralyze.lua"/>
+		<instant name="mummy paralyze" words="###305"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/undead humanoids/mummy paralyze.lua"/>
+		<instant name="elder mummy paralyze" words="###304"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/undead humanoids/elder mummy paralyze.lua"/>
+		<instant name="banshee paralyze" words="###81"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/undead humanoids/banshee paralyze.lua"/>
+		<instant name="lich paralyze" words="###157" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/undead humanoids/lich paralyze.lua"/>
+
+		<!--serpents-->
+		<instant name="sea serpent drown" words="###17"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/serpents/sea serpent drown.lua"/>
+		<instant name="young sea serpent drown" words="###18"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/serpents/young sea serpent drown.lua"/>
+		<instant name="serpent spawn paralyze" words="###153" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/serpents/serpent spawn paralyze.lua"/>
+		<instant name="seacrest serpent wave" words="###373" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/serpents/seacrest serpent wave.lua"/>
+
+		<!--quaras-->
+		<instant name="quara constrictor freeze" words="###19"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/quaras/quara constrictor freeze.lua"/>
+		<instant name="quara constrictor electrify" words="###20"   aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/quaras/quara constrictor electrify.lua"/>
+
+		<!--machines-->
+		<instant name="war golem electrify" words="###22"   aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/machines/war golem electrify.lua"/>
+		<instant name="war golem skill reducer" words="###28"  direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/machines/war golem skill reducer.lua"/>
+		<instant name="rustheap golem electrify" words="###368" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/machines/rustheap golem electrify.lua"/>
+		<instant name="rustheap golem wave" words="###369" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/machines/rustheap golem wave.lua"/>
+		<instant name="metal gargoyle curse" words="###370" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/machines/metal gargoyle curse.lua"/>
+		<instant name="walker skill reducer" words="##371" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/machines/walker skill reducer.lua"/>
+
+		<!--mutated-->
+		<instant name="mutated bat curse" words="###24" direction="1"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/mutated/mutated bat curse.lua"/>
+		<instant name="mutated rat paralyze" words="###112"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/mutated/mutated rat paralyze.lua"/>
+		<instant name="mutated human paralyze" words="###280" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/mutated/mutated human paralyze.lua"/>
+
+		<!--magma-elementals-->
+		<instant name="magma crawler wave" words="###292" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/magma-elementals/magma crawler wave.lua"/>
+		<instant name="magma crawler soulfire" words="###27"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/magma-elementals/magma crawler soulfire.lua"/>
+		<instant name="magma crawler soulfire 2" words="###293"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/magma-elementals/magma crawler soulfire 2.lua"/>
+		<instant name="magma crawler skill reducer" words="###254" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/magma-elementals/magma crawler skill reducer.lua"/>
+		<instant name="weeper skill reducer" words="###255" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/magma-elementals/weeper skill reducer.lua"/>
+		<instant name="weeper paralyze" words="###290" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/magma-elementals/weeper paralyze.lua"/>
+		<instant name="lava golem soulfire" words="###26"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/magma-elementals/lava golem soulfire.lua"/>
+		<instant name="lava golem soulfire2" words="###315"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/magma-elementals/lava golem soulfire2.lua"/>
+		<instant name="infected weeper summon" words="###291" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/magma-elementals/infected weeper summon.lua"/>
+		<instant name="vulcongra soulfire" words="###25"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/magma-elementals/vulcongra soulfire.lua"/>
+
+		<!--geo-elementals-->
+		<instant name="cliff strider electrify" words="###21"   aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/geo-elementals/cliff strider electrify.lua"/>
+		<instant name="cliff strider skill reducer" words="###31"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/geo-elementals/cliff strider skill reducer.lua"/>
+		<instant name="forest fury skill reducer 1" words="###35"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/geo-elementals/forest fury skill reducer 1.lua"/>
+		<instant name="forest fury skill reducer 2" words="###75"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/geo-elementals/forest fury skill reducer 2.lua"/>
+		<instant name="ironblight skill reducer" words="###262" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/geo-elementals/ironblight skill reducer.lua"/>
+		<instant name="ironblight freeze" words="###263" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/geo-elementals/ironblight freeze.lua"/>
+		<instant name="orewalker wave" words="###294" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/geo-elementals/orewalker wave.lua"/>
+		<instant name="orewalker skill reducer 1" words="###260" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/geo-elementals/orewalker skill reducer 1.lua"/>	
+		<instant name="stone devourer paralyze" words="###72"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/geo-elementals/stone devourer paralyze.lua"/>
+		<instant name="medusa paralyze" words="###152" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/geo-elementals/medusa paralyze.lua"/>
+
+		<!--pyro-elementals-->
+		<instant name="massive fire elemental soulfire" words="###5" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/pyro-elementals/massive fire elemental soulfire.lua"/>
+		<instant name="hellfire fighter soulfire" words="###6" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/pyro-elementals/hellfire fighter soulfire.lua"/>
+
+		<!--cryo-elementals-->
+		<instant name="ice golem skill reducer" words="###41"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/cryo-elementals/ice golem skill reducer.lua"/>
+		<instant name="ice golem paralyze" words="###162" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/cryo-elementals/ice golem paralyze.lua"/>
+
+		<!--bio-elementals-->
+		<instant name="defiler paralyze 1" words="###64"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bio-elementals/defiler paralyze 1.lua"/>
+		<instant name="defiler paralyze 2" words="###65"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bio-elementals/defiler paralyze 2.lua"/>
+		<instant name="defiler paralyze 3" words="###66" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bio-elementals/defiler paralyze 3.lua"/>
+		<instant name="humongous fungus poison" words="###68" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bio-elementals/humongous fungus poison.lua"/>
+		<instant name="humongous fungus paralyze" words="###69" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bio-elementals/humongous fungus paralyze.lua"/>
+		<instant name="hideous fungus paralyze" words="###70"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/bio-elementals/hideous fungus paralyze.lua"/>
+		<instant name="hideous fungus poison" words="###71"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bio-elementals/hideous fungus poison.lua"/>
+		<instant name="hideous fungus summon" words="###126" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/bio-elementals/hideous fungus summon.lua"/>
+		<instant name="devourer wave" words="###365" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bio-elementals/devourer wave.lua"/>
+		<instant name="devourer paralyze" words="###366" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bio-elementals/devourer paralyze.lua"/>
+		<instant name="leaf golem paralyze" words="###73"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bio-elementals/leaf golem paralyze.lua"/>
+		<instant name="wilting leaf golem paralyze" words="###74"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bio-elementals/wilting leaf golem paralyze.lua"/>
+		<instant name="bog raider paralyze" words="###62"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/bio-elementals/bog raider paralyze.lua"/>
+		<instant name="carniphila paralyze" words="###63"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/bio-elementals/carniphila paralyze.lua"/>
+		<instant name="rot elemental paralyze" words="###367" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bio-elementals/rot elemental paralyze.lua"/>
+		<instant name="glooth anemone summon" words="##372" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/bio-elementals/glooth anemone summon.lua"/>
+		<instant name="woodling paralyze" words="###375" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bio-elementals/woodling paralyze.lua"/>
+		<instant name="swampling paralyze" words="###76" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bio-elementals/swampling paralyze.lua"/>
+		<instant name="diseased paralyze" words="###107"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/bio-elementals/diseased paralyze.lua"/>
+		<instant name="slime puddle paralyze" words="###327"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bio-elementals/slime puddle paralyze.lua"/>
+		<instant name="haunted treeling paralyze" words="###67" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bio-elementals/haunted treeling paralyze.lua"/>
+
+		<!--electro-elementals-->
+		<instant name="charged energy elemental electrify" words="###259" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/electro-elementals/charged energy elemental electrify.lua"/>
+		<instant name="glooth battery heal" words="###400" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/electro-elementals/glooth battery heal.lua"/>
+		<instant name="glooth-generator summon" words="###402" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/electro-elementals/glooth-generator summon.lua"/>
+		<instant name="energy elemental electrify" words="###3"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/electro-elementals/energy elemental electrify.lua"/>
+		<instant name="massive energy elemental electrify" words="###4" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/electro-elementals/massive energy elemental electrify.lua"/>
+		<instant name="energy pulse explosion" words="###401" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/electro-elementals/energy pulse explosion.lua"/>
+
+		<!--elemental lords-->
+		<instant name="lord of the elements summon" words="###180" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/elemental lords/lord of the elements summon.lua"/>
+		<instant name="lord of the elements soulfire" words="###181" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/elemental lords/lord of the elements soulfire.lua"/>
+		<instant name="lord of the elements paralyze" words="###182" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/elemental lords/lord of the elements paralyze.lua"/>
+		<instant name="lord of the elements skill reducer" words="###183" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/elemental lords/lord of the elements skill reducer.lua"/>
+		<instant name="ice overlord freeze" words="###264" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/elemental lords/ice overlord freeze.lua"/>
+		<instant name="ice overlord paralyze" words="###265" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/elemental lords/ice overlord paralyze.lua"/>
+		<instant name="fire overlord paralyze" words="###288" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/elemental lords/fire overlord paralyze.lua"/>
+		<instant name="fire overlord soulfire" words="###289" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/elemental lords/fire overlord soulfire.lua"/>
+		<instant name="energy overlord paralyze" words="###261" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/elemental lords/energy overlord paralyze.lua"/>
+
+		<!--sorcerers-->
+		<instant name="warlock skill reducer" words="###30"  aggressive="1"  blockwalls="1" needtarget="1" needlearn="1" script="monster/sorcerers/warlock skill reducer.lua"/>
+		<instant name="ice witch paralyze" words="###299"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/sorcerers/ice witch paralyze.lua"/>
+
+		<!--ungulates-->
+		<instant name="stampor skill reducer" words="###32"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/ungulates/stampor skill reducer.lua"/>
+
+		<!--barbarians-->
+		<instant name="barbarian brutetamer skill reducer" words="###38"   aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/barbarians/barbarian brutetamer skill reducer.lua"/>
+
+		<!--deeplings-->
+		<instant name="deepling spellsinger skill reducer" words="###39"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/deeplings/deepling spellsinger skill reducer.lua"/>
+
+		<!--were-creatures-->
+		<instant name="werewolf summon" words="###160" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/were-creatures/werewolf summon.lua"/>
+		<instant name="werewolf skill reducer" words="###161" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/were-creatures/werewolf skill reducer.lua"/>
+
+		<!--dwarves-->
+		<instant name="enslaved dwarf skill reducer 1" words="###45"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/dwarves/enslaved dwarf skill reducer 1.lua"/>
+		<instant name="enslaved dwarf skill reducer 2" words="###46"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/dwarves/enslaved dwarf skill reducer 2.lua"/>
+		<instant name="dwarf henchman drown" words="###252" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/dwarves/dwarf henchman drown.lua"/>
+		<instant name="lost berserker skill reducer" words="###253" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/dwarves/lost berserker skill reducer.lua"/>
+		<instant name="lost thrower skill reducer" words="###256" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/dwarves/lost thrower skill reducer.lua"/>
+
+		<!--skeletons-->
+		<instant name="betrayed wraith paralyze" words="###296"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/skeletons/betrayed wraith paralyze.lua"/>
+		<instant name="betrayed wraith skill reducer" words="###48"  direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/skeletons/betrayed wraith skill reducer.lua"/>
+		<instant name="dreadbeast summon" words="###159" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/skeletons/dreadbeast summon.lua"/>
+		<instant name="dreadbeast skill reducer" words="###297"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/skeletons/dreadbeast skill reducer.lua"/>
+		<instant name="undead cavebear curse" words="###61"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/skeletons/undead cavebear curse.lua"/>
+		<instant name="bonebeast paralyze" words="###205" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/skeletons/bonebeast paralyze.lua"/>
+		<instant name="lost soul paralyze" words="###298"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/skeletons/lost soul paralyze.lua"/>
+
+		<!--pirates-->
+		<instant name="pirate corsair skill reducer" words="###49"  direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/pirates/pirate corsair skill reducer.lua"/>
+
+		<!--arachnids-->
+		<instant name="crystal spider paralyze 1" words="###50"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/arachnids/crystal spider paralyze 1.lua"/>
+		<instant name="crystal spider paralyze 2" words="###51"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/arachnids/crystal spider paralyze 2.lua"/>
+
+		<!--arena-->
+		<instant name="gnorre chyllson drown" words="###56"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/arena/warlord/gnorre chyllson drown.lua"/>
+		<instant name="gnorre chyllson skill reducer" words="###57"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/arena/warlord/gnorre chyllson skill reducer.lua"/>
+		<instant name="gnorre chyllson paralyze" words="###58"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/arena/warlord/gnorre chyllson paralyze.lua"/>
+		<instant name="spirit of earth paralyze" words="###53"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/arena/scrapper/spirit of earth paralyze.lua"/>
+		<instant name="deathbringer drown" words="###54"  direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/arena/warlord/deathbringer drown.lua"/>
+		<instant name="svoren the mad paralyze" words="###59"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/arena/warlord/svoren the mad paralyze.lua"/>
+		<instant name="webster paralyze" words="###60"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/arena/warlord/webster paralyze.lua"/>
+
+		<!--arena combat-->
+		<instant name="dreadwing curse" words="###108" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/arena/mortal combat/dreadwing curse.lua"/>
+		<instant name="dreadwing skill reducer" words="###109"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/arena/mortal combat/dreadwing skill reducer.lua"/>
+		<instant name="haunter curse" words="###312"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/arena/mortal combat/haunter curse.lua"/>
+		<instant name="haunter electrify" words="###313"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/arena/mortal combat/haunter electrify.lua"/>
+		<instant name="the dreadorian drown" words="###328"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/arena/mortal combat/the dreadorian drown.lua"/>
+		<instant name="the dreadorian soulfire" words="###329"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/arena/mortal combat/the dreadorian soulfire.lua"/>
+		<instant name="the dreadorian curse" words="###330"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/arena/mortal combat/the dreadorian curse.lua"/>
+		<instant name="coldheart paralyze" words="###314"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/arena/mortal combat/coldheart paralyze.lua"/>
+		<instant name="incineron soulfire" words="###311"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/arena/mortal combat/incineron soulfire.lua"/>
+
+		<!--event creatures-->
+		<instant name="essence of darkness curse" words="###77"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/event creatures/essence of darkness curse.lua"/>
+		<instant name="essence of darkness paralyze" words="###78"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/event creatures/essence of darkness paralyze.lua"/>
+		<instant name="undead jester paralyze" words="###347" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1"  script="monster/event creatures/undead jester paralyze.lua"/>
+		<instant name="undead jester summon" words="###348" aggressive="0" blockwalls="1" needtarget="0" needlearn="1"  script="monster/event creatures/undead jester summon.lua"/>
+		<instant name="midnight spawn paralyze" words="###79"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/event creatures/essence of darkness paralyze.lua"/>
+		<instant name="dryad paralyze" words="###307"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/event creatures/dryad paralyze.lua"/>
+		<instant name="bane of light paralyze" words="###354" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/event creatures/bane of light paralyze.lua"/>
+
+		<!--bonelords-->
+		<instant name="braindeath paralyze" words="###80"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/bonelords/braindeath paralyze.lua"/>
+		<instant name="elder bonelord paralyze" words="###83"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/bonelords/elder bonelord paralyze.lua"/>
+
+		<!--vampires-->
+		<instant name="vampire paralyze" words="###82"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/vampires/vampire paralyze.lua"/>
+		<instant name="vampire viscount paralyze" words="###349" aggressive="1" blockwalls="1" needtarget="0" needlearn="1"  script="monster/vampires/vampire viscount paralyze.lua"/>
+
+		<!--birds-->
+		<instant name="dire penguin paralyze" words="###106"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/birds/dire penguin paralyze.lua"/>
+
+		<!--isle of evil-->
+		<instant name="mephiles summon" words="###273" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/isle of evil/mephiles summon.lua"/>
+		<instant name="mephiles skill reducer" words="###275" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/isle of evil/mephiles skill reducer.lua"/>
+		<instant name="hot dog soulfire" words="###276" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/isle of evil/hot dog soulfire.lua"/>
+		<instant name="hot dog wave" words="###277" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/isle of evil/hot dog wave.lua"/>
+		<instant name="monstor summon" words="###274" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/isle of evil/monstor summon.lua"/>
+		<instant name="boogey summon" words="###268" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/isle of evil/boogey summon.lua"/>
+		<instant name="dirtbeard summon" words="###269" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/isle of evil/dirtbeard summon.lua"/>
+		<instant name="doctor perhaps summon" words="###270" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/isle of evil/doctor perhaps summon.lua"/>
+		<instant name="evil sheep lord summon" words="###271" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/isle of evil/evil sheep lord summon.lua"/>
+		<instant name="killer rabbit summon" words="###272" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/isle of evil/killer rabbit summon.lua"/>
+
+		<!--the ruthless seven-->
+		<instant name="verminor paralyze" words="###226" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/the ruthless seven/verminor paralyze.lua"/>
+		<instant name="verminor summon" words="###227" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/the ruthless seven/verminor summon.lua"/>
+		<instant name="ashfalor summon" words="###355" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/the ruthless seven/ashfalor summon.lua"/>
+
+		<!--the ruthless seven minions-->
+		<instant name="annihilon skill reducer" words="###88"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/the ruthless seven minions/annihilon skill reducer.lua"/>
+		<instant name="annihilon paralyze" words="###89"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/the ruthless seven minions/annihilon paralyze.lua"/>
+		<instant name="madareth pillar skill reducer" words="###184" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/the ruthless seven minions/madareth pillar skill reducer.lua"/>
+		<instant name="madareth skill reducer" words="###185" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/the ruthless seven minions/madareth skill reducer.lua"/>
+		<instant name="ushuriel curse" words="###224" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/the ruthless seven minions/ushuriel curse.lua"/>
+		<instant name="ushuriel electrify" words="###225" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/the ruthless seven minions/ushuriel electrify.lua"/>
+		<instant name="hellgorak skill reducer" words="###158" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/the ruthless seven minions/hellgorak skill reducer.lua"/>
+		<instant name="zugurosh soulfire" words="###230" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/the ruthless seven minions/zugurosh soulfire.lua"/>
+		<instant name="twins skill reducer" words="###151" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/the ruthless seven minions/twins skill reducer.lua"/>
+
+		<!--myriapods-->
+		<instant name="spitter paralyze" words="###206" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/myriapods/spitter paralyze.lua"/>
+		<instant name="wiggler paralyze" words="###267" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/myriapods/wiggler paralyze.lua"/>
+
+		<!--chakoyas-->
+		<instant name="chakoya freeze" words="###235" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/chakoyas/chakoya freeze.lua"/>
+
+		<!--canines-->	
+		<instant name="crystal wolf wave" words="###236" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/canines/crystal wolf wave.lua"/>
+
+		<!--corym-->
+		<instant name="corym vanguard wave" words="###237" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/corym/corym vanguard wave.lua"/>
+
+		<!--arak demons-->
+		<instant name="askarak wave" words="###238" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/arak demons/askarak wave.lua"/>
+		<instant name="shaburak wave" words="###244" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/arak demons/shaburak wave.lua"/>
+
+		<!--dworcs-->
+		<instant name="dworc paralyze" words="###257" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/dworcs/dworc paralyze.lua"/>
+
+		<!--elves-->
+		<instant name="firestarter soulfire" words="###258" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/elves/firestarter soulfire.lua"/>
+
+		<!--necromancers-->
+		<instant name="blood hand paralyze" words="###281" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/necromancers/blood hand paralyze.lua"/>
+
+		<!--outlaws-->
+		<instant name="feverish citizen drunk" words="###282" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/outlaws/feverish citizen drunk.lua"/>
+
+		<!--traps-->
+		<instant name="hell hole summon" words="###300" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/traps/hell hole summon.lua"/>
+		<instant name="hive pore summon" words="###301" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/traps/hive pore summon.lua"/>
+		<instant name="magic pillar summon" words="###302" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/traps/magic pillar summon.lua"/>
+		<instant name="zugurosh pillar skill reducer" words="###303"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/traps/zugurosh pillar skill reducer.lua"/>
+		<instant name="canopic jar heal" words="###390" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/traps/canopic jar heal.lua"/>
+		<instant name="greater jar summon" words="###397" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/traps/greater jar summon.lua"/>
+
+		<!--hyaenids-->
+		<instant name="ghoulish hyaena wave" words="###310" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/hyaenids/ghoulish hyaena wave.lua"/>
+
+		<!--annelids-->
+		<instant name="drillworm paralyze" words="###362" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1"  script="monster/annelids/drillworm paralyze.lua"/>
+
+		<!--minotaurs-->
+		<instant name="minotaur amazon paralyze" words="###363" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1"  script="monster/minotaurs/minotaur amazon paralyze.lua"/>
+		<instant name="worm priestess paralyze" words="###364" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1"  script="monster/minotaurs/worm priestess paralyze.lua"/>
+		<instant name="minotaur wallbreaker walkthrough" words="###403" aggressive="1" blockwalls="0" needtarget="0" needlearn="1" script="monster/minotaurs/minotaur wallbreaker walkthrough.lua"/>
+
+		<!--trolls-->
+		<instant name="salamander trainer summon" words="##374" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/trolls/salamander trainer summon.lua"/>
+
+		<!--pharaohs-->
+		<instant name="dipthrah skill reducer" words="###285" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/pharaohs/dipthrah skill reducer.lua"/>
+		<instant name="mahrdis soulfire" words="###286" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/pharaohs/mahrdis soulfire.lua"/>
+		<instant name="thalas summon" words="###287" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/pharaohs/thalas summon.lua"/>
+
+		<!--bosses-->
+		<instant name="arkhothep summon" words="###129" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/arkhothep summon.lua"/>
+		<instant name="arkhothep paralyze" words="###90"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/arkhothep paralyze.lua"/>
+		<instant name="arkhothep curse" words="###91"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/arkhothep curse.lua"/>
+		<instant name="abyssador skill reducer 1" words="###84"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/abyssador skill reducer 1.lua"/>
+		<instant name="abyssador skill reducer 2" words="###85"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/abyssador skill reducer 2.lua"/>
+		<instant name="abyssador paralyze" words="###86"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/bosses/abyssador paralyze.lua"/>
+		<instant name="abyssador poison wave" words="###87" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/abyssador poison wave.lua"/>
+		<instant name="azerus summon 1" words="###131" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/azerus summon 1.lua"/>
+		<instant name="azerus summon 2" words="###132" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/azerus summon 2.lua"/>
+		<instant name="azerus summon 3" words="###133" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/azerus summon 3.lua"/>
+		<instant name="azerus summon 4" words="###134" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/azerus summon 4.lua"/>	
+		<instant name="azerus skill reducer 1" words="###92"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/bosses/azerus skill reducer 1.lua"/>
+		<instant name="azerus skill reducer 2" words="###93"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/bosses/azerus skill reducer 2.lua"/>
+		<instant name="azerus skill reducer 3" words="###94"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/bosses/azerus skill reducer 3.lua"/>
+		<instant name="azerus electrify" words="###95"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/bosses/azerus electrify.lua"/>
+		<instant name="azerus soulfire 1" words="###96"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/azerus soulfire 1.lua"/>
+		<instant name="azerus soulfire 2" words="###97"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/bosses/azerus soulfire 2.lua"/>
+		<instant name="mawhawk summon" words="###360" aggressive="0" blockwalls="1" needtarget="0" needlearn="1"  script="monster/bosses/mawhawk summon.lua"/>
+		<instant name="mawhawk ue" words="###361" aggressive="1" blockwalls="1" needtarget="0" needlearn="1"  script="monster/bosses/mawhawk ue.lua"/>
+		<instant name="death priest shargon curse" words="###376" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/bosses/death priest shargon curse.lua"/>
+		<instant name="death priest shargon dazzle" words="###377" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/death priest shargon dazzle.lua"/>
+		<instant name="death priest shargon summon" words="###378" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/death priest shargon summon.lua"/>
+		<instant name="death priest shargon heal" words="###379" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/death priest shargon heal.lua"/>
+		<instant name="bullwark summon" words="###380" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/bullwark summon.lua"/>
+		<instant name="bullwark paralyze" words="###381" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/bullwark paralyze.lua"/>
+		<instant name="glooth fairy skill reducer" words="###382" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/glooth fairy skill reducer.lua"/>
+		<instant name="glooth fairy paralyze" words="###383" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/glooth fairy paralyze.lua"/>
+		<instant name="glooth fairy healing" words="###384" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/glooth fairy healing.lua"/>
+		<instant name="lisa skill reducer" words="###385" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/bosses/lisa skill reducer.lua"/>
+		<instant name="lisa heal" words="###386" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/lisa heal.lua"/>
+		<instant name="lisa paralyze" words="###387" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/lisa paralyze.lua"/>
+		<instant name="lisa wave" words="###388" direction="1" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/lisa wave.lua"/>
+		<instant name="lisa summon" words="###389" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/lisa summon.lua"/>
+		<instant name="chizzoron the distorter paralyze" words="###100"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/chizzoron the distorter paralyze.lua"/>
+		<instant name="chizzoron the distorter summon" words="###136" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/chizzoron the distorter summon.lua"/>
+		<instant name="deathstrike freeze" words="###101"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/bosses/deathstrike freeze.lua"/>
+		<instant name="deathstrike manadrain" words="###102" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/deathstrike manadrain.lua"/>
+		<instant name="deathstrike paralyze" words="###103"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/deathstrike paralyze.lua"/>
+		<instant name="raging mage skill reducer 1" words="###110"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/bosses/raging mage skill reducer 1.lua"/>
+		<instant name="raging mage skill reducer 2" words="###111"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/raging mage skill reducer 2.lua"/>
+		<instant name="ferumbras electrify" words="###116"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/ferumbras electrify.lua"/>
+		<instant name="ferumbras soulfire" words="###117"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/bosses/ferumbras soulfire.lua"/>
+		<instant name="furyosa heal" words="###340" aggressive="0" blockwalls="1" needtarget="1" needlearn="1"  script="monster/bosses/furyosa heal.lua"/>
+		<instant name="furyosa summon" words="###141" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/furyosa summon.lua"/>	
+		<instant name="furyosa soulfire" words="###119" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/furyosa soulfire.lua"/>
+		<instant name="furyosa skill reducer" words="###120"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/furyosa skill reducer.lua"/>
+		<instant name="furyosa manadrain" words="###121" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/furyosa manadrain.lua"/>
+		<instant name="furyosa deathball" words="###122" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/furyosa deathball.lua"/>
+		<instant name="gaz'haragoth death" words="###325"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/gaz'haragoth death.lua"/>
+		<instant name="gaz'haragoth iceball" words="###123" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/gaz'haragoth iceball.lua"/>
+		<instant name="gaz'haragoth paralyze" words="###124" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/gaz'haragoth paralyze.lua"/>
+		<instant name="gaz'haragoth summon" words="###125" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/gaz'haragoth summon.lua"/>
+		<instant name="ghazbaran summon" words="###142" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/ghazbaran summon.lua"/>
+		<instant name="ghazbaran skill reducer 1" words="###143" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/ghazbaran skill reducer 1.lua"/>
+		<instant name="ghazbaran skill reducer 2" words="###144" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/ghazbaran skill reducer 2.lua"/>
+		<instant name="ghazbaran paralyze" words="###145" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/bosses/ghazbaran paralyze.lua"/>
+		<instant name="gnomevil drunk" words="###146" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/gnomevil drunk.lua"/>
+		<instant name="gnomevil skill reducer 1" words="###147" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/gnomevil skill reducer 1.lua"/>
+		<instant name="gnomevil skill reducer 2" words="###148" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/gnomevil skill reducer 2.lua"/>
+		<instant name="gnomevil soulfire" words="###149" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/gnomevil soulfire.lua"/>
+		<instant name="gnomevil electrify" words="###150" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/gnomevil electrify.lua"/>
+		<instant name="hirintror skill reducer" words="###163" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/hirintror skill reducer.lua"/>
+		<instant name="hirintror summon" words="###164" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/hirintror summon.lua"/>
+		<instant name="hirintror freeze" words="###165" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/hirintror freeze.lua"/>
+		<instant name="hirintror heal" words="###341" aggressive="0" blockwalls="1" needtarget="1" needlearn="1"  script="monster/bosses/hirintror heal.lua"/>
+		<instant name="koshei the deathless curse" words="###171" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/bosses/koshei the deathless curse.lua"/>
+		<instant name="koshei the deathless paralyze" words="###172" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/bosses/koshei the deathless paralyze.lua"/>
+		<instant name="kraknaknork poison wave" words="###173" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/kraknaknork poison wave.lua"/>
+		<instant name="kraknaknork explosion wave" words="###174" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/kraknaknork explosion wave.lua"/>
+		<instant name="kraknaknork ice wave" words="###175" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/kraknaknork ice wave.lua"/>
+		<instant name="kraknaknork paralyze" words="###176" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/bosses/kraknaknork paralyze.lua"/>
+		<instant name="morgaroth skill reducer 1" words="###191" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/morgaroth skill reducer 1.lua"/>
+		<instant name="morgaroth skill reducer 2" words="###192" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/bosses/morgaroth skill reducer 2.lua"/>
+		<instant name="morgaroth paralyze" words="###193" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/morgaroth paralyze.lua"/>
+		<instant name="morgaroth summon" words="###194" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/morgaroth summon.lua"/>
+		<instant name="pythius the rotten summon" words="###202" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/pythius the rotten summon.lua"/>
+		<instant name="pythius the rotten curse" words="###203" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/bosses/pythius the rotten curse.lua"/>
+		<instant name="pythius the rotten paralyze" words="###204" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/bosses/pythius the rotten paralyze.lua"/>
+		<instant name="terofar heal" words="###391" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/terofar heal.lua"/>
+		<instant name="terofar curse" words="###213" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/bosses/terofar curse.lua"/>
+		<instant name="terofar skill reducer 1" words="###214" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/terofar skill reducer 1.lua"/>
+		<instant name="terofar skill reducer 2" words="###215" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/terofar skill reducer 2.lua"/>
+		<instant name="prince drazzak wave" words="###319" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/prince drazzak wave.lua"/>
+		<instant name="prince drazzak knight" words="###320"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/prince drazzak knight.lua"/>
+		<instant name="prince drazzak druid" words="###321"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/prince drazzak druid.lua"/>
+		<instant name="prince drazzak paladin" words="###322"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/prince drazzak paladin.lua"/>
+		<instant name="prince drazzak sorcerer" words="###323"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/prince drazzak sorcerer.lua"/>
+		<instant name="prince drazzak summon" words="###324"  aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/prince drazzak summon.lua"/>
+		<instant name="prince drazzak tp" words="###353" aggressive="0" blockwalls="1" needtarget="0" needlearn="1"  script="monster/bosses/prince drazzak tp.lua"/>
+		<instant name="the abomination paralyze" words="###216" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/the abomination paralyze.lua"/>
+		<instant name="the abomination summon" words="###217" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/the abomination summon.lua"/>
+		<instant name="thul summon" words="###222" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/thul summon.lua"/>
+		<instant name="thul paralyze" words="###223" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/bosses/thul paralyze.lua"/>
+		<instant name="zavarash heal" words="###393" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/zavarash heal.lua"/>	
+		<instant name="zavarash paralyze" words="###228" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/bosses/zavarash paralyze.lua"/>
+		<instant name="zavarash2 paralyze" words="###229" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/bosses/zavarash2 paralyze.lua"/>
+		<instant name="zulazza the corruptor paralyze" words="###231" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/bosses/zulazza the corruptor paralyze.lua"/>
+		<instant name="zulazza the corruptor skill reducer" words="###232" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/bosses/zulazza the corruptor skill reducer.lua"/>
+		<instant name="zushuka paralyze" words="###233" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/bosses/zushuka paralyze.lua"/>
+		<instant name="zushuka freeze" words="###234" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/bosses/zushuka freeze.lua"/>
+		<instant name="zushuka heal" words="###342" aggressive="0" blockwalls="1" needtarget="1" needlearn="1"  script="monster/bosses/zushuka heal.lua"/>
+		<instant name="omrafir summon" words="###317"  aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/omrafir summon.lua"/>
+		<instant name="omrafir wave" words="###318" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/omrafir wave.lua"/>
+		<instant name="omrafir beam" words="###331" aggressive="1" blockwalls="1" needlearn="1" script="monster/bosses/omrafir beam.lua"/>
+		<instant name="omrafir healing 2" words="###346" aggressive="0" blockwalls="1" needtarget="0" needlearn="1"  script="monster/bosses/omrafir healing 2.lua"/>
+		<instant name="the pale count bomb" words="###332" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/bosses/the pale count bomb.lua"/>
+		<instant name="the pale count manadrain" words="###333" aggressive="1" blockwalls="1" needtarget="0" needlearn="1"  script="monster/bosses/the pale count manadrain.lua"/>
+		<instant name="the pale count summon" words="###334" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/the pale count summon.lua"/>
+		<instant name="the pale count wave" words="###335" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1"  script="monster/bosses/the pale count wave.lua"/>
+		<instant name="the welter heal" words="###336" aggressive="0" blockwalls="1" needtarget="0" needlearn="1"  script="monster/bosses/the welter heal.lua"/>
+		<instant name="the welter summon" words="###337" aggressive="0" blockwalls="1" needtarget="0" needlearn="1"  script="monster/bosses/the welter summon.lua"/>
+		<instant name="the welter summon2" words="###338" aggressive="0" blockwalls="1" needtarget="0" needlearn="1"  script="monster/bosses/the welter summon2.lua"/>
+		<instant name="the welter paralyze" words="###339" aggressive="1" blockwalls="1" needtarget="0" needlearn="1"  script="monster/bosses/the welter paralyze.lua"/>
+		<instant name="the welter heal2" words="###394" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/the welter heal2.lua"/>
+		<instant name="spawn of the welter heal" words="###395" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/spawn of the welter heal.lua"/>
+		<instant name="spawn of the welter heal2" words="###396" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/spawn of the welter heal2.lua"/>
+		<instant name="tyrn electrify" words="###343" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1"  script="monster/bosses/tyrn electrify.lua"/>
+		<instant name="tyrn skill reducer" words="###344" aggressive="1" blockwalls="1" needtarget="0" needlearn="1"  script="monster/bosses/tyrn skill reducer.lua"/>
+		<instant name="tyrn heal" words="###345" aggressive="0" blockwalls="1" needtarget="0" needlearn="1"  script="monster/bosses/tyrn heal.lua"/>
+		<instant name="white pale paralyze" words="###350" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1"  script="monster/bosses/white pale paralyze.lua"/>
+		<instant name="white pale summon" words="###351" aggressive="0" blockwalls="1" needtarget="0" needlearn="1"  script="monster/bosses/white pale summon.lua"/>
+		<instant name="white pale heal" words="###352" aggressive="0" blockwalls="1" needtarget="0" needlearn="1"  script="monster/bosses/white pale heal.lua"/>
+		<instant name="obujos skill reducer 1" words="###197" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/bosses/obujos skill reducer 1.lua"/>
+		<instant name="obujos skill reducer 2" words="###198" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/bosses/obujos skill reducer 2.lua"/>
+		<instant name="mindmasher drown" words="###188" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/bosses/mindmasher drown.lua"/>
+		<instant name="mindmasher summon" words="###189" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/mindmasher summon.lua"/>
+		<instant name="horadron paralyze" words="###166" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/bosses/horadron paralyze.lua"/>
+		<instant name="horadron heal" words="###392" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/horadron heal.lua"/>	
+		<instant name="bibby bloodbath paralyze" words="###99"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/bibby bloodbath paralyze.lua"/>
+		<instant name="devovorga curse" words="###104"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/devovorga curse.lua"/>
+		<instant name="dharalion skill reducer" words="###105"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/bosses/dharalion skill reducer.lua"/>
+		<instant name="apprentice sheng summon" words="###127" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/apprentice sheng summon.lua"/>
+		<instant name="arachir the ancient one summon" words="###128" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/arachir the ancient one summon.lua"/>
+		<instant name="arthei summon" words="###130" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/arthei summon.lua"/>
+		<instant name="big boss trolliver summon" words="###135" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/big boss trolliver summon.lua"/>
+		<instant name="diblis the fair summon" words="###137" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/diblis the fair summon.lua"/>
+		<instant name="flamecaller zazrak summon" words="###139" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/flamecaller zazrak summon.lua"/>
+		<instant name="emperor summon" words="###140" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/emperor summon.lua"/>
+		<instant name="grand mother foulscale summon" words="###154" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/grand mother foulscale summon.lua"/>
+		<instant name="grandfather tridian paralyze" words="###155" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/bosses/grandfather tridian paralyze.lua"/>
+		<instant name="the dark dancer summon" words="#156" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/the dark dancer summon.lua"/>
+		<instant name="horestis paralyze" words="###167" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/bosses/horestis paralyze.lua"/>
+		<instant name="jaul paralyze" words="###170" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/bosses/jaul paralyze.lua"/>
+		<instant name="lersatio summon" words="###177" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/lersatio summon.lua"/>
+		<instant name="lethal lissy skill reducer" words="###178" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/lethal lissy skill reducer.lua"/>
+		<instant name="lizard gate guardian summon" words="###179" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/lizard gate guardian summon.lua"/>
+		<instant name="mamma longlegs paralyze" words="###186" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/bosses/mamma longlegs paralyze.lua"/>
+		<instant name="man in the cave summon" words="###187" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/man in the cave summon.lua"/>
+		<instant name="mooh'tah master skill reducer" words="###190" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/bosses/mooh'tah master skill reducer.lua"/>
+		<instant name="morik the gladiator summon" words="###195" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/morik the gladiator summon.lua"/>
+		<instant name="munster summon" words="###196" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/munster summon.lua"/>
+		<instant name="ocyakao freeze" words="###199" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/ocyakao freeze.lua"/>
+		<instant name="sir valorcrest summon" words="###208" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/sir valorcrest summon.lua"/>
+		<instant name="tanjis skill reducer" words="###212" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/bosses/tanjis skill reducer.lua"/>
+		<instant name="shlorg paralyze" words="###326"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/bosses/shlorg paralyze.lua"/>
+		<instant name="the blightfather summon" words="###219" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/the blightfather summon.lua"/>
+		<instant name="the imperor summon" words="###220" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/the imperor summon.lua"/>
+		<instant name="the voice of ruin paralyze" words="###221" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/the voice of ruin paralyze.lua"/>
+		<instant name="the ravager heal" words="###398" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/bosses/the ravager heal.lua"/>
+		<instant name="glooth bomb walkthrough" words="###399" aggressive="1" blockwalls="0" needtarget="0" needlearn="1" script="monster/bosses/glooth bomb walkthrough.lua"/>
 </spells>

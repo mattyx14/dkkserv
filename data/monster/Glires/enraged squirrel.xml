@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Enraged Squirrel" nameDescription="an enraged squirrel" race="blood" experience="10" speed="300" manacost="220">
-	<health now="20" max="20" />
-	<look type="274" corpse="7628" />
-	<targetchange interval="4000" chance="0" />
+<monster name="Enraged Squirrel" nameDescription="an enraged squirrel" race="blood" experience="0" speed="480" manacost="220">
+	<health now="35" max="35"/>
+	<look type="274" corpse="7628"/>
+	<targetchange interval="2000" chance="0"/>
 	<flags>
-		<flag summonable="1" />
-		<flag attackable="1" />
-		<flag hostile="1" />
-		<flag illusionable="1" />
-		<flag convinceable="1" />
-		<flag pushable="1" />
-		<flag canpushitems="0" />
-		<flag canpushcreatures="0" />
-		<flag targetdistance="1" />
-		<flag staticattack="90" />
-		<flag runonhealth="2" />
+		<flag summonable="1"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="1"/>
+		<flag convinceable="1"/>
+		<flag pushable="1"/>
+		<flag canpushitems="0"/>
+		<flag canpushcreatures="0"/>
+		<flag targetdistance="4"/>
+		<flag runonhealth="0"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="10" attack="10" />
+		<attack name="melee" interval="2000" skill="10" attack="5"/>
+		<attack name="physical" interval="2000" chance="55" range="7" radius="1" target="1" min="-0" max="-15">
+			<attribute key="shootEffect" value="explosion"/>
+			<attribute key="areaEffect" value="stun"/>
+		</attack>
 	</attacks>
-	<defenses armor="5" defense="5" />
-	<elements>
-		<element firePercent="-10" />
-	</elements>
-	<voices interval="2000" chance="7">
-		<voice sentence="Chchch" />
+	<defenses armor="1" defense="2"/>
+	<voices interval="2000" chance="5">
+		<voice sentence="Chchch"/>
 	</voices>
 	<loot>
-		<item id="7909" chance="1140" /><!-- walnut -->
+		<item id="7909" chance="3080"/><!-- walnut -->
 	</loot>
 </monster>

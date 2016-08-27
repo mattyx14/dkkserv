@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Coldheart" nameDescription="Coldheart" race="undead" experience="3500" speed="250" manacost="0">
+	<health now="7000" max="7000"/>
+	<look type="261" corpse="7282"/>
+	<targetchange interval="2000" chance="5"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag staticattack="90"/>
+		<flag lightlevel="0"/>
+		<flag lightcolor="0"/>
+		<flag targetdistance="1"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="70" attack="50"/>
+		<attack name="ice" interval="2000" chance="15" range="7" target="1" min="-50" max="-350">
+			<attribute key="shootEffect" value="ice"/>
+			<attribute key="areaEffect" value="iceattack"/>
+		</attack>
+		<attack name="coldheart paralyze" interval="2000" chance="12"/>
+		<attack name="ice" interval="2000" chance="15" length="8" spread="0" min="-150" max="-710">
+			<attribute key="areaEffect" value="icearea"/>
+		</attack>
+	</attacks>
+	<defenses armor="56" defense="73"/>
+	<immunities>
+		<immunity paralyze="1"/>
+		<immunity fire="1"/>
+		<immunity ice="1"/>
+		<immunity drunk="1"/>
+		<immunity invisible="1"/>
+	</immunities>
+	<voices interval="2000" chance="5">
+		<voice sentence="So cold."/>
+		<voice sentence="Ain't I cool?"/>
+	</voices>
+</monster>

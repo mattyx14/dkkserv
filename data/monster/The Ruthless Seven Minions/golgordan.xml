@@ -1,87 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Golgordan" nameDescription="Golgordan" race="fire" experience="10000" speed="350" manacost="0">
-	<health now="40000" max="40000" />
-	<look type="12" head="108" body="100" legs="105" feet="114" corpse="8721" />
-	<targetchange interval="7000" chance="10" />
-	<strategy attack="90" defense="10" />
+<monster name="Golgordan" nameDescription="Golgordan" race="fire" experience="10000" speed="390" manacost="0">
+	<health now="40000" max="40000"/>
+	<look type="12" head="52" body="99" legs="52" feet="91" corpse="6068"/> 
+	<targetchange interval="2000" chance="8"/>
 	<flags>
-		<flag summonable="0" />
-		<flag attackable="1" />
-		<flag hostile="1" />
-		<flag illusionable="0" />
-		<flag convinceable="0" />
-		<flag pushable="0" />
-		<flag canpushitems="1" />
-		<flag canpushcreatures="1" />
-		<flag targetdistance="1" />
-		<flag staticattack="85" />
-		<flag runonhealth="0" />
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="500"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" min="0" max="-500" />
-		<attack name="fire" interval="2000" chance="15" range="7" radius="4" min="-60" max="-200">
-			<attribute key="shootEffect" value="fire" />
-			<attribute key="areaEffect" value="firearea" />
+		<attack name="melee" interval="2000" skill="80" attack="100"/>
+		<attack name="fire" interval="2000" chance="11" length="12" spread="0" min="-350" max="-550">
+			<attribute key="areaEffect" value="fireattack"/>
 		</attack>
-		<attack name="poisoncondition" interval="1000" chance="11" length="5" spread="0" min="-30" max="-30">
-			<attribute key="areaEffect" value="poison" />
+		<attack name="twins skill reducer" interval="2000" chance="11"/>
+		<attack name="drunk" interval="2000" chance="9" length="13" spread="0" duration="5000">
+			<attribute key="areaEffect" value="poff"/>
 		</attack>
-		<attack name="death" interval="3000" chance="15" length="8" spread="3" min="-50" max="-600">
-			<attribute key="areaEffect" value="mortarea" />
+		<attack name="death" interval="2000" chance="12" length="5" spread="2" min="-300" max="-400">
+			<attribute key="areaEffect" value="mortarea"/>
 		</attack>
-		<attack name="death" interval="2000" chance="10" radius="1" range="4" min="0" max="-600">
-			<attribute key="shootEffect" value="death" />
-			<attribute key="areaEffect" value="mortarea" />
+		<attack name="death" interval="2000" chance="15" range="7" target="1" min="-450" max="-600">
+			<attribute key="shootEffect" value="death"/>
+			<attribute key="areaEffect" value="smallclouds"/>
 		</attack>
-		<attack name="fire" interval="2000" chance="10" length="8" spread="3" min="0" max="-600">
-			<attribute key="areaEffect" value="firearea" />
+		<attack name="poisoncondition" interval="2000" chance="12" length="10" spread="0" min="-400" max="-900">
+			<attribute key="areaEffect" value="poison"/>
 		</attack>
-		<attack name="physical" interval="1000" chance="8" radius="6" target="0" min="-50" max="-60">
-			<attribute key="areaEffect" value="groundshaker" />
+		<attack name="fire" interval="2000" chance="17" radius="4" target="0" min="-150" max="-200">
+			<attribute key="areaEffect" value="fireattack"/>
 		</attack>
 	</attacks>
-	<defenses armor="48" defense="54" />
+	<defenses armor="48" defense="54">
+		<defense name="healing" interval="2000" chance="9" min="450" max="550">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+	</defenses>
 	<elements>
-		<element icePercent="-1" />
-		<element holyPercent="1" />
-		<element physicalPercent="1" />
-		<element firePercent="-1" />
+		<element icePercent="-10"/>
+		<element holyPercent="15"/>
+		<element physicalPercent="20"/>
+		<element firePercent="-5"/>
 	</elements>
 	<immunities>
-		<immunity death="1" />
-		<immunity invisible="1" />
+		<immunity death="1"/>
+		<immunity invisible="1"/>
+		<immunity drunk="1"/>
+		<immunity paralyze="1"/>
 	</immunities>
-	<voices interval="2000" chance="7">
-		<voice sentence="Latrivan, you fool!" yell="1" />
-		<voice sentence="We are the right hand and the left hand of the seven!" />
+	<voices interval="2000" chance="5">
+		<voice sentence="Latrivan your fool!" yell="1"/>
+		<voice sentence="Colateral damage is so fun!"/>
+		<voice sentence="I might reward you for killing my brother ~ with a swift death!"/>
+		<voice sentence="We are the right hand and the left hand of the seven!" yell="1"/>
 	</voices>
 	<loot>
-		<item id="2148" countmax="273" chance="100000" />	<!-- gold coin -->
-		<item id="7591" chance="55000" />					<!-- great health potion -->
-		<item id="2387" chance="30000" />					<!-- double axe -->
-		<item id="6300" chance="25000" />					<!-- death ring -->
-		<item id="2214" chance="25000" />					<!-- ring of healing -->
-		<item id="2144" countmax="13" chance="20000" />		<!-- black pearl -->
-		<item id="2149" countmax="10" chance="20000" />		<!-- small emerald -->
-		<item id="2396" chance="15000" />					<!-- ice rapier -->
-		<item id="2162" chance="15000" />					<!-- magic light wand -->
-		<item id="2170" chance="15000" />					<!-- silver amulet -->
-		<item id="2146" countmax="10" chance="15000" />		<!-- small sapphire -->
-		<item id="2143" countmax="13" chance="15000" />		<!-- white pearl -->
-		<item id="2520" chance="10000" />					<!-- demon shield -->
-		<item id="6500" chance="10000" />					<!-- demonic essence -->
-		<item id="2167" chance="10000" />					<!-- energy ring -->
-		<item id="2393" chance="10000" />					<!-- giant sword -->
-		<item id="9971" chance="10000" />					<!-- gold ingot -->
-		<item id="2179" chance="10000" />					<!-- gold ring -->
-		<item id="2158" chance="5000" />						<!-- blue gem -->
-		<item id="2462" chance="5000" />						<!-- devil helmet -->
-		<item id="2155" chance="5000" />						<!-- green gem -->
-		<item id="2164" chance="5000" />						<!-- might ring -->
-		<item id="2402" chance="5000" />						<!-- silver dagger -->
-		<item id="2150" countmax="12" chance="15000" />		<!-- small amethyst -->
-		<item id="2182" chance="5000" />						<!-- snakebite rod -->
-		<item id="2165" chance="5000" />						<!-- stealth ring -->
-		<item id="2197" chance="5000" />						<!-- stone skin amulet -->
+		<item id="2148" countmax="243" chance="100000"/><!-- gold coin -->
+		<item id="2179" chance="58820"/><!-- gold ring -->
+		<item id="7591" chance="52940"/><!-- great health potion -->
+		<item id="2214" chance="29410"/><!-- ring of healing -->
+		<item id="2150" countmax="18" chance="29410"/><!-- small amethyst -->
+		<item id="2462" chance="23530"/><!-- devil helmet -->
+		<item id="2162" chance="23530"/><!-- magic light wand -->
+		<item id="2144" countmax="10" chance="17650"/><!-- black pearl -->
+		<item id="7365" countmax="7" chance="17650"/><!-- onyx arrow -->
+		<item id="2200" chance="17650"/><!-- protection amulet -->
+		<item id="2402" chance="17650"/><!-- silver dagger -->
+		<item id="2387" chance="11760"/><!-- double axe -->
+		<item id="2167" chance="11760"/><!-- energy ring -->
+		<item id="2432" chance="11760"/><!-- fire axe -->
+		<item id="9971" chance="11760"/><!-- gold ingot -->
+		<item id="2178" chance="11760"/><!-- mind stone -->
+		<item id="2170" chance="11760"/><!-- silver amulet -->
+		<item id="2146" countmax="7" chance="11760"/><!-- small sapphire -->
+		<item id="2197" chance="11760"/><!-- stone skin amulet -->
+		<item id="2192" chance="5880"/><!-- crystal ball -->
+		<item id="2520" chance="5880"/><!-- demon shield -->
+		<item id="6500" chance="5880"/><!-- demonic essence -->
+		<item id="2393" chance="5880"/><!-- giant sword -->
+		<item id="2436" chance="5880"/><!-- skull staff -->
+		<item id="2145" countmax="4" chance="5880"/><!-- small diamond -->
+		<item id="2143" countmax="11" chance="5880"/><!-- white pearl -->
+		<item id="2155" chance="5000"/><!-- green gem -->
+		<item id="3955" chance="5000"/><!-- voodoo doll -->
+		<item id="6300" chance="2700"/><!-- death ring -->
+		<item id="2164" chance="2700"/><!-- might ring -->
+		<item id="2182" chance="6200"/><!-- snakebite rod -->
+		<item id="2185" chance="5000"/><!-- necrotic rod -->
+		<item id="2165" chance="4500"/><!-- stealth ring -->
+		<item id="2396" chance="6500"/><!-- ice rapier -->
 	</loot>
 </monster>

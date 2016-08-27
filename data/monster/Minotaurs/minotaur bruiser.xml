@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Minotaur Bruiser" nameDescription="a minotaur bruiser" race="blood" experience="50" speed="170" manacost="0">
+<monster name="Minotaur Bruiser" nameDescription="a minotaur bruiser" race="blood" experience="50" speed="168" manacost="0">
 	<health now="100" max="100" />
 	<look type="25" corpse="5969" />
-	<targetchange interval="4000" chance="0" />
+	<targetchange interval="2000" chance="0" />
 	<flags>
 		<flag summonable="0" />
 		<flag attackable="1" />
@@ -17,24 +17,21 @@
 		<flag runonhealth="0" />
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" min="0" max="-45" />
+		<attack name="melee" interval="2000" skill="10" attack="25"/>
 	</attacks>
-	<defenses armor="10" defense="15" />
-	<immunities>
-		<immunity invisible="1" />
-	</immunities>
+	<defenses armor="4" defense="7" />
 	<loot>
-		<item id="2148" countmax="15" chance="65700" />	<!-- gold coin -->
-		<item id="2510" chance="20000" />				<!-- plate shield -->
-		<item id="2398" chance="12900" />				<!-- mace -->
-		<item id="2464" chance="10000" />				<!-- chain armor -->
-		<item id="2460" chance="7800" />					<!-- brass helmet -->
-		<item id="2376" chance="5000" />					<!-- sword -->
-		<item id="2666" chance="5000" />					<!-- meat -->
-		<item id="2386" chance="4000" />					<!-- axe -->
-		<item id="12428" countmax="2" chance="2000" />	<!-- minotaur horn -->
-		<item id="5878" chance="980" />					<!-- minotaur leather -->
-		<item id="2554" chance="310" />					<!-- shovel -->
-		<item id="2172" chance="120" />					<!-- bronze amulet -->
+		<item id="2386" chance="14340" />					<!-- axe -->
+		<item id="2460" chance="6990" />					<!-- brass helmet -->
+		<item id="2464" chance="8090" />				<!-- chain armor -->
+		<item id="2148" countmax="15" chance="100000" />	<!-- gold coin -->
+		<item id="2398" chance="11400" />				<!-- mace -->
+		<item id="2666" chance="4040" />					<!-- meat -->
+		<item id="12428" countmax="2" chance="2210" />	<!-- minotaur horn -->
+		<item id="5878" chance="1840" />					<!-- minotaur leather -->
+		<item id="2510" chance="20220" />				<!-- plate shield -->
+		<item id="2554" chance="370" />					<!-- shovel -->
+		<item id="2484" chance="16540"/> <!-- studded armor -->
+		<item id="2376" chance="12500" />					<!-- sword -->
 	</loot>
 </monster>

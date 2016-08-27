@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Flamecaller Zazrak" nameDescription="Flamecaller Zazrak" race="blood" experience="3000" speed="256" manacost="0">
+	<health now="2690" max="2690"/>
+	<look type="339" corpse="11280"/>
+	<targetchange interval="2000" chance="8"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="0"/>
+		<flag targetdistance="4"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="30" attack="25"/>
+		<attack name="fire" interval="2000" chance="17" target="1" range="7" radius="1" min="-125" max="-500">
+			<attribute key="shootEffect" value="fire"/>
+			<attribute key="areaEffect" value="firearea"/>
+		</attack>
+		<attack name="poisoncondition" interval="2000" chance="20" target="1" range="7" radius="1" min="-140" max="-240">
+			<attribute key="shootEffect" value="poison"/>
+			<attribute key="areaEffect" value="poison"/>
+		</attack>
+	</attacks>
+	<defenses armor="25" defense="25">
+		<defense name="healing" interval="2000" chance="23" min="250" max="400">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+		<defense name="lizard dragon priest summon" interval="2000" chance="19"/>
+		<defense name="flamecaller zazrak summon" interval="2000" chance="19"/>
+		<defense name="invisible" interval="2000" chance="10" duration="4000">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+	</defenses>
+	<elements>
+		<element firePercent="45"/>
+		<element icePercent="-10"/>
+	</elements>
+	<immunities>
+		<immunity earth="1"/>
+		<immunity invisible="1"/>
+	</immunities>
+	<voices interval="2000" chance="5">
+		<voice sentence="I ssssmell warm blood!"/>
+		<voice sentence="Shhhhhhhh."/>
+	</voices>
+	<loot>
+		<item id="11245" chance="25000" /><!-- bunch of ripe rice -->
+		<item id="11361" chance="100000" /><!-- dragon priest's wandtip -->
+		<item id="2148" countmax="100" chance="50000" /><!-- gold coin -->
+		<item id="7589" countmax="3" chance="12110" /><!-- strong mana potion -->
+		<item id="2168" chance="5000" /><!-- life ring -->
+		<item id="2152" countmax="5" chance="8000" /><!-- platinum coin -->
+		<item id="7590" chance="12000" /><!-- great mana potion -->
+		<item id="2154" chance="5000" /><!-- yellow gem -->
+		<item id="2150" countmax="5" chance="9000" /><!-- small amethyst -->
+		<item id="8871" chance="2500" /><!-- focus cape -->
+		<item id="5876" chance="15000" /><!-- lizard leather -->
+		<item id="5881" countmax="1" chance="25000" /><!-- lizard scale -->
+		<item id="2181" chance="9000" /><!-- terra rod -->
+		<item id="11356" chance="4500" /><!-- zaoan robe -->
+		<item id="2187" chance="7200" /><!-- wand of inferno -->
+		<item id="11303" chance="8000" /><!-- zaoan shoes -->
+	</loot>
+</monster>

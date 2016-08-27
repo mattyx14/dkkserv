@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Maw" nameDescription="Maw" race="venom" experience="6500" speed="230" manacost="0">
+    <health now="8200" max="8200"/>
+    <look type="458" corpse="15354"/>
+    <targetchange interval="2000" chance="10"/>
+    <flags>
+        <flag summonable="0"/>
+        <flag attackable="1"/>
+        <flag hostile="1"/>
+        <flag illusionable="0"/>
+        <flag convinceable="0"/>
+        <flag pushable="0"/>
+        <flag canpushitems="1"/>
+        <flag canpushcreatures="1"/>
+        <flag targetdistance="4"/>
+        <flag staticattack="90"/>
+        <flag runonhealth="0"/>
+    </flags>
+    <attacks>
+        <attack name="melee" interval="2000" skill="110" attack="50"/>
+	<attack name="physical" interval="2000" chance="30" length="2" spread="0" min="-0" max="-700">
+		<attribute key="areaEffect" value="groundshaker"/>
+	</attack>
+	<attack name="physical" interval="2000" chance="30" range="7" min="-0" max="-300">
+		<attribute key="shootEffect" value="poison"/>
+	</attack>
+    </attacks>
+    <defenses armor="30" defense="40">
+        <defense name="healing" interval="2000" chance="30" min="5" max="15">
+            <attribute key="areaEffect" value="bluebubble"/>
+        </defense>
+        <defense name="healing" interval="2000" chance="15" min="500" max="600">
+            <attribute key="areaEffect" value="greenshimmer"/>
+        </defense>
+    </defenses>
+    <elements>
+        <element physicalPercent="60"/>
+        <element energyPercent="50"/>
+        <element deathPercent="40"/>
+        <element firePercent="50"/>
+    </elements>
+    <immunities>
+        <immunity lifedrain="1"/>
+        <immunity earth="1"/>
+        <immunity invisible="1"/>
+    </immunities>
+    <voices interval="2000" chance="5">
+        <voice sentence="Kropp!"/>
+        <voice sentence="Zopp!"/>
+    </voices>
+    <loot>
+		<item id="15486" countmax="1" chance="100000"/> <!-- compound eye -->
+		<item id="7632" chance="5560"/><!-- giant shimmering pearl -->
+		<item id="7633" chance="5560"/><!-- giant shimmering pearl -->
+		<item id="2148" countmax="150" chance="100000"/> <!-- gold coin -->
+		<item id="15572" countmax="2" chance="11110"/><!-- gooey mass -->
+		<item id="15480" chance="100000"/> <!-- kollos shell -->
+		<item id="15643" chance="5560"/> <!-- hive bow -->
+		<item id="9971" chance="5560"/> <!-- gold ingot -->
+		<item id="16096" chance="44440"/><!-- dung ball(quest) -->
+		<item id="16096" chance="22220"/><!-- dung ball(quest) -->
+		<item id="7590" countmax="2" chance="61110"/> <!-- great mana potion -->
+		<item id="2152" countmax="6" chance="83330"/> <!-- platinum coin -->
+		<item id="8473" countmax="1" chance="38890"/> <!-- ultimate health potion -->
+		<item id="2147" countmax="4" chance="44440"/> <!-- small ruby -->
+		<item id="2144" countmax="4" chance="27780"/> <!-- black pearl -->
+		<item id="2156" chance="16670"/><!-- red gem -->
+    </loot>
+</monster>

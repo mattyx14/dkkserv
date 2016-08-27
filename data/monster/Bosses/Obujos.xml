@@ -1,66 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Obujos" nameDescription="a obujos" race="blood" experience="25000" speed="560" manacost="0">
-	<health now="90000" max="90000" />
-	<look type="445" corpse="15224" />
-	<targetchange interval="2000" chance="50" />
+<monster name="Obujos" nameDescription="Obujos" race="blood" experience="20000" speed="390" manacost="0">
+	<health now="35000" max="35000"/>
+	<look type="445" corpse="15224"/>
+	<targetchange interval="2000" chance="8"/>
 	<flags>
-		<flag summonable="0" />
-		<flag attackable="1" />
-		<flag hostile="1" />
-		<flag illusionable="0" />
-		<flag convinceable="0" />
-		<flag pushable="1" />
-		<flag canpushitems="1" />
-		<flag canpushcreatures="1" />
-		<flag targetdistance="0" />
-		<flag runonhealth="60" />
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="1000"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" min="0" max="-1200" poison="360" />
-		<attack name="death" interval="3000" chance="23" range="7" radius="7" target="1" min="-200" max="-800">
-			<attribute key="shootEffect" value="suddendeath" />
-			<attribute key="areaEffect" value="mortarea" />
+		<attack name="melee" interval="2000" skill="110" attack="200" poison="300"/>
+		<attack name="death" interval="2000" chance="25" radius="6" target="1" min="-200" max="-800">
+			<attribute key="shootEffect" value="suddendeath"/>
+			<attribute key="areaEffect" value="mortarea"/>
 		</attack>
-		<attack name="manadrain" interval="3500" chance="20" range="7" radius="6" target="1" min="-200" max="-600">
-			<attribute key="shootEffect" value="suddendeath" />
-			<attribute key="areaEffect" value="bigclouds" />
+		<attack name="poison" interval="2000" chance="35" radius="1" target="1" min="-100" max="-800">
+			<attribute key="shootEffect" value="poisonarrow"/>
+			<attribute key="areaEffect" value="bubbles"/>
 		</attack>
-		<attack name="earth" interval="2000" chance="25" range="7" radius="1" target="1" min="-200" max="-800">
-			<attribute key="shootEffect" value="poisonarrow" />
-			<attribute key="areaEffect" value="greenbubble" />
+		<attack name="obujos skill reducer 1" interval="2000" chance="13" range="7"/>
+		<attack name="obujos skill reducer 2" interval="2000" chance="13" range="7"/>
+		<attack name="poisoncondition" interval="2000" chance="22" range="7" radius="1" target="1" min="-300" max="-360">
+			<attribute key="shootEffect" value="smallearth"/>
+			<attribute key="areaEffect" value="smallplants"/>
 		</attack>
-		<attack name="ice" interval="1200" chance="7" length="8" spread="0" min="-600" max="-1300">
-			<attribute key="areaEffect" value="giantice" />
+		<attack name="ice" interval="2000" chance="9" length="8" spread="0" min="-600" max="-1300">
+			<attribute key="areaEffect" value="giantice"/>
 		</attack>
-		<attack name="lifedrain" interval="2000" chance="14" length="8" spread="3" min="-600" max="-1600">
-			<attribute key="areaEffect" value="icetornado" />
+		<attack name="lifedrain" interval="2000" chance="16" length="8" spread="3" min="-500" max="-1500">
+			<attribute key="areaEffect" value="icetornado"/>
+		</attack>
+		<attack name="manadrain" interval="2000" chance="23" radius="5" target="1" min="-200" max="-600">
+			<attribute key="shootEffect" value="energyball"/>
+			<attribute key="areaEffect" value="bigclouds"/>
 		</attack>
 	</attacks>
-	<defenses armor="40" defense="40">
-		<defense name="healing" interval="1000" chance="15" min="1000" max="2100">
-			<attribute key="areaEffect" value="blueshimmer" />
+	<defenses armor="38" defense="55">
+		<defense name="healing" interval="2000" chance="40" min="1000" max="1500">
+			<attribute key="areaEffect" value="blueshimmer"/>
 		</defense>
 	</defenses>
-	<immunities>
-		<immunity ice="1" />
-		<immunity paralyze="1" />
-		<immunity drown="1" />
-		<immunity fire="1" />
-		<immunity invisible="1" />
-	</immunities>
-	<voices interval="3000" chance="200">
-		<voice sentence="JN OBU!!" />
-		<voice sentence="QJELL KEJH!!" />
-	</voices>
 	<elements>
-		<element earthPercent="-20" />
-		<element energyPercent="-20" />
-		<element physicalPercent="-20" />
-		<element deathPercent="-20" />
+		<element deathPercent="50"/>
 	</elements>
+	<immunities>
+		<immunity paralyze="1"/>
+		<immunity earth="1"/>
+		<immunity invisible="1"/>
+	</immunities>
+	<voices interval="2000" chance="5">
+		<voice sentence="QJELL KEJH!!" yell="1"/>
+		<voice sentence="JN OBU!!" yell="1"/>
+	</voices>
 	<loot>
-		<item id="15411" chance="100000" /><!-- depth scutum -->
-		<item id="15404" chance="14285" /><!-- deepling axe -->
-		<item id="15412" chance="14285" /><!-- ornate legs -->
+		<item id="15411" chance="39130"/><!-- depth scutum -->
+		<item id="15412" chance="17830"/><!-- ornate legs -->
+		<item id="15404" chance="43040"/><!-- deepling axe -->
 	</loot>
 </monster>

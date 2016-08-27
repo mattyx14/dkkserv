@@ -1,48 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Deadeye Devious" nameDescription="deadeye devious" race="blood" experience="2000" speed="350" manacost="0">
-	<health now="2500" max="2500" />
-	<look type="151" head="115" body="76" legs="35" feet="117" addons="2" corpse="20378" />
-	<targetchange interval="60000" chance="0" />
+<monster name="Deadeye Devious" nameDescription="Deadeye Devious" race="blood" experience="750" speed="256" manacost="0">
+	<health now="1450" max="1450"/>
+	<look type="151" head="115" body="76" legs="35" feet="117" addons="2" corpse="20378"/>
+	<targetchange interval="2000" chance="10"/>
 	<flags>
-		<flag summonable="0" />
-		<flag attackable="1" />
-		<flag hostile="1" />
-		<flag illusionable="0" />
-		<flag convinceable="0" />
-		<flag pushable="0" />
-		<flag canpushitems="1" />
-		<flag staticattack="50" />
-		<flag lightlevel="0" />
-		<flag lightcolor="0" />
-		<flag targetdistance="1" />
-		<flag runonhealth="0" />
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag staticattack="90"/>
+		<flag lightlevel="0"/>
+		<flag lightcolor="0"/>
+		<flag targetdistance="4"/>
+		<flag runonhealth="180"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" min="-250" max="-550" />
-		<attack name="physical" interval="4000" chance="60" min="-200" max="-250">
-			<attribute key="shootEffect" value="throwingknife" />
+		<attack name="melee" interval="2000" skill="45" attack="40"/>
+		<attack name="physical" interval="2000" chance="24" min="-0" max="-120">
+			<attribute key="shootEffect" value="throwingknife"/>
 		</attack>
 	</attacks>
 	<defenses armor="35" defense="50">
-		<defense name="healing" interval="6000" chance="65" min="200" max="250">
-			<attribute key="areaEffect" value="blueshimmer" />
+		<defense name="healing" interval="2000" chance="11" min="85" max="135">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+		<defense name="healing" interval="2000" chance="8" min="0" max="0">
+			<attribute key="areaEffect" value="purplenote"/>
 		</defense>
 	</defenses>
 	<immunities>
-		<immunity invisible="1" />
+		<immunity invisible="1"/>
 	</immunities>
-	<voices interval="5000" chance="10">
-		<voice sentence="Let's kill 'em" />
-		<voice sentence="Arrrgh!" />
-		<voice sentence="You'll never take me alive!" />
+	<voices interval="2000" chance="5">
+		<voice sentence="Let's kill 'em"/>
+		<voice sentence="Arrrgh!"/>
+		<voice sentence="You'll never take me alive!"/>
+		<voice sentence="You won't get me alive!"/>
 	</voices>
 	<loot>
-		<item id="6102" chance="100000" /><!-- deadeye devious' eye patch -->
-		<item id="2148" countmax="65" chance="100000" /><!-- gold coin -->
-		<item id="2476" chance="1200" /><!-- knight armor -->
-		<item id="2463" chance="4000" /><!-- plate armor -->
-		<item id="2320" countmax="2" chance="100000" /><!-- skull -->
-		<item id="5926" chance="4000" /><!-- pirate backpack -->
-		<item id="2666" chance="100000" /><!-- meat -->
+		<item id="6102" chance="100000"/><!-- Deadeye Devious' eye patch -->
+		<item id="2148" countmin="3" countmax="121" chance="100000"/><!-- gold coin -->
+		<item id="2476" chance="28570"/><!-- knight armor -->
+		<item id="2666" countmax="3" chance="42860"/><!-- meat -->
+		<item id="7591" chance="10000"/><!-- great health potion -->
+		<item id="2463" chance="78570"/><!-- plate armor -->
+		<item id="2229" countmax="2" chance="85710"/><!-- skull -->
+		<item id="10103" chance="10000"/><!-- very old piece of paper -->
+		<item id="2379" chance="21430"/><!-- dagger -->
+		<item id="5926" chance="7140"/><!-- pirate backpack -->
+		<item id="2145" countmax="1" chance="14290"/><!-- small diamond -->
+
 	</loot>
 </monster>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Nightslayer" nameDescription="a nightslayer" race="blood" experience="250" speed="180" manacost="0">
+	<health now="400" max="400"/>
+	<look type="152" head="95" body="95" legs="95" feet="95" addons="3" corpse="20582"/>
+	<targetchange interval="2000" chance="5"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag staticattack="90"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="50" attack="50"/>
+		<attack name="physical" interval="2000" chance="13" range="7" min="-0" max="-40">
+			<attribute key="shootEffect" value="redstar"/>
+		</attack>
+	</attacks>
+	<defenses armor="18" defense="23">
+		<defense name="speed" interval="2000" chance="13" speedchange="180" duration="6000">
+			<attribute key="areaEffect" value="greenshimmer"/>
+		</defense>
+	</defenses>
+	<elements>
+		<element holyPercent="-25"/>
+	</elements>
+	<immunities>
+		<immunity invisible="1"/>
+		<immunity death="1"/>
+		<immunity fire="1"/>
+		<immunity earth="1"/>
+	</immunities>
+	<voices interval="2000" chance="5">
+		<voice sentence="We will stop you!"/>
+		<voice sentence="Here is the darkness... and it's coming for you!"/>
+		<voice sentence="You will die for your futile efforts!"/>
+	</voices>
+	<loot>
+		<item id="10531" chance="2240"/><!-- midnight shard --> 
+	</loot>
+</monster>

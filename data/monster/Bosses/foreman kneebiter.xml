@@ -1,31 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Foreman Kneebiter" nameDescription="foreman kneebiter" race="blood" experience="570" speed="200">
-	<health now="445" max="445" />
-	<look type="70" corpse="6013" />
-	<targetchange interval="5000" chance="8" />
+<monster name="Foreman Kneebiter" nameDescription="Foreman Kneebiter" race="blood" experience="445" speed="200">
+	<health now="570" max="570"/>
+	<look type="70" corpse="6013"/>
+	<targetchange interval="2000" chance="8"/>
 	<flags>
-		<flag attackable="1" />
-		<flag hostile="1" />
-		<flag canpushitems="1" />
-		<flag targetdistance="1" />
-		<flag staticattack="90" />
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" min="-60" max="-200" />
+		<attack name="melee" interval="2000" skill="90" attack="50"/>
+		<attack name="physical" interval="2000" chance="14" target="1" range="7" min="-0" max="-70">
+			<attribute key="shootEffect" value="whirlwindaxe"/>
+		</attack>
 	</attacks>
-	<defenses armor="15" defense="22" />
+	<defenses armor="15" defense="22">
+		<defense name="healing" interval="2000" chance="18" min="20" max="70">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+	</defenses>
 	<elements>
-		<element earthPercent="90" />
-		<element physicalPercent="20" />
-		<element firePercent="-5" />
-		<element deathPercent="-5" />
+		<element earthPercent="90"/>
+		<element physicalPercent="20"/>
+		<element firePercent="-5"/>
+		<element deathPercent="-5"/>
 	</elements>
 	<immunities>
-		<immunity invisible="1" />
-	</immunities>
+		<immunity invisible="1"/>
+	</immunities> 
+	<voices interval="2000" chance="5">
+		<voice sentence="By Durins beard!"/>
+	</voices>
 	<loot>
-		<item id="5880" countmax="2" chance="2500" /><!-- iron ore -->
-		<item id="2148" countmax="100" chance="90000" /><!-- gold coin -->
-		<item id="2513" chance="6666" /><!-- battle shield -->
+		<item id="5880" countmax="2" chance="2500"/><!-- iron ore -->
+		<item id="2148" countmax="100" chance="90000"/><!-- gold coin -->
+		<item id="2513" chance="6666"/><!-- battle shield -->
 	</loot>
 </monster>

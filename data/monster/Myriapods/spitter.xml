@@ -1,65 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Spitter" nameDescription="a spitter" race="venom" experience="1100" speed="200" manacost="0">
-	<health now="1500" max="1500" />
-	<look type="461" corpse="15392" />
-	<targetchange interval="4000" chance="10" />
+<monster name="Spitter" nameDescription="a spitter" race="venom" experience="1100" speed="270" manacost="0">
+	<health now="1500" max="1500"/>
+	<look type="461" corpse="15392"/>
+	<targetchange interval="2000" chance="4"/>
 	<flags>
-		<flag summonable="0" />
-		<flag attackable="1" />
-		<flag hostile="1" />
-		<flag illusionable="1" />
-		<flag convinceable="0" />
-		<flag pushable="1" />
-		<flag canpushitems="1" />
-		<flag canpushcreatures="1" />
-		<flag targetdistance="1" />
-		<flag runonhealth="40" />
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag runonhealth="40"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" min="0" max="-150" />
-		<attack name="earth" interval="2000" chance="20" range="7" radius="3" min="-100" max="-150">
-			<attribute key="areaEffect" value="poison" />
-			<attribute key="shootEffect" value="poison" />
+		<attack name="melee" interval="2000" skill="110" attack="50" poison="240"/>	
+		<attack name="poison" interval="2000" chance="21" range="7" radius="3" target="1" min="-100" max="-170">
+			<attribute key="shootEffect" value="poison"/>
+			<attribute key="areaEffect" value="poison"/>
 		</attack>
-		<attack name="speed" interval="2000" chance="15" range="7" target="1" speedchange="-300" duration="15000">
-			<attribute key="shootEffect" value="poison" />
-		</attack>
-		<attack name="poisoncondition" interval="2000" chance="30" radius="5" target="0" min="-12" max="-12" />
+        	<attack name="spitter paralyze" interval="2000" chance="12" range="7"/>
 	</attacks>
-	<defenses armor="20" defense="20">
-		<defense name="speed" interval="2000" chance="15" speedchange="250" duration="5000">
-			<attribute key="areaEffect" value="redshimmer" />
+	<defenses armor="30" defense="39">
+		<defense name="speed" interval="2000" chance="11" speedchange="600" duration="6000">
+			<attribute key="areaEffect" value="poff"/>
 		</defense>
 	</defenses>
 	<elements>
-		<element firePercent="5" />
-		<element energyPercent="-5" />
-		<element deathPercent="5" />
-		<element icePercent="-5" />
+		<element deathPercent="15"/>
+		<element firePercent="5"/>
+		<element energyPercent="-11"/>
+		<element icePercent="-5"/>
 	</elements>
 	<immunities>
-		<immunity earth="1" />
-		<immunity invisible="1" />
+		<immunity paralyze="1"/>
+		<immunity invisible="1"/>
+		<immunity earth="1"/>
 	</immunities>
-	<voices interval="2000" chance="7">
-		<voice sentence="Spotz!" />
+	<voices interval="2000" chance="5">
+		<voice sentence="Spotz!"/>
+		<voice sentence="Schlopfth!"/>
 	</voices>
 	<loot>
-		<item id="2148" countmax="190" chance="100000" />	<!-- gold coin -->
-		<item id="2152" chance="75250" />					<!-- platinum coin -->
-		<item id="15481" chance="18000" />					<!-- spitter nose -->
-		<item id="15486" chance="15000" />					<!-- compound eye -->
-		<item id="2150" countmax="2" chance="8100" />		<!-- small amethyst -->
-		<item id="7590" chance="7800" />						<!-- great mana potion -->
-		<item id="2789" countmax="3" chance="7500" />		<!-- brown mushroom -->
-		<item id="7591" chance="5000" />						<!-- great health potion -->
-		<item id="2169" chance="2400" />						<!-- time ring -->
-		<item id="7449" chance="2000" />						<!-- crystal sword -->
-		<item id="7440" chance="300" />						<!-- mastermind potion -->
-		<item id="2171" chance="260" />						<!-- platinum amulet -->
-		<item id="15489" chance="230" />						<!-- calopteryx cape -->
-		<item id="2497" chance="220" />						<!-- crusader helmet -->
-		<item id="2155" chance="210" />						<!-- green gem -->
-		<item id="15490" chance="140" />						<!-- grasshopper legs -->
+		<item id="15489" chance="240"/><!-- calopteryx cape -->
+		<item id="7440" chance="310"/><!-- mastermind potion -->
+		<item id="15486" chance="15100"/> <!-- compound eye -->
+		<item id="2789" countmax="3" chance="7520"/> <!-- brown mushroom -->
+		<item id="2148" countmax="190" chance="100000"/> <!-- gold coin -->
+		<item id="15481" chance="17940"/> <!-- spitter nose -->
+		<item id="7591" chance="5020"/><!-- great health potion -->
+		<item id="7590" chance="7790"/> <!-- great mana potion -->
+		<item id="2150" countmax="2" chance="8160"/> <!-- small amethyst -->
+		<item id="2169" chance="2410"/><!-- time ring -->
+		<item id="7449" chance="2010"/><!-- crystal sword -->
+		<item id="2155" chance="210"/><!-- green gem -->
+		<item id="2497" chance="230"/><!-- crusader helmet -->
+		<item id="2171" chance="260"/><!-- platinum amulet -->
+		<item id="15490" chance="130"/><!-- grasshopper legs -->
 	</loot>
 </monster>

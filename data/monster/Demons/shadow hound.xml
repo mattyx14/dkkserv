@@ -1,48 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Shadow Hound" nameDescription="a shadow hound" experience="600" speed="360" race="blood" manacost="0">
-	<health now="555" max="555" />
-	<targetchange speed="0" chance="8" />
-	<look type="322" corpse="9923" />
+<monster name="Shadow Hound" nameDescription="a shadow hound" experience="600" speed="230" race="blood" manacost="0">
+	<health now="555" max="555"/>
+	<look type="322" corpse="10538"/>
+	<targetchange speed="2000" chance="8"/>
 	<flags>
-		<flag summonable="0" />
-		<flag attackable="1" />
-		<flag hostile="1" />
-		<flag illusionable="0" />
-		<flag convinceable="0" />
-		<flag pushable="0" />
-		<flag canpushitems="1" />
-		<flag canpushcreatures="1" />
-		<flag targetdistance="1" />
-		<flag staticattack="90" />
-		<flag runonhealth="0" />
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" chance="100" skill="60" attack="100" />
-		<attack name="fireball" interval="2000" chance="24" min="-60" max="-160" />
-		<attack name="soulfire" interval="2000" chance="14" />
+		<attack name="melee" interval="2000" skill="48" attack="50" poison="130"/>
+    	<attack name="shadow hound curse" interval="2000" chance="22"/>
+    	<attack name="poison" interval="2000" chance="18" target="1" range="7" min="-45" max="-75">
+      		<attribute key="areaEffect" value="poison" />
+      		<attribute key="shootEffect" value="poison" />
+    	</attack>
 	</attacks>
-	<defenses armor="50" defense="55">
-		<defense name="healing" interval="1000" chance="15" min="60" max="230">
-			<attribute key="areaEffect" value="blueshimmer" />
+	<defenses armor="30" defense="39">
+		<defense name="healing" interval="2000" chance="15" min="40" max="65">
+			<attribute key="areaEffect" value="greenspark"/>
 		</defense>
+    		<defense name="speed" interval="2000" chance="7" speedchange="318" duration="5000">
+      			<attribute key="areaEffect" value="poff" />
+    		</defense>
 	</defenses>
 	<elements>
-		<element holyPercent="30" />
-		<element energyPercent="10" />
-		<element firePercent="-10" />
-		<element icePercent="-10" />
-		<element physicalPercent="-20" />
+		<element holyPercent="-25"/>
+		<element energyPercent="10"/>
+		<element firePercent="-10"/>
 	</elements>
 	<immunities>
-		<immunity death="1" />
-		<immunity earth="1" />
-		<immunity paralyze="1" />
-		<immunity invisible="1" />
-	</immunities>
-	<voices interval="5000" chance="10">
-		<voice sentence="Grrrr!" yell="1" />
+		<immunity death="1"/>
+		<immunity earth="1"/>
+		<immunity paralyze="1"/>
+		<immunity invisible="1"/> 
+	</immunities> 
+	<voices speed="2000" chance="5">
+		<voice sentence="Grrrr!" yell="1"/>
+		<voice sentence="Growl!" yell="1"/>
 	</voices>
 	<loot>
-		<item id="10531" chance="8333" /><!-- midnight shard -->
+		<item id="10531" chance="7060"/><!-- midnight shard -->
 	</loot>
 </monster>

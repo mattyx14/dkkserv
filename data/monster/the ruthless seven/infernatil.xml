@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Infernatil" nameDescription="Infernatil" race="fire" experience="85000" speed="450" manacost="0">
+	<health now="160000" max="160000"/>
+	<look type="12" head="0" body="4" legs="93" feet="94" addons="0" corpse="6068"/>
+	<targetchange interval="2000" chance="15"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag staticattack="90"/>
+		<flag targetdistance="1"/>
+		<flag runonhealth="3000"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="210" attack="260"/>
+		<attack name="fire" interval="2000" chance="16" range="7" radius="7" target="1" min="-250" max="-900">
+			<attribute key="shootEffect" value="fire"/>
+			<attribute key="areaEffect" value="firearea"/>
+		</attack>
+		<attack name="fire" interval="2000" chance="50" radius="5" target="0" min="-150" max="-500">
+			<attribute key="areaEffect" value="fire"/>
+		</attack>
+		<attack name="firefield" interval="2000" chance="5" range="7" radius="8" target="0">
+			<attribute key="areaEffect" value="explosionarea"/>
+		</attack>
+		<attack name="fire" interval="2000" chance="8" length="8" spread="0" min="-300" max="-1600">
+			<attribute key="areaEffect" value="explosionarea"/>
+		</attack>
+		<attack name="fire" interval="2000" chance="14" radius="8" target="0" min="-250" max="-1000">
+			<attribute key="areaEffect" value="firearea"/>
+		</attack>
+		<attack name="physical" interval="2000" chance="11" radius="8" target="0" min="-0" max="-500">
+			<attribute key="areaEffect" value="explosionarea"/>
+		</attack>
+		<attack name="fire" interval="2000" chance="8" length="8" spread="3" min="-300" max="-1600">
+			<attribute key="areaEffect" value="firearea"/>
+		</attack>
+	</attacks>
+	<defenses armor="165" defense="150">
+		<defense name="healing" interval="2000" chance="25" min="500" max="2500">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+		<defense name="healing" interval="2000" chance="14" min="2500" max="7500">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+		<defense name="healing" interval="2000" chance="8" min="7500" max="22500">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+		<defense name="speed" interval="2000" chance="9" speedchange="808" duration="4000">
+			<attribute key="areaEffect" value="redshimmer"/>
+		</defense>
+		<defense name="morgaroth summon" interval="2000" chance="11"/>
+	</defenses>
+	<elements>
+		<element energyPercent="80"/>
+		<element physicalPercent="40"/>
+		<element icePercent="-5"/>
+		<element holyPercent="-3"/>
+	</elements>
+	<immunities>
+		<immunity paralyze="1"/>
+		<immunity death="1"/>
+		<immunity fire="1"/>
+		<immunity earth="1"/>
+		<immunity lifedrain="1"/>
+		<immunity invisible="1"/>
+	</immunities>
+	<voices interval="2000" chance="5">
+		<voice sentence="Worship Zathroth pathetic mortal!" yell="1"/>
+		<voice sentence="Your soul will be mine!" yell="1"/>
+		<voice sentence="ASHES TO ASHES!" yell="1"/>
+		<voice sentence="YOU WILL ALL BURN!" yell="1"/>
+		<voice sentence="THE DAY OF RECKONING IS AT HAND!" yell="1"/>
+		<voice sentence="BOW TO THE POWER OF THE RUTHLESS SEVEN!" yell="1"/>
+	</voices>
+	<loot>
+		<item id="6500" countmax="5" chance="95450"/><!-- demonic essence -->
+		<item id="2152" countmax="74" chance="95450"/><!-- platinum coin -->
+		<item id="2155" chance="50000"/><!-- green gem -->
+		<item id="7590" chance="45450"/><!-- great mana potion -->
+		<item id="2150" countmax="18" chance="36360"/><!-- small amethyst -->
+		<item id="8852" chance="36360"/><!-- the devileye -->
+		<item id="1986" chance="27270"/><!-- red tome -->
+		<item id="2149" countmax="7" chance="27270"/><!-- small emerald -->
+		<item id="2146" countmax="9" chance="27270"/><!-- small sapphire -->
+		<item id="8473" chance="27270"/><!-- ultimate health potion -->
+		<item id="8850" chance="22730"/><!-- chain bolter -->
+		<item id="8865" chance="22730"/><!-- dark lord's cape -->
+		<item id="6300" chance="22730"/><!-- death ring -->
+		<item id="5954" countmax="2" chance="22730"/><!-- demon horn -->
+		<item id="2214" chance="22730"/><!-- ring of healing -->
+		<item id="2151" countmax="7" chance="13040"/><!-- talon -->
+		<item id="8853" chance="22730"/><!-- the ironworker -->
+		<item id="2387" chance="18180"/><!-- double axe -->	
+		<item id="8881" chance="18180"/><!-- fireborn giant armor -->	
+		<item id="8472" countmax="1" chance="18180"/><!-- great spirit potion -->
+		<item id="2472" chance="18180"/><!-- magic plate armor -->
+		<item id="2164" chance="18180"/><!-- might ring -->
+		<item id="2178" chance="18180"/><!-- mind stone -->
+		<item id="8851" chance="18180"/><!-- royal crossbow -->
+		<item id="2165" chance="18180"/><!-- stealth ring -->
+		<item id="2112" chance="18180"/><!-- teddy bear -->		
+		<item id="7368" countmax="35" chance="13640"/><!-- assassin star -->
+		<item id="2144" countmax="15" chance="13640"/><!-- black pearl -->
+		<item id="7431" chance="13640"/><!-- demonbone -->
+		<item id="2033" chance="13640"/><!-- golden mug -->
+		<item id="5943" chance="13640"/><!-- Morgaroth's heart -->
+		<item id="8928" chance="13640"/><!-- obsidian truncheon -->
+		<item id="8929" chance="13640"/><!-- the stomper -->
+		<item id="2143" countmax="13" chance="13640"/><!-- white pearl -->
+		<item id="2158" chance="9090"/><!-- blue gem -->
+		<item id="2520" chance="9090"/><!-- demon shield -->
+		<item id="2167" chance="9090"/><!-- energy ring -->
+		<item id="2393" chance="9090"/><!-- giant sword -->
+		<item id="2179" chance="9090"/><!-- gold ring -->
+		<item id="2177" chance="9090"/><!-- life crystal -->
+		<item id="2162" chance="9090"/><!-- magic light wand -->
+		<item id="2176" chance="9090"/><!-- orb -->
+		<item id="2645" chance="9090"/><!-- steel boots -->
+		<item id="2174" chance="9090"/><!-- strange symbol -->
+
+		<item id="2421" chance="6000"/><!-- thunder hammer -->
+		<item id="2522" chance="3600"/><!-- great shield -->
+		<item id="2195" chance="12000"/><!-- boots of haste -->
+		<item id="6529" countmax="100" chance="10000"/><!-- infernal bolt -->
+		<item id="9971" chance="9000"/><!-- gold ingot -->
+		<item id="2142" chance="4000"/><!-- ancient amulet -->
+		<item id="2462" chance="4000"/><!-- devil helmet -->
+		<item id="2432" chance="4000"/><!-- fire axe -->
+		<item id="2470" chance="4000"/><!-- golden legs -->
+		<item id="7899" chance="4000"/><!-- magma coat -->
+		<item id="2514" chance="4000"/><!-- mastermind shield -->
+		<item id="2186" chance="4000"/><!-- moonlight rod -->
+		<item id="2185" chance="4000"/><!-- necrotic rod -->
+		<item id="7421" chance="4000"/><!-- onyx flail -->
+		<item id="2171" chance="4000"/><!-- platinum amulet -->
+		<item id="1982" chance="4000"/><!-- purple tome -->
+		<item id="2123" chance="4000"/><!-- ring of the sky -->
+		<item id="2170" chance="4000"/><!-- silver amulet -->
+		<item id="2402" chance="4000"/><!-- silver dagger -->
+		<item id="2436" chance="4000"/><!-- skull staff -->
+		<item id="2197" chance="4000"/><!-- stone skin amulet -->
+		<item id="2377" chance="4000"/><!-- two handed sword -->
+		<item id="8867" chance="4000"/><!-- dragon robe -->
+		<item id="8886" chance="8000"/><!-- molten plate -->
+	</loot>
+</monster>

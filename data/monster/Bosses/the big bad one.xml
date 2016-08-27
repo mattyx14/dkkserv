@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="The Big Bad One" nameDescription="The Big Bad One" race="blood" experience="170" speed="264" manacost="0">
+	<health now="300" max="300"/>
+	<look type="3" corpse="6009"/>
+	<targetchange interval="2000" chance="4"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="1"/>
+		<flag convinceable="1"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="0"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="50" attack="40"/>
+	</attacks>
+	<defenses armor="10" defense="16"/>
+	<elements>
+		<element earthPercent="20"/>
+		<element holyPercent="10"/>
+		<element icePercent="-10"/>
+		<element deathPercent="-5"/>
+	</elements>
+	<voices interval="2000" chance="5">
+		<voice sentence="Grrrrrrr"/>
+		<voice sentence="Yoooohhuuuu!" yell="1"/>
+	</voices>
+	<summons maxSummons="2">
+		<summon name="war wolf" interval="2000" chance="14" max="2"/>
+	</summons>
+	<loot>
+		<item id="2671" countmax="2" chance="70000"/><!-- ham -->
+		<item id="5897" chance="7100"/><!-- wolf paw -->
+		<item id="11235" chance="100000"/><!-- warwolf fur -->
+		<item id="7394" chance="400"/><!-- wolf trophy -->
+	</loot>
+</monster>

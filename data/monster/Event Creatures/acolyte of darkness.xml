@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Acolyte Of Darkness" nameDescription="an acolyte of darkness" race="blood" experience="200" speed="180" manacost="0">
+	<health now="325" max="325"/>
+	<look type="9" corpse="6080"/>
+	<targetchange interval="2000" chance="8"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="50" attack="40"/>
+    	<attack name="death" interval="2000" chance="16" range="1" target="1" min="-25" max="-35">
+      		<attribute key="shootEffect" value="suddendeath" />
+      		<attribute key="areaEffect" value="smallclouds" />
+    	</attack>
+    	<attack name="death" interval="2000" chance="14" radius="3" target="0" min="-5" max="-15">
+      		<attribute key="areaEffect" value="mortarea" />
+    	</attack>
+	</attacks>
+	<defenses armor="14" defense="17">
+		<defense name="healing" interval="2000" chance="20" min="25" max="50">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+	</defenses>
+	<elements>
+		<element holyPercent="-35"/>
+	</elements>
+	<immunities>
+		<immunity invisible="1"/>
+		<immunity earth="1"/>
+		<immunity death="1"/>
+		<immunity fire="1"/>
+	</immunities>
+	<voices interval="2000" chance="5">
+		<voice sentence="Mine is the power of the night!"/>
+		<voice sentence="You can not hope to stop us all!"/>
+		<voice sentence="The power of darkness is with me!"/>
+	</voices>
+	<loot>
+		<item id="10531" chance="1400"/><!-- midnight shard -->
+	</loot>
+</monster>

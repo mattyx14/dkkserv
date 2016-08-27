@@ -29715,12 +29715,12 @@
 		<attribute key="absorbPercentEarth" value="2" />
 		<attribute key="absorbPercentFire" value="-2" />
 	</item>
-	<item id="21707" article="a" name="haunted mirror piece">
+	<item id="21707" article="a" name="Dracula mirror">
 		<attribute key="weight" value="2800" />
 		<attribute key="defense" value="34" />
 		<attribute key="weaponType" value="shield" />
 	</item>
-	<item id="21708" name="vampire silk slippers">
+	<item id="21708" name="Dracula silk slippers">
 		<attribute key="weight" value="1150" />
 	</item>
 	<item id="21713" article="a" name="chargeless monolith">

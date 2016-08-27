@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Shadowstalker" nameDescription="Shadowstalker" race="venom" experience="4000" speed="290" manacost="0">
+	<health now="5850" max="5850"/>
+	<look type="456" corpse="15292"/>
+	<targetchange interval="2000" chance="2"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag staticattack="90"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="130" attack="50" poison="500"/>
+		<attack name="poison" interval="2000" chance="11" range="5" target="1" min ="-100" max="-200">
+			<attribute key="shootEffect" value="poison"/> 
+			<attribute key="areaEffect" value="smallplants"/>
+		</attack>
+	</attacks>
+	<defenses armor="12" defense="20">
+		<defense name="healing" interval="2000" chance="24" min="5" max="15">
+			<attribute key="areaEffect" value="bluebubble"/>
+		</defense>
+		<defense name="invisible" interval="2000" chance="15" duration="6000">
+			<attribute key="areaEffect" value="poff"/>
+		</defense>
+		<defense name="speed" interval="2000" chance="25" speedchange="1418" duration="5000">
+			<attribute key="areaEffect" value="yellowspark"/>
+		</defense>
+	</defenses>
+	<immunities>
+		<immunity earth="1" />
+		<immunity invisible="1"/>
+	</immunities>
+	<voices interval="2000" chance="5">
+		<voice sentence="Chrssschrsss!"/>
+		<voice sentence="Sssschrchrsss!"/>
+	</voices>
+	<elements>
+		<element deathPercent="5"/>
+		<element holyPercent="-5"/>
+		<element firePercent="-8"/>
+		<element icePercent="-7"/>
+	</elements>
+	<loot>
+		<item id="15486" chance="91670"/> <!-- compound eye -->
+		<item id="15482" chance="100000"/> <!-- crawler head plating -->
+		<item id="2148" countmax="217" chance="100000"/> <!-- gold coin -->
+		<item id="16096" chance="50000"/><!-- dung ball(quest) -->
+		<item id="16096" chance="20000"/><!-- dung ball(quest) -->
+		<item id="2152" countmax="5" chance="91670"/> <!-- platinum coin -->
+		<item id="7590" countmax="2" chance="66670"/> <!-- great mana potion -->
+		<item id="7591" countmax="2" chance="33330"/> <!-- great health potion -->
+		<item id="9970" countmax="2" chance="33330"/> <!-- small topaz -->
+		<item id="2149" countmax="2" chance="58330"/> <!-- small emerald -->
+		<item id="2391" chance="8000"/><!-- war hammer -->
+		<item id="8912" chance="9400"/><!-- springsprout rod -->
+		<item id="2154" chance="8330"/><!-- yellow gem -->
+		<item id="15490" chance="5200"/><!-- grasshopper legs -->
+	</loot>
+</monster>

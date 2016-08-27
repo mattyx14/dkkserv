@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Baron Brute" nameDescription="Baron Brute" race="blood" experience="3000" speed="278" manacost="0">
+	<health now="5025" max="5025"/>
+	<look type="2" corpse="6008"/>
+	<targetchange interval="2000" chance="10"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="60" attack="80"/>
+        <attack name="physical" interval="2000" chance="13" radius="1" range="7" target="1" min="-0" max="-120">
+            	<attribute key="shootEffect" value="whirlwindsword"/>
+        </attack>
+        <attack name="lifedrain" interval="2000" chance="12" radius="3" range="7" target="0" min="-130" max="-220">
+            	<attribute key="areaEffect" value="yellowspark"/>
+        </attack>
+	</attacks>
+	<defenses armor="21" defense="27">
+		<defense name="healing" interval="2000" chance="8" min="70" max="100">
+			<attribute key="areaEffect" value="greenshimmer"/>
+		</defense>
+	</defenses>
+	<elements>
+		<element earthPercent="-10"/>
+		<element energyPercent="-10"/>
+		<element deathPercent="-5"/>
+		<element holyPercent="10"/>
+		<element firePercent="80"/>
+	</elements>
+	<immunities>
+		<immunity invisible="1"/>
+	</immunities>
+	<voices interval="2000" chance="5">
+		<voice sentence="Mash'n!"/>
+		<voice sentence="Wahhh!"/>
+	</voices>
+</monster>

@@ -1,39 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Nightfiend" nameDescription="a nightfiend" race="blood" experience="2100" speed="210" manacost="0">
-	<health now="2700" max="2700" />
-	<look type="568" corpse="2669" />
-	<targetchange interval="5000" chance="8" />
+<monster name="Nightfiend" nameDescription="a nightfiend" race="blood" experience="2100" speed="224" manacost="0">
+	<health now="2700" max="2700"/>
+	<look type="556" corpse="21269"/>
+	<targetchange interval="2000" chance="8"/>
 	<flags>
-		<flag summonable="0" />
-		<flag attackable="1" />
-		<flag hostile="1" />
-		<flag illusionable="0" />
-		<flag convinceable="0" />
-		<flag pushable="0" />
-		<flag canpushitems="1" />
-		<flag canpushcreatures="1" />
-		<flag targetdistance="4" />
-		<flag staticattack="90" />
-		<flag runonhealth="0" />
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="1"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="20" attack="30" />
-		<attack name="physical" interval="1000" chance="10" range="7" min="-5" max="-40">
-			<attribute key="shootEffect" value="throwingknife" />
+		<attack name="melee" interval="2000" skill="70" attack="50"/>
+		<attack name="bleedcondition" interval="2000" chance="16" range="7" min="-200" max="-280">
+			<attribute key="shootEffect" value="suddendeath"/>
+			<attribute key="areaEffect" value="redspark"/>
+		</attack>
+		<attack name="physical" interval="2000" chance="11" range="7" min="-0" max="-100">
+			<attribute key="shootEffect" value="explosion"/>
+			<attribute key="areaEffect" value="explosionarea"/>
+		</attack>
+		<attack name="lifedrain" interval="2000" chance="15" range="7" radius="3" target="1" min="-100" max="-220">
+			<attribute key="shootEffect" value="death"/>
+			<attribute key="areaEffect" value="mortarea"/>
+		</attack>
+		<attack name="manadrain" interval="2000" chance="24" radius="4" target="0" min="-50" max="-100">
+			<attribute key="areaEffect" value="redshimmer"/>
 		</attack>
 	</attacks>
-	<defenses armor="11" defense="11" />
+	<defenses armor="17" defense="24">
+		<defense name="invisible" interval="2000" chance="15" duration="5000">
+			<attribute key="areaEffect" value="poff"/>
+		</defense>
+		<defense name="speed" interval="2000" chance="10" speedchange="306" duration="9000">
+			<attribute key="areaEffect" value="insects"/>
+		</defense>
+	</defenses>
 	<elements>
-		<element physicalPercent="5" />
-		<element energyPercent="5" />
-		<element icePercent="5" />
-		<element firePercent="-5" />
-		<element holyPercent="-5" />
+		<element physicalPercent="10"/>
+		<element energyPercent="10"/>
+		<element icePercent="5"/>
+		<element firePercent="-10"/>
+		<element holyPercent="-10"/>
 	</elements>
 	<immunities>
-		<immunity death="1" />
-		<immunity earth="1" />
-		<immunity paralyze="1" />
-		<immunity invisible="1" />
+		<immunity death="1"/>
+		<immunity earth="1"/>
+		<immunity lifedrain="1"/>
+		<immunity paralyze="1"/>
+		<immunity invisible="1"/>
 	</immunities>
+	<voices interval="2000" chance="5">
+		<voice sentence="*SNIFF* *SNIFF* BLOOD! I CAN SMELL YOU, MORTAL!" yell="1"/>
+		<voice sentence="I will end your torment. Do not run, little mortal."/>
+		<voice sentence="I will drink from your veins!"/>
+	</voices>
+	<loot>
+		<item id="12405" chance="5710"/><!-- blood preservation -->
+		<item id="10602" chance="13330"/><!-- vampire teeth -->
+		<item id="21241" chance="3810"/><!-- tooth file -->
+		<item id="2148" countmax="148" chance="98100"/><!-- gold coin -->
+		<item id="2152" chance="35240"/><!-- platinum coin -->
+		<item id="2147" countmax="3" chance="7620"/><!-- small ruby -->
+		<item id="2127" chance="1900"/><!-- emerald bangle -->
+		<item id="2156" chance="1900"/><!-- red gem -->
+		<item id="2214" chance="3810"/><!-- ring of healing -->
+		<item id="7588" chance="2860"/><!-- strong health potion -->
+		<item id="7589" chance="9520"/><!-- strong mana potion -->
+		<item id="2534" chance="250"/><!-- vampire shield -->
+	</loot>
 </monster>

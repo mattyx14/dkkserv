@@ -1,67 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Gladiator" nameDescription="a gladiator" race="blood" experience="1600" speed="250" manacost="0">
-	<health now="1800" max="1800" />
-	<look type="131" head="78" body="3" legs="79" feet="114" addons="3" corpse="20407" />
-	<targetchange interval="4000" chance="10" />
+<monster name="Gladiator" nameDescription="a gladiator" race="blood" experience="90" speed="196" manacost="470">
+	<health now="185" max="185"/>
+	<look type="131" head="78" body="3" legs="79" feet="114" corpse="20407"/>
+	<targetchange interval="2000" chance="1"/>
 	<flags>
-		<flag summonable="0" />
-		<flag attackable="1" />
-		<flag hostile="1" />
-		<flag illusionable="0" />
-		<flag convinceable="0" />
-		<flag pushable="0" />
-		<flag canpushitems="1" />
-		<flag canpushcreatures="1" />
-		<flag targetdistance="1" />
-		<flag staticattack="90" />
-		<flag runonhealth="0" />
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="1"/>
+		<flag pushable="1"/>
+		<flag canpushitems="0"/>
+		<flag canpushcreatures="0"/>
+		<flag staticattack="90"/>
+		<flag targetdistance="1"/>
+		<flag runonhealth="10"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="90" attack="60" />
-		<attack name="physical" interval="2000" chance="20" range="7" min="0" max="-200">
-			<attribute key="shootEffect" value="spear" />
-		</attack>
+		<attack name="melee" interval="2000" skill="50" attack="30"/>
 	</attacks>
-	<defenses armor="40" defense="40" />
+	<defenses armor="11" defense="13">
+		<defense name="speed" interval="2000" chance="11" speedchange="238" duration="8000">
+			<attribute key="areaEffect" value="redshimmer"/>
+		</defense>
+	</defenses>
 	<elements>
-		<element firePercent="95" />
-		<element energyPercent="80" />
-		<element physicalPercent="20" />
-		<element deathPercent="20" />
-		<element holyPercent="-10" />
+		<element holyPercent="10"/>
+		<element physicalPercent="5"/>
+		<element deathPercent="-5"/>
 	</elements>
-	<immunities>
-		<immunity paralyze="1" />
-		<immunity invisible="1" />
-		<immunity earth="1" />
-		<immunity ice="1" />
-	</immunities>
-	<voices interval="5000" chance="10">
-		<voice sentence="MINE!" yell="1" />
-		<voice sentence="No prisoners!" yell="1" />
-		<voice sentence="NO MERCY!" yell="1" />
-		<voice sentence="By Bolg's Blood!" />
-		<voice sentence="You're no match for me!" />
+	<voices interval="2000" chance="5">
+		<voice sentence="You are no match for me!"/>
+		<voice sentence="Feel my prowess."/>
+		<voice sentence="Fight!"/>
+		<voice sentence="Take this!"/>
 	</voices>
 	<loot>
-		<item id="2148" countmax="80" chance="23000" /><!-- gold coin -->
-		<item id="2148" countmax="56" chance="23000" /><!-- gold coin -->
-		<item id="2389" countmax="3" chance="30800" /><!-- spear -->
-		<item id="2691" countmax="2" chance="21600" /><!-- brown bread -->
-		<item id="2478" chance="12200" /><!-- brass legs -->
-		<item id="2120" chance="16020" /><!-- rope -->
-		<item id="2381" chance="11850" /><!-- halberd -->
-		<item id="2463" chance="10370" /><!-- plate armor -->
-		<item id="2457" chance="11220" /><!-- steel helmet -->
-		<item id="2377" chance="8470" /><!-- two handed sword -->
-		<item id="2475" chance="5610" /><!-- warrior helmet -->
-		<item id="2417" chance="6980" /><!-- battle hammer -->
-		<item id="2476" chance="320" /><!-- knight armor -->
-		<item id="2489" chance="1900" /><!-- dark armor -->
-		<item id="2490" chance="2330" /><!-- dark helmet -->
-		<item id="2477" chance="1050" /><!-- knight legs -->
-		<item id="2133" chance="740" /><!-- ruby necklace -->
-		<item id="2414" chance="110" /><!-- dragon lance -->
-		<item id="2114" chance="210" /><!-- piggy bank -->
+		<item id="2148" countmax="30" chance="49360"/><!-- gold coin -->
+		<item id="2666" countmax="1" chance="18950"/><!-- meat -->
+		<item id="2510" chance="10080"/><!-- plate shield -->
+		<item id="2376" chance="12420"/><!-- sword -->
+		<item id="2398" chance="11240"/><!-- mace -->
+		<item id="2465" chance="2770"/><!-- brass armor -->
+		<item id="2458" chance="5200"/><!-- chain helmet -->
+		<item id="2509" chance="870"/><!-- steel shield -->
+		<item id="8872" chance="320"/><!-- belted cape -->
+		<item id="2459" chance="610"/><!-- iron helmet -->
 	</loot>
 </monster>

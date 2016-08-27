@@ -1,37 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Brutus Bloodbeard" nameDescription="Brutus Bloodbeard" race="blood" experience="2500" speed="340" manacost="0">
-	<health now="3200" max="3200" />
-	<look type="98" corpse="20478" />
-	<targetchange interval="60000" chance="0" />
+<monster name="Brutus Bloodbeard" nameDescription="Brutus Bloodbeard" race="blood" experience="795" speed="236" manacost="0">
+	<health now="1555" max="1555"/>
+	<look type="98" corpse="6080"/>
+	<targetchange interval="2000" chance="7"/>
 	<flags>
-		<flag summonable="0" />
-		<flag attackable="1" />
-		<flag hostile="1" />
-		<flag illusionable="0" />
-		<flag convinceable="0" />
-		<flag pushable="0" />
-		<flag canpushitems="1" />
-		<flag staticattack="50" />
-		<flag lightlevel="0" />
-		<flag lightcolor="0" />
-		<flag targetdistance="1" />
-		<flag runonhealth="0" />
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag staticattack="90"/>
+		<flag lightlevel="0"/>
+		<flag lightcolor="0"/>
+		<flag targetdistance="1"/>
+		<flag runonhealth="0"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" min="-450" max="-800" />
+		<attack name="melee" interval="2000" skill="30" attack="50"/>
+		<attack name="drunk" interval="2000" chance="15" length="4" spread="3" duration="15000">
+			<attribute key="areaEffect" value="poff"/>
+		</attack>
+        	<attack name="physical" interval="2000" chance="13" radius="1" range="7" target="1" min="-0" max="-115">
+            		<attribute key="shootEffect" value="throwingknife"/>
+        </attack>
 	</attacks>
-	<summons maxSummons="4">
-		<summon name="Pirate Cutthroat" interval="2000" chance="50" />
-	</summons>
-	<defenses armor="35" defense="50" />
+	<defenses armor="35" defense="50">
+		<defense name="healing" interval="2000" chance="12" min="115" max="150">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+		<defense name="healing" interval="2000" chance="11" min="0" max="0">
+			<attribute key="areaEffect" value="purplenote"/>
+		</defense>
+    </defenses>
 	<immunities>
-		<immunity invisible="1" />
+		<immunity invisible="1"/>
 	</immunities>
+    <voices interval="2000" chance="5">
+        <voice sentence="Who wants to live forever?"/>
+        <voice sentence="You won't get my precious rum!"/>
+    </voices>
 	<loot>
-		<item id="6099" chance="100000" /><!-- brutus bloodbeard's hat -->
-		<item id="2148" countmax="40" chance="100000" /><!-- gold coin -->
-		<item id="2476" chance="1200" /><!-- knight armor -->
-		<item id="2463" chance="4000" /><!-- plate armor -->
-		<item id="2320" chance="100000" /><!-- skull -->
+		<item id="6099" chance="100000"/><!-- Brutus Bloodbeard's hat -->
+		<item id="2148" countmin="29" countmax="154" chance="100000"/><!-- gold coin -->
+		<item id="2476" chance="25000"/><!-- knight armor -->
+		<item id="2666" chance="25000"/><!-- meat -->
+		<item id="7591" chance="10000"/><!-- great health potion -->
+		<item id="2463" chance="25000"/><!-- plate armor -->
+		<item id="2229" countmax="2" chance="75000"/><!-- skull -->
+		<item id="10103" chance="10000"/><!-- very old piece of paper -->
+		<item id="2379" chance="25000"/><!-- dagger -->
+		<item id="5926" chance="8000"/><!-- pirate backpack -->
+		<item id="2145" countmax="2" chance="10000"/><!-- small diamond -->
 	</loot>
 </monster>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Mindmasher" nameDescription="Mindmasher" race="venom" experience="6000" speed="240" manacost="0">
+<health now="9500" max="9500"/>
+<look type="403" corpse="13514"/>
+<targetchange interval="2000" chance="6"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="70" attack="30" poison="140"/>
+		<attack name="mindmasher drown" interval="2000" chance="10" range="7"/>
+		<attack name="manadrain" interval="2000" chance="10" range="7" target="1" min ="-250" max="-720">
+			<attribute key="areaEffect" value="mortarea"/>
+		</attack>
+		<attack name="drunk" interval="2000" chance="10" range="7" target="1" duration="15000">
+			<attribute key="areaEffect" value="teleport"/>
+		</attack>
+	</attacks>
+	<defenses armor="16" defense="19">
+        <defense name="healing" interval="2000" chance="30" min="5" max="15">
+            <attribute key="areaEffect" value="bluebubble"/>
+        </defense>
+        <defense name="healing" interval="2000" chance="15" min="100" max="200">
+            <attribute key="areaEffect" value="greenshimmer"/>
+        </defense>
+        <defense name="mindmasher summon" interval="2000" chance="22"/>
+        <defense name="invisible" interval="2000" chance="17" duration="10000">
+            <attribute key="areaEffect" value="bluebubble"/>
+        </defense>
+    </defenses>
+	<elements>
+		<element physicalPercent="10"/>
+		<element firePercent="-10"/>
+		<element earthPercent="50"/>
+		<element energyPercent="-5"/>
+		<element icePercent="-10"/>
+	</elements>
+	<immunities>
+		<immunity invisible="1"/>
+	</immunities>
+	<voices interval="2000" chance="5">
+		<voice sentence="Klk! Klk!"/>
+		<voice sentence="Chrrr! Chrrr!"/>
+	</voices>
+	<loot>
+		<item id="15486" countmax="2" chance="100000"/> <!-- compound eye -->
+		<item id="15622" chance="100000"/><!-- dung ball -->
+		<item id="2148" countmax="215" chance="100000" /> <!-- gold coin -->
+		<item id="16096" chance="44440"/><!-- dung ball(quest) -->
+		<item id="16096" chance="22220"/><!-- dung ball(quest) -->
+		<item id="2152" countmax="4" chance="85710" /> <!-- platinum coin -->
+		<item id="7591" countmax="2" chance="28570" /> <!-- great health potion -->
+		<item id="7590" countmax="2" chance="71430" /> <!-- great mana potion -->
+		<item id="2149" countmax="2" chance="42860"/><!-- small emerald -->
+		<item id="2146" countmax="2" chance="28570"/><!-- small sapphire -->
+		<item id="2213" chance="14290" /> <!-- dwarven ring -->
+		<item id="2154" chance="28570" /> <!-- yellow gem -->
+		<item id="3964" chance="57140" /> <!-- ripper lance -->
+		<item id="11309" chance="14290" /> <!-- twin hooks -->
+	</loot>
+</monster>

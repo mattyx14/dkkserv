@@ -1,29 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Swarmer Hatchling" nameDescription="a swarmer hatchling" race="blood" experience="0" speed="560" manacost="0">
-	<health now="5" max="5" />
-	<look type="460" corpse="15388" />
-	<targetchange interval="2000" chance="50" />
+<monster name="Swarmer Hatchling" nameDescription="a swarmer hatchling" race="venom" experience="0" speed="220" manacost="0">
+	<health now="5" max="5"/>
+	<look type="460" corpse="15388"/>
+	<targetchange interval="2000" chance="2"/>
 	<flags>
-		<flag summonable="0" />
-		<flag attackable="1" />
-		<flag hostile="1" />
-		<flag illusionable="0" />
-		<flag convinceable="0" />
-		<flag pushable="0" />
-		<flag canpushitems="0" />
-		<flag canpushcreatures="0" />
-		<flag targetdistance="0" />
-		<flag runonhealth="0" />
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="1"/>
+		<flag convinceable="0"/>
+		<flag pushable="1"/>
+		<flag canpushitems="0"/>
+		<flag canpushcreatures="0"/>
+		<flag targetdistance="1"/>
+		<flag runonhealth="0"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="34" attack="45" />
-		<attack name="drown" interval="1000" chance="11" range="5" target="1" min ="-15" max="-100">
-			<attribute key="shootEffect" value="spear" /><!-- TODO: Add spear deepling speed effect? -->
-			<attribute key="areaEffect" value="bluebubble" />
+		<attack name="melee" interval="2000" skill="10" attack="0"/>
+		<attack name="drown" interval="2000" chance="25" radius="5" target="0" min ="-1" max="-1">
+			<attribute key="areaEffect" value="greenspark"/>
 		</attack>
 	</attacks>
-	<defenses armor="12" defense="20" />
-	<immunities>
-		<immunity earth="1" />
-	</immunities>
+	<defenses armor="3" defense="7">
+		<defense name="speed" interval="2000" chance="11" speedchange="358" duration="7000">
+			<attribute key="areaEffect" value="poff"/>
+		</defense>
+	</defenses>
+	<elements>
+		<element drownPercent="-400"/>
+	</elements>
+	<voices interval="2000" chance="5">
+		<voice sentence="Flzlzlzlzlzlzlz!"/>
+		<voice sentence="Rzlrzlrzlrzlrzlrzl!"/>
+	</voices>
 </monster>

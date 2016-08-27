@@ -1,51 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Roaring Water Elemental" nameDescription="a roaring water elemental" race="undead" experience="1300" speed="390" manacost="0">
-	<health now="1750" max="1750" />
-	<look type="11" corpse="8965" />
-	<targetchange interval="20000" chance="15" />
+<monster name="Roaring Water Elemental" nameDescription="a roaring water elemental" race="undead" experience="1300" speed="430" manacost="0">
+	<health now="1750" max="1750"/>
+	<look type="11" corpse="8965"/>
+	<targetchange interval="2000" chance="3"/>
 	<flags>
-		<flag summonable="0" />
-		<flag attackable="1" />
-		<flag hostile="1" />
-		<flag illusionable="0" />
-		<flag convinceable="0" />
-		<flag pushable="0" />
-		<flag canpushitems="1" />
-		<flag staticattack="85" />
-		<flag lightlevel="0" />
-		<flag lightcolor="0" />
-		<flag targetdistance="1" />
-		<flag runonhealth="1" />
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag staticattack="90"/>
+		<flag lightlevel="0"/>
+		<flag lightcolor="0"/>
+		<flag targetdistance="1"/>
+		<flag runonhealth="0"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="40" attack="90" />
-		<attack name="ice" interval="1000" chance="15" radius="2" target="1" min="-240" max="-320">
-			<attribute key="areaEffect" value="bluebubble" />
-			<attribute key="shootEffect" value="ice" />
-		</attack>
+    <attack name="melee" interval="2000" skill="70" attack="60"/>
+    <attack name="drown" interval="2000" chance="17" radius="2" target="1" min="-100" max="-320">
+      <attribute key="shootEffect" value="snowball" />
+      <attribute key="areaEffect" value="bluebubble" />
+    </attack>
+    <attack name="ice" interval="2000" chance="13" range="7" target="1" min="-160" max="-210">
+      <attribute key="shootEffect" value="ice" />
+      <attribute key="areaEffect" value="bluebubble" />
+    </attack>
+    <attack name="poisoncondition" interval="2000" chance="12" radius="5" target="0" min="-280" max="-460">
+      <attribute key="shootEffect" value="poison" />
+      <attribute key="areaEffect" value="poison" />
+    </attack>
 	</attacks>
-	<defenses armor="30" defense="30">
-		<defense name="healing" interval="2000" chance="15" min="90" max="150">
-			<attribute key="areaEffect" value="blueshimmer" />
+	<defenses armor="35" defense="45">
+		<defense name="healing" interval="2000" chance="15" min="60" max="75">
+			<attribute key="areaEffect" value="blueshimmer"/>
 		</defense>
 	</defenses>
 	<elements>
-		<element physicalPercent="50" />
-		<element holyPercent="30" />
+		<element physicalPercent="30"/>
+		<element holyPercent="40"/>
+		<element deathPercent="50"/>
 	</elements>
 	<immunities>
-		<immunity fire="1" />
-		<immunity lifedrain="1" />
-		<immunity paralyze="1" />
-		<immunity invisible="1" />
-		<immunity drown="1" />
+		<immunity fire="1"/>
+		<immunity ice="1"/>
+		<immunity earth="1"/>
+		<immunity lifedrain="1"/>
+		<immunity paralyze="1"/>
+		<immunity invisible="1"/>
+		<immunity drown="1"/>
 	</immunities>
+	<voices interval="2000" chance="5">
+		<voice sentence="BLUB BLUB"/>
+		<voice sentence="SWASHHH"/>
+	</voices>
 	<loot>
-		<item id="2148" countmax="90" chance="27000" /><!-- gold coin -->
-		<item id="2148" countmax="87" chance="27000" /><!-- gold coin -->
-		<item id="8302" chance="9000" /><!-- iced soil -->
-		<item id="2146" countmax="2" chance="4125" /><!-- small sapphire -->
-		<item id="7839" countmax="2" chance="1000" /><!-- giant shimmering pearl -->
-		<item id="8911" chance="750" /><!-- northwind rod -->
+		<item id="2148" countmax="172" chance="88890"/><!-- gold coin -->
+		<item id="8302" chance="8020"/><!-- iced soil -->
+		<item id="2146" countmax="2" chance="3700"/><!-- small sapphire -->
+		<item id="7633" countmax="1" chance="3700"/><!-- giant shimmering pearl brown -->
+		<item id="7632" countmax="1" chance="3700"/><!-- giant shimmering pearl blue -->
 	</loot>
 </monster>

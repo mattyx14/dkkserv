@@ -1,38 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Eye of the Seven" nameDescription="an eye of the seven" race="venom" experience="0" speed="0" manacost="0">
-	<health now="1" max="1" />
-	<look typeex="1560" />
-	<targetchange interval="5000" chance="20" />
+<monster name="Eye of the Seven" nameDescription="an eye of the seven" race="undead" experience="320" speed="0" manacost="0">
+	<health now="2000" max="2000"/>
+	<look type="109" corpse="2253"/>
+	<targetchange interval="2000" chance="25"/>
 	<flags>
-		<flag summonable="0" />
-		<flag attackable="0" />
-		<flag hostile="1" />
-		<flag illusionable="0" />
-		<flag convinceable="0" />
-		<flag pushable="0" />
-		<flag canpushitems="0" />
-		<flag canpushcreatures="1" />
-		<flag targetdistance="1" />
-		<flag staticattack="90" />
-		<flag runonhealth="0" />
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="0"/>
+		<flag canpushcreatures="0"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="190" attack="50" />
-		<attack name="lifedrain" interval="1000" chance="9" range="6" min="0" max="-500" />
+		<attack name="fire" interval="2000" chance="15" range="7" min="-70" max="-325">
+			<attribute key="shootEffect" value="fire"/>
+			<attribute key="areaEffect" value="fire"/>
+		</attack>
+		<attack name="energy" interval="2000" chance="15" range="7" min="-70" max="-325">
+			<attribute key="shootEffect" value="energyball"/>
+			<attribute key="areaEffect" value="energy"/>
+		</attack>
+		<attack name="ice" interval="2000" chance="15" range="7" min="-70" max="-325">
+			<attribute key="shootEffect" value="smallice"/>
+			<attribute key="areaEffect" value="iceattack"/>
+		</attack>
 	</attacks>
-	<defenses armor="1" defense="1" />
+	<defenses armor="199" defense="199"/>
 	<immunities>
-		<immunity physical="1" />
-		<immunity energy="1" />
-		<immunity fire="1" />
-		<immunity poison="1" />
-		<immunity ice="1" />
-		<immunity holy="1" />
-		<immunity death="1" />
-		<immunity lifedrain="1" />
-		<immunity manadrain="1" />
-		<immunity paralyze="1" />
-		<immunity drunk="1" />
-		<immunity outfit="1" />
+		<immunity physical="1"/>
+		<immunity energy="1"/>
+		<immunity fire="1"/>
+		<immunity poison="1"/>
+		<immunity ice="1"/>
+		<immunity holy="1"/>
+		<immunity death="1"/>
+		<immunity lifedrain="1"/>
+		<immunity manadrain="1"/>
+		<immunity paralyze="1"/>
+		<immunity drunk="1"/>
+		<immunity outfit="1"/>
+		<immunity invisible="0"/>
 	</immunities>
 </monster>

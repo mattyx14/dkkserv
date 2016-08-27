@@ -1,19 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Damaged Crystal Golem" nameDescription="a damaged crystal golem" race="energy" experience="0" speed="180" manacost="0">
-	<health now="500" max="500" />
-	<look type="508" corpse="18466" />
-	<targetchange interval="4000" chance="10" />
+<monster name="Damaged Crystal Golem" nameDescription="a damaged crystal golem" race="energy" experience="0" speed="268" manacost="0">
+	<health now="500" max="500"/>
+	<look type="508" corpse="18466"/>
+	<targetchange interval="2000" chance="8"/>
 	<flags>
-		<flag summonable="0" />
-		<flag attackable="1" />
-		<flag hostile="1" />
-		<flag illusionable="0" />
-		<flag convinceable="0" />
-		<flag pushable="0" />
-		<flag canpushitems="1" />
-		<flag canpushcreatures="1" />
-		<flag targetdistance="1" />
-		<flag staticattack="90" />
-		<flag runonhealth="500" />
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="3"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="500"/>
 	</flags>
+	<defenses armor="29" defense="37">
+		<defense name="healing" interval="2000" chance="17" min="1" max="10">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+	</defenses>
+	<elements>
+		<element physicalPercent="20"/>
+	</elements>
+	<immunities>
+		<immunity fire="1"/>
+		<immunity ice="1"/>
+	</immunities>
+	<voices interval="2000" chance="5">
+		<voice sentence="Crrrk! Crrrk!"/>
+		<voice sentence="Crrrk! Crrrrk! Crrrrrrrk!"/>
+	</voices>
 </monster>

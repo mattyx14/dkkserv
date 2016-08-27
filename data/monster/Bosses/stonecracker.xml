@@ -1,61 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Stonecracker" nameDescription="stonecracker" race="blood" experience="3500" speed="280" manacost="0">
-	<health now="6500" max="6500" />
-	<look type="55" corpse="5999" />
-	<targetchange interval="5000" chance="8" />
+<monster name="Stonecracker" nameDescription="Stonecracker" race="blood" experience="3500" speed="370" manacost="0">
+	<health now="6500" max="6500"/>
+	<look type="55" corpse="5999"/>
+	<targetchange interval="2000" chance="8"/>
 	<flags>
-		<flag summonable="0" />
-		<flag attackable="1" />
-		<flag hostile="1" />
-		<flag illusionable="0" />
-		<flag convinceable="0" />
-		<flag pushable="0" />
-		<flag canpushitems="1" />
-		<flag canpushcreatures="1" />
-		<flag targetdistance="1" />
-		<flag staticattack="90" />
-		<flag runonhealth="0" />
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="90" attack="100" />
-		<attack name="physical" interval="2000" chance="20" range="7" min="-200" max="-280">
-			<attribute key="shootEffect" value="largerock" />
+		<attack name="melee" interval="2000" skill="103" attack="100"/>
+		<attack name="earth" interval="2000" chance="20" range="7" min="-200" max="-300">
+			<attribute key="shootEffect" value="largerock"/>
 		</attack>
 	</attacks>
-	<defenses armor="40" defense="45">
-		<defense name="speed" interval="2000" chance="10" speedchange="360" duration="4000">
-			<attribute key="areaEffect" value="redshimmer" />
+	<defenses armor="44" defense="57">
+		<defense name="speed" interval="2000" chance="10" speedchange="630" duration="7000">
+			<attribute key="areaEffect" value="redshimmer"/>
 		</defense>
-		<defense name="healing" interval="2000" chance="10" min="500" max="600">
-			<attribute key="areaEffect" value="blueshimmer" />
+		<defense name="healing" interval="2000" chance="10" min="100" max="185">
+			<attribute key="areaEffect" value="redshimmer"/>
 		</defense>
 	</defenses>
 	<elements>
-		<element earthPercent="85" />
-		<element holyPercent="35" />
-		<element firePercent="40" />
-		<element energyPercent="15" />
-		<element physicalPercent="15" />
-		<element icePercent="-5" />
+		<element earthPercent="85"/>
+		<element holyPercent="35"/>
+		<element firePercent="40"/>
+		<element energyPercent="30"/>
+		<element physicalPercent="15"/>
+		<element icePercent="-5"/>
 	</elements>
 	<immunities>
-		<immunity paralyze="1" />
-		<immunity invisible="1" />
+		<immunity paralyze="1"/>
+		<immunity invisible="1"/>
 	</immunities>
-	<voices interval="5000" chance="10">
-		<voice sentence="HUAHAHA!" />
+	<voices interval="2000" chance="5">
+		<voice sentence="HUAHAHA!"/>
+		<voice sentence="Smaaaashing!"/>
 	</voices>
 	<loot>
-		<item id="2148" countmax="100" chance="76225" /><!-- gold coin -->
-		<item id="5893" chance="64800" /><!-- perfect behemoth fang -->
-		<item id="2666" chance="36200" /><!-- meat -->
-		<item id="5930" chance="50500" /><!-- behemoth claw -->
-		<item id="7368" countmax="2" chance="11225" /><!-- assassin star -->
-		<item id="2489" chance="7650" /><!-- dark armor -->
-		<item id="2553" chance="14800" /><!-- pick -->
-		<item id="2416" chance="14800" /><!-- crowbar -->
-		<item id="2150" countmax="2" chance="7650" /><!-- small amethyst -->
-		<item id="2387" chance="7650" /><!-- double axe -->
-		<item id="2463" chance="7650" /><!-- plate armor -->
+		<item id="7368" countmax="100" chance="62070"/><!-- assassin star -->
+		<item id="5930" countmax="1" chance="100000"/><!-- behemoth claw -->
+		<item id="7396" chance="100000"/><!-- behemoth trophy -->
+		<item id="2489" chance="6900"/><!-- dark armor -->
+		<item id="2387" chance="6900"/><!-- double axe -->
+		<item id="2393" chance="2000"/><!-- giant sword -->
+		<item id="2148" countmax="200" chance="100000"/><!-- gold coin -->
+		<item id="2666" countmax="3" chance="31030"/><!-- meat -->
+		<item id="5893" countmax="1" chance="100000"/><!-- perfect behemoth fang -->
+		<item id="11227" countmax="1" chance="3450"/><!-- shiny stone -->
+		<item id="2150" countmax="5" chance="75860"/><!-- small amethyst -->
+		<item id="2645" chance="1000"/><!-- steel boots -->
+		<item id="2377" chance="58620"/><!-- two handed sword -->
+		<item id="2454" chance="5000"/><!-- war axe -->
 	</loot>
 </monster>

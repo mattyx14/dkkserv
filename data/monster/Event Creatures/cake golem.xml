@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Cake Golem" nameDescription="a cake golem" race="blood" experience="100" speed="200" manacost="0">
+	<health now="444" max="444"/>
+	<look typeex="6394" corpse="13128"/>
+	<targetchange interval="2000" chance="8"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="1"/>
+		<flag canpushitems="0"/>
+		<flag canpushcreatures="0"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="50"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="10" attack="25"/>
+		<attack name="drunk" interval="2000" chance="18" range="7" duration="3000">
+			<attribute key="shootEffect" value="cake"/>
+			<attribute key="areaEffect" value="cake"/>
+		</attack>
+		<attack name="poison" interval="2000" chance="12" range="7" min="10" max="20">
+			<attribute key="shootEffect" value="cake"/>
+			<attribute key="areaEffect" value="cake"/>
+		</attack>
+	</attacks>
+	<defenses armor="5" defense="15">
+		<defense name="healing" interval="2000" chance="15" min="50" max="100">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+	</defenses>
+	<elements>
+		<element deathPercent="95"/>
+		<element firePercent="95"/>
+		<element poisonPercent="95"/>
+		<element energyPercent="95"/>
+		<element holyPercent="95"/>
+		<element icePercent="95"/>
+	</elements>
+	<loot>
+		<item id="13130" chance="100000"/> <!-- sweet and sugary substance -->
+	</loot>
+</monster>

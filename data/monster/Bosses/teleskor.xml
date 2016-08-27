@@ -1,40 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Teleskor" nameDescription="Teleskor" race="undead" experience="70" speed="150" manacost="0">
-	<health now="80" max="80" />
-	<look type="298" corpse="5972" />
-	<targetchange interval="4000" chance="5" />
+<monster name="Teleskor" nameDescription="Teleskor" race="undead" experience="70" speed="154" manacost="0">
+	<health now="80" max="80"/>
+	<look type="298" corpse="5972"/>
+	<targetchange interval="2000" chance="2"/>
 	<flags>
-		<flag summonable="0" />
-		<flag attackable="1" />
-		<flag hostile="1" />
-		<flag illusionable="0" />
-		<flag convinceable="0" />
-		<flag pushable="0" />
-		<flag canpushitems="1" />
-		<flag canpushcreatures="1" />
-		<flag targetdistance="1" />
-		<flag staticattack="90" />
-		<flag runonhealth="0" />
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" min="0" max="-30" />
+		<attack name="melee" interval="2000" skill="20" attack="20"/>
+		<attack name="lifedrain" interval="2000" chance="9" range="1" target="1" min="-7" max="-15">
+			<attribute key="areaEffect" value="redshimmer"/>
+		</attack>
 	</attacks>
-	<defenses armor="15" defense="15" />
+	<defenses armor="2" defense="9"/>
 	<elements>
-		<element holyPercent="-5" />
+		<element holyPercent="10"/>
 	</elements>
-	<voices interval="2000" chance="7">
-		<voice sentence="Who disturbs my slumber?" />
-		<voice sentence="Mourn the dead, do not hunt them!" />
+	<immunities>
+		<immunity death="1"/>
+		<immunity drown="1"/>
+		<immunity lifedrain="1"/>
+	</immunities>
+	<voices interval="2000" chance="5">
+		<voice sentence="Who disturbs my slumber?"/>
+		<voice sentence="Mourn the dead, do not hunt them!"/>
 	</voices>
 	<loot>
-		<item id="12437" chance="100000" />				<!-- pelvis bone -->
-		<item id="2148" countmax="79" chance="81000" />	<!-- gold coin -->
-		<item id="2398" chance="72000" />				<!-- mace -->
-		<item id="2473" chance="72000" />				<!-- viking helmet -->
-		<item id="2511" chance="45000" />				<!-- brass shield -->
-		<item id="2050" chance="36000" />				<!-- torch -->
-		<item id="2388" chance="27000" />				<!-- hatchet -->
-		<item id="2376" chance="27000" />				<!-- sword -->
+		<item id="2511" chance="45450"/><!-- brass shield -->
+		<item id="2148" countmax="80" chance="81820"/><!-- gold coin -->
+		<item id="12437" chance="100000"/><!-- pelvis bone -->
+		<item id="2388" chance="27270"/><!-- hatchet -->
+		<item id="2376" chance="27270"/><!-- sword -->
+		<item id="2398" chance="72730"/><!-- mace -->
+		<item id="2050" chance="36360"/><!-- torch -->
+		<item id="2473" chance="72730"/><!-- viking helmet -->
 	</loot>
 </monster>

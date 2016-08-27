@@ -1,55 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="The Abomination" nameDescription="the abomination" race="venom" experience="25000" speed="340" manacost="0">
-	<health now="38050" max="38050" />
-	<look type="238" corpse="6532" />
-	<targetchange interval="5000" chance="8" />
+<monster name="The Abomination" nameDescription="The Abomination" race="venom" experience="25000" speed="120" manacost="0">
+	<health now="38000" max="38000"/>
+	<look type="238" corpse="6532"/>
+	<targetchange interval="2000" chance="8"/>
 	<flags>
-		<flag summonable="0" />
-		<flag attackable="1" />
-		<flag hostile="1" />
-		<flag illusionable="1" />
-		<flag convinceable="0" />
-		<flag pushable="0" />
-		<flag canpushitems="1" />
-		<flag canpushcreatures="1" />
-		<flag targetdistance="1" />
-		<flag staticattack="90" />
-		<flag runonhealth="0" />
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="1"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="90" attack="120" />
-		<attack name="speed" interval="1000" chance="12" radius="6" target="0" speedchange="-800" duration="10000">
-			<attribute key="areaEffect" value="poison" />
+		<attack name="melee" interval="2000" skill="90" attack="120"/>
+		<attack name="the abomination paralyze" interval="2000" chance="12"/>
+		<attack name="physical" interval="2000" chance="25" target="0" radius="8" min="-0" max="-250">
+			<attribute key="areaEffect" value="redspark"/>
 		</attack>
-		<attack name="earth" interval="1000" chance="9" target="0" radius="4" min="-200" max="-650">
-			<attribute key="areaEffect" value="poison" />
+		<attack name="physical" interval="2000" chance="25" target="0" radius="8" min="-0" max="-250">
+			<attribute key="areaEffect" value="greenspark"/>
 		</attack>
-		<attack name="lifedrain" interval="1000" chance="11" target="1" radius="4" min="-400" max="-900">
-			<attribute key="areaEffect" value="greennote" />
-			<attribute key="shootEffect" value="poison" />
+		<attack name="blightwalker curse" interval="2000" chance="25"/>
+		<attack name="poisoncondition" interval="2000" chance="11" target="0" radius="8" min="-200" max="-900">
+			<attribute key="areaEffect" value="greenspark"/>
 		</attack>
-		<attack name="physical" interval="2000" chance="19" length="7" min="-350" max="-850">
-			<attribute key="shootEffect" value="poison" />
+		<attack name="earth" interval="2000" chance="50" target="0" radius="4" min="-50" max="-250">
+			<attribute key="areaEffect" value="greenbubble"/>
+		</attack>
+		<attack name="physical" interval="2000" chance="19" length="8" spread="0" min="-0" max="-1230">
+			<attribute key="areaEffect" value="groundshaker"/>
 		</attack>
 	</attacks>
-	<defenses armor="25" defense="25">
-		<defense name="healing" interval="1000" chance="75" min="505" max="605">
-			<attribute key="areaEffect" value="blueshimmer" />
+	<defenses armor="150" defense="150">
+		<defense name="healing" interval="2000" chance="100" min="505" max="605">
+			<attribute key="areaEffect" value="blueshimmer"/>
 		</defense>
+		<defense name="the abomination summon" interval="2000" chance="24"/>
 	</defenses>
+	<elements>
+		<element firePercent="10"/>
+		<element icePercent="70"/>
+		<element energyPercent="40"/>
+		<element holyPercent="-5"/>
+		<element physicalPercent="60"/>
+	</elements>
 	<immunities>
-		<immunity poison="1" />
-		<immunity outfit="1" />
-		<immunity drunk="1" />
-		<immunity invisible="1" />
+		<immunity poison="1"/>
+		<immunity death="1"/>
+		<immunity lifedrain="1"/>
+		<immunity outfit="1"/>
+		<immunity drunk="1"/>
+		<immunity invisible="1"/>
 	</immunities>
-	<voices interval="5000" chance="10">
-		<voice sentence="Blubb" />
+	<voices interval="2000" chance="5">
+		<voice sentence="Blubb"/>
+		<voice sentence="DEATH IS INEVITABLE!" yell="1"/>
+		<voice sentence="I AM THE ESSENCE OF DEATH!" yell="1"/>
 	</voices>
+	<summons maxSummons="2">
+		<summon name="Blightwalker" interval="2000" chance="11" max="2"/>
+	</summons>
 	<loot>
-		<item id="2148" countmax="100" chance="100000" /><!-- gold coin -->
-		<item id="2152" countmax="3" chance="10000" /><!-- platinum coin -->
-		<item id="6500" countmax="1" chance="2857" /><!-- demonic essence -->
-		<item id="5944" chance="2500" /><!-- soul orb -->
+		<item id="2148" countmax="100" chance="100000"/><!-- gold coin -->
+		<item id="2152" countmax="3" chance="10000"/><!-- platinum coin -->
+		<item id="6500" countmax="1" chance="2857"/><!-- demonic essence -->
+		<item id="5944" chance="2500"/><!-- soul orb -->
 	</loot>
 </monster>

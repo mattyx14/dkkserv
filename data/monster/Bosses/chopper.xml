@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Chopper" nameDescription="Chopper" race="venom" experience="5400" speed="310" manacost="0">
+	<health now="7200" max="7200"/>
+	<look type="462" corpse="15396"/>
+	<targetchange interval="2000" chance="3"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/> 
+		<flag runonhealth="50"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="130" attack="80" poison="560"/>
+		<attack name="poison" interval="2000" chance="16" range="7" radius="3" target="1" min ="-100" max="-150">
+			<attribute key="shootEffect" value="poison"/> 
+			<attribute key="areaEffect" value="poison"/>
+		</attack>
+		<attack name="effect" interval="2000" chance="10" range="7" target="1">
+			<attribute key="shootEffect" value="poisonarrow"/> 
+			<attribute key="areaEffect" value="greenshimmer"/>
+		</attack>
+	</attacks>
+	<defenses armor="32" defense="35">
+		<defense name="healing" interval="2000" chance="25" min="5" max="15">
+			<attribute key="areaEffect" value="bluebubble"/>
+		</defense>
+		<defense name="healing" interval="2000" chance="12" min="150" max="250">
+			<attribute key="areaEffect" value="bluebubble"/>
+		</defense>
+	</defenses>
+	<immunities>
+		<immunity earth="1" />
+		<immunity invisible="1"/>
+	</immunities>
+	<elements>
+		<element deathPercent="5"/>
+		<element energyPercent="25"/>
+		<element physicalPercent="-1"/>
+		<element holyPercent="-1"/>
+		<element firePercent="-10"/>
+	</elements>
+	<voices interval="2000" chance="5">
+	</voices>
+	<loot>
+		<item id="15486" chance="6250"/><!-- compound eye -->
+		<item id="2148" countmax="200" chance="100000"/><!-- gold coin -->
+		<item id="2152" countmax="4" chance="91300"/><!-- platinum coin -->
+		<item id="15483" chance="100000"/><!-- waspoid claw -->
+		<item id="15484" chance="86960"/><!-- waspoid wing -->
+		<item id="8870" countmax="2" chance="60870"/><!-- small topaz -->
+		<item id="2144" chance="26090"/><!-- black pearl -->
+		<item id="7590" countmax="2" chance="26090"/><!-- great mana potion -->
+		<item id="7591" countmax="2" chance="39130"/><!-- great health potion -->
+		<item id="2127" chance="13040"/><!-- emerald bangle -->
+		<item id="2154" chance="13040"/><!-- yellow gem -->
+		<item id="16096" chance="69570"/><!-- dung ball(quest) -->
+		<item id="16096" chance="69570"/><!-- dung ball(quest) -->
+	</loot>
+</monster>

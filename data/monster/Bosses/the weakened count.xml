@@ -1,47 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="The Weakened Count" nameDescription="The Weakened Count" race="undead" experience="450" speed="370" manacost="0">
-	<health now="740" max="740" />
-	<look type="68" corpse="6006" />
-	<targetchange interval="5000" chance="10" />
+<monster name="The Weakened Count" nameDescription="The weakened Count" race="undead" experience="450" speed="238" manacost="0">
+	<health now="740" max="740"/>
+	<look type="68" corpse="6006"/>
+	<targetchange interval="2000" chance="8"/>
 	<flags>
-		<flag summonable="0" />
-		<flag attackable="1" />
-		<flag hostile="1" />
-		<flag illusionable="0" />
-		<flag convinceable="0" />
-		<flag pushable="0" />
-		<flag canpushitems="1" />
-		<flag canpushcreatures="1" />
-		<flag targetdistance="1" />
-		<flag staticattack="90" />
-		<flag runonhealth="0" />
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="1"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="100" min="-50" max="-75" />
-		<attack name="lifedrain" interval="1000" chance="9" target="0" radius="4" min="0" max="-100">
-			<attribute key="areaEffect" value="smallclouds" />
+		<attack name="melee" interval="2000" skill="50" attack="50"/>
+		<attack name="lifedrain" interval="2000" chance="20" range="1" min="-50" max="-100">
+			<attribute key="shootEffect" value="death"/>
+			<attribute key="areaEffect" value="redshimmer"/>
 		</attack>
+		<attack name="vampire paralyze" interval="2000" chance="12" range="7"/>
 	</attacks>
-	<defenses armor="30" defense="30">
-		<defense name="healing" interval="1000" chance="25" min="50" max="105">
-			<attribute key="areaEffect" value="blueshimmer" />
+	<defenses armor="17" defense="23">
+		<defense name="outfit" interval="2000" chance="6" monster="bat" duration="6000">
+			<attribute key="areaEffect" value="blueshimmer"/>
 		</defense>
-		<defense name="invisible" interval="3000" chance="30" duration="6000">
-			<attribute key="areaEffect" value="blueshimmer" />
+		<defense name="speed" interval="2000" chance="10" speedchange="332" duration="9000">
+			<attribute key="areaEffect" value="redshimmer"/>
 		</defense>
+		<defense name="healing" interval="2000" chance="9" min="15" max="25"/>
 	</defenses>
 	<elements>
-		<element physicalPercent="20" />
-		<element holyPercent="-20" />
+		<element physicalPercent="35"/>
+		<element firePercent="-10"/>
+		<element holyPercent="-25"/>
 	</elements>
 	<immunities>
-		<immunity lifedrain="1" />
-		<immunity death="1" />
-		<immunity invisible="1" />
+		<immunity death="1"/>
+		<immunity earth="1"/>
+		<immunity lifedrain="1"/>
+		<immunity paralyze="1"/>
+		<immunity invisible="1"/>
 	</immunities>
+	<voices interval="2000" chance="5">
+		<voice sentence="Uhh I can't tolerate that stench!"/>
+		<voice sentence="1... 2... 2... Uh, can't concentrate."/>
+		<voice sentence="I call you, my bats! Come!"/>
+	</voices>
 	<loot>
-		<item id="2148" countmax="98" chance="40000" /><!-- gold coin -->
-		<item id="8752" chance="100000" /><!-- the ring of the count -->
-		<item id="2391" chance="2300" /><!-- war hammer -->
+		<item id="2148" countmax="100" chance="90250"/><!-- gold coin -->
+		<item id="8752" chance="100000"/><!-- the ring of the count -->
+		<item id="2229" chance="1010"/><!-- skull -->
+		<item id="2534" chance="250"/><!-- vampire shield -->
 	</loot>
 </monster>

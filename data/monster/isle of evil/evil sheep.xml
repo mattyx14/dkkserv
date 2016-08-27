@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Evil Sheep" nameDescription="an evil sheep" race="blood" experience="240" speed="156" manacost="250">
+	<health now="350" max="350"/>
+	<look type="14" corpse="5991"/>
+	<targetchange interval="2000" chance="4"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="20"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="35" attack="40"/>
+		<attack name="physical" interval="2000" chance="20" range="7" min="-0" max="-50">
+			<attribute key="shootEffect" value="snowball"/>
+		</attack>
+	</attacks>
+	<defenses armor="18" defense="23"/>
+	<elements>
+		<element holyPercent="-5"/>
+		<element icePercent="20"/>
+		<element energyPercent="90"/>
+		<element physicalPercent="5"/>
+	</elements>
+	<immunities>
+		<immunity lifedrain="1"/>
+		<immunity invisible="1"/>
+		<immunity earth="1"/>
+		<immunity death="1"/>
+	</immunities>
+	<voices interval="2000" chance="5">
+		<voice sentence="Grrrr"/>
+	</voices>
+	<loot>
+		<item id="2148" countmax="50" chance="78050"/><!-- gold coins -->
+	</loot>
+</monster>

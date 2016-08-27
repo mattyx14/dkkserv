@@ -1,46 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Killer Caiman" nameDescription="a killer caiman" race="blood" experience="900" speed="230" manacost="0">
-	<health now="1500" max="1500" />
-	<look type="358" corpse="11430" />
-	<targetchange interval="4000" chance="10" />
+<monster name="Killer Caiman" nameDescription="a killer caiman" race="blood" experience="900" speed="186" manacost="0">
+	<health now="1500" max="1500"/>
+	<look type="358" corpse="11430"/>
+	<targetchange interval="2000" chance="3"/>
 	<flags>
-		<flag summonable="0" />
-		<flag attackable="1" />
-		<flag hostile="1" />
-		<flag illusionable="0" />
-		<flag convinceable="0" />
-		<flag pushable="0" />
-		<flag canpushitems="1" />
-		<flag canpushcreatures="1" />
-		<flag targetdistance="1" />
-		<flag staticattack="90" />
-		<flag runonhealth="10" />
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="1"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="10"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="50" attack="60" />
+		<attack name="melee" interval="2000" skill="62" attack="50"/>
 	</attacks>
-	<defenses armor="35" defense="35">
-		<defense name="speed" interval="2000" chance="15" speedchange="700" duration="5000">
-			<attribute key="areaEffect" value="redshimmer" />
+	<defenses armor="30" defense="39">
+		<defense name="speed" interval="2000" chance="10" speedchange="584" duration="8000">
+			<attribute key="areaEffect" value="redshimmer"/>
 		</defense>
 	</defenses>
 	<elements>
-		<element physicalPercent="5" />
-		<element icePercent="10" />
-		<element earthPercent="20" />
-		<element energyPercent="-5" />
+		<element physicalPercent="5"/>
+		<element icePercent="10"/>
+		<element earthPercent="20"/>
+		<element energyPercent="-5"/>
 	</elements>
 	<immunities>
-		<immunity invisible="1" />
+		<immunity invisible="1"/>
 	</immunities>
 	<loot>
-		<item id="2148" countmax="100" chance="50000" /><!-- gold coin -->
-		<item id="2148" countmax="80" chance="50000" /><!-- gold coin -->
-		<item id="11196" chance="25430" /><!-- piece of crocodile leather -->
-		<item id="2671" chance="40100" /><!-- ham -->
-		<item id="7632" chance="1130" /><!-- giant shimmering pearl -->
-		<item id="11245" countmax="2" chance="4800" /><!-- bunch of ripe rice -->
-		<item id="2149" countmax="5" chance="10150" /><!-- small emerald -->
-		<item id="2425" chance="4975" /><!-- obsidian lance -->
+		<item id="11196" chance="25400" /><!-- piece of crocodile leather -->
+		<item id="2148" countmax="180" chance="100000" /><!-- gold coin -->
+		<item id="2671" chance="38920" /><!-- ham -->
+		<item id="2425" chance="4930" /><!-- obsidian lance -->
+		<item id="7632" chance="1130" /><!-- giant shimmering pearl blue -->
+		<item id="7633" chance="1130" /><!-- giant shimmering pearl brown -->
+		<item id="11245" countmax="2" chance="4820" /><!-- bunch of ripe rice -->
+		<item id="2149" countmax="5" chance="10070" /><!-- small emerald -->
+		<item id="3982" chance="490" /><!-- crocodile boots -->
 	</loot>
 </monster>

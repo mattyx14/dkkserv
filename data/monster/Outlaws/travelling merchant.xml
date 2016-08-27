@@ -1,22 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Travelling Merchant" nameDescription="a travelling merchant" race="blood" experience="65" speed="170" manacost="0">
-	<health now="100" max="100" />
-	<look type="132" head="110" body="90" legs="128" feet="95" addons="1" corpse="13176" />
-	<targetchange interval="4000" chance="10" />
+<monster name="Travelling Merchant" nameDescription="a travelling merchant" race="blood" experience="65" speed="210" manacost="0">
+	<health now="100" max="100"/>
+	<look type="132" head="111" body="109" legs="128" feet="95" addons="0" corpse="6080"/>
+	<targetchange interval="2000" chance="2"/>
 	<flags>
-		<flag summonable="0" />
-		<flag attackable="1" />
-		<flag hostile="0" />
-		<flag illusionable="0" />
-		<flag convinceable="0" />
-		<flag pushable="1" />
-		<flag canpushitems="0" />
-		<flag canpushcreatures="0" />
-		<flag targetdistance="4" />
-		<flag staticattack="90" />
-		<flag runonhealth="100" />
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="0"/>
+		<flag canpushcreatures="0"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
 	</flags>
-	<voices interval="2000" chance="7">
-		<voice sentence="It's quite dark in the forest, isn't it?" />
+	<attacks>
+		<attack name="melee" interval="2000" skill="10" attack="10"/>
+	</attacks>
+	<defenses armor="5" defense="6"/>
+	<elements>
+	</elements>
+	<voices interval="2000" chance="5">
+		<voice sentence="It's quite dark in the forest, isn't it?"/>
 	</voices>
+	<loot>
+	</loot>
 </monster>

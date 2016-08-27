@@ -1,38 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Shard Of Corruption" nameDescription="a shard of corruption" race="undead" experience="5" speed="180" manacost="590">
-	<health now="600" max="600" />
-	<look type="67" corpse="6005" />
-	<targetchange interval="4000" chance="10" />
+<monster name="Shard Of Corruption" nameDescription="a shard of corruption" race="venom" experience="5" speed="180" manacost="0">
+	<health now="600" max="600"/>
+	<look type="67" corpse="6005"/>
+	<targetchange interval="2000" chance="8"/>
 	<flags>
-		<flag summonable="1" />
-		<flag attackable="1" />
-		<flag hostile="1" />
-		<flag illusionable="1" />
-		<flag convinceable="1" />
-		<flag pushable="0" />
-		<flag canpushitems="1" />
-		<flag canpushcreatures="1" />
-		<flag targetdistance="1" />
-		<flag staticattack="90" />
-		<flag runonhealth="0" />
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="45" min="0" max="-150" />
-		<attack name="earth" interval="2000" chance="10" range="7" target="1" min="0" max="-115">
-			<attribute key="shootEffect" value="smallearth" />
-			<attribute key="areaEffect" value="greenbubble" />
+		<attack name="melee" interval="2000" skill="50" attack="50"/>
+		<attack name="earth" interval="2000" chance="20" range="7" min="-50" max="-115">
+			<attribute key="shootEffect" value="largerock"/>
+			<attribute key="areaEffect" value="yellowspark"/>
+		</attack>
+		<attack name="poisoncondition" interval="2000" chance="20" length="4" spread="1" min="-300" max="-600">
+			<attribute key="areaEffect" value="poison"/>
 		</attack>
 	</attacks>
-	<defenses armor="20" defense="20" />
+	<defenses armor="33" defense="43"/>
 	<elements>
-		<element physicalPercent="60" />
-		<element firePercent="30" />
-		<element energyPercent="25" />
-		<element icePercent="-15" />
+		<element physicalPercent="35"/>
+		<element firePercent="30"/>
+		<element energyPercent="25"/>
+		<element icePercent="20"/>
+		<element holyPercent="-10"/>
 	</elements>
 	<immunities>
-		<immunity paralyze="1" />
-		<immunity drown="1" />
-		<immunity earth="1" />
+		<immunity paralyze="1"/>
+		<immunity death="1"/>
+		<immunity drown="1"/>
+		<immunity invisible="1"/>
+		<immunity earth="1"/>
 	</immunities>
 </monster>

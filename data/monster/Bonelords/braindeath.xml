@@ -1,84 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Braindeath" nameDescription="a braindeath" race="undead" experience="895" speed="230" manacost="0">
-	<health now="1225" max="1225" />
-	<look type="256" corpse="7256" />
-	<targetchange interval="4000" chance="10" />
+<monster name="Braindeath" nameDescription="a braindeath" race="venom" experience="985" speed="200" manacost="0">
+	<health now="1225" max="1225"/>
+	<look type="256" corpse="7260"/>
+	<targetchange interval="2000" chance="5"/>
 	<flags>
-		<flag summonable="0" />
-		<flag attackable="1" />
-		<flag hostile="1" />
-		<flag illusionable="1" />
-		<flag convinceable="0" />
-		<flag pushable="0" />
-		<flag canpushitems="1" />
-		<flag canpushcreatures="1" />
-		<flag targetdistance="4" />
-		<flag staticattack="80" />
-		<flag runonhealth="0" />
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="1"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="0"/>
+		<flag targetdistance="4"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="30" attack="50" />
-		<attack name="energy" interval="2000" chance="10" range="7" min="-93" max="-170">
-			<attribute key="shootEffect" value="energy" />
+		<attack name="melee" interval="2000" skill="30" attack="50"/>
+		<attack name="energy" interval="2000" chance="8" range="7" min="-90" max="-170">
+			<attribute key="shootEffect" value="energy"/>
 		</attack>
-		<attack name="fire" interval="2000" chance="10" range="7" min="-75" max="-125">
-			<attribute key="shootEffect" value="fire" />
+		<attack name="fire" interval="2000" chance="9" range="7" min="-60" max="-145">
+			<attribute key="shootEffect" value="fire"/>
 		</attack>
-		<attack name="death" interval="2000" chance="10" range="7" min="-85" max="-170">
-			<attribute key="shootEffect" value="suddendeath" />
-			<attribute key="areaEffect" value="mortarea" />
-			<attribute key="areaEffect" value="smallclouds" />
+		<attack name="death" interval="2000" chance="8" range="7" min="-70" max="-170">
+			<attribute key="shootEffect" value="death"/>
+			<attribute key="areaEffect" value="mortarea"/>
 		</attack>
-		<attack name="earth" interval="2000" chance="10" range="7" min="-65" max="-125">
-			<attribute key="shootEffect" value="poison" />
+		<attack name="lifedrain" interval="2000" chance="8" range="7" min="-70" max="-155">
+			<attribute key="shootEffect" value="death"/>
+			<attribute key="areaEffect" value="redshimmer"/>
 		</attack>
-		<attack name="lifedrain" interval="2000" chance="10" range="7" min="-75" max="-85">
-			<attribute key="areaEffect" value="redshimmer" />
+		<attack name="poison" interval="2000" chance="8" range="7" min="-65" max="-130">
+			<attribute key="shootEffect" value="poison"/>
 		</attack>
-		<attack name="manadrain" interval="2000" chance="10" range="7" min="0" max="-155">
+		<attack name="manadrain" interval="2000" chance="14" range="7" min="-20" max="-155">
+			<attribute key="shootEffect" value="energy"/>
+			<attribute key="areaEffect" value="redshimmer"/>
 		</attack>
+		<attack name="braindeath paralyze" interval="2000" chance="10" range="7"/>
 	</attacks>
-	<defenses armor="20" defense="20">
-		<defense name="healing" interval="2000" chance="15" min="150" max="200">
-			<attribute key="areaEffect" value="blueshimmer" />
+	<defenses armor="9" defense="11">
+		<defense name="healing" interval="2000" chance="7" min="70" max="165">
+			<attribute key="areaEffect" value="energy"/>
 		</defense>
-		<defense name="speed" interval="2000" chance="15" speedchange="260" duration="5000">
-			<attribute key="areaEffect" value="redshimmer" />
+		<defense name="speed" interval="2000" chance="8" speedchange="320" duration="5000">
+			<attribute key="areaEffect" value="energy"/>
 		</defense>
 	</defenses>
-	<elements>
-		<element icePercent="20" />
-		<element physicalPercent="10" />
-		<element energyPercent="10" />
-		<element holyPercent="-20" />
-		<element firePercent="-15" />
+		<elements>
+		<element physicalPercent="15"/>
+		<element energyPercent="10"/>
+		<element icePercent="20"/>
+		<element holyPercent="-20"/>
+		<element firePercent="-15"/>
 	</elements>
 	<immunities>
-		<immunity earth="1" />
-		<immunity death="1" />
-		<immunity invisible="1" />
+		<immunity earth="1"/>
+		<immunity death="1"/>
+		<immunity invisible="1"/>
 	</immunities>
 	<summons maxSummons="2">
-		<summon name="Vampire" interval="2000" chance="10" />
+		<summon name="Vampire" interval="2000" chance="10"/>
 	</summons>
-	<voices interval="5000" chance="10">
-		<voice sentence="You have disturbed my thoughts!" />
-		<voice sentence="Let me turn you into something more useful!" />
-		<voice sentence="Let me taste your brain!" />
-		<voice sentence="You will be punished!" />
+	<voices interval="2000" chance="5">
+		<voice sentence="You have disturbed my thoughts!"/>
+		<voice sentence="Let me turn you into something more useful!"/>
+		<voice sentence="Let me taste your brain!"/>
+		<voice sentence="You will be punished!"/>
 	</voices>
 	<loot>
-		<item id="2148" countmax="89" chance="55000" /><!-- gold coin -->
-		<item id="7364" countmax="4" chance="9000" /><!-- sniper arrows -->
-		<item id="2175" chance="690" /><!-- spellbook -->
-		<item id="2450" chance="8000" /><!-- bone sword -->
-		<item id="2423" chance="2000" /><!-- clerical mace -->
-		<item id="2509" chance="6000" /><!-- steel shield -->
-		<item id="5898" chance="3380" /><!-- beholder eye -->
-		<item id="7407" chance="1500" /><!-- haunted blade -->
-		<item id="2518" chance="750" /><!-- beholder shield -->
-		<item id="7452" chance="950" /><!-- spiked squelcher-->
-		<item id="3972" chance="180" /><!-- beholder helmet -->
-		<item id="10580" chance="4725" /><!-- piece of dead brain -->
+		<item id="2148" countmax="89" chance="99640"/><!-- gold coin -->
+		<item id="7364" countmax="4" chance="9080"/><!-- sniper arrows -->
+		<item id="2175" chance="700"/><!-- spellbook -->
+		<item id="2450" chance="15370"/><!-- bone sword -->
+		<item id="2423" chance="2070"/><!-- clerical mace -->
+		<item id="2509" chance="6110"/><!-- steel shield -->
+		<item id="5898" chance="3430"/><!-- beholder eye -->
+		<item id="10580" chance="4620"/><!-- piece of dead brain -->
+		<item id="7407" chance="1520"/><!-- haunted blade -->
+		<item id="2518" chance="120"/><!-- beholder shield -->
+		<item id="7452" chance="90"/><!-- spiked squelcher-->
+		<item id="3972" chance="180"/><!-- beholder helmet -->
 	</loot>
 </monster>

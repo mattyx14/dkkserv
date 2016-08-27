@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Irahsae" nameDescription="Irahsae" race="blood" experience="15000" speed="400" manacost="0">
+	<health now="35000" max="35000"/>
+	<look type="359" head="94" body="77" legs="78" feet="79" addons="1" corpse="12280"/>
+	<targetchange interval="2000" chance="8"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="1"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="92" attack="100"/>
+		<attack name="lifedrain" interval="2000" chance="10" range="7" radius="3" target="0" min="-100" max="-300">
+			<attribute key="areaEffect" value="blackspark"/>
+		</attack>
+		<attack name="death" interval="2000" chance="13" range="7" radius="4" target="0" min="-100" max="-300">
+			<attribute key="areaEffect" value="redspark"/>
+		</attack>
+		<attack name="physical" interval="2000" chance="12" range="7" target="1" min="-0" max="-150"/>
+		<attack name="fury skill reducer 1" interval="2000" chance="9"/>
+		<attack name="fury skill reducer 2" interval="2000" chance="9"/>
+		<attack name="death" interval="2000" chance="12" length="9" spread="0" min="-250" max="-700">
+			<attribute key="areaEffect" value="redspark"/>
+		</attack>
+		<attack name="fire" interval="2000" chance="10" length="8" spread="3" min="-200" max="-350">
+			<attribute key="areaEffect" value="explosionarea"/>
+		</attack>
+    		<attack name="fury paralyze" interval="2000" chance="13" range="7"/>
+	</attacks>
+	<defenses armor="32" defense="39">
+		<defense name="healing" interval="2000" chance="15" min="100" max="200">
+			<attribute key="areaEffect" value="redshimmer"/>
+		</defense>
+		<defense name="speed" interval="2000" chance="10" speedchange="1024" duration="4000">
+			<attribute key="areaEffect" value="redshimmer"/>
+		</defense>
+	</defenses>
+	<elements>
+		<element icePercent="30"/>
+		<element holyPercent="30"/>
+		<element deathPercent="-10"/>
+		<element earthPercent="-10"/>
+		<element physicalPercent="-10"/>
+	</elements>
+	<immunities>
+		<immunity paralyze="1"/>
+		<immunity fire="1"/>
+		<immunity lifedrain="1"/>
+		<immunity invisible="1"/>
+	</immunities>
+	<voices interval="2000" chance="5">
+		<voice sentence="Scientia potentia est."/>
+		<voice sentence="How furious would YOU be after having been trapped for ages?"/>
+		<voice sentence="My anger is unmatched!"/>
+		<voice sentence="In ira et studio!"/>
+		<voice sentence="Feel my wrath! Feel my rage!"/>
+	</voices>
+	<loot>
+	</loot>
+</monster>

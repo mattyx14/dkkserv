@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Target Dummy" nameDescription="a target dummy" race="energy" experience="0" speed="0" manacost="0">
+	<health now="500000" max="500000"/>
+	<look type="304" corpse="9801"/>
+	<targetchange interval="2000" chance="1"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="0"/>
+		<flag canpushcreatures="0"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="physical" interval="2000" radius="3">
+			<attribute key="areaEffect" value="poff"/>
+		</attack>
+		<attack name="physical" interval="2000" radius="3">
+			<attribute key="areaEffect" value="yellowspark"/>
+		</attack>
+	</attacks>
+	<defenses armor="0" defense="0">
+		<defense name="healing" interval="2000" chance="50" min="150" max="250">
+			<attribute key="areaEffect" value="bluefirework"/>
+		</defense>
+		<defense name="healing" interval="2000" chance="10" min="500000" max="500000">
+			<attribute key="areaEffect" value="bluefirework"/>
+		</defense>
+	</defenses>
+	<immunities>
+		<immunity invisible="1"/>
+		<immunity paralyze="1"/>
+	</immunities>
+	<voices interval="2000" chance="5">
+		<voice sentence="I hope you are enjoying your sparring Sir or Ma'am!"/>
+		<voice sentence="Threat level rising!"/>
+		<voice sentence="Engaging in hostile interaction!"/>
+		<voice sentence="Rrrtttarrrttarrrtta"/>
+		<voice sentence="Please feel free to hit me Sir or Ma'am!"/>
+		<voice sentence="Klonk klonk klonk"/>
+		<voice sentence="Self-diagnosis running."/>
+		<voice sentence="Battle simulation proceeding."/>
+		<voice sentence="Repairs initiated!"/>
+	</voices>
+</monster>

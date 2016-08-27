@@ -1,88 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Hellhound" nameDescription="a hellhound" race="blood" experience="6800" speed="280" manacost="0">
-	<health now="7500" max="7500" />
-	<look type="240" corpse="6332" />
-	<targetchange interval="4000" chance="10" />
+<monster name="Hellhound" nameDescription="a hellhound" race="blood" experience="6800" speed="360" manacost="0">
+	<health now="7500" max="7500"/>
+	<look type="240" corpse="6332"/>
+	<targetchange interval="2000" chance="8"/>
 	<flags>
-		<flag summonable="0" />
-		<flag attackable="1" />
-		<flag hostile="1" />
-		<flag illusionable="1" />
-		<flag convinceable="0" />
-		<flag pushable="0" />
-		<flag canpushitems="1" />
-		<flag canpushcreatures="1" />
-		<flag targetdistance="1" />
-		<flag staticattack="70" />
-		<flag runonhealth="0" />
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="1"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="70" attack="130" poison="800" />
-		<attack name="earth" interval="2000" chance="5" length="8" spread="3" min="-300" max="-700">
-			<attribute key="areaEffect" value="carniphila" />
+		<attack name="melee" interval="2000" skill="70" attack="130" poison="420"/>
+		<attack name="poison" interval="2000" chance="8" length="8" spread="3" min="-300" max="-700">
+			<attribute key="areaEffect" value="carniphila"/>
 		</attack>
-		<attack name="death" interval="2000" chance="10" range="7" min="-395" max="-498">
-			<attribute key="shootEffect" value="suddendeath" />
-			<attribute key="areaEffect" value="mortarea" />
-			<attribute key="areaEffect" value="smallclouds" />
+		<attack name="death" interval="2000" chance="10" range="7" min="-395" max="-505">
+			<attribute key="shootEffect" value="suddendeath"/>
+			<attribute key="areaEffect" value="mortarea"/>
 		</attack>
-		<attack name="fire" interval="2000" chance="10" length="8" spread="3" min="-350" max="-660">
-			<attribute key="areaEffect" value="firearea" />
+		<attack name="fire" interval="2000" chance="10" range="7" min="-100" max="-450">
+			<attribute key="shootEffect" value="fire"/>
+			<attribute key="areaEffect" value="firearea"/>
 		</attack>
-		<attack name="lifedrain" interval="2000" chance="10" length="8" spread="3" min="-350" max="-976">
-			<attribute key="areaEffect" value="redshimmer" />
+		<attack name="fire" interval="2000" chance="8" length="8" spread="3" min="-50" max="-665">
+			<attribute key="areaEffect" value="firearea"/>
 		</attack>
-		<attack name="fire" interval="2000" chance="10" radius="1" target="1" min="-200" max="-403">
-			<attribute key="areaEffect" value="fire" />
+		<attack name="lifedrain" interval="2000" chance="8" length="8" spread="3" min="-250" max="-600">
+			<attribute key="areaEffect" value="redshimmer"/>
 		</attack>
-		<attack name="earth" interval="2000" chance="5" range="7" min="-300" max="-549">
-			<attribute key="shootEffect" value="poison" />
-			<attribute key="areaEffect" value="poison" />
+		<attack name="poison" interval="2000" chance="10" range="7" min="-100" max="-550">
+			<attribute key="shootEffect" value="poison"/>
+			<attribute key="areaEffect" value="greenbubble"/>
 		</attack>
 	</attacks>
-	<defenses armor="40" defense="40">
-		<defense name="speed" interval="2000" chance="15" speedchange="320" duration="5000">
-			<attribute key="areaEffect" value="redshimmer" />
+	<defenses armor="47" defense="61">
+		<defense name="healing" interval="2000" chance="15" min="250" max="450">
+			<attribute key="areaEffect" value="greenspark"/>
 		</defense>
-		<defense name="healing" interval="2000" chance="20" min="220" max="425">
-			<attribute key="areaEffect" value="blueshimmer" />
+		<defense name="speed" interval="2000" chance="10" speedchange="608" duration="4000">
+			<attribute key="areaEffect" value="redshimmer"/>
 		</defense>
 	</defenses>
 	<elements>
-		<element earthPercent="20" />
-		<element energyPercent="10" />
-		<element icePercent="-5" />
-		<element holyPercent="-25" />
+		<element earthPercent="20"/>
+		<element energyPercent="10"/>
+		<element icePercent="-5"/>
+		<element holyPercent="-5"/>
 	</elements>
 	<immunities>
-		<immunity paralyze="1" />
-		<immunity outfit="1" />
-		<immunity drunk="1" />
-		<immunity invisible="1" />
-		<immunity fire="1" />
+		<immunity paralyze="1"/>
+		<immunity fire="1"/>
+		<immunity outfit="1"/>
+		<immunity lifedrain="1"/>
+		<immunity drunk="1"/>
+		<immunity invisible="1"/>
 	</immunities>
-	<voices interval="5000" chance="10">
-		<voice sentence="GROOOWL!" />
-		<voice sentence="GRRRRR!" />
+	<voices interval="2000" chance="5">
+		<voice sentence="GROOOOWL!"/>
+		<voice sentence="GRRRRR!"/>
 	</voices>
 	<loot>
-		<item id="2148" countmax="100" chance="100000" /><!-- gold coin -->
-		<item id="2152" countmax="7" chance="100000" /><!-- platinum coin -->
-		<item id="2671" countmax="14" chance="30930" /><!-- ham -->
-		<item id="7368" countmax="10" chance="38000" /><!-- assassin star -->
-		<item id="2144" countmax="4" chance="9400" /><!-- black pearl -->
-		<item id="2231" chance="1000" /><!-- big bone -->
-		<item id="6558" countmax="2" chance="31000" /><!-- concentrated demonic blood -->
-		<item id="6500" chance="17000" /><!-- demonic essence -->
-		<item id="9971" chance="1500" /><!-- gold ingot -->
-		<item id="9810" chance="4500" /><!-- rusty armor -->
-		<item id="5944" chance="53000" /><!-- soul orb -->
-		<item id="2383" chance="16310" /><!-- spike sword -->
-		<item id="10554" chance="18000" /><!-- hellhound slobber -->
-		<item id="2392" chance="6900" /><!-- fire sword -->
-		<item id="4873" chance="130" /><!-- explorer brooch -->
-		<item id="2187" chance="9000" /><!-- wand of inferno -->
-		<item id="7591" countmax="2" chance="15150" /><!-- great health potion -->
-		<item id="7590" countmax="3" chance="15150" /><!-- great mana potion -->
+		<item id="2231" chance="1160"/><!-- big bone -->
+		<item id="5925" chance="8810"/><!-- hardened bone -->
+		<item id="18425" chance="10170"/><!-- blazing bone -->
+		<item id="10553" chance="9150"/><!-- fiery heart -->
+		<item id="6500" chance="20930"/><!-- demonic essence -->
+		<item id="4873" chance="110"/><!-- explorer brooch -->
+		<item id="2144" countmax="4" chance="8960"/><!-- black pearl -->
+		<item id="7590" countmax="3" chance="25000"/><!-- great mana potion -->
+		<item id="8472" chance="25000"/><!-- great spirit potion -->
+		<item id="8473" chance="15500"/><!-- ultimate health potion -->
+		<item id="10554" chance="19240"/><!-- hellhound slobber -->
+		<item id="2671" countmax="14" chance="29200"/><!-- ham -->
+		<item id="9971" chance="2640"/><!-- gold ingot -->
+		<item id="2152" countmax="4" chance="100000"/><!-- platinum coin -->
+		<item id="2152" chance="100000"/><!-- platinum coin -->
+		<item id="2152" chance="100000"/><!-- platinum coin --><!-- three times due to min drop of 3 platin coin  -->
+		<item id="6558" chance="29680"/><!-- concentrated demonic blood -->
+		<item id="6558" chance="29680"/><!-- concentrated demonic blood -->
+		<item id="5944" chance="51500"/><!-- soul orb -->
+		<item id="2430" chance="10020"/><!-- knight axe -->
+		<item id="2392" chance="6850"/><!-- fire sword -->
+		<item id="2393" chance="1160"/><!-- giant sword -->
+		<item id="7426" chance="3050"/><!-- amber staff -->
+		<item id="7421" chance="680"/><!-- onyx flail -->
+		<item id="6553" chance="630"/><!-- ruthless axe -->
+		<item id="7368" countmax="10" chance="39060"/><!-- assassin star -->
+		<item id="7890" chance="1020"/><!-- magma amulet -->
+		<item id="7894" chance="2060"/><!-- magma legs -->
+		<item id="7899" chance="1360"/><!-- magma coat -->
+		<item id="7900" chance="900"/><!-- magma monocle -->
+		<item id="7891" chance="2370"/><!-- magma boots -->
+		<item id="2187" chance="7590"/><!-- wand of inferno -->
+		<item id="5910" chance="7460"/><!-- green piece of cloth -->
+		<item id="5911" chance="3730"/><!-- red piece of cloth -->
+		<item id="5914" chance="3730"/><!-- yellow piece of cloth -->
+		<item id="2147" countmax="3" chance="9830"/><!-- small ruby -->
+		<item id="2149" countmax="3" chance="10510"/><!-- small emerald -->
+		<item id="9970" countmax="3" chance="9150"/><!-- small topaz -->
+		<item id="2154" chance="3730"/><!-- yellow gem -->
+		<item id="2155" chance="5420"/><!-- green gem -->
+		<item id="2156" chance="1360"/><!-- red gem -->
 	</loot>
 </monster>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Devovorga" nameDescription="Devovorga" race="venom" experience="100000" speed="590" manacost="0">
+	<health now="500000" max="500000"/>
+	<look type="365" corpse="0"/>
+	<targetchange interval="2000" chance="8"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="150" attack="400" poison="300"/>
+		<attack name="manadrain" interval="2000" chance="14" range="7" radius="8" target="0" min="-50" max="-160">
+			<attribute key="areaEffect" value="carniphila"/>
+		</attack>
+		<attack name="poisoncondition" interval="2000" chance="10" range="7" radius="8" target="0" min="-1400" max="-2500">
+			<attribute key="areaEffect" value="bigplants"/>
+		</attack>
+		<attack name="devovorga curse" interval="2000" chance="10"/>
+		<attack name="poison" interval="2000" chance="15" range="7" radius="1" target="1" min="-200" max="-1000">
+			<attribute key="shootEffect" value="poison"/>
+			<attribute key="areaEffect" value="smallplants"/>
+		</attack>
+		<attack name="lifedrain" interval="2000" chance="13" range="7" radius="1" target="1" min="-200" max="-1000">
+			<attribute key="shootEffect" value="poison"/>
+			<attribute key="areaEffect" value="smallplants"/>
+		</attack>
+		<attack name="arkhothep paralyze" interval="2000" chance="13"/>
+		<attack name="death" interval="2000" chance="11" length="9" spread="3" min="-200" max="-1700">
+			<attribute key="areaEffect" value="mortarea"/>
+		</attack>
+		<attack name="physical" interval="2000" chance="9" length="8" spread="0" min="-0" max="-1600"/>
+	</attacks>
+	<defenses armor="22" defense="35">
+		<defense name="healing" interval="2000" chance="16" min="4800" max="5200">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+		<defense name="healing" interval="2000" chance="5" min="15000" max="25000">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+		<defense name="healing" interval="12000" chance="100" radius="6">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+	</defenses>
+	<immunities>
+		<immunity name="poison"/>
+		<immunity name="drown"/>
+		<immunity name="lifedrain"/>
+		<immunity name="paralyze"/>
+		<immunity name="drunk"/>
+		<immunity name="invisible"/>
+	</immunities>
+	<summons maxSummons="3">
+		<summon name="spawn of devovorga" interval="12000" chance="100" max="1"/>
+		<summon name="spawn of devovorga" interval="12000" chance="100" max="1"/>
+		<summon name="spawn of devovorga" interval="12000" chance="100" max="1"/>
+	</summons>
+	<voices interval="2000" chance="5">
+		<voice sentence="BRING IT! WE END THIS HERE!" yell="1"/>
+		<voice sentence="PEREAS MUNDUS!" yell="1"/>
+		<voice sentence="YOU WILL ALL DIE - ONE WAY OR THE OTHER." yell="1"/>
+		<voice sentence="EVEN THE GODS BOW BEFORE ME!" yell="1"/>
+		<voice sentence="DESTRUCTION TO MY ENSLAVERS!" yell="1"/>
+		<voice sentence="THE SEVEN? THEY WERE NOT ABLE TO CONTROL ME!" yell="1"/>
+		<voice sentence="I AM A WEAPON AGAINST EVIL AND CORRUPTION - AGAINST YOU!" yell="1"/>
+		<voice sentence="MY FURY IS UNMATCHED!" yell="1"/>
+	</voices>
+	<loot>
+	</loot>
+</monster>

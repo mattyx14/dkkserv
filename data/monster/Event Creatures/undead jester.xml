@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Undead Jester" nameDescription="an undead jester" race="blood" experience="5" speed="210" manacost="0">
+	<health now="355" max="355"/>
+	<look type="273" head="0" body="0" legs="114" feet="0" addons="3" corpse="20522"/>
+	<targetchange interval="2000" chance="7"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="4"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="135"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="10" attack="3"/>
+		<attack name="drunk" interval="2000" chance="14" range="7" duration="20000">
+			<attribute key="shootEffect" value="cake"/>
+			<attribute key="areaEffect" value="cake"/>
+		</attack>
+		<attack name="undead jester paralyze" interval="2000" chance="11"/>
+	</attacks>
+	<defenses armor="7" defense="11">
+    		<defense name="healing" interval="2000" chance="16" min="5" max="25">
+      			<attribute key="areaEffect" value="giftwraps" />
+    		</defense>
+    		<defense name="undead jester summon" interval="2000" chance="9"/>
+		<defense name="invisible" interval="2000" chance="12" duration="4000">
+			<attribute key="areaEffect" value="mortarea"/>
+		</defense>
+	</defenses>
+	<elements>
+		<element firePercent="20"/>
+		<element energyPercent="10"/>
+		<element icePercent="30"/>
+		<element holyPercent="-20"/>
+	</elements>
+	<immunities>
+		<immunity death="1"/>
+		<immunity earth="1"/>
+		<immunity lifedrain="1"/>
+		<immunity paralyze="1"/>
+		<immunity invisible="1"/>
+	</immunities>
+	<voices interval="2000" chance="5">
+		<voice sentence="Who's bad?"/>
+		<voice sentence="I have a cunning plan!"/>
+		<voice sentence="Resistance is futile! You will be amused!"/>
+		<voice sentence="Pull my finger!"/>
+		<voice sentence="Why did the chicken cross the road? TO KILL YOU!!!"/>
+		<voice sentence="I will teach you all to mock me!"/>
+		<voice sentence="He who laughs last, Laughs best!"/>
+		<voice sentence="Th-Th-Th-That's all, folks!"/>
+		<voice sentence="A zathroth priest, a druid and a paladin walk into a bar ..."/>
+		<voice sentence="Ha Ha!"/>
+		<voice sentence="Doh!"/>
+		<voice sentence="Zathroth made me do it!"/>
+		<voice sentence="And now for something completely different!"/>
+		<voice sentence="You think this is funny now?"/>
+		<voice sentence="Are we having fun yet?"/>
+		<voice sentence="Did I do that?"/>
+	</voices>
+	<loot>
+	<item id="2667" chance="58880"/><!-- fish -->
+	<item id="7158" chance="1130"/><!-- rainbow trout -->
+	<item id="7159" chance="1610"/><!-- green perch -->
+	<item id="7963" chance="230"/><!-- marlin -->
+	<item id="6574" chance="400"/><!-- bar of chocolate -->
+	<item id="5911" chance="460"/><!-- red piece of cloth -->
+	<item id="5914" chance="460"/><!-- yellow piece of cloth -->
+	<item id="5909" chance="1830"/><!-- white piece of cloth -->
+	<item id="5910" chance="1030"/><!-- green piece of cloth -->
+	<item id="5912" chance="340"/><!-- blue piece of cloth -->
+	<item id="5913" chance="1150"/><!-- brown piece of cloth -->
+	<item id="2114" chance="1100"/><!-- piggy bank -->
+	<item id="7487" chance="200"/><!-- toy mouse -->
+	<item id="9074" chance="230"/><!-- present(explosive) -->
+	<item id="8072" chance="230"/><!-- supersoft pillow -->
+	<item id="9108" chance="40640"/><!-- suspicious present bag -->
+	<item id="7377" chance="200"/><!-- ice cream cone (blue-barian) -->
+	<item id="9694" chance="1000"/><!-- the head of a jester doll -->
+	<item id="9699" chance="2000"/><!-- right leg of a jester doll -->
+	<item id="9698" chance="2000"/><!-- left leg of a jester doll -->
+	<item id="9697" chance="1000"/><!-- right arm of a jester doll -->
+	<item id="9696" chance="1000"/><!-- left arm of a jester doll -->
+	<item id="9695" chance="1030"/><!-- the torso of a jester doll -->
+	<item id="7735" chance="200"/><!-- spell wand -->
+	</loot> 
+</monster>

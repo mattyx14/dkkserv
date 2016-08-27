@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Frost Spider" nameDescription="a frost spider" race="undead" experience="0" speed="230" manacost="0">
+	<health now="1250" max="1250"/>
+	<look type="263" corpse="7344"/>
+  <targetchange speed="2000" chance="4" />
+  <flags>
+    <flag summonable="0" />
+    <flag attackable="1" />
+    <flag hostile="1" />
+    <flag illusionable="0" />
+    <flag convinceable="0" />
+    <flag pushable="0" />
+    <flag canpushitems="1" />
+    <flag staticattack="90" />
+    <flag lightlevel="0" />
+    <flag lightcolor="0" />
+    <flag targetdistance="1" />
+    <flag runonhealth="0" />
+  </flags>
+  <attacks>
+    <attack name="melee" interval="2000" skill="40" attack="100" poison="175" />
+    <attack name="crystal spider paralyze 1" interval="2000" chance="14"/>
+    <attack name="crystal spider paralyze 2" interval="2000" chance="12"/>
+    <attack name="ice" interval="2000" chance="7" range="7" target="1" min="-50" max="-100">
+      <attribute key="shootEffect" value="ice" />
+      <attribute key="areaEffect" value="icearea" />
+    </attack>
+  </attacks>
+  <defenses armor="32" defense="41">
+    <defense name="speed" interval="2000" chance="8" speedchange="350" duration="15000">
+      <attribute key="areaEffect" value="redshimmer" />
+    </defense>
+  </defenses>
+  <elements>
+    <element earthPercent="20" />
+	<element holyPercent="20" />
+    <element energyPercent="-20" />
+  </elements>
+  <immunities>
+    <immunity fire="1" />
+    <immunity ice="1" />
+    <immunity paralyze="1" />
+    <immunity invisible="1" />
+  </immunities>
+</monster>

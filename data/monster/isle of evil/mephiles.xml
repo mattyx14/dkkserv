@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Mephiles" nameDescription="Mephiles" race="blood" experience="415" speed="210" manacost="0">
+	<health now="415" max="415"/>
+	<look type="237" corpse="10323"/>
+	<targetchange interval="2000" chance="8"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="4"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="10" attack="35"/>
+		<attack name="fire" interval="2000" chance="25" range="7" radius="2" target="1" min="-15" max="-45">
+			<attribute key="shootEffect" value="fire"/>
+			<attribute key="areaEffect" value="fireattack"/>
+		</attack>
+    		<attack name="mephiles skill reducer" interval="2000" chance="10" range="7"/>
+	</attacks>
+	<defenses armor="12" defense="15">
+		<defense name="speed" interval="2000" chance="15" speedchange="684" duration="3000">
+			<attribute key="areaEffect" value="fire"/>
+		</defense>
+		<defense name="mephiles summon" interval="2000" chance="13"/>
+		<defense name="invisible" interval="2000" chance="13" duration="2000">
+			<attribute key="areaEffect" value="teleport"/>
+		</defense>
+	</defenses>
+	<elements>
+		<element earthPercent="50"/>
+		<element deathPercent="10"/>
+		<element icePercent="-10"/>
+		<element holyPercent="-5"/>
+	</elements>
+	<immunities>
+		<immunity fire="1"/>
+		<immunity lifedrain="1"/>
+		<immunity drunk="1"/>
+		<immunity invisible="1"/>
+	</immunities>
+	<voices interval="2000" chance="5">
+		<voice sentence="I have a contract here which you should sign!"/>
+		<voice sentence="I sence so much potential in you. It's almost a shame I have to kill you."/>
+		<voice sentence="Yes, slay me for the loot I might have. Give in to your greed."/>
+		<voice sentence="Wealth, Power, it is all at your fingertips. All you have to do is a bit blackmailing and bullying."/>
+		<voice sentence="Come on. being a bit evil won't hurt you."/>
+	</voices>
+</monster>

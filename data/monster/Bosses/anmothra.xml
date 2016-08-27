@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Anmothra" nameDescription="Anmothra" race="venom" experience="10000" speed="200" manacost="0">
+	<health now="2100" max="2100"/>
+	<look type="363" corpse="12282"/>
+	<targetchange interval="2000" chance="8"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="75" attack="40"/>
+		<attack name="fire" interval="2000" chance="17" range="7" radius="4" target="1" min="-100" max="-160">
+			<attribute key="shootEffect" value="fire"/>
+			<attribute key="areaEffect" value="firearea"/>
+		</attack>
+		<attack name="firefield" interval="2000" chance="15" range="7" radius="4" target="1">
+			<attribute key="shootEffect" value="fire"/>
+		</attack>
+		<attack name="fire" interval="2000" chance="17" length="8" spread="3" min="-100" max="-250">
+			<attribute key="areaEffect" value="firearea"/>
+		</attack>
+	</attacks>
+	<defenses armor="22" defense="35">
+		<defense name="healing" interval="2000" chance="25" min="55" max="95">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+	</defenses>
+	<elements>
+		<element earthPercent="-10"/>
+		<element energyPercent="25"/>
+		<element holyPercent="10"/>
+		<element deathPercent="-10"/>
+	</elements>
+	<immunities>
+		<immunity paralyze="1"/>
+		<immunity fire="1"/>
+		<immunity invisible="1"/>
+	</immunities>
+	<voices interval="2000" chance="5">
+		<voice sentence="Sanguis meus et anima mea in gratiam illorum quas diligo."/>
+		<voice sentence="And death for those who do not see."/>
+	</voices>
+	<loot>
+	</loot>
+</monster>

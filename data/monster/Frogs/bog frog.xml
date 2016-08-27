@@ -1,19 +1,27 @@
-<?xml version="1.0" encoding="utf-8"?>
-<monster name="Bog Frog" namedescription="a bog frog" race="blood" experience="0" speed="200" manacost="305">
-	<health now="25" max="25" />
-	<look type="412" corpse="6079" />
-	<targetchange interval="4000" chance="0" />
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Bog Frog" nameDescription="a bog frog" race="venom" experience="0" speed="320" manacost="0">
+	<health now="25" max="25"/>
+	<look type="412" head="69" body="66" legs="69" feet="66" corpse="6079"/>
+	<targetchange interval="2000" chance="0"/>
 	<flags>
-		<flag summonable="0" />
-		<flag attackable="1" />
-		<flag hostile="1" />
-		<flag illusionable="0" />
-		<flag convinceable="0" />
-		<flag pushable="0" />
-		<flag canpushitems="0" />
-		<flag canpushcreatures="0" />
-		<flag staticattack="90" />
-		<flag targetdistance="1" />
-		<flag runonhealth="25" />
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="0"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="1"/>
+		<flag canpushitems="0"/>
+		<flag canpushcreatures="0"/>
+		<flag staticattack="90"/>
+		<flag targetdistance="6"/>
+		<flag runonhealth="25"/>
 	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="10" attack="25"/>
+	</attacks>
+	<defenses armor="1" defense="1"/>
+	<voices interval="2000" chance="5">
+		<voice sentence="Ribbit!"/>
+		<voice sentence="Ribbit! Ribbit!"/>
+	</voices>
 </monster>

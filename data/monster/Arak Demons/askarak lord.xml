@@ -1,70 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Askarak Lord" nameDescription="an askarak lord" race="venom" experience="1200" speed="230" manacost="0">
-	<health now="2100" max="2100" />
-	<look type="410" corpse="13956" />
-	<targetchange interval="4000" chance="10" />
+<monster name="Askarak Lord" nameDescription="an askarak lord" race="venom" experience="1200" speed="240" manacost="0">
+	<health now="2100" max="2100"/>
+	<look type="410" corpse="13956"/>
+	<targetchange interval="2000" chance="9"/>
 	<flags>
-		<flag summonable="0" />
-		<flag attackable="1" />
-		<flag hostile="1" />
-		<flag illusionable="0" />
-		<flag convinceable="0" />
-		<flag pushable="0" />
-		<flag canpushitems="1" />
-		<flag canpushcreatures="1" />
-		<flag targetdistance="1" />
-		<flag staticattack="80" />
-		<flag runonhealth="0" />
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="55" attack="57" />
-		<attack name="earth" interval="2000" chance="20" range="7" radius="6" target="0" min="-40" max="-80">
-			<attribute key="shootEffect" value="poison" />
-			<attribute key="areaEffect" value="greenbubble" />
+		<attack name="melee" interval="2000" skill="90" attack="50"/>
+		<attack name="askarak wave" interval="2000" chance="13" min="-80" max="-170"/>
+		<attack name="vampire paralyze" interval="2000" chance="10" radius="1" range="1"/>
+		<attack name="earth" interval="2000" chance="12" length="5" spread="0" target="0" min="-140" max="-200">
+			<attribute key="areaEffect" value="greenbubble"/>
 		</attack>
-		<attack name="earth" interval="2000" chance="15" target="0" length="4" spread="3" min="-95" max="-180">
-			<attribute key="areaEffect" value="greenbubble" />
-		</attack>
-		<attack name="earth" interval="2000" chance="10" target="0" length="4" spread="0" min="-130" max="-180">
-			<attribute key="areaEffect" value="greenbubble" />
-		</attack>
-		<attack name="speed" interval="2000" chance="15" radius="1" target="1" speedchange="-650" duration="15000">
-			<attribute key="areaEffect" value="redshimmer" />
+		<attack name="earth" interval="2000" chance="17" radius="6" target="0" min="-30" max="-75">
+			<attribute key="areaEffect" value="greenbubble"/>
 		</attack>
 	</attacks>
-	<defenses armor="20" defense="20">
-		<defense name="healing" interval="2000" chance="10" min="120" max="160">
-			<attribute key="areaEffect" value="blueshimmer" />
+	<defenses armor="21" defense="27">
+		<defense name="healing" interval="2000" chance="10"  min="100" max="150">
+			<attribute key="areaEffect" value="blueshimmer"/>
 		</defense>
 	</defenses>
 	<elements>
-		<element energyPercent="50" />
-		<element icePercent="50" />
-		<element firePercent="-10" />
+		<element firePercent="-20"/>
+		<element energyPercent="65"/>
+		<element icePercent="65"/>
 	</elements>
 	<immunities>
-		<immunity earth="1" />
-		<immunity paralyze="1" />
-		<immunity invisible="1" />
+		<immunity earth="1"/>
+		<immunity paralyze="1"/>
+		<immunity invisible="1"/>
 	</immunities>
-	<voices interval="2000" chance="7">
-		<voice sentence="WE RULE!" />
-		<voice sentence="RED IS MAD" />
+	<voices interval="2000" chance="5">
+		<voice sentence="GREEN WILL RULE!" yell="1"/>
+		<voice sentence="ONLY WE ARE TRUE DEMONS!" yell="1"/>
+		<voice sentence="POWER TO THE ASKARAK!" yell="1"/>
+		<voice sentence="DEATH TO THE SHABURAK!" yell="1"/>
+		<voice sentence="RED IS MAD" yell="1"/>
 	</voices>
 	<loot>
-		<item id="2148" countmax="100" chance="50000" /><!-- gold coin -->
-		<item id="2148" countmax="90" chance="50000" /><!-- gold coin -->
-		<item id="2152" countmax="2" chance="35333" /><!-- platinum coin -->
-		<item id="7589" chance="7692" /><!-- strong mana potion -->
-		<item id="7588" chance="6250" /><!-- strong health potion -->
-		<item id="2149" countmax="5" chance="5882" /><!-- small emerald -->
-		<item id="2789" countmax="5" chance="5263" /><!-- brown mushroom -->
-		<item id="8912" chance="1010" /><!-- springsprout rod -->
-		<item id="2167" chance="606" /><!-- energy ring -->
-		<item id="7440" chance="750" /><!-- mastermind potion -->
-		<item id="5904" chance="620" /><!-- magic sulphur -->
-		<item id="7368" countmax="5" chance="70" /><!-- assassin star -->
-		<item id="7884" chance="70" /><!-- terra mantle -->
-		<item id="7419" chance="30" /><!-- dread cleaver -->
+		<item id="2148" countmax="190" chance="95890" /> <!-- gold coin -->
+		<item id="2152" countmax="2" chance="35890" /> <!-- platinum coin -->
+		<item id="8912" chance="1030" /> <!-- springsprout rod  -->
+		<item id="7589" chance="7950" /> <!-- strong mana potion  -->
+		<item id="7588" chance="5960" /> <!-- strong health potion -->
+		<item id="2149" countmax="5" chance="6300" /> <!-- small emerald  -->
+		<item id="2167" chance="620" /> <!-- energy ring -->
+		<item id="5904" chance="620" /> <!-- magic sulphur -->
+		<item id="2789" countmax="5" chance="4450" /> <!-- brown mushroom -->
+		<item id="7440" chance="750" /> <!-- mastermind potion -->
+		<item id="7884" chance="70" /> <!-- terra mantle -->
 	</loot>
 </monster>

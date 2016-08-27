@@ -1,69 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Energy Elemental" nameDescription="an energy elemental" race="energy" experience="2450" speed="240" manacost="0">
-	<health now="3500" max="3500"/>
-	<look type="293" corpse="8966" />
-	<targetchange interval="4000" chance="10" />
+<monster name="Energy Elemental" nameDescription="an energy elemental" race="energy" experience="550" speed="230" manacost="0">
+	<health now="500" max="500"/>
+	<look type="293" corpse="8966"/>
+	<targetchange interval="2000" chance="5"/>
 	<flags>
-		<flag summonable="0" />
-		<flag attackable="1" />
-		<flag hostile="1" />
-		<flag illusionable="1" />
-		<flag convinceable="0" />
-		<flag pushable="0" />
-		<flag canpushitems="0" />
-		<flag staticattack="85" />
-		<flag lightlevel="0" />
-		<flag lightcolor="0" />
-		<flag targetdistance="1" />
-		<flag runonhealth="0" />
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="1"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag staticattack="90"/>
+		<flag lightlevel="0"/>
+		<flag lightcolor="0"/>
+		<flag targetdistance="1"/>
+		<flag runonhealth="0"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" min="-220" max="-300"/>
-		<attack name="Paralyze" interval="1000" chance="17" range="7" target="1">
+		<attack name="melee" interval="2000" skill="35" attack="80"/>
+		<attack name="energy" interval="2000" chance="15" range="7" radius="2" target="1" min="-125" max="-255">
+			<attribute key="shootEffect" value="energyball"/>
+			<attribute key="areaEffect" value="energy"/>
+		</attack>
+		<attack name="energy" interval="2000" chance="15" range="7" radius="1" target="1" min="-80" max="-130">
 			<attribute key="shootEffect" value="energy"/>
-			<attribute key="areaEffect" value="PURPLEENERGY"/>
+			<attribute key="areaEffect" value="energy"/>
 		</attack>
-		<attack name="energy" interval="2000" chance="10" range="7" radius="2" target="1" min="-125" max="-252">
-			<attribute key="shootEffect" value="energy" />
-			<attribute key="areaEffect" value="energy" />
-		</attack>
-		<attack name="energy" interval="2000" chance="15" range="7" target="1" min="-100" max="-130">
-			<attribute key="shootEffect" value="energyball" />
-			<attribute key="areaEffect" value="energy" />
-		</attack>
-		<attack name="energy elemental electrify" interval="2000" chance="20" />
+		<attack name="energy elemental electrify" interval="2000" chance="15"/>
 	</attacks>
-	<defenses armor="15" defense="15">
-		<defense name="healing" interval="2000" chance="10" min="90" max="150">
-			<attribute key="areaEffect" value="blueshimmer" />
+	<defenses armor="18" defense="23">
+		<defense name="healing" interval="2000" chance="15" min="25" max="35">
+			<attribute key="areaEffect" value="blueshimmer"/>
 		</defense>
 	</defenses>
 	<elements>
-		<element physicalPercent="30" />
-		<element holyPercent="10" />
-		<element deathPercent="5" />
-		<element earthPercent="-15" />
+		<element physicalPercent="35"/>
+		<element holyPercent="5"/>
+		<element deathPercent="5"/>
+		<element earthPercent="-15"/>
 	</elements>
 	<immunities>
-		<immunity fire="1" />
-		<immunity energy="1" />
-		<immunity ice="1" />
-		<immunity lifedrain="1" />
-		<immunity invisible="1" />
-		<immunity paralyze="1" />
+		<immunity ice="1"/>
+		<immunity fire="1"/>
+		<immunity energy="1"/>
+		<immunity invisible="1"/>
 	</immunities>
 	<loot>
-		<item id="2148" countmax="100" chance="50000" /><!-- gold coin -->
-		<item id="2148" countmax="70" chance="50000" /><!-- gold coin -->
-		<item id="7620" chance="11711" /><!-- mana potion -->
-		<item id="2399" countmax="5" chance="9900" /><!-- throwing star -->
-		<item id="7589" chance="7692" /><!-- strong mana potion -->
-		<item id="7449" chance="5882" /><!-- crystal sword -->
-		<item id="2150" countmax="2" chance="5000" /><!-- small amethyst -->
-		<item id="2425" chance="3571" /><!-- obsidian lance -->
-		<item id="2124" chance="2000" /><!-- crystal ring -->
-		<item id="2170" chance="1020" /><!-- silver amulet -->
-		<item id="2167" chance="892" /><!-- energy ring -->
-		<item id="2189" chance="636" /><!-- wand of cosmic energy -->
+		<item id="7838" countmax="10" chance="10050"/><!-- flash arrow -->
+		<item id="7449" chance="6070"/><!-- crystal sword -->
+		<item id="2148" countmax="170" chance="98120"/><!-- gold coin -->
+		<item id="2399" countmax="5" chance="9870"/><!-- throwing star -->
+		<item id="7620" chance="11730"/><!-- mana potion -->
+		<item id="7589" chance="7940"/><!-- strong mana potion -->
+		<item id="2150" countmax="2" chance="5160"/><!-- small amethysts -->
+		<item id="2425" chance="3580"/><!-- obsidian lance -->
+		<item id="2124" chance="2090"/><!-- crystal ring -->
+		<item id="2167" chance="900"/><!-- energy ring -->
+		<item id="2170" chance="1000"/><!-- silver amulet -->
+		<item id="2515" chance="240"/><!-- guardian shield -->
+		<item id="2189" chance="630"/><!-- wand of cosmic energy -->
 	</loot>
 </monster>

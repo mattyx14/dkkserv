@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="The Dreadorian" nameDescription="The Dreadorian" race="blood" experience="4000" speed="370" manacost="0">
+	<health now="8500" max="8500"/>
+	<look type="234" corpse="6328"/>
+	<targetchange interval="2000" chance="8"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="93" attack="100"/>
+		<attack name="dark torturer skill reducer" interval="2000" chance="12"/>
+		<attack name="the dreadorian drown" interval="2000" chance="14"/>
+		<attack name="the dreadorian soulfire" interval="2000" chance="14"/>
+		<attack name="the dreadorian curse" interval="2000" chance="14"/>
+	</attacks>
+	<defenses armor="33" defense="43">
+		<defense name="healing" interval="2000" chance="9" min="200" max="300">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+	</defenses>
+	<elements>
+		<element earthPercent="90"/>
+		<element energyPercent="30"/>
+		<element deathPercent="10"/>
+		<element icePercent="-10"/>
+		<element holyPercent="-10"/>
+	</elements>
+	<immunities>
+		<immunity invisible="1"/>
+		<immunity fire="1"/>
+	</immunities>
+	<voices interval="2000" chance="5">
+		<voice sentence="You can't beat me!"/>
+	</voices>
+</monster>

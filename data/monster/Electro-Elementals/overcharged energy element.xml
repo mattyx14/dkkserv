@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Overcharged Energy Element" nameDescription="an overcharged energy element" race="energy" experience="1300" speed="430" manacost="0">
+	<health now="1750" max="1750"/>
+	<look type="290" corpse="8966"/>
+	<targetchange interval="2000" chance="5"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag staticattack="85"/>
+		<flag lightlevel="0"/>
+		<flag lightcolor="0"/>
+		<flag targetdistance="1"/>
+		<flag runonhealth="1"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="40" attack="80"/>
+		<attack name="energy" interval="2000" chance="15" range="7" radius="2" target="1" min="-150" max="-420">
+			<attribute key="shootEffect" value="energyball"/>
+			<attribute key="areaEffect" value="energy"/>
+		</attack>
+		<attack name="energy" interval="2000" chance="15" range="7" radius="1" target="1" min="-100" max="-250">
+			<attribute key="shootEffect" value="energy"/>
+			<attribute key="areaEffect" value="energy"/>
+		</attack>
+		<attack name="charged energy elemental electrify" interval="2000" chance="15"/>
+	</attacks>
+	<defenses armor="26" defense="33">
+		<defense name="healing" interval="2000" chance="15" min="60" max="75">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+	</defenses>
+	<elements>
+		<element earthPercent="-20"/>
+		<element physicalPercent="10"/>
+		<element deathPercent="20"/>
+	</elements>
+	<immunities>
+		<immunity ice="1"/>
+		<immunity fire="1"/>
+		<immunity energy="1"/>
+		<immunity holy="1"/>
+		<immunity invisible="1"/>
+	</immunities>
+	<voices interval="2000" chance="5">
+		<voice sentence="BZZZZZZZZZZ"/>
+	</voices>
+	<loot>
+		<item id="2148" countmax="176" chance="83640"/><!-- gold coin -->
+		<item id="7439" chance="1760"/><!-- berserk potion -->
+		<item id="8303" chance="15040" /><!-- energy soil -->
+		<item id="7591" chance="10760" /><!-- great health potion -->
+		<item id="2150" countmax="2" chance="4720"/><!-- small amethyst -->
+		<item id="2214" chance="770"/><!-- ring of healing -->
+		<item id="8920" chance="220"/><!-- wand of starstorm -->
+	</loot>
+</monster>

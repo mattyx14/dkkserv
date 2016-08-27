@@ -1,43 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Ladybug" nameDescription="a ladybug" race="venom" experience="70" speed="200" manacost="0">
-	<health now="255" max="255" />
-	<look type="448" corpse="15272" />
-	<targetchange interval="5000" chance="0" />
+<monster name="Ladybug" nameDescription="a ladybug" race="venom" experience="70" speed="104" manacost="0">
+	<health now="255" max="255"/>
+	<look type="448" corpse="15272"/>
+	<targetchange interval="2000" chance="5"/>
 	<flags>
-		<flag summonable="0" />
-		<flag attackable="1" />
-		<flag hostile="1" />
-		<flag illusionable="0" />
-		<flag convinceable="0" />
-		<flag pushable="1" />
-		<flag canpushitems="1" />
-		<flag canpushcreatures="1" />
-		<flag targetdistance="0" />
-		<flag runonhealth="60" />
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="1"/>
+		<flag canpushitems="0"/>
+		<flag canpushcreatures="0"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="5" attack="5" />
-		<attack name="earth" interval="2000" chance="15" range="1" min="0" max="-20">
-			<attribute key="shootEffect" value="poison" />
-		</attack>
-		<attack name="earth" interval="2000" chance="15" range="7" min="0" max="-20">
-			<attribute key="shootEffect" value="poison" />
+		<attack name="melee" interval="2000" skill="10" attack="5"/>	
+		<attack name="poison" interval="2000" chance="23" range="3" min="-10" max="-40">
+			<attribute key="shootEffect" value="poison"/>
 		</attack>
 	</attacks>
-	<defenses armor="10" defense="10" />
+	<defenses armor="11" defense="16"/>    
 	<immunities>
-		<immunity invisible="1" />
+		<immunity invisible="1"/>
 	</immunities>
-	<voices interval="2000" chance="7">
-		<voice sentence="Nee pah!" />
+	<voices interval="2000" chance="5">
+		<voice sentence="Nee pah!"/>
+		<voice sentence="Chrk chrk!"/>
 	</voices>
 	<elements>
-		<element earthPercent="5" />
-		<element physicalPercent="-5" />
-		<element firePercent="-5" />
-		<element icePercent="-5" />
+		<element earthPercent="1"/>
+		<element physicalPercent="-1"/>
+		<element firePercent="-1"/>
+		<element icePercent="-1"/>
 	</elements>
 	<loot>
-		<item id="2148" countmax="40" chance="65000" /><!-- gold coin -->
+		<item id="2148" countmax="40" chance="65470"/> <!-- gold coin -->
 	</loot>
 </monster>

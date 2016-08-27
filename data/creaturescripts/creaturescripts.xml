@@ -22,4 +22,30 @@
 	<!-- Kill Bosses -->
 	<event type="kill" name="KillBoss" script="KillBoss.lua" />
 	<event type="kill" name="VampireKill" script="quest/dracula/VampireKill.lua" />
+
+	<!-- Monsters Scripts -->
+	<event type="preparedeath" name="MonsterHeal" script="monster/monster_heal.lua" />
+	<event type="preparedeath" name="MonsterHeal2" script="monster/monster_heal2.lua" />
+	<event type="death" name="WhiteDeerDeath" script="monster/whitedeer.lua" />
+	<event type="death" name="WhiteDeerScoutsDeath" script="monster/whitedeer_scouts.lua" />
+	<!-- 
+		<event type="think" name="OmrafirExplode" script="monster/omrafir explode.lua" />
+		<event type="death" name="RagingMage" script="monster/raging mage.lua" />
+		<event type="death" name="RagingMage2" script="monster/raging mage2.lua" />
+	 -->
+	<event type="death" name="Yielothax" script="monster/yielothax.lua" />
+	<event type="death" name="NorthernPike" script="monster/northern pike.lua" />
+	<event type="death" name="GloothHorror" script="monster/glooth horror.lua" />
+	<event type="death" name="Wyda" script="monster/wyda.lua" />
+	<event type="think" name="GazharagothHeal" script="monster/gaz'haragoth_heal.lua" />
+	<event type="think" name="ShlorgTp" script="monster/shlorg tp.lua" />
+	<event type="think" name="ThePaleCountTp" script="monster/the pale count tp.lua" />
+	<event type="think" name="WelterEgg" script="monster/welter egg.lua" />
+	<event type="think" name="ZavarashHide" script="monster/zavarash hide.lua" />
+	<event type="think" name="GreaterMinion" script="monster/greater_minion.lua" />
+	<event type="think" name="SuperiorMinion" script="monster/superior_minion.lua" />
+	<event type="think" name="NecromanticMinion" script="monster/necromantic_minion.lua" />
+	<event type="think" name="ShargonGrowthCheck" script="monster/shargon growth check.lua" />
+	<event type="think" name="TheRavagerHeal" script="monster/the ravager heal.lua" />
+	<event type="think" name="CanopicJar" script="monster/canopic jar.lua" />
 </creaturescripts>

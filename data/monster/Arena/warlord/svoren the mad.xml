@@ -1,38 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Svoren the Mad" nameDescription="svoren the mad" race="blood" experience="3000" speed="180" manacost="0">
-	<health now="6300" max="6300" />
-	<look type="254" head="80" body="99" legs="118" feet="38" corpse="7349" />
+<monster name="Svoren the Mad" nameDescription="Svoren the Mad" race="blood" experience="3000" speed="320" manacost="0">
+	<health now="6300" max="6300"/>
+	<look type="254" head="80" body="61" legs="43" feet="5" corpse="7349"/>
 	<flags>
-		<flag summonable="0" />
-		<flag attackable="1" />
-		<flag hostile="1" />
-		<flag illusionable="0" />
-		<flag convinceable="0" />
-		<flag pushable="0" />
-		<flag canpushitems="1" />
-		<flag targetdistance="1" />
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+    	<flag staticattack="90" />
+		<flag canpushitems="1"/>
+		<flag targetdistance="1"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="60" attack="150" />
-		<attack name="speed" interval="3500" chance="35" radius="1" target="1" range="1" duration="40" speedchange="-250">
-			<attribute key="areaEffect" value="redshimmer" />
+		<attack name="melee" interval="2000" skill="60" attack="150" poison="200"/>
+		<attack name="svoren the mad paralyze" interval="2000" chance="9"/>
+		<attack name="poison" interval="2000" range="10" radius="4" target="0" chance="11" min="-80" max="-100">
+			<attribute key="areaEffect" value="poison"/>
+		</attack>
+		<attack name="lifedrain" interval="2000" range="9" length="5" spread="4" chance="10" min="-95" max="-215">
+			<attribute key="areaEffect" value="yellownote"/>
 		</attack>
 	</attacks>
-	<defenses armor="25" defense="27" />
+	<defenses armor="35" defense="45">
+		<defense name="healing" interval="2000" chance="10" min="60" max="85">
+			<attribute key="areaEffect" value="greennote"/>
+		</defense>
+		<defense name="speed" interval="2000" chance="9" duration="3000" speedchange="578">
+			<attribute key="areaEffect" value="bluenote"/>
+		</defense>
+	</defenses>
+	<elements>
+		<element deathPercent="-20"/>
+		<element physicalPercent="-5"/>
+		<element holyPercent="50"/>
+	</elements>
 	<immunities>
-		<immunity fire="1" />
-		<immunity ice="1" />
-		<immunity energy="1" />
-		<immunity earth="1" />
-		<immunity outfit="1" />
-		<immunity drunk="1" />
-		<immunity invisible="1" />
+		<immunity fire="1"/>
+		<immunity ice="1"/>
+		<immunity energy="1"/>
+		<immunity earth="1"/>
+		<immunity outfit="1"/>
+		<immunity drunk="1"/>
+		<immunity invisible="1"/>
 	</immunities>
 	<voices interval="2000" chance="5">
-		<voice sentence="NO mommy NO. Leave me alone!" />
-		<voice sentence="Not that tower again!" />
-		<voice sentence="The cat has grown some horns!!" />
-		<voice sentence="What was I doing here again?" />
-		<voice sentence="Are we there soon mommy?" />
+		<voice sentence="NO mommy NO. Leave me alone!"/>
+		<voice sentence="Not that tower again!"/>
+		<voice sentence="The cat has grown some horns!!"/>
+		<voice sentence="What was I doing here again?"/>
+		<voice sentence="Are we there soon mommy?"/>
 	</voices>
 </monster>

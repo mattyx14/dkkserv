@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Dreadmaw" nameDescription="Dreadmaw" race="blood" experience="1500" speed="186" manacost="0">
+	<health now="2000" max="2000"/>
+	<look type="358" corpse="11430"/>
+	<targetchange interval="2000" chance="8"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="10"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="82" attack="50"/>
+	</attacks>
+	<defenses armor="25" defense="25">
+		<defense name="speed" interval="2000" chance="10" speedchange="608" duration="8000">
+			<attribute key="areaEffect" value="redshimmer"/>
+		</defense>
+	</defenses>
+	<elements>
+		<element physicalPercent="5"/>
+		<element icePercent="10"/>
+		<element earthPercent="20"/>
+		<element energyPercent="-5"/>
+	</elements>
+	<immunities>
+		<immunity invisible="1"/>
+	</immunities>
+	<loot>
+		<item id="11196" chance="100000" /><!-- piece of crocodile leather -->
+		<item id="2148" countmax="180" chance="100000" /><!-- gold coin -->
+		<item id="9971" chance="100000" /><!-- gold ingot -->
+		<item id="2671" chance="100000" /><!-- ham -->
+		<item id="7632" chance="7000" /><!-- giant shimmering pearl blue -->
+		<item id="7633" chance="7000" /><!-- giant shimmering pearl brown -->
+		<item id="11245" countmax="5" chance="12000" /><!-- bunch of ripe rice -->
+		<item id="2149" countmax="5" chance="10070" /><!-- small emerald -->
+		<item id="3982" chance="6000" /><!-- crocodile boots -->
+	</loot>
+</monster>

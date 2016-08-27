@@ -1,29 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Troll Guard" nameDescription="a troll guard" race="blood" experience="25" speed="180" manacost="0">
-	<health now="60" max="60" />
-	<look type="281" corpse="7926" />
-	<targetchange interval="5000" chance="20" />
+<monster name="Troll Guard" nameDescription="a troll guard" race="blood" experience="25" speed="120" manacost="0">
+	<health now="60" max="60"/>
+	<look type="281" corpse="7926"/>
+	<targetchange interval="2000" chance="0"/>
 	<flags>
-		<flag summonable="0" />
-		<flag attackable="1" />
-		<flag hostile="1" />
-		<flag illusionable="1" />
-		<flag convinceable="0" />
-		<flag pushable="1" />
-		<flag canpushitems="0" />
-		<flag canpushcreatures="0" />
-		<flag targetdistance="1" />
-		<flag staticattack="90" />
-		<flag runonhealth="17" />
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="1"/>
+		<flag convinceable="0"/>
+		<flag pushable="1"/>
+		<flag canpushitems="0"/>
+		<flag canpushcreatures="0"/>
+		<flag targetdistance="1"/>
+		<flag runonhealth="15"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" min="0" max="-15" />
+		<attack name="melee" interval="2000" skill="10" attack="15"/>
 	</attacks>
-	<defenses armor="1" defense="2" />
+	<defenses armor="8" defense="9"/>
+	<elements>
+		<element earthPercent="-10"/>
+	</elements>
+	<voices interval="2000" chance="5">
+		<voice sentence="Meee maity!"/>
+		<voice sentence="Grrrr"/>
+		<voice sentence="Whaaaz up!?"/>
+		<voice sentence="Gruntz!"/>
+		<voice sentence="Groar"/>
+	</voices>
 	<loot>
-		<item id="2148" countmax="12" chance="58000" />	<!-- gold coin -->
-		<item id="2666" countmax="2" chance="14000" />	<!-- meat -->
-		<item id="2120" chance="10000" />				<!-- rope -->
-		<item id="2448" chance="3000" />					<!-- studded club -->
+		<item id="2148" countmax="12" chance="58460"/><!-- gold coin -->
+		<item id="2666" chance="13850"/><!-- meat -->
+		<item id="2120" chance="10770"/><!-- rope -->
+		<item id="2448" chance="3080"/><!-- studded club -->
 	</loot>
 </monster>

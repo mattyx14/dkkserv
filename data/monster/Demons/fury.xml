@@ -1,89 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Fury" nameDescription="a fury" race="blood" experience="4500" speed="250" manacost="0">
-	<health now="4100" max="4100" />
-	<look type="149" head="94" body="77" legs="96" feet="0" addons="3" corpse="20399" />
-	<targetchange interval="4000" chance="10" />
+<monster name="Fury" nameDescription="a fury" race="blood" experience="4500" speed="400" manacost="0">
+	<health now="4100" max="4100"/>
+	<look type="149" head="94" body="77" legs="78" feet="79" addons="1" corpse="20399"/>
+	<targetchange interval="2000" chance="8"/>
 	<flags>
-		<flag summonable="0" />
-		<flag attackable="1" />
-		<flag hostile="1" />
-		<flag illusionable="1" />
-		<flag convinceable="0" />
-		<flag pushable="0" />
-		<flag canpushitems="1" />
-		<flag canpushcreatures="1" />
-		<flag targetdistance="1" />
-		<flag staticattack="70" />
-		<flag runonhealth="0" />
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="1"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="50" attack="170" />
+		<attack name="melee" interval="2000" skill="92" attack="100"/>
+		<attack name="lifedrain" interval="2000" chance="10" range="7" radius="3" target="0" min="-100" max="-300">
+			<attribute key="areaEffect" value="blackspark"/>
+		</attack>
+		<attack name="death" interval="2000" chance="13" range="7" radius="4" target="0" min="-100" max="-300">
+			<attribute key="areaEffect" value="redspark"/>
+		</attack>
+		<attack name="fury skill reducer 1" interval="2000" chance="11"/>
+		<attack name="fury skill reducer 2" interval="2000" chance="11"/>
+		<attack name="death" interval="2000" chance="12" length="9" spread="0" min="-250" max="-700">
+			<attribute key="areaEffect" value="redspark"/>
+		</attack>
 		<attack name="fire" interval="2000" chance="10" length="8" spread="3" min="-200" max="-300">
-			<attribute key="areaEffect" value="explosionarea" />
+			<attribute key="areaEffect" value="explosionarea"/>
 		</attack>
-		<attack name="death" interval="2000" chance="5" length="8" spread="0" min="-120" max="-700">
-			<attribute key="areaEffect" value="redspark" />
-		</attack>
-		<attack name="death" interval="2000" chance="10" radius="4" target="0" min="-120" max="-300">
-			<attribute key="areaEffect" value="redspark" />
-		</attack>
-		<attack name="fury skill reducer" interval="2000" chance="5" />
-		<attack name="lifedrain" interval="2000" chance="10" radius="3" target="0" min="-120" max="-300">
-			<attribute key="areaEffect" value="blackspark" />
-		</attack>
-		<attack name="death" interval="2000" chance="10" range="7" min="-125" max="-250">
-			<attribute key="shootEffect" value="suddendeath" />
-			<attribute key="areaEffect" value="smallclouds" />
-		</attack>
-		<attack name="speed" interval="2000" chance="15" range="7" speedchange="-800" duration="30000">
-			<attribute key="shootEffect" value="suddendeath" />
-			<attribute key="areaEffect" value="smallclouds" />
-		</attack>
+    		<attack name="fury paralyze" interval="2000" chance="13" range="7"/>
 	</attacks>
-	<defenses armor="20" defense="20">
-		<defense name="speed" interval="2000" chance="15" speedchange="800" duration="5000">
-			<attribute key="areaEffect" value="redshimmer" />
+	<defenses armor="26" defense="33">
+		<defense name="healing" interval="2000" chance="15" min="100" max="200">
+			<attribute key="areaEffect" value="redshimmer"/>
+		</defense>
+		<defense name="speed" interval="2000" chance="10" speedchange="1024" duration="4000">
+			<attribute key="areaEffect" value="redshimmer"/>
 		</defense>
 	</defenses>
 	<elements>
-		<element icePercent="30" />
-		<element holyPercent="30" />
-		<element deathPercent="-10" />
-		<element energyPercent="-10" />
-		<element earthPercent="-10" />
-		<element physicalPercent="-10" />
+		<element icePercent="30"/>
+		<element holyPercent="30"/>
+		<element deathPercent="-10"/>
+		<element energyPercent="-10"/>
+		<element earthPercent="-10"/>
+		<element physicalPercent="-10"/>
 	</elements>
 	<immunities>
-		<immunity paralyze="1" />
-		<immunity invisible="1" />
-		<immunity fire="1" />
+		<immunity paralyze="1"/>
+		<immunity fire="1"/>
+		<immunity lifedrain="1"/>
+		<immunity invisible="1"/>
 	</immunities>
-	<voices interval="2000" chance="7">
-		<voice sentence="Ahhhhrrrr!" />
-		<voice sentence="Waaaaah!" />
-		<voice sentence="Carnage!" />
-		<voice sentence="Dieee!" />
+	<voices interval="2000" chance="5">
+		<voice sentence="Ahhhhrrrr!"/>
+		<voice sentence="Waaaaah!"/>
+		<voice sentence="Carnage!"/>
+		<voice sentence="Dieee!"/>
 	</voices>
 	<loot>
-		<item id="2148" countmax="100" chance="30000" /><!-- gold coin -->
-		<item id="2148" countmax="100" chance="30000" /><!-- gold coin -->
-		<item id="2148" countmax="69" chance="38000" /><!-- gold coin -->
-		<item id="2152" countmax="4" chance="2800" /><!-- platinum coin -->
-		<item id="6558" countmax="3" chance="35000" /><!-- concentrated demonic blood -->
-		<item id="6500" chance="22500" /><!-- demonic essence -->
-		<item id="7591" chance="10500" /><!-- great health potion-->
-		<item id="2666" chance="25000" /><!-- meat -->
-		<item id="7456" chance="2000" /><!-- noble axe -->
-		<item id="5022" countmax="4" chance="1500" /><!-- orichalcum pearl -->
-		<item id="5911" chance="4000" /><!-- red piece of cloth -->
-		<item id="9813" chance="1920" /><!-- rusty legs -->
-		<item id="2120" countmax="3" chance="8000" /><!-- small amethyst -->
-		<item id="5944" chance="21500" /><!-- soul orb -->
-		<item id="2181" chance="20000" /><!-- terra rod -->
-		<item id="7404" chance="660" /><!-- assassin dagger -->
-		<item id="5944" chance="50" /><!-- assassin star -->
-		<item id="2124" chance="410" /><!-- crystal ring-->
-		<item id="8844" countmax="4" chance="29280" /><!-- jalapeno peppers-->
-		<item id="6301" chance="60" /><!-- death ring-->
+		<item id="2148" countmax="255" chance="98620"/><!-- gold coin -->
+		<item id="8844" countmax="4" chance="28730"/><!-- jalapeno pepper -->
+		<item id="2152" countmax="4" chance="2790"/><!-- platinum coin -->
+		<item id="6558" chance="34170"/><!-- concentrated demonic blood -->
+		<item id="6558" chance="34170"/><!-- concentrated demonic blood -->
+		<item id="6558" chance="34170"/><!-- concentrated demonic blood -->
+		<item id="7591" chance="10650"/><!-- great health potion-->
+		<item id="6500" chance="22550"/><!-- demonic essence -->
+		<item id="5944" chance="21030"/><!-- soul orb -->
+		<item id="2470" chance="100"/><!-- golden legs -->
+		<item id="7456" chance="2080"/><!-- noble axe -->
+		<item id="5022" countmax="4" chance="1510"/><!-- orichalcum pearl -->
+		<item id="5911" chance="4200"/><!-- red piece of cloth -->
+		<item id="2150" countmax="3" chance="7430"/><!-- small amethyst -->
+		<item id="2645" chance="710"/><!-- steel boots -->
+		<item id="2181" chance="20260"/><!-- terra rod -->
+		<item id="7404" chance="710"/><!-- assassin dagger -->
+		<item id="7368" chance="10"/><!-- assassin star -->
+		<item id="2124" chance="440"/><!-- crystal ring-->
+		<item id="6300" chance="70"/><!-- death ring-->
+		<item id="9813" chance="1410"/><!-- rusty legs -->
 	</loot>
 </monster>

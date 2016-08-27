@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Glooth Powered Minotaur" nameDescription="a glooth powered minotaur" race="blood" experience="2600" speed="200" manacost="0">
-	<health now="3200" max="3200" />
+<monster name="Glooth Powered Minotaur" nameDescription="a glooth powered minotaur" race="blood" experience="0" speed="260" manacost="0">
+	<health now="5000" max="5000" />
 	<look type="607" corpse="5962" />
-	<targetchange interval="4000" chance="10" />
+	<targetchange interval="2000" chance="10" />
 	<flags>
 		<flag summonable="0" />
 		<flag attackable="1" />
@@ -17,27 +17,43 @@
 		<flag runonhealth="0" />
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" min="0" max="-290" />
-		<attack name="physical" interval="2000" chance="15" radius="3" min="0" max="-200">
-			<attribute key="areaEffect" value="blackspark" />
+		<attack name="melee" interval="2000" skill="110" attack="50"/>
+		<attack name="physical" interval="2000" chance="13" length="3" spread="0" min="-100" max="-230">
+			<attribute key="areaEffect" value="groundshaker"/>
 		</attack>
-		<attack name="lifedrain" interval="2000" chance="15" range="7" radius="4" target="1" min="-100" max="-225">
-			<attribute key="areaEffect" value="redshimmer" />
+		<attack name="physical" interval="2000" chance="12" radius="3" target="0" min="-100" max="-200">
+			<attribute key="areaEffect" value="groundshaker"/>
+		</attack>
+		<attack name="lifedrain" interval="2000" chance="19" radius="5" target="0" min="-50" max="-225">
+			<attribute key="areaEffect" value="redshimmer"/>
+		</attack>
+		<attack name="lifedrain" interval="2000" chance="10" range="7" target="1" radius="4" min="-150" max="-235">
+			<attribute key="shootEffect" value="largerock"/>
+			<attribute key="areaEffect" value="explosionarea"/>
 		</attack>
 	</attacks>
 	<defenses armor="40" defense="45">
-		<defense name="healing" interval="4000" chance="15" min="50" max="145">
-			<attribute key="areaEffect" value="blueshimmer" />
+		<defense name="healing" interval="2000" chance="50" min="10" max="50">
+			<attribute key="areaEffect" value="yellowbubble"/>
 		</defense>
 	</defenses>
 	<elements>
-		<element earthPercent="1" />
-		<element firePercent="1" />
-		<element holyPercent="90" />
+		<element firePercent="95" />
+		<element energyPercent="95" />
+		<element holyPercent="95" />
+		<element poisonPercent="95" />
+		<element deathPercent="95" />
+		<element physicalPercent="95" />
+		<element icePercent="95" />
 	</elements>
 	<immunities>
-		<immunity earth="1" />
 		<immunity invisible="1" />
 		<immunity paralyze="1" />
 	</immunities>
+	<voices interval="2000" chance="5">
+		<voice sentence="I FEEL THE POWER!" yell="1"/>
+		<voice sentence="NOBODY CAN STOP MEEEE!" yell="1"/>
+		<voice sentence="POOOWEEER!" yell="1"/>
+		<voice sentence="UNSTOPABLE!" yell="1"/>
+	</voices>
 </monster>

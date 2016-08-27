@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Mindmasher" nameDescription="Mindmasher" race="venom" experience="0" speed="240" manacost="0">
+<health now="9500" max="9500"/>
+<look type="403" corpse="13514"/>
+<targetchange interval="2000" chance="7"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="10" attack="10"/>
+		<attack name="mindmasher drown" interval="2000" chance="10" range="7"/>
+		<attack name="manadrain" interval="2000" chance="10" range="7" target="1" min ="-300" max="-720">
+			<attribute key="areaEffect" value="mortarea"/>
+		</attack>
+		<attack name="drunk" interval="2000" chance="10" range="7" target="1" duration="15000">
+			<attribute key="areaEffect" value="teleport"/>
+		</attack>
+	</attacks>
+	<defenses armor="1" defense="1">
+        <defense name="healing" interval="2000" chance="30" min="5" max="15">
+            <attribute key="areaEffect" value="bluebubble"/>
+        </defense>
+        <defense name="invisible" interval="2000" chance="17" duration="10000">
+            <attribute key="areaEffect" value="bluebubble"/>
+        </defense>
+    </defenses>
+	<elements>
+		<element physicalPercent="-150"/>
+		<element firePercent="-10"/>
+		<element earthPercent="50"/>
+		<element energyPercent="-5"/>
+		<element icePercent="-10"/>
+	</elements>
+	<immunities>
+		<immunity invisible="1"/>
+	</immunities>
+	<voices interval="2000" chance="5">
+		<voice sentence="Klk! Klk!"/>
+		<voice sentence="Chrrr! Chrrr!"/>
+	</voices>
+	<loot>
+	</loot>
+</monster>

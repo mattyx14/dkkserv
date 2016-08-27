@@ -2,7 +2,7 @@
 <monster name="Minotaur Totem" nameDescription="a minotaur totem" race="undead" experience="0" speed="0" manacost="0">
 	<health now="5000" max="5000" />
 	<look typeex="3802" />
-	<targetchange interval="5000" chance="16" />
+	<targetchange interval="2000" chance="4" />
 	<flags>
 		<flag summonable="0" />
 		<flag attackable="1" />

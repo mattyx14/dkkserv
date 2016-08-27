@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="The Mutated Pumpkin" nameDescription="The Mutated Pumpkin" race="venom" experience="55000" speed="580" manacost="0">
+	<health now="550000" max="550000"/>
+	<look type="292" head="115" body="41" legs="21" feet="57" addons="0" corpse="8960"/>
+	<targetchange interval="2000" chance="8"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="95"/>
+		<flag runonhealth="10000"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="40" attack="100"/>
+		<attack name="effect" interval="2000" chance="12" length="7" spread="3"/>
+		<attack name="manadrain" interval="2000" chance="11" length="7" spread="3" min="-5" max="-12">
+			<attribute key="areaEffect" value="bluefirework"/>
+		</attack>
+		<attack name="death" interval="2000" chance="12" length="6" spread="2" min="-10" max="-15">
+			<attribute key="areaEffect" value="poison"/>
+		</attack>
+		<attack name="outfit" interval="2000" chance="11" length="8" spread="0" item="2096" duration="4000">
+			<attribute key="areaEffect" value="smallplants"/>
+		</attack>
+		<attack name="drunk" interval="2000" chance="13" radius="8" target="0" duration="25000">
+			<attribute key="areaEffect" value="stun"/>
+		</attack>
+		<attack name="effect" interval="2000" chance="14" length="6" spread="3">
+			<attribute key="areaEffect" value="rednote"/>
+		</attack>
+		<attack name="outfit" interval="2000" chance="20" range="7" monster="the mutated pumpkin" duration="4000"/>
+	</attacks>
+	<defenses armor="18" defense="25">
+		<defense name="healing" interval="2000" chance="15" min="2000" max="3000">
+			<attribute key="areaEffect" value="sleep"/>
+		</defense>
+		<defense name="invisible" interval="2000" chance="9" duration="5000">
+			<attribute key="areaEffect" value="poff"/>
+		</defense>
+		<defense name="outfit" interval="2000" chance="12" monster="mutatedpumpkindruid" duration="4000">
+			<attribute key="areaEffect" value="poff"/>
+		</defense>
+	</defenses>
+	<immunities>
+		<immunity paralyze="1"/>
+		<immunity invisible="1"/>
+	</immunities>
+	<voices interval="2000" chance="5">
+		<voice sentence="I had the Halloween Hare for breakfast!"/>
+		<voice sentence="Your soul will be mine...wait, wrong line"/>
+		<voice sentence="Trick or treat? I saw death!"/>
+		<voice sentence="No wait! Don't kill me! It's me, your friend!"/>
+		<voice sentence="Bunnies, pah! I'm the real thing!"/>
+		<voice sentence="Muahahahaha!"/>
+		<voice sentence="I've come to avenge all those mutilated pumpkins!"/>
+		<voice sentence="Wait until I get you!"/>
+		<voice sentence="Fear the spirit of Halloween!"/>
+		<voice sentence="You, my little mouse, are doomed."/>
+	</voices>
+	<loot>
+		<item id="6526" chance="100000"/><!-- skeleton decoration -->
+		<item id="6492" chance="100000"/><!-- bat decoration -->
+		<item id="6492" chance="100000"/><!-- bat decoration -->
+		<item id="8860" chance="100000"/><!-- spiderwebs -->
+		<item id="9005" chance="100000"/><!-- yummy gummy worm -->
+		<item id="9005" chance="100000"/><!-- yummy gummy worm -->
+		<item id="9005" chance="100000"/><!-- yummy gummy worm -->
+		<item id="9005" chance="100000"/><!-- yummy gummy worm -->
+		<item id="9005" chance="100000"/><!-- yummy gummy worm -->
+		<item id="9005" chance="100000"/><!-- yummy gummy worm -->
+		<item id="9005" chance="100000"/><!-- yummy gummy worm -->
+		<item id="9005" chance="100000"/><!-- yummy gummy worm -->
+		<item id="9005" chance="100000"/><!-- yummy gummy worm -->
+		<item id="9005" chance="100000"/><!-- yummy gummy worm -->
+		<item id="9006" chance="100000"/><!-- toy spider -->
+		<item id="2683" chance="100000"/><!-- pumpkin -->
+		<item id="2683" chance="100000"/><!-- pumpkin -->
+		<item id="2683" chance="100000"/><!-- pumpkin -->
+		<item id="2683" chance="100000"/><!-- pumpkin -->
+		<item id="2683" chance="100000"/><!-- pumpkin -->
+	</loot>
+</monster>

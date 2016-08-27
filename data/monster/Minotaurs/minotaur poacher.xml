@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Minotaur Poacher" nameDescription="a minotaur poacher" race="blood" experience="55" speed="170" manacost="0">
+<monster name="Minotaur Poacher" nameDescription="a minotaur poacher" race="blood" experience="55" speed="160" manacost="0">
 	<health now="160" max="160" />
 	<look type="24" corpse="5982" />
-	<targetchange interval="4000" chance="10" />
+	<targetchange interval="2000" chance="5" />
 	<flags>
 		<flag summonable="0" />
 		<flag attackable="1" />
@@ -14,27 +14,28 @@
 		<flag canpushcreatures="0" />
 		<flag targetdistance="1" />
 		<flag staticattack="90" />
-		<flag runonhealth="0" />
+		<flag runonhealth="10" />
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" min="0" max="-15" />
-		<attack name="physical" interval="2000" chance="40" range="7" min="0" max="-20">
+		<attack name="melee" interval="2000" skill="10" attack="15"/>
+		<attack name="physical" interval="2000" chance="30" range="7" min="0" max="-20">
 			<attribute key="shootEffect" value="bolt" />
 		</attack>
 	</attacks>
 	<defenses armor="5" defense="5" />
-	<immunities>
-		<immunity invisible="1" />
-	</immunities>
+	<elements>
+		<element firePercent="10"/>
+		<element energyPercent="10"/>
+	</elements>
 	<loot>
+		<item id="2543" countmax="18" chance="55700" />	<!-- bolt -->
+		<item id="12407" chance="18790" />				<!-- broken crossbow -->
+		<item id="2464" chance="9400" />				<!-- chain armor -->
+		<item id="2455" chance="670" />					<!-- crossbow -->
 		<item id="2148" countmax="28" chance="100000" />	<!-- gold coin -->
-		<item id="2543" countmax="18" chance="55000" />	<!-- bolt -->
-		<item id="12407" chance="19400" />				<!-- broken crossbow -->
-		<item id="2464" chance="10000" />				<!-- chain armor -->
-		<item id="2484" chance="6000" />					<!-- studded armor -->
-		<item id="2666" chance="5000" />					<!-- meat -->
-		<item id="5878" chance="1400" />					<!-- minotaur leather -->
-		<item id="2455" chance="710" />					<!-- crossbow -->
-		<item id="12428" chance="710" />					<!-- minotaur horn -->
+		<item id="2666" chance="5370" />					<!-- meat -->
+		<item id="12428" chance="670" />					<!-- minotaur horn -->
+		<item id="5878" chance="1340" />					<!-- minotaur leather -->
+		<item id="2484" chance="5370" />					<!-- studded armor -->
 	</loot>
 </monster>

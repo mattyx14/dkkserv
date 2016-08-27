@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Kraknaknork's Demon" nameDescription="Kraknaknork's demon" race="fire" experience="0" speed="500" manacost="0">
+	<health now="5000" max="5000"/>
+	<look type="12" head="117" body="77" legs="79" feet="0" addons="0" corpse="6068"/>
+	<targetchange interval="2000" chance="25"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="0"/>
+		<flag staticattack="90"/>
+		<flag targetdistance="1"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="28" attack="50"/>
+		<attack name="fire" interval="2000" chance="30" range="7" min="-10" max="-40">
+			<attribute key="shootEffect" value="fire"/>
+			<attribute key="areaEffect" value="firearea"/>
+		</attack>
+	</attacks>
+	<defenses armor="45" defense="60">
+		<defense name="healing" interval="2000" chance="35" min="250" max="350">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+	</defenses>
+	<elements>
+		<element physicalPercent="20"/>
+	</elements>
+	<immunities>
+	</immunities>
+	<voices interval="2000" chance="5">
+		<voice sentence="STEP A BIT CLOSER, RIGHT THERE, HAHAHA!" yell="1"/>
+		<voice sentence="COME AND DIE!" yell="1"/>
+		<voice sentence="ROOKIE FOR BREAKFAST" yell="1"/>
+	</voices>
+	<loot>
+	</loot>
+</monster>

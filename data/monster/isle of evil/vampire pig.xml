@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Vampire Pig" nameDescription="a vampire pig" race="blood" experience="165" speed="110" manacost="255">
+	<health now="305" max="305"/>
+	<look type="60" corpse="6000"/>
+	<targetchange interval="2000" chance="4"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="1"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="0"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="20"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="40" attack="40"/>
+		<attack name="lifedrain" interval="2000" chance="17" radius="4" min="-15" max="-25">
+			<attribute key="areaEffect" value="bats"/>
+		</attack>
+		<attack name="lifedrain" interval="2000" chance="19" range="7" target="1" min="-35" max="-55">
+			<attribute key="shootEffect" value="suddendeath"/>
+			<attribute key="areaEffect" value="redshimmer"/>
+		</attack>
+	</attacks>
+	<defenses armor="15" defense="17">
+		<defense name="outfit" interval="2000" chance="11" monster="mutated bat" duration="4000">
+			<attribute key="areaEffect" value="poff"/>
+		</defense>
+		<defense name="healing" interval="2000" chance="10" min="30" max="60">
+			<attribute key="areaEffect" value="redshimmer"/>
+		</defense>
+	</defenses>
+	<immunities>
+		<immunity lifedrain="1"/>
+		<immunity drown="1"/>
+		<immunity invisible="1"/>
+	</immunities>
+	<voices interval="2000" chance="5">
+		<voice sentence="Oink"/>
+		<voice sentence="Oink oink"/>
+	</voices>
+	<loot>
+		<item id="2148" countmax="40" chance="92940"/><!-- gold coins -->
+	</loot>
+</monster>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Greater Canopic Jar" nameDescription="a greater canopic jar" race="undead" experience="0" speed="0" manacost="0">
+	<health now="7000" max="7000"/>
+	<look type="599" corpse="0"/>
+	<targetchange interval="2000" chance="3"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="0"/>
+		<flag canpushcreatures="0"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<defenses armor="22" defense="44">
+		<defense name="greater jar summon" interval="2000" chance="50"/>
+	</defenses>
+	<immunities>
+		<immunity paralyze="1"/>
+		<immunity drunk="1"/>
+		<immunity outfit="1"/>
+		<immunity invisible="1"/>
+	</immunities>
+</monster>

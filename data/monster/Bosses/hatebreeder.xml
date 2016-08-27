@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Hatebreeder" nameDescription="Hatebreeder" race="undead" experience="10000" speed="350" manacost="0">
+<health now="18000" max="18000"/>
+<look type="351" corpse="11362"/>
+  <targetchange interval="2000" chance="3" />
+  <flags>
+    <flag summonable="0" />
+    <flag attackable="1" />
+    <flag hostile="1" />
+    <flag illusionable="0" />
+    <flag convinceable="0" />
+    <flag pushable="0" />
+    <flag canpushitems="1" />
+    <flag canpushcreatures="1" />
+    <flag targetdistance="1" />
+    <flag staticattack="90" />
+    <flag runonhealth="366" />
+  </flags>
+  <attacks>
+    <attack name="melee" interval="2000" skill="160" attack="100" />
+    <attack name="ghastly dragon wave" interval="2000" chance="10" min="-220" max="-400"/>
+    <attack name="ghastly dragon curse" interval="2000" chance="10" range="7"/>
+    <attack name="poisoncondition" interval="2000" chance="10" range="7" min="-1600" max="-2200">
+      <attribute key="shootEffect" value="death" />
+      <attribute key="areaEffect" value="smallclouds" />
+    </attack>
+    <attack name="ghastly dragon paralyze" interval="2000" chance="9" range="7"/>
+    <attack name="lifedrain" interval="2000" chance="20" range="7" target="1" min="-200" max="-315">
+      <attribute key="areaEffect" value="redshimmer" />
+    </attack>
+    <attack name="death" interval="2000" chance="13" radius="4" target="0" min="-350" max="-505">
+      <attribute key="areaEffect" value="mortarea" />
+    </attack>
+  </attacks>
+  <defenses armor="45" defense="35" >
+    <defense name="healing" interval="2000" chance="9" min="2450" max="2535">
+      <attribute key="areaEffect" value="greenshimmer" />
+    </defense>
+  </defenses>
+  <elements>
+    <element firePercent="20" />
+    <element physicalPercent="10" />
+    <element energyPercent="10" />
+  </elements>
+  <immunities>
+    <immunity paralyze="1" />
+    <immunity invisible="1" />
+    <immunity death="1" />
+    <immunity lifedrain="1" />
+    <immunity earth="1" />
+    <immunity drunk="1" />
+    <immunity ice="1" />
+  </immunities>
+	<voices interval="2000" chance="5">
+		<voice sentence="YOU ARE NOT WELCOME HERE!" yell="1"/>
+	</voices>
+	<loot>
+		<item id="6500" countmax="1" chance="76920" /><!-- demonic essence -->
+		<item id="11366" chance="69230" /><!-- ghastly dragon head -->
+		<item id="2148" countmax="262" chance="100000" /><!-- gold coin -->
+		<item id="2152" countmax="2" chance="30770" /><!-- platinum coin -->
+		<item id="11367" chance="100000" /><!-- undead heart -->
+		<item id="11368" chance="92310" /><!-- jade hat -->
+		<item id="11302" chance="7690" /><!-- Zaoan helmet -->
+		<item id="12630" chance="7690" /><!-- cobra crown -->
+		<item id="11355" chance="76920" /><!-- spellweaver's robe -->
+		<item id="11301" chance="15380" /><!-- Zaoan armor -->
+		<item id="11240" chance="15380" /><!-- guardian boots -->
+		<item id="11303" chance="69230" /><!-- Zaoan shoes -->
+		<item id="11304" chance="61540" /><!-- Zaoan legs -->
+		<item id="11309" chance="30770" /><!-- twin hooks -->
+		<item id="11307" chance="46150" /><!-- Zaoan sword -->
+		<item id="11305" chance="23080" /><!-- drakinata -->
+		<item id="11323" chance="23080" /><!-- Zaoan halberd -->
+		<item id="8472" countmax="5" chance="38460" /><!-- great spirit potion -->
+		<item id="8473" countmax="5" chance="53850" /><!-- ultimate health potion -->
+		<item id="7591" countmax="5" chance="7690" /><!-- great health potion -->
+		<item id="7590" countmax="5" chance="7690" /><!-- great mana potion -->
+		<item id="12648" chance="1000" /><!-- snake god's sceptre -->
+	</loot>
+</monster>

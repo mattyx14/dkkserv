@@ -1,27 +1,31 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<monster name="Weakened Demon" nameDescription="a weakened demon" race="fire" experience="0" speed="200" manacost="0">
-	<health now="5" max="5" />
-	<look type="12" head="94" body="19" legs="116" feet="81" corpse="0" />
-	<targetchange interval="10000" chance="20" />
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Weakened Demon" nameDescription="a weakened demon" race="blood" experience="0" speed="500" manacost="0">
+	<health now="5" max="5"/>
+	<look type="12" head="77" body="0" legs="79" feet="81" addons="0" corpse="6068"/>
+	<targetchange interval="2000" chance="25"/>
 	<flags>
-		<flag summonable="0" />
-		<flag attackable="1" />
-		<flag hostile="1" />
-		<flag illusionable="0" />
-		<flag convinceable="0" />
-		<flag pushable="0" />
-		<flag canpushitems="1" />
-		<flag canpushcreatures="0" />
-		<flag staticattack="98" />
-		<flag targetdistance="1" />
-		<flag runonhealth="0" />
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="0"/>
+		<flag staticattack="90"/>
+		<flag targetdistance="1"/>
+		<flag runonhealth="0"/>
 	</flags>
-	<defenses armor="5" defense="5">
-		<defense name="invisible" interval="2000" chance="10" duration="4000">
-			<attribute key="areaEffect" value="blueshimmer" />
-		</defense>
+	<attacks>
+		<attack name="melee" interval="2000" skill="10" attack="0"/>
+	</attacks>
+	<defenses armor="5" defense="6">
 	</defenses>
-	<voices interval="2000" chance="7">
-		<voice sentence="UH?" />
+	<immunities>
+	</immunities>
+	<voices interval="2000" chance="5">
+		<voice sentence="UH?" yell="1"/>
 	</voices>
+	<loot>
+	</loot>
 </monster>

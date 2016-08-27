@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Elf Overseer" nameDescription="an elf overseer" race="blood" experience="290" speed="200" manacost="0">
+	<health now="500" max="500"/>
+	<look type="159" head="21" body="76" legs="76" feet="116" addons="0" corpse="20596"/>
+	<targetchange interval="2000" chance="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="1"/>
+		<flag canpushitems="0"/>
+		<flag canpushcreatures="0"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="40" attack="30"/>
+		<attack name="drown" interval="2000" chance="23" range="7" target="1" min="-25" max="-50">
+			<attribute key="shootEffect" value="shiverarrow"/>
+			<attribute key="areaEffect" value="bluebubble"/>
+		</attack>
+		<attack name="drown" interval="2000" chance="19" length="5" spread="0" min="-30" max="-90">
+			<attribute key="areaEffect" value="bubbles"/>
+		</attack>
+	</attacks>
+	<defenses armor="11" defense="13">
+		<defense name="healing" interval="2000" chance="16" min="50" max="75">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+	</defenses>
+	<elements>
+		<element deathPercent="-10"/>
+	</elements>
+	<immunities>
+		<immunity invisible="1"/>
+		<immunity drown="1"/>
+	</immunities>
+	<voices interval="2000" chance="5">
+		<voice sentence="Do YOU want some more water, yes? YES?"/>
+	</voices>
+	<loot>
+		<item id="10552" chance="2100"/><!-- elvish talisman -->
+		<item id="2689" countmax="2" chance="13780"/><!-- bread -->
+		<item id="2148" countmax="50" chance="44470"/><!-- gold coin -->
+		<item id="7449" chance="10810"/><!-- crystal sword -->
+		<item id="2513" chance="9330"/><!-- battle shield -->
+		<item id="7618" chance="4060"/><!-- health potion -->
+		<item id="7620" chance="4060"/><!-- mana potion -->
+		<item id="5922" countmax="1" chance="2110"/><!-- holy orchid -->
+	</loot>
+</monster>

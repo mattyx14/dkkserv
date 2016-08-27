@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Vulnerable Cocoon" nameDescription="a vulnerable cocoon" race="undead" experience="20000" speed="0" manacost="0">
+	<health now="100000" max="100000"/>
+	<look typeex="12292" corpse="12329"/>
+	<targetchange interval="2000" chance="5"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="190" attack="300"/>
+		<attack name="poison" interval="2000" chance="22" range="7" radius="1" target="1" min="-400" max="-550">
+			<attribute key="shootEffect" value="earth"/>
+			<attribute key="areaEffect" value="plantattack"/>
+		</attack>
+		<attack name="poison" interval="2000" chance="25" range="7" radius="7" target="0" min="-200" max="-350">
+			<attribute key="areaEffect" value="stones"/>
+		</attack>
+	</attacks>
+	<defenses armor="22" defense="35">
+		<defense name="healing" interval="2000" chance="12" min="4500" max="5500">
+			<attribute key="areaEffect" value="smallplants"/>
+		</defense>
+	</defenses>
+	<elements>
+	</elements>
+	<immunities>
+		<immunity name="death"/>
+		<immunity name="poison"/>
+		<immunity name="drown"/>
+		<immunity name="lifedrain"/>
+		<immunity name="paralyze"/>
+		<immunity name="drunk"/>
+		<immunity name="invisible"/>
+	</immunities>
+	<voices interval="2000" chance="5">
+		<voice sentence="I ONLY WANT THE BEST FOR YOU, DON'T YOU SEE?" yell="1"/>
+		<voice sentence="GO AWAY!" yell="1"/>
+		<voice sentence="GET OFF ME!" yell="1"/>
+		<voice sentence="STOP THAT, YOU FOOLS!" yell="1"/>
+	</voices>
+	<loot>
+	</loot>
+</monster>

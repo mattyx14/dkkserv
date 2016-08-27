@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Rocko" nameDescription="Rocko" race="venom" experience="3400" speed="260" manacost="0">
+	<health now="10000" max="10000"/>
+	<look type="67" corpse="6005"/>
+	<targetchange interval="2000" chance="8"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="90" attack="40"/>
+		<attack name="physical" interval="2000" chance="17" length="8" spread="0" min="-0" max="-500">
+			<attribute key="areaEffect" value="carniphila"/>
+		</attack>
+		<attack name="poisoncondition" interval="2000" chance="12" length="4" spread="1" min="-300" max="-500">
+			<attribute key="areaEffect" value="poison"/>
+		</attack>
+	</attacks>
+	<defenses armor="48" defense="63">
+		<defense name="healing" interval="2000" chance="50" min="50" max="250">
+			<attribute key="areaEffect" value="poff"/>
+		</defense>
+		<defense name="healing" interval="2000" chance="50" min="5" max="50">
+			<attribute key="areaEffect" value="poff"/>
+		</defense>
+	</defenses>
+	<elements>
+		<element physicalPercent="15"/>
+		<element firePercent="30"/>
+		<element energyPercent="25"/>
+		<element holyPercent="10"/>
+		<element icePercent="20"/>
+	</elements>
+	<immunities>
+		<immunity paralyze="1"/>
+		<immunity earth="1"/>
+		<immunity death="1"/>
+	</immunities>
+</monster>
