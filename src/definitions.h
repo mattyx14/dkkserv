@@ -21,12 +21,12 @@
 #define FS_DEFINITIONS_H_877452FEC245450C9F96B8FD268D8963
 
 #define STATUS_SERVER_NAME "OTX Server"
-#define STATUS_SERVER_VERSION "3"
-#define MINOR_VERSION "6"
-#define REVISION_VERSION "-"
-#define SOFTWARE_CODENAME "SCARETALE"
+#define STATUS_SERVER_VERSION "4"
+#define MINOR_VERSION "0"
+#define REVISION_VERSION "DEV"
+#define SOFTWARE_CODENAME "SAILOR"
 #define STATUS_SERVER_DEVELOPERS "Mattyx14, Brewsterl and The Forgotten Server Developers"
-#define GIT_REPO "https://github.com/mattyx14/otxserver/tree/otxserv3"
+#define GIT_REPO "https://github.com/mattyx14/otxserver/tree/otxserv3/"
 
 #define CLIENT_VERSION_MIN 1100
 #define CLIENT_VERSION_MAX 1100

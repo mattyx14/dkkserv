@@ -2064,15 +2064,7 @@ void Player::death(Creature* lastHitCreature)
 
 	if (skillLoss) {
 		uint8_t unfairFightReduction = 100;
-
-		if (lastHitCreature) {
-			Player* lastHitPlayer = lastHitCreature->getPlayer();
-			if (!lastHitPlayer) {
-				Creature* lastHitMaster = lastHitCreature->getMaster();
-				if (lastHitMaster) {
-					lastHitPlayer = lastHitMaster->getPlayer();
-				}
-			}
+		bool lastHitPlayer = Player::lastHitIsPlayer(lastHitCreature);
 
 			if (lastHitPlayer) {
 				uint32_t sumLevels = 0;
@@ -2092,7 +2084,6 @@ void Player::death(Creature* lastHitCreature)
 					unfairFightReduction = std::max<uint8_t>(20, std::floor((reduce * 100) + 0.5));
 				}
 			}
-		}
 
 		//Magic level loss
 		uint64_t sumMana = 0;
@@ -2187,20 +2178,6 @@ void Player::death(Creature* lastHitCreature)
 
 		std::bitset<6> bitset(blessings);
 		if (bitset[5]) {
-			Player* lastHitPlayer;
-
-			if (lastHitCreature) {
-				lastHitPlayer = lastHitCreature->getPlayer();
-				if (!lastHitPlayer) {
-					Creature* lastHitMaster = lastHitCreature->getMaster();
-					if (lastHitMaster) {
-						lastHitPlayer = lastHitMaster->getPlayer();
-					}
-				}
-			} else {
-				lastHitPlayer = nullptr;
-			}
-
 			if (lastHitPlayer) {
 				bitset.reset(5);
 				blessings = bitset.to_ulong();
@@ -2264,22 +2241,7 @@ void Player::death(Creature* lastHitCreature)
 
 bool Player::dropCorpse(Creature* lastHitCreature, Creature* mostDamageCreature, bool lastHitUnjustified, bool mostDamageUnjustified)
 {
-	if (getZone() != ZONE_PVP) {
-		return Creature::dropCorpse(lastHitCreature, mostDamageCreature, lastHitUnjustified, mostDamageUnjustified);
-	}
-
-	Player* lastHitPlayer = nullptr;
-	if (lastHitCreature) {
-		lastHitPlayer = lastHitCreature->getPlayer();
-		if (!lastHitPlayer) {
-			Creature* lastHitMaster = lastHitCreature->getMaster();
-			if (lastHitMaster) {
-				lastHitPlayer = lastHitMaster->getPlayer();
-			}
-		}
-	}
-
-	if (!lastHitPlayer) {
+	if (getZone() != ZONE_PVP || !Player::lastHitIsPlayer(lastHitCreature)) {
 		return Creature::dropCorpse(lastHitCreature, mostDamageCreature, lastHitUnjustified, mostDamageUnjustified);
 	}
 
@@ -3841,6 +3803,20 @@ bool Player::isImmune(ConditionType_t type) const
 bool Player::isAttackable() const
 {
 	return !hasFlag(PlayerFlag_CannotBeAttacked);
+}
+
+bool Player::lastHitIsPlayer(Creature* lastHitCreature)
+{
+	if (!lastHitCreature) {
+		return false;
+	}
+
+	if (lastHitCreature->getPlayer()) {
+		return true;
+	}
+
+	Creature* lastHitMaster = lastHitCreature->getMaster();
+	return lastHitMaster && lastHitMaster->getPlayer();
 }
 
 void Player::changeHealth(int32_t healthChange, bool sendHealthChange/* = true*/)

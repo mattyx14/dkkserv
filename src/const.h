@@ -389,6 +389,7 @@ enum WeaponAction_t : uint8_t {
 };
 
 enum WieldInfo_t {
+	WIELDINFO_NONE = 0 << 0,
 	WIELDINFO_LEVEL = 1 << 0,
 	WIELDINFO_MAGLV = 1 << 1,
 	WIELDINFO_SKILL = 1 << 2,
@@ -484,7 +485,7 @@ enum item_t : uint16_t {
 
 	ITEM_REWARD_CONTAINER = 21518,
 	ITEM_REWARD_CHEST = 21584,
-	
+
 	ITEM_DEPOT = 2594,
 	ITEM_LOCKER1 = 2589,
 	ITEM_INBOX = 14404,

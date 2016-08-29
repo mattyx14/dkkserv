@@ -122,6 +122,19 @@ Event* Weapons::getEvent(const std::string& nodeName)
 	return nullptr;
 }
 
+bool Weapons::registerLuaEvent(Event* event)
+{
+	Weapon* weapon = static_cast<Weapon*>(event); //event is guaranteed to be a Weapon
+
+	auto result = weapons.emplace(weapon->getID(), weapon);
+	if (!result.second) {
+		delete weapons.at(weapon->getID());
+		weapons.erase(weapon->getID());
+		weapons.emplace(weapon->getID(), weapon);
+	}
+	return result.second;
+}
+
 bool Weapons::registerEvent(Event* event, const pugi::xml_node&)
 {
 	Weapon* weapon = static_cast<Weapon*>(event); //event is guaranteed to be a Weapon
@@ -143,7 +156,6 @@ int32_t Weapons::getMaxMeleeDamage(int32_t attackSkill, int32_t attackValue)
 int32_t Weapons::getMaxWeaponDamage(uint32_t level, int32_t attackSkill, int32_t attackValue, float attackFactor)
 {
 	return static_cast<int32_t>(std::round((level / 2) + (((((attackSkill / 4.) + 1) * (attackValue / 3.)) * 1.5) / attackFactor)));
-	// return static_cast<int32_t>(std::ceil((2.5 * (attackValue * (attackSkill + 6) / 18 + (level - 1) / 10)) / attackFactor));
 }
 
 Weapon::Weapon(LuaScriptInterface* interface) :
@@ -153,19 +165,17 @@ Weapon::Weapon(LuaScriptInterface* interface) :
 	id = 0;
 	level = 0;
 	magLevel = 0;
-	skillLevel = 0;
 	mana = 0;
 	manaPercent = 0;
+	health = 0;
+	healthPercent = 0;
+	wieldInfo = 0;
 	soul = 0;
 	premium = false;
 	enabled = true;
 	wieldUnproperly = false;
-	swing = false;
 	breakChance = 0;
 	action = WEAPONACTION_NONE;
-	params.blockedByArmor = true;
-	params.blockedByShield = true;
-	params.combatType = COMBAT_PHYSICALDAMAGE;
 }
 
 bool Weapon::configureEvent(const pugi::xml_node& node)
@@ -187,10 +197,6 @@ bool Weapon::configureEvent(const pugi::xml_node& node)
 
 	if ((attr = node.attribute("mana"))) {
 		mana = pugi::cast<uint32_t>(attr.value());
-	}
-
-	if ((attr = node.attribute("skill"))) {
-		skillLevel = pugi::cast<uint32_t>(attr.value());
 	}
 
 	if ((attr = node.attribute("manapercent"))) {
@@ -222,10 +228,6 @@ bool Weapon::configureEvent(const pugi::xml_node& node)
 
 	if ((attr = node.attribute("unproperly"))) {
 		wieldUnproperly = attr.as_bool();
-	}
-
-	if ((attr = node.attribute("swing"))) {
-		swing = attr.as_bool();
 	}
 
 	std::list<std::string> vocStringList;
@@ -272,10 +274,6 @@ bool Weapon::configureEvent(const pugi::xml_node& node)
 		wieldInfo |= WIELDINFO_MAGLV;
 	}
 
-	if (getReqSkillLv() > 0) {
-		wieldInfo |= WIELDINFO_SKILL;
-	}
-
 	if (!vocationString.empty()) {
 		wieldInfo |= WIELDINFO_VOCREQ;
 	}
@@ -290,7 +288,6 @@ bool Weapon::configureEvent(const pugi::xml_node& node)
 		it.vocationString = vocationString;
 		it.minReqLevel = getReqLevel();
 		it.minReqMagicLevel = getReqMagLv();
-		it.minReqSkillLevel = getReqSkillLv();
 	}
 
 	configureWeapon(Item::items[id]);
@@ -328,6 +325,10 @@ int32_t Weapon::playerWeaponCheck(Player* player, Creature* target, uint8_t shoo
 			return 0;
 		}
 
+		if (player->getHealth() < getHealthCost(player)) {
+			return 0;
+		}
+
 		if (player->getSoul() < soul) {
 			return 0;
 		}
@@ -348,10 +349,6 @@ int32_t Weapon::playerWeaponCheck(Player* player, Creature* target, uint8_t shoo
 		}
 
 		if (player->getMagicLevel() < getReqMagLv()) {
-			damageModifier = (isWieldedUnproperly() ? damageModifier / 2 : 0);
-		}
-
-		if (player->getSkillLevel(player->getWeaponType()) < getReqSkillLv()) {
 			damageModifier = (isWieldedUnproperly() ? damageModifier / 2 : 0);
 		}
 		return damageModifier;
@@ -457,6 +454,12 @@ void Weapon::onUsedWeapon(Player* player, Item* item, Tile* destTile) const
 		player->changeMana(-static_cast<int32_t>(manaCost));
 	}
 
+	int32_t healthCost = getHealthCost(player);
+	if (healthCost != 0) {
+		player->changeHealth(-static_cast<int32_t>(healthCost));
+		player->sendMagicEffect(player->getPosition(), CONST_ME_DRAWBLOOD);
+	}
+
 	if (!player->hasFlag(PlayerFlag_HasInfiniteSoul) && soul > 0) {
 		player->changeSoul(-static_cast<int32_t>(soul));
 	}
@@ -499,6 +502,19 @@ uint32_t Weapon::getManaCost(const Player* player) const
 	}
 
 	return (player->getMaxMana() * manaPercent) / 100;
+}
+
+int32_t Weapon::getHealthCost(const Player* player) const
+{
+	if (health != 0) {
+		return health;
+	}
+
+	if (healthPercent == 0) {
+		return 0;
+	}
+
+	return (player->getMaxHealth() * healthPercent) / 100;
 }
 
 bool Weapon::executeUseWeapon(Player* player, const LuaVariant& var) const
@@ -630,7 +646,6 @@ WeaponDistance::WeaponDistance(LuaScriptInterface* interface) :
 {
 	params.blockedByArmor = true;
 	params.combatType = COMBAT_PHYSICALDAMAGE;
-	swing = params.blockedByShield = false;
 }
 
 void WeaponDistance::configureWeapon(const ItemType& it)

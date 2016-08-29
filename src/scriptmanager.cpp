@@ -30,6 +30,7 @@
 #include "globalevent.h"
 #include "events.h"
 #include "modules.h"
+#include "script.h"
 
 Actions* g_actions = nullptr;
 CreatureEvents* g_creatureEvents = nullptr;
@@ -41,6 +42,7 @@ TalkActions* g_talkActions = nullptr;
 MoveEvents* g_moveEvents = nullptr;
 Weapons* g_weapons = nullptr;
 Modules* g_modules = nullptr;
+Scripts* g_scripts = nullptr;
 
 extern LuaEnvironment g_luaEnvironment;
 
@@ -60,6 +62,7 @@ ScriptingManager::~ScriptingManager()
 	delete g_chat;
 	delete g_creatureEvents;
 	delete g_globalEvents;
+	delete g_scripts;
 }
 
 bool ScriptingManager::loadScriptSystems()
@@ -70,14 +73,6 @@ bool ScriptingManager::loadScriptSystems()
 
 	g_chat = new Chat();
 
-	g_weapons = new Weapons();
-	if (!g_weapons->loadFromXml()) {
-		std::cout << "> ERROR: Unable to load weapons!" << std::endl;
-		return false;
-	}
-
-	g_weapons->loadDefaults();
-
 	g_spells = new Spells();
 	if (!g_spells->loadFromXml()) {
 		std::cout << "> ERROR: Unable to load spells!" << std::endl;
@@ -85,10 +80,6 @@ bool ScriptingManager::loadScriptSystems()
 	}
 
 	g_actions = new Actions();
-	if (!g_actions->loadFromXml()) {
-		std::cout << "> ERROR: Unable to load actions!" << std::endl;
-		return false;
-	}
 
 	g_talkActions = new TalkActions();
 	if (!g_talkActions->loadFromXml()) {
@@ -114,6 +105,9 @@ bool ScriptingManager::loadScriptSystems()
 		return false;
 	}
 
+	g_weapons = new Weapons();
+	g_weapons->loadDefaults();
+
 	g_events = new Events();
 	if (!g_events->load()) {
 		std::cout << "> ERROR: Unable to load events!" << std::endl;
@@ -123,6 +117,12 @@ bool ScriptingManager::loadScriptSystems()
 	g_modules = new Modules();
 	if (!g_modules->loadFromXml()) {
 		std::cout << "> ERROR: Unable to load modules!" << std::endl;
+		return false;
+	}
+
+	g_scripts = new Scripts();
+	if (!g_scripts->loadScripts("scripts")) {
+		std::cout << "> ERROR: Unable to load scripts!" << std::endl;
 		return false;
 	}
 
