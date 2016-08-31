@@ -2660,6 +2660,7 @@ void LuaScriptInterface::registerFunctions()
 	registerMethod("Action", "uid", LuaScriptInterface::luaActionUid);
 	registerMethod("Action", "allowFarUse", LuaScriptInterface::luaActionAllowFarUse);
 
+	// CreatureEvent
 	registerClass("CreatureEvent", "", LuaScriptInterface::luaCreateCreatureEvent);
 	registerMetaMethod("CreatureEvent", "__gc", LuaScriptInterface::luaDeleteCreatureEvent);
 	registerMethod("CreatureEvent", "type", LuaScriptInterface::luaCreatureEventType);
@@ -2678,6 +2679,7 @@ void LuaScriptInterface::registerFunctions()
 	registerMethod("CreatureEvent", "onManaChange", LuaScriptInterface::luaCreatureEventOnCallback);
 	registerMethod("CreatureEvent", "onExtendedOpcode", LuaScriptInterface::luaCreatureEventOnCallback);
 
+	// MoveEvent
 	registerClass("MoveEvent", "", LuaScriptInterface::luaCreateMoveEvent);
 	registerMetaMethod("MoveEvent", "__gc", LuaScriptInterface::luaDeleteMoveEvent);
 	registerMethod("MoveEvent", "type", LuaScriptInterface::luaMoveEventType);
@@ -2696,6 +2698,7 @@ void LuaScriptInterface::registerFunctions()
 	registerMethod("MoveEvent", "onAddItem", LuaScriptInterface::luaMoveEventOnCallback);
 	registerMethod("MoveEvent", "onRemoveItem", LuaScriptInterface::luaMoveEventOnCallback);
 
+	// GlobalEvent
 	registerClass("GlobalEvent", "", LuaScriptInterface::luaCreateGlobalEvent);
 	registerMetaMethod("GlobalEvent", "__gc", LuaScriptInterface::luaDeleteGlobalEvent);
 	registerMethod("GlobalEvent", "type", LuaScriptInterface::luaGlobalEventType);
@@ -2709,6 +2712,7 @@ void LuaScriptInterface::registerFunctions()
 	registerMethod("GlobalEvent", "onShutdown", LuaScriptInterface::luaGlobalEventOnCallback);
 	registerMethod("GlobalEvent", "onRecord", LuaScriptInterface::luaGlobalEventOnCallback);
 
+	// Weapon
 	registerClass("Weapon", "", LuaScriptInterface::luaCreateWeapon);
 	registerMetaMethod("Weapon", "__gc", LuaScriptInterface::luaDeleteWeapon);
 	registerMethod("Weapon", "type", LuaScriptInterface::luaWeaponType);
@@ -2732,6 +2736,7 @@ void LuaScriptInterface::registerFunctions()
 	registerMethod("Weapon", "minDamage", LuaScriptInterface::luaWeaponWandMinChange);
 	registerMethod("Weapon", "maxDamage", LuaScriptInterface::luaWeaponWandMaxChange);
 	registerMethod("Weapon", "element", LuaScriptInterface::luaWeaponWandElement);
+
 }
 
 #undef registerEnum
@@ -6116,7 +6121,7 @@ int LuaScriptInterface::luaItemSplit(lua_State* L)
 	}
 
 	Item* item = *itemPtr;
-	if (!item || !item->isStackable()) {
+	if (!item || !item->isStackable() || item->isRemoved()) {
 		lua_pushnil(L);
 		return 1;
 	}
@@ -6529,7 +6534,7 @@ int LuaScriptInterface::luaItemTransform(lua_State* L)
 	}
 
 	Item*& item = *itemPtr;
-	if (!item) {
+	if (!item || item->isRemoved()) {
 		lua_pushnil(L);
 		return 1;
 	}
@@ -9769,7 +9774,6 @@ int LuaScriptInterface::luaPlayerEnterMarket(lua_State* L)
 	}
 	return 1;
 }
-
 
 // Monster
 int LuaScriptInterface::luaMonsterCreate(lua_State* L)
@@ -13585,8 +13589,6 @@ int LuaScriptInterface::luaWeaponWandElement(lua_State* L)
 	}
 	return 1;
 }
-
-
 
 int LuaScriptInterface::luaWeaponPremium(lua_State* L)
 {

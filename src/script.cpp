@@ -45,7 +45,6 @@ bool Scripts::loadScripts(string folderName)
 		return false;
 	}
 
-	cout << ">> Loading lua scripts" << endl;
 	recursive_directory_iterator endit;
 	typedef vector<path> vec;
 	vec v;

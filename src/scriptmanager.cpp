@@ -73,6 +73,14 @@ bool ScriptingManager::loadScriptSystems()
 
 	g_chat = new Chat();
 
+	g_weapons = new Weapons();
+	if (!g_weapons->loadFromXml()) {
+		std::cout << "> ERROR: Unable to load weapons!" << std::endl;
+		return false;
+	}
+
+	g_weapons->loadDefaults();
+
 	g_spells = new Spells();
 	if (!g_spells->loadFromXml()) {
 		std::cout << "> ERROR: Unable to load spells!" << std::endl;
@@ -80,6 +88,10 @@ bool ScriptingManager::loadScriptSystems()
 	}
 
 	g_actions = new Actions();
+	if (!g_actions->loadFromXml()) {
+		std::cout << "> ERROR: Unable to load actions!" << std::endl;
+		return false;
+	}
 
 	g_talkActions = new TalkActions();
 	if (!g_talkActions->loadFromXml()) {
@@ -105,24 +117,21 @@ bool ScriptingManager::loadScriptSystems()
 		return false;
 	}
 
-	g_weapons = new Weapons();
-	g_weapons->loadDefaults();
-
 	g_events = new Events();
 	if (!g_events->load()) {
 		std::cout << "> ERROR: Unable to load events!" << std::endl;
 		return false;
 	}
 
-	g_modules = new Modules();
-	if (!g_modules->loadFromXml()) {
-		std::cout << "> ERROR: Unable to load modules!" << std::endl;
-		return false;
-	}
-
 	g_scripts = new Scripts();
 	if (!g_scripts->loadScripts("scripts")) {
 		std::cout << "> ERROR: Unable to load scripts!" << std::endl;
+		return false;
+	}
+
+	g_modules = new Modules();
+	if (!g_modules->loadFromXml()) {
+		std::cout << "> ERROR: Unable to load modules!" << std::endl;
 		return false;
 	}
 

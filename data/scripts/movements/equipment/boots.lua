@@ -83,4 +83,3 @@ equip:vocation("paladin", true, true)
 equip:vocation("royal paladin")
 equip:id(18406)
 equip:register()
-
