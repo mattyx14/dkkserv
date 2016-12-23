@@ -17,7 +17,6 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-#include <chrono>
 #include "otpch.h"
 
 #include "protocollogin.h"
@@ -86,9 +85,12 @@ void ProtocolLogin::getCastingStreamsList(const std::string& password, uint16_t 
 
 	const auto& casts = ProtocolGame::getLiveCasts();
 	output->addByte(casts.size());
+	std::ostringstream entry;
 	for (const auto& cast : casts) {
 		output->addByte(0);
-		output->addString(cast.first->getName());
+		entry << cast.first->getName() << " [" << cast.second->getSpectatorCount() << " viewers]";
+		output->addString(entry.str());
+		entry.str(std::string());
 	}
 	output->addByte(0);
 	output->addByte(g_config.getBoolean(ConfigManager::FREE_PREMIUM));
@@ -122,9 +124,14 @@ void ProtocolLogin::getCharacterList(const std::string& accountName, const std::
 	}
 
 	//Add premium days
-	output->addByte(0);//0 = normal (free/premium), 1 = frozen, 2 = suspended
-	output->addByte(g_config.getBoolean(ConfigManager::FREE_PREMIUM) || account.premiumDays > 0);
-	output->add<uint32_t>(g_config.getBoolean(ConfigManager::FREE_PREMIUM) ? 0 : (time(nullptr) + (account.premiumDays * 86400)));
+	output->addByte(0);
+	if (g_config.getBoolean(ConfigManager::FREE_PREMIUM)) {
+		output->addByte(1);
+		output->add<uint32_t>(0);
+	} else {
+		output->addByte(0);
+		output->add<uint32_t>(time(nullptr) + (account.premiumDays * 86400));
+	}
 
 	send(output);
 
@@ -154,7 +161,9 @@ void ProtocolLogin::onRecvFirstMessage(NetworkMessage& msg)
 	 */
 
 	if (version <= 760) {
-		disconnectClient(g_config.getString(ConfigManager::VERSION_STR), version);
+		std::ostringstream ss;
+		ss << "Only clients with protocol " << g_config.getString(ConfigManager::VERSION_STR) << " allowed!";
+		disconnectClient(ss.str(), version);
 		return;
 	}
 
@@ -172,7 +181,9 @@ void ProtocolLogin::onRecvFirstMessage(NetworkMessage& msg)
 	setXTEAKey(key);
 
 	if (version < g_config.getNumber(ConfigManager::VERSION_MIN) || version > g_config.getNumber(ConfigManager::VERSION_MAX)) {
-		disconnectClient(g_config.getString(ConfigManager::VERSION_STR), version);
+		std::ostringstream ss;
+		ss << "Only clients with protocol " << g_config.getString(ConfigManager::VERSION_STR) << " allowed!";
+		disconnectClient(ss.str(), version);
 		return;
 	}
 

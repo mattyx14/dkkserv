@@ -26,11 +26,6 @@
 
 extern LuaEnvironment g_luaEnvironment;
 
-BaseEvents::BaseEvents()
-{
-	loaded = false;
-}
-
 bool BaseEvents::loadFromXml()
 {
 	if (loaded) {
@@ -73,9 +68,8 @@ bool BaseEvents::loadFromXml()
 		if (scriptAttribute) {
 			std::string scriptFile = "scripts/" + std::string(scriptAttribute.as_string());
 			success = event->checkScript(basePath, scriptsName, scriptFile) && event->loadScript(basePath + scriptFile);
-			event->loadFunction(node.attribute("function"), true);
 		} else {
-			success = event->loadFunction(node.attribute("function"), false);
+			success = event->loadFunction(node.attribute("function"));
 		}
 
 		if (!success || !registerEvent(event, node)) {
@@ -92,8 +86,7 @@ bool BaseEvents::reload()
 	return loadFromXml();
 }
 
-Event::Event(LuaScriptInterface* interface) :
-	scripted(false), scriptId(0), scriptInterface(interface) {}
+Event::Event(LuaScriptInterface* interface) : scriptInterface(interface) {}
 
 Event::Event(const Event* copy) :
 	scripted(copy->scripted), scriptId(copy->scriptId), scriptInterface(copy->scriptInterface) {}
@@ -148,31 +141,6 @@ bool Event::loadScript(const std::string& scriptFile)
 	scripted = true;
 	scriptId = id;
 	return true;
-}
-
-bool Event::loadCallback()
-{
-	if (!scriptInterface || scriptId != 0) {
-		std::cout << "Failure: [Event::loadCallback] scriptInterface == nullptr. scriptid = " << scriptId << std::endl;
-		return false;
-	}
-
-	int32_t id = scriptInterface->getEvent();
-	if (id == -1) {
-		std::cout << "[Warning - Event::loadCallback] Event " << getScriptEventName() << " not found. " << std::endl;
-		return false;
-	}
-
-	scripted = true;
-	scriptId = id;
-	return true;
-}
-
-CallBack::CallBack()
-{
-	scriptId = 0;
-	scriptInterface = nullptr;
-	loaded = false;
 }
 
 bool CallBack::loadCallBack(LuaScriptInterface* interface, const std::string& name)

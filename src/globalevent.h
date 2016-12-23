@@ -54,8 +54,6 @@ class GlobalEvents final : public BaseEvents
 		GlobalEventMap getEventMap(GlobalEvent_t type);
 		static void clearMap(GlobalEventMap& map);
 
-		bool registerLuaEvent(Event* event);
-
 	protected:
 		std::string getScriptBaseName() const final {
 			return "globalevents";
@@ -71,7 +69,7 @@ class GlobalEvents final : public BaseEvents
 		LuaScriptInterface scriptInterface;
 
 		GlobalEventMap thinkMap, serverMap, timerMap;
-		int32_t thinkEventId, timerEventId;
+		int32_t thinkEventId = 0, timerEventId = 0;
 };
 
 class GlobalEvent final : public Event
@@ -87,22 +85,13 @@ class GlobalEvent final : public Event
 		GlobalEvent_t getEventType() const {
 			return eventType;
 		}
-		void setEventType(GlobalEvent_t type) {
-			eventType = type;
-		}
 
-		std::string getName() const {
+		const std::string& getName() const {
 			return name;
-		}
-		void setName(std::string eventName) {
-			name = eventName;
 		}
 
 		uint32_t getInterval() const {
 			return interval;
-		}
-		void setInterval(uint32_t eventInterval) {
-			interval |= eventInterval;
 		}
 
 		int64_t getNextExecution() const {
@@ -113,13 +102,13 @@ class GlobalEvent final : public Event
 		}
 
 	protected:
-		GlobalEvent_t eventType;
+		GlobalEvent_t eventType = GLOBALEVENT_NONE;
 
 		std::string getScriptEventName() const final;
 
 		std::string name;
-		int64_t nextExecution;
-		uint32_t interval;
+		int64_t nextExecution = 0;
+		uint32_t interval = 0;
 };
 
 #endif

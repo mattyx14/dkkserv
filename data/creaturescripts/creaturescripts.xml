@@ -28,11 +28,6 @@
 	<event type="preparedeath" name="MonsterHeal2" script="monster/monster_heal2.lua" />
 	<event type="death" name="WhiteDeerDeath" script="monster/whitedeer.lua" />
 	<event type="death" name="WhiteDeerScoutsDeath" script="monster/whitedeer_scouts.lua" />
-	<!-- 
-		<event type="think" name="OmrafirExplode" script="monster/omrafir explode.lua" />
-		<event type="death" name="RagingMage" script="monster/raging mage.lua" />
-		<event type="death" name="RagingMage2" script="monster/raging mage2.lua" />
-	 -->
 	<event type="death" name="Yielothax" script="monster/yielothax.lua" />
 	<event type="death" name="NorthernPike" script="monster/northern pike.lua" />
 	<event type="death" name="GloothHorror" script="monster/glooth horror.lua" />

@@ -13297,7 +13297,7 @@
 	</item>
 	<item id="7590" article="a" name="great mana potion">
 		<attribute key="weight" value="310" />
-		<attribute key="description" value="This potion can only be consumed by sorcerers and druids of level 80 or higher." />
+		<attribute key="description" value="This potion can only be consumed by sorcerers and druids of level 100 or higher." />
 	</item>
 	<item id="7591" article="a" name="great health potion">
 		<attribute key="weight" value="310" />
@@ -15324,11 +15324,11 @@
 	<item fromid="8460" toid="8471" name="earth" />
 	<item id="8472" article="a" name="great spirit potion">
 		<attribute key="weight" value="310" />
-		<attribute key="description" value="This potion can only be consumed by paladins of level 130 or higher." />
+		<attribute key="description" value="This potion can only be consumed by paladins of level 150 or higher." />
 	</item>
 	<item id="8473" article="an" name="ultimate health potion">
 		<attribute key="weight" value="310" />
-		<attribute key="description" value="This potion can only be consumed by knights of level 130 or higher." />
+		<attribute key="description" value="This potion can only be consumed by knights of level 150 or higher." />
 	</item>
 	<item id="8474" article="an" name="antidote potion">
 		<attribute key="weight" value="265" />
@@ -28878,6 +28878,16 @@
 		<attribute key="weight" value="1500" />
 	</item>
 	<item id="20668" article="a" name="shadowy statue" />
+	<item id="20669" article="a" name="magic wall">
+		<attribute key="type" value="magicfield" />
+		<attribute key="decayTo" value="0" />
+		<attribute key="duration" value="20" />
+	</item>
+	<item id="20670" article="a" name="rush wood">
+		<attribute key="type" value="magicfield" />
+		<attribute key="decayTo" value="0" />
+		<attribute key="duration" value="45" />
+	</item>
 	<item fromid="20671" toid="20691" article="a" name="basalt crystal wall" />
 	<item id="20692" name="the spike of a crystal drill" />
 	<item fromid="20693" toid="20700" article="a" name="large crystal" />
@@ -29630,7 +29640,7 @@
 		<attribute key="weight" value="800" />
 	</item>
 	<item id="21570" name="the world board">
-		<attribute key="description" value="This board will notify you of currently active mini world changes all over Tibia." />
+		<attribute key="description" value="This board will notify you of currently active mini world changes all over world." />
 	</item>
 	<item id="21584" article="a" name="reward chest">
 		<attribute key="type" value="rewardchest" />
@@ -30555,7 +30565,7 @@
 		<attribute key="corpseType" value="blood" />
 	</item>
 	<item id="22691" article="a" name="jade amulet">
-		<attribute key="description" value="Golden lines are embedded in the amulet and show mysterious symbols. It was awarded by TibiaHoF." />
+		<attribute key="description" value="Golden lines are embedded in the amulet and show mysterious symbols." />
 		<attribute key="weight" value="400" />
 		<attribute key="slotType" value="necklace" />
 	</item>
@@ -32597,15 +32607,15 @@
 	</item>
 	<item id="26029" article="a" name="ultimate mana potion">
 		<attribute key="weight" value="310" />
-		<attribute key="description" value="This potion can only be consumed by magicians of level 150 or higher." />
+		<attribute key="description" value="This potion can only be consumed by magicians of level 200 or higher." />
 	</item>
 	<item id="26030" article="a" name="ultimate spirit potion">
 		<attribute key="weight" value="310" />
-		<attribute key="description" value="This potion can only be consumed by paladins of level 200 or higher." />
+		<attribute key="description" value="This potion can only be consumed by paladins of level 230 or higher." />
 	</item>
 	<item id="26031" article="an" name="supreme health potion">
 		<attribute key="weight" value="310" />
-		<attribute key="description" value="This potion can only be consumed by knights of level 200 or higher." />
+		<attribute key="description" value="This potion can only be consumed by knights of level 230 or higher." />
 	</item>
 	<item id="25453" article="a" name="depot box of Fynn Castle" />
 	<item id="25454" article="a" name="depot box of Anshara Desert" />

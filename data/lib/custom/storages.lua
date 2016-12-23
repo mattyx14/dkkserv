@@ -15,7 +15,7 @@ Storage = {
 		AxeBlowsFace = 8291
 	},
 	FerumbrasTowerAccess = 2548,
-	FreeBless = 5774, -- For testings
+	infiniteBless = 5774, -- For testings
 	Missions = {
 		DjinnMission = {
 			Done = 24073

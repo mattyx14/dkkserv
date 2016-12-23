@@ -3,8 +3,6 @@
 worldType = "pvp"
 hotkeyAimbotEnabled = true
 protectionLevel = 0
-killsToRedSkull = 5
-killsToBlackSkull = 8
 pzLocked = 60 * 1000
 removeChargesFromRunes = true
 timeToDecreaseFrags = 24 * 60 * 60 * 1000
@@ -12,6 +10,12 @@ whiteSkullTime = 15 * 60 * 1000
 stairJumpExhaustion = 2 * 1000
 experienceByKillingPlayers = false
 expFromPlayersLevelRange = 75
+dayKillsToRedSkull = 3
+weekKillsToRedSkull = 5
+monthKillsToRedSkull = 10
+redSkullDuration = 10
+blackSkullDuration = 15
+orangeSkullDuration = 1
 
 -- Connection Config
 -- NOTE: maxPlayers set to 0 means no limit
@@ -29,13 +33,18 @@ statusTimeout = 1 * 1000
 replaceKickOnLogin = true
 maxPacketsPerSecond = 25
 
--- Version
+-- Version Manual
 clientVersionMin = 1100
 clientVersionMax = 1100
-clientVersionStr = "52.00"
+clientVersionStr = "Only clients with protocol 60 or allowed!"
+
+-- Depot Limit
+freeDepotLimit = 2000
+premiumDepotLimit = 10000
+depotBoxes = 17
 
 -- Casting System 
-enableLiveCasting = false
+enableLiveCasting = true
 liveCastPort = 7173
 
 -- Deaths
@@ -59,8 +68,8 @@ mapName = "darkkonia"
 mapAuthor = "Mattyx14"
 
 -- Market
-marketOfferDuration = 2 * 24 * 60 * 60
-premiumToCreateMarketOffer = false
+marketOfferDuration = 30 * 24 * 60 * 60
+premiumToCreateMarketOffer = true
 checkExpiredMarketOffersEachMinutes = 60
 maxMarketOffersAtATimePerPlayer = 100
 
@@ -79,10 +88,8 @@ kickIdlePlayerAfterMinutes = 15
 maxMessageBuffer = 4
 emoteSpells = true
 classicEquipmentSlots = false
-allowWalkthrough = false
 coinPacketSize = 25
 coinImagesURL = "http://darkkonia.sytes.net/"
-allowBlockSpawn = true
 
 -- Rates
 -- NOTE: rateExp is not used if you have enabled stages in data/XML/stages.xml

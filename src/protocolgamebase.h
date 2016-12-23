@@ -45,14 +45,7 @@ class ProtocolGameBase : public Protocol {
 
 	protected:
 		explicit ProtocolGameBase(Connection_ptr connection):
-			Protocol(connection),
-			player(nullptr),
-			eventConnect(0),
-			version(CLIENT_VERSION_MIN),
-			challengeTimestamp(0),
-			challengeRandom(0),
-			debugAssertSent(false),
-			acceptPackets(false) {}
+			Protocol(connection) {}
 
 		virtual void writeToOutputBuffer(const NetworkMessage& msg, bool broadcast = true) = 0;
 		void onConnect() final;
@@ -76,6 +69,7 @@ class ProtocolGameBase : public Protocol {
 
 		static void RemoveTileThing(NetworkMessage& msg, const Position& pos, uint32_t stackpos);
 
+		void sendChannelMessage(const std::string& author, const std::string& text, SpeakClasses type, uint16_t channel);
 		void sendUpdateTile(const Tile* tile, const Position& pos);
 		void sendContainer(uint8_t cid, const Container* container, bool hasParent, uint16_t firstIndex);
 		void sendChannel(uint16_t channelId, const std::string& channelName, const UsersMap* channelUsers, const InvitedMap* invitedUsers);
@@ -88,6 +82,8 @@ class ProtocolGameBase : public Protocol {
 		//inventory
 		void sendInventoryItem(slots_t slot, const Item* item);
 		void sendInventoryClientIds();
+		// Unjust Panel
+		void sendUnjustifiedPoints(const uint8_t& dayProgress, const uint8_t& dayLeft, const uint8_t& weekProgress, const uint8_t& weekLeft, const uint8_t& monthProgress, const uint8_t& monthLeft, const uint8_t& skullDuration);
 
 		void sendSkills();
 
@@ -105,15 +101,17 @@ class ProtocolGameBase : public Protocol {
 		bool canSee(const Creature*) const;
 		bool canSee(const Position& pos) const;
 
-		Player* player;
-		uint32_t eventConnect;
-		uint16_t version;
+		Player* player = nullptr;
+		uint32_t eventConnect = 0;
+		uint16_t version = CLIENT_VERSION_MIN;
 
-		uint32_t challengeTimestamp;
-		uint8_t challengeRandom;
+		uint32_t challengeTimestamp = 0;
+		uint8_t challengeRandom = 0;
 
-		bool debugAssertSent;
-		bool acceptPackets;
+		bool debugAssertSent = false;
+		bool acceptPackets = false;
+
+		bool loggedIn = false;
 
 		std::unordered_set<uint32_t> knownCreatureSet;
 };

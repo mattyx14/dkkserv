@@ -4,7 +4,6 @@
 	<action itemid="1740" script="quests/quests.lua" />
 	<action fromid="1747" toid="1749" script="quests/quests.lua" />
 	<action actionid="2000" script="quests/system.lua" />
-	<action uniqueid="30015" script="quests/annihilator.lua" />
 
 	<!-- Tools -->
 	<action itemid="2120" script="tools/rope.lua" />
@@ -217,15 +216,15 @@
 	<action itemid="2023" script="liquids/fluids.lua" />
 	<action fromid="2031" toid="2034" script="liquids/fluids.lua" />
 	<action fromid="2574" toid="2577" script="liquids/fluids.lua" />
-		<action fromid="7588" toid="7591" script="liquids/potions.lua" />
-		<action itemid="7618" script="liquids/potions.lua" />
-		<action itemid="7620" script="liquids/potions.lua" />
-		<action fromid="8472" toid="8474" script="liquids/potions.lua" />
-		<action itemid="8704" script="liquids/potions.lua" />
-		<action fromid="26029" toid="26031" script="liquids/potions.lua" />
-			<action itemid="7439" script="liquids/strengthening_potions.lua" />
-			<action itemid="7440" script="liquids/strengthening_potions.lua" />
-			<action itemid="7443" script="liquids/strengthening_potions.lua" />
+	<action itemid="6558" script="liquids/potions.lua" />
+	<action fromid="7439" toid="7440" script="liquids/potions.lua"/>
+	<action itemid="7443" script="liquids/potions.lua"/>
+	<action fromid="7588" toid="7591" script="liquids/potions.lua" />
+	<action itemid="7618" script="liquids/potions.lua" />
+	<action itemid="7620" script="liquids/potions.lua" />
+	<action fromid="8472" toid="8474" script="liquids/potions.lua" />
+	<action itemid="8704" script="liquids/potions.lua" />
+	<action fromid="26029" toid="26031" script="liquids/potions.lua" />
 
 	<!-- Doors -->
 	<action fromid="1209" toid="1214" script="other/doors.lua" />
@@ -289,7 +288,6 @@
 	<action itemid="5468" script="other/firebug.lua" />
 	<action fromid="5792" toid="5797" script="other/dice.lua" />
 	<action itemid="5957" script="other/lotteryticket.lua" />
-	<action itemid="6558" script="other/concentrated_demonic_blood.lua" />
 	<action itemid="6578" script="other/partyhat.lua" />
 	<action fromid="6570" toid="6571" script="other/surprisebag.lua" />
 	<action itemid="6576" script="other/fireworksrocket.lua" />
@@ -327,6 +325,7 @@
 	<action itemid="1386" script="other/teleport.lua" />
 	<action itemid="3678" script="other/teleport.lua" />
 	<action itemid="5543" script="other/teleport.lua" />
+	<action fromaid="6754" toaid="6756" script="other/teleport.lua" />
 	<action itemid="8599" script="other/teleport.lua" />
 
 	<!-- Dolls -->
@@ -337,8 +336,10 @@
 	<action itemid="6566" script="other/dolls.lua" />
 	<action itemid="8974" script="other/dolls.lua" />
 	<action itemid="8977" script="other/dolls.lua" />
-	<action itemid="8981" script="other/dolls.lua" />
-	<action itemid="8982" script="other/dolls.lua" />
+	<!-- Addon and mount dolls 
+		<action itemid="8981" script="other/dolls.lua" />
+		<action itemid="8982" script="other/dolls.lua" />
+	-->
 
 	<!-- Valuables -->
 	<action itemid="13670" script="valuables/randomitems.lua" />
@@ -347,4 +348,55 @@
 
 	<!-- Market -->
 	<action itemid="14405" function="market" />
+
+	<!-- Demon Oak -->
+	<action itemid="8293" script="quests/demon oak/demonOak.lua" />
+	<!-- <action fromuid="9008" touid="9011" script="quests/demon oak/demonOakChest.lua" /> -->
+	<action uniqueid="9009" script="quests/demon oak/demonOakGravestone.lua" />
+
+	<!-- Other -->
+	<action fromaid="50140" toaid="50144" script="oreWagons.lua" />
+	<!-- Mounts/Addons Dolls
+		<action itemid="8982" script="modalAD.lua"/>
+		<action itemid="9019" script="modalMD.lua"/>
+	 -->
+		<!-- Other Outfits -->
+		<!-- Pirate Outfit -->
+		<action uniqueid="6096" script="quests/outfits/outfits.lua" />
+			<action uniqueid="9010" script="quests/outfits/pirateLever.lua" />
+		<!-- Conjurer Outfit -->
+		<action uniqueid="2662" script="quests/outfits/outfits.lua" />
+			<action actionid="2080" script="quests/outfits/conjurerLever.lua" />
+			<action actionid="2081" script="quests/outfits/conjurerLever_two.lua" />
+		<!-- Death Herald Outfit -->
+		<action uniqueid="10008" script="quests/outfits/outfits.lua" />
+			<action actionid="39517" script="quests/outfits/portalDracula.lua" />
+		<!-- Assassin Outfit -->
+		<action uniqueid="9933" script="quests/outfits/outfits.lua" />
+		<!-- Chaos Acolyte Outfit -->
+		<action uniqueid="8820" script="quests/outfits/outfits.lua" />
+		<!-- Norse Outfit -->
+		<action uniqueid="7460" script="quests/outfits/outfits.lua" />
+		<!-- Deepling Outfit -->
+		<action uniqueid="15545" script="quests/outfits/outfits.lua" />
+		<!-- Demonhunter Outfit -->
+		<action uniqueid="7431" script="quests/outfits/outfits.lua" />
+		<!-- Brotherhood Outfit -->
+		<action uniqueid="5807" script="quests/outfits/outfits.lua" />
+		<!-- Oriental Outfit -->
+		<action uniqueid="8267" script="quests/outfits/outfits.lua" />
+		<!-- Marry Outfit -->
+		<action uniqueid="3697" script="quests/outfits/outfits.lua" />
+
+	<!-- Teleport items -->
+	<action fromaid="39512" toaid="39516" script="quests/itemPortal.lua" />
+
+	<!-- Annihilator lever -->
+	<action uniqueid="2208" script="quests/annihilator.lua" />
+
+	<!-- System Quest -->
+		<!-- Djinn Quest -->
+		<action actionid="2001" script="quests/system.lua" />
+		<!-- Anni Quest -->
+		<action actionid="2002" script="quests/system.lua" />
 </actions>

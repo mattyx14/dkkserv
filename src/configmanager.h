@@ -25,8 +25,6 @@
 class ConfigManager
 {
 	public:
-		ConfigManager();
-
 		enum boolean_config_t {
 			ALLOW_CHANGEOUTFIT,
 			ONE_PLAYER_ON_ACCOUNT,
@@ -44,7 +42,6 @@ class ConfigManager
 			WARN_UNSAFE_SCRIPTS,
 			CONVERT_UNSAFE_SCRIPTS,
 			CLASSIC_EQUIPMENT_SLOTS,
-			ALLOW_WALKTHROUGH,
 			ENABLE_LIVE_CASTING,
 			ALLOW_BLOCK_SPAWN,
 
@@ -88,8 +85,6 @@ class ConfigManager
 			RATE_MAGIC,
 			RATE_SPAWN,
 			HOUSE_PRICE,
-			KILLS_TO_RED,
-			KILLS_TO_BLACK,
 			MAX_MESSAGEBUFFER,
 			ACTIONS_DELAY_INTERVAL,
 			EX_ACTIONS_DELAY_INTERVAL,
@@ -112,6 +107,15 @@ class ConfigManager
 			LIVE_CAST_PORT,
 			VERSION_MIN,
 			VERSION_MAX,
+			FREE_DEPOT_LIMIT,
+			PREMIUM_DEPOT_LIMIT,
+			DEPOT_BOXES,
+			DAY_KILLS_TO_RED,
+			WEEK_KILLS_TO_RED,
+			MONTH_KILLS_TO_RED,
+			RED_SKULL_DURATION,
+			BLACK_SKULL_DURATION,
+			ORANGE_SKULL_DURATION,
 
 			LAST_INTEGER_CONFIG /* this must be the last one */
 		};
@@ -128,11 +132,11 @@ class ConfigManager
 		static int32_t getGlobalNumber(lua_State* L, const char* identifier, const int32_t defaultValue = 0);
 		static bool getGlobalBoolean(lua_State* L, const char* identifier, const bool defaultValue);
 
-		std::string string[LAST_STRING_CONFIG];
-		int32_t integer[LAST_INTEGER_CONFIG];
-		bool boolean[LAST_BOOLEAN_CONFIG];
+		std::string string[LAST_STRING_CONFIG] = {};
+		int32_t integer[LAST_INTEGER_CONFIG] = {};
+		bool boolean[LAST_BOOLEAN_CONFIG] = {};
 
-		bool loaded;
+		bool loaded = false;
 };
 
 #endif

@@ -30,8 +30,7 @@ extern Vocations g_vocations;
 extern ConfigManager g_config;
 extern Weapons* g_weapons;
 
-Weapons::Weapons():
-	scriptInterface("Weapon Interface")
+Weapons::Weapons()
 {
 	scriptInterface.initState();
 }
@@ -122,19 +121,6 @@ Event* Weapons::getEvent(const std::string& nodeName)
 	return nullptr;
 }
 
-bool Weapons::registerLuaEvent(Event* event)
-{
-	Weapon* weapon = static_cast<Weapon*>(event); //event is guaranteed to be a Weapon
-
-	auto result = weapons.emplace(weapon->getID(), weapon);
-	if (!result.second) {
-		delete weapons.at(weapon->getID());
-		weapons.erase(weapon->getID());
-		weapons.emplace(weapon->getID(), weapon);
-	}
-	return result.second;
-}
-
 bool Weapons::registerEvent(Event* event, const pugi::xml_node&)
 {
 	Weapon* weapon = static_cast<Weapon*>(event); //event is guaranteed to be a Weapon
@@ -155,27 +141,7 @@ int32_t Weapons::getMaxMeleeDamage(int32_t attackSkill, int32_t attackValue)
 //players
 int32_t Weapons::getMaxWeaponDamage(uint32_t level, int32_t attackSkill, int32_t attackValue, float attackFactor)
 {
-	return static_cast<int32_t>(std::round((level / 2) + (((((attackSkill / 4.) + 1) * (attackValue / 3.)) * 1.5) / attackFactor)));
-}
-
-Weapon::Weapon(LuaScriptInterface* interface) :
-	Event(interface)
-{
-	scripted = false;
-	id = 0;
-	level = 0;
-	magLevel = 0;
-	mana = 0;
-	manaPercent = 0;
-	health = 0;
-	healthPercent = 0;
-	wieldInfo = 0;
-	soul = 0;
-	premium = false;
-	enabled = true;
-	wieldUnproperly = false;
-	breakChance = 0;
-	action = WEAPONACTION_NONE;
+	return static_cast<int32_t>(std::round((level / 5) + (((((attackSkill / 4.) + 1) * (attackValue / 3.)) * 1.03) / attackFactor)));
 }
 
 bool Weapon::configureEvent(const pugi::xml_node& node)
@@ -216,7 +182,7 @@ bool Weapon::configureEvent(const pugi::xml_node& node)
 	}
 
 	if ((attr = node.attribute("action"))) {
-		action = getWeaponAction(attr.as_string());
+		action = getWeaponAction(asLowerCaseString(attr.as_string()));
 		if (action == WEAPONACTION_NONE) {
 			std::cout << "[Warning - Weapon::configureEvent] Unknown action " << attr.as_string() << std::endl;
 		}
@@ -322,10 +288,6 @@ int32_t Weapon::playerWeaponCheck(Player* player, Creature* target, uint8_t shoo
 		}
 
 		if (player->getMana() < getManaCost(player)) {
-			return 0;
-		}
-
-		if (player->getHealth() < getHealthCost(player)) {
 			return 0;
 		}
 
@@ -454,12 +416,6 @@ void Weapon::onUsedWeapon(Player* player, Item* item, Tile* destTile) const
 		player->changeMana(-static_cast<int32_t>(manaCost));
 	}
 
-	int32_t healthCost = getHealthCost(player);
-	if (healthCost != 0) {
-		player->changeHealth(-static_cast<int32_t>(healthCost));
-		player->sendMagicEffect(player->getPosition(), CONST_ME_DRAWBLOOD);
-	}
-
 	if (!player->hasFlag(PlayerFlag_HasInfiniteSoul) && soul > 0) {
 		player->changeSoul(-static_cast<int32_t>(soul));
 	}
@@ -504,19 +460,6 @@ uint32_t Weapon::getManaCost(const Player* player) const
 	return (player->getMaxMana() * manaPercent) / 100;
 }
 
-int32_t Weapon::getHealthCost(const Player* player) const
-{
-	if (health != 0) {
-		return health;
-	}
-
-	if (healthPercent == 0) {
-		return 0;
-	}
-
-	return (player->getMaxHealth() * healthPercent) / 100;
-}
-
 bool Weapon::executeUseWeapon(Player* player, const LuaVariant& var) const
 {
 	//onUseWeapon(player, var)
@@ -549,7 +492,7 @@ void Weapon::decrementItemCount(Item* item)
 }
 
 WeaponMelee::WeaponMelee(LuaScriptInterface* interface) :
-	Weapon(interface), elementType(COMBAT_NONE), elementDamage(0)
+	Weapon(interface)
 {
 	params.blockedByArmor = true;
 	params.blockedByShield = true;
@@ -642,7 +585,7 @@ int32_t WeaponMelee::getWeaponDamage(const Player* player, const Creature*, cons
 }
 
 WeaponDistance::WeaponDistance(LuaScriptInterface* interface) :
-	Weapon(interface), elementType(COMBAT_NONE), elementDamage(0)
+	Weapon(interface)
 {
 	params.blockedByArmor = true;
 	params.combatType = COMBAT_PHYSICALDAMAGE;
@@ -911,13 +854,6 @@ bool WeaponDistance::getSkillType(const Player* player, const Item*, skills_t& s
 		skillpoint = 0;
 	}
 	return true;
-}
-
-WeaponWand::WeaponWand(LuaScriptInterface* interface) :
-	Weapon(interface)
-{
-	minChange = 0;
-	maxChange = 0;
 }
 
 bool WeaponWand::configureEvent(const pugi::xml_node& node)

@@ -90,7 +90,7 @@ function Player:onMoveItem(item, count, fromPosition, toPosition, fromCylinder, 
 		self:sendCancelMessage('Sorry, not possible.')
 		return false
 	end
-
+	
 	if toPosition.x == CONTAINER_POSITION and toCylinder and toCylinder:getId() == 26052 then
 		self:sendCancelMessage(RETURNVALUE_NOTPOSSIBLE)
 		return false

@@ -43,28 +43,25 @@ extern Game g_game;
 
 struct TextMessage
 {
-	MessageClasses type;
+	MessageClasses type = MESSAGE_STATUS_DEFAULT;
 	std::string text;
 	Position position;
 	struct {
-		int32_t value;
+		int32_t value = 0;
 		TextColor_t color;
 	} primary, secondary;
 
-	TextMessage() {
-		type = MESSAGE_STATUS_DEFAULT;
-		primary.value = 0;
-		secondary.value = 0;
-	}
-	TextMessage(MessageClasses type, std::string text) : type(type), text(text) {
-		primary.value = 0;
-		secondary.value = 0;
-	}
+	TextMessage() = default;
+	TextMessage(MessageClasses type, std::string text) : type(type), text(std::move(text)) {}
 };
 
 class ProtocolGame final : public ProtocolGameBase
 {
 	public:
+		// static protocol information
+		enum {server_sends_first = true};
+		enum {protocol_identifier = 0}; // Not required as we send first
+		enum {use_checksum = true};
 		static const char* protocol_name() {
 			return "gameworld protocol";
 		}
@@ -169,9 +166,9 @@ class ProtocolGame final : public ProtocolGameBase
 		*   and then get broadcast to the rest of the spectators
 		*  \param text string containing the text message
 		*/
-		void broadcastSpectatorMessage(const std::string& text) {
+		void broadcastSpectatorMessage(const std::string& name, const std::string& text) {
 			if (player) {
-				sendChannelMessage("Spectator", text, TALKTYPE_CHANNEL_Y, CHANNEL_CAST);
+				sendChannelMessage(name, text, TALKTYPE_CHANNEL_Y, CHANNEL_CAST);
 			}
 		}
 
@@ -263,7 +260,6 @@ class ProtocolGame final : public ProtocolGameBase
 		void parseCloseChannel(NetworkMessage& msg);
 
 		//Send functions
-		void sendChannelMessage(const std::string& author, const std::string& text, SpeakClasses type, uint16_t channel);
 		void sendChannelEvent(uint16_t channelId, const std::string& playerName, ChannelEvent_t channelEvent);
 		void sendClosePrivate(uint16_t channelId);
 		void sendCreatePrivateChannel(uint16_t channelId, const std::string& channelName);
@@ -284,7 +280,6 @@ class ProtocolGame final : public ProtocolGameBase
 
 		void sendChangeSpeed(const Creature* creature, uint32_t speed);
 		void sendCancelTarget();
-		void sendCreatureVisible(const Creature* creature, bool visible);
 		void sendCreatureOutfit(const Creature* creature, const Outfit_t& outfit);
 		void sendTextMessage(const TextMessage& message);
 		void sendReLoginWindow(uint8_t unfairFightReduction);
@@ -350,14 +345,6 @@ class ProtocolGame final : public ProtocolGameBase
 		void MoveUpCreature(NetworkMessage& msg, const Creature* creature, const Position& newPos, const Position& oldPos);
 		void MoveDownCreature(NetworkMessage& msg, const Creature* creature, const Position& newPos, const Position& oldPos);
 
-		//container
-		void AddContainerItem(NetworkMessage& msg, uint8_t cid, const Item* item);
-		void UpdateContainerItem(NetworkMessage& msg, uint8_t cid, uint16_t slot, const Item* item);
-		void RemoveContainerItem(NetworkMessage& msg, uint8_t cid, uint16_t slot);
-
-		//inventory
-		void SetInventoryItem(NetworkMessage& msg, slots_t slot, const Item* item);
-
 		//shop
 		void AddShopItem(NetworkMessage& msg, const ShopInfo& item);
 
@@ -378,15 +365,15 @@ class ProtocolGame final : public ProtocolGameBase
 		}
 
 		static LiveCastsMap liveCasts; ///< Stores all available casts.
-		
-		std::atomic<bool> isCaster{ false }; ///< Determines if this \ref ProtocolGame object is casting
+
+		std::atomic<bool> isCaster { false }; ///< Determines if this \ref ProtocolGame object is casting
 
 		/// list of spectators \warning This variable should only be accessed after locking \ref liveCastLock
 		CastSpectatorVec spectators;
 
 		/// Live cast name that is also used as login
 		std::string liveCastName;
-				
+
 		/// Password used to access the live cast
 		std::string liveCastPassword;
 		void sendInventory();

@@ -138,6 +138,24 @@ function onUseShovel(player, item, fromPosition, target, toPosition, isHotkey)
 end
 
 function onUsePick(player, item, fromPosition, target, toPosition, isHotkey)
+	local targetId, targetActionId = target.itemid, target.actionid
+	if targetId == 1304 then
+		if player:getStorageValue(Storage.VampireQuest.draculaDone) == 1 then
+			if targetActionId == 50058 then
+				local stoneStorage = Game.getStorageValue(Storage.VampireQuest.draculaDone)
+				if stoneStorage ~= 5 then
+					Game.setStorageValue(Storage.VampireQuest.draculaDone, math.max(0, stoneStorage) + 1)
+				elseif stoneStorage == 5 then
+					target:remove()
+					Game.setStorageValue(Storage.VampireQuest.draculaDone)
+				end
+
+				toPosition:sendMagicEffect(CONST_ME_POFF)
+				doTargetCombatHealth(0, player, COMBAT_PHYSICALDAMAGE, -1001, -1109, CONST_ME_NONE)
+			end
+		end
+	end
+
 	if toPosition.x == CONTAINER_POSITION then
 		return false
 	end

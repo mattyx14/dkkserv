@@ -1,4 +1,8 @@
-local specialQuests = {}
+local specialQuests = {
+	[2001] = Storage.Missions.DjinnMission.Done,
+	[2002] = Storage.AnniQuest.AnnihiMission.Done,
+}
+
 local questsExperience = {}
 local questLog = {}
 
