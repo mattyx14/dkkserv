@@ -26,12 +26,12 @@ cache:
 
 artifacts:
   - path: build\vc14\**\theforgottenserver.exe
-  - path2: build2\vc14\**\theforgottenserver.exe
+  - path: build2\vc14\**\theforgottenserver.exe
 
 build:
   project: build/vc14/theforgottenserver.sln
   parallel: true
  
-  project2: build2/vc14/theforgottenserver.sln
-  parallel2: true
+  project: build2/vc14/theforgottenserver.sln
+  parallel: true
 
