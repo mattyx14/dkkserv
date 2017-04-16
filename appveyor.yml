@@ -30,7 +30,5 @@ artifacts:
 
 build:
   project: build/vc14/theforgottenserver.sln
-  parallel: true
- 
   project: build2/vc14/theforgottenserver.sln
   parallel: true
