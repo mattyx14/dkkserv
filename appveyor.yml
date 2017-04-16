@@ -5,7 +5,7 @@ branches:
     - master
 
 platform:
-  - x86
+  - Win32
   - x64
 
 configuration:
