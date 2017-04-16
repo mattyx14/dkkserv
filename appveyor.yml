@@ -9,6 +9,7 @@ platform:
   - x64
 
 configuration:
+  - Debug
   - Release
 
 matrix:
