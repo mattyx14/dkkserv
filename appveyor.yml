@@ -34,4 +34,3 @@ build:
  
   project: build2/vc14/theforgottenserver.sln
   parallel: true
-
