@@ -2,7 +2,7 @@ os: Visual Studio 2015
 
 branches:
   only:
-    - master\make
+    - master
 
 platform:
   - Win32
@@ -30,8 +30,4 @@ artifacts:
 
 build:
   project: build/vc14/theforgottenserver.sln
-  parallel: true
-
-build:
-  project: build2/vc14/theforgottenserver.sln
   parallel: true
