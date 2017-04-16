@@ -2,7 +2,7 @@ os: Visual Studio 2015
 
 branches:
   only:
-    - master
+    - master\make
 
 platform:
   - Win32
@@ -25,4 +25,4 @@ cache:
   - tfs-sdk-3.2 -> appveyor.yml
 
 artifacts:
-  - path: vc14\**\theforgottenserver.exe
+  - path: make\vc14\**\theforgottenserver.exe
