@@ -25,4 +25,4 @@ cache:
   - tfs-sdk-3.2 -> appveyor.yml
 
 artifacts:
-  - path: path_7_7\vc14\**\theforgottenserver.exe
+  - path: vc14\**\theforgottenserver.exe
