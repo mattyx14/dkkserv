@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2017  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -37,7 +37,7 @@ class Connection;
 class Quest;
 class ProtocolGame;
 class ProtocolSpectator;
-typedef std::shared_ptr<ProtocolGame> ProtocolGame_ptr;
+using ProtocolGame_ptr = std::shared_ptr<ProtocolGame>;
 
 extern Game g_game;
 
@@ -46,6 +46,7 @@ struct TextMessage
 	MessageClasses type = MESSAGE_STATUS_DEFAULT;
 	std::string text;
 	Position position;
+	uint16_t channelId;
 	struct {
 		int32_t value = 0;
 		TextColor_t color;
@@ -320,6 +321,9 @@ class ProtocolGame final : public ProtocolGameBase
 
 		void sendSpellCooldown(uint8_t spellId, uint32_t time);
 		void sendSpellGroupCooldown(SpellGroup_t groupId, uint32_t time);
+
+		void sendCoinBalanceUpdating(bool updating);
+		void sendUpdatedCoinBalance();
 
 		//tiles
 

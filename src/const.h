@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2017  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -108,11 +108,13 @@ enum MagicEffectClasses : uint8_t {
 	CONST_ME_YELLOWSMOKE = 168,
 	CONST_ME_GREENSMOKE = 169,
 	CONST_ME_PURPLESMOKE = 170,
-	CONST_ME_LIGHTNING = 171,
-	CONST_ME_RAGIAZ_BONE_CAPSULE = 172,
-	CONST_ME_CRITICAL_HIT = 173,
+	CONST_ME_EARLY_THUNDER = 171,
+	CONST_ME_RAGIAZ_BONECAPSULE = 172,
+	CONST_ME_CRITICAL_DAMAGE = 173,
+	// 174 is empty
+	CONST_ME_PLUNGING_FISH = 175,
 
-	CONST_ME_LAST = CONST_ME_CRITICAL_HIT,
+	CONST_ME_LAST = CONST_ME_PLUNGING_FISH,
 };
 
 enum ShootType_t : uint8_t {
@@ -219,6 +221,9 @@ enum MessageClasses : uint8_t {
 	MESSAGE_EVENT_DEFAULT = 30, /*White message at the bottom of the game window and in the console*/
 	MESSAGE_LOOT = 31,
 
+	MESSAGE_GUILD = 33, /*White message in channel (+ channelId)*/
+	MESSAGE_PARTY_MANAGEMENT = 34, /*White message in channel (+ channelId)*/
+	MESSAGE_PARTY = 35, /*White message in channel (+ channelId)*/
 	MESSAGE_EVENT_ORANGE = 36, /*Orange message in the console*/
 	MESSAGE_STATUS_CONSOLE_ORANGE = 37,  /*Orange message in the console*/
 };
@@ -505,6 +510,8 @@ enum item_t : uint16_t {
 
 	ITEM_AMULETOFLOSS = 2173,
 
+	ITEM_TIBIA_COIN = 24774,
+
 	ITEM_DOCUMENT_RO = 1968, //read-only
 };
 
@@ -547,6 +554,28 @@ enum PlayerFlags : uint64_t {
 	PlayerFlag_IgnoreWeaponCheck = static_cast<uint64_t>(1) << 35,
 	PlayerFlag_CannotBeMuted = static_cast<uint64_t>(1) << 36,
 	PlayerFlag_IsAlwaysPremium = static_cast<uint64_t>(1) << 37,
+};
+
+enum ReloadTypes_t : uint8_t  {
+	RELOAD_TYPE_ALL,
+	RELOAD_TYPE_ACTIONS,
+	RELOAD_TYPE_CHAT,
+	RELOAD_TYPE_COMMANDS,
+	RELOAD_TYPE_CONFIG,
+	RELOAD_TYPE_CREATURESCRIPTS,
+	RELOAD_TYPE_EVENTS,
+	RELOAD_TYPE_GLOBAL,
+	RELOAD_TYPE_GLOBALEVENTS,
+	RELOAD_TYPE_ITEMS,
+	RELOAD_TYPE_MONSTERS,
+	RELOAD_TYPE_MOUNTS,
+	RELOAD_TYPE_MOVEMENTS,
+	RELOAD_TYPE_NPCS,
+	RELOAD_TYPE_QUESTS,
+	RELOAD_TYPE_RAIDS,
+	RELOAD_TYPE_SPELLS,
+	RELOAD_TYPE_TALKACTIONS,
+	RELOAD_TYPE_WEAPONS,
 };
 
 static constexpr int32_t CHANNEL_GUILD = 0x00;

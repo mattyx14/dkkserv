@@ -2,7 +2,7 @@
 -- NOTE: valid values for worldType are: "pvp", "no-pvp" and "pvp-enforced"
 worldType = "pvp"
 hotkeyAimbotEnabled = true
-protectionLevel = 0
+protectionLevel = 1
 pzLocked = 60 * 1000
 removeChargesFromRunes = true
 timeToDecreaseFrags = 24 * 60 * 60 * 1000
@@ -13,30 +13,30 @@ expFromPlayersLevelRange = 75
 dayKillsToRedSkull = 3
 weekKillsToRedSkull = 5
 monthKillsToRedSkull = 10
-redSkullDuration = 10
-blackSkullDuration = 15
-orangeSkullDuration = 1
+redSkullDuration = 30
+blackSkullDuration = 45
+orangeSkullDuration = 7
 
 -- Connection Config
 -- NOTE: maxPlayers set to 0 means no limit
-ip = "darkkonia.sytes.net"
+ip = "127.0.0.1"
 bindOnlyGlobalAddress = false
 loginProtocolPort = 7171
 gameProtocolPort = 7172
 statusProtocolPort = 7171
-maxPlayers = 100
-motd = "Welcome to The DarkKonia Fantasy Server!"
+maxPlayers = 0
+motd = "Welcome to The Forgotten Server!"
 onePlayerOnlinePerAccount = true
 allowClones = false
-serverName = "FANTASY"
-statusTimeout = 1 * 1000
+serverName = "Forgotten"
+statusTimeout = 5 * 1000
 replaceKickOnLogin = true
 maxPacketsPerSecond = 25
 
 -- Version Manual
-clientVersionMin = 1100
-clientVersionMax = 1100
-clientVersionStr = "Only clients with protocol 60 or allowed!"
+clientVersionMin = 1098
+clientVersionMax = 1099
+clientVersionStr = "Only clients with protocol 10.98/99 or allowed!"
 
 -- Depot Limit
 freeDepotLimit = 2000
@@ -55,17 +55,17 @@ deathLosePercent = -1
 
 -- Houses
 -- NOTE: set housePriceEachSQM to -1 to disable the ingame buy house functionality
-housePriceEachSQM = 2000
+housePriceEachSQM = 1000
 houseRentPeriod = "weekly"
 
 -- Item Usage
 timeBetweenActions = 200
-timeBetweenExActions = 1200
+timeBetweenExActions = 1000
 
 -- Map
 -- NOTE: set mapName WITHOUT .otbm at the end
-mapName = "darkkonia"
-mapAuthor = "Mattyx14"
+mapName = "forgotten"
+mapAuthor = "Komic"
 
 -- Market
 marketOfferDuration = 30 * 24 * 60 * 60
@@ -75,9 +75,9 @@ maxMarketOffersAtATimePerPlayer = 100
 
 -- MySQL
 mysqlHost = "127.0.0.1"
-mysqlUser = ""
+mysqlUser = "forgottenserver"
 mysqlPass = ""
-mysqlDatabase = ""
+mysqlDatabase = "forgottenserver"
 mysqlPort = 3306
 mysqlSock = ""
 
@@ -88,16 +88,23 @@ kickIdlePlayerAfterMinutes = 15
 maxMessageBuffer = 4
 emoteSpells = true
 classicEquipmentSlots = false
+allowWalkthrough = true
 coinPacketSize = 25
-coinImagesURL = "http://darkkonia.sytes.net/"
+coinImagesURL = "http://some.url/images/store/"
+classicAttackSpeed = false
 
 -- Rates
 -- NOTE: rateExp is not used if you have enabled stages in data/XML/stages.xml
-rateExp = 2
-rateSkill = 80
-rateLoot = 4
-rateMagic = 4
+rateExp = 5
+rateSkill = 3
+rateLoot = 2
+rateMagic = 3
 rateSpawn = 1
+
+-- Monster rates
+rateMonsterHealth = 1.0
+rateMonsterAttack = 1.0
+rateMonsterDefense = 1.0
 
 -- Monsters
 deSpawnRange = 2

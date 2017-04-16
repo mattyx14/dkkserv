@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2017  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,11 +20,13 @@
 #include "otpch.h"
 
 #include "monster.h"
+#include "configmanager.h"
 #include "game.h"
 #include "spells.h"
 
 extern Game g_game;
 extern Monsters g_monsters;
+extern ConfigManager g_config;
 
 int32_t Monster::despawnRange;
 int32_t Monster::despawnRadius;
@@ -40,16 +42,17 @@ Monster* Monster::createMonster(const std::string& name)
 	return new Monster(mType);
 }
 
-Monster::Monster(MonsterType* mtype) :
+Monster::Monster(MonsterType* mType) :
 	Creature(),
-	strDescription(asLowerCaseString(mtype->nameDescription)),
-	mType(mtype)
+	strDescription(asLowerCaseString(mType->nameDescription)),
+	mType(mType)
 {
 	defaultOutfit = mType->info.outfit;
 	currentOutfit = mType->info.outfit;
 	skull = mType->info.skull;
-	health = mType->info.health;
-	healthMax = mType->info.healthMax;
+	float multiplier = g_config.getFloat(ConfigManager::RATE_MONSTER_HEALTH);
+	health = mType->info.health*multiplier;
+	healthMax = mType->info.healthMax*multiplier;
 	baseSpeed = mType->info.baseSpeed;
 	internalLight = mType->info.light;
 	hiddenHealth = mType->info.hiddenHealth;
@@ -349,10 +352,10 @@ void Monster::updateTargetList()
 		}
 	}
 
-	SpectatorVec list;
-	g_game.map.getSpectators(list, position, true);
-	list.erase(this);
-	for (Creature* spectator : list) {
+	SpectatorHashSet spectators;
+	g_game.map.getSpectators(spectators, position, true);
+	spectators.erase(this);
+	for (Creature* spectator : spectators) {
 		if (canSee(spectator->getPosition())) {
 			onCreatureFound(spectator);
 		}
@@ -769,8 +772,14 @@ void Monster::doAttacking(uint32_t interval)
 					updateLook = false;
 				}
 
-				minCombatValue = spellBlock.minCombatValue;
-				maxCombatValue = spellBlock.maxCombatValue;
+				float multiplier;
+				if(maxCombatValue > 0) //defense
+					multiplier = g_config.getFloat(ConfigManager::RATE_MONSTER_DEFENSE);
+				else //attack
+					multiplier = g_config.getFloat(ConfigManager::RATE_MONSTER_ATTACK);
+
+				minCombatValue = spellBlock.minCombatValue * multiplier;
+				maxCombatValue = spellBlock.maxCombatValue * multiplier;
 				spellBlock.spell->castSpell(this, attackedCreature);
 
 				if (spellBlock.isMelee) {
@@ -936,15 +945,14 @@ void Monster::onThinkDefense(uint32_t interval)
 
 			Monster* summon = Monster::createMonster(summonBlock.name);
 			if (summon) {
-				const Position& summonPos = getPosition();
-
-				addSummon(summon);
-
-				if (!g_game.placeCreature(summon, summonPos, false, summonBlock.force)) {
-					removeSummon(summon);
-				} else {
+				if (g_game.placeCreature(summon, getPosition(), false, summonBlock.force)) {
+					summon->setDropLoot(false);
+					summon->setSkillLoss(false);
+					summon->setMaster(this);
 					g_game.addMagicEffect(getPosition(), CONST_ME_MAGIC_BLUE);
 					g_game.addMagicEffect(summon->getPosition(), CONST_ME_TELEPORT);
+				} else {
+					delete summon;
 				}
 			}
 		}
@@ -1754,8 +1762,7 @@ void Monster::death(Creature*)
 
 	for (Creature* summon : summons) {
 		summon->changeHealth(-summon->getHealth());
-		summon->setMaster(nullptr);
-		summon->decrementReferenceCounter();
+		summon->removeMaster();
 	}
 	summons.clear();
 
@@ -1813,8 +1820,14 @@ bool Monster::getCombatValues(int32_t& min, int32_t& max)
 		return false;
 	}
 
-	min = minCombatValue;
-	max = maxCombatValue;
+	float multiplier;
+	if(maxCombatValue > 0) //defense
+		multiplier = g_config.getFloat(ConfigManager::RATE_MONSTER_DEFENSE);
+	else //attack
+		multiplier = g_config.getFloat(ConfigManager::RATE_MONSTER_ATTACK);
+
+	min = minCombatValue * multiplier;
+	max = maxCombatValue * multiplier;
 	return true;
 }
 
@@ -1934,20 +1947,17 @@ bool Monster::convinceCreature(Creature* creature)
 			return false;
 		}
 
-		Creature* oldMaster = getMaster();
-		oldMaster->removeSummon(this);
 	}
-
-	creature->addSummon(this);
-
+	setMaster(creature);
+	setDropLoot(false);
+	setSkillLoss(false);
 	setFollowCreature(nullptr);
 	setAttackedCreature(nullptr);
 
 	//destroy summons
 	for (Creature* summon : summons) {
 		summon->changeHealth(-summon->getHealth());
-		summon->setMaster(nullptr);
-		summon->decrementReferenceCounter();
+		summon->removeMaster();
 	}
 	summons.clear();
 
@@ -1956,10 +1966,10 @@ bool Monster::convinceCreature(Creature* creature)
 	updateIdleStatus();
 
 	//Notify surrounding about the change
-	SpectatorVec list;
-	g_game.map.getSpectators(list, getPosition(), true);
-	g_game.map.getSpectators(list, creature->getPosition(), true);
-	for (Creature* spectator : list) {
+	SpectatorHashSet spectators;
+	g_game.map.getSpectators(spectators, getPosition(), true);
+	g_game.map.getSpectators(spectators, creature->getPosition(), true);
+	for (Creature* spectator : spectators) {
 		spectator->onCreatureConvinced(creature, this);
 	}
 

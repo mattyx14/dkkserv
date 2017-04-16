@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2017  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -196,11 +196,11 @@ void ProtocolGameBase::AddPlayerStats(NetworkMessage& msg)
 	msg.add<uint16_t>(player->getLevel());
 	msg.addByte(player->getLevelPercent());
 
-	msg.add<uint16_t>(100); // base xp gain rate
-	msg.add<uint16_t>(0); // xp voucher
-	msg.add<uint16_t>(0); // low level bonus
-	msg.add<uint16_t>(0); // xp boost
-	msg.add<uint16_t>(100); // stamina multiplier (100 = x1.0)
+	msg.add<uint16_t>(player->getBaseXpGain()); // base xp gain rate
+	msg.add<uint16_t>(player->getVoucherXpBoost()); // xp voucher
+	msg.add<uint16_t>(player->getGrindingXpBoost()); // low level bonus
+	msg.add<uint16_t>(player->getStoreXpBoost()); // xp boost
+	msg.add<uint16_t>(player->getStaminaXpBoost()); // stamina multiplier (100 = 1.0x)
 
 	msg.add<uint16_t>(std::min<int32_t>(player->getMana(), std::numeric_limits<uint16_t>::max()));
 	msg.add<uint16_t>(std::min<int32_t>(player->getMaxMana(), std::numeric_limits<uint16_t>::max()));
@@ -401,11 +401,11 @@ void ProtocolGameBase::GetTileDescription(const Tile* tile, NetworkMessage& msg)
 					++count;
 				}
 
-				if (++count == 10) {
-					return;
-				}
+			if (++count == 10) {
+				return;
 			}
 		}
+	}
 	} else {
 		const CreatureVector *creatures = tile->getCreatures();
 		if (creatures) {
@@ -600,16 +600,16 @@ void ProtocolGameBase::sendAddCreature(const Creature* creature, const Position&
 			return;
 		}
 
-		NetworkMessage msg;
-		msg.addByte(0x6A);
-		msg.addPosition(pos);
-		msg.addByte(stackpos);
+			NetworkMessage msg;
+			msg.addByte(0x6A);
+			msg.addPosition(pos);
+			msg.addByte(stackpos);
 
-		bool known;
-		uint32_t removedKnown;
-		checkCreatureAsKnown(creature->getID(), known, removedKnown);
-		AddCreature(msg, creature, known, removedKnown);
-		writeToOutputBuffer(msg);
+			bool known;
+			uint32_t removedKnown;
+			checkCreatureAsKnown(creature->getID(), known, removedKnown);
+			AddCreature(msg, creature, known, removedKnown);
+			writeToOutputBuffer(msg);
 
 		if (isLogin) {
 			sendMagicEffect(pos, CONST_ME_TELEPORT);
@@ -729,7 +729,10 @@ void ProtocolGameBase::sendBasicData()
 		msg.add<uint32_t>(0);
 	}
 	msg.addByte(player->getVocation()->getClientId());
-	msg.add<uint16_t>(0x00);
+	msg.add<uint16_t>(0xFF); // number of known spells
+	for (uint8_t spellId = 0x00; spellId < 0xFF; spellId++) {
+		msg.addByte(spellId);
+	}
 	writeToOutputBuffer(msg);
 }
 

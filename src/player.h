@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2017  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -113,9 +113,9 @@ struct Kill {
 	Kill(uint32_t _target, time_t _time, bool _unavenged) : target(_target), time(_time), unavenged(_unavenged) {}
 };
 
-typedef std::map<uint32_t, uint32_t> MuteCountMap;
+using MuteCountMap = std::map<uint32_t, uint32_t>;
 
-static constexpr int32_t PLAYER_MAX_SPEED = 1500;
+static constexpr int32_t PLAYER_MAX_SPEED = 4500;
 static constexpr int32_t PLAYER_MIN_SPEED = 10;
 
 class Player final : public Creature, public Cylinder
@@ -261,8 +261,8 @@ class Player final : public Creature, public Cylinder
 
 		uint16_t getClientIcons() const;
 
-		const GuildWarList& getGuildWarList() const {
-			return guildWarList;
+		const GuildWarVector& getGuildWarVector() const {
+			return guildWarVector;
 		}
 
 		Vocation* getVocation() const {
@@ -683,6 +683,7 @@ class Player final : public Creature, public Cylinder
 		bool hasKilled(const Player* player) const;
 		bool hasAttacked(const Player* attacked) const;
 		void addAttacked(const Player* attacked);
+		void removeAttacked(const Player* attacked);
 		void clearAttacked();
 		void addUnjustifiedDead(const Player* attacked);
 		void sendCreatureSkull(const Creature* creature) const {
@@ -1122,6 +1123,12 @@ class Player final : public Creature, public Cylinder
 			}
 		}
 
+		void sendCoinBalanceUpdating(bool updating){
+			if(client){
+				client->sendCoinBalanceUpdating(updating);
+			}
+		}
+
 		void receivePing() {
 			lastPong = OTSYS_TIME();
 		}
@@ -1184,6 +1191,43 @@ class Player final : public Creature, public Cylinder
 			return openContainers;
 		}
 
+		uint16_t getBaseXpGain() const {
+			return baseXpGain;
+		}
+		void setBaseXpGain(uint16_t value) {
+
+			baseXpGain = std::min<uint16_t>(std::numeric_limits<uint16_t>::max(), value);
+		}
+		uint16_t getVoucherXpBoost() const {
+			return voucherXpBoost;
+		}
+		void setVoucherXpBoost(uint16_t value) {
+			voucherXpBoost = std::min<uint16_t>(std::numeric_limits<uint16_t>::max(), value);
+		}
+		uint16_t getGrindingXpBoost() const {
+			return grindingXpBoost;
+		}
+		void setGrindingXpBoost(uint16_t value) {
+			grindingXpBoost = std::min<uint16_t>(std::numeric_limits<uint16_t>::max(), value);
+		}
+		uint16_t getStoreXpBoost() const {
+			return storeXpBoost;
+		}
+		void setStoreXpBoost(uint16_t value) {
+			storeXpBoost = std::min<uint16_t>(std::numeric_limits<uint16_t>::max(), value);
+		}
+		uint16_t getStaminaXpBoost() const {
+			return staminaXpBoost;
+		}
+		void setStaminaXpBoost(uint16_t value) {
+			staminaXpBoost = std::min<uint16_t>(std::numeric_limits<uint16_t>::max(), value);
+		}
+
+		int32_t getIdleTime() const {
+			return idleTime;
+		}
+
+	    void doCriticalDamage(CombatDamage& damage) const;
 	protected:
 		std::forward_list<Condition*> getMuteConditions() const;
 
@@ -1245,7 +1289,7 @@ class Player final : public Creature, public Cylinder
 		std::map<uint32_t, Reward*> rewardMap;
 
 		std::vector<OutfitEntry> outfits;
-		GuildWarList guildWarList;
+		GuildWarVector guildWarVector;
 
 		std::list<ShopInfo> shopItemList;
 
@@ -1330,6 +1374,11 @@ class Player final : public Creature, public Cylinder
 		uint16_t lastStatsTrainingTime = 0;
 		uint16_t staminaMinutes = 2520;
 		uint16_t maxWriteLen = 0;
+		uint16_t baseXpGain = 100;
+		uint16_t voucherXpBoost = 0;
+		uint16_t grindingXpBoost = 0;
+		uint16_t storeXpBoost = 0;
+		uint16_t staminaXpBoost = 100;
 		int16_t lastDepotId = -1;
 
 		uint8_t soul = 0;

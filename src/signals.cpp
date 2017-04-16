@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2017 Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -90,14 +90,14 @@ void Signals::dispatchSignalHandler(int signal)
 			g_dispatcher.addTask(createTask(sigtermHandler));
 			break;
 #ifndef _WIN32
-			 case SIGHUP: //Reload config/data
-				g_dispatcher.addTask(createTask(sighupHandler));
-				break;
-			case SIGUSR1: //Saves game state
+		case SIGHUP: //Reload config/data
+			g_dispatcher.addTask(createTask(sighupHandler));
+			break;
+		case SIGUSR1: //Saves game state
 			g_dispatcher.addTask(createTask(sigusr1Handler));
 			break;
 #endif
-			default:
+		default:
 			break;
 	}
 }
@@ -126,9 +126,6 @@ void Signals::sighupHandler()
 
 	g_config.reload();
 	std::cout << "Reloaded config." << std::endl;
-
-	g_game.reloadCommands();
-	std::cout << "Reloaded commands." << std::endl;
 
 	g_creatureEvents->reload();
 	std::cout << "Reloaded creature scripts." << std::endl;

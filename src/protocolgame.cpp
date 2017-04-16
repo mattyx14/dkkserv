@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2017  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -115,8 +115,9 @@ void ProtocolGame::login(const std::string& name, uint32_t accountId, OperatingS
 			}
 		}
 
-		if (!WaitingList::getInstance()->clientLogin(player)) {
-			uint32_t currentSlot = WaitingList::getInstance()->getClientSlot(player);
+		WaitingList& waitingList = WaitingList::getInstance();
+		if (!waitingList.clientLogin(player)) {
+			uint32_t currentSlot = waitingList.getClientSlot(player);
 			uint32_t retryTime = WaitingList::getTime(currentSlot);
 			std::ostringstream ss;
 
@@ -1181,6 +1182,11 @@ void ProtocolGame::sendTextMessage(const TextMessage& message)
 			msg.addByte(message.primary.color);
 			break;
 		}
+		case MESSAGE_GUILD:
+		case MESSAGE_PARTY_MANAGEMENT:
+		case MESSAGE_PARTY:
+			msg.add<uint16_t>(message.channelId);
+			break;
 		default: {
 			break;
 		}
@@ -1260,7 +1266,11 @@ void ProtocolGame::sendSaleItemList(const std::list<ShopInfo>& shop)
 {
 	NetworkMessage msg;
 	msg.addByte(0x7B);
-	msg.add<uint64_t>(player->getMoney() + player->getBankBalance());
+	if (player->isPremium()) {
+		msg.add<uint64_t>(player->getMoney() + player->getBankBalance());
+	} else {
+		msg.add<uint64_t>(player->getMoney());
+	}
 
 	std::map<uint16_t, uint32_t> saleMap;
 
@@ -1745,7 +1755,7 @@ void ProtocolGame::sendMarketDetail(uint16_t itemId)
 		msg.add<uint16_t>(0x00);
 	}
 
-	MarketStatistics* statistics = IOMarket::getInstance()->getPurchaseStatistics(itemId);
+	MarketStatistics* statistics = IOMarket::getInstance().getPurchaseStatistics(itemId);
 	if (statistics) {
 		msg.addByte(0x01);
 		msg.add<uint32_t>(statistics->numTransactions);
@@ -1756,7 +1766,7 @@ void ProtocolGame::sendMarketDetail(uint16_t itemId)
 		msg.addByte(0x00);
 	}
 
-	statistics = IOMarket::getInstance()->getSaleStatistics(itemId);
+	statistics = IOMarket::getInstance().getSaleStatistics(itemId);
 	if (statistics) {
 		msg.addByte(0x01);
 		msg.add<uint32_t>(statistics->numTransactions);
@@ -2219,9 +2229,15 @@ void ProtocolGame::sendOutfitWindow()
 	if (player->isAccessPlayer()) {
 		static const std::string gamemasterOutfitName = "Gamemaster";
 		protocolOutfits.emplace_back(gamemasterOutfitName, 75, 0);
+
+		static const std::string gmCustomerSupport = "CS";
+		protocolOutfits.emplace_back(gmCustomerSupport, 266, 0);
+
+		static const std::string communityManager = "CM";
+		protocolOutfits.emplace_back(communityManager, 302, 0);
 	}
 
-	const auto& outfits = Outfits::getInstance()->getOutfits(player->getSex());
+	const auto& outfits = Outfits::getInstance().getOutfits(player->getSex());
 	protocolOutfits.reserve(outfits.size());
 	for (const Outfit& outfit : outfits) {
 		uint8_t addons;
@@ -2283,6 +2299,36 @@ void ProtocolGame::sendSpellGroupCooldown(SpellGroup_t groupId, uint32_t time)
 	msg.addByte(groupId);
 	msg.add<uint32_t>(time);
 	writeToOutputBuffer(msg);
+}
+
+void ProtocolGame::sendCoinBalanceUpdating(bool updating)
+{
+    //by jlcvp
+    NetworkMessage msg;
+    msg.addByte(0xF2);
+    msg.addByte(0x00);
+    writeToOutputBuffer(msg);
+
+    if(updating){
+        sendUpdatedCoinBalance();
+    }
+}
+
+void ProtocolGame::sendUpdatedCoinBalance()
+{
+    NetworkMessage msg;
+    msg.addByte(0xF2); //balanceupdating
+    msg.addByte(0x01); //this is not the end
+
+    msg.addByte(0xDF); //coinBalance opcode
+    msg.addByte(0x01); //as follows
+
+    uint32_t  playerCoinBalance = IOAccount::getCoinBalance(player->getAccount());
+
+    msg.add<uint32_t>(playerCoinBalance);
+    msg.add<uint32_t>(playerCoinBalance); //I don't know why this duplicated entry is needed but... better keep it there
+
+    writeToOutputBuffer(msg);
 }
 
 void ProtocolGame::sendModalWindow(const ModalWindow& modalWindow)

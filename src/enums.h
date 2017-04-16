@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2017  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -407,6 +407,13 @@ enum ReturnValue {
 	RETURNVALUE_CANONLYUSEONESHIELD,
 	RETURNVALUE_NOPARTYMEMBERSINRANGE,
 	RETURNVALUE_YOUARENOTTHEOWNER,
+	RETURNVALUE_NOSUCHRAIDEXISTS,
+	RETURNVALUE_ANOTHERRAIDISALREADYEXECUTING,
+	RETURNVALUE_TRADEPLAYERFARAWAY,
+	RETURNVALUE_YOUDONTOWNTHISHOUSE,
+	RETURNVALUE_TRADEPLAYERALREADYOWNSAHOUSE,
+	RETURNVALUE_TRADEPLAYERHIGHESTBIDDER,
+	RETURNVALUE_YOUCANNOTTRADETHISHOUSE,
 	RETURNVALUE_NOTENOUGHFISTLEVEL,
 	RETURNVALUE_NOTENOUGHCLUBLEVEL,
 	RETURNVALUE_NOTENOUGHSWORDLEVEL,
@@ -564,16 +571,19 @@ struct CombatDamage
 	} primary, secondary;
 
 	CombatOrigin origin;
+	bool critical;
+
 	CombatDamage()
 	{
 		origin = ORIGIN_NONE;
 		primary.type = secondary.type = COMBAT_NONE;
 		primary.value = secondary.value = 0;
+		critical = false;
 	}
 };
 
-typedef std::list<MarketOffer> MarketOfferList;
-typedef std::list<HistoryMarketOffer> HistoryMarketOfferList;
-typedef std::list<ShopInfo> ShopInfoList;
+using MarketOfferList = std::list<MarketOffer>;
+using HistoryMarketOfferList = std::list<HistoryMarketOffer>;
+using ShopInfoList = std::list<ShopInfo>;
 
 #endif

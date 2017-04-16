@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2017  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,7 +22,6 @@
 
 #include "account.h"
 #include "combat.h"
-#include "commands.h"
 #include "groups.h"
 #include "map.h"
 #include "position.h"
@@ -308,7 +307,7 @@ class Game
 		  * \param text The text to say
 		  */
 		bool internalCreatureSay(Creature* creature, SpeakClasses type, const std::string& text,
-		                         bool ghostMode, SpectatorVec* listPtr = nullptr, const Position* pos = nullptr);
+		                         bool ghostMode, SpectatorHashSet* spectatorsPtr = nullptr, const Position* pos = nullptr);
 
 		void loadPlayersRecord();
 		void checkPlayersRecord();
@@ -444,14 +443,11 @@ class Game
 
 		//animation help functions
 		void addCreatureHealth(const Creature* target);
-		static void addCreatureHealth(const SpectatorVec& list, const Creature* target);
+		static void addCreatureHealth(const SpectatorHashSet& spectators, const Creature* target);
 		void addMagicEffect(const Position& pos, uint8_t effect);
-		static void addMagicEffect(const SpectatorVec& list, const Position& pos, uint8_t effect);
+		static void addMagicEffect(const SpectatorHashSet& spectators, const Position& pos, uint8_t effect);
 		void addDistanceEffect(const Position& fromPos, const Position& toPos, uint8_t effect);
-		static void addDistanceEffect(const SpectatorVec& list, const Position& fromPos, const Position& toPos, uint8_t effect);
-
-		void addCommandTag(char tag);
-		void resetCommandTag();
+		static void addDistanceEffect(const SpectatorHashSet& spectators, const Position& fromPos, const Position& toPos, uint8_t effect);
 
 		void startDecay(Item* item);
 		int32_t getLightHour() const {
@@ -497,9 +493,8 @@ class Game
 		Item* getUniqueItem(uint16_t uniqueId);
 		bool addUniqueItem(uint16_t uniqueId, Item* item);
 		void removeUniqueItem(uint16_t uniqueId);
-		void reloadCommands() {
-			commands.reload();
-		}
+
+		bool reload(ReloadTypes_t reloadType);
 
 		bool hasEffect(uint8_t effectId);
 		bool hasDistanceEffect(uint8_t effectId);
@@ -511,7 +506,6 @@ class Game
 		Quests quests;
 
 	protected:
-		bool playerSayCommand(Player* player, const std::string& text);
 		bool playerSaySpell(Player* player, SpeakClasses type, const std::string& text);
 		void playerWhisper(Player* player, const std::string& text);
 		bool playerYell(Player* player, const std::string& text);
@@ -534,7 +528,6 @@ class Game
 
 		std::vector<Creature*> ToReleaseCreatures;
 		std::vector<Item*> ToReleaseItems;
-		std::vector<char> commandTags;
 
 		size_t lastBucket = 0;
 
@@ -549,7 +542,6 @@ class Game
 		std::map<uint32_t, BedItem*> bedSleepersMap;
 
 		ModalWindow offlineTrainingWindow { std::numeric_limits<uint32_t>::max(), "Choose a Skill", "Please choose a skill:" };
-		Commands commands;
 
 		static constexpr int32_t LIGHT_LEVEL_DAY = 250;
 		static constexpr int32_t LIGHT_LEVEL_NIGHT = 40;
