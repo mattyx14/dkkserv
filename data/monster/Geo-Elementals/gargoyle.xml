@@ -1,58 +1,58 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<monster name="Gargoyle" nameDescription="a gargoyle" race="undead" experience="150" speed="200" manacost="0">
-	<health now="250" max="250"/>
-	<look type="95" corpse="6027"/>
-	<targetchange interval="2000" chance="0"/>
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Gargoyle" nameDescription="a gargoyle" race="undead" experience="150" speed="200">
+	<health now="250" max="250" />
+	<look type="95" corpse="6027" />
+	<targetchange interval="4000" chance="10" />
 	<flags>
-		<flag summonable="0"/>
-		<flag attackable="1"/>
-		<flag hostile="1"/>
-		<flag illusionable="1"/>
-		<flag convinceable="0"/>
-		<flag pushable="0"/>
-		<flag canpushitems="1"/>
-		<flag canpushcreatures="1"/>
-		<flag targetdistance="1"/>
-		<flag staticattack="90"/>
-		<flag runonhealth="30"/>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag staticattack="70" />
+		<flag runonhealth="30" />
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="55" attack="20"/>
+		<attack name="melee" interval="2000" min="0" max="-65" />
 	</attacks>
-	<defenses armor="20" defense="25">
-		<defense name="healing" interval="2000" chance="10" min="5" max="15">
-			<attribute key="areaEffect" value="blueshimmer"/>
+	<defenses armor="25" defense="25">
+		<defense name="healing" interval="2000" chance="20" min="5" max="15">
+			<attribute key="areaEffect" value="blueshimmer" />
 		</defense>
 	</defenses>
 	<elements>
-		<element physicalPercent="20"/>
-		<element deathPercent="40"/>
-		<element firePercent="-10"/>
+		<element physicalPercent="40" />
+		<element deathPercent="1" />
+		<element firePercent="-10" />
 	</elements>
 	<immunities>
-		<immunity lifedrain="1"/>
-		<immunity earth="1"/>
+		<immunity lifedrain="1" />
+		<immunity earth="1" />
 	</immunities>
-	<voices interval="2000" chance="5">
-		<voice sentence="Harrrr harrrr!"/>
-		<voice sentence="Stone sweet stone."/>
-		<voice sentence="Feel my claws, softskin."/>
-		<voice sentence="Chhhhhrrrrk!"/>
-		<voice sentence="There is a stone in your shoe!"/>
+	<voices interval="5000" chance="10">
+		<voice sentence="Harrrr Harrrr!" />
+		<voice sentence="Stone sweet stone." />
+		<voice sentence="Feel my claws, softskin." />
+		<voice sentence="Chhhhhrrrrk!" />
+		<voice sentence="There is a stone in your shoe!" />
 	</voices>
 	<loot>
-		<item id="8838" countmax="2" chance="9310"/><!-- potato -->
-		<item id="2680" countmax="5" chance="1820"/><!-- strawberry -->
-		<item id="2148" countmax="30" chance="88120"/><!-- gold coin -->
-		<item id="2513" chance="1020"/><!-- battle shield -->
-		<item id="2394" chance="2120"/><!-- morning star -->
-		<item id="11195" chance="11660"/><!-- stone wing -->
-		<item id="11343" chance="610"/><!-- piece of marble rock -->
-		<item id="2194" countmax="10" chance="15670"/><!-- small stone -->
-		<item id="2457" chance="870"/><!-- steel helmet -->
-		<item id="2489" chance="300"/><!-- dark armor -->
-		<item id="11227" chance="190"/><!-- shiny stone -->
-		<item id="2129" chance="1480"/><!-- wolf tooth chain -->
-		<item id="2209" chance="260"/><!-- club ring -->
+		<item name="wolf tooth chain" chance="1480" />
+		<item name="gold coin" countmax="30" chance="88000" />
+		<item name="mysterious fetish" countmax="10" chance="15800" />
+		<item name="club ring" chance="260" />
+		<item name="morning star" chance="2150" />
+		<item name="steel helmet" chance="850" />
+		<item name="dark armor" chance="300" />
+		<item name="battle shield" chance="1000" />
+		<item name="strawberry" countmax="5" chance="1810" />
+		<item name="potato" countmax="2" chance="9220" />
+		<item name="stone wing" chance="11730" />
+		<item name="shiny stone" chance="190" />
+		<item name="piece of marble rock" chance="630" />
 	</loot>
 </monster>

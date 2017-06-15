@@ -544,6 +544,16 @@ Attr_ReadValue Item::readAttr(AttrTypes_t attr, PropStream& propStream)
 			break;
 		}
 
+		case ATTR_IMBUINGSLOTS: {
+			int32_t imbuingSlots;
+			if (!propStream.read<int32_t>(imbuingSlots)) {
+				return ATTR_READ_ERROR;
+			}
+
+			setIntAttr(ITEM_ATTRIBUTE_IMBUINGSLOTS, imbuingSlots);
+			break;
+		}
+
 		case ATTR_ARMOR: {
 			int32_t armor;
 			if (!propStream.read<int32_t>(armor)) {
@@ -571,6 +581,16 @@ Attr_ReadValue Item::readAttr(AttrTypes_t attr, PropStream& propStream)
 			}
 
 			setIntAttr(ITEM_ATTRIBUTE_SHOOTRANGE, shootRange);
+			break;
+		}
+
+		case ATTR_SPECIAL: {
+			std::string special;
+			if (!propStream.readString(special)) {
+				return ATTR_READ_ERROR;
+			}
+
+			setStrAttr(ITEM_ATTRIBUTE_SPECIAL, special);
 			break;
 		}
 
@@ -740,6 +760,11 @@ void Item::serializeAttr(PropWriteStream& propWriteStream) const
 		propWriteStream.write<int32_t>(getIntAttr(ITEM_ATTRIBUTE_EXTRADEFENSE));
 	}
 
+	if (hasAttribute(ITEM_ATTRIBUTE_IMBUINGSLOTS)) {
+		propWriteStream.write<uint8_t>(ATTR_IMBUINGSLOTS);
+		propWriteStream.write<int32_t>(getIntAttr(ITEM_ATTRIBUTE_IMBUINGSLOTS));
+	}
+
 	if (hasAttribute(ITEM_ATTRIBUTE_ARMOR)) {
 		propWriteStream.write<uint8_t>(ATTR_ARMOR);
 		propWriteStream.write<int32_t>(getIntAttr(ITEM_ATTRIBUTE_ARMOR));
@@ -753,6 +778,11 @@ void Item::serializeAttr(PropWriteStream& propWriteStream) const
 	if (hasAttribute(ITEM_ATTRIBUTE_SHOOTRANGE)) {
 		propWriteStream.write<uint8_t>(ATTR_SHOOTRANGE);
 		propWriteStream.write<uint8_t>(getIntAttr(ITEM_ATTRIBUTE_SHOOTRANGE));
+	}
+
+	if (hasAttribute(ITEM_ATTRIBUTE_SPECIAL)) {
+		propWriteStream.write<uint8_t>(ATTR_SPECIAL);
+		propWriteStream.writeString(getStrAttr(ITEM_ATTRIBUTE_SPECIAL));
 	}
 }
 
@@ -854,7 +884,7 @@ std::string Item::getDescription(const ItemType& it, int32_t lookDistance,
 		if (it.weaponType == WEAPON_DISTANCE && it.ammoType != AMMO_NONE) {
 			bool begin = true;
 			begin = false;
-			s << " (Range:" << static_cast<uint16_t>(item ? item->getShootRange() : it.shootRange);
+			s << " (Range: " << static_cast<uint16_t>(item ? item->getShootRange() : it.shootRange);
 
 			int32_t attack;
 			int8_t hitChance;
@@ -867,11 +897,11 @@ std::string Item::getDescription(const ItemType& it, int32_t lookDistance,
 			}
 
 			if (attack != 0) {
-				s << ", Atk" << std::showpos << attack << std::noshowpos;
+				s << ", Atk " << std::showpos << attack << std::noshowpos;
 			}
 
 			if (hitChance != 0) {
-				s << ", Hit%" << std::showpos << static_cast<int16_t>(hitChance) << std::noshowpos;
+				s << ", Hit% " << std::showpos << static_cast<int16_t>(hitChance) << std::noshowpos;
 			}
 
 			if (it.abilities) {
@@ -914,6 +944,18 @@ std::string Item::getDescription(const ItemType& it, int32_t lookDistance,
 					}
 
 					s << "magic level " << std::showpos << it.abilities->stats[STAT_MAGICPOINTS] << std::noshowpos;
+				}
+
+				if (it.abilities->skills[SKILL_DISTANCE]) {
+					if (begin) {
+						begin = false;
+						s << " (";
+					}
+					else {
+						s << ", ";
+					}
+
+					s << "distance fighting " << std::showpos << it.abilities->skills[SKILL_DISTANCE] << std::noshowpos;
 				}
 
 				int16_t show = it.abilities->absorbPercent[0];

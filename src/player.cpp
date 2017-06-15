@@ -4118,6 +4118,11 @@ void Player::setPremiumDays(int32_t v)
 	sendBasicData();
 }
 
+void Player::setTibiaCoins(int32_t v)
+{
+	tibiaCoins = v;
+}
+
 PartyShields_t Player::getPartyShield(const Player* player) const
 {
 	if (!player) {

@@ -103,6 +103,8 @@ enum clientVersion_t {
 	CLIENT_VERSION_1035 = 55,
 	CLIENT_VERSION_1076 = 56,
 	CLIENT_VERSION_1098 = 57,
+	CLIENT_VERSION_1100_V1 = 58,
+	CLIENT_VERSION_1100_V2 = 59,
 };
 
 enum rootattrib_ {
@@ -176,6 +178,7 @@ enum itemflags_t {
 	FLAG_ANIMATION = 1 << 24,
 	FLAG_FULLTILE = 1 << 25, // unused
 	FLAG_FORCEUSE = 1 << 26,
+	FLAG_WRAPCONTAINER = 1 << 27,
 };
 
 //1-byte aligned structs

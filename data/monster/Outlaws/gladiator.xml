@@ -1,50 +1,50 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<monster name="Gladiator" nameDescription="a gladiator" race="blood" experience="90" speed="196" manacost="470">
-	<health now="185" max="185"/>
-	<look type="131" head="78" body="3" legs="79" feet="114" corpse="20407"/>
-	<targetchange interval="2000" chance="1"/>
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Gladiator" nameDescription="a gladiator" race="blood" experience="90" speed="200" manacost="470">
+	<health now="185" max="185" />
+	<look type="131" head="78" body="3" legs="79" feet="114" corpse="20407" />
+	<targetchange interval="4000" chance="0" />
 	<flags>
-		<flag summonable="0"/>
-		<flag attackable="1"/>
-		<flag hostile="1"/>
-		<flag illusionable="0"/>
-		<flag convinceable="1"/>
-		<flag pushable="1"/>
-		<flag canpushitems="0"/>
-		<flag canpushcreatures="0"/>
-		<flag staticattack="90"/>
-		<flag targetdistance="1"/>
-		<flag runonhealth="10"/>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="1" />
+		<flag pushable="1" />
+		<flag canpushitems="0" />
+		<flag canpushcreatures="0" />
+		<flag staticattack="90" />
+		<flag targetdistance="1" />
+		<flag runonhealth="10" />
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="50" attack="30"/>
+		<attack name="melee" interval="2000" min="0" max="-90" />
 	</attacks>
-	<defenses armor="11" defense="13">
-		<defense name="speed" interval="2000" chance="11" speedchange="238" duration="8000">
-			<attribute key="areaEffect" value="redshimmer"/>
+	<defenses armor="25" defense="25">
+		<defense name="speed" interval="2000" chance="15" speedchange="215" duration="5000">
+			<attribute key="areaEffect" value="redshimmer" />
 		</defense>
 	</defenses>
 	<elements>
-		<element holyPercent="10"/>
-		<element physicalPercent="5"/>
-		<element deathPercent="-5"/>
+		<element holyPercent="10" />
+		<element physicalPercent="15" />
+		<element deathPercent="-5" />
 	</elements>
-	<voices interval="2000" chance="5">
-		<voice sentence="You are no match for me!"/>
-		<voice sentence="Feel my prowess."/>
-		<voice sentence="Fight!"/>
-		<voice sentence="Take this!"/>
+	<voices interval="5000" chance="10">
+		<voice sentence="You are no match for me!" />
+		<voice sentence="Feel my prowess" />
+		<voice sentence="Fight!" />
+		<voice sentence="Take this!" />
 	</voices>
 	<loot>
-		<item id="2148" countmax="30" chance="49360"/><!-- gold coin -->
-		<item id="2666" countmax="1" chance="18950"/><!-- meat -->
-		<item id="2510" chance="10080"/><!-- plate shield -->
-		<item id="2376" chance="12420"/><!-- sword -->
-		<item id="2398" chance="11240"/><!-- mace -->
-		<item id="2465" chance="2770"/><!-- brass armor -->
-		<item id="2458" chance="5200"/><!-- chain helmet -->
-		<item id="2509" chance="870"/><!-- steel shield -->
-		<item id="8872" chance="320"/><!-- belted cape -->
-		<item id="2459" chance="610"/><!-- iron helmet -->
+		<item name="gold coin" countmax="30" chance="49500" />
+		<item id="2376" chance="12620" /><!-- sword -->
+		<item name="mace" chance="11160" />
+		<item name="chain helmet" chance="5200" />
+		<item name="iron helmet" chance="590" />
+		<item name="brass armor" chance="2750" />
+		<item name="steel shield" chance="840" />
+		<item name="plate shield" chance="9950" />
+		<item name="meat" chance="19000" />
+		<item name="belted cape" chance="340" />
 	</loot>
 </monster>

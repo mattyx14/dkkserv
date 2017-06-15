@@ -1,65 +1,66 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<monster name="Drillworm" nameDescription="a drillworm" race="blood" experience="1100" speed="220" manacost="0">
-	<health now="1500" max="1500"/>
-	<look type="527" corpse="19705"/>
-	<targetchange interval="2000" chance="6"/>
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Drillworm" nameDescription="a drillworm" race="venom" experience="1100" speed="240">
+	<health now="1500" max="1500" />
+	<look type="527" corpse="19705" />
+	<targetchange interval="4000" chance="20" />
 	<flags>
-		<flag summonable="0"/>
-		<flag attackable="1"/>
-		<flag hostile="1"/>
-		<flag illusionable="0"/>
-		<flag convinceable="0"/>
-		<flag pushable="0"/>
-		<flag canpushitems="1"/>
-		<flag canpushcreatures="1"/>
-		<flag targetdistance="1"/>
-		<flag staticattack="90"/>
-		<flag runonhealth="0"/>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="0" />
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="90" attack="60" poison="90"/>
-		<attack name="poison" interval="2000" chance="13" range="7" radius="3" target="1" min="-100" max="-150">
-			<attribute key="shootEffect" value="poisonarrow"/>
-			<attribute key="areaEffect" value="poison"/>
+		<attack name="melee" interval="2000" min="0" max="-300" poison="100" />
+		<attack name="speed" interval="2000" chance="15" length="8" spread="0" target="0" speedchange="-600" duration="15000">
+			<attribute key="areaEffect" value="redshimmer" />
 		</attack>
-		<attack name="poison" interval="2000" chance="14" length="8" spread="0" min="-200" max="-300">
-			<attribute key="areaEffect" value="greenspark"/>
+		<attack name="earth" interval="2000" chance="10" length="8" spread="0" min="-150" max="-300">
+			<attribute key="areaEffect" value="greenspark" />
 		</attack>
-		<attack name="drillworm paralyze" interval="2000" chance="15"/>
+		<attack name="earth" interval="2000" chance="15" radius="3" target="1" min="-100" max="-150">
+			<attribute key="areaEffect" value="poison" />
+		</attack>
 	</attacks>
-	<defenses armor="23" defense="28"/>
+	<defenses armor="35" defense="35" />
 	<elements>
-		<element deathPercent="15"/>
-		<element icePercent="15"/>
-		<element holyPercent="25"/>
-		<element energyPercent="15"/>
-		<element firePercent="-5"/>
+		<element energyPercent="15" />
+		<element icePercent="16" />
+		<element holyPercent="25" />
+		<element deathPercent="15" />
+		<element firePercent="-5" />
 	</elements>
 	<immunities>
-		<immunity invisible="1"/>
-		<immunity earth="1"/>
-		<immunity paralyze="1"/>
+		<immunity earth="1" />
+		<immunity paralyze="1" />
+		<immunity invisible="1" />
 	</immunities>
-	<voices interval="2000" chance="5">
-		<voice sentence="Chrrrk! Chrrrk"/>
-		<voice sentence="Knarrrk!"/>
+	<voices interval="5000" chance="10">
+		<voice sentence="Knarrrk!" />
 	</voices>
 	<loot>
-		<item id="13757" chance="12130"/> <!-- coal -->
-		<item id="2515" chance="2240"/> <!-- dwarven ring -->
-		<item id="2148" countmax="150" chance="100000"/> <!-- gold coin -->
-		<item id="3976" countmax="5" chance="4550"/> <!-- worms -->
-		<item id="18436" countmax="2" chance="5870"/> <!-- drill bolt -->
-		<item id="11222" chance="15000"/> <!-- lump of earth  -->
-		<item id="18427" chance="5400"/> <!-- pulverized stone  -->
-		<item id="18429" chance="7280"/> <!-- vein of ore  -->
-		<item id="18416" chance="9780"/> <!-- green crystal splinter -->
-		<item id="18417" chance="9260"/> <!-- brown crystal splinter -->
-		<item id="18418" chance="9610"/> <!-- blue crystal splinter -->
-		<item id="2553" chance="5280"/> <!-- pick -->
-		<item id="5880" chance="1750"/> <!-- iron ore -->
-		<item id="7887" chance="2360"/> <!-- terra amulet -->
-		<item id="7452" chance="540"/> <!-- spiked squelcher -->
-		<item id="11339" chance="700"/> <!-- clay lump -->
+		<item name="gold coin" countmax="100" chance="50000" />
+		<item name="gold coin" countmax="50" chance="50000" />
+		<item name="guardian shield" chance="2240" />
+		<item name="pick" chance="5280" />
+		<item name="worm" countmax="5" chance="4580" />
+		<item name="iron ore" chance="1750" />
+		<item name="spiked squelcher" chance="540" />
+		<item name="terra amulet" chance="2360" />
+		<item name="lump of earth" chance="15000" />
+		<item name="clay lump" chance="700" />
+		<item id="13757" chance="12130" /><!-- Coal -->
+		<item name="green crystal splinter" chance="9780" />
+		<item name="brown crystal splinter" chance="9260" />
+		<item name="blue crystal splinter" chance="9610" />
+		<item name="pulverized ore" chance="5400" />
+		<item name="vein of ore" chance="7280" />
+		<item name="drill bolt" countmax="2" chance="4870" />
 	</loot>
 </monster>

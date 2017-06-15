@@ -171,6 +171,7 @@ void ProtocolGameBase::AddCreature(NetworkMessage& msg, const Creature* creature
 	msg.addByte(creatureType); // Type (for summons)
 	msg.addByte(creature->getSpeechBubble());
 	msg.addByte(0xFF); // MARK_UNMARKED
+	msg.addByte(0x00); // ??
 
 	if (otherPlayer) {
 		msg.add<uint16_t>(otherPlayer->getHelpers());
@@ -220,8 +221,8 @@ void ProtocolGameBase::AddPlayerStats(NetworkMessage& msg)
 
 	msg.add<uint16_t>(player->getOfflineTrainingTime() / 60 / 1000);
 
-	msg.add<uint16_t>(0); // xp boost time (seconds)
-	msg.addByte(0); // enables exp boost in the store
+	msg.add<uint16_t>(player->getExpBoostStamina()); // xp boost time (seconds)
+	msg.addByte(1); // enables exp boost in the store
 }
 
 void ProtocolGameBase::AddPlayerSkills(NetworkMessage& msg)
@@ -238,6 +239,31 @@ void ProtocolGameBase::AddPlayerSkills(NetworkMessage& msg)
 		msg.add<uint16_t>(std::min<int32_t>(player->getSkillLevel(i), std::numeric_limits<uint16_t>::max()));
 		msg.add<uint16_t>(player->getBaseSkill(i));
 	}
+}
+
+// Send preyInfo
+void ProtocolGameBase::sendPreyData()
+{
+	NetworkMessage msg;
+	for (int i = 0; i < 3; i++) {
+		msg.addByte(0xE8);
+		msg.addByte(i);
+
+		msg.addByte(0x00);
+		msg.addByte(0x00);
+		msg.add<uint16_t>(0);
+	}
+
+	msg.addByte(0xEC);
+	msg.addByte(0xEE);
+	msg.addByte(0x0A);
+	msg.add<uint64_t>(0);
+	msg.addByte(0xEE);
+	msg.addByte(0x01);
+	msg.add<uint64_t>(0);
+	msg.addByte(0xE9);
+	msg.add<uint32_t>(0);
+	writeToOutputBuffer(msg);
 }
 
 void ProtocolGameBase::AddWorldLight(NetworkMessage& msg, const LightInfo& lightInfo)
@@ -401,11 +427,11 @@ void ProtocolGameBase::GetTileDescription(const Tile* tile, NetworkMessage& msg)
 					++count;
 				}
 
-			if (++count == 10) {
-				return;
+				if (++count == 10) {
+					return;
+				}
 			}
 		}
-	}
 	} else {
 		const CreatureVector *creatures = tile->getCreatures();
 		if (creatures) {
@@ -707,6 +733,7 @@ void ProtocolGameBase::sendAddCreature(const Creature* creature, const Position&
 
 	sendBasicData();
 	sendInventoryClientIds();
+	sendPreyData();
 	player->sendIcons();
 }
 
@@ -729,6 +756,14 @@ void ProtocolGameBase::sendBasicData()
 		msg.add<uint32_t>(0);
 	}
 	msg.addByte(player->getVocation()->getClientId());
+
+	// Prey window
+	if (player->getVocation()->getId() == 0) {
+		msg.addByte(0);
+	} else {
+		msg.addByte(1); // has reached Main (allow player to open Prey window)
+	}
+
 	msg.add<uint16_t>(0xFF); // number of known spells
 	for (uint8_t spellId = 0x00; spellId < 0xFF; spellId++) {
 		msg.addByte(spellId);
@@ -835,17 +870,21 @@ void ProtocolGameBase::sendVIP(uint32_t guid, const std::string& name, const std
 
 void ProtocolGameBase::sendCancelWalk()
 {
-	NetworkMessage msg;
-	msg.addByte(0xB5);
-	msg.addByte(player->getDirection());
-	writeToOutputBuffer(msg);
+	if (player) {
+		NetworkMessage msg;
+		msg.addByte(0xB5);
+		msg.addByte(player->getDirection());
+		writeToOutputBuffer(msg);
+	}
 }
 
 void ProtocolGameBase::sendPing()
 {
-	NetworkMessage msg;
-	msg.addByte(0x1D);
-	writeToOutputBuffer(msg, false);
+	if (player) {
+		NetworkMessage msg;
+		msg.addByte(0x1D);
+		writeToOutputBuffer(msg);
+	}
 }
 
 void ProtocolGameBase::sendPingBack()

@@ -1,53 +1,53 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<monster name="Xenia" nameDescription="Xenia" race="blood" experience="255" speed="172" manacost="0">
-	<health now="200" max="200"/>
-	<look type="137" head="76" body="115" legs="115" feet="76" corpse="20542"/>
-	<targetchange interval="2000" chance="8"/>
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Xenia" nameDescription="Xenia" race="blood" experience="255" speed="176" manacost="450">
+	<health now="200" max="200" />
+	<look type="137" head="95" body="115" legs="115" feet="95" corpse="20542" />
+	<targetchange interval="5000" chance="8" />
 	<flags>
-		<flag summonable="0"/>
-		<flag attackable="1"/>
-		<flag hostile="1"/>
-		<flag illusionable="1"/>
-		<flag convinceable="0"/>
-		<flag pushable="0"/>
-		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
-		<flag targetdistance="1"/>
-		<flag staticattack="90"/>
-		<flag runonhealth="10"/>
+		<flag summonable="1" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="1" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="10" />
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="40" attack="28"/>
-    		<attack name="drunk" interval="2000" chance="10" length="8" spread="3" duration="15000">
-     			<attribute key="areaEffect" value="bluenote" />
-    		</attack>
+		<attack name="melee" interval="2000" min="0" max="-50" />
+		<attack name="physical" interval="1000" chance="15" range="7" min="-28" max="-42">
+			<attribute key="shootEffect" value="spear" />
+		</attack>
 	</attacks>
-	<defenses armor="12" defense="14">
-    <defense name="speed" interval="2000" chance="11" speedchange="300" duration="4000" >
-      <attribute key="areaEffect" value="redshimmer" />
-    </defense>
-  </defenses>
+	<defenses armor="12" defense="14" />
 	<elements>
-		<element icePercent="10"/>
-		<element firePercent="10"/>
-		<element holyPercent="7"/>
-		<element deathPercent="-7"/>
-		<element physicalPercent="-6"/>
+		<element icePercent="10" />
+		<element firePercent="10" />
+		<element holyPercent="7" />
+		<element deathPercent="-7" />
+		<element physicalPercent="-6" />
 	</elements>
-	<voices interval="2000" chance="5">
+	<voices interval="5000" chance="10">
+		<voice sentence="Stand still!" />
+		<voice sentence="One more head for me!" />
+		<voice sentence="Head off!" />
 	</voices>
 	<loot>
-		<item id="2148" countmax="20" chance="40020"/><!-- gold coin -->
-		<item id="2229" countmax="2" chance="80310"/><!-- skull -->
-		<item id="2379" chance="81000"/><!-- dagger -->
-		<item id="2467" chance="43000"/><!-- leather armor -->
-		<item id="2691" countmax="1" chance="29190"/><!-- brown bread -->
-		<item id="2385" chance="23000"/><!-- sabre -->
-		<item id="12399" countmax="1" chance="10100"/><!-- girlish hair decoration -->
-		<item id="12400" countmax="1" chance="5170"/><!-- protective charm -->
-		<item id="2050" chance="1050"/><!-- torch -->
-		<item id="2526" chance="7000"/><!-- studded shield -->
-		<item id="2125" chance="290"/><!-- crystal necklace -->
-		<item id="2147" chance="160"/><!-- small ruby -->
+		<item name="crystal necklace" chance="2500" />
+		<item name="small diamond" countmax="2" chance="2500" />
+		<item name="small ruby" countmax="2" chance="2500" />
+		<item name="gold coin" countmax="45" chance="100000" />
+		<item name="protection amulet" chance="1000" />
+		<item name="double axe" chance="3333" />
+		<item name="machete" chance="10000" />
+		<item name="chain helmet" chance="5000" />
+		<item name="plate armor" chance="1333" />
+		<item name="chain armor" chance="6666" />
+		<item name="meat" countmax="3" chance="20000" />
+		<item name="red apple" countmax="4" chance="10000" />
+		<item name="worm" countmax="10" chance="50000" />
 	</loot>
 </monster>

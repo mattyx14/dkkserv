@@ -1,36 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Achad" nameDescription="Achad" race="blood" experience="70" speed="176" manacost="0">
-	<health now="185" max="185"/>
-	<look type="146" head="116" body="93" legs="38" feet="59" addons="3" corpse="7349"/>
+<monster name="Achad" nameDescription="Achad" race="blood" experience="70" speed="185">
+	<health now="185" max="185" />
+	<look type="146" head="93" body="93" legs="57" feet="97" addons="3" corpse="7349" />
 	<flags>
-		<flag summonable="0"/>
-		<flag attackable="1"/>
-		<flag hostile="1"/>
-		<flag illusionable="0"/>
-		<flag convinceable="0"/>
-		<flag pushable="0"/>
-		<flag canpushitems="1"/>
-    	<flag staticattack="90" />
-		<flag targetdistance="1"/>
-		<flag runonhealth="55"/>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag targetdistance="1" />
+		<flag runonhealth="55" />
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="30" attack="40"/>
+		<attack name="melee" interval="2000" min="0" max="-80" />
 	</attacks>
-	<defenses armor="8" defense="9"/>
+	<defenses armor="20" defense="19" />
 	<elements>
-		<element firePercent="10"/>
-		<element icePercent="-5"/>
-		<element physicalPercent="-5"/>
+		<element firePercent="10" />
 	</elements>
 	<immunities>
-		<immunity outfit="1"/>
-		<immunity drunk="1"/>
-		<immunity invisible="1"/>
+		<immunity outfit="1" />
+		<immunity drunk="1" />
+		<immunity invisible="1" />
 	</immunities>
-	<voices interval="2000" chance="5">
-		<voice sentence="You won't pass me."/>
-		<voice sentence="I have travelled far to fight here."/>
+	<voices interval="5000" chance="10">
+		<voice sentence="You won't pass me." />
+		<voice sentence="I have travelled far to fight here." />
 	</voices>
-	<defenses armor="20" defense="19"/>
 </monster>

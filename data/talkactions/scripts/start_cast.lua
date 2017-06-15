@@ -4,7 +4,7 @@ function onSay(player, words, param)
 	end
 
 	if player:startLiveCast(param) then
-		player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, "You have started casting your gameplay. Commands: !spectators - !stopcast")
+		player:sendTextMessage(MESSAGE_INFO_DESCR, "You have started casting your gameplay. Commands: !spectators - !stopcast")
 	else
 		player:sendCancelMessage("You're already casting your gameplay.")
 	end

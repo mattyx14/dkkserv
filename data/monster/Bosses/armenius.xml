@@ -1,66 +1,68 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<monster name="Armenius" nameDescription="Armenius" race="undead" experience="500" speed="238" manacost="0">
-	<health now="550" max="550"/>
-	<look type="68" corpse="6006"/>
-	<targetchange interval="2000" chance="5"/>
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Armenius" nameDescription="Armenius" race="venom" experience="500" speed="330">
+	<health now="550" max="550" />
+	<look type="79" corpse="6021" />
+	<targetchange interval="5000" chance="8" />
 	<flags>
-		<flag summonable="0"/>
-		<flag attackable="1"/>
-		<flag hostile="1"/>
-		<flag illusionable="1"/>
-		<flag convinceable="0"/>
-		<flag pushable="0"/>
-		<flag canpushitems="1"/>
-		<flag canpushcreatures="1"/>
-		<flag targetdistance="1"/>
-		<flag staticattack="90"/>
-		<flag runonhealth="30"/>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="0" />
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="50" attack="50"/>
-		<attack name="lifedrain" interval="2000" chance="20" range="1" min="-50" max="-200">
-			<attribute key="shootEffect" value="death"/>
-			<attribute key="areaEffect" value="redshimmer"/>
+		<attack name="melee" interval="2000" min="0" max="-210" poison="100" />
+		<attack name="earth" interval="1000" chance="12" range="7" min="-15" max="-135">
+			<attribute key="shootEffect" value="poison" />
+			<attribute key="areaEffect" value="poison" />
 		</attack>
-		<attack name="vampire paralyze" interval="2000" chance="12" range="7"/>
+		<attack name="speed" interval="1000" chance="13" range="7" speedchange="-700" duration="25000">
+			<attribute key="shootEffect" value="poison" />
+			<attribute key="areaEffect" value="poison" />
+		</attack>
+		<attack name="poisoncondition" interval="3000" chance="17" radius="5" target="0" min="-30" max="-100">
+			<attribute key="areaEffect" value="poison" />
+		</attack>
 	</attacks>
-	<defenses armor="17" defense="23">
-		<defense name="outfit" interval="2000" chance="6" monster="bat" duration="6000">
-			<attribute key="areaEffect" value="blueshimmer"/>
+	<defenses armor="25" defense="20">
+		<defense name="speed" interval="1000" chance="8" speedchange="350" duration="9000">
+			<attribute key="areaEffect" value="redshimmer" />
 		</defense>
-		<defense name="speed" interval="2000" chance="10" range="7" speedchange="332" duration="9000">
-			<attribute key="areaEffect" value="redshimmer"/>
-		</defense>
-		<defense name="healing" interval="2000" chance="9" min="15" max="25"/>
 	</defenses>
 	<elements>
-		<element physicalPercent="35"/>
-		<element firePercent="-10"/>
-		<element holyPercent="-25"/>
+		<element energyPercent="20" />
+		<element physicalPercent="10" />
+		<element firePercent="-15" />
+		<element icePercent="-5" />
 	</elements>
 	<immunities>
-		<immunity death="1"/>
-		<immunity earth="1"/>
-		<immunity lifedrain="1"/>
-		<immunity paralyze="1"/>
-		<immunity invisible="1"/>
+		<immunity earth="1" />
+		<immunity paralyze="1" />
+		<immunity invisible="1" />
 	</immunities>
-	<voices interval="2000" chance="5">
-	</voices>
+	<summons maxSummons="3">
+		<summon name="Larva" interval="1000" chance="15" max="3" />
+	</summons>
 	<loot>
-		<item id="12405" chance="5000"/><!-- blood preservation -->
-		<item id="10602" chance="7590"/><!-- vampire teeth -->
-		<item id="2148" countmax="60" chance="90250"/><!-- gold coin -->
-		<item id="2144" chance="1770"/><!-- black pearl -->
-		<item id="2172" chance="210"/><!-- bronze amulet -->
-		<item id="2127" chance="250"/><!-- emerald bangle -->
-		<item id="2747" chance="1910"/><!-- grave flower -->
-		<item id="2396" chance="420"/><!-- ice rapier -->
-		<item id="2412" chance="1450"/><!-- katana -->
-		<item id="2229" chance="1010"/><!-- skull -->
-		<item id="2383" chance="1060"/><!-- spike sword -->
-		<item id="2479" chance="410"/><!-- strange helmet -->
-		<item id="7588" chance="1510"/><!-- strong health potion -->
-		<item id="2534" chance="250"/><!-- vampire shield -->
+		<item name="scarab amulet" chance="2063" />
+		<item name="ancient amulet" chance="2564" />
+		<item name="gold coin" countmax="90" chance="100000" />
+		<item name="gold coin" countmax="90" chance="100000" />
+		<item name="small emerald" countmax="3" chance="4347" />
+		<item name="small amethyst" countmax="4" chance="4166" />
+		<item name="scarab coin" countmax="2" chance="7692" />
+		<item id="2162" chance="11111" /><!-- magic lightwand -->
+		<item name="daramian waraxe" chance="781" />
+		<item name="plate armor" chance="10000" />
+		<item name="scarab shield" chance="518" />
+		<item name="strong health potion" chance="1041" />
+		<item name="terra hood" chance="1298" />
+		<item name="scarab pincers" chance="3571" />
 	</loot>
 </monster>

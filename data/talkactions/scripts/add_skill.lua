@@ -29,15 +29,17 @@ function onSay(player, words, param)
 	if player:getAccountType() < ACCOUNT_TYPE_GOD then
 		return false
 	end
+	--log 
+	logCommand(player, words, param)
 
 	local split = param:split(",")
-	if split[2] == nil then
+	if not split[2] then
 		player:sendCancelMessage("Insufficient parameters.")
 		return false
 	end
 
 	local target = Player(split[1])
-	if target == nil then
+	if not target then
 		player:sendCancelMessage("A player with that name is not online.")
 		return false
 	end

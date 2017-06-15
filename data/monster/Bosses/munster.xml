@@ -1,39 +1,37 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<monster name="Munster" nameDescription="Munster" race="blood" experience="35" speed="156" manacost="0">
-	<health now="58" max="58"/>
-	<look type="56" corpse="2813"/>
-	<targetchange interval="2000" chance="0"/>
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Munster" nameDescription="Munster" race="blood" experience="35" speed="200" manacost="250">
+	<health now="58" max="58" />
+	<look type="56" corpse="2813" />
+	<targetchange interval="60000" chance="0" />
 	<flags>
-		<flag summonable="0"/>
-		<flag attackable="1"/>
-		<flag hostile="1"/>
-		<flag illusionable="1"/>
-		<flag convinceable="0"/>
-		<flag pushable="0"/>
-		<flag canpushitems="1"/>
-		<flag canpushcreatures="1"/>
-		<flag staticattack="90"/>
-		<flag lightlevel="0"/>
-		<flag lightcolor="0"/>
-		<flag targetdistance="1"/>
-		<flag runonhealth="5"/>
+		<flag summonable="1" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="1" />
+		<flag pushable="1" />
+		<flag canpushitems="0" />
+		<flag staticattack="80" />
+		<flag lightlevel="0" />
+		<flag lightcolor="0" />
+		<flag targetdistance="1" />
+		<flag runonhealth="10" />
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="10" attack="15"/>
+		<attack name="melee" interval="2000" min="0" max="-15" />
 	</attacks>
-	<defenses armor="2" defense="4">
-		<defense name="munster summon" interval="2000" chance="18"/>
-	</defenses>
+	<defenses armor="2" defense="4" />
+	<summons maxSummons="2">
+		<summon name="Rat" interval="2000" chance="20" max="2" />
+	</summons>
 	<voices interval="2000" chance="5">
-		<voice sentence="Meeeeep!"/>
-		<voice sentence="Meep!"/>
+		<voice sentence="Meeeeep!" />
 	</voices>
 	<loot>
-		<item id="2449" chance="86360"/><!-- bone club -->
-		<item id="2696" countmax="4" chance="63640"/><!-- cheese -->
-		<item id="2687" countmax="2" chance="4550"/><!-- cookie -->
-		<item id="2148" countmax="24" chance="72730"/><!-- gold coin -->
-		<item id="3976" countmax="3" chance="50000"/><!-- worm -->
-		<item id="5792" chance="1500"/><!-- dice -->
+		<item name="gold coin" countmax="16" chance="100000" />
+		<item name="bone club" chance="5000" />
+		<item name="jacket" chance="50000" />
+		<item name="cookie" countmax="1" chance="5000" />
+		<item id="2696" chance="50000" /><!-- cheese -->
 	</loot>
 </monster>

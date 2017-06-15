@@ -1,14 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <modules>
 	<!-- GameStore -->
-	<module type="recvbyte" byte="233" script="gamestore/gamestore.lua"/>
-	<module type="recvbyte" byte="239" script="gamestore/gamestore.lua"/>
-	<module type="recvbyte" byte="250" delay="600" script="gamestore/gamestore.lua"/>
-	<module type="recvbyte" byte="251" script="gamestore/gamestore.lua"/>
-	<module type="recvbyte" byte="252" script="gamestore/gamestore.lua"/>
-	<module type="recvbyte" byte="253" script="gamestore/gamestore.lua"/>
-	<module type="recvbyte" byte="254" script="gamestore/gamestore.lua"/>
+	<!--<module type="recvbyte" byte="233" script="gamestore/gamestore.lua"/>-->
+	<!--<module type="recvbyte" byte="239" script="gamestore/gamestore.lua"/>-->
+	<!--<module type="recvbyte" byte="250" delay="600" script="gamestore/gamestore.lua"/>-->
+	<!--<module type="recvbyte" byte="251" script="gamestore/gamestore.lua"/>-->
+	<!--<module type="recvbyte" byte="252" script="gamestore/gamestore.lua"/>-->
+
+	<module type="recvbyte" byte="253" script="gamestore/gamestore.lua"/> <!-- Store History -->
+	<module type="recvbyte" byte="254" script="gamestore/gamestore.lua"/> <!-- Store History -->
 
 	<!-- EquipObject By Hotkey -->
 	<module type="recvbyte" byte="119" delay="1000" script="equipobject/equipobject.lua"/>
+
+	<!-- Prey System -->
+	<module type="recvbyte" byte="235" script="prey system/preysystem.lua" />
+	<module type="recvbyte" byte="237" script="prey system/preysystem.lua" />
+
+	<!-- Imbuing System -->
+	<module type="recvbyte" byte="213" script="imbuement/imbuement.lua" />
+	<module type="recvbyte" byte="214" script="imbuement/imbuement.lua" />
+
+	<!-- Inspection System (11.10) -->
+	<module type="recvbyte" byte="205" script="inspection/inspection.lua"/>
+	<module type="recvbyte" byte="206" script="inspection/inspection.lua"/>
 </modules>

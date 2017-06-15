@@ -1,83 +1,63 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<monster name="Dracola" nameDescription="Dracola" race="undead" experience="11000" speed="370" manacost="0">
-	<health now="16200" max="16200"/>
-	<look type="231" corpse="6307"/>
-	<targetchange interval="2000" chance="5"/>
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Dracola" nameDescription="Dracola" race="undead" experience="11000" speed="410">
+	<health now="16200" max="16200" />
+	<look type="231" corpse="6307" />
+	<targetchange interval="2000" chance="5" />
 	<flags>
-		<flag summonable="0"/>
-		<flag attackable="1"/>
-		<flag hostile="1"/>
-		<flag illusionable="0"/>
-		<flag convinceable="0"/>
-		<flag pushable="0"/>
-		<flag canpushitems="1"/>
-		<flag canpushcreatures="1"/>
-		<flag staticattack="90"/> 
-		<flag targetdistance="1"/>
-		<flag runonhealth="800"/>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="1" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag runonhealth="0" />
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="112" attack="85"/>
-		<attack name="poison" interval="2000" chance="15" range="7" radius="4" target="1" min="-110" max="-495">
-			<attribute key="shootEffect" value="poison"/>
-			<attribute key="areaEffect" value="poison"/>
+		<attack name="melee" interval="2000" min="0" max="-404" />
+		<attack name="melee" interval="2000" chance="20" range="7" radius="4" target="1" min="-300" max="-395">
+			<attribute key="shootEffect" value="fire" />
+			<attribute key="areaEffect" value="redspark" />
 		</attack>
-		<attack name="poison" interval="2000" chance="5" range="7" radius="1" target="1" min="-120" max="-325">
-			<attribute key="shootEffect" value="poison"/>
-			<attribute key="areaEffect" value="poison"/>
+		<attack name="physical" interval="3000" chance="10" range="7" min="0" max="-800">
+			<attribute key="shootEffect" value="suddendeath" />
+			<attribute key="areaEffect" value="mortarea" />
 		</attack>
-		<attack name="lifedrain" interval="2000" chance="15" range="7" radius="4" target="1" min="-120" max="-650">
-			<attribute key="shootEffect" value="poison"/>
-			<attribute key="areaEffect" value="redspark"/>
+		<attack name="earth" interval="2000" chance="20" range="7" radius="4" target="1" min="-120" max="-390">
+			<attribute key="shootEffect" value="poison" />
+			<attribute key="areaEffect" value="poison" />
 		</attack>
-		<attack name="death" interval="2000" chance="11" range="7" min="-330" max="-805">
-			<attribute key="shootEffect" value="death"/>
-			<attribute key="areaEffect" value="mortarea"/>
+		<attack name="earth" interval="1000" chance="23" range="7" min="-50" max="-180">
+			<attribute key="shootEffect" value="poison" />
+			<attribute key="areaEffect" value="poison" />
 		</attack>
-		<attack name="undead dragon curse" interval="2000" chance="10"/>
-		<attack name="poison" interval="2000" chance="9" length="8" spread="3" min="-300" max="-780">
-			<attribute key="areaEffect" value="poison"/>
+		<attack name="fire" interval="4000" chance="20" length="8" spread="3" min="-500" max="-600">
+			<attribute key="areaEffect" value="firearea" />
 		</attack>
-		<attack name="lifedrain" interval="2000" chance="12" length="8" spread="3" min="-300" max="-950">
-			<attribute key="areaEffect" value="redshimmer"/>
+		<attack name="earth" interval="2000" chance="20" length="8" spread="3" min="-200" max="-685">
+			<attribute key="areaEffect" value="poison" />
+		</attack>
+		<attack name="lifedrain" interval="3000" chance="20" length="8" spread="3" min="-300" max="-600">
+			<attribute key="areaEffect" value="greenshimmer" />
+		</attack>
+		<attack name="drowncondition" interval="1000" chance="20" length="8" spread="3">
+			<attribute key="areaEffect" value="poff" />
 		</attack>
 	</attacks>
-	<defenses armor="52" defense="64">
-		<defense name="healing" interval="2000" chance="55" min="450" max="550">
-			<attribute key="areaEffect" value="redshimmer"/>
-		</defense>
-	</defenses>
-	<elements>
-		<element holyPercent="-10"/>
-		<element physicalPercent="10"/>
-	</elements>
+	<defenses armor="40" defense="39" />
 	<immunities>
-		<immunity paralyze="1"/>
-		<immunity invisible="1"/>
-		<immunity ice="1"/>
-		<immunity fire="1"/>
-		<immunity earth="1"/>
-		<immunity drown="1"/>
+		<immunity earth="1" />
+		<immunity paralyze="1" />
+		<immunity invisible="1" />
 	</immunities>
 	<voices interval="2000" chance="5">
-		<voice sentence="DEATH CAN'T STOP MY HUNGER!" yell="1"/>
-		<voice sentence="Your new name is breakfast."/>
-		<voice sentence="I'm bad to the bone."/>
+		<voice sentence="DEATH CAN'T STOP MY HUNGER!" yell="1" />
 	</voices>
 	<loot>
-		<item id="6500" countmax="1" chance="100000"/><!-- demonic essence -->
-		<item id="6546" chance="100000"/><!-- dracola's eye -->
-		<item id="2148" countmax="133" chance="100000"/><!-- gold coin -->
-		<item id="7591" chance="20000"/><!-- great health potion -->
-		<item id="7590" chance="13330"/><!-- great mana potion -->
-		<item id="2152" countmax="4" chance="40000"/><!-- platinum coin -->
-		<item id="5944" countmax="1" chance="100000"/><!-- soul orb -->
-		<item id="5741" chance="6670"/><!-- skull helmet -->
-		<item id="2489" chance="26670"/><!-- dark armor -->
-		<item id="2146" countmax="4" chance="13330"/><!-- small sapphire -->
-		<item id="2177" chance="73330"/><!-- life crystal -->
-		<item id="6300" chance="13330"/><!-- death ring -->
-		<item id="5925" countmax="1" chance="6670"/><!-- hardened bone -->
-		<item id="7420" chance="20000"/><!-- reaper's axe -->
+		<item name="platinum coin" countmax="8" chance="20000" />
+		<item name="demonic essence" countmax="4" chance="1000" />
+		<item name="Dracola's eye" chance="100000" />
 	</loot>
 </monster>

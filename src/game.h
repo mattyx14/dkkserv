@@ -32,6 +32,7 @@
 #include "npc.h"
 #include "wildcardtree.h"
 #include "quests.h"
+#include "gamestore.h"
 
 class ServiceManager;
 class Creature;
@@ -352,6 +353,7 @@ class Game
 		void playerMoveUpContainer(uint32_t playerId, uint8_t cid);
 		void playerUpdateContainer(uint32_t playerId, uint8_t cid);
 		void playerRotateItem(uint32_t playerId, const Position& pos, uint8_t stackPos, const uint16_t spriteId);
+		void playerWrapableItem(uint32_t playerId, const Position& pos, uint8_t stackPos, const uint16_t spriteId);
 		void playerWriteItem(uint32_t playerId, uint32_t windowTextId, const std::string& text);
 		void playerBrowseField(uint32_t playerId, const Position& pos);
 		void playerSeekInContainer(uint32_t playerId, uint8_t containerId, uint16_t index);
@@ -397,6 +399,11 @@ class Game
 		void playerCreateMarketOffer(uint32_t playerId, uint8_t type, uint16_t spriteId, uint16_t amount, uint32_t price, bool anonymous);
 		void playerCancelMarketOffer(uint32_t playerId, uint32_t timestamp, uint16_t counter);
 		void playerAcceptMarketOffer(uint32_t playerId, uint32_t timestamp, uint16_t counter, uint16_t amount);
+		void playerStoreOpen(uint32_t playerId, uint8_t serviceType);
+		void playerShowStoreCategoryOffers(uint32_t playerId, StoreCategory* category);
+		void playerBuyStoreOffer(uint32_t playerId, uint32_t offerId, uint8_t productType, const std::string& additionalInfo="");
+        void playerCoinTransfer(uint32_t playerId, const std::string& receiverName, uint32_t amount);
+        void playerStoreTransactionHistory(uint32_t playerId, uint32_t page);
 
 		void parsePlayerExtendedOpcode(uint32_t playerId, uint8_t opcode, const std::string& buffer);
 
@@ -504,6 +511,9 @@ class Game
 		Mounts mounts;
 		Raids raids;
 		Quests quests;
+		GameStore gameStore;
+
+
 
 	protected:
 		bool playerSaySpell(Player* player, SpeakClasses type, const std::string& text);

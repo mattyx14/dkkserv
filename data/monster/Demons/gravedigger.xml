@@ -1,83 +1,76 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<monster name="Gravedigger" nameDescription="a gravedigger" race="blood" experience="950" speed="240" manacost="0">
-  <health now="1500" max="1500"/>
-  <look type="558" corpse="21279"/>
-  <targetchange interval="2000" chance="8"/>
-  <flags>
-    <flag summonable="0" />
-    <flag attackable="1" />
-    <flag hostile="1" />
-    <flag illusionable="0" />
-    <flag convinceable="0" />
-    <flag pushable="0" />
-    <flag canpushitems="1" />
-    <flag canpushcreatures="1" />
-    <flag targetdistance="1" />
-    <flag staticattack="90" />
-    <flag runonhealth="320" />
-  </flags>
-  <attacks>
-    <attack name="melee" interval="2000" skill="118" attack="50" poison="140" />
-    <attack name="manadrain" interval="2000" chance="10" target="1" range="1" min="-30" max="-130">
-      <attribute key="areaEffect" value="blueshimmer" />
-    </attack>
-    <attack name="drunk" interval="2000" chance="10" target="0" radius="5" duration="4000">
-      <attribute key="areaEffect" value="smallclouds" />
-    </attack>
-    <attack name="death" interval="2000" chance="10" target="1" range="1" min="-100" max="-160">
-      <attribute key="areaEffect" value="smallclouds" />
-    </attack>
-    <attack name="effect" interval="2000" chance="8" target="1" range="1">
-      <attribute key="shootEffect" value="death" />
-      <attribute key="areaEffect" value="smallclouds" />
-    </attack>
-  </attacks>
-  <defenses armor="25" defense="35">
-    <defense name="healing" interval="2000" chance="11" min="150" max="420">
-      <attribute key="areaEffect" value="blueshimmer" />
-    </defense>
-    <defense name="speed" interval="2000" chance="7" speedchange="880" duration="4000">
-      <attribute key="areaEffect" value="redshimmer" />
-    </defense>
-    <defense name="invisible" interval="2000" chance="9" duration="4000">
-      <attribute key="areaEffect" value="blueshimmer" />
-    </defense>
-  </defenses>
-  <elements>
-    <element firePercent="-10" />
-    <element holyPercent="-5" />
-    <element earthPercent="-5" />
-    <element physicalPercent="5" />
-  </elements>
-  <immunities>
-    <immunity death="1" />
-    <immunity ice="1" />
-    <immunity energy="1" />
-    <immunity paralyze="1" />
-    <immunity invisible="1" />
-    <immunity lifedrain="1" />
-    <immunity drunk="1" />
-  </immunities>
-	<voices interval="2000" chance="5">
-		<voice sentence="High Five!" yell="0"/>
-		<voice sentence="No... don't go further, stranger... danger lies in every step..." yell="0"/>
-		<voice sentence="*scratch*" yell="0"/>
-		<voice sentence="*scrabble*" yell="0"/>
-		<voice sentence="Put it there." yell="0"/>
-		<voice sentence="Slap!" yell="0"/>
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Gravedigger" nameDescription="a gravedigger" race="blood" experience="950" speed="230">
+	<health now="1500" max="1500" />
+	<look type="558" corpse="21279" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag staticattack="70" />
+		<flag runonhealth="200" />
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" min="0" max="-320" poison="180" />
+		<attack name="manadrain" interval="2000" chance="10" range="1" min="-40" max="-250">
+			<attribute key="areaEffect" value="blueshimmer" />
+		</attack>
+		<attack name="death" interval="2000" chance="15" range="1" min="-175" max="-300">
+			<attribute key="shootEffect" value="death" />
+		</attack>
+		<attack name="drunk" interval="2000" chance="10" radius="5" target="0" duration="4000">
+			<attribute key="areaEffect" value="smallclouds" />
+		</attack>
+	</attacks>
+	<defenses armor="20" defense="20">
+		<defense name="invisible" interval="2000" chance="15" duration="5000">
+			<attribute key="areaEffect" value="redshimmer" />
+		</defense>
+		<defense name="healing" interval="2000" chance="20" min="100" max="250">
+			<attribute key="areaEffect" value="blueshimmer" />
+		</defense>
+		<defense name="speed" interval="2000" chance="15" speedchange="420" duration="5000">
+			<attribute key="areaEffect" value="redshimmer" />
+		</defense>
+	</defenses>
+	<elements>
+		<element earthPercent="-5" />
+		<element firePercent="-10" />
+		<element holyPercent="-5" />
+	</elements>
+	<immunities>
+		<immunity ice="1" />
+		<immunity energy="1" />
+		<immunity death="1" />
+		<immunity paralyze="1" />
+		<immunity invisible="1" />
+	</immunities>
+	<voices interval="5000" chance="10">
+		<voice sentence="High Five!" />
+		<voice sentence="scrabble" />
+		<voice sentence="Put it there!" />
 	</voices>
 	<loot>
-		<item id="2148" countmax="150" chance="100000"/><!-- gold coin -->
-		<item id="2152" chance="24750"/><!-- platinum coin -->
-		<item id="2268" subtype="8" chance="4910"/><!-- sudden death rune -->
-		<item id="7588" countmax="2" chance="2590"/><!-- strong health potion -->
-		<item id="7589" countmax="2" chance="2220"/><!-- strong mana potion -->
-		<item id="2187" chance="5070"/><!-- wand of inferno -->
-		<item id="11233" chance="10400"/><!-- unholy bone -->
-		<item id="12449" chance="5810"/><!-- safety pin -->
-		<item id="12440" chance="7760"/><!-- pile of grave earth -->
-		<item id="2436" chance="50"/><!-- skull staff -->
-		<item id="2154" chance="1110"/><!-- yellow gem -->
-		<item id="6300" chance="630"/><!-- death ring -->
+		<item name="gold coin" countmax="137" chance="100000" />
+		<item name="platinum coin" chance="24470" />
+		<item name="yellow gem" chance="800" />
+		<item name="wand of inferno" chance="5590" />
+		<item name="sudden death rune" countmaxe="9" chance="7300" />
+		<item name="skull staff" chance="130" />
+		<item name="mysterious voodoo skull" chance="100" />
+		<item name="hardened bone" chance="50" />
+		<item id="6300" chance="800" /><!-- death ring -->
+		<item name="strong health potion" countmax="2" chance="2260" />
+		<item name="strong mana potion" countmax="2" chance="3600" />
+		<item name="lump of dirt" chance="100" />
+		<item name="unholy bone" chance="9570" />
+		<item name="pile of grave earth" chance="6650" />
+		<item name="safety pin" chance="6000" />
 	</loot>
 </monster>

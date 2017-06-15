@@ -5,7 +5,7 @@ local function onMovementRemoveProtection(cid, oldPosition, time)
 	end
 
 	local playerPosition = player:getPosition()
-	if (playerPosition.x ~= oldPosition.x or playerPosition.y ~= oldPosition.y or playerPosition.z ~= oldPosition.z) or player:getTarget() or time <= 0 then
+	if (playerPosition.x ~= oldPosition.x or playerPosition.y ~= oldPosition.y or playerPosition.z ~= oldPosition.z) or player:getTarget() then
 		player:setStorageValue(Storage.combatProtectionStorage, 0)
 		return true
 	end
@@ -30,7 +30,7 @@ function onLogin(player)
 	local playerId = player:getId()
 
 	-- Stamina
-	nextUseStaminaTime[player.uid] = 0
+	nextUseStaminaTime[player.uid] = 1
 
 	-- Promotion
 	local vocation = player:getVocation()
@@ -46,13 +46,33 @@ function onLogin(player)
 		player:setVocation(vocation:getDemotion())
 	end
 
-	-- Rewards notice
-	local rewards = #player:getRewardList()
-	if rewards > 0 then
-		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, string.format("You have %s %s in your reward chest.", rewards == 1 and 'one' or rewards, rewards > 1 and "rewards" or "reward"))
+	-- EXP Stamina
+	nextUseXpStamina[player.uid] = 1
+
+	--Prey Stamina
+	nextUseStaminaPrey[player.uid+1] = {Time = 1}
+	nextUseStaminaPrey[player.uid+2] = {Time = 1}
+	nextUseStaminaPrey[player.uid+3] = {Time = 1}
+
+	-- Prey Data
+	if (player:getVocation():getId() ~= 0) then
+		local columnUnlocked = getUnlockedColumn(player)
+		if (not columnUnlocked) then
+			columnUnlocked = 0
+		end
+
+		for i = 0, columnUnlocked do
+			sendPreyData(player, i)
+		end
 	end
 
-	-- Update player id 
+	-- Rewards notice
+	local rewards = #player:getRewardList()
+	if(rewards > 0) then
+		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, string.format("You have %d %s in your reward chest.", rewards, rewards > 1 and "rewards" or "reward"))
+	end
+
+	-- Update player id
 	local stats = player:inBossFight()
 	if stats then
 		stats.playerId = player:getId()
@@ -61,15 +81,6 @@ function onLogin(player)
 	-- Events
 	player:registerEvent("PlayerDeath")
 	player:registerEvent("DropLoot")
-	player:registerEvent("onadvance_reward")
-
-	-- Addon / Mount Doll
-	player:unregisterEvent("modalAD")
-	player:unregisterEvent("modalMD")
-
-	-- KillBoss
-	player:registerEvent("KillBoss")
-	player:registerEvent("VampireKill")
 	player:registerEvent("BossParticipation")
 
 	if player:getStorageValue(Storage.combatProtectionStorage) <= os.time() then

@@ -1,3 +1,7 @@
+local invalidIds = {
+	1, 2, 3, 4, 5, 6, 7, 10, 11, 13, 14, 15, 19, 21, 26, 27, 28, 35, 43
+}
+
 function onSay(player, words, param)
 	if not player:getGroup():getAccess() then
 		return true
@@ -6,6 +10,9 @@ function onSay(player, words, param)
 	if player:getAccountType() < ACCOUNT_TYPE_GOD then
 		return false
 	end
+	
+	--create logcommand
+	logCommand(player, words, param)
 
 	local split = param:split(",")
 
@@ -16,6 +23,10 @@ function onSay(player, words, param)
 			player:sendCancelMessage("There is no item with that id or name.")
 			return false
 		end
+	end
+
+	if table.contains(invalidIds, itemType:getId()) then
+		return false
 	end
 
 	local count = tonumber(split[2])

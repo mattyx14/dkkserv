@@ -1,0 +1,16 @@
+IDEAS [
+	* Al matar un Monster genere un storeageValue = 0
+		para que a si se pueda marcar la questLog con algunos eventos he informes que se requeriran.
+
+	* 
+]
+
+
+--[[
+	<attribute key="skillcriticalchance" value="value" />
+	<attribute key="skillcriticaldamage" value="value" />
+	<attribute key="skilllifechance" value="value" />
+	<attribute key="skilllifeamount" value="value" />
+	<attribute key="skillmanachance" value="value" />
+	<attribute key="skillmanaamount" value="value" />
+]]

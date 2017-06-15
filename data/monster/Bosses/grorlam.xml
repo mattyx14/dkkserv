@@ -1,62 +1,55 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<monster name="Grorlam" nameDescription="Grorlam" race="undead" experience="2400" speed="280" manacost="0">
-	<health now="3000" max="3000"/>
-	<look type="205" corpse="6005"/>
-	<targetchange interval="2000" chance="1"/>
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Grorlam" nameDescription="Grorlam" race="blood" experience="2400" speed="240">
+	<health now="3000" max="3000" />
+	<look type="205" corpse="6005" />
+	<targetchange interval="5000" chance="3" />
 	<flags>
-		<flag summonable="0"/>
-		<flag attackable="1"/>
-		<flag hostile="1"/>
-		<flag illusionable="0"/>
-		<flag convinceable="0"/>
-		<flag pushable="0"/>
-		<flag canpushitems="1"/>
-		<flag canpushcreatures="1"/>
-		<flag targetdistance="1"/>
-		<flag staticattack="90"/>
-		<flag runonhealth="0"/>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="0" />
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="75" attack="60"/>
-		<attack name="physical" interval="2000" chance="14" range="7" min="-0" max="-200">
-			<attribute key="shootEffect" value="largerock"/>
+		<attack name="melee" interval="2000" min="0" max="-255" />
+		<attack name="physical" interval="1000" chance="15" range="7" min="-150" max="-200">
+			<attribute key="shootEffect" value="largerock" />
 		</attack>
 	</attacks>
-	<defenses armor="55" defense="35">
-		<defense name="healing" interval="2000" chance="25" min="100" max="150">
-			<attribute key="areaEffect" value="blueshimmer"/>
+	<defenses armor="15" defense="25">
+		<defense name="healing" interval="1000" chance="25" min="100" max="150">
+			<attribute key="areaEffect" value="blueshimmer" />
 		</defense>
-		<defense name="speed" interval="2000" chance="6" speedchange="480" duration="6000">
-			<attribute key="areaEffect" value="redshimmer"/>
+		<defense name="speed" interval="1000" chance="6" speedchange="270" duration="6000">
+			<attribute key="areaEffect" value="redshimmer" />
 		</defense>
 	</defenses>
 	<elements>
-		<element physicalPercent="30"/>
-		<element holyPercent="20"/>
-		<element energyPercent="20"/>
-		<element deathPercent="-5"/>
-		<element firePercent="-10"/>
+		<element physicalPercent="30" />
+		<element holyPercent="20" />
+		<element energyPercent="20" />
+		<element deathPercent="-5" />
+		<element firePercent="-10" />
 	</elements>
 	<immunities>
-		<immunity paralyze="1"/>
-		<immunity earth="1"/>
-		<immunity invisible="1"/>
+		<immunity earth="1" />
+		<immunity paralyze="1" />
+		<immunity invisible="1" />
 	</immunities>
 	<loot>
-		<item id="11227" chance="100000"/><!-- shiny stone -->
-		<item id="2148" countmax="100" chance="100000"/><!-- gold coin -->
-		<item id="2152" countmax="6" chance="100000"/><!-- platinum coin -->
-		<item id="2483" chance="10000"/><!-- scale armor -->
-		<item id="1295" chance="10000"/><!-- stone -->
-		<item id="2509" chance="63640"/><!-- steel shield -->
-		<item id="1294" countmax="20" chance="9090"/><!-- small stone -->
-		<item id="2150" countmax="2" chance="63640"/><!-- small amethyst -->
-		<item id="2395" chance="11500"/><!-- carlin sword -->
-		<item id="5880" chance="8500"/><!-- iron ore -->
-		<item id="2166" chance="45450"/><!-- power ring-->
-		<item id="2124" chance="15000"/><!-- crystal ring -->
-		<item id="2156" chance="63640"/><!-- red gem -->
-		<item id="2645" chance="1000"/><!-- steel boots -->
-		<item id="11232" chance="72730"/><!-- sulphurous stone -->
+		<item name="small stone" countmax="5" chance="20000" />
+		<item id="1295" chance="10000" /><!-- stone -->
+		<item id="2050" chance="20000" /><!-- torch -->
+		<item name="gold coin" countmax="20" chance="100000" />
+		<item name="carlin sword" chance="2500" />
+		<item name="scale armor" chance="10000" />
+		<item name="fishing rod" chance="5000" />
+		<item name="worm" countmax="10" chance="50000" />
 	</loot>
 </monster>

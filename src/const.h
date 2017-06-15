@@ -440,6 +440,8 @@ enum item_t : uint16_t {
 
 	ITEM_DEPOT_NULL = 25452, // for internal use
 
+	TRANSFORM_BOX_ID = 26054, // for internal use
+
 	ITEM_DEPOT_I = 25453,
 	ITEM_DEPOT_II = 25454,
 	ITEM_DEPOT_III = 25455,
@@ -578,6 +580,15 @@ enum ReloadTypes_t : uint8_t  {
 	RELOAD_TYPE_WEAPONS,
 };
 
+enum NameEval_t : uint8_t {
+	VALID,
+	INVALID,
+	INVALID_LENGTH,
+	INVALID_TOKEN_LENGTH,
+	INVALID_FORBIDDEN,
+	INVALID_CHARACTER
+};
+
 static constexpr int32_t CHANNEL_GUILD = 0x00;
 static constexpr int32_t CHANNEL_PARTY = 0x01;
 static constexpr int32_t CHANNEL_PRIVATE = 0xFFFF;
@@ -585,6 +596,7 @@ static constexpr int32_t CHANNEL_PRIVATE = 0xFFFF;
 static constexpr int32_t CHANNEL_CAST = 40;
 const std::string LIVE_CAST_CHAT_NAME = "Live Cast Chat";
 
+static constexpr int32_t STORAGEVALUE_PROMOTION = 30018;
 //Reserved player storage key ranges;
 //[10000000 - 20000000];
 static constexpr int32_t PSTRG_RESERVED_RANGE_START = 10000000;

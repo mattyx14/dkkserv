@@ -163,6 +163,9 @@ class MonsterType
 		bool isBlockable = false;
 		bool isPassive = false;
 		bool isRewardBoss = false;
+		bool canWalkOnEnergy = true;
+		bool canWalkOnFire = true;
+		bool canWalkOnPoison = true;
 	};
 
 	public:
@@ -179,7 +182,7 @@ class MonsterType
 
 		void createLoot(Container* corpse);
 		bool createLootContainer(Container* parent, const LootBlock& lootblock);
-		std::vector<Item*> createLootItem(const LootBlock& lootBlock);
+		std::vector<Item*> createLootItem(const LootBlock& lootBlock, bool canRerollLoot = false);
 };
 
 class Monsters
@@ -197,6 +200,7 @@ class Monsters
 		bool reload();
 
 		MonsterType* getMonsterType(const std::string& name);
+		std::vector<std::string> getPreyMonsters();
 
 		static uint32_t getLootRandom();
 

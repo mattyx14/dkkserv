@@ -1,10 +1,5 @@
 SPELL_BOOK = 2175
 
-DEMON_OAK_POSITION = Position(478, 1433, 7)
-DEMON_OAK_KICK_POSITION = Position(479, 1414, 7)
-DEMON_OAK_ENTER_POSITION = Position(478, 1423, 7)
-DEMON_OAK_REWARDROOM_POSITION = Position(466, 1424, 8)
-
 function getDistanceBetween(firstPosition, secondPosition)
 	local xDif = math.abs(firstPosition.x - secondPosition.x)
 	local yDif = math.abs(firstPosition.y - secondPosition.y)
@@ -213,27 +208,27 @@ function Position.getTile(self)
 end
 
 function Player.isDruid(self)
-	return isInArray({2, 6}, self:getVocation():getId())
+	return table.contains({2, 6}, self:getVocation():getId())
 end
 
 function Player.isKnight(self)
-	return isInArray({4, 8}, self:getVocation():getId())
+	return table.contains({4, 8}, self:getVocation():getId())
 end
 
 function Player.isPaladin(self)
-	return isInArray({3, 7}, self:getVocation():getId())
+	return table.contains({3, 7}, self:getVocation():getId())
 end
 
 function Player.isMage(self)
-	return isInArray({1, 2, 5, 6}, self:getVocation():getId())
+	return table.contains({1, 2, 5, 6}, self:getVocation():getId())
 end
 
 function Player.isWarrior(self)
-	return isInArray({3, 7, 4, 8}, self:getVocation():getId())
+	return table.contains({3, 7, 4, 8}, self:getVocation():getId())
 end
 
 function Player.isSorcerer(self)
-	return isInArray({1, 5}, self:getVocation():getId())
+	return table.contains({1, 5}, self:getVocation():getId())
 end
 
 function Player.isPromoted(self)
