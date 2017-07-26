@@ -1042,6 +1042,32 @@ void LuaScriptInterface::registerFunctions()
 	registerEnum(BUG_CATEGORY_TECHNICAL)
 	registerEnum(BUG_CATEGORY_OTHER)
 
+	registerEnum(REPORT_TYPE_NAME)
+	registerEnum(REPORT_TYPE_STATEMENT)
+	registerEnum(REPORT_TYPE_BOT)
+
+	registerEnum(REPORT_REASON_NAMEINAPPROPRIATE)
+	registerEnum(REPORT_REASON_NAMEPOORFORMATTED)
+	registerEnum(REPORT_REASON_NAMEADVERTISING)
+	registerEnum(REPORT_REASON_NAMEUNFITTING)
+	registerEnum(REPORT_REASON_NAMERULEVIOLATION)
+	registerEnum(REPORT_REASON_INSULTINGSTATEMENT)
+	registerEnum(REPORT_REASON_SPAMMING)
+	registerEnum(REPORT_REASON_ADVERTISINGSTATEMENT)
+	registerEnum(REPORT_REASON_UNFITTINGSTATEMENT)
+	registerEnum(REPORT_REASON_LANGUAGESTATEMENT)
+	registerEnum(REPORT_REASON_DISCLOSURE)
+	registerEnum(REPORT_REASON_RULEVIOLATION)
+	registerEnum(REPORT_REASON_STATEMENT_BUGABUSE)
+	registerEnum(REPORT_REASON_UNOFFICIALSOFTWARE)
+	registerEnum(REPORT_REASON_PRETENDING)
+	registerEnum(REPORT_REASON_HARASSINGOWNERS)
+	registerEnum(REPORT_REASON_FALSEINFO)
+	registerEnum(REPORT_REASON_ACCOUNTSHARING)
+	registerEnum(REPORT_REASON_STEALINGDATA)
+	registerEnum(REPORT_REASON_SERVICEATTACKING)
+	registerEnum(REPORT_REASON_SERVICEAGREEMENT)
+
 	registerEnum(CALLBACK_PARAM_LEVELMAGICVALUE)
 	registerEnum(CALLBACK_PARAM_SKILLVALUE)
 	registerEnum(CALLBACK_PARAM_TARGETTILE)
@@ -1396,12 +1422,12 @@ void LuaScriptInterface::registerFunctions()
 	registerEnum(CREATURETYPE_PLAYER)
 	registerEnum(CREATURETYPE_MONSTER)
 	registerEnum(CREATURETYPE_NPC)
-	registerEnum(CREATURETYPE_SUMMON_OWN)
-	registerEnum(CREATURETYPE_SUMMON_OTHERS)
+	registerEnum(CREATURETYPE_SUMMONPLAYER)
 
 	registerEnum(CLIENTOS_LINUX)
 	registerEnum(CLIENTOS_WINDOWS)
 	registerEnum(CLIENTOS_FLASH)
+	registerEnum(CLIENTOS_NEW_WINDOWS)
 	registerEnum(CLIENTOS_OTCLIENT_LINUX)
 	registerEnum(CLIENTOS_OTCLIENT_WINDOWS)
 	registerEnum(CLIENTOS_OTCLIENT_MAC)
@@ -1476,6 +1502,18 @@ void LuaScriptInterface::registerFunctions()
 	registerEnum(ITEM_WILDGROWTH)
 	registerEnum(ITEM_WILDGROWTH_PERSISTENT)
 	registerEnum(ITEM_WILDGROWTH_SAFE)
+
+	registerEnum(ITEM_HEALTH_CASK_START)
+	registerEnum(ITEM_HEALTH_CASK_END)
+
+	registerEnum(ITEM_MANA_CASK_START)
+	registerEnum(ITEM_MANA_CASK_END)
+
+	registerEnum(ITEM_SPIRIT_CASK_START)
+	registerEnum(ITEM_SPIRIT_CASK_END)
+
+	registerEnum(ITEM_KEG_START)
+	registerEnum(ITEM_KEG_END)
 
 	registerEnum(PlayerFlag_CannotUseCombat)
 	registerEnum(PlayerFlag_CannotAttackPlayer)
@@ -1769,6 +1807,7 @@ void LuaScriptInterface::registerFunctions()
 	registerEnum(RELOAD_TYPE_GLOBALEVENTS)
 	registerEnum(RELOAD_TYPE_ITEMS)
 	registerEnum(RELOAD_TYPE_MONSTERS)
+	registerEnum(RELOAD_TYPE_MODULES)
 	registerEnum(RELOAD_TYPE_MOUNTS)
 	registerEnum(RELOAD_TYPE_MOVEMENTS)
 	registerEnum(RELOAD_TYPE_NPCS)
@@ -1807,6 +1846,10 @@ void LuaScriptInterface::registerFunctions()
 	registerEnumIn("configKeys", ConfigManager::ENABLE_LIVE_CASTING)
 	registerEnumIn("configKeys", ConfigManager::ALLOW_BLOCK_SPAWN)
 	registerEnumIn("configKeys", ConfigManager::CLASSIC_ATTACK_SPEED)
+	registerEnumIn("configKeys", ConfigManager::REMOVE_WEAPON_AMMO)
+	registerEnumIn("configKeys", ConfigManager::REMOVE_WEAPON_CHARGES)
+	registerEnumIn("configKeys", ConfigManager::REMOVE_POTION_CHARGES)
+	registerEnumIn("configKeys", ConfigManager::STOREMODULES)
 
 	registerEnumIn("configKeys", ConfigManager::MAP_NAME)
 	registerEnumIn("configKeys", ConfigManager::HOUSE_RENT_PERIOD)
@@ -2342,6 +2385,7 @@ void LuaScriptInterface::registerFunctions()
 	registerMethod("Player", "hasBlessing", LuaScriptInterface::luaPlayerHasBlessing);
 	registerMethod("Player", "addBlessing", LuaScriptInterface::luaPlayerAddBlessing);
 	registerMethod("Player", "removeBlessing", LuaScriptInterface::luaPlayerRemoveBlessing);
+	registerMethod("Player", "getBlessingCount", LuaScriptInterface::luaPlayerGetBlessingCount);
 
 	registerMethod("Player", "canLearnSpell", LuaScriptInterface::luaPlayerCanLearnSpell);
 	registerMethod("Player", "learnSpell", LuaScriptInterface::luaPlayerLearnSpell);
@@ -8581,6 +8625,10 @@ int LuaScriptInterface::luaPlayerSetGroup(lua_State* L)
 int LuaScriptInterface::luaPlayerGetPreyStamina(lua_State* L)
 {
 	uint16_t column = getNumber<uint16_t>(L, 2);
+	if (column == 10) {
+		column = 2;
+	}
+
 	Player* player = getUserdata<Player>(L, 1);
 	if (player) {
 		lua_pushnumber(L, player->getPreyStamina(column));
@@ -8594,6 +8642,9 @@ int LuaScriptInterface::luaPlayerGetPreyType(lua_State* L)
 {
 	Player* player = getUserdata<Player>(L, 1);
 	uint16_t column = getNumber<uint16_t>(L, 2);
+	if (column == 10) {
+		column = 2;
+	}
 
 	if (player) {
 		lua_pushnumber(L, player->getPreyType(column));
@@ -8608,6 +8659,9 @@ int LuaScriptInterface::luaPlayerGetPreyValue(lua_State* L)
 {
 	Player* player = getUserdata<Player>(L, 1);
 	uint16_t column = getNumber<uint16_t>(L, 2);
+	if (column == 10) {
+		column = 2;
+	}
 
 	if (player) {
 		lua_pushnumber(L, player->getPreyValue(column));
@@ -8622,6 +8676,9 @@ int LuaScriptInterface::luaPlayerGetPreyName(lua_State* L)
 {
 	Player* player = getUserdata<Player>(L, 1);
 	uint16_t column = getNumber<uint16_t>(L, 2);
+	if (column == 10) {
+		column = 2;
+	}
 
 	if (player) {
 		pushString(L, player->getPreyName(column));
@@ -8635,6 +8692,10 @@ int LuaScriptInterface::luaPlayerGetPreyName(lua_State* L)
 int LuaScriptInterface::luaPlayerSetPreyStamina(lua_State* L)
 {
 	uint16_t column = getNumber<uint16_t>(L, 2);
+	if (column == 10) {
+		column = 2;
+	}
+
 	uint16_t stamina = getNumber<uint16_t>(L, 3);
 	Player* player = getUserdata<Player>(L, 1);
 	if (player) {
@@ -8649,6 +8710,10 @@ int LuaScriptInterface::luaPlayerSetPreyStamina(lua_State* L)
 int LuaScriptInterface::luaPlayerSetPreyType(lua_State* L)
 {
 	uint16_t column = getNumber<uint16_t>(L, 2);
+	if (column == 10) {
+		column = 2;
+	}
+
 	uint16_t type = getNumber<uint16_t>(L, 3);
 	Player* player = getUserdata<Player>(L, 1);
 	if (player) {
@@ -8664,6 +8729,10 @@ int LuaScriptInterface::luaPlayerSetPreyValue(lua_State* L)
 {
 	uint16_t value = getNumber<uint16_t>(L, 3);
 	uint16_t column = getNumber<uint16_t>(L, 2);
+	if (column == 10) {
+		column = 2;
+	}
+
 	Player* player = getUserdata<Player>(L, 1);
 	if (player) {
 		player->preyBonusValue[column] = value;
@@ -8677,6 +8746,10 @@ int LuaScriptInterface::luaPlayerSetPreyValue(lua_State* L)
 int LuaScriptInterface::luaPlayerSetPreyName(lua_State* L)
 {
 	uint16_t column = getNumber<uint16_t>(L, 2);
+	if (column == 10) {
+		column = 2;
+	}
+
 	std::string name = getString(L, 3);
 	Player* player = getUserdata<Player>(L, 1);
 	if (player) {
@@ -9478,7 +9551,7 @@ int LuaScriptInterface::luaPlayerRemoveTibiaCoins(lua_State* L)
 int LuaScriptInterface::luaPlayerHasBlessing(lua_State* L)
 {
 	// player:hasBlessing(blessing)
-	uint8_t blessing = getNumber<uint8_t>(L, 2) - 1;
+	uint8_t blessing = getNumber<uint8_t>(L, 2);
 	Player* player = getUserdata<Player>(L, 1);
 	if (player) {
 		pushBoolean(L, player->hasBlessing(blessing));
@@ -9497,13 +9570,11 @@ int LuaScriptInterface::luaPlayerAddBlessing(lua_State* L)
 		return 1;
 	}
 
-	uint8_t blessing = getNumber<uint8_t>(L, 2) - 1;
-	if (player->hasBlessing(blessing)) {
-		pushBoolean(L, false);
-		return 1;
-	}
+	uint8_t blessing = getNumber<uint8_t>(L, 2);
+	uint8_t count = getNumber<uint8_t>(L, 3);
 
-	player->addBlessing(1 << blessing);
+	player->addBlessing(blessing, count);
+	player->sendBlessStatus();
 	pushBoolean(L, true);
 	return 1;
 }
@@ -9517,14 +9588,33 @@ int LuaScriptInterface::luaPlayerRemoveBlessing(lua_State* L)
 		return 1;
 	}
 
-	uint8_t blessing = getNumber<uint8_t>(L, 2) - 1;
+	uint8_t blessing = getNumber<uint8_t>(L, 2);
+	uint8_t count = getNumber<uint8_t>(L, 3);
+
 	if (!player->hasBlessing(blessing)) {
 		pushBoolean(L, false);
 		return 1;
 	}
 
-	player->removeBlessing(1 << blessing);
+	player->removeBlessing(blessing, count);
 	pushBoolean(L, true);
+	return 1;
+}
+
+int LuaScriptInterface::luaPlayerGetBlessingCount(lua_State* L)
+{
+	// player:getBlessingCount(index)
+	Player* player = getUserdata<Player>(L, 1);
+	uint8_t index = getNumber<uint8_t>(L, 2);
+	if (index == 0) {
+		index = 1;
+	}
+
+	if (player) {
+		lua_pushnumber(L, player->getBlessingCount(index));
+	} else {
+		lua_pushnil(L);
+	}
 	return 1;
 }
 

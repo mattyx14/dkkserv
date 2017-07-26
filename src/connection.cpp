@@ -237,19 +237,10 @@ void Connection::parsePacket(const boost::system::error_code& error)
 		return;
 	}
 
-	//Check packet checksum
-	uint32_t checksum;
-	int32_t len = msg.getLength() - msg.getBufferPosition() - NetworkMessage::CHECKSUM_LENGTH;
-	if (len > 0) {
-		checksum = adlerChecksum(msg.getBuffer() + msg.getBufferPosition() + NetworkMessage::CHECKSUM_LENGTH, len);
-	} else {
-		checksum = 0;
-	}
-
-	uint32_t recvChecksum = msg.get<uint32_t>();
-	if (recvChecksum != checksum) {
-		// it might not have been the checksum, step back
-		msg.skipBytes(-NetworkMessage::CHECKSUM_LENGTH);
+	//Check packet
+	uint32_t recvPacket = msg.get<uint32_t>();
+	if ((recvPacket & 1 << 31) != 0) {
+		//std::cout << "CCompress" << std::endl;
 	}
 
 	if (!receivedFirst) {
@@ -257,19 +248,24 @@ void Connection::parsePacket(const boost::system::error_code& error)
 		receivedFirst = true;
 
 		if (!protocol) {
+			// As of 11.11+ update, we need to check if it's a outdated client or a status client server with this ugly check
+			if(msg.getLength() < 280) {
+				msg.skipBytes(-NetworkMessage::CHECKSUM_LENGTH); //those 32bits read up there
+			}
+
 			// Game protocol has already been created at this point
-			protocol = service_port->make_protocol(recvChecksum == checksum, msg, shared_from_this());
+			protocol = service_port->make_protocol(true, msg, shared_from_this());
 			if (!protocol) {
 				close(FORCE_CLOSE);
 				return;
 			}
 		} else {
-			msg.skipBytes(1);    // Skip protocol ID
+			msg.skipBytes(1); // Skip protocol ID
 		}
 
 		protocol->onRecvFirstMessage(msg);
 	} else {
-		protocol->onRecvMessage(msg);    // Send the packet to the current protocol
+		protocol->onRecvMessage(msg); // Send the packet to the current protocol
 	}
 
 	try {

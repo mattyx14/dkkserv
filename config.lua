@@ -5,6 +5,9 @@ hotkeyAimbotEnabled = true
 protectionLevel = 1
 pzLocked = 60 * 1000
 removeChargesFromRunes = true
+removeChargesFromPotions = true
+removeWeaponAmmunition = true
+removeWeaponCharges = true
 timeToDecreaseFrags = 24 * 60 * 60 * 1000
 whiteSkullTime = 15 * 60 * 1000
 stairJumpExhaustion = 2 * 1000
@@ -19,29 +22,32 @@ orangeSkullDuration = 7
 
 -- Connection Config
 -- NOTE: maxPlayers set to 0 means no limit
-ip = "127.0.0.1"
+ip = "darkkonia.zapto.org"
 bindOnlyGlobalAddress = false
 loginProtocolPort = 7171
 gameProtocolPort = 7172
 statusProtocolPort = 7171
 maxPlayers = 0
-motd = "Welcome to The Forgotten Server!"
+motd = "Welcome to The DarkKonia Server!"
 onePlayerOnlinePerAccount = true
 allowClones = false
-serverName = "Forgotten"
+serverName = "FANTASY"
 statusTimeout = 5 * 1000
 replaceKickOnLogin = true
-maxPacketsPerSecond = 25
+maxPacketsPerSecond = 45
 
 -- Version Manual
 clientVersionMin = 1100
-clientVersionMax = 1200
-clientVersionStr = "Only clients with protocol 10.00 or allowed!"
+clientVersionMax = 1140
+clientVersionStr = "Only clients with protocol 10.00 or 11.40 is allowed!"
 
 -- Depot Limit
 freeDepotLimit = 2000
 premiumDepotLimit = 10000
 depotBoxes = 17
+
+-- GameStore
+gamestoreByModules = true
 
 -- Casting System 
 enableLiveCasting = true
@@ -64,8 +70,8 @@ timeBetweenExActions = 1000
 
 -- Map
 -- NOTE: set mapName WITHOUT .otbm at the end
-mapName = "forgotten"
-mapAuthor = "Komic"
+mapName = "darkkonia"
+mapAuthor = "Matt Gomez"
 
 -- Market
 marketOfferDuration = 30 * 24 * 60 * 60

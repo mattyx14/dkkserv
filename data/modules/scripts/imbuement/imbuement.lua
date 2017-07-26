@@ -1,13 +1,15 @@
+ImbuingSystem = {
+	Developer = "Charles (Cjaker)",
+	Version = "1.0",
+	LastUpdate = "24/05/2017 - 03:50 (AM)",
+	FixedBy = "Leu (jlvc) and Clenir (Mikii)"
+}
+
 --[[
 	1~3 => Element Type
 	4~6 => Total Time (segundos - 20 h)
 	7~9 => Time Passed (seconds)
-]]--
-ImbuingSystem = {
-	Developer = "Charles (Cjaker)",
-	Version = "1.0",
-	LastUpdate = "24/05/2017 - 03:50 (AM)"
-}
+]]
 
 local Imbuements = {
 	{
@@ -64,18 +66,176 @@ local Imbuements = {
 		Name = "Vampirism",
 		Category = "Life Leech",
 		Type = "hitpointsleech",
-		Description = "converts % of damage to HP with a chance of 100%",
+		Description = "converts % of damage to HP with a chance of 100%.",
 		Levels = {"Basic", "Intricate", "Powerful"},
 		LevelsPercent = {5, 10, 25},
 		Weapons = {"axe", "club", "sword", "wand", "rod", "bow", "armor"},
 		Items = {{10602, 25}, {10550, 15}, {10580, 5}}
+	},
+	{
+		Name = "Void",
+		Category = "Mana Leech",
+		Type = "manapointsleech",
+		Description = "converts % of damage to MP with a chance of 100%.",
+		Levels = {"Basic", "Intricate", "Powerful"},
+		LevelsPercent = {3, 5, 8},
+		Weapons = {"axe", "club", "sword", "wand", "rod", "bow", "helmet"},
+		Items = {{12448, 25}, {22534, 25}, {25386, 5}}
+	},
+	{
+		Name = "Strike",
+		Category = "Critical Hit",
+		Type = "criticaldamage",
+		Description = "raises crit hit damage by % and crit hit chance by 10%.",
+		Levels = {"Basic", "Intricate", "Powerful"},
+		LevelsPercent = {15, 25, 50},
+		Weapons = {"axe", "club", "sword", "bow"},
+		Items = {{12400, 20}, {11228, 25}, {25384, 5}}
+	},
+	{
+		Name = "Lich Shroud",
+		Category = "Death Damage",
+		Type = "absorbPercentDeath",
+		Description = "reduces death damage by %.",
+		Levels = {"Basic", "Intricate", "Powerful"},
+		LevelsPercent = {3, 8, 15},
+		Weapons = {"armor", "shield"},
+		Items = {{12422, 25}, {24663, 20}, {10577, 5}}
+	},
+	{
+		Name = "Snake Skin",
+		Category = "Eart Damage",
+		Type = "absorbPercentEarth",
+		Description = "reduces earth damage by %.",
+		Levels = {"Basic", "Intricate", "Powerful"},
+		LevelsPercent = {3, 8, 15},
+		Weapons = {"armor", "shield"},
+		Items = {{20103, 25}, {10611, 20}, {12658, 10}}
+	},
+	{
+		Name = "Hide Dragon",
+		Category = "Fire Damage",
+		Type = "absorbPercentFire",
+		Description = "reduces fire damage by %.",
+		Levels = {"Basic", "Intricate", "Powerful"},
+		LevelsPercent = {3, 8, 15},
+		Weapons = {"armor", "shield"},
+		Items = {{5877, 25}, {18425, 10}, {12614, 5}}
+	},
+	{
+		Name = "Quara Scale",
+		Category = "Ice Damage",
+		Type = "absorbPercentIce",
+		Description = "reduces ice damage by %.",
+		Levels = {"Basic", "Intricate", "Powerful"},
+		LevelsPercent = {3, 8, 15},
+		Weapons = {"armor", "shield"},
+		Items = {{11212, 25}, {11224, 15}, {15425, 10}}
+	},
+	{
+		Name = "Cloud Fabric",
+		Category = "Energy Damage",
+		Type = "absorbPercentEnergy",
+		Description = "reduces energy damage by %.",
+		Levels = {"Basic", "Intricate", "Powerful"},
+		LevelsPercent = {3, 8, 15},
+		Weapons = {"armor", "shield"},
+		Items = {{10561, 25}, {15482, 15}, {10582, 10}}
+	},
+	{
+		Name = "Demon Presence",
+		Category = "Holy Damage",
+		Type = "absorbPercentHoly",
+		Description = "reduces holy damage by %.",
+		Levels = {"Basic", "Intricate", "Powerful"},
+		LevelsPercent = {3, 8, 15},
+		Weapons = {"armor", "shield"},
+		Items = {{10556, 25}, {10555, 25}, {11221, 20}}
+	},
+	{
+		Name = "Swiftness",
+		Category = "Increase Speed",
+		Type = "speed",
+		Description = "raises walking speed by %.",
+		Levels = {"Basic", "Intricate", "Powerful"},
+		LevelsPercent = {10, 15, 20},
+		Weapons = {"boots"},
+		Items = {{19738, 15}, {11219, 25}, {15484, 20}}
+	},
+	{
+		Name = "Chop",
+		Category = "Increase Axe Fighting",
+		Type = "skillAxe",
+		Description = "raises axe fighting skill by %.",
+		Levels = {"Basic", "Intricate", "Powerful"},
+		LevelsPercent = {1, 2, 4},
+		Weapons = {"axe", "helmet"},
+		Items = {{11113, 20}, {12403, 25}, {23571, 20}}
+	},
+	{
+		Name = "Slash",
+		Category = "Increase Sword Fighting",
+		Type = "skillSword",
+		Description = "raises sword fighting skill by %.",
+		Levels = {"Basic", "Intricate", "Powerful"},
+		LevelsPercent = {1, 2, 4},
+		Weapons = {"sword", "helmet"},
+		Items = {{10608, 25}, {23573, 25}, {10571, 5}}
+	},
+	{
+		Name = "Bash",
+		Category = "Increase Club Fighting",
+		Type = "skillClub",
+		Description = "raises club fighting skill by %.",
+		Levels = {"Basic", "Intricate", "Powerful"},
+		LevelsPercent = {1, 2, 4},
+		Weapons = {"club", "helmet"},
+		Items = {{10574, 20}, {24845, 15}, {11322, 10}}
+	},
+	{
+		Name = "Precision",
+		Category = "Increase Distance Fighting",
+		Type = "skillDist",
+		Description = "raises distance fighting skill by %.",
+		Levels = {"Basic", "Intricate", "Powerful"},
+		LevelsPercent = {1, 2, 4},
+		Weapons = {"bow", "helmet"},
+		Items = {{12420, 25}, {21311, 20}, {11215, 10}}
+	},
+	{
+		Name = "Blockade",
+		Category = "Increase Shielding",
+		Type = "skillShield",
+		Description = "raises shielding skill by %.",
+		Levels = {"Basic", "Intricate", "Powerful"},
+		LevelsPercent = {1, 2, 4},
+		Weapons = {"shield", "helmet"},
+		Items = {{10558, 20}, {12659, 25}, {22533, 25}}
+	},
+	{
+		Name = "Epiphany",
+		Category = "Increase Magic Level",
+		Type = "magiclevelpoints",
+		Description = "raises magic level by %.",
+		Levels = {"Basic", "Intricate", "Powerful"},
+		LevelsPercent = {1, 2, 4},
+		Weapons = {"wand", "rod", "helmetmage"},
+		Items = {{10552, 25}, {12408, 15}, {11226, 15}}
 	}
 }
 
 local Weapons = {
-	["axe"] = {3962, 7412, 18451, 8926, 2414, 11305, 7419, 2435, 7453, 2415, 2427, 8924, 15492, 7435, 7455, 7456, 2443, 25383, 7434, 6553, 8925, 2431, 2447, 15451, 11323},
-	["club"] = {7414, 7426, 2453, 7429, 15647, 7431, 7430, 23543, 2444, 2452, 20093, 7424, 25418, 18452, 8928, 7421, 15414, 7410, 7437, 7451, 2424, 2436, 7423, 12648, 7452, 8929, 2421},
-	["sword"] = {7404, 7403, 12649, 7416, 2407, 2413, 7385, 7382, 2451, 8930, 2438, 2393, 7407, 7405, 2400, 7418, 7417, 18465, 2376, 7391, 6528, 8931, 12613, 11309, 7408, 11307}
+	["armor"] = {21692, 2500, 2656, 2464, 2487, 2494, 15407, 2492, 2503, 12607, 2466, 23538, 10296, 2476, 3968, 2472, 7463, 8888, 23537, 2486, 15406, 8891, 18404, 10363},
+	["shield"] = {2537, 2518, 15491, 2534, 2535, 2536, 2542, 2539, 2519, 2520, 25382, 25414, 15411, 2516, 2514, 2522, 2533, 2531, 21707, 10289, 6433, 6391, 7460, 2524, 15413, 21697, 3974, 12644, 10297, 10294, 2509, 10364, 15453, 25411, 2217, 8900, 8901},
+	["boots"] = {9931, 3982, 15410, 2646, 24637, 5462, 18406, 2645, 25412, 21708},
+	["helmet"] = {2499, 2139, 3972, 2491, 2497, 2493, 2502, 12645, 7458, 2471, 10298, 10299, 20132, 2662, 10291, 2498, 24848, 5741, 25410, 2475, 11302},
+	["helmetmage"] = {10016, 2323, 12630, 11368, 8820, 10570, 9778},
+	["bow"] = {7438, 15643, 21696, 10295, 18454, 25522, 8857, 8854, 8850, 8851, 8852, 8853, 2455, 8849, 16111, 21690},
+	["wand"] = {8920, 8921, 8922, 2191},
+	["rod"] = {8910, 8911, 24839},
+	["axe"] = {2426, 2427, 2414, 2415, 2443, 11323, 7455, 2447, 7412, 8926, 7419, 7453, 2435, 3962, 15451, 7434, 7435, 6553, 15492, 7456, 8925, 18451, 2431, 8924},
+	["club"] = {7424, 2452, 2444, 7426, 7414, 7452, 7429, 7421, 15414, 7410, 15647, 20093, 7430, 7431, 23543, 2453, 8929, 12648, 7423, 2436, 2424, 7451, 7437, 2421, 8928, 18452, 25418},
+	["sword"] = {7407, 2393, 7382, 7403, 2413, 7405, 7391, 11309, 12613, 7417, 2376, 2400, 7404, 12649, 2438, 8930, 2451, 11395, 2407, 7416, 11307, 7418, 6528, 7408, 18465, 8931}
 }
 
 local ImbuingInfo = {
@@ -85,31 +245,18 @@ local ImbuingInfo = {
 }
 
 local imbuingShrineIds = {
-	27716, 27717, 27728, 27729, 27850, 27851
+	27789, 27790, 27716, 27717
 }
 
 local ImbuementElements = {
 	"firedamage", "earthdamage", "energydamage", "deathdamage", "icedamage"
 }
 
-local ErrorMessages = {
-	MESSAGEDIALOG_IMBUEMENT_ERROR = 1,
-	MESSAGEDIALOG_IMBUEMENT_ROLL_FAILED = 2,
-	MESSAGEDIALOG_IMBUING_STATION_NOT_FOUND = 3,
-	MESSAGEDIALOG_CLEARING_CHARM_SUCCESS = 10,
-	MESSAGEDIALOG_CLEARING_CHARM_ERROR = 11
-}
-
-local ClientPackets = {
-	ApplyImbuement = 0xD5,
-	ClearImbuement = 0xD6
-}
-
 function onRecvbyte(player, msg, byte)
-	if (byte == ClientPackets.ApplyImbuement) then
+	if (byte == 0xD5) then
 		-- Apply Imbuement
 		player:applyImbuement(msg)
-	elseif (byte == ClientPackets.ClearImbuement) then
+	elseif (byte == 0xD6) then
 		-- Clear Imbuement
 		player:clearImbuement(msg)
 	end
@@ -125,7 +272,7 @@ local function tableContains(table, value)
 	return false
 end
 
-local function haveImbuingShrine(player) 
+local function haveImbuingShrine(player)
 	for x = -1, 1 do
 		for y = -1, 1 do
 			local posX, posY, posZ = player:getPosition().x+x, player:getPosition().y+y, player:getPosition().z
@@ -195,10 +342,10 @@ local function getImbuementByIndex(index, id)
 	return nil
 end
 
-local function sendImbuementError(self, message, errorType)
+local function sendImbuementError(self, message)
 	local msg = NetworkMessage()
 	msg:addByte(0xED)
-	msg:addByte(errorType or 0x01)
+	msg:addByte(0x01)
 	msg:addString(message)
 	msg:sendToPlayer(self)
 end
@@ -214,122 +361,140 @@ local function mergeImbuementList(table1, table2)
 	return newTable
 end
 
-local function getNewList(item)
-	local equip = getEquipById(item:getId())
-	local myImbuements = getImbuementEquip(equip)
-	local imbuingSlots = item:getType():getImbuingSlots()
-
-	for i = 1, imbuingSlots do
-		if (item:isActiveImbuement(i+3)) then
-			local existsImbuement, enchantLevel = getActiveImbuement(item, i)
-			myImbuements = mergeImbuementList(myImbuements, existsImbuement)
-		end
-	end
-
-	return myImbuements
-end
-
-function Player.applyImbuement(self, msg)
-	if (not haveImbuingShrine(self)) then
-		sendImbuementError(self, "An error ocurred, please reopen imbuement window.", ErrorMessages.MESSAGEDIALOG_IMBUEMENT_ERROR)
-		return false
-	end
-
-	local item = lastItemImbuing[self:getGuid()]
-	if (item == nil) then
-		sendImbuementError(self, "Cannot find item, please contact an Administrator.", ErrorMessages.MESSAGEDIALOG_IMBUEMENT_ERROR)
-		return false
-	end
-
-	local slot, choiceId, useProtection = msg:getByte(), msg:getU32(), msg:getByte()
-	local myImbuement, imbuingLevel = getImbuementByIndex(choiceId, item:getId())
-	local imbuementsNow = getNewList(item)
-	local index = 0
-	for i = 1, #imbuementsNow do
-		for j = 1, item:getType():getImbuingSlots() do
-			index = index + 1
-			if (choiceId == index) then
-				myImbuement, imbuingLevel = imbuementsNow[i], j
-				break
-			end
-		end
-	end
-
-	if (not myImbuement) then
-		sendImbuementError(self, "Cannot find imbuement data, please contact an Administrator.", ErrorMessages.MESSAGEDIALOG_IMBUEMENT_ERROR)
-		return false
-	end
-
-	local imbuingPrice = ImbuingInfo[imbuingLevel].Price
-	if (useProtection == 1) then
-		imbuingPrice = imbuingPrice + ImbuingInfo[imbuingLevel].Protection
-	end
-
-	if (not self:removeMoneyNpc(imbuingPrice)) then
-		sendImbuementError(self, "You don't have enough money " ..imbuingPrice.. " gps.", ErrorMessages.MESSAGEDIALOG_IMBUEMENT_ROLL_FAILED)
-		return false
-	end
-
-	slot = slot + 1
-
-	for j = 1, imbuingLevel do
-		local itemID, itemCount = myImbuement.Items[j][1], myImbuement.Items[j][2]
-		if (self:getItemCount(itemID) < itemCount) then
-			sendImbuementError(self, "You don't have all necessary items.", ErrorMessages.MESSAGEDIALOG_IMBUEMENT_ROLL_FAILED)
-			return false
-		end
-
-		self:removeItem(itemID, itemCount)
-	end
-
-	if (item:isActiveImbuement(slot+3)) then
-		sendImbuementError(self, "An error ocurred, please reopen imbuement window.", ErrorMessages.MESSAGEDIALOG_IMBUEMENT_ERROR)
-		return false
-	end
-	
-	local applyChance = math.random(100)
-	if (ImbuingInfo[imbuingLevel].Percent < applyChance) then
-		sendImbuementError(self, "Item failed to apply imbuement.", ErrorMessages.MESSAGEDIALOG_IMBUEMENT_ROLL_FAILED)
-		return false
-	end
-
-	item:setSpecialAttribute(slot, myImbuement.Levels[imbuingLevel]..myImbuement.Name, slot+3, 72000, slot+6, 0)
-	self:openImbuementWindow(item)
-end
-
+-- ############### leu(jlcvp) ############## --
 function Player.clearImbuement(self, msg)
 	if (not haveImbuingShrine(self)) then
-		sendImbuementError(self, "Sorry, not possible.", ErrorMessages.MESSAGEDIALOG_CLEARING_CHARM_ERROR)
+		sendImbuementError(self, "Sorry, not possible.")
 		return false
 	end
 
 	local item = lastItemImbuing[self:getGuid()]
 	if (item == nil) then
-		sendImbuementError(self, "Cannot find item, please send this message to a Administrator.", ErrorMessages.MESSAGEDIALOG_CLEARING_CHARM_ERROR)
+		sendImbuementError(self, "Cannot find item, please send this message to a Administrator.")
 		return false
 	end
 
 	local weaponSlot = msg:getByte()
 	if (not weaponSlot) then
-		sendImbuementError(self, "Sorry, not possible.", ErrorMessages.MESSAGEDIALOG_CLEARING_CHARM_ERROR)
+		sendImbuementError(self, "Sorry, not possible.")
 		return false
 	end
 
 	weaponSlot = weaponSlot + 1
 
 	if (not item:isActiveImbuement(weaponSlot + 3)) then
-		sendImbuementError(self, "Sorry, not possible.", ErrorMessages.MESSAGEDIALOG_CLEARING_CHARM_ERROR)
+		sendImbuementError(self, "Sorry, not possible.")
 		return false
 	end
 
 	if (not self:removeMoneyNpc(15000)) then
-		sendImbuementError(self, "You don't have enough money 15000 gps.", ErrorMessages.MESSAGEDIALOG_CLEARING_CHARM_ERROR)
+		sendImbuementError(self, "You don't have enough money 15000 gps.")
 		return false
 	end
 	
 	item:setSpecialAttribute(weaponSlot, 0, weaponSlot+3, 0, weaponSlot+6, 0)
 	self:openImbuementWindow(item)
-	sendImbuementError(self, "Item clean success!", ErrorMessages.MESSAGEDIALOG_CLEARING_CHARM_SUCCESS)
+end
+-- ###########################################--
+
+function Player.applyImbuement(self, msg)
+	if (not haveImbuingShrine(self)) then
+		self:sendCancelMessage("Sorry, not possible.")
+		return false
+	end
+
+	local item = lastItemImbuing[self:getGuid()]
+	if (item == nil) then
+		self:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Cannot find item, please send this message to a Administrator.")
+		return false
+	end
+
+	local slot, choiceId, useProtection = msg:getByte(), msg:getU32(), msg:getByte()
+
+	local myImbuement, imbuingLevel = getImbuementByIndex(choiceId, item:getId())
+
+	-- ################# PARTE ADICIONADA BY MIKII - CLENIR SANTOS ################# --
+	-- A FUNÇÃO ABAIXO ATÉ O FINAL DESTE COMENTÁRIO É RESPONSAVEL PELA REMOÇÃO DOS ITENS DOS PLAYERS E DINHEIRO DO BANCO --
+
+	-- Cria um Array para Descobrir o Level numeral do encantamento.
+	local TempArrayLevel = { 
+		['Basic'] 		= 1,
+		['Intricate'] 	= 2,
+		['Powerful'] 	= 3
+	}
+
+	-- Retorna o Level numeral a partir do selecionado no cliente.
+	local VerificaLeveldeRemocao = TempArrayLevel[myImbuement.Levels[imbuingLevel]]	
+
+	-- Retorna o Valor Total - Se tem Proteção - Soma Valor + Valor Proteção - Senao cobra o Valor Simples.		
+	if  (useProtection == 1) then
+		ValorTotal = ImbuingInfo[VerificaLeveldeRemocao].Price + ImbuingInfo[VerificaLeveldeRemocao].Protection
+	else
+		ValorTotal = ImbuingInfo[VerificaLeveldeRemocao].Price
+	end
+
+	-- Verifica se o Player Tem o valor no Banco antes da Remoção.		
+	if (not self:removeMoneyNpc(ValorTotal)) then
+		Player.closeImbuementWindow(self)
+		self:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You don't have enough money.")
+		return false
+	end
+
+	-- Verifica se o Player Tem os Itens Necessários antes da Remoção.
+	for i = 1, VerificaLeveldeRemocao do
+			local = myImbuement.Items[i][1]
+			local ItemQtd = myImbuement.Items[i][2]
+			if (self:getItemCount(ItemId) < ItemQtd) then
+				Player.closeImbuementWindow(self)
+				self:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You don't have necessary items.")
+				return false
+			end
+	end
+	-- ################# FINAL PARCIAL ################# --
+
+	if (not myImbuement) then
+		self:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Cannot find imbuement data, please send this message to a Administrator.")
+		return false
+	end
+
+	slot = slot + 1
+	if (item:isActiveImbuement(slot+3)) then
+		self:sendCancelMessage("Sorry, not possible.")
+		return false
+	end
+
+	-- ################# PARTE ADICIONADA BY MIKII - CLENIR SANTOS ################# --
+	-- SE TUDO OCORREU BEM SEM NENHUM FALSE --
+
+
+	-- Remove os itens .
+	for i = 1, VerificaLeveldeRemocao do
+		local	ItemId = myImbuement.Items[i][1]
+		local	ItemQtd = myImbuement.Items[i][2]
+
+		if (not self:removeItem(ItemId, ItemQtd)) then
+			Player.closeImbuementWindow(self)
+			self:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Você não tem os itens necessários.")
+			return false
+		end
+	end
+	-- Remove o dinheiro.
+	self:setBankBalance(self:getBankBalance() - ValorTotal)
+
+	-- Faz a contagem de % para o item quebrar caso nao esteja usando Proteção .
+	if (useProtection == 0) then
+		local ParseAcerto = ImbuingInfo[VerificaLeveldeRemocao].Percent
+			if(math.random(1,100) >= ParseAcerto) then
+				Player.closeImbuementWindow(self)
+				self:removeItem(item:getId(), 1)	
+				self:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Nossa tentativa falhou.")
+
+			end
+	end
+	-- ################# FINAL COMPLETO ################# --
+
+	item:setSpecialAttribute(slot, myImbuement.Levels[imbuingLevel].. " " ..myImbuement.Name, slot+3, 72000, slot+6, 0)
+	self:openImbuementWindow(item)
 end
 
 function Player.closeImbuementWindow(self)
@@ -464,7 +629,7 @@ end
 
 function Item:getImbuementType(slot)
 	local enchant = self:getSpecialAttribute(slot)
-	if (not enchant) then
+	if (enchant == 0) then
 		return false
 	end
 
@@ -482,7 +647,7 @@ end
 function Item:getImbuementPercent(name)
 	for i, v in pairs(Imbuements) do
 		for j = 1, 3 do
-			if (name:find(v.Name) and name:find(v.Levels[j])) then
+			if (name:find(v.Name) and name:find(v.Levels[j]) and name ~= 0) then
 				return v.LevelsPercent[j]
 			end
 		end

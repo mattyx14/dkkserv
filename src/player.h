@@ -335,14 +335,25 @@ class Player final : public Creature, public Cylinder
 			bedItem = b;
 		}
 
-		void addBlessing(uint8_t blessing) {
-			blessings |= blessing;
+		void addBlessing(uint8_t index, uint8_t count) {
+			if (blessings[index - 1] == 255) {
+				return;
+			}
+
+			blessings[index-1] += count;
 		}
-		void removeBlessing(uint8_t blessing) {
-			blessings &= ~blessing;
+		void removeBlessing(uint8_t index, uint8_t count) {
+			if (blessings[index - 1] == 0) {
+				return;
+			}
+
+			blessings[index-1] -= count;
 		}
-		bool hasBlessing(uint8_t value) const {
-			return (blessings & (static_cast<uint8_t>(1) << value)) != 0;
+		bool hasBlessing(uint8_t index) const {
+			return blessings[index - 1] != 0;
+		}
+		uint8_t getBlessingCount(uint8_t index) const {
+			return blessings[index - 1];
 		}
 
 		bool isOffline() const {
@@ -627,7 +638,7 @@ class Player final : public Creature, public Cylinder
 			return pzLocked;
 		}
 		BlockType_t blockHit(Creature* attacker, CombatType_t combatType, int32_t& damage,
-		                             bool checkDefense = false, bool checkArmor = false, bool field = false) final;
+									 bool checkDefense = false, bool checkArmor = false, bool field = false) final;
 		void doAttacking(uint32_t interval) final;
 		bool hasExtraSwing() final {
 			return lastAttack > 0 && ((OTSYS_TIME() - lastAttack) >= getAttackSpeed());
@@ -839,9 +850,9 @@ class Player final : public Creature, public Cylinder
 				client->sendCreatureShield(creature);
 			}
 		}
-		void sendCreatureType(uint32_t creatureId, uint8_t creatureType) {
+		void sendCreatureType(const Creature* creature, uint8_t creatureType) {
 			if (client) {
-				client->sendCreatureType(creatureId, creatureType);
+				client->sendCreatureType(creature, creatureType);
 			}
 		}
 		void sendCreatureHelpers(uint32_t creatureId, uint16_t helpers) {
@@ -891,18 +902,17 @@ class Player final : public Creature, public Cylinder
 			}
 		}
 
-		void sendShowStoreCategoryOffers(StoreCategory* category){
-			if(client){
+		void sendShowStoreCategoryOffers(StoreCategory* category) {
+			if(client) {
 				client->sendStoreCategoryOffers(category);
 			}
 		}
 
-        void sendStoreError(GameStoreError_t error, const std::string& errorMessage) {
-            if(client)
-            {
-                client->sendStoreError(error, errorMessage);
-            }
-        }
+		void sendStoreError(GameStoreError_t error, const std::string& errorMessage) {
+			if(client) {
+				client->sendStoreError(error, errorMessage);
+			}
+		}
 
 		void sendStorePurchaseSuccessful(const std::string& message, const uint32_t coinBalance) {
 			if(client)
@@ -911,29 +921,28 @@ class Player final : public Creature, public Cylinder
 			}
 		}
 
-        void sendStoreRequestAdditionalInfo(uint32_t offerId, ClientOffer_t clientOfferType){
-            if(client){
-                client->sendStoreRequestAdditionalInfo(offerId, clientOfferType);
-            }
-        }
+		void sendStoreRequestAdditionalInfo(uint32_t offerId, ClientOffer_t clientOfferType) {
+			if(client) {
+				client->sendStoreRequestAdditionalInfo(offerId, clientOfferType);
+			}
+		}
 
-        void sendStoreTrasactionHistory(HistoryStoreOfferList& list, uint32_t page, uint8_t entriesPerPage){
-            if(client){
-                client->sendStoreTrasactionHistory(list, page, entriesPerPage);
-            }
-        }
-
+		void sendStoreTrasactionHistory(HistoryStoreOfferList& list, uint32_t page, uint8_t entriesPerPage) {
+			if(client) {
+				client->sendStoreTrasactionHistory(list, page, entriesPerPage);
+			}
+		}
 
 		//event methods
 		void onUpdateTileItem(const Tile* tile, const Position& pos, const Item* oldItem,
-		                              const ItemType& oldType, const Item* newItem, const ItemType& newType) final;
+									  const ItemType& oldType, const Item* newItem, const ItemType& newType) final;
 		void onRemoveTileItem(const Tile* tile, const Position& pos, const ItemType& iType,
-		                              const Item* item) final;
+									  const Item* item) final;
 
 		void onCreatureAppear(Creature* creature, bool isLogin) final;
 		void onRemoveCreature(Creature* creature, bool isLogout) final;
 		void onCreatureMove(Creature* creature, const Tile* newTile, const Position& newPos,
-		                            const Tile* oldTile, const Position& oldPos, bool teleport) final;
+									const Tile* oldTile, const Position& oldPos, bool teleport) final;
 
 		void onAttackedCreatureDisappear(bool isLogout) final;
 		void onFollowCreatureDisappear(bool isLogout) final;
@@ -994,6 +1003,16 @@ class Player final : public Creature, public Cylinder
 				client->sendIcons(getClientIcons());
 			}
 		}
+		void sendClientCheck() const {
+			if (client) {
+				client->sendClientCheck();
+			}
+		}
+		void sendGameNews() const {
+			if (client) {
+				client->sendGameNews();
+			}
+		}
 		void sendMagicEffect(const Position& pos, uint8_t type) const {
 			if (client) {
 				client->sendMagicEffect(pos, type);
@@ -1009,6 +1028,11 @@ class Player final : public Creature, public Cylinder
 		void sendBasicData() const {
 			if (client) {
 				client->sendBasicData();
+			}
+		}
+		void sendBlessStatus() const {
+			if (client) {
+				client->sendBlessStatus();
 			}
 		}
 		void sendSkills() const {
@@ -1179,13 +1203,13 @@ class Player final : public Creature, public Cylinder
 			}
 		}
 
-		void sendCoinBalanceUpdating(bool updating){
-			if(client){
+		void sendCoinBalanceUpdating(bool updating) {
+			if(client) {
 				client->sendCoinBalanceUpdating(updating);
 			}
 		}
 
-		void sendStoreOpen(uint8_t serviceType){
+		void sendStoreOpen(uint8_t serviceType) {
 			if(client)
 				client->sendOpenStore(serviceType);
 		}
@@ -1450,6 +1474,7 @@ class Player final : public Creature, public Cylinder
 		std::vector<uint16_t> preyBonusType = {0, 0, 0};
 		std::vector<uint16_t> preyBonusValue = {0, 0, 0};
 		std::vector<std::string> preyBonusName = {"", "", ""};
+		std::vector<uint8_t> blessings = { 0, 0, 0, 0, 0, 0, 0, 0 };
 		uint16_t maxWriteLen = 0;
 		uint16_t baseXpGain = 100;
 		uint16_t voucherXpBoost = 0;
@@ -1459,7 +1484,6 @@ class Player final : public Creature, public Cylinder
 		int16_t lastDepotId = -1;
 
 		uint8_t soul = 0;
-		uint8_t blessings = 0;
 		uint8_t levelPercent = 0;
 		uint8_t magLevelPercent = 0;
 

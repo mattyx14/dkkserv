@@ -1,18 +1,49 @@
--- No move items with actionID 8000
--- Players cannot throw items on teleports if set to true
-local blockTeleportTrashing = true
-
 -- Internal Use
 ITEM_STORE_INBOX = 26052
 GOLD_POUNCH = 26377
+
+-- No move items with actionID 8000
+-- Players cannot throw items on teleports if set to true
+local blockTeleportTrashing = true
 
 function Player:onBrowseField(position)
 	return true
 end
 
+local function getHours(seconds)
+	return math.floor((seconds/60)/60)
+end
+
+local function getMinutes(seconds)
+	return math.floor(seconds/60)
+end
+
+local function getTime(seconds)
+	local hours, minutes = getHours(seconds), getMinutes(seconds)
+	if (minutes > 59) then
+		minutes = minutes-hours*60
+	end
+
+	if (minutes < 10) then
+		minutes = "0" ..minutes
+	end
+
+	return hours..":"..minutes.. "h"
+end
+
 function Player:onLook(thing, position, distance)
 	local description = 'You see '
 	if thing:isItem() then
+		if thing.itemid >= 28553 and thing.itemid <= 28557 or thing.itemid >= 28563 and thing.itemid <= 28566 or thing.itemid >= 28573 and thing.itemid <= 28574 or thing.itemid >= 28577 and thing.itemid <= 28588 then
+			description = description .. thing:getDescription(distance)
+			local charges = thing:getCharges()
+			if charges then
+			description = string.format('%s\nIt has %d refillings left.', description, charges)
+			end
+		else
+			description = description .. thing:getDescription(distance)
+		end
+
 		local itemType = thing:getType()
 		if (itemType and itemType:getImbuingSlots() > 0) then
 			local imbuingSlots = "Imbuements: ("
@@ -22,8 +53,8 @@ function Player:onLook(thing, position, distance)
 				if (thing:getSpecialAttribute(i+3)) then
 					time = getTime(thing:getSpecialAttribute(i+3))
 				end
-				
-				if (specialAttr) then
+
+				if (specialAttr and specialAttr ~= 0) then
 					if (i ~= itemType:getImbuingSlots()) then
 						imbuingSlots = imbuingSlots.. "" ..specialAttr.." " ..time..", "
 					else
@@ -31,9 +62,9 @@ function Player:onLook(thing, position, distance)
 					end
 				else
 					if (i ~= itemType:getImbuingSlots()) then
-						imbuingSlots = imbuingSlots.. "Empty Slot, "
+						imbuingSlots = imbuingSlots.. "Free Slot, "
 					else
-						imbuingSlots = imbuingSlots.. "Empty Slot)."
+						imbuingSlots = imbuingSlots.. "Free Slot)."
 					end
 				end
 			end
@@ -209,25 +240,6 @@ function Player:onMoveItem(item, count, fromPosition, toPosition, fromCylinder, 
 		end
 	end
 
-	--[[-- Do not stop trying this test
-	-- No move parcel very heavy
-	if item:getWeight() > 90000 and item:getId() == ITEM_PARCEL then
-		self:sendCancelMessage('YOU CANNOT MOVE PARCELS TOO HEAVY.')
-		return false
-	end
-
-	-- No move if item count > 26 items
-	if tile and tile:getItemCount() > 26 then
-		self:sendCancelMessage(RETURNVALUE_NOTPOSSIBLE)
-		return false
-	end
-
-	if tile and tile:getItemById(370) then -- Trapdoor
-		self:sendCancelMessage(RETURNVALUE_NOTPOSSIBLE)
-		self:getPosition():sendMagicEffect(CONST_ME_POFF)
-		return false
-	end]]
-
 	return true
 end
 
@@ -235,13 +247,40 @@ function Player:onMoveCreature(creature, fromPosition, toPosition)
 	return true
 end
 
-function Player:onReport(message, position, category)
-	if self:getAccountType() == ACCOUNT_TYPE_NORMAL then
-		return false
+-- Temporal disable
+--[[function Player:onReportRuleViolation(targetName, reportType, reportReason, comment, translation)
+	local name = self:getName()
+	local pendingReport = function () local f = io.open(string.format("data/reports/players/%s-%s-%d.txt", name, targetName, reportType), "r") ; if f then io.close(f) return true else return false end end
+	if pendingReport() then
+		self:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Your report is being processed.")
+		return
 	end
 
+	local file = io.open(string.format("data/reports/players/%s-%s-%d.txt", name, targetName, reportType), "a")
+	if not file then
+		self:sendTextMessage(MESSAGE_EVENT_ADVANCE, "There was an error when processing your report, please contact a gamemaster.")
+		return
+	end
+
+	io.output(file)
+	io.write("------------------------------\n")
+	io.write("Complainter: " .. name .. "\n")
+	io.write("Reported: " .. targetName .. "\n")
+	io.write("Type: " .. reportType .. "\n")
+	io.write("Reason: " .. reportReason .. "\n")
+	io.write("Comment: " .. comment .. "\n")
+	if reportType ~= REPORT_TYPE_BOT then
+		io.write("Translation: " .. translation .. "\n")
+	end
+	io.write("------------------------------\n")
+	io.close(file)
+	self:sendTextMessage(MESSAGE_EVENT_ADVANCE, string.format("Thank you for reporting %s. Your report will be processed by %s team as soon as possible.", targetName, configManager.getString(configKeys.SERVER_NAME)))
+	return
+end]]
+
+function Player:onReportBug(message, position, category)
 	local name = self:getName()
-	local file = io.open("data/reports/" .. name .. " report.txt", "a")
+	local file = io.open("data/reports/bugs/" .. name .. " report.txt", "a")
 
 	if not file then
 		self:sendTextMessage(MESSAGE_EVENT_DEFAULT, "There was an error when processing your report, please contact a gamemaster.")
@@ -286,6 +325,44 @@ local soulCondition = Condition(CONDITION_SOUL, CONDITIONID_DEFAULT)
 soulCondition:setTicks(4 * 60 * 1000)
 soulCondition:setParameter(CONDITION_PARAM_SOULGAIN, 1)
 
+function useStaminaImbuing(playerId, itemuid)
+	local player = Player(playerId)
+	if not player then
+		return false
+	end
+
+	local item = Item(itemuid)
+	if not item then
+		return false
+	end
+
+	for i = 1, item:getType():getImbuingSlots() do
+		if (item:isActiveImbuement(i+3)) then
+			local staminaMinutes = item:getSpecialAttribute(i+3)/60
+			if (staminaMinutes > 0) then
+				local currentTime = os.time()
+				local timePassed = currentTime - item:getSpecialAttribute(i+6)
+				if timePassed > 0 then
+					if timePassed > 60 then
+						if staminaMinutes > 2 then
+							staminaMinutes = staminaMinutes - 2
+						else
+							staminaMinutes = 0
+						end
+
+						item:setSpecialAttribute(i+6, currentTime + 120)
+					else
+						staminaMinutes = staminaMinutes - 1
+						item:setSpecialAttribute(i+6, currentTime + 60)
+					end
+				end
+
+				item:setSpecialAttribute(i+3, staminaMinutes*60)
+			end
+		end
+	end
+end
+
 local function useStamina(player)
 	local staminaMinutes = player:getStamina()
 	if staminaMinutes == 0 then
@@ -311,6 +388,33 @@ local function useStamina(player)
 		nextUseStaminaTime[playerId] = currentTime + 60
 	end
 	player:setStamina(staminaMinutes)
+end
+
+local function useStaminaXp(player)
+	local staminaMinutes = player:getExpBoostStamina()
+	if staminaMinutes == 0 then
+		return
+	end
+
+	local playerId = player:getId()
+	local currentTime = os.time()
+	local timePassed = currentTime - nextUseXpStamina[playerId]
+	if timePassed <= 0 then
+		return
+	end
+
+	if timePassed > 60 then
+		if staminaMinutes > 2 then
+			staminaMinutes = staminaMinutes - 2
+		else
+			staminaMinutes = 0
+		end
+		nextUseXpStamina[playerId] = currentTime + 120
+	else
+		staminaMinutes = staminaMinutes - 1
+		nextUseXpStamina[playerId] = currentTime + 60
+	end
+	player:setExpBoostStamina(staminaMinutes)
 end
 
 -- useStaminaPrey
@@ -344,26 +448,44 @@ local function useStaminaPrey(player, name)
 	end
 end
 
--- exp card
-local BONUS_EXP_STORAGE = 61398
-local BONUS_EXP_MULT = 1.3
+function Player:onUseWeapon(normalDamage, elementType, elementDamage)
+	local weapon = self:getSlotItem(CONST_SLOT_LEFT)
+	if not weapon or weapon:getType():getWeaponType() == WEAPON_SHIELD then
+		weapon = self:getSlotItem(CONST_SLOT_RIGHT)
+	end
 
-local configexp =  {
-	["Monday"] = 1.0,
-	["Tuesday"] = 1.0,
-	["Wednesday"] = 1.0,
-	["Thursday"] = 1.0,
-	["Friday"] = 1.0,
-	["Saturday"] = 2.0,
-	["Sunday"] = 2.0
-}
+	-- Imbuement
+	if (weapon and weapon:getType():getImbuingSlots() > 0) then
+		for i = 1, weapon:getType():getImbuingSlots() do
+			local slotEnchant = weapon:getSpecialAttribute(i)
+			if (slotEnchant) then
+				local percentDamage, enchantPercent = 0, weapon:getImbuementPercent(slotEnchant)
+				local typeEnchant = weapon:getImbuementType(i) or ""
+				if (typeEnchant ~= "") then
+					useStaminaImbuing(self:getId(), weapon:getUniqueId())
+				end
+
+			if (typeEnchant == "firedamage") then
+					elementType = COMBAT_FIREDAMAGE
+				elseif (typeEnchant == "earthdamage") then
+					elementType = COMBAT_EARTHDAMAGE
+				elseif (typeEnchant == "icedamage") then
+					elementType = COMBAT_ICEDAMAGE
+				elseif (typeEnchant == "energydamage") then
+					elementType = COMBAT_ENERGYDAMAGE
+				elseif (typeEnchant == "deathdamage") then
+					elementType = COMBAT_DEATHDAMAGE
+				end
+			end
+		end
+	end
+	return normalDamage, elementType, elementDamage
+end
 
 function Player:onGainExperience(source, exp, rawExp)
 	if not source or source:isPlayer() then
 		return exp
 	end
-
-	exp = exp * configexp[os.date("%A")]
 
 	-- Soul regeneration
 	local vocation = self:getVocation()
@@ -374,8 +496,6 @@ function Player:onGainExperience(source, exp, rawExp)
 
 	-- Apply experience stage multiplier
 	exp = exp * Game.getExperienceStage(self:getLevel())
-
-	-- Prey System -> BOOST_EXP
 	for i = 1, 3 do
 		if (self:isActive(i-1)) then
 			local bonusInfo = self:getBonusInfo(i-1)
@@ -385,6 +505,50 @@ function Player:onGainExperience(source, exp, rawExp)
 			end
 		end
 	end
+
+	if (self:getExpBoostStamina() <= 0 and self:getStoreXpBoost() > 0) then
+		self:setStoreXpBoost(0) -- reset xp boost to 0
+	end
+
+	-- More compact, after checking before (reset) it only of xp if you have :v
+	if (self:getStoreXpBoost() > 0) then
+		exp = exp + (exp * (self:getStoreXpBoost()/100)) -- Exp Boost
+	end
+
+	local party = self:getParty()
+	if (party) then
+		if (party:isSharedExperienceActive() and
+			party:isSharedExperienceEnabled()) then
+			local tableVocs = {}
+			local count = 0
+			local totalCount = 0
+			local leaderId = party:getLeader():getVocation():getId()
+			if (leaderId) then
+				tableVocs[leaderId] = 1
+				count = count + 1
+				totalCount = totalCount + 1
+			end
+			for i, v in pairs(party:getMembers()) do
+				local vocId = v:getVocation():getId()
+				if (tableVocs[vocId] == nil) then
+					tableVocs[vocId] = 1
+					count = count + 1
+				end
+				totalCount = totalCount + 1
+			end
+
+			if (totalCount <= 10 and
+				count >= 4) then
+				exp = exp * 2
+			end
+		end
+	end
+
+	-- Prey Stamina Modifier
+	useStaminaPrey(self, source:getName())
+
+	-- Exp Boost Modifier
+	useStaminaXp(self)
 
 	-- Stamina modifier
 	if configManager.getBoolean(configKeys.STAMINA_SYSTEM) then
@@ -396,14 +560,6 @@ function Player:onGainExperience(source, exp, rawExp)
 		elseif staminaMinutes <= 840 then
 			exp = exp * 0.5
 		end
-	end
-
-	-- Prey Stamina Modifier
-	useStaminaPrey(self, source:getName())
-
-	-- Exp Card
-	if self:getStorageValue(BONUS_EXP_STORAGE) - os.time() > 0 then
-		exp = exp * BONUS_EXP_MULT
 	end
 
 	return exp
@@ -422,25 +578,4 @@ function Player:onGainSkillTries(skill, tries)
 		return tries * configManager.getNumber(configKeys.RATE_MAGIC)
 	end
 	return tries * configManager.getNumber(configKeys.RATE_SKILL)
-end
-
-local function getHours(seconds)
-	return math.floor((seconds/60)/60)
-end
-
-local function getMinutes(seconds)
-	return math.floor(seconds/60)
-end
-
-local function getTime(seconds)
-	local hours, minutes = getHours(seconds), getMinutes(seconds)
-	if (minutes > 59) then
-		minutes = minutes-hours*60
-	end
-
-	if (minutes < 10) then
-		minutes = "0" ..minutes
-	end
-
-	return hours..":"..minutes.. "h"
 end

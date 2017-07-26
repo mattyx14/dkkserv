@@ -52,6 +52,10 @@ void ProtocolGame::release()
 	//dispatcher thread
 	stopLiveCast();
 	if (player && player->client == shared_from_this()) {
+		if (player->getTile() && (player->getTile()->hasFlag(TILESTATE_PROTECTIONZONE) || !player->hasCondition(CONDITION_INFIGHT))) {
+			logout(true, true);
+		}
+
 		player->client.reset();
 		player->decrementReferenceCounter();
 		player = nullptr;
@@ -357,6 +361,9 @@ void ProtocolGame::onRecvFirstMessage(NetworkMessage& msg)
 
 	OperatingSystem_t operatingSystem = static_cast<OperatingSystem_t>(msg.get<uint16_t>());
 	version = msg.get<uint16_t>();
+	if (version >= 1111) {
+		enableCompact();
+	}
 
 	msg.skipBytes(7); // U32 client version, U8 client type, U16 dat revision
 
@@ -486,6 +493,8 @@ void ProtocolGame::parsePacket(NetworkMessage& msg)
 			this_ptr->stopLiveCast();
 		}));
 		if (recvbyte == 0x0F) {
+			// we need to make the player pointer != null in this part, game.cpp release is the first step
+			// login(player->getName(), player->getAccount(), player->operatingSystem);
 			disconnect();
 			return;
 		}
@@ -569,10 +578,10 @@ void ProtocolGame::parsePacket(NetworkMessage& msg)
 		case 0xE6: parseBugReport(msg); break;
 		case 0xE7: /* thank you */ break;
 		case 0xE8: parseDebugAssert(msg); break;
-        case 0xEF: parseCoinTransfer(msg); break; /* premium coins transfer */
+		case 0xEF: if (!g_config.getBoolean(ConfigManager::STOREMODULES)) { parseCoinTransfer(msg); } break; /* premium coins transfer */
 		case 0xF0: addGameTaskTimed(DISPATCHER_TASK_EXPIRATION, &Game::playerShowQuestLog, player->getID()); break;
 		case 0xF1: parseQuestLine(msg); break;
-		case 0xF2: /* rule violation report */ break;
+		case 0xF2: parseRuleViolationReport(msg); break;
 		case 0xF3: /* get object info */ break;
 		case 0xF4: parseMarketLeave(); break;
 		case 0xF5: parseMarketBrowse(msg); break;
@@ -580,9 +589,9 @@ void ProtocolGame::parsePacket(NetworkMessage& msg)
 		case 0xF7: parseMarketCancelOffer(msg); break;
 		case 0xF8: parseMarketAcceptOffer(msg); break;
 		case 0xF9: parseModalWindowAnswer(msg); break;
-		case 0xFA: parseStoreOpen(msg); break;
-		case 0xFB: parseStoreRequestOffers(msg); break;
-		case 0xFC: parseStoreBuyOffer(msg); break;
+		case 0xFA: if (!g_config.getBoolean(ConfigManager::STOREMODULES)) { parseStoreOpen(msg); } break;
+		case 0xFB: if (!g_config.getBoolean(ConfigManager::STOREMODULES)) { parseStoreRequestOffers(msg); } break;
+		case 0xFC: if (!g_config.getBoolean(ConfigManager::STOREMODULES)) { parseStoreBuyOffer(msg); } break;
 //		case 0xFD: parseStoreOpenTransactionHistory(msg); break;
 //		case 0xFE: parseStoreRequestTransactionHistory(msg); break;
 
@@ -913,6 +922,23 @@ void ProtocolGame::parseWrapableItem(NetworkMessage& msg)
 	addGameTaskTimed(DISPATCHER_TASK_EXPIRATION, &Game::playerWrapableItem, player->getID(), pos, stackpos, spriteId);
 }
 
+void ProtocolGame::parseRuleViolationReport(NetworkMessage &msg)
+{
+	uint8_t reportType = msg.getByte();
+	uint8_t reportReason = msg.getByte();
+	const std::string& targetName = msg.getString();
+	const std::string& comment = msg.getString();
+	std::string translation;
+	if (reportType == REPORT_TYPE_NAME) {
+		translation = msg.getString();
+	} else if (reportType == REPORT_TYPE_STATEMENT) {
+		translation = msg.getString();
+		msg.get<uint32_t>(); // statement id, used to get whatever player have said, we don't log that.  
+	}
+
+	addGameTask(&Game::playerReportRuleViolationReport, player->getID(), targetName, reportType, reportReason, comment, translation);
+}
+
 void ProtocolGame::parseBugReport(NetworkMessage& msg)
 {
 	uint8_t category = msg.getByte();
@@ -1025,21 +1051,24 @@ void ProtocolGame::parseStoreBuyOffer(NetworkMessage &message) {
 	addGameTaskTimed(350, &Game::playerBuyStoreOffer, player->getID(), offerId, productType, additionalInfo);
 }
 
-void ProtocolGame::parseStoreOpenTransactionHistory(NetworkMessage& msg){
+void ProtocolGame::parseStoreOpenTransactionHistory(NetworkMessage& msg)
+{
 	uint8_t entriesPerPage = msg.getByte();
-	if(entriesPerPage>0 && entriesPerPage!=GameStore::HISTORY_ENTRIES_PER_PAGE){
+	if(entriesPerPage>0 && entriesPerPage!=GameStore::HISTORY_ENTRIES_PER_PAGE) {
 		GameStore::HISTORY_ENTRIES_PER_PAGE=entriesPerPage;
 	}
 
 	addGameTaskTimed(2000, &Game::playerStoreTransactionHistory, player->getID(), 1);
 }
 
-void ProtocolGame::parseStoreRequestTransactionHistory(NetworkMessage& msg){
+void ProtocolGame::parseStoreRequestTransactionHistory(NetworkMessage& msg)
+{
 	uint32_t pageNumber = msg.get<uint32_t>();
 	addGameTaskTimed(2000,&Game::playerStoreTransactionHistory,player->getID(), pageNumber);
 }
 
-void ProtocolGame::parseCoinTransfer(NetworkMessage& msg){
+void ProtocolGame::parseCoinTransfer(NetworkMessage& msg)
+{
 	std::string receiverName =msg.getString();
 	uint32_t amount = msg.get<uint32_t>();
 
@@ -1167,12 +1196,20 @@ void ProtocolGame::sendCreatureSkull(const Creature* creature)
 	writeToOutputBuffer(msg);
 }
 
-void ProtocolGame::sendCreatureType(uint32_t creatureId, uint8_t creatureType)
+void ProtocolGame::sendCreatureType(const Creature* creature, uint8_t creatureType)
 {
 	NetworkMessage msg;
 	msg.addByte(0x95);
-	msg.add<uint32_t>(creatureId);
+	msg.add<uint32_t>(creature->getID());
 	msg.addByte(creatureType);
+
+	if (creatureType == CREATURETYPE_SUMMONPLAYER) {
+		const Creature* master = creature->getMaster();
+		if (master) {
+			msg.add<uint32_t>(master->getID());
+		}
+	}
+
 	writeToOutputBuffer(msg);
 }
 
@@ -1223,6 +1260,7 @@ void ProtocolGame::sendReLoginWindow(uint8_t unfairFightReduction)
 	msg.addByte(0x28);
 	msg.addByte(0x00);
 	msg.addByte(unfairFightReduction);
+	msg.addByte(0x00); //Use death redemption
 	writeToOutputBuffer(msg);
 }
 
@@ -1303,7 +1341,7 @@ void ProtocolGame::sendIcons(uint16_t icons)
 {
 	NetworkMessage msg;
 	msg.addByte(0xA2);
-	msg.add<uint16_t>(icons);
+	msg.add<uint32_t>(icons); // TODO: verify compatibility of the new icon range ( 16-31 )
 	writeToOutputBuffer(msg);
 }
 
@@ -1331,15 +1369,45 @@ void ProtocolGame::sendCloseShop()
 	writeToOutputBuffer(msg);
 }
 
-void ProtocolGame::sendSaleItemList(const std::list<ShopInfo>& shop)
+void ProtocolGame::sendClientCheck()
 {
 	NetworkMessage msg;
-	msg.addByte(0x7B);
-	if (player->isPremium()) {
-		msg.add<uint64_t>(player->getMoney() + player->getBankBalance());
-	} else {
-		msg.add<uint64_t>(player->getMoney());
+	msg.addByte(0x63);
+	msg.add<uint32_t>(1);
+	msg.addByte(1);
+	writeToOutputBuffer(msg);
+}
+
+void ProtocolGame::sendGameNews()
+{
+	NetworkMessage msg;
+	msg.addByte(0x98);
+	msg.add<uint32_t>(1); // unknown
+	msg.addByte(1); //(0 = open | 1 = highlight)
+	writeToOutputBuffer(msg);
+}
+
+void ProtocolGame::sendResourceBalance(uint64_t money, uint64_t bank)
+{
+	NetworkMessage msg;
+	msg.addByte(0xEE);
+	msg.addByte(0x00);
+	msg.add<uint64_t>(bank);
+	msg.addByte(0xEE);
+	msg.addByte(0x01);
+	msg.add<uint64_t>(money);
+	writeToOutputBuffer(msg);
+}
+
+void ProtocolGame::sendSaleItemList(const std::list<ShopInfo>& shop)
+{
+	if (player->getProtocolVersion() >= 1100) {
+		sendResourceBalance(player->getMoney(), player->getBankBalance());
 	}
+
+	NetworkMessage msg;
+	msg.addByte(0x7B);
+	msg.add<uint64_t>(player->getMoney() + player->getBankBalance());
 
 	std::map<uint16_t, uint32_t> saleMap;
 
@@ -1472,6 +1540,49 @@ void ProtocolGame::sendMarketEnter(uint32_t depotId)
 		msg.add<uint16_t>(it->first);
 		msg.add<uint16_t>(std::min<uint32_t>(0xFFFF, it->second));
 	}
+
+	writeToOutputBuffer(msg);
+
+	updateCoinBalance();
+	sendResourceBalance(player->getMoney(), player->getBankBalance());
+}
+
+void ProtocolGame::updateCoinBalance()
+{
+	NetworkMessage msg;
+	msg.addByte(0xF2);
+	msg.addByte(0x00);
+
+	writeToOutputBuffer(msg);
+
+	g_dispatcher.addTask(
+		createTask(std::bind([](ProtocolGame_ptr client) {
+		client->sendCoinBalance();
+	}, getThis()))
+	);
+}
+
+void ProtocolGame::sendCoinBalance()
+{
+	Database& db = Database::getInstance();
+
+	std::ostringstream query;
+
+	query << "SELECT `coins` FROM `accounts` WHERE `id`=" + std::to_string(player->getAccount());
+	DBResult_ptr result = db.storeQuery(query.str());
+	if (!result) {
+		return;
+	}
+
+	NetworkMessage msg;
+	msg.addByte(0xF2);
+	msg.addByte(0x01);
+
+	msg.addByte(0xDF);
+	msg.addByte(0x01);
+
+	msg.add<uint32_t>(result->getNumber<uint32_t>("coins")); //total coins
+	msg.add<uint32_t>(result->getNumber<uint32_t>("coins")); //transferable coins
 
 	writeToOutputBuffer(msg);
 }
@@ -2442,7 +2553,7 @@ void ProtocolGame::sendOpenStore(uint8_t serviceType)
 		msg.addByte(stateByte);
 
 		msg.addByte((uint8_t)category->icons.size());
-		for(std::string iconStr : category->icons){
+		for(std::string iconStr : category->icons) {
 			msg.addString(iconStr);
 		}
 		msg.addString(""); //TODO: parentCategory
@@ -2460,12 +2571,11 @@ void ProtocolGame::sendStoreCategoryOffers(StoreCategory* category)
 	msg.addString(category->name);
 	msg.add<uint16_t>(category->offers.size());
 
-	for(BaseOffer* offer : category->offers){
+	for(BaseOffer* offer : category->offers) {
 		msg.add<uint32_t>(offer->id);
 		std::stringstream offername;
-		if(offer->type==Offer_t::ITEM || offer->type == Offer_t::STACKABLE_ITEM)
-		{
-			if(((ItemOffer*)offer)->count > 1){
+		if(offer->type==Offer_t::ITEM || offer->type == Offer_t::STACKABLE_ITEM) {
+			if(((ItemOffer*)offer)->count > 1) {
 				offername << ((ItemOffer*)offer)->count << "x ";
 			}
 		}
@@ -2493,10 +2603,10 @@ void ProtocolGame::sendStoreCategoryOffers(StoreCategory* category)
 				disabled=1;
 				if(addons == 0) { //addons == 0 //oufit-only offer and player already has it
 					disabledReason << "You already have this outfit.";
-				} else{
+				} else {
 					disabledReason << "You already have this outfit/addon.";
 				}
-			} else{
+			} else {
 				if(outfitOffer->type == OUTFIT_ADDON && !player->canWear(looktype,0)) { //addon offer and player doesnt have the base outfit
 					disabled=1;
 					disabledReason << "You don't have the outfit, you can't buy the addon.";

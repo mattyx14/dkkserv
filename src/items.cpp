@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The Forgotten Server - a free and open-source MMORPG server emulator
  * Copyright (C) 2017  Mark Samman <mark.samman@gmail.com>
  *
@@ -106,7 +106,7 @@ FILELOADER_ERRORS Items::loadFromOtb(const std::string& file)
 	} else if (majorVersion != 3) {
 		std::cout << "Old version detected, a newer version of items.otb is required." << std::endl;
 		return ERROR_INVALID_FORMAT;
-	} else if (minorVersion < CLIENT_VERSION_1100_V2) {
+	} else if (minorVersion < CLIENT_VERSION_1140) {
 		std::cout << "A newer version of items.otb is required." << std::endl;
 		return ERROR_INVALID_FORMAT;
 	}
@@ -388,6 +388,8 @@ void Items::parseItemNode(const pugi::xml_node& itemNode, uint16_t id)
 				it.type = ITEM_TYPE_DEPOT;
 			} else if (tmpStrValue == "rewardchest") {
 				it.type = ITEM_TYPE_REWARDCHEST;
+			} else if (tmpStrValue == "carpet") {
+				it.type = ITEM_TYPE_CARPET;
 			} else if (tmpStrValue == "mailbox") {
 				it.type = ITEM_TYPE_MAILBOX;
 			} else if (tmpStrValue == "trashholder") {

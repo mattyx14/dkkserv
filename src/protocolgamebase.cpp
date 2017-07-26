@@ -52,6 +52,7 @@ void ProtocolGameBase::onConnect()
 
 	// Go back and write checksum
 	output->skipBytes(-12);
+	// To support 11.10-, not have problems with 11.11+
 	output->add<uint32_t>(adlerChecksum(output->getOutputBuffer() + sizeof(uint32_t), 8));
 
 	send(std::move(output));
@@ -122,6 +123,14 @@ void ProtocolGameBase::AddCreature(NetworkMessage& msg, const Creature* creature
 		msg.add<uint32_t>(remove);
 		msg.add<uint32_t>(creature->getID());
 		msg.addByte(creatureType);
+
+		if (creatureType == CREATURETYPE_SUMMONPLAYER) {
+			const Creature* master = creature->getMaster();
+			if (master) {
+				msg.add<uint32_t>(master->getID());
+			}
+		}
+
 		msg.addString(creature->getName());
 	}
 
@@ -159,19 +168,25 @@ void ProtocolGameBase::AddCreature(NetworkMessage& msg, const Creature* creature
 		if (master) {
 			const Player* masterPlayer = master->getPlayer();
 			if (masterPlayer) {
-				if (masterPlayer == player) {
-					creatureType = CREATURETYPE_SUMMON_OWN;
-				} else {
-					creatureType = CREATURETYPE_SUMMON_OTHERS;
-				}
+				creatureType = CREATURETYPE_SUMMONPLAYER;
 			}
 		}
 	}
 
 	msg.addByte(creatureType); // Type (for summons)
+
+	if (creatureType == CREATURETYPE_SUMMONPLAYER) {
+		const Creature* master = creature->getMaster();
+		if (master) {
+			msg.add<uint32_t>(master->getID());
+		}
+	}
+
 	msg.addByte(creature->getSpeechBubble());
 	msg.addByte(0xFF); // MARK_UNMARKED
-	msg.addByte(0x00); // ??
+	if (version >= 1110) {
+		msg.addByte(0x00); // ??
+	}
 
 	if (otherPlayer) {
 		msg.add<uint16_t>(otherPlayer->getHelpers());
@@ -238,6 +253,47 @@ void ProtocolGameBase::AddPlayerSkills(NetworkMessage& msg)
 	for (uint8_t i = SKILL_CRITICAL_HIT_CHANCE; i <= SKILL_LAST; ++i) {
 		msg.add<uint16_t>(std::min<int32_t>(player->getSkillLevel(i), std::numeric_limits<uint16_t>::max()));
 		msg.add<uint16_t>(player->getBaseSkill(i));
+	}
+}
+
+void ProtocolGameBase::sendBlessStatus() {
+	NetworkMessage msg;
+	uint8_t blessCount = 0;
+	uint8_t maxBlessings = (player->operatingSystem == CLIENTOS_NEW_WINDOWS) ? 8 : 6;
+	for (int i = 1; i <= maxBlessings; i++) {
+		if (player->hasBlessing(i)) {
+			blessCount++;
+		}
+	}
+
+	msg.addByte(0x9C);
+	if (blessCount >= 5) {
+		uint8_t blessFlag = 0;
+		uint8_t maxFlag = (maxBlessings == 8) ? 256 : 64;
+		for (int i = 2; i < maxFlag; i *= 2) {
+			blessFlag += i;
+		}
+
+		msg.add<uint16_t>(blessFlag-1);
+	} else {
+		msg.add<uint16_t>(0x00);
+	}
+
+	msg.addByte((blessCount >= 5) ? 2 : 1); // 1 = Disabled | 2 = normal | 3 = green
+	writeToOutputBuffer(msg);
+}
+
+void ProtocolGameBase::sendPremiumTrigger()
+{
+	if (!g_config.getBoolean(ConfigManager::FREE_PREMIUM)) {
+		NetworkMessage msg;
+		msg.addByte(0x9E);
+		msg.addByte(16);
+		for (uint16_t i = 0; i <= 15; i++) {
+			//PREMIUM_TRIGGER_TRAIN_OFFLINE = false, PREMIUM_TRIGGER_XP_BOOST = false, PREMIUM_TRIGGER_MARKET = false, PREMIUM_TRIGGER_VIP_LIST = false, PREMIUM_TRIGGER_DEPOT_SPACE = false, PREMIUM_TRIGGER_INVITE_PRIVCHAT = false
+			msg.addByte(0x01);
+		}
+		writeToOutputBuffer(msg);
 	}
 }
 
@@ -326,7 +382,7 @@ bool ProtocolGameBase::canSee(int32_t x, int32_t y, int32_t z) const
 	//negative offset means that the action taken place is on a lower floor than ourself
 	int32_t offsetz = myPos.getZ() - z;
 	if ((x >= myPos.getX() - 8 + offsetz) && (x <= myPos.getX() + 9 + offsetz) &&
-	        (y >= myPos.getY() - 6 + offsetz) && (y <= myPos.getY() + 7 + offsetz)) {
+			(y >= myPos.getY() - 6 + offsetz) && (y <= myPos.getY() + 7 + offsetz)) {
 		return true;
 	}
 	return false;
@@ -655,7 +711,7 @@ void ProtocolGameBase::sendAddCreature(const Creature* creature, const Position&
 	msg.addDouble(Creature::speedC, 3);
 
 	// can report bugs?
-	if (player->getAccountType() >= ACCOUNT_TYPE_TUTOR) {
+	if (player->getAccountType() >= ACCOUNT_TYPE_NORMAL) {
 		msg.addByte(0x01);
 	} else {
 		msg.addByte(0x00);
@@ -692,6 +748,9 @@ void ProtocolGameBase::sendAddCreature(const Creature* creature, const Position&
 
 	sendStats();
 	sendSkills();
+	sendBlessStatus();
+	sendPremiumTrigger();
+	sendStoreHighlight();
 
 	//gameworld light-settings
 	LightInfo lightInfo;
@@ -734,6 +793,8 @@ void ProtocolGameBase::sendAddCreature(const Creature* creature, const Position&
 	sendBasicData();
 	sendInventoryClientIds();
 	sendPreyData();
+	player->sendClientCheck();
+	player->sendGameNews();
 	player->sendIcons();
 }
 
@@ -741,6 +802,17 @@ void ProtocolGameBase::sendStats()
 {
 	NetworkMessage msg;
 	AddPlayerStats(msg);
+	writeToOutputBuffer(msg);
+}
+
+void ProtocolGameBase::sendStoreHighlight()
+{
+	NetworkMessage msg;
+	bool haveSale = g_game.gameStore.haveCategoryByState(StoreState_t::SALE);
+	bool haveNewItem = g_game.gameStore.haveCategoryByState(StoreState_t::NEW);
+	msg.addByte(0x19);
+	msg.addByte((haveSale) ? 1 : 0);
+	msg.addByte((haveNewItem) ? 1 : 0);
 	writeToOutputBuffer(msg);
 }
 
@@ -865,6 +937,10 @@ void ProtocolGameBase::sendVIP(uint32_t guid, const std::string& name, const std
 	msg.add<uint32_t>(std::min<uint32_t>(10, icon));
 	msg.addByte(notify ? 0x01 : 0x00);
 	msg.addByte(status);
+	if (version >= 1110) {
+		msg.addByte(0x00); // ??
+	}
+
 	writeToOutputBuffer(msg);
 }
 

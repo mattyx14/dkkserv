@@ -66,18 +66,21 @@ void MonsterType::createLoot(Container* corpse)
 
 	Player* owner = g_game.getPlayerByID(corpse->getCorpseOwner());
 	if (!owner || owner->getStaminaMinutes() > 840) {
-		/* bool canRerollLoot = false;
-		for (int i = 0; i < 3; i++) {
-			if (owner->getPreyType(i) == 3 && name == owner->getPreyName(i)) {
-				uint32_t rand = uniform_random(0, 100);
-				if (rand <= owner->getPreyValue(i)) {
-					canRerollLoot = true;
+		bool canRerollLoot = false;
+
+		if (owner) {
+			for (int i = 0; i < 3; i++) {
+				if (owner->getPreyType(i) == 3 && name == owner->getPreyName(i)) {
+					uint32_t rand = uniform_random(0, 100);
+					if (rand <= owner->getPreyValue(i)) {
+						canRerollLoot = true;
+					}
+
 					break;
 				}
 			}
-		} */
+		}
 
-		bool canRerollLoot = false;
 		for (auto it = info.lootItems.rbegin(), end = info.lootItems.rend(); it != end; ++it) {
 			auto itemList = createLootItem(*it, canRerollLoot);
 			if (itemList.empty()) {
@@ -130,19 +133,22 @@ void MonsterType::createLoot(Container* corpse)
 std::vector<Item*> MonsterType::createLootItem(const LootBlock& lootBlock, bool canRerollLoot)
 {
 	int32_t itemCount = 0;
+	uint8_t tryTimes = 1;
 
-	uint32_t randvalue = Monsters::getLootRandom();
-	if (randvalue < lootBlock.chance) {
-		if (Item::items[lootBlock.id].stackable) {
-			itemCount = randvalue % lootBlock.countmax + 1;
-		} else {
-			itemCount = 1;
-		}
-		/* } else {
-			if (canRerollLoot) {
-				createLootItem(lootBlock, false);
+	if (canRerollLoot)
+		tryTimes = 2;
+
+	for (int i = 0; i < tryTimes; i++) {
+		uint32_t randvalue = Monsters::getLootRandom();
+		if (randvalue < lootBlock.chance) {
+			if (Item::items[lootBlock.id].stackable) {
+				itemCount = randvalue % lootBlock.countmax + 1;
+			} else {
+				itemCount = 1;
 			}
-		} */
+
+			break;
+		}
 	}
 
 	std::vector<Item*> itemList;
@@ -262,7 +268,7 @@ bool Monsters::reload()
 }
 
 ConditionDamage* Monsters::getDamageCondition(ConditionType_t conditionType,
-        int32_t maxDamage, int32_t minDamage, int32_t startDamage, uint32_t tickInterval)
+		int32_t maxDamage, int32_t minDamage, int32_t startDamage, uint32_t tickInterval)
 {
 	ConditionDamage* condition = static_cast<ConditionDamage*>(Condition::createCondition(CONDITIONID_COMBAT, conditionType, 0, 0));
 	condition->setParam(CONDITION_PARAM_TICKINTERVAL, tickInterval);
@@ -571,12 +577,12 @@ bool Monsters::deserializeSpell(const pugi::xml_node& node, spellBlock_t& sb, co
 		} else if (tmpName == "energyfield") {
 			combat->setParam(COMBAT_PARAM_CREATEITEM, ITEM_ENERGYFIELD_PVP);
 		} else if (tmpName == "firecondition" || tmpName == "energycondition" ||
-		           tmpName == "earthcondition" || tmpName == "poisoncondition" ||
-		           tmpName == "icecondition" || tmpName == "freezecondition" ||
-		           tmpName == "deathcondition" || tmpName == "cursecondition" ||
-		           tmpName == "holycondition" || tmpName == "dazzlecondition" ||
-		           tmpName == "drowncondition" || tmpName == "bleedcondition" ||
-		           tmpName == "physicalcondition") {
+				   tmpName == "earthcondition" || tmpName == "poisoncondition" ||
+				   tmpName == "icecondition" || tmpName == "freezecondition" ||
+				   tmpName == "deathcondition" || tmpName == "cursecondition" ||
+				   tmpName == "holycondition" || tmpName == "dazzlecondition" ||
+				   tmpName == "drowncondition" || tmpName == "bleedcondition" ||
+				   tmpName == "physicalcondition") {
 			ConditionType_t conditionType = CONDITION_NONE;
 			uint32_t tickInterval = 2000;
 

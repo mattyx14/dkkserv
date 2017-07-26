@@ -54,6 +54,8 @@ class ProtocolGameBase : public Protocol {
 		void AddCreature(NetworkMessage& msg, const Creature* creature, bool known, uint32_t remove);
 		void AddPlayerStats(NetworkMessage& msg);
 		void AddPlayerSkills(NetworkMessage& msg);
+		void sendBlessStatus();
+		void sendPremiumTrigger();
 		void AddWorldLight(NetworkMessage& msg, const LightInfo& lightInfo);
 		void AddCreatureLight(NetworkMessage& msg, const Creature* creature);
 		void AddOutfit(NetworkMessage& msg, const Outfit_t& outfit);
@@ -62,10 +64,10 @@ class ProtocolGameBase : public Protocol {
 		void GetTileDescription(const Tile* tile, NetworkMessage& msg);
 		// translate a floor to clientreadable format
 		void GetFloorDescription(NetworkMessage& msg, int32_t x, int32_t y, int32_t z,
-		                         int32_t width, int32_t height, int32_t offset, int32_t& skip);
+								 int32_t width, int32_t height, int32_t offset, int32_t& skip);
 		// translate a map area to clientreadable format
 		void GetMapDescription(int32_t x, int32_t y, int32_t z,
-		                       int32_t width, int32_t height, NetworkMessage& msg);
+							   int32_t width, int32_t height, NetworkMessage& msg);
 
 		static void RemoveTileThing(NetworkMessage& msg, const Position& pos, uint32_t stackpos);
 
@@ -76,6 +78,7 @@ class ProtocolGameBase : public Protocol {
 		void sendAddCreature(const Creature* creature, const Position& pos, int32_t stackpos, bool isLogin);
 		void sendMagicEffect(const Position& pos, uint8_t type);
 		void sendStats();
+		void sendStoreHighlight();
 		void sendBasicData();
 		void sendPendingStateEntered();
 		void sendEnterWorld();

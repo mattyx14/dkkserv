@@ -206,6 +206,7 @@ class ProtocolGame final : public ProtocolGameBase
 
 		void parseBugReport(NetworkMessage& msg);
 		void parseDebugAssert(NetworkMessage& msg);
+		void parseRuleViolationReport(NetworkMessage &msg);
 
 		void parseThrow(NetworkMessage& msg);
 		void parseUseItemEx(NetworkMessage& msg);
@@ -299,13 +300,18 @@ class ProtocolGame final : public ProtocolGameBase
 		void sendCreatureWalkthrough(const Creature* creature, bool walkthrough);
 		void sendCreatureShield(const Creature* creature);
 		void sendCreatureSkull(const Creature* creature);
-		void sendCreatureType(uint32_t creatureId, uint8_t creatureType);
+		void sendCreatureType(const Creature* creature, uint8_t creatureType);
 		void sendCreatureHelpers(uint32_t creatureId, uint16_t helpers);
 
 		void sendShop(Npc* npc, const ShopInfoList& itemList);
 		void sendCloseShop();
+		void sendClientCheck();
+		void sendGameNews();
+		void sendResourceBalance(uint64_t money, uint64_t bank);
 		void sendSaleItemList(const std::list<ShopInfo>& shop);
 		void sendMarketEnter(uint32_t depotId);
+		void updateCoinBalance();
+		void sendCoinBalance();
 		void sendMarketLeave();
 		void sendMarketBrowseItem(uint16_t itemId, const MarketOfferList& buyOffers, const MarketOfferList& sellOffers);
 		void sendMarketAcceptOffer(const MarketOfferEx& offer);
@@ -349,7 +355,7 @@ class ProtocolGame final : public ProtocolGameBase
 		void sendRemoveTileThing(const Position& pos, uint32_t stackpos);
 
 		void sendMoveCreature(const Creature* creature, const Position& newPos, int32_t newStackPos,
-		                      const Position& oldPos, int32_t oldStackPos, bool teleport);
+							  const Position& oldPos, int32_t oldStackPos, bool teleport);
 
 		//containers
 		void sendAddContainerItem(uint8_t cid, uint16_t slot, const Item* item);

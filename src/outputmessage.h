@@ -43,9 +43,11 @@ class OutputMessage : public NetworkMessage
 			add_header(info.length);
 		}
 
-		void addCryptoHeader(bool addChecksum) {
-			if (addChecksum) {
+		void addCryptoHeader(uint8_t addChecksum) {
+			if (addChecksum == 1) {
 				add_header(adlerChecksum(buffer + outputBufferStart, info.length));
+			} else if (addChecksum == 2) {
+				add_header(sequence++);
 			}
 
 			writeMessageLength();
@@ -71,6 +73,10 @@ class OutputMessage : public NetworkMessage
 		void setBroadcastMsg(bool isBroadcastMesssage) {
 			this->isBroadcastMesssage = isBroadcastMesssage;
 		}
+
+	private:
+		uint32_t sequence = 0;
+
 	protected:
 		template <typename T>
 		void add_header(T add) {

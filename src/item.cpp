@@ -816,7 +816,7 @@ uint32_t Item::getWeight() const
 }
 
 std::string Item::getDescription(const ItemType& it, int32_t lookDistance,
-                                 const Item* item /*= nullptr*/, int32_t subType /*= -1*/, bool addArticle /*= true*/)
+								 const Item* item /*= nullptr*/, int32_t subType /*= -1*/, bool addArticle /*= true*/)
 {
 	const std::string* text = nullptr;
 
@@ -944,18 +944,6 @@ std::string Item::getDescription(const ItemType& it, int32_t lookDistance,
 					}
 
 					s << "magic level " << std::showpos << it.abilities->stats[STAT_MAGICPOINTS] << std::noshowpos;
-				}
-
-				if (it.abilities->skills[SKILL_DISTANCE]) {
-					if (begin) {
-						begin = false;
-						s << " (";
-					}
-					else {
-						s << ", ";
-					}
-
-					s << "distance fighting " << std::showpos << it.abilities->skills[SKILL_DISTANCE] << std::noshowpos;
 				}
 
 				int16_t show = it.abilities->absorbPercent[0];
@@ -1274,7 +1262,7 @@ std::string Item::getDescription(const ItemType& it, int32_t lookDistance,
 					s << ", ";
 				}
 
-				s << getSkillName(i) << ' ' << std::showpos << it.abilities->skills[i] << std::noshowpos << '%';
+				s << getSkillName(i) << ' ' << std::showpos << it.abilities->skills[i] << std::noshowpos;
 			}
 
 			for (uint8_t i = SKILL_CRITICAL_HIT_CHANCE; i <= SKILL_LAST; i++) {
@@ -1290,7 +1278,7 @@ std::string Item::getDescription(const ItemType& it, int32_t lookDistance,
 					s << ", ";
 				}
 
-				s << getSkillName(i) << ' ' << std::showpos << it.abilities->skills[i] << std::noshowpos;
+				s << getSkillName(i) << ' ' << std::showpos << it.abilities->skills[i] << std::noshowpos << '%';
 			}
 
 			if (it.abilities->stats[STAT_MAGICPOINTS]) {
