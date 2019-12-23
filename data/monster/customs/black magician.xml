@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Black Magician" nameDescription="a black magician" race="blood" experience="7500" speed="350" manacost="0">
+	<health now="8400" max="8400"/>
+	<look type="130" head="114" body="114" legs="114" feet="114" addons="3" corpse="20527" />
+	<targetchange interval="5000" chance="8"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="800"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" min="-360" max="-1480"/>
+		<attack name="energy" interval="1000" chance="20" range="7" min="-85" max="-385">
+			<attribute key="shootEffect" value="energy"/>
+		</attack>
+		<attack name="manadrain" interval="1000" chance="15" range="7" min="-35" max="-275"/>
+		<attack name="Paralyze" interval="1000" chance="17" range="7" target="1">
+			<attribute key="areaEffect" value="energyarea"/>
+		</attack>
+		<attack name="energy" interval="1000" chance="20" range="7" radius="3" target="1" min="-350" max="-620">
+			<attribute key="shootEffect" value="FLASHARROW"/>
+		<attribute key="areaEffect" value="energyarea"/>
+		</attack>
+		<attack name="energyfield" interval="1000" chance="15" range="7" radius="3" target="1">
+			<attribute key="shootEffect" value="energy"/>
+		</attack>
+		<attack name="energy" interval="1000" chance="10" range="7" radius="4" min="-165" max="-245">
+			<attribute key="areaEffect" value="BIGCLOUDS"/>
+		</attack>
+	</attacks>
+	<defenses armor="25" defense="30">
+		<defense name="healing" interval="1000" chance="25" min="60" max="100">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+	</defenses>
+	<immunities>
+		<immunity lifedrain="1"/>
+		<immunity paralyze="1"/>
+		<immunity outfit="1"/>
+		<immunity drunk="1"/>
+		<immunity invisible="1"/>
+		<immunity drown="1"/>
+	</immunities>
+	<elements>
+		<element firePercent="10"/>
+		<element icePercent="25"/>
+		<element physicalPercent="50"/>
+		<element earthPercent="25"/>
+		<element energyPercent="10"/>
+		<element holyPercent="25"/>
+		<element deathPercent="100"/>
+	</elements>
+	<summons maxSummons="2">
+		<summon name="black warlock" interval="2000" chance="50" max="1"/>
+		<summon name="warlock" interval="2000" chance="50" max="1"/>
+	</summons>
+	<voices interval="5000" chance="10">
+		<voice sentence="Learn the secret of our magic! YOUR death!"/>
+		<voice sentence="Even a rat is a better mage than you."/>
+		<voice sentence="We don't like intruders!"/>
+	</voices>
+</monster>

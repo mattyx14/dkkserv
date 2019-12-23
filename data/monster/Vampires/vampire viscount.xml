@@ -1,79 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Vampire Viscount" nameDescription="a vampire viscount" race="blood" experience="800" speed="220" manacost="0">
-	<health now="1200" max="1200"/>
-	<look type="555" corpse="21275"/>
-	<targetchange interval="2000" chance="4"/>
+<monster name="Vampire Viscount" nameDescription="a vampire viscount" race="blood" experience="800" speed="250" manacost="0">
+	<health now="1200" max="1200" />
+	<look type="555" corpse="21278" />
+	<targetchange interval="4000" chance="10" />
 	<flags>
-		<flag summonable="0"/>
-		<flag attackable="1"/>
-		<flag hostile="1"/>
-		<flag illusionable="0"/>
-		<flag convinceable="0"/>
-		<flag pushable="0"/>
-		<flag canpushitems="1"/>
-		<flag canpushcreatures="1"/>
-		<flag targetdistance="0"/>
-		<flag staticattack="90"/>
-		<flag runonhealth="0"/>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="0" />
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="88" attack="50"/>
-		<attack name="bleedcondition" interval="2000" chance="12" range="7" target="1" radius="6" min="-160" max="-360">
-			<attribute key="shootEffect" value="death"/>
-			<attribute key="areaEffect" value="bats"/>
+		<attack name="melee" interval="2000" min="0" max="-150" />
+		<attack name="death" interval="2000" chance="15" radius="3" range="6" target="1" min="-50" max="-100">
+			<attribute key="shootEffect" value="death" />
+			<attribute key="areaEffect" value="mortarea" />
 		</attack>
-		<attack name="physical" interval="2000" chance="13" range="7" min="-100" max="-130">
-			<attribute key="shootEffect" value="ice"/>
+		<attack name="bleedcondition" interval="2000" chance="10" radius="6" min="-320" max="-560">
+			<attribute key="areaEffect" value="bats" />
 		</attack>
-    		<attack name="lifedrain" interval="2000" chance="11" target="1" range="7" radius="3" min="-120" max="-135">
-			<attribute key="shootEffect" value="death"/>
-      			<attribute key="areaEffect" value="mortarea" />
-    		</attack>
-    		<attack name="vampire viscount paralyze" interval="2000" chance="14"/>
 	</attacks>
-	<defenses armor="32" defense="45">
-		<defense name="outfit" interval="2000" chance="17" monster="vicious manbat" duration="6000">
-			<attribute key="areaEffect" value="insects"/>
+	<defenses armor="35" defense="35">
+		<defense name="outfit" interval="2000" chance="10" monster="Vicious Manbat" duration="4000" />
+		<defense name="speed" interval="2000" chance="15" speedchange="300" duration="4000">
+			<attribute key="areaEffect" value="redshimmer" />
 		</defense>
-    		<defense name="healing" interval="2000" chance="22" min="40" max="60">
-      			<attribute key="areaEffect" value="redspark" />
-    		</defense>
-    		<defense name="healing" interval="2000" chance="12" min="0" max="0">
-      			<attribute key="areaEffect" value="blueshimmer" />
-    		</defense>
 	</defenses>
 	<elements>
-		<element firePercent="-5"/>
-		<element icePercent="10"/>
-		<element physicalPercent="30"/>
-		<element holyPercent="-5"/>
+		<element holyPercent="-5" />
+		<element firePercent="-5" />
+		<element physicalPercent="5" />
+		<element icePercent="5" />
 	</elements>
 	<immunities>
-		<immunity death="1"/>
-		<immunity paralyze="1"/>
-		<immunity earth="1"/>
-		<immunity invisible="1"/>
+		<immunity invisible="1" />
+		<immunity paralyze="1" />
+		<immunity death="1" />
+		<immunity earth="1" />
 	</immunities>
-	<voices interval="2000" chance="5">
-		<voice sentence="Prepare to BLEED!"/>
-		<voice sentence="Don't struggle. We don't want to waste a drop of blood now, do we?"/>
-		<voice sentence="Ah, refreshments have arrived!"/>
-		<voice sentence="Oh good, some fresh blood in here!"/>
-		<voice sentence="Now, this will only hurt a little bit..."/>
+	<voices interval="2000" chance="7">
+		<voice sentence="Prepare to BLEED!" />
+		<voice sentence="Don't struggle. We don't want to waste a drop of blood now, do we?" />
+		<voice sentence="Ah, refreshments have arrived!" />
 	</voices>
 	<loot>
-		<item id="2144" chance="2500" /><!-- black pearl -->
-		<item id="12405" chance="2910" /><!-- blood preservation -->
-		<item id="21244" chance="4460" /><!-- vampire's cape chain -->
-		<item id="10602" chance="7230" /><!-- vampire teeth -->
-		<item id="2148" countmax="50" chance="83030" /><!-- gold coin -->
-		<item id="7588" chance="7170"/><!-- strong health potion -->
-		<item id="7589" chance="8720"/><!-- strong mana potion -->
-		<item id="21241" chance="6560" /><!-- tooth file -->
-		<item id="5911" chance="70" /><!-- red piece of cloth -->
-		<item id="2396" chance="810" /><!-- ice rapier -->
-		<item id="2534" chance="200" /><!-- vampire shield -->
-		<item id="2156" chance="540" /><!-- red gem -->
-		<item id="2147" countmax="2" chance="3040" /><!-- small rubies -->
+		<item id="2148" countmax="50" chance="83000" />	<!-- gold coin -->
+		<item id="7589" chance="8180" />					<!-- strong mana potion -->
+		<item id="10602" chance="7200" />				<!-- vampire teeth -->
+		<item id="7588" chance="7100" />					<!-- strong health potion -->
+		<item id="21241" chance="6560" />				<!-- tooth file -->
+		<item id="21244" chance="4460" />				<!-- vampire's cape chain -->
+		<item id="2147" countmax="2" chance="3040" />	<!-- small ruby -->
+		<item id="12405" chance="2910" />				<!-- blood preservation -->
+		<item id="2144" chance="2500" />					<!-- black pearl -->
+		<item id="2396" chance="810" />					<!-- ice rapier -->
+		<item id="2156" chance="540" />					<!-- red gem -->
+		<item id="5911" chance="70" />					<!-- red piece of cloth -->
 	</loot>
 </monster>

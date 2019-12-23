@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2017  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,7 +20,7 @@
 #ifndef FS_CONST_H_0A49B5996F074465BF44B90F4F780E8B
 #define FS_CONST_H_0A49B5996F074465BF44B90F4F780E8B
 
-static constexpr int32_t NETWORKMESSAGE_MAXSIZE = 24590;
+#define NETWORKMESSAGE_MAXSIZE 24590
 
 enum MagicEffectClasses : uint8_t {
 	CONST_ME_NONE,
@@ -108,13 +108,11 @@ enum MagicEffectClasses : uint8_t {
 	CONST_ME_YELLOWSMOKE = 168,
 	CONST_ME_GREENSMOKE = 169,
 	CONST_ME_PURPLESMOKE = 170,
-	CONST_ME_EARLY_THUNDER = 171,
-	CONST_ME_RAGIAZ_BONECAPSULE = 172,
-	CONST_ME_CRITICAL_DAMAGE = 173,
-	// 174 is empty
-	CONST_ME_PLUNGING_FISH = 175,
+	CONST_ME_LIGHTNING = 171,
+	CONST_ME_RAGIAZ_BONE_CAPSULE = 172,
+	CONST_ME_CRITICAL_HIT = 173,
 
-	CONST_ME_LAST = CONST_ME_PLUNGING_FISH,
+	CONST_ME_LAST = CONST_ME_CRITICAL_HIT,
 };
 
 enum ShootType_t : uint8_t {
@@ -221,9 +219,6 @@ enum MessageClasses : uint8_t {
 	MESSAGE_EVENT_DEFAULT = 30, /*White message at the bottom of the game window and in the console*/
 	MESSAGE_LOOT = 31,
 
-	MESSAGE_GUILD = 33, /*White message in channel (+ channelId)*/
-	MESSAGE_PARTY_MANAGEMENT = 34, /*White message in channel (+ channelId)*/
-	MESSAGE_PARTY = 35, /*White message in channel (+ channelId)*/
 	MESSAGE_EVENT_ORANGE = 36, /*Orange message in the console*/
 	MESSAGE_STATUS_CONSOLE_ORANGE = 37,  /*Orange message in the console*/
 };
@@ -334,7 +329,6 @@ enum TextColor_t : uint8_t {
 	TEXTCOLOR_LIGHTGREEN = 30,
 	TEXTCOLOR_LIGHTBLUE = 35,
 	TEXTCOLOR_MAYABLUE = 95,
-	TEXTCOLOR_MAYARED = 194,
 	TEXTCOLOR_DARKRED = 108,
 	TEXTCOLOR_LIGHTGREY = 129,
 	TEXTCOLOR_SKYBLUE = 143,
@@ -397,8 +391,9 @@ enum WeaponAction_t : uint8_t {
 enum WieldInfo_t {
 	WIELDINFO_LEVEL = 1 << 0,
 	WIELDINFO_MAGLV = 1 << 1,
-	WIELDINFO_VOCREQ = 1 << 2,
-	WIELDINFO_PREMIUM = 1 << 3,
+	WIELDINFO_SKILL = 1 << 2,
+	WIELDINFO_VOCREQ = 1 << 3,
+	WIELDINFO_PREMIUM = 1 << 4,
 };
 
 enum Skulls_t : uint8_t {
@@ -437,10 +432,7 @@ enum GuildEmblems_t : uint8_t {
 
 enum item_t : uint16_t {
 	ITEM_BROWSEFIELD = 460, // for internal use
-
 	ITEM_DEPOT_NULL = 25452, // for internal use
-
-	TRANSFORM_BOX_ID = 26054, // for internal use
 
 	ITEM_DEPOT_I = 25453,
 	ITEM_DEPOT_II = 25454,
@@ -492,7 +484,7 @@ enum item_t : uint16_t {
 
 	ITEM_REWARD_CONTAINER = 21518,
 	ITEM_REWARD_CHEST = 21584,
-
+	
 	ITEM_DEPOT = 2594,
 	ITEM_LOCKER1 = 2589,
 	ITEM_INBOX = 14404,
@@ -511,21 +503,6 @@ enum item_t : uint16_t {
 	ITEM_LABEL = 2599,
 
 	ITEM_AMULETOFLOSS = 2173,
-
-	ITEM_TIBIA_COIN = 24774,
-
-	/** Casks and Kegs **/
-	ITEM_HEALTH_CASK_START = 28553,
-	ITEM_HEALTH_CASK_END = 28557,
-
-	ITEM_MANA_CASK_START = 28563,
-	ITEM_MANA_CASK_END = 28567,
-
-	ITEM_SPIRIT_CASK_START = 28573,
-	ITEM_SPIRIT_CASK_END = 28574,
-
-	ITEM_KEG_START = 28577, //kegs ids are contiguous in item.otb
-	ITEM_KEG_END = 28588,
 
 	ITEM_DOCUMENT_RO = 1968, //read-only
 };
@@ -571,57 +548,26 @@ enum PlayerFlags : uint64_t {
 	PlayerFlag_IsAlwaysPremium = static_cast<uint64_t>(1) << 37,
 };
 
-enum ReloadTypes_t : uint8_t  {
-	RELOAD_TYPE_ALL,
-	RELOAD_TYPE_ACTIONS,
-	RELOAD_TYPE_CHAT,
-	RELOAD_TYPE_COMMANDS,
-	RELOAD_TYPE_CONFIG,
-	RELOAD_TYPE_CREATURESCRIPTS,
-	RELOAD_TYPE_EVENTS,
-	RELOAD_TYPE_GLOBAL,
-	RELOAD_TYPE_GLOBALEVENTS,
-	RELOAD_TYPE_ITEMS,
-	RELOAD_TYPE_MONSTERS,
-	RELOAD_TYPE_MODULES,
-	RELOAD_TYPE_MOUNTS,
-	RELOAD_TYPE_MOVEMENTS,
-	RELOAD_TYPE_NPCS,
-	RELOAD_TYPE_QUESTS,
-	RELOAD_TYPE_RAIDS,
-	RELOAD_TYPE_SPELLS,
-	RELOAD_TYPE_TALKACTIONS,
-	RELOAD_TYPE_WEAPONS,
-};
+#define CHANNEL_GUILD 0x00
+#define CHANNEL_PARTY 0x01
 
-enum NameEval_t : uint8_t {
-	VALID,
-	INVALID,
-	INVALID_LENGTH,
-	INVALID_TOKEN_LENGTH,
-	INVALID_FORBIDDEN,
-	INVALID_CHARACTER
-};
+#define CHANNEL_CAST 40
 
-static constexpr int32_t CHANNEL_GUILD = 0x00;
-static constexpr int32_t CHANNEL_PARTY = 0x01;
-static constexpr int32_t CHANNEL_PRIVATE = 0xFFFF;
+#define CHANNEL_PRIVATE 0xFFFF
 
-static constexpr int32_t CHANNEL_CAST = 40;
 const std::string LIVE_CAST_CHAT_NAME = "Live Cast Chat";
 
-static constexpr int32_t STORAGEVALUE_PROMOTION = 30018;
-//Reserved player storage key ranges;
-//[10000000 - 20000000];
-static constexpr int32_t PSTRG_RESERVED_RANGE_START = 10000000;
-static constexpr int32_t PSTRG_RESERVED_RANGE_SIZE = 10000000;
-//[1000 - 1500];
-static constexpr int32_t PSTRG_OUTFITS_RANGE_START = (PSTRG_RESERVED_RANGE_START + 1000);
-static constexpr int32_t PSTRG_OUTFITS_RANGE_SIZE = 500;
-//[2001 - 2011];
-static constexpr int32_t PSTRG_MOUNTS_RANGE_START = (PSTRG_RESERVED_RANGE_START + 2001);
-static constexpr int32_t PSTRG_MOUNTS_RANGE_SIZE = 10;
-static constexpr int32_t PSTRG_MOUNTS_CURRENTMOUNT = (PSTRG_MOUNTS_RANGE_START + 10);
+//Reserved player storage key ranges
+//[10000000 - 20000000]
+#define PSTRG_RESERVED_RANGE_START 10000000
+#define PSTRG_RESERVED_RANGE_SIZE 10000000
+//[1000 - 1500]
+#define PSTRG_OUTFITS_RANGE_START (PSTRG_RESERVED_RANGE_START + 1000)
+#define PSTRG_OUTFITS_RANGE_SIZE 500
+//[2001 - 2011]
+#define PSTRG_MOUNTS_RANGE_START (PSTRG_RESERVED_RANGE_START + 2001)
+#define PSTRG_MOUNTS_RANGE_SIZE 10
+#define PSTRG_MOUNTS_CURRENTMOUNT (PSTRG_MOUNTS_RANGE_START + 10)
 
 #define IS_IN_KEYRANGE(key, range) (key >= PSTRG_##range##_START && ((key - PSTRG_##range##_START) <= PSTRG_##range##_SIZE))
 

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="abaddon" nameDescription="the abaddon" race="undead" experience="0" speed="340" manacost="0">
+	<health now="235900" max="235900"/>
+	<look type="291" head="20" body="30" legs="40" feet="50" corpse="8847"/>
+	<targetchange interval="5000" chance="8"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="1"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="220"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="135" attack="185"/>
+		<attack name="energy" interval="1000" chance="15" range="7" radius="4" target="1" min="-920" max="-1880">
+			<attribute key="shootEffect" value="energy"/>
+			<attribute key="areaEffect" value="PURPLEENERGY"/>
+		</attack>
+		<attack name="energyfield" interval="1000" chance="25" range="7" radius="4" target="1">
+			<attribute key="shootEffect" value="energy"/>
+		</attack>
+		<attack name="energy" interval="1000" chance="17" length="4" spread="2" min="-950" max="-1850">
+			<attribute key="areaEffect" value="PURPLEENERGY"/>
+		</attack>
+	</attacks>
+	<defenses armor="22" defense="35">
+		<defense name="healing" interval="1000" chance="35" min="1900" max="2050">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+	</defenses>
+	<summons maxSummons="5">
+		<summon name="wyrm" interval="2000" chance="17" max="5"/>
+	</summons>
+	<immunities>
+		<immunity energy="1"/>
+		<immunity fire="1"/>
+		<immunity poison="1"/>
+		<immunity lifedrain="1"/>
+		<immunity paralyze="1"/>
+		<immunity outfit="1"/>
+		<immunity drunk="1"/>
+		<immunity invisible="1"/>
+	</immunities>
+	<elements>
+		<element firePercent="10"/>
+		<element icePercent="10"/>
+		<element earthPercent="10"/>
+		<element energyPercent="10"/>
+		<element holyPercent="50"/>
+		<element deathPercent="10"/>
+	</elements>
+	<voices interval="5000" chance="10">
+		<voice sentence="ZCHHHHH" yell="1"/>
+		<voice sentence="I WILL SET THE WORLD IN FIRE!" yell="1"/>
+		<voice sentence="I WILL PROTECT MY BROOD!" yell="1"/>
+	</voices>
+</monster>

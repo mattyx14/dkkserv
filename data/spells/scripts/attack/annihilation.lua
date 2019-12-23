@@ -6,8 +6,8 @@ combat:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 combat:setParameter(COMBAT_PARAM_USECHARGES, true)
 
 function onGetFormulaValues(player, skill, attack, factor)
-	local min = (player:getLevel() / 5) + (skill * attack * 0.06) + 13
-	local max = (player:getLevel() / 5) + (skill * attack * 0.14) + 34
+	local min = (player:getLevel() * 2.7) + (skill * attack * 0.03) + 7
+	local max = (player:getLevel() * 3.1) + (skill * attack * 0.05) + 11
 	return -min, -max
 end
 

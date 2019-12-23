@@ -1,58 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Forest Fury" nameDescription="a forest fury" race="blood" experience="235" speed="220" manacost="0">
-	<health now="480" max="480"/>
-	<look type="569" corpse="21359"/>
-	<targetchange interval="2000" chance="5"/>
+<monster name="Forest Fury" nameDescription="a forest fury" race="blood" experience="835" speed="310" manacost="0">
+	<health now="980" max="980" />
+	<look type="569" corpse="21359" />
+	<targetchange interval="4000" chance="10" />
 	<flags>
-		<flag summonable="0"/>
-		<flag attackable="1"/>
-		<flag hostile="1"/>
-		<flag illusionable="1"/>
-		<flag convinceable="0"/>
-		<flag pushable="0"/>
-		<flag canpushitems="0"/>
-		<flag canpushcreatures="1"/>
-		<flag targetdistance="4"/>
-		<flag staticattack="90"/>
-		<flag runonhealth="0"/>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="4" />
+		<flag staticattack="80" />
+		<flag runonhealth="0" />
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="20" attack="30"/>
-		<attack name="physical" interval="2000" chance="10" range="7" min="-0" max="-100">
-			<attribute key="shootEffect" value="huntingspear"/>
-			<attribute key="areaEffect" value="explosionarea"/>
+		<attack name="melee" interval="2000" skill="40" attack="50" />
+		<attack name="physical" interval="1500" chance="40" radius="4" target="1" range="7" min="-50" max="-280">
+			<attribute key="shootEffect" value="huntingspear" />
+			<attribute key="areaEffect" value="greenshimmer" />
 		</attack>
-    		<attack name="forest fury skill reducer 1" interval="2000" chance="20" range="7"/>
-    		<attack name="forest fury skill reducer 2" interval="2000" chance="20" range="7"/>
-		<attack name="physical" interval="2000" chance="20" length="3" spread="0" min="-0" max="-95">
-			<attribute key="areaEffect" value="poison"/>
-		</attack>
+		<attack name="forest fury skill reducer" range="5" interval="2000" chance="20" />
 	</attacks>
-	<defenses armor="13" defense="19"/>
-	<immunities>
-		<immunity paralyze="1"/>
-	</immunities>
+	<defenses armor="20" defense="20" />
 	<elements>
-		<element firePercent="-10"/>
-		<element holyPercent="10"/>
-		<element deathPercent="40"/>
+		<element holyPercent="10" />
+		<element firePercent="-5" />
 	</elements>
-	<voices interval="2000" chance="5">
-		<voice sentence="To arms, sisters!"/>
-		<voice sentence="Feel the wrath of mother forest!"/>
-		<voice sentence="By the power of Greenskull!"/>
-		<voice sentence="Yiiieeehhh!"/>
-		<voice sentence="I'll strike you infidels down!"/>
+	<voices interval="5000" chance="10">
+		<voice sentence="To arms, sisters!" />
+		<voice sentence="Feel the wrath of mother forest!" />
+		<voice sentence="By the power of Greenskull!" />
 	</voices>
 	<loot>
-		<item id="2455" chance="2750"/><!-- crossbow -->
-		<item id="7438" chance="90"/><!-- elvish bow -->
-		<item id="21311" chance="6890"/><!-- elven hoof -->
-		<item id="2148" countmax="55" chance="87660"/><!-- gold coin -->
-		<item id="2666" chance="25240"/><!-- meat -->
-		<item id="21312" chance="12200"/><!-- venison -->
-		<item id="2543" countmax="15" chance="48950"/><!-- bolt -->
-		<item id="7363" countmax="5" chance="14530"/><!-- piercing bolt -->
-		<item id="9970" chance="470"/><!-- small topaz -->
+		<item id="2148" countmax="53" chance="87250" /><!-- gold coin -->
+		<item id="2543" countmax="15" chance="48270" /><!-- bolts -->
+		<item id="2666" chance="24930" /><!-- meat -->
+		<item id="7363" countmax="5" chance="14900" /><!-- piercing bolts -->
+		<item id="21312" chance="13210" /><!-- venison -->
+		<item id="21311" chance="7030" /><!-- elven hoof -->
+		<item id="2455" chance="2750" /><!-- crossbow -->
+		<item id="9970" chance="470" /><!-- small topaz -->
+		<item id="7438" chance="90" /><!-- elvish bow -->
 	</loot>
 </monster>

@@ -1,66 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Fleshcrawler" nameDescription="Fleshcrawler" race="venom" experience="1000" speed="218" manacost="0">
-	<health now="1450" max="1450"/>
-	<look type="79" corpse="6021"/>
-	<targetchange interval="2000" chance="8"/>
+<monster name="Fleshcrawler" nameDescription="Fleshcrawler" race="venom" experience="1000" speed="230" manacost="0">
+	<health now="1450" max="1450" />
+	<look type="79" corpse="6021" />
+	<targetchange interval="4000" chance="10" />
 	<flags>
-		<flag summonable="0"/>
-		<flag attackable="1"/>
-		<flag hostile="1"/>
-		<flag illusionable="0"/>
-		<flag convinceable="0"/>
-		<flag pushable="0"/>
-		<flag canpushitems="1"/>
-		<flag canpushcreatures="1"/>
-		<flag targetdistance="1"/>
-		<flag staticattack="90"/>
-		<flag runonhealth="0"/>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag staticattack="80" />
+		<flag runonhealth="0" />
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="122" attack="50" poison="100"/>
-		<attack name="poison" interval="2000" chance="12" range="7" min="-15" max="-150">
-			<attribute key="shootEffect" value="poison"/>
-			<attribute key="areaEffect" value="poison"/>
+		<attack name="melee" interval="2000" min="0" max="-330" />
+		<attack name="poison" interval="2000" chance="20" range="7" min="0" max="-150">
+			<attribute key="shootEffect" value="poison" />
+			<attribute key="areaEffect" value="poison" />
 		</attack>
-		<attack name="ancient scarab paralyze" interval="2000" chance="13" range="7"/>
-		<attack name="poisoncondition" interval="2000" chance="30" radius="5" target="0" min="-440" max="-560">
-			<attribute key="areaEffect" value="poison"/>
+		<attack name="speed" interval="2000" chance="15" range="7" speedchange="-700" duration="25000">
+			<attribute key="shootEffect" value="poison" />
+			<attribute key="areaEffect" value="poison" />
+		</attack>
+		<attack name="poisoncondition" interval="2000" chance="30" radius="5" target="0" min="0" max="-520">
+			<attribute key="areaEffect" value="poison" />
 		</attack>
 	</attacks>
-	<defenses armor="25" defense="20">
-		<defense name="speed" interval="2000" chance="8" speedchange="332" duration="9000">
-			<attribute key="areaEffect" value="redshimmer"/>
-		</defense>
-	</defenses>
+	<defenses armor="30" defense="30" />
 	<elements>
-		<element energyPercent="20"/>
-		<element physicalPercent="10"/>
-		<element firePercent="-15"/>
-		<element deathPercent="-10"/>
-		<element icePercent="-5"/>
+		<element firePercent="-15" />
+		<element deathPercent="-10" />
 	</elements>
 	<immunities>
-		<immunity earth="1"/>
-		<immunity paralyze="1"/>
-		<immunity invisible="1"/>
+		<immunity earth="1" />
+		<immunity paralyze="1" />
+		<immunity invisible="1" />
 	</immunities>
 	<summons maxSummons="3">
-		<summon name="Larva" interval="2000" chance="12" max="3"/>
+		<summon name="Larva" interval="2000" chance="10" max="3" />
 	</summons>
 	<loot>
-		<item id="7426" chance="30060"/><!-- amber staff -->
-		<item id="2142" chance="46240"/><!-- ancient amulet -->
-		<item id="10548" chance="100000"/><!-- scarab pincers -->
-		<item id="12424" chance="13870"/><!-- ornamented brooch -->
-		<item id="2476" chance="45660"/><!-- knight armor -->
-		<item id="2152" countmax="15" chance="100000"/><!-- platinum coin -->
-		<item id="2135" chance="52600"/><!-- scarab amulet -->
-		<item id="2159" countmax="2" chance="98840"/><!-- scarab coin -->
-		<item id="2540" chance="43350"/><!-- scarab shield -->
-		<item id="2150" countmax="4" chance="87860"/><!-- small amethyst -->
-		<item id="2149" countmax="3" chance="88440"/><!-- small emerald -->
-		<item id="8912" chance="76880"/><!-- springsprout rod -->
-		<item id="7588" chance="42200"/><!-- strong health potion -->
-		<item id="7884" chance="10980"/><!-- terra mantle -->
+		<item id="2152" countmax="15" chance="98890" /><!-- platinum coin -->
+		<item id="2159" countmax="2" chance="98890" /><!-- scarab coin -->
+		<item id="2149" countmax="3" chance="88890" /><!-- small emerald -->
+		<item id="2150" countmax="4" chance="87220" /><!-- small amethyst -->
+		<item id="10548" chance="100000" /><!-- scarab pincers -->
+		<item id="2142" chance="45560" /><!-- ancient amulet -->
+		<item id="2135" chance="52220" /><!-- scarab amulet -->
+		<item id="7884" chance="11110" /><!-- terra mantle -->
+		<item id="7588" chance="43330" /><!-- strong health potion -->
+		<item id="8912" chance="75560" /><!-- springsprout rod -->
+		<item id="2540" chance="43890" /><!-- scarab shield -->
+		<item id="12424" chance="14440" /><!-- ornamented brooch -->
 	</loot>
 </monster>

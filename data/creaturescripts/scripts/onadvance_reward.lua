@@ -1,4 +1,10 @@
 local rewards = {
+	[SKILL_LEVEL] = {
+		{lvl = 30, items = {{2160, 5}}, storage = 3101},
+		{lvl = 50, items = {{2160, 5}}, storage = 3102},
+		-- {lvl = 60, items = {{16101, 1}}, storage = 3103}, -- Premium Scrolls
+	},
+--[[
 	[SKILL_SWORD] = {
 		{lvl = 150, items = {{2160, 2}, {2148, 1}}, storage = 54776},
 		{lvl = 160, items = {{2365, 2}}, storage = 54777}
@@ -6,9 +12,7 @@ local rewards = {
 	[SKILL_MAGLEVEL] = {
 		{lvl = 100, items = {{2365, 2}}, storage = 54778},
 	},
-	[SKILL_LEVEL] = {
-		{lvl = 480, items = {{2152, 2}}, storage = 54779},
-	},
+]]
 }
 
 function onAdvance(player, skill, oldlevel, newlevel)
@@ -39,10 +43,5 @@ function onAdvance(player, skill, oldlevel, newlevel)
 			player:sendTextMessage(MESSAGE_STATUS_CONSOLE_ORANGE, rewardstr .. table.concat(reward_t, ", "))
 		end
 	end
-	return true
-end
-
-function onLogin(player)
-	player:registerEvent("onadvance_reward")
 	return true
 end

@@ -546,7 +546,7 @@ function doConvinceCreature(cid, target)
 		return false
 	end
 
-	creature:addSummon(targetCreature)
+	targetCreature:setMaster(creature)
 	return true
 end
 
@@ -875,7 +875,6 @@ function getThingfromPos(pos)
 	end
 
 	local thing
-	local stackpos = pos.stackpos or 0
 	if stackpos == STACKPOS_TOP_MOVEABLE_ITEM_OR_CREATURE then
 		thing = tile:getTopCreature()
 		if thing == nil then
@@ -889,7 +888,7 @@ function getThingfromPos(pos)
 	elseif stackpos == STACKPOS_TOP_CREATURE then
 		thing = tile:getTopCreature()
 	else
-		thing = tile:getThing(stackpos)
+		thing = tile:getThing(pos.stackpos)
 	end
 	return pushThing(thing)
 end
@@ -1006,61 +1005,3 @@ end
 function Guild.removeMember(self, player)
 	return player:getGuild() == self and player:setGuild(nil)
 end
-
-function getPlayerInstantSpellCount(cid) local p = Player(cid) return p ~= nil and p:getInstantSpellCount() end
-function getPlayerInstantSpellInfo(cid, spellId)
-	local player = Player(cid)
-	if not player then
-		return false
-	end
-
-	local spell = Spell(spellId)
-	if not spell or not player:canCast(spell) then
-		return false
-	end
-
-	return spell
-end
-
-function doSetItemOutfit(cid, item, time) local c = Creature(cid) return c ~= nil and c:setItemOutfit(item, time) end
-function doSetMonsterOutfit(cid, name, time) local c = Creature(cid) return c ~= nil and c:setMonsterOutfit(name, time) end
-function doSetCreatureOutfit(cid, outfit, time)
-	local creature = Creature(cid)
-	if not creature then
-		return false
-	end
-
-	local condition = Condition(CONDITION_OUTFIT)
-	condition:setOutfit({
-		lookTypeEx = itemType:getId()
-	})
-	condition:setTicks(time)
-	creature:addCondition(condition)
-
-	return true
-end
-
-function isInArray(array, value) return table.contains(array, value) end
-
-function doCreateItem(itemid, count, pos)
-	local tile = Tile(pos)
-	if not tile then
-		return false
-	end
-
-	local item = Game.createItem(itemid, count, pos)
-	if item then
-		return item:getUniqueId()
-	end
-	return false
-end
-
-function doCreateItemEx(itemid, count)
-	local item = Game.createItem(itemid, count)
-	if item then
-		return item:getUniqueId()
-	end
-	return false
-end
-
-function doMoveCreature(cid, direction) local c = Creature(cid) return c ~= nil and c:move(direction) end

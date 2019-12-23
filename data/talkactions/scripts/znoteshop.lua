@@ -1,6 +1,7 @@
-function onSay(player, words, param)
+function onSay(cid, words, param)
 	local storage = 54073 -- Make sure to select non-used storage. This is used to prevent SQL load attacks.
 	local cooldown = 15 -- in seconds.
+	local player = Player(cid)
 	if player:getStorageValue(storage) <= os.time() then
 		player:setStorageValue(storage, os.time() + cooldown)
 		-- Create the query
@@ -8,10 +9,10 @@ function onSay(player, words, param)
 		-- Detect if we got any results
 		if orderQuery ~= false then
 			-- Fetch order values
-			local q_id = result.getNumber(orderQuery, "id")
-			local q_type = result.getNumber(orderQuery, "type")
-			local q_itemid = result.getNumber(orderQuery, "itemid")
-			local q_count = result.getNumber(orderQuery, "count")
+			local q_id = result.getDataInt(orderQuery, "id")
+			local q_type = result.getDataInt(orderQuery, "type")
+			local q_itemid = result.getDataInt(orderQuery, "itemid")
+			local q_count = result.getDataInt(orderQuery, "count")
 			result.free(orderQuery)
 			-- ORDER TYPE 1 (Regular item shop products)
 			if q_type == 1 then

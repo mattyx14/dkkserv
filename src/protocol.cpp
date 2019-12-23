@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2017  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -32,11 +32,7 @@ void Protocol::onSendMessage(const OutputMessage_ptr& msg) const
 
 		if (encryptionEnabled) {
 			XTEA_encrypt(*msg);
-			if (!compactCrypt) {
-				msg->addCryptoHeader((checksumEnabled ? 1 : 0));
-			} else {
-				msg->addCryptoHeader(2);
-			}
+			msg->addCryptoHeader(checksumEnabled);
 		}
 	}
 }

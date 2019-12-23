@@ -1,5 +1,10 @@
 SPELL_BOOK = 2175
 
+DEMON_OAK_POSITION = Position(478, 1433, 7)
+DEMON_OAK_KICK_POSITION = Position(479, 1414, 7)
+DEMON_OAK_ENTER_POSITION = Position(478, 1423, 7)
+DEMON_OAK_REWARDROOM_POSITION = Position(466, 1424, 8)
+
 function getDistanceBetween(firstPosition, secondPosition)
 	local xDif = math.abs(firstPosition.x - secondPosition.x)
 	local yDif = math.abs(firstPosition.y - secondPosition.y)
@@ -11,17 +16,6 @@ function getDistanceBetween(firstPosition, secondPosition)
 end
 
 function getFormattedWorldTime()
-	local worldTime = getWorldTime()
-	local hours = math.floor(worldTime / 60)
-
-	local minutes = worldTime % 60
-	if minutes < 10 then
-		minutes = '0' .. minutes
-	end
-	return hours .. ':' .. minutes
-end
-
-function getTibianTime()
 	local worldTime = getWorldTime()
 	local hours = math.floor(worldTime / 60)
 
@@ -219,27 +213,27 @@ function Position.getTile(self)
 end
 
 function Player.isDruid(self)
-	return table.contains({2, 6}, self:getVocation():getId())
+	return isInArray({2, 6}, self:getVocation():getId())
 end
 
 function Player.isKnight(self)
-	return table.contains({4, 8}, self:getVocation():getId())
+	return isInArray({4, 8}, self:getVocation():getId())
 end
 
 function Player.isPaladin(self)
-	return table.contains({3, 7}, self:getVocation():getId())
+	return isInArray({3, 7}, self:getVocation():getId())
 end
 
 function Player.isMage(self)
-	return table.contains({1, 2, 5, 6}, self:getVocation():getId())
+	return isInArray({1, 2, 5, 6}, self:getVocation():getId())
 end
 
 function Player.isWarrior(self)
-	return table.contains({3, 7, 4, 8}, self:getVocation():getId())
+	return isInArray({3, 7, 4, 8}, self:getVocation():getId())
 end
 
 function Player.isSorcerer(self)
-	return table.contains({1, 5}, self:getVocation():getId())
+	return isInArray({1, 5}, self:getVocation():getId())
 end
 
 function Player.isPromoted(self)
@@ -503,16 +497,4 @@ function Player.getExhaustion(self, value)
 	end
 
 	return storage - os.time()
-end
-
--- The following 2 functions can be used for delayed shouted text
-function say(param)
-	selfSay(text)
-	doCreatureSay(param.cid, param.text, 1)
-end
-
-function delayedSay(text, delay)
-	local delay = delay or 0
-	local cid = getNpcCid()
-	addEvent(say, delay, {cid = cid, text = text})
 end

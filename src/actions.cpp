@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2017  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -44,7 +44,7 @@ Actions::~Actions()
 	clear();
 }
 
-void Actions::clearMap(ActionUseMap& map)
+inline void Actions::clearMap(ActionUseMap& map)
 {
 	// Filter out duplicates to avoid double-free
 	std::unordered_set<Action*> set;
@@ -400,7 +400,7 @@ bool Actions::useItem(Player* player, const Position& pos, uint8_t index, Item* 
 }
 
 bool Actions::useItemEx(Player* player, const Position& fromPos, const Position& toPos,
-						uint8_t toStackPos, Item* item, bool isHotkey, Creature* creature/* = nullptr*/)
+                        uint8_t toStackPos, Item* item, bool isHotkey, Creature* creature/* = nullptr*/)
 {
 	player->setNextAction(OTSYS_TIME() + g_config.getNumber(ConfigManager::EX_ACTIONS_DELAY_INTERVAL));
 	player->stopWalk();
@@ -448,44 +448,37 @@ void Actions::showUseHotkeyMessage(Player* player, const Item* item, uint32_t co
 Action::Action(LuaScriptInterface* interface) :
 	Event(interface), function(nullptr), allowFarUse(false), checkFloor(true), checkLineOfSight(true) {}
 
+Action::Action(const Action* copy) :
+	Event(copy), function(copy->function), allowFarUse(copy->allowFarUse), checkFloor(copy->checkFloor), checkLineOfSight(copy->checkLineOfSight) {}
+
 bool Action::configureEvent(const pugi::xml_node& node)
 {
 	pugi::xml_attribute allowFarUseAttr = node.attribute("allowfaruse");
 	if (allowFarUseAttr) {
-		allowFarUse = allowFarUseAttr.as_bool();
+		setAllowFarUse(allowFarUseAttr.as_bool());
 	}
 
 	pugi::xml_attribute blockWallsAttr = node.attribute("blockwalls");
 	if (blockWallsAttr) {
-		checkLineOfSight = blockWallsAttr.as_bool();
+		setCheckLineOfSight(blockWallsAttr.as_bool());
 	}
 
 	pugi::xml_attribute checkFloorAttr = node.attribute("checkfloor");
 	if (checkFloorAttr) {
-		checkFloor = checkFloorAttr.as_bool();
+		setCheckFloor(checkFloorAttr.as_bool());
 	}
 
 	return true;
-}
-
-namespace {
-
-bool enterMarket(Player* player, Item*, const Position&, Thing*, const Position&, bool)
-{
-	if (player->getLastDepotId() == -1) {
-		return false;
-	}
-
-	player->sendMarketEnter(player->getLastDepotId());
-	return true;
-}
-
 }
 
 bool Action::loadFunction(const pugi::xml_attribute& attr)
 {
 	const char* functionName = attr.as_string();
-	if (strcasecmp(functionName, "market") == 0) {
+	if (strcasecmp(functionName, "increaseitemid") == 0) {
+		function = increaseItemId;
+	} else if (strcasecmp(functionName, "decreaseitemid") == 0) {
+		function = decreaseItemId;
+	} else if (strcasecmp(functionName, "market") == 0) {
 		function = enterMarket;
 	} else {
 		std::cout << "[Warning - Action::loadFunction] Function \"" << functionName << "\" does not exist." << std::endl;
@@ -496,6 +489,28 @@ bool Action::loadFunction(const pugi::xml_attribute& attr)
 	return true;
 }
 
+bool Action::increaseItemId(Player*, Item* item, const Position&, Thing*, const Position&, bool)
+{
+	g_game.startDecay(g_game.transformItem(item, item->getID() + 1));
+	return true;
+}
+
+bool Action::decreaseItemId(Player*, Item* item, const Position&, Thing*, const Position&, bool)
+{
+	g_game.startDecay(g_game.transformItem(item, item->getID() - 1));
+	return true;
+}
+
+bool Action::enterMarket(Player* player, Item*, const Position&, Thing*, const Position&, bool)
+{
+	if (player->getLastDepotId() == -1) {
+		return false;
+	}
+
+	player->sendMarketEnter(player->getLastDepotId());
+	return true;
+}
+
 std::string Action::getScriptEventName() const
 {
 	return "onUse";
@@ -503,10 +518,10 @@ std::string Action::getScriptEventName() const
 
 ReturnValue Action::canExecuteAction(const Player* player, const Position& toPos)
 {
-	if (!allowFarUse) {
+	if (!getAllowFarUse()) {
 		return g_actions->canUse(player, toPos);
 	} else {
-		return g_actions->canUseFar(player, toPos, checkLineOfSight, checkFloor);
+		return g_actions->canUseFar(player, toPos, getCheckLineOfSight(), getCheckFloor());
 	}
 }
 

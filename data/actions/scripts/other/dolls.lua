@@ -33,16 +33,24 @@ local dolls = {
 		"Weirdo, you're a weirdo! Actually all of you are!",
 		"Pie for breakfast, pie for lunch and pie for dinner!",
 		"All hail the control panel!",
+		"I own, Tibiacity owns, perfect match!",
 		"Hug me! Feed me! Hail me!"
+	},
+	[8981] = {
+		"It's news to me.",
+		"News, updated as infrequently as possible!",
+		"Extra! Extra! Read all about it!",
+		"Fresh off the press!"
 	},
 	[23806] = {
 		"I can hear their whisperings... Revenge!",
 		"You shall feel pain and terror, |PLAYERNAME|",
 		"I do not need a sword to slaughter you",
 		"My sword is broken, but my spirit is not dead",
-		"I can say 469 and more..."
+		"I can say 469 and more...",
+		"My dark magic lies on tibialatina.wikia.com"
 	},
-	[24331] = {"Hail Brasileiros!"}
+	[24331] = {"Hail Tibia Brasileiros! (União&Força)"}
 }
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)

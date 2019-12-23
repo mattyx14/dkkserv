@@ -1,79 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Blood Priest" nameDescription="a blood priest" race="blood" experience="900" speed="198" manacost="0">
-  <health now="820" max="820"/>
-  <look type="553" corpse="21262"/>
-  <targetchange interval="2000" chance="8" />
-  <flags>
-    <flag summonable="0" />
-    <flag attackable="1" />
-    <flag hostile="1" />
-    <flag illusionable="0" />
-    <flag convinceable="0" />
-    <flag pushable="0" />
-    <flag canpushitems="1" />
-    <flag canpushcreatures="1" />
-    <flag targetdistance="1" />
-    <flag staticattack="90" />
-    <flag runonhealth="0" />
-  </flags>
-  <attacks>
-    <attack name="melee" interval="2000" skill="78" attack="50" poison="100" />
-    <attack name="death" interval="2000" chance="21" range="7" target="1" min="-70" max="-110">
-      <attribute key="shootEffect" value="death" />
-      <attribute key="areaEffect" value="smallclouds" />
-    </attack>
-    <attack name="lifedrain" interval="2000" chance="15" target="0" radius="4" min="-40" max="-80">
-      <attribute key="areaEffect" value="redshimmer" />
-    </attack>
-    <attack name="manadrain" interval="2000" chance="13" target="0" length="7" spread="0" min="-80" max="-140">
-      <attribute key="areaEffect" value="blackspark" />
-    </attack>
-  </attacks>
-  <defenses armor="38" defense="49">
-    <defense name="healing" interval="2000" chance="20" min="75" max="110">
-      <attribute key="areaEffect" value="blueshimmer" />
-    </defense>
-    <defense name="healing" interval="2000" chance="10" min="0" max="0">
-      <attribute key="areaEffect" value="insects" />
-    </defense>
-  </defenses>
-  <elements>
-    <element firePercent="-8" />
-    <element physicalPercent="-5" />
-    <element holyPercent="-10" />
-    <element icePercent="25" />
-    <element deathPercent="50" />
-    <element energyPercent="15" />
-  </elements>
-  <immunities>
-    <immunity earth="1" />
-    <immunity invisible="1" />
-    <immunity drown="1" />
-    <immunity lifedrain="1" />
-    <immunity paralyze="1" />
-  </immunities>
-	<voices interval="2000" chance="5">
-		<voice sentence="Blood for the dark god!" yell="0"/>
-		<voice sentence="Give your blood to the Dark God!" yell="0"/>
-	</voices>   
-   	<loot>
-		<item id="2195" chance="120"/><!-- boots of haste -->
-		<item id="11237" chance="13410"/><!-- book of necromantic rituals -->
-		<item id="21246" chance="14340"/><!-- incantation notes -->
-		<item id="21245" chance="14630"/><!-- blood tincture in a vial -->
-		<item id="2148" countmax="176" chance="99940"/><!-- gold coin -->
-		<item id="21242" chance="14400"/><!-- lancet -->
-		<item id="21243" chance="9290"/><!-- horoscope -->
-		<item id="8910" chance="460"/><!-- underworld rod -->
-		<item id="21247" chance="7720"/><!-- pieces of magic chalk -->
-		<item id="7589" chance="6040"/><!-- strong mana potion -->
-		<item id="2663" chance="2150"/><!-- mystic turban -->
-		<item id="8901" chance="290"/><!-- spellbook of warding -->
-		<item id="8902" chance="170"/><!-- spellbook of mind control -->
-		<item id="5909" chance="3020"/><!-- white piece of cloth -->
-		<item id="5911" chance="640"/><!-- red piece of cloth -->
-		<item id="2436" chance="170"/><!-- skull staff -->
-		<item id="2147" countmax="2" chance="3480"/><!-- small ruby -->
-		<item id="2156" chance="870"/><!-- red gem -->
+<monster name="Blood Priest" nameDescription="a blood priest" race="blood" experience="900" speed="210" manacost="0">
+	<health now="820" max="820" />
+	<look type="553" corpse="21262" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="0" />
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="30" attack="40" poison="100" />
+		<attack name="death" interval="2000" chance="20" range="7" target="1" min="-60" max="-100">
+			<attribute key="shootEffect" value="death" />
+			<attribute key="areaEffect" value="smallclouds" />
+		</attack>
+		<attack name="lifedrain" interval="2000" chance="15" radius="4" target="0" min="-40" max="-60">
+			<attribute key="areaEffect" value="redshimmer" />
+		</attack>
+		<attack name="manadrain" interval="3000" chance="10" range="1" target="1" length="7" spread="0" min="-80" max="-130">
+			<attribute key="areaEffect" value="blackspark" />
+		</attack>
+		<attack name="bleedcondition" interval="2000" chance="5" range="1" radius="1" target="1" min="-160" max="-290">
+			<attribute key="areaEffect" value="redspark" />
+		</attack>
+	</attacks>
+	<defenses armor="30" defense="30">
+		<defense name="healing" interval="2000" chance="20" min="80" max="120">
+			<attribute key="areaEffect" value="blueshimmer" />
+		</defense>
+	</defenses>
+	<elements>
+		<element energyPercent="5" />
+		<element icePercent="5" />
+		<element deathPercent="5" />
+		<element physicalPercent="-5" />
+		<element firePercent="-10" />
+		<element holyPercent="-5" />
+	</elements>
+	<immunities>
+		<immunity invisible="1" />
+		<immunity earth="1" />
+		<immunity drown="1" />
+	</immunities>
+	<voices interval="5000" chance="10">
+		<voice sentence="Blood for the dark god!" />
+	</voices>
+	<loot>
+		<item id="2148" countmax="100" chance="50000" /><!-- gold coin -->
+		<item id="2148" countmax="71" chance="50000" /><!-- gold coin -->
+		<item id="21245" chance="14460" /><!-- Blood Tincture in a Vial -->
+		<item id="21242" chance="14410" /><!-- Lancet -->
+		<item id="21246" chance="14660" /><!-- Incantation Notes -->
+		<item id="11237" chance="13550" /><!-- Book of Necromantic Rituals -->
+		<item id="21243" chance="9270" /><!-- Horoscope -->
+		<item id="21247" chance="7770" /><!-- Pieces of Magic Chalk -->
+		<item id="7589" chance="6000" /><!-- Strong Mana Potion -->
+		<item id="2147" countmax="2" chance="3510" /><!-- Small Rubies -->
+		<item id="8910" chance="470" /><!-- Underworld Rod -->
+		<item id="8902" chance="180" /><!-- Spellbook of Mind Control -->
+		<item id="15565" chance="880" /><!-- Red Gem -->
+		<item id="5909" chance="3040" /><!-- White Piece of Cloth -->
+		<item id="2663" chance="2170" /><!-- Mystic Turban -->
+		<item id="5911" chance="640" /><!-- Red Piece of Cloth -->
 	</loot>
 </monster>

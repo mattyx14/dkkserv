@@ -5,39 +5,14 @@ local holeId = {
 	8323, 8252, 8253, 8254, 8255, 8256, 8592, 8972, 9606, 9625, 13190, 14461, 19519, 21536
 }
 
-local holes = {468, 481, 483, 7932, 23712}
-
-local pickHoleIds = {354, 355}
-
+local holes = {468, 481, 483, 7932}
 local others = {7932}
 
-local JUNGLE_GRASS = {2782, 3985, 19433}
-local WILD_GROWTH = {1446, 1447, 1499, 1775, 2101, 11099}
+local JUNGLE_GRASS = { 2782, 3985, 19433 }
+local WILD_GROWTH = { 1499, 11099 }
 
-local function revertItem(position, itemId, transformId)
-	local item = Tile(position):getItemById(itemId)
-	if item then
-		item:transform(transformId)
-	end
-end
-
-local function removeRemains(toPosition)
-	local item = Tile(toPosition):getItemById(2248)
-	if item then
-		item:remove()
-	end
-end
-
-local function revertCask(position)
-	local caskItem = Tile(position):getItemById(2249)
-	if caskItem then
-		caskItem:transform(5539)
-		position:sendMagicEffect(CONST_ME_MAGIC_GREEN)
-	end
-end
-
-function destroyItem(player, item, fromPosition, target, toPosition, isHotkey)
-	if type(target) ~= "userdata" or not target:isItem() then
+function destroyItem(player, target, toPosition, isHotkey)
+	if not target or not target:isItem() then
 		return false
 	end
 
@@ -50,7 +25,8 @@ function destroyItem(player, item, fromPosition, target, toPosition, isHotkey)
 		return true
 	end
 
-	local destroyId = ItemType(target.itemid):getDestroyId()
+	local targetId = target.itemid
+	local destroyId = ItemType(targetId):getDestroyId()
 	if destroyId == 0 then
 		return false
 	end
@@ -84,7 +60,7 @@ function onUseRope(player, item, fromPosition, target, toPosition, isHotkey)
 		return false
 	end
 
-	if table.contains(ropeSpots, tile:getGround():getId()) or tile:getItemById(14435) then
+	if isInArray(ropeSpots, tile:getGround():getId()) or tile:getItemById(14435) then
 		tile = Tile(toPosition:moveUpstairs())
 		if tile:hasFlag(TILESTATE_PROTECTIONZONE) and player:isPzLocked() then
 			player:sendTextMessage(MESSAGE_STATUS_SMALL, Game.getReturnMessage(RETURNVALUE_PLAYERISPZLOCKED))
@@ -92,7 +68,7 @@ function onUseRope(player, item, fromPosition, target, toPosition, isHotkey)
 		end
 		player:teleportTo(toPosition, false)
 		return true
-	elseif table.contains(holeId, target.itemid) then
+	elseif isInArray(holeId, target.itemid) then
 		toPosition.z = toPosition.z + 1
 		tile = Tile(toPosition)
 		if tile then
@@ -118,7 +94,7 @@ end
 
 function onUseShovel(player, item, fromPosition, target, toPosition, isHotkey)
 	local targetId = target.itemid, target.actionid
-	if table.contains(others, targetId) then
+	if isInArray(others, targetId) then
 		target:transform(targetId + 1)
 		target:decay()
 
@@ -140,7 +116,7 @@ function onUseShovel(player, item, fromPosition, target, toPosition, isHotkey)
 	end
 
 	local groundId = ground:getId()
-	if table.contains(holes, groundId) then
+	if isInArray(holes, groundId) then
 		ground:transform(groundId + 1)
 		ground:decay()
 
@@ -162,6 +138,24 @@ function onUseShovel(player, item, fromPosition, target, toPosition, isHotkey)
 end
 
 function onUsePick(player, item, fromPosition, target, toPosition, isHotkey)
+	local targetId, targetActionId = target.itemid, target.actionid
+	if targetId == 1304 then
+		if player:getStorageValue(Storage.VampireQuest.draculaDone) == 1 then
+			if targetActionId == 50058 then
+				local stoneStorage = Game.getStorageValue(Storage.VampireQuest.draculaDone)
+				if stoneStorage ~= 5 then
+					Game.setStorageValue(Storage.VampireQuest.draculaDone, math.max(0, stoneStorage) + 1)
+				elseif stoneStorage == 5 then
+					target:remove()
+					Game.setStorageValue(Storage.VampireQuest.draculaDone)
+				end
+
+				toPosition:sendMagicEffect(CONST_ME_POFF)
+				doTargetCombatHealth(0, player, COMBAT_PHYSICALDAMAGE, -1001, -1109, CONST_ME_NONE)
+			end
+		end
+	end
+
 	if toPosition.x == CONTAINER_POSITION then
 		return false
 	end
@@ -176,7 +170,7 @@ function onUsePick(player, item, fromPosition, target, toPosition, isHotkey)
 		return false
 	end
 
-	if (ground.uid > 65535 or ground.actionid == 0) and not table.contains(pickHoleIds, ground.itemid) then
+	if (ground.uid > 65535 or ground.actionid == 0) and not isInArray(groundIds, ground.itemid) then
 		return false
 	end
 
@@ -190,13 +184,13 @@ end
 
 function onUseMachete(player, item, fromPosition, target, toPosition, isHotkey)
 	local targetId = target.itemid
-	if table.contains(JUNGLE_GRASS, targetId) then
+	if isInArray(JUNGLE_GRASS, targetId) then
 		target:transform(targetId == 19433 and 19431 or targetId - 1)
 		target:decay()
 		return true
 	end
 
-	if table.contains(WILD_GROWTH, targetId) then
+	if isInArray(WILD_GROWTH, targetId) then
 		toPosition:sendMagicEffect(CONST_ME_POFF)
 		target:remove()
 		return true
@@ -206,15 +200,8 @@ function onUseMachete(player, item, fromPosition, target, toPosition, isHotkey)
 end
 
 function onUseScythe(player, item, fromPosition, target, toPosition, isHotkey)
-	if not table.contains({2550, 10513}, item.itemid) then
+	if not isInArray({2550, 10513}, item.itemid) then
 		return false
-	end
-
-	if target.itemid == 5464 then
-		target:transform(5463)
-		target:decay()
-		Game.createItem(5467, 1, toPosition)
-		return true
 	end
 
 	if target.itemid == 2739 then
@@ -224,5 +211,5 @@ function onUseScythe(player, item, fromPosition, target, toPosition, isHotkey)
 		return true
 	end
 
-	return destroyItem(player, item, fromPosition, target, toPosition, isHotkey)
+	return destroyItem(player, target, toPosition)
 end

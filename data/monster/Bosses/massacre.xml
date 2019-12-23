@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-<monster name="Massacre" nameDescription="Massacre" race="blood" experience="20000" speed="390">
-	<health now="32000" max="32000" />
-	<look type="244" corpse="6336" />
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Massacre" nameDescription="the massacre" race="blood" experience="9800" speed="390" manacost="0">
+	<health now="30000" max="30000" />
+	<look type="244" corpse="0" />
 	<targetchange interval="60000" chance="0" />
 	<flags>
 		<flag summonable="0" />
@@ -17,27 +17,50 @@
 		<flag runonhealth="0" />
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" min="0" max="-1200" />
+		<attack name="melee" interval="2000" skill="150" attack="150" />
 		<attack name="physical" interval="2000" chance="24" range="7" min="-280" max="-500">
 			<attribute key="shootEffect" value="largerock" />
 		</attack>
+		<attack name="earth" interval="1000" chance="14" range="7" radius="7" target="1" min="-190" max="-400">
+			<attribute key="shootEffect" value="EARTH"/>
+			<attribute key="areaEffect" value="STONES"/>
+		</attack>
+		<attack name="paralyze" interval="1000" chance="17" range="7" target="1">
+			<attribute key="shootEffect" value="poison"/>
+			<attribute key="areaEffect" value="greenbubble"/>
+		</attack>
+		<attack name="earth" interval="1500" chance="20" range="7" radius="7" target="1" min="-190" max="-400">
+			<attribute key="shootEffect" value="EARTH"/>
+			<attribute key="areaEffect" value="BIGPLANTS"/>
+		</attack>
+		<attack name="earth" interval="1500" chance="40" length="8" spread="0" min="-250" max="-420">
+			<attribute key="areaEffect" value="CARNIPHILA"/>
+		</attack>
 	</attacks>
-	<defenses armor="15" defense="15">
-		<defense name="speed" interval="2000" chance="12" speedchange="380" duration="4000">
+	<defenses armor="55" defense="55">
+		<defense name="healing" interval="2000" chance="15" min="180" max="250">
+			<attribute key="areaEffect" value="blueshimmer" />
+		</defense>
+		<defense name="speed" interval="2000" chance="15" speedchange="450" duration="5000">
 			<attribute key="areaEffect" value="redshimmer" />
 		</defense>
 	</defenses>
+	<elements>
+		<element physicalPercent="95"/>
+		<element earthPercent="95"/>
+		<element icePercent="95"/>
+		<element holyPercent="95"/>
+		<element deathPercent="95"/>
+	</elements>
 	<immunities>
-		<immunity energy="1" />
 		<immunity fire="1" />
-		<immunity earth="1" />
+		<immunity energy="1" />
+		<immunity drown="1" />
 		<immunity lifedrain="1" />
 		<immunity paralyze="1" />
-		<immunity outfit="1" />
-		<immunity drunk="1" />
 		<immunity invisible="1" />
 	</immunities>
-	<loot>
-		<item name="piece of Massacre's shell" chance="100000" />
-	</loot>
+	<summons maxSummons="1">
+		<summon name="adamantoise" interval="2000" chance="10" />
+	</summons>
 </monster>

@@ -50,24 +50,19 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 
 	if target.itemid == 1 then
 		if item.type == 0 then
-			player:sendTextMessage(MESSAGE_STATUS_SMALL, 'It is empty.')
-
+			player:sendTextMessage(MESSAGE_STATUS_SMALL, "It is empty.")
 		elseif target.uid == player.uid then
 			if isInArray({3, 15, 43}, item.type) then
 				player:addCondition(drunk)
-
 			elseif item.type == 4 then
 				player:addCondition(poison)
-
 			elseif item.type == 7 then
 				player:addMana(math.random(50, 150))
 				fromPosition:sendMagicEffect(CONST_ME_MAGIC_BLUE)
-
 			elseif item.type == 10 then
 				player:addHealth(60)
 				fromPosition:sendMagicEffect(CONST_ME_MAGIC_BLUE)
 			end
-
 			player:say(fluidMessage[item.type] or 'Gulp.', TALKTYPE_MONSTER_SAY)
 			item:transform(item.itemid, 0)
 		else
@@ -77,16 +72,12 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 			end
 			item:transform(item.itemid, 0)
 		end
-
 	else
-
 		local fluidSource = targetType:getFluidSource()
 		if fluidSource ~= 0 then
 			item:transform(item.itemid, fluidSource)
-
 		elseif item.type == 0 then
 			player:sendTextMessage(MESSAGE_STATUS_SMALL, 'It is empty.')
-
 		else
 			if item.type == 2 and target.actionid == 2023 then
 				toPosition.y = toPosition.y + 1
@@ -102,12 +93,10 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 						end
 					end
 				end
-
 			else
 				if toPosition.x == CONTAINER_POSITION then
 					toPosition = player:getPosition()
 				end
-
 				local pool = Game.createItem(2016, item.type, toPosition)
 				if pool then
 					pool:decay()
@@ -116,6 +105,5 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 			item:transform(item.itemid, 0)
 		end
 	end
-
 	return true
 end

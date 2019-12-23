@@ -8,27 +8,18 @@
 	<event type="death" name="DropLoot" script="droploot.lua" />
 	<event type="extendedopcode" name="ExtendedOpcode" script="extendedopcode.lua" />
 
-	<!-- OTX Systems -->
-		<!-- Modified Scripts from TFS
-			firstitems.lua
-			login.lua
-				- onMovementRemoveProtection
-				- RewardSystem
-			logout.luya
-				- RewardSystem
-			playerdeath.lua
-				- sendWarStatus
-		-->
+	<!-- Customs -->
+	<event type="login" name="FirstItems" script="firstitems.lua" />
+	<event type="advance" name="AdvanceSave" script="advance_save.lua" />
+	<event type="death" name="BossDeath" script="boss.lua" />
+	<event type="healthchange" name="BossParticipation" script="boss.lua" />
+	<event type="think" name="BossThink" script="boss.lua" />
+	<event type="login" name="freebless" script="freeblesslowlevel.lua"/>
+	<event type="advance" name="onadvance_reward" script="onadvance_reward.lua"/>
+	<event type="modalwindow" name="modalMD" script="modalMD.lua"/>
+	<event type="modalwindow" name="modalAD" script="modalAD.lua"/>
 
-		<event type="login" name="FirstItems" script="firstitems.lua" />
-		<event type="advance" name="AdvanceSave" script="advance_save.lua" />
-		<event type="death" name="BossDeath" script="boss.lua" />
-		<event type="healthchange" name="BossParticipation" script="boss.lua" />
-		<event type="think" name="BossThink" script="boss.lua" />
-		<!-- 
-			<event type="advance" name="onadvance_reward" script="onadvance_reward.lua"/>
-			<event type="login" name="onadv_register" script="onadvance_reward.lua"/>
-			<event type="login" name="freebless" script="freeblesslowlevel.lua"/>
-		-->
-		<event type="login" name="AntiMc" script="antimc.lua" />
+	<!-- Kill Bosses -->
+	<event type="kill" name="KillBoss" script="KillBoss.lua" />
+	<event type="kill" name="VampireKill" script="quest/dracula/VampireKill.lua" />
 </creaturescripts>

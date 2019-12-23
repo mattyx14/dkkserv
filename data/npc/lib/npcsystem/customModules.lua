@@ -1,7 +1,6 @@
 -- Custom Modules, created to help us in this datapack
 local travelDiscounts = {
-	['postman'] = {price = 10, storage = 12460, value = 3},
-	['new frontier'] = {price = 50, storage = 12133, value = 1}
+	['postman'] = {price = 500, storage = 12460, value = 1}
 }
 
 function StdModule.travelDiscount(player, discounts)
@@ -128,7 +127,7 @@ local hints = {
 	[13] = 'When you are on low health and need to run away from a monster, switch to \'Defensive Fighting\' and the monster will hit you less severely.',
 	[14] = 'Many creatures try to run away from you. Select \'Chase Opponent\' to follow them.',
 	[15] = 'The deeper you enter a dungeon, the more dangerous it will be. Approach every dungeon with utmost care or an unexpected creature might kill you. This will result in losing experience and skill points.',
-	[16] = 'Due to the perspective, some objects in World are not located at the spot they seem to appear (ladders, windows, lamps). Try clicking on the floor tile the object would lie on.',
+	[16] = 'Due to the perspective, some objects in Tibia are not located at the spot they seem to appear (ladders, windows, lamps). Try clicking on the floor tile the object would lie on.',
 	[17] = 'If you want to trade an item with another player, right-click on the item and select \'Trade with ...\', then click on the player with whom you want to trade.',
 	[18] = 'Stairs, ladders and dungeon entrances are marked as yellow dots on the automap.',
 	[19] = 'You can get food by killing animals or monsters. You can also pick blueberries or bake your own bread. If you are too lazy or own too much money, you can also buy food.',
@@ -142,29 +141,6 @@ local hints = {
 	[27] = 'The leader of a party has the option to distribute gathered experience among all players in the party. If you are the leader, right-click on yourself and select \'Enable Shared Experience\'.',
 	[28] = 'There is nothing more I can tell you. If you are still in need of some {hints}, I can repeat them for you.'
 }
-
---[[
-function StdModule.rookgaardHints(cid, message, keywords, parameters, node)
-	local npcHandler = parameters.npcHandler
-	if npcHandler == nil then
-		error("StdModule.say called without any npcHandler instance.")
-	end
-
-	if not npcHandler:isFocused(cid) then
-		return false
-	end
-
-	local player = Player(cid)
-	local hintId = player:getStorageValue(Storage.RookgaardHints)
-	npcHandler:say(hints[hintId], cid)
-	if hintId >= #hints then
-		player:setStorageValue(Storage.RookgaardHints, -1)
-	else
-		player:setStorageValue(Storage.RookgaardHints, hintId + 1)
-	end
-	return true
-end
-]]
 
 -- VoiceModule
 VoiceModule = {
@@ -212,43 +188,4 @@ function VoiceModule:callbackOnThink()
 		end
 	end
 	return true
-end
-
-function Player.removeMoneyNpc(self, amount)
-	amount = tonumber(amount)
-	local moneyCount = self:getMoney()
-	local bankCount = self:getBankBalance()
-	if amount > moneyCount + bankCount then
-		return false
-	end
-
-	self:removeMoney(math.min(amount, moneyCount))
-	if amount > moneyCount then
-		self:setBankBalance(bankCount - math.max(amount - moneyCount, 0))
-		if moneyCount == 0 then
-			self:sendTextMessage(MESSAGE_INFO_DESCR, ("Paid %d gold from bank account. Your account balance is now %d gold."):format(amount, self:getBankBalance()))
-		else
-			self:sendTextMessage(MESSAGE_INFO_DESCR, ("Paid %d from inventory and %d gold from bank account. Your account balance is now %d gold."):format(moneyCount, amount - moneyCount, self:getBankBalance()))
-		end
-	end
-
-	return true
-end
-
-local function getPlayerMoney(cid)
-	local player = Player(cid)
-	if player then
-		return player:getMoney() + player:getBankBalance()
-	end
-
-	return 0
-end
-
-local function doPlayerRemoveMoney(cid, amount)
-	local player = Player(cid)
-	if player then
-		return player:removeMoneyNpc(amount)
-	end
-
-	return false
 end

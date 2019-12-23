@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2017  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -56,13 +56,13 @@ class Weapons final : public BaseEvents
 
 		std::map<uint32_t, Weapon*> weapons;
 
-		LuaScriptInterface scriptInterface { "Weapon Interface" };
+		LuaScriptInterface scriptInterface;
 };
 
 class Weapon : public Event
 {
 	public:
-		explicit Weapon(LuaScriptInterface* interface) : Event(interface) {}
+		explicit Weapon(LuaScriptInterface* interface);
 
 		bool configureEvent(const pugi::xml_node& node) override;
 		bool loadFunction(const pugi::xml_attribute&) final {
@@ -78,7 +78,7 @@ class Weapon : public Event
 		virtual bool useWeapon(Player* player, Item* item, Creature* target) const;
 
 		virtual int32_t getWeaponDamage(const Player* player, const Creature* target, const Item* item, bool maxDamage = false) const = 0;
-		virtual int32_t getElementDamage(const Player* player, const Creature* target, const Item* item, int32_t imbuingDamage = 0, CombatType_t imbuingType = COMBAT_NONE) const = 0;
+		virtual int32_t getElementDamage(const Player* player, const Creature* target, const Item* item) const = 0;
 		virtual CombatType_t getElementType() const = 0;
 
 		uint16_t getID() const {
@@ -90,6 +90,9 @@ class Weapon : public Event
 		}
 		uint32_t getReqMagLv() const {
 			return magLevel;
+		}
+		uint32_t getReqSkillLv() const {
+			return skillLevel;
 		}
 		bool isPremium() const {
 			return premium;
@@ -114,17 +117,19 @@ class Weapon : public Event
 
 		CombatParams params;
 
-		uint32_t level = 0;
-		uint32_t magLevel = 0;
-		uint32_t mana = 0;
-		uint32_t manaPercent = 0;
-		uint32_t soul = 0;
-		uint16_t id = 0;
-		WeaponAction_t action = WEAPONACTION_NONE;
-		uint8_t breakChance = 0;
-		bool enabled = true;
-		bool premium = false;
-		bool wieldUnproperly = false;
+		uint32_t level;
+		uint32_t magLevel;
+		uint32_t skillLevel;
+		uint32_t mana;
+		uint32_t manaPercent;
+		uint32_t soul;
+		uint16_t id;
+		WeaponAction_t action;
+		uint8_t breakChance;
+		bool enabled;
+		bool premium;
+		bool wieldUnproperly;
+		bool swing;
 
 	private:
 		static void decrementItemCount(Item* item);
@@ -143,14 +148,14 @@ class WeaponMelee final : public Weapon
 		bool useWeapon(Player* player, Item* item, Creature* target) const final;
 
 		int32_t getWeaponDamage(const Player* player, const Creature* target, const Item* item, bool maxDamage = false) const final;
-		int32_t getElementDamage(const Player* player, const Creature* target, const Item* item, int32_t imbuingDamage, CombatType_t imbuingType) const final;
+		int32_t getElementDamage(const Player* player, const Creature* target, const Item* item) const final;
 		CombatType_t getElementType() const final { return elementType; }
 
 	protected:
 		bool getSkillType(const Player* player, const Item* item, skills_t& skill, uint32_t& skillpoint) const final;
 
-		CombatType_t elementType = COMBAT_NONE;
-		uint16_t elementDamage = 0;
+		CombatType_t elementType;
+		uint16_t elementDamage;
 };
 
 class WeaponDistance final : public Weapon
@@ -166,26 +171,26 @@ class WeaponDistance final : public Weapon
 		bool useWeapon(Player* player, Item* item, Creature* target) const final;
 
 		int32_t getWeaponDamage(const Player* player, const Creature* target, const Item* item, bool maxDamage = false) const final;
-		int32_t getElementDamage(const Player* player, const Creature* target, const Item* item, int32_t imbuingDamage, CombatType_t imbuingType) const final;
+		int32_t getElementDamage(const Player* player, const Creature* target, const Item* item) const final;
 		CombatType_t getElementType() const final { return elementType; }
 
 	protected:
 		bool getSkillType(const Player* player, const Item* item, skills_t& skill, uint32_t& skillpoint) const final;
 
-		CombatType_t elementType = COMBAT_NONE;
-		uint16_t elementDamage = 0;
+		CombatType_t elementType;
+		uint16_t elementDamage;
 };
 
 class WeaponWand final : public Weapon
 {
 	public:
-		explicit WeaponWand(LuaScriptInterface* interface) : Weapon(interface) {}
+		explicit WeaponWand(LuaScriptInterface* interface);
 
 		bool configureEvent(const pugi::xml_node& node) final;
 		void configureWeapon(const ItemType& it) final;
 
 		int32_t getWeaponDamage(const Player* player, const Creature* target, const Item* item, bool maxDamage = false) const final;
-		int32_t getElementDamage(const Player*, const Creature*, const Item*, int32_t, CombatType_t) const final { return 0; }
+		int32_t getElementDamage(const Player*, const Creature*, const Item*) const final { return 0; }
 		CombatType_t getElementType() const final { return COMBAT_NONE; }
 
 	protected:
@@ -193,8 +198,8 @@ class WeaponWand final : public Weapon
 			return false;
 		}
 
-		int32_t minChange = 0;
-		int32_t maxChange = 0;
+		int32_t minChange;
+		int32_t maxChange;
 };
 
 #endif

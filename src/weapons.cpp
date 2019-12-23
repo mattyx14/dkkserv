@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2017  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,16 +23,15 @@
 #include "configmanager.h"
 #include "game.h"
 #include "pugicast.h"
-#include "events.h"
 #include "weapons.h"
 
 extern Game g_game;
 extern Vocations g_vocations;
 extern ConfigManager g_config;
 extern Weapons* g_weapons;
-extern Events* g_events;
 
-Weapons::Weapons()
+Weapons::Weapons():
+	scriptInterface("Weapon Interface")
 {
 	scriptInterface.initState();
 }
@@ -143,7 +142,30 @@ int32_t Weapons::getMaxMeleeDamage(int32_t attackSkill, int32_t attackValue)
 //players
 int32_t Weapons::getMaxWeaponDamage(uint32_t level, int32_t attackSkill, int32_t attackValue, float attackFactor)
 {
-	return static_cast<int32_t>(std::round((level / 5) + (((((attackSkill / 4.) + 1) * (attackValue / 3.)) * 1.03) / attackFactor)));
+	return static_cast<int32_t>(std::round((level / 2) + (((((attackSkill / 4.) + 1) * (attackValue / 3.)) * 1.5) / attackFactor)));
+	// return static_cast<int32_t>(std::ceil((2.5 * (attackValue * (attackSkill + 6) / 18 + (level - 1) / 10)) / attackFactor));
+}
+
+Weapon::Weapon(LuaScriptInterface* interface) :
+	Event(interface)
+{
+	scripted = false;
+	id = 0;
+	level = 0;
+	magLevel = 0;
+	skillLevel = 0;
+	mana = 0;
+	manaPercent = 0;
+	soul = 0;
+	premium = false;
+	enabled = true;
+	wieldUnproperly = false;
+	swing = false;
+	breakChance = 0;
+	action = WEAPONACTION_NONE;
+	params.blockedByArmor = true;
+	params.blockedByShield = true;
+	params.combatType = COMBAT_PHYSICALDAMAGE;
 }
 
 bool Weapon::configureEvent(const pugi::xml_node& node)
@@ -167,6 +189,10 @@ bool Weapon::configureEvent(const pugi::xml_node& node)
 		mana = pugi::cast<uint32_t>(attr.value());
 	}
 
+	if ((attr = node.attribute("skill"))) {
+		skillLevel = pugi::cast<uint32_t>(attr.value());
+	}
+
 	if ((attr = node.attribute("manapercent"))) {
 		manaPercent = pugi::cast<uint32_t>(attr.value());
 	}
@@ -179,12 +205,12 @@ bool Weapon::configureEvent(const pugi::xml_node& node)
 		premium = attr.as_bool();
 	}
 
-	if ((attr = node.attribute("breakchance")) && g_config.getBoolean(ConfigManager::REMOVE_WEAPON_CHARGES)) {
+	if ((attr = node.attribute("breakchance"))) {
 		breakChance = std::min<uint8_t>(100, pugi::cast<uint16_t>(attr.value()));
 	}
 
 	if ((attr = node.attribute("action"))) {
-		action = getWeaponAction(asLowerCaseString(attr.as_string()));
+		action = getWeaponAction(attr.as_string());
 		if (action == WEAPONACTION_NONE) {
 			std::cout << "[Warning - Weapon::configureEvent] Unknown action " << attr.as_string() << std::endl;
 		}
@@ -196,6 +222,10 @@ bool Weapon::configureEvent(const pugi::xml_node& node)
 
 	if ((attr = node.attribute("unproperly"))) {
 		wieldUnproperly = attr.as_bool();
+	}
+
+	if ((attr = node.attribute("swing"))) {
+		swing = attr.as_bool();
 	}
 
 	std::list<std::string> vocStringList;
@@ -242,6 +272,10 @@ bool Weapon::configureEvent(const pugi::xml_node& node)
 		wieldInfo |= WIELDINFO_MAGLV;
 	}
 
+	if (getReqSkillLv() > 0) {
+		wieldInfo |= WIELDINFO_SKILL;
+	}
+
 	if (!vocationString.empty()) {
 		wieldInfo |= WIELDINFO_VOCREQ;
 	}
@@ -256,6 +290,7 @@ bool Weapon::configureEvent(const pugi::xml_node& node)
 		it.vocationString = vocationString;
 		it.minReqLevel = getReqLevel();
 		it.minReqMagicLevel = getReqMagLv();
+		it.minReqSkillLevel = getReqSkillLv();
 	}
 
 	configureWeapon(Item::items[id]);
@@ -313,6 +348,10 @@ int32_t Weapon::playerWeaponCheck(Player* player, Creature* target, uint8_t shoo
 		}
 
 		if (player->getMagicLevel() < getReqMagLv()) {
+			damageModifier = (isWieldedUnproperly() ? damageModifier / 2 : 0);
+		}
+
+		if (player->getSkillLevel(player->getWeaponType()) < getReqSkillLv()) {
 			damageModifier = (isWieldedUnproperly() ? damageModifier / 2 : 0);
 		}
 		return damageModifier;
@@ -380,12 +419,7 @@ void Weapon::internalUseWeapon(Player* player, Item* item, Creature* target, int
 		damage.primary.type = params.combatType;
 		damage.primary.value = (getWeaponDamage(player, target, item) * damageModifier) / 100;
 		damage.secondary.type = getElementType();
-		int32_t tmpDamage = 0;
-		if (damage.origin == ORIGIN_MELEE) {
-			g_events->eventPlayerOnUseWeapon(player, damage.primary.value, damage.secondary.type, tmpDamage);
-		}
-
-		damage.secondary.value = getElementDamage(player, target, item, tmpDamage, damage.secondary.type);
+		damage.secondary.value = getElementDamage(player, target, item);
 		Combat::doCombatHealth(player, target, damage, params);
 	}
 
@@ -434,14 +468,12 @@ void Weapon::onUsedWeapon(Player* player, Item* item, Tile* destTile) const
 
 	switch (action) {
 		case WEAPONACTION_REMOVECOUNT:
-			if(g_config.getBoolean(ConfigManager::REMOVE_WEAPON_AMMO)) {
-				Weapon::decrementItemCount(item);
-			}
+			Weapon::decrementItemCount(item);
 			break;
 
 		case WEAPONACTION_REMOVECHARGE: {
 			uint16_t charges = item->getCharges();
-			if (charges != 0 && g_config.getBoolean(ConfigManager::REMOVE_WEAPON_CHARGES)) {
+			if (charges != 0) {
 				g_game.transformItem(item, item->getID(), charges - 1);
 			}
 			break;
@@ -501,7 +533,7 @@ void Weapon::decrementItemCount(Item* item)
 }
 
 WeaponMelee::WeaponMelee(LuaScriptInterface* interface) :
-	Weapon(interface)
+	Weapon(interface), elementType(COMBAT_NONE), elementDamage(0)
 {
 	params.blockedByArmor = true;
 	params.blockedByShield = true;
@@ -534,7 +566,7 @@ bool WeaponMelee::useWeapon(Player* player, Item* item, Creature* target) const
 }
 
 bool WeaponMelee::getSkillType(const Player* player, const Item* item,
-	skills_t& skill, uint32_t& skillpoint) const
+                               skills_t& skill, uint32_t& skillpoint) const
 {
 	if (player->getAddAttackSkill() && player->getLastAttackBlockType() != BLOCK_IMMUNITY) {
 		skillpoint = 1;
@@ -565,14 +597,14 @@ bool WeaponMelee::getSkillType(const Player* player, const Item* item,
 	return false;
 }
 
-int32_t WeaponMelee::getElementDamage(const Player* player, const Creature*, const Item* item, int32_t imbuingDamage, CombatType_t imbuingType) const
+int32_t WeaponMelee::getElementDamage(const Player* player, const Creature*, const Item* item) const
 {
-	if (elementType == COMBAT_NONE && imbuingType == COMBAT_NONE) {
+	if (elementType == COMBAT_NONE) {
 		return 0;
 	}
 
 	int32_t attackSkill = player->getWeaponSkill(item);
-	int32_t attackValue = (imbuingDamage > 0) ? imbuingDamage : elementDamage;
+	int32_t attackValue = elementDamage;
 	float attackFactor = player->getAttackFactor();
 
 	int32_t maxValue = Weapons::getMaxWeaponDamage(player->getLevel(), attackSkill, attackValue, attackFactor);
@@ -594,10 +626,11 @@ int32_t WeaponMelee::getWeaponDamage(const Player* player, const Creature*, cons
 }
 
 WeaponDistance::WeaponDistance(LuaScriptInterface* interface) :
-	Weapon(interface)
+	Weapon(interface), elementType(COMBAT_NONE), elementDamage(0)
 {
 	params.blockedByArmor = true;
 	params.combatType = COMBAT_PHYSICALDAMAGE;
+	swing = params.blockedByShield = false;
 }
 
 void WeaponDistance::configureWeapon(const ItemType& it)
@@ -776,13 +809,13 @@ bool WeaponDistance::useWeapon(Player* player, Item* item, Creature* target) con
 	return true;
 }
 
-int32_t WeaponDistance::getElementDamage(const Player* player, const Creature* target, const Item* item, int32_t imbuingDamage, CombatType_t imbuingType) const
+int32_t WeaponDistance::getElementDamage(const Player* player, const Creature* target, const Item* item) const
 {
-	if (elementType == COMBAT_NONE && imbuingType == COMBAT_NONE) {
+	if (elementType == COMBAT_NONE) {
 		return 0;
 	}
 
-	int32_t attackValue = (imbuingDamage > 0) ? imbuingDamage : elementDamage;
+	int32_t attackValue = elementDamage;
 	if (item->getWeaponType() == WEAPON_AMMO) {
 		Item* weapon = player->getWeapon(true);
 		if (weapon) {
@@ -863,6 +896,13 @@ bool WeaponDistance::getSkillType(const Player* player, const Item*, skills_t& s
 		skillpoint = 0;
 	}
 	return true;
+}
+
+WeaponWand::WeaponWand(LuaScriptInterface* interface) :
+	Weapon(interface)
+{
+	minChange = 0;
+	maxChange = 0;
 }
 
 bool WeaponWand::configureEvent(const pugi::xml_node& node)

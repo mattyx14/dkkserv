@@ -23,7 +23,7 @@ local windows = {
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local window = windows[item:getId()]
-	if not window then
+	if window == nil then
 		return false
 	end
 

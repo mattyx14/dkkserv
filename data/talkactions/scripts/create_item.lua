@@ -9,11 +9,6 @@ function onSay(player, words, param)
 
 	local split = param:split(",")
 
-	if(not split or not split[1]) then
-		player:sendCancelMessage('Incorrect syntax use "/i itemName,quantity" OR "/i itemID,quantity".')
-		return false
-	end
-
 	local itemType = ItemType(split[1])
 	if itemType:getId() == 0 then
 		itemType = ItemType(tonumber(split[1]))
@@ -27,21 +22,25 @@ function onSay(player, words, param)
 	if count ~= nil then
 		if itemType:isStackable() then
 			count = math.min(10000, math.max(1, count))
-		elseif not itemType:isFluidContainer()  then
+		elseif not itemType:isFluidContainer() then
 			count = math.min(100, math.max(1, count))
 		else
 			count = math.max(0, count)
 		end
 	else
-		count = itemType:isFluidContainer() and 0 or 1
+		if not itemType:isFluidContainer() then
+			count = 1
+		else
+			count = 0
+		end
 	end
 
 	local result = player:addItem(itemType:getId(), count)
 	if result ~= nil then
 		if not itemType:isStackable() then
 			if type(result) == "table" then
-				for i = 1, #result do
-					result[i]:decay()
+				for _, item in ipairs(result) do
+					item:decay()
 				end
 			else
 				result:decay()

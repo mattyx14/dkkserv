@@ -33,7 +33,7 @@ function onStepIn(creature, item, position, fromPosition)
 			elseif not isPositionSafe(fromPosition) then
 				creature:teleportTo(safePosition, false)
 				return true
-			end
+			end		  
 		end
 
 		creature:teleportTo(fromPosition, false)

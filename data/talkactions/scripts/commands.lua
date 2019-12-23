@@ -4,16 +4,17 @@ function onSay(player, words, param)
 		player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, "Player commands:" .. "\n"
 			.. "!buyhouse" .. "\n"
 			.. "!leavehouse" .. "\n"
-			.. "!cast on" .. "\n"
-			.. "!cast off" .. "\n"
+			.. "!report - !report existe un error aqui" .. "\n"
 			.. "!serverinfo" .. "\n"
 			.. "!online" .. "\n"
 			.. "!deathlist" .. "\n"
 			.. "!kills" .. "\n"
 			.. "!saveme" .. "\n"
-			.. "!changesex" .. "\n"
-			.. "!uptime" .. "\n"
+			.. '!addon - !addon "first citizen addon"' .. "\n"
 			.. "!buypremium" .. "\n"
+			.. "!shop" .. "\n"
+			.. "!stamina" .. "\n"
+			.. "!uptime" .. "\n"
 			.. "!spells")
 		return false
 	else

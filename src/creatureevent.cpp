@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2017  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -91,7 +91,7 @@ bool CreatureEvents::registerEvent(Event* event, const pugi::xml_node&)
 
 CreatureEvent* CreatureEvents::getEventByName(const std::string& name, bool forceLoaded /*= true*/)
 {
-	auto it = creatureEvents.find(name);
+	CreatureEventList::iterator it = creatureEvents.find(name);
 	if (it != creatureEvents.end()) {
 		if (!forceLoaded || it->second->isLoaded()) {
 			return it->second;
@@ -127,7 +127,7 @@ bool CreatureEvents::playerLogout(Player* player) const
 }
 
 bool CreatureEvents::playerAdvance(Player* player, skills_t skill, uint32_t oldLevel,
-									   uint32_t newLevel)
+                                       uint32_t newLevel)
 {
 	for (const auto& it : creatureEvents) {
 		if (it.second->getEventType() == CREATURE_EVENT_ADVANCE) {
@@ -385,7 +385,7 @@ bool CreatureEvent::executeOnDeath(Creature* creature, Item* corpse, Creature* k
 }
 
 bool CreatureEvent::executeAdvance(Player* player, skills_t skill, uint32_t oldLevel,
-									   uint32_t newLevel)
+                                       uint32_t newLevel)
 {
 	//onAdvance(player, skill, oldLevel, newLevel)
 	if (!scriptInterface->reserveScriptEnv()) {

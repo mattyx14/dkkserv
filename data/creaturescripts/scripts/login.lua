@@ -5,7 +5,7 @@ local function onMovementRemoveProtection(cid, oldPosition, time)
 	end
 
 	local playerPosition = player:getPosition()
-	if (playerPosition.x ~= oldPosition.x or playerPosition.y ~= oldPosition.y or playerPosition.z ~= oldPosition.z) or player:getTarget() then
+	if (playerPosition.x ~= oldPosition.x or playerPosition.y ~= oldPosition.y or playerPosition.z ~= oldPosition.z) or player:getTarget() or time <= 0 then
 		player:setStorageValue(Storage.combatProtectionStorage, 0)
 		return true
 	end
@@ -30,35 +30,29 @@ function onLogin(player)
 	local playerId = player:getId()
 
 	-- Stamina
-	nextUseStaminaTime[playerId] = 1
+	nextUseStaminaTime[player.uid] = 0
 
-	-- EXP Stamina
-	nextUseXpStamina[playerId] = 1
-
-	--Prey Stamina
-	nextUseStaminaPrey[playerId+1] = {Time = 1}
-	nextUseStaminaPrey[playerId+2] = {Time = 1}
-	nextUseStaminaPrey[playerId+3] = {Time = 1}
-
-	-- Prey Data
-	if (player:getVocation():getId() ~= 0) then
-		local columnUnlocked = getUnlockedColumn(player)
-		if (not columnUnlocked) then
-			columnUnlocked = 0
+	-- Promotion
+	local vocation = player:getVocation()
+	local promotion = vocation:getPromotion()
+	if player:isPremium() then
+		local value = player:getStorageValue(STORAGEVALUE_PROMOTION)
+		if not promotion and value ~= 1 then
+			player:setStorageValue(STORAGEVALUE_PROMOTION, 1)
+		elseif value == 1 then
+			player:setVocation(promotion)
 		end
-
-		for i = 0, columnUnlocked do
-			sendPreyData(player, i)
-		end
+	elseif not promotion then
+		player:setVocation(vocation:getDemotion())
 	end
 
 	-- Rewards notice
 	local rewards = #player:getRewardList()
-	if(rewards > 0) then
-		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, string.format("You have %d %s in your reward chest.", rewards, rewards > 1 and "rewards" or "reward"))
+	if rewards > 0 then
+		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, string.format("You have %s %s in your reward chest.", rewards == 1 and 'one' or rewards, rewards > 1 and "rewards" or "reward"))
 	end
 
-	-- Update player id
+	-- Update player id 
 	local stats = player:inBossFight()
 	if stats then
 		stats.playerId = player:getId()
@@ -67,6 +61,15 @@ function onLogin(player)
 	-- Events
 	player:registerEvent("PlayerDeath")
 	player:registerEvent("DropLoot")
+	player:registerEvent("onadvance_reward")
+
+	-- Addon / Mount Doll
+	player:unregisterEvent("modalAD")
+	player:unregisterEvent("modalMD")
+
+	-- KillBoss
+	player:registerEvent("KillBoss")
+	player:registerEvent("VampireKill")
 	player:registerEvent("BossParticipation")
 
 	if player:getStorageValue(Storage.combatProtectionStorage) <= os.time() then

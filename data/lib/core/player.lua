@@ -22,7 +22,7 @@ function Player.feed(self, food)
 end
 
 function Player.getClosestFreePosition(self, position, extended)
-	if self:getGroup():getAccess() and self:getAccountType() >= ACCOUNT_TYPE_GOD then
+	if self:getAccountType() >= ACCOUNT_TYPE_GOD then
 		return position
 	end
 	return Creature.getClosestFreePosition(self, position, extended)
@@ -75,7 +75,7 @@ function Player.sendExtendedOpcode(self, opcode, buffer)
 	networkMessage:addByte(0x32)
 	networkMessage:addByte(opcode)
 	networkMessage:addString(buffer)
-	networkMessage:sendToPlayer(self)
+	networkMessage:sendToPlayer(self, false)
 	networkMessage:delete()
 	return true
 end

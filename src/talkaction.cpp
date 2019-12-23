@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2017  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -36,6 +36,9 @@ TalkActions::~TalkActions()
 
 void TalkActions::clear()
 {
+	for (TalkAction* talkAction : talkActions) {
+		delete talkAction;
+	}
 	talkActions.clear();
 
 	scriptInterface.reInitState();
@@ -61,16 +64,15 @@ Event* TalkActions::getEvent(const std::string& nodeName)
 
 bool TalkActions::registerEvent(Event* event, const pugi::xml_node&)
 {
-	auto talkAction = std::unique_ptr<TalkAction>(static_cast<TalkAction*>(event)); // event is guaranteed to be a TalkAction
-	talkActions.push_front(std::move(*talkAction));
+	talkActions.push_front(static_cast<TalkAction*>(event)); // event is guaranteed to be a TalkAction
 	return true;
 }
 
 TalkActionResult_t TalkActions::playerSaySpell(Player* player, SpeakClasses type, const std::string& words) const
 {
 	size_t wordsLength = words.length();
-	for (const TalkAction& talkAction : talkActions) {
-		const std::string& talkactionWords = talkAction.getWords();
+	for (TalkAction* talkAction : talkActions) {
+		const std::string& talkactionWords = talkAction->getWords();
 		size_t talkactionLength = talkactionWords.length();
 		if (wordsLength < talkactionLength || strncasecmp(words.c_str(), talkactionWords.c_str(), talkactionLength) != 0) {
 			continue;
@@ -84,7 +86,7 @@ TalkActionResult_t TalkActions::playerSaySpell(Player* player, SpeakClasses type
 			}
 			trim_left(param, ' ');
 
-			char separator = talkAction.getSeparator();
+			char separator = talkAction->getSeparator();
 			if (separator != ' ') {
 				if (!param.empty()) {
 					if (param.front() != separator) {
@@ -96,7 +98,7 @@ TalkActionResult_t TalkActions::playerSaySpell(Player* player, SpeakClasses type
 			}
 		}
 
-		if (talkAction.executeSay(player, param, type)) {
+		if (talkAction->executeSay(player, param, type)) {
 			return TALKACTION_CONTINUE;
 		} else {
 			return TALKACTION_BREAK;
@@ -104,6 +106,9 @@ TalkActionResult_t TalkActions::playerSaySpell(Player* player, SpeakClasses type
 	}
 	return TALKACTION_CONTINUE;
 }
+
+TalkAction::TalkAction(LuaScriptInterface* interface) :
+	Event(interface), separator('"') {}
 
 bool TalkAction::configureEvent(const pugi::xml_node& node)
 {

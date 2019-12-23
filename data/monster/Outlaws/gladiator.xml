@@ -1,50 +1,67 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-<monster name="Gladiator" nameDescription="a gladiator" race="blood" experience="90" speed="200" manacost="470">
-	<health now="185" max="185" />
-	<look type="131" head="78" body="3" legs="79" feet="114" corpse="20407" />
-	<targetchange interval="4000" chance="0" />
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Gladiator" nameDescription="a gladiator" race="blood" experience="1600" speed="250" manacost="0">
+	<health now="1800" max="1800" />
+	<look type="131" head="78" body="3" legs="79" feet="114" addons="3" corpse="20407" />
+	<targetchange interval="4000" chance="10" />
 	<flags>
 		<flag summonable="0" />
 		<flag attackable="1" />
 		<flag hostile="1" />
 		<flag illusionable="0" />
-		<flag convinceable="1" />
-		<flag pushable="1" />
-		<flag canpushitems="0" />
-		<flag canpushcreatures="0" />
-		<flag staticattack="90" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
 		<flag targetdistance="1" />
-		<flag runonhealth="10" />
+		<flag staticattack="90" />
+		<flag runonhealth="0" />
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" min="0" max="-90" />
+		<attack name="melee" interval="2000" skill="90" attack="60" />
+		<attack name="physical" interval="2000" chance="20" range="7" min="0" max="-200">
+			<attribute key="shootEffect" value="spear" />
+		</attack>
 	</attacks>
-	<defenses armor="25" defense="25">
-		<defense name="speed" interval="2000" chance="15" speedchange="215" duration="5000">
-			<attribute key="areaEffect" value="redshimmer" />
-		</defense>
-	</defenses>
+	<defenses armor="40" defense="40" />
 	<elements>
-		<element holyPercent="10" />
-		<element physicalPercent="15" />
-		<element deathPercent="-5" />
+		<element firePercent="95" />
+		<element energyPercent="80" />
+		<element physicalPercent="20" />
+		<element deathPercent="20" />
+		<element holyPercent="-10" />
 	</elements>
+	<immunities>
+		<immunity paralyze="1" />
+		<immunity invisible="1" />
+		<immunity earth="1" />
+		<immunity ice="1" />
+	</immunities>
 	<voices interval="5000" chance="10">
-		<voice sentence="You are no match for me!" />
-		<voice sentence="Feel my prowess" />
-		<voice sentence="Fight!" />
-		<voice sentence="Take this!" />
+		<voice sentence="MINE!" yell="1" />
+		<voice sentence="No prisoners!" yell="1" />
+		<voice sentence="NO MERCY!" yell="1" />
+		<voice sentence="By Bolg's Blood!" />
+		<voice sentence="You're no match for me!" />
 	</voices>
 	<loot>
-		<item name="gold coin" countmax="30" chance="49500" />
-		<item id="2376" chance="12620" /><!-- sword -->
-		<item name="mace" chance="11160" />
-		<item name="chain helmet" chance="5200" />
-		<item name="iron helmet" chance="590" />
-		<item name="brass armor" chance="2750" />
-		<item name="steel shield" chance="840" />
-		<item name="plate shield" chance="9950" />
-		<item name="meat" chance="19000" />
-		<item name="belted cape" chance="340" />
+		<item id="2148" countmax="80" chance="23000" /><!-- gold coin -->
+		<item id="2148" countmax="56" chance="23000" /><!-- gold coin -->
+		<item id="2389" countmax="3" chance="30800" /><!-- spear -->
+		<item id="2691" countmax="2" chance="21600" /><!-- brown bread -->
+		<item id="2478" chance="12200" /><!-- brass legs -->
+		<item id="2120" chance="16020" /><!-- rope -->
+		<item id="2381" chance="11850" /><!-- halberd -->
+		<item id="2463" chance="10370" /><!-- plate armor -->
+		<item id="2457" chance="11220" /><!-- steel helmet -->
+		<item id="2377" chance="8470" /><!-- two handed sword -->
+		<item id="2475" chance="5610" /><!-- warrior helmet -->
+		<item id="2417" chance="6980" /><!-- battle hammer -->
+		<item id="2476" chance="320" /><!-- knight armor -->
+		<item id="2489" chance="1900" /><!-- dark armor -->
+		<item id="2490" chance="2330" /><!-- dark helmet -->
+		<item id="2477" chance="1050" /><!-- knight legs -->
+		<item id="2133" chance="740" /><!-- ruby necklace -->
+		<item id="2414" chance="110" /><!-- dragon lance -->
+		<item id="2114" chance="210" /><!-- piggy bank -->
 	</loot>
 </monster>

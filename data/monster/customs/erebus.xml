@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="erebus" nameDescription="the erebus" race="undead" experience="14700" speed="320" manacost="0">
+	<health now="13950" max="13950"/>
+	<look type="300" head="20" corpse="6344"/>
+	<targetchange interval="5000" chance="8"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="1"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" min="-440" max="-790"/>
+		<attack name="death" interval="2000" chance="30" range="7" radius="4" target="1" min="-350" max="-700">
+			<attribute key="shootEffect" value="death"/>
+			<attribute key="areaEffect" value="mortarea"/>
+		</attack>
+		<attack name="earth" interval="2000" chance="50" range="7" radius="4" target="1" min="-450" max="-450">
+			<attribute key="shootEffect" value="earth"/>
+			<attribute key="areaEffect" value="stones"/>
+		</attack>
+		<attack name="manadrain" interval="3000" chance="25" range="7" min="-400" max="-700">
+			<attribute key="areaEffect" value="redshimmer"/>
+	</attack>
+		<attack name="Paralyze" interval="1000" chance="17" range="7" target="1">
+			<attribute key="areaEffect" value="redshimmer"/>
+		</attack>
+	</attacks>
+	<defenses armor="25" defense="20">
+		<defense name="healing" interval="1000" chance="70" min="475" max="825">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+	</defenses>
+	<immunities>
+		<immunity physical="1"/>
+		<immunity fire="1"/>
+		<immunity poison="1"/>
+		<immunity death="1"/>
+		<immunity lifedrain="1"/>
+		<immunity paralyze="1"/>
+		<immunity outfit="1"/>
+		<immunity drunk="1"/>
+		<immunity invisible="1"/>
+	</immunities>
+	<voices interval="5000" chance="10">
+		<voice sentence="Oh my, you forgot to put your pants on!"/>
+		<voice sentence="Weeheeheeheehee!"/>
+		<voice sentence="Its nothing but a dream!"/>
+		<voice sentence="Give in!"/>
+	</voices>
+	<summons maxSummons="2">
+		<summon name="Phantasm summon" interval="3000" chance="20" max="2"/>
+	</summons>
+	<loot>
+		<item id="2148" countmax="40" chance1="100000" chancemax="0"/>
+		<item id="2144" countmax="3" chance1="1000" chancemax="0"/>
+		<item id="2657" chance="5000"/>
+		<item id="2168" chance="1333"/>
+		<item id="2170" chance="2000"/>
+		<item id="1987" chance="100000">
+			<inside>
+				<item id="2654" chance="20000"/>
+				<item id="2655" chance="1333"/>
+				<item id="2656" chance="600"/>
+			</inside>
+		</item>
+	</loot>
+</monster>

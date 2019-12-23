@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2017  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -30,30 +30,7 @@ enum TalkActionResult_t {
 	TALKACTION_FAILED,
 };
 
-class TalkAction : public Event
-{
-	public:
-		explicit TalkAction(LuaScriptInterface* interface) : Event(interface) {}
-
-		bool configureEvent(const pugi::xml_node& node) override;
-
-		const std::string& getWords() const {
-			return words;
-		}
-		char getSeparator() const {
-			return separator;
-		}
-
-		//scripting
-		bool executeSay(Player* player, const std::string& param, SpeakClasses type) const;
-		//
-
-	protected:
-		std::string getScriptEventName() const override;
-
-		std::string words;
-		char separator = '"';
-};
+class TalkAction;
 
 class TalkActions : public BaseEvents
 {
@@ -74,9 +51,35 @@ class TalkActions : public BaseEvents
 		bool registerEvent(Event* event, const pugi::xml_node& node) final;
 		void clear() final;
 
-		std::forward_list<TalkAction> talkActions;
+		// TODO: Store TalkAction objects directly in the list instead of using pointers
+		std::forward_list<TalkAction*> talkActions;
 
 		LuaScriptInterface scriptInterface;
+};
+
+class TalkAction : public Event
+{
+	public:
+		explicit TalkAction(LuaScriptInterface* interface);
+
+		bool configureEvent(const pugi::xml_node& node) override;
+
+		std::string getWords() const {
+			return words;
+		}
+		char getSeparator() const {
+			return separator;
+		}
+
+		//scripting
+		bool executeSay(Player* player, const std::string& param, SpeakClasses type) const;
+		//
+
+	protected:
+		std::string getScriptEventName() const override;
+
+		std::string words;
+		char separator;
 };
 
 #endif

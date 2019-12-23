@@ -1,74 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Tormentor" nameDescription="Tormentor" race="blood" experience="3200" speed="464" manacost="0">
-	<health now="4100" max="4100"/>
-	<look type="245" corpse="6340"/>
-	<targetchange interval="2000" chance="8"/>
+<monster name="Tormentor" nameDescription="Tormentor" race="blood" experience="3200" speed="240" manacost="0">
+	<health now="4100" max="4100" />
+	<look type="245" corpse="6340" />
+	<targetchange interval="4000" chance="10" />
 	<flags>
-		<flag summonable="0"/>
-		<flag attackable="1"/>
-		<flag hostile="1"/>
-		<flag illusionable="0"/>
-		<flag convinceable="0"/>
-		<flag pushable="0"/>
-		<flag canpushitems="1"/>
-		<flag canpushcreatures="1"/>
-		<flag targetdistance="1"/>
-		<flag staticattack="90"/>
-		<flag runonhealth="300"/>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="300" />
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="50" attack="50"/>
-		<attack name="death" interval="2000" chance="12" range="7" radius="1" target="1" min="-120" max="-170">
-			<attribute key="shootEffect" value="death"/>
-			<attribute key="areaEffect" value="smallclouds"/>
+		<attack name="melee" interval="2000" min="0" max="-340" />
+		<attack name="death" interval="2000" chance="10" range="7" radius="1" target="1" min="-130" max="-170">
+			<attribute key="shootEffect" value="death" />
+			<attribute key="areaEffect" value="smallclouds" />
 		</attack>
-		<attack name="poison" interval="2000" chance="10" range="7" radius="4" target="1" min="-150" max="-350">	
-			<attribute key="shootEffect" value="poison"/>
-			<attribute key="areaEffect" value="poison"/>
+		<attack name="earth" interval="2000" chance="20" range="7" radius="4" target="1" min="-250" max="-400">
+			<attribute key="shootEffect" value="poison" />
+			<attribute key="areaEffect" value="poison" />
 		</attack>
 	</attacks>
-	<defenses armor="22" defense="28">
-		<defense name="healing" interval="2000" chance="13" min="60" max="100">
-			<attribute key="areaEffect" value="blueshimmer"/>
+	<defenses armor="25" defense="25">
+		<defense name="healing" interval="2000" chance="10" min="60" max="100">
+			<attribute key="areaEffect" value="blueshimmer" />
+		</defense>
+		<defense name="speed" interval="2000" chance="15" speedchange="420" duration="5000">
+			<attribute key="areaEffect" value="redshimmer" />
 		</defense>
 	</defenses>
 	<elements>
-		<element firePercent="20"/>
-		<element energyPercent="20"/>
-		<element icePercent="10"/>
-		<element holyPercent="-25"/>
+		<element firePercent="20" />
+		<element energyPercent="20" />
+		<element icePercent="10" />
 	</elements>
 	<immunities>
-		<immunity invisible="1"/>
-		<immunity earth="1"/>
-		<immunity paralyze="1"/>
-		<immunity death="1"/>
+		<immunity invisible="1" />
+		<immunity death="1" />
+		<immunity earth="1" />
+		<immunity lifedrain="1" />
 	</immunities>
-	<voices interval="2000" chance="5">
-		<voice sentence="Close your eyes... I want to show you something!"/>
-		<voice sentence="I will haunt you forever!"/>
-		<voice sentence="I will make you scream."/>
-		<voice sentence="Pffffrrrrrrrrrrrr."/>
-		<voice sentence="Take a ride with me."/>
-		<voice sentence="Weeeheeheeeheee!"/>
+	<voices interval="2000" chance="7">
+		<voice sentence="Take a ride with me." />
+		<voice sentence="Pffffrrrrrrrrrrrr." />
+		<voice sentence="Close your eyes... I have something for you." />
+		<voice sentence="I will make you scream." />
+		<voice sentence="I will haunt you forever!" />
 	</voices>
 	<loot>
-		<item id="2195" chance="8330"/><!-- boots of haste -->
-		<item id="6300" chance="100000"/><!-- death ring -->
-		<item id="6558" chance="100000"/><!-- concentrated demonic blood -->
-		<item id="6558" chance="50000"/><!-- concentrated demonic blood -->
-		<item id="6558" chance="25000"/><!-- concentrated demonic blood -->
-		<item id="6558" chance="12500"/><!-- concentrated demonic blood -->
-		<item id="6558" chance="6250"/><!-- concentrated demonic blood -->
-		<item id="6500" chance="100000"/><!-- demonic essence -->
-		<item id="11223" chance="100000"/><!-- essence of a bad dream -->
-		<item id="2671" countmax="3" chance="100000"/><!-- ham -->
-		<item id="2477" chance="68750"/><!-- knight legs -->
-		<item id="7418" chance="10420"/><!-- nightmare blade -->
-		<item id="2152" countmax="10" chance="89580"/><!-- platinum coin -->
-		<item id="11229" chance="81250"/><!-- scythe leg -->
-		<item id="5669" chance="39580"/><!-- mysterious voodoo skull -->
-		<item id="6526" chance="29170"/><!-- skeleton decoration -->
-		<item id="2454" chance="14580"/><!-- war axe -->
+		<item id="6558" chance="100000" />				<!-- concentrated demonic blood -->
+		<item id="6300" chance="100000" />				<!-- death ring -->
+		<item id="6500" chance="100000" />				<!-- demonic essence -->
+		<item id="11223" chance="100000" />				<!-- essence of a bad dream -->
+		<item id="2671" countmax="2" chance="100000" />	<!-- ham -->
+		<item id="2152" countmax="10" chance="90000" />	<!-- platinum coin -->
+		<item id="11229" chance="81000" />				<!-- scythe leg -->
+		<item id="2477" chance="70000" />				<!-- knight legs -->
+		<item id="5669" chance="40000" />				<!-- mysterious voodoo skull -->
+		<item id="6526" chance="28000" />				<!-- skeleton decoration -->
+		<item id="2454" chance="14000" />				<!-- war axe -->
+		<item id="7418" chance="10000" />				<!-- nightmare blade -->
 	</loot>
 </monster>
