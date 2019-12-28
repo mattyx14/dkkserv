@@ -6,7 +6,14 @@ function onLogin(player)
 		"BossParticipation",
 		"petlogin",
 		"petthink",
-		"bonusPreyLootKill"
+		"bonusPreyLootKill",
+
+		-- DarkKonia
+		"onadvance_reward",
+		"KillBoss",
+		"VampireKill",
+		"modalAD",
+		"modalMD"
 	}
 	
 	for i = 1, #events do

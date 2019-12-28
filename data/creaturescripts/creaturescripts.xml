@@ -32,4 +32,16 @@
 	<event type="advance" name="AdvanceSave" script="others/advance_save.lua" />
 	<event type="kill" name="bonusPreyLootKill" script="preyloot.lua"/>
 	<event type="death" name="bonusPreyLootDeath" script="preyloot.lua" />
+
+	<!-- DarkKonia Scripts -->
+	<!-- Customs -->
+	<event type="advance" name="onadvance_reward" script="onadvance_reward.lua"/>
+
+	<!-- Kill Bosses -->
+	<event type="kill" name="KillBoss" script="KillBoss.lua" />
+	<event type="kill" name="VampireKill" script="quest/dracula/VampireKill.lua" />
+
+	<!-- Item AddonMounts Full -->
+	<event type="modalwindow" name="modalMD" script="modalMD.lua"/>
+	<event type="modalwindow" name="modalAD" script="modalAD.lua"/>
 </creaturescripts>

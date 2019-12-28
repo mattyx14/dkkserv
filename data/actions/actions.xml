@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <actions>
-	<!-- Annihilator Quest -->
-	<action actionid="2214" script="quests/annihilator/door.lua" />
-	<action uniqueid="2208" script="quests/annihilator/lever.lua" /><!-- CHANGE POSSITIONS -->
-
 	<!-- Bastion Forge -->
 	<action itemid="32421" script="falcons/falcon_shield.lua" />
 
@@ -64,6 +60,7 @@
 	<action itemid="1386" script="others/teleport.lua" />
 	<action itemid="3678" script="others/teleport.lua" />
 	<action itemid="5543" script="others/teleport.lua" />
+	<action itemid="8599" script="others/teleport.lua" />
 	<action itemid="22845" script="others/teleport.lua" />
 	<action itemid="22846" script="others/teleport.lua" />
 	<action itemid="33397" script="others/teleport.lua" />
@@ -528,7 +525,6 @@
 	<action itemid="8974" script="others/dolls.lua" />
 	<action itemid="8977" script="others/dolls.lua" />
 	<action itemid="8981" script="others/dolls.lua" />
-	<action itemid="8982" script="others/dolls.lua" />
 
 	<!-- Valuables -->
 	<action itemid="13670" script="valuables/randomitems.lua" />
@@ -537,4 +533,57 @@
 	<action itemid="25419" script="valuables/randomitems.lua" />
 	<action itemid="26165" script="valuables/randomitems.lua" />
 	<action itemid="32014" script="valuables/randomitems.lua" />
+
+	<!-- DarkKonia Scripts -->
+	<!-- Quests -->
+	<action itemid="1740" script="quests/quests.lua" />
+	<action fromid="1747" toid="1749" script="quests/quests.lua" />
+	<!-- System Quest -->
+		<!-- Djinn Quest -->
+		<action actionid="2001" script="quests/others/systems/system.lua" />
+		<!-- Anni Quest -->
+		<action actionid="2002" script="quests/others/systems/system.lua" />
+
+	<!-- Demon Oak -->
+	<action itemid="8293" script="quests/demon oak/demonOak.lua" />
+	<!-- <action fromuid="9008" touid="9011" script="quests/demon oak/demonOakChest.lua" /> -->
+	<action uniqueid="9009" script="quests/demon oak/demonOakGravestone.lua" />
+
+	<!-- Other -->
+	<action fromaid="50140" toaid="50144" script="oreWagons.lua" />
+	<action itemid="8982" script="modalAD.lua"/>
+	<action itemid="9019" script="modalMD.lua"/>
+		<!-- Other Outfits -->
+		<!-- Pirate Outfit -->
+		<action uniqueid="6096" script="quests/outfits/outfits.lua" />
+			<action uniqueid="9010" script="quests/outfits/pirateLever.lua" />
+		<!-- Conjurer Outfit -->
+		<action uniqueid="2662" script="quests/outfits/outfits.lua" />
+			<action actionid="2080" script="quests/outfits/conjurerLever.lua" />
+			<action actionid="2081" script="quests/outfits/conjurerLever_two.lua" />
+		<!-- Death Herald Outfit -->
+		<action uniqueid="10008" script="quests/outfits/outfits.lua" />
+			<action actionid="39517" script="quests/outfits/portalDracula.lua" />
+		<!-- Assassin Outfit -->
+		<action uniqueid="9933" script="quests/outfits/outfits.lua" />
+		<!-- Chaos Acolyte Outfit -->
+		<action uniqueid="8820" script="quests/outfits/outfits.lua" />
+		<!-- Norse Outfit -->
+		<action uniqueid="7460" script="quests/outfits/outfits.lua" />
+		<!-- Deepling Outfit -->
+		<action uniqueid="15545" script="quests/outfits/outfits.lua" />
+		<!-- Demonhunter Outfit -->
+		<action uniqueid="7431" script="quests/outfits/outfits.lua" />
+		<!-- Brotherhood Outfit -->
+		<action uniqueid="5807" script="quests/outfits/outfits.lua" />
+		<!-- Oriental Outfit -->
+		<action uniqueid="8267" script="quests/outfits/outfits.lua" />
+		<!-- Marry Outfit -->
+		<action uniqueid="3697" script="quests/outfits/outfits.lua" />
+
+	<!-- Teleport items -->
+	<action fromaid="39512" toaid="39516" script="quests/itemPortal.lua" />
+
+	<!-- Annihilator lever -->
+	<action uniqueid="2208" script="quests/annihilator.lua" />
 </actions>

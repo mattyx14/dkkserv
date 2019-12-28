@@ -224,20 +224,24 @@ function onUseShovel(player, item, fromPosition, target, toPosition, isHotkey)
 end
 
 function onUsePick(player, item, fromPosition, target, toPosition, isHotkey)
-	local stonePos = Position(32648, 32134, 10)
-	if (toPosition == stonePos) then
-		local tile = Tile(stonePos)
-		local stone = tile:getItemById(1285)
-		if (stone) then
-			stone:remove(1)
-			toPosition:sendMagicEffect(CONST_ME_POFF)
-			addEvent(function() Game.createItem(1285, 1, stonePos) end, 20000)
+	local targetId, targetActionId = target.itemid, target.actionid
+	if targetId == 1304 then
+		if player:getStorageValue(Storage.VampireQuest.draculaDone) == 1 then
+			if targetActionId == 50058 then
+				local stoneStorage = Game.getStorageValue(Storage.VampireQuest.draculaDone)
+				if stoneStorage ~= 5 then
+					Game.setStorageValue(Storage.VampireQuest.draculaDone, math.max(0, stoneStorage) + 1)
+				elseif stoneStorage == 5 then
+					target:remove()
+					Game.setStorageValue(Storage.VampireQuest.draculaDone)
+				end
 
-			return true
+				toPosition:sendMagicEffect(CONST_ME_POFF)
+				doTargetCombatHealth(0, player, COMBAT_PHYSICALDAMAGE, -1001, -1109, CONST_ME_NONE)
+			end
 		end
 	end
 
-	local targetId, targetActionId = target.itemid, target.actionid
 	if isInArray({354, 355}, targetId) and (target:hasAttribute(ITEM_ATTRIBUTE_UNIQUEID) or target:hasAttribute(ITEM_ATTRIBUTE_ACTIONID)) then
 		target:transform(392)
 		target:decay()
