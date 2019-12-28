@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2019  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,8 +17,8 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-#ifndef FS_HOUSETILE_H_57D59BEC1CE741D9B142BFC54634505B
-#define FS_HOUSETILE_H_57D59BEC1CE741D9B142BFC54634505B
+#ifndef OT_SRC_HOUSETILE_H_
+#define OT_SRC_HOUSETILE_H_
 
 #include "tile.h"
 
@@ -31,13 +31,12 @@ class HouseTile final : public DynamicTile
 
 		//cylinder implementations
 		ReturnValue queryAdd(int32_t index, const Thing& thing, uint32_t count,
-				uint32_t flags, Creature* actor = nullptr) const final;
+				uint32_t flags, Creature* actor = nullptr) const override;
 
 		Tile* queryDestination(int32_t& index, const Thing& thing, Item** destItem,
-				uint32_t& flags) final;
+				uint32_t& flags) override;
 
-		void addThing(int32_t index, Thing* thing) final;
-		void internalAddThing(uint32_t index, Thing* thing) final;
+		void addThing(int32_t index, Thing* thing) override;
 
 		House* getHouse() {
 			return house;

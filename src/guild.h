@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2019  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,8 +17,8 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-#ifndef FS_GUILD_H_C00F0A1D732E4BA88FF62ACBE74D76BC
-#define FS_GUILD_H_C00F0A1D732E4BA88FF62ACBE74D76BC
+#ifndef OT_SRC_GUILD_H_
+#define OT_SRC_GUILD_H_
 
 class Player;
 
@@ -27,13 +27,15 @@ struct GuildRank {
 	std::string name;
 	uint8_t level;
 
-	GuildRank(uint32_t id, std::string name, uint8_t level) : id(id), name(name), level(level) {}
+	GuildRank(uint32_t initId, std::string initName, uint8_t initLevel) :
+		id(initId), name(std::move(initName)), level(initLevel) {}
 };
 
+using GuildRank_ptr = std::shared_ptr<GuildRank>;
 class Guild
 {
 	public:
-		Guild(uint32_t id, std::string name) : name(name), id(id), memberCount(0) {}
+		Guild(uint32_t initId, std::string initName) : name(std::move(initName)), id(initId) {}
 
 		void addMember(Player* player);
 		void removeMember(Player* player);
@@ -54,24 +56,29 @@ class Guild
 			memberCount = count;
 		}
 
-		GuildRank* getRankById(uint32_t id);
-		const GuildRank* getRankByLevel(uint8_t level) const;
+		const std::vector<GuildRank_ptr>& getRanks() const {
+			return ranks;
+		}
+
+		GuildRank_ptr getRankById(uint32_t id);
+		GuildRank_ptr getRankByName(const std::string& name) const;
+		GuildRank_ptr getRankByLevel(uint8_t level) const;
 		void addRank(uint32_t id, const std::string& name, uint8_t level);
 
 		const std::string& getMotd() const {
 			return motd;
 		}
-		void setMotd(const std::string& motd) {
-			this->motd = motd;
+		void setMotd(const std::string& newMotd) {
+			this->motd = newMotd;
 		}
 
 	private:
 		std::list<Player*> membersOnline;
-		std::vector<GuildRank> ranks;
+		std::vector<GuildRank_ptr> ranks;
 		std::string name;
 		std::string motd;
 		uint32_t id;
-		uint32_t memberCount;
+		uint32_t memberCount = 0;
 };
 
 #endif

@@ -1,6 +1,6 @@
-/**
+/** 
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2019  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,8 +17,8 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-#ifndef FS_PROTOCOLLOGIN_H_1238F4B473074DF2ABC595C29E81C46D
-#define FS_PROTOCOLLOGIN_H_1238F4B473074DF2ABC595C29E81C46D
+#ifndef OT_SRC_PROTOCOLLOGIN_H_
+#define OT_SRC_PROTOCOLLOGIN_H_
 
 #include "protocol.h"
 
@@ -36,7 +36,7 @@ class ProtocolLogin : public Protocol
 			return "login protocol";
 		}
 
-		explicit ProtocolLogin(Connection_ptr connection) : Protocol(connection) {}
+		explicit ProtocolLogin(Connection_ptr loginConnection) : Protocol(loginConnection) {}
 
 		void onRecvFirstMessage(NetworkMessage& msg);
 
@@ -44,8 +44,6 @@ class ProtocolLogin : public Protocol
 		void disconnectClient(const std::string& message, uint16_t version);
 
 		void getCharacterList(const std::string& accountName, const std::string& password, uint16_t version);
-		void getCastingStreamsList(const std::string& password, uint16_t version);
-		void addWorldInfo(OutputMessage_ptr& output, const std::string& accountName, const std::string& password, uint16_t version, bool isLiveCastLogin = false);
 };
 
 #endif

@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2019  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,8 +17,8 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-#ifndef FS_MONSTERS_H_776E8327BCE2450EB7C4A260785E6C0D
-#define FS_MONSTERS_H_776E8327BCE2450EB7C4A260785E6C0D
+#ifndef OT_SRC_MONSTERS_H_
+#define OT_SRC_MONSTERS_H_
 
 #include "creature.h"
 
@@ -48,7 +48,7 @@ struct LootBlock {
 	std::vector<LootBlock> childLoot;
 	LootBlock() {
 		id = 0;
-		countmax = 0;
+		countmax = 1;
 		chance = 0;
 
 		subType = -1;
@@ -63,20 +63,32 @@ struct LootBlock {
 	}
 };
 
+class Loot {
+	public:
+		Loot() = default;
+
+		// non-copyable
+		Loot(const Loot&) = delete;
+		Loot& operator=(const Loot&) = delete;
+
+		LootBlock lootBlock;
+};
+
 struct summonBlock_t {
 	std::string name;
 	uint32_t chance;
 	uint32_t speed;
+	uint32_t max;
 	bool force = false;
 };
 
 class BaseSpell;
 struct spellBlock_t {
-	spellBlock_t() = default;
+	constexpr spellBlock_t() = default;
 	~spellBlock_t();
 	spellBlock_t(const spellBlock_t& other) = delete;
 	spellBlock_t& operator=(const spellBlock_t& other) = delete;
-	spellBlock_t(spellBlock_t&& other):
+	spellBlock_t(spellBlock_t&& other) :
 		spell(other.spell),
 		chance(other.chance),
 		speed(other.speed),
@@ -105,15 +117,8 @@ struct voiceBlock_t {
 
 class MonsterType
 {
-	public:
-		MonsterType();
-		~MonsterType() = default;
-
-		// non-copyable
-		MonsterType(const MonsterType&) = delete;
-		MonsterType& operator=(const MonsterType&) = delete;
-
-		void reset();
+	struct MonsterInfo {
+		LuaScriptInterface* scriptInterface;
 
 		std::map<CombatType_t, int32_t> elementMap;
 
@@ -125,69 +130,124 @@ class MonsterType
 		std::vector<spellBlock_t> defenseSpells;
 		std::vector<summonBlock_t> summons;
 
+		Skulls_t skull = SKULL_NONE;
+		Outfit_t outfit = {};
+		RaceType_t race = RACE_BLOOD;
+
+		LightInfo light = {};
+		uint16_t lookcorpse = 0;
+
+		uint64_t experience = 0;
+
+		uint32_t manaCost = 0;
+		uint32_t yellChance = 0;
+		uint32_t yellSpeedTicks = 0;
+		uint32_t staticAttackChance = 95;
+		uint32_t maxSummons = 0;
+		uint32_t changeTargetSpeed = 0;
+		uint32_t conditionImmunities = 0;
+		uint32_t damageImmunities = 0;
+		uint32_t baseSpeed = 200;
+		uint32_t respawnType = RESPAWN_IN_ALL;
+
+		int32_t creatureAppearEvent = -1;
+		int32_t creatureDisappearEvent = -1;
+		int32_t creatureMoveEvent = -1;
+		int32_t creatureSayEvent = -1;
+		int32_t thinkEvent = -1;
+		int32_t targetDistance = 1;
+		int32_t runAwayHealth = 0;
+		int32_t health = 100;
+		int32_t healthMax = 100;
+		int32_t changeTargetChance = 0;
+		int32_t defense = 0;
+		int32_t armor = 0;
+
+		bool canPushItems = false;
+		bool canPushCreatures = false;
+		bool pushable = true;
+		bool isSummonable = false;
+		bool isIllusionable = false;
+		bool isConvinceable = false;
+		bool isAttackable = true;
+		bool isHostile = true;
+		bool hiddenHealth = false;
+		bool isBlockable = false;
+		bool isPet = false;
+		bool isPassive = false;
+		bool isRewardBoss = false;
+		bool isPreyable = true;
+		bool canWalkOnEnergy = true;
+		bool canWalkOnFire = true;
+		bool canWalkOnPoison = true;
+
+		MonstersEvent_t eventType = MONSTERS_EVENT_NONE;
+	};
+
+	public:
+		MonsterType() = default;
+
+		// non-copyable
+		MonsterType(const MonsterType&) = delete;
+		MonsterType& operator=(const MonsterType&) = delete;
+
 		std::string name;
 		std::string nameDescription;
 
-		LuaScriptInterface* scriptInterface;
+		MonsterInfo info;
 
-		uint64_t experience;
+		bool canSpawn(const Position& pos);
 
-		Outfit_t outfit;
+		//void loadLoot(MonsterType* monsterType, LootBlock lootblock); (from tfs)
+};
 
-		uint32_t manaCost;
-		uint32_t yellChance;
-		uint32_t yellSpeedTicks;
-		uint32_t staticAttackChance;
-		uint32_t maxSummons;
-		uint32_t changeTargetSpeed;
-		uint32_t conditionImmunities;
-		uint32_t damageImmunities;
-		uint32_t baseSpeed;
+class MonsterSpell
+{
+	public:
+		MonsterSpell() = default;
 
-		int32_t creatureAppearEvent;
-		int32_t creatureDisappearEvent;
-		int32_t creatureMoveEvent;
-		int32_t creatureSayEvent;
-		int32_t thinkEvent;
-		int32_t targetDistance;
-		int32_t runAwayHealth;
-		int32_t health;
-		int32_t healthMax;
-		int32_t changeTargetChance;
-		int32_t defense;
-		int32_t armor;
+		MonsterSpell(const MonsterSpell&) = delete;
+		MonsterSpell& operator=(const MonsterSpell&) = delete;
 
-		RaceType_t race;
+		std::string name = "";
+		std::string scriptName = "";
 
-		uint16_t lookcorpse;
+		uint8_t chance = 100;
+		uint8_t range = 0;
 
-		Skulls_t skull;
-		uint8_t lightLevel;
-		uint8_t lightColor;
+		uint16_t interval = 2000;
 
-		bool canPushItems;
-		bool canPushCreatures;
-		bool pushable;
-		bool isSummonable;
-		bool isRewardBoss;
-		bool isIllusionable;
-		bool isConvinceable;
-		bool isAttackable;
-		bool isHostile;
-		bool isPassive;
-		bool hiddenHealth;
-		bool isBlockable;
+		int32_t minCombatValue = 0;
+		int32_t maxCombatValue = 0;
+		int32_t attack = 0;
+		int32_t skill = 0;
+		int32_t length = 0;
+		int32_t spread = 0;
+		int32_t radius = 0;
+		int32_t conditionMinDamage = 0;
+		int32_t conditionMaxDamage = 0;
+		int32_t conditionStartDamage = 0;
+		int32_t tickInterval = 0;
+		int32_t speedChange = 0;
+		int32_t duration = 0;
 
-		void createLoot(Container* corpse);
-		bool createLootContainer(Container* parent, const LootBlock& lootblock);
-		std::vector<Item*> createLootItem(const LootBlock& lootBlock);
+		bool isScripted = false;
+		bool needTarget = false;
+		bool needDirection = false;
+		bool combatSpell = false;
+		bool isMelee = false;
+
+		Outfit_t outfit = {};
+		ShootType_t shoot = CONST_ANI_NONE;
+		MagicEffectClasses effect = CONST_ME_NONE;
+		ConditionType_t conditionType = CONDITION_NONE;
+		CombatType_t combatType = COMBAT_UNDEFINEDDAMAGE;
 };
 
 class Monsters
 {
 	public:
-		Monsters();
-		~Monsters() = default;
+		Monsters() = default;
 		// non-copyable
 		Monsters(const Monsters&) = delete;
 		Monsters& operator=(const Monsters&) = delete;
@@ -199,24 +259,28 @@ class Monsters
 		bool reload();
 
 		MonsterType* getMonsterType(const std::string& name);
-		uint32_t getIdByName(const std::string& name);
+		void addMonsterType(const std::string& name, MonsterType* mType);
+		bool deserializeSpell(MonsterSpell* spell, spellBlock_t& sb, const std::string& description = "");
 
-		static uint32_t getLootRandom();
+		std::vector<std::string> getPreyMonsters();
+
+		std::unique_ptr<LuaScriptInterface> scriptInterface;
+		bool loadCallback(LuaScriptInterface* scriptInterface, MonsterType* mType);
 
 	private:
 		ConditionDamage* getDamageCondition(ConditionType_t conditionType,
-		                                    int32_t maxDamage, int32_t minDamage, int32_t startDamage, uint32_t tickInterval);
+											int32_t maxDamage, int32_t minDamage, int32_t startDamage, uint32_t tickInterval);
 		bool deserializeSpell(const pugi::xml_node& node, spellBlock_t& sb, const std::string& description = "");
 
-		bool loadMonster(const std::string& file, const std::string& monsterName, std::list<std::pair<MonsterType*, std::string>>& monsterScriptList, bool reloading = false);
+		MonsterType* loadMonster(const std::string& file, const std::string& monsterName, bool reloading = false);
 
 		void loadLootContainer(const pugi::xml_node& node, LootBlock&);
 		bool loadLootItem(const pugi::xml_node& node, LootBlock&);
 
 		std::map<std::string, MonsterType> monsters;
-		std::unique_ptr<LuaScriptInterface> scriptInterface;
+		std::map<std::string, std::string> unloadedMonsters;
 
-		bool loaded;
+		bool loaded = false;
 };
 
 #endif

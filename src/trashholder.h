@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2019  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,8 +17,8 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-#ifndef FS_TRASHHOLDER_H_BA162024D67B4D388147F5EE06F33098
-#define FS_TRASHHOLDER_H_BA162024D67B4D388147F5EE06F33098
+#ifndef OT_SRC_TRASHHOLDER_H_
+#define OT_SRC_TRASHHOLDER_H_
 
 #include "item.h"
 #include "cylinder.h"

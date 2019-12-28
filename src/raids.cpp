@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2019  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -32,14 +32,7 @@ extern Game g_game;
 extern ConfigManager g_config;
 
 Raids::Raids()
-	: scriptInterface("Raid Interface")
 {
-	loaded = false;
-	started = false;
-	running = nullptr;
-	lastRaidEnd = 0;
-	checkRaidsEvent = 0;
-
 	scriptInterface.initState();
 }
 
@@ -117,7 +110,7 @@ bool Raids::loadFromXml()
 	return true;
 }
 
-#define MAX_RAND_RANGE 10000000
+static constexpr int32_t MAX_RAND_RANGE = 10000000;
 
 bool Raids::startup()
 {
@@ -235,7 +228,9 @@ bool Raid::loadFromXml(const std::string& filename)
 	}
 
 	//sort by delay time
-	std::sort(raidEvents.begin(), raidEvents.end(), RaidEvent::compareEvents);
+	std::sort(raidEvents.begin(), raidEvents.end(), [](const RaidEvent* lhs, const RaidEvent* rhs) {
+		return lhs->getDelay() < rhs->getDelay();
+	});
 
 	loaded = true;
 	return true;
@@ -552,8 +547,6 @@ bool AreaSpawnEvent::executeEvent()
 	}
 	return true;
 }
-
-ScriptEvent::ScriptEvent(LuaScriptInterface* interface) : Event(interface) {}
 
 bool ScriptEvent::configureRaidEvent(const pugi::xml_node& eventNode)
 {

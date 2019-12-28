@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2019  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,8 +17,8 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-#ifndef FS_INBOX_H_C3EF10190329447883B9C3479234EE5C
-#define FS_INBOX_H_C3EF10190329447883B9C3479234EE5C
+#ifndef OT_SRC_INBOX_H_
+#define OT_SRC_INBOX_H_
 
 #include "container.h"
 
@@ -26,6 +26,10 @@ class Inbox final : public Container
 {
 	public:
 		explicit Inbox(uint16_t type);
+
+		void setMaxInboxItems(uint32_t maxitems) {
+			maxInboxItems = maxitems;
+		}
 
 		//cylinder implementations
 		ReturnValue queryAdd(int32_t index, const Thing& thing, uint32_t count,
@@ -43,6 +47,8 @@ class Inbox final : public Container
 		Cylinder* getRealParent() const final {
 			return parent;
 		}
+	protected:
+		uint32_t maxInboxItems;
 };
 
 #endif

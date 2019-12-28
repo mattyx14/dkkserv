@@ -1,6 +1,6 @@
 -- Custom Modules, created to help us in this datapack
 local travelDiscounts = {
-	['postman'] = {price = 500, storage = 12460, value = 1}
+	-- ['postman'] = {price = 10, storage = Storage.postman.Rank, value = 3},
 }
 
 function StdModule.travelDiscount(player, discounts)
@@ -142,6 +142,27 @@ local hints = {
 	[28] = 'There is nothing more I can tell you. If you are still in need of some {hints}, I can repeat them for you.'
 }
 
+function StdModule.rookgaardHints(cid, message, keywords, parameters, node)
+	local npcHandler = parameters.npcHandler
+	if npcHandler == nil then
+		error("StdModule.say called without any npcHandler instance.")
+	end
+
+	if not npcHandler:isFocused(cid) then
+		return false
+	end
+
+	local player = Player(cid)
+	local hintId = player:getStorageValue(Storage.RookgaardHints)
+	npcHandler:say(hints[hintId], cid)
+	if hintId >= #hints then
+		player:setStorageValue(Storage.RookgaardHints, -1)
+	else
+		player:setStorageValue(Storage.RookgaardHints, hintId + 1)
+	end
+	return true
+end
+
 -- VoiceModule
 VoiceModule = {
 	voices = nil,
@@ -188,4 +209,62 @@ function VoiceModule:callbackOnThink()
 		end
 	end
 	return true
+end
+
+function Player.removeMoneyNpc(self, amount)
+
+	if type(amount) == 'string' then
+		amount = tonumber(amount)
+	end
+
+	local moneyCount = self:getMoney()
+	local bankCount = self:getBankBalance()
+
+	-- The player have all the money with him
+	if amount <= moneyCount then
+		-- Removes player inventory money
+		self:removeMoney(amount)
+
+		self:sendTextMessage(MESSAGE_INFO_DESCR, ("Paid %d from inventory."):format(amount))
+		return true
+
+	-- The player doens't have all the money with him
+	elseif amount <= (moneyCount + bankCount) then
+
+		-- Check if the player has some money
+		if moneyCount ~= 0 then
+			-- Removes player inventory money
+			self:removeMoney(moneyCount)
+			local remains = amount - moneyCount
+
+			-- Removes player bank money
+			self:setBankBalance(bankCount - remains)
+
+			self:sendTextMessage(MESSAGE_INFO_DESCR, ("Paid %d from inventory and %d gold from bank account. Your account balance is now %d gold."):format(moneyCount, amount - moneyCount, self:getBankBalance()))
+			return true
+
+		else
+			self:setBankBalance(bankCount - amount)
+			self:sendTextMessage(MESSAGE_INFO_DESCR, ("Paid %d gold from bank account. Your account balance is now %d gold."):format(amount, self:getBankBalance()))
+			return true
+		end
+	end
+
+	return false
+end
+
+local function getPlayerMoney(cid)
+	local player = Player(cid)
+	if player then
+		return player:getMoney() + player:getBankBalance()
+	end
+	return 0
+end
+
+local function doPlayerRemoveMoney(cid, amount)
+	local player = Player(cid)
+	if player then
+		return player:removeMoneyNpc(amount)
+	end
+	return false
 end

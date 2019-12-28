@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2019  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,8 +17,8 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-#ifndef FS_THREAD_HOLDER_H_BEB56FC46748E71D15A5BF0773ED2E67
-#define FS_THREAD_HOLDER_H_BEB56FC46748E71D15A5BF0773ED2E67
+#ifndef OT_SRC_THREADHOLDERBASE_H_
+#define OT_SRC_THREADHOLDERBASE_H_
 
 #include <thread>
 #include <atomic>
@@ -28,7 +28,7 @@ template <typename Derived>
 class ThreadHolder
 {
 	public:
-		ThreadHolder(): threadState(THREAD_STATE_TERMINATED) {}
+		ThreadHolder() {}
 		void start() {
 			setState(THREAD_STATE_RUNNING);
 			thread = std::thread(&Derived::threadMain, static_cast<Derived*>(this));
@@ -52,7 +52,7 @@ class ThreadHolder
 			return threadState.load(std::memory_order_relaxed);
 		}
 	private:
-		std::atomic<ThreadState> threadState;
+		std::atomic<ThreadState> threadState{THREAD_STATE_TERMINATED};
 		std::thread thread;
 };
 

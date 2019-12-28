@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2019  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,10 +17,11 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-#ifndef FS_SERVER_H_984DA68ABF744127850F90CC710F281B
-#define FS_SERVER_H_984DA68ABF744127850F90CC710F281B
+#ifndef OT_SRC_SERVER_H_
+#define OT_SRC_SERVER_H_
 
 #include "connection.h"
+#include "signals.h"
 #include <memory>
 
 class Protocol;
@@ -61,7 +62,7 @@ class Service final : public ServiceBase
 class ServicePort : public std::enable_shared_from_this<ServicePort>
 {
 	public:
-		explicit ServicePort(boost::asio::io_service& io_service);
+		explicit ServicePort(boost::asio::io_service& init_io_service) : io_service(init_io_service) {}
 		~ServicePort();
 
 		// non-copyable
@@ -87,14 +88,14 @@ class ServicePort : public std::enable_shared_from_this<ServicePort>
 		std::unique_ptr<boost::asio::ip::tcp::acceptor> acceptor;
 		std::vector<Service_ptr> services;
 
-		uint16_t serverPort;
-		bool pendingStart;
+		uint16_t serverPort = 0;
+		bool pendingStart = false;
 };
 
 class ServiceManager
 {
 	public:
-		ServiceManager();
+		ServiceManager() = default;
 		~ServiceManager();
 
 		// non-copyable
@@ -103,8 +104,6 @@ class ServiceManager
 
 		void run();
 		void stop();
-
-		bool okay();
 
 		template <typename ProtocolType>
 		bool add(uint16_t port);
@@ -119,8 +118,9 @@ class ServiceManager
 		std::unordered_map<uint16_t, ServicePort_ptr> acceptors;
 
 		boost::asio::io_service io_service;
-		boost::asio::deadline_timer death_timer;
-		bool running;
+		Signals signals{io_service};
+		boost::asio::deadline_timer death_timer { io_service };
+		bool running = false;
 };
 
 template <typename ProtocolType>
@@ -144,8 +144,8 @@ bool ServiceManager::add(uint16_t port)
 
 		if (service_port->is_single_socket() || ProtocolType::server_sends_first) {
 			std::cout << "ERROR: " << ProtocolType::protocol_name() <<
-			          " and " << service_port->get_protocol_names() <<
-			          " cannot use the same port " << port << '.' << std::endl;
+					  " and " << service_port->get_protocol_names() <<
+					  " cannot use the same port " << port << '.' << std::endl;
 			return false;
 		}
 	}

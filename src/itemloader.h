@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2019  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,8 +17,8 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-#ifndef FS_ITEMLOADER_H_107F1D3EECC94CD0A0F528843010D5D4
-#define FS_ITEMLOADER_H_107F1D3EECC94CD0A0F528843010D5D4
+#ifndef OT_SRC_ITEMLOADER_H_
+#define OT_SRC_ITEMLOADER_H_
 
 #include "fileloader.h"
 
@@ -102,7 +102,12 @@ enum clientVersion_t {
 	CLIENT_VERSION_1031 = 54,
 	CLIENT_VERSION_1035 = 55,
 	CLIENT_VERSION_1076 = 56,
-	CLIENT_VERSION_1094 = 57,
+	CLIENT_VERSION_1098 = 57,
+	CLIENT_VERSION_1100_V1 = 58, // No relased
+	CLIENT_VERSION_1100_V2 = 59,
+	CLIENT_VERSION_1100_V3 = 60, // No relased
+	CLIENT_VERSION_1100_V4 = 61, // No relased
+	CLIENT_VERSION_1140 = 62,
 };
 
 enum rootattrib_ {
@@ -176,6 +181,7 @@ enum itemflags_t {
 	FLAG_ANIMATION = 1 << 24,
 	FLAG_FULLTILE = 1 << 25, // unused
 	FLAG_FORCEUSE = 1 << 26,
+	FLAG_WRAPCONTAINER = 1 << 27,
 };
 
 //1-byte aligned structs

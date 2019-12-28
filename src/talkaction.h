@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2019  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,12 +17,15 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-#ifndef FS_TALKACTION_H_E6AABAC0F89843469526ADF310F3131C
-#define FS_TALKACTION_H_E6AABAC0F89843469526ADF310F3131C
+#ifndef OT_SRC_TALKACTION_H_
+#define OT_SRC_TALKACTION_H_
 
 #include "luascript.h"
 #include "baseevents.h"
 #include "const.h"
+
+class TalkAction;
+using TalkAction_ptr = std::unique_ptr<TalkAction>;
 
 enum TalkActionResult_t {
 	TALKACTION_CONTINUE,
@@ -30,9 +33,38 @@ enum TalkActionResult_t {
 	TALKACTION_FAILED,
 };
 
-class TalkAction;
+class TalkAction : public Event
+{
+	public:
+		explicit TalkAction(LuaScriptInterface* interface) : Event(interface) {}
 
-class TalkActions : public BaseEvents
+		bool configureEvent(const pugi::xml_node& node) override;
+
+		const std::string& getWords() const {
+			return words;
+		}
+		void setWords(std::string word) {
+			words = word;
+		}
+		std::string getSeparator() const {
+			return separator;
+		}
+		void setSeparator(std::string sep) {
+			separator = sep;
+		}
+
+		//scripting
+		bool executeSay(Player* player, const std::string& param, SpeakClasses type) const;
+		//
+
+	private:
+		std::string getScriptEventName() const override;
+
+		std::string words;
+		std::string separator = "\"";
+};
+
+class TalkActions final : public BaseEvents
 {
 	public:
 		TalkActions();
@@ -44,42 +76,18 @@ class TalkActions : public BaseEvents
 
 		TalkActionResult_t playerSaySpell(Player* player, SpeakClasses type, const std::string& words) const;
 
-	protected:
-		LuaScriptInterface& getScriptInterface() final;
-		std::string getScriptBaseName() const final;
-		Event* getEvent(const std::string& nodeName) final;
-		bool registerEvent(Event* event, const pugi::xml_node& node) final;
-		void clear() final;
+		bool registerLuaEvent(TalkAction* event);
+		void clear(bool fromLua) override final;
 
-		// TODO: Store TalkAction objects directly in the list instead of using pointers
-		std::forward_list<TalkAction*> talkActions;
+	private:
+		LuaScriptInterface& getScriptInterface() override;
+		std::string getScriptBaseName() const override;
+		Event_ptr getEvent(const std::string& nodeName) override;
+		bool registerEvent(Event_ptr event, const pugi::xml_node& node) override;
+
+		std::map<std::string, TalkAction> talkActions;
 
 		LuaScriptInterface scriptInterface;
-};
-
-class TalkAction : public Event
-{
-	public:
-		explicit TalkAction(LuaScriptInterface* interface);
-
-		bool configureEvent(const pugi::xml_node& node) override;
-
-		std::string getWords() const {
-			return words;
-		}
-		char getSeparator() const {
-			return separator;
-		}
-
-		//scripting
-		bool executeSay(Player* player, const std::string& param, SpeakClasses type) const;
-		//
-
-	protected:
-		std::string getScriptEventName() const override;
-
-		std::string words;
-		char separator;
 };
 
 #endif

@@ -1,13 +1,34 @@
-local condition = Condition(CONDITION_ATTRIBUTES)
-condition:setParameter(CONDITION_PARAM_TICKS, 6000)
-condition:setParameter(CONDITION_PARAM_SKILL_SHIELDPERCENT, 65)
+local combat = {}
 
-local combat = Combat()
-combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_GROUNDSHAKER)
-combat:setParameter(COMBAT_PARAM_DISTANCEEFFECT, CONST_ANI_EXPLOSION)
-combat:setArea(createCombatArea(AREA_CIRCLE2X2))
-combat:setCondition(condition)
+for i = 15, 30 do
+	combat[i] = Combat()
+	combat[i]:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_STUN)
 
-function onCastSpell(creature, variant)
-	return combat:execute(creature, variant)
+arr = {
+{0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0},
+{0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0},
+{0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0},
+{0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0},
+{0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0},
+{0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0},
+{1, 1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 1},
+{0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0},
+{0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0},
+{0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0},
+{0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0},
+{0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0},
+{0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0},
+}
+
+	local condition = Condition(CONDITION_ATTRIBUTES)
+	condition:setParameter(CONDITION_PARAM_TICKS, 6000)
+	condition:setParameter(CONDITION_PARAM_SKILL_SHIELDPERCENT, i)
+
+	local area = createCombatArea(arr)
+	combat[i]:setArea(area)
+	combat[i]:addCondition(condition)
+end
+
+function onCastSpell(creature, var)
+	return combat[math.random(15, 30)]:execute(creature, var)
 end

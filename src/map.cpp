@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2019  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -170,8 +170,8 @@ bool Map::placeCreature(const Position& centerPos, Creature* creature, bool exte
 
 	if (!foundTile) {
 		static std::vector<std::pair<int32_t, int32_t>> extendedRelList {
-			                   {0, -2},
-			         {-1, -1}, {0, -1}, {1, -1},
+							   {0, -2},
+					 {-1, -1}, {0, -1}, {1, -1},
 			{-2, 0}, {-1,  0},          {1,  0}, {2, 0},
 			         {-1,  1}, {0,  1}, {1,  1},
 			                   {0,  2}
@@ -234,12 +234,12 @@ void Map::moveCreature(Creature& creature, Tile& newTile, bool forceTeleport/* =
 
 	bool teleport = forceTeleport || !newTile.getGround() || !Position::areInRange<1, 1, 0>(oldPos, newPos);
 
-	SpectatorVec list;
-	getSpectators(list, oldPos, true);
-	getSpectators(list, newPos, true);
+	SpectatorHashSet spectators;
+	getSpectators(spectators, oldPos, true);
+	getSpectators(spectators, newPos, true);
 
 	std::vector<int32_t> oldStackPosVector;
-	for (Creature* spectator : list) {
+	for (Creature* spectator : spectators) {
 		if (Player* tmpPlayer = spectator->getPlayer()) {
 			if (tmpPlayer->canSeeCreature(&creature)) {
 				oldStackPosVector.push_back(oldTile.getClientIndexOfCreature(tmpPlayer, &creature));
@@ -280,7 +280,7 @@ void Map::moveCreature(Creature& creature, Tile& newTile, bool forceTeleport/* =
 
 	//send to client
 	size_t i = 0;
-	for (Creature* spectator : list) {
+	for (Creature* spectator : spectators) {
 		if (Player* tmpPlayer = spectator->getPlayer()) {
 			//Use the correct stackpos
 			int32_t stackpos = oldStackPosVector[i++];
@@ -291,7 +291,7 @@ void Map::moveCreature(Creature& creature, Tile& newTile, bool forceTeleport/* =
 	}
 
 	//event method
-	for (Creature* spectator : list) {
+	for (Creature* spectator : spectators) {
 		spectator->onCreatureMove(&creature, &newTile, newPos, &oldTile, oldPos, teleport);
 	}
 
@@ -299,7 +299,7 @@ void Map::moveCreature(Creature& creature, Tile& newTile, bool forceTeleport/* =
 	newTile.postAddNotification(&creature, &oldTile, 0);
 }
 
-void Map::getSpectatorsInternal(SpectatorVec& list, const Position& centerPos, int32_t minRangeX, int32_t maxRangeX, int32_t minRangeY, int32_t maxRangeY, int32_t minRangeZ, int32_t maxRangeZ, bool onlyPlayers) const
+void Map::getSpectatorsInternal(SpectatorHashSet& spectators, const Position& centerPos, int32_t minRangeX, int32_t maxRangeX, int32_t minRangeY, int32_t maxRangeY, int32_t minRangeZ, int32_t maxRangeZ, bool onlyPlayers) const
 {
 	int_fast16_t min_y = centerPos.y + minRangeY;
 	int_fast16_t min_x = centerPos.x + minRangeX;
@@ -328,28 +328,18 @@ void Map::getSpectatorsInternal(SpectatorVec& list, const Position& centerPos, i
 		for (int_fast32_t nx = startx1; nx <= endx2; nx += FLOOR_SIZE) {
 			if (leafE) {
 				const CreatureVector& node_list = (onlyPlayers ? leafE->player_list : leafE->creature_list);
-				CreatureVector::const_iterator node_iter = node_list.begin();
-				CreatureVector::const_iterator node_end = node_list.end();
-				if (node_iter != node_end) {
-					do {
-						Creature* creature = *node_iter;
+				for (Creature* creature : node_list) {
+					const Position& cpos = creature->getPosition();
+					if (minRangeZ > cpos.z || maxRangeZ < cpos.z) {
+						continue;
+					}
 
-						const Position& cpos = creature->getPosition();
-						if (cpos.z < minRangeZ || cpos.z > maxRangeZ) {
-							continue;
-						}
+					int_fast16_t offsetZ = Position::getOffsetZ(centerPos, cpos);
+					if ((min_y + offsetZ) > cpos.y || (max_y + offsetZ) < cpos.y || (min_x + offsetZ) > cpos.x || (max_x + offsetZ) < cpos.x) {
+						continue;
+					}
 
-						int_fast16_t offsetZ = Position::getOffsetZ(centerPos, cpos);
-						if (cpos.y < (min_y + offsetZ) || cpos.y > (max_y + offsetZ)) {
-							continue;
-						}
-
-						if (cpos.x < (min_x + offsetZ) || cpos.x > (max_x + offsetZ)) {
-							continue;
-						}
-
-						list.insert(creature);
-					} while (++node_iter != node_end);
+					spectators.insert(creature);
 				}
 				leafE = leafE->leafE;
 			} else {
@@ -365,7 +355,7 @@ void Map::getSpectatorsInternal(SpectatorVec& list, const Position& centerPos, i
 	}
 }
 
-void Map::getSpectators(SpectatorVec& list, const Position& centerPos, bool multifloor /*= false*/, bool onlyPlayers /*= false*/, int32_t minRangeX /*= 0*/, int32_t maxRangeX /*= 0*/, int32_t minRangeY /*= 0*/, int32_t maxRangeY /*= 0*/)
+void Map::getSpectators(SpectatorHashSet& spectators, const Position& centerPos, bool multifloor /*= false*/, bool onlyPlayers /*= false*/, int32_t minRangeX /*= 0*/, int32_t maxRangeX /*= 0*/, int32_t minRangeY /*= 0*/, int32_t maxRangeY /*= 0*/)
 {
 	if (centerPos.z >= MAP_MAX_LAYERS) {
 		return;
@@ -383,11 +373,11 @@ void Map::getSpectators(SpectatorVec& list, const Position& centerPos, bool mult
 		if (onlyPlayers) {
 			auto it = playersSpectatorCache.find(centerPos);
 			if (it != playersSpectatorCache.end()) {
-				if (!list.empty()) {
-					const SpectatorVec& cachedList = it->second;
-					list.insert(cachedList.begin(), cachedList.end());
+				if (!spectators.empty()) {
+					const SpectatorHashSet& cachedSpectators = it->second;
+					spectators.insert(cachedSpectators.begin(), cachedSpectators.end());
 				} else {
-					list = it->second;
+					spectators = it->second;
 				}
 
 				foundCache = true;
@@ -398,17 +388,17 @@ void Map::getSpectators(SpectatorVec& list, const Position& centerPos, bool mult
 			auto it = spectatorCache.find(centerPos);
 			if (it != spectatorCache.end()) {
 				if (!onlyPlayers) {
-					if (!list.empty()) {
-						const SpectatorVec& cachedList = it->second;
-						list.insert(cachedList.begin(), cachedList.end());
+					if (!spectators.empty()) {
+						const SpectatorHashSet& cachedSpectators = it->second;
+						spectators.insert(cachedSpectators.begin(), cachedSpectators.end());
 					} else {
-						list = it->second;
+						spectators = it->second;
 					}
 				} else {
-					const SpectatorVec& cachedList = it->second;
-					for (Creature* spectator : cachedList) {
+					const SpectatorHashSet& cachedSpectators = it->second;
+					for (Creature* spectator : cachedSpectators) {
 						if (spectator->getPlayer()) {
-							list.insert(spectator);
+							spectators.insert(spectator);
 						}
 					}
 				}
@@ -446,13 +436,13 @@ void Map::getSpectators(SpectatorVec& list, const Position& centerPos, bool mult
 			maxRangeZ = centerPos.z;
 		}
 
-		getSpectatorsInternal(list, centerPos, minRangeX, maxRangeX, minRangeY, maxRangeY, minRangeZ, maxRangeZ, onlyPlayers);
+		getSpectatorsInternal(spectators, centerPos, minRangeX, maxRangeX, minRangeY, maxRangeY, minRangeZ, maxRangeZ, onlyPlayers);
 
 		if (cacheResult) {
 			if (onlyPlayers) {
-				playersSpectatorCache[centerPos] = list;
+				playersSpectatorCache[centerPos] = spectators;
 			} else {
-				spectatorCache[centerPos] = list;
+				spectatorCache[centerPos] = spectators;
 			}
 		}
 	}
@@ -465,7 +455,7 @@ void Map::clearSpectatorCache()
 }
 
 bool Map::canThrowObjectTo(const Position& fromPos, const Position& toPos, bool checkLineOfSight /*= true*/,
-                           int32_t rangex /*= Map::maxClientViewportX*/, int32_t rangey /*= Map::maxClientViewportY*/) const
+						   int32_t rangex /*= Map::maxClientViewportX*/, int32_t rangey /*= Map::maxClientViewportY*/) const
 {
 	//z checks
 	//underground 8->15
@@ -863,29 +853,19 @@ int_fast32_t AStarNodes::getTileWalkCost(const Creature& creature, const Tile* t
 // Floor
 Floor::~Floor()
 {
-	for (uint32_t i = 0; i < FLOOR_SIZE; ++i) {
-		for (uint32_t j = 0; j < FLOOR_SIZE; ++j) {
-			delete tiles[i][j];
+	for (auto& row : tiles) {
+		for (auto tile : row) {
+			delete tile;
 		}
 	}
 }
 
 // QTreeNode
-QTreeNode::QTreeNode()
-{
-	leaf = false;
-	child[0] = nullptr;
-	child[1] = nullptr;
-	child[2] = nullptr;
-	child[3] = nullptr;
-}
-
 QTreeNode::~QTreeNode()
 {
-	delete child[0];
-	delete child[1];
-	delete child[2];
-	delete child[3];
+	for (auto* ptr : child) {
+		delete ptr;
+	}
 }
 
 QTreeLeafNode* QTreeNode::getLeaf(uint32_t x, uint32_t y)
@@ -920,21 +900,11 @@ QTreeLeafNode* QTreeNode::createLeaf(uint32_t x, uint32_t y, uint32_t level)
 
 // QTreeLeafNode
 bool QTreeLeafNode::newLeaf = false;
-QTreeLeafNode::QTreeLeafNode()
-{
-	for (uint32_t i = 0; i < MAP_MAX_LAYERS; ++i) {
-		array[i] = nullptr;
-	}
-
-	leaf = true;
-	leafS = nullptr;
-	leafE = nullptr;
-}
 
 QTreeLeafNode::~QTreeLeafNode()
 {
-	for (uint32_t i = 0; i < MAP_MAX_LAYERS; ++i) {
-		delete array[i];
+	for (auto* ptr : array) {
+		delete ptr;
 	}
 }
 
@@ -957,7 +927,7 @@ void QTreeLeafNode::addCreature(Creature* c)
 
 void QTreeLeafNode::removeCreature(Creature* c)
 {
-	CreatureVector::iterator iter = std::find(creature_list.begin(), creature_list.end(), c);
+	auto iter = std::find(creature_list.begin(), creature_list.end(), c);
 	assert(iter != creature_list.end());
 	*iter = creature_list.back();
 	creature_list.pop_back();
@@ -994,9 +964,8 @@ uint32_t Map::clean() const
 					continue;
 				}
 
-				for (size_t x = 0; x < FLOOR_SIZE; ++x) {
-					for (size_t y = 0; y < FLOOR_SIZE; ++y) {
-						Tile* tile = floor->tiles[x][y];
+				for (auto& row : floor->tiles) {
+					for (auto tile : row) {
 						if (!tile || tile->hasFlag(TILESTATE_PROTECTIONZONE)) {
 							continue;
 						}
@@ -1022,8 +991,7 @@ uint32_t Map::clean() const
 				}
 			}
 		} else {
-			for (size_t i = 0; i < 4; ++i) {
-				QTreeNode* childNode = node->child[i];
+			for (auto childNode : node->child) {
 				if (childNode) {
 					nodes.push_back(childNode);
 				}
@@ -1036,7 +1004,7 @@ uint32_t Map::clean() const
 	}
 
 	std::cout << "> CLEAN: Removed " << count << " item" << (count != 1 ? "s" : "")
-	          << " from " << tiles << " tile" << (tiles != 1 ? "s" : "") << " in "
-	          << (OTSYS_TIME() - start) / (1000.) << " seconds." << std::endl;
+			  << " from " << tiles << " tile" << (tiles != 1 ? "s" : "") << " in "
+			  << (OTSYS_TIME() - start) / (1000.) << " seconds." << std::endl;
 	return count;
 }

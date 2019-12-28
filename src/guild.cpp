@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2019  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -47,21 +47,31 @@ void Guild::removeMember(Player* player)
 	}
 }
 
-GuildRank* Guild::getRankById(uint32_t rankId)
+GuildRank_ptr Guild::getRankById(uint32_t rankId)
 {
-	for (size_t i = 0; i < ranks.size(); ++i) {
-		if (ranks[i].id == rankId) {
-			return &ranks[i];
+	for (auto rank : ranks) {
+		if (rank->id == rankId) {
+			return rank;
 		}
 	}
 	return nullptr;
 }
 
-const GuildRank* Guild::getRankByLevel(uint8_t level) const
+GuildRank_ptr Guild::getRankByName(const std::string& guildName) const
 {
-	for (size_t i = 0; i < ranks.size(); ++i) {
-		if (ranks[i].level == level) {
-			return &ranks[i];
+	for (auto rank : ranks) {
+		if (rank->name == guildName) {
+			return rank;
+		}
+	}
+	return nullptr;
+}
+
+GuildRank_ptr Guild::getRankByLevel(uint8_t level) const
+{
+	for (auto rank : ranks) {
+		if (rank->level == level) {
+			return rank;
 		}
 	}
 	return nullptr;
@@ -69,5 +79,5 @@ const GuildRank* Guild::getRankByLevel(uint8_t level) const
 
 void Guild::addRank(uint32_t rankId, const std::string& rankName, uint8_t level)
 {
-	ranks.emplace_back(rankId, rankName, level);
+	ranks.emplace_back(std::make_shared<GuildRank>(rankId,rankName,level));
 }

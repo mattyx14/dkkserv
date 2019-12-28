@@ -11,7 +11,7 @@ condition:addDamage(20, 4000, -1)
 
 local secondCombat = Combat()
 secondCombat:setParameter(COMBAT_PARAM_TYPE, COMBAT_EARTHDAMAGE)
-secondCombat:setCondition(condition)
+secondCombat:addCondition(condition)
 
 function onUseWeapon(player, variant)
 	local boolean = combat:execute(player, variant)
@@ -21,9 +21,7 @@ function onUseWeapon(player, variant)
 
 	local target = variant:getNumber()
 	if target ~= 0 then
-		if math.random(1, 100) > 90 then
-			boolean = secondCombat:execute(player, variant)
-		end
+		boolean = secondCombat:execute(player, variant)
 	end
 	return boolean
 end

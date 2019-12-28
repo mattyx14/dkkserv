@@ -1,5 +1,6 @@
 local CHAIN_ARMOR, SCALE_ARMOR, BRASS_ARMOR, PLATE_ARMOR, KNIGHT_ARMOR, PALADIN_ARMOR, CROWN_ARMOR, GOLDEN_ARMOR, DRAGON_SCALE_MAIL, MAGIC_PLATE_ARMOR = 2464, 2483, 2465, 2463, 2476, 8891, 2487, 2466, 2492, 2472
 local STUDDED_LEGS, CHAIN_LEGS, BRASS_LEGS, PLATE_LEGS, KNIGHT_LEGS, CROWN_LEGS, GOLDEN_LEGS = 2468, 2648, 2478, 2647, 2477, 2488, 2470
+local BRASS_HELMET, IRON_HELMET, STEEL_HELMET, CROWN_HELMET, CRUSADER_HELMET, ROYAL_HELMET = 2460, 2459, 2457, 2491, 2497, 2498
 
 local config = {
 	[9808] = { -- common rusty armor
@@ -10,6 +11,18 @@ local config = {
 		{{97001, 99000}, PLATE_ARMOR},
 		{{99001, 100000}, KNIGHT_ARMOR}
 	},
+
+	[9820] = { -- semi-rare rusty helmet
+		{{1, 40000}},
+		{{40001, 57500}, BRASS_HELMET},
+		{{57501, 70000}, IRON_HELMET},
+		{{70001, 81000}, STEEL_HELMET},
+		{{81001, 94000}, CROWN_HELMET},
+		{{94001, 98500}, CRUSADER_HELMET},
+		{{98501, 100000}, ROYAL_HELMET}
+	},
+
+
 	[9809] = { -- semi-rare rusty armor
 		{{1, 40000}},
 		{{40001, 57500}, CHAIN_ARMOR},
@@ -74,7 +87,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 				target:transform(targetItem[i][2])
 				toPosition:sendMagicEffect(CONST_ME_MAGIC_GREEN)
 			else
-				player:say((isInArray({9808, 9809, 9810}, target.itemid) and "The armor was already damaged so badly that it broke when you tried to clean it." or "The legs were already damaged so badly that they broke when you tried to clean them."),TALKTYPE_MONSTER_SAY)
+				player:say((isInArray({9808, 9809, 9810}, target.itemid) and "The item was already damaged so badly that it broke when you tried to clean it." or "The item were already damaged so badly that they broke when you tried to clean them."),TALKTYPE_MONSTER_SAY)
 				target:remove()
 				toPosition:sendMagicEffect(CONST_ME_BLOCKHIT)
 			end

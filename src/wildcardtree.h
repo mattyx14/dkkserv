@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2019  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,16 +17,16 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-#ifndef FS_WILDCARDTREE_H_054C9BA46A1D4EA4B7C77ECE60ED4DEB
-#define FS_WILDCARDTREE_H_054C9BA46A1D4EA4B7C77ECE60ED4DEB
+#ifndef OT_SRC_WILDCARDTREE_H_
+#define OT_SRC_WILDCARDTREE_H_
 
 #include "enums.h"
 
 class WildcardTreeNode
 {
 	public:
-		explicit WildcardTreeNode(bool breakpoint) : breakpoint(breakpoint) {}
-		WildcardTreeNode(WildcardTreeNode&& other) : children(std::move(other.children)), breakpoint(other.breakpoint) {}
+		explicit WildcardTreeNode(bool initBreakpoint) : breakpoint(initBreakpoint) {}
+		WildcardTreeNode(WildcardTreeNode&& other) = default;
 
 		// non-copyable
 		WildcardTreeNode(const WildcardTreeNode&) = delete;

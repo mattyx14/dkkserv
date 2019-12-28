@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Darakan the Executioner" nameDescription="darakan the executioner" race="blood" experience="1600" speed="205" manacost="0">
-	<health now="3500" max="3500" />
+<monster name="Darakan the Executioner" nameDescription="Darakan the Executioner" race="blood" experience="1600" speed="205">
+	<health now="3480" max="3480" />
 	<look type="255" head="78" body="114" legs="114" feet="114" corpse="7349" />
 	<flags>
 		<flag summonable="0" />
@@ -11,9 +11,12 @@
 		<flag pushable="0" />
 		<flag canpushitems="1" />
 		<flag targetdistance="1" />
+		<flag canwalkonenergy="0" />
+		<flag canwalkonfire="0" />
+		<flag canwalkonpoison="0" />
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="50" attack="70" />
+		<attack name="melee" interval="2000" min="0" max="-210" />
 		<attack name="physical" interval="1000" chance="100" min="-72" max="-130">
 			<attribute key="shootEffect" value="spear" />
 		</attack>
@@ -24,12 +27,10 @@
 		</defense>
 	</defenses>
 	<elements>
-		<element icePercent="15" />
-		<element firePercent="-15" />
+		<element icePercent="1" />
+		<element firePercent="-1" />
 	</elements>
 	<immunities>
-		<immunity outfit="1" />
-		<immunity drunk="1" />
 		<immunity invisible="1" />
 	</immunities>
 	<voices interval="2000" chance="5">

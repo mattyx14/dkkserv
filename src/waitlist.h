@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2019  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,41 +17,26 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-#ifndef FS_WAITLIST_H_7E4299E552E44F10BC4F4E50BF3D7241
-#define FS_WAITLIST_H_7E4299E552E44F10BC4F4E50BF3D7241
+#ifndef OT_SRC_WAITLIST_H_
+#define OT_SRC_WAITLIST_H_
 
 #include "player.h"
 
-struct Wait {
-	Wait(int64_t timeout, uint32_t playerGUID) :
-		timeout(timeout), playerGUID(playerGUID) {}
-
-	int64_t timeout;
-	uint32_t playerGUID;
-};
-
-typedef std::list<Wait> WaitList;
-typedef WaitList::iterator WaitListIterator;
+struct WaitListInfo;
 
 class WaitingList
 {
 	public:
-		static WaitingList* getInstance() {
-			static WaitingList waitingList;
-			return &waitingList;
-		}
+		static WaitingList& getInstance();
 
 		bool clientLogin(const Player* player);
-		uint32_t getClientSlot(const Player* player);
-		static uint32_t getTime(uint32_t slot);
+		std::size_t getClientSlot(const Player* player);
+		static std::size_t getTime(std::size_t slot);
 
-	protected:
-		WaitList priorityWaitList;
-		WaitList waitList;
+	private:
+		WaitingList();
 
-		static uint32_t getTimeout(uint32_t slot);
-		WaitListIterator findClient(const Player* player, uint32_t& slot);
-		static void cleanupList(WaitList& list);
+		std::unique_ptr<WaitListInfo> info;
 };
 
 #endif

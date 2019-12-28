@@ -1,11 +1,11 @@
 local combat = Combat()
 combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_FIREDAMAGE)
 combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_FIREAREA)
-combat:setArea(createCombatArea(AREA_CROSS5X5))
+combat:setArea(createCombatArea(AREA_CIRCLE5X5))
 
-function onGetFormulaValues(player, level, maglevel)
-	local min = (level / 2) + (maglevel * 8) + 50
-	local max = (level / 2) + (maglevel * 12) + 75
+function onGetFormulaValues(player, level, magicLevel)
+	local min = (level / 5) + (magicLevel * 8) + 50
+	local max = (level / 5) + (magicLevel * 12) + 75
 	return -min, -max
 end
 

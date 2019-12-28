@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2019  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,8 +17,8 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-#ifndef FS_IOMARKET_H_B981E52C218C42D3B9EF726EBF0E92C9
-#define FS_IOMARKET_H_B981E52C218C42D3B9EF726EBF0E92C9
+#ifndef OT_SRC_IOMARKET_H_
+#define OT_SRC_IOMARKET_H_
 
 #include "enums.h"
 #include "database.h"
@@ -26,9 +26,9 @@
 class IOMarket
 {
 	public:
-		static IOMarket* getInstance() {
+		static IOMarket& getInstance() {
 			static IOMarket instance;
-			return &instance;
+			return instance;
 		}
 
 		static MarketOfferList getActiveOffers(MarketAction_t action, uint16_t itemId);

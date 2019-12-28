@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2019  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,8 +17,8 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-#ifndef FS_VOCATION_H_ADCAA356C0DB44CEBA994A0D678EC92D
-#define FS_VOCATION_H_ADCAA356C0DB44CEBA994A0D678EC92D
+#ifndef OT_SRC_VOCATION_H_
+#define OT_SRC_VOCATION_H_
 
 #include "enums.h"
 #include "item.h"
@@ -26,7 +26,7 @@
 class Vocation
 {
 	public:
-		explicit Vocation(uint16_t id);
+		explicit Vocation(uint16_t initId) : id(initId) {}
 
 		const std::string& getVocName() const {
 			return name;
@@ -86,7 +86,10 @@ class Vocation
 			return fromVocation;
 		}
 
-		float meleeDamageMultiplier, distDamageMultiplier, defenseMultiplier, armorMultiplier;
+		float meleeDamageMultiplier = 1.0f;
+		float distDamageMultiplier = 1.0f;
+		float defenseMultiplier = 1.0f;
+		float armorMultiplier = 1.0f;
 
 	protected:
 		friend class Vocations;
@@ -94,28 +97,29 @@ class Vocation
 		std::map<uint32_t, uint64_t> cacheMana;
 		std::map<uint32_t, uint32_t> cacheSkill[SKILL_LAST + 1];
 
-		std::string name;
+		std::string name = "none";
 		std::string description;
 
-		float skillMultipliers[SKILL_LAST + 1];
-		float manaMultiplier;
+		float skillMultipliers[SKILL_LAST + 1] = {1.5f, 2.0f, 2.0f, 2.0f, 2.0f, 1.5f, 1.1f};
+		float manaMultiplier = 4.0f;
 
-		uint32_t gainHealthTicks;
-		uint32_t gainHealthAmount;
-		uint32_t gainManaTicks;
-		uint32_t gainManaAmount;
-		uint32_t gainCap;
-		uint32_t gainMana;
-		uint32_t gainHP;
-		uint32_t fromVocation;
-		uint32_t attackSpeed;
-		uint32_t baseSpeed;
+		uint32_t gainHealthTicks = 6;
+		uint32_t gainHealthAmount = 1;
+		uint32_t gainManaTicks = 6;
+		uint32_t gainManaAmount = 1;
+		uint32_t gainCap = 500;
+		uint32_t gainMana = 5;
+		uint32_t gainHP = 5;
+		uint32_t fromVocation = VOCATION_NONE;
+		uint32_t attackSpeed = 1500;
+		uint32_t baseSpeed = 220;
 		uint16_t id;
 
-		uint16_t gainSoulTicks;
 
-		uint8_t soulMax;
-		uint8_t clientId;
+		uint16_t gainSoulTicks = 120;
+
+		uint8_t soulMax = 100;
+		uint8_t clientId = 0;
 
 		static uint32_t skillBase[SKILL_LAST + 1];
 };

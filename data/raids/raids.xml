@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <raids>
-	<raid name="Orshabaal" file="bosses/Orshabaal.xml" interval2="1440" margin="180" />
+	<!-- <raid name="Chayenne" file="chayenne/chayenne.xml" interval2="1440" margin="170" /> -->
 </raids>

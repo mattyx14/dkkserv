@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Deathbine" nameDescription="a deathbine" race="venom" experience="340" speed="240" manacost="0">
+<monster name="Deathbine" nameDescription="Deathbine" race="venom" experience="340" speed="240">
 	<health now="525" max="525" />
 	<look type="120" corpse="6047" />
 	<targetchange interval="5000" chance="8" />
 	<flags>
+		<flag preyable="0" />
 		<flag summonable="0" />
 		<flag attackable="1" />
 		<flag hostile="1" />
@@ -15,6 +16,8 @@
 		<flag targetdistance="1" />
 		<flag staticattack="90" />
 		<flag runonhealth="0" />
+		<flag canwalkonenergy="0" />
+		<flag canwalkonfire="0" />
 	</flags>
 	<attacks>
 		<attack name="melee" interval="2000" skill="30" attack="100" poison="5" />
@@ -51,6 +54,6 @@
 		<item id="7886" chance="50000" /><!-- terra boots -->
 		<item id="8912" chance="50000" /><!--springsprout rod-->
 		<item id="5015" chance="5555" /><!--mandrake-->
-		<item id="13307" chance="2854" /><!--mandrake-->
+		<item id="13307" chance="2854" /><!--sweet smelling bait-->
 	</loot>
 </monster>

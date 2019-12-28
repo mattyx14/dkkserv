@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2019  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,8 +17,8 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-#ifndef FS_PUGICAST_H_07810DF7954D411EB14A16C3ED2A7548
-#define FS_PUGICAST_H_07810DF7954D411EB14A16C3ED2A7548
+#ifndef OT_SRC_PUGICAST_H_
+#define OT_SRC_PUGICAST_H_
 
 #include <boost/lexical_cast.hpp>
 

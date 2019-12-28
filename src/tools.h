@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2019  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,11 +17,12 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-#ifndef FS_TOOLS_H_5F9A9742DA194628830AA1C64909AE43
-#define FS_TOOLS_H_5F9A9742DA194628830AA1C64909AE43
+#ifndef OT_SRC_TOOLS_H_
+#define OT_SRC_TOOLS_H_
 
 #include <random>
-
+#include <regex>
+#include <boost/algorithm/string.hpp>
 #include "position.h"
 #include "const.h"
 #include "enums.h"
@@ -35,15 +36,15 @@ void replaceString(std::string& str, const std::string& sought, const std::strin
 void trim_right(std::string& source, char t);
 void trim_left(std::string& source, char t);
 void toLowerCaseString(std::string& source);
-std::string asLowerCaseString(const std::string& source);
-std::string asUpperCaseString(const std::string& source);
+std::string asLowerCaseString(std::string source);
+std::string asUpperCaseString(std::string source);
 
-typedef std::vector<std::string> StringVec;
-typedef std::vector<int32_t> IntegerVec;
+using StringVector = std::vector<std::string>;
+using IntegerVector = std::vector<int32_t>;
 
-StringVec explodeString(const std::string& inString, const std::string& separator, int32_t limit = -1);
-IntegerVec vectorAtoi(const StringVec& stringVector);
-inline bool hasBitSet(uint32_t flag, uint32_t flags) {
+StringVector explodeString(const std::string& inString, const std::string& separator, int32_t limit = -1);
+IntegerVector vectorAtoi(const StringVector& stringVector);
+constexpr bool hasBitSet(uint32_t flag, uint32_t flags) {
 	return (flags & flag) != 0;
 }
 
@@ -68,9 +69,10 @@ MagicEffectClasses getMagicEffect(const std::string& strValue);
 ShootType_t getShootType(const std::string& strValue);
 Ammo_t getAmmoType(const std::string& strValue);
 WeaponAction_t getWeaponAction(const std::string& strValue);
-CombatType_t getCombatType(const std::string& strValue);
 Skulls_t getSkullType(const std::string& strValue);
+SpawnType_t getSpawnType(const std::string& strValue);
 std::string getCombatName(CombatType_t combatType);
+CombatType_t getCombatType(const std::string& combatname);
 
 std::string getSkillName(uint8_t skillid);
 
@@ -92,9 +94,13 @@ itemAttrTypes stringToItemAttribute(const std::string& str);
 
 const char* getReturnMessage(ReturnValue value);
 
-inline int64_t OTSYS_TIME()
-{
-	return std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
-}
+void capitalizeWords(std::string &source);
+NameEval_t validateName(const std::string &name);
+
+bool isCaskItem(uint16_t itemId);
+
+int64_t OTSYS_TIME();
+
+SpellGroup_t stringToSpellGroup(std::string value);
 
 #endif

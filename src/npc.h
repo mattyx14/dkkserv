@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2019  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,8 +17,8 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-#ifndef FS_NPC_H_B090D0CB549D4435AFA03647195D156F
-#define FS_NPC_H_B090D0CB549D4435AFA03647195D156F
+#ifndef OT_SRC_NPC_H_
+#define OT_SRC_NPC_H_
 
 #include "creature.h"
 #include "luascript.h"
@@ -74,7 +74,7 @@ class NpcScriptInterface final : public LuaScriptInterface
 class NpcEventsHandler
 {
 	public:
-		NpcEventsHandler(const std::string& file, Npc* npc);
+		NpcEventsHandler(const std::string& file, Npc* npcEvent);
 
 		void onCreatureAppear(Creature* creature);
 		void onCreatureDisappear(Creature* creature);
@@ -91,14 +91,14 @@ class NpcEventsHandler
 		Npc* npc;
 		NpcScriptInterface* scriptInterface;
 
-		int32_t creatureAppearEvent;
-		int32_t creatureDisappearEvent;
-		int32_t creatureMoveEvent;
-		int32_t creatureSayEvent;
-		int32_t playerCloseChannelEvent;
-		int32_t playerEndTradeEvent;
-		int32_t thinkEvent;
-		bool loaded;
+		int32_t creatureAppearEvent = -1;
+		int32_t creatureDisappearEvent = -1;
+		int32_t creatureMoveEvent = -1;
+		int32_t creatureSayEvent = -1;
+		int32_t playerCloseChannelEvent = -1;
+		int32_t playerEndTradeEvent = -1;
+		int32_t thinkEvent = -1;
+		bool loaded = false;
 };
 
 class Npc final : public Creature
@@ -175,7 +175,7 @@ class Npc final : public Creature
 
 		void onPlayerCloseChannel(Player* player);
 		void onPlayerTrade(Player* player, int32_t callback, uint16_t itemId, uint8_t count,
-		                   uint8_t amount, bool ignore = false, bool inBackpacks = false);
+						   uint8_t amount, bool ignore = false, bool inBackpacks = false);
 		void onPlayerEndTrade(Player* player, int32_t buyCallback, int32_t sellCallback);
 
 		void turnToCreature(Creature* creature);
@@ -191,7 +191,7 @@ class Npc final : public Creature
 		void onCreatureAppear(Creature* creature, bool isLogin) final;
 		void onRemoveCreature(Creature* creature, bool isLogout) final;
 		void onCreatureMove(Creature* creature, const Tile* newTile, const Position& newPos,
-		                            const Tile* oldTile, const Position& oldPos, bool teleport) final;
+									const Tile* oldTile, const Position& oldPos, bool teleport) final;
 
 		void onCreatureSay(Creature* creature, SpeakClasses type, const std::string& text) final;
 		void onThink(uint32_t interval) final;
@@ -208,6 +208,9 @@ class Npc final : public Creature
 		}
 		bool getNextStep(Direction& dir, uint32_t& flags) final;
 
+		void setIdle(bool idle);
+		void updateIdleStatus();
+
 		bool canWalkTo(const Position& fromPos, Direction dir) const;
 		bool getRandomStep(Direction& dir) const;
 
@@ -221,6 +224,7 @@ class Npc final : public Creature
 		std::map<std::string, std::string> parameters;
 
 		std::set<Player*> shopPlayerSet;
+		std::set<Player*> spectators;
 
 		std::string name;
 		std::string filename;
@@ -239,6 +243,7 @@ class Npc final : public Creature
 		bool attackable;
 		bool ignoreHeight;
 		bool loaded;
+		bool isIdle;
 
 		static NpcScriptInterface* scriptInterface;
 

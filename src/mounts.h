@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2019  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,13 +17,13 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-#ifndef FS_MOUNTS_H_73716D11906A4C5C9F4A7B68D34C9BA6
-#define FS_MOUNTS_H_73716D11906A4C5C9F4A7B68D34C9BA6
+#ifndef OT_SRC_MOUNTS_H_
+#define OT_SRC_MOUNTS_H_
 
 struct Mount
 {
-	Mount(uint8_t id, uint16_t clientId, std::string name, int32_t speed, bool premium)
-		: name(name), speed(speed), clientId(clientId), id(id), premium(premium) {}
+	Mount(uint8_t initId, uint16_t initClientId, std::string initName, int32_t initSpeed, bool initPremium) :
+		name(std::move(initName)), speed(initSpeed), clientId(initClientId), id(initId), premium(initPremium) {}
 
 	std::string name;
 	int32_t speed;
@@ -38,6 +38,7 @@ class Mounts
 		bool reload();
 		bool loadFromXml();
 		Mount* getMountByID(uint8_t id);
+		Mount* getMountByName(const std::string& name);
 		Mount* getMountByClientID(uint16_t clientId);
 
 		const std::vector<Mount>& getMounts() const {

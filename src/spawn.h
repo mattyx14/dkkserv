@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2019  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,8 +17,8 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-#ifndef FS_SPAWN_H_1A86089E080846A9AE53ED12E7AE863B
-#define FS_SPAWN_H_1A86089E080846A9AE53ED12E7AE863B
+#ifndef OT_SRC_SPAWN_H_
+#define OT_SRC_SPAWN_H_
 
 #include "tile.h"
 #include "position.h"
@@ -38,7 +38,7 @@ struct spawnBlock_t {
 class Spawn
 {
 	public:
-		Spawn(const Position& pos, int32_t radius) : centerPos(pos), radius(radius), interval(60000), checkSpawnEvent() {}
+		Spawn(Position initPos, int32_t initRadius) : centerPos(std::move(initPos)), radius(initRadius) {}
 		~Spawn();
 
 		// non-copyable
@@ -61,8 +61,8 @@ class Spawn
 
 	private:
 		//map of the spawned creatures
-		typedef std::multimap<uint32_t, Monster*> SpawnedMap;
-		typedef SpawnedMap::value_type spawned_pair;
+		using SpawnedMap = std::multimap<uint32_t, Monster*>;
+		using spawned_pair = SpawnedMap::value_type;
 		SpawnedMap spawnedMap;
 
 		//map of creatures in the spawn
@@ -71,8 +71,8 @@ class Spawn
 		Position centerPos;
 		int32_t radius;
 
-		uint32_t interval;
-		uint32_t checkSpawnEvent;
+		uint32_t interval = 60000;
+		uint32_t checkSpawnEvent = 0;
 
 		static bool findPlayer(const Position& pos);
 		bool spawnMonster(uint32_t spawnId, MonsterType* mType, const Position& pos, Direction dir, bool startup = false);
@@ -83,8 +83,6 @@ class Spawn
 class Spawns
 {
 	public:
-		Spawns();
-
 		static bool isInZone(const Position& centerPos, int32_t radius, const Position& pos);
 
 		bool loadFromXml(const std::string& filename);
@@ -94,14 +92,18 @@ class Spawns
 		bool isStarted() const {
 			return started;
 		}
+		std::forward_list<Spawn>& getSpawnList() {
+			return spawnList;
+		}
 
 	private:
 		std::forward_list<Npc*> npcList;
 		std::forward_list<Spawn> spawnList;
 		std::string filename;
-		bool loaded, started;
+		bool loaded = false;
+		bool started = false;
 };
 
-#define NONBLOCKABLE_SPAWN_INTERVAL 1400
+static constexpr int32_t NONBLOCKABLE_SPAWN_INTERVAL = 1400;
 
 #endif

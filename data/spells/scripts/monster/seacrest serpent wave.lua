@@ -14,6 +14,6 @@ combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_WATERSPLASH)
 local area = createCombatArea(arr)
 combat:setArea(area)
 
-function onCastSpell(creature, variant)
-	return combat:execute(creature, variant)
+function onCastSpell(creature, var)
+	return combat:execute(creature, var)
 end

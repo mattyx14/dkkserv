@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Hide" nameDescription="hide" race="venom" experience="240" speed="280">
+<monster name="Hide" nameDescription="Hide" race="venom" experience="240" speed="280">
 	<health now="500" max="500" />
 	<look type="219" corpse="6060" />
 	<targetchange interval="5000" chance="8" />
 	<flags>
+		<flag preyable="0" />
 		<flag summonable="0" />
 		<flag attackable="1" />
 		<flag hostile="1" />
@@ -31,8 +32,6 @@
 		<element physicalPercent="40" />
 	</elements>
 	<immunities>
-		<immunity outfit="1" />
-		<immunity drunk="1" />
 		<immunity invisible="1" />
 		<immunity earth="1" />
 	</immunities>

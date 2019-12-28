@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2019  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,8 +17,8 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-#ifndef FS_THING_H_6F16A8E566AF4ACEAE02CF32A7246144
-#define FS_THING_H_6F16A8E566AF4ACEAE02CF32A7246144
+#ifndef OT_SRC_THING_H_
+#define OT_SRC_THING_H_
 
 #include "position.h"
 
@@ -31,7 +31,7 @@ class Container;
 class Thing
 {
 	protected:
-		Thing() = default;
+		constexpr Thing() = default;
 		~Thing() = default;
 
 	public:

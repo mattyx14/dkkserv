@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2019  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,8 +17,38 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-#ifndef FS_ENUMS_H_003445999FEE4A67BCECBE918B0124CE
-#define FS_ENUMS_H_003445999FEE4A67BCECBE918B0124CE
+#ifndef OT_SRC_ENUMS_H_
+#define OT_SRC_ENUMS_H_
+
+enum RuleViolationType_t : uint8_t {
+	REPORT_TYPE_NAME = 0,
+	REPORT_TYPE_STATEMENT = 1,
+	REPORT_TYPE_BOT = 2
+};
+
+enum RuleViolationReasons_t : uint8_t {
+	REPORT_REASON_NAMEINAPPROPRIATE = 0,
+	REPORT_REASON_NAMEPOORFORMATTED = 1,
+	REPORT_REASON_NAMEADVERTISING = 2,
+	REPORT_REASON_NAMEUNFITTING = 3,
+	REPORT_REASON_NAMERULEVIOLATION = 4,
+	REPORT_REASON_INSULTINGSTATEMENT = 5,
+	REPORT_REASON_SPAMMING = 6,
+	REPORT_REASON_ADVERTISINGSTATEMENT = 7,
+	REPORT_REASON_UNFITTINGSTATEMENT = 8,
+	REPORT_REASON_LANGUAGESTATEMENT = 9,
+	REPORT_REASON_DISCLOSURE = 10,
+	REPORT_REASON_RULEVIOLATION = 11,
+	REPORT_REASON_STATEMENT_BUGABUSE = 12,
+	REPORT_REASON_UNOFFICIALSOFTWARE = 13,
+	REPORT_REASON_PRETENDING = 14,
+	REPORT_REASON_HARASSINGOWNERS = 15,
+	REPORT_REASON_FALSEINFO = 16,
+	REPORT_REASON_ACCOUNTSHARING = 17,
+	REPORT_REASON_STEALINGDATA = 18,
+	REPORT_REASON_SERVICEATTACKING = 19,
+	REPORT_REASON_SERVICEAGREEMENT = 20
+};
 
 enum BugReportType_t : uint8_t {
 	BUG_CATEGORY_MAP = 0,
@@ -59,6 +89,9 @@ enum itemAttrTypes : uint32_t {
 	ITEM_ATTRIBUTE_CHARGES = 1 << 20,
 	ITEM_ATTRIBUTE_FLUIDTYPE = 1 << 21,
 	ITEM_ATTRIBUTE_DOORID = 1 << 22,
+	ITEM_ATTRIBUTE_SPECIAL = 1 << 23,
+	ITEM_ATTRIBUTE_IMBUINGSLOTS = 1 << 24,
+	ITEM_ATTRIBUTE_CUSTOM = 1U << 31
 };
 
 enum VipStatus_t : uint8_t {
@@ -97,6 +130,7 @@ enum CreatureType_t : uint8_t {
 	CREATURETYPE_PLAYER = 0,
 	CREATURETYPE_MONSTER = 1,
 	CREATURETYPE_NPC = 2,
+	CREATURETYPE_SUMMONPLAYER = 3,
 	CREATURETYPE_SUMMON_OWN = 3,
 	CREATURETYPE_SUMMON_OTHERS = 4,
 };
@@ -107,6 +141,7 @@ enum OperatingSystem_t : uint8_t {
 	CLIENTOS_LINUX = 1,
 	CLIENTOS_WINDOWS = 2,
 	CLIENTOS_FLASH = 3,
+	CLIENTOS_NEW_WINDOWS = 5,
 
 	CLIENTOS_OTCLIENT_LINUX = 10,
 	CLIENTOS_OTCLIENT_WINDOWS = 11,
@@ -119,6 +154,49 @@ enum SpellGroup_t : uint8_t {
 	SPELLGROUP_HEALING = 2,
 	SPELLGROUP_SUPPORT = 3,
 	SPELLGROUP_SPECIAL = 4,
+	SPELLGROUP_CONJURE = 5,
+};
+
+// New Prey
+enum PreySlotNum_t : uint8_t
+{
+	PREY_SLOTNUM_FIRST = 0,
+	PREY_SLOTNUM_SECOND = 1,
+	PREY_SLOTNUM_THIRD = 2,
+};
+
+enum PreySlotStatus_t : uint16_t
+{
+	PREY_SLOT_LOCKED = 0,
+	PREY_SLOT_UNLOCKED = 1,
+};
+
+
+enum PreyState_t : uint16_t
+{
+	PREY_STATE_LOCKED = 0,
+	PREY_STATE_INACTIVE = 1,
+	PREY_STATE_ACTIVE = 2,
+	PREY_STATE_SELECTION = 3,
+	PREY_STATE_SELECTION_CHANGE_MONSTER = 4,
+};
+
+enum PreyBonusType_t : uint8_t
+{
+	PREY_BONUS_DAMAGE_BOOST = 0,
+	PREY_BONUS_DAMAGE_REDUCTION = 1,
+	PREY_BONUS_XP_BONUS = 2,
+	PREY_BONUS_IMPROVED_LOOT = 3,
+	PREY_BONUS_NONE = 4,
+
+	PREY_BONUS_FIRST = PREY_BONUS_DAMAGE_BOOST,
+	PREY_BONUS_LAST = PREY_BONUS_IMPROVED_LOOT,
+};
+
+enum SpellType_t : uint8_t {
+	SPELL_UNDEFINED = 0,
+	SPELL_INSTANT = 1,
+	SPELL_RUNE = 2,
 };
 
 enum AccountType_t : uint8_t {
@@ -138,7 +216,7 @@ enum RaceType_t : uint8_t {
 	RACE_ENERGY,
 };
 
-enum CombatType_t {
+enum CombatType_t : uint16_t {
 	COMBAT_NONE = 0,
 
 	COMBAT_PHYSICALDAMAGE = 1 << 0,
@@ -230,12 +308,7 @@ enum ConditionParam_t {
 	CONDITION_PARAM_SKILL_LIFE_LEECH_AMOUNT = 50,
 	CONDITION_PARAM_SKILL_MANA_LEECH_CHANCE = 51,
 	CONDITION_PARAM_SKILL_MANA_LEECH_AMOUNT = 52,
-	CONDITION_PARAM_SKILL_CRITICAL_HIT_CHANCEPERCENT = 53,
-	CONDITION_PARAM_SKILL_CRITICAL_HIT_DAMAGEPERCENT = 54,
-	CONDITION_PARAM_SKILL_LIFE_LEECH_CHANCEPERCENT = 55,
-	CONDITION_PARAM_SKILL_LIFE_LEECH_AMOUNTPERCENT = 56,
-	CONDITION_PARAM_SKILL_MANA_LEECH_CHANCEPERCENT = 57,
-	CONDITION_PARAM_SKILL_MANA_LEECH_AMOUNTPERCENT = 58,
+	CONDITION_PARAM_DISABLE_DEFENSE = 53,
 };
 
 enum BlockType_t : uint8_t {
@@ -299,7 +372,7 @@ enum ConditionType_t {
 	CONDITION_MANASHIELD = 1 << 9,
 	CONDITION_INFIGHT = 1 << 10,
 	CONDITION_DRUNK = 1 << 11,
-	CONDITION_EXHAUST_WEAPON = 1 << 12, // unused
+	CONDITION_EXHAUST = 1 << 12, // unused
 	CONDITION_REGENERATION = 1 << 13,
 	CONDITION_SOUL = 1 << 14,
 	CONDITION_DROWN = 1 << 15,
@@ -403,10 +476,18 @@ enum ReturnValue {
 	RETURNVALUE_YOUNEEDAMAGICITEMTOCASTSPELL,
 	RETURNVALUE_CANNOTCONJUREITEMHERE,
 	RETURNVALUE_YOUNEEDTOSPLITYOURSPEARS,
-	RETURNVALUE_NAMEISTOOAMBIGIOUS,
+	RETURNVALUE_NAMEISTOOAMBIGUOUS,
 	RETURNVALUE_CANONLYUSEONESHIELD,
 	RETURNVALUE_NOPARTYMEMBERSINRANGE,
 	RETURNVALUE_YOUARENOTTHEOWNER,
+	RETURNVALUE_YOUCANTOPENCORPSEADM,
+	RETURNVALUE_NOSUCHRAIDEXISTS,
+	RETURNVALUE_ANOTHERRAIDISALREADYEXECUTING,
+	RETURNVALUE_TRADEPLAYERFARAWAY,
+	RETURNVALUE_YOUDONTOWNTHISHOUSE,
+	RETURNVALUE_TRADEPLAYERALREADYOWNSAHOUSE,
+	RETURNVALUE_TRADEPLAYERHIGHESTBIDDER,
+	RETURNVALUE_YOUCANNOTTRADETHISHOUSE,
 	RETURNVALUE_NOTENOUGHFISTLEVEL,
 	RETURNVALUE_NOTENOUGHCLUBLEVEL,
 	RETURNVALUE_NOTENOUGHSWORDLEVEL,
@@ -424,6 +505,15 @@ enum SpeechBubble_t
 	SPEECHBUBBLE_TRADE = 2,
 	SPEECHBUBBLE_QUEST = 3,
 	SPEECHBUBBLE_QUESTTRADER = 4,
+};
+
+enum SpawnType_t
+{
+	RESPAWN_IN_ALL = 0,
+	RESPAWN_IN_DAY = 1,
+	RESPAWN_IN_NIGHT = 2,
+	RESPAWN_IN_DAY_CAVE = 3,
+	RESPAWN_IN_NIGHT_CAVE = 4,
 };
 
 enum MapMark_t
@@ -451,36 +541,21 @@ enum MapMark_t
 };
 
 struct Outfit_t {
-	Outfit_t() {
-		reset();
-	}
-
-	void reset() {
-		lookType = 0;
-		lookTypeEx = 0;
-		lookMount = 0;
-		lookHead = 0;
-		lookBody = 0;
-		lookLegs = 0;
-		lookFeet = 0;
-		lookAddons = 0;
-	}
-
-	uint16_t lookType;
-	uint16_t lookTypeEx;
-	uint16_t lookMount;
-	uint8_t lookHead;
-	uint8_t lookBody;
-	uint8_t lookLegs;
-	uint8_t lookFeet;
-	uint8_t lookAddons;
+	uint16_t lookType = 0;
+	uint16_t lookTypeEx = 0;
+	uint16_t lookMount = 0;
+	uint8_t lookHead = 0;
+	uint8_t lookBody = 0;
+	uint8_t lookLegs = 0;
+	uint8_t lookFeet = 0;
+	uint8_t lookAddons = 0;
 };
 
 struct LightInfo {
 	uint8_t level = 0;
 	uint8_t color = 0;
-	LightInfo() = default;
-	LightInfo(uint8_t level, uint8_t color) : level(level), color(color) {}
+	constexpr LightInfo() = default;
+	constexpr LightInfo(uint8_t newLevel, uint8_t newColor) : level(newLevel), color(newColor) {}
 };
 
 struct ShopInfo {
@@ -497,8 +572,8 @@ struct ShopInfo {
 		sellPrice = 0;
 	}
 
-	ShopInfo(uint16_t itemId, int32_t subType = 0, uint32_t buyPrice = 0, uint32_t sellPrice = 0, std::string realName = "")
-		: itemId(itemId), subType(subType), buyPrice(buyPrice), sellPrice(sellPrice), realName(realName) {}
+	ShopInfo(uint16_t newItemId, int32_t newSubType = 0, uint32_t newBuyPrice = 0, uint32_t newSellPrice = 0, std::string newRealName = "")
+		: itemId(newItemId), subType(newSubType), buyPrice(newBuyPrice), sellPrice(newSellPrice), realName(std::move(newRealName)) {}
 };
 
 struct MarketOffer {
@@ -558,8 +633,8 @@ struct ModalWindow
 	uint8_t defaultEnterButton, defaultEscapeButton;
 	bool priority;
 
-	ModalWindow(uint32_t id, std::string title, std::string message)
-		: title(title), message(message), id(id), defaultEnterButton(0xFF), defaultEscapeButton(0xFF), priority(false) {}
+	ModalWindow(uint32_t newId, std::string newTitle, std::string newMessage)
+		: title(std::move(newTitle)), message(std::move(newMessage)), id(newId), defaultEnterButton(0xFF), defaultEscapeButton(0xFF), priority(false) {}
 };
 
 enum CombatOrigin
@@ -579,16 +654,30 @@ struct CombatDamage
 	} primary, secondary;
 
 	CombatOrigin origin;
+	bool critical;
+	int affected;
+
 	CombatDamage()
 	{
 		origin = ORIGIN_NONE;
 		primary.type = secondary.type = COMBAT_NONE;
 		primary.value = secondary.value = 0;
+		critical = false;
+		affected = 1;
 	}
 };
 
-typedef std::list<MarketOffer> MarketOfferList;
-typedef std::list<HistoryMarketOffer> HistoryMarketOfferList;
-typedef std::list<ShopInfo> ShopInfoList;
+using MarketOfferList = std::list<MarketOffer>;
+using HistoryMarketOfferList = std::list<HistoryMarketOffer>;
+using ShopInfoList = std::list<ShopInfo>;
+
+enum MonstersEvent_t : uint8_t {
+	MONSTERS_EVENT_NONE = 0,
+	MONSTERS_EVENT_THINK = 1,
+	MONSTERS_EVENT_APPEAR = 2,
+	MONSTERS_EVENT_DISAPPEAR = 3,
+	MONSTERS_EVENT_MOVE = 4,
+	MONSTERS_EVENT_SAY = 5,
+};
 
 #endif
