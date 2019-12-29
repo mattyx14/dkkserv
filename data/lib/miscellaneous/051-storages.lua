@@ -109,6 +109,10 @@ Storage = {
 	AdventurersGuild = {
 		Stone = 50702,
 	},
+	FirstQuest = {
+		Fynn = 2526,
+		Misidia = 12520,
+	},
 }
 
 GlobalStorage = {
