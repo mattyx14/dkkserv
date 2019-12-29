@@ -589,4 +589,7 @@
 
 	<!-- Adventurer's Guild -->
 	<action itemid="18559" script="adventurersStone.lua" />
+
+	<!-- Premium Scroll -->
+	<action itemid="16101" script="premiumscroll.lua" />
 </actions>
