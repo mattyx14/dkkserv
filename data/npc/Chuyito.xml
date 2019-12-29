@@ -53,5 +53,9 @@
 			wand of starstorm,8920,18000,1;
 			wand of voodoo,8922,22000,1;
 			wand of vortex,2190,500,1;" />
+		<parameter key="shop_sellable" value="
+			empty potion flask,7634,10;
+			empty potion flask,7635,15;
+			empty small potion flask,7636,5;" />
 	</parameters>
 </npc>
