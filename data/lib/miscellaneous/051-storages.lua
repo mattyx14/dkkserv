@@ -106,6 +106,9 @@ Storage = {
 			Done = 24075
 		}
 	}
+	AdventurersGuild = {
+		Stone = 50702,
+	},
 }
 
 GlobalStorage = {

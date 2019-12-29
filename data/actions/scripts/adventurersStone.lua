@@ -1,5 +1,16 @@
 local config = {
-	{fromPos = Position(937, 993, 7), toPos = Position(948, 1002, 7), townId = 1} -- Fynn
+	{fromPos = Position(937, 993, 7), toPos = Position(948, 1002, 7), townId = 1}, -- Fynn
+	{fromPos = Position(694, 443, 5), toPos = Position(708, 454, 5), townId = 2}, -- Anshara
+	{fromPos = Position(336, 1093, 8), toPos = Position(340, 1098, 8), townId = 3}, -- Sohan
+	{fromPos = Position(308, 1286, 6), toPos = Position(316, 1296, 6), townId = 4}, -- Samaransa
+	{fromPos = Position(373, 1400, 7), toPos = Position(381, 1412, 7), townId = 5}, -- Forgos
+	{fromPos = Position(831, 1218, 7), toPos = Position(844, 122, 7), townId = 6}, -- Agard
+	{fromPos = Position(1064, 1216, 6), toPos = Position(1085, 1238, 8), townId = 7}, -- Mer Jungle
+	{fromPos = Position(414, 856, 6), toPos = Position(426, 865, 6), townId = 8}, -- Vinor
+	{fromPos = Position(1043, 680, 7), toPos = Position(1055, 691, 7), townId = 9}, -- Jorvik
+	{fromPos = Position(1104, 312, 6), toPos = Position(1111, 323, 6), townId = 10}, -- Misidia
+	{fromPos = Position(691, 1158, 6), toPos = Position(702, 1169, 6), townId = 11}, -- Elfic
+	{fromPos = Position(1541, 666, 12), toPos = Position(1560, 678, 12), townId = 12}, -- Vaargdon
 }
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
