@@ -53,35 +53,5 @@
 			wand of starstorm,8920,18000,1;
 			wand of voodoo,8922,22000,1;
 			wand of vortex,2190,500,1;" />
-		<parameter key="shop_sellable" value="
-			crystal of balance,9942,1500;
-			crystal ring,2124,2000;
-			empty potion flask,7634,10;
-			empty potion flask,7635,15;
-			empty small potion flask,7636,5;
-			energy soil,8303,3000;
-			gold ingot,9971,10000;
-			hibiscus dress,8873,5000;
-			nails,8309,100;
-			wand of cosmic energy,2189,1000;
-			wand of decay,2188,500;
-			wand of defiance,18390,3750;
-			wand of draconia,8921,750;
-			wand of dragonbreath,2191,100;
-			wand of everblazing,18409,3000;
-			wand of inferno,2187,1500;
-			wand of starstorm,8920,1800;
-			wand of voodoo,8922,2200;
-			wand of vortex,2190,100;
-			glacial rod,18412,6500;
-			hailstorm rod,2183,1500;
-			moonlight rod,2186,100;
-			muck rod,18411,3000;
-			necrotic rod,2185,500;
-			northwind rod,8911,750;
-			snakebite rod,2182,100;
-			springsprout rod,8912,1300;
-			terra rod,2181,1000;
-			underworld rod,8910,2200;" />
 	</parameters>
 </npc>
