@@ -586,4 +586,7 @@
 
 	<!-- Annihilator lever -->
 	<action uniqueid="2208" script="quests/annihilator.lua" />
+
+	<!-- Adventurer's Guild -->
+	<action itemid="18559" script="adventurersStone.lua" />
 </actions>

@@ -93,11 +93,11 @@ DailyReward = {
       systemType = DAILY_REWARD_SYSTEM_TYPE_ONE,
       freeAccount = {
         items = {7618, 7588, 7620, 7589, 8472, 2290, 2266, 2310, 2277, 2301, 2265},
-        itemsToPick = 5
+        itemsToPick = 50
       },
       premiumAccount = {
         items = {7618, 7588, 7620, 7589, 8472, 2290, 2266, 2310, 2277, 2301, 2265},
-        itemsToPick = 10
+        itemsToPick = 100
       }
     },
     [2] = {
@@ -105,11 +105,11 @@ DailyReward = {
       systemType = DAILY_REWARD_SYSTEM_TYPE_ONE,
       freeAccount = {
         items = {7618, 7588, 7620, 7589, 8472, 2290, 2266, 2310, 2277, 2301, 2265},
-        itemsToPick = 5
+        itemsToPick = 75
       },
       premiumAccount = {
         items = {7618, 7588, 7620, 7589, 8472, 2290, 2266, 2310, 2277, 2301, 2265},
-        itemsToPick = 10
+        itemsToPick = 125
       }
     },
     [3] = {
@@ -127,11 +127,11 @@ DailyReward = {
       systemType = DAILY_REWARD_SYSTEM_TYPE_ONE,
       freeAccount = {
         items = {7618, 7588, 7620, 7589, 8472, 2290, 2266, 2310, 2277, 2301, 2265},
-        itemsToPick = 10
+        itemsToPick = 100
       },
       premiumAccount = {
         items = {7618, 7588, 7620, 7589, 8472, 2290, 2266, 2310, 2277, 2301, 2265},
-        itemsToPick = 20
+        itemsToPick = 150
       }
     },
     [5] = {
@@ -148,23 +148,25 @@ DailyReward = {
       type = DAILY_REWARD_TYPE_ITEM,
       systemType = DAILY_REWARD_SYSTEM_TYPE_ONE,
       freeAccount = {
-        items = {32124, 32125, 32126, 32127, 32128, 32129},
-        itemsToPick = 1
+        items = {7618, 7588, 7620, 7589, 8472, 2290, 2266, 2310, 2277, 2301, 2265},
+        itemsToPick = 150
       },
       premiumAccount = {
-        items = {32124, 32125, 32126, 32127, 32128, 32129},
-        itemsToPick = 2
+        items = {7618, 7588, 7620, 7589, 8472, 2290, 2266, 2310, 2277, 2301, 2265},
+        itemsToPick = 200
       },
-	  itemCharges = 50
+	  -- itemCharges = 50
     },
     [7] = {
       type = DAILY_REWARD_TYPE_XP_BOOST,
       systemType = DAILY_REWARD_SYSTEM_TYPE_TWO,
       freeAccount = {
-        xpminutes = 10
+        items = {16101},
+        xpminutes = 30
       },
       premiumAccount = {
-        xpminutes = 30
+        items = {16101},
+        xpminutes = 60
       }
     }
 -- Storage reward template

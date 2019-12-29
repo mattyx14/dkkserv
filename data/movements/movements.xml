@@ -3018,4 +3018,7 @@
 	<movevent event="AddItem" tileitem="1" itemid="1481" script="coalBasinSacrifice.lua" />
 	<movevent event="AddItem" tileitem="1" itemid="1482" script="coalBasinSacrifice.lua" />
 	<movevent event="AddItem" tileitem="1" itemid="1483" script="coalBasinSacrifice.lua" />
+
+	<!-- Adventurer's Guild -->
+	<movevent event="StepIn" actionid="4255" script="adventurersguild.lua" />
 </movements>
