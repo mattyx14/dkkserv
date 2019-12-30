@@ -105,7 +105,7 @@ Storage = {
 		POIMission = {
 			Done = 24075
 		}
-	}
+	},
 	AdventurersGuild = {
 		Stone = 50702,
 	},
