@@ -1,23 +1,23 @@
 local failPosition = {
 	[5500] = {
-		mission = 2432,
+		mission = Storage.FirstSacrifice.fireAxe,
 		fromPosition = Position(890, 1021, 11),
 		missionName = "require fixe axe quest"
 	},
 	[5501] = {
-		mission = 2407,
+		mission = Storage.FirstSacrifice.brightSword,
 		fromPosition = Position(931, 1084, 11),
 		missionName = "require bright sword quest"
 	},
 	[5502] = {
-		mission = 2436,
+		mission = Storage.FirstSacrifice.skullStaff,
 		fromPosition = Position(724, 821, 12),
 		missionName = "require skull staff quest"
 	},
 	[5503] = {
-		mission = 3101,
+		mission = Storage.FirstQuest.Fynn,
 		fromPosition = Position(925, 981, 7),
-		missionName = "require lv 30+ quest"
+		missionName = "the first quest of fynn"
 	},
 	[5504] = {
 		mission = 7730,
@@ -25,34 +25,24 @@ local failPosition = {
 		missionName = "require blue legs quest"
 	},
 	[5505] = {
-		mission = 7429,
+		mission = Storage.AnniQuest.blessedSceptreDone,
 		fromPosition = Position(940, 1076, 8),
 		missionName = "require blessed sceptre quest"
 	},
 	[5506] = {
-		mission = 7434,
+		mission = Storage.AnniQuest.royalAxeDone,
 		fromPosition = Position(940, 1076, 8),
 		missionName = "require royal axe quest"
 	},
 	[5507] = {
-		mission = 7390,
+		mission = Storage.AnniQuest.justiceSeekerDone,
 		fromPosition = Position(940, 1076, 8),
 		missionName = "require the justice seeker quest"
 	},
-	[5508] = {
-		mission = 9693,
-		fromPosition = Position(932, 988, 9),
-		missionName = "require jester outfit quest"
-	},
-	[5509] = {
-		mission = 10614,
-		fromPosition = Position(1065, 662, 8),
-		missionName = "require rare crystal quest"
-	},
-	[5590] = { -- Anshara Skull Area
-		mission = 1582,
-		fromPosition = Position(599, 371, 7),
-		missionName = "are blocked no have monsters"
+	[5510] = {
+		mission = Storage.FirstQuest.Misidia,
+		fromPosition = Position(1066, 317, 7),
+		missionName = "the first quest of misidia"
 	},
 }
 

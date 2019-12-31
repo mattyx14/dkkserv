@@ -1,7 +1,7 @@
 local rewards = {
 	[SKILL_LEVEL] = {
-		{lvl = 30, items = {{2160, 5}}, storage = 3101},
-		{lvl = 50, items = {{2160, 5}}, storage = 3102},
+		{lvl = 30, items = {{2160, 5}}, storage = Storage.firstLevelReward},
+		{lvl = 50, items = {{2160, 5}}, storage = Storage.firstLevelReward},
 		-- {lvl = 60, items = {{16101, 1}}, storage = 3103}, -- Premium Scrolls
 	},
 --[[

@@ -568,8 +568,8 @@
 		<action uniqueid="9933" script="quests/outfits/outfits.lua" />
 		<!-- Chaos Acolyte Outfit -->
 		<action uniqueid="8820" script="quests/outfits/outfits.lua" />
-		<!-- Norse Outfit -->
-		<action uniqueid="7460" script="quests/outfits/outfits.lua" />
+		<!-- Norse Outfit
+		<action uniqueid="7460" script="quests/outfits/outfits.lua" /> -->
 		<!-- Deepling Outfit -->
 		<action uniqueid="15545" script="quests/outfits/outfits.lua" />
 		<!-- Demonhunter Outfit -->
@@ -580,6 +580,8 @@
 		<action uniqueid="8267" script="quests/outfits/outfits.lua" />
 		<!-- Marry Outfit -->
 		<action uniqueid="3697" script="quests/outfits/outfits.lua" />
+		<!-- Puppeteer Outfit -->
+		<action uniqueid="1449" script="quests/outfits/outfits.lua" />
 
 	<!-- Teleport items -->
 	<action fromaid="39512" toaid="39516" script="quests/itemPortal.lua" />

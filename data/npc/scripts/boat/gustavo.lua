@@ -25,7 +25,7 @@ local function creatureSayCallback(cid, type, msg)
 	end
 	local player = Player(cid)
 	if msgcontains(msg, "fynn castle") then
-		if player:getStorageValue(Storage.FirstQuest.Misidia) == 1 then
+		if player:getStorageValue(Storage.FirstQuest.rewardMisidia) == 1 then
 			npcHandler:say("Do you seek a seek a passage to {Fynn Castle}?", cid)
 			npcHandler.topic[cid] = 1
 		else
