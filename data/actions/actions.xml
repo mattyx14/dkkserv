@@ -594,4 +594,9 @@
 
 	<!-- Premium Scroll -->
 	<action itemid="16101" script="premiumscroll.lua" />
+
+	<!-- Change Gold -->
+	<action itemid="2148" script="others/changegold.lua" />
+	<action itemid="2152" script="others/changegold.lua" />
+	<action itemid="2160" script="others/changegold.lua" />
 </actions>
