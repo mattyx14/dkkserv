@@ -46,7 +46,7 @@
 		<item name="burnt Scroll" countmax="5" chance="10000"/>
 		<item name="Glowing Rune" countmax="5" chance="10000"/>
 		<item name="Small Diamond" countmax="5" chance="10000"/>
-		<item name="Fire Axe" chance="250"/>
+		<item id="2160" countmax="1" chance="250"/>
 		<item name="Soul Orb" countmax="5" chance="260"/>
 		<item name="Spellbook of Warding" chance="250"/>
 		<item name="Wand of Inferno" chance="250"/>

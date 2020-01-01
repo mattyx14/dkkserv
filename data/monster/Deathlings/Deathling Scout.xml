@@ -60,7 +60,7 @@
 		<item name="Heavy Trident" chance="6620"/>
 		<item name="Eye of a Deepling" chance="6070"/>
 		<item name="Warrior's Shield" chance="3630"/>
-		<item name="Warrior's Axe" chance="3470"/>
+		<item id="2160" countmax="1" chance="3000"/>
 		<item name="Life Ring" chance="3000"/>
 		<item name="Fish Fin" chance="920"/>
 		<item name="Necklace of the Deep" chance="440"/>

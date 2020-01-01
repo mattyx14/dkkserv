@@ -44,7 +44,6 @@
 		<item id="2229" countmax="2" chance="85000"/>		<!-- skull -->
 		<item id="2463" chance="78000"/>					<!-- plate armor -->
 		<item id="2666" countmax="3" chance="42000"/>		<!-- meat -->
-		<item id="2476" chance="28000"/>					<!-- knight armor -->
 		<item id="2379" chance="21000"/>					<!-- dagger -->
 		<item id="2145" chance="14000"/>					<!-- small diamond -->
 		<item id="2387" chance="7000"/>						<!-- double axe -->

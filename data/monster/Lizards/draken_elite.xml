@@ -59,7 +59,7 @@
 		<item name="platinum coin" countmax="8" chance="50360"/>
 		<item name="meat" chance="30175"/>
 		<item name="magic sulphur" chance="2100"/>
-		<item name="assassin dagger" chance="980"/>
+		<item id="2160" countmax="2" chance="1000"/>
 		<item name="great mana potion" countmax="3" chance="9340"/>
 		<item name="ultimate health potion" countmax="3" chance="9250"/>
 		<item name="Zaoan armor" chance="490"/>

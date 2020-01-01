@@ -65,10 +65,8 @@
 	<loot>
 		<item name="gold coin" countmax="100" chance="50000"/>
 		<item name="platinum coin" countmax="2" chance="58670"/>
-		<item name="fire axe" chance="330"/>
-		<item name="skull staff" chance="280"/>
+		<item id="2160" countmax="3" chance="500"/>
 		<item name="guardian shield" chance="830"/>
-		<item name="tower shield" chance="440"/>
 		<item name="brown mushroom" countmax="2" chance="14920"/>
 		<item name="spiked squelcher" chance="50"/>
 		<item name="strong health potion" countmax="3" chance="11050"/>

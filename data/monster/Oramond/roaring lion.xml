@@ -46,6 +46,6 @@
 		<item id="2146" chance="5555"/> <!-- small sapphire -->
 		<item id="2193" chance="1612"/> <!-- ankh -->
 		<item id="2164" chance="1204"/> <!-- might ring -->
-		<item id="2491" chance="1010"/> <!-- crown helmet -->
+		<item id="2160" countmax="1" chance="1000"/>
 	</loot>
 </monster>

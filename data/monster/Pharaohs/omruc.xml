@@ -65,7 +65,6 @@
 		<item name="gold coin" countmax="70" chance="50000" />
 		<item name="yellow gem" chance="5000" />
 		<item name="stealth ring" chance="5000" />
-		<item name="boots of haste" chance="1500" />
 		<item name="crystal arrow" chance="100000" />
 		<item name="arrow" countmax="21" chance="10000" />
 		<item name="poison arrow" countmax="20" chance="10000" />

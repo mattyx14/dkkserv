@@ -99,7 +99,6 @@
 		<item id="7422" chance="800"/><!--Jade Hammer-->
 		<item id="2143" countmax="5" chance="10000"/><!-- white pearl-->
 		<item id="7418" chance="600"/><!--nightmare blade -->
-		<item id="2539" chance="800"/><!--phoenix shield -->
 		<item id="2520" chance="800"/><!-- demon shield-->
 		<item id="34784" chance="150"/><!--mysterious scroll -->
 		<item id="2148" countmax="100" chance="100000"/><!-- gold coin -->

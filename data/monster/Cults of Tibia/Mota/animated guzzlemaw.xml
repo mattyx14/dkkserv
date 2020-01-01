@@ -75,7 +75,7 @@
 		<item name="iron ore" chance="3000" />
 		<item name="fish fin" chance="5000" />
 		<item name="hardened bone" chance="5700" />
-		<item name="assassin dagger" chance="1000" />
+		<item id="2160" countmax="2" chance="1000"/>
 		<item name="haunted blade" chance="2000" />
 		<item name="nightmare blade" chance="380" />
 		<item name="great mana potion" countmax="3" chance="17000" />

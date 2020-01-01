@@ -57,8 +57,6 @@
 		<item id="2214" chance="100000" />					<!-- ring of healing -->
 		<item id="2152" countmax="4" chance="95000" />		<!-- platinum coin -->
 		<item id="2147" countmax="3" chance="68000" />		<!-- small ruby -->
-		<item id="2476" chance="54000" />					<!-- knight armor -->
-		<item id="2528" chance="34000" />					<!-- tower shield -->
 		<item id="2381" chance="31050" />					<!-- halberd -->
 		<item id="2438" chance="26000" />					<!-- epee -->
 		<item id="7884" chance="8200" />						<!-- terra mantle -->

@@ -80,7 +80,6 @@
 		<item id="5944" chance="50" /><!-- assassin star -->
 		<item id="2124" chance="410" /><!-- crystal ring -->
 		<item id="6301" chance="60" /><!-- death ring -->
-		<item id="2539" chance="100" />						<!-- phoenix shield -->
 		<item id="21725" chance="100" />						<!-- furious frock -->
 	</loot>
 </monster>

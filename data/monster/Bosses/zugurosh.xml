@@ -88,7 +88,6 @@
 		<item id="5914" countmax="10" chance="14000"/>		<!-- yellow piece of cloth -->
 		<item id="5913" countmax="10" chance="12000"/>		<!-- brown piece of cloth -->
 		<item id="5954" countmax="2" chance="9700"/>		<!-- demon horn -->
-		<item id="2195" chance="8700"/>						<!-- boots of haste -->
 		<item id="2173" chance="6000"/>						<!-- amulet of loss -->
 		<item id="2645" chance="4500"/>						<!-- steel boots -->
 		<item id="2646" chance="1500"/>						<!-- golden boots -->

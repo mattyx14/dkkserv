@@ -74,7 +74,7 @@
 		<item id="2175" chance="1030" /><!-- spellbook -->
 		<item name="strong mana potion" chance="830" />
 		<item name="giant eye" chance="460" />
-		<item name="bonelord shield" chance="90" />
+		<item id="2152" countmax="25" chance="1000"/>
 		<item name="bonelord helmet" chance="90" />
 	</loot>
 </monster>

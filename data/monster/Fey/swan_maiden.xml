@@ -71,7 +71,7 @@
 		<item name="silver brooch" chance="3400"/>
 		<item name="summer dress" chance="3400"/>
 		<item name="wild flowers" chance="3400"/>
-		<item name="boots of haste" chance="50"/>
+		<item id="2160" countmax="3" chance="50"/>
 		<item name="butterfly ring" chance="100"/>
 	</loot>
 </monster>

@@ -54,7 +54,7 @@
 		<item id="2144" chance="719"/> <!-- black pearl -->
 		<item id="5895" chance="719"/> <!-- fish fin -->
 		<item id="2168" chance="719"/> <!-- life ring -->
-		<item id="2476" chance="719"/> <!-- knight armor -->
+		<item id="2152" countmax="50" chance="1000"/>
 		<item id="2155" chance="719"/> <!-- green gem -->
 	</loot>
 </monster>

@@ -65,16 +65,13 @@
 		<item id="11237" chance="100000" />				<!-- book of necromantic rituals -->
 		<item id="2148" countmax="99" chance="100000" />	<!-- gold coin -->
 		<item id="12431" chance="100000" />				<!-- necromantic robe -->
-		<item id="5809" chance="100000" />				<!-- soul stone -->
 		<item id="2423" chance="52000" />				<!-- clerical mace -->
-		<item id="2436" chance="47000" />				<!-- skull staff -->
 		<item id="2449" chance="38000" />				<!-- bone club -->
 		<item id="2229" chance="19000" />				<!-- skull -->
 		<item id="2796" chance="14000" />				<!-- green mushroom -->
 		<item id="2186" chance="14000" />				<!-- moonlight rod -->
 		<item id="2231" chance="9500" />					<!-- big bone -->
 		<item id="2541" chance="9500" />					<!-- bone shield -->
-		<item id="2195" chance="4700" />					<!-- boots of haste -->
 		<item id="2663" chance="4700" />					<!-- mystic turban -->
 		<item id="7589" chance="4700" />					<!-- strong mana potion -->
 	</loot>

@@ -70,7 +70,7 @@
 		<item id="7633" chance="800"/>
 		<item name="Violet Gem" chance="600"/>
 		<item name="Green Gem" chance="600"/>
-		<item name="Knight Armor" chance="600"/>
+		<item id="2152" countmax="50" chance="600"/>
 		<item name="Titan Axe" chance="600"/>
 		<item name="Spiked Squelcher" chance="600"/>
 		<item name="Patch of Fine Cloth" countmax="3" chance="500"/>

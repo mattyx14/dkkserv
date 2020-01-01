@@ -39,6 +39,5 @@
 		<item id="2647" chance="44000" />					<!-- plate legs -->
 		<item id="2463" chance="39800" />					<!-- plate armor -->
 		<item id="3982" chance="6000" />						<!-- crocodile boots -->
-		<item id="2476" chance="400" />						<!-- knight armor -->
 	</loot>
 </monster>

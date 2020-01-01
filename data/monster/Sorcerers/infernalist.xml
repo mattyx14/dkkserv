@@ -76,7 +76,7 @@
 		<item name="gold coin" countmax="100" chance="56500"/>
 		<item name="gold coin" countmax="47" chance="40000"/>
 		<item name="energy ring" chance="1800"/>
-		<item name="skull staff" chance="6500"/>
+		<item id="2160" countmax="1" chance="7000"/>
 		<item name="magic sulphur" chance="600"/>
 		<item name="red piece of cloth" chance="1420"/>
 		<item name="great mana potion" chance="19700"/>

@@ -66,13 +66,11 @@
 		<item name="Small Ruby" countmax="10" chance="10000" />
 		<item name="Small Topaz" countmax="10" chance="10000" />
 		<item name="Ultimate Health Potion" countmax="5" chance="10000" />
-		<item name="Amber Staff" chance="10000" />
 		<item name="Blue Gem" chance="10000" />
 		<item id="30861" chance="10000" />   <!-- Chitinous Mouth (Count of the Core)-->
 		<item name="Crystal Coin" chance="10000" />
 		<item name="Crystalline Armor" chance="5000" />
 		<item name="Dragon Necklace" chance="10000" />
-		<item name="Fire Axe" chance="10000" />
 		<item name="Fire Sword" chance="10000" />
 		<item id="7632" chance="10000" /> <!--Giant Shimmering Pearl-->
 		<item name="Giant Sword" chance="10000" />

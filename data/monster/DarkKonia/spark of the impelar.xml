@@ -64,7 +64,6 @@
 	<loot>
 		<item id="2152" countmax="80" chance="16000"/> --platinum coin
 		<item id="2152" countmax="99" chance="16000"/> --platinum coin
-		<item id="2656" chance="1200"/> --blue robe
 		<item id="7840" countmax="16" chance="12000"/> --flaming arrow
 		<item id="1987" chance="100000"> --bag
 			<inside>

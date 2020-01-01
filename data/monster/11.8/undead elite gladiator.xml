@@ -49,7 +49,7 @@
  	<!-- Incomum-->
 		<item name="Ultimate Health Potion" countmax="2" chance="500"/>
 		<item name="Throwing Star" countmax="18" chance="500"/>
-		<item name="Knight Axe" chance="250"/>
+		<item id="2152" countmax="50" chance="2000"/>
 		<item id="2419" chance="500"/><!-- scimitar -->
  	<!-- Semi-raro-->
 		<item name="protection amulet" chance="250"/>

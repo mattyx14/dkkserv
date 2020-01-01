@@ -55,8 +55,6 @@
 		<item id="11306" chance="20000"/><!-- sais -->
 		<item id="7437" chance="20000"/><!-- sapphire hammer -->
 		<item id="5801" chance="7692"/><!-- jewelled backpack -->
-		<item id="2476" chance="7692"/><!-- knight armor -->
-		<item id="2477" chance="5555"/><!-- knight legs -->
 		<item id="7290" chance="3703"/><!-- shard -->
 		<item id="2169" chance="3703"/><!-- time ring -->
 	</loot>

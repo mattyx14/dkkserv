@@ -45,7 +45,6 @@
 	</immunities>
 	<loot>
 		<item id="13301" chance="100000" />					<!-- hollow stampor hoof -->
-		<item id="2476" chance="100000" />					<!-- knight armor -->
 		<item id="2152" countmax="13" chance="100000" />		<!-- platinum coin -->
 		<item id="9970" countmax="5" chance="100000" />		<!-- small topaz -->
 		<item id="13299" chance="100000" />					<!-- stampor horn -->

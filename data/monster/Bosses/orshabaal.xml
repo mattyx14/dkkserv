@@ -92,15 +92,12 @@
 		<item name="orb" chance="6666"/>
 		<item name="life crystal" chance="12500"/>
 		<item name="mind stone" chance="20000"/>
-		<item name="boots of haste" chance="12500"/>
 		<item name="protection amulet" chance="20000"/>
 		<item name="ring of healing" chance="33333"/>
 		<item name="two handed sword" chance="12500"/>
 		<item name="giant sword" chance="25000"/>
 		<item name="silver dagger" chance="6666"/>
 		<item name="golden sickle" chance="6666"/>
-		<item name="fire axe" chance="12500"/>
-		<item name="dragon hammer" chance="6666"/>
 		<item name="devil helmet" chance="33333"/>
 		<item name="golden legs" chance="12500"/>
 		<item name="magic plate armor" chance="6666"/>

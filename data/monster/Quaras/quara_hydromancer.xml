@@ -69,7 +69,7 @@
 		<item name="small emerald" countmax="2" chance="5111"/>
 		<item name="wand of cosmic energy" chance="900"/>
 		<item name="ring of healing" chance="1008"/>
-		<item name="knight armor" chance="200"/>
+		<item id="2152" countmax="50" chance="1000"/>
 		<item name="shrimp" countmax="5" chance="4545"/>
 		<item name="fish fin" chance="1280"/>
 		<item name="great mana potion" chance="3100"/>

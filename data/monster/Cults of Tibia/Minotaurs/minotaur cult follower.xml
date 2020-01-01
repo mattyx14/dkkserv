@@ -62,7 +62,7 @@
 		<item name="mino shield" chance="12670" />
 		<item name="ring of healing" chance="3190" />
 		<item name="mino lance" chance="1810" />
-		<item name="warrior helmet" chance="570" />
+		<item id="2152" countmax="50" chance="800"/>
 		<item name="red gem" chance="170" />
 		<item name="meat" chance="8020" />
 		<item name="minotaur leather" chance="11530" />

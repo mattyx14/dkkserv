@@ -45,8 +45,6 @@
 		<item id="2148" countmax="51" chance="97000" /><!--gold coin -->
 		<item id="5920" chance="50000" /><!-- green Dragon Scale -->
 		<item id="27606" chance="100000" /><!-- dragon tongue -->
-		<item id="2492" chance="25000" /><!-- dsm -->
-		<item id="2434" chance="25000" /><!-- dragon hammer-->
 		<item id="2516" chance="25000" /><!-- dragon shield-->
 		<item id="2201" chance="25000" /><!-- dragon necklace-->
 		<item id="2672" chance="25000" /><!-- dragon ham-->

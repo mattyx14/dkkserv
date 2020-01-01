@@ -41,7 +41,7 @@
 		<item id="2667" chance="29760" />			<!-- FISH -->
 		<item name="great health potion" chance="10190" />
 		<item name="orc tooth" chance="1340" />
-		<item name="warrior helmet" chance="10190" />
+		<item id="2152" countmax="50" chance="10000"/>
 		<item name="orc leather" chance="22250" />
 		<item name="skull belt" chance="13940" />
 		<item name="small ruby" countmax="3" chance="10990" />

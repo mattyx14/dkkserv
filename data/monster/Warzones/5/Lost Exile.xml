@@ -79,14 +79,11 @@
 				<item name="guardian shield" chance="1430" />
 				<item name="buckle" chance="1900" />
 				<item name="clay lump" chance="710" />
-				<item name="knight axe" chance="950" />
+				<item id="2160" countmax="3" chance="1000"/>
 				<item name="terra boots" chance="240" />
 				<item name="suspicious device" chance="250" />
 					<!--muito raro-->
-					<item name="tower shield" chance="240" />
 					<item name="terra legs" chance="240" />
-					<item name="fire axe" chance="710" />
-					<item name="skull staff" chance="480" />
 					<item name="spiked squelcher" chance="240" />
 	</loot>
 </monster>

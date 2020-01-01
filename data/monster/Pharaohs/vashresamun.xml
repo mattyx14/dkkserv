@@ -63,6 +63,5 @@
 		<item name="gold coin" countmax="65" chance="50000" />
 		<item name="blue note" chance="100000" />
 		<item name="crystal mace" chance="500" />
-		<item name="blue robe" chance="2500" />
 	</loot>
 </monster>

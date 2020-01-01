@@ -78,7 +78,7 @@
 		<item name="life crystal" chance="2500"/>
 		<item name="war axe" chance="1290"/>
 		<item name="golden armor" chance="860"/>
-		<item name="knight armor" chance="5500"/>
+		<item id="2152" countmax="50" chance="5000"/>
 		<item name="royal helmet" chance="1720"/>
 		<item name="power bolt" countmax="15" chance="15190"/>
 		<item name="hardened bone" chance="14180"/>

@@ -56,7 +56,7 @@
 		<item name="gold coin" countmax="99" chance="50000"/>
 		<item id="2152" countmax="7" chance="100000"/> <!-- platinum coin -->
 		<item name="fire sword" chance="3280"/>
-		<item name="fire axe" chance="2150"/>
+		<item id="2160" countmax="1" chance="3000"/>
 		<item name="great mana potion" countmax="2" chance="14800"/>
 		<item name="magma legs" chance="790"/>
 		<item name="magma coat" chance="790"/>

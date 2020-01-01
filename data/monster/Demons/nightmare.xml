@@ -62,9 +62,8 @@
 		<item name="gold coin" countmax="100" chance="50000"/>
 		<item name="gold coin" countmax="55" chance="50000"/>
 		<item name="platinum coin" countmax="3" chance="2564"/>
-		<item name="boots of haste" chance="337"/>
+		<item id="2160" countmax="4" chance="337"/>
 		<item name="war axe" chance="95"/>
-		<item name="knight legs" chance="961"/>
 		<item name="ancient shield" chance="990"/>
 		<item name="power bolt" countmax="4" chance="9090"/>
 		<item name="ham" countmax="2" chance="29000"/>

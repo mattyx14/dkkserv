@@ -46,7 +46,6 @@
 	<loot>		
 		<!--every-->
 		<item name="silver token" countmax="5" chance="100000000" />
-		<item name="skull staff" countmax="5" chance="100000000" />
 		<item name="energy bar" countmax="5" chance="100000000" />
 		<item name="Purple Tendril Lantern" chance="100000000" />
 		<item name="crystal coin" countmax="2" chance="100000000" />
@@ -80,7 +79,6 @@
 		<item name="Alptramun's Toothbrush" chance="520" />
 		<item name="Dream Shroud" chance="620" />
 		<item name="Pair of Dreamwalkers" chance="720" />
-		<item name="Soul Stone" chance="820" />
 		<item id="26185" chance="10590" />  <!-- ring of blue plasma -->
 		<item name="Pomegranate" chance="880" />
 		<item name="Dream Shroud" chance="980" />

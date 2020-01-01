@@ -46,7 +46,7 @@
 		<item name="eye of a deepling" chance="25000"/>
 		<item name="deepling warts" chance="25000"/>
 		<item name="deeptags" chance="21700"/>
-		<item name="warrior's axe" chance="640"/>
+		<item id="2160" countmax="1" chance="1000"/>
 		<item name="deepling ridge" chance="19000"/>
 		<item name="warrior's shield" chance="1234"/>
 		<item name="deepling filet" chance="25000"/>

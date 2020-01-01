@@ -70,8 +70,7 @@
 		<item name="small amethyst" countmax="3" chance="17000"/>
 		<item name="platinum coin" countmax="8" chance="100000"/>
 		<item name="giant sword" chance="560"/>
-		<item name="warrior helmet" chance="2820"/>
-		<item name="knight armor" chance="4000"/>
+		<item id="2160" countmax="1" chance="3000"/>
 		<item name="white piece of cloth" chance="4520"/>
 		<item name="red piece of cloth" chance="1130"/>
 		<item name="great mana potion" countmax="2" chance="36000"/>

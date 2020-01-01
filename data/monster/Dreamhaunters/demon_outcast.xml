@@ -74,7 +74,7 @@
 		<item name="ice rapier" chance="660"/>
 		<item name="devil helmet" chance="910"/>
 		<item name="crusader helmet" chance="740"/>
-		<item name="crown shield" chance="740"/>
+		<item id="2152" countmax="50" chance="1000"/>
 		<item name="demon shield" chance="170"/>
 		<item name="fire mushroom" countmax="6" chance="20600"/>
 		<item id="5906" chance="1000"/> <!-- demon dust -->

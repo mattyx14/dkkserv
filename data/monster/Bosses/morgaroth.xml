@@ -132,7 +132,6 @@
 		<item name="thunder hammer" unique="1" chance="9000"/>
 		<item name="small diamond" countmax="5" chance="4500"/>
 		<item id="2124" chance="4500"/><!-- crystal ring -->
-		<item name="fire axe" chance="4500"/>
 		<item name="great health potion" chance="4500"/>
 		<item name="mastermind shield" chance="4500"/>
 		<item name="dragon robe" chance="4500"/>

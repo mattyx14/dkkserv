@@ -60,12 +60,11 @@
 		<item name="violet gem" chance="830"/>
 		<item name="green gem" chance="869"/>
 		<item name="red gem" chance="13850"/>
-		<item name="dragon hammer" chance="9000"/>
+		<item id="2160" countmax="1" chance="5000"/>
 		<item name="heavy mace" chance="400"/>
 		<item name="war axe" chance="400"/>
 		<item name="golden armor" chance="550"/>
 		<item name="golden legs" chance="500"/>
-		<item name="knight armor" chance="4990"/>
 		<item name="mastermind shield" chance="800"/>
 		<item name="closed trap" chance="280"/>
 		<item name="ham" countmax="8" chance="60000"/>

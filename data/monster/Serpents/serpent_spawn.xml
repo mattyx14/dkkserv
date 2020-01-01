@@ -71,11 +71,9 @@
 		<item name="life ring" chance="6250"/>
 		<item name="life crystal" chance="800"/>
 		<item name="snakebite rod" chance="930"/>
-		<item name="warrior helmet" chance="560"/>
+		<item id="2160" countmax="2" chance="1000"/>
 		<item name="strange helmet" chance="670"/>
-		<item name="crown armor" chance="510"/>
 		<item name="royal helmet" chance="140"/>
-		<item name="tower shield" chance="920"/>
 		<item name="power bolt" chance="6200"/>
 		<item name="green mushroom" chance="18200"/>
 		<item name="charmer's tiara" chance="180"/>

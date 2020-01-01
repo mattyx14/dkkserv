@@ -64,7 +64,4 @@
 		<summon name="frost dragon" interval="1000" chance="10" max="3"/>
 		<summon name="demonfrost" interval="2000" chance="10" max="1"/>
 	</summons>
-	<loot>
-		<item id="2436" chance="222"/>
-	</loot>
 </monster>

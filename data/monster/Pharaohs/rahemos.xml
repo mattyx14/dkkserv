@@ -80,7 +80,6 @@
 		<item name="ring of healing" chance="7000" />
 		<item name="ancient rune" chance="100000" />
 		<item name="twin axe" chance="200" />
-		<item name="magician hat" chance="300" />
 		<item name="great mana potion" chance="7000" />
 	</loot>
 </monster>

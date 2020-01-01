@@ -92,7 +92,7 @@
 		<item id="2171" chance="1213"/><!-- platinum amulet -->
 		<item id="2462" chance="1504"/><!-- devil helmet -->
 		<item id="2396" chance="1666"/><!-- ice rapier -->
-		<item id="2432" chance="1003"/><!-- fire axe -->
+		<item id="2160" countmax="1" chance="1000"/>
 		<item id="2520" chance="989"/><!-- demon shield -->
 		<item id="2393" chance="1290"/><!-- giant sword -->
 		<item id="7382" chance="320"/><!-- demonrage sword -->

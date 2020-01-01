@@ -55,7 +55,7 @@
 	</voices>
 	<loot>
 		<item name="gold coin" countmax="64" chance="100000"/>
-		<item name="boots of haste" chance="60"/>
+		<item id="2160" countmax="3" chance="60"/>
 		<item name="clerical mace" chance="290"/>
 		<item name="mystic turban" chance="580"/>
 		<item name="brown mushroom" chance="5170"/>

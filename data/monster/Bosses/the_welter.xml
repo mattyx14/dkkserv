@@ -68,13 +68,10 @@
 	<loot>
 	<item id="21400" chance="200"/><!-- silver token -->
 		<item id="21690" chance="200"/> <!-- Triple Bolt Crossbow -->
-		<item id="2475" chance="2000"/> <!-- Warrior Helmet-->
 		<item id="21691" chance="500"/> <!-- Shrunken Head Necklace -->
-		<item id="2195" chance="1000"/> <!-- Boots of Haste -->
 		<item id="2536" chance="2000"/> <!--  Medusa Shield -->
 		<item id="2396" chance="2000"/> <!--  Ice Rapier -->
 		<item id="2146" countmax="2" chance="20000"/> <!-- Small Sapphire -->
-		<item id="2476" chance="3000"/> <!-- Knight Armor -->
 		<item id="7588" countmax="2" chance="20000"/> <!-- Strong Health Potion -->
 		<item id="10219" subtype="5" chance="1000"/> <!-- Sacred Tree Amulet-->
 		<item id="2197" subtype="5" chance="20000"/> <!-- Stone Skin Amulet-->

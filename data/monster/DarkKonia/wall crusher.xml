@@ -23,8 +23,6 @@
 	<defenses armor="18" defense="18"/>
 	<loot>
 		<item id="2152" countmax="3" chance1="100000" chancemax="0"/>
-		<item id="2434" countmax="1" chance1="100000" chancemax="0"/>
 		<item id="5951" countmax="1" chance1="14000" chancemax="0"/>
-		<item id="2476" countmax="1" chance1="10000" chancemax="0"/>
 	</loot>
 </monster>

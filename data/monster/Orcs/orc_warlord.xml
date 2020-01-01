@@ -54,7 +54,7 @@
 		<item name="throwing star" countmax="18" chance="13920"/>
 		<item id="2419" chance="3450"/><!-- scimitar -->
 		<item name="orcish axe" chance="5400"/>
-		<item name="dragon hammer" chance="320"/>
+		<item id="2152" countmax="50" chance="500"/>
 		<item name="plate armor" chance="5210"/>
 		<item name="brass armor" chance="740"/>
 		<item name="dark helmet" chance="1260"/>

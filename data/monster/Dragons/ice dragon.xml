@@ -47,6 +47,6 @@
 		<item id="26449" chance="3000"/><!-- dragon bloods -->
 		<item id="2148" countmax="200" chance="95070"/><!-- gold coin -->
 		<item id="7902" chance="2000"/><!-- glacier mask -->
-		<item id="2492" chance="280"/><!-- dragon scale mail -->
+		<item id="2160" countmax="4" chance="280"/>
 	</loot>
 </monster>

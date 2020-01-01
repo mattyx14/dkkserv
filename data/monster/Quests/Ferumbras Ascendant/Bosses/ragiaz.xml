@@ -81,13 +81,11 @@
 		<item id="2155" chance="1000"/><!-- green gem -->
 		<item id="2156" chance="1000"/><!-- red gem -->
 		<item id="2158" chance="1000"/><!-- blue gem -->
-		<item id="2436" chance="4000"/><!-- skull staff -->
 		<item id="25414" chance="100" unique="1"/><!-- death gaze -->
 		<item id="25522" chance="700"/><!-- ritt bow -->
 		<item id="25523" chance="700"/><!-- rift crossbow -->
 		<item id="6500" chance="11000"/><!-- demonic essence -->
 		<item id="7420" chance="500"/><!-- reaper's axe -->
-		<item id="7426" chance="4000"/><!-- amber staff -->
 		<item id="7590" countmax="5" chance="3000"/><!-- great mana potion -->
 		<item id="7591" countmax="5" chance="3100"/><!-- great health potion -->
 		<item id="7632" countmax="5" chance="3000"/><!-- giant shimmering pearl -->

@@ -63,11 +63,8 @@
 		<item id="2121" chance="510"/>	<!-- Wedding Ring -->
 		<item id="5911" chance="210"/>	<!-- Red Piece of Cloth -->
 		<item id="2391" chance="210"/>	<!-- war hammer -->
-		<item id="2487" chance="310"/>	<!-- Crown Armor -->
+		<item id="2160" countmax="4" chance="500"/>
 		<item id="2392" chance="210"/>	<!-- Fire Sword -->
-		<item id="2491" chance="310"/>	<!-- Crown Helmet -->
-		<item id="2519" chance="210"/>	<!-- Crown Shield -->
-		<item id="2488" chance="110"/>	<!-- Crown Legs -->
 		<item id="2171" chance="210"/>	<!-- Platinum Amulet  -->
 	</loot>
 </monster>

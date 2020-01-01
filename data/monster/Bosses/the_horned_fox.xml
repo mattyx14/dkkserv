@@ -49,7 +49,6 @@
 		<voice sentence="Help me, Boys!" />
 	</voices>
 	<loot>
-		<item id="5804" chance="100000" />				<!-- nose ring -->
 		<item id="2148" countmax="99" chance="96000" />	<!-- gold coin -->
 		<item id="5878" chance="96000" />				<!-- minotaur leather -->
 		<item id="12428" countmax="2" chance="92590" />	<!-- minotaur horn -->

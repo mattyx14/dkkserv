@@ -70,9 +70,8 @@
 		<item id="2207" chance="1110"/>						<!-- sword ring -->
 		<item id="23537" chance="1090"/>					<!-- mooh'tah plate -->
 		<item id="2515" chance="1020"/>						<!-- guardian shield -->
-		<item id="2477" chance="710"/>						<!-- knight legs -->
+		<item id="2152" countmax="100" chance="1000"/>
 		<item id="5911" chance="650"/>			<!-- red piece of cloth -->
-		<item id="2476" chance="490"/>						<!-- knight armor -->
 		<item id="7401" chance="150"/>						<!-- minotaur trophy -->
 	</loot>
 </monster>

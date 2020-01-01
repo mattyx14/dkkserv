@@ -56,9 +56,8 @@
 		<item name="Green Ectoplasm" chance="1890"/>
      		<item name="Coral Brooch" chance="1330"/>
 		<item name="Serpent Sword" chance="1150"/>
-		<item name="Assassin Dagger" chance="970"/>
+		<item id="2160" countmax="2" chance="1000"/>
 		<item name="Hexagonal Ruby" chance="940"/>
 		<item name="Spike Sword" chance="530"/>
-		<item name="Wyvern Fang" chance="120"/>
 	</loot>
 </monster>

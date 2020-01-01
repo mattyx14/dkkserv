@@ -73,7 +73,7 @@
 		<item name="morning star" chance="29000"/>
 		<item name="battle hammer" chance="20000"/>
 		<item name="hammer of wrath" chance="952"/>
-		<item name="knight legs" chance="6250"/>
+		<item id="2152" countmax="50" chance="5000"/>
 		<item name="steel shield" chance="20000"/>
 		<item name="steel boots" chance="1123"/>
 		<item name="piece of royal steel" chance="1234"/>

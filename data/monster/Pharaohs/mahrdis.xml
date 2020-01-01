@@ -75,8 +75,6 @@
 		<item name="red gem" chance="1500" />
 		<item name="life ring" chance="1500" />
 		<item name="burning heart" chance="100000" />
-		<item name="fire axe" chance="750" />
-		<item name="phoenix shield" chance="300" />
 		<item name="great health potion" chance="1500" />
 	</loot>
 </monster>

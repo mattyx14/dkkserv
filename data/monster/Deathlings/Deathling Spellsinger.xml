@@ -59,7 +59,7 @@
 		<item name="Eye of a Deepling" chance="6070"/>
 		<item name="Warrior's Shield" chance="4200"/>
 		<item name="Heavy Trident" chance="4000"/>
-		<item name="Warrior's Axe" chance="4000"/>
+		<item id="2160" countmax="1" chance="4000"/>
 		<item name="Fish Fin" chance="3650"/>
 		<item name="Life Ring" chance="2870"/>
 		<item name="Small Enchanted Sapphire" countmax="4" chance="2220"/>

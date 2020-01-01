@@ -55,7 +55,7 @@
 	</voices>
 	<loot>
 		<item id="2745" chance="400"/> <!-- blue rose -->
-		<item id="2195" chance="150"/> <!-- boots of haste -->
+		<item id="2160" countmax="3" chance="150"/>
 		<item id="29000" chance="12000"/> <!-- colourful snail shell -->
 		<item id="2127" chance="1800"/> <!-- emerald bangle -->
 		<item id="9927" chance="500"/> <!-- flower wreath -->

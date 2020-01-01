@@ -57,9 +57,8 @@
 	</voices>
 	<loot>
 		<item name="gold coin" countmax="90" chance="30050"/>
-		<item name="boots of haste" chance="210"/>
+		<item id="2160" countmax="4" chance="500"/>
 		<item name="clerical mace" chance="390"/>
-		<item name="skull staff" chance="100"/>
 		<item name="poison arrow" countmax="5" chance="15000"/>
 		<item name="mystic turban" chance="500"/>
 		<item name="green mushroom" chance="1470"/>

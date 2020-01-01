@@ -60,8 +60,7 @@
 		<item name="platinum amulet" chance="130" />
 		<item name="steel helmet" chance="5200" />
 		<item name="plate armor" chance="9993" />
-		<item name="knight armor" chance="560" />
-		<item name="knight legs" chance="760" />
+		<item id="2160" countmax="1" chance="600"/>
 		<item name="jewelled backpack" chance="80" />
 		<item name="spider silk" chance="2010" />
 		<item name="shard" chance="740" />

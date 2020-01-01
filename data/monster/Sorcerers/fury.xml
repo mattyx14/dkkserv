@@ -84,7 +84,7 @@
 		<item id="6301" chance="60"/><!-- death ring-->
 		<item name="demonic essence" chance="22500"/>
 		<item name="concentrated demonic blood" countmax="3" chance="35000"/>
-		<item name="assassin dagger" chance="660"/>
+		<item id="2160" countmax="1" chance="1000"/>
 		<item name="noble axe" chance="2000"/>
 		<item name="great health potion" chance="10500"/>
 		<item name="jalapeno pepper" countmax="4" chance="29280"/>

@@ -62,6 +62,5 @@
 		<item id="2150" countmax="4" chance="38000" />	<!-- small amethyst -->
 		<item id="7383" chance="35000" />				<!-- relic sword -->
 		<item id="2497" chance="16000" />				<!-- crusader helmet -->
-		<item id="2487" chance="10000" />				<!-- crown armor -->
 	</loot>
 </monster>

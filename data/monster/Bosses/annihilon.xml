@@ -70,9 +70,7 @@
 		<item name="heavy mace" chance="25000"/>
 		<item name="mastermind shield" chance="4166"/>
 		<item name="guardian shield" chance="7692"/>
-		<item name="crown shield" chance="11111"/>
 		<item name="demon shield" chance="4166"/>
-		<item name="tower shield" chance="9090"/>
 		<item name="power bolt" countmax="94" chance="16666"/>
 		<item name="soul orb" countmax="5" chance="20000"/>
 		<item name="demon horn" countmax="2" chance="12500"/>

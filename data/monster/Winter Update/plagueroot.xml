@@ -82,7 +82,6 @@
 		<item name="Bullseye Potion" countmax="10" chance="25000" />
 		<item name="Pomegranate" chance="8000" />
 		<item name="Crystal Coin" countmax="2" chance="7700" />
-		<item name="Skull Staff" chance="7650" />
 		<item name="Chaos Mace" chance="2200" />
 		<item name="Gold Ingot" chance="2800" />
 		<item id="26199" chance="2500" /> <!-- collar of green plasma-->

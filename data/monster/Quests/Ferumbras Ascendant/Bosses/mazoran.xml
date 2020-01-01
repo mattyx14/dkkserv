@@ -81,7 +81,6 @@
 		<item id="2155" chance="1000"/><!-- green gem -->
 		<item id="2158" chance="1000"/><!-- blue gem -->
 		<item id="2167" chance="4000"/><!-- energy ring -->
-		<item id="2432" chance="3000"/><!-- fire axe -->
 		<item id="25416" chance="500"/><!-- impaler of igniter -->
 		<item id="2542" chance="500" unique="1"/><!-- tempest shield -->
 		<item id="25522" chance="500"/><!-- ritt bow -->

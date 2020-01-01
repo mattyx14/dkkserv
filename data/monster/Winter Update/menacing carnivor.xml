@@ -60,7 +60,7 @@
 		<item name="Machete" chance="30000" />
 		<item name="Heavy Machete" chance="13050" />
 		<item name="Iron Helmet" chance="12800" />
-		<item name="Knight Legs" chance="10050" />
+		<item id="2152" countmax="50" chance="10000"/>
 		<item name="Wand of Starstorm" chance="22000" />
 		<item name="Wand of Voodoo" chance="24600" />
 		<item name="Green Crystal Fragment" chance="21400" />

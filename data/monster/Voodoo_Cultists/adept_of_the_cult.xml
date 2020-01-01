@@ -68,7 +68,7 @@
 		<item name="pirate voodoo doll" chance="1730"/>
 		<item id="6089" chance="700"/><!-- music sheet 3rd verse -->
 		<item name="lunar staff" chance="120"/>
-		<item name="amber staff" chance="680"/>
+		<item id="2152" countmax="50" chance="1000"/>
 		<item name="cultish robe" chance="10080"/>
 		<item name="cultish symbol" chance="90"/>
 		<item name="rope belt" chance="10000"/>

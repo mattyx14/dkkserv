@@ -54,7 +54,7 @@
 		<item name="burnt scroll" chance="50000"/>
 		<item name="blank rune" countmax="2" chance="30000"/>
 		<item name="fire sword" chance="4140"/>
-		<item name="fire axe" chance="440"/>
+		<item id="2160" countmax="1" chance="1000"/>
 		<item name="soul orb" chance="12150"/>
 		<item name="demonic essence" chance="14500"/>
 		<item name="magma legs" chance="730"/>

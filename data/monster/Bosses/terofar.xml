@@ -76,7 +76,6 @@
 		<item id="7633" chance="38890"/><!-- giant shimmering pearl -->
 		<item id="2520" chance="11110"/><!-- demon shield -->
 		<item id="2515" chance="22220"/><!-- guardian shield -->
-		<item id="2519" chance="11110"/><!-- crown shield -->
 		<item id="2514" chance="960"/><!-- mastermind shield -->
 		<item id="8891" chance="5560"/><!-- paladin armor -->
 		<item id="8879" chance="11110"/><!-- voltage armor -->
@@ -88,7 +87,6 @@
 		<item id="2645" chance="910"/><!-- steel boots -->
 		<item id="2498" chance="910"/><!-- RH -->
 		<item id="7886" chance="2910"/><!--terra boots -->
-		<item id="2195" chance="1910"/><!--boots haste -->
 		<item id="5741" chance="1910"/><!-- skull helmnet -->
 	</loot>
 </monster>

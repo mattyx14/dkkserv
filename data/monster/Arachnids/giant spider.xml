@@ -53,8 +53,7 @@
 		<item name="two handed sword" chance="5100" />
 		<item name="steel helmet" chance="4980" />
 		<item name="plate armor" chance="9980" />
-		<item name="knight armor" chance="500" />
-		<item name="knight legs" chance="840" />
+		<item id="2160" countmax="1" chance="600"/>
 		<item name="poison arrow" countmax="12" chance="11950" />
 		<item name="plate legs" chance="8333" />
 		<item name="spider silk" chance="1990" />

@@ -96,9 +96,6 @@
 				<item id="2411" chance="5000"/> -- poison dagger :: Def 8 :: Atk 18
 				<item id="2792" countmax="5" chance1="6666" chancemax="0"/> -- dark mushroom
 				<item id="2793" countmax="2" chance1="6666" chancemax="0"/> -- mushrooms
-				<item id="2656" chance="600"/> -- blue robe :: Arm 11
-				<item id="7730" chance="650"/> -- blue legs :: Arm 8
-				<item id="2436" chance="2428"/> -- skull staff :: Def 12 :: Atk 40
 				<item id="2123" chance="3000"/> -- ring of the sky
 			</inside>
 		</item>

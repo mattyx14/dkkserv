@@ -69,7 +69,6 @@
 			<inside>
 				<item id="2654" chance="20000"/>
 				<item id="2655" chance="1333"/>
-				<item id="2656" chance="600"/>
 			</inside>
 		</item>
 	</loot>

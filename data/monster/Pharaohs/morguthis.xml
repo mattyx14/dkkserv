@@ -73,7 +73,6 @@
 		<item name="gold coin" countmax="73" chance="50000" />
 		<item name="stone skin amulet" chance="7000" />
 		<item name="sword hilt" chance="100000" />
-		<item name="knight axe" chance="7000" />
 		<item name="ravager's axe" chance="300" />
 		<item name="steel boots" chance="500" />
 		<item name="assassin star" countmax="3" chance="500" />

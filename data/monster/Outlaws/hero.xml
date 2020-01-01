@@ -59,10 +59,7 @@
 		<item name="war hammer" chance="870"/>
 		<item name="fire sword" chance="550"/>
 		<item name="bow" chance="13300"/>
-		<item name="crown armor" chance="490"/>
-		<item name="crown legs" chance="660"/>
-		<item name="crown helmet" chance="450"/>
-		<item name="crown shield" chance="280"/>
+		<item id="2160" countmax="4" chance="800"/>
 		<item name="arrow" countmax="13" chance="26000"/>
 		<item name="green tunic" chance="8000"/>
 		<item name="scarf" chance="1110"/>

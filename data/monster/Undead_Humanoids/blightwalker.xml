@@ -61,7 +61,7 @@
 		<item name="garlic necklace" chance="2050"/>
 		<item name="blank rune" countmax="2" chance="26250"/>
 		<item name="golden sickle" chance="350"/>
-		<item name="skull staff" chance="1520"/>
+		<item id="2152" countmax="50" chance="1500"/>
 		<item name="scythe" chance="3000"/>
 		<item name="bunch of wheat" chance="50000"/>
 		<item name="soul orb" chance="23720"/>

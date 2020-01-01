@@ -76,8 +76,6 @@
 		<item id="11233" countmax="3" chance="100000" />		<!-- unholy bone -->
 		<item id="9971" chance="78000" />					<!-- gold ingot -->
 		<item id="6500" chance="56000" />					<!-- demonic essence -->
-		<item id="2476" chance="47270" />					<!-- knight armor -->
-		<item id="2491" chance="40000" />					<!-- crown helmet -->
 		<item id="8472" countmax="3" chance="37000" />		<!-- great spirit potion -->
 		<item id="5925" countmax="5" chance="37000" />		<!-- hardened bone -->
 		<item id="11368" chance="37000" />					<!-- jade hat -->

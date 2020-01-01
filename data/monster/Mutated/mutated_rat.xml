@@ -67,7 +67,7 @@
 		<item name="mouldy cheese" chance="950"/>
 		<item name="halberd" chance="2990"/>
 		<item name="plate shield" chance="3750"/>
-		<item name="tower shield" chance="50"/>
+		<item id="2152" countmax="50" chance="50"/>
 		<item name="green mushroom" chance="1390"/>
 		<item name="stone herb" chance="4920"/>
 		<item name="health potion" chance="560"/>

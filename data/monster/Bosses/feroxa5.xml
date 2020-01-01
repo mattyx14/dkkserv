@@ -47,7 +47,6 @@
 		<item id="18418" countmax="5" chance="10000"/><!-- blue crystal splinter -->
 		<item id="2158" chance="2500"/><!-- blue gem -->
 		<item id="2156" chance="2500"/><!-- red gem -->
-		<item id="2195" chance="1500"/><!-- boots of haste -->
 		<item id="2152" countmax="50" chance="100000"/><!-- platinum coin -->
 		<item id="8473" countmax="5" chance="10000"/><!-- ultimate health potion -->
 		<item id="7590" countmax="5" chance="10000"/><!-- great mana potion -->

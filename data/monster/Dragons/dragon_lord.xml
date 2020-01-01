@@ -59,9 +59,8 @@
 		<item name="life crystal" chance="680"/>
 		<item name="fire sword" chance="290"/>
 		<item name="strange helmet" chance="360"/>
-		<item name="dragon scale mail" chance="170"/>
+		<item id="2160" countmax="6" chance="170"/>
 		<item name="royal helmet" chance="280"/>
-		<item name="tower shield" chance="250"/>
 		<item name="power bolt" countmax="7" chance="6700"/>
 		<item name="dragon ham" countmax="5" chance="80000"/>
 		<item name="green mushroom" chance="12000"/>

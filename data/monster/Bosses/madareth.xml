@@ -68,7 +68,6 @@
 		<item id="2370" chance="19000"/>					<!-- lute -->
 		<item id="2152" countmax="26" chance="19000"/>		<!-- platinum coin -->
 		<item id="2377" chance="19000"/>					<!-- two handed sword -->
-		<item id="7404" chance="16000"/>					<!-- assassin dagger -->
 		<item id="2208" chance="16000"/>					<!-- axe ring -->
 		<item id="8473" chance="16000"/>					<!-- ultimate health potion -->
 		<item id="8910" chance="16000"/>					<!-- underworld rod -->

@@ -61,7 +61,7 @@
 		<item name="Holy Orchid" chance="5650"/>
 		<item name="Magma Amulet" chance="5130"/>
 		<item name="Wand of Inferno" chance="4360"/>
-		<item name="Fire Axe" chance="3590"/>
+		<item id="2160" countmax="1" chance="4000"/>
 		<item name="Magma Coat" chance="3340"/>
 		<item name="Wand of Dragonbreath" chance="2650"/>
 		<item name="Sun Fruit" chance="2570"/>
