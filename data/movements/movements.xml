@@ -790,8 +790,6 @@
 	<movevent event="Equip" itemid="2139" slot="head" function="onEquipItem"/>
 	<movevent event="DeEquip" itemid="3972" slot="head" function="onDeEquipItem" />
 	<movevent event="Equip" itemid="3972" slot="head" function="onEquipItem"/>
-	<movevent event="DeEquip" itemid="2491" slot="head" function="onDeEquipItem" />
-	<movevent event="Equip" itemid="2491" slot="head" function="onEquipItem"/>
 	<movevent event="DeEquip" itemid="2497" slot="head" function="onDeEquipItem" />
 	<movevent event="Equip" itemid="2497" slot="head" function="onEquipItem"/>
 	<movevent event="DeEquip" itemid="7458" slot="head" function="onDeEquipItem" />
@@ -847,9 +845,6 @@
 		<vocation name="Royal Paladin" showInDescription="0" />
 	</movevent>
 	<movevent event="DeEquip" itemid="30883" slot="armor" function="onDeEquipItem" />
-
-	<movevent event="Equip" itemid="29079" slot="armor" level="60" function="onEquipItem" /> <!-- Swan Feather Cloak -->
-	<movevent event="DeEquip" itemid="29079" slot="armor" function="onDeEquipItem" />
 
 	<movevent event="Equip" itemid="2466" slot="armor" function="onEquipItem">
 		<vocation name="Knight" />
@@ -1260,14 +1255,6 @@
 	</movevent>
 	<movevent event="DeEquip" itemid="12607" slot="armor" function="onDeEquipItem" />
 
-	<movevent event="Equip" itemid="12643" slot="armor" level="100" function="onEquipItem">
-		<vocation name="Sorcerer" />
-		<vocation name="Master Sorcerer" showInDescription="0" />
-		<vocation name="Druid" />
-		<vocation name="Elder Druid" showInDescription="0" />
-	</movevent>
-	<movevent event="DeEquip" itemid="12643" slot="armor" function="onDeEquipItem" />
-
 	<movevent event="Equip" itemid="12642" slot="armor" level="100" function="onEquipItem">
 		<vocation name="Knight" />
 		<vocation name="Elite Knight" showInDescription="0" />
@@ -1363,15 +1350,6 @@
 		<vocation name="Royal Paladin" showInDescription="0" />
 	</movevent>
 	<movevent event="DeEquip" itemid="2477" slot="legs" function="onDeEquipItem" />
-
-	<movevent event="Equip" itemid="2488" slot="legs" function="onEquipItem">
-		<vocation name="Knight" />
-		<vocation name="Elite Knight" showInDescription="0" />
-		<vocation name="Paladin" />
-		<vocation name="Royal Paladin" showInDescription="0" />
-	</movevent>
-	<movevent event="DeEquip" itemid="2488" slot="legs" function="onDeEquipItem" />
-
 	<movevent event="Equip" itemid="2470" slot="legs" function="onEquipItem">
 		<vocation name="Knight" />
 		<vocation name="Elite Knight" showInDescription="0" />
@@ -2363,9 +2341,6 @@
 	<movevent event="Equip" itemid="15451" level="40" slot="hand" function="onEquipItem"/> <!-- Warrior's Axe -->
 	<movevent event="DeEquip" itemid="15451" slot="hand" function="onDeEquipItem" />
 
-	<movevent event="Equip" itemid="7434" level="75" slot="hand" function="onEquipItem"/> <!-- Royal Axe -->
-	<movevent event="DeEquip" itemid="7434" slot="hand" function="onDeEquipItem" />
-
 	<movevent event="Equip" itemid="7435" level="85" slot="hand" function="onEquipItem"/> <!-- Impaler -->
 	<movevent event="DeEquip" itemid="7435" slot="hand" function="onDeEquipItem" />
 
@@ -2383,9 +2358,6 @@
 
 	<movevent event="Equip" itemid="8925" level="130" slot="hand" function="onEquipItem"/> <!-- Solar Axe -->
 	<movevent event="DeEquip" itemid="8925" slot="hand" function="onDeEquipItem" />
-
-	<movevent event="Equip" itemid="2431" level="90" slot="hand" function="onEquipItem"/> <!-- Stonecutter Axe -->
-	<movevent event="DeEquip" itemid="2431" slot="hand" function="onDeEquipItem" />
 
 	<movevent event="Equip" itemid="8924" level="110" slot="hand" function="onEquipItem"/> <!-- Hellforged Axe -->
 	<movevent event="DeEquip" itemid="8924" slot="hand" function="onDeEquipItem" />
@@ -2457,9 +2429,6 @@
 	</movevent>
 	<movevent event="DeEquip" itemid="7452" slot="hand" function="onDeEquipItem" />
 
-	<movevent event="Equip" itemid="7429" level="75" slot="hand" function="onEquipItem"/> <!-- Blessed Sceptre -->
-	<movevent event="DeEquip" itemid="7429" slot="hand" function="onDeEquipItem" />
-
 	<movevent event="Equip" itemid="7421" level="65" slot="hand" function="onEquipItem"/> <!-- Onyx Flail -->
 	<movevent event="DeEquip" itemid="7421" slot="hand" function="onDeEquipItem" />
 
@@ -2484,9 +2453,6 @@
 	<movevent event="Equip" itemid="23543" level="25" slot="hand" function="onEquipItem"/> <!-- Glooth Whip -->
 	<movevent event="DeEquip" itemid="23543" slot="hand" function="onDeEquipItem" />
 
-	<movevent event="Equip" itemid="2453" level="75" slot="hand" function="onEquipItem"/> <!-- Arcane Staff -->
-	<movevent event="DeEquip" itemid="2453" slot="hand" function="onDeEquipItem" />
-
 	<movevent event="Equip" itemid="8929" level="100" slot="hand" function="onEquipItem"> <!-- The Stomper -->
 		<vocation name="Knight"/>
 		<vocation name="Elite Knight" showInDescription="0"/>
@@ -2502,9 +2468,6 @@
 	</movevent>
 	<movevent event="DeEquip" itemid="7423" slot="hand" function="onDeEquipItem" />
 
-	<movevent event="Equip" itemid="2436" level="30" slot="hand" function="onEquipItem"/> <!-- Skull Staff -->
-	<movevent event="DeEquip" itemid="2436" slot="hand" function="onDeEquipItem" />
-
 	<movevent event="Equip" itemid="2424" level="45" slot="hand" function="onEquipItem"/> <!-- Silver Mace -->
 	<movevent event="DeEquip" itemid="2424" slot="hand" function="onDeEquipItem" />
 
@@ -2513,9 +2476,6 @@
 
 	<movevent event="Equip" itemid="7437" level="30" slot="hand" function="onEquipItem"/> <!-- Sapphire Hammer -->
 	<movevent event="DeEquip" itemid="7437" slot="hand" function="onDeEquipItem" />
-
-	<movevent event="Equip" itemid="2421" level="85" slot="hand" function="onEquipItem"/> <!-- Thunder Hammer -->
-	<movevent event="DeEquip" itemid="2421" slot="hand" function="onDeEquipItem" />
 
 	<movevent event="Equip" itemid="8928" level="100" slot="hand" function="onEquipItem"/> <!-- Obsidian Truncheon -->
 	<movevent event="DeEquip" itemid="8928" slot="hand" function="onDeEquipItem" />
@@ -2609,9 +2569,6 @@
 	<movevent event="Equip" itemid="2376" slot="hand" function="onEquipItem"/> <!-- Sword -->
 	<movevent event="DeEquip" itemid="2376" slot="hand" function="onDeEquipItem" />
 
-	<movevent event="Equip" itemid="2400" level="80" slot="hand" function="onEquipItem"/> <!-- Magic Sword -->
-	<movevent event="DeEquip" itemid="2400" slot="hand" function="onDeEquipItem" />
-
 	<movevent event="Equip" itemid="7404" level="40" slot="hand" function="onEquipItem"/> <!-- Assassin Dagger -->
 	<movevent event="DeEquip" itemid="7404" slot="hand" function="onDeEquipItem" />
 
@@ -2629,9 +2586,6 @@
 
 	<movevent event="Equip" itemid="11395" slot="hand" function="onEquipItem"/> <!-- Crimson Sword (Rashid) -->
 	<movevent event="DeEquip" itemid="11395" slot="hand" function="onDeEquipItem" />
-
-	<movevent event="Equip" itemid="2407" level="30" slot="hand" function="onEquipItem"/> <!-- Bright Sword -->
-	<movevent event="DeEquip" itemid="2407" slot="hand" function="onDeEquipItem" />
 
 	<movevent event="Equip" itemid="7416" level="55" slot="hand" function="onEquipItem"/> <!-- Bloody Edge -->
 	<movevent event="DeEquip" itemid="7416" slot="hand" function="onDeEquipItem" />
@@ -2983,8 +2937,6 @@
 	<movevent event="DeEquip" itemid="11305" slot="hand" function="onDeEquipItem" />
 	<movevent event="Equip" itemid="7380" slot="hand" function="onEquipItem" />
 	<movevent event="DeEquip" itemid="7380" slot="hand" function="onDeEquipItem" />
-	<movevent event="Equip" itemid="7389" slot="hand" function="onEquipItem" />
-	<movevent event="DeEquip" itemid="7389" slot="hand" function="onDeEquipItem" />
 	<movevent event="Equip" itemid="2430" slot="hand" function="onEquipItem" />
 	<movevent event="DeEquip" itemid="2430" slot="hand" function="onDeEquipItem" />
 	<movevent event="Equip" itemid="22405" slot="hand" function="onEquipItem" />
@@ -3021,4 +2973,80 @@
 
 	<!-- Adventurer's Guild -->
 	<movevent event="StepIn" actionid="4255" script="adventurersguild.lua" />
+
+	<!-- Imbuid items DarkKonia -->
+	<movevent event="Equip" itemid="2407" level="90" slot="hand" function="onEquipItem"> <!-- Bright Sword -->
+		<vocation name="Knight"/>
+		<vocation name="Elite Knight" showInDescription="0"/>
+	</movevent>
+	<movevent event="DeEquip" itemid="2407" slot="hand" function="onDeEquipItem" />
+	<movevent event="Equip" itemid="2436" level="30" slot="hand" level="90" function="onEquipItem"> <!-- Skull Staff -->
+		<vocation name="Knight"/>
+		<vocation name="Elite Knight" showInDescription="0"/>
+	</movevent>
+	<movevent event="DeEquip" itemid="2436" slot="hand" function="onDeEquipItem" />
+	<movevent event="Equip" itemid="2432" slot="hand" level="90" function="onEquipItem"> <!-- Fire Axe -->
+		<vocation name="Knight"/>
+		<vocation name="Elite Knight" showInDescription="0"/>
+	</movevent>
+	<movevent event="DeEquip" itemid="2432" slot="hand" function="onDeEquipItem" />
+	<movevent event="Equip" itemid="7390" slot="hand" level="150" function="onEquipItem"> <!-- The Justice Seeker -->
+		<vocation name="Knight"/>
+		<vocation name="Elite Knight" showInDescription="0"/>
+	</movevent>
+	<movevent event="DeEquip" itemid="7390" slot="hand" function="onDeEquipItem" />
+	<movevent event="Equip" itemid="2491" slot="head" function="onEquipItem">
+		<vocation name="Sorcerer" />
+		<vocation name="Master Sorcerer" showInDescription="0" />
+		<vocation name="Druid" />
+		<vocation name="Elder Druid" showInDescription="0" />
+	</movevent>
+	<movevent event="DeEquip" itemid="2491" slot="head" function="onDeEquipItem" />
+	<movevent event="Equip" itemid="29079" slot="armor" level="60" function="onEquipItem"> <!-- Swan Feather Cloak -->
+		<vocation name="Druid" />
+		<vocation name="Elder Druid" showInDescription="0" />
+	</movevent>
+	<movevent event="DeEquip" itemid="29079" slot="armor" function="onDeEquipItem" />
+	<movevent event="Equip" itemid="7434" level="150" slot="hand" function="onEquipItem"> <!-- Royal Axe -->
+		<vocation name="Knight"/>
+		<vocation name="Elite Knight" showInDescription="0"/>
+	</movevent>
+	<movevent event="DeEquip" itemid="7434" slot="hand" function="onDeEquipItem" />
+	<movevent event="Equip" itemid="7429" level="150" slot="hand" function="onEquipItem"> <!-- Blessed Sceptre -->
+		<vocation name="Knight"/>
+		<vocation name="Elite Knight" showInDescription="0"/>
+	</movevent>
+	<movevent event="DeEquip" itemid="7429" slot="hand" function="onDeEquipItem" />
+	<movevent event="Equip" itemid="2453" level="75" slot="hand" function="onEquipItem"> <!-- Arcane Staff -->
+		<vocation name="Knight"/>
+		<vocation name="Elite Knight" showInDescription="0"/>
+	</movevent>
+	<movevent event="DeEquip" itemid="2453" slot="hand" function="onDeEquipItem" />
+	<movevent event="Equip" itemid="2421" level="200" slot="hand" function="onEquipItem"> <!-- Thunder Hammer -->
+		<vocation name="Knight" />
+		<vocation name="Elite Knight" showInDescription="0" />
+	</movevent>
+	<movevent event="DeEquip" itemid="2421" slot="hand" function="onDeEquipItem" />
+	<movevent event="Equip" itemid="2400" level="200" slot="hand" function="onEquipItem"> <!-- Magic Sword -->
+		<vocation name="Knight"/>
+		<vocation name="Elite Knight" showInDescription="0"/>
+	</movevent>
+	<movevent event="DeEquip" itemid="2400" slot="hand" function="onDeEquipItem" />
+	<movevent event="Equip" itemid="2431" level="200" slot="hand" function="onEquipItem"> <!-- Stonecutter Axe -->
+		<vocation name="Knight"/>
+		<vocation name="Elite Knight" showInDescription="0"/>
+	</movevent>
+	<movevent event="DeEquip" itemid="2431" slot="hand" function="onDeEquipItem" />
+	<movevent event="Equip" itemid="7389" slot="hand" function="onEquipItem">
+		<vocation name="Knight"/>
+		<vocation name="Elite Knight" showInDescription="0"/>
+	</movevent>
+	<movevent event="DeEquip" itemid="7389" slot="hand" function="onDeEquipItem" />
+	<movevent event="Equip" itemid="12643" slot="armor" level="100" function="onEquipItem">
+		<vocation name="Sorcerer" />
+		<vocation name="Master Sorcerer" showInDescription="0" />
+	</movevent>
+	<movevent event="DeEquip" itemid="12643" slot="armor" function="onDeEquipItem" />
+	<movevent event="Equip" itemid="2488" slot="legs" function="onEquipItem" />
+	<movevent event="DeEquip" itemid="2488" slot="legs" function="onDeEquipItem" />
 </movements>

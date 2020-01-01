@@ -3243,10 +3243,11 @@
 		<attribute key="description" value="It's the Sword of Valor." />
 		<attribute key="weight" value="4200" />
 		<attribute key="defense" value="35" />
-		<attribute key="attack" value="48" />
+		<attribute key="attack" value="53" />
+		<attribute key="elementHoly" value="5" />
 		<attribute key="weaponType" value="sword" />
 		<attribute key="extradef" value="3" />
-		<attribute key="imbuingSlots" value="2" />
+		<attribute key="imbuingSlots" value="3" />
 	</item>
 	<item id="2401" article="a" name="staff">
 		<attribute key="weight" value="3800" />
@@ -3289,7 +3290,8 @@
 		<attribute key="description" value="The blade shimmers in light blue." />
 		<attribute key="weight" value="2900" />
 		<attribute key="defense" value="30" />
-		<attribute key="attack" value="36" />
+		<attribute key="attack" value="28" />
+		<attribute key="elementHoly" value="19" />
 		<attribute key="weaponType" value="sword" />
 		<attribute key="extradef" value="1" />
 		<attribute key="imbuingSlots" value="2" />
@@ -3393,10 +3395,11 @@
 		<attribute key="description" value="It is blessed by the gods of Tibia." />
 		<attribute key="weight" value="12500" />
 		<attribute key="defense" value="35" />
-		<attribute key="attack" value="49" />
+		<attribute key="attack" value="52" />
+		<attribute key="elementEnergy" value="5" />
 		<attribute key="weaponType" value="club" />
 		<attribute key="extradef" value="1" />
-		<attribute key="imbuingSlots" value="2" />
+		<attribute key="imbuingSlots" value="3" />
 	</item>
 	<item id="2422" article="an" name="iron hammer">
 		<attribute key="weight" value="6600" />
@@ -3469,19 +3472,21 @@
 		<attribute key="description" value="You feel the power of this mighty axe." />
 		<attribute key="weight" value="9900" />
 		<attribute key="defense" value="30" />
-		<attribute key="attack" value="50" />
+		<attribute key="attack" value="54" />
+		<attribute key="elementEarth" value="5" />
 		<attribute key="weaponType" value="axe" />
 		<attribute key="extradef" value="3" />
-		<attribute key="imbuingSlots" value="1" />
+		<attribute key="imbuingSlots" value="3" />
 	</item>
 	<item id="2432" article="a" name="fire axe">
 		<attribute key="description" value="The blade is a magic flame." />
 		<attribute key="weight" value="4000" />
 		<attribute key="defense" value="16" />
-		<attribute key="attack" value="27" />
-		<attribute key="elementFire" value="11" />
+		<attribute key="attack" value="26" />
+		<attribute key="elementFire" value="19" />
 		<attribute key="weaponType" value="axe" />
 		<attribute key="extradef" value="1" />
+		<attribute key="imbuingSlots" value="2" />
 	</item>
 	<item id="2433" article="an" name="enchanted staff">
 		<attribute key="description" value="Temporary magic powers enchant this staff." />
@@ -3511,7 +3516,8 @@
 		<attribute key="description" value="The staff longs for death." />
 		<attribute key="weight" value="1700" />
 		<attribute key="defense" value="12" />
-		<attribute key="attack" value="36" />
+		<attribute key="attack" value="30" />
+		<attribute key="elementDeath" value="14" />
 		<attribute key="weaponType" value="club" />
 		<attribute key="extradef" value="1" />
 		<attribute key="imbuingSlots" value="2" />
@@ -3638,7 +3644,7 @@
 		<attribute key="attack" value="50" />
 		<attribute key="weaponType" value="club" />
 		<attribute key="slotType" value="two-handed" />
-		<attribute key="imbuingSlots" value="2" />
+		<attribute key="imbuingSlots" value="3" />
 	</item>
 	<item id="2454" article="a" name="war axe">
 		<attribute key="weight" value="6150" />
@@ -3827,7 +3833,7 @@
 		<attribute key="weight" value="9900" />
 		<attribute key="armor" value="13" />
 		<attribute key="slotType" value="body" />
-		<attribute key="imbuingSlots" value="1" />
+		<attribute key="imbuingSlots" value="2" />
 	</item>
 	<item id="2488" name="crown legs">
 		<attribute key="weight" value="6500" />
@@ -3846,7 +3852,7 @@
 	</item>
 	<item id="2491" article="a" name="crown helmet">
 		<attribute key="weight" value="2950" />
-		<attribute key="armor" value="7" />
+		<attribute key="armor" value="8" />
 		<attribute key="slotType" value="head" />
 		<attribute key="imbuingSlots" value="2" />
 	</item>
@@ -12489,10 +12495,9 @@
 		<attribute key="imbuingSlots" value="2" />
 	</item>
 	<item id="7384" article="a" name="mystic blade">
-		<attribute key="description" value="This sword is only granted to a scrapper of the Svargrond arena." />
 		<attribute key="weight" value="3500" />
 		<attribute key="defense" value="25" />
-		<attribute key="attack" value="44" />
+		<attribute key="attack" value="42" />
 		<attribute key="weaponType" value="sword" />
 		<attribute key="extradef" value="2" />
 		<attribute key="imbuingSlots" value="2" />
@@ -12532,16 +12537,16 @@
 		<attribute key="attack" value="44" />
 		<attribute key="weaponType" value="axe" />
 		<attribute key="extradef" value="1" />
-		<attribute key="description" value="This axe is only granted to a scrapper of the Svargrond Arena." />
 		<attribute key="imbuingSlots" value="2" />
 	</item>
 	<item id="7390" article="the" name="justice seeker">
 		<attribute key="weight" value="5000" />
 		<attribute key="defense" value="24" />
-		<attribute key="attack" value="47" />
+		<attribute key="attack" value="43" />
+		<attribute key="elementHoly" value="4" />
 		<attribute key="weaponType" value="sword" />
 		<attribute key="extradef" value="3" />
-		<attribute key="description" value="This sword is only granted to a warlord of the Svargrond Arena." />
+		<attribute key="imbuingSlots" value="3" />
 	</item>
 	<item id="7391" article="a" name="thaian sword">
 		<attribute key="weight" value="6100" />
@@ -12798,13 +12803,13 @@
 		<attribute key="slotType" value="two-handed" />
 	</item>
 	<item id="7429" article="a" name="blessed sceptre">
-		<attribute key="description" value="This club is only granted to a warlord of the Svargrond arena." />
 		<attribute key="weight" value="3900" />
 		<attribute key="defense" value="21" />
-		<attribute key="attack" value="47" />
+		<attribute key="attack" value="39" />
+		<attribute key="elementHoly" value="7" />
 		<attribute key="weaponType" value="club" />
 		<attribute key="extradef" value="3" />
-		<attribute key="imbuingSlots" value="2" />
+		<attribute key="imbuingSlots" value="3" />
 	</item>
 	<item id="7430" article="a" name="dragonbone staff">
 		<attribute key="description" value="Small flames are dancing around this strange weapon." />
@@ -12839,11 +12844,11 @@
 	<item id="7434" article="a" name="royal axe">
 		<attribute key="weight" value="9200" />
 		<attribute key="defense" value="25" />
-		<attribute key="attack" value="47" />
+		<attribute key="attack" value="41" />
+		<attribute key="elementHoly" value="7" />
 		<attribute key="weaponType" value="axe" />
 		<attribute key="extradef" value="3" />
-		<attribute key="description" value="This axe is only granted to a warlord of the Svargrond arena." />
-		<attribute key="imbuingSlots" value="2" />
+		<attribute key="imbuingSlots" value="3" />
 	</item>
 	<item id="7435" article="an" name="impaler">
 		<attribute key="weight" value="8200" />
@@ -21468,8 +21473,10 @@
 		<attribute key="weight" value="4500" />
 		<attribute key="armor" value="12" />
 		<attribute key="slotType" value="body" />
-		<attribute key="magiclevelpoints" value="2" />
+		<attribute key="magiclevelpoints" value="3" />
 		<attribute key="absorbPercentFire" value="5" />
+		<attribute key="absorbPercentIce" value="5" />
+		<attribute key="imbuingSlots" value="1" />
 	</item>
 	<item id="12644" article="a" name="shield of corruption">
 		<attribute key="weight" value="4900" />
@@ -24466,7 +24473,7 @@
 		<attribute key="weight" value="7500" />
 	</item>
 	<item id="16101" article="a" name="premium scroll">
-		<attribute key="description" value="Using this scroll will add 5 days of premium time to your account once." />
+		<attribute key="description" value="Using this scroll will add 30 days of premium time to your account once." />
 		<attribute key="weight" value="0" />
 	</item>
 	<item id="16102" article="a" name="surprise nest">
@@ -30237,7 +30244,7 @@
 		<attribute key="weaponType" value="sword" />
 		<attribute key="extradef" value="3" />
 		<attribute key="skillSword" value="1" />
-		<attribute key="imbuingSlots" value="1" />
+		<attribute key="imbuingSlots" value="2" />
 	</item>
 	<item id="22401" article="a" name="crude umbral slayer">
 		<attribute key="weight" value="10000" />
@@ -30335,7 +30342,7 @@
 		<attribute key="weaponType" value="club" />
 		<attribute key="extradef" value="3" />
 		<attribute key="skillClub" value="1" />
-		<attribute key="imbuingSlots" value="1" />
+		<attribute key="imbuingSlots" value="2" />
 	</item>
 	<item id="22413" article="a" name="crude umbral hammer">
 		<attribute key="weight" value="17000" />
@@ -37109,8 +37116,9 @@
 		<attribute key="armor" value="12" />
 		<attribute key="slotType" value="body" />
 		<attribute key="speed" value="20" />
-		<attribute key="absorbPercentEarth" value="12" />
-		<attribute key="absorbPercentEnergy" value="12" />
+		<attribute key="absorbPercentEarth" value="8" />
+		<attribute key="absorbPercentEnergy" value="8" />
+		<attribute key="imbuingSlots" value="1" />
 	</item>
 	<item id="29080" article="a" name="blossom bag">
 		<attribute key="weight" value="800" />
@@ -38788,14 +38796,16 @@
 	<item id="30684" article="a" name="blade of destruction">
 		<attribute key="weight" value="5000" />
 		<attribute key="defense" value="33" />
-		<attribute key="attack" value="50" />
+		<attribute key="attack" value="55" />
+		<attribute key="elementHoly" value="5" />
 		<attribute key="weaponType" value="sword" />
 		<attribute key="imbuingSlots" value="3" />
 	</item>
 	<item id="30685" article="a" name="slayer of destruction">
 		<attribute key="weight" value="7000" />
 		<attribute key="defense" value="32" />
-		<attribute key="attack" value="52" />
+		<attribute key="attack" value="56" />
+		<attribute key="elementHoly" value="6" />
 		<attribute key="weaponType" value="sword" />
 		<attribute key="slotType" value="two-handed" />
 		<attribute key="imbuingSlots" value="3" />
@@ -38803,14 +38813,16 @@
 	<item id="30686" article="an" name="axe of destruction">
 		<attribute key="weight" value="5000" />
 		<attribute key="defense" value="31" />
-		<attribute key="attack" value="51" />
+		<attribute key="attack" value="56" />
+		<attribute key="elementHoly" value="5" />
 		<attribute key="weaponType" value="axe" />
 		<attribute key="imbuingSlots" value="3" />
 	</item>
 	<item id="30687" article="a" name="chopper of destruction">
 		<attribute key="weight" value="7000" />
 		<attribute key="defense" value="32" />
-		<attribute key="attack" value="52" />
+		<attribute key="attack" value="57" />
+		<attribute key="elementHoly" value="7" />
 		<attribute key="weaponType" value="axe" />
 		<attribute key="slotType" value="two-handed" />
 		<attribute key="imbuingSlots" value="3" />
@@ -38818,14 +38830,16 @@
 	<item id="30688" article="a" name="mace of destruction">
 		<attribute key="weight" value="5000" />
 		<attribute key="defense" value="30" />
-		<attribute key="attack" value="50" />
+		<attribute key="attack" value="55" />
+		<attribute key="elementHoly" value="5" />
 		<attribute key="weaponType" value="club" />
 		<attribute key="imbuingSlots" value="3" />
 	</item>
 	<item id="30689" article="a" name="hammer of destruction">
 		<attribute key="weight" value="7000" />
 		<attribute key="defense" value="30" />
-		<attribute key="attack" value="53" />
+		<attribute key="attack" value="56" />
+		<attribute key="elementHoly" value="7" />
 		<attribute key="weaponType" value="club" />
 		<attribute key="slotType" value="two-handed" />
 		<attribute key="imbuingSlots" value="3" />
@@ -38834,8 +38848,8 @@
 		<attribute key="weight" value="6500" />
 		<attribute key="weaponType" value="distance" />
 		<attribute key="slotType" value="two-handed" />
-		<attribute key="attack" value="6" />
-		<attribute key="HitChance" value="6" />
+		<attribute key="attack" value="10" />
+		<attribute key="HitChance" value="8" />
 		<attribute key="ammoType" value="arrow" />
 		<attribute key="range" value="6" />
 		<attribute key="imbuingSlots" value="3" />
@@ -38844,8 +38858,8 @@
 		<attribute key="weight" value="6500" />
 		<attribute key="weaponType" value="distance" />
 		<attribute key="slotType" value="two-handed" />
-		<attribute key="attack" value="6" />
-		<attribute key="HitChance" value="6" />
+		<attribute key="attack" value="12" />
+		<attribute key="HitChance" value="8" />
 		<attribute key="ammoType" value="bolt" />
 		<attribute key="range" value="5" />
 		<attribute key="imbuingSlots" value="3" />
@@ -38855,16 +38869,16 @@
 		<attribute key="weaponType" value="wand" />
 		<attribute key="shootType" value="energy" />
 		<attribute key="range" value="4" />
-		<attribute key="magiclevelpoints" value="2" />
-		<attribute key="imbuingSlots" value="2" />
+		<attribute key="magiclevelpoints" value="5" />
+		<attribute key="imbuingSlots" value="3" />
 	</item>
 	<item id="30693" article="a" name="rod of destruction">
 		<attribute key="weight" value="3500" />
 		<attribute key="weaponType" value="wand" />
 		<attribute key="shootType" value="ice" />
 		<attribute key="range" value="4" />
-		<attribute key="magiclevelpoints" value="2" />
-		<attribute key="imbuingSlots" value="2" />
+		<attribute key="magiclevelpoints" value="5" />
+		<attribute key="imbuingSlots" value="3" />
 	</item>
 	<item id="30758" article="a" name="strange mallet">
 		<attribute key="weight" value="4500" />
