@@ -16,7 +16,7 @@ function onThink()
 end
 
 local config = {
-	price = 50000
+	price = 10000
 }
 
 local function creatureSayCallback(cid, type, msg)
@@ -25,24 +25,28 @@ local function creatureSayCallback(cid, type, msg)
 	end
 	local player = Player(cid)
 	if msgcontains(msg, "misidia settlement") then
-		if player:getStorageValue(Storage.FirstQuest.rewardFynn) == 1 then
+		if player:getStorageValue(Storage.FirstQuest.rewardFynn) ~= 1 then
+			npcHandler:say("You don't complete the first Fynnian quest.", cid)
+		elseif player:getStorageValue(Storage.FirstQuest.rewardFynn) == 1 then
 			npcHandler:say("Do you seek a seek a passage to {Misidia Settlement}?", cid)
 			npcHandler.topic[cid] = 1
 		else
-			npcHandler:say("You don't complete the first Fynnian quest.", cid)
+		return false
 		end
 	elseif msgcontains(msg, "yes") then
-		if player:removeMoney(config.price) then
-			if npcHandler.topic[cid] == 1 then
+		if npcHandler.topic[cid] == 1 then
+			if player:removeMoneyNpc(config.price) then
 				npcHandler:say("Let's go fo' a hunt and bring the beast down!", cid)
-				player:teleportTo(Position(1059, 313, 6), false)
+				doTeleportThing(cid, Position(1059, 313, 6))
 				player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 				npcHandler.topic[cid] = 0
+			else
+				npcHandler:say("You don\'t have enough money.", cid)
+				npcHandler.topic[cid] = 0
 			end
-		else
-			npcHandler:say("You don't have enough money, " .. config.price .. " gold coins.", cid)
 		end
 	end
+
 	return true
 end
 
