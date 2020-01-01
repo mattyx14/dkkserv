@@ -56,6 +56,27 @@
 		<parameter key="shop_sellable" value="
 			empty potion flask,7634,10;
 			empty potion flask,7635,15;
-			empty small potion flask,7636,5;" />
+			empty small potion flask,7636,5;
+			wand of cosmic energy, 2189, 2000;
+			wand of decay, 2188, 1000;
+			wand of defiance, 18390, 6500;
+			wand of draconia, 8921, 1500;
+			wand of dragonbreath, 2191, 200;
+			wand of everblazing, 18409, 6000;
+			wand of inferno, 2187, 3000;
+			wand of starstorm, 8920, 3600;
+			wand of voodoo, 8922, 4400;
+			wand of vortex, 2190, 100;
+			glacial rod, 18412, 6500;
+			hailstorm rod, 2183, 3000;
+			moonlight rod, 2186, 200;
+			muck rod, 18411, 6000;
+			mysterious fetish, 2194, 50;
+			necrotic rod, 2185, 1000;
+			northwind rod, 8911, 1500;
+			snakebite rod, 2182, 100;
+			springsprout rod, 8912, 3600;
+			terra rod, 2181, 2000;
+			underworld rod, 8910, 4400;" />
 	</parameters>
 </npc>
