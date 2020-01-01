@@ -6,4 +6,5 @@
 	<talkaction words="!kills" script="kills.lua" />
 	<talkaction words="!saveme" script="saveme.lua" />
 	<talkaction words="!serverinfo" script="serverinfo.lua" />
+	<talkaction words="!shop" script="znoteshop.lua"/>
 </talkactions>

@@ -92,24 +92,24 @@ DailyReward = {
       type = DAILY_REWARD_TYPE_ITEM,
       systemType = DAILY_REWARD_SYSTEM_TYPE_ONE,
       freeAccount = {
-        items = {7618, 7588, 7620, 7589, 8472, 2290, 2266, 2310, 2277, 2301, 2265},
-        itemsToPick = 50
+        items = {7618, 7588, 7620, 7589, 8472, 26029, 26030, 26031},
+        itemsToPick = 5
       },
       premiumAccount = {
-        items = {7618, 7588, 7620, 7589, 8472, 2290, 2266, 2310, 2277, 2301, 2265},
-        itemsToPick = 100
+        items = {7618, 7588, 7620, 7589, 8472, 26029, 26030, 26031},
+        itemsToPick = 10
       }
     },
     [2] = {
       type = DAILY_REWARD_TYPE_ITEM,
       systemType = DAILY_REWARD_SYSTEM_TYPE_ONE,
       freeAccount = {
-        items = {7618, 7588, 7620, 7589, 8472, 2290, 2266, 2310, 2277, 2301, 2265},
-        itemsToPick = 75
+        items = {7618, 7588, 7620, 7589, 8472, 26029, 26030, 26031},
+        itemsToPick = 10
       },
       premiumAccount = {
-        items = {7618, 7588, 7620, 7589, 8472, 2290, 2266, 2310, 2277, 2301, 2265},
-        itemsToPick = 125
+        items = {7618, 7588, 7620, 7589, 8472, 26029, 26030, 26031},
+        itemsToPick = 20
       }
     },
     [3] = {
@@ -126,46 +126,43 @@ DailyReward = {
       type = DAILY_REWARD_TYPE_ITEM,
       systemType = DAILY_REWARD_SYSTEM_TYPE_ONE,
       freeAccount = {
-        items = {7618, 7588, 7620, 7589, 8472, 2290, 2266, 2310, 2277, 2301, 2265},
-        itemsToPick = 100
+        items = {7618, 7588, 7620, 7589, 8472, 26029, 26030, 26031},
+        itemsToPick = 20
       },
       premiumAccount = {
-        items = {7618, 7588, 7620, 7589, 8472, 2290, 2266, 2310, 2277, 2301, 2265},
-        itemsToPick = 150
+        items = {7618, 7588, 7620, 7589, 8472, 26029, 26030, 26031},
+        itemsToPick = 40
       }
     },
     [5] = {
       type = DAILY_REWARD_TYPE_PREY_REROLL,
       systemType = DAILY_REWARD_SYSTEM_TYPE_TWO,
       freeAccount = {
-        rerollCount = 1
+        rerollCount = 10
       },
       premiumAccount = {
-        rerollCount = 2
+        rerollCount = 20
       }
     },
     [6] = {
       type = DAILY_REWARD_TYPE_ITEM,
       systemType = DAILY_REWARD_SYSTEM_TYPE_ONE,
       freeAccount = {
-        items = {7618, 7588, 7620, 7589, 8472, 2290, 2266, 2310, 2277, 2301, 2265},
-        itemsToPick = 150
+        items = {25172, 25377},
+        itemsToPick = 5
       },
       premiumAccount = {
-        items = {7618, 7588, 7620, 7589, 8472, 2290, 2266, 2310, 2277, 2301, 2265},
-        itemsToPick = 200
-      },
-	  -- itemCharges = 50
+        items = {25172, 25377},
+        itemsToPick = 10
+      }
     },
     [7] = {
       type = DAILY_REWARD_TYPE_XP_BOOST,
       systemType = DAILY_REWARD_SYSTEM_TYPE_TWO,
       freeAccount = {
-        items = {16101},
         xpminutes = 30
       },
       premiumAccount = {
-        items = {16101},
         xpminutes = 60
       }
     }
