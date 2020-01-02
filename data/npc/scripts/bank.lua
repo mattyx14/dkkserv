@@ -10,7 +10,7 @@ function onCreatureDisappear(cid)       npcHandler:onCreatureDisappear(cid)     
 function onCreatureSay(cid, type, msg)      npcHandler:onCreatureSay(cid, type, msg)        end
 function onThink()      npcHandler:onThink()        end
 
-local voices = { {text = 'Don\'t forget to deposit your money here in the Tibian Bank before you head out for adventure.'} }
+local voices = { {text = 'Don\'t forget to deposit your money here in the DarkKonian Bank before you head out for adventure.'} }
 if VoiceModule then
     npcHandler:addModule(VoiceModule:new(voices))
 end
