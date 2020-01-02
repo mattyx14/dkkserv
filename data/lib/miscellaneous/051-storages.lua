@@ -185,12 +185,19 @@ Storage = {
 			AddonBackpack = 12012,
 			AddonBackpackTimer = 12017
 		},
-		-- Hunter-outfit Quest
-		HunterBodyAddon = 12054,
+		-- Hunter Addons
 		HunterHatAddon = 12055,
 		Hunter = {
 			AddonGlove = 12054,
 			AddonHat = 12055
+		},
+		-- Knight Addons
+		Knight = {
+			AddonSword = 12153,
+			MissionHelmet = 12154,
+			AddonHelmet = 12155,
+			AddonHelmetTimer = 12156,
+			RamsaysHelmetDoor = 12160
 		},
 	},
 }

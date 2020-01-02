@@ -29,6 +29,17 @@ if not Quests then
 					},
 
 				},
+				[4] = {
+					name = "Knight Addon: Helmet", storageid = Storage.OutfitQuest.Knight.MissionHelmet, startvalue = 1, endvalue = 6,
+					states = {
+						[1] = "Your current task is to bring 100 perfect behemoth fangs to Wendy.",
+						[2] = "Your current task is to retrieve the helmet of Ramsay the Reckless from Anshara. These pesky mino steal everything they can get their dirty hands on.",
+						[3] = "Your current task is to obtain a flask of warrior's sweat, which can be magicially extracted from headgear worn by a true warrior, but only in small amounts.",
+						[4] = "Your current task is to bring royal steel to Wendy. Royal steel can only be refined by very skilled smiths.",
+						[5] = "You have delivered all items required for the helmet addon.",
+						[6] = "Sam is currently creating the helmet for you. Be patient and don't forget to check on it later!",
+					},
+				},
 			}
 		},
 	}
