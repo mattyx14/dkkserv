@@ -26,7 +26,7 @@
 			bolt,2543,4;
 			bow,2456,400;
 			crossbow,2455,500;
-			crystalline arrow.,18304,20;
+			crystalline arrow,18304,20;
 			drill bolt,18436,12;
 			earth arrow,7850,5;
 			envenomed arrow,18437,12;
@@ -36,6 +36,7 @@
 			piercing bolt,7363,5;
 			power bolt,2547,7;
 			prismatic bolt,18435,20;
+			shiver arrow,7839,5;
 			sniper arrow,7364,5;
 			spear,2389,9;
 			tarsal arrow,15648,6;
