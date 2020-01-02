@@ -15,6 +15,13 @@ function onThink()
 	npcHandler:onThink()
 end
 
+local voices = {
+	{ text = 'Great spirit potions as well as health and mana potions in different sizes!' },
+	{ text = 'If you need alchemical fluids like slime and blood, get them here.' }
+}
+
+npcHandler:addModule(VoiceModule:new(voices))
+
 function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false

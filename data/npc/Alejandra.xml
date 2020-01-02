@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<npc name="Alejandra" script="default.lua" walkinterval="2000" floorchange="0" speechbubble="0" skull="green">
+<npc name="Alejandra" script="alejandra.lua" walkinterval="2000" floorchange="0" speechbubble="0" skull="green">
 	<health now="100" max="100" />
 	<look type="542" head="57" body="59" legs="40" feet="76" addons="1" />
 	<parameters>
 		<parameter key="message_greet" value="Hello |PLAYERNAME|. I sell all kinds of objects such as ropes, shovels and product monsters. Only say {trade}."/>
 		<parameter key="module_shop" value="1" />
 		<parameter key="shop_buyable" value="
+			closed trap,2578,75;
+			crowbar,2416,50;
+			inkwell,2600,8;
+			machete,2420,6;
+			mirror,2560,10;
+			sickle,2405,3;
+			wooden hammer,2556,15;
+
 			backpack of holding,2365,500000,1;
 			basket,1989,6,1;
 			beach backpack,5949,20,1;
