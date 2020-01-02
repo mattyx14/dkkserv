@@ -22,8 +22,8 @@ local function addTravelKeyword(keyword, cost, destination, action)
 		travelKeyword:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, text = 'We would like to serve you some time.', reset = true})
 end
 
-addTravelKeyword('argarot mountain', 1000, Position(742, 640, 6))
-addTravelKeyword('anshara desert', 1000, Position(647, 361, 6))
+-- addTravelKeyword('argarot', 1000, Position(742, 640, 6))
+addTravelKeyword('anshara', 1000, Position(647, 361, 6))
 keywordHandler:addKeyword({'travel'}, StdModule.say, {npcHandler = npcHandler, text = 'Where do you want to go? To {Argarot Mountain} and to {Anshara Desert}?'})
 
 npcHandler:setMessage(MESSAGE_GREET, 'Welcome on board, |PLAYERNAME|. Where may I {travel} you today?')

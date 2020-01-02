@@ -22,7 +22,7 @@ local function addTravelKeyword(keyword, cost, destination, action)
 		travelKeyword:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, text = 'We would like to serve you some time.', reset = true})
 end
 
-addTravelKeyword('fynn castle', 1000, Position(958, 1025, 6))
+addTravelKeyword('fynn', 1000, Position(958, 1025, 6))
 keywordHandler:addKeyword({'travel'}, StdModule.say, {npcHandler = npcHandler, text = 'Where do you want to go to {Fynn Castle}?'})
 
 npcHandler:setMessage(MESSAGE_GREET, 'Welcome on board, |PLAYERNAME|. Where may I {travel} you today?')

@@ -39,9 +39,9 @@ local failPosition = {
 		fromPosition = Position(940, 1076, 8),
 		missionName = "require the justice seeker quest"
 	},
-	[5510] = {
+	[5008] = {
 		mission = Storage.FirstQuest.Misidia,
-		fromPosition = Position(1066, 317, 7),
+		fromPosition = Position(1066, 319, 7),
 		missionName = "the first quest of misidia"
 	},
 }

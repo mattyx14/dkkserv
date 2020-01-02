@@ -24,11 +24,11 @@ local function creatureSayCallback(cid, type, msg)
 		return false
 	end
 	local player = Player(cid)
-	if msgcontains(msg, "fynn castle") then
+	if msgcontains(msg, "fynn") then
 		if player:getStorageValue(Storage.FirstQuest.rewardMisidia) ~= 1 then
 			npcHandler:say("You don't complete the first Misidian quest.", cid)
 		elseif player:getStorageValue(Storage.FirstQuest.rewardMisidia) == 1 then
-			npcHandler:say("Do you seek a seek a passage to {Fynn Castle}?", cid)
+			npcHandler:say("Do you seek a seek a passage to {Fynn}?", cid)
 			npcHandler.topic[cid] = 1
 		else
 		return false
@@ -57,9 +57,9 @@ local function addTravelKeyword(keyword, cost, destination, action)
 		travelKeyword:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, text = 'We would like to serve you some time.', reset = true})
 end
 
-addTravelKeyword('elfic ville', 1000, Position(657, 1216, 6))
-addTravelKeyword('sohan town', 1000, Position(336, 1128, 6))
-addTravelKeyword('anshara desert', 1000, Position(647, 361, 6))
+addTravelKeyword('elfic', 1000, Position(657, 1216, 6))
+addTravelKeyword('sohan', 1000, Position(336, 1128, 6))
+addTravelKeyword('anshara', 1000, Position(647, 361, 6))
 keywordHandler:addKeyword({'travel'}, StdModule.say, {npcHandler = npcHandler, text = 'Where do you want to go? To {Anshara Desert}, {Sohan Town}, {Misidia Settlement} and to {Elfic Ville}?'})
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
