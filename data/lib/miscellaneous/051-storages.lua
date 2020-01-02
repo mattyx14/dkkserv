@@ -170,6 +170,29 @@ Storage = {
 		-- assassinOutfit = assassinDone,
 		puppeteerOutfit = 1449,
 	},
+	-- Global Tibia Quest
+	OutfitQuest = {
+		DefaultStart = 12010, -- until all outfit quests are completed
+		Ref = 12010,
+
+		-- Citizen Addons
+		Citizen = {
+			-- Mission storages for temporary questlog entries
+			MissionHat = 12009,
+			AddonHat = 12011,
+
+			MissionBackpack = 12008,
+			AddonBackpack = 12012,
+			AddonBackpackTimer = 12017
+		},
+		-- Hunter-outfit Quest
+		HunterBodyAddon = 12054,
+		HunterHatAddon = 12055,
+		Hunter = {
+			AddonGlove = 12054,
+			AddonHat = 12055
+		},
+	},
 }
 
 GlobalStorage = {

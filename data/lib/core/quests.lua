@@ -1,21 +1,36 @@
 if not Quests then
 	Quests = {
-		--[[
 		[1] = {
-			name = "The Explorer Society", startstorageid = Storage.ExplorerSociety.QuestLine, startstoragevalue = 1,
+			name = "Outfit and Addon Quests", startstorageid = Storage.OutfitQuest.DefaultStart, startstoragevalue = 1,
 			missions = {
 				[1] = {
-					name = "Joining the Explorers", storageid = Storage.ExplorerSociety.QuestLine, startvalue = 1, endvalue = 4,
+					name = "Citizen Addon: Backpack", storageid = Storage.OutfitQuest.Citizen.MissionBackpack, startvalue = 1, endvalue = 2,
 					states = {
-						[1] = "The mission should be simple to fulfil. You have to seek out Uzgod in Kazordoon and get the pickaxe for us. Or just find dwarven pickaxe on your own...",
-						[2] = "Get into Dwacatra and bring family brooch back to Uzgod.",
-						[3] = "Bring the pickaxe back to the Explorer Society representative.",
+						[1] = "Collect 100 pieces of minotaur leather and bring it to either Citizen to have them make a backpack addon for you.",
+						[2] = "You delivered 100 pieces of minotaur leather. Some time is needed to make the backpack for you though. You should check back later and ask either Citizen for your backpack.",
 					},
 
-				}
+				},
+				[2] = {
+					name = "Citizen Addon: Feather Hat", storageid = Storage.OutfitQuest.Citizen.MissionHat, startvalue = 1, endvalue = 2,
+					states = {
+						[1] = "Collect a legion helmet, 100 chicken feathers and 50 honeycombs and bring them to either Citizen to have them make a feather hat addon for you.",
+					},
+
+				},
+				[3] = {
+					name = "Hunter Outfit Quest", storageid = Storage.OutfitQuest.HunterHatAddon, startvalue = 1, endvalue = 5,
+					states = {
+						[1] = "Ivan sends you to Agard Town to bring her the Crossbow from the Cult.",
+						[2] = "Bring Ivan 100 pieces of lizard leather and 100 pieces of red dragon leather.",
+						[3] = "Bring Ivan 5 enchanted chicken wings.",
+						[4] = "Bring Ivan one piece of royal steel, draconian steel and hell steel each.",
+						[5] = "You got the Outfit!",
+					},
+
+				},
 			}
-		}
-		]]
+		},
 	}
 end
 

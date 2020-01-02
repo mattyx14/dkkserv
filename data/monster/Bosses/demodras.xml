@@ -57,6 +57,6 @@
 		<item id="2392" chance="1428"/><!-- fire sword -->
 		<item id="2146" countmax="2" chance="2222"/><!-- small sapphire -->
 		<item id="5948" chance="5000"/><!-- red dragon leather -->
-		<item id="5919" chance="100000"/><!-- dragon claw -->
+		<item id="5919" chance="1000"/><!-- dragon claw -->
 	</loot>
 </monster>
