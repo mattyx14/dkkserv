@@ -2223,7 +2223,7 @@
 		<vocation name="Knight" /><vocation name="Elite Knight" showInDescription="0" />
 	</movevent>
 	<movevent event="DeEquip" itemid="2407" slot="hand" function="onDeEquipItem" />
-	<movevent event="Equip" itemid="2436" level="30" slot="hand" level="90" function="onEquipItem"> <!-- Skull Staff -->
+	<movevent event="Equip" itemid="2436" slot="hand" level="90" function="onEquipItem"> <!-- Skull Staff -->
 		<vocation name="Knight" /><vocation name="Elite Knight" showInDescription="0" />
 	</movevent>
 	<movevent event="DeEquip" itemid="2436" slot="hand" function="onDeEquipItem" />
