@@ -44,6 +44,21 @@ local failPosition = {
 		fromPosition = Position(1066, 319, 7),
 		missionName = "the first quest of misidia"
 	},
+	[5509] = {
+		mission = Storage.FirstSacrifice.noSacrifice.axeKnight,
+		fromPosition = Position(977, 945, 8),
+		missionName = "require make the first sacrifice knight axe"
+	},
+	[5510] = {
+		mission = Storage.FirstSacrifice.noSacrifice.fangWyvern,
+		fromPosition = Position(969, 1033, 7),
+		missionName = "require make the first sacrifice wyvern fang"
+	},
+	[5511] = {
+		mission = Storage.FirstSacrifice.noSacrifice.hammerDragon,
+		fromPosition = Position(562, 1266, 6),
+		missionName = "require make the first sacrifice dragon hammer"
+	},
 }
 
 function onStepIn(creature, item, position, fromPosition)

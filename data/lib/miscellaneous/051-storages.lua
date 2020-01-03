@@ -130,6 +130,11 @@ Storage = {
 		amberStaff = 7426,
 		skullStaff = 2436,
 		--blessedSceptre = blessedSceptreDone,
+		noSacrifice = {
+			fangWyvern = 800,
+			axeKnight = 801,
+			hammerDragon = 802,
+		}
 	},
 	Rewards = {
 		firstLevelReward = 3101,
