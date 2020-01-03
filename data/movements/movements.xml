@@ -2213,6 +2213,11 @@
 	<!-- Adventurer's Guild -->
 	<movevent event="StepIn" actionid="4255" script="adventurersguild.lua" />
 
+	<!-- First Sacrifice -->
+	<movevent event="StepIn" actionid="9006" script="quests/firstSacrifice/firstSacrificeWyvernFang.lua" />
+	<movevent event="StepIn" actionid="9007" script="quests/firstSacrifice/firstSacrificeKnightAxe.lua" />
+	<movevent event="StepIn" actionid="9008" script="quests/firstSacrifice/firstSacrificeDragonHammer.lua" />
+
 	<!-- Imbuid items DarkKonia -->
 	<movevent event="Equip" itemid="2407" level="90" slot="hand" function="onEquipItem"> <!-- Bright Sword -->
 		<vocation name="Knight" /><vocation name="Elite Knight" showInDescription="0" />
