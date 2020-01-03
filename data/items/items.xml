@@ -3770,18 +3770,21 @@
 		<attribute key="weight" value="6800" />
 		<attribute key="armor" value="8" />
 		<attribute key="slotType" value="head" />
-		<attribute key="imbuingSlots" value="2" />
+		<attribute key="imbuingSlots" value="1" />
+		<attribute key="absorbPercentPhysical" value="1" />
 	</item>
 	<item id="2476" article="a" name="knight armor">
 		<attribute key="weight" value="12000" />
 		<attribute key="armor" value="12" />
 		<attribute key="slotType" value="body" />
-		<attribute key="imbuingSlots" value="2" />
+		<attribute key="imbuingSlots" value="1" />
+		<attribute key="absorbPercentPhysical" value="1" />
 	</item>
 	<item id="2477" name="knight legs">
 		<attribute key="weight" value="7000" />
 		<attribute key="armor" value="8" />
 		<attribute key="slotType" value="legs" />
+		<attribute key="absorbPercentPhysical" value="2" />
 	</item>
 	<item id="2478" name="brass legs">
 		<attribute key="weight" value="3800" />
@@ -4072,6 +4075,7 @@
 		<attribute key="defense" value="32" />
 		<attribute key="weaponType" value="shield" />
 		<attribute key="imbuingSlots" value="1" />
+		<attribute key="absorbPercentPhysical" value="2" />
 	</item>
 	<item id="2529" article="a" name="black shield">
 		<attribute key="description" value="An unholy creature covers the shield." />
