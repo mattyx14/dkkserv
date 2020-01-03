@@ -599,4 +599,9 @@
 	<action itemid="2148" script="others/changegold.lua" />
 	<action itemid="2152" script="others/changegold.lua" />
 	<action itemid="2160" script="others/changegold.lua" />
+
+	<!-- First Sacrifice -->
+	<action itemid="9006" script="missions/firstSacrificeWyvernFang.lua" />
+	<action itemid="9007" script="missions/firstSacrificeKnightAxe.lua" />
+	<action itemid="9008" script="missions/firstSacrificeDragonHammer.lua" />
 </actions>

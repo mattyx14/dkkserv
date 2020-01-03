@@ -51,7 +51,7 @@ local failPosition = {
 	},
 	[5510] = {
 		mission = Storage.FirstSacrifice.noSacrifice.fangWyvern,
-		fromPosition = Position(969, 1033, 7),
+		fromPosition = Position(973, 1033, 7),
 		missionName = "require make the first sacrifice wyvern fang"
 	},
 	[5511] = {
