@@ -13,7 +13,8 @@ function onLogin(player)
 		"KillBoss",
 		"VampireKill",
 		"modalAD",
-		"modalMD"
+		"modalMD",
+		"BossesForgotten",
 	}
 	
 	for i = 1, #events do

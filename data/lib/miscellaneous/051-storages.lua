@@ -15,8 +15,8 @@ Storage = {
 		AccessGolden = 10137,
 		AccessLast = 10138,
 		OldDesk = 10139,
-		GirlPicture = 10140,
-		SilverKey = 10141,
+		GirlPicture = 10140, -- Fynn = 26400
+		SilverKey = 10141, -- Fynn
 		Phial = 10142,
 		BirdCounter = 10143,
 		PlantCounter = 10144,
@@ -24,8 +24,8 @@ Storage = {
 		DiamondServantCounter = 10146,
 		AccessPortals = 10147,
 		AccessMachine = 10148,
-		LadyTenebrisTimer = 10149,
-		LadyTenebrisKilled = 10150,
+		LadyTenebrisTimer = 10149, -- Fynn
+		LadyTenebrisKilled = 10150, -- Fynn
 		LloydTimer = 10151,
 		LloydKilled = 10152,
 		ThornKnightTimer = 10153,
@@ -204,6 +204,9 @@ Storage = {
 			AddonHelmetTimer = 12156,
 			RamsaysHelmetDoor = 12160
 		},
+	},
+	ForgottenKnowledgeRewards = {
+		yalahariSet = 9776,
 	},
 }
 

@@ -26,6 +26,7 @@ Imbuements_Weapons = {
 	["elemental_swords"] = {30886, 34059, 34060, 36449},
 	["elemental_axes"] = {32424, 35231},
 	["elemental_clubs"] = {32425, 34057, 35230, 36415},
+
 	-- Note: if an armor has native protection, it can't be imbue with this protection
 	["armor_energy"] = {30883},
 	["armor_only_energy"] = {34061},
@@ -63,22 +64,28 @@ local enablingStorages = {
 	["lich shroud"] = Storage.ForgottenKnowledge.LadyTenebrisKilled,
 	["reap"] = Storage.ForgottenKnowledge.LadyTenebrisKilled,
 	["vampirism"] = Storage.ForgottenKnowledge.LadyTenebrisKilled,
+
 	["cloud fabric"] = Storage.ForgottenKnowledge.LloydKilled,
 	["electrify"] = Storage.ForgottenKnowledge.LloydKilled,
 	["swiftness"] = Storage.ForgottenKnowledge.LloydKilled,
+
 	["snake skin"] = Storage.ForgottenKnowledge.ThornKnightKilled,
 	["venom"] = Storage.ForgottenKnowledge.ThornKnightKilled,
 	["slash"] = Storage.ForgottenKnowledge.ThornKnightKilled,
 	["chop"] = Storage.ForgottenKnowledge.ThornKnightKilled,
 	["bash"] = Storage.ForgottenKnowledge.ThornKnightKilled,
+
 	["hide dragon"] = Storage.ForgottenKnowledge.DragonkingKilled,
 	["scorch"] = Storage.ForgottenKnowledge.DragonkingKilled,
 	["void"] = Storage.ForgottenKnowledge.DragonkingKilled,
+
 	["quara scale"] = Storage.ForgottenKnowledge.HorrorKilled,
 	["frost"] = Storage.ForgottenKnowledge.HorrorKilled,
 	["blockade"] = Storage.ForgottenKnowledge.HorrorKilled,
+
 	["demon presence"] = Storage.ForgottenKnowledge.TimeGuardianKilled,
 	["precision"] = Storage.ForgottenKnowledge.TimeGuardianKilled,
+
 	["strike"] = Storage.ForgottenKnowledge.LastLoreKilled,
 	["epiphany"] = Storage.ForgottenKnowledge.LastLoreKilled,
 	["featherweight"] = -1,

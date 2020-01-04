@@ -599,4 +599,11 @@
 	<action itemid="2148" script="others/changegold.lua" />
 	<action itemid="2152" script="others/changegold.lua" />
 	<action itemid="2160" script="others/changegold.lua" />
+
+	<!-- Forgotten Knowledge -->
+	<action fromaid="24876" toaid="24877" script="quests/forgotten knowledge/secretWall.lua"/>
+	<action itemid="26402" script="quests/forgotten knowledge/lantern.lua"/>
+	<action itemid="26406" script="quests/forgotten knowledge/lantern.lua"/>
+	<!-- Levers-->
+	<action actionid="24878" script="quests/forgotten knowledge/tenebrisLever.lua"/>
 </actions>

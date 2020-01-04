@@ -44,4 +44,8 @@
 	<!-- Item AddonMounts Full -->
 	<event type="modalwindow" name="modalMD" script="modalMD.lua"/>
 	<event type="modalwindow" name="modalAD" script="modalAD.lua"/>
+
+	<!-- Forgotten Knowledge -->
+	<event type="healthchange" name="HealthForgotten" script="quests/forgotten knowledge/healthchange forgotten.lua"/>
+	<event type="kill" name="BossesForgotten" script="quests/forgotten knowledge/bossesKill.lua"/>
 </creaturescripts>
