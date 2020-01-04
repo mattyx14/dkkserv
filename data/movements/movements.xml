@@ -4,6 +4,7 @@
 	<movevent event="AddItem" tileitem="1" itemid="1387" script="others/itemTeleports.lua" />
 	<movevent event="AddItem" tileitem="1" itemid="1397" script="others/itemTeleports.lua" />
 	<movevent event="AddItem" tileitem="1" itemid="8058" script="others/itemTeleports.lua" />
+	<movevent event="AddItem" tileitem="1" itemid="8632" script="others/itemTeleports.lua" />
 
 	<!-- Threatened Dreams -->
 	<movevent event="Equip" itemid="29003" slot="ring" level="50" function="onEquipItem" />

@@ -41,6 +41,6 @@
 		<item name="pirate backpack" chance="6250" />
 		<item name="plate armor" chance="56250" />
 		<item name="very old piece of paper" chance="25000" />
-		<item id="6100" chance="100000" /><!-- lethal lissy's shirt -->
+		<item id="6100" chance="200" /><!-- lethal lissy's shirt -->
 	</loot>
 </monster>

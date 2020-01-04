@@ -11620,9 +11620,7 @@
 	<item fromid="6728" toid="6738" article="an" name="ice wall" />
 	<item fromid="6739" toid="6749" article="a" name="frozen wall" />
 	<item fromid="6750" toid="6753" article="an" name="ice hut" />
-	<item fromid="6754" toid="6756" article="an" name="ice hut">
-		<attribute key="floorchange" value="down" />
-	</item>
+	<item fromid="6754" toid="6756" article="an" name="ice hut" />
 	<item fromid="6757" toid="6760" name="snow" />
 	<item fromid="6761" toid="6762" article="an" name="icy mountain" />
 	<item fromid="6763" toid="6767" name="ice" />
@@ -14702,7 +14700,6 @@
 		<attribute key="slotType" value="necklace" />
 		<attribute key="charges" value="200" />
 		<attribute key="absorbPercentFire" value="20" />
-		<attribute key="absorbPercentIce" value="-10" />
 		<attribute key="showcharges" value="1" />
 		<attribute key="showattributes" value="1" />
 	</item>
@@ -14710,7 +14707,6 @@
 		<attribute key="weight" value="750" />
 		<attribute key="armor" value="2" />
 		<attribute key="absorbPercentFire" value="5" />
-		<attribute key="absorbPercentIce" value="-5" />
 		<attribute key="slotType" value="feet" />
 		<attribute key="imbuingSlots" value="1" />
 	</item>
@@ -14719,14 +14715,12 @@
 		<attribute key="armor" value="2" />
 		<attribute key="slotType" value="feet" />
 		<attribute key="absorbPercentIce" value="5" />
-		<attribute key="absorbPercentEnergy" value="-5" />
 		<attribute key="imbuingSlots" value="1" />
 	</item>
 	<item id="7893" name="lightning boots">
 		<attribute key="weight" value="750" />
 		<attribute key="armor" value="2" />
 		<attribute key="absorbPercentEnergy" value="5" />
-		<attribute key="absorbPercentEarth" value="-5" />
 		<attribute key="slotType" value="feet" />
 		<attribute key="imbuingSlots" value="1" />
 	</item>
@@ -14734,14 +14728,12 @@
 		<attribute key="weight" value="1900" />
 		<attribute key="armor" value="8" />
 		<attribute key="absorbPercentFire" value="6" />
-		<attribute key="absorbPercentIce" value="-6" />
 		<attribute key="slotType" value="legs" />
 	</item>
 	<item id="7895" name="lightning legs">
 		<attribute key="weight" value="1900" />
 		<attribute key="armor" value="8" />
 		<attribute key="absorbPercentEnergy" value="6" />
-		<attribute key="absorbPercentEarth" value="-6" />
 		<attribute key="slotType" value="legs" />
 	</item>
 	<item id="7896" article="a" name="glacier kilt">
@@ -14749,55 +14741,47 @@
 		<attribute key="armor" value="8" />
 		<attribute key="slotType" value="legs" />
 		<attribute key="absorbPercentIce" value="6" />
-		<attribute key="absorbPercentEnergy" value="-6" />
 	</item>
 	<item id="7897" article="a" name="glacier robe">
 		<attribute key="weight" value="2250" />
 		<attribute key="armor" value="11" />
 		<attribute key="slotType" value="body" />
 		<attribute key="absorbPercentIce" value="8" />
-		<attribute key="absorbPercentEnergy" value="-8" />
 	</item>
 	<item id="7898" article="a" name="lightning robe">
 		<attribute key="weight" value="2250" />
 		<attribute key="armor" value="11" />
 		<attribute key="absorbPercentEnergy" value="8" />
-		<attribute key="absorbPercentEarth" value="-8" />
 		<attribute key="slotType" value="body" />
 	</item>
 	<item id="7899" article="a" name="magma coat">
 		<attribute key="weight" value="2250" />
 		<attribute key="armor" value="11" />
 		<attribute key="absorbPercentFire" value="8" />
-		<attribute key="absorbPercentIce" value="-8" />
 		<attribute key="slotType" value="body" />
 	</item>
 	<item id="7900" article="a" name="magma monocle">
 		<attribute key="weight" value="1000" />
 		<attribute key="armor" value="5" />
 		<attribute key="absorbPercentFire" value="4" />
-		<attribute key="absorbPercentIce" value="-5" />
 		<attribute key="slotType" value="head" />
 	</item>
 	<item id="7901" article="a" name="lightning headband">
 		<attribute key="weight" value="1000" />
 		<attribute key="armor" value="5" />
 		<attribute key="absorbPercentEnergy" value="4" />
-		<attribute key="absorbPercentEarth" value="-5" />
 		<attribute key="slotType" value="head" />
 	</item>
 	<item id="7902" article="a" name="glacier mask">
 		<attribute key="weight" value="1000" />
 		<attribute key="armor" value="5" />
 		<attribute key="absorbPercentIce" value="4" />
-		<attribute key="absorbPercentEnergy" value="-5" />
 		<attribute key="slotType" value="head" />
 	</item>
 	<item id="7903" article="a" name="terra hood">
 		<attribute key="weight" value="1000" />
 		<attribute key="armor" value="5" />
 		<attribute key="absorbPercentEarth" value="4" />
-		<attribute key="absorbPercentFire" value="-5" />
 		<attribute key="slotType" value="head" />
 	</item>
 	<item id="7904" article="a" name="green bed kit">
@@ -15515,7 +15499,11 @@
 	<item fromid="8625" toid="8626" article="a" name="dwarven statue" />
 	<item fromid="8627" toid="8630" article="a" name="bone" />
 	<item id="8631" article="a" name="burning wall" />
-	<item id="8632" article="a" name="water vortex" />
+	<item id="8632" article="a" name="water vortex">
+		<attribute key="description" value="You can see the other side through it." />
+		<attribute key="type" value="teleport" />
+		<attribute key="effect" value="teleport" />
+	</item>
 	<item fromid="8633" toid="8636" article="a" name="large crystal" />
 	<item fromid="8637" toid="8640" article="a" name="crystal" />
 	<item fromid="8641" toid="8642" article="a" name="crucible" />

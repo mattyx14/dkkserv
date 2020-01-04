@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monster name="Captain Jones" nameDescription="Captain Jones" race="undead" experience="2825" speed="370" manacost="0">
-	<health now="3800" max="3800" />
+	<health now="5800" max="5800" />
 	<look type="196" corpse="5566" />
 	<targetchange interval="4000" chance="10" />
 	<flags>
@@ -17,7 +17,7 @@
 		<flag runonhealth="0" />
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" min="-80" max="-495" poison="2" />
+		<attack name="melee" interval="2000" min="-280" max="-495" poison="2" />
 		<attack name="lifedrain" interval="2000" chance="15" radius="1" min="-130" max="-280">
 			<attribute key="areaEffect" value="redshimmer" />
 		</attack>
@@ -44,6 +44,12 @@
 		<immunity death="1" />
 		<immunity earth="1" />
 	</immunities>
+	<summons maxSummons="4">
+		<summon name="Ron the Ripper" interval="2000" chance="10"/>
+		<summon name="Brutus Bloodbeard" interval="2000" chance="10"/>
+		<summon name="Deadeye Devious" interval="2000" chance="10"/>
+		<summon name="Lethal Lissy" interval="2000" chance="10"/>
+	</summons>
 	<loot>
 		<item id="2148" countmax="150" chance="100000" />	<!-- gold coin -->
 		<item id="2165" chance="33000" />					<!-- stealth ring -->

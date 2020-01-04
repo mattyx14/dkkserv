@@ -56,6 +56,14 @@
 			wand of starstorm,8920,18000,1;
 			wand of voodoo,8922,22000,1;" />
 		<parameter key="shop_sellable" value="
+			batwing hat,10016,8000;
+			ethno coat,8892,200;
+			focus cape,8871,6000;
+			jade hat,11368,9000;
+			spellweavers rob,11355,12000;
+			spirit cloak,8870,350;
+			zaoan robe,11356,12000;
+
 			empty potion flask,7634,10;
 			empty potion flask,7635,15;
 			empty small potion flask,7636,5;

@@ -20,8 +20,8 @@ local function creatureSayCallback(cid, type, msg)
 		return false
 	end
 	local player = Player(cid)
-	if isInArray({"enchanted chicken wing", "boots of haste"}, msg) then
-		npcHandler:say('Do you want to trade Boots of haste for Enchanted Chicken Wing?', cid)
+	if isInArray({"enchanted chicken wing", "enchanted chicken wing"}, msg) then
+		npcHandler:say('Do you want to trade enchanted chicken wing for boots of haste?', cid)
 		npcHandler.topic[cid] = 1
 	elseif isInArray({"warrior sweat", "warrior helmets"}, msg) then
 		npcHandler:say('Do you want to trade 4 Warrior Helmets for Warrior Sweat?', cid)
@@ -42,11 +42,11 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler:say('Do you want to trade 10 Spider Silks for Spool of Yarn?', cid)
 		npcHandler.topic[cid] = 7
 	elseif isInArray({"job", "items"}, msg) then
-		npcHandler:say('I trade: {Boots of Haste}, {Warrior Helmets}, {Royal Helmets}, {Fire Swords}, {Giant Swords}, {Crown Armors}, {Spider Silks}.', cid)
+		npcHandler:say('I trade: {Enchanted Chicken Wing}, {Warrior Helmets}, {Royal Helmets}, {Fire Swords}, {Giant Swords}, {Crown Armors}, {Spider Silks}.', cid)
 		npcHandler.topic[cid] = 0
 	elseif msgcontains(msg,'yes') and npcHandler.topic[cid] <= 7 and npcHandler.topic[cid] >= 1 then
 		local trade = {
-			{ NeedItem = 2195, Ncount = 1, GiveItem = 5891, Gcount = 1}, -- Enchanted Chicken Wing
+			{ NeedItem = 5891, Ncount = 1, GiveItem = 2195, Gcount = 1}, -- Boots of Haste
 			{ NeedItem = 2475, Ncount = 4, GiveItem = 5885, Gcount = 1}, -- Flask of Warrior's Sweat
 			{ NeedItem = 2498, Ncount = 2, GiveItem = 5884, Gcount = 1}, -- Spirit Container
 			{ NeedItem = 2392, Ncount = 2, GiveItem = 5904, Gcount = 1},  -- Magic Sulphur
@@ -72,7 +72,7 @@ end
 
 local function onTradeRequest(cid)
 	if Player(cid):getStorageValue(Storage.Missions.DjinnMission.Done) ~= 1 then
-		npcHandler:say('Sorry, but you do not complete the quest Djinn u need quest {mystic blade}, {heroic Axe}, {warrior staff} and {oil lamp} quest. I have to make sure that I can trust in the quality of your wares.', cid)
+		npcHandler:say('Sorry, but you do not complete the quest Djinn u need quest {mystic blade}, {heroic Axe}, {skull staff} and {oil lamp} quest. I have to make sure that I can trust in the quality of your wares.', cid)
 		return false
 	end
 
