@@ -33,7 +33,7 @@
 			mana potion,7620,50,1;
 			moonlight rod,2186,1000,1;
 			necrotic rod,2185,5000,1;
-			northwind rod,8911,750,1;
+			northwind rod,8911,1500,1;
 			shimmer rod,13872,30000,1;
 			shimmer wand,13880,30000,1;
 			springsprout rod,8912,18000,1;
@@ -83,7 +83,7 @@
 			muck rod, 18411, 6000;
 			mysterious fetish, 2194, 50;
 			necrotic rod, 2185, 1000;
-			northwind rod, 8911, 1500;
+			northwind rod, 8911, 750;
 			snakebite rod, 2182, 100;
 			springsprout rod, 8912, 3600;
 			terra rod, 2181, 2000;
