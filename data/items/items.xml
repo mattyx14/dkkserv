@@ -3345,7 +3345,7 @@
 		<attribute key="description" value="The extraordinary sharp blade penetrates every armor." />
 		<attribute key="weight" value="6700" />
 		<attribute key="defense" value="16" />
-		<attribute key="attack" value="47" />
+		<attribute key="attack" value="44" />
 		<attribute key="weaponType" value="axe" />
 		<attribute key="slotType" value="two-handed" />
 		<attribute key="imbuingSlots" value="3" />
@@ -3419,7 +3419,7 @@
 		<attribute key="description" value="You feel an aura of protection." />
 		<attribute key="weight" value="6700" />
 		<attribute key="defense" value="30" />
-		<attribute key="attack" value="41" />
+		<attribute key="attack" value="52" />
 		<attribute key="weaponType" value="club" />
 		<attribute key="extradef" value="2" />
 		<attribute key="imbuingSlots" value="2" />
@@ -3572,7 +3572,7 @@
 		<attribute key="description" value="A giant is said to have forged this hammer to take revenge for the death of his brother." />
 		<attribute key="weight" value="7000" />
 		<attribute key="defense" value="12" />
-		<attribute key="attack" value="48" />
+		<attribute key="attack" value="44" />
 		<attribute key="weaponType" value="club" />
 		<attribute key="slotType" value="two-handed" />
 		<attribute key="imbuingSlots" value="3" />
@@ -3649,7 +3649,7 @@
 	<item id="2454" article="a" name="war axe">
 		<attribute key="weight" value="6150" />
 		<attribute key="defense" value="10" />
-		<attribute key="attack" value="48" />
+		<attribute key="attack" value="44" />
 		<attribute key="weaponType" value="axe" />
 		<attribute key="slotType" value="two-handed" />
 		<attribute key="imbuingSlots" value="3" />
@@ -12690,7 +12690,7 @@
 		<attribute key="description" value="Floating stones form the tip of this strange weapon, held in place by unspeakable magic." />
 		<attribute key="weight" value="5500" />
 		<attribute key="defense" value="21" />
-		<attribute key="attack" value="47" />
+		<attribute key="attack" value="45" />
 		<attribute key="weaponType" value="club" />
 		<attribute key="slotType" value="two-handed" />
 		<attribute key="imbuingSlots" value="3" />
@@ -12723,7 +12723,7 @@
 	<item id="7418" article="a" name="nightmare blade">
 		<attribute key="weight" value="4600" />
 		<attribute key="defense" value="23" />
-		<attribute key="attack" value="46" />
+		<attribute key="attack" value="43" />
 		<attribute key="weaponType" value="sword" />
 		<attribute key="extradef" value="-3" />
 		<attribute key="imbuingSlots" value="2" />
@@ -12739,7 +12739,7 @@
 	<item id="7420" article="a" name="reaper's axe">
 		<attribute key="weight" value="5900" />
 		<attribute key="defense" value="25" />
-		<attribute key="attack" value="46" />
+		<attribute key="attack" value="52" />
 		<attribute key="weaponType" value="axe" />
 		<attribute key="extradef" value="2" />
 	</item>
@@ -12800,7 +12800,7 @@
 		<attribute key="description" value="This weapon has to be swung in both hands and requires a lot of strength." />
 		<attribute key="weight" value="12000" />
 		<attribute key="defense" value="15" />
-		<attribute key="attack" value="46" />
+		<attribute key="attack" value="44" />
 		<attribute key="weaponType" value="club" />
 		<attribute key="slotType" value="two-handed" />
 	</item>
@@ -20022,7 +20022,7 @@
 	<item id="11305" article="a" name="drakinata">
 		<attribute key="weight" value="5400" />
 		<attribute key="defense" value="20" />
-		<attribute key="attack" value="47" />
+		<attribute key="attack" value="44" />
 		<attribute key="weaponType" value="axe" />
 		<attribute key="slotType" value="two-handed" />
 		<attribute key="imbuingSlots" value="3" />
@@ -21345,7 +21345,7 @@
 	<item id="12613" article="a" name="twiceslicer">
 		<attribute key="weight" value="18000" />
 		<attribute key="defense" value="30" />
-		<attribute key="attack" value="47" />
+		<attribute key="attack" value="45" />
 		<attribute key="weaponType" value="sword" />
 		<attribute key="slotType" value="two-handed" />
 		<attribute key="imbuingSlots" value="3" />
@@ -21511,7 +21511,7 @@
 	<item id="12649" article="a" name="blade of corruption">
 		<attribute key="weight" value="6400" />
 		<attribute key="defense" value="29" />
-		<attribute key="attack" value="48" />
+		<attribute key="attack" value="44" />
 		<attribute key="weaponType" value="sword" />
 		<attribute key="extradef" value="2" />
 		<attribute key="imbuingSlots" value="2" />
@@ -24087,7 +24087,7 @@
 	</item>
 	<item id="15451" article="a" name="warrior's axe">
 		<attribute key="weight" value="8800" />
-		<attribute key="attack" value="42" />
+		<attribute key="attack" value="41" />
 		<attribute key="defense" value="21" />
 		<attribute key="weaponType" value="axe" />
 		<attribute key="imbuingSlots" value="2" />
@@ -24181,7 +24181,7 @@
 	</item>
 	<item id="15492" article="a" name="hive scythe">
 		<attribute key="weight" value="7500" />
-		<attribute key="attack" value="46" />
+		<attribute key="attack" value="45" />
 		<attribute key="defense" value="24" />
 		<attribute key="weaponType" value="axe" />
 		<attribute key="imbuingSlots" value="2" />
@@ -31723,7 +31723,7 @@
 	</item>
 	<item id="23544" article="a" name="moohtant cudgel">
 		<attribute key="defense" value="21" />
-		<attribute key="attack" value="47" />
+		<attribute key="attack" value="43" />
 		<attribute key="weaponType" value="club" />
 		<attribute key="slotType" value="two-handed" />
 		<attribute key="weight" value="8500" />
@@ -31741,7 +31741,7 @@
 	</item>
 	<item id="23547" article="an" name="execowtioner axe">
 		<attribute key="defense" value="18" />
-		<attribute key="attack" value="46" />
+		<attribute key="attack" value="45" />
 		<attribute key="weaponType" value="axe" />
 		<attribute key="slotType" value="two-handed" />
 		<attribute key="weight" value="8200" />
