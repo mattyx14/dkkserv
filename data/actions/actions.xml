@@ -522,7 +522,6 @@
 	<action itemid="6388" script="others/dolls.lua" />
 	<action itemid="6512" script="others/dolls.lua" />
 	<action itemid="6566" script="others/dolls.lua" />
-	<action itemid="8974" script="others/dolls.lua" />
 	<action itemid="8977" script="others/dolls.lua" />
 	<action itemid="8981" script="others/dolls.lua" />
 
@@ -606,4 +605,7 @@
 	<action itemid="26406" script="quests/forgotten knowledge/lantern.lua"/>
 	<!-- Levers-->
 	<action actionid="24878" script="quests/forgotten knowledge/tenebrisLever.lua"/>
+
+	<!-- Stamina Refill -->
+	<action itemid="8974" script="staminaRefill.lua" />
 </actions>

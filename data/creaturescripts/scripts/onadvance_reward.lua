@@ -4,6 +4,9 @@ local rewards = {
 		{lvl = 50, items = {{2160, 30}}, storage = Storage.Rewards.secondLevelReward},
 		{lvl = 80, items = {{2160, 50}}, storage = Storage.Rewards.thirdLevelReward},
 		{lvl = 110, items = {{2160, 80}}, storage = Storage.Rewards.fourthLevelReward},
+		{lvl = 150, items = {{2160, 80}}, storage = Storage.Rewards.fivthLevelReward},
+		{lvl = 180, items = {{2160, 80}}, storage = Storage.Rewards.sixthLevelReward},
+		{lvl = 200, items = {{2160, 80}}, storage = Storage.Rewards.seventhLevelReward},
 		-- {lvl = 60, items = {{16101, 1}}, storage = 3103}, -- Premium Scrolls
 	},
 --[[

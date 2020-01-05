@@ -16503,7 +16503,7 @@
 		<attribute key="floorchange" value="down" />
 	</item>
 	<item id="8973" article="an" name="archway" />
-	<item id="8974" article="an" name="oracle figurine">
+	<item id="8974" article="an" name="stamina figurine">
 		<attribute key="weight" value="800" />
 	</item>
 	<item id="8975" article="an" name="oracle figurine">
