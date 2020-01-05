@@ -550,8 +550,6 @@
 
 	<!-- Other -->
 	<action fromaid="50140" toaid="50144" script="oreWagons.lua" />
-	<action itemid="8982" script="modalAD.lua"/>
-	<action itemid="9019" script="modalMD.lua"/>
 		<!-- Other Outfits -->
 		<!-- Pirate Outfit -->
 		<action uniqueid="6096" script="quests/outfits/outfits.lua" />

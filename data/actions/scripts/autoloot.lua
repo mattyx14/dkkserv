@@ -68,11 +68,13 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		player:sendTextMessage(MESSAGE_INFO_DESCR,'Looted:'.. string.gsub(" "..msg, "%W%l", string.lower):sub(3) ..' opening corpse')
 	end
 
+--[[
 	if issue then
 		if #issue >= 1 then
 			for i = 1, #issue do
-				player:sendTextMessage(MESSAGE_INFO_DESCR,'All main '..string.gsub(" "..string.lower(ItemType(issue[i]):getName()), "%W%l", string.upper):sub(2)..' full, buy a new or move itens to sub backpacks.')
+				player:sendTextMessage(MESSAGE_INFO_DESCR,'All main '..string.gsub(" "..string.lower(ItemType(issue[i]):getName()), "%W%l", string.upper):sub(2)..' full, buy a new or move items to sub backpacks.')
 			end
 		end
 	end
+]]
 end

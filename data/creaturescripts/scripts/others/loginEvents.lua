@@ -12,8 +12,6 @@ function onLogin(player)
 		"onadvance_reward",
 		"KillBoss",
 		"VampireKill",
-		"modalAD",
-		"modalMD",
 		"BossesForgotten",
 	}
 	

@@ -8,6 +8,8 @@ function onSay(player, words, param)
 			.. "!serverinfo" .. "\n"
 			.. "!shop" .. "\n"
 			.. "!online" .. "\n"
+			.. "!add" .. " -- for autoloot !add MONSTERNAME\n"
+			.. "!autoloot" .. " -- for autoloot managelist loot\n"
 			.. "!commands")
 		return false
 	else
