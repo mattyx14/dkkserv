@@ -85,7 +85,7 @@
 		<item id="2156" chance="760"/><!-- Red Gem -->
 		<item id="25523" chance="240"/><!-- Rift Crossbow-->
 		<item id="25382" chance="230"/><!-- Rift Shield-->
-		<item id="25386" chance="1910"/><!-- Some Grimeleech Wings-->
+		<item id="25386" countmax="2" chance="1910"/><!-- Some Grimeleech Wings-->
 		<item id="2645" chance="690"/><!-- steel boots -->
 		<item id="8910" chance="1280"/><!-- Underworld Rod-->
 		<item id="25383" chance="100"/><!-- Rift Lance -->
