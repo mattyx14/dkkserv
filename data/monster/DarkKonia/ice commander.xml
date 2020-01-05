@@ -6,7 +6,7 @@
 	<targetchange speed="1" chance="8"/>
 	<flags>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="1"/>
+		<flag canpushcreatures="0"/>
 		<flag hostile="1"/>
 		<flag attackable="1"/>
 		<flag staticattack="90"/>

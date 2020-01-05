@@ -12,7 +12,7 @@
 		<flag convinceable="0" />
 		<flag pushable="0" />
 		<flag canpushitems="0" />
-		<flag canpushcreatures="1" />
+		<flag canpushcreatures="0" />
 		<flag targetdistance="1" />
 		<flag runonhealth="100" />
 		<flag hidehealth="1" />
