@@ -11,4 +11,8 @@
 	<talkaction words="!commands" script="commands.lua" />
 	<talkaction words="!autoloot" separator=" " script="autoloot.lua"/>
 	<talkaction words="!add" separator=" " script="add_autoloot.lua" />
+	<talkaction words="!buypremium" script="buyprem.lua" />
+	<talkaction words="!buyhouse" script="buyhouse.lua" />
+	<talkaction words="!sellhouse" separator=" " script="sellhouse.lua" />
+	<talkaction words="!leavehouse" script="leavehouse.lua" />
 </talkactions>
