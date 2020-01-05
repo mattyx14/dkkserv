@@ -608,4 +608,7 @@
 
 	<!-- Stamina Refill -->
 	<action itemid="8974" script="staminaRefill.lua" />
+
+	<!-- Autoloot mode 2 -->
+	<action actionid="500" script="autoloot.lua" />
 </actions>

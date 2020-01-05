@@ -48,4 +48,7 @@
 	<!-- Forgotten Knowledge -->
 	<event type="healthchange" name="HealthForgotten" script="quest/forgotten knowledge/healthchange forgotten.lua"/>
 	<event type="kill" name="BossesForgotten" script="quest/forgotten knowledge/bossesKill.lua"/>
+
+	<!-- AUTO LOOT -->
+	<event type="modalwindow" name="autoloot" script="autoloot.lua"/>
 </creaturescripts>

@@ -31,4 +31,7 @@
 
 		<!-- Shop -->
 		<globalevent name="Znote Shop" interval="30000" script="znoteshop.lua"/>
+
+		<!-- Autoloot -->
+		<globalevent name="autoloot" type="startup" script="autoloot.lua"/>
 </globalevents>
