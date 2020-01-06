@@ -61,7 +61,7 @@
 		<immunity invisible="1"/>
 	</immunities>
 	<summons maxSummons="4">
-		<summon name="demon" interval="1000" chance="10" max="4"/>
+		<summon name="Fire Lord" interval="1000" chance="10" max="4"/>
 	</summons>
 	<voices interval="5000" chance="10">
 		<voice sentence="PRAISED BE MY MASTERS, THE RUTHLESS SEVEN!"/>
