@@ -27,10 +27,10 @@
 		<attack name="lifedrain" interval="2000" chance="10" radius="3" target="0" min="-25" max="-47">
 			<attribute key="areaEffect" value="redshimmer"/>
 		</attack>
-		<attack name="poisoncondition" interval="2000" chance="10" radius="3" target="0" min="-50" max="-60">
+		<attack name="poisoncondition" interval="2000" chance="10" radius="3" target="0">
 			<attribute key="areaEffect" value="poison"/>
 		</attack>
-		<attack name="poisoncondition" interval="2000" chance="10" length="6" spread="0" target="0" min="-70" max="-80">
+		<attack name="poisoncondition" interval="2000" chance="10" length="6" spread="0" target="0">
 			<attribute key="areaEffect" value="poison"/>
 		</attack>
 		<attack name="speed" interval="2000" chance="15" target="1" speedchange="-600" duration="13000"/>

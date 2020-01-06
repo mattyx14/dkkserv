@@ -7,6 +7,13 @@
 		<parameter key="message_decline" value="Is |TOTALCOST| gold coins too much for you? Get out of here!" />
 		<parameter key="module_shop" value="1" />
 		<parameter key="shop_buyable" value="
+			collar of blue plasma, 26198, 6000;
+			collar of green plasma, 26199, 6000;
+			collar of red plasma, 26200, 6000;
+			ring of blue plasma, 26185, 8000;
+			ring of green plasma, 26187, 8000;
+			ring of red plasma, 26189, 8000;
+
 			stone shower rune,2288,37;
 			blank rune,2260,10;
 			energy field rune,2277,38;

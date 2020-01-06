@@ -2294,7 +2294,7 @@
 	<item id="2195" name="boots of haste">
 		<attribute key="weight" value="750" />
 		<attribute key="slotType" value="feet" />
-		<attribute key="speed" value="40" />
+		<attribute key="speed" value="60" />
 		<attribute key="showattributes" value="1" />
 		<attribute key="imbuingSlots" value="1" />
 	</item>
@@ -12053,7 +12053,7 @@
 	<item id="7256" article="a" name="slain braindeath">
 		<attribute key="containerSize" value="10" />
 		<attribute key="decayTo" value="7260" />
-		<attribute key="duration" value="10" />
+		<attribute key="duration" value="600" />
 		<attribute key="fluidSource" value="blood" />
 		<attribute key="corpseType" value="blood" />
 	</item>
@@ -12075,7 +12075,7 @@
 	<item id="7260" article="a" name="slain braindeath">
 		<attribute key="containerSize" value="10" />
 		<attribute key="decayTo" value="7257" />
-		<attribute key="duration" value="600" />
+		<attribute key="duration" value="10" />
 	</item>
 	<item id="7261" article="a" name="frostbite herb" />
 	<item fromid="7262" toid="7263" article="a" name="figurehead" />

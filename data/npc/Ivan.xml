@@ -7,6 +7,9 @@
 		<parameter key="message_decline" value="Is |TOTALCOST| gold coins too much for you? Get out of here!" />
 		<parameter key="module_shop" value="1" />
 		<parameter key="shop_sellable" value="
+			badger boots, 24742, 7500;
+			fur armor, 24741, 5000;
+
 			crossbow,2455,150;
 			bow,2456,130;
 			minotaur trophy, 7401, 500;

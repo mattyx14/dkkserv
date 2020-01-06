@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <monster name="Braindeath" nameDescription="a braindeath" race="undead" experience="985" speed="109">
 	<health now="1225" max="1225" />
-	<look type="256" corpse="7256" />
+	<look type="256" corpse="7260" />
 	<targetchange interval="4000" chance="10" />
 	<flags>
 		<flag summonable="0" />
