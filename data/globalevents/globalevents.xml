@@ -20,7 +20,7 @@
 	<!-- Demon Oak Quest -->
 	<globalevent name="DemonOakVoices" interval="15000" script="demon oak quest/voices.lua" />
 	<!-- Bosses -->
-	<globalevent name="bosses" interval="46800000" script="bosses.lua"/>
+	<globalevent name="bosses" time="16:00:00" script="bosses.lua"/>
 	<!-- OTX Systems -->
 		<!-- Modified Scripts from TFS
 			serversave.lua - for save with interval time

@@ -104,7 +104,6 @@
 		<item name="mastermind shield" chance="6666"/>
 		<item name="demon shield" chance="25000"/>
 		<item name="Orshabaal's brain" unique="1" chance="6666"/>
-		<item name="thunder hammer" unique="1" chance="6666"/>
 		<item name="demon horn" chance="50000"/>
 		<item id="6300" chance="50000"/><!-- death ring -->
 		<item name="demonic essence" chance="100000"/>

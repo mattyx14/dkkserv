@@ -6,7 +6,9 @@ local spawns = {
 	[5]  = {position = Position(492, 1108, 8), monster = 'Rotworm Queen'},
 }
 
-function onThink(interval, lastExecution)
+-- Function that is called by the global events when it reaches the time configured
+-- interval is the time between the event start and the the effective save, it will send an notify message every minute
+function onTime(interval)
 	local spawn = spawns[math.random(#spawns)]
 	local monster = Game.createMonster(spawn.monster, spawn.position, true, true)
 	if not monster then
