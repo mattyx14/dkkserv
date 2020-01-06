@@ -286,7 +286,7 @@
 	<melee id="22399" level="120" unproperly="1">
 		<vocation name="Knight" /><vocation name="Elite Knight" showInDescription="0" />
 	</melee>
-	<melee id="22400" level="250" unproperly="1">
+	<melee id="22400" level="150" unproperly="1">
 		<vocation name="Knight" /><vocation name="Elite Knight" showInDescription="0" />
 	</melee>
 	<melee id="22401" level="75" unproperly="1">
@@ -393,7 +393,7 @@
 	<melee id="22405" level="120" unproperly="1">
 		<vocation name="Knight" /><vocation name="Elite Knight" showInDescription="0" />
 	</melee>
-	<melee id="22406" level="250" unproperly="1">
+	<melee id="22406" level="150" unproperly="1">
 		<vocation name="Knight" /><vocation name="Elite Knight" showInDescription="0" />
 	</melee>
 	<melee id="22407" level="75" unproperly="1">
@@ -490,7 +490,7 @@
 	<melee id="22411" level="120" unproperly="1">
 		<vocation name="Knight" /><vocation name="Elite Knight" showInDescription="0" />
 	</melee>
-	<melee id="22412" level="250" unproperly="1">
+	<melee id="22412" level="150" unproperly="1">
 		<vocation name="Knight" /><vocation name="Elite Knight" showInDescription="0" />
 	</melee>
 	<melee id="22413" level="75" unproperly="1">
@@ -614,7 +614,7 @@
 	<distance id="22417" level="150" unproperly="1"> <!-- Umbral Bow -->
 		<vocation name="Paladin" /><vocation name="Royal Paladin" showInDescription="0" />
 	</distance>
-	<distance id="22418" level="250" unproperly="1"> <!-- Umbral Master Bow -->
+	<distance id="22418" level="150" unproperly="1"> <!-- Umbral Master Bow -->
 		<vocation name="Paladin" /><vocation name="Royal Paladin" showInDescription="0" />
 	</distance>
 	<distance id="22419" level="75" unproperly="1"> <!-- Crude Umbral Crossbow -->
@@ -623,7 +623,7 @@
 	<distance id="22420" level="150" unproperly="1"> <!-- Umbral Crossbow -->
 		<vocation name="Paladin" /><vocation name="Royal Paladin" showInDescription="0" />
 	</distance>
-	<distance id="22421" level="250" unproperly="1"> <!-- Umbral Master Crossbow -->
+	<distance id="22421" level="150" unproperly="1"> <!-- Umbral Master Crossbow -->
 		<vocation name="Paladin" /><vocation name="Royal Paladin" showInDescription="0" />
 	</distance>
 	<distance id="25522" level="120" unproperly="1"> <!-- Rift Bow -->
