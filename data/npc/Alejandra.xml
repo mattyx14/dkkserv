@@ -14,9 +14,6 @@
 			sickle,2405,3;
 			wooden hammer,2556,15;
 
-			soul orb, 5944, 50;
-			demonic essence, 6500, 1000;
-
 			backpack of holding,2365,500000,1;
 			basket,1989,6,1;
 			beach backpack,5949,20,1;
@@ -59,6 +56,9 @@
 			hollow stampor hoof, 13301, 400;
 			stampor horn, 13299, 280;
 			stampor talons, 13300, 150;
+
+			soul orb, 5944, 50;
+			demonic essence, 6500, 1000;
 
 			Badger Fur, 11216, 15;
 			Royal Tapestry, 9958, 1000;
