@@ -31,24 +31,18 @@
 		</attack>
 		<attack name="energy strike" interval="2000" chance="10" range="1" min="-210" max="-300">
 		</attack>
-		<attack name="speed" interval="2000" chance="15" radius="1" target="1" speedchange="-700" duration="30000">
-			<attribute key="areaEffect" value="redshimmer" />
-		</attack>
 	</attacks>
 	<defenses armor="55" defense="55">
-		<defense name="healing" interval="2000" chance="15" min="180" max="250">
-			<attribute key="areaEffect" value="blueshimmer" />
-		</defense>
 		<defense name="speed" interval="2000" chance="15" speedchange="320" duration="5000">
 			<attribute key="areaEffect" value="redshimmer" />
 		</defense>
 	</defenses>
 	<elements>
-		<element physicalPercent="95"/>
-		<element earthPercent="95"/>
-		<element icePercent="95"/>
-		<element holyPercent="95"/>
-		<element deathPercent="95"/>
+		<element physicalPercent="85"/>
+		<element earthPercent="85"/>
+		<element icePercent="85"/>
+		<element holyPercent="85"/>
+		<element deathPercent="85"/>
 	</elements>
 	<immunities>
 		<immunity fire="1" />
@@ -58,11 +52,10 @@
 		<immunity paralyze="1" />
 		<immunity invisible="1" />
 	</immunities>
-	<summons maxSummons="4">
+	<summons maxSummons="3">
 		<summon name="fire elemental" interval="2000" chance="20" />
 		<summon name="dragon lord" interval="2000" chance="15" />
 		<summon name="banshee" interval="2000" chance="10" />
-		<summon name="fire lord" interval="2000" chance="2" />
 	</summons>
 	<voices interval="5000" chance="10">
 		<voice sentence="Your soul will be mine!" />
