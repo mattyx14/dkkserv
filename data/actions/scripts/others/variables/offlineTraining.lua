@@ -8,11 +8,6 @@ local statues = {
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local skill = statues[item:getId()]
-	if not player:isPremium() then
-		player:sendTextMessage(MESSAGE_STATUS_SMALL, Game.getReturnMessage(RETURNVALUE_YOUNEEDPREMIUMACCOUNT))
-		return true
-	end
-
 	if player:isPzLocked() then
 		return false
 	end
