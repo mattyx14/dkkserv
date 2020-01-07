@@ -39,9 +39,9 @@ function onSay(player, words, param)
 		end
 		sum = sum + 1
 	end
-	window:addButton(105, "Backpack")
+	window:addButton(105, "BP")
 	window:setDefaultEnterButton(103, "Add")
-	window:addButton(100, "Confirm")
+	window:addButton(100, "Ok")
 	if autolootBP == 1 then
 	window:addButton(102, "Remove")
 	end

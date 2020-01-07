@@ -62,7 +62,6 @@
 		<item name="great spirit potion" chance="2010" />
 		<item name="ultimate health potion" chance="750" />
 		<item name="belted cape" chance="580" />
-		<item name="paladin armor" chance="140" />
 		<item name="springsprout rod" chance="1020" />
 		<item name="boggy dreads" chance="9870" />
 	</loot>

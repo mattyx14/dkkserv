@@ -21,11 +21,11 @@ function onSay(player, words, param)
 			window:addChoice(sum, "".. string.gsub(" "..(ItemType(item)):getName(), "%W%l", string.upper):sub(2, 21) .." "..string.gsub(" "..string.lower(backvinculo), "%W%l", string.upper):sub(2).."")
 			sum = sum + 1
 		end
-		window:addButton(106, "Backpack")
-		window:addButton(100, "Confirm")
+		window:addButton(106, "BP")
+		window:addButton(100, "Ok")
 		window:addButton(102, "Remove")
 		if autolootBP == 1 then
-		window:setDefaultEnterButton(106, "Backpack")
+		window:setDefaultEnterButton(106, "BP")
 		end
 		window:sendToPlayer(player)
 		return true

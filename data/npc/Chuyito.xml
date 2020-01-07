@@ -8,6 +8,7 @@
 		<parameter key="module_shop" value="1" />
 		<parameter key="shop_buyable" value="
 			stone shower rune,2288,37;
+			thunderstorm rune,2315,45;
 			blank rune,2260,10;
 			energy field rune,2277,38;
 			energy wall rune,2279,85;

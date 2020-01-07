@@ -161,7 +161,7 @@ function call(player, param, param2, tobpid)
 			sum = sum + 1
 		end
 		if autolootBP == 1 then
-			window:addButton(105, "Backpack")
+			window:addButton(105, "BP")
 		end
 		callwindow(window, player, 1)
 		elseif param == 'remove' then
@@ -189,7 +189,7 @@ function call(player, param, param2, tobpid)
 			return false
 		end
 		if autolootBP == 1 then
-			window:addButton(106, "Backpack")
+			window:addButton(106, "BP")
 		end
 		callwindow(window, player, 2)
 		elseif param == 'backpack' then
@@ -231,16 +231,16 @@ end
 
 function callwindow(window, player, param)
 	if param == 3 then
-		window:setDefaultEnterButton(100, "Confirm")
-		window:addButton(100, "Confirm")
+		window:setDefaultEnterButton(100, "Ok")
+		window:addButton(100, "Ok")
 		else
-		window:addButton(100, "Confirm")
+		window:addButton(100, "Ok")
 		window:addButton(102, "Remove")
-		window:setDefaultEnterButton(106, "Backpack")
+		window:setDefaultEnterButton(106, "BP")
 		if param == 1 then
 			window:addButton(103, "Add")
 			window:setDefaultEnterButton(103, "Add")
-			window:addButton(105, "Backpack")
+			window:addButton(105, "BP")
 		end
 	end
 	window:sendToPlayer(player)
