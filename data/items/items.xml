@@ -14755,13 +14755,17 @@
 		<attribute key="weight" value="2250" />
 		<attribute key="armor" value="12" />
 		<attribute key="absorbPercentEnergy" value="10" />
+		<attribute key="magiclevelpoints" value="2" />
 		<attribute key="slotType" value="body" />
+		<attribute key="imbuingSlots" value="1" />
 	</item>
 	<item id="7899" article="a" name="magma coat">
 		<attribute key="weight" value="2250" />
 		<attribute key="armor" value="12" />
 		<attribute key="absorbPercentFire" value="10" />
+		<attribute key="magiclevelpoints" value="2" />
 		<attribute key="slotType" value="body" />
+		<attribute key="imbuingSlots" value="1" />
 	</item>
 	<item id="7900" article="a" name="magma monocle">
 		<attribute key="weight" value="1000" />
