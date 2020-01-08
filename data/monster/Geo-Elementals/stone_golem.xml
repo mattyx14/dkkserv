@@ -25,7 +25,6 @@
 	<elements>
 		<element physicalPercent="20"/>
 		<element firePercent="20"/>
-		<element energyPercent="15"/>
 		<element deathPercent="20"/>
 		<element icePercent="-10"/>
 	</elements>
@@ -33,6 +32,7 @@
 		<immunity paralyze="1"/>
 		<immunity drown="1"/>
 		<immunity earth="1"/>
+		<immunity energy="1"/>
 	</immunities>
 	<loot>
 		<item name="small stone" countmax="4" chance="13890"/>
