@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monster name="Angeryosa" nameDescription="Angeryosa" race="blood" experience="11500" speed="270" script="rewardboss.lua">
 	<health now="25000" max="25000" />
-	<look type="149" head="94" body="77" legs="96" feet="0" addons="3" corpse="3065" />
+	<look type="149" head="0" body="89" legs="100" feet="80" addons="3" corpse="3065" />
 	<targetchange interval="4000" chance="10" />
 	<flags>
 		<flag preyable="0" />
