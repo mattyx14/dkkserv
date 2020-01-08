@@ -52,7 +52,7 @@
 		<item name="gold token" chance="1530"/>
 		<item name="gold coin" countmax="200" chance="100000"/>
 		<item name="platinum coin" countmax="57" chance="29840"/>
-		<item name="lightning legs" chance="8723"/>
+		<item id="2160" countmax="1" chance="2500"/>
 		<item name="yellow gem" chance="29460"/>
 		<item name="demon shield" chance="2270"/>
 		<item name="shockwave amulet" chance="15100"/>

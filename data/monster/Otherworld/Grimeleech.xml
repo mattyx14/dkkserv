@@ -80,7 +80,7 @@
 		<item id="9970" countmax="2" chance="1940"/><!-- Small Topazes -->
 		<item id="2520" chance="390"/><!-- demon shield -->
 		<item id="2462" chance="1500"/><!-- Devil Helmet -->
-		<item id="7894" chance="1000"/><!-- Magma Legs, -->
+		<item id="2160" countmax="1" chance="3000"/>
 		<item id="7418" chance="1460"/><!-- Nightmare Blade -->
 		<item id="2156" chance="760"/><!-- Red Gem -->
 		<item id="25523" chance="240"/><!-- Rift Crossbow-->

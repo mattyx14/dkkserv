@@ -52,7 +52,7 @@
 		<item name="Wand of Inferno" chance="250"/>
 		<item name="Fire Sword" chance="250"/>
 		<item name="Magma Coat" chance="350"/>
-		<item name="Magma Legs" chance="250"/>
+		<item id="2160" countmax="1" chance="500"/>
 		<item name="Piece of Hellfire Armor" countmax="5" chance="500"/>
 		<item id="13757" countmax="5" chance="10000"/> <!-- coal -->
 	</loot>

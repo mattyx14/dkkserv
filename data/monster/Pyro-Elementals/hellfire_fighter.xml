@@ -54,11 +54,9 @@
 		<item name="burnt scroll" chance="50000"/>
 		<item name="blank rune" countmax="2" chance="30000"/>
 		<item name="fire sword" chance="4140"/>
-		<item id="2160" countmax="1" chance="1000"/>
 		<item name="soul orb" chance="12150"/>
 		<item name="demonic essence" chance="14500"/>
-		<item name="magma legs" chance="730"/>
-		<item name="magma coat" chance="470"/>
+		<item id="2160" countmax="3" chance="3000"/>
 		<item name="fiery heart" chance="9570"/>
 		<item name="piece of hellfire armor" chance="5060"/>
 		<item id="13757" chance="670"/><!-- coal -->

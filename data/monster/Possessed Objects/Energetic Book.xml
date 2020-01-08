@@ -52,6 +52,5 @@
 		<item name="Spellweaver's Robe" chance="350"/>
 		<item name="Wand of Defiance" chance="350"/>
 		<item name="Haunted Blade" chance="550"/>
-		<item name="Lightning Legs" chance="350"/>
 	</loot>
 </monster>

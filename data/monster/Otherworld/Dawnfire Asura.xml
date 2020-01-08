@@ -70,7 +70,7 @@
 		<item id="6500" chance="330"/>					<!-- Demonic Essence -->
 		<item id="8871" chance="220"/>					<!--  Focus Cape -->
 		<item id="24630" chance="500"/>					<!-- Golden Lotus Brooch -->
-		<item id="7899" chance="100"/>					<!-- Magma Coat -->
+		<item id="2160" countmax="1" chance="1000"/>
 	    <item id="2194" chance="400"/>					<!-- Mysterious Fetish -->
 	    <item id="2663" chance="300"/>					<!-- Mystic Turban -->
 	    <item id="24637" chance="300"/>					<!-- Oriental Shoes -->

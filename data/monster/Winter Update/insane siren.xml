@@ -61,11 +61,9 @@
 		<item name="Holy Orchid" chance="5650"/>
 		<item name="Magma Amulet" chance="5130"/>
 		<item name="Wand of Inferno" chance="4360"/>
-		<item id="2160" countmax="1" chance="4000"/>
-		<item name="Magma Coat" chance="3340"/>
+		<item id="2160" countmax="5" chance="4000"/>
 		<item name="Wand of Dragonbreath" chance="2650"/>
 		<item name="Sun Fruit" chance="2570"/>
-		<item name="Magma Legs" chance="1200"/>
 		<item name="Magma Monocle" chance="260"/>
 	</loot>
 </monster>

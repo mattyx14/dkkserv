@@ -72,7 +72,7 @@
 		<item id="2411" chance="9600" />					<!-- poison dagger -->
 		<item id="7368" countmax="4" chance="5500" />	<!-- assassin star -->
 		<item id="2146" chance="3190" />					<!-- small sapphire -->
-		<item id="7898" chance="3040" />					<!-- lightning robe -->
+		<item id="7898" chance="100" />					<!-- lightning robe -->
 		<item id="2123" chance="2420" />					<!-- ring of the sky -->
 		<item id="2466" chance="2240" />					<!-- golden armor -->
 	</loot>

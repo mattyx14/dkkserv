@@ -177,6 +177,8 @@ Storage = {
 		-- deathHeraldOutfit = draculaDone,
 		-- assassinOutfit = assassinDone,
 		puppeteerOutfit = 1449,
+		magmaSet = 30492,
+		lightningSete = 30493,
 	},
 	-- Global Tibia Quest
 	OutfitQuest = {

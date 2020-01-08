@@ -64,7 +64,7 @@
 		<item name="Wand of Draconia" chance="25000" />
 		<item name="Wand of Inferno" chance="12800" />
 		<item name="Red Ectoplasm" chance="12000" />
-		<item name="Magma Coat" chance="30000" />
+		<item id="2160" countmax="1" chance="10000"/>
 		<item name="Prismatic Quartz" chance="13050" />
 		<item name="Small Enchanted Emerald" chance="12800" />
 		<item name="Onyx Chip" chance="12000" />

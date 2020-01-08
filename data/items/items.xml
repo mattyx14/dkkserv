@@ -4156,6 +4156,9 @@
 		<attribute key="weight" value="5100" />
 		<attribute key="defense" value="36" />
 		<attribute key="weaponType" value="shield" />
+		<attribute key="absorbPercentEnergy" value="15" />
+		<attribute key="magiclevelpoints" value="5" />
+		<attribute key="showattributes" value="1" />
 		<attribute key="imbuingSlots" value="1" />
 	</item>
 	<item id="2543" article="a" name="bolt">
@@ -14750,14 +14753,14 @@
 	</item>
 	<item id="7898" article="a" name="lightning robe">
 		<attribute key="weight" value="2250" />
-		<attribute key="armor" value="11" />
-		<attribute key="absorbPercentEnergy" value="8" />
+		<attribute key="armor" value="12" />
+		<attribute key="absorbPercentEnergy" value="10" />
 		<attribute key="slotType" value="body" />
 	</item>
 	<item id="7899" article="a" name="magma coat">
 		<attribute key="weight" value="2250" />
-		<attribute key="armor" value="11" />
-		<attribute key="absorbPercentFire" value="8" />
+		<attribute key="armor" value="12" />
+		<attribute key="absorbPercentFire" value="10" />
 		<attribute key="slotType" value="body" />
 	</item>
 	<item id="7900" article="a" name="magma monocle">
@@ -30017,9 +30020,10 @@
 		<attribute key="weight" value="3400" />
 		<attribute key="armor" value="12" />
 		<attribute key="slotType" value="body" />
-		<attribute key="absorbPercentFire" value="5" />
-		<attribute key="magiclevelpoints" value="2" />
+		<attribute key="absorbPercentFire" value="15" />
+		<attribute key="magiclevelpoints" value="5" />
 		<attribute key="showattributes" value="1" />
+		<attribute key="imbuingSlots" value="1" />
 	</item>
 	<item id="21726" article="an" name="opticording sphere">
 		<attribute key="weight" value="200" />

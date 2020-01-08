@@ -9,7 +9,7 @@
 	<!-- Others -->
 	<globalevent type="startup" name="ServerStartup" script="startup.lua" />
 	<globalevent type="record" name="PlayerRecord" script="record.lua" />
-	<globalevent name="ServerSave" time="07:00:00" script="serversave.lua" />
+	<globalevent name="ServerSave" time="06:00:00" script="serversave.lua" />
 
 	<!-- <globalevent type="startup" name="doCheckHouses" script="others/doCheckHouses.lua" /> -->
 	<globalevent name="checkInbox" interval="30000" script="others/checkInbox.lua"/>

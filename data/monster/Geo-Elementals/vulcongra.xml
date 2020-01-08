@@ -54,7 +54,7 @@
 		<item name="strong health potion" chance="7100"/>
 		<item name="strong mana potion" chance="7100"/>
 		<item name="magma amulet" chance="970"/>
-		<item name="magma coat" chance="140"/>
+		<item id="2160" countmax="1" chance="500"/>
 		<item name="fiery heart" chance="9380"/>
 		<item id="13757" chance="940"/><!-- coal -->
 		<item name="brown crystal splinter" chance="4850"/>

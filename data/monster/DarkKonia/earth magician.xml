@@ -81,8 +81,6 @@
 		<item id="2689" countmax="1" chance="11000"/> -- bread
 		<item id="2167" chance="3000"/> -- energy ring
 		<item id="5958" chance="3000"/> -- parchment
-		<item id="7898" chance="1000"/> -- lightning robe :: Arm 11
-		<item id="7895" chance="1001"/> -- lightning legs :: Arm 8
 		<item id="2197" chance="500"/> -- stone skin amulet
 		<item id="7368" countmax="30" chance="7000"/> -- assassin star :: Atk 62
 		<item id="2151" countmax="2" chance="1100"/> -- talon

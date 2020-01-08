@@ -66,7 +66,7 @@
 		<item name="strong health potion" chance="20000"/>
 		<item name="strong mana potion" chance="20000"/>
 		<item name="lightning pendant" chance="862"/>
-		<item name="lightning legs" chance="480"/>
+		<item id="2160" countmax="1" chance="500"/>
 		<item name="shockwave amulet" chance="571"/>
 		<item name="broken ring of ending" chance="261"/>
 		<item name="yielowax" chance="300"/>

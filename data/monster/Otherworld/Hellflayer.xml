@@ -77,7 +77,7 @@
 		<item id="7632" chance="800"/>	<!-- Giant Shimmering Pearl -->
 		<item id="2155" chance="800"/>	<!-- Green Gem -->
 		<item id="7891" chance="500"/>	<!-- Magma Boots -->
-		<item id="7894" chance="1200"/>	<!-- Magma Legs -->
+		<item id="2160" countmax="1" chance="3000"/>
 		<item id="2514" chance="350"/>	<!-- Mastermind Shield -->
 		<item id="25385" chance="800"/>	<!-- Pair of Hellflayer Horns -->
 		<item id="2156" chance="500"/>	<!-- Red Gem -->

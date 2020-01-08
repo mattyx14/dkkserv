@@ -70,7 +70,7 @@
 		<item name="mana potion" countmax="2" chance="20720"/>
 		<item name="magma amulet" chance="2900"/>
 		<item name="magma boots" chance="2650"/>
-		<item name="magma coat" chance="430"/>
+		<item id="2160" countmax="1" chance="4000"/>
 		<item name="ultimate health potion" chance="15390"/>
 		<item name="spellbook of mind control" chance="450"/>
 		<item name="fiery heart" chance="13510"/>

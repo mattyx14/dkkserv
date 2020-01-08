@@ -65,8 +65,6 @@
 		<item name="yellow fireworks powder" chance="1870" />
 		<item name="red fireworks powder" chance="1830" />
 		<item name="magma amulet" chance="1320" />
-		<item name="magma coat" chance="1320" />
 		<item name="magma monocle" chance="950" />
-		<item name="magma legs" chance="510" />
 	</loot>
 </monster>
