@@ -33,15 +33,12 @@
 		<attack name="energy" interval="2000" chance="10" length="8" spread="0" min="-150" max="-230">
 			<attribute key="areaEffect" value="bigclouds"/>
 		</attack>
-		<attack name="speed" interval="2000" chance="15" range="7" speedchange="-600" duration="20000">
-			<attribute key="areaEffect" value="redshimmer"/>
-		</attack>
 	</attacks>
 	<defenses armor="20" defense="20">
 		<defense name="healing" interval="2000" chance="20" min="100" max="225">
 			<attribute key="areaEffect" value="blueshimmer"/>
 		</defense>
-		<defense name="invisible" interval="2000" chance="20" duration="10000">
+		<defense name="invisible" interval="10000" chance="20" duration="10000">
 			<attribute key="areaEffect" value="blueshimmer"/>
 		</defense>
 	</defenses>
