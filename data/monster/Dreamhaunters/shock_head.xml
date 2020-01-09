@@ -28,8 +28,6 @@
 			<attribute key="shootEffect" value="earth"/>
 			<attribute key="areaEffect" value="stones"/>
 		</attack>
-		<attack name="shock head skill reducer 1" range="5" interval="2000" chance="5"/>
-		<attack name="shock head skill reducer 2" interval="2000" chance="5"/>
 	</attacks>
 	<defenses armor="30" defense="30">
 		<defense name="healing" interval="2000" chance="15" min="250" max="350">

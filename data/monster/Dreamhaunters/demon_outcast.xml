@@ -27,7 +27,6 @@
 		<attack name="energy" interval="2000" chance="20" radius="3" target="1" min="-100" max="-250">
 			<attribute key="areaEffect" value="energy"/>
 		</attack>
-		<attack name="demon outcast skill reducer" range="5" interval="2000" chance="10"/>
 		<attack name="manadrain" interval="2000" chance="10" radius="4" target="0" min="-80" max="-150">
 			<attribute key="areaEffect" value="greenshimmer"/>
 		</attack>

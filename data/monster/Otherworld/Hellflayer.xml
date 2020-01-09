@@ -34,7 +34,6 @@
 			<attribute key="shootEffect" value="fire"/>
 			<attribute key="areaEffect" value="fireattack"/>
 		</attack>
-		<attack name="warlock skill reducer" range="5" interval="2000" chance="5"/>
 		<attack name="physical" interval="2000" chance="10" radius="1" target="1" min="300" max="-500">
 			<attribute key="shootEffect" value="explosion"/>
 			<attribute key="areaEffect" value="sleep"/>

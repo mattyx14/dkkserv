@@ -19,7 +19,6 @@
   </flags>
   <attacks>
     <attack name="melee" interval="2000" skill="70" attack="50"/>
-    <attack name="walker skill reducer" interval="2000" chance="21"/>
     <attack name="fire" interval="2000" chance="17" length="8" spread="0" min="-125" max="-245">
       <attribute key="areaEffect" value="explosion"/>
     </attack>

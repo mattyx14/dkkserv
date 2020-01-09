@@ -30,7 +30,6 @@
 			<attribute key="areaEffect" value="yellowspark"/>
 		</attack>
 		<attack name="ice golem paralyze" interval="2000" chance="11"/>
-		<attack name="hirintror skill reducer" interval="2000" chance="10"/>
 	</attacks>
 	<defenses armor="60" defense="60">
 		<defense name="healing" interval="2000" chance="20" radius="7" min="0" max="0">

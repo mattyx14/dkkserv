@@ -36,7 +36,6 @@
 		<attack name="speed" interval="2000" chance="15" range="7" speedchange="-330" duration="20000">
 			<attribute key="areaEffect" value="redshimmer" />
 		</attack>
-		<attack name="warlock skill reducer" range="5" interval="2000" chance="5" />
 	</attacks>
 	<defenses armor="20" defense="20">
 		<defense name="healing" interval="2000" chance="20" min="100" max="225">

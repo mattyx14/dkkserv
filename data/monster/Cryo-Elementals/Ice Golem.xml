@@ -28,7 +28,6 @@
 			<attribute key="shootEffect" value="smallice"/>
 			<attribute key="areaEffect" value="iceattack"/>
 		</attack>
-		<attack name="ice golem skill reducer" interval="2000" chance="10"/>
 	</attacks>
 	<defenses armor="25" defense="26"/>
 	<elements>

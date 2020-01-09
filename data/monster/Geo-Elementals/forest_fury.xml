@@ -25,7 +25,6 @@
 			<attribute key="shootEffect" value="huntingspear"/>
 			<attribute key="areaEffect" value="greenshimmer"/>
 		</attack>
-		<attack name="forest fury skill reducer" range="5" interval="2000" chance="20"/>
 	</attacks>
 	<defenses armor="20" defense="20"/>
 	<elements>

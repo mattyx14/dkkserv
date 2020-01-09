@@ -23,7 +23,6 @@
     <attack name="energy" interval="2000" chance="25" range="7" min="-125" max="-245">
       <attribute key="shootEffect" value="energy"/>
     </attack>
-    <attack name="war golem skill reducer" interval="2000" chance="16"/>
     <attack name="war golem electrify" interval="2000" chance="9" range="7"/>
   </attacks>
   <defenses armor="40" defense="45">
