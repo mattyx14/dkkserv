@@ -31,6 +31,7 @@
 		<attack name="physical" interval="2000" chance="10" radius="1" target="0">
 			<attribute key="areaEffect" value="greennote"/>
 		</attack>
+		<attack name="werewolf skill reducer" interval="2000" range="1" chance="15"/>
 	</attacks>
 	<defenses armor="40" defense="40">
 		<defense name="healing" interval="2000" chance="15" min="120" max="225">

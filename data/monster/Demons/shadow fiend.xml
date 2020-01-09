@@ -25,6 +25,9 @@
 		<attack name="speed" range="6" interval="2000" radius="4" chance="20" speedchange="-600" duration="20000">
 			<attribute key="areaEffect" value="smallclouds"/>
 		</attack>
+		<attack name="silencer skill reducer" range="4" interval="2000" chance="30">
+			<attribute key="areaEffect" value="poff"/>
+		</attack>
 	</attacks>
 	<defenses armor="30" defense="35">
 		<defense name="healing" interval="2000" chance="13" min="160" max="230">

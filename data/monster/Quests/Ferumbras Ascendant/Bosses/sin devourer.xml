@@ -26,6 +26,9 @@
 			<attribute key="areaEffect" value="icearea"/>
 			<attribute key="shootEffect" value="snowball"/>
 		</attack>
+		<attack name="silencer skill reducer" range="4" interval="2000" chance="30">
+			<attribute key="areaEffect" value="poff"/>
+		</attack>
 	</attacks>
 	<defenses armor="30" defense="35">
 		<defense name="healing" interval="2000" chance="13" min="60" max="130">

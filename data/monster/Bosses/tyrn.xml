@@ -35,6 +35,7 @@
 			<attribute key="areaEffect" value="explosion"/>
 		</attack>
 		<attack name="tyrn electrify" interval="2000" chance="11"/>
+		<attack name="tyrn skill reducer" interval="2000" chance="14"/>
 	</attacks>
 	<defenses armor="58" defense="68">
 		<defense name="healing" interval="2000" chance="33" min="200" max="300">

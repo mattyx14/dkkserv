@@ -48,6 +48,7 @@
 		<attack name="manadrain" interval="2000" chance="15" radius="3" target="1" min="-70" max="-320">
 			<attribute key="areaEffect" value="blackspark"/>
 		</attack>
+		<attack name="dark torturer skill reducer" interval="2000" chance="5"/>
 	</attacks>
 	<defenses armor="55" defense="65">
 		<defense name="healing" interval="3000" chance="35" min="800" max="1100">

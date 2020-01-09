@@ -35,6 +35,7 @@
 		<attack name="physical" interval="3000" chance="18" radius="5" target="1" min="0" max="-150">
 			<attribute key="areaEffect" value="groundshaker" />
 		</attack>
+		<attack name="fury skill reducer" interval="2000" chance="5" />
 	</attacks>
 	<defenses armor="20" defense="20">
 		<defense name="invisible" interval="2000" chance="10" duration="8000">

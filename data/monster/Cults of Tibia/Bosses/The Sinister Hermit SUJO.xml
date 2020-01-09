@@ -26,6 +26,9 @@
 		<defense name="healing" interval="2000" chance="20" min="0" max="800">
 			<attribute key="areaEffect" value="redshimmer" />
 		</defense>
+		<defense name="shock head skill reducer 2" interval="2000" radius="8" chance="30">
+			<attribute key="areaEffect" value="redshimmer" />
+		</defense>
 	</defenses>
 	<elements>
 	</elements>

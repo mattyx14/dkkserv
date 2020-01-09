@@ -27,6 +27,7 @@
 			<attribute key="shootEffect" value="fire"/>
 			<attribute key="areaEffect" value="fireattack"/>
 		</attack>
+		<attack name="diabolic imp skill reducer" range="5" interval="2000" chance="5"/>
 	</attacks>
 	<defenses armor="25" defense="25">
 		<defense name="healing" interval="2000" chance="10" min="250" max="350">

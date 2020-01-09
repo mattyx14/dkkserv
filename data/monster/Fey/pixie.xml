@@ -34,6 +34,7 @@
 		<attack name="energy" interval="2000" chance="30" range="4" min="0" max="-100">
 			<attribute key="shootEffect" value="leafstar"/>
 		</attack>
+		<attack name="pixie skill reducer" interval="2000" chance="20"/>
 	</attacks>
 	<defenses armor="50" defense="45">
 		<defense name="healing" interval="2000" chance="25" min="40" max="75">

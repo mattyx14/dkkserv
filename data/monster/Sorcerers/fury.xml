@@ -29,6 +29,7 @@
 		<attack name="death" interval="2000" chance="10" radius="4" target="0" min="-120" max="-300">
 			<attribute key="areaEffect" value="redspark"/>
 		</attack>
+		<attack name="fury skill reducer" interval="2000" chance="5"/>
 		<attack name="lifedrain" interval="2000" chance="10" radius="3" target="0" min="-120" max="-300">
 			<attribute key="areaEffect" value="blackspark"/>
 		</attack>

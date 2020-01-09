@@ -20,6 +20,7 @@
 	</flags>
 	<attacks>
 		<attack name="melee" interval="2000" min="0" max="-290" />
+		<attack name="werewolf skill reducer" interval="2000" range="1" chance="15" />
 		<attack name="lifedrain" interval="2000" chance="15" radius="8" target="0" min="-100" max="-300">
 			<attribute key="areaEffect" value="rednote" />
 		</attack>
