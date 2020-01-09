@@ -10,6 +10,7 @@ local outfits = {
 	[8267] = {8267, 'Oriental', 150, 146, 8267},
 	[3697] = {3697, 'Marry', 329, 328, 2121},
 	[1449] = {1449, 'Puppeteer', 696, 697, 3972},
+	[14699] = {14699, 'Insectoid', 466, 465, 14699},
 }
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)

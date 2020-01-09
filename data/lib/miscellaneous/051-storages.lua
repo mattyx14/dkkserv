@@ -179,6 +179,7 @@ Storage = {
 		puppeteerOutfit = 1449,
 		magmaSet = 30492,
 		lightningSete = 30493,
+		insectoidOutfit = 14699,
 	},
 	-- Global Tibia Quest
 	OutfitQuest = {

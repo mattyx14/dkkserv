@@ -580,6 +580,8 @@
 		<action uniqueid="3697" script="quests/outfits/outfits.lua" />
 		<!-- Puppeteer Outfit -->
 		<action uniqueid="1449" script="quests/outfits/outfits.lua" />
+		<!-- Insectoid Outfit -->
+		<action uniqueid="14699" script="quests/outfits/outfits.lua" />
 
 	<!-- Teleport items -->
 	<action fromaid="39512" toaid="39516" script="quests/itemPortal.lua" />
