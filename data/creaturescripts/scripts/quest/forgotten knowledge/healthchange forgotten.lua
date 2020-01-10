@@ -1,9 +1,9 @@
 function onHealthChange(creature, attacker, primaryDamage, primaryType, secondaryDamage, secondaryType, origin)
-	if creature:getName():lower() == 'lady tenebris' then
+	if creature:getName():lower() == 'Lady Tenebris' then
 		local spectators = Game.getSpectators(creature:getPosition(), false, false, 7, 7, 7, 7)
 		for i = 1, #spectators do
 			local spectator = spectators[i]
-			if spectator:getName():lower() == 'shadow tentacle' then
+			if spectator:getName():lower() == 'Shadow Tentacle' then
 				return primaryDamage, primaryType, secondaryDamage, secondaryType
 			end
 		end

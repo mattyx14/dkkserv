@@ -1,6 +1,6 @@
 local bosses = {
 	-- bosses
-	['lady tenebris'] = {killed = Storage.ForgottenKnowledge.LadyTenebrisKilled},
+	['Lady Tenebris'] = {killed = Storage.ForgottenKnowledge.LadyTenebrisKilled},
 }
 
 function onKill(creature, target)
@@ -18,7 +18,7 @@ function onKill(creature, target)
 		local attackerPlayer = Player(pid)
 		if attackerPlayer then
 			if bossConfig.killed then
-				attackerPlayer:setExhaustion(bossConfig.killed, 30 * 60 * 1000)
+				attackerPlayer:setExhaustion(bossConfig.killed, 20 * 60 * 1000)
 			end
 		end
 	end
