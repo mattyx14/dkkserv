@@ -1,5 +1,5 @@
 local destination = {
-	[24878] = {newPos = Position(1127, 1076, 15), backPos = Position(1095, 1080, 15), storage = Storage.ForgottenKnowledge.LadyTenebrisTimer},
+	[24878] = {newPos = Position(1127, 1080, 15), backPos = Position(1095, 1080, 15), storage = Storage.ForgottenKnowledge.LadyTenebrisTimer},
 }
 
 function onStepIn(creature, item, position, fromPosition)

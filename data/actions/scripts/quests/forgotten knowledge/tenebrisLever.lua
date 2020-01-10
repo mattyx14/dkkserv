@@ -17,7 +17,7 @@ local function clearTenebris()
 			spectator:remove()
 		end
 	end
-	Game.setStorageValue(Storage.ForgottenKnowledge.LadyTenebrisTimer, 0)
+	Game.setStorageValue(GlobalStorage.ForgottenKnowledge.TenebrisTimer, 0)
 end
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
@@ -29,7 +29,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	end
 
 	if item.itemid == 9825 then
-		if Game.getStorageValue(Storage.ForgottenKnowledge.LadyTenebrisTimer) >= 1 then
+		if Game.getStorageValue(GlobalStorage.ForgottenKnowledge.TenebrisTimer) >= 1 then
 			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You need to wait a while, recently someone challenge Lady Tenebris.")
 			return true
 		end
@@ -58,7 +58,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 				playerTile:setExhaustion(Storage.ForgottenKnowledge.LadyTenebrisTimer, 20 * 60 * 60)
 			end
 		end
-		Game.setStorageValue(Storage.ForgottenKnowledge.LadyTenebrisTimer, 1)
+		Game.setStorageValue(GlobalStorage.ForgottenKnowledge.TenebrisTimer, 1)
 		addEvent(clearTenebris, 20 * 60 * 1000)
 		item:transform(9826)
 	elseif item.itemid == 9826 then

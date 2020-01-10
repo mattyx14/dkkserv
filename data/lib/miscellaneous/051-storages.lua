@@ -9,7 +9,7 @@ Storage = {
 	ForgottenKnowledge = {
 		GirlPicture = 10140, -- Fynn = 26400
 		SilverKey = 10141, -- Fynn
-		LadyTenebrisTimer = 10148, -- Fynn
+		LadyTenebrisTimer = 10151, -- Fynn
 		LadyTenebrisKilled = 10150, -- Fynn
 	},
 	AnnihilatorDone = 2215,
