@@ -11,6 +11,14 @@ Storage = {
 		SilverKey = 10141, -- Fynn
 		LadyTenebrisTimer = 10151, -- Fynn
 		LadyTenebrisKilled = 10150, -- Fynn
+
+		-- Internal Usage
+		LloydKilled = 10152,
+		ThornKnightKilled = 10154,
+		DragonkingKilled = 10156,
+		HorrorKilled = 10158,
+		TimeGuardianKilled = 10160,
+		LastLoreKilled = 10162,
 	},
 	AnnihilatorDone = 2215,
 	Promotion = 30018, -- Promotion Storage cannot be changed, it is set in source code
