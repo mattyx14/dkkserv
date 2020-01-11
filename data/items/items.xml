@@ -4546,6 +4546,7 @@
 		<attribute key="weight" value="750" />
 		<attribute key="armor" value="1" />
 		<attribute key="slotType" value="head" />
+		<attribute key="magiclevelpoints" value="3" />
 		<attribute key="imbuingSlots" value="2" />
 	</item>
 	<item id="2663" article="a" name="mystic turban">
