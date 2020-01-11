@@ -11482,7 +11482,7 @@
 	<item id="6560" article="a" name="dead human">
 		<attribute key="containerSize" value="10" />
 		<attribute key="decayTo" value="3065" />
-		<attribute key="duration" value="180" />
+		<attribute key="duration" value="1200" />
 		<attribute key="corpseType" value="blood" />
 		<attribute key="fluidSource" value="blood" />
 	</item>

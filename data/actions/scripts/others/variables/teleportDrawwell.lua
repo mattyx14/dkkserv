@@ -1,5 +1,5 @@
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	if item:getActionId() ~= 1000 then
+	if item:getActionId() ~= 100 then
 		return false
 	end
 
