@@ -67,7 +67,7 @@
 		<immunity invisible="1" />
 	</immunities>
 	<summons maxSummons="2">
-		<summon name="demon" interval="4000" chance="50" />
+		<summon name="Fire Lord" interval="4000" chance="50" />
 	</summons>
 	<voices interval="5000" chance="30">
 		<voice sentence="I AM ZORALURK, THE DEMON WITH A THOUSAND FACES!" yell="1" />

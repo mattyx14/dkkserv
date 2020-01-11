@@ -61,7 +61,7 @@
 		<immunity invisible="1"/>
 	</immunities>
 	<summons maxSummons="4">
-		<summon name="Demon" interval="3000" chance="12"/>
+		<summon name="Fire Lord" interval="3000" chance="12"/>
 	</summons>
 	<voices interval="5000" chance="20">
 		<voice sentence="NO ONE WILL STOP ME THIS TIME!" yell="1"/>

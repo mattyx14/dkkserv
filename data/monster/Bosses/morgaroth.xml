@@ -75,7 +75,7 @@
 		<immunity invisible="1"/>
 	</immunities>
 	<summons maxSummons="6">
-		<summon name="Demon" interval="4000" chance="33"/>
+		<summon name="Fire Lord" interval="4000" chance="33"/>
 	</summons>
 	<voices interval="5000" chance="30">
 		<voice sentence="I AM MORGAROTH, LORD OF THE TRIANGLE... AND YOU ARE LOST!" yell="1"/>
