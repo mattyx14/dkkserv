@@ -2256,7 +2256,7 @@
 	<movevent event="DeEquip" itemid="29079" slot="armor" function="onDeEquipItem" />
 	<movevent event="Equip" itemid="7434" level="150" slot="hand" function="onEquipItem"> <!-- Royal Axe -->
 		<vocation name="Knight" /><vocation name="Elite Knight" showInDescription="0" />
-	</movevent>>
+	</movevent>
 	<movevent event="DeEquip" itemid="7434" slot="hand" function="onDeEquipItem" />
 	<movevent event="Equip" itemid="7429" level="150" slot="hand" function="onEquipItem"> <!-- Blessed Sceptre -->
 		<vocation name="Knight" /><vocation name="Elite Knight" showInDescription="0" />

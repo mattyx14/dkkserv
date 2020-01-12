@@ -161,7 +161,7 @@
 		<vocation name="Knight" /><vocation name="Elite Knight" showInDescription="0" />
 	</melee>
 	<melee id="2392" level="30" unproperly="1" />
-	<melee id="2407" level="30" unproperly="1" />
+	<melee id="2407" level="90" unproperly="1" />
 	<melee id="2438" level="30" unproperly="1" />
 	<melee id="7407" level="30" unproperly="1">
 		<vocation name="Knight" /><vocation name="Elite Knight" showInDescription="0" />
@@ -197,7 +197,7 @@
 	<melee id="7405" level="70" unproperly="1">
 		<vocation name="Knight" /><vocation name="Elite Knight" showInDescription="0" />
 	</melee>
-	<melee id="7390" level="75" unproperly="1" />
+	<melee id="7390" level="150" unproperly="1" />
 	<melee id="6528" level="75" unproperly="1">
 		<vocation name="Knight" /><vocation name="Elite Knight" showInDescription="0" />
 	</melee>
@@ -324,7 +324,7 @@
 	<melee id="7454" level="30" unproperly="1">
 		<vocation name="Knight" /><vocation name="Elite Knight" showInDescription="0" />
 	</melee>
-	<melee id="2432" level="35" unproperly="1" />
+	<melee id="2432" level="90" unproperly="1" />
 	<melee id="25416" level="150" unproperly="1" />
 	<melee id="24828" level="25" unproperly="1" />
 	<melee id="25415" level="150" unproperly="1" />
@@ -360,7 +360,7 @@
 		<vocation name="Knight" /><vocation name="Elite Knight" showInDescription="0" />
 	</melee>
 	<melee id="7420" level="70" unproperly="1" />
-	<melee id="7434" level="75" unproperly="1" />
+	<melee id="7434" level="150" unproperly="1" />
 	<melee id="7433" level="65" unproperly="1" />
 	<melee id="6553" level="75" unproperly="1">
 		<vocation name="Knight" /><vocation name="Elite Knight" showInDescription="0" />
@@ -423,7 +423,7 @@
 	<melee id="7387" level="25" unproperly="1" />
 	<melee id="7379" level="25" unproperly="1" />
 	<melee id="7430" level="30" unproperly="1" />
-	<melee id="2436" level="30" unproperly="1" />
+	<melee id="2436" level="90" unproperly="1" />
 	<melee id="7437" level="30" unproperly="1" />
 	<melee id="3961" level="40" unproperly="1" />
 	<melee id="7452" level="30" unproperly="1">
@@ -458,7 +458,7 @@
 		<vocation name="Knight" /><vocation name="Elite Knight" showInDescription="0" />
 	</melee>
 	<melee id="7422" level="75" unproperly="1" />
-	<melee id="7429" level="75" unproperly="1" />
+	<melee id="7429" level="150" unproperly="1" />
 	<melee id="2437" level="80" unproperly="1" />
 	<melee id="2453" level="75" unproperly="1" />
 	<melee id="7431" level="80" unproperly="1" />
