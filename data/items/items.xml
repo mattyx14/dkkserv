@@ -3517,7 +3517,7 @@
 		<attribute key="weight" value="1700" />
 		<attribute key="defense" value="12" />
 		<attribute key="attack" value="30" />
-		<attribute key="elementDeath" value="14" />
+		<attribute key="elementDeath" value="17" />
 		<attribute key="weaponType" value="club" />
 		<attribute key="extradef" value="1" />
 		<attribute key="imbuingSlots" value="2" />
@@ -12551,10 +12551,10 @@
 		<attribute key="weight" value="5000" />
 		<attribute key="defense" value="24" />
 		<attribute key="attack" value="43" />
-		<attribute key="elementHoly" value="4" />
+		<attribute key="elementHoly" value="8" />
 		<attribute key="weaponType" value="sword" />
 		<attribute key="extradef" value="3" />
-		<attribute key="imbuingSlots" value="3" />
+		<attribute key="imbuingSlots" value="2" />
 	</item>
 	<item id="7391" article="a" name="thaian sword">
 		<attribute key="weight" value="6100" />
@@ -12814,10 +12814,10 @@
 		<attribute key="weight" value="3900" />
 		<attribute key="defense" value="21" />
 		<attribute key="attack" value="39" />
-		<attribute key="elementHoly" value="7" />
+		<attribute key="elementHoly" value="12" />
 		<attribute key="weaponType" value="club" />
 		<attribute key="extradef" value="3" />
-		<attribute key="imbuingSlots" value="3" />
+		<attribute key="imbuingSlots" value="2" />
 	</item>
 	<item id="7430" article="a" name="dragonbone staff">
 		<attribute key="description" value="Small flames are dancing around this strange weapon." />
@@ -12853,10 +12853,10 @@
 		<attribute key="weight" value="9200" />
 		<attribute key="defense" value="25" />
 		<attribute key="attack" value="41" />
-		<attribute key="elementHoly" value="7" />
+		<attribute key="elementHoly" value="11" />
 		<attribute key="weaponType" value="axe" />
 		<attribute key="extradef" value="3" />
-		<attribute key="imbuingSlots" value="3" />
+		<attribute key="imbuingSlots" value="2" />
 	</item>
 	<item id="7435" article="an" name="impaler">
 		<attribute key="weight" value="8200" />
