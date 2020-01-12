@@ -23,17 +23,27 @@
 		<attack name="Front Sweep" interval="500" chance="23" length="3" spread="3" min="-100" max="-500">
 			<attribute key="areaEffect" value="lifedrain" />
 		</attack>
-		<attack name="energy" interval="2000" chance="15" range="7" length="2" min="-75" max="-705">
+		<attack name="Front Sweep" interval="1000" chance="23" length="3" spread="3" min="-250" max="-150">
+			<attribute key="areaEffect" value="lifedrain" />
+		</attack>
+		<attack name="energy" interval="2000" chance="15" range="7" length="2" min="-375" max="-705">
 			<attribute key="shootEffect" value="energyball" />
 			<attribute key="areaEffect" value="energy" />
 		</attack>
+		<attack name="energy" interval="2000" chance="15" range="7" length="2" min="-475" max="-605">
+			<attribute key="shootEffect" value="energyball" />
+			<attribute key="areaEffect" value="energy" />
+		</attack>
+		<attack name="Challenge" interval="500" chance="3" radius="8">
+			<attribute key="areaEffect" value="exeta res"/>
+		</attack>
 	</attacks>
 	<defenses armor="55" defense="95">
-		<defense name="healing" interval="3000" chance="25" min="80" max="600">
+		<defense name="healing" interval="3000" chance="25" min="300" max="600">
 			<attribute key="areaEffect" value="blueshimmer" />
 		</defense>
 		<defense name="Challenge" interval="100" chance="15">
-			<attribute key="areaEffect" value="exeta res" />
+			<attribute key="areaEffect" value="exeta res"/>
 		</defense>
 	</defenses>
 	<elements>

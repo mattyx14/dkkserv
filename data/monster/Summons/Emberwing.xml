@@ -19,19 +19,22 @@
 		<flag runonhealth="9000" />
 	</flags>
 	<attacks>
-		<attack name="holy" interval="200" chance="25" min="-100" max="-190" />
-		<attack name="Divine Caldera" interval="500" chance="15" length="10" spread="10" target="1" min="-200" max="-500">
+		<attack name="melee" interval="200" chance="25" min="-100" max="-190" />
+		<attack name="Divine Caldera" interval="500" chance="15" length="10" spread="10" target="1" min="-200" max="-350">
 			<attribute key="areaEffect" value="exevo mas san" />
 		</attack>
-		<attack name="Great Fireball" interval="500" chance="16" radius="7" min="-50" max="-500">
+		<attack name="Great Fireball" interval="500" chance="16" radius="7" min="-150" max="-300">
 			<attribute key="areaEffect" value="firearea" />
 		</attack>
-		<attack name="Divine Caldera" interval="2000" chance="30" target="1" radius="4" min="-100" max="-240">
+		<attack name="Great Fireball" interval="2000" chance="16" radius="7" min="-350" max="-650">
+			<attribute key="areaEffect" value="firearea" />
+		</attack>
+		<attack name="Divine Caldera" interval="2000" chance="30" target="1" radius="4" min="-350" max="-650">
 			<attribute key="areaEffect" value="exevo mas san" />
 		</attack>
 	</attacks>
 	<defenses armor="55" defense="95">
-		<defense name="healing" interval="3000" chance="35" min="80" max="400">
+		<defense name="healing" interval="3000" chance="35" min="300" max="400">
 			<attribute key="areaEffect" value="blueshimmer" />
 		</defense>
 	</defenses>
