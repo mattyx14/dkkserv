@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monster name="Jaul" nameDescription="Jaul" race="blood" experience="30000" speed="220" script="rewardboss.lua">
-	<health now="90000" max="90000"/>
+	<health now="190000" max="190000"/>
 	<look type="444" corpse="15220"/>
 	<targetchange interval="2000" chance="50"/>
 	<flags>
@@ -62,17 +62,16 @@
 		<voice sentence="QJELL AFAR GOU JEY!!"/>
 		<voice sentence="DIE!! KENH!!"/>
 	</voices>
-	<elements>
-		<element deathPercent="-1"/>
-	</elements>
 	<loot>
 		<item id="15413" chance="3100"/><!-- ornate shield -->
-		<item id="15408" chance="5333"/><!-- depth galea -->
-		<item id="15404" chance="5000"/><!-- deepling axe -->
-		<item id="15406" chance="25000" unique="1"/><!-- ornate chestplate -->
-		<item id="15407" chance="4000"/><!-- depth lorica -->
-		<item id="15410" chance="2285"/><!-- depth calcei -->
-		<item id="15414" chance="4285"/><!-- ornate mace -->
-		<item id="15412" chance="3142"/><!-- ornate legs -->
+		<item id="15404" chance="700"/><!-- deepling axe -->
+		<item id="15406" chance="500" unique="1"/><!-- ornate chestplate -->
+		<item id="15407" chance="1000"/><!-- depth lorica -->
+		<item id="15410" chance="2000"/><!-- depth calcei -->
+		<item id="15414" chance="1000"/><!-- ornate mace -->
+		<item id="25919" chance="600"/><!-- ornate sword -->
+		<item id="15412" chance="2500"/><!-- ornate legs -->
+		<item id="15545" chance="250"/><!-- foxtail -->
+		<item id="15645" chance="9500"/><!-- deepling backpack -->
 	</loot>
 </monster>

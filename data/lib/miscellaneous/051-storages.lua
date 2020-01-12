@@ -198,6 +198,11 @@ Storage = {
 		MissionDemodras = 22223,
 		DemodrasTeleport = 22556
 	},
+	MisidiaQuest = {
+		JaulTimer = 8411,
+		DeaplingJaulTimer = 8412,
+		jaulKilled = 10139,
+	},
 }
 
 GlobalStorage = {

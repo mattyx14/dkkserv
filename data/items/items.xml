@@ -23876,8 +23876,9 @@
 	<item id="15404" article="a" name="deepling axe">
 		<attribute key="weight" value="9100" />
 		<attribute key="defense" value="29" />
-		<attribute key="attack" value="49" />
+		<attribute key="attack" value="54" />
 		<attribute key="weaponType" value="axe" />
+		<attribute key="imbuingSlots" value="3" />
 	</item>
 	<item id="15405" article="a" name="sandfish" plural="sandfish">
 		<attribute key="weight" value="660" />
@@ -23948,10 +23949,11 @@
 	</item>
 	<item id="15414" article="an" name="ornate mace">
 		<attribute key="weight" value="14900" />
-		<attribute key="attack" value="49" />
+		<attribute key="attack" value="52" />
 		<attribute key="defense" value="24" />
 		<attribute key="weaponType" value="club" />
 		<attribute key="imbuingSlots" value="2" />
+		<attribute key="imbuingSlots" value="3" />
 	</item>
 	<item id="15415" article="a" name="trophy of Obujos">
 		<attribute key="weight" value="500" />
@@ -34661,10 +34663,10 @@
 		<attribute key="range" value="3" />
 		<attribute key="imbuingSlots" value="3" />
 	</item>
-	<item id="25919" article="a" name="blade of remedy">
+	<item id="25919" article="a" name="ornate sword">
 		<attribute key="description" value="It can only be wielded properly by players of level 100 or higher." />
 		<attribute key="defense" value="33" />
-		<attribute key="attack" value="50" />
+		<attribute key="attack" value="53" />
 		<attribute key="weaponType" value="sword" />
 		<attribute key="weight" value="5000" />
 		<attribute key="imbuingSlots" value="3" />

@@ -79,7 +79,7 @@ local enablingStorages = {
 	["scorch"] = Storage.ForgottenKnowledge.DragonkingKilled,
 	["void"] = Storage.ForgottenKnowledge.DragonkingKilled,
 
-	["quara scale"] = Storage.ForgottenKnowledge.HorrorKilled,
+	["quara scale"] = Storage.MisidiaQuest.jaulKilled,
 	["frost"] = Storage.ForgottenKnowledge.HorrorKilled,
 	["blockade"] = Storage.ForgottenKnowledge.HorrorKilled,
 
