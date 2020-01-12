@@ -9,6 +9,23 @@
 		<parameter key="shop_buyable" value="
 			flask of rust remover,9930,100,1;" />
 		<parameter key="shop_sellable" value="
+			drachaku, 11308, 10000;
+			draken boots, 12646, 40000;
+			draken wristbands, 12615, 430;
+			drakinata, 11305, 10000;
+			Elite Draken Mail, 12607, 50000;
+			guardian boots, 11240, 35000;
+			sais, 11306, 16500;
+			twiceslicer, 12613, 28000;
+			twin hooks, 11309, 500;
+			wailing widow's necklace, 11329, 3000;
+			zaoan armor, 11301, 14000;
+			zaoan halberd, 11323, 500;
+			zaoan helmet, 11302, 45000;
+			zaoan legs, 11304, 14000;
+			zaoan shoes, 11303, 5000;
+			zaoan sword, 11307, 30000;
+	
 			axe,2386,7;
 			barbarian axe,2429,185;
 			battle axe,2378,80;

@@ -6,6 +6,23 @@
 		<parameter key="module_shop" value="1" />
 		<parameter key="message_greet" value="Hello |PLAYERNAME|. I trade {items} for others."/>
 		<parameter key="shop_sellable" value="
+			drachaku, 11308, 15000;
+			draken boots, 12646, 50000;
+			draken wristbands, 12615, 830;
+			drakinata, 11305, 15000;
+			Elite Draken Mail, 12607, 80000;
+			guardian boots, 11240, 75000;
+			sais, 11306, 2500;
+			twiceslicer, 12613, 35000;
+			twin hooks, 11309, 500;
+			wailing widow's necklace, 11329, 5000;
+			zaoan armor, 11301, 18000;
+			zaoan halberd, 11323, 1500;
+			zaoan helmet, 11302, 85000;
+			zaoan legs, 11304, 25000;
+			zaoan shoes, 11303, 15000;
+			zaoan sword, 11307, 45000;
+
 			ancient shield, 2535, 1000;
 			black shield, 2529, 1000;
 			bonebreaker, 7428, 13000;
