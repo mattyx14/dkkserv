@@ -40,9 +40,62 @@ if not Quests then
 						[6] = "Sam is currently creating the helmet for you. Be patient and don't forget to check on it later!",
 					},
 				},
-			},
+			}
 		},
 		[2] = {
+			name = "Forgotten Knowledge", startstorageid = Storage.ForgottenKnowledge.Tomes, startstoragevalue = 1,
+			missions = {
+				[1] = {
+					name = "Circle of the Black Sphinx", storageid = Storage.ForgottenKnowledge.LadyTenebrisKilled, startvalue = 0, endvalue = 1522018605,
+					states = {
+						[1] = "You defeated the rogue Lady Tenebris.",
+					},
+				},
+				[2] = {
+					name = "Bane of the Cosmic Force", storageid = Storage.ForgottenKnowledge.LloydKilled, startvalue = 0, endvalue = 1522018605,
+					states = {
+						[1] = "You calmed poor, misguided Lloyd. All he wanted was protection from the outside world. Luckily he seems to have learned his lesson... or has he?",
+					},
+				},
+				[3] = {
+					name = "The Desecrated Glade", storageid = Storage.ForgottenKnowledge.ThornKnightKilled, startvalue = 0, endvalue = 1522018605,
+					states = {
+						[1] = "You defeated the Thorn Knight and shattered the root of evil with all your might. The honour of being a guardian of the glade indeed comes with pride as well as responsibility.",
+					},
+				},
+				[4] = {
+					name = "The Unwary Mage", storageid = Storage.ForgottenKnowledge.DragonkingKilled, startvalue = 0, endvalue = 1522018605,
+					states = {
+						[1] = "With help of Ivalisse from the temple of the Astral Shapers in Sohan Town and her father, you averted the Dragon King's menace deep in the Mer Jungle.",
+					},
+				},
+				[5] = {
+					name = "Dragon in Distress", storageid = Storage.ForgottenKnowledge.HorrorKilled, startvalue = 0, endvalue = 1522018605,
+					states = {
+						[1] = "You saved the Dragon Mother's egg and she melted the ice wall that blocked your way.",
+					},
+				},
+				[6] = {
+					name = "Time is a Window", storageid = Storage.ForgottenKnowledge.TimeGuardianKilled, startvalue = 0, endvalue = 1522018605,
+					states = {
+						[1] = "You defeated the Time Guardian and are free to return to your own time. For some creatures in this world, it seems neither past nor future are an obstacle.",
+					},
+				},
+				[7] = {
+					name = "Deep wathers", storageid = Storage.MisidiaQuest.jaulKilled, startvalue = 0, endvalue = 1522018605,
+					states = {
+						[1] = "You defeated the Jaul and and purifies the waters of their evil. For some creatures in this world, it seems neither past nor future are an obstacle.",
+					},
+				},
+				[8] = {
+					name = "Final Fight", storageid = Storage.ForgottenKnowledge.LastLoreKilled, startvalue = 0, endvalue = 1522018605,
+					states = {
+						[1] = "Description Fault.",
+					},
+				},
+			}
+		},
+		[3] = {
 			name = "The Explorer Society", startstorageid = Storage.ExplorerSociety.QuestLine, startstoragevalue = 1,
 			missions = {
 				[1] = {
@@ -215,7 +268,7 @@ if not Quests then
 
 			},
 		},
-		[3] = {
+		[4] = {
 			name = "Killing in the Name of...", startstorageid = 100157, startstoragevalue = 1,
 			missions = {
 				[1] = {
@@ -247,7 +300,6 @@ if not Quests then
 						[1] = "Elite Hunter wanted you to go look for Demodras'  hideout. He also mentioned that it might be somewhere under the Plains of Havoc.",
 						[2] = "You have slained the Demodras.",
 					},
-
 				},
 				[8] = {
 					name = "Paw and Fur: The Snapper", storageid = 34100, startvalue = 1, endvalue = 2, description = "Grizzly told you about the Snapper, a crocodile that already killed many citizens of Port Hope. Try find its hideout and kill it.",
@@ -420,8 +472,7 @@ if not Quests then
 				[64] = {
 					name = "Paw and Fur: Werewolves", storageid = 65027, startvalue = 0, endvalue = 300, description = function(player)return string.format("You already hunted %d/300 werewolves.", (math.max(player:getStorageValue(65027), 0))) end,
 				},
-
-				65] = {
+				[65] = {
 					name = "Paw and Fur: Nightmares", storageid = 65028, startvalue = 0, endvalue = 400, description = function(player)return string.format("You already hunted %d/400 nightmares.", (math.max(player:getStorageValue(65028), 0))) end,
 				},
 				[66] = {
@@ -490,62 +541,9 @@ if not Quests then
 				[87] = {
 					name = "Paw and Fur: Necromancers and Priestess", storageid = 65050, startvalue = 0, endvalue = 4000, description = function(player)return string.format("You already hunted %d/4000 necromancers and priestess.", (math.max(player:getStorageValue(65050), 0))) end,
 				},
-			},
+			}
 		},
-		[4] = {
-			name = "Forgotten Knowledge", startstorageid = Storage.ForgottenKnowledge.Tomes, startstoragevalue = 1,
-			missions = {
-				[1] = {
-					name = "Circle of the Black Sphinx", storageid = Storage.ForgottenKnowledge.LadyTenebrisKilled, startvalue = 0, endvalue = 1522018605,
-					states = {
-						[1] = "You defeated the rogue Lady Tenebris.",
-					},
-				},
-				[2] = {
-					name = "Bane of the Cosmic Force", storageid = Storage.ForgottenKnowledge.LloydKilled, startvalue = 0, endvalue = 1522018605,
-					states = {
-						[1] = "You calmed poor, misguided Lloyd. All he wanted was protection from the outside world. Luckily he seems to have learned his lesson... or has he?",
-					},
-				},
-				[3] = {
-					name = "The Desecrated Glade", storageid = Storage.ForgottenKnowledge.ThornKnightKilled, startvalue = 0, endvalue = 1522018605,
-					states = {
-						[1] = "You defeated the Thorn Knight and shattered the root of evil with all your might. The honour of being a guardian of the glade indeed comes with pride as well as responsibility.",
-					},
-				},
-				[4] = {
-					name = "The Unwary Mage", storageid = Storage.ForgottenKnowledge.DragonkingKilled, startvalue = 0, endvalue = 1522018605,
-					states = {
-						[1] = "With help of Ivalisse from the temple of the Astral Shapers in Sohan Town and her father, you averted the Dragon King's menace deep in the Mer Jungle.",
-					},
-				},
-				[5] = {
-					name = "Dragon in Distress", storageid = Storage.ForgottenKnowledge.HorrorKilled, startvalue = 0, endvalue = 1522018605,
-					states = {
-						[1] = "You saved the Dragon Mother's egg and she melted the ice wall that blocked your way.",
-					},
-				},
-				[6] = {
-					name = "Time is a Window", storageid = Storage.ForgottenKnowledge.TimeGuardianKilled, startvalue = 0, endvalue = 1522018605,
-					states = {
-						[1] = "You defeated the Time Guardian and are free to return to your own time. For some creatures in this world, it seems neither past nor future are an obstacle.",
-					},
-				},
-				[7] = {
-					name = "Deep wathers", storageid = Storage.MisidiaQuest.jaulKilled, startvalue = 0, endvalue = 1522018605,
-					states = {
-						[1] = "You defeated the Jaul and and purifies the waters of their evil. For some creatures in this world, it seems neither past nor future are an obstacle.",
-					},
-				},
-				[8] = {
-					name = "Final Fight", storageid = Storage.ForgottenKnowledge.LastLoreKilled, startvalue = 0, endvalue = 1522018605,
-					states = {
-						[1] = "Description Fault.",
-					},
-				},
-			},
-		},
-	},
+	}
 end
 
 if not LastQuestlogUpdate then

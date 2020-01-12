@@ -30,6 +30,36 @@ Storage = {
 	PetSummon = 60045,
 	isTraining = 37,
 
+	ExplorerSociety = {
+		QuestLine = 90,
+		bansheeDoor = 91,
+		bonelordsDoor = 92,
+		CalassaQuest = 93,
+		edronDoor = 94,
+		elvenDoor = 95,
+		orcDoor = 96,
+		urnDoor = 97,
+		SpectralStone = 98,		-- = 1 - mission taken from Angus, = 2 - mission taken from Mortimer
+		skullofratha = 99,
+		giantsmithhammer = 100,
+		JoiningtheExplorers = 118,
+		TheIceDelivery = 102,
+		TheButterflyHunt = 103,
+		ThePlantCollection = 104,
+		TheLizardUrn = 105,
+		TheBonelordSecret = 106,
+		TheOrcPowder = 107,
+		TheElvenPoetry = 108,
+		TheMemoryStone = 109,
+		TheRuneWritings = 117,
+		TheEctoplasm = 111,
+		TheSpectralDress = 112,
+		TheSpectralStone = 113,
+        TheAstralPortals = 114,
+		TheIslandofDragons = 115,
+		TheIceMusic = 116
+	},
+
 	-- DarkKonia Storages
 	DemonOak = {
 		Done = 1010,
