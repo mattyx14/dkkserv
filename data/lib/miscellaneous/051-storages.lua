@@ -188,6 +188,16 @@ Storage = {
 	ForgottenKnowledgeRewards = {
 		yalahariSet = 9776,
 	},
+	KillingInTheNameOf = {
+		LugriNecromancers = 50000,
+		LugriNecromancerCount = 65050,
+		BudrikMinos = 50001,
+		BudrikMinosCount = 65049,
+		MissionTiquandasRevenge = 22222,
+		TiquandasRevengeTeleport = 22555,
+		MissionDemodras = 22223,
+		DemodrasTeleport = 22556
+	},
 }
 
 GlobalStorage = {
