@@ -10,7 +10,7 @@ local function clearTenebris()
 	for i = 1, #spectators do
 		local spectator = spectators[i]
 		if spectator:isPlayer() then
-			spectator:teleportTo(Position(1136, 454, 15)) -- Kick Potition
+			spectator:teleportTo(Position(1138, 472, 14)) -- Kick Potition
 			spectator:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 			spectator:say('Time out! You were teleported out by strange forces.', TALKTYPE_MONSTER_SAY)
 		elseif spectator:isMonster() then
@@ -22,7 +22,7 @@ end
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	if item.itemid == 9825 then
-		if player:getPosition() ~= Position(1127, 1083, 15) then -- Lever Main Position
+		if player:getPosition() ~= Position(1143, 456, 14) then -- Lever Main Position
 			item:transform(9826)
 			return true
 		end
@@ -43,14 +43,14 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 			end
 		end
 
-		for d = 1, 10 do
+		for d = 1, 6 do
 			Game.createMonster('deepling tyrant', Position(math.random(1134, 1147), math.random(550, 568), 15), true, true)
 		end
 
 		Game.createMonster(config.bossName, config.BossPosition, true, true)
 
 		for x = 1141, 1145 do
-			local playerTile = Tile(Position(x, 456, 15)):getTopCreature()
+			local playerTile = Tile(Position(x, 456, 14)):getTopCreature()
 			if playerTile and playerTile:isPlayer() then
 				playerTile:getPosition():sendMagicEffect(CONST_ME_POFF)
 				playerTile:teleportTo(config.newPosition)

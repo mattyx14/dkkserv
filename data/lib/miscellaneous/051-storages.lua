@@ -19,6 +19,7 @@ Storage = {
 		HorrorKilled = 10158,
 		TimeGuardianKilled = 10160,
 		LastLoreKilled = 10162,
+		Tomes = 10167,
 	},
 	AnnihilatorDone = 2215,
 	Promotion = 30018, -- Promotion Storage cannot be changed, it is set in source code
@@ -55,7 +56,7 @@ Storage = {
 		TheEctoplasm = 111,
 		TheSpectralDress = 112,
 		TheSpectralStone = 113,
-        TheAstralPortals = 114,
+		TheAstralPortals = 114,
 		TheIslandofDragons = 115,
 		TheIceMusic = 116
 	},
@@ -229,8 +230,8 @@ Storage = {
 		DemodrasTeleport = 22556
 	},
 	MisidiaQuest = {
-		JaulTimer = 8411,
-		DeaplingJaulTimer = 8412,
+		JaulTimer = 8416,
+		DeaplingJaulTimer = 8417,
 		jaulKilled = 10139,
 	},
 }
