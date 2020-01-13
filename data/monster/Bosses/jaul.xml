@@ -62,17 +62,20 @@
 		<voice sentence="QJELL AFAR GOU JEY!!"/>
 		<voice sentence="DIE!! KENH!!"/>
 	</voices>
+	<summons maxSummons="1">
+		<summon name="skullfrost" interval="1000" chance="32" max="1" />
+	</summons>
 	<loot>
 		<item name="Small Enchanted Sapphire" countmax="8" chance="100000"/>
 		<item id="15413" chance="3100"/><!-- ornate shield -->
-		<item id="15404" chance="700"/><!-- deepling axe -->
-		<item id="15406" chance="500" unique="1"/><!-- ornate chestplate -->
+		<item id="15404" chance="450"/><!-- deepling axe -->
+		<item id="15406" chance="100" unique="1"/><!-- ornate chestplate -->
 		<item id="15407" chance="1000"/><!-- depth lorica -->
 		<item id="15410" chance="2000"/><!-- depth calcei -->
-		<item id="15414" chance="1000"/><!-- ornate mace -->
-		<item id="25919" chance="600"/><!-- ornate sword -->
+		<item id="15414" chance="500"/><!-- ornate mace -->
+		<item id="25919" chance="400"/><!-- ornate sword -->
 		<item id="15412" chance="2500"/><!-- ornate legs -->
-		<item id="15545" chance="250"/><!-- foxtail -->
+		<item id="15545" chance="150"/><!-- foxtail -->
 		<item id="15645" chance="9500"/><!-- deepling backpack -->
 	</loot>
 </monster>
