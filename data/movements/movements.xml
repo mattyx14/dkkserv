@@ -1308,10 +1308,14 @@
 		<vocation name="Paladin" /><vocation name="Royal Paladin" showInDescription="0" />
 	</movevent>
 	<movevent event="DeEquip" itemid="25987" slot="hand" function="onDeEquipItem" /> <!-- sword of remedy -->
-	<movevent event="Equip" itemid="25919" slot="hand" level="100" function="onEquipItem">
+	<movevent event="Equip" itemid="25919" slot="hand" level="200" function="onEquipItem">
 		<vocation name="Knight" /><vocation name="Elite Knight" showInDescription="0" />
 	</movevent>
 	<movevent event="DeEquip" itemid="25919" slot="hand" function="onDeEquipItem" /> <!-- slayer of remedy -->
+	<movevent event="Equip" itemid="15404" slot="hand" level="200" function="onEquipItem">
+		<vocation name="Knight" /><vocation name="Elite Knight" showInDescription="0" />
+	</movevent>
+	<movevent event="DeEquip" itemid="15404" slot="hand" function="onDeEquipItem" /> <!-- deepling axe -->
 	<movevent event="Equip" itemid="25923" slot="hand" level="100" function="onEquipItem">
 		<vocation name="Knight" /><vocation name="Elite Knight" showInDescription="0" />
 	</movevent>
@@ -1783,7 +1787,9 @@
 	<movevent event="DeEquip" itemid="7452" slot="hand" function="onDeEquipItem" />
 	<movevent event="Equip" itemid="7421" level="65" slot="hand" function="onEquipItem"/> <!-- Onyx Flail -->
 	<movevent event="DeEquip" itemid="7421" slot="hand" function="onDeEquipItem" />
-	<movevent event="Equip" itemid="15414" level="90" slot="hand" function="onEquipItem"/> <!-- Ornate Mace -->
+	<movevent event="Equip" itemid="15414" level="200" slot="hand" function="onEquipItem"> <!-- Ornate Mace -->
+		<vocation name="Knight" /><vocation name="Elite Knight" showInDescription="0" />
+	</movevent>
 	<movevent event="DeEquip" itemid="15414" slot="hand" function="onDeEquipItem" />
 	<movevent event="Equip" itemid="7410" level="55" slot="hand" function="onEquipItem"/> <!-- Queen's Sceptre -->
 	<movevent event="DeEquip" itemid="7410" slot="hand" function="onDeEquipItem" />
