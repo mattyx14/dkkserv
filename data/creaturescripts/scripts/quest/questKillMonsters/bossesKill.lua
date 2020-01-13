@@ -1,7 +1,7 @@
 local bosses = {
 	-- bosses
 	['lady tenebris'] = {killed = Storage.ForgottenKnowledge.LadyTenebrisKilled},
-	['jaul'] = {killed = Storage.MisidiaQuest.jaulKilled},
+	['jaul'] = {killed = Storage.MisidiaQuest.JaulKilled},
 }
 
 function onKill(creature, target)

@@ -5,7 +5,7 @@ local config = {
 	newPosition = Position(1149, 558, 15), -- Send Player to new Positions
 }
 
-local function clearTenebris()
+local function clearJaul()
 	local spectators = Game.getSpectators(config.centerRoom, false, false, 15, 15, 15, 15)
 	for i = 1, #spectators do
 		local spectator = spectators[i]
@@ -29,7 +29,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	end
 
 	if item.itemid == 9825 then
-		if Game.getStorageValue(GlobalStorage.MisidiaQuest.DeaplingJaulTimer) >= 1 then
+		if Game.getStorageValue(Storage.MisidiaQuest.JaulTimer) >= 1 then
 			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You need to wait a while, recently someone challenge Jaul.")
 			return true
 		end
@@ -55,11 +55,11 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 				playerTile:getPosition():sendMagicEffect(CONST_ME_POFF)
 				playerTile:teleportTo(config.newPosition)
 				playerTile:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-				playerTile:setExhaustion(Storage.MisidiaQuest.jaulTimer, 20 * 60 * 60)
+				playerTile:setExhaustion(Storage.MisidiaQuest.JaulTimer, 20 * 60 * 60)
 			end
 		end
 		Game.setStorageValue(GlobalStorage.MisidiaQuest.DeaplingJaulTimer, 1)
-		addEvent(clearTenebris, 20 * 60 * 1000)
+		addEvent(clearJaul, 20 * 60 * 1000)
 		item:transform(9826)
 	elseif item.itemid == 9826 then
 		item:transform(9825)

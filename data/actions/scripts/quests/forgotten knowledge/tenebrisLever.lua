@@ -29,7 +29,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	end
 
 	if item.itemid == 9825 then
-		if Game.getStorageValue(GlobalStorage.ForgottenKnowledge.TenebrisTimer) >= 1 then
+		if Game.getStorageValue(Storage.ForgottenKnowledge.LadyTenebrisTimer) >= 1 then
 			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You need to wait a while, recently someone challenge Lady Tenebris.")
 			return true
 		end

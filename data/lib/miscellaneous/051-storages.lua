@@ -253,7 +253,7 @@ GlobalStorage = {
 		LastLoreTimer = 566107
 	},
 	MisidiaQuest = {
-		DeaplingJaulTimer = 566108,
+		DeaplingJaulTimer = 566110,
 	},
 	ExpBoost = 51052,
 	XpDisplayMode = 5634

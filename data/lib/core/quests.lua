@@ -82,7 +82,7 @@ if not Quests then
 					},
 				},
 				[7] = {
-					name = "Deep wathers", storageid = Storage.MisidiaQuest.jaulKilled, startvalue = 0, endvalue = 1522018605,
+					name = "Deep wathers", storageid = Storage.MisidiaQuest.JaulKilled, startvalue = 0, endvalue = 1522018605,
 					states = {
 						[1] = "You defeated the Jaul and and purifies the waters of their evil. For some creatures in this world, it seems neither past nor future are an obstacle.",
 					},
