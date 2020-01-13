@@ -230,8 +230,7 @@ Storage = {
 		DemodrasTeleport = 22556
 	},
 	MisidiaQuest = {
-		JaulTimer = 8416,
-		DeaplingJaulTimer = 8417,
+		jaulTimer = 8420,
 		jaulKilled = 10139,
 	},
 }
@@ -252,6 +251,9 @@ GlobalStorage = {
 		HorrorTimer = 566105,
 		TimeGuardianTimer = 566106,
 		LastLoreTimer = 566107
+	},
+	MisidiaQuest = {
+		DeaplingJaulTimer = 566108,
 	},
 	ExpBoost = 51052,
 	XpDisplayMode = 5634
