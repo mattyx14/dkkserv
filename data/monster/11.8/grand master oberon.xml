@@ -50,15 +50,15 @@
 	<loot>
 		<item id="32550" chance="100000"/><!-- the spatial warp almanac -->
 		<item name="Grant of Arms" chance="600"/>
-		<item name="Falcon Battleaxe" chance="60"/>
-		<item name="Falcon Bow" chance="60"/>
-		<item name="Falcon Circlet" chance="60"/>
-		<item name="Falcon Coif" chance="60"/>
-		<item name="Falcon Longsword" chance="60"/>
-		<item name="Falcon Mace" chance="60"/>
-		<item name="Falcon Rod" chance="60"/>
-		<item name="Falcon Shield" chance="60"/>
-		<item name="Falcon Greaves" chance="60"/>
-		<item name="Falcon Plate" chance="60"/>
+		<item name="Falcon Battleaxe" chance="6"/>
+		<item name="Falcon Bow" chance="6"/>
+		<item name="Falcon Circlet" chance="6"/>
+		<item name="Falcon Coif" chance="6"/>
+		<item name="Falcon Longsword" chance="6"/>
+		<item name="Falcon Mace" chance="6"/>
+		<item name="Falcon Rod" chance="6"/>
+		<item name="Falcon Shield" chance="6"/>
+		<item name="Falcon Greaves" chance="6"/>
+		<item name="Falcon Plate" chance="6"/>
 	</loot>
 </monster>

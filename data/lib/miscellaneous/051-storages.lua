@@ -230,8 +230,8 @@ Storage = {
 		DemodrasTeleport = 22556
 	},
 	MisidiaQuest = {
-		jaulTimer = 8420,
-		jaulKilled = 10139,
+		JaulTimer = 8420,
+		JaulKilled = 10139,
 	},
 }
 

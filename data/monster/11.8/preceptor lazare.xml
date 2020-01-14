@@ -76,7 +76,7 @@
 		<item name="Patch of Fine Cloth" countmax="3" chance="500"/>
 		<item name="Golden Armor" chance="250"/>
 		<item name="Mastermind Shield" chance="200"/>
-		<item name="Falcon Rod" chance="100"/>
-		<item name="Falcon Greaves" chance="100"/>
+		<item name="Falcon Rod" chance="1"/>
+		<item name="Falcon Greaves" chance="1"/>
 	</loot>
 </monster>
