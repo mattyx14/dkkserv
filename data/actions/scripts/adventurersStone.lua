@@ -11,7 +11,8 @@ local config = {
 	{fromPos = Position(1104, 312, 6), toPos = Position(1111, 323, 6), townId = 10}, -- Misidia
 	{fromPos = Position(691, 1158, 6), toPos = Position(702, 1169, 6), townId = 11}, -- Elfic
 	{fromPos = Position(1541, 666, 12), toPos = Position(1560, 678, 12), townId = 12}, -- Vaargdon
-	{fromPos = Position(944, 1214, 8), toPos = Position(977, 1224, 8), townId = 13}, -- Vaargdon
+	{fromPos = Position(944, 1214, 8), toPos = Position(977, 1224, 8), townId = 13}, -- Hive Island
+	{fromPos = Position(1270, 469, 14), toPos = Position(1297, 486, 14), townId = 14}, -- Sunken Sanctuary
 }
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
