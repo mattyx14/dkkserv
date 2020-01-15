@@ -62,6 +62,7 @@ Storage = {
 	},
 
 	-- DarkKonia Storages
+	DefaultStartQuest = 15700,
 	DemonOak = {
 		Done = 1010,
 		Progress = 1013,
@@ -183,7 +184,7 @@ Storage = {
 		-- assassinOutfit = assassinDone,
 		puppeteerOutfit = 1449,
 		magmaSet = 30492,
-		lightningSete = 30493,
+		lightningSet = 30493,
 		insectoidOutfit = 14699,
 	},
 	-- Global Tibia Quest
