@@ -60,7 +60,8 @@ end
 addTravelKeyword('elfic', 1000, Position(657, 1216, 6))
 addTravelKeyword('sohan', 1000, Position(336, 1128, 6))
 addTravelKeyword('anshara', 1000, Position(647, 361, 6))
-keywordHandler:addKeyword({'travel'}, StdModule.say, {npcHandler = npcHandler, text = 'Where do you want to go? To {Anshara Desert}, {Sohan Town}, {Misidia Settlement} and to {Elfic Ville}?'})
+addTravelKeyword('sunken', 5000, Position(1271, 274, 7))
+keywordHandler:addKeyword({'travel'}, StdModule.say, {npcHandler = npcHandler, text = 'Where do you want to go? To {Anshara Desert}, {Sohan Town}, {Misidia Settlement}, {Sunken Sanctuary} and to {Elfic Ville}?'})
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:setMessage(MESSAGE_GREET, 'Welcome on board, |PLAYERNAME|. Where may I {travel} you today?')
