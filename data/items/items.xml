@@ -33858,9 +33858,10 @@
 	<item id="25185" article="a" name="frostheart platemail">
 		<attribute key="weight" value="14500" />
 		<attribute key="armor" value="18" />
+		<attribute key="skillSword" value="4" />
+		<attribute key="skillAxe" value="4" />
 		<attribute key="skillClub" value="4" />
 		<attribute key="absorbPercentIce" value="8" />
-		<attribute key="absorbPercentEnergy" value="-8" />
 		<attribute key="slotType" value="body" />
 	</item>
 	<item id="25186" article="a" name="firesoul tabard">
@@ -33892,7 +33893,6 @@
 		<attribute key="armor" value="18" />
 		<attribute key="skillDist" value="4" />
 		<attribute key="absorbPercentIce" value="8" />
-		<attribute key="absorbPercentEnergy" value="-8" />
 		<attribute key="slotType" value="body" />
 	</item>
 	<item id="25190" article="a" name="firemind raiment">
@@ -39161,10 +39161,10 @@
 	<item id="30829" name="deepworm jaws">
 		<attribute key="weight" value="180" />
 	</item>
-	<item id="30830" name="tunnel tyrant head">
+	<item id="30830" name="tyrant head">
 		<attribute key="weight" value="180" />
 	</item>
-	<item id="30831" article="a" name="tunnel tyrant shell">
+	<item id="30831" article="a" name="tyrant shell">
 		<attribute key="weight" value="250" />
 	</item>
 	<item id="30832" name="diremaw brainpan">

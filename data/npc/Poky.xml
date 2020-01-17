@@ -5,9 +5,17 @@
 	<parameters>
 		<parameter key="module_shop" value="1" />
 		<parameter key="message_greet" value="Everyone on this island has gone crazy! Except for me and you, it seems. Let's {trade} like normal people would." />
-   	 	<parameter key="message_farewell" value="Promise to come back sometime, will ya?" />
-   		<parameter key="message_walkaway" value="Hey! Don't leave me alone with all these lunatics!" />
+		<parameter key="message_farewell" value="Promise to come back sometime, will ya?" />
+		<parameter key="message_walkaway" value="Hey! Don't leave me alone with all these lunatics!" />
 		<parameter key="shop_sellable" value="
+			tunnel tyrant head, 30830, 500;
+			tunnel tyrant shell, 30831, 700;
+			tunnel tyrant shell, 30831, 700;
+			suspicious device, 30888, 14000;
+
+			calopteryx cape, 15489, 15000;
+			heavy trident, 13838, 5000;
+
 			calopteryx cape, 15489, 15000;
 			carapace shield, 15491, 32000;
 			crowbar, 2416, 50;
@@ -139,6 +147,14 @@
 			violet gem,2153,10000;
 			yellow gem,2154,1000;" />
 		<parameter key="shop_buyable" value="
+			brown bread,2691,8;
+			ham,2671,8;
+			carrot,2684,8;
+			meat,2666,8;
+			apple,2674,8;
+			brown mushroom,2789,8;
+			egg,2695,8;
+
 			stone shower rune,2288,37;
 			thunderstorm rune,2315,45;
 			blank rune,2260,10;

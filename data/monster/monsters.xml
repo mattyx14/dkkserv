@@ -1629,6 +1629,10 @@
 	<monster name="Captain Jones" file="DarkKonia/captain jones.xml" />
 	<monster name="Dracula" file="DarkKonia/dracula.xml" />
 
+	<!-- News DarkKonia -->
 	<monster name="Anger" file="DarkKonia/anger.xml" />
 	<monster name="Angeryosa" file="DarkKonia/angeryosa.xml" />
+		<monster name="Tyrant of The Depth" file="DarkKonia/news/Tyrant of The Depth.xml" />
+		<monster name="Atlantian Scout" file="DarkKonia/news/Atlantian Scout.xml" />
+		<monster name="Atlantian Warrior" file="DarkKonia/news/Atlantian Warrior.xml" />
 </monsters>
