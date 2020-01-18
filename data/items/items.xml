@@ -37019,12 +37019,12 @@
 	</item>
 	<item id="29036" article="a" name="leaf star">
 		<attribute key="weight" value="200" />
-		<attribute key="attack" value="48" />
+		<attribute key="attack" value="50" />
 		<attribute key="hitChance" value="90" />
 		<attribute key="weaponType" value="distance" />
 		<attribute key="shootType" value="leafstar" />
 		<attribute key="maxHitChance" value="86" />
-		<attribute key="elementEarth" value="2" />
+		<attribute key="elementEarth" value="12" />
 		<attribute key="range" value="4" />
 	</item>
 	<item id="29037" name="swan feathers" />
@@ -37062,8 +37062,8 @@
 	<item id="29056" article="an" name="energized tile" />
 	<item id="29059" article="a" name="royal star">
 		<attribute key="weight" value="220" />
-		<attribute key="attack" value="64" />
-		<attribute key="elementFire" value="2" />
+		<attribute key="attack" value="60" />
+		<attribute key="elementFire" value="15" />
 		<attribute key="maxHitChance" value="100" />
 		<attribute key="weaponType" value="distance" />
 		<attribute key="shootType" value="royalstar" />

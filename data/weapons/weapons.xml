@@ -665,7 +665,9 @@
 	<distance id="7366" breakchance="9" script="viper_star.lua" />
 	<distance id="7367" breakchance="1" unproperly="1" level="42" /> <!-- Enchanted Spear -->
 	<distance id="7368" breakchance="33" unproperly="1" level="80" /> <!-- Assassin Star -->
-	<distance id="29036" breakchance="30" unproperly="1" level="60" /> <!-- Leaf Star -->
+	<distance id="29036" breakchance="30" unproperly="1" level="110"> <!-- Leaf Star -->
+		<vocation name="Paladin" /><vocation name="Royal Paladin" showInDescription="0" />
+	</distance>
 	<distance id="7378" breakchance="3" unproperly="1" level="25" /> <!-- Royal Spear -->
 	<distance id="7838" action="removecount" unproperly="1" level="80" script="flash_arrow.lua" /> <!-- Flash Arrow -->
 	<distance id="7839" action="removecount" unproperly="1" level="80" script="shiver_arrow.lua" /> <!-- Shiver Arrow -->
@@ -682,5 +684,7 @@
 	<distance id="23839" action="removecount" unproperly="0" level="1" /> <!-- Simple Arrow -->
 	<distance id="29057" action="removecount" unproperly="1" level="150" script="diamond_arrow.lua" />	<!-- Diamond Arrow -->
 	<distance id="29058" action="removecount" unproperly="1" level="150" />	<!-- Spectral Bolt -->
-	<distance id="29059" breakchance="30" unproperly="1" level="120" />	<!-- Royal Star -->
+	<distance id="29059" breakchance="30" unproperly="1" level="150">	<!-- Royal Star -->
+		<vocation name="Paladin" /><vocation name="Royal Paladin" showInDescription="0" />
+	</distance>
 </weapons>

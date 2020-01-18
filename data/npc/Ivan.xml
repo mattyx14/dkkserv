@@ -7,6 +7,10 @@
 		<parameter key="message_decline" value="Is |TOTALCOST| gold coins too much for you? Get out of here!" />
 		<parameter key="module_shop" value="1" />
 		<parameter key="shop_sellable" value="
+			assassin stars,29059,75;
+			assassin stars,7368,50;
+			leaf star, 29036, 40;
+
 			badger boots, 24742, 7500;
 			fur armor, 24741, 5000;
 
@@ -25,6 +29,10 @@
 			demon trophy, 7393, 40000;
 			dragon lord trophy, 7399, 10000;" />
 		<parameter key="shop_buyable" value="
+			assassin stars,29059,150;
+			assassin stars,7368,100;
+			leaf star, 29036, 80;
+
 			arrow,2544,3;
 			bolt,2543,4;
 			bow,2456,400;

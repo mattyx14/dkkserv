@@ -2294,4 +2294,12 @@
 	<movevent event="DeEquip" itemid="12643" slot="armor" function="onDeEquipItem" />
 	<movevent event="Equip" itemid="2488" slot="legs" function="onEquipItem" />
 	<movevent event="DeEquip" itemid="2488" slot="legs" function="onDeEquipItem" />
+	<movevent event="Equip" itemid="29036" slot="hand" level="110" function="onEquipItem"> <!-- Leaf Star -->
+		<vocation name="Paladin" /><vocation name="Royal Paladin" showInDescription="0" />
+	</movevent>
+	<movevent event="DeEquip" itemid="29036" slot="hand" function="onDeEquipItem" />
+	<movevent event="Equip" itemid="29059" slot="hand" level="150" function="onEquipItem"> <!-- Royal Start -->
+		<vocation name="Paladin" /><vocation name="Royal Paladin" showInDescription="0" />
+	</movevent>
+	<movevent event="DeEquip" itemid="29059" slot="hand" function="onDeEquipItem" />
 </movements>
