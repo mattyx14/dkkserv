@@ -39,6 +39,30 @@ local function creatureSayCallback(cid, type, msg)
 			end
 			npcHandler.topic[cid] = 0
 		end
+	elseif msgcontains(msg, 'warrior\'s sword') then
+		if player:hasOutfit(player:getSex() == PLAYERSEX_FEMALE and 142 or 134, 2) then
+			npcHandler:say('You already have this outfit!', cid)
+			return true
+		end
+
+		if player:getStorageValue(Storage.OutfitQuest.WarriorSwordAddon) < 1 then
+			player:setStorageValue(Storage.OutfitQuest.WarriorSwordAddon, 1)
+			npcHandler:say('Great! Simply bring me 100 iron ore and one royal steel and I will happily {forge} it for you.', cid)
+		elseif player:getStorageValue(Storage.OutfitQuest.WarriorSwordAddon) == 1 and npcHandler.topic[cid] == 1 then
+			if player:getItemCount(5887) > 0 and player:getItemCount(5880) > 99 then
+				player:removeItem(5887, 1)
+				player:removeItem(5880, 100)
+				player:addOutfitAddon(134, 2)
+				player:addOutfitAddon(142, 2)
+				player:setStorageValue(Storage.OutfitQuest.WarriorSwordAddon, 2)
+				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
+				player:addAchievementProgress('Wild Warrior', 2)
+				npcHandler:say('Alright! As a matter of fact, I have one in store. Here you go!', cid)
+			else
+				npcHandler:say('You do not have all the required items.', cid)
+			end
+			npcHandler.topic[cid] = 0
+		end
 	elseif msgcontains(msg, 'forge') then
 		npcHandler:say('What would you like me to forge for you? A {knight\'s sword} or a {warrior\'s sword}?', cid)
 		npcHandler.topic[cid] = 1
@@ -187,6 +211,34 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say('There is no need to rush anyway.', cid)
 		end
 		npcHandler.topic[cid] = 0
+	end
+
+	if msgcontains(msg, 'adorn')
+			or msgcontains(msg, 'outfit')
+			or msgcontains(msg, 'addon') then
+		local addonProgress = player:getStorageValue(Storage.OutfitQuest.Knight.AddonHelmet)
+		if addonProgress == 5 then
+			player:setStorageValue(Storage.OutfitQuest.Knight.MissionHelmet, 6)
+			player:setStorageValue(Storage.OutfitQuest.Knight.AddonHelmet, 6)
+			player:setStorageValue(Storage.OutfitQuest.Knight.AddonHelmetTimer, os.time() + 7200)
+			npcHandler:say('Oh, Gregor sent you? I see. It will be my pleasure to adorn your helmet. Please give me some time to finish it.', cid)
+		elseif addonProgress == 6 then
+			if player:getStorageValue(Storage.OutfitQuest.Knight.AddonHelmetTimer) < os.time() then
+				player:setStorageValue(Storage.OutfitQuest.Knight.MissionHelmet, 0)
+				player:setStorageValue(Storage.OutfitQuest.Knight.AddonHelmet, 7)
+				player:setStorageValue(Storage.OutfitQuest.Ref, math.min(0, player:getStorageValue(Storage.OutfitQuest.Ref) - 1))
+				player:addOutfitAddon(131, 2)
+				player:addOutfitAddon(139, 2)
+				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
+				npcHandler:say('Just in time, |PLAYERNAME|. Your helmet is finished, I hope you like it.', cid)
+			else
+				npcHandler:say('Please have some patience, |PLAYERNAME|. Forging is hard work!', cid)
+			end
+		elseif addonProgress == 7 then
+			npcHandler:say('I think it\'s one of my masterpieces.', cid)
+		else
+			npcHandler:say('Sorry, but without the permission of Gregor I cannot help you with this matter.', cid)
+		end
 	end
 	return true
 end

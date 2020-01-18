@@ -216,6 +216,10 @@ Storage = {
 			AddonHelmetTimer = 12156,
 			RamsaysHelmetDoor = 12160
 		},
+		-- Warrior-outfit Quest
+		WarriorShoulderAddon = 12067,
+		WarriorSwordAddon = 12068,
+		WarriorShoulderTimer = 12071,
 	},
 	ForgottenKnowledgeRewards = {
 		yalahariSet = 9776,

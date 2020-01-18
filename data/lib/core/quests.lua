@@ -9,14 +9,13 @@ if not Quests then
 						[1] = "Collect 100 pieces of minotaur leather and bring it to either Citizen to have them make a backpack addon for you.",
 						[2] = "You delivered 100 pieces of minotaur leather. Some time is needed to make the backpack for you though. You should check back later and ask either Citizen for your backpack.",
 					},
-
 				},
 				[2] = {
 					name = "Citizen Addon: Feather Hat", storageid = Storage.OutfitQuest.Citizen.MissionHat, startvalue = 1, endvalue = 2,
 					states = {
 						[1] = "Collect a legion helmet, 100 chicken feathers and 50 honeycombs and bring them to either Citizen to have them make a feather hat addon for you.",
+						[2] = "You got the Outfit!",
 					},
-
 				},
 				[3] = {
 					name = "Hunter Outfit Quest", storageid = Storage.OutfitQuest.HunterHatAddon, startvalue = 1, endvalue = 5,
@@ -27,7 +26,6 @@ if not Quests then
 						[4] = "Bring Ivan one piece of royal steel, draconian steel and hell steel each.",
 						[5] = "You got the Outfit!",
 					},
-
 				},
 				[4] = {
 					name = "Knight Addon: Helmet", storageid = Storage.OutfitQuest.Knight.MissionHelmet, startvalue = 1, endvalue = 6,
@@ -38,6 +36,18 @@ if not Quests then
 						[4] = "Your current task is to bring royal steel to Wendy. Royal steel can only be refined by very skilled smiths.",
 						[5] = "You have delivered all items required for the helmet addon.",
 						[6] = "Sam is currently creating the helmet for you. Be patient and don't forget to check on it later!",
+					},
+				},
+				[5] = {
+					name = "Warrior Addon: Shoulder Spike", storageid = Storage.OutfitQuest.WarriorShoulderAddon, startvalue = 1, endvalue = 7,
+					states = {
+						[1] = "Your current task is to bring 100 hardened bones to Henrry in Carlin. They can sometimes be extracted from creatures that consist only of - you guessed it, bones. You need an obsidian knife though.",
+						[2] = "Your current task is to bring 100 turtle shells to Henrry in Carlin. Turtles can be found on some idyllic islands which have recently been discovered.",
+						[3] = "Your current task is to show that you have fighting spirit. Maybe someone grants you a wish...?",
+						[4] = "Your current task is to obtain a dragon claw. You cannot get this special claw from any common dragons in Tibia. It requires a special one, a lord among the lords.",
+						[5] = "You have delivered all items requried for the shoulder spike addon. Go talk to Cornelia and tell her Henrry sent you. She will be glad to create the should spikes.",
+						[6] = "Cornelia is currently creating the should spikes for you. Be patient and don't forget to check on it later!",
+						[7] = "You have obtained the shoulder spike addon.",
 					},
 				},
 			}
