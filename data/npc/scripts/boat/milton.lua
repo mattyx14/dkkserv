@@ -23,7 +23,7 @@ local function addTravelKeyword(keyword, cost, destination, action)
 end
 
 addTravelKeyword('mer jungle', 1000, Position(1096, 1273, 7))
-addTravelKeyword('argard', 1000, Position(929, 1278, 7))
+addTravelKeyword('agard', 1000, Position(926, 1280, 7))
 keywordHandler:addKeyword({'travel'}, StdModule.say, {npcHandler = npcHandler, text = 'Where do you want to go? To {Mer Jungle},and {Agard Camp}?'})
 
 npcHandler:setMessage(MESSAGE_GREET, 'Welcome on board, |PLAYERNAME|. Where may I {travel} you today?')
