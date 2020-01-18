@@ -214,8 +214,7 @@ local function creatureSayCallback(cid, type, msg)
 	end
 
 	if msgcontains(msg, 'adorn')
-			or msgcontains(msg, 'outfit')
-			or msgcontains(msg, 'addon') then
+			or msgcontains(msg, 'outfit') then
 		local addonProgress = player:getStorageValue(Storage.OutfitQuest.Knight.AddonHelmet)
 		if addonProgress == 5 then
 			player:setStorageValue(Storage.OutfitQuest.Knight.MissionHelmet, 6)

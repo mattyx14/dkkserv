@@ -131,11 +131,13 @@ local function creatureSayCallback(cid, type, msg)
 	end
 
 	local playerAddon = Player(cid)
-	if isInArray({"addon", "armor"}, msg) then
+
+	if msgcontains(msg, 'adorn')
+			or msgcontains(msg, 'outfit') then
 		if playerAddon:getStorageValue(Storage.OutfitQuest.WarriorShoulderAddon) == 5 then
 			playerAddon:setStorageValue(Storage.OutfitQuest.WarriorShoulderAddon, 6)
 			playerAddon:setStorageValue(Storage.OutfitQuest.WarriorShoulderTimer, os.time() + (player:getSex() == PLAYERSEX_FEMALE and 3600 or 7200))
-			npcHandler:say('Ah, you must be the hero Trisha talked about. I\'ll prepare the shoulder spikes for you. Please give me some time to finish.', cid)
+			npcHandler:say('Ah, you must be the hero Henrry talked about. I\'ll prepare the shoulder spikes for you. Please give me some time to finish.', cid)
 		elseif playerAddon:getStorageValue(Storage.OutfitQuest.WarriorShoulderAddon) == 6 then
 			if playerAddon:getStorageValue(Storage.OutfitQuest.WarriorShoulderTimer) > os.time() then
 				npcHandler:say('I\'m not done yet. Please be as patient as you are courageous.', cid)
