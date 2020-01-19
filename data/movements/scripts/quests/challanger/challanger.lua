@@ -1,6 +1,6 @@
 local destination = {
-	[24878] = {newPos = Position(1127, 1080, 15), backPos = Position(1095, 1080, 15), storage = Storage.ForgottenKnowledge.LadyTenebrisTimer},
-	[24879] = {newPos = Position(1133, 461, 14), backPos = Position(1138, 472, 14), storage = Storage.MisidiaQuest.jaulTimer}
+	[24878] = {newPos = Position(1127, 1080, 15), backPos = Position(1095, 1080, 15), timer = Storage.ForgottenKnowledge.LadyTenebrisTimer},
+	[24879] = {newPos = Position(1133, 461, 14), backPos = Position(1138, 472, 14), timer = Storage.MisidiaQuest.jaulTimer}
 }
 
 function onStepIn(creature, item, position, fromPosition)
@@ -13,14 +13,14 @@ function onStepIn(creature, item, position, fromPosition)
 	if not teleport then
 		return
 	end
-	if player:getExhaustion(teleport.storage) > 0 then
+	if player:getExhaustion(teleport.timer) > 0 then
 		position:sendMagicEffect(CONST_ME_TELEPORT)
 		player:teleportTo(teleport.newPos)
 		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 		return true
 	else
 		player:teleportTo(teleport.backPos)
-		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have to wait to challange this enemy again!")
+		player:say('You have to wait to challange this enemy again!', TALKTYPE_MONSTER_SAY)
 		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 		return true
 	end
