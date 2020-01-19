@@ -1,6 +1,10 @@
 local config = {
 	bossName = 'Jaul',
 	centerRoom = Position(1143, 558, 15),
+	storage = Storage.HidenChest.deaplingOutfit,
+	value = 1,
+	range = 15, 
+	timer = Storage.MisidiaQuest.JaulTimer,
 	BossPosition = Position(1143, 559, 15),
 	newPosition = Position(1149, 558, 15), -- Send Player to new Positions
 }
@@ -9,61 +13,54 @@ local function clearJaul()
 	local spectators = Game.getSpectators(config.centerRoom, false, false, 15, 15, 15, 15)
 	for i = 1, #spectators do
 		local spectator = spectators[i]
-		if spectator:isPlayer() then
+		if spectator:isPlayer() and spectator.uid == playerId then
 			spectator:teleportTo(Position(1138, 472, 14)) -- Kick Potition
 			spectator:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 			spectator:say('Time out! You were teleported out by strange forces.', TALKTYPE_MONSTER_SAY)
-		elseif spectator:isMonster() then
+		end
+
+		if spectator:isMonster() then
 			spectator:remove()
 		end
 	end
-	Game.setStorageValue(GlobalStorage.MisidiaQuest.DeaplingJaulTimer, 0)
 end
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	if item.itemid == 9825 then
 		if player:getPosition() ~= Position(1143, 456, 14) then -- Lever Main Position
-			item:transform(9826)
 			return true
 		end
 	end
 
 	if item.itemid == 9825 then
-		if Game.getStorageValue(Storage.MisidiaQuest.JaulTimer) >= 1 then
-			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You need to wait a while, recently someone challenge Jaul.")
+		if player:getStorageValue(config.storage) < config.value then
+			player:say('You don\'t have permission to use this lever', TALKTYPE_MONSTER_SAY)
 			return true
 		end
 
-		local specs, spec = Game.getSpectators(config.centerRoom, false, false, 15, 15, 15, 15)
-		for i = 1, #specs do
-			spec = specs[i]
-			if spec:isPlayer() then
-				player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Someone is fighting with Jaul.")
-				return true
-			end
+		if player:getExhaustion(config.timer) > 0 then
+			player:say('You have to wait to challange this enemy again!', TALKTYPE_MONSTER_SAY)
+			return true
 		end
 
+		if roomIsOccupied(config.BossPosition, config.range, config.range) then
+			player:say('Someone is fighting against the boss! You need wait awhile.', TALKTYPE_MONSTER_SAY)
+			return true
+		end
+		clearRoom(config.BossPosition, config.range, config.range, fromPosition)
 		for d = 1, 6 do
 			Game.createMonster('deepling tyrant', Position(math.random(1134, 1147), math.random(550, 568), 15), true, true)
 		end
-
-		Game.createMonster(config.bossName, config.BossPosition, true, true)
-
-		for x = 1141, 1145 do
-			local playerTile = Tile(Position(x, 456, 14)):getTopCreature()
-			if playerTile and playerTile:isPlayer() then
-				playerTile:getPosition():sendMagicEffect(CONST_ME_POFF)
-				playerTile:teleportTo(config.newPosition)
-				playerTile:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-				playerTile:setExhaustion(Storage.MisidiaQuest.JaulTimer, 20 * 60 * 60)
-			end
+		local monster = Game.createMonster(config.bossName, config.BossPosition, true, true)
+		if not monster then
+			return true
 		end
-		Game.setStorageValue(GlobalStorage.MisidiaQuest.DeaplingJaulTimer, 1)
-		addEvent(clearJaul, 20 * 60 * 1000)
-		item:transform(9826)
-	elseif item.itemid == 9826 then
-		item:transform(9825)
-	end
 
-	return true
+		player:teleportTo(config.newPosition)
+		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+		player:say('You have twenty minutes to kill and loot this boss. Otherwise you will lose that chance and will be kicked out.', TALKTYPE_MONSTER_SAY)
+		addEvent(clearJaul, 60 * 20 * 1000, player.uid, monster.uid, teleport.bossPos, teleport.range, teleport.range, fromPosition)
+		player:setExhaustion(config.timer, 20 * 60 * 60)
+		return true
+	end
 end

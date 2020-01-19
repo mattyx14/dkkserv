@@ -9,7 +9,7 @@ Storage = {
 	ForgottenKnowledge = {
 		GirlPicture = 10140, -- Fynn = 26400
 		SilverKey = 10141, -- Fynn
-		LadyTenebrisTimer = 10151, -- Fynn
+		LadyTenebrisTimer = 10168, -- Fynn
 		LadyTenebrisKilled = 10150, -- Fynn
 
 		-- Internal Usage
@@ -186,29 +186,28 @@ Storage = {
 		magmaSet = 30492,
 		lightningSet = 30493,
 		insectoidOutfit = 14699,
+		deaplingOutfit = 15545,
 	},
 	-- Global Tibia Quest
 	OutfitQuest = {
 		DefaultStart = 12010, -- until all outfit quests are completed
 		Ref = 12010,
-
-		-- Citizen Addons
+		-- Citizen Addons Quest
 		Citizen = {
 			-- Mission storages for temporary questlog entries
 			MissionHat = 12009,
 			AddonHat = 12011,
-
 			MissionBackpack = 12008,
 			AddonBackpack = 12012,
 			AddonBackpackTimer = 12017
 		},
-		-- Hunter Addons
+		-- Hunter Addons Quest
 		HunterHatAddon = 12055,
 		Hunter = {
 			AddonGlove = 12054,
 			AddonHat = 12055
 		},
-		-- Knight Addons
+		-- Knight Addons Quest
 		Knight = {
 			AddonSword = 12153,
 			MissionHelmet = 12154,
@@ -220,6 +219,14 @@ Storage = {
 		WarriorShoulderAddon = 12067,
 		WarriorSwordAddon = 12068,
 		WarriorShoulderTimer = 12071,
+		-- Mage/Summoner-outfit Quest
+		MageSummoner = {
+			AddonWand = 12061,
+			AddonBelt = 12062,
+			MissionHatCloak = 12063,
+			AddonHatCloak = 12064,
+			AddonWandTimer = 12072
+		},
 	},
 	ForgottenKnowledgeRewards = {
 		yalahariSet = 9776,
@@ -235,7 +242,7 @@ Storage = {
 		DemodrasTeleport = 22556
 	},
 	MisidiaQuest = {
-		JaulTimer = 8420,
+		JaulTimer = 8422,
 		JaulKilled = 10139,
 	},
 }
