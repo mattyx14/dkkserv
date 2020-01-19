@@ -56,11 +56,16 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 			return true
 		end
 
-		player:teleportTo(config.newPosition)
-		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-		player:say('You have thirty minutes to kill and loot this boss. Otherwise you will lose that chance and will be kicked out.', TALKTYPE_MONSTER_SAY)
-		addEvent(clearTenebris, 60 * 30 * 1000, player.uid, monster.uid, teleport.bossPos, teleport.range, teleport.range, fromPosition)
-		player:setExhaustion(config.timer, 20 * 60 * 60)
+		for x = 1125, 1129 do
+			local playerTile = Tile(Position(x, 1083, 15)):getTopCreature()
+			if playerTile and playerTile:isPlayer() then
+				playerTile:teleportTo(config.newPosition)
+				playerTile:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+				playerTile:say('You have thirty minutes to kill and loot this boss. Otherwise you will lose that chance and will be kicked out.', TALKTYPE_MONSTER_SAY)
+				addEvent(clearTenebris, 60 * 30 * 1000, player.uid, monster.uid, config.bossPos, config.range, config.range, fromPosition)
+				playerTile:setExhaustion(config.timer, 20 * 60 * 60)
+			end
+		end
 		return true
 	end
 end
