@@ -1,28 +1,21 @@
-local bosses = {
-	-- bosses
-	['lady tenebris'] = {killed = Storage.ForgottenKnowledge.LadyTenebrisKilled},
-	['jaul'] = {killed = Storage.MisidiaQuest.JaulKilled},
-}
-
-function onKill(creature, target)
-	local targetMonster = target:getMonster()
-	if not targetMonster or targetMonster:getMaster() then
-		return true
-	end
-
-	local bossConfig = bosses[targetMonster:getName():lower()]
-	if not bossConfig then
-		return true
-	end
-
-	for pid, _ in pairs(targetMonster:getDamageMap()) do
-		local attackerPlayer = Player(pid)
-		if attackerPlayer then
-			if bossConfig.killed then
-				attackerPlayer:setExhaustion(bossConfig.killed, 20 * 60 * 1000)
+function onKill(player, creature)
+	if not player:isPlayer() then return true end
+	if not creature:isMonster() or creature:getMaster() then return true end
+	local bosses = {
+		["lady tenebris"] = {stg = Storage.ForgottenKnowledge.LadyTenebrisKilled, value = 1},
+		["jaul"] = {stg = Storage.MisidiaQuest.JaulKilled, value = 1},
+	}
+	local monsterName = creature:getName():lower()
+	local boss = bosses[monsterName]
+	if boss then
+		for playerid, damage in pairs(creature:getDamageMap()) do
+			local p = Player(playerid)
+			if p then
+				if p:getStorageValue(boss.stg) < boss.value then
+					p:setStorageValue(boss.stg, boss.value)
+				end
 			end
 		end
 	end
-
 	return true
 end

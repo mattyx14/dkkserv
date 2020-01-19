@@ -56,49 +56,49 @@ if not Quests then
 			name = "Forgotten Knowledge", startstorageid = Storage.ForgottenKnowledge.Tomes, startstoragevalue = 1,
 			missions = {
 				[1] = {
-					name = "Circle of the Black Sphinx", storageid = Storage.ForgottenKnowledge.LadyTenebrisKilled, startvalue = 0, endvalue = 1522018605,
+					name = "Circle of the Black Sphinx", storageid = Storage.ForgottenKnowledge.LadyTenebrisKilled, startvalue = 0, endvalue = 1,
 					states = {
 						[1] = "You defeated the rogue Lady Tenebris.",
 					},
 				},
 				[2] = {
-					name = "Bane of the Cosmic Force", storageid = Storage.ForgottenKnowledge.LloydKilled, startvalue = 0, endvalue = 1522018605,
+					name = "Bane of the Cosmic Force", storageid = Storage.ForgottenKnowledge.LloydKilled, startvalue = 0, endvalue = 1,
 					states = {
 						[1] = "You calmed poor, misguided Lloyd. All he wanted was protection from the outside world. Luckily he seems to have learned his lesson... or has he?",
 					},
 				},
 				[3] = {
-					name = "The Desecrated Glade", storageid = Storage.ForgottenKnowledge.ThornKnightKilled, startvalue = 0, endvalue = 1522018605,
+					name = "The Desecrated Glade", storageid = Storage.ForgottenKnowledge.ThornKnightKilled, startvalue = 0, endvalue = 1,
 					states = {
 						[1] = "You defeated the Thorn Knight and shattered the root of evil with all your might. The honour of being a guardian of the glade indeed comes with pride as well as responsibility.",
 					},
 				},
 				[4] = {
-					name = "The Unwary Mage", storageid = Storage.ForgottenKnowledge.DragonkingKilled, startvalue = 0, endvalue = 1522018605,
+					name = "The Unwary Mage", storageid = Storage.ForgottenKnowledge.DragonkingKilled, startvalue = 0, endvalue = 1,
 					states = {
 						[1] = "With help of Ivalisse from the temple of the Astral Shapers in Sohan Town and her father, you averted the Dragon King's menace deep in the Mer Jungle.",
 					},
 				},
 				[5] = {
-					name = "Dragon in Distress", storageid = Storage.ForgottenKnowledge.HorrorKilled, startvalue = 0, endvalue = 1522018605,
+					name = "Dragon in Distress", storageid = Storage.ForgottenKnowledge.HorrorKilled, startvalue = 0, endvalue = 1,
 					states = {
 						[1] = "You saved the Dragon Mother's egg and she melted the ice wall that blocked your way.",
 					},
 				},
 				[6] = {
-					name = "Time is a Window", storageid = Storage.ForgottenKnowledge.TimeGuardianKilled, startvalue = 0, endvalue = 1522018605,
+					name = "Time is a Window", storageid = Storage.ForgottenKnowledge.TimeGuardianKilled, startvalue = 0, endvalue = 1,
 					states = {
 						[1] = "You defeated the Time Guardian and are free to return to your own time. For some creatures in this world, it seems neither past nor future are an obstacle.",
 					},
 				},
 				[7] = {
-					name = "Deep wathers", storageid = Storage.MisidiaQuest.JaulKilled, startvalue = 0, endvalue = 1522018605,
+					name = "Deep wathers", storageid = Storage.MisidiaQuest.JaulKilled, startvalue = 0, endvalue = 1,
 					states = {
 						[1] = "You defeated the Jaul and and purifies the waters of their evil. For some creatures in this world, it seems neither past nor future are an obstacle.",
 					},
 				},
 				[8] = {
-					name = "Final Fight", storageid = Storage.ForgottenKnowledge.LastLoreKilled, startvalue = 0, endvalue = 1522018605,
+					name = "Final Fight", storageid = Storage.ForgottenKnowledge.LastLoreKilled, startvalue = 0, endvalue = 1,
 					states = {
 						[1] = "Description Fault.",
 					},
