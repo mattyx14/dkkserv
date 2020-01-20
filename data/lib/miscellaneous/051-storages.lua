@@ -187,6 +187,9 @@ Storage = {
 		lightningSet = 30493,
 		insectoidOutfit = 14699,
 		deaplingOutfit = 15545,
+		hiddenCity = {
+			OreWagon = 25475,
+		},
 	},
 	-- Global Tibia Quest
 	OutfitQuest = {
