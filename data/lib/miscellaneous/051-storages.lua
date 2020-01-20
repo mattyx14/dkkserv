@@ -248,6 +248,65 @@ Storage = {
 		JaulTimer = 8422,
 		JaulKilled = 10139,
 	},
+
+	-- Tibia Updates
+	-- update 6.1
+	OrcFortress = {
+	},
+	-- update 6.4
+	DarkArmor = {
+	},
+	-- update 7.2
+	TheQueenOfTheBanshees = {
+	},
+	-- update 7.24
+	MadMageRoom = {
+	},
+	-- update 7.4
+	TheAncientTombs = {
+	},
+	-- update 8.1
+	KosheiTheDeathless = {
+	},
+	-- update 8.2
+	TheInquisition = {
+	},
+	VampireHunter = {
+	},
+	-- update 8.4
+	BloodBrothers = {
+	},
+	-- update 8.54
+	TomesOfKnowledge = {
+	},
+	TheNewFrontier = {
+	},
+	ChildrenOfTheRevolution = {
+	},
+	-- update 8.6
+	WrathOfTheEmperor = {
+	},
+	RiseOfDevovorga = {
+	},
+	-- update 10.30
+	Roshamuul = {
+	},
+	-- update 10.80
+	AsuraPalace = {
+	},
+	NightmareTeddy = {
+	},
+	Grimvale = {
+	},
+	-- update 10.90
+	FerumbrasAscension = {
+	},
+	-- update 10.94
+	HeartOfDestruction = {	
+	},
+	-- update 12.00
+	TheDreamCourts = {
+	},
 }
 
 GlobalStorage = {
