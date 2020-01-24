@@ -81,7 +81,7 @@ local function creatureSayCallback(cid, type, msg)
 		elseif addonProgress == 1 then
 			npcHandler:say('Your current task is to bring me 100 perfect behemoth fangs, |PLAYERNAME|.', cid)
 		elseif addonProgress == 2 then
-			npcHandler:say('Your current task is to retrieve the helmet of Ramsay the Reckless from Banuta, |PLAYERNAME|.', cid)
+			npcHandler:say('Your current task is to retrieve the helmet of Ramsay the Reckless from Anshara, |PLAYERNAME|.', cid)
 		elseif addonProgress == 3 then
 			npcHandler:say('Your current task is to obtain a flask of warrior\'s sweat, |PLAYERNAME|.', cid)
 		elseif addonProgress == 4 then
@@ -206,7 +206,7 @@ local function creatureSayCallback(cid, type, msg)
 
 			player:setStorageValue(Storage.OutfitQuest.Knight.AddonHelmet, 5)
 			player:setStorageValue(Storage.OutfitQuest.Knight.MissionHelmet, 5)
-			npcHandler:say('You truly deserve to wear an adorned helmet, brave Knight |PLAYERNAME|. Please talk to Sam and tell him I sent you. I\'m sure he will be glad to refine your helmet.', cid)
+			npcHandler:say('You truly deserve to wear an adorned helmet, brave Knight |PLAYERNAME|. I\'m sure he will be glad to refine your {adorn} helmet.', cid)
 		elseif msgcontains(msg, 'no') then
 			npcHandler:say('There is no need to rush anyway.', cid)
 		end
