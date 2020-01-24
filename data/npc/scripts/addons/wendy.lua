@@ -87,7 +87,7 @@ local function creatureSayCallback(cid, type, msg)
 		elseif addonProgress == 4 then
 			npcHandler:say('Your current task is to bring me royal steel, |PLAYERNAME|.', cid)
 		elseif addonProgress == 5 then
-			npcHandler:say('Please talk to Sam and tell him I sent you. I\'m sure he will be glad to refine your helmet, |PLAYERNAME|.', cid)
+			npcHandler:say('I\'m sure he will be glad to refine your helmet, |PLAYERNAME|.', cid)
 		else
 			npcHandler:say('You\'ve already completed the task and can consider yourself a mighty warrior, |PLAYERNAME|.', cid)
 		end
