@@ -854,7 +854,7 @@
 	<monster name="Warlord Ruzad" file="Bosses/warlord_ruzad.xml"/>
 	<monster name="White Pale" file="Bosses/white_pale.xml"/>
 	<monster name="Wrath of the Emperor" file="Bosses/wrath_of_the_emperor.xml"/>
-	<monster name="Xenia" file="Bosses/Xenia.xml"/>
+	<monster name="Xenia" file="Bosses/xenia.xml"/>
 	<monster name="Yaga The Crone" file="Bosses/Yaga The Crone.xml"/>
 	<monster name="Yakchal" file="Bosses/yakchal.xml"/>
 	<monster name="Zanakeph" file="Bosses/zanakeph.xml"/>
