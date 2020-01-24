@@ -49,6 +49,7 @@
 		<item id="5913" chance="30000"/>				<!-- brown piece of cloth -->
 		<item id="2148" countmax="39" chance="30000"/>	<!-- gold coin -->
 		<item id="7458" chance="15000"/>				<!-- fur cap -->
+		<item id="2496" chance="10"/>				<!-- horned helmet -->
 		<item id="7290" chance="8000"/>					<!-- shard -->
 	</loot>
 </monster>

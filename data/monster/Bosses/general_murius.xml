@@ -61,5 +61,6 @@
 		<item id="2666" countmax="3" chance="20000"/>	<!-- meat -->
 		<item id="2547" countmax="7" chance="20000"/>	<!-- power bolt -->
 		<item id="7588" chance="20000"/>				<!-- strong health potion -->
+		<item id="2503" chance="50" />				<!-- dwarven armor -->
 	</loot>
 </monster>

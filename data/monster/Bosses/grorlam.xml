@@ -48,5 +48,6 @@
 		<item id="2483" chance="10000" /><!-- scale armor -->
 		<item id="1294" countmax="5" chance="20000" /><!-- small stone -->
 		<item id="2395" chance="2500" /><!-- carlin sword -->
+		<item id="2504" chance="50" /><!-- Dwarven Legs -->
 	</loot>
 </monster>

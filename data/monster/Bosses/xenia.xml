@@ -39,6 +39,9 @@
 		<item id="2229" countmax="2" chance="100000"/><!-- skull -->
 		<item name="gold coin" countmax="34" chance="66666"/>
 		<item name="sabre" chance="33000"/>
+		<item id="2537" chance="10"/> <!-- Amazon Shield -->
+		<item id="2499" chance="10"/> <!-- Amazon Helmet -->
+		<item id="2500" chance="10"/> <!-- Amazon Armor -->
 		<item name="studded shield" chance="33000"/>
 	</loot>
 </monster>

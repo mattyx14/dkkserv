@@ -57,7 +57,7 @@
 		<item id="2465" chance="25000" />				<!-- brass armor -->
 		<item id="2666" countmax="2" chance="18000" />	<!-- meat -->
 		<item id="2513" chance="14000" />				<!-- battle shield -->
-		<item id="2502" chance="5000" />				<!-- dwarven helmet -->
+		<item id="2502" chance="50" />				<!-- dwarven helmet -->
 		<item id="2580" chance="7410" />					<!-- fishing rod -->
 		<item id="7588" chance="7410" />					<!-- strong health potion -->
 		<item id="2387" chance="3700" />					<!-- double axe -->
