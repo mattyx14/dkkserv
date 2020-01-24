@@ -30,14 +30,16 @@
 		</defense>
 	</defenses>
 	<elements>
+		<element energyPercent="-20"/>
 		<element earthPercent="-20"/>
-		<element energyPercent="-10"/>
+		<element deathPercent="10"/>
 	</elements>
 	<immunities>
 		<immunity invisible="1"/>
-		<immunity fire="1"/>
 		<immunity ice="1"/>
+		<immunity paralyze="1"/>
 		<immunity drown="1"/>
+		<immunity fire="1"/>
 	</immunities>
 	<voices interval="5000" chance="10">
 		<voice sentence="Jou wjil ajll djie!"/>

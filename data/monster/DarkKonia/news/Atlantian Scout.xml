@@ -24,7 +24,8 @@
 	</attacks>
 	<elements>
 		<element firePercent="100"/>
-		<element earthPercent="100"/>
+		<element earthPercent="-10"/>
+		<element energyPercent="-5" />
 		<element deathPercent="0"/>
 		<element icePercent="100"/>
 		<element holyPercent="0"/>
