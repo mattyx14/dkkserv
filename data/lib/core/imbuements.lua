@@ -29,8 +29,8 @@ Imbuements_Weapons = {
 
 	-- Note: if an armor has native protection, it can't be imbue with this protection
 	["armor_energy"] = {30883},
-	["armor_only_energy"] = {7898, 34061},
-	["armor_ice"] = {36414},
+	["armor_only_energy"] = {7898, 25192, 34061},
+	["armor_ice"] = {25185, 25189, 36414},
 	["armor_fire"] = {7899, 12643, 21725},
 	["armor_multi"] = {12643},
 	["armor_multi_two"] = {29079},
@@ -84,7 +84,7 @@ local enablingStorages = {
 
 	["quara scale"] = Storage.MisidiaQuest.JaulKilled,
 	["frost"] = Storage.ForgottenKnowledge.HorrorKilled,
-	["blockade"] = Storage.ForgottenKnowledge.HorrorKilled,
+	["blockade"] = Storage.ForgottenKnowledge.JaulKilled,
 
 	["demon presence"] = Storage.ForgottenKnowledge.TimeGuardianKilled,
 	["precision"] = Storage.ForgottenKnowledge.TimeGuardianKilled,

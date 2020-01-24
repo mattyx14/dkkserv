@@ -29939,6 +29939,7 @@
 		<attribute key="armor" value="11" />
 		<attribute key="slotType" value="body" />
 		<attribute key="showattributes" value="1" />
+		<attribute key="hitChance" value="4" />
 		<attribute key="imbuingSlots" value="2" />
 	</item>
 	<item id="21693" article="a" name="horn">
@@ -33862,6 +33863,7 @@
 		<attribute key="skillClub" value="4" />
 		<attribute key="absorbPercentIce" value="8" />
 		<attribute key="slotType" value="body" />
+		<attribute key="imbuingSlots" value="1" />
 	</item>
 	<item id="25186" article="a" name="firesoul tabard">
 		<attribute key="weight" value="14500" />
@@ -33893,6 +33895,7 @@
 		<attribute key="skillDist" value="4" />
 		<attribute key="absorbPercentIce" value="8" />
 		<attribute key="slotType" value="body" />
+		<attribute key="imbuingSlots" value="1" />
 	</item>
 	<item id="25190" article="a" name="firemind raiment">
 		<attribute key="weight" value="14500" />
@@ -33914,9 +33917,9 @@
 		<attribute key="weight" value="14500" />
 		<attribute key="armor" value="15" />
 		<attribute key="magiclevelpoints" value="4" />
-		<attribute key="absorbPercentEnergy" value="8" />
-		<attribute key="absorbPercentEarth" value="-8" />
+		<attribute key="absorbPercentEnergy" value="12" />
 		<attribute key="slotType" value="body" />
+		<attribute key="imbuingSlots" value="1" />
 	</item>
 	<item id="25193" article="a" name="frostmind raiment">
 		<attribute key="weight" value="14500" />
