@@ -23952,7 +23952,6 @@
 		<attribute key="attack" value="52" />
 		<attribute key="defense" value="24" />
 		<attribute key="weaponType" value="club" />
-		<attribute key="imbuingSlots" value="2" />
 		<attribute key="imbuingSlots" value="3" />
 	</item>
 	<item id="15415" article="a" name="trophy of Obujos">
