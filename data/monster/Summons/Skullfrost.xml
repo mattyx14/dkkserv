@@ -2,7 +2,7 @@
 <monster name="Skullfrost" nameDescription="a Skullfrost" race="undead" speed="500" manacost="1000">
 	<health now="10000" max="10000" />
 	<look type="991" corpse="0" />
-	<targetchange interval="4000" chance="20" />
+	<targetchange interval="1000" chance="100" />
 	<flags>
 		<flag preyable="0" />
 		<flag pet="1" />
@@ -16,7 +16,7 @@
 		<flag canpushcreatures="0" />
 		<flag staticattack="98" />
 		<flag targetdistance="4" />
-		<flag runonhealth="9000" />
+		<flag runonhealth="0" />
 	</flags>
 	<attacks>
 		<attack name="melee" interval="500" chance="25" min="-100" max="-280" />
@@ -38,7 +38,7 @@
 		</attack>
 	</attacks>
 	<defenses armor="55" defense="95">
-		<defense name="healing" interval="3000" chance="25" min="400" max="600">
+		<defense name="healing" interval="2500" chance="50" min="400" max="600">
 			<attribute key="areaEffect" value="blueshimmer" />
 		</defense>
 	</defenses>

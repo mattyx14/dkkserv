@@ -197,6 +197,8 @@
 	<!-- Swimming -->
 	<movevent event="StepIn" fromid="4620" toid="4625" script="others/swimming.lua" />
 	<movevent event="StepOut" fromid="4620" toid="4625" script="others/swimming.lua" />
+	<movevent event="StepIn" fromid="4820" toid="4825" script="others/swimming.lua" />
+	<movevent event="StepOut" fromid="4820" toid="4825" script="others/swimming.lua" />
 	<movevent event="StepIn" fromid="5406" toid="5410" script="others/drowning.lua"/>
 	<movevent event="StepOut" fromid="5406" toid="5410" script="others/drowning.lua"/>
 	<movevent event="StepIn" fromid="5743" toid="5744" script="others/drowning.lua"/>
