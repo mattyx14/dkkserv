@@ -55,7 +55,7 @@ local equipitems = {
 	["void"] = {"axe", "club", "sword", "wand", "rod", "special_strike", "bow", "crossbow", "helmet","helmetmage", "elemental_swords", "elemental_axes", "elemental_clubs", "special_wand", "special_rod"}, -- Mana
 	["quara scale"] = {"armor", "armor_only_energy", "armor_earth", "armor_death", "spellbooks", "shield", "armor_fire", "armor_multi_two"},
 	["frost"] = {"axe", "club", "sword"},
-	["blockade"] = {"shield", "helmet", "spellbooks", "shield"},
+	["blockade"] = {"shield", "helmet", "spellbooks"},
 	["demon presence"] = {"armor", "armor_energy", "armor_only_energy", "armor_ice", "armor_earth", "armor_death", "spellbooks", "shield", "armor_fire", "armor_multi", "armor_multi_two"},
 	["precision"] = {"bow", "crossbow", "helmet"},
 	["strike"] = {"axe", "club", "sword", "bow", "crossbow", "special_strike", "elemental_swords", "elemental_axes", "elemental_clubs", "special_rod"},
@@ -84,7 +84,7 @@ local enablingStorages = {
 
 	["quara scale"] = Storage.MisidiaQuest.JaulKilled,
 	["frost"] = Storage.ForgottenKnowledge.HorrorKilled,
-	["blockade"] = Storage.ForgottenKnowledge.JaulKilled,
+	["blockade"] = Storage.MisidiaQuest.JaulKilled,
 
 	["demon presence"] = Storage.ForgottenKnowledge.TimeGuardianKilled,
 	["precision"] = Storage.ForgottenKnowledge.TimeGuardianKilled,
