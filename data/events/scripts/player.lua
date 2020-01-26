@@ -528,6 +528,10 @@ function Player:onTurn(direction)
 end
 
 function Player:onTradeRequest(target, item)
+	if item:getActionId() == NOT_MOVEABLE_ACTION then
+		return false
+	end
+
 	if isInArray(storeItemID,item.itemid) then
         return false
     end
