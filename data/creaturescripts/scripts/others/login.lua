@@ -37,6 +37,7 @@ function onLogin(player)
 	end
 
 	player:sendTextMessage(MESSAGE_STATUS_DEFAULT, loginStr)
+	player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "All Server Info - Exp Stages/Miscellaneous Info/How work commands, visit:\n https://darkkonia.sytes.net/serverinfo.php")
 
 	local playerId = player:getId()
 
