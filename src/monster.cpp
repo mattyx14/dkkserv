@@ -884,11 +884,11 @@ void Monster::onThinkTarget(uint32_t interval)
 		if (mType->info.changeTargetSpeed != 0) {
 			bool canChangeTarget = true;
 
-			if (challengeFocusDuration > 0) {
-				challengeFocusDuration -= interval;
+			if (targetExetaCooldown > 0) {
+				targetExetaCooldown -= interval;
 
-				if (challengeFocusDuration <= 0) {
-					challengeFocusDuration = 0;
+				if (targetExetaCooldown <= 0) {
+					targetExetaCooldown = 0;
 				}
 			}
 
@@ -910,8 +910,8 @@ void Monster::onThinkTarget(uint32_t interval)
 					targetChangeTicks = 0;
 					targetChangeCooldown = mType->info.changeTargetSpeed;
 
-					if (challengeFocusDuration > 0) {
-						challengeFocusDuration = 0;
+					if (targetExetaCooldown > 0) {
+						targetExetaCooldown = 0;
 					}
 
 					if (mType->info.changeTargetChance >= uniform_random(1, 100)) {
@@ -1976,7 +1976,7 @@ bool Monster::challengeCreature(Creature* creature)
 	bool result = selectTarget(creature);
 	if (result) {
 		targetChangeCooldown = 2000;
-		challengeFocusDuration = targetChangeCooldown;
+		targetExetaCooldown = targetChangeCooldown;
 		targetChangeTicks = 0;
 	}
 	return result;

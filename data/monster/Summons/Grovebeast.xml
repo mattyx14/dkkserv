@@ -29,9 +29,6 @@
 		<attack name="earth" interval="2000" chance="15" length="2" spread="3" min="-250" max="-500">
 			<attribute key="areaEffect" value="carniphila"/>
 		</attack>
-		<attack name="earth" interval="2000" chance="15" length="2" spread="3" min="-250" max="-800">
-			<attribute key="areaEffect" value="carniphila"/>
-		</attack>
 		<attack name="Challenge" interval="500" chance="3" radius="8">
 			<attribute key="areaEffect" value="exeta res"/>
 		</attack>

@@ -60,7 +60,7 @@
 		<immunity paralyze="1" />
 		<immunity invisible="1" />
 	</immunities>
-	<summons maxSummons="4">
+	<summons maxSummons="10">
 		<summon name="energy overlord" interval="2000" chance="20" />
 		<summon name="warlock" interval="2000" chance="10" />
 		<summon name="grim reaper" interval="2000" chance="2" />

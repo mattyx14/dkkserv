@@ -26,9 +26,6 @@
     		<attack name="lifedrain" interval="2000" chance="14" radius="4" target="0" min="-65" max="-135">
       			<attribute key="areaEffect" value="greenshimmer" />
     		</attack>
-    			<attack name="drunk" interval="2000" chance="20" duration="35000" radius="7" target="0">
-      			<attribute key="areaEffect" value="greenspark" />
-    		</attack>
 			<attack name="death" interval="2000" chance="14" legth="4" target="0" min="-165" max="-535">
       			<attribute key="areaEffect" value="mortarea" />
     		</attack>

@@ -65,6 +65,9 @@
 		<immunity invisible="1" />
 		<immunity earth="1" />
 	</immunities>
+	<summons maxSummons="5">
+		<summon name="emberwing" interval="1000" chance="32" max="5" />
+	</summons>
 	<loot>
 		<item id="25377" chance="100000"/><!-- Gold Token -->
 		<item id="25172" chance="100000"/><!-- Silver Token -->

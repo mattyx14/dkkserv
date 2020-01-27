@@ -26,10 +26,7 @@
 		<attack name="Great Fireball" interval="500" chance="16" radius="7" min="-150" max="-300">
 			<attribute key="areaEffect" value="firearea" />
 		</attack>
-		<attack name="Great Fireball" interval="2000" chance="16" radius="7" min="-350" max="-650">
-			<attribute key="areaEffect" value="firearea" />
-		</attack>
-		<attack name="Divine Caldera" interval="2000" chance="30" target="1" radius="4" min="-350" max="-650">
+		<attack name="Divine Caldera" interval="2000" chance="30" target="1" radius="4" min="-150" max="-450">
 			<attribute key="areaEffect" value="exevo mas san" />
 		</attack>
 	</attacks>

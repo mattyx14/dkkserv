@@ -2,4 +2,5 @@
 <raids>
 	<!-- Raids Fynn -->
 	<raid name="Orshabaal" file="fynn/orshabaal.xml" interval2="144000" margin="100" />
+	<raid name="Morgaroth" file="anshara/morgaroth.xml" interval2="144000" margin="100" />
 </raids>
