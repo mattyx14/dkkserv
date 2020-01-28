@@ -584,7 +584,7 @@
 		<action uniqueid="14699" script="quests/outfits/outfits.lua" />
 
 	<!-- Teleport items -->
-	<action fromaid="39512" toaid="39516" script="quests/itemPortal.lua" />
+	<action fromaid="39510" toaid="39550" script="quests/itemPortal.lua" />
 
 	<!-- Annihilator lever -->
 	<action uniqueid="2208" script="quests/annihilator.lua" />

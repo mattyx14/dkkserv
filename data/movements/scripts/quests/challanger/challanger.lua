@@ -8,6 +8,7 @@ local destination = {
 		backPos = Position(1138, 472, 14),
 		timer = Storage.MisidiaQuest.jaulTimer
 	},
+	-- [24880] = {}, -- Reserved to lavaPortal
 }
 
 function onStepIn(creature, item, position, fromPosition)
@@ -16,14 +17,11 @@ function onStepIn(creature, item, position, fromPosition)
 		return
 	end
 
-	local teleport = destination[item.uid]
-	if player:getStorageValue(teleport.timer) > 0 then
-		position:sendMagicEffect(CONST_ME_TELEPORT)
-		player:teleportTo(teleport.backPos)
-		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-		player:say('You have to wait to challange this enemy again!', TALKTYPE_MONSTER_SAY)
-		return true
+	local teleport = destination[item.actionid]
+	if not teleport then
+		return
 	end
+
 	position:sendMagicEffect(CONST_ME_TELEPORT)
 	player:teleportTo(teleport.newPos)
 	player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
