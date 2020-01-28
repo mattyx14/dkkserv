@@ -23,6 +23,7 @@ local spawns = {
 	[22]  = {position = Position(980, 652, 5), monster = 'Zushuka'}, -- Jorvik
 	[23]  = {position = Position(273, 1327, 4), monster = 'The Welter'}, -- Samaransa Bay
 	[24]  = {position = Position(1002, 1278, 10), monster = 'The Welter'}, -- Mer Jungle
+	[25]  = {position = Position(618, 360, 6), monster = 'Demodras'}, -- Anshara
 }
 
 -- Function that is called by the global events when it reaches the time configured
