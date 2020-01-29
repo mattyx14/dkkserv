@@ -606,10 +606,10 @@
 	<action itemid="26406" script="quests/forgotten knowledge/lantern.lua"/>
 	<!-- Levers-->
 	<action actionid="24878" script="quests/forgotten knowledge/tenebrisLever.lua"/>
-
 	<!-- Misidia -->
-	<!-- Levers-->
 	<action actionid="24879" script="quests/misidiaQuest/jaulLever.lua"/>
+	<!-- Anshara -->
+	<action actionid="24880" script="quests/forgotten knowledge/dragonLever.lua"/>
 
 	<!-- Stamina Refill -->
 	<action itemid="8974" script="staminaRefill.lua" />

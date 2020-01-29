@@ -2236,6 +2236,7 @@
 	<!-- Forgotten Knowledge Quest -->
 	<movevent event="StepIn" fromaid="24870" toaid="24890" script="quests/challanger/challanger.lua" />
 	<movevent event="StepIn" actionid="24880" script="quests/challanger/lavaPortal.lua" />
+	<movevent event="StepIn" itemid="26396" script="quests/forgotten knowledge/dragonking vortex.lua" />
 
 	<!-- Imbuid items DarkKonia -->
 	<movevent event="Equip" itemid="2407" level="90" slot="hand" function="onEquipItem"> <!-- Bright Sword -->

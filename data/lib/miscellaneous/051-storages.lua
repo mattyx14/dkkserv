@@ -11,11 +11,12 @@ Storage = {
 		SilverKey = 10141, -- Fynn
 		LadyTenebrisTimer = 10168, -- Fynn
 		LadyTenebrisKilled = 10150, -- Fynn
+		DragonkingTimer = 10169, -- Anshara
+		DragonkingKilled = 10156, -- Anshara
 
 		-- Internal Usage
 		LloydKilled = 10152,
 		ThornKnightKilled = 10154,
-		DragonkingKilled = 10156,
 		HorrorKilled = 10158,
 		TimeGuardianKilled = 10160,
 		LastLoreKilled = 10162,
