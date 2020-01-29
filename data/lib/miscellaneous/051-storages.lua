@@ -191,6 +191,7 @@ Storage = {
 		hiddenCity = {
 			OreWagon = 25475,
 		},
+		crystallineArmor = 8878,
 	},
 	-- Global Tibia Quest
 	OutfitQuest = {
@@ -248,6 +249,10 @@ Storage = {
 	MisidiaQuest = {
 		JaulTimer = 8422,
 		JaulKilled = 10139,
+	},
+	AnsharaPOI = {
+		IzcandarWinterKilled = 10540
+		IzcandarWinterTimer = 10541
 	},
 
 	-- Tibia Updates

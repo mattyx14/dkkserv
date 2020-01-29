@@ -76,7 +76,7 @@ if not Quests then
 				[4] = {
 					name = "The Unwary Mage", storageid = Storage.ForgottenKnowledge.DragonkingKilled, startvalue = 0, endvalue = 1,
 					states = {
-						[1] = "With help of Ivalisse from the temple of the Astral Shapers in Sohan Town and her father, you averted the Dragon King's menace deep in the Mer Jungle.",
+						[1] = "With your help Anshara Desert are free, you averted the Dragon King's menace deep in the Anshara Desert.",
 					},
 				},
 				[5] = {
