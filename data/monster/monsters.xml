@@ -1520,6 +1520,7 @@
 	<monster name="The Nightmare Beast" file="Winter Update/the nightmare beast.xml"/>
 	<monster name="Unpleasant Dream" file="Winter Update/unpleasant dream.xml"/>
 	<monster name="Whirling Blades" file="Winter Update/whirling blades.xml"/>
+		<monster name="Izcandar Champion of Winter" file="Winter Update/izcandar champion of winter.xml"/>
 
 	<!-- Monstros adicionados recentemente -->
 	<monster name="Acolyte of Darkness" file="new/Acolyte_of_Darkness.xml"/>

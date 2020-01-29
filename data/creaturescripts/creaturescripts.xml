@@ -51,4 +51,7 @@
 
 	<!-- AUTO LOOT -->
 	<event type="modalwindow" name="autoloot" script="autoloot.lua"/>
+
+	<!-- Healing Bosses -->
+	<event type="healthchange" name="healIceDamage" script="heal_Ice.lua"/>
 </creaturescripts>
