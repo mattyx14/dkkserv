@@ -9,13 +9,13 @@ local config = {
 }
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	if item.itemid == 1945 then
-		local p = config[item.actionid]
-		if not p then
-			return true
-		end
+	local p = config[item.actionid]
+	if not p then
+		return true
+	end
 
-		local tile = p(p.stonePosition):getTile()
+	if item.itemid == 1945 then
+		local tile = p.stonePosition:getTile()
 		if tile then
 			local stone = tile:getItemById(p.rockID)
 			if stone then
@@ -23,21 +23,21 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 			end
 		end
 
-		local teleport = Game.createItem(p.portalID, 1, p(p.teleportPosition))
+		local teleport = Game.createItem(p.portalID, 1, p.teleportPosition)
 		if teleport then
-			teleport:setDestination(p(p.destinationTeleport))
-			p(p.teleportPosition):sendMagicEffect(CONST_ME_TELEPORT)
+			teleport:setDestination(p.destinationTeleport)
+			p.teleportPosition:sendMagicEffect(CONST_ME_TELEPORT)
 		end
 	elseif item.itemid == 1946 then
-		local tile = p(p.teleportPosition):getTile()
+		local tile = p.teleportPosition:getTile()
 		if tile then
 			local teleport = tile:getItemById(p.portalID)
 			if teleport and teleport:isTeleport() then
 				teleport:remove()
 			end
 		end
-		p(p.teleportPosition):sendMagicEffect(CONST_ME_POFF)
-		Game.createItem(p.rockID, 1, p(p.stonePosition))
+		p.teleportPosition:sendMagicEffect(CONST_ME_POFF)
+		Game.createItem(p.rockID, 1, p.stonePosition)
 	end
 	return item:transform(item.itemid == 1945 and 1946 or 1945)
 end

@@ -49,7 +49,7 @@ local config = {
 		{{40001, 60000}, STUDDED_LEGS},
 		{{60001, 75000}, CHAIN_LEGS},
 		{{75001, 87500}, BRASS_LEGS},
-		{{87501, 95500}, PLATE_LEGS}
+		{{87501, 95500}, PLATE_LEGS},
 		{{99251, 100000}, GOLDEN_LEGS}
 	},
 	[9813] = { -- rare rusty legs

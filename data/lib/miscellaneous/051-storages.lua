@@ -251,8 +251,8 @@ Storage = {
 		JaulKilled = 10139,
 	},
 	AnsharaPOI = {
-		IzcandarWinterKilled = 10540
-		IzcandarWinterTimer = 10541
+		IzcandarWinterKilled = 10540,
+		IzcandarWinterTimer = 10541,
 	},
 
 	-- Tibia Updates
