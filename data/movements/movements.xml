@@ -2234,7 +2234,7 @@
 	<movevent event="StepIn" actionid="9008" script="quests/firstSacrifice/firstSacrificeDragonHammer.lua" />
 
 	<!-- Forgotten Knowledge Quest -->
-	<movevent event="StepIn" fromaid="24870" toaid="24890" script="quests/challanger/challanger.lua" />
+	<movevent event="StepIn" fromuid="24870" touid="24890" script="quests/challanger/challanger.lua" />
 	<movevent event="StepIn" actionid="24980" script="quests/challanger/lavaPortal.lua" />
 	<movevent event="StepIn" itemid="26396" script="quests/forgotten knowledge/dragonking vortex.lua" />
 
