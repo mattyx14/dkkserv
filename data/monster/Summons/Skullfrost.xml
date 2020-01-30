@@ -2,7 +2,7 @@
 <monster name="Skullfrost" nameDescription="a Skullfrost" race="undead" speed="500" manacost="1000">
 	<health now="10000" max="10000" />
 	<look type="991" corpse="0" />
-	<targetchange interval="1000" chance="100" />
+	<targetchange interval="1000" chance="20" />
 	<flags>
 		<flag preyable="0" />
 		<flag pet="1" />
@@ -15,20 +15,20 @@
 		<flag canpushitems="0" />
 		<flag canpushcreatures="0" />
 		<flag staticattack="98" />
-		<flag targetdistance="4" />
-		<flag runonhealth="0" />
+		<flag targetdistance="3" />
+		<flag runonhealth="9000" />
 	</flags>
 	<attacks>
-		<attack name="melee" interval="500" chance="25" min="-100" max="-280" />
-		<attack name="death" interval="500" chance="10" radius="3" target="1" min="-150" max="-250">
+		<attack name="melee" interval="500" chance="50" min="-100" max="-280" />
+		<attack name="death" interval="1000" chance="15" range="7" radius="3" target="1" min="-150" max="-250">
 			<attribute key="shootEffect" value="death"/>
 			<attribute key="areaEffect" value="mortarea" />
 		</attack>
-		<attack name="death" interval="500" chance="10" radius="2" target="1" min="-150" max="-250">
+		<attack name="death" interval="1000" chance="16" range="7" radius="2" target="1" min="-150" max="-250">
 			<attribute key="shootEffect" value="death"/>
 			<attribute key="areaEffect" value="mortarea" />
 		</attack>
-		<attack name="ice" interval="2000" chance="15" radius="2" target="1" min="-350"  max="-450">
+		<attack name="ice" interval="2000" chance="30" range="7" radius="2" target="1" min="-350"  max="-450">
 			<attribute key="shootEffect" value="ice"/>
 			<attribute key="areaEffect" value="icetornado" />
 		</attack>
