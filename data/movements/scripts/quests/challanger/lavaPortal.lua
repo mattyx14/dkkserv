@@ -13,7 +13,7 @@ function onStepIn(creature, item, position, fromPosition)
 		return
 	end
 
-	if player:getStorageValue(teleport.storage) >= 1 then
+	if player:getStorageValue(teleport.storage) == 1 then
 		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 		player:teleportTo(teleport.position)
 		player:getPosition():sendMagicEffect(CONST_ME_FIREAREA)
