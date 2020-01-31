@@ -1,5 +1,5 @@
 local destination = {
-	[24880] = {position = Position(634, 373, 8), Storage = Storage.ForgottenKnowledge.DragonkingKilled}
+	[24880] = {position = Position(495, 172, 9), Storage = Storage.Anshara.ritualInfernus}
 }
 
 function onStepIn(creature, item, position, fromPosition)
@@ -18,9 +18,9 @@ function onStepIn(creature, item, position, fromPosition)
 		player:teleportTo(teleport.position)
 		player:getPosition():sendMagicEffect(CONST_ME_FIREAREA)
 	else
-		player:teleportTo(Position(618, 371, 8))
+		player:teleportTo(Position(495, 176, 9))
 		player:say("You haven't permission to use this teleport.", TALKTYPE_MONSTER_SAY)
-		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+		player:getPosition():sendMagicEffect(CONST_ME_FIREAREA)
 	end
 
 	return true

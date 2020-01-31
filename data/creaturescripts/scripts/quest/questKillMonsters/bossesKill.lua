@@ -4,6 +4,8 @@ function onKill(player, creature)
 	local bosses = {
 		["lady tenebris"] = {stg = Storage.ForgottenKnowledge.LadyTenebrisKilled, value = 1},
 		["jaul"] = {stg = Storage.MisidiaQuest.JaulKilled, value = 1},
+		["izcandar champion of winter"] = {stg = Storage.AnsharaPOI.IzcandarWinterKilled, value = 1},
+		["infernus"] = {stg = Storage.AnsharaPOI.InfernusKilled, value = 1},
 	}
 	local monsterName = creature:getName():lower()
 	local boss = bosses[monsterName]

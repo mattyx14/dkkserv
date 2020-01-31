@@ -1629,6 +1629,7 @@
 	<monster name="Thief" file="DarkKonia/thief.xml" />
 	<monster name="Captain Jones" file="DarkKonia/captain jones.xml" />
 	<monster name="Dracula" file="DarkKonia/dracula.xml" />
+	<monster name="Infernus" file="DarkKonia/infernus.xml" />
 
 	<!-- News DarkKonia -->
 	<monster name="Anger" file="DarkKonia/anger.xml" />

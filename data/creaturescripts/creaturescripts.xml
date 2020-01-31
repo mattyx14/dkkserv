@@ -54,4 +54,6 @@
 
 	<!-- Healing Bosses -->
 	<event type="healthchange" name="healIceDamage" script="heal_Ice.lua"/>
+	<event type="healthchange" name="healFireDamage" script="heal_Fire.lua"/>
+	<event type="healthchange" name="healDeathDamage" script="heal_Death.lua"/>
 </creaturescripts>

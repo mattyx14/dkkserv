@@ -613,6 +613,8 @@
 	<action actionid="24880" script="quests/forgotten knowledge/dragonLever.lua"/>
 	<action fromaid="9011" toaid="9020" script="quests/volcanoPOI/levers.lua" />
 	<action actionid="24881" script="quests/volcanoPOI/IzcandarLever.lua" />
+	<action actionid="24882" script="quests/volcanoPOI/InfernusLever.lua" />
+	<action actionid="24883" script="quests/volcanoPOI/sacrificeInfernusLever.lua" />
 
 	<!-- Stamina Refill -->
 	<action itemid="8974" script="staminaRefill.lua" />

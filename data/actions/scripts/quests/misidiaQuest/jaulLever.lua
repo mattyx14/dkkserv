@@ -48,9 +48,6 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 			return true
 		end
 		clearRoom(config.BossPosition, config.range, config.range, fromPosition)
-		for d = 1, 6 do
-			Game.createMonster('deepling tyrant', Position(math.random(1134, 1147), math.random(550, 568), 15), true, true)
-		end
 		local monster = Game.createMonster(config.bossName, config.BossPosition, true, true)
 		if not monster then
 			return true

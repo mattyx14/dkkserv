@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Infernus" nameDescription="a Infernus" race="undead" experience="0" speed="370" manacost="0">
+<monster name="Infernus" nameDescription="a Infernus" race="undead" experience="0" speed="370" manacost="0" script="rewardboss.lua">
 	<health now="112000" max="112000"/>
-	<look type="862" head="98" body="96" legs="90" feet="92" addons="2" corpse="5995"/>
-	<targetchange interval="5000" chance="8"/>
-	<strategy attack="100" defense="0"/>
+	<look type="862" head="98" body="96" legs="90" feet="92" addons="2" corpse="6068"/>
+	<targetchange interval="2000" chance="50" />
 	<flags>
 		<flag summonable="0"/>
 		<flag attackable="1"/>
@@ -18,7 +17,7 @@
 		<flag runonhealth="2500"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="250" attack="250"/>
+		<attack name="melee" interval="2000" min="400" max="1550" />
 		<attack name="manadrain" interval="1000" chance="7" range="7" min="-300" max="-600"/>
 		<attack name="manadrain" interval="1000" chance="6" radius="5" target="0" min="-150" max="-350">
 			<attribute key="areaEffect" value="HOLYDAMAGE"/>
@@ -26,8 +25,8 @@
 		<attack name="fire" interval="1500" chance="6" radius="5" target="0">
 			<attribute key="areaEffect" value="GROUNDSHAKER"/>
 		</attack>
-		<attack name="energy" interval="1000" chance="70" length="8" spread="0" min="-1820" max="-2380">
-			<attribute key="areaEffect" value="PURPLEENERGY"/>
+		<attack name="fire" interval="1000" chance="70" length="8" spread="0" min="-220" max="-2380">
+			<attribute key="areaEffect" value="HOLYDAMAGE"/>
 		</attack>
 		<attack name="fire" interval="1000" chance="34" range="7" radius="5" target="1" min="-710" max="-950">
 			<attribute key="shootEffect" value="holy"/>
@@ -36,7 +35,7 @@
 		<attack name="firefield" interval="1900" chance="10" range="7" radius="4" target="1">
 			<attribute key="shootEffect" value="fire"/>
 		</attack>
-		<attack name="fire" interval="1000" chance="15" range="7" radius="5" min="-800" max="-1000">
+		<attack name="fire" interval="1000" chance="15" range="7" radius="5" min="-400" max="-1000">
 			<attribute key="areaEffect" value="BIGCLOUDS"/>
 		</attack>
 	</attacks>
@@ -47,22 +46,63 @@
 		<immunity paralyze="1"/>
 		<immunity invisible="1"/>
 	</immunities>
+	<script>
+		<event name="healFireDamage"/>
+	</script>
 	<elements>
-		<element physicalPercent="80"/>
-		<element earthPercent="80"/>
-		<element energyPercent="100"/>
-		<element deathPercent="80"/>
-		<element icePercent="80"/>
-		<element holyPercent="80"/>
+		<element physicalPercent="30"/>
+		<element icePercent="-10"/>
+		<element firePercent="-100"/>
 	</elements>
-	<summons maxSummons="1">
-		<summon name="firelord" interval="1000" chance="10" max="1"/>
-	</summons>
 	<voices interval="5000" chance="10">
-		<voice sentence="PRAISED BE MY MASTERS, THE RUTHLESS SEVEN!" yell="1"/>
-		<voice sentence="YOU ARE DOOMED!" yell="1"/>
 		<voice sentence="INFERNUS IS BACK!" yell="1"/>
-		<voice sentence="Be prepared for the day my masters will come for you!"/>
 		<voice sentence="SOULS FOR INFERNUS!" yell="1"/>
 	</voices>
+	<loot>
+		<!--common-->
+		<item name="Platinum Coin" count="5" chance="50000" /> 
+		<item name="Crystal Coin" count="2" chance="50000" />
+		<item name="Supreme Health Potion" countmax="10" chance="50000" />
+		<item name="Ultimate Mana Potion" countmax="20" chance="50000" />
+		<item name="Ultimate Spirit Potion" countmax="20" chance="50000" />
+		<item name="Gold Token" count="3" chance="50000" /> 
+		<item name="Silver Token" count="5" chance="50000" /> 
+		<item name="Energy Bar" chance="50000" />    
+		<item name="Mysterious Remains" chance="50000" /> 
+		<!--uncommon-->
+		<item name="Berserk Potion" count="10" chance="25000" /> 
+		<item name="Bullseye Potion" count="10" chance="25000" /> 
+		<item name="Green Gem" countmin="1" countmax="2" chance="25000" />
+		<item name="Mastermind Potion" count="10" chance="25000" /> 
+		<item name="Royal Star" count="100" chance="25000" /> 
+		<item name="Blue Gem" chance="25000" />
+		<item name="Chaos Mace" chance="25000" />    
+		<item id="7632" chance="25000" /> <!-- Giant Shimmering Pearl -->
+		<item name="Gold Ingot" chance="25000" /> 
+		<item name="Magic Sulphur" chance="25000" /> 
+		<item name="Piggy Bank" chance="25000" /> 
+		<item name="Red Gem" chance="25000" />
+		<item name="Skull Staff" chance="25000" />
+		<item name="Violet Gem" chance="25000" />
+		<item name="Yellow Gem" chance="25000" />
+		<!--Semi-rare-->
+		<item name="Arcane Staff" chance="12000" />    
+		<item name="Collar of Blue Plasma" chance="12000" />    
+		<item name="Collar of Green Plasma" chance="12000" /> 
+		<item name="Collar of Red Plasma" chance="12000" />    
+		<item name="Dragon Figurine" chance="12000" />    
+		<item name="Giant Sapphire" chance="12000" />
+		<item name="Huge Chunk of Crude Iron" chance="12000" /> 
+		<item name="Pomegranate" chance="12000" /> 
+		<item name="Ring of Blue Plasma" chance="12000" />
+		<item name="Ring of Green Plasma" chance="12000" /> 
+		<item name="Ring of Red Plasma" chance="12000" /> 
+		<item name="Ring of the Sky" chance="12000" /> 
+		<!--Rare-->
+		<item name="Ornate Locket" chance="4000" /> 
+		<item name="Purple Tendril Lantern" chance="500" /> 
+		<item name="Soul Stone" chance="4000" /> 
+		<item name="Turquoise Tendril Lantern" chance="500" /> 
+		<item name="Solar Axe" chance="50" /> 
+	</loot>
 </monster>
