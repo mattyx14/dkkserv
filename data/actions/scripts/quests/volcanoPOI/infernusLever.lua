@@ -1,7 +1,6 @@
 local config = {
 	bossName = 'Infernus',
 	centerRoom = Position(513, 197, 9),
-	storage = Storage.HidenChest.crystallineArmor,
 	value = 1,
 	range = 15, 
 	timer = Storage.AnsharaPOI.InfernusTimer,
@@ -33,11 +32,6 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	end
 
 	if item.itemid == 9825 then
-		if player:getStorageValue(config.storage) < config.value then
-			player:say('You don\'t have permission to use this lever u need complete the infernus ritual', TALKTYPE_MONSTER_SAY)
-			return true
-		end
-
 		if player:getExhaustion(config.timer) > 0 then
 			player:say('You have to wait to challange this enemy again!', TALKTYPE_MONSTER_SAY)
 			return true
