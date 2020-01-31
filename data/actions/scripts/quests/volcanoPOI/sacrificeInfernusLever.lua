@@ -38,7 +38,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		players[i]:getPosition():sendMagicEffect(CONST_ME_POFF)
 		players[i]:teleportTo(config[i].toPosition)
 		config[i].toPosition:sendMagicEffect(CONST_ME_TELEPORT)
-		Game.setStorageValue(Storage.Anshara.ritualInfernus, 1)
+		Game.setStorageValue(Storage.AnsharaPOI.ritualInfernus, 1)
 	end
 	return true
 end

@@ -1,5 +1,5 @@
 local destination = {
-	[24880] = {position = Position(495, 172, 9), Storage = Storage.Anshara.ritualInfernus}
+	[24880] = {position = Position(495, 172, 9), Storage = Storage.AnsharaPOI.ritualInfernus}
 }
 
 function onStepIn(creature, item, position, fromPosition)
