@@ -35,5 +35,6 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 			Game.setStorageValue(Storage.AnsharaPOI.ritualInfernus, 1)
 			return true
 		end
+		return true
 	end
 end
