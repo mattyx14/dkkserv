@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monster name="Izcandar Champion of Winter" nameDescription="an izcandar champion of winter" race="blood" experience="55000" speed="250" manacost="0" script="rewardboss.lua">
 	<health now="365000" max="365000" />
-	<look type="1137" head="19" body="57" legs="85" feet="19" addons="3" corpse="29376" />
+	<look type="1137" head="19" body="57" legs="85" feet="19" addons="3" corpse="34775" />
 	<targetchange interval="2000" chance="80" />
 	<flags>
 		<flag preyable="0" />
