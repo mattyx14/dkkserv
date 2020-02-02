@@ -26,10 +26,10 @@
 		<attack name="fire" interval="1500" chance="6" radius="5" target="0">
 			<attribute key="areaEffect" value="GROUNDSHAKER"/>
 		</attack>
-		<attack name="fire" interval="1000" chance="70" length="8" spread="0" min="-220" max="-2380">
+		<attack name="fire" interval="1000" chance="70" length="8" spread="0" min="-220" max="-1500">
 			<attribute key="areaEffect" value="HOLYDAMAGE"/>
 		</attack>
-		<attack name="fire" interval="1000" chance="34" range="7" radius="5" target="1" min="-710" max="-950">
+		<attack name="fire" interval="1000" chance="34" range="7" radius="5" target="1" min="-350" max="-950">
 			<attribute key="shootEffect" value="holy"/>
 			<attribute key="areaEffect" value="HOLYDAMAGE"/>
 		</attack>
@@ -87,18 +87,11 @@
 		<item name="Violet Gem" chance="25000" />
 		<item name="Yellow Gem" chance="25000" />
 		<!--Semi-rare-->
-		<item name="Arcane Staff" chance="12000" />    
-		<item name="Collar of Blue Plasma" chance="12000" />    
-		<item name="Collar of Green Plasma" chance="12000" /> 
-		<item name="Collar of Red Plasma" chance="12000" />    
+		<item name="Arcane Staff" chance="12000" />       
 		<item name="Dragon Figurine" chance="12000" />    
 		<item name="Giant Sapphire" chance="12000" />
 		<item name="Huge Chunk of Crude Iron" chance="12000" /> 
 		<item name="Pomegranate" chance="12000" /> 
-		<item name="Ring of Blue Plasma" chance="12000" />
-		<item name="Ring of Green Plasma" chance="12000" /> 
-		<item name="Ring of Red Plasma" chance="12000" /> 
-		<item name="Ring of the Sky" chance="12000" /> 
 		<!--Rare-->
 		<item name="Ornate Locket" chance="4000" /> 
 		<item name="Purple Tendril Lantern" chance="500" /> 

@@ -93,19 +93,12 @@
 		<item name="Violet Gem" chance="25000" />
 		<item name="Yellow Gem" chance="25000" />
 		<!--Semi-rare-->
-		<item name="Arcane Staff" chance="12000" />    
-		<item name="Collar of Blue Plasma" chance="12000" />    
-		<item name="Collar of Green Plasma" chance="12000" /> 
-		<item name="Collar of Red Plasma" chance="12000" />    
+		<item name="Arcane Staff" chance="12000" /> 
 		<item name="Dragon Figurine" chance="12000" />    
 		<item name="Giant Sapphire" chance="12000" />
 		<item name="Huge Chunk of Crude Iron" chance="12000" /> 
 		<item name="Izcandar's Snow Globe" chance="12000" /> 
 		<item name="Pomegranate" chance="12000" /> 
-		<item name="Ring of Blue Plasma" chance="12000" />
-		<item name="Ring of Green Plasma" chance="12000" /> 
-		<item name="Ring of Red Plasma" chance="12000" /> 
-		<item name="Ring of the Sky" chance="12000" /> 
 		<!--Rare-->
 		<item name="Ice Shield" chance="4000" /> 
 		<item name="Ornate Locket" chance="4000" /> 
