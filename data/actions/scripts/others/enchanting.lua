@@ -50,6 +50,13 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		return true
 	end
 
+	if item.itemid == 7759 and target.itemid == 10021 then
+		target:transform(6132)
+		item:remove(1)
+		toPosition:sendMagicEffect(CONST_ME_MAGIC_RED)
+		return true
+	end
+
 	if item.itemid == 7760 and isInArray({9934, 10022}, target.itemid) then
 		target:transform(9933)
 		item:remove(1)
