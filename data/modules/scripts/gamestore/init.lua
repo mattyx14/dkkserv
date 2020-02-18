@@ -1,7 +1,7 @@
 -- Please don't edit those information!
 GameStore = {
   ModuleName = "GameStore",
-  Developers = { "Cjaker", "metabob" },
+  Developers = { "Slavi Dodo", "Cjaker", "metabob" },
   Version = "0.4",
   LastUpdated = "15-04-2019 17:40PM"
 }
@@ -1077,7 +1077,7 @@ end
 
 function GameStore.processPremiumPurchase(player, offerId)
   player:addPremiumDays(offerId-3000)
-
+  
   -- Update Prey Data
   for slot = CONST_PREY_SLOT_FIRST, CONST_PREY_SLOT_THIRD do
     player:sendPreyData(slot)
@@ -1088,7 +1088,7 @@ function GameStore.processStackablePurchase(player, offerId, offerCount, offerNa
   local function isKegExerciseItem(itemId)
     return ((itemId >= ITEM_KEG_START and itemId <= ITEM_KEG_END) or (itemId >= ITEM_EXERCISE_START and itemId <= ITEM_EXERCISE_END) or itemId == 32109)
   end
-
+  
   if isKegExerciseItem(offerId) then
     if player:getFreeCapacity() < ItemType(offerId):getWeight(1) then
       return error({code = 0, message = "Please make sure you have free capacity to hold this item."})
@@ -1274,7 +1274,7 @@ function GameStore.processPreySlotPurchase(player)
 		player:setStorageValue(STORE_SLOT_STORAGE, 1)
 		player:setPreyUnlocked(CONST_PREY_SLOT_THIRD, 2)
 		player:setPreyState(CONST_PREY_SLOT_THIRD, 1)
-
+		
 		-- Update Prey Data
 		for slot = CONST_PREY_SLOT_FIRST, CONST_PREY_SLOT_THIRD do
 			player:sendPreyData(slot)
