@@ -22,54 +22,18 @@ local voices = {
 
 npcHandler:addModule(VoiceModule:new(voices))
 
-function creatureSayCallback(cid, type, msg)
-	if not npcHandler:isFocused(cid) then
-		return false
+local hatKeyword = keywordHandler:addKeyword({'ferumbras'}, StdModule.say, {npcHandler = npcHandler, text = '... I cannot believe my eyes. You retrieved this hat from Ferumbras\' remains? That is incredible. If you give it to me, I will grant you the right to wear this hat as addon. What do you say?'},
+	function(player) return not player:hasOutfit(player:getSex() == PLAYERSEX_FEMALE and 141 or 130, 2) end
+)
+hatKeyword:addChildKeyword({'yes'}, StdModule.say, {npcHandler = npcHandler, text = 'Sorry you don\'t have the Ferumbras\' hat.'}, function(player) return player:getItemCount(5903) == 0 end)
+hatKeyword:addChildKeyword({'yes'}, StdModule.say, {npcHandler = npcHandler, text = 'I bow to you, player, and hereby grant you the right to wear Ferumbras\' hat as accessory. Congratulations!'}, nil,
+	function(player)
+		player:removeItem(5903, 1)
+		player:addOutfitAddon(141, 2)
+		player:addOutfitAddon(130, 2)
+		player:getPosition():sendMagicEffect(CONST_ME_MAGIC_RED)
 	end
-
-	local player = Player(cid)
-	local vocationId = player:getVocation():getId()
-	local items = {
-		[1] = 2190,
-		[2] = 2182,
-		[5] = 2190,
-		[6] = 2182
-	}
-
-	if msgcontains(msg, 'first rod') or msgcontains(msg, 'first wand') then
-		if isInArray({1, 2, 5, 6}, vocationId) then
-			if player:getStorageValue(3050) == -1 then
-				selfSay('So you ask me for a {' .. ItemType(items[vocationId]):getName() .. '} to begin your advanture?', cid)
-				npcHandler.topic[cid] = 1
-			else
-				selfSay('What? I have already gave you one {' .. ItemType(items[vocationId]):getName() .. '}!', cid)
-			end
-		else
-			selfSay('Sorry, you aren\'t a druid either a sorcerer.', cid)
-		end
-	elseif msgcontains(msg, 'yes') then
-		if npcHandler.topic[cid] == 1 then
-			player:addItem(items[vocationId], 1)
-			player:setStorageValue(3050, 1)
-			selfSay('Here you are young adept, take care yourself.', cid)
-		end
-		npcHandler.topic[cid] = 0
-	elseif msgcontains(msg, 'no') and npcHandler.topic[cid] == 1 then
-		selfSay('Ok then.', cid)
-		npcHandler.topic[cid] = 0
-	elseif isInArray({"vial", "ticket", "bonus"}, msg) then
-		if player:removeItem(7634, 100) or player:removeItem(7635, 100) or player:removeItem(7636, 100) then
-			player:addItem(5957, 1)
-			npcHandler:say("Alright, thank you very much! Here is your lottery ticket, good luck. Would you like to deposit more vials that way?", cid)
-			npcHandler.topic[cid] = 0
-		else
-			npcHandler:say("Sorry, but you don't have 100 empty flasks or vials of the SAME kind and thus don't qualify for the lottery. Would you like to deposit the vials you have as usual and receive 5 gold per vial?", cid)
-			npcHandler.topic[cid] = 0
-		end
-	end
-
-	return true
-end
+)
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())
