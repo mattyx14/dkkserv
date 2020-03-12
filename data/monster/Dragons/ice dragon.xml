@@ -11,7 +11,7 @@
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
 		<flag staticattack="90"/>
 		<flag runonhealth="350"/>
@@ -47,6 +47,6 @@
 		<item id="26449" chance="3000"/><!-- dragon bloods -->
 		<item id="2148" countmax="200" chance="95070"/><!-- gold coin -->
 		<item id="7902" chance="2000"/><!-- glacier mask -->
-		<item id="2160" countmax="4" chance="280"/>
+		<item id="2492" chance="280"/><!-- dragon scale mail -->
 	</loot>
 </monster>

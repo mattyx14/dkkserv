@@ -11,7 +11,7 @@
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
 		<flag staticattack="90"/>
 		<flag runonhealth="0"/>
@@ -49,7 +49,7 @@
  	<!-- Incomum-->
 		<item name="Ultimate Health Potion" countmax="2" chance="500"/>
 		<item name="Throwing Star" countmax="18" chance="500"/>
-		<item id="2152" countmax="50" chance="2000"/>
+		<item name="Knight Axe" chance="250"/>
 		<item id="2419" chance="500"/><!-- scimitar -->
  	<!-- Semi-raro-->
 		<item name="protection amulet" chance="250"/>

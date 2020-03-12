@@ -12,7 +12,7 @@
 		<flag isblockable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
 		<flag staticattack="90"/>
 		<flag runonhealth="0"/>
@@ -50,6 +50,7 @@
 		<item name="Great Spirit Potion" countmax="3" chance="1000"/>
 		<item name="Ultimate Health Potion" chance="1000"/>
 		<item name="Essence of a Bad Dream" chance="1000"/>
+		<item name="Knight Axe" chance="1000"/>
 		<item name="Mino Shield" chance="1000"/>
 		<item name="Terra Boots" chance="1000"/>
 		<item name="Terra Hood" chance="1000"/>
@@ -62,7 +63,7 @@
 		<item name="Titan Axe" chance="500"/>
 		<item name="Wand of Cosmic Energy" chance="500"/>
 		<item name="Wand of Defiance" chance="500"/>
-		<item id="2160" countmax="2" chance="1500"/>
+		<item name="Warrior's Axe" chance="500"/>
 		<item name="Warrior's Shield" chance="500"/>
 	</loot>
 </monster>

@@ -11,7 +11,7 @@
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
 		<flag staticattack="90"/>
 		<flag runonhealth="0"/>
@@ -53,7 +53,7 @@
 		<item name="fire sword" chance="530"/>
 		<item name="magma amulet" chance="1300"/>
 		<item name="magma boots" chance="560"/>
-		<item id="2160" countmax="1" chance="3000"/>
+		<item name="magma legs" chance="210"/>
 		<item id="9809" chance="1330"/><!-- rusty armor -->
 	</loot>
 </monster>

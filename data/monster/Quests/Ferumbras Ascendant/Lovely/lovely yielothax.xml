@@ -11,7 +11,7 @@
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag staticattack="90"/>
 		<flag targetdistance="1"/>
 		<flag runonhealth="0"/>
@@ -76,6 +76,6 @@
 		<item id="2438" chance="520"/><!-- epee -->
 		<item id="10221" chance="570"/><!-- shockwave amulet -->
 		<item id="7889" chance="830"/><!-- lightning pendant -->
-		<item id="2160" countmax="1" chance="1000"/>
+		<item id="7895" chance="480"/><!-- lightning legs -->
 	</loot>
 </monster>

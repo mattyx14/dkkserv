@@ -11,7 +11,7 @@
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
 		<flag staticattack="80"/>
 		<flag runonhealth="0"/>
@@ -59,7 +59,9 @@
 		<item name="platinum coin" countmax="10" chance="100000"/>
 		<item name="yellow gem" chance="1030"/>
 		<item name="dwarven ring" chance="4660"/>
-		<item id="2160" countmax="3" chance="1500"/>
+		<item name="knight legs" chance="1910"/>
+		<item name="crown armor" chance="370"/>
+		<item name="crown helmet" chance="890"/>
 		<item name="iron ore" chance="15000"/>
 		<item name="magic sulphur" chance="3000"/>
 		<item name="titan axe" chance="2600"/>

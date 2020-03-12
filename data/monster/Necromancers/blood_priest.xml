@@ -11,7 +11,7 @@
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
 		<flag staticattack="90"/>
 		<flag runonhealth="0"/>
@@ -60,7 +60,8 @@
 		<item name="small ruby" countmax="2" chance="3510"/>
 		<item name="gold coin" countmax="100" chance="50000"/>
 		<item name="gold coin" countmax="71" chance="50000"/>
-		<item id="2160" countmax="4" chance="500"/>
+		<item name="boots of haste" chance="120"/>
+		<item name="skull staff" chance="180"/>
 		<item name="mystic turban" chance="2170"/>
 		<item name="white piece of cloth" chance="3040"/>
 		<item name="red piece of cloth" chance="640"/>

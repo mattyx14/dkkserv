@@ -11,7 +11,7 @@
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="0"/>
 		<flag staticattack="90"/>
 		<flag runonhealth="0"/>
@@ -58,7 +58,8 @@
 	<loot>
 		<item name="gold coin" countmax="130" chance="100000"/>
 		<item name="necrotic rod" chance="3000"/>
-		<item id="2160" countmax="4" chance="500"/>
+		<item name="boots of haste" chance="210"/>
+		<item name="skull staff" chance="130"/>
 		<item name="mystic turban" chance="790"/>
 		<item name="white piece of cloth" chance="840"/>
 		<item name="red piece of cloth" chance="500"/>

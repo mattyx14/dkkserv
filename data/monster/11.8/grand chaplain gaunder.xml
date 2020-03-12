@@ -12,7 +12,7 @@
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
 		<flag staticattack="70"/>
 		<flag runonhealth="0"/>
@@ -60,7 +60,7 @@
 		<item name="Onyx Arrow" countmax="3" chance="700"/>
 		<item id="7633" chance="3300"/>
 		<item name="Damaged Armor Plates" countmax="3" chance="350"/>
-		<item name="Falcon Longsword" chance="1"/>
-		<item name="Falcon Shield" chance="1"/>
+		<item name="Falcon Longsword" chance="60"/>
+		<item name="Falcon Shield" chance="60"/>
 	</loot>
 </monster>

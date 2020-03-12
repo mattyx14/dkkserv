@@ -4,7 +4,7 @@
 	<look type="229" corpse="6078"/>
 	<targetchange interval="5000" chance="8"/>
 	<flags>
-		<flag preyable="0" />
+		<!-- <flag preyable="0"/> -->
 		<flag rewardboss="1" />
 		<flag summonable="0"/>
 		<flag attackable="1"/>
@@ -13,7 +13,7 @@
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
 		<flag staticattack="90"/>
 		<flag runonhealth="2500"/>
@@ -99,6 +99,7 @@
 		<item id="7422" chance="800"/><!--Jade Hammer-->
 		<item id="2143" countmax="5" chance="10000"/><!-- white pearl-->
 		<item id="7418" chance="600"/><!--nightmare blade -->
+		<item id="2539" chance="800"/><!--phoenix shield -->
 		<item id="2520" chance="800"/><!-- demon shield-->
 		<item id="34784" chance="150"/><!--mysterious scroll -->
 		<item id="2148" countmax="100" chance="100000"/><!-- gold coin -->

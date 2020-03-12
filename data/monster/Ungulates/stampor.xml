@@ -11,7 +11,7 @@
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
 		<flag staticattack="90"/>
 		<flag runonhealth="0"/>
@@ -52,7 +52,7 @@
 		<item name="gold coin" countmax="242" chance="30000"/>
 		<item name="platinum coin" countmax="2" chance="9920"/>
 		<item name="war hammer" chance="1010"/>
-		<item id="2152" countmax="50" chance="1000"/>
+		<item name="knight armor" chance="870"/>
 		<item name="spiked squelcher" chance="160"/>
 		<item name="strong health potion" countmax="2" chance="5000"/>
 		<item name="strong mana potion" countmax="2" chance="5000"/>

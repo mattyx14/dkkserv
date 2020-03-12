@@ -11,7 +11,7 @@
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
 		<flag staticattack="70"/>
 		<flag runonhealth="0"/>
@@ -53,11 +53,12 @@
 		<item name="Emerald Bangle" chance="4740"/>
 		<item name="Twin Hooks" chance="4570"/>
 		<item name="Springsprout Rod" chance="3510"/>
-		<item name="Green Ectoplasm" chance="1890"/>
-     		<item name="Coral Brooch" chance="1330"/>
+		<item id="34721" chance="1890"/>
+     	<item name="Coral Brooch" chance="1330"/>
 		<item name="Serpent Sword" chance="1150"/>
-		<item id="2160" countmax="2" chance="1000"/>
+		<item name="Assassin Dagger" chance="970"/>
 		<item name="Hexagonal Ruby" chance="940"/>
 		<item name="Spike Sword" chance="530"/>
+		<item name="Wyvern Fang" chance="120"/>
 	</loot>
 </monster>

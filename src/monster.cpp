@@ -1975,7 +1975,7 @@ bool Monster::challengeCreature(Creature* creature)
 
 	bool result = selectTarget(creature);
 	if (result) {
-		targetChangeCooldown = 2000;
+		targetChangeCooldown = 8000;
 		targetExetaCooldown = targetChangeCooldown;
 		targetChangeTicks = 0;
 	}

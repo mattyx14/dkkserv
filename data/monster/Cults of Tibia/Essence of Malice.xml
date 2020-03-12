@@ -4,7 +4,7 @@
 	<look type="351" corpse="11362"/>
 	<targetchange interval="4000" chance="5"/>
 	<flags>
-		
+		<!-- <flag preyable="0"/> -->
 		<flag rewardboss="1"/>
 		<flag summonable="0"/>
 		<flag attackable="1"/>
@@ -13,7 +13,7 @@
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
 		<flag runonhealth="366"/>
 		<flag canwalkonenergy="0"/>
@@ -52,7 +52,7 @@
 		<item name="gold token" chance="1530"/>
 		<item name="gold coin" countmax="200" chance="100000"/>
 		<item name="platinum coin" countmax="57" chance="29840"/>
-		<item id="2160" countmax="1" chance="2500"/>
+		<item name="lightning legs" chance="8723"/>
 		<item name="yellow gem" chance="29460"/>
 		<item name="demon shield" chance="2270"/>
 		<item name="shockwave amulet" chance="15100"/>

@@ -46,7 +46,8 @@
 		<item id="2156" chance="5000"/> <!-- red gem -->
 		<item id="2178" chance="4166"/> <!-- mind stone -->
 		<item id="5895" chance="1666"/> <!-- fish fin -->
-		<item id="2160" countmax="2" chance="1000"/>
+		<item id="2475" chance="840"/> <!-- warrior helmet -->
 		<item id="2169" chance="840"/> <!-- time ring -->
+		<item id="2487" chance="840"/> <!-- crown armor -->
 	</loot>
 </monster>

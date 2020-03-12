@@ -11,7 +11,7 @@
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
 		<flag staticattack="80"/>
 		<flag runonhealth="0"/>
@@ -68,7 +68,7 @@
 		<item name="fish fin" chance="5000"/>
 		<item name="hardened bone" chance="5700"/>
 		<item id="5951" chance="9400"/>
-		<item id="2160" countmax="2" chance="1000"/>
+		<item name="assassin dagger" chance="1000"/>
 		<item name="haunted blade" chance="2000"/>
 		<item name="nightmare blade" chance="380"/>
 		<item name="great mana potion" countmax="3" chance="17000"/>
@@ -77,7 +77,7 @@
 		<item name="violet crystal shard" chance="3000"/>
 		<item name="brown crystal splinter" countmax="2" chance="12000"/>
 		<item name="red crystal fragment" chance="7600"/>
-		<item name="crystal rubbish" chance="12000"/>
+		<item id="33539" chance="12000"/>
 		<item name="cluster of solace" chance="920"/>
 		<item name="frazzle tongue" chance="15000"/>
 		<item name="frazzle skin" chance="14000"/>

@@ -11,7 +11,7 @@
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
 		<flag staticattack="90"/>
 		<flag runonhealth="0"/>
@@ -57,7 +57,7 @@
 		<item name="Titan Axe" chance="3000"/>
 		<item id="7633" chance="3000"/><!-- giant shimmering pearl -->
 		<item name="Spiked Squelcher" chance="2200"/>
-		<item id="2152" countmax="50" chance="1000"/>
+		<item name="Knight Armor" chance="1980"/>
 		<item name="Falcon Crest" chance="1250"/>
 		<item name="War Axe" chance="1230"/>
 		<item name="Violet Gem" chance="1060"/>
@@ -66,7 +66,7 @@
 		<item name="Golden Armor" chance="840"/>
 		<item name="Mastermind Shield" chance="620"/>
 		<item name="Heavy Mace" chance="460"/>
-		<item name="Closed Trap" chance="370"/>
+		<item id="2578" chance="370"/>
 		<item id="2136" chance="100"/><!-- demonbone amulet -->
 	</loot>
 </monster>

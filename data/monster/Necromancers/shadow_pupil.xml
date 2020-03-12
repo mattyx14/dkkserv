@@ -11,7 +11,7 @@
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
 		<flag staticattack="90"/>
 		<flag runonhealth="0"/>
@@ -55,7 +55,7 @@
 	</voices>
 	<loot>
 		<item name="gold coin" countmax="64" chance="100000"/>
-		<item id="2160" countmax="3" chance="60"/>
+		<item name="boots of haste" chance="60"/>
 		<item name="clerical mace" chance="290"/>
 		<item name="mystic turban" chance="580"/>
 		<item name="brown mushroom" chance="5170"/>

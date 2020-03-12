@@ -11,7 +11,7 @@
 		<flag convinceable="1"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
 		<flag staticattack="90"/>
 		<flag runonhealth="0"/>
@@ -25,6 +25,7 @@
 	<elements>
 		<element physicalPercent="20"/>
 		<element firePercent="20"/>
+		<element energyPercent="15"/>
 		<element deathPercent="20"/>
 		<element icePercent="-10"/>
 	</elements>
@@ -32,7 +33,6 @@
 		<immunity paralyze="1"/>
 		<immunity drown="1"/>
 		<immunity earth="1"/>
-		<immunity energy="1"/>
 	</immunities>
 	<loot>
 		<item name="small stone" countmax="4" chance="13890"/>

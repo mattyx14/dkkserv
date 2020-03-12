@@ -12,7 +12,7 @@
 		<flag isblockable="0" />
 		<flag pushable="0" />
 		<flag canpushitems="1" />
-		<flag canpushcreatures="0" />
+		<flag canpushcreatures="1" />
 		<flag targetdistance="1" />
 		<flag staticattack="90" />
 		<flag runonhealth="0" />
@@ -43,12 +43,13 @@
 		<item name="Dark Armor" chance="1000" />
 		<item name="Guardian Shield" chance="1000" />
 		<item name="Rainbow Quartz" chance="700" />
+		<item name="Blue Robe" chance="700" />
 		<item name="Glacier Amulet" chance="700" />
 		<item name="Lightning Pendant" chance="700" />
 		<item name="Prismatic Quartz" chance="700" />
 		<item name="Talon" chance="700" />
 		<item name="Terra Amulet" chance="700" />
-		<item id="2160" countmax="2" chance="1000"/>
+		<item name="Warrior Helmet" chance="700" />
 		<item name="Shockwave Amulet" chance="450" />
 		<item name="Terra Mantle" chance="450" />
 		<item name="Buckle" chance="250" />

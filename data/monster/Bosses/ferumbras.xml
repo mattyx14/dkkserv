@@ -4,7 +4,7 @@
 	<look type="229" corpse="6078"/>
 	<targetchange interval="5000" chance="8"/>
 	<flags>
-		
+		<!-- <flag preyable="0"/> -->
 		<flag rewardboss="1"/>
 		<flag summonable="0"/>
 		<flag attackable="1"/>
@@ -13,7 +13,7 @@
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="2"/>
 		<flag staticattack="90"/>
 		<flag runonhealth="2500"/>
@@ -61,7 +61,7 @@
 		<immunity invisible="1"/>
 	</immunities>
 	<summons maxSummons="4">
-		<summon name="Fire Lord" interval="3000" chance="12"/>
+		<summon name="Demon" interval="3000" chance="12"/>
 	</summons>
 	<voices interval="5000" chance="20">
 		<voice sentence="NO ONE WILL STOP ME THIS TIME!" yell="1"/>
@@ -87,6 +87,7 @@
 		<item id="2127" chance="18000"/>				<!-- emerald bangle -->
 		<item id="7896" chance="18000"/>				<!-- glacier kilt -->
 		<item id="7895" chance="18000"/>				<!-- lightning legs -->
+		<item id="2539" chance="18000"/>				<!-- phoenix shield -->
 		<item id="8918" chance="18000"/>				<!-- spellbook of dark mysteries -->
 		<item id="7885" chance="18000"/>				<!-- terra legs -->
 		<item id="8930" chance="16000"/>				<!-- emerald sword -->

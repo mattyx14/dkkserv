@@ -11,7 +11,7 @@
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
 		<flag staticattack="80"/>
 		<flag runonhealth="0"/>
@@ -69,8 +69,9 @@
 		<item id="9970" countmax="3" chance="580"/>					<!-- Small Topaz -->
 		<item id="7591" chance="700"/>					                <!-- Great Health Potion -->
 		<item id="2143" chance="560"/>					<!-- White Pearl -->
-		<item id="2160" countmax="3" chance="500"/>
+		<item id="7404" chance="130"/>					<!-- Assassin Dagger-->
 		<item id="2158" chance="320"/>					<!--  Blue Gem -->
+		<item id="2656" chance="300"/>					<!-- Blue Robe -->
 		<item id="9971" chance="300"/>					<!--  Gold Ingot -->
 	    <item id="24630" chance="300"/>				<!-- Golden Lotus Brooch -->
 	    <item id="2186" chance="300"/>					<!-- Moonlight Rod, -->

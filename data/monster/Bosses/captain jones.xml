@@ -4,7 +4,7 @@
 	<look type="196" corpse="5566"/>
 	<targetchange interval="4000" chance="10"/>
 	<flags>
-		
+		<!-- <flag preyable="0"/> -->
 		<flag summonable="0"/>
 		<flag attackable="1"/>
 		<flag hostile="1"/>
@@ -12,7 +12,7 @@
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag staticattack="90"/>
 		<flag targetdistance="1"/>
 		<flag runonhealth="0"/>
@@ -48,6 +48,7 @@
 	<loot>
 		<item id="2148" countmax="150" chance="100000"/>	<!-- gold coin -->
 		<item id="2165" chance="33000"/>					<!-- stealth ring -->
+		<item id="2488" chance="5070"/>						<!-- crown legs -->
 		<item id="8871" chance="3070"/>						<!-- focus cape -->
 		<item id="2655" chance="1110"/>						<!-- red robe -->
 		<item id="2383" chance="1110"/>						<!-- spike sword -->

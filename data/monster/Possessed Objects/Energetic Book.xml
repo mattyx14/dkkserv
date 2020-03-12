@@ -11,7 +11,7 @@
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
 		<flag staticattack="90"/>
 		<flag runonhealth="0"/>
@@ -52,5 +52,6 @@
 		<item name="Spellweaver's Robe" chance="350"/>
 		<item name="Wand of Defiance" chance="350"/>
 		<item name="Haunted Blade" chance="550"/>
+		<item name="Lightning Legs" chance="350"/>
 	</loot>
 </monster>

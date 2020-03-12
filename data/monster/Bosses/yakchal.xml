@@ -4,7 +4,7 @@
 	<look type="149" head="8" body="0" legs="85" feet="85" addons="1" corpse="20546"/>
 	<targetchange interval="2000" chance="5"/>
 	<flags>
-		
+		<!-- <flag preyable="0"/> -->
 		<flag summonable="0"/>
 		<flag attackable="1"/>
 		<flag hostile="1"/>
@@ -12,7 +12,7 @@
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag staticattack="50"/>
 		<flag targetdistance="4"/>
 		<flag runonhealth="100"/>
@@ -66,10 +66,12 @@
 		<item id="7590" chance="9500"/>					<!-- great mana potion -->
 		<item id="7443" chance="8000"/>					<!-- bullseye potion -->
 		<item id="7897" chance="8000"/>					<!-- glacier robe -->
+		<item id="2436" chance="8000"/>					<!-- skull staff -->
 		<item id="7459" chance="6350"/>					<!-- pair of earmuffs -->
 		<item id="7439" chance="4700"/>					<!-- berserk potion -->
 		<item id="2168" chance="4700"/>					<!-- life ring -->
 		<item id="7410" chance="4700"/>					<!-- queen's sceptre -->
+		<item id="2195" chance="1500"/>					<!-- boots of haste -->
 		<item id="2796" chance="1500"/>					<!-- green mushroom -->
 	</loot>
 </monster>

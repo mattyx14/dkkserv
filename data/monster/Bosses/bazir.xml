@@ -4,7 +4,7 @@
 	<look type="35" head="0" body="0" legs="0" feet="0" corpse="2916" />
 	<targetchange interval="2000" chance="10" />
 	<flags>
-		<flag preyable="0" />
+		<!-- <flag preyable="0"/> -->
 		<flag summonable="0" />
 		<flag attackable="1" />
 		<flag hostile="1" />
@@ -12,7 +12,7 @@
 		<flag convinceable="0" />
 		<flag pushable="0" />
 		<flag canpushitems="1" />
-		<flag canpushcreatures="0" />
+		<flag canpushcreatures="1" />
 		<flag targetdistance="1" />
 		<flag runonhealth="3000" />
 	</flags>
@@ -99,6 +99,7 @@
 		<item id="2231" chance="9000" />
 		<item id="2144" countmax="15" chance="15000" />
 		<item id="2158" chance="1500" />
+		<item id="2195" chance="4000" />
 		<item id="2186" chance="3500" />
 		<item id="2192" chance="2500" />
 		<item id="2125" chance="1500" />
@@ -106,7 +107,9 @@
 		<item id="2520" chance="15500" />
 		<item id="2462" chance="11000" />
 		<item id="2387" chance="20000" />
+		<item id="2434" chance="4500" />
 		<item id="2167" chance="13500" />
+		<item id="2432" chance="17000" />
 		<item id="2393" chance="12500" />
 		<item id="2148" countmax="100" chance="99900" />
 		<item id="2148" countmax="100" chance="88800" />
@@ -134,6 +137,7 @@
 		<item id="2123" chance="3500" />
 		<item id="2170" chance="13000" />
 		<item id="2402" chance="15500" />
+		<item id="2436" chance="5000" />
 		<item id="2150" countmax="20" chance="13500" />
 		<item id="2145" countmax="5" chance="9500" />
 		<item id="2149" countmax="10" chance="15500" />

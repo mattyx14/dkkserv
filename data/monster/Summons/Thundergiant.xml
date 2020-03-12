@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monster name="Thundergiant" nameDescription="a Thundergiant" race="undead" speed="500" manacost="3000">
-	<health now="30000" max="30000" />
+	<health now="20000" max="20000" />
 	<look type="994" corpse="0" />
 	<targetchange interval="4000" chance="20" />
 	<flags>
-		<flag preyable="0" />
+		<!-- <flag preyable="0"/> -->
 		<flag pet="1" />
 		<flag summonable="0" />
 		<flag attackable="1" />
@@ -13,33 +13,27 @@
 		<flag convinceable="1" />
 		<flag pushable="1" />
 		<flag canpushitems="0" />
-		<flag canpushcreatures="0" />
+		<flag canpushcreatures="1" />
 		<flag staticattack="98" />
 		<flag targetdistance="0" />
-		<flag runonhealth="0" />
+		<flag runonhealth="9000" />
 	</flags>
 	<attacks>
 		<attack name="melee" interval="200" chance="25" min="-100" max="-310" />
 		<attack name="Front Sweep" interval="500" chance="23" length="3" spread="3" min="-100" max="-500">
 			<attribute key="areaEffect" value="lifedrain" />
 		</attack>
-		<attack name="Front Sweep" interval="1000" chance="23" length="3" spread="3" min="-250" max="-150">
-			<attribute key="areaEffect" value="lifedrain" />
-		</attack>
-		<attack name="energy" interval="2000" chance="15" range="7" length="2" min="-175" max="-605">
+		<attack name="energy" interval="2000" chance="15" range="7" length="2" min="-75" max="-705">
 			<attribute key="shootEffect" value="energyball" />
 			<attribute key="areaEffect" value="energy" />
 		</attack>
-		<attack name="Challenge" interval="500" chance="3" radius="8">
-			<attribute key="areaEffect" value="exeta res"/>
-		</attack>
 	</attacks>
-	<defenses armor="100" defense="100">
-		<defense name="healing" interval="2000" chance="50" min="400" max="600">
-			<attribute key="areaEffect" value="blueshimmer"/>
+	<defenses armor="55" defense="95">
+		<defense name="healing" interval="3000" chance="25" min="80" max="600">
+			<attribute key="areaEffect" value="blueshimmer" />
 		</defense>
 		<defense name="Challenge" interval="100" chance="15">
-			<attribute key="areaEffect" value="exeta res"/>
+			<attribute key="areaEffect" value="exeta res" />
 		</defense>
 	</defenses>
 	<elements>

@@ -357,7 +357,7 @@ function Player.sendPreyData(self, slot)
 		self:setPreyUnlocked(CONST_PREY_SLOT_FIRST, 2)
 		self:setPreyState(CONST_PREY_SLOT_FIRST, 1)
 	end
-
+	
 	-- Unlock/lock second slot (premium status)
 	if self:isPremium() then
 		if self:getPreyState(CONST_PREY_SLOT_SECOND) == 0 then
@@ -368,7 +368,7 @@ function Player.sendPreyData(self, slot)
 		self:setPreyUnlocked(CONST_PREY_SLOT_SECOND, 0)
 		self:setPreyState(CONST_PREY_SLOT_SECOND, 0)
 	end
-
+	
 	-- Unlock store slot
 	if self:getPreyState(CONST_PREY_SLOT_THIRD) == 0 then
 		if self:getStorageValue(STORE_SLOT_STORAGE) == 1	then
@@ -379,9 +379,9 @@ function Player.sendPreyData(self, slot)
 			self:setPreyState(CONST_PREY_SLOT_THIRD, 0)
 		end
 	end
-
+	
 	local slotState = self:getPreyState(slot)
-
+	
 	local msg = NetworkMessage()
 	msg:addByte(Prey.S_Packets.PreyData) -- packet header
 
@@ -408,7 +408,7 @@ function Player.sendPreyData(self, slot)
 				return self:resetPreySlot(slot, Prey.StateTypes.SELECTION_CHANGE_MONSTER)
 			end
 		end
-
+		
 	elseif slotState == Prey.StateTypes.SELECTION then
 		msg:addByte(slot)
 		msg:addByte(3)
@@ -465,7 +465,7 @@ function Player.sendPreyData(self, slot)
 		msg:addByte(slotState)
 		msg:addByte(self:getPreyUnlocked(slot))
 	end	
-
+	
 	-- Next free reroll
 	msg:addU16(self:getMinutesUntilFreeReroll(slot))
 

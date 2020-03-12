@@ -11,7 +11,7 @@
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="4"/>
 		<flag staticattack="95"/>
 		<flag runonhealth="900"/>
@@ -44,6 +44,9 @@
 		<defense name="healing" interval="2000" chance="15" min="60" max="230">
 			<attribute key="areaEffect" value="blueshimmer"/>
 		</defense>
+		<defense name="invisible" interval="2000" chance="15" duration="8000">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
 	</defenses>
 	<elements>
 		<element earthPercent="95"/>
@@ -73,7 +76,7 @@
 		<item name="gold coin" countmax="100" chance="56500"/>
 		<item name="gold coin" countmax="47" chance="40000"/>
 		<item name="energy ring" chance="1800"/>
-		<item id="2160" countmax="3" chance="7000"/>
+		<item name="skull staff" chance="6500"/>
 		<item name="magic sulphur" chance="600"/>
 		<item name="red piece of cloth" chance="1420"/>
 		<item name="great mana potion" chance="19700"/>

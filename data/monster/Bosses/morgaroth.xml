@@ -4,7 +4,7 @@
 	<look type="12" head="0" body="94" legs="79" feet="79" corpse="6068"/>
 	<targetchange interval="10000" chance="20"/>
 	<flags>
-		
+		<!-- <flag preyable="0"/> -->
 		<flag rewardboss="1"/>
 		<flag summonable="0"/>
 		<flag attackable="1"/>
@@ -13,7 +13,7 @@
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag staticattack="98"/>
 		<flag targetdistance="1"/>
 		<flag runonhealth="100"/>
@@ -75,7 +75,7 @@
 		<immunity invisible="1"/>
 	</immunities>
 	<summons maxSummons="6">
-		<summon name="Fire Lord" interval="4000" chance="33"/>
+		<summon name="Demon" interval="4000" chance="33"/>
 	</summons>
 	<voices interval="5000" chance="30">
 		<voice sentence="I AM MORGAROTH, LORD OF THE TRIANGLE... AND YOU ARE LOST!" yell="1"/>
@@ -132,6 +132,7 @@
 		<item name="thunder hammer" unique="1" chance="9000"/>
 		<item name="small diamond" countmax="5" chance="4500"/>
 		<item id="2124" chance="4500"/><!-- crystal ring -->
+		<item name="fire axe" chance="4500"/>
 		<item name="great health potion" chance="4500"/>
 		<item name="mastermind shield" chance="4500"/>
 		<item name="dragon robe" chance="4500"/>

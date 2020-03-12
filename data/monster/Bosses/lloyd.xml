@@ -11,7 +11,7 @@
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
 		<flag staticattack="90"/>
 		<flag runonhealth="1"/>
@@ -19,7 +19,7 @@
 		<flag canwalkonenergy="1"/>
 		<flag canwalkonfire="1"/>
 		<flag canwalkonpoison="1"/>
-		
+		<!-- <flag preyable="0"/> -->
 	</flags>
 	<script>
 		<event name="Lloyd"/>
@@ -70,6 +70,7 @@
 		<item id="2158" chance="5000"/><!-- Blue Gem -->
 		<item id="2155" chance="5000"/><!-- Green Gem -->
 		<item id="2154" chance="5000"/><!-- yellow Gem -->
+		<item id="2195" chance="5000"/><!-- boh -->
 		<item id="26182" chance="5000"/><!-- collar of blue plasma -->
 		<item id="5891" chance="5000"/><!-- enchanted chicken wing -->
 		<item id="7895" chance="5000"/><!--  Lightning Legs -->

@@ -4,7 +4,7 @@
 	<look type="241" head="20" corpse="6344"/>
 	<targetchange interval="60000" chance="0"/>
 	<flags>
-		
+		<!-- <flag preyable="0"/> -->
 		<flag summonable="0"/>
 		<flag attackable="1"/>
 		<flag hostile="1"/>
@@ -12,7 +12,7 @@
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
 		<flag staticattack="90"/>
 		<flag runonhealth="540"/>
@@ -73,6 +73,7 @@
 		<item id="2148" countmax="169" chance="82350"/><!-- gold coin -->
 		<item id="2152" countmax="4" chance="55880"/><!-- platinum coin -->
 		<item id="5944" chance="85290"/><!-- soul orb -->
+		<item id="2656" chance="32350"/><!-- blue robe -->
 		<item id="2424" chance="4210"/><!-- silver mace -->
 		<item id="2647" chance="8820"/><!-- plate legs -->
 		<item id="2200" chance="23530"/><!-- protection amulet -->

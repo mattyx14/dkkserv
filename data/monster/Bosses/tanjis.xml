@@ -4,7 +4,7 @@
 	<look type="446" corpse="15228"/>
 	<targetchange interval="2000" chance="50"/>
 	<flags>
-		
+		<!-- <flag preyable="0"/> -->
 		<flag rewardboss="1"/>
 		<flag summonable="0"/>
 		<flag attackable="1"/>
@@ -13,7 +13,7 @@
 		<flag convinceable="0"/>
 		<flag pushable="1"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="0"/>
 		<flag runonhealth="60"/>
 	</flags>
@@ -68,7 +68,6 @@
 		<element deathPercent="-20"/>
 	</elements>
 	<loot>
-		<item name="Small Enchanted Sapphire" countmax="8" chance="100000"/>
 		<item id="15409" chance="5000"/><!-- depth ocrea -->
 		<item id="15414" chance="20000" unique="1"/><!-- ornate mace -->
 		<item id="15413" chance="2000"/><!-- ornate shield -->

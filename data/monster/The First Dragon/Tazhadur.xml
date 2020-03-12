@@ -4,7 +4,7 @@
 	<look type="947" head="57" body="118" legs="57" feet="0" addons="3" corpse="27733" />
 	<targetchange interval="4000" chance="10" />
 	<flags>
-		<flag preyable="0" />
+		<!-- <flag preyable="0"/> -->
 		<flag summonable="0" />
 		<flag attackable="1" />
 		<flag hostile="1" />
@@ -13,7 +13,7 @@
 		<flag isblockable="0" />
 		<flag pushable="0" />
 		<flag canpushitems="1" />
-		<flag canpushcreatures="0" />
+		<flag canpushcreatures="1" />
 		<flag targetdistance="1" />
 	</flags>
 	<attacks>
@@ -47,7 +47,9 @@
 		<item id="2387" chance="10000" /> <!-- double axe -->
 		<item id="27605" countmax="2" chance="100000"/> <!-- dragon blood -->
 		<item id="2672" countmax="5" chance="40000" /> <!-- dragon ham -->
+		<item id="2434" chance="6000" /> <!-- dragon hammer -->
 		<item id="2201" chance="10000" /> <!-- dragon necklace -->
+		<item id="2492" chance="3000" /> <!-- dragon scale mail -->
 		<item id="2516" chance="6000" /> <!-- dragon shield -->
 		<item id="27606" chance="100000"/> <!-- dragon tongue -->
 		<item id="7430" chance="1000" /> <!-- dragonbone staff -->

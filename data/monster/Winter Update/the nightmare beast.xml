@@ -4,7 +4,7 @@
 	<look type="1144" corpse="34797"/>
 	<targetchange interval="4000" chance="10"/>
 	<flags>
-	    
+	    <!-- <flag preyable="0"/> -->
         <flag rewardboss="1"/>
 		<flag summonable="0"/>
 		<flag attackable="1"/>
@@ -14,7 +14,7 @@
 		<flag isblockable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
 		<flag staticattack="90"/>
 		<flag runonhealth="0"/>
@@ -61,6 +61,7 @@
 		<item name="Enchanted Sleep Shawl" chance="100"/>
 		<item name="Ice Shield" chance="100"/>
 		<item name="Purple Tendril Lantern" chance="100"/>
+		<item name="Soul Stone" chance="100"/>
 		<item name="Turquoise Tendril Lantern" chance="100"/>
 		<item name="Unicorn Figurine" chance="100"/>
 	</loot>

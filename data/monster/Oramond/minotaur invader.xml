@@ -11,7 +11,7 @@
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
 		<flag staticattack="90"/>
 		<flag runonhealth="0"/>
@@ -39,7 +39,7 @@
 		<item id="2150" chance="7692"/> <!-- small amethyst -->
 		<item id="5878" chance="5000"/> <!-- minotaur leather -->
 		<item id="2147" chance="3703"/> <!-- small ruby -->
-		<item id="2152" countmax="50" chance="1000"/>
+		<item id="2430" chance="1250"/> <!-- knight axe -->
 		<item id="2515" chance="1250"/> <!-- guardian shield -->
 		<item id="2156" chance="1250"/> <!-- red gem -->
 		<item id="5911" chance="1250"/> <!-- red piece of cloth -->

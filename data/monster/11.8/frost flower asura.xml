@@ -11,7 +11,7 @@
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="3"/>
 		<flag staticattack="80"/>
 		<flag runonhealth="0"/>
@@ -45,6 +45,6 @@
 	<loot>
 		<item id="2148" countmax="242" chance="97000"/>	            <!-- gold coin -->
  		<item id="2148" countmax="102" chance="97000"/>	            <!-- gold coin -->
-		<item id="2160" countmax="1" chance="2000"/>
+		<item id="2656" chance="2000"/>					<!-- Blue Robe -->
 	</loot>
 </monster>

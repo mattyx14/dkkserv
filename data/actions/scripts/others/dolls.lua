@@ -42,6 +42,11 @@ local dolls = {
 		"Extra! Extra! Read all about it!",
 		"Fresh off the press!"
 	},
+	[8982] = {
+		"Hail TibiaNordic!",
+		"So cold..",
+		"Run, mammoth!"
+	},
 	[23806] = {
 		"I can hear their whisperings... Revenge!",
 		"You shall feel pain and terror, |PLAYERNAME|",

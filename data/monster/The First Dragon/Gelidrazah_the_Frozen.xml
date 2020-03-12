@@ -4,7 +4,7 @@
 	<look type="947" head="57" body="30" legs="57" feet="57" addons="3" corpse="27733"/>
 	<targetchange interval="4000" chance="10"/>
 	<flags>
-		
+		<!-- <flag preyable="0"/> -->
 		<flag summonable="0"/>
 		<flag attackable="1"/>
 		<flag hostile="1"/>
@@ -13,7 +13,7 @@
 		<flag isblockable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
 	</flags>
 	<attacks>

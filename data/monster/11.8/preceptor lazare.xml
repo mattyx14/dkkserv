@@ -12,7 +12,7 @@
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
 		<flag staticattack="90"/>
 		<flag runonhealth="0"/>
@@ -70,13 +70,13 @@
 		<item id="7633" chance="800"/>
 		<item name="Violet Gem" chance="600"/>
 		<item name="Green Gem" chance="600"/>
-		<item id="2152" countmax="50" chance="600"/>
+		<item name="Knight Armor" chance="600"/>
 		<item name="Titan Axe" chance="600"/>
 		<item name="Spiked Squelcher" chance="600"/>
 		<item name="Patch of Fine Cloth" countmax="3" chance="500"/>
 		<item name="Golden Armor" chance="250"/>
 		<item name="Mastermind Shield" chance="200"/>
-		<item name="Falcon Rod" chance="1"/>
-		<item name="Falcon Greaves" chance="1"/>
+		<item name="Falcon Rod" chance="100"/>
+		<item name="Falcon Greaves" chance="100"/>
 	</loot>
 </monster>

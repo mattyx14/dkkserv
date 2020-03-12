@@ -11,14 +11,14 @@
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
 		<flag staticattack="90"/>
 		<flag runonhealth="15"/>
 		<flag canwalkonenergy="1"/>
 		<flag canwalkonfire="1"/>
 		<flag canwalkonpoison="1"/>
-		
+		<!-- <flag preyable="0"/> -->
 		<flag rewardboss="1"/>
 	</flags>
 	<script>
@@ -78,6 +78,7 @@
 		<item id="7439" chance="14460"/><!-- Berserk Potion -->
 		<item id="7443" chance="14460"/><!--Bullseye Potion -->
 		<item id="7632" chance="7000"/><!-- Giant Shimmering Pearl -->
+		<item id="2407" chance="20000"/><!-- Bright -->
 		<item id="7453" chance="100"/><!-- Executioner -->
 		<item id="27622" chance="100"/><!-- Forbidden Fruit -->
 		<item id="5015" chance="500"/><!-- Mandrake -->

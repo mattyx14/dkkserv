@@ -11,7 +11,7 @@
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
 		<flag staticattack="75"/>
 		<flag runonhealth="0"/>
@@ -66,7 +66,7 @@
 		<item name="strong health potion" chance="20000"/>
 		<item name="strong mana potion" chance="20000"/>
 		<item name="lightning pendant" chance="862"/>
-		<item id="2160" countmax="1" chance="500"/>
+		<item name="lightning legs" chance="480"/>
 		<item name="shockwave amulet" chance="571"/>
 		<item name="broken ring of ending" chance="261"/>
 		<item name="yielowax" chance="300"/>

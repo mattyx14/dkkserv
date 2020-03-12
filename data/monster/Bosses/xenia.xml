@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monster name="Xenia" nameDescription="Xenia" race="blood" experience="255" speed="176">
 	<health now="200" max="200"/>
-	<look type="137" head="95" body="115" legs="115" feet="95" addons="3" corpse="20542"/>
+	<look type="137" head="95" body="115" legs="115" feet="95" corpse="20542"/>
 	<targetchange interval="5000" chance="8"/>
 	<flags>
-		
+		<!-- <flag preyable="0"/> -->
 		<flag summonable="0"/>
 		<flag attackable="1"/>
 		<flag hostile="1"/>
@@ -39,9 +39,6 @@
 		<item id="2229" countmax="2" chance="100000"/><!-- skull -->
 		<item name="gold coin" countmax="34" chance="66666"/>
 		<item name="sabre" chance="33000"/>
-		<item id="2537" chance="10"/> <!-- Amazon Shield -->
-		<item id="2499" chance="10"/> <!-- Amazon Helmet -->
-		<item id="2500" chance="10"/> <!-- Amazon Armor -->
 		<item name="studded shield" chance="33000"/>
 	</loot>
 </monster>

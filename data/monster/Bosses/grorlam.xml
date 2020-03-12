@@ -4,7 +4,7 @@
 	<look type="205" corpse="6005" />
 	<targetchange interval="5000" chance="3" />
 	<flags>
-		<flag preyable="0" />
+		<!-- <flag preyable="0"/> -->
 		<flag summonable="0" />
 		<flag attackable="1" />
 		<flag hostile="1" />
@@ -12,7 +12,7 @@
 		<flag convinceable="0" />
 		<flag pushable="0" />
 		<flag canpushitems="1" />
-		<flag canpushcreatures="0" />
+		<flag canpushcreatures="1" />
 		<flag targetdistance="1" />
 		<flag staticattack="90" />
 		<flag runonhealth="0" />
@@ -48,6 +48,5 @@
 		<item id="2483" chance="10000" /><!-- scale armor -->
 		<item id="1294" countmax="5" chance="20000" /><!-- small stone -->
 		<item id="2395" chance="2500" /><!-- carlin sword -->
-		<item id="2504" chance="50" /><!-- Dwarven Legs -->
 	</loot>
 </monster>

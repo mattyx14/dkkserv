@@ -11,7 +11,7 @@
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
 		<flag staticattack="90"/>
 		<flag runonhealth="350"/>
@@ -79,7 +79,7 @@
 		<item name="platinum coin" countmax="4" chance="87730"/>
 		<item name="stealth ring" chance="550"/>
 		<item name="blank rune" countmax="2" chance="22500"/>
-		<item id="2160" countmax="1" chance="1000"/>
+		<item name="crown armor" chance="660"/>
 		<item name="shadow herb" countmax="2" chance="26930"/>
 		<item id="6300" chance="330"/><!-- death ring -->
 		<item name="demonic essence" chance="16320"/>

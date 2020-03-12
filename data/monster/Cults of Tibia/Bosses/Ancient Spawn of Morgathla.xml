@@ -4,7 +4,7 @@
 	<look type="1067" corpse="23375" />
 	<targetchange interval="2000" chance="4" />
 	<flags>
-		<flag preyable="0" />
+		<!-- <flag preyable="0"/> -->
 		<flag summonable="0" />
 		<flag attackable="1" />
 		<flag hostile="1" />
@@ -13,7 +13,7 @@
 		<flag pushable="0" />
 		<flag isblockable="0" />
 		<flag canpushitems="1" />
-		<flag canpushcreatures="0" />
+		<flag canpushcreatures="1" />
 		<flag targetdistance="1" />
 		<flag staticattack="90" />
 		<flag runonhealth="0" />
@@ -63,7 +63,9 @@
 		<item id="9970" countmax="2" chance="5810" />		<!-- small topaz -->
 		<item id="2147" countmax="2" chance="4520" />		<!-- small ruby -->
 		<item id="7412" chance="900" />						<!-- butcher's axe -->
+		<item id="2487" chance="770" />						<!-- crown armor -->
 		<item id="23547" chance="1420" />					<!-- execowtioner axe -->
+		<item id="2430" chance="770" />						<!-- knight axe -->
 		<item id="7413" chance="390" />						<!-- titan axe -->
 		<item id="7401" chance="520" />						<!-- minotaur trophy -->
 	</loot>

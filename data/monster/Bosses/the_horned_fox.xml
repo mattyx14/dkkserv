@@ -4,7 +4,7 @@
 	<look type="29" corpse="5983" />
 	<targetchange interval="5000" chance="8" />
 	<flags>
-		<flag preyable="0" />
+		<!-- <flag preyable="0"/> -->
 		<flag summonable="0" />
 		<flag attackable="1" />
 		<flag hostile="1" />
@@ -12,7 +12,7 @@
 		<flag convinceable="0" />
 		<flag pushable="0" />
 		<flag canpushitems="1" />
-		<flag canpushcreatures="0" />
+		<flag canpushcreatures="1" />
 		<flag targetdistance="1" />
 		<flag staticattack="90" />
 		<flag runonhealth="0" />
@@ -49,6 +49,7 @@
 		<voice sentence="Help me, Boys!" />
 	</voices>
 	<loot>
+		<item id="5804" chance="100000" />				<!-- nose ring -->
 		<item id="2148" countmax="99" chance="96000" />	<!-- gold coin -->
 		<item id="5878" chance="96000" />				<!-- minotaur leather -->
 		<item id="12428" countmax="2" chance="92590" />	<!-- minotaur horn -->
@@ -57,7 +58,7 @@
 		<item id="2465" chance="25000" />				<!-- brass armor -->
 		<item id="2666" countmax="2" chance="18000" />	<!-- meat -->
 		<item id="2513" chance="14000" />				<!-- battle shield -->
-		<item id="2502" chance="50" />				<!-- dwarven helmet -->
+		<item id="2502" chance="5000" />				<!-- dwarven helmet -->
 		<item id="2580" chance="7410" />					<!-- fishing rod -->
 		<item id="7588" chance="7410" />					<!-- strong health potion -->
 		<item id="2387" chance="3700" />					<!-- double axe -->

@@ -4,7 +4,7 @@
 	<look type="1142" corpse="34789" />
 	<targetchange interval="4000" chance="10" />
 	<flags>
-		<flag preyable="0" />
+		<!-- <flag preyable="0"/> -->
 		<flag rewardboss="1" />
 		<flag summonable="0" />
 		<flag attackable="1" />
@@ -14,7 +14,7 @@
 		<flag isblockable="0" />
 		<flag pushable="0" />
 		<flag canpushitems="1" />
-		<flag canpushcreatures="0" />
+		<flag canpushcreatures="1" />
 		<flag targetdistance="1" />
 		<flag staticattack="90" />
 		<flag runonhealth="0" />
@@ -70,6 +70,7 @@
 		<item name="Blue Gem" chance="10340" />
 		<item name="Huge Chunk of Crude Iron" chance="17240" />
 		<item id="26185" chance="3450" /> <!-- ring of blue plasma-->
+		<item name="Skull Staff" chance="13790" />
 		<item name="Energized Limb" chance="3450" />
 		<item name="Purple Tendril Lantern" chance="1500" />
 	</loot>

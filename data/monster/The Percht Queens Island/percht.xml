@@ -11,7 +11,7 @@
 		<flag convinceable="0" />
 		<flag pushable="0" />
 		<flag canpushitems="1" />
-		<flag canpushcreatures="0" />
+		<flag canpushcreatures="1" />
 		<flag targetdistance="1" />
 		<flag staticattack="90" />
 		<flag runonhealth="50" />
@@ -57,7 +57,7 @@
 		<item name="grainy fireworks powder" chance="6640" />
 		<item name="broken bell" chance="5390" />
 		<item name="versicolour fireworks powder" chance="4220" />
-		<item name="dark bell" chance="3190" />
+		<item id="35152" chance="3190" />
 		<item name="green fireworks powder" chance="2790" />
 		<item name="purple fireworks powder" chance="2090" />
 		<item name="turquoise fireworks powder" chance="1980" />
@@ -65,6 +65,8 @@
 		<item name="yellow fireworks powder" chance="1870" />
 		<item name="red fireworks powder" chance="1830" />
 		<item name="magma amulet" chance="1320" />
+		<item name="magma coat" chance="1320" />
 		<item name="magma monocle" chance="950" />
+		<item name="magma legs" chance="510" />
 	</loot>
 </monster>

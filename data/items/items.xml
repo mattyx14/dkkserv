@@ -219,10 +219,14 @@
 	</item>
 	<item fromid="1196" toid="1204" article="a" name="lava wall" />
 	<item fromid="1205" toid="1208" article="an" name="archway" />
-	<item fromid="1209" toid="1210" article="a" name="closed door">
+	<item id="1209" article="a" name="closed door">
 		<attribute key="type" value="door" />
 		<attribute key="blockprojectile" value="1" />
 		<attribute key="description" value="It is locked." />
+	</item>
+	<item id="1210" article="a" name="closed door">
+		<attribute key="type" value="door" />
+		<attribute key="blockprojectile" value="1" />
 	</item>
 	<item id="1211" article="an" name="open door">
 		<attribute key="type" value="door" />
@@ -463,7 +467,7 @@
 	</item>
 	<item id="1388" article="a" name="ramp">
 		<attribute key="floorchange" value="east" />
-	</item>
+	</item>	
 	<item id="1389" article="a" name="ramp" />
 	<item id="1390" article="a" name="ramp">
 		<attribute key="floorchange" value="west" />
@@ -3247,7 +3251,7 @@
 		<attribute key="elementHoly" value="5" />
 		<attribute key="weaponType" value="sword" />
 		<attribute key="extradef" value="3" />
-		<attribute key="imbuingSlots" value="3" />
+		<attribute key="imbuingSlots" value="2" />
 	</item>
 	<item id="2401" article="a" name="staff">
 		<attribute key="weight" value="3800" />
@@ -3399,7 +3403,7 @@
 		<attribute key="elementEnergy" value="5" />
 		<attribute key="weaponType" value="club" />
 		<attribute key="extradef" value="1" />
-		<attribute key="imbuingSlots" value="3" />
+		<attribute key="imbuingSlots" value="2" />
 	</item>
 	<item id="2422" article="an" name="iron hammer">
 		<attribute key="weight" value="6600" />
@@ -3476,7 +3480,7 @@
 		<attribute key="elementEarth" value="5" />
 		<attribute key="weaponType" value="axe" />
 		<attribute key="extradef" value="3" />
-		<attribute key="imbuingSlots" value="3" />
+		<attribute key="imbuingSlots" value="2" />
 	</item>
 	<item id="2432" article="a" name="fire axe">
 		<attribute key="description" value="The blade is a magic flame." />
@@ -3836,7 +3840,7 @@
 		<attribute key="weight" value="9900" />
 		<attribute key="armor" value="13" />
 		<attribute key="slotType" value="body" />
-		<attribute key="imbuingSlots" value="2" />
+		<attribute key="imbuingSlots" value="1" />
 	</item>
 	<item id="2488" name="crown legs">
 		<attribute key="weight" value="6500" />
@@ -8218,7 +8222,7 @@
 	<item fromid="4992" toid="4994" article="a" name="dead butterfly">
 		<attribute key="weight" value="20" />
 		<attribute key="decayTo" value="4313" />
-		<attribute key="duration" value="60" />
+		<attribute key="duration" value="300" />
 	</item>
 	<item id="4995" name="sharp icicles" article="some" />
 	<item id="4996" name="canopic jar">
@@ -8236,7 +8240,7 @@
 	<item id="5014" article="a" name="dead butterfly">
 		<attribute key="weight" value="20" />
 		<attribute key="decayTo" value="4313" />
-		<attribute key="duration" value="60" />
+		<attribute key="duration" value="300" />
 	</item>
 	<item id="5015" article="a" name="mandrake">
 		<attribute key="description" value="This rare root is often used for shamanic medicines." />
@@ -23970,7 +23974,7 @@
 		<attribute key="defense" value="29" />
 		<attribute key="attack" value="54" />
 		<attribute key="weaponType" value="axe" />
-		<attribute key="imbuingSlots" value="3" />
+		<attribute key="imbuingSlots" value="2" />
 	</item>
 	<item id="15405" article="a" name="sandfish" plural="sandfish">
 		<attribute key="weight" value="660" />
@@ -24044,7 +24048,7 @@
 		<attribute key="attack" value="52" />
 		<attribute key="defense" value="24" />
 		<attribute key="weaponType" value="club" />
-		<attribute key="imbuingSlots" value="3" />
+		<attribute key="imbuingSlots" value="2" />
 	</item>
 	<item id="15415" article="a" name="trophy of Obujos">
 		<attribute key="weight" value="500" />
@@ -34988,7 +34992,7 @@
 		<attribute key="attack" value="53" />
 		<attribute key="weaponType" value="sword" />
 		<attribute key="weight" value="5000" />
-		<attribute key="imbuingSlots" value="3" />
+		<attribute key="imbuingSlots" value="2" />
 	</item>
 	<item id="25922" article="a" name="blade of remedy"/>
 	<item id="25923" article="a" name="slayer of remedy">
@@ -35160,8 +35164,8 @@
 		<attribute key="shootType" value="ice" />
 		<attribute key="range" value="3" />
 		<attribute key="imbuingSlots" value="3" />
-	</item>
-	<item fromid="25996" toid="25998" article="a" name="rod of carving" />
+	</item> 
+	<item fromid="25996" toid="25998" article="a" name="rod of carving" />	
 	<item fromid="25999" toid="26000" article="a" name="crater" />
 	<item fromid="26005" toid="26007" article="a" name="crater" />
 	<item id="26019" name="rift floor">
@@ -39221,7 +39225,7 @@
 		<attribute key="attack" value="55" />
 		<attribute key="elementHoly" value="5" />
 		<attribute key="weaponType" value="sword" />
-		<attribute key="imbuingSlots" value="3" />
+		<attribute key="imbuingSlots" value="2" />
 	</item>
 	<item id="30685" article="a" name="slayer of destruction">
 		<attribute key="weight" value="7000" />
@@ -39238,7 +39242,7 @@
 		<attribute key="attack" value="56" />
 		<attribute key="elementHoly" value="5" />
 		<attribute key="weaponType" value="axe" />
-		<attribute key="imbuingSlots" value="3" />
+		<attribute key="imbuingSlots" value="2" />
 	</item>
 	<item id="30687" article="a" name="chopper of destruction">
 		<attribute key="weight" value="7000" />
@@ -39255,7 +39259,7 @@
 		<attribute key="attack" value="55" />
 		<attribute key="elementHoly" value="5" />
 		<attribute key="weaponType" value="club" />
-		<attribute key="imbuingSlots" value="3" />
+		<attribute key="imbuingSlots" value="2" />
 	</item>
 	<item id="30689" article="a" name="hammer of destruction">
 		<attribute key="weight" value="7000" />
@@ -39292,7 +39296,7 @@
 		<attribute key="shootType" value="energy" />
 		<attribute key="range" value="4" />
 		<attribute key="magiclevelpoints" value="5" />
-		<attribute key="imbuingSlots" value="3" />
+		<attribute key="imbuingSlots" value="2" />
 	</item>
 	<item id="30693" article="a" name="rod of destruction">
 		<attribute key="weight" value="3500" />
@@ -39300,7 +39304,7 @@
 		<attribute key="shootType" value="ice" />
 		<attribute key="range" value="4" />
 		<attribute key="magiclevelpoints" value="5" />
-		<attribute key="imbuingSlots" value="3" />
+		<attribute key="imbuingSlots" value="2" />
 	</item>
 	<item id="30694" article="a" name="shadow bite plant"/> <!-- Grimvale Quest -->
 	<item id="30695" name="shadow bite berries"> <!-- Grimvale Quest - The Curse Spreads -->
@@ -43806,11 +43810,25 @@
 		<attribute key="floorchange" value="south" />
 	</item>	
 	<item fromid="35662" toid="35667" article="a" name="ruined ancient wall"/> 
-	<item fromid="35668" toid="35671" article="a" name="closed door">
+	<item id="35668" article="a" name="closed door"><!-- key door locked -->
+		<attribute key="type" value="door" />
+		<attribute key="blockprojectile" value="1" />
+		<attribute key="description" value="It is locked." />
+	</item>
+	<item id="35669" article="a" name="closed door"><!-- key door closed -->
 		<attribute key="type" value="door" />
 		<attribute key="blockprojectile" value="1" />
 	</item>
-	<item fromid="35672" toid="35673" article="an" name="open door">
+	<item id="35670" article="a" name="closed door"><!-- key door locked -->
+		<attribute key="type" value="door" />
+		<attribute key="blockprojectile" value="1" />
+		<attribute key="description" value="It is locked." />
+	</item>
+	<item id="35671" article="a" name="closed door"><!-- key door closed -->
+		<attribute key="type" value="door" />
+		<attribute key="blockprojectile" value="1" />
+	</item>
+	<item fromid="35672" toid="35673" article="an" name="open door"><!-- key door open -->
 		<attribute key="type" value="door" />
 	</item>
 	<item id="35674" article="a" name="ancient wall" />
@@ -45299,7 +45317,7 @@
 	</item>
 	<item id="36460" article="a" name="winged backpack">
 		<attribute key="weight" value="1500" />
-		<attribute key="containerSize" value="240" />
+		<attribute key="containerSize" value="24" />
 		<attribute key="slotType" value="backpack" />
 		<attribute key="imbuingSlots" value="1" />
 	</item>

@@ -43,7 +43,7 @@
 		<item name="white mushroom" countmax="3" chance="24000"/>
 		<item name="Soul Orb" countmax="5" chance="43500"/>
 <!--Incomum-->
-		<item id="2152" countmax="25" chance="250"/>
+		<item name="Knight Axe" chance="250"/>
 		<item name="pelvis bone" countmax="10" chance="10630"/>
 		<item name="Unholy Bone" countmax="5" chance="10630"/>
 <!--Semi-raro-->

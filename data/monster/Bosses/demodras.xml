@@ -4,7 +4,7 @@
 	<look type="204" corpse="5984"/>
 	<targetchange interval="5000" chance="8"/>
 	<flags>
-		
+		<!-- <flag preyable="0"/> -->
 		<flag summonable="0"/>
 		<flag attackable="1"/>
 		<flag hostile="1"/>
@@ -12,7 +12,7 @@
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
 		<flag staticattack="90"/>
 		<flag runonhealth="300"/>
@@ -52,11 +52,12 @@
 		<item id="2672" countmax="2" chance="20000"/><!-- dragon ham -->
 		<item id="2033" chance="1818"/><!-- golden mug -->
 		<item id="1976" chance="3333"/><!-- gemmed book -->
+		<item id="2492" chance="333"/><!-- dragon scale mail -->
 		<item id="2547" countmax="10" chance="2222"/><!-- power bolt -->
 		<item id="2796" chance="6666"/><!-- green mushroom -->
 		<item id="2392" chance="1428"/><!-- fire sword -->
 		<item id="2146" countmax="2" chance="2222"/><!-- small sapphire -->
 		<item id="5948" chance="5000"/><!-- red dragon leather -->
-		<item id="5919" chance="1000"/><!-- dragon claw -->
+		<item id="5919" chance="100000"/><!-- dragon claw -->
 	</loot>
 </monster>

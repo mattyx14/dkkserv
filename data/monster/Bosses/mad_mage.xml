@@ -4,7 +4,7 @@
 	<look type="394" corpse="13603"/>
 	<targetchange interval="5000" chance="30"/>
 	<flags>
-		
+		<!-- <flag preyable="0"/> -->
 		<flag rewardboss="1"/>
 		<flag summonable="0"/>
 		<flag attackable="1"/>
@@ -13,7 +13,7 @@
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="4"/>
 		<flag staticattack="90"/>
 		<flag runonhealth="0"/>
@@ -69,6 +69,7 @@
 		<item id="13756" chance="1680" unique="1"/>					<!-- mage's cap -->
 		<item id="7443" chance="1100"/>						<!-- bullseye potion -->
 		<item id="9941" chance="740"/>						<!-- crystal of focus -->
+		<item id="2195" chance="2370"/>						<!-- boots of haste -->
 		<item id="12410" chance="370"/>						<!-- luminous orb -->
 		<item id="2114" chance="1370"/>						<!-- piggy bank -->
 		<item id="2123" chance="1370"/>						<!-- ring of the sky -->

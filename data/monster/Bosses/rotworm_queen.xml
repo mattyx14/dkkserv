@@ -4,7 +4,7 @@
 	<look type="295" corpse="8947"/>
 	<targetchange interval="60000" chance="0"/>
 	<flags>
-		
+		<!-- <flag preyable="0"/> -->
 		<flag summonable="0"/>
 		<flag attackable="1"/>
 		<flag hostile="1"/>
@@ -24,6 +24,5 @@
 		<item id="2148" countmax="47" chance="100000"/><!-- gold coin -->
 		<item id="8971" chance="3333"/><!-- gland -->
 		<item id="3976" countmax="45" chance="20000"/><!-- worm -->
-		<item id="36452" chance="10"/><!-- Winged Boots -->
 	</loot>
 </monster>

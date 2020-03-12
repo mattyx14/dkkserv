@@ -11,7 +11,7 @@
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
 		<flag staticattack="90"/>
 		<flag runonhealth="0"/>
@@ -62,9 +62,11 @@
 		<item name="gold coin" countmax="100" chance="50000"/>
 		<item name="platinum coin" countmax="9" chance="100000"/>
 		<item name="dwarven ring" chance="2280"/>
-		<item id="2160" countmax="3" chance="500"/>
+		<item name="knight axe" chance="2070"/>
+		<item name="fire axe" chance="380"/>
 		<item name="royal helmet" chance="150"/>
 		<item name="guardian shield" chance="1400"/>
+		<item name="tower shield" chance="1002"/>
 		<item name="black shield" chance="640"/>
 		<item name="brown mushroom" countmax="2" chance="15190"/>
 		<item name="iron ore" chance="8490"/>

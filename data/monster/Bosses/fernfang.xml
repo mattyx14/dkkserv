@@ -4,7 +4,7 @@
 	<look type="206" corpse="20566" />
 	<targetchange interval="5000" chance="8" />
 	<flags>
-		<flag preyable="0" />
+		<!-- <flag preyable="0"/> -->
 		<flag summonable="0" />
 		<flag attackable="1" />
 		<flag hostile="1" />
@@ -12,7 +12,7 @@
 		<flag convinceable="0" />
 		<flag pushable="0" />
 		<flag canpushitems="1" />
-		<flag canpushcreatures="0" />
+		<flag canpushcreatures="1" />
 		<flag targetdistance="4" />
 		<flag staticattack="90" />
 		<flag runonhealth="0" />
@@ -68,7 +68,6 @@
 		<item id="2044" chance="13000" />				<!-- lamp -->
 		<item id="2401" chance="13000" />				<!-- staff -->
 		<item id="5786" chance="13000" />				<!-- wooden whistle -->
-		<item id="22422" chance="50" />				<!-- crude umbral spellbook -->
 		<item id="2260" chance="7000" />					<!-- blank rune -->
 		<item id="2689" chance="7000" />					<!-- bread -->
 		<item id="2652" chance="7000" />					<!-- green tunic -->

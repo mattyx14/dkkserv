@@ -29,6 +29,5 @@
 		<item id="2695" chance="950"/><!-- egg -->
 		<item name="worm" countmax="3" chance="10000"/>
 		<item name="chicken feather" chance="20000"/>
-		<item id="5891" chance="200"/>
 	</loot>
 </monster>

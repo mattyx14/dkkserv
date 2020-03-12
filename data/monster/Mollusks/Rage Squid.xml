@@ -11,7 +11,7 @@
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
 		<flag staticattack="90"/>
 		<flag runonhealth="0"/>
@@ -72,6 +72,6 @@
 		<item name="magic plate armor" chance="150"/>
 		<item name="platinum amulet" chance="350"/>
 		<item name="wand of everblazing" chance="300"/>
-		<item id="2160" countmax="1" chance="1000"/>
+		<item name="fire axe" chance="500"/>
 	</loot>
 </monster>

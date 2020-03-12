@@ -4,7 +4,7 @@
 	<look typeex="460" />
 	<targetchange interval="4000" chance="10" />
 	<flags>
-		<flag preyable="0" />
+		<!-- <flag preyable="0"/> -->
 		<flag summonable="0" />
 		<flag attackable="0" />
 		<flag hostile="1" />
@@ -12,7 +12,7 @@
 		<flag convinceable="0" />
 		<flag pushable="0" />
 		<flag canpushitems="0" />
-		<flag canpushcreatures="0" />
+		<flag canpushcreatures="1" />
 		<flag targetdistance="1" />
 		<flag staticattack="100" />
 		<flag runonhealth="0" />
@@ -37,6 +37,6 @@
 		</defense>
 	</defenses>
 	<summons maxSummons="1">
-		<summon name="Fire Lord" interval="1000" chance="100" />
+		<summon name="Demon" interval="1000" chance="100" />
 	</summons>
 </monster>

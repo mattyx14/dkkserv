@@ -64,7 +64,8 @@
 		<item name="strong mana potion" chance="20930"/>
 		<item name="lightning pendant" chance="520"/>
 		<item name="lightning boots" chance="310"/>
-		<item id="2160" countmax="2" chance="1500"/>
+		<item name="lightning legs" chance="930"/>
+		<item name="lightning robe" chance="310"/>
 		<item name="composite hornbow" chance="310"/>
 		<item name="focus cape" chance="100"/>
 		<item name="wand of starstorm" chance="410"/>

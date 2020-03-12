@@ -4,7 +4,7 @@
 	<look type="554" corpse="21266" />
 	<targetchange interval="2000" chance="10" />
 	<flags>
-		<flag preyable="0" />
+		<!-- <flag preyable="0"/> -->
 		<flag summonable="0" />
 		<flag attackable="1" />
 		<flag hostile="1" />
@@ -12,7 +12,7 @@
 		<flag convinceable="0" />
 		<flag pushable="0" />
 		<flag canpushitems="1" />
-		<flag canpushcreatures="0" />
+		<flag canpushcreatures="1" />
 		<flag targetdistance="1" />
 		<flag staticattack="80" />
 		<flag runonhealth="1500" />
@@ -63,6 +63,7 @@
 		<item id="8473" chance="10500" /><!-- dragon scale boots -->
 		<item id="11118" chance="5500" /><!-- ultimate health potion -->
 		<item id="5944" countmax="4" chance="19250" /><!-- soul orb -->
+		<item id="2528" chance="15500" /><!-- tower shield -->
 		<item id="7366" countmax="67" chance="8100" /><!-- viper star -->
 		<item id="7632" countmax="2" chance="28000" /><!-- giant shimmering pearl -->
 		<item id="2154" chance="15500" /><!-- yellow gem -->

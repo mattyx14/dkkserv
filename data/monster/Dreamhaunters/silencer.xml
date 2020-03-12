@@ -11,7 +11,7 @@
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
 		<flag staticattack="90"/>
 		<flag runonhealth="0"/>
@@ -57,7 +57,7 @@
 		<item name="gold coin" countmax="100" chance="100000"/>
 		<item name="platinum coin" countmax="8" chance="100000"/>
 		<item name="stealth ring" chance="1200"/>
-		<item id="2160" countmax="3" chance="360"/>
+		<item name="boots of haste" chance="360"/>
 		<item name="dark shield" chance="2000"/>
 		<item name="assassin star" countmax="10" chance="7600"/>
 		<item name="diamond sceptre" chance="960"/>

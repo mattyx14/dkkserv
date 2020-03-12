@@ -270,7 +270,7 @@ CREATE TABLE IF NOT EXISTS `guilds` (
   `creationdata` int(11) NOT NULL,
   `motd` varchar(255) NOT NULL DEFAULT '',
   `residence` int(11) NOT NULL DEFAULT '0',
-  `description` text NOT NULL,
+  `description` text NOT NULL DEFAULT '',
   `balance` bigint(20) UNSIGNED NOT NULL DEFAULT '0',
   CONSTRAINT `guilds_pk` PRIMARY KEY (`id`),
   CONSTRAINT `guilds_name_unique` UNIQUE (`name`),
@@ -520,6 +520,30 @@ CREATE TABLE IF NOT EXISTS `market_offers` (
     ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure `player_autoloot`
+--
+
+CREATE TABLE IF NOT EXISTS `player_autoloot` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `player_id` int(11) NOT NULL,
+  `autoloot_list` blob,
+  CONSTRAINT `player_autoloot_pk` PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure `player_autoloot_persist`
+--
+
+CREATE TABLE IF NOT EXISTS `player_autoloot_persist` (
+  `player_guid` mediumint(9) DEFAULT NULL,
+  `cont_id` mediumint(9) DEFAULT NULL,
+  `item_id` mediumint(9) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 

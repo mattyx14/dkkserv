@@ -11,7 +11,7 @@
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
 		<flag staticattack="90"/>
 		<flag runonhealth="0"/>
@@ -54,7 +54,7 @@
 		<item name="throwing star" countmax="18" chance="13920"/>
 		<item id="2419" chance="3450"/><!-- scimitar -->
 		<item name="orcish axe" chance="5400"/>
-		<item id="2152" countmax="50" chance="500"/>
+		<item name="dragon hammer" chance="320"/>
 		<item name="plate armor" chance="5210"/>
 		<item name="brass armor" chance="740"/>
 		<item name="dark helmet" chance="1260"/>

@@ -4,7 +4,7 @@
 	<look type="149" head="86" body="12" legs="31" feet="60" addons="0" corpse="20546" />
 	<targetchange interval="4000" chance="10" />
 	<flags>
-		<flag preyable="0" />
+		<!-- <flag preyable="0"/> -->
 		<flag rewardboss="1" />
 		<flag summonable="0" />
 		<flag attackable="1" />
@@ -13,7 +13,7 @@
 		<flag convinceable="0" />
 		<flag pushable="0" />
 		<flag canpushitems="1" />
-		<flag canpushcreatures="0" />
+		<flag canpushcreatures="1" />
 		<flag staticattack="70" />
 		<flag targetdistance="1" />
 		<flag runonhealth="0" />
@@ -90,6 +90,8 @@
 		<item id="9971" chance="14000" />				<!-- gold ingot -->
 		<item id="7591" countmax="5" chance="14000" />	<!-- great health potion -->
 		<item id="7459" chance="14000" />				<!-- pair of earmuffs -->
+		<item id="2436" chance="14000" />				<!-- skull staff -->
+		<item id="2195" chance="7000" />					<!-- boots of haste -->
 		<item id="7902" chance="7000" />					<!-- glacier mask -->
 		<item id="5911" chance="7000" />					<!-- red piece of cloth -->
 		<item id="21699" chance="7000" />				<!-- trapped lightning -->

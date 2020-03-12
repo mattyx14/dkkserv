@@ -11,7 +11,7 @@
 		<flag convinceable="0"/>
 		<flag pushable="1"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="0"/>
 		<flag staticattack="70"/>
 		<flag runonhealth="20"/>
@@ -33,11 +33,6 @@
 			<attribute key="areaEffect" value="blueshimmer"/>
 		</defense>
 	</defenses>
-	<elements>
-		<element energyPercent="-20"/>
-		<element earthPercent="-20"/>
-		<element deathPercent="10"/>
-	</elements>
 	<immunities>
 		<immunity invisible="1"/>
 		<immunity ice="1"/>

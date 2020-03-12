@@ -11,7 +11,7 @@
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag staticattack="50"/>
 		<flag targetdistance="4"/>
 		<flag runonhealth="0"/>
@@ -71,10 +71,12 @@
 		<item name="platinum amulet" chance="200"/>
 		<item name="wand of inferno" chance="180"/>
 		<item name="protection amulet" chance="790"/>
-		<item id="2160" countmax="3" chance="500"/>
+		<item name="skull staff" chance="350"/>
+		<item name="blue robe" chance="40"/>
 		<item name="jewelled backpack" chance="100"/>
 		<item name="pirate voodoo doll" chance="430"/>
 		<item id="6090" chance="490"/><!-- music sheet 4th verse -->
+		<item name="amber staff" chance="100"/>
 		<item name="strong mana potion" chance="740"/>
 		<item name="cultish mask" chance="10250"/>
 		<item name="cultish symbol" chance="890"/>

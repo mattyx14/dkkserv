@@ -11,14 +11,14 @@
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
 		<flag staticattack="90"/>
 		<flag runonhealth="300"/>
 		<flag isblockable="0" />
 	</flags>
 	<script>
-		<event name="Somewhat"/>
+		<event name="Somewhat Beatable Death"/>
 	</script>
 	<attacks>
 		<attack name="melee" interval="2000" skill="50" attack="40"/>

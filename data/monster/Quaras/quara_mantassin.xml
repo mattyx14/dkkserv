@@ -52,7 +52,7 @@
 		<item name="halberd" chance="5000"/>
 		<item name="strange helmet" chance="100"/>
 		<item name="cape" chance="1050"/>
-		<item id="2152" countmax="100" chance="50"/>
+		<item name="blue robe" chance="50"/>
 		<item name="shrimp" countmax="5" chance="5000"/>
 		<item name="fish fin" chance="630"/>
 		<item name="mantassin tail" chance="11600"/>

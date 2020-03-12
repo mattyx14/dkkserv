@@ -11,7 +11,7 @@
 		<flag convinceable="0"/>
 		<flag pushable="1"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="0"/>
 		<flag staticattack="90"/>
 		<flag runonhealth="30"/>
@@ -29,17 +29,10 @@
 			<attribute key="areaEffect" value="blueshimmer"/>
 		</defense>
 	</defenses>
-	<elements>
-		<element energyPercent="-20"/>
-		<element earthPercent="-20"/>
-		<element deathPercent="10"/>
-	</elements>
 	<immunities>
-		<immunity invisible="1"/>
-		<immunity ice="1"/>
-		<immunity paralyze="1"/>
-		<immunity drown="1"/>
 		<immunity fire="1"/>
+		<immunity invisible="1"/>
+		<immunity paralyze="1"/>
 	</immunities>
 	<loot>
 		<item name="gold coin" countmax="100" chance="100000"/>
@@ -53,7 +46,7 @@
 		<item name="eye of a deepling" chance="25000"/>
 		<item name="deepling warts" chance="25000"/>
 		<item name="deeptags" chance="21700"/>
-		<item id="2160" countmax="1" chance="1000"/>
+		<item name="warrior's axe" chance="640"/>
 		<item name="deepling ridge" chance="19000"/>
 		<item name="warrior's shield" chance="1234"/>
 		<item name="deepling filet" chance="25000"/>

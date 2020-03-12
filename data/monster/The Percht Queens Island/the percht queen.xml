@@ -4,7 +4,7 @@
 	<look typeex="35168" corpse="35101" />
 	<targetchange interval="5000" chance="8" />
 	<flags>
-		<flag preyable="0" />
+		<!-- <flag preyable="0"/> -->
 		<flag summonable="0" />
 		<flag attackable="1" />
 		<flag hostile="1" />
@@ -12,7 +12,7 @@
 		<flag convinceable="0" />
 		<flag pushable="0" />
 		<flag canpushitems="1" />
-		<flag canpushcreatures="0" />
+		<flag canpushcreatures="1" />
 		<flag targetdistance="1" />
 		<flag staticattack="90" />
 		<flag runonhealth="0" />
@@ -52,12 +52,14 @@
 		<item name="Frozen Claw" chance="24500" />
 		<item name="Berserk Potion" countmax="10" chance="23000" />
 		<item name="Red Gem" chance="22500" />
+		<item name="Soul Stone" chance="224000" />
 		<item name="The Crown of the Percht Queen" chance="25000" />
 		<item name="Flames of the Percht Queen" chance="18000" />
 		<item name="Small Ladybug" chance="24980" />
 		<item name="Gold Ingot" chance="22480" />
 		<item name="Crystal Coin" countmax="2" chance="24890" />
 		<item id="7632" chance="21580" /> <!-- Giant Shimmering Pearl -->
+		<item name="Skull Staff" chance="19850" />
 		<item name="Magic Sulphur" chance="25480" />
 		<item name="Percht Queen's Frozen Heart" chance="26800" />
 		<item name="Percht Skull" chance="25842" />

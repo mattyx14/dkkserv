@@ -4,7 +4,7 @@
 	<look type="595" corpse="22629"/>
 	<targetchange interval="5000" chance="8"/>
 	<flags>
-		
+		<!-- <flag preyable="0"/> -->
 		<flag rewardboss="1"/>
 		<flag summonable="0"/>
 		<flag attackable="1"/>
@@ -13,7 +13,7 @@
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
 		<flag staticattack="90"/>
 		<flag runonhealth="0"/>
@@ -50,6 +50,7 @@
 		<item id="5895" chance="10000"/> <!-- fish fin -->
 		<item id="5911" chance="10000"/> <!-- red piece of cloth -->
 		<item id="5925" chance="10000"/> <!-- hardened bone -->
+		<item id="7404" chance="10000"/> <!-- assassin dagger -->
 		<item id="7407" chance="10000"/> <!-- haunted blade -->
 		<item id="7418" chance="10000"/> <!-- nightmare blade -->
 		<item id="18414" countmax="3" chance="10000"/> <!-- violet crystal shard -->

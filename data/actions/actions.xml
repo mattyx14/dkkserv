@@ -522,8 +522,10 @@
 	<action itemid="6388" script="others/dolls.lua" />
 	<action itemid="6512" script="others/dolls.lua" />
 	<action itemid="6566" script="others/dolls.lua" />
+	<action itemid="8974" script="others/dolls.lua" />
 	<action itemid="8977" script="others/dolls.lua" />
 	<action itemid="8981" script="others/dolls.lua" />
+	<action itemid="8982" script="others/dolls.lua" />
 
 	<!-- Valuables -->
 	<action itemid="13670" script="valuables/randomitems.lua" />

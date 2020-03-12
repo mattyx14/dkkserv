@@ -11,7 +11,7 @@
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
 		<flag staticattack="90"/>
 		<flag runonhealth="0"/>
@@ -70,7 +70,8 @@
 		<item name="small amethyst" countmax="3" chance="17000"/>
 		<item name="platinum coin" countmax="8" chance="100000"/>
 		<item name="giant sword" chance="560"/>
-		<item id="2160" countmax="1" chance="3000"/>
+		<item name="warrior helmet" chance="2820"/>
+		<item name="knight armor" chance="4000"/>
 		<item name="white piece of cloth" chance="4520"/>
 		<item name="red piece of cloth" chance="1130"/>
 		<item name="great mana potion" countmax="2" chance="36000"/>

@@ -49,7 +49,10 @@
 		<item id="7591" chance="1210"/>	<!-- Great Health Potion -->
 		<item id="2666" countmax="2" chance="1210"/>	<!-- Meat -->
 		<item id="7364" countmax="4" chance="1210"/>	<!-- Sniper Arrow -->
-		<item id="2160" countmax="4" chance="500"/>
+		<item id="2487" chance="210"/>	<!-- Crown Armor -->
+		<item id="2491" chance="310"/>	<!-- Crown Helmet -->
+		<item id="2519" chance="210"/>	<!-- Crown Shield -->
+		<item id="2488" chance="110"/>	<!-- Crown Legs -->
 		<item id="2392" chance="310"/>	<!-- Fire Sword -->
 		<item id="2381" chance="1610"/>	<!-- Halberd -->
 		<item id="2744" chance="510"/>	<!-- Red Rose -->

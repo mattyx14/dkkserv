@@ -11,7 +11,7 @@
 		<flag convinceable="0"/>
 		<flag pushable="1"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="4"/>
 		<flag runonhealth="0"/>
 	</flags>
@@ -53,7 +53,6 @@
 		<item name="small ruby" countmax="2" chance="16000"/>
 		<item name="gold coin" countmax="100" chance="40000"/>
 		<item name="gold coin" countmax="98" chance="58000"/>
-		<item id="2160" countmax="3" chance="1000"/>
 		<item name="platinum coin" countmax="6" chance="84000"/>
 		<item name="steel boots" chance="550"/>
 		<item name="great mana potion" chance="18000"/>
@@ -66,5 +65,6 @@
 		<item name="carapace shield" chance="920"/>
 		<item name="hive scythe" chance="1650"/>
 		<item name="gooey mass" countmax="2" chance="13000"/>
+		<item name="hive bow" chance="830"/>
 	</loot>
 </monster>

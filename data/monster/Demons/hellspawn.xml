@@ -11,7 +11,7 @@
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
 		<flag staticattack="90"/>
 		<flag runonhealth="0"/>
@@ -58,7 +58,8 @@
 		<item name="gold coin" countmax="100" chance="60000"/>
 		<item name="gold coin" countmax="36" chance="60000"/>
 		<item name="morning star" chance="10000"/>
-		<item id="2160" countmax="1" chance="2000"/>
+		<item name="warrior helmet" chance="1886"/>
+		<item name="knight legs" chance="3030"/>
 		<item name="red mushroom" countmax="2" chance="7692"/>
 		<item name="demonic essence" chance="9090"/>
 		<item name="assassin star" countmax="2" chance="9090"/>

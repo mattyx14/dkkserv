@@ -12,7 +12,7 @@
 		<flag pushable="0"/>
 		<flag isblockable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="4"/>
 		<flag staticattack="90"/>
 		<flag runonhealth="240"/>
@@ -75,7 +75,7 @@
 		<item id="2156" chance="430"/>						<!-- red gem -->
 		<item id="2197" subtype="5" chance="850"/>			<!-- stone skin amulet -->
 		<item id="2154" chance="870"/>						<!-- yellow gem -->
-		<item id="2152" countmax="50" chance="1000"/>
+		<item id="2475" chance="1160"/>						<!-- warrior helmet -->
 		<item id="7443" chance="720"/>			<!-- bullseye potion -->
 	</loot>
 </monster>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <monster name="Braindeath" nameDescription="a braindeath" race="undead" experience="985" speed="109">
 	<health now="1225" max="1225" />
-	<look type="256" corpse="7260" />
+	<look type="256" corpse="7256" />
 	<targetchange interval="4000" chance="10" />
 	<flags>
 		<flag summonable="0" />
@@ -11,7 +11,7 @@
 		<flag convinceable="0" />
 		<flag pushable="0" />
 		<flag canpushitems="1" />
-		<flag canpushcreatures="0" />
+		<flag canpushcreatures="1" />
 		<flag targetdistance="4" />
 		<flag staticattack="80" />
 		<flag runonhealth="0" />
@@ -81,7 +81,7 @@
 		<item name="haunted blade" chance="1440" />
 		<item id="2175" chance="930" /><!-- spellbook -->
 		<item name="spiked squelcher" chance="180" />
-		<item id="2152" countmax="25" chance="1000"/>
+		<item name="bonelord shield" chance="100" />
 		<item name="bonelord helmet" chance="100" />
 	</loot>
 </monster>

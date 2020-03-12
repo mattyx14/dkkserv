@@ -11,7 +11,7 @@
     		<flag convinceable="0" />
     		<flag pushable="0" />
     		<flag canpushitems="1" />
-    		<flag canpushcreatures="0" />
+    		<flag canpushcreatures="1" />
     		<flag targetdistance="1" />
     		<flag staticattack="90" />
     		<flag runonhealth="800" />
@@ -60,7 +60,9 @@
 		<item id="2133" chance="1590"/><!-- ruby necklace -->
 		<item id="2197" chance="2560"/><!-- stone skin amulet -->
 		<item id="2156" chance="2050"/><!-- red gem -->
+		<item id="2528" chance="740"/><!-- tower shield -->
 		<item id="5741" chance="170"/><!-- skull helmet -->
+		<item id="2436" chance="850"/><!-- skull staff -->
 		<item id="7413" chance="1020"/><!-- titan axe -->
 		<item id="7407" chance="740"/><!-- haunted blade -->
 		<item id="6300" chance="2160"/><!-- death ring -->

@@ -57,7 +57,7 @@
 		<item id="23529" chance="1492"/> <!-- glooth spear -->
 		<item id="8473" chance="1492"/> <!-- ultimate health potion -->
 		<item id="23517" chance="1000"/> <!-- glooth steak -->
-		<item id="2152" countmax="50" chance="1000"/>
+		<item id="2436" chance="1000"/> <!-- skull staff -->
 		<item id="23535" chance="1000"/> <!-- glooth cape -->
 		<item id="2155" chance="1000"/> <!-- green gem -->
 		<item id="23551" chance="1000"/> <!-- glooth axe -->

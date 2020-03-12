@@ -12,7 +12,7 @@
 		<flag isblockable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
 		<flag staticattack="90"/>
 		<flag runonhealth="0"/>
@@ -45,7 +45,7 @@
 		<item name="Green Gem" chance="12800"/>
 		<item name="Blue Gem" chance="12000"/>
 		<item name="Two Handed Sword" chance="30000"/>
-		<item id="2160" countmax="1" chance="13000"/>
+		<item name="Blue Robe" chance="13050"/>
 		<item name="Glorious Axe" chance="12800"/>
 		<item name="Green Crystal Shard" chance="12000"/>
 		<item name="Fur Armor" chance="25000"/>

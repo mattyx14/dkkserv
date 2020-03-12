@@ -12,7 +12,7 @@
 		<flag convinceable="0" />
 		<flag pushable="0" />
 		<flag canpushitems="1" />
-		<flag canpushcreatures="0" />
+		<flag canpushcreatures="1" />
 		<flag targetdistance="1" />
 		<flag staticattack="70" />
 		<flag runonhealth="0" />
@@ -71,8 +71,8 @@
 		<item name="Patch of Fine Cloth" chance="320" />
 		<item name="Golden Armor" chance="120" />
 		<item name="Mastermind Shield" chance="120" />
-		<item name="Falcon Bow" chance="1" />
-		<item name="Falcon Wand" chance="1" />
-		<item name="Falcon Plate" chance="1" />
+		<item name="Falcon Bow" chance="60" />
+		<item name="Falcon Wand" chance="60" />
+		<item name="Falcon Plate" chance="60" />
 	</loot>
 </monster>

@@ -11,7 +11,7 @@
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
 		<flag staticattack="70"/>
 		<flag runonhealth="500"/>
@@ -67,13 +67,13 @@
 		<item name="club ring" chance="4761"/>
 		<item name="piece of iron" chance="20000"/>
 		<item name="mouldy cheese" chance="50000"/>
-		<item name="dirty cape" chance="60000"/>
+		<item id="33528" chance="60000"/>
 		<item name="two handed sword" chance="20000"/>
 		<item name="war hammer" chance="2127"/>
 		<item name="morning star" chance="29000"/>
 		<item name="battle hammer" chance="20000"/>
 		<item name="hammer of wrath" chance="952"/>
-		<item id="2152" countmax="50" chance="5000"/>
+		<item name="knight legs" chance="6250"/>
 		<item name="steel shield" chance="20000"/>
 		<item name="steel boots" chance="1123"/>
 		<item name="piece of royal steel" chance="1234"/>

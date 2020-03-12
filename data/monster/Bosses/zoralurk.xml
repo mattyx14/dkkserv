@@ -4,7 +4,7 @@
 	<look type="12" head="0" body="98" legs="86" feet="94" corpse="6068" />
 	<targetchange interval="10000" chance="20" />
 	<flags>
-		<flag preyable="0" />
+		<!-- <flag preyable="0"/> -->
 		<flag summonable="0" />
 		<flag attackable="1" />
 		<flag hostile="1" />
@@ -12,7 +12,7 @@
 		<flag convinceable="0" />
 		<flag pushable="0" />
 		<flag canpushitems="1" />
-		<flag canpushcreatures="0" />
+		<flag canpushcreatures="1" />
 		<flag staticattack="98" />
 		<flag targetdistance="1" />
 		<flag runonhealth="0" />
@@ -67,7 +67,7 @@
 		<immunity invisible="1" />
 	</immunities>
 	<summons maxSummons="2">
-		<summon name="Fire Lord" interval="4000" chance="50" />
+		<summon name="demon" interval="4000" chance="50" />
 	</summons>
 	<voices interval="5000" chance="30">
 		<voice sentence="I AM ZORALURK, THE DEMON WITH A THOUSAND FACES!" yell="1" />
@@ -77,7 +77,10 @@
 		<item name="white pearl" chance="10000" countmax="5" />
 		<item name="gold coin" chance="100000" countmax="100" />
 		<item name="gold coin" chance="50000" countmax="90" />
+		<item name="boots of haste" chance="16033" />
 		<item name="giant sword" chance="60000" />
+		<item name="bright sword" chance="20000" />
+		<item name="bright sword" chance="20000" />
 		<item name="warlord sword" chance="6000" />
 		<item name="patched boots" chance="7000" />
 		<item id="6530" chance="16000" /><!-- Worn Soft Boots -->

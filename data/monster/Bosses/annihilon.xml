@@ -4,7 +4,7 @@
 	<look type="12" head="19" body="104" legs="96" feet="96" corpse="6068"/>
 	<targetchange interval="5000" chance="8"/>
 	<flags>
-		
+		<!-- <flag preyable="0"/> -->
 		<flag summonable="0"/>
 		<flag attackable="1"/>
 		<flag hostile="1"/>
@@ -12,7 +12,7 @@
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
 		<flag staticattack="85"/>
 		<flag runonhealth="0"/>
@@ -70,7 +70,9 @@
 		<item name="heavy mace" chance="25000"/>
 		<item name="mastermind shield" chance="4166"/>
 		<item name="guardian shield" chance="7692"/>
+		<item name="crown shield" chance="11111"/>
 		<item name="demon shield" chance="4166"/>
+		<item name="tower shield" chance="9090"/>
 		<item name="power bolt" countmax="94" chance="16666"/>
 		<item name="soul orb" countmax="5" chance="20000"/>
 		<item name="demon horn" countmax="2" chance="12500"/>

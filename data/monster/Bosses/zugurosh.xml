@@ -4,7 +4,7 @@
 	<look type="12" head="2" body="35" legs="57" feet="91" corpse="8721"/>
 	<targetchange interval="5000" chance="15"/>
 	<flags>
-		
+		<!-- <flag preyable="0"/> -->
 		<flag summonable="0"/>
 		<flag attackable="1"/>
 		<flag hostile="1"/>
@@ -12,7 +12,7 @@
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
 		<flag staticattack="85"/>
 		<flag runonhealth="4500"/>
@@ -88,6 +88,7 @@
 		<item id="5914" countmax="10" chance="14000"/>		<!-- yellow piece of cloth -->
 		<item id="5913" countmax="10" chance="12000"/>		<!-- brown piece of cloth -->
 		<item id="5954" countmax="2" chance="9700"/>		<!-- demon horn -->
+		<item id="2195" chance="8700"/>						<!-- boots of haste -->
 		<item id="2173" chance="6000"/>						<!-- amulet of loss -->
 		<item id="2645" chance="4500"/>						<!-- steel boots -->
 		<item id="2646" chance="1500"/>						<!-- golden boots -->

@@ -4,7 +4,7 @@
 	<look type="862" head="76" body="57" legs="19" feet="0" addons="3" corpse="25151" />
 	<targetchange interval="5000" chance="8" />
 	<flags>
-		<flag preyable="0" />
+		<!-- <flag preyable="0"/> -->
 		<flag summonable="0" />
 		<flag attackable="1" />
 		<flag hostile="1" />
@@ -12,7 +12,7 @@
 		<flag convinceable="0" />
 		<flag pushable="0" />
 		<flag canpushitems="1" />
-		<flag canpushcreatures="0" />
+		<flag canpushcreatures="1" />
 		<flag targetdistance="1" />
 		<flag staticattack="90" />
 		<flag runonhealth="0" />
@@ -81,11 +81,13 @@
 		<item id="2155" chance="1000"/><!-- green gem -->
 		<item id="2156" chance="1000"/><!-- red gem -->
 		<item id="2158" chance="1000"/><!-- blue gem -->
+		<item id="2436" chance="4000"/><!-- skull staff -->
 		<item id="25414" chance="100" unique="1"/><!-- death gaze -->
 		<item id="25522" chance="700"/><!-- ritt bow -->
 		<item id="25523" chance="700"/><!-- rift crossbow -->
 		<item id="6500" chance="11000"/><!-- demonic essence -->
 		<item id="7420" chance="500"/><!-- reaper's axe -->
+		<item id="7426" chance="4000"/><!-- amber staff -->
 		<item id="7590" countmax="5" chance="3000"/><!-- great mana potion -->
 		<item id="7591" countmax="5" chance="3100"/><!-- great health potion -->
 		<item id="7632" countmax="5" chance="3000"/><!-- giant shimmering pearl -->

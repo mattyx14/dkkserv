@@ -4,7 +4,7 @@
 	<look type="99" head="95" body="116" legs="119" feet="115" corpse="6028" />
 	<targetchange interval="4000" chance="10" />
 	<flags>
-		<flag preyable="0" />
+		<!-- <flag preyable="0"/> -->
 		<flag summonable="0" />
 		<flag attackable="1" />
 		<flag hostile="1" />
@@ -12,7 +12,7 @@
 		<flag convinceable="0" />
 		<flag pushable="0" />
 		<flag canpushitems="1" />
-		<flag canpushcreatures="0" />
+		<flag canpushcreatures="1" />
 		<flag targetdistance="1" />
 		<flag staticattack="80" />
 		<flag runonhealth="0" />
@@ -62,6 +62,7 @@
 		<item id="2144" chance="15960" />					<!-- black pearl -->
 		<item id="2143" chance="15000" />					<!-- white pearl -->
 		<item id="2214" chance="15040" />					<!-- ring of healing -->
+		<item id="2656" chance="500" />						<!-- blue robe -->
 		<item id="7893" chance="900" />						<!-- lightning boots -->
 		<item id="8904" chance="300" />						<!-- spellscroll of prophecies -->
 		<item id="2175" chance="4650" />						<!-- spellbook -->

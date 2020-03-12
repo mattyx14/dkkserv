@@ -11,7 +11,7 @@
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
 		<flag staticattack="90"/>
 		<flag runonhealth="300"/>
@@ -55,7 +55,7 @@
 		<item name="gold coin" countmax="100" chance="50000"/>
 		<item name="gold coin" countmax="53" chance="50000"/>
 		<item name="platinum coin" countmax="3" chance="961"/>
-		<item id="2160" countmax="1" chance="666"/>
+		<item name="crown helmet" chance="666"/>
 		<item name="meat" countmax="4" chance="50000"/>
 		<item id="6300" chance="250"/><!-- death ring -->
 		<item name="bar of chocolate" chance="280"/>

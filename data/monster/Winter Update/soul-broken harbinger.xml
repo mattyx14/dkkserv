@@ -11,7 +11,7 @@
 		<flag convinceable="0" />
 		<flag pushable="0" />
 		<flag canpushitems="1" />
-		<flag canpushcreatures="0" />
+		<flag canpushcreatures="1" />
 		<flag targetdistance="1" />
 		<flag staticattack="90" />
 		<flag runonhealth="0" />
@@ -43,13 +43,15 @@
 		<item id="34696" countmax="3" chance="15750" /> <!-- Ice Flower -->
 		<item name="Dream Essence Egg" chance="13700" />
 		<item name="Elvish Talisman" chance="4790" />
-		<item id="2160" countmax="3" chance="3000"/>
+		<item name="Knight Legs" chance="4450" />
 		<item name="Glacier Kilt" chance="4110" />
 		<item name="Glacier Shoes" chance="3770" />
 		<item name="Ice Rapier" chance="3770" />
 		<item name="Spellbook of Mind Control" chance="2400" />
+		<item name="Crown Shield" chance="1710" />
 		<item name="Wood Cape" chance="1710" />
 		<item id="26185" chance="1370" /> <!-- Ring of Blue Plasma -->
+		<item name="Tower Shield" chance="680" />
 		<item id="26199" chance="680" /> <!-- Collar of Green Plasma -->
 	</loot>
 </monster>

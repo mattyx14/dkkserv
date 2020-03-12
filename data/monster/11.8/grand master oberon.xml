@@ -4,7 +4,7 @@
 	<look type="1072" head="57" body="75" legs="38" feet="86" addons="1" corpse="33368"/>
 	<targetchange interval="4000" chance="10"/>
 	<flags>
-		
+		<!-- <flag preyable="0"/> -->
         <flag rewardboss="1"/>
 		<flag summonable="0"/>
 		<flag attackable="1"/>
@@ -13,7 +13,7 @@
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
 		<flag staticattack="70"/>
 		<flag runonhealth="0"/>
@@ -50,15 +50,15 @@
 	<loot>
 		<item id="32550" chance="100000"/><!-- the spatial warp almanac -->
 		<item name="Grant of Arms" chance="600"/>
-		<item name="Falcon Battleaxe" chance="6"/>
-		<item name="Falcon Bow" chance="6"/>
-		<item name="Falcon Circlet" chance="6"/>
-		<item name="Falcon Coif" chance="6"/>
-		<item name="Falcon Longsword" chance="6"/>
-		<item name="Falcon Mace" chance="6"/>
-		<item name="Falcon Rod" chance="6"/>
-		<item name="Falcon Shield" chance="6"/>
-		<item name="Falcon Greaves" chance="6"/>
-		<item name="Falcon Plate" chance="6"/>
+		<item name="Falcon Battleaxe" chance="60"/>
+		<item name="Falcon Bow" chance="60"/>
+		<item name="Falcon Circlet" chance="60"/>
+		<item name="Falcon Coif" chance="60"/>
+		<item name="Falcon Longsword" chance="60"/>
+		<item name="Falcon Mace" chance="60"/>
+		<item name="Falcon Rod" chance="60"/>
+		<item name="Falcon Shield" chance="60"/>
+		<item name="Falcon Greaves" chance="60"/>
+		<item name="Falcon Plate" chance="60"/>
 	</loot>
 </monster>

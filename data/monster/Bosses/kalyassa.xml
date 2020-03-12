@@ -11,7 +11,7 @@
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
 		<flag staticattack="90"/>
 		<flag runonhealth="800"/>
@@ -59,6 +59,7 @@
 		<item id="7591" chance="8260"/><!-- great health potion -->
 		<item id="7590" chance="9170"/><!-- great mana potion -->
 		<item id="2498" chance="25000"/><!-- royal helmet -->
+		<item id="2492" chance="25000"/><!-- dragon scale mail -->
 		<item id="27606" chance="100000" /><!-- dragon tongue -->
 		<item id="2547" chance="17430"/><!-- power bolt -->
 		<item id="7365" countmax="10" chance="26610"/><!-- green mushroom -->

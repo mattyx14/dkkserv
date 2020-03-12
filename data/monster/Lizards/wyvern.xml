@@ -11,7 +11,7 @@
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
 		<flag staticattack="90"/>
 		<flag runonhealth="300"/>
@@ -54,7 +54,7 @@
 		<item name="wand of inferno" chance="810"/>
 		<item name="power bolt" countmax="2" chance="3400"/>
 		<item name="dragon ham" countmax="3" chance="60500"/>
-		<item id="2152" countmax="50" chance="1000"/>
+		<item name="wyvern fang" chance="410"/>
 		<item name="strong health potion" chance="2500"/>
 		<item name="wyvern talisman" chance="12300"/>
 	</loot>

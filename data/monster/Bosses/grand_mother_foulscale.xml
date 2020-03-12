@@ -4,7 +4,7 @@
 	<look type="34" corpse="5973" />
 	<targetchange interval="5000" chance="8" />
 	<flags>
-		<flag preyable="0" />
+		<!-- <flag preyable="0"/> -->
 		<flag summonable="0" />
 		<flag attackable="1" />
 		<flag hostile="1" />
@@ -12,7 +12,7 @@
 		<flag convinceable="0" />
 		<flag pushable="0" />
 		<flag canpushitems="1" />
-		<flag canpushcreatures="0" />
+		<flag canpushcreatures="1" />
 		<flag targetdistance="1" />
 		<flag staticattack="90" />
 		<flag runonhealth="400" />
@@ -64,6 +64,7 @@
 		<item id="2387" chance="1333" /><!-- double axe -->
 		<item id="2187" chance="1800" /><!-- wand of inferno -->
 		<item id="5920" chance="100000" /><!-- green dragon scale -->
+		<item id="2434" chance="600" /><!-- dragon hammer -->
 		<item id="5877" chance="100000" /><!-- green dragon leather -->
 		<item id="2516" chance="500" /><!-- dragon shield -->
 		<item id="7430" chance="650" /><!-- dragonbone staff -->

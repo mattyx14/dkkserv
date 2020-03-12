@@ -70,7 +70,7 @@
 		<item name="morning star" chance="7020" />
 		<item name="longsword" chance="9060" />
 		<item name="steel shield" chance="3980" />
-		<item id="2152" countmax="25" chance="1000"/>
+		<item name="bonelord shield" chance="110" />
 		<item name="bonelord eye" chance="1010" />
 		<item name="mana potion" chance="300" />
 		<item name="small flask of eyedrops" chance="5060" />

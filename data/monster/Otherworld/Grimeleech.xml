@@ -11,7 +11,7 @@
    		<flag convinceable="0"/>
     	<flag pushable="0"/>
     	<flag canpushitems="1"/>
-    	<flag canpushcreatures="0"/>
+    	<flag canpushcreatures="1"/>
     	<flag targetdistance="1"/>
     	<flag staticattack="90"/>
     	<flag runonhealth="0"/>
@@ -80,12 +80,12 @@
 		<item id="9970" countmax="2" chance="1940"/><!-- Small Topazes -->
 		<item id="2520" chance="390"/><!-- demon shield -->
 		<item id="2462" chance="1500"/><!-- Devil Helmet -->
-		<item id="2160" countmax="1" chance="3000"/>
+		<item id="7894" chance="1000"/><!-- Magma Legs, -->
 		<item id="7418" chance="1460"/><!-- Nightmare Blade -->
 		<item id="2156" chance="760"/><!-- Red Gem -->
 		<item id="25523" chance="240"/><!-- Rift Crossbow-->
 		<item id="25382" chance="230"/><!-- Rift Shield-->
-		<item id="25386" countmax="2" chance="1910"/><!-- Some Grimeleech Wings-->
+		<item id="25386" chance="1910"/><!-- Some Grimeleech Wings-->
 		<item id="2645" chance="690"/><!-- steel boots -->
 		<item id="8910" chance="1280"/><!-- Underworld Rod-->
 		<item id="25383" chance="100"/><!-- Rift Lance -->

@@ -11,7 +11,7 @@
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
 		<flag staticattack="80"/>
 		<flag runonhealth="300"/>
@@ -55,7 +55,7 @@
 		<item name="longsword" chance="4000"/>
 		<item name="serpent sword" chance="420"/>
 		<item name="broadsword" chance="1950"/>
-		<item id="2152" countmax="50" chance="1000"/>
+		<item name="dragon hammer" chance="560"/>
 		<item name="crossbow" chance="10000"/>
 		<item name="steel helmet" chance="3000"/>
 		<item name="steel shield" chance="15000"/>

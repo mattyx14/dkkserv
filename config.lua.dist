@@ -39,6 +39,11 @@ maxPacketsPerSecond = 25
 maxItem = 2000
 maxContainer = 100
 
+-- 0 = Disable,
+-- 1 = onKillMonster,
+-- 2 = onOpenCorpse -- restart required
+autolootmode = 2
+
 -- Version Manual
 clientVersionMin = 1100
 clientVersionMax = 1200
@@ -51,9 +56,6 @@ depotBoxes = 17
 
 -- GameStore
 gamestoreByModules = true
-
--- Quest Sytem
-loadQuestLua = true
 
 -- Expert Pvp Config
 expertPvp = false
@@ -105,7 +107,7 @@ emoteSpells = false
 classicEquipmentSlots = false
 allowWalkthrough = true
 coinPacketSize = 25
-coinImagesURL = "http://localhost/images/store/"
+coinImagesURL = "http://127.0.0.1/images/store/"
 classicAttackSpeed = false
 showScriptsLogInConsole = false
 

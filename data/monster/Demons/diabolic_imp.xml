@@ -11,7 +11,7 @@
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="4"/>
 		<flag staticattack="90"/>
 		<flag runonhealth="400"/>
@@ -30,10 +30,13 @@
 		<attack name="diabolic imp skill reducer" range="5" interval="2000" chance="5"/>
 	</attacks>
 	<defenses armor="25" defense="25">
-		<defense name="healing" interval="2000" chance="10" min="250" max="350">
+		<defense name="healing" interval="2000" chance="10" min="650" max="800">
 			<attribute key="areaEffect" value="blueshimmer"/>
 		</defense>
-		<defense name="invisible" interval="10000" chance="10" duration="1000">
+		<defense name="speed" interval="2000" chance="15" speedchange="800" duration="2000">
+			<attribute key="areaEffect" value="redshimmer"/>
+		</defense>
+		<defense name="invisible" interval="2000" chance="10" duration="1000">
 			<attribute key="areaEffect" value="teleport"/>
 		</defense>
 	</defenses>
@@ -70,7 +73,7 @@
 		<item id="6300" chance="120"/><!-- death ring -->
 		<item name="demonic essence" chance="8000"/>
 		<item name="concentrated demonic blood" countmax="2" chance="25000"/>
-		<item id="2160" countmax="1" chance="500"/>
+		<item name="magma coat" chance="250"/>
 		<item name="magma monocle" chance="430"/>
 	</loot>
 </monster>

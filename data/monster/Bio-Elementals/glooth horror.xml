@@ -10,7 +10,7 @@
 		<flag illusionable="0"/>
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag canpushitems="1"/>
 		<flag staticattack="90"/>
 		<flag lightlevel="0"/>
@@ -19,7 +19,7 @@
 		<flag runonhealth="200"/>
 		<flag canwalkonenergy="1" />
 		<flag canwalkonfire="1" />
-		
+		<!-- <flag preyable="0"/> -->
 	</flags>
 	<script>
 		<event name="GloothHorror"/>

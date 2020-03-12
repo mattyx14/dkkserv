@@ -4,7 +4,7 @@
 	<look type="12" head="108" body="100" legs="105" feet="114" corpse="8721"/>
 	<targetchange interval="7000" chance="10"/>
 	<flags>
-		
+		<!-- <flag preyable="0"/> -->
 		<flag summonable="0"/>
 		<flag attackable="1"/>
 		<flag hostile="1"/>
@@ -12,7 +12,7 @@
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
 		<flag staticattack="85"/>
 		<flag runonhealth="0"/>
@@ -77,6 +77,7 @@
 		<item id="2470" chance="10000"/>					<!-- golden legs -->
 		<item id="2158" chance="5000"/>						<!-- blue gem -->
 		<item id="2462" chance="5000"/>						<!-- devil helmet -->
+		<item id="2432" chance="5000"/>						<!-- fire axe -->
 		<item id="2155" chance="5000"/>						<!-- green gem -->
 		<item id="2164" chance="5000"/>						<!-- might ring -->
 		<item id="2402" chance="5000"/>						<!-- silver dagger -->

@@ -11,7 +11,7 @@
 		<flag convinceable="0"/>
 		<flag pushable="1"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="0"/>
 		<flag staticattack="70"/>
 		<flag runonhealth="30"/>
@@ -30,16 +30,14 @@
 		</defense>
 	</defenses>
 	<elements>
-		<element energyPercent="-20"/>
 		<element earthPercent="-20"/>
-		<element deathPercent="10"/>
+		<element energyPercent="-10"/>
 	</elements>
 	<immunities>
 		<immunity invisible="1"/>
-		<immunity ice="1"/>
-		<immunity paralyze="1"/>
-		<immunity drown="1"/>
 		<immunity fire="1"/>
+		<immunity ice="1"/>
+		<immunity drown="1"/>
 	</immunities>
 	<voices interval="5000" chance="10">
 		<voice sentence="Jou wjil ajll djie!"/>
@@ -56,7 +54,7 @@
 		<item name="eye of a deepling" chance="574"/>
 		<item name="deepling warts" chance="10000"/>
 		<item name="deeptags" chance="14285"/>
-		<item id="2160" countmax="1" chance="1000"/>
+		<item name="warrior's axe" chance="534"/>
 		<item name="deepling ridge" chance="11111"/>
 		<item name="warrior's shield" chance="684"/>
 		<item name="deepling filet" chance="14285"/>

@@ -4,7 +4,7 @@
 	<look type="1143" corpse="34793" />
 	<targetchange interval="4000" chance="10" />
 	<flags>
-	    <flag preyable="0" />
+	    <!-- <flag preyable="0"/> -->
         <flag rewardboss="1" />
 		<flag summonable="0" />
 		<flag attackable="1" />
@@ -14,7 +14,7 @@
 		<flag isblockable="0" />
 		<flag pushable="0" />
 		<flag canpushitems="1" />
-		<flag canpushcreatures="0" />
+		<flag canpushcreatures="1" />
 		<flag targetdistance="1" />
 		<flag staticattack="90" />
 		<flag runonhealth="0" />
@@ -46,6 +46,7 @@
 	<loot>		
 		<!--every-->
 		<item name="silver token" countmax="5" chance="100000000" />
+		<item name="skull staff" countmax="5" chance="100000000" />
 		<item name="energy bar" countmax="5" chance="100000000" />
 		<item name="Purple Tendril Lantern" chance="100000000" />
 		<item name="crystal coin" countmax="2" chance="100000000" />
@@ -79,6 +80,7 @@
 		<item name="Alptramun's Toothbrush" chance="520" />
 		<item name="Dream Shroud" chance="620" />
 		<item name="Pair of Dreamwalkers" chance="720" />
+		<item name="Soul Stone" chance="820" />
 		<item id="26185" chance="10590" />  <!-- ring of blue plasma -->
 		<item name="Pomegranate" chance="880" />
 		<item name="Dream Shroud" chance="980" />

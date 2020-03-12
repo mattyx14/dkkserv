@@ -11,7 +11,7 @@
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
 		<flag staticattack="80"/>
 		<flag runonhealth="0"/>
@@ -55,8 +55,9 @@
 		<item name="piggy bank" chance="4450"/>
 		<item name="gold coin" countmax="100" chance="60000"/>
 		<item name="platinum coin" countmax="2" chance="70000"/>
-		<item id="2160" countmax="2" chance="300"/>
+		<item name="fire axe" chance="310"/>
 		<item name="war axe" chance="120"/>
+		<item name="knight legs" chance="310"/>
 		<item name="black shield" chance="3710"/>
 		<item name="brown mushroom" countmax="2" chance="15170"/>
 		<item name="iron ore" chance="5280"/>

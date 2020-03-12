@@ -11,7 +11,7 @@
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
 		<flag staticattack="90"/>
 		<flag runonhealth="0"/>
@@ -59,7 +59,10 @@
 		<item name="war hammer" chance="870"/>
 		<item name="fire sword" chance="550"/>
 		<item name="bow" chance="13300"/>
-		<item id="2160" countmax="4" chance="800"/>
+		<item name="crown armor" chance="490"/>
+		<item name="crown legs" chance="660"/>
+		<item name="crown helmet" chance="450"/>
+		<item name="crown shield" chance="280"/>
 		<item name="arrow" countmax="13" chance="26000"/>
 		<item name="green tunic" chance="8000"/>
 		<item name="scarf" chance="1110"/>

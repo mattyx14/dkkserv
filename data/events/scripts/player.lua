@@ -540,6 +540,7 @@ function Player:onTradeRequest(target, item)
 end
 
 function Player:onTradeAccept(target, item, targetItem)
+	target:closeImbuementWindow(self)
 	return true
 end
 
@@ -724,12 +725,12 @@ function Player:canBeAppliedImbuement(imbuement, item)
 	if imbuement:isPremium() and self:getPremiumDays() < 1 then
 		return false
 	end
-
+	
 	if self:getStorageValue(Storage.ForgottenKnowledge.Tomes) > 0 then
-		imbuable = true
-	else
-		return false
-	end
+              imbuable = true 
+   	else         
+              return false      
+   	end
 
 	if not self:canImbueItem(imbuement, item) then
 		return false

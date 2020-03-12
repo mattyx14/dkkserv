@@ -11,7 +11,7 @@
 		<flag convinceable="0" />
 		<flag pushable="0" />
 		<flag canpushitems="1" />
-		<flag canpushcreatures="0" />
+		<flag canpushcreatures="1" />
 		<flag targetdistance="1" />
 		<flag staticattack="90" />
 		<flag runonhealth="300" />
@@ -60,9 +60,11 @@
 		<item name="gold coin" countmax="46" chance="20000" />
 		<item name="platinum coin" countmax="3" chance="48000" />
 		<item name="life crystal" chance="570" />
-		<item id="2160" countmax="4" chance="1000"/>
+		<item name="boots of haste" chance="130" />
 		<item name="stone skin amulet" chance="900" />
 		<item name="ring of healing" chance="1190" />
+		<item name="warrior helmet" chance="890" />
+		<item name="knight armor" chance="1000" />
 		<item name="royal helmet" chance="210" />
 		<item name="medusa shield" chance="270" />
 		<item name="ham" countmax="4" chance="60000" />

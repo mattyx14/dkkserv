@@ -11,14 +11,14 @@
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag staticattack="90"/>
 		<flag targetdistance="1"/>
 		<flag runonhealth="0"/>
 		<flag canwalkonenergy="1" />
 		<flag canwalkonfire="1" />
 		<flag canwalkonpoison="1" />
-		<flag preyable="0" />
+		<!-- <flag preyable="0"/> -->
 		<flag rewardboss="1"/>
 	</flags>
 	<attacks>
@@ -65,9 +65,6 @@
 		<immunity invisible="1" />
 		<immunity earth="1" />
 	</immunities>
-	<summons maxSummons="5">
-		<summon name="emberwing" interval="1000" chance="32" max="5" />
-	</summons>
 	<loot>
 		<item id="25377" chance="100000"/><!-- Gold Token -->
 		<item id="25172" chance="100000"/><!-- Silver Token -->

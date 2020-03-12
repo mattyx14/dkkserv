@@ -11,7 +11,7 @@
 		<flag convinceable="0" />
 		<flag pushable="0" />
 		<flag canpushitems="1" />
-		<flag canpushcreatures="0" />
+		<flag canpushcreatures="1" />
 		<flag targetdistance="1" />
 		<flag staticattack="90" />
 		<flag runonhealth="0" />
@@ -51,8 +51,8 @@
 		<item name="Small Enchanted Ruby" chance="9040" />
 		<item name="Violet Gem" chance="7750" />
 		<item name="Lump of Dirt" chance="10190" />
-		<item name="Tyrant Head" chance="24100" />
-		<item name="Tyrant Shell" chance="12480" />
+		<item name="Tunnel Tyrant Head" chance="24100" />
+		<item name="Tunnel Tyrant Shell" chance="12480" />
 		<!--semi raro-->
 			<item name="Green Gem" chance="2300" />
 			<item name="Blue Gem" chance="3010" />

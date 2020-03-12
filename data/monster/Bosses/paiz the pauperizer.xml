@@ -4,7 +4,7 @@
 	<look type="362" corpse="12609" />
 	<targetchange interval="5000" chance="10" />
 	<flags>
-		<flag preyable="0" />
+		<!-- <flag preyable="0"/> -->
 		<flag summonable="0" />
 		<flag attackable="1" />
 		<flag hostile="1" />
@@ -12,7 +12,7 @@
 		<flag convinceable="0" />
 		<flag pushable="0" />
 		<flag canpushitems="1" />
-		<flag canpushcreatures="0" />
+		<flag canpushcreatures="1" />
 		<flag targetdistance="1" />
 		<flag staticattack="90" />
 		<flag runonhealth="0" />
@@ -74,6 +74,7 @@
 		<item id="2155" chance="21740" />					<!-- green gem -->
 		<item id="11307" chance="19570" />					<!-- zaoan sword -->
 		<item id="11301" chance="15220" />					<!-- zaoan armor -->
+		<item id="2492" chance="13040" />					<!-- dragon scale mail -->
 		<item id="8880" chance="10870" />					<!-- swamplair armor -->
 		<item id="12613" chance="10870" />					<!-- twiceslicer -->
 		<item id="2158" chance="8700" />						<!-- blue gem -->

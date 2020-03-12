@@ -11,7 +11,7 @@
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
 		<flag staticattack="80"/>
 		<flag runonhealth="600"/>
@@ -60,7 +60,7 @@
 		<item name="gold coin" countmax="90" chance="50000"/>
 		<item name="small emerald" countmax="4" chance="3770"/>
 		<item name="platinum coin" countmax="6" chance="74810"/>
-		<item id="2152" countmax="50" chance="2000"/>
+		<item name="knight armor" chance="1840"/>
 		<item name="medusa shield" chance="3040"/>
 		<item name="titan axe" chance="1160"/>
 		<item name="great mana potion" countmax="2" chance="10000"/>

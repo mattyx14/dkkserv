@@ -11,7 +11,7 @@
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
 		<flag staticattack="90"/>
 		<flag runonhealth="0"/>
@@ -44,7 +44,7 @@
 		<item name="gold coin" countmax="100" chance="99930"/>
 		<item name="platinum coin" countmax="4" chance="99540"/>
 		<item name="guardian halberd" chance="560"/>
-		<item id="2152" countmax="50" chance="1000"/>
+		<item name="tower shield" chance="820"/>
 		<item name="iron ore" chance="1700"/>
 		<item name="ancient stone" chance="20020"/>
 		<item name="shiny stone" chance="800"/>

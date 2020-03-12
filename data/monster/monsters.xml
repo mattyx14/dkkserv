@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monsters>
+	<!-- Others -->
+	<monster name="Black Cobra" file="Others/black cobra.xml"/>
+	<monster name="Cart Packed with Gold" file="Others/cart packed with gold.xml"/>
+	<monster name="Earworm" file="Others/earworm.xml"/>
+	<monster name="Ugly Monster" file="Others/ugly monster.xml"/>
+
 	<!-- Amazons -->
 	<monster name="Amazon" file="Amazons/amazon.xml"/>
 	<monster name="Valkyrie" file="Amazons/valkyrie.xml"/>
@@ -213,10 +219,18 @@
 	<monster name="Orc Cult Fanatic" file="Cults of Tibia/Orcs/orc cult fanatic.xml"/>
 	<monster name="Orc Cult Inquisitor" file="Cults of Tibia/Orcs/orc cult inquisitor.xml"/>
 	<monster name="Putrid Mummy" file="Cults of Tibia/Sandy/putrid mummy.xml"/>
+
 	<!-- BOSSES -->
+	<monster name="Wisdom of Urmahlullu" file="Bosses/wisdom of urmahlullu.xml"/>
+	<monster name="Urmahlullu the Immaculate" file="Bosses/urmahlullu the immaculate.xml"/>
+	<monster name="Urmahlullu the Weakened" file="Bosses/Urmahlullu the Weakened.xml"/>
+	<monster name="Wildness of Urmahlullu" file="Bosses/wildness of urmahlullu.xml"/>
+	<monster name="Bragrumol" file="Bosses/bragrumol.xml"/>
+	<monster name="Mozradek" file="Bosses/mozradek.xml"/>
 	<monster name="Leiden" file="Cults of Tibia/Bosses/Leiden.xml"/>
 	<monster name="Ravennous Hunger" file="Cults of Tibia/Bosses/Ravennous Hunger.xml"/>
 	<monster name="Wine Cask" file="Cults of Tibia/Bosses/Wine Cask.xml"/>
+	<monster name="Xogixath" file="Bosses/xogixath.xml"/>
 
 	<monster name="Eshtaba The Conjurer" file="Cults of Tibia/Bosses/Eshtaba The Conjurer.xml"/>
 	<monster name="Malkhar Deathbringer" file="Cults of Tibia/Bosses/Malkhar Deathbringer.xml"/>
@@ -543,12 +557,14 @@
 	<monster name="Rotworm" file="Annelids/rotworm.xml"/>
 	<monster name="Rift Worm" file="Annelids/rift worm.xml"/>
 
-	<!-- Anuma -->
-	<monster name="Crypt Warden" file="Anuma/Crypt Warden.xml"/>
-	<monster name="Feral Sphinx" file="Anuma/Feral Sphinx.xml"/>
-	<monster name="Gryphon" file="Misc/Misc Mounts/Gryphon.xml"/>
-	<monster name="Manticore" file="Anuma/Manticore.xml"/>
-	<monster name="Sphinx" file="Anuma/Sphinx.xml"/>
+	<!-- Anumas -->
+	<monster name="Crypt Warden" file="Anumas/Crypt Warden.xml"/>
+	<monster name="Feral Sphinx" file="Anumas/Feral Sphinx.xml"/>
+	<monster name="Gryphon" file="Anumas/gryphon.xml"/>
+	<monster name="Lamassu" file="Anumas/Lamassu.xml"/>
+	<monster name="Manticore" file="Anumas/Manticore.xml"/>
+	<monster name="Sphinx" file="Anumas/Sphinx.xml"/>	
+	<monster name="Gryphon" file="Misc/Misc Mounts/Gryphon.xml"/>	
 
 	<!-- Apes -->
 	<monster name="Kongra" file="Apes/kongra.xml"/>
@@ -847,7 +863,6 @@
 	<monster name="Tremorak" file="Bosses/tremorak.xml"/>
 	<monster name="Tromphonyte" file="Bosses/tromphonyte.xml"/>
 	<monster name="Ungreez" file="Bosses/ungreez.xml"/>
-	<monster name="Urmahlullu the Weakened" file="Bosses/Urmahlullu the Weakened.xml"/>
 	<monster name="Ushuriel" file="Bosses/ushuriel.xml"/>
 	<monster name="Verminor" file="Bosses/verminor.xml"/>
 	<monster name="Versperoth" file="Bosses/versperoth.xml"/>
@@ -1530,7 +1545,6 @@
 	<monster name="Burrowing Beetle" file="new/Burrowing_Beetle.xml"/>
 	<monster name="Cave Spider" file="new/Cave_Spider.xml"/>
 	<monster name="Dawn Bat" file="new/Dawn_Bat.xml"/>
-	<monster name="Deepsea Blood Crab" file="new/Deepsea_Blood_Crab.xml"/>
 	<monster name="Dreadmaw" file="new/Dreadmaw.xml"/>
 	<monster name="Duskbringer" file="new/Duskbringer.xml"/>
 	<monster name="Eclipse Knight" file="new/Eclipse_Knight.xml"/>

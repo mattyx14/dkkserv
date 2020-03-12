@@ -4,7 +4,7 @@
 	<look type="611" corpse="23462"/>
 	<targetchange interval="5000" chance="8"/>
 	<flags>
-		
+		<!-- <flag preyable="0"/> -->
 		<flag summonable="0"/>
 		<flag attackable="1"/>
 		<flag hostile="1"/>
@@ -12,7 +12,7 @@
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
 		<flag staticattack="90"/>
 		<flag runonhealth="0"/>
@@ -61,6 +61,5 @@
 		<item id="2666" countmax="3" chance="20000"/>	<!-- meat -->
 		<item id="2547" countmax="7" chance="20000"/>	<!-- power bolt -->
 		<item id="7588" chance="20000"/>				<!-- strong health potion -->
-		<item id="2503" chance="50" />				<!-- dwarven armor -->
 	</loot>
 </monster>

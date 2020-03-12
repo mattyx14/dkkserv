@@ -4,7 +4,7 @@
 	<look type="245" corpse="6340" />
 	<targetchange interval="4000" chance="10" />
 	<flags>
-		<flag preyable="0" />
+		<!-- <flag preyable="0"/> -->
 		<flag summonable="0" />
 		<flag attackable="1" />
 		<flag hostile="1" />
@@ -12,7 +12,7 @@
 		<flag convinceable="0" />
 		<flag pushable="0" />
 		<flag canpushitems="1" />
-		<flag canpushcreatures="0" />
+		<flag canpushcreatures="1" />
 		<flag targetdistance="1" />
 		<flag staticattack="90" />
 		<flag runonhealth="300" />
@@ -61,9 +61,11 @@
 		<item id="2671" countmax="2" chance="100000" />	<!-- ham -->
 		<item id="2152" countmax="10" chance="90000" />	<!-- platinum coin -->
 		<item id="11229" chance="81000" />				<!-- scythe leg -->
+		<item id="2477" chance="70000" />				<!-- knight legs -->
 		<item id="5669" chance="40000" />				<!-- mysterious voodoo skull -->
 		<item id="6526" chance="28000" />				<!-- skeleton decoration -->
 		<item id="2454" chance="14000" />				<!-- war axe -->
 		<item id="7418" chance="10000" />				<!-- nightmare blade -->
+		<item id="2195" chance="8000" />					<!-- boots of haste -->
 	</loot>
 </monster>

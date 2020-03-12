@@ -11,7 +11,7 @@
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="4"/>
 		<flag staticattack="90"/>
 		<flag runonhealth="900"/>
@@ -24,21 +24,24 @@
 		<attack name="warlock skill reducer" range="5" interval="2000" chance="5"/>
 		<attack name="manadrain" interval="2000" chance="10" range="7" min="0" max="-120"/>
 		<attack name="fire" interval="2000" chance="20" range="7" radius="3" target="1" min="-50" max="-180">
-			<attribute key="shootEffect" value="flasharrow"/>
-			<attribute key="areaEffect" value="energyarea"/>
+			<attribute key="shootEffect" value="burstarrow"/>
+			<attribute key="areaEffect" value="firearea"/>
 		</attack>
-		<attack name="energyfield" interval="2000" chance="10" range="7" radius="2" target="1">
-			<attribute key="shootEffect" value="energy"/>
+		<attack name="firefield" interval="2000" chance="10" range="7" radius="2" target="1">
+			<attribute key="shootEffect" value="fire"/>
 		</attack>
 		<attack name="energy" interval="2000" chance="10" length="8" spread="0" min="-150" max="-230">
 			<attribute key="areaEffect" value="bigclouds"/>
+		</attack>
+		<attack name="speed" interval="2000" chance="15" range="7" speedchange="-600" duration="20000">
+			<attribute key="areaEffect" value="redshimmer"/>
 		</attack>
 	</attacks>
 	<defenses armor="20" defense="20">
 		<defense name="healing" interval="2000" chance="20" min="100" max="225">
 			<attribute key="areaEffect" value="blueshimmer"/>
 		</defense>
-		<defense name="invisible" interval="10000" chance="20" duration="10000">
+		<defense name="invisible" interval="2000" chance="20" duration="10000">
 			<attribute key="areaEffect" value="blueshimmer"/>
 		</defense>
 	</defenses>
@@ -75,9 +78,10 @@
 		<item name="mind stone" chance="2000"/>
 		<item name="stone skin amulet" chance="330"/>
 		<item name="poison dagger" chance="7600"/>
-		<item id="2160" countmax="2" chance="5000"/>
+		<item name="skull staff" chance="6370"/>
 		<item name="golden armor" chance="240"/>
 		<item id="2600" chance="1000"/> <!-- inkwell -->
+		<item name="blue robe" chance="1410"/>
 		<item name="cherry" countmax="4" chance="19000"/>
 		<item name="bread" chance="9000"/>
 		<item name="dark mushroom" chance="3000"/>
@@ -85,7 +89,7 @@
 		<item name="assassin star" countmax="4" chance="3470"/>
 		<item name="great mana potion" chance="4760"/>
 		<item name="great health potion" chance="5190"/>
-		<item id="2160" countmax="1" chance="500"/>
+		<item name="lightning robe" chance="1000"/>
 		<item name="luminous orb" chance="510"/>
 	</loot>
 </monster>

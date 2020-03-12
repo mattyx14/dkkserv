@@ -11,14 +11,14 @@
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
-		<flag canpushcreatures="0"/>
+		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
 		<flag staticattack="90"/>
 		<flag runonhealth="0"/>
 		<flag canwalkonenergy="1"/>
 		<flag canwalkonfire="1"/>
 		<flag canwalkonpoison="1"/>
-		
+		<!-- <flag preyable="0"/> -->
 		<flag rewardboss="1"/>
 	</flags>
 	<attacks>
@@ -73,7 +73,9 @@
 		<item id="7440" chance="2000"/><!-- mastermind potion -->
 		<item id="2214" chance="2000"/><!-- ring of healing -->
 		<item id="2153" chance="2000"/><!-- violet gem -->
+		<item id="2436" chance="1000"/><!-- skull staff -->
 		<item id="2197" chance="1000"/><!-- stone skin amulet -->
+		<item id="2539" chance="100"/><!-- Phoenix Shield -->
 		<item id="7417" chance="100"/><!-- Runed Sword -->
 		<item id="25377" chance="100000"/><!-- Gold Token -->
 		<item id="25172" chance="100000"/><!-- Silver Token -->

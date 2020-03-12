@@ -11,7 +11,7 @@
 		<flag convinceable="0" />
 		<flag pushable="0" />
 		<flag canpushitems="1" />
-		<flag canpushcreatures="0" />
+		<flag canpushcreatures="1" />
 		<flag targetdistance="1" />
 		<flag staticattack="90" />
 		<flag runonhealth="0" />
@@ -66,6 +66,7 @@
 		<item name="mind stone" chance="1500" />
 		<item name="ankh" chance="500" />
 		<item name="ornamented ankh" chance="100000" />
+		<item name="skull staff" chance="500" />
 		<item name="pharaoh sword" chance="300" />
 		<item name="great mana potion" chance="7000" />
 	</loot>

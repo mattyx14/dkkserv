@@ -11,20 +11,23 @@
 		<flag convinceable="0" />
 		<flag pushable="0" />
 		<flag canpushitems="1" />
-		<flag canpushcreatures="0" />
+		<flag canpushcreatures="1" />
 		<flag targetdistance="1" />
 		<flag staticattack="90" />
 		<flag runonhealth="800" />
 		<flag canwalkonenergy="1" />
 		<flag canwalkonfire="1" />
 		<flag canwalkonpoison="1" />
-		<flag preyable="0" />
+		<!-- <flag preyable="0"/> -->
 	</flags>
   	<attacks>
     		<attack name="melee" interval="2000" skill="88" attack="100" />
     		<attack name="blightwalker curse" interval="2000" chance="10"/>
     		<attack name="lifedrain" interval="2000" chance="14" radius="4" target="0" min="-65" max="-135">
       			<attribute key="areaEffect" value="greenshimmer" />
+    		</attack>
+    			<attack name="drunk" interval="2000" chance="20" duration="35000" radius="7" target="0">
+      			<attribute key="areaEffect" value="greenspark" />
     		</attack>
 			<attack name="death" interval="2000" chance="14" legth="4" target="0" min="-165" max="-535">
       			<attribute key="areaEffect" value="mortarea" />
