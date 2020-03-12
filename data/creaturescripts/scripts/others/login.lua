@@ -64,6 +64,7 @@ function onLogin(player)
             10 *> You have finished your schedule, you have no tutor online, you communicate with some CM in-game or ts and stay in the help until someone logs in, if you can.
             11 *> Always keep a good Portuguese in the Help, we want tutors who support, not that they speak a satanic ritual.
             12 *> If you see a tutor doing something that violates the rules, take a print and send it to your superiors. "
+			]]
         player:popupFYI(msg)
     end
 
