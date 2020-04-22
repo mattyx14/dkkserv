@@ -7,9 +7,6 @@
 	<talkaction words="!saveme" script="saveme.lua" />
 	<talkaction words="!shop" script="znoteshop.lua"/>
 	<talkaction words="!online" script="online.lua" />
-	<talkaction words="!autoloot" separator=" " script="autoloot.lua"/>
-	<talkaction words="!add" separator=" " script="add_autoloot.lua" />
-	<talkaction words="!sellhouse" separator=" " script="sellhouse.lua" />
-	<talkaction words="!leavehouse" script="leavehouse.lua" />
+	<talkaction words="!commands" script="commands.lua" />
 	<talkaction words="!bank" separator=" " script="bank.lua"/>
 </talkactions>

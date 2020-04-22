@@ -7,6 +7,7 @@ function onLogin(player)
 		"petlogin",
 		"petthink",
 		"bonusPreyLootKill",
+		"BestiaryOnKill",
 
 		-- DarkKonia
 		"onadvance_reward",
@@ -17,7 +18,7 @@ function onLogin(player)
 		"KillingInTheNameOfKillss",
 		"KillingInTheNameOfKillsss",
 	}
-	
+
 	for i = 1, #events do
 		player:registerEvent(events[i])
 	end
