@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="poltergeist" nameDescription="a poltergeist" race="undead" experience="16090" speed="250" manacost="0">
+	<health now="12050" max="12050"/>
+	<look type="235" head="20" corpse="6348"/>
+	<targetchange interval="5000" chance="8"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="1"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="0"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" min="-480" max="-1550"/>
+		<attack name="death" interval="1900" chance="30" range="7" radius="4" target="1" min="-250" max="-350">
+			<attribute key="shootEffect" value="death"/>
+			<attribute key="areaEffect" value="STONES"/>
+		</attack>
+		<attack name="death" interval="1900" chance="50" range="7" radius="4" target="1" min="-450" max="-750">
+			<attribute key="shootEffect" value="death"/>
+			<attribute key="areaEffect" value="mortarea"/>
+		</attack>
+		<attack name="death" interval="1900" chance="45" range="7" radius="4" target="1" min="-450" max="-750">
+			<attribute key="shootEffect" value="death"/>
+			<attribute key="areaEffect" value="mortarea"/>
+		</attack>
+		<attack name="manadrain" interval="2000" chance="20" range="7" min="-210" max="-400">
+			<attribute key="areaEffect" value="HEARTS"/>
+	</attack>
+	</attacks>
+	<defenses armor="25" defense="20">
+		<defense name="healing" interval="1000" chance="50" min="375" max="725">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+	</defenses>
+	<immunities>
+		<immunity poison="1"/>
+		<immunity lifedrain="1"/>
+		<immunity paralyze="1"/>
+		<immunity outfit="1"/>
+		<immunity drunk="1"/>
+		<immunity death="1"/>
+		<immunity invisible="1"/>
+	</immunities>
+	<voices interval="5000" chance="10">
+		<voice sentence="Revenge ... is so ... sweet!"/>
+		<voice sentence="Life...force!"/>
+		<voice sentence="Feed me your... lifeforce!"/>
+	</voices>
+</monster>

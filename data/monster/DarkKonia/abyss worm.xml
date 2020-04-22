@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<monster name="abyss worm" nameDescription="a abyss worm" race="undead" experience="12070" speed="300" manacost="0">
+	<health now="6145" max="6145"/>
+	<look type="295" corpse="8947"/>
+	<targetchange interval="2000" chance="0"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="0"/>
+		<flag canpushcreatures="0"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" min="-240" max="-445"/>
+		<attack name="earth" interval="1000" chance="30" range="7" min="-215" max="-435">
+			<attribute key="shootEffect" value="EARTH"/>
+			<attribute key="areaEffect" value="PLANTATTACK"/>
+		</attack>
+		<attack name="Paralyze" interval="1000" chance="17" range="7" target="1">
+			<attribute key="shootEffect" value="EARTH"/>
+			<attribute key="areaEffect" value="PLANTATTACK"/>
+		</attack>
+		<attack name="poisoncondition" interval="1000" chance="17" radius="5" target="0" min="-130" max="-400">
+			<attribute key="areaEffect" value="BIGPLANTS"/>
+		</attack>
+	</attacks>
+	<defenses armor="8" defense="11"/>
+	<elements>
+		<element earthPercent="100"/>
+		<element holyPercent="30"/>
+		<element firePercent="100"/>
+		<element energyPercent="100"/>
+		<element physicalPercent="40"/>
+		<element icePercent="25"/>
+		<element deathPercent="30"/>
+	</elements>
+	<immunities>
+		<immunity lifedrain="1"/>
+		<immunity paralyze="1"/>
+		<immunity outfit="1"/>
+		<immunity drunk="1"/>
+		<immunity invisible="1"/>
+		<immunity drown="1"/>
+	</immunities>
+</monster>

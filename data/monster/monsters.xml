@@ -1555,4 +1555,102 @@
 	<monster name="Flame of Omrafir" file="new/flame_of_omrafir.xml"/>
 	<monster name="Fleabringer" file="new/fleabringer.xml"/>
 	<monster name="Frost Servant" file="new/frost_servant.xml"/>
+
+	<!-- DarkKonia -->
+	<!-- DarkKonia DarkKonia -->
+	<monster name="Aquagel" file="DarkKonia/aquagel.xml"/>
+	<monster name="Adamantoise" file="DarkKonia/adamantoise.xml"/>
+	<monster name="Envo" file="DarkKonia/envo.xml"/>
+	<monster name="Erebus" file="DarkKonia/erebus.xml"/>
+	<monster name="Flame Eater" file="DarkKonia/flame eater.xml"/>
+	<monster name="Hellfire" file="DarkKonia/hellfire.xml"/>
+	<monster name="Ice Commander" file="DarkKonia/ice commander.xml"/>
+	<monster name="Land Turtle" file="DarkKonia/land turtle.xml"/>
+	<monster name="Thunder bolt" file="DarkKonia/thunder bolt.xml"/>
+	<monster name="Vinon" file="DarkKonia/vinon.xml"/>
+	<monster name="Abaddon" file="DarkKonia/abaddon.xml"/>
+	<monster name="Abyss Worm" file="DarkKonia/abyss worm.xml"/>
+	<monster name="Catrastrophe Death" file="DarkKonia/catrastrophe death.xml"/>
+	<monster name="Catrastrophe Earth" file="DarkKonia/catrastrophe earth.xml"/>
+	<monster name="Catrastrophe Energy" file="DarkKonia/catrastrophe energy.xml"/>
+	<monster name="Dark Warrior" file="DarkKonia/dark warrior.xml"/>
+	<monster name="Demon Fire" file="DarkKonia/demon fire.xml"/>
+	<monster name="Earth Eater" file="DarkKonia/earth eater.xml"/>
+	<monster name="Fire Commander" file="DarkKonia/fire commander.xml"/>
+	<monster name="Kaiser Dragon" file="DarkKonia/kaiser dragon.xml"/>
+	<monster name="Lord Knight" file="DarkKonia/lord knight.xml"/>
+	<monster name="Spirit of Fire Fire" file="DarkKonia/spirit of fire fire.xml"/>
+	<monster name="Storm Demon" file="DarkKonia/storm demon.xml"/>
+	<monster name="Storm Dragon" file="DarkKonia/storm dragon.xml"/>
+	<monster name="Trainer" file="DarkKonia/trainer.xml"/>
+	<monster name="Black Warlock" file="DarkKonia/black warlock.xml"/>
+	<monster name="Black Magician" file="DarkKonia/black magician.xml"/>
+	<monster name="Chaos Destroyer" file="DarkKonia/chaos destroyer.xml"/>
+	<monster name="Chaos Littium" file="DarkKonia/chaos littium.xml"/>
+	<monster name="Crystal Spider Ice" file="DarkKonia/crystal spider ice.xml"/>
+	<monster name="Executor" file="DarkKonia/executor.xml"/>
+	<monster name="Gloom Widow" file="DarkKonia/gloom widow.xml"/>
+	<monster name="Infernos" file="DarkKonia/infernos.xml"/>
+	<monster name="Infernatil" file="DarkKonia/infernatil.xml"/>
+	<monster name="Ixedon" file="DarkKonia/ixedon.xml"/>
+	<monster name="Lithermoth" file="DarkKonia/lithermoth.xml"/>
+	<monster name="Lord of Elements" file="DarkKonia/lord of elements.xml"/>
+	<monster name="Massive Demon Frost" file="DarkKonia/massive demon frost.xml"/>
+	<monster name="Son of Verminor Earth" file="DarkKonia/son of verminor earth.xml"/>
+	<monster name="Verminor Earth" file="DarkKonia/verminor earth.xml"/>
+	<monster name="Verminor" file="DarkKonia/verminor.xml"/>
+	<monster name="Webster Ice" file="DarkKonia/webster ice.xml"/>
+	<monster name="Yakchal" file="DarkKonia/yakchal.xml"/>
+	<monster name="Zarabustor" file="DarkKonia/zarabustor.xml"/>
+	<monster name="Demon Energy" file="DarkKonia/demon energy.xml"/>
+	<monster name="Flaremance" file="DarkKonia/flaremance.xml"/>
+	<monster name="Fury Fire" file="DarkKonia/fury fire.xml"/>
+	<monster name="Gorgimera Earth" file="DarkKonia/gorgimera earth.xml"/>
+	<monster name="Gorgimera Energy" file="DarkKonia/gorgimera energy.xml"/>
+	<monster name="Gorgimera Fire" file="DarkKonia/gorgimera fire.xml"/>
+	<monster name="Hidon" file="DarkKonia/hidon.xml"/>
+	<monster name="Ice Warrior" file="DarkKonia/ice warrior.xml"/>
+	<monster name="Massive Ice Elemental" file="DarkKonia/massive ice elemental.xml"/>
+	<monster name="Metamorph" file="DarkKonia/metamorph.xml"/>
+	<monster name="Mini Satana" file="DarkKonia/mini satana.xml"/>
+	<monster name="Poltergeist" file="DarkKonia/poltergeist.xml"/>
+	<monster name="Skeletal Horror" file="DarkKonia/skeletal horror.xml"/>
+	<monster name="Skull Dragon" file="DarkKonia/skull dragon.xml"/>
+	<monster name="Twister" file="DarkKonia/twister.xml"/>
+	<monster name="Dragon Aevis" file="DarkKonia/dragon aevis.xml"/>
+	<monster name="Mini Satana fire" file="DarkKonia/mini satana fire.xml"/>
+	<monster name="Chaos Imperor" file="DarkKonia/chaos imperor.xml"/>
+	<monster name="Doom Howl" file="DarkKonia/doom howl.xml"/>
+	<monster name="Evil Mastermind" file="DarkKonia/evil mastermind.xml"/>
+	<monster name="Monstor Ripper" file="DarkKonia/monstor ripper.xml"/>
+	<monster name="Incineron Magna" file="DarkKonia/incineron magna.xml"/>
+	<monster name="Demon" file="Demons/demon.xml"/>
+	<monster name="Poison Eater" file="DarkKonia/poison eater.xml"/>
+	<monster name="Zathroth" file="DarkKonia/zathroth.xml"/>
+	<monster name="Lucifer" file="DarkKonia/lucifer.xml"/>
+	<monster name="Satan" file="DarkKonia/satan.xml"/>
+	<monster name="Bella" file="DarkKonia/bella.xml"/>
+	<monster name="Sand Worm" file="DarkKonia/sand worm.xml"/>
+	<monster name="Tyrant Warrior" file="DarkKonia/tyrant warrior.xml"/>
+	<monster name="Ra" file="DarkKonia/ra.xml"/>
+	<monster name="Roken Skeleton" file="DarkKonia/roken skeleton.xml"/>
+	<monster name="Leaf Golem Grom" file="DarkKonia/leaf golem grom.xml" />
+	<monster name="Fezarus" file="DarkKonia/fezarus.xml"/>
+	<monster name="Toxirus" file="DarkKonia/toxirus.xml"/>
+	<monster name="Fyzarus" file="DarkKonia/fyzarus.xml" />
+	<monster name="Shazarus" file="DarkKonia/shazarus.xml" />
+	<monster name="Gyyzarus" file="DarkKonia/gyyzarus.xml" />
+	<monster name="Fire Lord" file="DarkKonia/fire lord.xml"/>
+	<monster name="Sokay Guardian" file="DarkKonia/sokay guardian.xml"/>
+	<monster name="Thief" file="DarkKonia/thief.xml" />
+	<monster name="Captain Jones" file="DarkKonia/captain jones.xml" />
+	<monster name="Dracula" file="DarkKonia/dracula.xml" />
+	<monster name="Infernus" file="DarkKonia/infernus.xml" />
+
+	<!-- News DarkKonia -->
+	<monster name="Anger" file="DarkKonia/anger.xml" />
+	<monster name="Angeryosa" file="DarkKonia/angeryosa.xml" />
+		<monster name="Tyrant of The Depth" file="DarkKonia/news/Tyrant of The Depth.xml" />
+		<monster name="Atlantian Scout" file="DarkKonia/news/Atlantian Scout.xml" />
+		<monster name="Atlantian Warrior" file="DarkKonia/news/Atlantian Warrior.xml" />
 </monsters>

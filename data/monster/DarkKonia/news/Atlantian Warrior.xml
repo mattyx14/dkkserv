@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<monster name="Atlantian Warrior" nameDescription="a Atlantian Warrior" experience="19500" speed="360" race="Undead">
+	<health now="12900" max="12900"/>
+	<look type="1202" head="85" body="114" legs="114" feet="85" addons="2" mount="734" corpse="6080"/>
+	<strategy attack="100" defense="0"/>
+	<targetchange speed="1" chance="8"/>
+	<flags>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="0"/>
+		<flag hostile="1"/>
+		<flag attackable="1"/>
+		<flag staticattack="90"/>
+		<flag targetdistance="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" chance="100" min="-180" max="-490"/>
+		<attack name="ice" interval="1900" chance="45" min="-250" max="-420" range="8" radius="6" target="1">
+			<attribute key="areaEffect" value="icetornado"/>
+			<attribute key="shootEffect" value="ice"/>
+		</attack>
+		<attack name="ice" interval="1800" chance="15" min="-230" max="-355" range="7" radius="5" target="0">
+			<attribute key="areaEffect" value="iceattack"/>
+		</attack>
+	</attacks>
+	<defenses defense="20" armor="30">
+		<defense name="healing" interval="1000" chance="10" min="100" max="250">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+	</defenses>
+	<elements>
+		<element firePercent="100"/>
+		<element earthPercent="-10"/>
+		<element energyPercent="-5" />
+		<element deathPercent="0"/>
+		<element icePercent="100"/>
+		<element holyPercent="0"/>
+		<element physicalPercent="0"/>
+	</elements>
+	<immunities>
+		<immunity lifedrain="1"/>
+		<immunity paralyze="1"/>
+		<immunity outfit="1"/>
+		<immunity drunk="1"/>
+		<immunity invisible="1"/>
+		<immunity drown="1"/>
+	</immunities>
+	<summons maxSummons="1">
+		<summon name="Deepling Warrior" interval="2500" chance="10" max="1"/>
+	</summons>
+	<loot>
+	<!--Sempre-->
+		<item name="Small Enchanted Sapphire" chance="11910" />
+		<item name="Small Enchanted Ruby" chance="9040" />
+		<!--semi raro-->
+			<item name="Green Gem" chance="2300" />
+			<item name="Blue Gem" chance="3010" />
+			<item name="Crystal Mace" chance="1580" />
+			<item name="Energy Vein" chance="3010" />
+			<!--raro-->
+					<item name="Crystalline Armor" chance="860" />
+					<item name="Violet Gem" chance="750" />
+					<item name="Suspicious Device" chance="1290" />
+					<item name="frostsoul tabard" chance="1" />
+	</loot>
+</monster>

@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Tyrant Warrior" nameDescription="a tyrant warrior" race="undead" experience="18700" speed="320" manacost="10000">
+	<health now="12200" max="12200"/>
+	<look type="498" corpse="14190"/>
+	<targetchange interval="5000" chance="8"/>
+	<strategy attack="80" defense="70"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="0"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" min="-400" max="-1050"/>
+		<attack name="ice" interval="1500" chance="15" range="7" radius="7" target="1" min="-360" max="-580">
+			<attribute key="shootEffect" value="ice"/>
+			<attribute key="areaEffect" value="icetornado"/>
+		</attack>
+		<attack name="earth" interval="1500" chance="25" range="7" radius="7" target="1" min="-360" max="-650">
+			<attribute key="shootEffect" value="ice"/>
+			<attribute key="areaEffect" value="giantice"/>
+		</attack>
+		<attack name="ice" interval="1500" chance="30" length="8" spread="0" min="-320" max="-500">
+			<attribute key="areaEffect" value="giantice"/>
+		</attack>
+		<attack name="earth" interval="1800" chance="20" range="3" radius="5" target="1" min="-350" max="-600">
+			<attribute key="areaEffect" value="bigplants"/>
+			</attack>
+		<attack name="Paralyze" interval="1500" chance="17" range="7" target="1">
+			<attribute key="areaEffect" value="icetornado"/>
+		</attack>
+	</attacks>
+	<defenses armor="50" defense="55">
+		<defense name="healing" interval="1000" chance="15" min="90" max="150">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+	</defenses>
+	<immunities>
+		<immunity lifedrain="1"/>
+		<immunity paralyze="1"/>
+		<immunity outfit="1"/>
+		<immunity drunk="1"/>
+		<immunity invisible="1"/>
+	</immunities>
+	<elements>
+		<element physicalPercent="90"/>
+		<element energyPercent="100"/>
+		<element earthPercent="100"/>
+		<element icePercent="100"/>
+		<element holyPercent="90"/>
+		<element deathPercent="90"/>
+		<element firePercent="90"/>
+	</elements>
+</monster>

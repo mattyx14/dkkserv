@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Toxirus" nameDescription="a toxirus" race="VENOM" experience="9900" speed="390" manacost="10000">
+	<health now="9200" max="9200"/>
+	<look type="12" head="19" body="83" legs="115" feet="96" corpse="0"/>
+	<targetchange interval="5000" chance="8"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="0"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" min="-120" max="-750"/>
+		<attack name="earth" interval="1000" chance="14" range="7" radius="7" target="1" min="-190" max="-400">
+			<attribute key="shootEffect" value="EARTH"/>
+			<attribute key="areaEffect" value="STONES"/>
+		</attack>
+		<attack name="Paralyze" interval="1000" chance="17" range="7" target="1">
+			<attribute key="shootEffect" value="poison"/>
+			<attribute key="areaEffect" value="greenbubble"/>
+		</attack>
+		<attack name="earth" interval="1500" chance="20" range="7" radius="7" target="1" min="-190" max="-400">
+			<attribute key="shootEffect" value="EARTH"/>
+			<attribute key="areaEffect" value="BIGPLANTS"/>
+		</attack>
+		<attack name="earth" interval="1500" chance="40" length="8" spread="0" min="-250" max="-420">
+			<attribute key="areaEffect" value="CARNIPHILA"/>
+		</attack>
+	</attacks>
+	<defenses armor="50" defense="55">
+		<defense name="healing" interval="1000" chance="15" min="90" max="150">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+	</defenses>
+	<summons maxSummons="4">
+		<summon name="behemoth" interval="2000" chance="20" />
+		<summon name="stonecraker" interval="2000" chance="15" />
+		<summon name="giant spider" interval="2000" chance="10" />
+		<summon name="cyclops smith" interval="2000" chance="2" />
+	</summons>
+	<elements>
+		<element physicalPercent="95"/>
+		<element energyPercent="100"/>
+		<element earthPercent="100"/>
+		<element icePercent="95"/>
+		<element holyPercent="95"/>
+		<element deathPercent="95"/>
+		<element firePercent="95"/>
+	</elements>
+	<immunities>
+		<immunity drown="1" />
+		<immunity lifedrain="1" />
+		<immunity paralyze="1" />
+		<immunity invisible="1" />
+	</immunities>
+</monster>
