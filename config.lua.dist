@@ -23,7 +23,7 @@ orangeSkullDuration = 5
 -- Connection Config
 -- NOTE: maxPlayers set to 0 means no limit
 -- NOTE: MaxPacketsPerSeconds if you change you will be subject to bugs by WPE, keep the default value of 25
-ip = "192.99.54.243"
+ip = "127.0.0.1"
 bindOnlyGlobalAddress = false
 loginProtocolPort = 7171
 gameProtocolPort = 7172
@@ -39,10 +39,9 @@ maxPacketsPerSecond = 25
 maxItem = 2000
 maxContainer = 100
 
--- Version Manual
-clientVersionMin = 1100
-clientVersionMax = 1200
-clientVersionStr = "Only support version 12.00"
+--- Version
+clientVersion = 1240
+clientVersionStr = "12.40"
 
 -- Depot Limit
 freeDepotLimit = 2000
@@ -65,10 +64,12 @@ housePriceEachSQM = 2000
 houseRentPeriod = "weekly"
 
 -- Item Usage
--- Do not touch here
--- Avoid use of WIPE program to crash the distro
 timeBetweenActions = 500
-timeBetweenExActions = 700
+timeBetweenExActions = 1000
+
+-- Push Delay
+pushDelay = 1000
+pushDistanceDelay = 1500
 
 -- Map
 -- NOTE: set mapName WITHOUT .otbm at the end
@@ -115,12 +116,12 @@ serverSaveClose = false
 serverSaveShutdown = true
 
 -- Rates
--- NOTE: rateExp is not used if you have enabled stages in data/XML/stages.xml
-experienceStages = true
+-- NOTE: rateExp is used as a fallback only
+-- To configure experience rate see file data/stages.lua
 rateExp = 5
-rateSkill = 70
+rateSkill = 90
 rateLoot = 3
-rateMagic = 15
+rateMagic = 25
 rateSpawn = 1
 
 -- Monster rates
