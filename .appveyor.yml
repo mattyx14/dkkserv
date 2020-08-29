@@ -9,7 +9,6 @@ platform:
   - x64
 
 configuration:
-  - Debug
   - Release
 
 matrix:
@@ -49,6 +48,6 @@ cache:
   - c:\tools\vcpkg\installed\
 
 artifacts:
-  - path: vc14\**\otservbr-global*.exe
+  - path: vc14\**\otxserver*.exe
   - path: vc14\**\*.dll
-  - path: otservbr-global.zip
+  - path: otxserver.zip

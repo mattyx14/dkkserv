@@ -5,37 +5,7 @@ jobs:
   include:
     - dist: bionic
       env:
-        - BUILD_TYPE=Debug LUAJIT=OFF
-
-    - dist: bionic
-      env:
-        - BUILD_TYPE=Debug LUAJIT=ON
-
-    - dist: bionic
-      env:
-        - BUILD_TYPE=Release LUAJIT=OFF
-
-    - dist: bionic
-      env:
         - BUILD_TYPE=Release LUAJIT=ON
-
-    - dist: xenial
-      env:
-        - BUILD_TYPE=Debug LUAJIT=OFF
-
-    - dist: xenial
-      env:
-        - BUILD_TYPE=Debug LUAJIT=ON
-
-    - dist: xenial
-      env:
-        - BUILD_TYPE=Release LUAJIT=OFF
-
-    - dist: xenial
-      env:
-        - BUILD_TYPE=Release LUAJIT=ON
-
-
 
 compiler:
   - gcc
