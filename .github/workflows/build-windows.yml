@@ -25,8 +25,8 @@ jobs:
       fail-fast: false
       matrix:
         name: [windows]
-        buildtype: [Debug, Release]
-        luajit: [on, off]
+        buildtype: [Release]
+        luajit: [on]
         include:
           - os: windows
             triplet: x64-windows
