@@ -25,7 +25,7 @@ jobs:
       matrix:
         os: [ubuntu-18.04]
         buildtype: [Release]
-        luajit: [on, off]
+        luajit: [on]
 
     steps:
     - uses: actions/checkout@v2
