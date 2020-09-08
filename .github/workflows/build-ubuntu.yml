@@ -60,10 +60,10 @@ jobs:
         unzip -o data/world/world.zip -d data/world/
         rm data/world/world.zip
         cd ..
-        zip -r otservbr.zip otservbr-global
+        zip -r otxserver.zip otxserver
 
     - name: Upload binary
       uses: actions/upload-artifact@v2
       with:
         name: ${{ matrix.os }}-otbr-amd64-${{ matrix.buildtype }}-LUAJIT=${{ matrix.luajit }}-${{ github.sha }}
-        path: ${{ runner.workspace }}/otservbr.zip
+        path: ${{ runner.workspace }}/otxserver.zip

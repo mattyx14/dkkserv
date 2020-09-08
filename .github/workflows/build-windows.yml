@@ -74,16 +74,16 @@ jobs:
       - name: Create datapack
         shell: powershell
         run: |
-          md ${{ runner.workspace }}\otservbr-global\otservbr-global
-          Copy-Item ${{ runner.workspace }}\otservbr-global\config.lua.dist     ${{ runner.workspace }}\otservbr-global\otservbr-global
-          Copy-Item ${{ runner.workspace }}\otservbr-global\key.pem             ${{ runner.workspace }}\otservbr-global\otservbr-global
-          Copy-Item ${{ runner.workspace }}\otservbr-global\LICENSE             ${{ runner.workspace }}\otservbr-global\otservbr-global
-          Copy-Item ${{ runner.workspace }}\otservbr-global\README.md           ${{ runner.workspace }}\otservbr-global\otservbr-global
-          Copy-Item ${{ runner.workspace }}\build\otbr.exe      ${{ runner.workspace }}\otservbr-global\otservbr-global\otservbr-global.exe
-          get-childitem -path ${{ runner.workspace }}\build -filter *.dll -recurse | copy-item -destination ${{ runner.workspace }}\otservbr-global\otservbr-global
-          Copy-Item ${{ runner.workspace }}\otservbr-global\data -Destination   ${{ runner.workspace }}\otservbr-global\otservbr-global\data
-          Copy-Item -Path ${{ runner.workspace }}\otservbr-global\data\* -Destination ${{ runner.workspace }}\otservbr-global\otservbr-global\data -Recurse
-          Compress-Archive -Path ${{ runner.workspace }}\otservbr-global\otservbr-global -DestinationPath ${{ runner.workspace }}\otservbr.zip
+          md ${{ runner.workspace }}\otxserver\otxserver
+          Copy-Item ${{ runner.workspace }}\otxserver\config.lua.dist     ${{ runner.workspace }}\otxserver\otxserver
+          Copy-Item ${{ runner.workspace }}\otxserver\key.pem             ${{ runner.workspace }}\otxserver\ootxserver
+          Copy-Item ${{ runner.workspace }}\otxserver\LICENSE             ${{ runner.workspace }}\otxserver\otxserver
+          Copy-Item ${{ runner.workspace }}\otxserver\README.md           ${{ runner.workspace }}\otxserver\otxserver
+          Copy-Item ${{ runner.workspace }}\build\otxserver.exe      ${{ runner.workspace }}\otxserver\otxserver\otxserver.exe
+          get-childitem -path ${{ runner.workspace }}\build -filter *.dll -recurse | copy-item -destination ${{ runner.workspace }}\otxserver\otxserverl
+          Copy-Item ${{ runner.workspace }}\otxserver\data -Destination   ${{ runner.workspace }}\otxserver\otxserver\data
+          Copy-Item -Path ${{ runner.workspace }}\otxserver\data\* -Destination ${{ runner.workspace }}\otxserver\otxserver\data -Recurse
+          Compress-Archive -Path ${{ runner.workspace }}\otxserver\otxserver -DestinationPath ${{ runner.workspace }}\otxserver.zip
 
       - name: dir
         run: find $RUNNER_WORKSPACE
@@ -93,5 +93,5 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: otbr-${{ matrix.os }}-${{ matrix.buildtype }}-luajit=${{ matrix.luajit }}-${{ github.sha }}
-          path: ${{ runner.workspace }}/otservbr.zip
+          path: ${{ runner.workspace }}/otxserver.zip
         if: contains( matrix.os, 'windows')
