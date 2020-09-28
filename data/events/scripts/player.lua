@@ -371,7 +371,7 @@ function Player:onMoveItem(item, count, fromPosition, toPosition, fromCylinder, 
 
 	local containerTo = self:getContainerById(toPosition.y-64)
 	if (containerTo) then
-		if (containerTo:getId() == ITEM_STORE_INBOX) or (containerTo:getParent():isContainer() and containerTo:getParent():getId() == ITEM_STORE_INBOX) then
+		if (containerTo:getId() == ITEM_STORE_INBOX) or (containerTo:getParent():isContainer() and containerTo:getParent():getId() == ITEM_STORE_INBOX and containerTo:getId() ~= ITEM_GOLD_POUCH) then
 			self:sendCancelMessage(RETURNVALUE_CONTAINERNOTENOUGHROOM)
 			return false
 		end
@@ -728,10 +728,14 @@ function Player:onGainSkillTries(skill, tries)
 		return tries
 	end
 
-	if skill == SKILL_MAGLEVEL then
-		return tries * configManager.getNumber(configKeys.RATE_MAGIC)
+	local skillRate = configManager.getNumber(configKeys.RATE_SKILL)
+	local magicRate = configManager.getNumber(configKeys.RATE_MAGIC)
+
+	if(skill == SKILL_MAGLEVEL) then -- Magic getLevel
+		return tries * getRateFromTable(magicLevelStages, self:getMagicLevel(), magicRate)
 	end
-	return tries * configManager.getNumber(configKeys.RATE_SKILL)
+
+	return tries * getRateFromTable(skillsStages, self:getEffectiveSkillLevel(skill), skillRate)
 end
 
 function Player:onRemoveCount(item)
