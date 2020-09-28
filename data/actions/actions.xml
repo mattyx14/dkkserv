@@ -490,89 +490,89 @@
 
 	<!-- DarkKonia Scripts -->
 	<!-- Quests -->
-	<action itemid="1740" script="quests/quests.lua" />
-	<action fromid="1747" toid="1749" script="quests/quests.lua" />
-	<action actionid="30492" script="quests/furyQuest/chest.lua" />
+	<action itemid="1740" script="darkkoniaTemp/quests/quests.lua" />
+	<action fromid="1747" toid="1749" script="darkkoniaTemp/quests/quests.lua" />
+	<action actionid="30492" script="darkkoniaTemp/quests/furyQuest/chest.lua" />
 	<!-- System Quest -->
 		<!-- Djinn Quest -->
-		<action actionid="2001" script="quests/others/systems/system.lua" />
+		<action actionid="2001" script="darkkoniaTemp/quests/others/systems/system.lua" />
 		<!-- Anni Quest -->
-		<action actionid="2002" script="quests/others/systems/system.lua" />
+		<action actionid="2002" script="darkkoniaTemp/quests/others/systems/system.lua" />
 
 	<!-- Demon Oak -->
-	<action itemid="8293" script="quests/demon oak/demonOak.lua" />
-	<!-- <action fromuid="9008" touid="9011" script="quests/demon oak/demonOakChest.lua" /> -->
-	<action uniqueid="9009" script="quests/demon oak/demonOakGravestone.lua" />
+	<action itemid="8293" script="darkkoniaTemp/quests/demon oak/demonOak.lua" />
+	<!-- <action fromuid="9008" touid="9011" script="darkkoniaTemp/quests/demon oak/demonOakChest.lua" /> -->
+	<action uniqueid="9009" script="darkkoniaTemp/quests/demon oak/demonOakGravestone.lua" />
 
 	<!-- Other -->
-	<action fromaid="50140" toaid="50144" script="oreWagons.lua" />
+	<action fromaid="50140" toaid="50144" script="darkkoniaTemp/oreWagons.lua" />
 		<!-- Other Outfits -->
 		<!-- Pirate Outfit -->
-		<action uniqueid="6096" script="quests/outfits/outfits.lua" />
-			<action uniqueid="9010" script="quests/outfits/pirateLever.lua" />
+		<action uniqueid="6096" script="darkkoniaTemp/quests/outfits/outfits.lua" />
+			<action uniqueid="9010" script="darkkoniaTemp/quests/outfits/pirateLever.lua" />
 		<!-- Conjurer Outfit -->
-		<action uniqueid="2662" script="quests/outfits/outfits.lua" />
-			<action actionid="2080" script="quests/outfits/conjurerLever.lua" />
-			<action actionid="2081" script="quests/outfits/conjurerLever_two.lua" />
+		<action uniqueid="2662" script="darkkoniaTemp/quests/outfits/outfits.lua" />
+			<action actionid="2080" script="darkkoniaTemp/quests/outfits/conjurerLever.lua" />
+			<action actionid="2081" script="darkkoniaTemp/quests/outfits/conjurerLever_two.lua" />
 		<!-- Death Herald Outfit -->
-		<action uniqueid="10008" script="quests/outfits/outfits.lua" />
-			<action actionid="39517" script="quests/outfits/portalDracula.lua" />
+		<action uniqueid="10008" script="darkkoniaTemp/quests/outfits/outfits.lua" />
+			<action actionid="39517" script="darkkoniaTemp/quests/outfits/portalDracula.lua" />
 		<!-- Assassin Outfit -->
-		<action uniqueid="9933" script="quests/outfits/outfits.lua" />
+		<action uniqueid="9933" script="darkkoniaTemp/quests/outfits/outfits.lua" />
 		<!-- Chaos Acolyte Outfit -->
-		<action uniqueid="8820" script="quests/outfits/outfits.lua" />
+		<action uniqueid="8820" script="darkkoniaTemp/quests/outfits/outfits.lua" />
 		<!-- Norse Outfit
-		<action uniqueid="7460" script="quests/outfits/outfits.lua" /> -->
+		<action uniqueid="7460" script="darkkoniaTemp/quests/outfits/outfits.lua" /> -->
 		<!-- Deepling Outfit -->
-		<action uniqueid="15545" script="quests/outfits/outfits.lua" />
+		<action uniqueid="15545" script="darkkoniaTemp/quests/outfits/outfits.lua" />
 		<!-- Demonhunter Outfit -->
-		<action uniqueid="7431" script="quests/outfits/outfits.lua" />
+		<action uniqueid="7431" script="darkkoniaTemp/quests/outfits/outfits.lua" />
 		<!-- Brotherhood Outfit -->
-		<action uniqueid="5807" script="quests/outfits/outfits.lua" />
+		<action uniqueid="5807" script="darkkoniaTemp/quests/outfits/outfits.lua" />
 		<!-- Oriental Outfit -->
-		<action uniqueid="8267" script="quests/outfits/outfits.lua" />
+		<action uniqueid="8267" script="darkkoniaTemp/quests/outfits/outfits.lua" />
 		<!-- Marry Outfit -->
-		<action uniqueid="3697" script="quests/outfits/outfits.lua" />
+		<action uniqueid="3697" script="darkkoniaTemp/quests/outfits/outfits.lua" />
 		<!-- Puppeteer Outfit -->
-		<action uniqueid="1449" script="quests/outfits/outfits.lua" />
+		<action uniqueid="1449" script="darkkoniaTemp/quests/outfits/outfits.lua" />
 		<!-- Insectoid Outfit -->
-		<action uniqueid="14699" script="quests/outfits/outfits.lua" />
+		<action uniqueid="14699" script="darkkoniaTemp/quests/outfits/outfits.lua" />
 
 	<!-- Teleport items -->
-	<action fromaid="39510" toaid="39516" script="quests/itemPortal.lua" />
-	<action fromaid="39518" toaid="39550" script="quests/itemPortal.lua" />
+	<action fromaid="39510" toaid="39516" script="darkkoniaTemp/quests/itemPortal.lua" />
+	<action fromaid="39518" toaid="39550" script="darkkoniaTemp/quests/itemPortal.lua" />
 
 	<!-- Annihilator lever -->
-	<action uniqueid="2208" script="quests/annihilator.lua" />
+	<action uniqueid="2208" script="darkkoniaTemp/quests/annihilator.lua" />
 
 	<!-- Adventurer's Guild -->
-	<action itemid="18559" script="adventurersStone.lua" />
+	<action itemid="18559" script="darkkoniaTemp/adventurersStone.lua" />
 
 	<!-- Premium Scroll -->
-	<action itemid="16101" script="premiumscroll.lua" />
+	<action itemid="16101" script="darkkoniaTemp/premiumscroll.lua" />
 
 	<!-- Change Gold -->
-	<action itemid="2148" script="others/changegold.lua" />
-	<action itemid="2152" script="others/changegold.lua" />
-	<action itemid="2160" script="others/changegold.lua" />
+	<action itemid="2148" script="darkkoniaTemp/others/changegold.lua" />
+	<action itemid="2152" script="darkkoniaTemp/others/changegold.lua" />
+	<action itemid="2160" script="darkkoniaTemp/others/changegold.lua" />
 
 	<!-- Forgotten Knowledge -->
-	<action fromaid="24876" toaid="24877" script="quests/forgotten knowledge/secretWall.lua"/>
-	<action itemid="26402" script="quests/forgotten knowledge/lantern.lua"/>
-	<action itemid="26406" script="quests/forgotten knowledge/lantern.lua"/>
+	<action fromaid="24876" toaid="24877" script="darkkoniaTemp/quests/forgotten knowledge/secretWall.lua"/>
+	<action itemid="26402" script="darkkoniaTemp/quests/forgotten knowledge/lantern.lua"/>
+	<action itemid="26406" script="darkkoniaTemp/quests/forgotten knowledge/lantern.lua"/>
 	<!-- Levers-->
-	<action actionid="24878" script="quests/forgotten knowledge/tenebrisLever.lua"/>
+	<action actionid="24878" script="darkkoniaTemp/quests/forgotten knowledge/tenebrisLever.lua"/>
 	<!-- Misidia -->
-	<action actionid="24879" script="quests/misidiaQuest/jaulLever.lua"/>
+	<action actionid="24879" script="darkkoniaTemp/quests/misidiaQuest/jaulLever.lua"/>
 	<!-- Anshara -->
-	<action actionid="24880" script="quests/forgotten knowledge/dragonLever.lua"/>
-	<action fromaid="9011" toaid="9020" script="quests/volcanoPOI/levers.lua" />
-	<action actionid="24881" script="quests/volcanoPOI/IzcandarLever.lua" />
-	<action actionid="24882" script="quests/volcanoPOI/InfernusLever.lua" />
-	<action actionid="24883" script="quests/volcanoPOI/sacrificeInfernusLever.lua" />
+	<action actionid="24880" script="darkkoniaTemp/quests/forgotten knowledge/dragonLever.lua"/>
+	<action fromaid="9011" toaid="9020" script="darkkoniaTemp/quests/volcanoPOI/levers.lua" />
+	<action actionid="24881" script="darkkoniaTemp/quests/volcanoPOI/IzcandarLever.lua" />
+	<action actionid="24882" script="darkkoniaTemp/quests/volcanoPOI/InfernusLever.lua" />
+	<action actionid="24883" script="darkkoniaTemp/quests/volcanoPOI/sacrificeInfernusLever.lua" />
 
 	<!-- Stamina Refill -->
-	<action itemid="8974" script="staminaRefill.lua" />
+	<action itemid="8974" script="darkkoniaTemp/staminaRefill.lua" />
 </actions>
 
 <!--
