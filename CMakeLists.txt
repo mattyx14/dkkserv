@@ -264,7 +264,7 @@ include_directories(SYSTEM ${MYSQL_INCLUDE_DIR} ${LUA_INCLUDE_DIR}
                     ${Boost_INCLUDE_DIRS} ${PUGIXML_INCLUDE_DIR}
                     ${CRYPTOPP_INCLUDE_DIR})
 
-target_link_libraries(otxserv otxserver_lib ${MYSQL_CLIENT_LIBS} ${LUA_LIBRARIES}
+target_link_libraries(otxserver otxserver_lib ${MYSQL_CLIENT_LIBS} ${LUA_LIBRARIES}
                       ${Boost_LIBRARIES} ${Boost_FILESYSTEM_LIBRARY}
                       ${PUGIXML_LIBRARIES} ${CRYPTOPP_LIBRARIES}
                       ${CMAKE_THREAD_LIBS_INIT})
