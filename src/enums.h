@@ -147,6 +147,7 @@ enum OperatingSystem_t : uint8_t {
 	CLIENTOS_WINDOWS = 2,
 	CLIENTOS_FLASH = 3,
 	CLIENTOS_NEW_WINDOWS = 5,
+	CLIENTOS_NEW_MAC = 6,
 
 	CLIENTOS_OTCLIENT_LINUX = 10,
 	CLIENTOS_OTCLIENT_WINDOWS = 11,
@@ -501,6 +502,16 @@ enum SpeechBubble_t
 	SPEECHBUBBLE_QUESTTRADER = 4,
 };
 
+enum RespawnPeriod_t {
+	RESPAWNPERIOD_ALL,
+	RESPAWNPERIOD_DAY,
+	RESPAWNPERIOD_NIGHT
+};
+
+/**
+ * @Deprecated
+ * It will be dropped with monsters. Use RespawnPeriod_t instead.
+ */
 enum SpawnType_t
 {
 	RESPAWN_IN_ALL = 0,
@@ -586,11 +597,23 @@ struct Outfit_t {
 	uint8_t lookAddons = 0;
 };
 
+enum LightState_t {
+	LIGHT_STATE_DAY,
+	LIGHT_STATE_NIGHT,
+	LIGHT_STATE_SUNSET,
+	LIGHT_STATE_SUNRISE,
+};
+
 struct LightInfo {
 	uint8_t level = 0;
 	uint8_t color = 0;
 	constexpr LightInfo() = default;
 	constexpr LightInfo(uint8_t newLevel, uint8_t newColor) : level(newLevel), color(newColor) {}
+};
+
+struct RespawnType {
+	RespawnPeriod_t period;
+	bool underground;
 };
 
 struct ShopInfo {

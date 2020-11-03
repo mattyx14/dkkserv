@@ -40,8 +40,8 @@ maxItem = 2000
 maxContainer = 100
 
 --- Version
-clientVersion = 1240
-clientVersionStr = "12.40"
+clientVersion = 1251
+clientVersionStr = "12.51"
 
 -- Depot Limit
 freeDepotLimit = 2000
@@ -64,7 +64,7 @@ housePriceEachSQM = 2000
 houseRentPeriod = "weekly"
 
 -- Item Usage
-timeBetweenActions = 500
+timeBetweenActions = 200
 timeBetweenExActions = 1000
 
 -- Push Delay
@@ -96,8 +96,6 @@ passwordType = "sha1"
 allowChangeOutfit = true
 freePremium = false
 kickIdlePlayerAfterMinutes = 15
-idleWarningTime = 14 * 60 * 1000
-idleKickTime = 15 * 60 * 1000
 maxMessageBuffer = 4
 emoteSpells = true
 classicEquipmentSlots = false
@@ -116,8 +114,8 @@ serverSaveClose = false
 serverSaveShutdown = true
 
 -- Rates
--- NOTE: rateExp is used as a fallback only
--- To configure experience rate see file data/stages.lua
+-- NOTE: rateExp, rateSkill and rateMagic is used as a fallback only
+-- To configure rates see file data/stages.lua
 rateExp = 5
 rateSkill = 90
 rateLoot = 3

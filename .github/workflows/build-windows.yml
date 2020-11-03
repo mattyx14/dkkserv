@@ -76,11 +76,11 @@ jobs:
         run: |
           md ${{ runner.workspace }}\otxserver\otxserver
           Copy-Item ${{ runner.workspace }}\otxserver\config.lua.dist     ${{ runner.workspace }}\otxserver\otxserver
-          Copy-Item ${{ runner.workspace }}\otxserver\key.pem             ${{ runner.workspace }}\otxserver\ootxserver
+          Copy-Item ${{ runner.workspace }}\otxserver\key.pem             ${{ runner.workspace }}\otxserver\otxserver
           Copy-Item ${{ runner.workspace }}\otxserver\LICENSE             ${{ runner.workspace }}\otxserver\otxserver
           Copy-Item ${{ runner.workspace }}\otxserver\README.md           ${{ runner.workspace }}\otxserver\otxserver
           Copy-Item ${{ runner.workspace }}\build\otxserver.exe      ${{ runner.workspace }}\otxserver\otxserver\otxserver.exe
-          get-childitem -path ${{ runner.workspace }}\build -filter *.dll -recurse | copy-item -destination ${{ runner.workspace }}\otxserver\otxserverl
+          get-childitem -path ${{ runner.workspace }}\build -filter *.dll -recurse | copy-item -destination ${{ runner.workspace }}\otxserver\otxserver
           Copy-Item ${{ runner.workspace }}\otxserver\data -Destination   ${{ runner.workspace }}\otxserver\otxserver\data
           Copy-Item -Path ${{ runner.workspace }}\otxserver\data\* -Destination ${{ runner.workspace }}\otxserver\otxserver\data -Recurse
           Compress-Archive -Path ${{ runner.workspace }}\otxserver\otxserver -DestinationPath ${{ runner.workspace }}\otxserver.zip

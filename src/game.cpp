@@ -55,7 +55,6 @@ extern Vocations g_vocations;
 extern GlobalEvents* g_globalEvents;
 extern CreatureEvents* g_creatureEvents;
 extern Events* g_events;
-extern CreatureEvents* g_creatureEvents;
 extern Monsters g_monsters;
 extern MoveEvents* g_moveEvents;
 extern Weapons* g_weapons;
@@ -88,12 +87,12 @@ void Game::start(ServiceManager* manager)
 {
 	serviceManager = manager;
 
-	time_t now = time(0);
-	const tm* tms = localtime(&now);
-	int minutes = tms->tm_min;
-	lightHour = (minutes * 1440) / 60;
-
-	g_scheduler.addEvent(createSchedulerTask(EVENT_LIGHTINTERVAL, std::bind(&Game::checkLight, this)));
+	time_t now = time(0);	
+	const tm* tms = localtime(&now);	
+	int minutes = tms->tm_min;	
+	lightHour = (minutes * LIGHT_DAY_LENGTH) / 60;
+	
+	g_scheduler.addEvent(createSchedulerTask(EVENT_LIGHTINTERVAL_MS, std::bind(&Game::checkLight, this)));
 	g_scheduler.addEvent(createSchedulerTask(EVENT_CREATURE_THINK_INTERVAL, std::bind(&Game::checkCreatures, this, 0)));
 	g_scheduler.addEvent(createSchedulerTask(EVENT_DECAYINTERVAL, std::bind(&Game::checkDecay, this)));
 	g_scheduler.addEvent(createSchedulerTask(EVENT_IMBUEMENTINTERVAL, std::bind(&Game::checkImbuements, this)));
@@ -866,6 +865,10 @@ bool Game::removeCreature(Creature* creature, bool isLogout/* = true*/)
 		spectator->onRemoveCreature(creature, isLogout);
 	}
 
+  if (creature->getMaster() && !creature->getMaster()->isRemoved()) {
+    creature->setMaster(nullptr);
+  }
+
 	creature->getParent()->postRemoveNotification(creature, nullptr, 0);
 
 	creature->removeList();
@@ -1390,6 +1393,12 @@ ReturnValue Game::internalMoveItem(Cylinder* fromCylinder, Cylinder* toCylinder,
 	//destination is the same as the source?
 	if (item == toItem) {
 		return RETURNVALUE_NOERROR; //silently ignore move
+	}
+
+	// 'Move up' stackable items fix
+	//  Cip's client never sends the count of stackables when using "Move up" menu option
+	if (item->isStackable() && count == 255 && fromCylinder->getParent() == toCylinder) {
+		count = item->getItemCount();
 	}
 
 	//check if we can add this item
@@ -5978,12 +5987,12 @@ void Game::checkImbuements()
 
 void Game::checkLight()
 {
-	g_scheduler.addEvent(createSchedulerTask(EVENT_LIGHTINTERVAL, std::bind(&Game::checkLight, this)));
+	g_scheduler.addEvent(createSchedulerTask(EVENT_LIGHTINTERVAL_MS, std::bind(&Game::checkLight, this)));
 
 	lightHour += lightHourDelta;
 
-	if (lightHour > 1440) {
-		lightHour -= 1440;
+	if (lightHour > LIGHT_DAY_LENGTH) {
+		lightHour -= LIGHT_DAY_LENGTH;
 	}
 
 	if (std::abs(lightHour - SUNRISE) < 2 * lightHourDelta) {
@@ -6020,11 +6029,18 @@ void Game::checkLight()
 		lightLevel = newLightLevel;
 	}
 
-	if (lightChange) {
-		LightInfo lightInfo = getWorldLightInfo();
+	LightInfo lightInfo = getWorldLightInfo();
 
+	if (lightChange) {
 		for (const auto& it : players) {
 			it.second->sendWorldLight(lightInfo);
+		}
+	}
+
+	if (currentLightState != lightState) {
+		currentLightState = lightState;
+		for (auto& it : g_globalEvents->getEventMap(GLOBALEVENT_PERIODCHANGE)) {
+			it.second.executePeriodChange(lightState, lightInfo);
 		}
 	}
 }
@@ -7548,7 +7564,10 @@ void Game::updatePlayerSaleItems(uint32_t playerId)
 		return;
 	}
 
-	player->sendSaleItemList();
+  std::map<uint32_t, uint32_t> tempInventoryMap;
+  player->getAllItemTypeCountAndSubtype(tempInventoryMap);
+
+	player->sendSaleItemList(tempInventoryMap);
 	player->setScheduledSaleUpdate(false);
 }
 
@@ -7704,10 +7723,8 @@ bool Game::reload(ReloadTypes_t reloadType)
 		case RELOAD_TYPE_EVENTS: return g_events->load();
 		case RELOAD_TYPE_GLOBALEVENTS: return g_globalEvents->reload();
 		case RELOAD_TYPE_ITEMS: return Item::items.reload();
-		case RELOAD_TYPE_MONSTERS: return g_monsters.reload();
 		case RELOAD_TYPE_MODULES: return g_modules->reload();
 		case RELOAD_TYPE_MOUNTS: return mounts.reload();
-		case RELOAD_TYPE_MOVEMENTS: return g_moveEvents->reload();
 		case RELOAD_TYPE_IMBUEMENTS: return g_imbuements->reload();
 		case RELOAD_TYPE_NPCS: {
 			Npcs::reload();
@@ -7720,20 +7737,11 @@ bool Game::reload(ReloadTypes_t reloadType)
 			if (!g_spells->reload()) {
 				std::cout << "[Error - Game::reload] Failed to reload spells." << std::endl;
 				std::terminate();
-			} else if (!g_monsters.reload()) {
-				std::cout << "[Error - Game::reload] Failed to reload monsters." << std::endl;
-				std::terminate();
 			}
 			return true;
 		}
 
 		case RELOAD_TYPE_TALKACTIONS: return g_talkActions->reload();
-
-		case RELOAD_TYPE_WEAPONS: {
-			bool results = g_weapons->reload();
-			g_weapons->loadDefaults();
-			return results;
-		}
 
 		case RELOAD_TYPE_SCRIPTS: {
 			// commented out stuff is TODO, once we approach further in revscriptsys
@@ -7754,21 +7762,15 @@ bool Game::reload(ReloadTypes_t reloadType)
 			if (!g_spells->reload()) {
 				std::cout << "[Error - Game::reload] Failed to reload spells." << std::endl;
 				std::terminate();
-			} else if (!g_monsters.reload()) {
-				std::cout << "[Error - Game::reload] Failed to reload monsters." << std::endl;
-				std::terminate();
 			}
 
 			g_actions->reload();
 			g_config.reload();
 			g_creatureEvents->reload();
-			g_monsters.reload();
-			g_moveEvents->reload();
 			Npcs::reload();
 			raids.reload() && raids.startup();
 			g_talkActions->reload();
 			Item::items.reload();
-			g_weapons->reload();
 			g_weapons->clear(true);
 			g_weapons->loadDefaults();
 			mounts.reload();
