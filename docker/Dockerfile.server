@@ -21,8 +21,8 @@ COPY data/   ./data/
 COPY cmake/  ./cmake/
 COPY key.pem CMakeLists.txt ./
 
-# RUN rm -rf build && mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=Debug -DDEBUG_LOG=ON .. && make -j`nproc` && cp otbr /opt/otserver
-RUN rm -rf build && mkdir build && cd build && cmake .. && make -j`nproc` && sleep 5 && cp otbr /opt/otserver
+# RUN rm -rf build && mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=Debug -DDEBUG_LOG=ON .. && make -j`nproc` && cp otxserver /opt/otserver
+RUN rm -rf build && mkdir build && cd build && cmake .. && make -j`nproc` && sleep 5 && cp otxserver /opt/otserver
 
 COPY config.lua.dist ./
 
@@ -33,4 +33,4 @@ RUN cp config.lua.dist config.lua \
   && sed -i '/mysqlDatabase = .*$/c\mysqlDatabase = "otserver"' config.lua \
   && unzip -o data/world/world.zip -d data/world/
 
-ENTRYPOINT /opt/otserver/otbr
+ENTRYPOINT /opt/otserver/otxserver

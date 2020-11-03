@@ -244,7 +244,7 @@
     <ClCompile Include="..\src\xtea.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="otservbr-global.rc" />
+    <ResourceCompile Include="otxserv.rc" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\account.hpp" />

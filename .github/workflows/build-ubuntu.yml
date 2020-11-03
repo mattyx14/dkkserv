@@ -47,23 +47,20 @@ jobs:
       run: |
         cd build
         make -j `nproc`
-        mv otbr ../
+        mv otxserver ../
 
     - name: Clean workspace
       shell: bash
-      run: find . -maxdepth 1 ! -name otbr ! -name data ! -name config.lua.dist ! -name key.pem ! -name LICENSE ! -name README.md ! -name schema.sql -exec rm -r {} \;
+      run: find . -maxdepth 1 ! -name otxserver ! -name data ! -name config.lua.dist ! -name key.pem ! -name LICENSE ! -name README.md ! -name schema.sql -exec rm -r {} \;
 
     - name: Prepare datapack contents
       shell: bash
       run: |
-        mv config.lua.dist config.lua
-        unzip -o data/world/world.zip -d data/world/
-        rm data/world/world.zip
         cd ..
         zip -r otxserver.zip otxserver
 
     - name: Upload binary
       uses: actions/upload-artifact@v2
       with:
-        name: ${{ matrix.os }}-otbr-amd64-${{ matrix.buildtype }}-LUAJIT=${{ matrix.luajit }}-${{ github.sha }}
+        name: ${{ matrix.os }}-otxserver-amd64-${{ matrix.buildtype }}-LUAJIT=${{ matrix.luajit }}-${{ github.sha }}
         path: ${{ runner.workspace }}/otxserver.zip

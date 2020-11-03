@@ -38,9 +38,9 @@ endif()
 set(CMAKE_VERBOSE_MAKEFILE OFF)
 
 # *****************************************************************************
-# Project OTBR
+# Project OTX Server
 # *****************************************************************************
-project(otbr)
+project(otxserver)
 
 
 # *****************************************************************************
@@ -168,13 +168,13 @@ add_subdirectory(src)
 # *****************************************************************************
 # Library
 # *****************************************************************************
-add_library(otbr_lib ${otbr_SRC})
+add_library(otxserver_lib ${otxserver_SRC})
 
 
 # *****************************************************************************
 # Executable
 # *****************************************************************************
-add_executable(otbr ${CMAKE_CURRENT_SOURCE_DIR}/src/otserv.cpp)
+add_executable(otxserver ${CMAKE_CURRENT_SOURCE_DIR}/src/otserv.cpp)
 
 
 # *****************************************************************************
@@ -242,8 +242,8 @@ set(POST_CONFIGURE_FILE "${CMAKE_CURRENT_BINARY_DIR}/gitmetadata.h")
 include(git_watcher)
 if (Git_FOUND)
     message("-- Git Found")
-    add_dependencies(otbr check_git)
-    target_include_directories(otbr PRIVATE ${CMAKE_CURRENT_BINARY_DIR})
+    add_dependencies(otxserver check_git)
+    target_include_directories(otxserver PRIVATE ${CMAKE_CURRENT_BINARY_DIR})
 endif()
 
 # *****************************************************************************
@@ -254,7 +254,7 @@ option(PACKAGE_TESTS "Build the tests" OFF)
 if(PACKAGE_TESTS)
     enable_testing()
     add_subdirectory(tests)
-    target_compile_definitions(otbr_lib PRIVATE UNIT_TESTING=1)
+    target_compile_definitions(otxserver_lib PRIVATE UNIT_TESTING=1)
 endif()
 
 # *****************************************************************************
@@ -264,7 +264,7 @@ include_directories(SYSTEM ${MYSQL_INCLUDE_DIR} ${LUA_INCLUDE_DIR}
                     ${Boost_INCLUDE_DIRS} ${PUGIXML_INCLUDE_DIR}
                     ${CRYPTOPP_INCLUDE_DIR})
 
-target_link_libraries(otbr otbr_lib ${MYSQL_CLIENT_LIBS} ${LUA_LIBRARIES}
+target_link_libraries(otxserv otxserver_lib ${MYSQL_CLIENT_LIBS} ${LUA_LIBRARIES}
                       ${Boost_LIBRARIES} ${Boost_FILESYSTEM_LIBRARY}
                       ${PUGIXML_LIBRARIES} ${CRYPTOPP_LIBRARIES}
                       ${CMAKE_THREAD_LIBS_INIT})

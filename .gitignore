@@ -374,5 +374,5 @@ config.lua
 sftp-config.json
 
 # Binaries
-otbr
-otbr.old
+otxserver
+otxserver.old

@@ -46,7 +46,7 @@ jobs:
       env:
         REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        cd ${{ runner.workspace }}/otservbr-global
+        cd ${{ runner.workspace }}/otxserver
         cppcheck --version
         reviewdog -reporter=github-pr-check -runners=cppcheck
 
@@ -55,14 +55,14 @@ jobs:
         REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         luacheck --version
-        cd ${{ runner.workspace }}/otservbr-global
+        cd ${{ runner.workspace }}/otxserver
         reviewdog -reporter=github-pr-check -runners=luacheck
 
     - name: luac
       env:
         REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        cd ${{ runner.workspace }}/otservbr-global
+        cd ${{ runner.workspace }}/otxserver
         luac -v
         reviewdog -reporter=github-pr-check -runners=luac
 
@@ -70,6 +70,6 @@ jobs:
       env:
         REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        cd ${{ runner.workspace }}/otservbr-global
+        cd ${{ runner.workspace }}/otxserver
         xmllint --version
         reviewdog -reporter=github-pr-check -runners=xmllint
