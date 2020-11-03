@@ -53,12 +53,6 @@ jobs:
       shell: bash
       run: find . -maxdepth 1 ! -name otxserver ! -name data ! -name config.lua.dist ! -name key.pem ! -name LICENSE ! -name README.md ! -name schema.sql -exec rm -r {} \;
 
-    - name: Prepare datapack contents
-      shell: bash
-      run: |
-        cd ..
-        zip -r otxserver.zip otxserver
-
     - name: Upload binary
       uses: actions/upload-artifact@v2
       with:
