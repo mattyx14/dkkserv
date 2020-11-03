@@ -4,11 +4,6 @@ on:
   push:
     branches:
       - master
-      - develop
-      - v*
-
-    tags:
-      - v*
 
   pull_request:
     paths:
@@ -74,16 +69,16 @@ jobs:
       - name: Create datapack
         shell: powershell
         run: |
-          md ${{ runner.workspace }}\otxserver
-          Copy-Item ${{ runner.workspace }}\config.lua.dist     ${{ runner.workspace }}\otxserver
-          Copy-Item ${{ runner.workspace }}\key.pem             ${{ runner.workspace }}\otxserver
-          Copy-Item ${{ runner.workspace }}\LICENSE             ${{ runner.workspace }}\otxserver
-          Copy-Item ${{ runner.workspace }}\README.md           ${{ runner.workspace }}\otxserver
-          Copy-Item ${{ runner.workspace }}\build\otxserver.exe      ${{ runner.workspace }}\otxserver\otxserver.exe
-          get-childitem -path ${{ runner.workspace }}\build -filter *.dll -recurse | copy-item -destination ${{ runner.workspace }}\otxserver
-          Copy-Item ${{ runner.workspace }}\otxserver\data -Destination   ${{ runner.workspace }}\otxserver\data
-          Copy-Item -Path ${{ runner.workspace }}\otxserver\data\* -Destination ${{ runner.workspace }}\otxserver\data -Recurse
-          Compress-Archive -Path ${{ runner.workspace }}\otxserver -DestinationPath ${{ runner.workspace }}\otxserver.zip
+          md ${{ runner.workspace }}\dkkserv\dkkserv
+          Copy-Item ${{ runner.workspace }}\dkkserv\config.lua.dist     ${{ runner.workspace }}\dkkserv\dkkserv
+          Copy-Item ${{ runner.workspace }}\dkkserv\key.pem             ${{ runner.workspace }}\dkkserv\dkkserv
+          Copy-Item ${{ runner.workspace }}\dkkserv\LICENSE             ${{ runner.workspace }}\dkkserv\dkkserv
+          Copy-Item ${{ runner.workspace }}\dkkserv\README.md           ${{ runner.workspace }}\dkkserv\dkkserv
+          Copy-Item ${{ runner.workspace }}\build\otxserver.exe         ${{ runner.workspace }}\dkkserv\dkkserv\otxserver-bin.exe
+          get-childitem -path ${{ runner.workspace }}\build -filter *.dll -recurse | copy-item -destination ${{ runner.workspace }}\dkkserv\dkkserv
+          Copy-Item ${{ runner.workspace }}\dkkserv\data -Destination   ${{ runner.workspace }}\dkkserv\dkkserv\data
+          Copy-Item -Path ${{ runner.workspace }}\dkkserv\data\* -Destination ${{ runner.workspace }}\dkkserv\dkkserv\data -Recurse
+          Compress-Archive -Path ${{ runner.workspace }}\dkkserv\dkkserv -DestinationPath ${{ runner.workspace }}\otxserver.zip
 
       - name: dir
         run: find $RUNNER_WORKSPACE

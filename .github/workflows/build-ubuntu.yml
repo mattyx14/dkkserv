@@ -4,11 +4,6 @@ on:
   push:
     branches:
       - master
-      - develop
-      - v*
-
-    tags:
-      - v*
 
   pull_request:
     paths:
@@ -60,7 +55,7 @@ jobs:
         unzip -o data/world/world.zip -d data/world/
         rm data/world/world.zip
         cd ..
-        zip -r otserv.zip server-data
+        zip -r otserv.zip dkkserv
 
     - name: Upload binary
       uses: actions/upload-artifact@v2
