@@ -39,7 +39,7 @@ monster.flags = {
 	hostile = true,
 	convinceable = false,
 	pushable = false,
-	rewardBoss = false,
+	rewardBoss = true,
 	illusionable = false,
 	canPushItems = true,
 	canPushCreatures = true,
@@ -47,9 +47,11 @@ monster.flags = {
 	targetDistance = 1,
 	runHealth = 0,
 	healthHidden = false,
+	isBlockable = false,
 	canWalkOnEnergy = true,
 	canWalkOnFire = true,
-	canWalkOnPoison = true
+	canWalkOnPoison = true,
+	pet = false
 }
 
 monster.light = {
@@ -100,10 +102,10 @@ monster.loot = {
 }
 
 monster.attacks = {
-	{name ="combat", type = COMBAT_PHYSICALDAMAGE, interval = 2000, chance = 100, minDamage = 0, maxDamage = -600, effect = CONST_ME_DRAWBLOOD},
-	{name ="combat", interval = 2000, chance = 16, minDamage = -400, maxDamage = -600, target = true},
-	{name ="combat", interval = 2000, chance = 13, minDamage = -450, maxDamage = -640, type = COMBAT_HOLYDAMAGE, length = 7, spread = 3, effect = CONST_ME_HOLYAREA, target = false},
-	{name ="combat", interval = 2000, chance = 15, minDamage = -480, maxDamage = -630, type = COMBAT_EARTHDAMAGE, effect = CONST_ME_EXPLOSIONHIT, target = false}
+	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -600, effect = CONST_ME_DRAWBLOOD},
+	{name ="sudden death", interval = 2000, chance = 16, minDamage = -400, maxDamage = -600, target = true},
+	{name ="combat", interval = 2000, chance = 13, type = COMBAT_HOLYDAMAGE, minDamage = -450, maxDamage = -640, length = 7, spread = 3, effect = CONST_ME_HOLYAREA, target = false},
+	{name ="combat", interval = 2000, chance = 15, type = COMBAT_EARTHDAMAGE, minDamage = -480, maxDamage = -630, radius = 5, effect = CONST_ME_EXPLOSIONHIT, target = false}
 }
 
 monster.defenses = {
