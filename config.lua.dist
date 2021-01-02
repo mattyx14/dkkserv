@@ -8,17 +8,20 @@ removeChargesFromRunes = true
 removeChargesFromPotions = true
 removeWeaponAmmunition = true
 removeWeaponCharges = true
-timeToDecreaseFrags = 7 * 24 * 60 * 60
+timeToDecreaseFrags = 1 * 24 * 60 * 60
 whiteSkullTime = 15 * 60 * 1000
 stairJumpExhaustion = 2 * 1000
 experienceByKillingPlayers = false
 expFromPlayersLevelRange = 75
-dayKillsToRedSkull = 7
-weekKillsToRedSkull = 30
-monthKillsToRedSkull = 75
-redSkullDuration = 3
-blackSkullDuration = 5
-orangeSkullDuration = 5
+dayKillsToRedSkull = 3
+weekKillsToRedSkull = 5
+monthKillsToRedSkull = 10
+redSkullDuration = 1
+blackSkullDuration = 3
+orangeSkullDuration = 7
+
+onlyInvitedCanMoveHouseItems = true
+cleanProtectionZones = false
 
 -- Connection Config
 -- NOTE: maxPlayers set to 0 means no limit
@@ -32,7 +35,7 @@ maxPlayers = 200
 motd = "Welcome to The DarkKonia Server!"
 onePlayerOnlinePerAccount = true
 allowClones = false
-serverName = "DarkKonia"
+serverName = "OTXServer"
 statusTimeout = 5 * 1000
 replaceKickOnLogin = true
 maxPacketsPerSecond = 25
@@ -40,8 +43,8 @@ maxItem = 2000
 maxContainer = 100
 
 --- Version
-clientVersion = 1251
-clientVersionStr = "12.51"
+clientVersion = 1260
+clientVersionStr = "12.60"
 
 -- Depot Limit
 freeDepotLimit = 2000
@@ -50,6 +53,13 @@ depotBoxes = 18
 
 -- GameStore
 gamestoreByModules = true
+
+-- NOTE: Access only for Premium Account
+onlyPremiumAccount = false
+
+-- Customs
+weatherRain = false
+thunderEffect = false
 
 -- Deaths
 -- NOTE: Leave deathLosePercent as -1 if you want to use the default
@@ -62,6 +72,7 @@ deathLosePercent = -1
 -- Periods: daily/weekly/monthly/yearly/never
 housePriceEachSQM = 2000
 houseRentPeriod = "weekly"
+houseOwnedByAccount = false
 
 -- Item Usage
 timeBetweenActions = 200
@@ -90,7 +101,6 @@ mysqlPass = ""
 mysqlDatabase = ""
 mysqlPort = 3306
 mysqlSock = ""
-passwordType = "sha1"
 
 -- Misc.
 allowChangeOutfit = true
@@ -101,7 +111,7 @@ emoteSpells = true
 classicEquipmentSlots = false
 allowWalkthrough = true
 coinPacketSize = 25
-coinImagesURL = "https://darkkonia.sytes.net/images/store/"
+coinImagesURL = "http://127.0.0.1/images/store/"
 classicAttackSpeed = false
 showScriptsLogInConsole = false
 
@@ -148,4 +158,4 @@ startupDatabaseOptimization = true
 ownerName = "Mattyx14"
 ownerEmail = "darkylive@live.com.mx"
 url = "https://github.com/mattyx14/otxserver/"
-location = "CAN"
+location = "MEX"

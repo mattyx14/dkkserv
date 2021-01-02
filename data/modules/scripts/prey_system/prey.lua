@@ -201,7 +201,8 @@ function Player.getMinutesUntilFreeReroll(self, slot)
 	if (self:getPreyNextUse(slot) <= currentTime) then
 		return 0
 	end
-	return math.floor((self:getPreyNextUse(slot) - currentTime) / 60)
+
+	return math.floor((self:getPreyNextUse(slot) - currentTime))
 end
 
 function Player.getRerollPrice(self)
@@ -209,8 +210,10 @@ function Player.getRerollPrice(self)
 end
 
 function getNameByRace(race)
-    local monsterTable = Bestiary.Monsters[race]
-	return monsterTable.name
+	local mtype = MonsterType(race)
+	if mtype then
+		return mtype:getName()
+	end
 end
 
 function Player.getMonsterList(self)
@@ -564,7 +567,7 @@ function Player.sendPreyData(self, slot)
 	end
 
 	-- Next free reroll
-	msg:addU16(self:getMinutesUntilFreeReroll(slot))
+	msg:addU32(self:getMinutesUntilFreeReroll(slot))
 
 	-- Automatic Reroll/Lock Prey
 	msg:addByte(tickState)

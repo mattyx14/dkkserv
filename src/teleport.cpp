@@ -55,7 +55,7 @@ ReturnValue Teleport::queryMaxCount(int32_t, const Thing&, uint32_t, uint32_t&, 
 	return RETURNVALUE_NOTPOSSIBLE;
 }
 
-ReturnValue Teleport::queryRemove(const Thing&, uint32_t, uint32_t) const
+ReturnValue Teleport::queryRemove(const Thing&, uint32_t, uint32_t, Creature* /*= nullptr */) const
 {
 	return RETURNVALUE_NOERROR;
 }
@@ -63,6 +63,21 @@ ReturnValue Teleport::queryRemove(const Thing&, uint32_t, uint32_t) const
 Cylinder* Teleport::queryDestination(int32_t&, const Thing&, Item**, uint32_t&)
 {
 	return this;
+}
+
+bool Teleport::checkInfinityLoop(Tile* destTile) {
+	if (!destTile) {
+		return false;
+	}
+
+	if (Teleport* teleport = destTile->getTeleportItem()) {
+		const Position& nextDestPos = teleport->getDestPos();
+		if (getPosition() == nextDestPos) {
+			return true;
+		}
+		return checkInfinityLoop(g_game.map.getTile(nextDestPos));
+	}
+	return false;
 }
 
 void Teleport::addThing(Thing* thing)
@@ -74,6 +89,13 @@ void Teleport::addThing(int32_t, Thing* thing)
 {
 	Tile* destTile = g_game.map.getTile(destPos);
 	if (!destTile) {
+		return;
+	}
+
+	// Prevent infinity loop
+	if (checkInfinityLoop(destTile)) {
+		const Position& pos = getPosition();
+		std::cout << "[Warning - Teleport:addThing] Infinity loop teleport at position: " << pos << std::endl;
 		return;
 	}
 

@@ -926,7 +926,7 @@ MonsterType* Monsters::loadMonster(const std::string& file, const std::string& m
 			std::cout << "[Warning - Monsters::loadMonster] Missing targetchange chance. " << file << std::endl;
 		}
 	}
-	
+
 	if ((node = monsterNode.child("targetstrategies"))) {
 		if ((attr = node.attribute("nearest"))) {
 			mType->info.targetStrategiesNearestPercent = pugi::cast<int32_t>(attr.value());
@@ -1323,28 +1323,6 @@ bool Monsters::loadLootItem(const pugi::xml_node& node, LootBlock& lootBlock)
 		return false;
 	}
 
-	if ((attr = node.attribute("countmax"))) {
-		lootBlock.countmax = std::max<int32_t>(1, pugi::cast<int32_t>(attr.value()));
-	} else {
-		lootBlock.countmax = 1;
-	}
-	
-	if ((attr = node.attribute("countmin"))) {
-		lootBlock.countmin = std::max<int32_t>(1, pugi::cast<int32_t>(attr.value()));
-	} else {
-		lootBlock.countmin = 1;
-	}
-
-	if ((attr = node.attribute("chance")) || (attr = node.attribute("chance1"))) {
-		lootBlock.chance = std::min<int32_t>(MAX_LOOTCHANCE, pugi::cast<int32_t>(attr.value()));
-	} else {
-		lootBlock.chance = MAX_LOOTCHANCE;
-	}
-
-	if (Item::items[lootBlock.id].isContainer()) {
-		loadLootContainer(node, lootBlock);
-	}
-
 	//optional
 	if ((attr = node.attribute("subtype"))) {
 		lootBlock.subType = pugi::cast<int32_t>(attr.value());
@@ -1353,6 +1331,30 @@ bool Monsters::loadLootItem(const pugi::xml_node& node, LootBlock& lootBlock)
 		if (charges != 0) {
 			lootBlock.subType = charges;
 		}
+	}
+
+	if ((attr = node.attribute("chance")) || (attr = node.attribute("chance1"))) {
+		lootBlock.chance = std::min<int32_t>(MAX_LOOTCHANCE, pugi::cast<int32_t>(attr.value()));
+	} else {
+		lootBlock.chance = MAX_LOOTCHANCE;
+	}
+
+	//optional
+	if ((attr = node.attribute("countmin"))) {
+		lootBlock.countmin = std::max<int32_t>(1, pugi::cast<int32_t>(attr.value()));
+	} else {
+		lootBlock.countmin = 1;
+	}
+
+	//optional
+	if ((attr = node.attribute("countmax"))) {
+		lootBlock.countmax = std::max<int32_t>(1, pugi::cast<int32_t>(attr.value()));
+	} else {
+		lootBlock.countmax = 1;
+	}
+
+	if (Item::items[lootBlock.id].isContainer()) {
+		loadLootContainer(node, lootBlock);
 	}
 
 	if ((attr = node.attribute("actionId"))) {
@@ -1425,6 +1427,16 @@ MonsterType* Monsters::getMonsterType(const std::string& name)
 		return loadMonster(it2->second, name);
 	}
 	return &it->second;
+}
+
+MonsterType* Monsters::getMonsterTypeByRaceId(uint16_t thisrace) {
+	std::map<uint16_t, std::string> raceid_list = g_game.getBestiaryList();
+	auto it = raceid_list.find(thisrace);
+	if (it == raceid_list.end()) {
+		return nullptr;
+	}
+	MonsterType* mtype = g_monsters.getMonsterType(it->second);
+	return (mtype ? mtype : nullptr);
 }
 
 void Monsters::addMonsterType(const std::string& name, MonsterType* mType)

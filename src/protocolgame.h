@@ -20,6 +20,8 @@
 #ifndef FS_PROTOCOLGAME_H_FACA2A2D1A9348B78E8FD7E8003EBB87
 #define FS_PROTOCOLGAME_H_FACA2A2D1A9348B78E8FD7E8003EBB87
 
+#include <string>
+
 #include "protocol.h"
 #include "chat.h"
 #include "creature.h"
@@ -116,9 +118,29 @@ class ProtocolGame final : public Protocol
 		void parseAttack(NetworkMessage& msg);
 		void parseFollow(NetworkMessage& msg);
 
-		void parseBugReport(NetworkMessage& msg);
+    void sendItemInspection(uint16_t itemId, uint8_t itemCount, const Item* item, bool cyclopedia);
+    void parseInspectionObject(NetworkMessage& msg);
+
+    void parseCyclopediaCharacterInfo(NetworkMessage& msg);
+
+    void parseHighscores(NetworkMessage& msg);
+	  void sendHighscoresNoData();
+	  void sendHighscores(const std::vector<HighscoreCharacter>& characters, uint8_t categoryId, uint32_t vocationId, uint16_t page, uint16_t pages);
+
+    void parseTournamentLeaderboard(NetworkMessage& msg);
+
+    void parseBugReport(NetworkMessage& msg);
 		void parseDebugAssert(NetworkMessage& msg);
 		void parseRuleViolationReport(NetworkMessage &msg);
+
+		void parseBestiarysendRaces();
+		void parseBestiarysendCreatures(NetworkMessage &msg);
+		void BestiarysendCharms();
+		void sendBestiaryEntryChanged(uint16_t raceid);
+		void refreshBestiaryTracker(std::list<MonsterType*> trackerList);
+		void parseSendBuyCharmRune(NetworkMessage &msg);
+		void parseBestiarysendMonsterData(NetworkMessage &msg);
+		void addBestiaryTrackerList(NetworkMessage &msg);
 
 		void parseTeleport(NetworkMessage& msg);
 		void parseThrow(NetworkMessage& msg);
@@ -237,6 +259,22 @@ class ProtocolGame final : public Protocol
 
 		void sendTutorial(uint8_t tutorialId);
 		void sendAddMarker(const Position& pos, uint8_t markType, const std::string& desc);
+    
+    void sendTournamentLeaderboard();
+
+    void sendCyclopediaCharacterNoData(CyclopediaCharacterInfoType_t characterInfoType, uint8_t errorCode);
+		void sendCyclopediaCharacterBaseInformation();
+		void sendCyclopediaCharacterGeneralStats();
+		void sendCyclopediaCharacterCombatStats();
+		void sendCyclopediaCharacterRecentDeaths(uint16_t page, uint16_t pages, const std::vector<RecentDeathEntry>& entries);
+		void sendCyclopediaCharacterRecentPvPKills(uint16_t page, uint16_t pages, const std::vector<RecentPvPKillEntry>& entries);
+		void sendCyclopediaCharacterAchievements();
+		void sendCyclopediaCharacterItemSummary();
+		void sendCyclopediaCharacterOutfitsMounts();
+		void sendCyclopediaCharacterStoreSummary();
+		void sendCyclopediaCharacterInspection();
+		void sendCyclopediaCharacterBadges();
+		void sendCyclopediaCharacterTitles();
 
 		void sendCreatureWalkthrough(const Creature* creature, bool walkthrough);
 		void sendCreatureShield(const Creature* creature);
@@ -277,6 +315,7 @@ class ProtocolGame final : public Protocol
 
 		void sendCreatureLight(const Creature* creature);
 		void sendWorldLight(const LightInfo& lightInfo);
+    void sendTibiaTime(int32_t time);
 
 		void sendCreatureSquare(const Creature* creature, SquareColor_t color);
 
@@ -328,7 +367,8 @@ class ProtocolGame final : public Protocol
 		//analyzers
 		void sendKillTrackerUpdate(Container* corpse, const std::string& name, const Outfit_t creatureOutfit);
 		void sendUpdateSupplyTracker(const Item* item);
-		void sendUpdateImpactTracker(int32_t quantity, bool isHeal);
+		void sendUpdateImpactTracker(CombatType_t type, int32_t amount);
+		void sendUpdateInputAnalyzer(CombatType_t type, int32_t amount, std::string target);
 		void sendUpdateLootTracker(Item* item);
 		
 		// Hotkey equip/dequip item

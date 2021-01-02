@@ -54,8 +54,11 @@ std::condition_variable g_loaderSignal;
 std::unique_lock<std::mutex> g_loaderUniqueLock(g_loaderLock);
 
 void startupErrorMessage(const std::string& errorStr) {
-	std::cout << "> ERROR: " << errorStr << std::endl;
-	g_loaderSignal.notify_all();
+  std::cout << "\033[1;31m>> " << errorStr << std::endl;
+  std::cout << ">> The program will close after pressing the enter key..." << "\033[0m" << std::endl;
+  g_loaderSignal.notify_all();
+  getchar();
+  exit(-1);
 }
 
 void mainLoader(int argc, char* argv[], ServiceManager* servicer);
@@ -145,10 +148,10 @@ void mainLoader(int, char*[], ServiceManager* services) {
 	std::cout << "A server developed by " << STATUS_SERVER_DEVELOPERS
 																<< std::endl;
 	std::cout << "Visit our forum for updates, support, and resources: "
-		"https://otserv.com.br/ and https://forums.otserv.com.br" << std::endl;
+		"https://otserv.com.br/ - https://forums.otserv.com.br/ and https://github.com/mattyx14/otxserver/" << std::endl;
 	std::cout << std::endl;
 
-	std::cout << "Client Version: " << CLIENT_VERSION_STR
+	std::cout << ">> Client Version: " << CLIENT_VERSION_STR
 													<< std::endl;
 
 	// check if config.lua or config.lua.dist exist
@@ -236,6 +239,11 @@ void mainLoader(int, char*[], ServiceManager* services) {
 		return;
 	}
 
+	std::cout << ">> Loading event scheduler" << std::endl;
+	if (!g_game.loadScheduleEventFromXml()) {
+		startupErrorMessage("Unable to load event schedule!");
+	}
+
 	std::cout << ">> Loading script systems" << std::endl;
 	if (!ScriptingManager::getInstance().loadScriptSystems()) {
 		startupErrorMessage("Failed to load script systems");
@@ -248,11 +256,25 @@ void mainLoader(int, char*[], ServiceManager* services) {
 		return;
 	}
 
+	std::cout << ">> Loading lua monsters" << std::endl;	
+	if (!g_scripts->loadScripts("monster", false, false)) {	
+		startupErrorMessage("Failed to load lua monsters");	
+		return;	
+	}
+
 	std::cout << ">> Loading outfits" << std::endl;
 	if (!Outfits::getInstance().loadFromXml()) {
 		startupErrorMessage("Unable to load outfits!");
 		return;
 	}
+
+	std::cout << ">> Loading familiars" << std::endl;
+	if (!Familiars::getInstance().loadFromXml()) {
+		startupErrorMessage("Unable to load familiars!");
+		return;
+	}
+
+	g_game.loadBoostedCreature();
 
 	std::cout << ">> Checking world type... " << std::flush;
 	std::string worldType = asLowerCaseString(g_config.getString(

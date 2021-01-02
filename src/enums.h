@@ -146,6 +146,7 @@ enum OperatingSystem_t : uint8_t {
 	CLIENTOS_LINUX = 1,
 	CLIENTOS_WINDOWS = 2,
 	CLIENTOS_FLASH = 3,
+	CLIENTOS_NEW_LINUX = 4,
 	CLIENTOS_NEW_WINDOWS = 5,
 	CLIENTOS_NEW_MAC = 6,
 
@@ -205,6 +206,66 @@ enum RaceType_t : uint8_t {
 	RACE_UNDEAD,
 	RACE_FIRE,
 	RACE_ENERGY,
+};
+
+enum charmRune_t : int8_t {
+	CHARM_NONE = -1,
+	CHARM_WOUND = 0,
+	CHARM_ENFLAME = 1,
+	CHARM_POISON = 2,
+	CHARM_FREEZE = 3,
+	CHARM_ZAP = 4,
+	CHARM_CURSE = 5,
+	CHARM_CRIPPLE = 6,
+	CHARM_PARRY = 7,
+	CHARM_DODGE = 8,
+	CHARM_ADRENALINE = 9,
+	CHARM_NUMB = 10,
+	CHARM_CLEANSE = 11,
+	CHARM_BLESS = 12,
+	CHARM_SCAVENGE = 13,
+	CHARM_GUT = 14,
+	CHARM_LOW = 15,
+	CHARM_DIVINE = 16,
+	CHARM_VAMP = 17,
+	CHARM_VOID = 18,
+
+	CHARM_LAST = CHARM_VOID,
+};
+
+enum charm_t {
+	CHARM_UNDEFINED = 0,
+	CHARM_OFFENSIVE = 1,
+	CHARM_DEFENSIVE = 2,
+	CHARM_PASSIVE = 3,
+};
+
+enum BestiaryType_t : uint8_t { 
+	BESTY_RACE_NONE = 0,
+
+	BESTY_RACE_AMPHIBIC = 1,
+	BESTY_RACE_AQUATIC = 2,
+	BESTY_RACE_BIRD = 3,
+	BESTY_RACE_CONSTRUCT = 4,
+	BESTY_RACE_DEMON = 5,
+	BESTY_RACE_DRAGON = 6,
+	BESTY_RACE_ELEMENTAL = 7,
+	BESTY_RACE_EXTRA_DIMENSIONAL = 8,
+	BESTY_RACE_FEY = 9,
+	BESTY_RACE_GIANT = 10,
+	BESTY_RACE_HUMAN = 11,
+	BESTY_RACE_HUMANOID = 12,
+	BESTY_RACE_LYCANTHROPE = 13,
+	BESTY_RACE_MAGICAL = 14,
+	BESTY_RACE_MAMMAL = 15,
+	BESTY_RACE_PLANT = 16,
+	BESTY_RACE_REPTILE = 17,
+	BESTY_RACE_SLIME = 18,
+	BESTY_RACE_UNDEAD = 19,
+	BESTY_RACE_VERMIN = 20,
+
+	BESTY_RACE_FIRST = BESTY_RACE_AMPHIBIC,
+	BESTY_RACE_LAST = BESTY_RACE_VERMIN,
 };
 
 enum CombatType_t : uint16_t {
@@ -406,7 +467,16 @@ enum PlayerSex_t : uint8_t {
 };
 
 enum Vocation_t : uint16_t {
-	VOCATION_NONE = 0
+	VOCATION_NONE = 0,
+	VOCATION_SORCERER = 1,
+	VOCATION_DRUID = 2,
+	VOCATION_PALADIN = 3,
+	VOCATION_KNIGHT = 4,
+	VOCATION_MASTER_SORCERER = 5,
+	VOCATION_ELDER_DRUID = 6,
+	VOCATION_ROYAL_PALADIN = 7,
+	VOCATION_ELITE_KNIGHT = 8,
+	VOCATION_LAST = VOCATION_ELITE_KNIGHT
 };
 
 enum ReturnValue {
@@ -595,6 +665,11 @@ struct Outfit_t {
 	uint8_t lookLegs = 0;
 	uint8_t lookFeet = 0;
 	uint8_t lookAddons = 0;
+	uint8_t lookMountHead = 0;
+	uint8_t lookMountBody = 0;
+	uint8_t lookMountLegs = 0;
+	uint8_t lookMountFeet = 0;
+	uint16_t lookFamiliarsType = 0;
 };
 
 enum LightState_t {
@@ -714,6 +789,8 @@ struct CombatDamage
 	CombatOrigin origin;
 	bool critical;
 	int affected;
+	bool extension;
+	std::string exString;
 
 	CombatDamage()
 	{
@@ -722,6 +799,8 @@ struct CombatDamage
 		primary.value = secondary.value = 0;
 		critical = false;
 		affected = 1;
+		extension = false;
+		exString = "";
 	}
 };
 
@@ -773,6 +852,120 @@ enum MagicEffectsType_t : uint8_t {
   MAGIC_EFFECTS_CREATE_EFFECT = 3,//needs uint8_t effectid after type
   MAGIC_EFFECTS_CREATE_DISTANCEEFFECT = 4,//needs uint8_t and deltaX(int8_t), deltaY(int8_t) after type
   MAGIC_EFFECTS_CREATE_DISTANCEEFFECT_REVERSED = 5,//needs uint8_t and deltaX(int8_t), deltaY(int8_t) after type
+};
+
+enum InspectObjectTypes : uint8_t {
+	INSPECT_NORMALOBJECT = 0,
+	INSPECT_NPCTRADE = 1,
+	INSPECT_UNKNOWN = 2,
+	INSPECT_CYCLOPEDIA = 3
+};
+
+enum ImpactAnalyzerAndTracker_t : uint8_t {
+	ANALYZER_HEAL = 0,
+	ANALYZER_DAMAGE_DEALT = 1,
+	ANALYZER_DAMAGE_RECEIVED = 2
+};
+
+enum CyclopediaCharacterInfoType_t : uint8_t {
+	CYCLOPEDIA_CHARACTERINFO_BASEINFORMATION = 0,
+	CYCLOPEDIA_CHARACTERINFO_GENERALSTATS = 1,
+	CYCLOPEDIA_CHARACTERINFO_COMBATSTATS = 2,
+	CYCLOPEDIA_CHARACTERINFO_RECENTDEATHS = 3,
+	CYCLOPEDIA_CHARACTERINFO_RECENTPVPKILLS = 4,
+	CYCLOPEDIA_CHARACTERINFO_ACHIEVEMENTS = 5,
+	CYCLOPEDIA_CHARACTERINFO_ITEMSUMMARY = 6,
+	CYCLOPEDIA_CHARACTERINFO_OUTFITSMOUNTS = 7,
+	CYCLOPEDIA_CHARACTERINFO_STORESUMMARY = 8,
+	CYCLOPEDIA_CHARACTERINFO_INSPECTION = 9,
+	CYCLOPEDIA_CHARACTERINFO_BADGES = 10,
+	CYCLOPEDIA_CHARACTERINFO_TITLES = 11
+};
+
+enum CyclopediaCharacterInfo_OutfitType_t : uint8_t {
+	CYCLOPEDIA_CHARACTERINFO_OUTFITTYPE_NONE = 0,
+	CYCLOPEDIA_CHARACTERINFO_OUTFITTYPE_QUEST = 1,
+	CYCLOPEDIA_CHARACTERINFO_OUTFITTYPE_STORE = 2
+};
+
+enum CyclopediaCharacterInfo_RecentKillStatus_t : uint8_t {
+	CYCLOPEDIA_CHARACTERINFO_RECENTKILLSTATUS_JUSTIFIED = 0,
+	CYCLOPEDIA_CHARACTERINFO_RECENTKILLSTATUS_UNJUSTIFIED = 1,
+	CYCLOPEDIA_CHARACTERINFO_RECENTKILLSTATUS_GUILDWAR = 2,
+	CYCLOPEDIA_CHARACTERINFO_RECENTKILLSTATUS_ASSISTED = 3,
+	CYCLOPEDIA_CHARACTERINFO_RECENTKILLSTATUS_ARENA = 4
+};
+
+struct RecentDeathEntry
+{
+	RecentDeathEntry(std::string cause, uint32_t timestamp) :
+		cause(std::move(cause)), timestamp(timestamp) {}
+
+	std::string cause;
+	uint32_t timestamp;
+};
+
+struct RecentPvPKillEntry
+{
+	RecentPvPKillEntry(std::string description, uint32_t timestamp, uint8_t status) :
+		description(std::move(description)), timestamp(timestamp), status(status) {}
+
+	std::string description;
+	uint32_t timestamp;
+	uint8_t status;
+};
+
+enum HighscoreType_t : uint8_t {
+	HIGHSCORE_GETENTRIES = 0,
+	HIGHSCORE_OURRANK = 1
+};
+
+enum HighscoreCategories_t : uint8_t {
+	HIGHSCORE_CATEGORY_EXPERIENCE = 0,
+	HIGHSCORE_CATEGORY_FIST_FIGHTING,
+	HIGHSCORE_CATEGORY_CLUB_FIGHTING,
+	HIGHSCORE_CATEGORY_SWORD_FIGHTING,
+	HIGHSCORE_CATEGORY_AXE_FIGHTING,
+	HIGHSCORE_CATEGORY_DISTANCE_FIGHTING,
+	HIGHSCORE_CATEGORY_SHIELDING,
+	HIGHSCORE_CATEGORY_FISHING,
+	HIGHSCORE_CATEGORY_MAGIC_LEVEL
+};
+
+struct HighscoreCategory
+{
+	HighscoreCategory(const char* name, uint8_t id) :
+		name(name), id(id) {}
+
+	const char* name;
+	uint8_t id;
+};
+
+struct HighscoreCharacter
+{
+	HighscoreCharacter(std::string name, uint64_t points, uint32_t id, uint32_t rank, uint16_t level, uint8_t vocation) :
+		name(std::move(name)), points(points), id(id), rank(rank), level(level), vocation(vocation) {}
+
+	std::string name;
+	uint64_t points;
+	uint32_t id;
+	uint32_t rank;
+	uint16_t level;
+	uint8_t vocation;
+};
+
+enum Cipbia_Elementals_t : uint8_t {
+	CIPBIA_ELEMENTAL_PHYSICAL = 0,
+	CIPBIA_ELEMENTAL_FIRE = 1,
+	CIPBIA_ELEMENTAL_EARTH = 2,
+	CIPBIA_ELEMENTAL_ENERGY = 3,
+	CIPBIA_ELEMENTAL_ICE = 4,
+	CIPBIA_ELEMENTAL_HOLY = 5,
+	CIPBIA_ELEMENTAL_DEATH = 6,
+	CIPBIA_ELEMENTAL_HEALING = 7,
+	CIPBIA_ELEMENTAL_DROWN = 8,
+	CIPBIA_ELEMENTAL_LIFEDRAIN = 9,
+	CIPBIA_ELEMENTAL_UNDEFINED = 10
 };
 
 #endif

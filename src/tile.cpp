@@ -402,6 +402,13 @@ void Tile::onAddTileItem(Item* item)
 	for (Creature* spectator : spectators) {
 		spectator->onAddTileItem(this, cylinderMapPos);
 	}
+
+  if ((!hasFlag(TILESTATE_PROTECTIONZONE) || g_config.getBoolean(ConfigManager::CLEAN_PROTECTION_ZONES))
+																							&& item->isCleanable()) {
+		if (!dynamic_cast<HouseTile*>(this)) {
+			g_game.addTileToClean(this);
+		}
+	}
 }
 
 void Tile::onUpdateTileItem(Item* oldItem, const ItemType& oldType, Item* newItem, const ItemType& newType)
@@ -467,6 +474,26 @@ void Tile::onRemoveTileItem(const SpectatorHashSet& spectators, const std::vecto
 	//event methods
 	for (Creature* spectator : spectators) {
 		spectator->onRemoveTileItem(this, cylinderMapPos, iType, item);
+	}
+
+  if (!hasFlag(TILESTATE_PROTECTIONZONE) || g_config.getBoolean(ConfigManager::CLEAN_PROTECTION_ZONES)) {
+		auto items = getItemList();
+		if (!items || items->empty()) {
+			g_game.removeTileToClean(this);
+			return;
+		}
+
+		bool ret = false;
+		for (auto toCheck : *items) {
+			if (toCheck->isCleanable()) {
+				ret = true;
+				break;
+			}
+		}
+
+		if (!ret) {
+			g_game.removeTileToClean(this);
+		}
 	}
 }
 
@@ -553,7 +580,7 @@ ReturnValue Tile::queryAdd(int32_t, const Thing& thing, uint32_t, uint32_t tileF
 					//1) Monster is able to walk over field type
 					//2) Being attacked while random stepping will make it ignore field damages
 					if (hasBitSet(FLAG_IGNOREFIELDDAMAGE, tileFlags)) {
-						if (!(monster->canWalkOnFieldType(combatType) || monster->getIgnoreFieldDamage())) {
+						if (!(monster->getIgnoreFieldDamage() || monster->canWalkOnFieldType(combatType))) {
 							return RETURNVALUE_NOTPOSSIBLE;
 						}
 					} else {
@@ -721,7 +748,7 @@ ReturnValue Tile::queryMaxCount(int32_t, const Thing&, uint32_t count, uint32_t&
 	return RETURNVALUE_NOERROR;
 }
 
-ReturnValue Tile::queryRemove(const Thing& thing, uint32_t count, uint32_t tileFlags) const
+ReturnValue Tile::queryRemove(const Thing& thing, uint32_t count, uint32_t tileFlags, Creature* /*= nullptr */) const
 {
 	int32_t index = getThingIndex(&thing);
 	if (index == -1) {

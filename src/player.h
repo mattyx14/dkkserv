@@ -27,6 +27,7 @@
 #include "depotchest.h"
 #include "depotlocker.h"
 #include "enums.h"
+#include "familiars.h"
 #include "gamestore.h"
 #include "groups.h"
 #include "guild.h"
@@ -80,6 +81,12 @@ enum tradestate_t : uint8_t {
 	TRADE_TRANSFER,
 };
 
+enum PlayerAsyncOngoingTaskFlags : uint64_t {
+	PlayerAsyncTask_Highscore = 1 << 0,
+	PlayerAsyncTask_RecentDeaths = 1 << 1,
+	PlayerAsyncTask_RecentPvPKills = 1 << 2
+};
+
 struct VIPEntry {
 	VIPEntry(uint32_t initGuid, std::string initName, std::string initDescription, uint32_t initIcon, bool initNotify) :
 		guid(initGuid), name(std::move(initName)), description(std::move(initDescription)), icon(initIcon), notify(initNotify) {}
@@ -101,6 +108,11 @@ struct OutfitEntry {
 
 	uint16_t lookType;
 	uint8_t addons;
+};
+
+struct FamiliarEntry {
+	constexpr explicit FamiliarEntry(uint16_t initLookType) : lookType(initLookType) {}
+	uint16_t lookType;
 };
 
 struct Skill {
@@ -179,6 +191,25 @@ class Player final : public Creature, public Cylinder
 			if (client) {
 				client->sendFYIBox(message);
 			}
+		}
+
+		void BestiarysendCharms() {
+			if (client) {
+				client->BestiarysendCharms();
+			}
+		}
+		void addBestiaryKillCount(uint16_t raceid, uint32_t amount)
+		{
+			uint32_t oldCount = getBestiaryKillCount(raceid);
+			uint32_t key = STORAGEVALUE_BESTIARYKILLCOUNT + raceid;
+			addStorageValue(key, static_cast<int32_t>(oldCount + amount));
+		}
+		uint32_t getBestiaryKillCount(uint16_t raceid) const
+		{
+			int32_t cp = 0;
+			uint32_t key = STORAGEVALUE_BESTIARYKILLCOUNT + raceid;
+			getStorageValue(key, cp);
+			return cp > 0 ? static_cast<uint32_t>(cp) : 0;
 		}
 
 		void setGUID(uint32_t newGuid) {
@@ -337,7 +368,35 @@ class Player final : public Creature, public Cylinder
 		uint16_t getClientIcons() const;
 
 		const GuildWarVector& getGuildWarVector() const {
-			return guildWarVector;
+		return guildWarVector;
+		}
+
+		std::list<MonsterType*> getBestiaryTrackerList() const {
+			return BestiaryTracker;
+		}
+
+		void addBestiaryTrackerList(MonsterType* mtype) {
+			if (client) {
+				auto it = std::find(BestiaryTracker.begin(), BestiaryTracker.end(), mtype);
+				if (it == BestiaryTracker.end()) {
+					BestiaryTracker.push_front(mtype);
+				} else {
+					BestiaryTracker.remove(mtype);
+				}
+				client->refreshBestiaryTracker(BestiaryTracker);
+			}
+		}
+
+		void sendBestiaryEntryChanged(uint16_t raceid) {
+			if (client) {
+				client->sendBestiaryEntryChanged(raceid);
+			}
+		}
+
+		void refreshBestiaryTracker(std::list<MonsterType*> trackerList) {
+			if (client) {
+				client->refreshBestiaryTracker(trackerList);
+			}
 		}
 
 		Vocation* getVocation() const {
@@ -817,6 +876,14 @@ class Player final : public Creature, public Cylinder
 		bool removeOutfitAddon(uint16_t lookType, uint8_t addons);
 		bool getOutfitAddons(const Outfit& outfit, uint8_t& addons) const;
 
+		bool canFamiliar(uint32_t lookType) const;
+		void addFamiliar(uint16_t lookType);
+		bool removeFamiliar(uint16_t lookType);
+		bool getFamiliar(const Familiar& familiar) const;
+		void setFamiliarLooktype(uint16_t familiarLooktype) {
+			this->defaultOutfit.lookFamiliarsType = familiarLooktype;
+		}
+
 		bool canLogout();
 
 		bool hasKilled(const Player* player) const;
@@ -1200,11 +1267,7 @@ class Player final : public Creature, public Cylinder
 				client->sendCloseShop();
 			}
 		}
-		void sendMarketEnter(uint32_t depotId) const {
-			if (client) {
-				client->sendMarketEnter(depotId);
-			}
-		}
+		void sendMarketEnter(uint32_t depotId);
 		void sendMarketLeave() {
 			inMarket = false;
 			if (client) {
@@ -1256,6 +1319,11 @@ class Player final : public Creature, public Cylinder
 				client->sendWorldLight(lightInfo);
 			}
 		}
+    void sendTibiaTime(int32_t time) {
+			if (client) {
+				client->sendTibiaTime(time);
+			}
+		}
 		void sendChannelsDialog() {
 			if (client) {
 				client->sendChannelsDialog();
@@ -1276,11 +1344,7 @@ class Player final : public Creature, public Cylinder
 				client->sendOutfitWindow();
 			}
 		}
-		void sendImbuementWindow(Item* item) {
-			if (client) {
-				client->sendImbuementWindow(item);
-			}
-		}
+		void sendImbuementWindow(Item* item);
 		void sendCloseContainer(uint8_t cid) {
 			if (client) {
 				client->sendCloseContainer(cid);
@@ -1300,6 +1364,100 @@ class Player final : public Creature, public Cylinder
 		void sendAddMarker(const Position& pos, uint8_t markType, const std::string& desc) {
 			if (client) {
 				client->sendAddMarker(pos, markType, desc);
+			}
+		}
+    void sendItemInspection(uint16_t itemId, uint8_t itemCount, const Item* item, bool cyclopedia) {
+			if (client) {
+				client->sendItemInspection(itemId, itemCount, item, cyclopedia);
+			}
+		}
+    void sendCyclopediaCharacterNoData(CyclopediaCharacterInfoType_t characterInfoType, uint8_t errorCode) {
+			if (client) {
+				client->sendCyclopediaCharacterNoData(characterInfoType, errorCode);
+			}
+		}
+    void sendCyclopediaCharacterBaseInformation() {
+			if (client) {
+				client->sendCyclopediaCharacterBaseInformation();
+			}
+		}
+		void sendCyclopediaCharacterGeneralStats() {
+			if (client) {
+				client->sendCyclopediaCharacterGeneralStats();
+			}
+		}
+		void sendCyclopediaCharacterCombatStats() {
+			if (client) {
+				client->sendCyclopediaCharacterCombatStats();
+			}
+		}
+		void sendCyclopediaCharacterRecentDeaths(uint16_t page, uint16_t pages, const std::vector<RecentDeathEntry>& entries) {
+			if (client) {
+				client->sendCyclopediaCharacterRecentDeaths(page, pages, entries);
+			}
+		}
+		void sendCyclopediaCharacterRecentPvPKills(uint16_t page, uint16_t pages, const std::vector<RecentPvPKillEntry>& entries) {
+			if (client) {
+				client->sendCyclopediaCharacterRecentPvPKills(page, pages, entries);
+			}
+		}
+		void sendCyclopediaCharacterAchievements() {
+			if (client) {
+				client->sendCyclopediaCharacterAchievements();
+			}
+		}
+		void sendCyclopediaCharacterItemSummary() {
+			if (client) {
+				client->sendCyclopediaCharacterItemSummary();
+			}
+		}
+		void sendCyclopediaCharacterOutfitsMounts() {
+			if (client) {
+				client->sendCyclopediaCharacterOutfitsMounts();
+			}
+		}
+		void sendCyclopediaCharacterStoreSummary() {
+			if (client) {
+				client->sendCyclopediaCharacterStoreSummary();
+			}
+		}
+		void sendCyclopediaCharacterInspection() {
+			if (client) {
+				client->sendCyclopediaCharacterInspection();
+			}
+		}
+		void sendCyclopediaCharacterBadges() {
+			if (client) {
+				client->sendCyclopediaCharacterBadges();
+			}
+		}
+		void sendCyclopediaCharacterTitles() {
+			if (client) {
+				client->sendCyclopediaCharacterTitles();
+			}
+		}
+    void sendHighscoresNoData() {
+			if (client) {
+				client->sendHighscoresNoData();
+			}
+		}
+		void sendHighscores(const std::vector<HighscoreCharacter>& characters, uint8_t categoryId, uint32_t vocationId, uint16_t page, uint16_t pages) {
+			if (client) {
+				client->sendHighscores(characters, categoryId, vocationId, page, pages);
+			}
+		}
+    void addAsyncOngoingTask(uint64_t flags) {
+			asyncOngoingTasks |= flags;
+		}
+		bool hasAsyncOngoingTask(uint64_t flags) const {
+			return (asyncOngoingTasks & flags);
+		}
+		void resetAsyncOngoingTask(uint64_t flags) {
+			asyncOngoingTasks &= ~(flags);
+		}
+		void sendTournamentLeaderboard() {
+  			if (client) {
+				client->sendTournamentLeaderboard();
 			}
 		}
 		void sendEnterWorld() {
@@ -1328,10 +1486,9 @@ class Player final : public Creature, public Cylinder
 			lastPong = OTSYS_TIME();
 		}
 
-		void sendOpenStash()
-		{
-			if (client) {
-				client->sendOpenStash();
+		void sendOpenStash() {
+			if (client && getLastDepotId() != -1) {
+        		client->sendOpenStash();
 			}
 		}
 
@@ -1486,19 +1643,22 @@ class Player final : public Creature, public Cylinder
 			return false;
  		}
 
-   		void updateSupplyTracker(const Item* item)
- 		{
-  			if (client) {
- 				client->sendUpdateSupplyTracker(item);
- 			}
- 		}
+		void updateSupplyTracker(const Item* item) {
+			if (client) {
+				client->sendUpdateSupplyTracker(item);
+			}
+		}
 
-   		void updateImpactTracker(int32_t quantity, bool isHeal)
- 		{
-  			if (client) {
- 				client->sendUpdateImpactTracker(quantity, isHeal);
- 			}
- 		}
+		void updateImpactTracker(CombatType_t type, int32_t amount) {
+			if (client) {
+				client->sendUpdateImpactTracker(type, amount);
+			}
+		}
+		void updateInputAnalyzer(CombatType_t type, int32_t amount, std::string target) {
+			if (client) {
+				client->sendUpdateInputAnalyzer(type, amount, target);
+			}
+		}
 
    		void updateLootTracker(Item* item)
  		{
@@ -1506,6 +1666,108 @@ class Player final : public Creature, public Cylinder
  				client->sendUpdateLootTracker(item);
  			}
  		}
+
+		uint32_t getCharmPoints() {
+			return charmPoints;
+		}
+		void setCharmPoints(uint32_t points) {
+			charmPoints = points;
+		}
+		bool hasCharmExpansion() {
+			return charmExpansion;
+		}
+		void setCharmExpansion(bool onOff) {
+			charmExpansion = onOff;
+		}
+		void setUsedRunesBit(int32_t bit) {
+			UsedRunesBit = bit;
+		}
+		int32_t getUsedRunesBit() {
+			return UsedRunesBit;
+		}
+		void setUnlockedRunesBit(int32_t bit) {
+			UnlockedRunesBit = bit;
+		}
+		int32_t getUnlockedRunesBit() {
+			return UnlockedRunesBit;
+		}
+		void setImmuneCleanse(ConditionType_t conditiontype) {
+			cleanseCondition.first = conditiontype;
+			cleanseCondition.second = OTSYS_TIME() + 10000;
+		}
+		bool isImmuneCleanse(ConditionType_t conditiontype) {
+			uint64_t timenow = OTSYS_TIME();
+			if ((cleanseCondition.first == conditiontype) && (timenow <= cleanseCondition.second)) {
+				return true;
+			}
+			return false;
+		}
+		uint16_t parseRacebyCharm(charmRune_t charmId, bool set, uint16_t newRaceid) {
+			uint16_t raceid = 0;
+		switch (charmId) {
+			case CHARM_WOUND:
+				if (set) { charmRuneWound = newRaceid; } else { raceid = charmRuneWound; }
+				break;
+			case CHARM_ENFLAME:
+				if (set) { charmRuneEnflame = newRaceid; } else { raceid = charmRuneEnflame; }
+				break;
+			case CHARM_POISON:
+				if (set) { charmRunePoison = newRaceid; } else { raceid = charmRunePoison; }
+				break;
+			case CHARM_FREEZE:
+				if (set) { charmRuneFreeze = newRaceid; } else { raceid = charmRuneFreeze; }
+				break;
+			case CHARM_ZAP:
+				if (set) { charmRuneZap = newRaceid; } else { raceid = charmRuneZap; }
+				break;
+			case CHARM_CURSE:
+				if (set) { charmRuneCurse = newRaceid; } else { raceid = charmRuneCurse; }
+				break;
+			case CHARM_CRIPPLE:
+				if (set) { charmRuneCripple = newRaceid; } else { raceid = charmRuneCripple; }
+				break;
+			case CHARM_PARRY:
+				if (set) { charmRuneParry = newRaceid; } else { raceid = charmRuneParry; }
+				break;
+			case CHARM_DODGE:
+				if (set) { charmRuneDodge = newRaceid; } else { raceid = charmRuneDodge; }
+				break;
+			case CHARM_ADRENALINE:
+				if (set) { charmRuneAdrenaline = newRaceid; } else { raceid = charmRuneAdrenaline; }
+				break;
+			case CHARM_NUMB:
+				if (set) { charmRuneNumb = newRaceid; } else { raceid = charmRuneNumb; }
+				break;
+			case CHARM_CLEANSE:
+				if (set) { charmRuneCleanse = newRaceid; } else { raceid = charmRuneCleanse; }
+				break;
+			case CHARM_BLESS:
+				if (set) { charmRuneBless = newRaceid; } else { raceid = charmRuneBless; }
+				break;
+			case CHARM_SCAVENGE:
+				if (set) { charmRuneScavenge = newRaceid; } else { raceid = charmRuneScavenge; }
+				break;
+			case CHARM_GUT:
+				if (set) { charmRuneGut = newRaceid; } else { raceid = charmRuneGut; }
+				break;
+			case CHARM_LOW:
+				if (set) { charmRuneLowBlow = newRaceid; } else { raceid = charmRuneLowBlow; }
+				break;
+			case CHARM_DIVINE:
+				if (set) { charmRuneDivine = newRaceid; } else { raceid = charmRuneDivine; }
+				break;
+			case CHARM_VAMP:
+				if (set) { charmRuneVamp = newRaceid; } else { raceid = charmRuneVamp; }
+				break;
+			case CHARM_VOID:
+				if (set) { charmRuneVoid = newRaceid; } else { raceid = charmRuneVoid; }
+				break;
+			default:
+				raceid = 0;
+				break;
+		}
+			return raceid;
+		}
 
 		uint16_t getFreeBackpackSlots() const;
 
@@ -1549,7 +1811,7 @@ class Player final : public Creature, public Cylinder
 				uint32_t flags, Creature* actor = nullptr) const override;
 		ReturnValue queryMaxCount(int32_t index, const Thing& thing, uint32_t count, uint32_t& maxQueryCount,
 				uint32_t flags) const override;
-		ReturnValue queryRemove(const Thing& thing, uint32_t count, uint32_t flags) const override;
+		ReturnValue queryRemove(const Thing& thing, uint32_t count, uint32_t flags, Creature* actor = nullptr) const override;
 		Cylinder* queryDestination(int32_t& index, const Thing& thing, Item** destItem,
 				uint32_t& flags) override;
 
@@ -1590,6 +1852,8 @@ class Player final : public Creature, public Cylinder
 		std::vector<uint16_t> quickLootListClientIds;
 
 		std::vector<OutfitEntry> outfits;
+		std::vector<FamiliarEntry> familiars;
+
 		GuildWarVector guildWarVector;
 
 		std::vector<ShopInfo> shopItemList;
@@ -1598,6 +1862,8 @@ class Player final : public Creature, public Cylinder
 		std::forward_list<uint32_t> modalWindows;
 		std::forward_list<std::string> learnedInstantSpellList;
 		std::forward_list<Condition*> storedConditionList; // TODO: This variable is only temporarily used when logging in, get rid of it somehow
+
+		std::list<MonsterType*> BestiaryTracker;
 
 		std::string name;
 		std::string guildNick;
@@ -1626,6 +1892,7 @@ class Player final : public Creature, public Cylinder
 		int64_t nextPotionAction = 0;
 		int64_t lastQuickLootNotification = 0;
 		int64_t lastWalking = 0;
+    uint64_t asyncOngoingTasks = 0;
 
 		std::vector<Kill> unjustifiedKills;
 
@@ -1696,6 +1963,32 @@ class Player final : public Creature, public Cylinder
 		uint16_t storeXpBoost = 0;
 		uint16_t staminaXpBoost = 100;
 		int16_t lastDepotId = -1;
+
+		// Bestiary
+		bool charmExpansion = false;
+		uint16_t charmRuneWound = 0;
+		uint16_t charmRuneEnflame = 0;
+		uint16_t charmRunePoison = 0;
+		uint16_t charmRuneFreeze = 0;
+		uint16_t charmRuneZap = 0;
+		uint16_t charmRuneCurse = 0;
+		uint16_t charmRuneCripple = 0;
+		uint16_t charmRuneParry = 0;
+		uint16_t charmRuneDodge = 0;
+		uint16_t charmRuneAdrenaline = 0;
+		uint16_t charmRuneNumb = 0;
+		uint16_t charmRuneCleanse = 0;
+		uint16_t charmRuneBless = 0;
+		uint16_t charmRuneScavenge = 0;
+		uint16_t charmRuneGut = 0;
+		uint16_t charmRuneLowBlow = 0;
+		uint16_t charmRuneDivine = 0;
+		uint16_t charmRuneVamp = 0;
+		uint16_t charmRuneVoid = 0;
+		uint32_t charmPoints = 0;
+		int32_t UsedRunesBit = 0;
+		int32_t UnlockedRunesBit = 0;
+		std::pair<ConditionType_t, uint64_t> cleanseCondition = {CONDITION_NONE, 0};
 
 		// New Prey
 		uint16_t preyBonusRerolls = 0;

@@ -1,6 +1,6 @@
 local config = {
-	-- [9059] = TOWNS_LIST.AB_DENDRIEL,
-	-- [9056] = TOWNS_LIST.CARLIN,
+	--[9059] = TOWNS_LIST.AB_DENDRIEL,
+	--[9056] = TOWNS_LIST.CARLIN
 }
 
 local citizen = MoveEvent()
@@ -18,6 +18,13 @@ function citizen.onStepIn(creature, item, position, fromPosition)
 
 	local town = Town(townId)
 	if not town then
+		return true
+	end
+
+	if town:getId() == TOWNS_LIST.SVARGROND and player:getStorageValue(Storage.BarbarianTest.Questline) < 8 then
+		player:sendTextMessage(MESSAGE_STATUS_WARNING, 'You first need to absolve the Barbarian Test Quest to become citizen!')
+		player:teleportTo(town:getTemplePosition())
+		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 		return true
 	end
 

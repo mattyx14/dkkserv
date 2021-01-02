@@ -27,11 +27,7 @@
 
 extern Weapons* g_weapons;
 
-Items::Items()
-{
-	items.reserve(40000);
-	nameToItems.reserve(40000);
-}
+Items::Items(){}
 
 void Items::clear()
 {
@@ -49,7 +45,7 @@ LootTypeNames lootTypeNames = {
 	{"container", ITEM_TYPE_CONTAINER},
 	{"decoration", ITEM_TYPE_DECORATION},
 	{"food", ITEM_TYPE_FOOD},
-	{"head", ITEM_TYPE_HELMET},
+	{"helmet", ITEM_TYPE_HELMET},
 	{"legs", ITEM_TYPE_LEGS},
 	{"other", ITEM_TYPE_OTHER},
 	{"potion", ITEM_TYPE_POTION},
@@ -182,9 +178,6 @@ FILELOADER_ERRORS Items::loadFromOtb(const std::string& file)
 						return ERROR_INVALID_FORMAT;
 					}
 
-					if (serverId > 40000 && serverId < 40100) {
-						serverId -= 40000;
-					}
 					break;
 				}
 
@@ -393,18 +386,19 @@ void Items::buildInventoryList()
 
 void Items::parseItemNode(const pugi::xml_node& itemNode, uint16_t id)
 {
-	if (id > 40000 && id < 40100) {
-		id -= 40000;
-
-		if (id >= items.size()) {
-			items.resize(id + 1);
-		}
-		ItemType& iType = items[id];
-		iType.id = id;
+	if (id >= items.size()) {
+		items.resize(id + 1);
 	}
+	ItemType& iType = items[id];
+	iType.id = id;
 
 	ItemType& it = getItemType(id);
 	if (it.id == 0) {
+		return;
+	}
+
+	if (!it.name.empty()) {
+		std::cout << "[Warning - Items::parseItemNode] Duplicate item with id: " << id << std::endl;
 		return;
 	}
 

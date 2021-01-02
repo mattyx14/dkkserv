@@ -534,7 +534,15 @@ class LuaScriptInterface
 		static int luaTableCreate(lua_State* L);
 
 		// Game
+		static int luaGamegetEventSLoot(lua_State* L);
+		static int luaGamegetEventSSkill(lua_State* L);
+		static int luaGamegetEventSExp(lua_State* L);
+
 		static int luaGameGetSpectators(lua_State* L);
+
+		static int luaGameGetBoostedCreature(lua_State* L);
+		static int luaGameGetBestiaryList(lua_State* L);
+
 		static int luaGameGetPlayers(lua_State* L);
 		static int luaGameLoadMap(lua_State* L);
 		static int luaGameLoadSpawnFile(lua_State* L);
@@ -561,6 +569,9 @@ class LuaScriptInterface
 		static int luaGameGenerateNpc(lua_State* L);
 		static int luaGameCreateNpc(lua_State* L);
 		static int luaGameCreateTile(lua_State* L);
+
+		static int luaGameGetBestiaryCharm(lua_State* L);
+		static int luaGameCreateBestiaryCharm(lua_State* L);
 		static int luaGameCreateMonsterType(lua_State* L);
 
 		static int luaGameStartRaid(lua_State* L);
@@ -852,6 +863,9 @@ class LuaScriptInterface
 		// Player
 		static int luaPlayerCreate(lua_State* L);
 
+		static int luaPlayerUnlockAllCharmRunes(lua_State* L);
+		static int luaPlayerResetCharmsMonsters(lua_State* L);
+		static int luaPlayeraddCharmPoints(lua_State* L);
 		static int luaPlayerIsPlayer(lua_State* L);
 
 		static int luaPlayerGetGuid(lua_State* L);
@@ -862,6 +876,10 @@ class LuaScriptInterface
 
 		static int luaPlayerGetAccountType(lua_State* L);
 		static int luaPlayerSetAccountType(lua_State* L);
+		
+		static int luaPlayeraddBestiaryKill(lua_State* L);
+		static int luaPlayercharmExpansion(lua_State* L);
+		static int luaPlayergetCharmMonsterType(lua_State* L);
 
 		static int luaPlayerGetCapacity(lua_State* L);
 		static int luaPlayerSetCapacity(lua_State* L);
@@ -876,6 +894,7 @@ class LuaScriptInterface
 		static int luaPlayerGetRewardList(lua_State* L);
 
 		static int luaPlayerSendInventory(lua_State* L);
+		static int luaPlayerSendLootStats(lua_State* L);
 		static int luaPlayerUpdateKillTracker(lua_State* L);
 		static int luaPlayerUpdateLootTracker(lua_State* L);
 		static int luaPlayerUpdateSupplyTracker(lua_State* L);
@@ -1004,6 +1023,12 @@ class LuaScriptInterface
 		static int luaPlayerRemoveMount(lua_State* L);
 		static int luaPlayerHasMount(lua_State* L);
 
+		static int luaPlayerAddFamiliar(lua_State* L);
+		static int luaPlayerRemoveFamiliar(lua_State* L);
+		static int luaPlayerHasFamiliar(lua_State* L);
+		static int luaPlayerSetFamiliarLooktype(lua_State* L);
+		static int luaPlayerGetFamiliarLooktype(lua_State* L);
+
 		static int luaPlayerGetPremiumDays(lua_State* L);
 		static int luaPlayerAddPremiumDays(lua_State* L);
 		static int luaPlayerRemovePremiumDays(lua_State* L);
@@ -1101,6 +1126,8 @@ class LuaScriptInterface
 		static int luaPlayerGetIdleTime(lua_State* L);
 		static int luaPlayerGetFreeBackpackSlots(lua_State* L);
 
+		static int luaPlayerOpenMarket(lua_State* L);
+
 		// Monster
 		static int luaMonsterCreate(lua_State* L);
 
@@ -1151,6 +1178,9 @@ class LuaScriptInterface
 		static int luaGuildGetId(lua_State* L);
 		static int luaGuildGetName(lua_State* L);
 		static int luaGuildGetMembersOnline(lua_State* L);
+
+    static int luaGuildGetBankBalance(lua_State* L);
+    static int luaGuildSetBankBalance(lua_State* L);
 
 		static int luaGuildAddRank(lua_State* L);
 		static int luaGuildGetRankById(lua_State* L);
@@ -1256,6 +1286,7 @@ class LuaScriptInterface
 		static int luaItemTypeIsMagicField(lua_State* L);
 		static int luaItemTypeIsUseable(lua_State* L);
 		static int luaItemTypeIsPickupable(lua_State* L);
+		static int luaItemTypeIsKey(lua_State* L);
 
 		static int luaItemTypeGetType(lua_State* L);
 		static int luaItemTypeGetId(lua_State* L);
@@ -1333,6 +1364,19 @@ class LuaScriptInterface
 
 		static int luaConditionAddDamage(lua_State* L);
 
+		// Bestiary (charm)
+		static int luaParseBestiaryCharmName(lua_State* L);
+		static int luaParseBestiaryCharmDescription(lua_State* L);
+		static int luaParseBestiaryCharmType(lua_State* L);
+		static int luaParseBestiaryCharmDamageType(lua_State* L);
+		static int luaParseBestiaryCharmPercentage(lua_State* L);
+		static int luaParseBestiaryCharmChance(lua_State* L);
+		static int luaParseBestiaryCharmCancelMsg(lua_State* L);
+		static int luaParseBestiaryCharmLogMsg(lua_State* L);
+		static int luaParseBestiaryCharmEffect(lua_State* L);
+		static int luaParseBestiaryCharmPoints(lua_State* L);
+		static int luaBestiaryCharmCreate(lua_State* L);
+
 		// MonsterType
 		static int luaMonsterTypeCreate(lua_State* L);
 
@@ -1356,10 +1400,24 @@ class LuaScriptInterface
 		static int luaMonsterTypeName(lua_State* L);
 		static int luaMonsterTypeNameDescription(lua_State* L);
 
+		static int luaMonsterTypegetCorpseId(lua_State* L);
+
 		static int luaMonsterTypeHealth(lua_State* L);
 		static int luaMonsterTypeMaxHealth(lua_State* L);
 		static int luaMonsterTypeRunHealth(lua_State* L);
 		static int luaMonsterTypeExperience(lua_State* L);
+
+		// Bestiary
+		static int luaMonsterTypeRaceid(lua_State* L);
+		static int luaMonsterTypeBestiaryclass(lua_State* L);
+		static int luaMonsterTypeBestiaryOccurrence(lua_State* L);
+		static int luaMonsterTypeBestiaryLocations(lua_State* L);		
+		static int luaMonsterTypeBestiaryStars(lua_State* L);
+		static int luaMonsterTypeBestiaryCharmsPoints(lua_State* L);
+		static int luaMonsterTypeBestiarySecondUnlock(lua_State* L);
+		static int luaMonsterTypeBestiaryFirstUnlock(lua_State* L);
+		static int luaMonsterTypeBestiarytoKill(lua_State* L);
+		static int luaMonsterTypeBestiaryrace(lua_State* L);
 
 		static int luaMonsterTypeCombatImmunities(lua_State* L);
 		static int luaMonsterTypeConditionImmunities(lua_State* L);
@@ -1372,6 +1430,9 @@ class LuaScriptInterface
 
 		static int luaMonsterTypeGetElementList(lua_State* L);
 		static int luaMonsterTypeAddElement(lua_State* L);
+
+		static int luaMonsterTypeAddReflect(lua_State* L);
+		static int luaMonsterTypeAddHealing(lua_State* L);
 
 		static void parseLoot(lua_State* L, const std::vector<LootBlock>& lootList);
 
@@ -1424,12 +1485,21 @@ class LuaScriptInterface
 		static int luaCreateLoot(lua_State* L);
 		static int luaDeleteLoot(lua_State* L);
 		static int luaLootSetId(lua_State* L);
-		static int luaLootSetMaxCount(lua_State* L);
 		static int luaLootSetMinCount(lua_State* L);
+		static int luaLootSetMaxCount(lua_State* L);
 		static int luaLootSetSubType(lua_State* L);
 		static int luaLootSetChance(lua_State* L);
 		static int luaLootSetActionId(lua_State* L);
-		static int luaLootSetDescription(lua_State* L);
+		static int luaLootSetText(lua_State* L);
+		static int luaLootSetNameItem(lua_State* L);
+		static int luaLootSetArticle(lua_State* L);
+		static int luaLootSetAttack(lua_State* L);
+		static int luaLootSetDefense(lua_State* L);
+		static int luaLootSetExtraDefense(lua_State* L);
+		static int luaLootSetArmor(lua_State* L);
+		static int luaLootSetShootRange(lua_State* L);
+		static int luaLootSetHitChance(lua_State* L);
+		static int luaLootSetUnique(lua_State* L);
 		static int luaLootAddChildLoot(lua_State* L);
 
 		// MonsterSpell

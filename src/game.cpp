@@ -83,6 +83,55 @@ Game::~Game()
 	}
 }
 
+void Game::loadBoostedCreature()
+{
+	Database& db = Database::getInstance();
+	std::ostringstream query;
+	query << "SELECT * FROM `boosted_creature`";
+	DBResult_ptr result = db.storeQuery(query.str());
+
+	if (!result) {
+		std::cout << "[Warning - Boosted creature] Failed to detect boosted creature database. (CODE 01)" << std::endl;
+		return;
+	}
+
+	uint16_t date = result->getNumber<uint16_t>("date");
+	std::string name = "";
+	time_t now = time(0);
+	tm *ltm = localtime(&now);
+	uint8_t today = ltm->tm_mday;
+	if (date == today) {
+		name = result->getString("boostname");
+	} else {
+		uint16_t oldrace = result->getNumber<uint16_t>("raceid");
+		std::map<uint16_t, std::string> monsterlist = getBestiaryList();
+		uint16_t newrace = 0;
+		uint8_t k = 1;
+		while (newrace == 0 || newrace == oldrace) {
+			uint16_t random = normal_random(0, monsterlist.size());
+			for (auto it : monsterlist) {
+				if (k == random) {
+					newrace = it.first;
+					name = it.second;	
+				}
+				k++;
+			}
+		}
+		query.str(std::string());
+		query << "UPDATE `boosted_creature` SET ";
+		query << "`date` = '" << ltm->tm_mday << "',";
+		query << "`boostname` = " << db.escapeString(name) << ",";
+		query << "`raceid` = '" << newrace << "'";
+
+		if (!db.executeQuery(query.str())) {
+			std::cout << "[Warning - Boosted creature] Failed to detect boosted creature database. (CODE 02)" << std::endl;
+			return;
+		}
+	}
+	setBoostedName(name);
+	std::cout << ">> Boosted creature: " << name << std::endl;
+}
+
 void Game::start(ServiceManager* manager)
 {
 	serviceManager = manager;
@@ -106,6 +155,86 @@ GameState_t Game::getGameState() const
 void Game::setWorldType(WorldType_t type)
 {
 	worldType = type;
+}
+
+bool Game::loadScheduleEventFromXml()
+{
+	pugi::xml_document doc;
+	pugi::xml_parse_result result = doc.load_file("data/XML/events.xml");
+	if (!result) {
+		printXMLError("Error - Game::loadScheduleEventFromXml", "data/XML/events.xml", result);
+		return false;
+	}
+
+		int16_t daysNow;
+		time_t t = time(NULL);
+		tm* timePtr = localtime(&t);
+		int16_t daysMath = ((timePtr->tm_year + 1900) * 365) + ((timePtr->tm_mon + 1) * 30) + (timePtr->tm_mday);
+
+	for (auto schedNode : doc.child("events").children()) {
+		std::string ss_d;
+		std::stringstream ss;
+
+		pugi::xml_attribute attr;
+		if ((attr = schedNode.attribute("name"))) {
+			ss_d = attr.as_string();
+			ss << "> " << ss_d << " event";
+		}
+
+		int year;
+		int day;
+		int month;
+
+		if (!(attr = schedNode.attribute("enddate"))) {
+			continue;
+		} else {
+			ss_d = attr.as_string();
+			sscanf(ss_d.c_str(), "%d/%d/%d", &month, &day, &year);
+			daysNow = ((year * 365) + (month * 30) + day);
+			if (daysMath > daysNow) {
+				continue;
+			}
+		}
+
+		if (!(attr = schedNode.attribute("startdate"))) {
+			continue;
+		} else {
+			ss_d = attr.as_string();
+			sscanf(ss_d.c_str(), "%d/%d/%d", &month, &day, &year);
+			daysNow = ((year * 365) + (month * 30) + day);
+			if (daysMath < daysNow) {
+				continue;
+			}	
+		}
+
+			for (auto schedENode : schedNode.children()) {
+				if ((schedENode.attribute("exprate"))) {
+					uint16_t exprate = pugi::cast<uint16_t>(schedENode.attribute("exprate").value());
+					g_game.setExpSchedule(exprate);
+					ss << " exp: " << (exprate - 100) << "%";
+				}
+
+				if ((schedENode.attribute("lootrate"))) {
+					uint16_t lootrate = pugi::cast<uint16_t>(schedENode.attribute("lootrate").value());
+					g_game.setLootSchedule(lootrate);
+					ss << ", loot: " << (lootrate - 100) << "%";
+				}
+
+				if ((schedENode.attribute("spawnrate"))) {
+					uint32_t spawnrate = pugi::cast<uint32_t>(schedENode.attribute("spawnrate").value());
+					g_game.setSpawnSchedule(spawnrate);
+					ss << ", spawn: "  << (spawnrate - 100) << "%";
+				}
+
+				if ((schedENode.attribute("skillrate"))) {
+					uint16_t skillrate = pugi::cast<uint16_t>(schedENode.attribute("skillrate").value());
+					g_game.setSkillSchedule(skillrate);
+					ss << ", skill: " << (skillrate - 100) << "%";
+				}
+			}
+		std::cout << ss.str() << "." << std::endl;
+	}
+	return true;
 }
 
 void Game::setGameState(GameState_t newState)
@@ -408,6 +537,10 @@ void Game::saveGameState()
 		it.second->loginPosition = it.second->getPosition();
 		IOLoginData::savePlayer(it.second);
 	}
+
+  for (const auto& it : guilds) {
+    IOGuild::saveGuild(it.second);
+  }
 
 	Map::save();
 
@@ -902,6 +1035,26 @@ void Game::playerTeleport(uint32_t playerId, const Position& newPosition) {
   if (returnValue != RETURNVALUE_NOERROR) {
     player->sendCancelMessage(returnValue);
   }
+}
+
+void Game::playerInspectItem(Player* player, const Position& pos) {
+	Thing* thing = internalGetThing(player, pos, 0, 0, STACKPOS_TOPDOWN_ITEM);
+	if (!thing) {
+		player->sendCancelMessage(RETURNVALUE_NOTPOSSIBLE);
+		return;
+	}
+
+	Item* item = thing->getItem();
+	if (!item) {
+		player->sendCancelMessage(RETURNVALUE_NOTPOSSIBLE);
+		return;
+	}
+
+	player->sendItemInspection(item->getClientID(), item->getItemCount(), item, false);
+}
+
+void Game::playerInspectItem(Player* player, uint16_t itemId, uint8_t itemCount, bool cyclopedia) {
+	player->sendItemInspection(itemId, itemCount, nullptr, cyclopedia);
 }
 
 void Game::playerMoveThing(uint32_t playerId, const Position& fromPos,
@@ -1415,7 +1568,7 @@ ReturnValue Game::internalMoveItem(Cylinder* fromCylinder, Cylinder* toCylinder,
 				return retExchangeMaxCount;
 			}
 
-			if (toCylinder->queryRemove(*toItem, toItem->getItemCount(), flags) == RETURNVALUE_NOERROR) {
+			if (toCylinder->queryRemove(*toItem, toItem->getItemCount(), flags, actor) == RETURNVALUE_NOERROR) {
 				int32_t oldToItemIndex = toCylinder->getThingIndex(toItem);
 				toCylinder->removeThing(toItem, toItem->getItemCount());
 				fromCylinder->addThing(toItem);
@@ -1455,7 +1608,7 @@ ReturnValue Game::internalMoveItem(Cylinder* fromCylinder, Cylinder* toCylinder,
 
 	Item* moveItem = item;
 	//check if we can remove this item
-	ret = fromCylinder->queryRemove(*item, m, flags);
+	ret = fromCylinder->queryRemove(*item, m, flags, actor);
 	if (ret != RETURNVALUE_NOERROR) {
 		return ret;
 	}
@@ -3020,6 +3173,10 @@ void Game::playerMoveUpContainer(uint32_t playerId, uint8_t cid)
 			return;
 		}
 
+		if (!g_events->eventPlayerOnBrowseField(player, tile->getPosition())) {
+			return;
+		}
+
 		auto it = browseFields.find(tile);
 		if (it == browseFields.end()) {
 			parentContainer = new Container(tile);
@@ -3544,6 +3701,16 @@ void Game::playerRequestTrade(uint32_t playerId, const Position& pos, uint8_t st
 	if (tradeItem->getClientID() != spriteId || !tradeItem->isPickupable() || tradeItem->hasAttribute(ITEM_ATTRIBUTE_UNIQUEID)) {
 		player->sendCancelMessage(RETURNVALUE_NOTPOSSIBLE);
 		return;
+	}
+  
+  if (g_config.getBoolean(ConfigManager::ONLY_INVITED_CAN_MOVE_HOUSE_ITEMS)) {
+		if (HouseTile* houseTile = dynamic_cast<HouseTile*>(tradeItem->getTile())) {
+			House* house = houseTile->getHouse();
+			if (house && !house->isInvited(player)) {
+				player->sendCancelMessage(RETURNVALUE_NOTPOSSIBLE);
+				return;
+			}
+		}
 	}
 
 	const Position& playerPosition = player->getPosition();
@@ -5070,9 +5237,35 @@ bool Game::combatBlockHit(CombatDamage& damage, Creature* attacker, Creature* ta
 		}
 	};
 
+	bool canHeal = false;
+		CombatDamage damageHeal;
+		damageHeal.primary.type = COMBAT_HEALING;
+
+	bool canReflect = false;
+		CombatDamage damageReflected;
+
 	BlockType_t primaryBlockType, secondaryBlockType;
 	if (damage.primary.type != COMBAT_NONE) {
+		// Damage reflection primary
+		if (attacker && target->getMonster()) {
+			uint32_t primaryReflect = target->getMonster()->getReflectValue(damage.primary.type);
+			if (primaryReflect > 0) {
+				damageReflected.primary.type = damage.primary.type;
+				damageReflected.primary.value = std::ceil((damage.primary.value) * (primaryReflect / 100.));
+				damageReflected.extension = true;
+				damageReflected.exString = "(damage reflection)";
+				canReflect = true;
+			}
+		}
 		damage.primary.value = -damage.primary.value;
+		// Damage healing primary
+		if (attacker && target->getMonster()) {
+			uint32_t primaryHealing = target->getMonster()->getHealingCombatValue(damage.primary.type);
+			if (primaryHealing > 0) {
+				damageHeal.primary.value = std::ceil((damage.primary.value) * (primaryHealing / 100.));
+				canHeal = true;
+			}
+		}
 		primaryBlockType = target->blockHit(attacker, damage.primary.type, damage.primary.value, checkDefense, checkArmor, field);
 
 		damage.primary.value = -damage.primary.value;
@@ -5082,13 +5275,43 @@ bool Game::combatBlockHit(CombatDamage& damage, Creature* attacker, Creature* ta
 	}
 
 	if (damage.secondary.type != COMBAT_NONE) {
+		// Damage reflection secondary
+		if (attacker && target->getMonster()) {
+			uint32_t secondaryReflect = target->getMonster()->getReflectValue(damage.secondary.type);
+			if (secondaryReflect > 0) {
+				if (!canReflect) {
+					damageReflected.primary.type = damage.secondary.type;
+					damageReflected.primary.value = std::ceil((damage.secondary.value) * (secondaryReflect / 100.));
+					damageReflected.extension = true;
+					damageReflected.exString = "(damage reflection)";
+					canReflect = true;
+				} else {
+					damageReflected.secondary.type = damage.secondary.type;
+					damageReflected.secondary.value = std::ceil((damage.secondary.value) * (secondaryReflect / 100.));
+				}
+			}
+		}
 		damage.secondary.value = -damage.secondary.value;
+		// Damage healing secondary
+		if (attacker && target->getMonster()) {
+			uint32_t secondaryHealing = target->getMonster()->getHealingCombatValue(damage.secondary.type);
+			if (secondaryHealing > 0) {;
+				damageHeal.primary.value += std::ceil((damage.secondary.value) * (secondaryHealing / 100.));
+				canHeal = true;
+			}
+		}
 		secondaryBlockType = target->blockHit(attacker, damage.secondary.type, damage.secondary.value, false, false, field);
 
 		damage.secondary.value = -damage.secondary.value;
 		sendBlockEffect(secondaryBlockType, damage.secondary.type, target->getPosition());
 	} else {
 		secondaryBlockType = BLOCK_NONE;
+	}
+	if (canReflect) {
+		combatChangeHealth(target, attacker, damageReflected, false);
+	}
+	if (canHeal) {
+		combatChangeHealth(nullptr, target, damageHeal);
 	}
 	return (primaryBlockType != BLOCK_NONE) && (secondaryBlockType != BLOCK_NONE);
 }
@@ -5189,7 +5412,7 @@ void Game::combatGetTypeInfo(CombatType_t combatType, Creature* target, TextColo
 	}
 }
 
-bool Game::combatChangeHealth(Creature* attacker, Creature* target, CombatDamage& damage, bool isEvent)
+bool Game::combatChangeHealth(Creature* attacker, Creature* target, CombatDamage& damage, bool isEvent /*= false*/)
 {
 	using namespace std;
 	const Position& targetPos = target->getPosition();
@@ -5227,7 +5450,7 @@ bool Game::combatChangeHealth(Creature* attacker, Creature* target, CombatDamage
 
 		if (realHealthChange > 0 && !target->isInGhostMode()) {
 			if (targetPlayer) {
-				targetPlayer->updateImpactTracker(realHealthChange, true);
+				targetPlayer->updateImpactTracker(COMBAT_HEALING, realHealthChange);
 			}
 			std::stringstream ss;
 
@@ -5323,6 +5546,23 @@ bool Game::combatChangeHealth(Creature* attacker, Creature* target, CombatDamage
 
 		if (damage.critical) {
 			addMagicEffect(spectators, targetPos, CONST_ME_CRITICAL_DAMAGE);
+		}
+
+		if (!damage.extension && attacker && attacker->getMonster() && targetPlayer) {
+			// Charm rune (target as player)
+			MonsterType* mType = g_monsters.getMonsterType(attacker->getName());
+			if (mType) {
+				IOBestiary g_bestiary;
+				charmRune_t activeCharm = g_bestiary.getCharmFromTarget(targetPlayer, mType);
+				if (activeCharm != CHARM_NONE && activeCharm != CHARM_CLEANSE) {
+					Charm* charm = g_bestiary.getBestiaryCharm(activeCharm);
+					if (charm && charm->type == CHARM_DEFENSIVE &&(charm->chance > normal_random(0, 100))) {
+						if (g_bestiary.parseCharmCombat(charm, targetPlayer, attacker, (damage.primary.value + damage.secondary.value))) {
+							return false; // Dodge charm
+						}
+					}
+				}
+			}
 		}
 
 		if (target->hasCondition(CONDITION_MANASHIELD) && damage.primary.type != COMBAT_UNDEFINEDDAMAGE) {
@@ -5446,7 +5686,7 @@ bool Game::combatChangeHealth(Creature* attacker, Creature* target, CombatDamage
 		if (realDamage > 0) {
 			if (Monster* targetMonster = target->getMonster()) {
 				if (attackerPlayer && attackerPlayer->getPlayer()) {
-					attackerPlayer->updateImpactTracker(realDamage, false);
+					attackerPlayer->updateImpactTracker(damage.secondary.type, damage.secondary.value);
 				}
 
 				if (targetMonster->israndomStepping()) {
@@ -5462,6 +5702,20 @@ bool Game::combatChangeHealth(Creature* attacker, Creature* target, CombatDamage
 			uint16_t lifeChance = attackerPlayer->getSkillLevel(SKILL_LIFE_LEECH_CHANCE);
       		uint16_t lifeSkill = attackerPlayer->getSkillLevel(SKILL_LIFE_LEECH_AMOUNT);
 			if (normal_random(0, 100) < lifeChance) {
+				// Vampiric charm rune
+				if (target && target->getMonster()) {
+					uint16_t playerCharmRaceidVamp = attackerPlayer->parseRacebyCharm(CHARM_VAMP, false, 0);
+					if (playerCharmRaceidVamp != 0) {
+						MonsterType* mType = g_monsters.getMonsterType(target->getName());
+						if (mType && playerCharmRaceidVamp == mType->info.raceid) {
+							IOBestiary g_bestiary;
+							Charm* lifec = g_bestiary.getBestiaryCharm(CHARM_VAMP);
+							if (lifec) {
+								lifeSkill += lifec->percent;
+							}
+						}
+					}
+				}
 				CombatParams tmpParams;
 				CombatDamage tmpDamage;
 
@@ -5477,6 +5731,20 @@ bool Game::combatChangeHealth(Creature* attacker, Creature* target, CombatDamage
 			uint16_t manaChance = attackerPlayer->getSkillLevel(SKILL_MANA_LEECH_CHANCE);
       		uint16_t manaSkill = attackerPlayer->getSkillLevel(SKILL_MANA_LEECH_AMOUNT);
 			if (normal_random(0, 100) < manaChance) {
+				// Void charm rune
+				if (target && target->getMonster()) {
+					uint16_t playerCharmRaceidVoid = attackerPlayer->parseRacebyCharm(CHARM_VOID, false, 0);
+					if (playerCharmRaceidVoid != 0) {
+						MonsterType* mType = g_monsters.getMonsterType(target->getName());
+						if (mType && playerCharmRaceidVoid == mType->info.raceid) {
+							IOBestiary g_bestiary;
+							Charm* voidc = g_bestiary.getBestiaryCharm(CHARM_VOID);
+							if (voidc) {
+								manaSkill += voidc->percent;
+							}
+						}
+					}
+				}
 				CombatParams tmpParams;
 				CombatDamage tmpDamage;
 
@@ -5486,6 +5754,21 @@ bool Game::combatChangeHealth(Creature* attacker, Creature* target, CombatDamage
 				tmpDamage.primary.value = std::round(realDamage * (manaSkill / 100.) * (0.1 * affected + 0.9)) / affected;
 
 				Combat::doCombatMana(nullptr, attackerPlayer, tmpDamage, tmpParams);
+			}
+
+			//Charm rune (attacker as player)
+			if (!damage.extension && target && target->getMonster()) {
+				MonsterType* mType = g_monsters.getMonsterType(target->getName());
+				if (mType) {
+					IOBestiary g_bestiary;
+					charmRune_t activeCharm = g_bestiary.getCharmFromTarget(attackerPlayer, mType);
+					if (activeCharm != CHARM_NONE) {
+						Charm* charm = g_bestiary.getBestiaryCharm(activeCharm);
+						if (charm && charm->type == CHARM_OFFENSIVE && (charm->chance >= normal_random(0, 100))) {
+							g_bestiary.parseCharmCombat(charm, attackerPlayer, target, realDamage);
+						}
+					}
+				}
 			}
 		}
 
@@ -5514,6 +5797,22 @@ bool Game::combatChangeHealth(Creature* attacker, Creature* target, CombatDamage
 		}
 
 		if (message.primary.color != TEXTCOLOR_NONE || message.secondary.color != TEXTCOLOR_NONE) {
+			if (attackerPlayer) {
+				attackerPlayer->updateImpactTracker(damage.primary.type, damage.primary.value);
+				if (damage.secondary.type != COMBAT_NONE) {
+					attackerPlayer->updateImpactTracker(damage.secondary.type, damage.secondary.value);
+				}
+			}
+			if (targetPlayer) {
+				std::string cause = "(other)";
+				if (attacker) {
+					cause = attacker->getName();
+				}
+				targetPlayer->updateInputAnalyzer(damage.primary.type, damage.primary.value, cause);
+				if (damage.secondary.type != COMBAT_NONE) {
+					attackerPlayer->updateInputAnalyzer(damage.secondary.type, damage.secondary.value, cause);
+				}
+			}
 			std::stringstream ss;
 
 			ss << realDamage << (realDamage != 1 ? " hitpoints" : " hitpoint");
@@ -5530,6 +5829,9 @@ bool Game::combatChangeHealth(Creature* attacker, Creature* target, CombatDamage
 				if (tmpPlayer == attackerPlayer && attackerPlayer != targetPlayer) {
 					ss.str({});
 					ss << ucfirst(target->getNameDescription()) << " loses " << damageString << " due to your attack.";
+					if (damage.extension) {
+						ss << " " << damage.exString;
+					}
 					message.type = MESSAGE_DAMAGE_DEALT;
 					message.text = ss.str();
 				} else if (tmpPlayer == targetPlayer) {
@@ -5541,6 +5843,9 @@ bool Game::combatChangeHealth(Creature* attacker, Creature* target, CombatDamage
 						ss << " due to your own attack.";
 					} else {
 						ss << " due to an attack by " << attacker->getNameDescription() << '.';
+					}
+					if (damage.extension) {
+						ss << " " << damage.exString;
 					}
 					message.type = MESSAGE_DAMAGE_RECEIVED;
 					message.text = ss.str();
@@ -5563,6 +5868,9 @@ bool Game::combatChangeHealth(Creature* attacker, Creature* target, CombatDamage
 							}
 						}
 						ss << '.';
+						if (damage.extension) {
+							ss << " " << damage.exString;
+						}
 						spectatorMessage = ss.str();
 					}
 
@@ -5693,6 +6001,23 @@ bool Game::combatChangeMana(Creature* attacker, Creature* target, CombatDamage& 
 				}
 				damage.origin = ORIGIN_NONE;
 				return combatChangeMana(attacker, target, damage);
+			}
+		}
+
+		if (targetPlayer && attacker && attacker->getMonster()) {
+			//Charm rune (target as player)
+			MonsterType* mType = g_monsters.getMonsterType(attacker->getName());
+			if (mType) {
+				IOBestiary g_bestiary;
+				charmRune_t activeCharm = g_bestiary.getCharmFromTarget(targetPlayer, mType);
+				if (activeCharm != CHARM_NONE && activeCharm != CHARM_CLEANSE) {
+					Charm* charm = g_bestiary.getBestiaryCharm(activeCharm);
+					if (charm && charm->type == CHARM_DEFENSIVE && (charm->chance > normal_random(0, 100))) {
+						if (g_bestiary.parseCharmCombat(charm, targetPlayer, attacker, manaChange)) {
+							return false; // Dodge charm
+						}
+					}
+				}
 			}
 		}
 
@@ -6034,10 +6359,14 @@ void Game::checkLight()
 	if (lightChange) {
 		for (const auto& it : players) {
 			it.second->sendWorldLight(lightInfo);
+      it.second->sendTibiaTime(lightHour);
 		}
+	} else {
+		for (const auto& it : players) {
+			it.second->sendTibiaTime(lightHour);
+    }
 	}
-
-	if (currentLightState != lightState) {
+  if (currentLightState != lightState) {
 		currentLightState = lightState;
 		for (auto& it : g_globalEvents->getEventMap(GLOBALEVENT_PERIODCHANGE)) {
 			it.second.executePeriodChange(lightState, lightInfo);
@@ -6117,6 +6446,15 @@ void Game::ReleaseCreature(Creature* creature)
 void Game::ReleaseItem(Item* item)
 {
 	ToReleaseItems.push_back(item);
+}
+
+void Game::addBestiaryList(uint16_t raceid, std::string name)
+{
+	auto it = BestiaryList.find(raceid);
+	if (it != BestiaryList.end()) {
+		return;
+	}
+	BestiaryList.insert(std::pair<uint16_t, std::string>(raceid, name));
 }
 
 void Game::broadcastMessage(const std::string& text, MessageClasses type) const
@@ -6451,6 +6789,256 @@ void Game::kickPlayer(uint32_t playerId, bool displayEffect)
 	player->kickPlayer(displayEffect);
 }
 
+void Game::playerCyclopediaCharacterInfo(Player* player, uint32_t characterID, CyclopediaCharacterInfoType_t characterInfoType, uint16_t entriesPerPage, uint16_t page) {
+	uint32_t playerGUID = player->getGUID();
+  if (characterID != playerGUID) {
+		//For now allow viewing only our character since we don't have tournaments supported
+		player->sendCyclopediaCharacterNoData(characterInfoType, 2);
+		return;
+	}
+
+	switch (characterInfoType) {
+	case CYCLOPEDIA_CHARACTERINFO_BASEINFORMATION: player->sendCyclopediaCharacterBaseInformation(); break;
+	case CYCLOPEDIA_CHARACTERINFO_GENERALSTATS: player->sendCyclopediaCharacterGeneralStats(); break;
+	case CYCLOPEDIA_CHARACTERINFO_COMBATSTATS: player->sendCyclopediaCharacterCombatStats(); break;
+  case CYCLOPEDIA_CHARACTERINFO_RECENTDEATHS: {
+    std::ostringstream query;
+    uint32_t offset = static_cast<uint32_t>(page - 1) * entriesPerPage;
+			query << "SELECT `time`, `level`, `killed_by`, `mostdamage_by`, (select count(*) FROM `player_deaths` WHERE `player_id` = " << playerGUID << ") as `entries` FROM `player_deaths` WHERE `player_id` = " << playerGUID << " ORDER BY `time` DESC LIMIT " << offset << ", " << entriesPerPage;
+
+			uint32_t playerID = player->getID();
+			std::function<void(DBResult_ptr, bool)> callback = [playerID, page, entriesPerPage](DBResult_ptr result, bool) {
+				Player* player = g_game.getPlayerByID(playerID);
+				if (!player) {
+					return;
+				}
+
+				player->resetAsyncOngoingTask(PlayerAsyncTask_RecentDeaths);
+				if (!result) {
+					player->sendCyclopediaCharacterRecentDeaths(0, 0, {});
+					return;
+				}
+
+				uint32_t pages = result->getNumber<uint32_t>("entries");
+				pages += entriesPerPage - 1;
+				pages /= entriesPerPage;
+
+				std::vector<RecentDeathEntry> entries;
+				entries.reserve(result->countResults());
+				do {
+					std::string cause1 = result->getString("killed_by");
+					std::string cause2 = result->getString("mostdamage_by");
+
+					std::ostringstream cause;
+					cause << "Died at Level " << result->getNumber<uint32_t>("level") << " by";
+					if (!cause1.empty()) {
+						const char& character = cause1.front();
+						if (character == 'a' || character == 'e' || character == 'i' || character == 'o' || character == 'u') {
+							cause << " an ";
+						} else {
+							cause << " a ";
+						}
+						cause << cause1;
+					}
+
+					if (!cause2.empty()) {
+						if (!cause1.empty()) {
+							cause << " and ";
+						}
+
+						const char& character = cause2.front();
+						if (character == 'a' || character == 'e' || character == 'i' || character == 'o' || character == 'u') {
+							cause << " an ";
+						} else {
+							cause << " a ";
+						}
+						cause << cause2;
+					}
+					cause << '.';
+					entries.emplace_back(std::move(cause.str()), result->getNumber<uint32_t>("time"));
+				} while (result->next());
+				player->sendCyclopediaCharacterRecentDeaths(page, static_cast<uint16_t>(pages), entries);
+			};
+			g_databaseTasks.addTask(std::move(query.str()), callback, true);
+			player->addAsyncOngoingTask(PlayerAsyncTask_RecentDeaths);
+			break;
+	}
+	case CYCLOPEDIA_CHARACTERINFO_RECENTPVPKILLS: {
+			// TODO: add guildwar, assists and arena kills
+			Database& db = Database::getInstance();
+			const std::string& escapedName = db.escapeString(player->getName());
+			std::ostringstream query;
+			uint32_t offset = static_cast<uint32_t>(page - 1) * entriesPerPage;
+			query << "SELECT `d`.`time`, `d`.`killed_by`, `d`.`mostdamage_by`, `d`.`unjustified`, `d`.`mostdamage_unjustified`, `p`.`name`, (select count(*) FROM `player_deaths` WHERE ((`killed_by` = " << escapedName << " AND `is_player` = 1) OR (`mostdamage_by` = " << escapedName << " AND `mostdamage_is_player` = 1))) as `entries` FROM `player_deaths` AS `d` INNER JOIN `players` AS `p` ON `d`.`player_id` = `p`.`id` WHERE ((`d`.`killed_by` = " << escapedName << " AND `d`.`is_player` = 1) OR (`d`.`mostdamage_by` = " << escapedName << " AND `d`.`mostdamage_is_player` = 1)) ORDER BY `time` DESC LIMIT " << offset << ", " << entriesPerPage;
+
+			uint32_t playerID = player->getID();
+			std::function<void(DBResult_ptr, bool)> callback = [playerID, page, entriesPerPage](DBResult_ptr result, bool) {
+				Player* player = g_game.getPlayerByID(playerID);
+				if (!player) {
+					return;
+				}
+
+				player->resetAsyncOngoingTask(PlayerAsyncTask_RecentPvPKills);
+				if (!result) {
+					player->sendCyclopediaCharacterRecentPvPKills(0, 0, {});
+					return;
+				}
+
+				uint32_t pages = result->getNumber<uint32_t>("entries");
+				pages += entriesPerPage - 1;
+				pages /= entriesPerPage;
+
+				std::vector<RecentPvPKillEntry> entries;
+				entries.reserve(result->countResults());
+				do {
+					std::string cause1 = result->getString("killed_by");
+					std::string cause2 = result->getString("mostdamage_by");
+					std::string name = result->getString("name");
+
+					uint8_t status = CYCLOPEDIA_CHARACTERINFO_RECENTKILLSTATUS_JUSTIFIED;
+					if (player->getName() == cause1) {
+						if (result->getNumber<uint32_t>("unjustified") == 1) {
+							status = CYCLOPEDIA_CHARACTERINFO_RECENTKILLSTATUS_UNJUSTIFIED;
+						}
+					} else if (player->getName() == cause2) {
+						if (result->getNumber<uint32_t>("mostdamage_unjustified") == 1) {
+							status = CYCLOPEDIA_CHARACTERINFO_RECENTKILLSTATUS_UNJUSTIFIED;
+						}
+					}
+
+					std::ostringstream description;
+					description << "Killed " << name << '.';
+					entries.emplace_back(std::move(description.str()), result->getNumber<uint32_t>("time"), status);
+				} while (result->next());
+				player->sendCyclopediaCharacterRecentPvPKills(page, static_cast<uint16_t>(pages), entries);
+			};
+			g_databaseTasks.addTask(std::move(query.str()), callback, true);
+			player->addAsyncOngoingTask(PlayerAsyncTask_RecentPvPKills);
+			break;
+	}
+	case CYCLOPEDIA_CHARACTERINFO_ACHIEVEMENTS: player->sendCyclopediaCharacterAchievements(); break;
+	case CYCLOPEDIA_CHARACTERINFO_ITEMSUMMARY: player->sendCyclopediaCharacterItemSummary(); break;
+	case CYCLOPEDIA_CHARACTERINFO_OUTFITSMOUNTS: player->sendCyclopediaCharacterOutfitsMounts(); break;
+	case CYCLOPEDIA_CHARACTERINFO_STORESUMMARY: player->sendCyclopediaCharacterStoreSummary(); break;
+	case CYCLOPEDIA_CHARACTERINFO_INSPECTION: player->sendCyclopediaCharacterInspection(); break;
+	case CYCLOPEDIA_CHARACTERINFO_BADGES: player->sendCyclopediaCharacterBadges(); break;
+	case CYCLOPEDIA_CHARACTERINFO_TITLES: player->sendCyclopediaCharacterTitles(); break;
+  default: player->sendCyclopediaCharacterNoData(characterInfoType, 1); break;
+	}
+}
+
+void Game::playerHighscores(Player* player, HighscoreType_t type, uint8_t category, uint32_t vocation, const std::string&, uint16_t page, uint8_t entriesPerPage)
+{
+	if (player->hasAsyncOngoingTask(PlayerAsyncTask_Highscore)) {
+		return;
+	}
+
+	std::string categoryName;
+	switch (category) {
+		case HIGHSCORE_CATEGORY_FIST_FIGHTING: categoryName = "skill_fist"; break;
+		case HIGHSCORE_CATEGORY_CLUB_FIGHTING: categoryName = "skill_club"; break;
+		case HIGHSCORE_CATEGORY_SWORD_FIGHTING: categoryName = "skill_sword"; break;
+		case HIGHSCORE_CATEGORY_AXE_FIGHTING: categoryName = "skill_axe"; break;
+		case HIGHSCORE_CATEGORY_DISTANCE_FIGHTING: categoryName = "skill_dist"; break;
+		case HIGHSCORE_CATEGORY_SHIELDING: categoryName = "skill_shielding"; break;
+		case HIGHSCORE_CATEGORY_FISHING: categoryName = "skill_fishing"; break;
+		case HIGHSCORE_CATEGORY_MAGIC_LEVEL: categoryName = "maglevel"; break;
+		default: {
+			category = HIGHSCORE_CATEGORY_EXPERIENCE;
+			categoryName = "experience";
+			break;
+		}
+	}
+
+	std::ostringstream query;
+	if (type == HIGHSCORE_GETENTRIES) {
+		uint32_t startPage = (static_cast<uint32_t>(page - 1) * static_cast<uint32_t>(entriesPerPage));
+		uint32_t endPage = startPage + static_cast<uint32_t>(entriesPerPage);
+		query << "SELECT *, @row AS `entries`, " << page << " AS `page` FROM (SELECT *, (@row := @row + 1) AS `rn` FROM (SELECT `id`, `name`, `level`, `vocation`, `" << categoryName << "` AS `points`, @curRank := IF(@prevRank = `" << categoryName << "`, @curRank, IF(@prevRank := `" << categoryName << "`, @curRank + 1, @curRank + 1)) AS `rank` FROM `players` `p`, (SELECT @curRank := 0, @prevRank := NULL, @row := 0) `r` WHERE `group_id` < " << static_cast<int>(account::GroupType::GROUP_TYPE_GAMEMASTER) << " ORDER BY `" << categoryName << "` DESC) `t`";
+		if (vocation != 0xFFFFFFFF) {
+			bool firstVocation = true;
+
+			const auto& vocationsMap = g_vocations.getVocations();
+			for (const auto& it : vocationsMap) {
+				const Vocation& voc = it.second;
+				if (voc.getFromVocation() == vocation) {
+					if (firstVocation) {
+						query << " WHERE `vocation` = " << voc.getId();
+						firstVocation = false;
+					} else {
+						query << " OR `vocation` = " << voc.getId();
+					}
+				}
+			}
+		}
+		query << ") `T` WHERE `rn` > " << startPage << " AND `rn` <= " << endPage;
+	} else if (type == HIGHSCORE_OURRANK) {
+		std::string entriesStr = std::to_string(entriesPerPage);
+		query << "SELECT *, @row AS `entries`, (@ourRow DIV " << entriesStr << ") + 1 AS `page` FROM (SELECT *, (@row := @row + 1) AS `rn`, @ourRow := IF(`id` = " << player->getGUID() << ", @row - 1, @ourRow) AS `rw` FROM (SELECT `id`, `name`, `level`, `vocation`, `" << categoryName << "` AS `points`, @curRank := IF(@prevRank = `" << categoryName << "`, @curRank, IF(@prevRank := `" << categoryName << "`, @curRank + 1, @curRank + 1)) AS `rank` FROM `players` `p`, (SELECT @curRank := 0, @prevRank := NULL, @row := 0, @ourRow := 0) `r` WHERE `group_id` < " << static_cast<int>(account::GroupType::GROUP_TYPE_GAMEMASTER) << " ORDER BY `" << categoryName << "` DESC) `t`";
+		if (vocation != 0xFFFFFFFF) {
+			bool firstVocation = true;
+
+			const auto& vocationsMap = g_vocations.getVocations();
+			for (const auto& it : vocationsMap) {
+				const Vocation& voc = it.second;
+				if (voc.getFromVocation() == vocation) {
+					if (firstVocation) {
+						query << " WHERE `vocation` = " << voc.getId();
+						firstVocation = false;
+					} else {
+						query << " OR `vocation` = " << voc.getId();
+					}
+				}
+			}
+		}
+		query << ") `T` WHERE `rn` > ((@ourRow DIV " << entriesStr << ") * " << entriesStr << ") AND `rn` <= (((@ourRow DIV " << entriesStr << ") * " << entriesStr << ") + " << entriesStr << ")";
+	}
+
+	uint32_t playerID = player->getID();
+	std::function<void(DBResult_ptr, bool)> callback = [playerID, category, vocation, entriesPerPage](DBResult_ptr result, bool) {
+		Player* player = g_game.getPlayerByID(playerID);
+		if (!player) {
+			return;
+		}
+
+		player->resetAsyncOngoingTask(PlayerAsyncTask_Highscore);
+		if (!result) {
+			player->sendHighscoresNoData();
+			return;
+		}
+
+		uint16_t page = result->getNumber<uint16_t>("page");
+		uint32_t pages = result->getNumber<uint32_t>("entries");
+		pages += entriesPerPage - 1;
+		pages /= entriesPerPage;
+
+		std::vector<HighscoreCharacter> characters;
+		characters.reserve(result->countResults());
+		do {
+			uint8_t characterVocation;
+			Vocation* voc = g_vocations.getVocation(result->getNumber<uint16_t>("vocation"));
+			if (voc) {
+				characterVocation = voc->getClientId();
+			} else {
+				characterVocation = 0;
+			}
+			characters.emplace_back(std::move(result->getString("name")), result->getNumber<uint64_t>("points"), result->getNumber<uint32_t>("id"), result->getNumber<uint32_t>("rank"), result->getNumber<uint16_t>("level"), characterVocation);
+		} while (result->next());
+		player->sendHighscores(characters, category, vocation, page, static_cast<uint16_t>(pages));
+	};
+	g_databaseTasks.addTask(std::move(query.str()), callback, true);
+	player->addAsyncOngoingTask(PlayerAsyncTask_Highscore);
+}
+
+void Game::playerTournamentLeaderboard(uint32_t playerId, uint8_t leaderboardType) {
+	Player* player = getPlayerByID(playerId);
+	if (!player || leaderboardType > 1) {
+		return;
+	}
+
+	player->sendTournamentLeaderboard();
+}
+
 void Game::playerReportRuleViolationReport(uint32_t playerId, const std::string& targetName, uint8_t reportType, uint8_t reportReason, const std::string& comment, const std::string& translation)
 {
 	Player* player = getPlayerByID(playerId);
@@ -6610,12 +7198,9 @@ void Game::playerCreateMarketOffer(uint32_t playerId, uint8_t type, uint16_t spr
 		return;
 	}
 
-	uint64_t fee = (price / 100.) * amount;
-	if (fee < 20) {
-		fee = 20;
-	} else if (fee > 1000) {
-		fee = 1000;
-	}
+	uint64_t calcFee = (price / 100.) * amount;
+	uint32_t minFee = std::min<uint32_t>(100000, calcFee);
+	uint32_t fee = std::max<uint32_t>(20, minFee);
 
 	if (type == MARKETACTION_SELL) {
 
@@ -7068,7 +7653,7 @@ void Game::playerBuyStoreOffer(uint32_t playerId, uint32_t offerId, uint8_t prod
 				return;
 			}
 
-			Container* inbox = thing->getItem()->getContainer(); //TODO: Not the right way to get the storeInbox
+			Container* inbox = thing->getItem()->getContainer();  // TODO: Not the right way to get the storeInbox
 			if (!inbox) {
 				player->sendStoreError(STORE_ERROR_NETWORK, "We cannot locate your store inbox, try again after relog and if this error persists, contact the system administrator.");
 				return;
@@ -7268,7 +7853,7 @@ void Game::playerBuyStoreOffer(uint32_t playerId, uint32_t offerId, uint8_t prod
 				message << "female.";
 			}
 			playerChangeOutfit(player->getID(),playerOutfit);
-			//TODO: add the other sex equivalent outfits player already have in the current sex.
+			// TODO: add the other sex equivalent outfits player already have in the current sex.
       account.LoadAccountDB(player->getAccount());
       account.RemoveCoins(offer->price);
       account.RegisterCoinsTransaction(account::COIN_REMOVE, offer->price,
@@ -7365,7 +7950,7 @@ void Game::playerBuyStoreOffer(uint32_t playerId, uint32_t offerId, uint8_t prod
 			player->sendStorePurchaseSuccessful(message.str(), coins);
 			return;
 		} else {
-			//TODO: BOOST_XP and BOOST_STAMINA (the support systems are not yet implemented)
+			// TODO: BOOST_XP and BOOST_STAMINA (the support systems are not yet implemented)
 			player->sendStoreError(STORE_ERROR_INFORMATION, "JLCVP: NOT YET IMPLEMENTED!");
 			return;
 		}
@@ -7626,6 +8211,10 @@ void Game::addGuild(Guild* guild)
 
 void Game::removeGuild(uint32_t guildId)
 {
+  auto it = guilds.find(guildId);
+  if (it != guilds.end()) {
+    IOGuild::saveGuild(it->second);
+  }
 	guilds.erase(guildId);
 }
 
@@ -7696,7 +8285,7 @@ bool Game::addUniqueItem(uint16_t uniqueId, Item* item)
 {
 	auto result = uniqueItems.emplace(uniqueId, item);
 	if (!result.second) {
-		std::cout << "Duplicate unique id: " << uniqueId << std::endl;
+		std::cout << "> Duplicate unique id: " << uniqueId << std::endl;
 	}
 	return result.second;
 }
@@ -7712,16 +8301,9 @@ void Game::removeUniqueItem(uint16_t uniqueId)
 bool Game::reload(ReloadTypes_t reloadType)
 {
 	switch (reloadType) {
-		case RELOAD_TYPE_ACTIONS: return g_actions->reload();
 		case RELOAD_TYPE_CHAT: return g_chat->load();
 		case RELOAD_TYPE_CONFIG: return g_config.reload();
-		case RELOAD_TYPE_CREATURESCRIPTS: {
-			g_creatureEvents->reload();
-			g_creatureEvents->removeInvalidEvents();
-			return true;
-		}
 		case RELOAD_TYPE_EVENTS: return g_events->load();
-		case RELOAD_TYPE_GLOBALEVENTS: return g_globalEvents->reload();
 		case RELOAD_TYPE_ITEMS: return Item::items.reload();
 		case RELOAD_TYPE_MODULES: return g_modules->reload();
 		case RELOAD_TYPE_MOUNTS: return mounts.reload();
@@ -7741,8 +8323,6 @@ bool Game::reload(ReloadTypes_t reloadType)
 			return true;
 		}
 
-		case RELOAD_TYPE_TALKACTIONS: return g_talkActions->reload();
-
 		case RELOAD_TYPE_SCRIPTS: {
 			// commented out stuff is TODO, once we approach further in revscriptsys
 			g_actions->clear(true);
@@ -7754,7 +8334,6 @@ bool Game::reload(ReloadTypes_t reloadType)
 			g_weapons->loadDefaults();
 			g_spells->clear(true);
 			g_scripts->loadScripts("scripts", false, true);
-			g_creatureEvents->removeInvalidEvents();
 			return true;
 		}
 
@@ -7764,17 +8343,13 @@ bool Game::reload(ReloadTypes_t reloadType)
 				std::terminate();
 			}
 
-			g_actions->reload();
 			g_config.reload();
-			g_creatureEvents->reload();
 			Npcs::reload();
 			raids.reload() && raids.startup();
-			g_talkActions->reload();
 			Item::items.reload();
 			g_weapons->clear(true);
 			g_weapons->loadDefaults();
 			mounts.reload();
-			g_globalEvents->reload();
 			g_events->load();
 			g_chat->load();
 			g_actions->clear(true);
@@ -7784,7 +8359,6 @@ bool Game::reload(ReloadTypes_t reloadType)
 			g_globalEvents->clear(true);
 			g_spells->clear(true);
 			g_scripts->loadScripts("scripts", false, true);
-			g_creatureEvents->removeInvalidEvents();
 			return true;
 		}
 	}
