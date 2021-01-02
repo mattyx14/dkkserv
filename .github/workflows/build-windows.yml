@@ -47,7 +47,7 @@ jobs:
         if: contains( matrix.os, 'windows')
 
       - name: Run vcpkg
-        uses: lukka/run-vcpkg@v2
+        uses: lukka/run-vcpkg@v5
         with:
           vcpkgArguments: ${{ matrix.packages }}
           vcpkgDirectory: ${{ runner.workspace }}/vcpkg/
@@ -55,7 +55,7 @@ jobs:
           vcpkgGitCommitId: 7db401cb1ef1fc559ec9f9ce814d064c328fd767
 
       - name: Build with CMake
-        uses: lukka/run-cmake@v2
+        uses: lukka/run-cmake@v3.2
         with:
           useVcpkgToolchainFile: true
           buildDirectory: ${{ runner.workspace }}/build
@@ -74,11 +74,11 @@ jobs:
           Copy-Item ${{ runner.workspace }}\dkkserv\key.pem             ${{ runner.workspace }}\dkkserv\dkkserv
           Copy-Item ${{ runner.workspace }}\dkkserv\LICENSE             ${{ runner.workspace }}\dkkserv\dkkserv
           Copy-Item ${{ runner.workspace }}\dkkserv\README.md           ${{ runner.workspace }}\dkkserv\dkkserv
-          Copy-Item ${{ runner.workspace }}\build\otxserver.exe         ${{ runner.workspace }}\dkkserv\dkkserv\otxserver-bin.exe
+          Copy-Item ${{ runner.workspace }}\build\dkkserv.exe           ${{ runner.workspace }}\dkkserv\dkkserv\dkkserv-bin.exe
           get-childitem -path ${{ runner.workspace }}\build -filter *.dll -recurse | copy-item -destination ${{ runner.workspace }}\dkkserv\dkkserv
           Copy-Item ${{ runner.workspace }}\dkkserv\data -Destination   ${{ runner.workspace }}\dkkserv\dkkserv\data
           Copy-Item -Path ${{ runner.workspace }}\dkkserv\data\* -Destination ${{ runner.workspace }}\dkkserv\dkkserv\data -Recurse
-          Compress-Archive -Path ${{ runner.workspace }}\dkkserv\dkkserv -DestinationPath ${{ runner.workspace }}\otxserver.zip
+          Compress-Archive -Path ${{ runner.workspace }}\dkkserv\dkkserv -DestinationPath ${{ runner.workspace }}\dkkserv.zip
 
       - name: dir
         run: find $RUNNER_WORKSPACE
