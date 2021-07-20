@@ -7,10 +7,10 @@ then
 	echo "Clean build directory"
 	rm -rf *
 	echo "Configuring"
-	cmake ..
+	cmake -DCMAKE_TOOLCHAIN_FILE=../../vcpkg/scripts/buildsystems/vcpkg.cmake ..
 else
 	mkdir "build" && cd build
-	cmake ..
+	cmake -DCMAKE_TOOLCHAIN_FILE=../../vcpkg/scripts/buildsystems/vcpkg.cmake ..
 fi
 
 make -j$(nproc) || exit 1
@@ -20,9 +20,9 @@ then
 else
 	echo "Compilation successful!"
 	cd ..
-	if [ -f "otxserver" ]; then
+	if [ -f "otxsr" ]; then
 		echo "Saving old build"
-		mv ./otxserver ./otxserver.old
+		mv ./otxsr ./otxsr.old
 	fi
-	cp ./build/otxserver ./otxserver
+	cp ./build/otxsr ./otxsr
 fi

@@ -8,7 +8,7 @@ removeChargesFromRunes = true
 removeChargesFromPotions = true
 removeWeaponAmmunition = true
 removeWeaponCharges = true
-timeToDecreaseFrags = 1 * 24 * 60 * 60
+timeToDecreaseFrags = 24 * 60 * 60 * 1000
 whiteSkullTime = 15 * 60 * 1000
 stairJumpExhaustion = 2 * 1000
 experienceByKillingPlayers = false
@@ -32,7 +32,7 @@ loginProtocolPort = 7171
 gameProtocolPort = 7172
 statusProtocolPort = 7171
 maxPlayers = 200
-motd = "Welcome to The DarkKonia Server!"
+motd = "Welcome to The OTX Server!"
 onePlayerOnlinePerAccount = true
 allowClones = false
 serverName = "OTXServer"
@@ -42,9 +42,9 @@ maxPacketsPerSecond = 25
 maxItem = 2000
 maxContainer = 100
 
---- Version
-clientVersion = 1260
-clientVersionStr = "12.60"
+-- Version
+clientVersion = 1264
+clientVersionStr = "12.64"
 
 -- Depot Limit
 freeDepotLimit = 2000
@@ -60,6 +60,8 @@ onlyPremiumAccount = false
 -- Customs
 weatherRain = false
 thunderEffect = false
+freeQuests = false
+allConsoleLog = false
 
 -- Deaths
 -- NOTE: Leave deathLosePercent as -1 if you want to use the default
@@ -85,8 +87,21 @@ pushDistanceDelay = 1500
 -- Map
 -- NOTE: set mapName WITHOUT .otbm at the end
 -- NOTE: unzip the map world.rar
-mapName = "darkkonia"
-mapAuthor = "Mattyx14"
+mapName = "forgotten"
+mapAuthor = "OTLand"
+
+-- Party List limitations
+-- max distance in which players in party list are visible
+-- NOTE partyListMaxDistance set to 0 means no limit
+partyListMaxDistance = 30
+
+-- Custom Map
+-- NOTE: mapCustomEnabled: true = activate the map, false = disable the map
+mapCustomName = ""
+mapCustomFile = ""
+mapCustomSpawn = ""
+mapCustomAuthor = ""
+mapCustomEnabled = false
 
 -- Market
 marketOfferDuration = 30 * 24 * 60 * 60
@@ -107,7 +122,7 @@ allowChangeOutfit = true
 freePremium = false
 kickIdlePlayerAfterMinutes = 15
 maxMessageBuffer = 4
-emoteSpells = true
+emoteSpells = false
 classicEquipmentSlots = false
 allowWalkthrough = true
 coinPacketSize = 25
@@ -126,8 +141,8 @@ serverSaveShutdown = true
 -- Rates
 -- NOTE: rateExp, rateSkill and rateMagic is used as a fallback only
 -- To configure rates see file data/stages.lua
-rateExp = 5
-rateSkill = 90
+rateExp = 1
+rateSkill = 50
 rateLoot = 3
 rateMagic = 25
 rateSpawn = 1
@@ -159,3 +174,8 @@ ownerName = "Mattyx14"
 ownerEmail = "darkylive@live.com.mx"
 url = "https://github.com/mattyx14/otxserver/"
 location = "MEX"
+
+-- Sends Discord webhook notifications on startup, raids and shutdown.
+-- The URL layout is https://discord.com/api/webhooks/:id/:token
+-- Leave empty if you wish to disable.
+discordWebhookURL = ""

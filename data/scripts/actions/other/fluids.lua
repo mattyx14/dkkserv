@@ -34,6 +34,47 @@ local function graveStoneTeleport(cid, fromPosition, toPosition)
 	toPosition:sendMagicEffect(CONST_ME_MORTAREA)
 end
 
+-- Special poison condition used on dawnport residents
+-- Doesnt allow poison yourself when health is <= 10 or your health go low than 10 due poison
+function dawnportPoisonCondition(player)
+	local health = player:getHealth();
+	local minHealth = 10
+	-- Default poison values (not possible read condition parameters)
+	local startValue = 5
+	local minPoisonDamage = 50
+	local maxPoisonDamage = 120
+
+	-- Special poison
+	if health > minHealth and health < (minHealth + maxPoisonDamage) then
+		local maxValue = health - minHealth
+		local minValue = minPoisonDamage
+		local value = startValue
+		local minRoundsDamage = (startValue * (startValue + 1) / 2)
+
+		if maxValue < minPoisonDamage then
+			minValue = maxValue
+		end
+
+		if maxValue < minRoundsDamage then
+			value = math.floor( math.sqrt(maxValue) )
+		end
+
+		local poisonMod = Condition(CONDITION_POISON)
+		poisonMod:setParameter(CONDITION_PARAM_DELAYED, true)
+		poisonMod:setParameter(CONDITION_PARAM_MINVALUE, -minValue)
+		poisonMod:setParameter(CONDITION_PARAM_MAXVALUE, -maxValue)
+		poisonMod:setParameter(CONDITION_PARAM_STARTVALUE, -value)
+		poisonMod:setParameter(CONDITION_PARAM_TICKINTERVAL, 4000)
+		poisonMod:setParameter(CONDITION_PARAM_FORCEUPDATE, true)
+
+		player:addCondition(poisonMod)
+	-- Common poison
+	elseif health >= (minHealth + maxPoisonDamage) then
+		player:addCondition(poison)
+	end
+	-- Otherwise no poison
+end
+
 local fluid = Action()
 
 function fluid.onUse(player, item, fromPosition, target, toPosition, isHotkey)
@@ -49,22 +90,38 @@ function fluid.onUse(player, item, fromPosition, target, toPosition, isHotkey)
 			return true
 		end
 	end
-
+	if target.itemid == 29312 then
+		if item.type == 0 then
+			player:sendTextMessage(MESSAGE_FAILURE, 'It is empty.')
+		
+		elseif item.type == 1 then
+			toPosition:sendMagicEffect(CONST_ME_WATER_SPLASH)
+			target:transform(target.itemid + 1)
+			item:transform(item.itemid, 0)
+		else
+			player:sendTextMessage(MESSAGE_FAILURE, 'You need water.')
+		end
+		return true
+	end
+			
 	if target.itemid == 1 then
 		if item.type == 0 then
-			player:sendTextMessage(MESSAGE_STATUS_SMALL, 'It is empty.')
+			player:sendTextMessage(MESSAGE_FAILURE, 'It is empty.')
 
 		elseif target.uid == player.uid then
 			if isInArray({3, 15, 43}, item.type) then
 				player:addCondition(drunk)
 
 			elseif item.type == 4 then
-				player:addCondition(poison)
-
+				local town = player:getTown()
+				if town and town:getId() == TOWNS_LIST.DAWNPORT then
+					dawnportPoisonCondition(player)
+				else
+					player:addCondition(poison)
+				end
 			elseif item.type == 7 then
 				player:addMana(math.random(50, 150))
 				fromPosition:sendMagicEffect(CONST_ME_MAGIC_BLUE)
-
 			elseif item.type == 10 then
 				player:addHealth(60)
 				fromPosition:sendMagicEffect(CONST_ME_MAGIC_BLUE)
@@ -90,7 +147,7 @@ function fluid.onUse(player, item, fromPosition, target, toPosition, isHotkey)
 			item:transform(item.itemid, fluidSource)
 
 		elseif item.type == 0 then
-			player:sendTextMessage(MESSAGE_STATUS_SMALL, 'It is empty.')
+			player:sendTextMessage(MESSAGE_FAILURE, 'It is empty.')
 
 		else
 			if item.type == 2 and target.actionid == 2023 then

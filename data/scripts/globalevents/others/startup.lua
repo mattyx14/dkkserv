@@ -1,17 +1,13 @@
 local serverstartup = GlobalEvent("serverstartup")
 function serverstartup.onStartup()
-	print(">> Loading map attributes")
+	Spdlog.info("Loading map attributes")
 	-- Npc table
 	loadLuaNpcs(NpcTable)
 	-- Sign table
 	loadLuaMapSign(SignTable)
-	print("> Loaded " .. (#SignTable) .. " signs in the map")
-	-- Book table
-	loadLuaMapBook(BookTable)
-	print("> Loaded " .. (#BookTable) .. " books in the map")
-	-- Documents table
-	loadLuaMapBook(DocumentsTable)
-	print("> Loaded " .. (#DocumentsTable) .. " documents in the map")
+	Spdlog.info("Loaded " .. (#SignTable) .. " signs in the map")
+	-- Book/Document table
+	loadLuaMapBookDocument(BookDocumentTable)
 
 	-- Action and unique tables
 	-- Chest table
@@ -49,12 +45,8 @@ function serverstartup.onStartup()
 	-- Tile pick table
 	loadLuaMapAction(TilePickAction)
 
-	print("> Loaded all actions in the map")
-	print("> Loaded all uniques in the map")
-
-	print(">> Loading custom maps")
-	-- Custom maps table
-	loadCustomMaps()
+	Spdlog.info("Loaded all actions in the map")
+	Spdlog.info("Loaded all uniques in the map")
 
 	for i = 1, #startupGlobalStorages do
 		Game.setStorageValue(startupGlobalStorages[i], 0)
@@ -63,8 +55,15 @@ function serverstartup.onStartup()
 	local time = os.time()
 	db.asyncQuery('TRUNCATE TABLE `players_online`')
 
+	-- reset Daily Reward status
+	db.query('UPDATE `players` SET `isreward` = '..DAILY_REWARD_NOTCOLLECTED)
+
 	-- reset storages and allow purchase of boost in the store
 	db.query('UPDATE `player_storage` SET `value` = 0 WHERE `player_storage`.`key` = 51052')
+
+	-- reset familiars message storage
+	db.query('DELETE FROM `player_storage` WHERE `key` = '..Storage.PetSummonEvent10)
+	db.query('DELETE FROM `player_storage` WHERE `key` = '..Storage.PetSummonEvent60)
 
 	-- delete canceled and rejected guilds
 	db.asyncQuery('DELETE FROM `guild_wars` WHERE `status` = 2')
@@ -128,5 +127,8 @@ function serverstartup.onStartup()
 
 	-- Hireling System
 	HirelingsInit()
+
+	-- Load otservbr-custom map (data/world/custom/otservbr-custom.otbm)
+	loadCustomMap()
 end
 serverstartup:register()

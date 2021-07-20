@@ -1,6 +1,21 @@
 TRUE = true
 FALSE = false
 
+MESSAGE_STATUS_CONSOLE_RED = MESSAGE_GAMEMASTER_CONSOLE
+
+MESSAGE_STATUS_DEFAULT = MESSAGE_LOGIN
+MESSAGE_STATUS_WARNING = MESSAGE_ADMINISTRADOR
+MESSAGE_EVENT_ADVANCE = MESSAGE_EVENT_ADVANCE
+
+MESSAGE_STATUS_SMALL = MESSAGE_FAILURE
+MESSAGE_INFO_DESCR = MESSAGE_LOOK
+MESSAGE_DAMAGE_DEALT = MESSAGE_DAMAGE_DEALT
+MESSAGE_DAMAGE_RECEIVED = MESSAGE_DAMAGE_RECEIVED
+MESSAGE_EVENT_DEFAULT = MESSAGE_STATUS
+
+MESSAGE_EVENT_ORANGE = TALKTYPE_MONSTER_SAY
+MESSAGE_STATUS_CONSOLE_ORANGE = TALKTYPE_MONSTER_YELL
+
 result.getDataInt = result.getNumber
 result.getDataLong = result.getNumber
 result.getDataString = result.getString
@@ -306,12 +321,12 @@ setCombatFormula = Combat.setFormula
 setCombatParam = Combat.setParameter
 
 Combat.setCondition = function(...)
-	print("[Warning] Function Combat.setCondition was renamed to Combat.addCondition and will be removed in the future")
+	Spdlog.warn("[Combat.setCondition] - Function was renamed to Combat.addCondition and will be removed in the future")
 	Combat.addCondition(...)
 end
 
 setCombatCondition = function(...)
-	print("[Warning] Function setCombatCondition was renamed to addCombatCondition and will be removed in the future")
+	Spdlog.warn("[setCombatCondition] - Function was renamed to addCombatCondition and will be removed in the future")
 	Combat.addCondition(...)
 end
 
@@ -631,7 +646,7 @@ function doPlayerJoinParty(cid, leaderId)
 	end
 
 	if player:getParty() then
-		player:sendTextMessage(MESSAGE_INFO_DESCR, "You are already in a party.")
+		player:sendTextMessage(MESSAGE_PARTY_MANAGEMENT, "You are already in a party.")
 		return true
 	end
 
@@ -1205,7 +1220,7 @@ end
 
 function broadcastMessage(message, messageType)
 	Game.broadcastMessage(message, messageType)
-	print("> Broadcasted message: \"" .. message .. "\".")
+	Spdlog.info("Broadcasted message: \"" .. message .. "\"")
 end
 
 function Guild.addMember(self, player)
@@ -1311,3 +1326,20 @@ function createFunctions(class)
 		rawset(class, func[3], func[4])
 	end
 end
+
+function doSetCreatureLight(cid, lightLevel, lightColor, time)
+	local creature = Creature(cid)
+	if not creature then
+		return false
+	end
+
+	local condition = Condition(CONDITION_LIGHT)
+	condition:setParameter(CONDITION_PARAM_LIGHT_LEVEL, lightLevel)
+	condition:setParameter(CONDITION_PARAM_LIGHT_COLOR, lightColor)
+	condition:setTicks(time)
+	creature:addCondition(condition)
+	return true
+end
+
+-- this is a fix for lua52 or higher which has the function renamed to table.unpack, while luajit still uses unpack
+if unpack == nil then unpack = table.unpack end

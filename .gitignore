@@ -359,6 +359,11 @@ docker/**/otserver
 # VSCode
 settings.json
 c_cpp_properties.json
+.history
+TODO
+
+# CLion (JetBrains)
+.idea/
 
 ## CUSTOM
 # Files
@@ -374,7 +379,11 @@ config.lua
 sftp-config.json
 
 # Binaries
-otbr
-otbr.old
-otxserver
-otxserver.old
+otxsr
+otxsr.old
+
+# VCPKG
+vcpkg_installed
+
+# CLION
+src/cmake-build-debug

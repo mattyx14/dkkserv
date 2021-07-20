@@ -9,8 +9,9 @@ function loadLuaMapAction(tablename)
 			if tile then
 				-- Checks that you have no items created
 				if tile:getItemCountById(value.itemId) == 0 then
-					print(">> Wrong item id found")
-					print(string.format("> Action id: %d, item id: %d", index, value.itemId))
+					Spdlog.warn("[loadLuaMapAction] - Wrong item id found")
+					Spdlog.warn(string.format("Action id: %d, item id: %d",
+						index, value.itemId))
 				end
 				if tile:getItemCountById(value.itemId) == 1 then
 					item = tile:getItemById(value.itemId)
@@ -49,8 +50,8 @@ function loadLuaMapUnique(tablename)
 		if tile then
 			-- Checks that you have no items created
 			if tile:getItemCountById(value.itemId) == 0 then
-				print(">> Wrong item id found")
-				print(string.format("> Unique id: %d, item id: %d", index, value.itemId))
+				Spdlog.warn("[loadLuaMapUnique] - Wrong item id found")
+				Spdlog.warn("Unique id: ".. index ..", item id: ".. value.itemId .."")
 			end
 			if tile:getItemCountById(value.itemId) == 1 then
 				item = tile:getItemById(value.itemId)
@@ -72,33 +73,10 @@ function loadLuaMapSign(tablename)
 		if tile then
 			-- Checks that you have no items created
 			if tile:getItemCountById(value.itemId) == 0 then
-				print(">> Wrong item id found")
-				print(string.format("> Sign id: %d, item id: %d", index, value.itemId))
+				Spdlog.warn("[loadLuaMapSign] - Wrong item id found")
+				Spdlog.warn("Sign id: ".. index ..", item id: ".. value.itemId .."")
 			end
 			if tile:getItemCountById(value.itemId) == 1 then
-				item = tile:getItemById(value.itemId)
-			end
-			-- If he found the item, add the text
-			if item then
-				item:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, value.text)
-			end
-		end
-	end
-end
-
-function loadLuaMapBook(tablename)
-	-- It load book on map table
-	for index, value in pairs(tablename) do
-		local tile = Tile(value.itemPos)
-		local item
-		-- Checks if the position is valid
-		if tile then
-			-- Checks that you have no items created
-			if tile:getItemCountById(value.itemId) == 0 then
-				-- Create item
-				item = Game.createItem(value.itemId, 1, value.itemPos)
-			end
-			if not item then
 				item = tile:getItemById(value.itemId)
 			end
 			-- If he found the item, add the text
@@ -106,6 +84,55 @@ function loadLuaMapBook(tablename)
 				item:setAttribute(ITEM_ATTRIBUTE_TEXT, value.text)
 			end
 		end
+	end
+end
+
+function loadLuaMapBookDocument(tablename)
+	-- Index 1: total valid, index 2: total loaded
+	local totals = {0, 0}
+	for index, value in ipairs(tablename) do
+		local tile = Tile(value.position)
+		-- Check position (some items dont have a know position yet defined, lets ignore them)
+		if value.position then
+			totals[1] = totals[1] + 1
+			-- Check if is a valid tile
+			if tile then
+				-- Try find the container on the map if containerId is set
+				local container = (value.containerId and tile:getItemById(value.containerId) or nil)
+				-- Check if cotainerId is not set or if containerId is set also if the container exists
+				if not value.containerId or value.containerId and container then
+					local item
+					-- Check if the item need to be in a container
+					if container then
+						-- Create the item inside the container
+						item = container:addItem(value.itemId, 1, INDEX_WHEREEVER, FLAG_NOLIMIT)
+					else
+						-- Try first find the item on the map (in some cases the item is already on the map)
+						item = tile:getItemById(value.itemId)
+						-- Create the item at map position if dont was found
+						if not item then
+							item = Game.createItem(value.itemId, 1, value.position)
+						end
+					end
+					-- If the item exists, add the text
+					if item then
+						item:setAttribute(ITEM_ATTRIBUTE_TEXT, value.text)
+						totals[2] = totals[2] + 1
+					else
+						Spdlog.warn("[loadLuaMapBookDocument] - Item not found! Index: ".. index ..", itemId: ".. value.itemId.."")
+					end
+				else
+					Spdlog.warn("[loadLuaMapBookDocument] - Container not found! Index: ".. index ..", containerId: ".. value.containerId.."")
+				end
+			else
+				Spdlog.warn("[loadLuaMapBookDocument] - Tile not found! Index: ".. index ..", position: x: ".. value.position.x.." y: ".. value.position.y .." z: ".. value.position.z .."")
+			end
+		end
+	end
+	if totals[1] == totals[2] then
+		Spdlog.info("Loaded ".. totals[2] .." books and documents in the map")
+	else
+		Spdlog.info("Loaded ".. totals[2] .." of ".. totals[1] .." books and documents in the map")
 	end
 end
 
@@ -119,28 +146,25 @@ function loadLuaNpcs(tablename)
 			end
 		end
 	end
-	print(string.format("> Loaded ".. (#NpcTable) .." npcs and spawned %d monsters\n> \z
-	Loaded %d towns with %d houses in total", Game.getMonsterCount(), #Game.getTowns(), #Game.getHouses()))
+	Spdlog.info("Loaded ".. (#NpcTable) .." npcs and spawned ".. Game.getMonsterCount() .." monsters")
+	Spdlog.info("Loaded ".. #Game.getTowns() .. " towns with ".. #Game.getHouses() .." houses in total")
 end
 
--- Function for load the map and spawn custom
-function loadCustomMaps()
-	for index, value in ipairs(CustomMapTable) do
-		if value.enabled then
-			-- It's load the map
-			Game.loadMap(value.mapFile)
-			print("> Loaded " .. value.mapName .. " map")
-
-			-- It's load the spawn
-			-- 10 * 1000 = 10 seconds delay for load the spawn after loading the map
-			if value.spawnFile then
-				addEvent(
-				function()
-					Game.loadSpawnFile(value.spawnFile)
-					print("> Loaded " .. value.mapName .. " spawn")
-				end, 30 * 1000)
-			end
-		end
+-- Function for load the map and spawm custom (config.lua line 92)
+-- Set mapCustomEnabled to false for disable the custom map
+function loadCustomMap()
+	local mapName = configManager.getString(configKeys.MAP_CUSTOM_NAME)
+	if configManager.getBoolean(configKeys.MAP_CUSTOM_ENABLED) then
+		Spdlog.info("Loading custom map")
+		Game.loadMap(configManager.getString(configKeys.MAP_CUSTOM_FILE))
+		Spdlog.info("Loaded " .. mapName .. " map")
+		-- It's load the spawn
+		-- 10 * 1000 = 10 seconds delay for load the spawn after loading the map
+		addEvent(
+		function()
+			Game.loadSpawnFile(configManager.getString(configKeys.MAP_CUSTOM_SPAWN))
+			Spdlog.info("Loaded " .. mapName .. " spawn")
+		end, 10 * 1000)
 	end
 end
 
@@ -153,7 +177,7 @@ function preyTimeLeft(player, slot)
 		local playerId = player:getId()
 		local currentTime = os.time()
 		local timePassed = currentTime - nextPreyTime[playerId][slot]
-		
+
 		-- Setting new timeleft
 		if timePassed >= 59 then
 			timeLeft = timeLeft - 1
@@ -172,8 +196,8 @@ function preyTimeLeft(player, slot)
 			player:setAutomaticBonus(slot)
 			player:sendPreyData(slot)
 			return true
-		end	
-		
+		end
+
 		-- Expiring prey as there's no timeLeft
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, string.format("Your %s's prey has expired.", monster:lower()))
 		player:setPreyCurrentMonster(slot, "")

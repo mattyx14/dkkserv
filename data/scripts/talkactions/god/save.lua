@@ -2,7 +2,7 @@ local savingEvent = 0
 function saveLoop(delay)
 	saveServer()
 	SaveHirelings()
-	print("> Saved Hirelings")
+	Spdlog.info("Saved Hirelings")
 	if delay > 0 then
 		savingEvent = addEvent(saveLoop, delay, delay)
 	end
@@ -18,8 +18,8 @@ function save.onSay(player, words, param)
 		else
 			saveServer()
 			SaveHirelings()
-			print("> Saved Hirelings")
-			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Server is saved ...")
+			Spdlog.info("Saved Hirelings")
+			player:sendTextMessage(MESSAGE_ADMINISTRADOR, "Server is saved ...")
 		end
 	end
 end

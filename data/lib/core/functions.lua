@@ -29,7 +29,8 @@ debug.sethook(function(event, line)
 	linecount = linecount + 1
 	if os.mtime() - start >= 1 then
 		if linecount >= 30000 then
-			print(string.format(">> Possible infinite loop in file %s near line %s", debug.getinfo(2).source, line))
+			Spdlog.warn(string.format("[debug.sethook] - Possible infinite loop in file [%s] near line [%d]",
+				debug.getinfo(2).source, line))
 			debug.sethook()
 		end
 		linecount = 0
@@ -86,7 +87,7 @@ function getBankMoney(cid, amount)
 	local player = Player(cid)
 	if player:getBankBalance() >= amount then
 		player:setBankBalance(player:getBankBalance() - amount)
-		player:sendTextMessage(MESSAGE_INFO_DESCR, "Paid " .. amount .. " gold from bank account. Your account balance is now " .. player:getBankBalance() .. " gold.")
+		player:sendTextMessage(MESSAGE_TRADE, "Paid " .. amount .. " gold from bank account. Your account balance is now " .. player:getBankBalance() .. " gold.")
 		return true
 	end
 	return false
@@ -674,6 +675,10 @@ function isNumber(str)
 	return tonumber(str) ~= nil
 end
 
+function isInteger(n)
+	return (type(n) == "number") and (math.floor(n) == n)
+end
+
 -- Function for the reload talkaction
 local logFormat = "[%s] %s %s"
 
@@ -705,7 +710,7 @@ function indexToStr(i, v, buffer)
 	local tp = type(v)
 	local itp = type(i)
 	if itp ~= "number" and itp ~= "string" then
-		print("Invalid index to serialize: " .. type(i))
+		Spdlog.warn("[indexToStr] - Invalid index to serialize: " .. type(i))
 	else
 		if tp == "table" then
 			insertIndex(i, buffer)
@@ -725,7 +730,7 @@ function indexToStr(i, v, buffer)
 			table.insert(buffer, v == true and "true" or "false")
 			table.insert(buffer, ",")
 		else
-			print("Invalid type to serialize: " .. tp .. ", index: " .. i)
+			Spdlog.warn("[indexToStr] - Invalid type to serialize: " .. tp .. ", index: " .. i)
 		end
 	end
 end
@@ -762,7 +767,7 @@ function unserializeTable(str, out)
 	if tmp then
 		tmp = tmp()
 	else
-		print("Unserialization error: " .. str)
+		Spdlog.warn("[unserializeTable] - Unserialization error: " .. str)
 		return false
 	end
 	return table.copy(tmp, out)
@@ -912,4 +917,4 @@ function Player:doCheckBossRoom(bossName, fromPos, toPos)
 		end
 	end
 	return true
-end	
+end

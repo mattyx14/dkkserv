@@ -109,7 +109,7 @@ local function regenStamina(id, delay)
 		end
 		if actualStamina < 2520 then
 			player:setStamina(actualStamina + 1)
-			player:sendTextMessage(MESSAGE_STATUS_SMALL, "One minute of stamina has been refilled.")
+			player:sendTextMessage(MESSAGE_FAILURE, "One minute of stamina has been refilled.")
 		end
 	end
 	stopEvent(staminaEvent)
@@ -134,7 +134,7 @@ local function regenSoul(id, delay)
 		end
 		if player:getSoul() < maxsoul then
 			player:addSoul(1)
-			player:sendTextMessage(MESSAGE_STATUS_SMALL, "One soul point has been restored.")
+			player:sendTextMessage(MESSAGE_FAILURE, "One soul point has been restored.")
 		end
 	end
 	stopEvent(soulEvent)
@@ -220,7 +220,6 @@ function Player.loadDailyRewardBonuses(self)
 			Daily_Bonus.soul[self:getId()] = addEvent(regenSoul, delay * 1000, self:getId(), delay * 1000)
 		end
 	end
-	--[[ Message for testing
-	print(string.format("> Player: %s, streak level: %d, active bonuses: %s", self:getName(), streakLevel, self:getActiveDailyRewardBonusesName()))
-	]]--
+	Spdlog.debug(string.format("Player: %s, streak level: %d, active bonuses: %s",
+		self:getName(), streakLevel, self:getActiveDailyRewardBonusesName()))
 end
