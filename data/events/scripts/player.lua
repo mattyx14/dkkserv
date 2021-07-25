@@ -314,8 +314,7 @@ local function antiPush(self, item, count, fromPosition, toPosition, fromCylinde
 end
 
 function Player:onMoveItem(item, count, fromPosition, toPosition, fromCylinder, toCylinder)
-
-	-- No move items with actionID = 100
+	-- No move items with actionID = 8000
 	if item:getActionId() == NOT_MOVEABLE_ACTION then
 		self:sendCancelMessage(RETURNVALUE_NOTPOSSIBLE)
 		return false
@@ -598,7 +597,7 @@ function Player:onTurn(direction)
 end
 
 function Player:onTradeRequest(target, item)
-	-- No trade items with actionID = 100
+	-- No trade items with actionID = 8000
 	if item:getActionId() == NOT_MOVEABLE_ACTION then
 		return false
 	end
