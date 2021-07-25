@@ -34,9 +34,5 @@ ChestAction = {
 }
 
 ChestUnique = {
-	-- Keys quest
-	-- data\scripts\actions\system\quest_reward_key.lua
-	-- To add a reward inside a bag, you need to add the variable "container = bagId" before "reward"
-	-- Just duplicate the table and configure correctly, the scripts already register the entire table automatically
-	-- Path: data\scripts\actions\system\quest_reward_common.lua
+	-- 
 }

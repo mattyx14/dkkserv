@@ -3,45 +3,47 @@ function serverstartup.onStartup()
 	Spdlog.info("Loading map attributes")
 	-- Npc table
 	loadLuaNpcs(NpcTable)
+
 	-- Sign table
-	loadLuaMapSign(SignTable)
-	Spdlog.info("Loaded " .. (#SignTable) .. " signs in the map")
+	--loadLuaMapSign(SignTable)
+	--Spdlog.info("Loaded " .. (#SignTable) .. " signs in the map")
+
 	-- Book/Document table
 	loadLuaMapBookDocument(BookDocumentTable)
 
 	-- Action and unique tables
 	-- Chest table
 	loadLuaMapAction(ChestAction)
-	loadLuaMapUnique(ChestUnique)
+	-- loadLuaMapUnique(ChestUnique)
 	-- Corpse table
 	loadLuaMapAction(CorpseAction)
-	loadLuaMapUnique(CorpseUnique)
+	-- loadLuaMapUnique(CorpseUnique)
 	-- Doors key table
 	loadLuaMapAction(KeyDoorAction)
 	-- Doors level table
 	loadLuaMapAction(LevelDoorAction)
 	-- Doors quest table
 	loadLuaMapAction(QuestDoorAction)
-	loadLuaMapUnique(QuestDoorUnique)
+	-- loadLuaMapUnique(QuestDoorUnique)
 	-- Item table
 	loadLuaMapAction(ItemAction)
-	loadLuaMapUnique(ItemUnique)
+	-- loadLuaMapUnique(ItemUnique)
 	-- Item daily reward table
 	loadLuaMapAction(DailyRewardAction)
 	-- Item unmoveable table
 	loadLuaMapAction(ItemUnmoveableAction)
 	-- Lever table
 	loadLuaMapAction(LeverAction)
-	loadLuaMapUnique(LeverUnique)
+	-- loadLuaMapUnique(LeverUnique)
 	-- Teleport (magic forcefields) table
 	loadLuaMapAction(TeleportAction)
-	loadLuaMapUnique(TeleportUnique)
+	-- loadLuaMapUnique(TeleportUnique)
 	-- Teleport item table
 	loadLuaMapAction(TeleportItemAction)
-	loadLuaMapUnique(TeleportItemUnique)
+	-- loadLuaMapUnique(TeleportItemUnique)
 	-- Tile table
 	loadLuaMapAction(TileAction)
-	loadLuaMapUnique(TileUnique)
+	-- loadLuaMapUnique(TileUnique)
 	-- Tile pick table
 	loadLuaMapAction(TilePickAction)
 
@@ -123,6 +125,6 @@ function serverstartup.onStartup()
 	HirelingsInit()
 
 	-- Load otservbr-custom map (data/world/custom/otservbr-custom.otbm)
-	loadCustomMap()
+	-- loadCustomMap()
 end
 serverstartup:register()
