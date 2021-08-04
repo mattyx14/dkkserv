@@ -1,5 +1,6 @@
 local specialQuests = {
-	-- 
+	[2001] = Storage.Missions.DjinnMission.Done,
+	[2002] = Storage.AnniQuest.AnnihiMission.Done,
 }
 
 local questsExperience = {
@@ -8,6 +9,12 @@ local questsExperience = {
 
 local questLog = {
 	-- 
+}
+
+local achievementChest = {
+	-- [item.actionid] = "Achievement name",
+	-- Annihilator sample
+	[2215] = "Annihilator"
 }
 
 local hotaQuest = {50950, 50951, 50952, 50953, 50954, 50955}
@@ -93,6 +100,10 @@ function questSystem1.onUse(player, item, fromPosition, target, toPosition, isHo
 		player:setStorageValue(questLog[storage], 1)
 	end
 
+	if(achievementChest[item.actionid])then
+		player:addAchievement(achievementChest[item.actionid])
+	end
+
 	player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You have found ' .. result .. '.')
 	player:setStorageValue(storage, 1)
 	return true
@@ -102,5 +113,5 @@ for index, value in pairs(specialQuests) do
 	questSystem1:aid(index)
 end
 
-questSystem1:aid(2000)
+questSystem1:aid(2000, 2001, 2002, 2215)
 questSystem1:register()
