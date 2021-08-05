@@ -1,7 +1,8 @@
 local sacretWall = Action()
 function sacretWall.onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	if item.actionid == 24877 then
-		player:teleportTo(Position(1075, 959, 15))
+		player:teleportTo(Position(1072, 964, 15))
+		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 		return true
 	end
 
@@ -15,6 +16,7 @@ function sacretWall.onUse(player, item, fromPosition, target, toPosition, isHotk
 	end
 
 	player:teleportTo(Position(1095, 1080, 15))
+	player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 	return true
 end
 

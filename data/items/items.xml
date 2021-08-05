@@ -3528,7 +3528,8 @@
 		<attribute key="description" value="It's the Sword of Valor." />
 		<attribute key="weight" value="4200" />
 		<attribute key="defense" value="35" />
-		<attribute key="attack" value="48" />
+		<attribute key="attack" value="53" />
+		<attribute key="elementHoly" value="5" />
 		<attribute key="weaponType" value="sword" />
 		<attribute key="loottype" value="sword" />
 		<attribute key="extradef" value="3" />
@@ -3581,7 +3582,8 @@
 		<attribute key="description" value="The blade shimmers in light blue." />
 		<attribute key="weight" value="2900" />
 		<attribute key="defense" value="30" />
-		<attribute key="attack" value="36" />
+		<attribute key="attack" value="28" />
+		<attribute key="elementHoly" value="19" />
 		<attribute key="weaponType" value="sword" />
 		<attribute key="loottype" value="sword" />
 		<attribute key="extradef" value="1" />
@@ -3700,7 +3702,8 @@
 		<attribute key="description" value="It is blessed by the gods of Tibia." />
 		<attribute key="weight" value="12500" />
 		<attribute key="defense" value="35" />
-		<attribute key="attack" value="49" />
+		<attribute key="attack" value="52" />
+		<attribute key="elementEnergy" value="5" />
 		<attribute key="weaponType" value="club" />
 		<attribute key="loottype" value="club" />
 		<attribute key="extradef" value="1" />
@@ -3786,21 +3789,23 @@
 		<attribute key="description" value="You feel the power of this mighty axe." />
 		<attribute key="weight" value="9900" />
 		<attribute key="defense" value="30" />
-		<attribute key="attack" value="50" />
+		<attribute key="attack" value="54" />
+		<attribute key="elementEarth" value="5" />
 		<attribute key="weaponType" value="axe" />
 		<attribute key="loottype" value="axe" />
 		<attribute key="extradef" value="3" />
-		<attribute key="imbuingSlots" value="1" />
+		<attribute key="imbuingSlots" value="2" />
 	</item>
 	<item id="2432" article="a" name="fire axe">
 		<attribute key="description" value="The blade is a magic flame." />
 		<attribute key="weight" value="4000" />
 		<attribute key="defense" value="16" />
-		<attribute key="attack" value="27" />
-		<attribute key="elementFire" value="11" />
+		<attribute key="attack" value="26" />
+		<attribute key="elementFire" value="19" />
 		<attribute key="weaponType" value="axe" />
 		<attribute key="loottype" value="axe" />
 		<attribute key="extradef" value="1" />
+		<attribute key="imbuingSlots" value="2" />
 	</item>
 	<item id="2433" article="an" name="enchanted staff">
 		<attribute key="description" value="Temporary magic powers enchant this staff." />
@@ -3833,7 +3838,8 @@
 		<attribute key="description" value="The staff longs for death." />
 		<attribute key="weight" value="1700" />
 		<attribute key="defense" value="12" />
-		<attribute key="attack" value="36" />
+		<attribute key="attack" value="30" />
+		<attribute key="elementDeath" value="17" />
 		<attribute key="weaponType" value="club" />
 		<attribute key="loottype" value="club" />
 		<attribute key="extradef" value="1" />
@@ -3978,7 +3984,7 @@
 		<attribute key="weaponType" value="club" />
 		<attribute key="loottype" value="club" />
 		<attribute key="slotType" value="two-handed" />
-		<attribute key="imbuingSlots" value="2" />
+		<attribute key="imbuingSlots" value="3" />
 	</item>
 	<item id="2454" article="a" name="war axe">
 		<attribute key="weight" value="6150" />
@@ -4223,7 +4229,7 @@
 	</item>
 	<item id="2491" article="a" name="crown helmet">
 		<attribute key="weight" value="2950" />
-		<attribute key="armor" value="7" />
+		<attribute key="armor" value="8" />
 		<attribute key="slotType" value="head" />
 		<attribute key="loottype" value="helmet" />
 		<attribute key="imbuingSlots" value="2" />
@@ -4245,9 +4251,11 @@
 	</item>
 	<item id="2494" article="a" name="demon armor">
 		<attribute key="weight" value="8000" />
-		<attribute key="armor" value="16" />
+		<attribute key="armor" value="18" />
 		<attribute key="slotType" value="body" />
 		<attribute key="loottype" value="armor" />
+		<attribute key="absorbPercentFire" value="6" />
+		<attribute key="absorbPercentPhysical" value="10" />
 		<attribute key="imbuingSlots" value="2" />
 	</item>
 	<item id="2495" name="demon legs">
@@ -4255,6 +4263,12 @@
 		<attribute key="armor" value="9" />
 		<attribute key="slotType" value="legs" />
 		<attribute key="loottype" value="legs" />
+		<attribute key="absorbPercentPhysical" value="6" />
+		<attribute key="absorbPercentFire" value="5" />
+		<attribute key="skillDist" value="3" />
+		<attribute key="skillSword" value="3" />
+		<attribute key="skillClub" value="3" />
+		<attribute key="skillAxe" value="3" />
 	</item>
 	<item id="2496" article="a" name="horned helmet">
 		<attribute key="weight" value="5100" />
@@ -13257,17 +13271,17 @@
 		<attribute key="weaponType" value="axe" />
 		<attribute key="loottype" value="axe" />
 		<attribute key="extradef" value="1" />
-		<attribute key="description" value="This axe is only granted to a scrapper of the Svargrond Arena." />
 		<attribute key="imbuingSlots" value="2" />
 	</item>
 	<item id="7390" article="the" name="justice seeker">
 		<attribute key="weight" value="5000" />
 		<attribute key="defense" value="24" />
-		<attribute key="attack" value="47" />
+		<attribute key="attack" value="43" />
+		<attribute key="elementHoly" value="8" />
 		<attribute key="weaponType" value="sword" />
 		<attribute key="loottype" value="sword" />
 		<attribute key="extradef" value="3" />
-		<attribute key="description" value="This sword is only granted to a warlord of the Svargrond Arena." />
+		<attribute key="imbuingSlots" value="2" />
 	</item>
 	<item id="7391" article="a" name="thaian sword">
 		<attribute key="weight" value="6100" />
@@ -13562,10 +13576,10 @@
 		<attribute key="slotType" value="two-handed" />
 	</item>
 	<item id="7429" article="a" name="blessed sceptre">
-		<attribute key="description" value="This club is only granted to a warlord of the Svargrond arena." />
 		<attribute key="weight" value="3900" />
 		<attribute key="defense" value="21" />
-		<attribute key="attack" value="47" />
+		<attribute key="attack" value="39" />
+		<attribute key="elementHoly" value="12" />
 		<attribute key="weaponType" value="club" />
 		<attribute key="loottype" value="club" />
 		<attribute key="extradef" value="3" />
@@ -13608,11 +13622,11 @@
 	<item id="7434" article="a" name="royal axe">
 		<attribute key="weight" value="9200" />
 		<attribute key="defense" value="25" />
-		<attribute key="attack" value="47" />
+		<attribute key="attack" value="41" />
+		<attribute key="elementHoly" value="11" />
 		<attribute key="weaponType" value="axe" />
 		<attribute key="loottype" value="axe" />
 		<attribute key="extradef" value="3" />
-		<attribute key="description" value="This axe is only granted to a warlord of the Svargrond arena." />
 		<attribute key="imbuingSlots" value="2" />
 	</item>
 	<item id="7435" article="an" name="impaler">
@@ -22842,8 +22856,10 @@
 		<attribute key="armor" value="12" />
 		<attribute key="slotType" value="body" />
 		<attribute key="loottype" value="armor" />
-		<attribute key="magiclevelpoints" value="2" />
+		<attribute key="magiclevelpoints" value="3" />
 		<attribute key="absorbPercentFire" value="5" />
+		<attribute key="absorbPercentIce" value="5" />
+		<attribute key="imbuingSlots" value="1" />
 	</item>
 	<item id="12644" article="a" name="shield of corruption">
 		<attribute key="weight" value="4900" />
@@ -25436,11 +25452,11 @@
 	</item>
 	<item id="15406" article="an" name="ornate chestplate">
 		<attribute key="weight" value="15600" />
-		<attribute key="armor" value="16" />
+		<attribute key="armor" value="17" />
 		<attribute key="slotType" value="body" />
 		<attribute key="loottype" value="armor" />
-		<attribute key="skillShield" value="3" />
-		<attribute key="absorbPercentPhysical" value="8" />
+		<attribute key="skillShield" value="4" />
+		<attribute key="absorbPercentPhysical" value="9" />
 		<attribute key="showattributes" value="1" />
 		<attribute key="imbuingSlots" value="2" />
 	</item>
@@ -35990,181 +36006,161 @@
 	</item>
 	<item id="25174" article="a" name="fireheart cuirass">
 		<attribute key="weight" value="14500" />
-		<attribute key="armor" value="18" />
+		<attribute key="armor" value="16" />
 		<attribute key="skillSword" value="4" />
-		<attribute key="absorbPercentFire" value="8" />
-		<attribute key="absorbPercentIce" value="-8" />
+		<attribute key="absorbPercentFire" value="6" />
 		<attribute key="slotType" value="body" />
 		<attribute key="loottype" value="armor" />
 	</item>
 	<item id="25175" article="a" name="fireheart hauberk">
 		<attribute key="weight" value="14500" />
-		<attribute key="armor" value="18" />
+		<attribute key="armor" value="16" />
 		<attribute key="skillAxe" value="4" />
-		<attribute key="absorbPercentFire" value="8" />
-		<attribute key="absorbPercentIce" value="-8" />
+		<attribute key="absorbPercentFire" value="6" />
 		<attribute key="slotType" value="body" />
 		<attribute key="loottype" value="armor" />
 	</item>
 	<item id="25176" article="a" name="fireheart platemail">
 		<attribute key="weight" value="14500" />
-		<attribute key="armor" value="18" />
+		<attribute key="armor" value="16" />
 		<attribute key="skillClub" value="4" />
-		<attribute key="absorbPercentFire" value="8" />
-		<attribute key="absorbPercentIce" value="-8" />
+		<attribute key="absorbPercentFire" value="6" />
 		<attribute key="slotType" value="body" />
 		<attribute key="loottype" value="armor" />
 	</item>
 	<item id="25177" article="an" name="earthheart cuirass">
 		<attribute key="weight" value="14500" />
-		<attribute key="armor" value="18" />
+		<attribute key="armor" value="16" />
 		<attribute key="skillSword" value="4" />
-		<attribute key="absorbPercentEarth" value="8" />
-		<attribute key="absorbPercentFire" value="-8" />
+		<attribute key="absorbPercentEarth" value="6" />
 		<attribute key="slotType" value="body" />
 		<attribute key="loottype" value="armor" />
 	</item>
 	<item id="25178" article="an" name="earthheart hauberk">
 		<attribute key="weight" value="14500" />
-		<attribute key="armor" value="18" />
+		<attribute key="armor" value="16" />
 		<attribute key="skillAxe" value="4" />
-		<attribute key="absorbPercentEarth" value="8" />
-		<attribute key="absorbPercentFire" value="-8" />
+		<attribute key="absorbPercentEarth" value="6" />
 		<attribute key="slotType" value="body" />
 		<attribute key="loottype" value="armor" />
 	</item>
 	<item id="25179" article="an" name="earthheart platemail">
 		<attribute key="weight" value="14500" />
-		<attribute key="armor" value="18" />
+		<attribute key="armor" value="16" />
 		<attribute key="skillClub" value="4" />
-		<attribute key="absorbPercentEarth" value="8" />
-		<attribute key="absorbPercentFire" value="-8" />
+		<attribute key="absorbPercentEarth" value="6" />
 		<attribute key="slotType" value="body" />
 		<attribute key="loottype" value="armor" />
 	</item>
 	<item id="25180" article="a" name="thunderheart cuirass">
 		<attribute key="weight" value="14500" />
-		<attribute key="armor" value="18" />
+		<attribute key="armor" value="16" />
 		<attribute key="skillSword" value="4" />
-		<attribute key="absorbPercentEnergy" value="8" />
-		<attribute key="absorbPercentEarth" value="-8" />
+		<attribute key="absorbPercentEnergy" value="6" />
 		<attribute key="slotType" value="body" />
 		<attribute key="loottype" value="armor" />
 	</item>
 	<item id="25181" article="a" name="thunderheart hauberk">
 		<attribute key="weight" value="14500" />
-		<attribute key="armor" value="18" />
+		<attribute key="armor" value="16" />
 		<attribute key="skillAxe" value="4" />
-		<attribute key="absorbPercentEnergy" value="8" />
-		<attribute key="absorbPercentEarth" value="-8" />
+		<attribute key="absorbPercentEnergy" value="6" />
 		<attribute key="slotType" value="body" />
 		<attribute key="loottype" value="armor" />
 	</item>
 	<item id="25182" article="a" name="thunderheart platemail">
 		<attribute key="weight" value="14500" />
-		<attribute key="armor" value="18" />
+		<attribute key="armor" value="16" />
 		<attribute key="skillClub" value="4" />
-		<attribute key="absorbPercentEnergy" value="8" />
-		<attribute key="absorbPercentEarth" value="-8" />
+		<attribute key="absorbPercentEnergy" value="6" />
 		<attribute key="slotType" value="body" />
 		<attribute key="loottype" value="armor" />
 	</item>
 	<item id="25183" article="a" name="frostheart cuirass">
 		<attribute key="weight" value="14500" />
-		<attribute key="armor" value="18" />
+		<attribute key="armor" value="16" />
 		<attribute key="skillSword" value="4" />
-		<attribute key="absorbPercentIce" value="8" />
-		<attribute key="absorbPercentEnergy" value="-8" />
+		<attribute key="absorbPercentIce" value="6" />
 		<attribute key="slotType" value="body" />
 		<attribute key="loottype" value="armor" />
 	</item>
 	<item id="25184" article="a" name="frostheart hauberk">
 		<attribute key="weight" value="14500" />
-		<attribute key="armor" value="18" />
+		<attribute key="armor" value="16" />
 		<attribute key="skillAxe" value="4" />
-		<attribute key="absorbPercentIce" value="8" />
-		<attribute key="absorbPercentEnergy" value="-8" />
+		<attribute key="absorbPercentIce" value="6" />
 		<attribute key="slotType" value="body" />
 		<attribute key="loottype" value="armor" />
 	</item>
 	<item id="25185" article="a" name="frostheart platemail">
 		<attribute key="weight" value="14500" />
-		<attribute key="armor" value="18" />
+		<attribute key="armor" value="16" />
 		<attribute key="skillClub" value="4" />
-		<attribute key="absorbPercentIce" value="8" />
-		<attribute key="absorbPercentEnergy" value="-8" />
+		<attribute key="absorbPercentIce" value="6" />
 		<attribute key="slotType" value="body" />
 		<attribute key="loottype" value="armor" />
 	</item>
 	<item id="25186" article="a" name="firesoul tabard">
 		<attribute key="weight" value="14500" />
-		<attribute key="armor" value="18" />
+		<attribute key="armor" value="16" />
 		<attribute key="skillDist" value="4" />
-		<attribute key="absorbPercentFire" value="8" />
-		<attribute key="absorbPercentIce" value="-8" />
+		<attribute key="absorbPercentFire" value="6" />
 		<attribute key="slotType" value="body" />
 		<attribute key="loottype" value="armor" />
 	</item>
 	<item id="25187" article="an" name="earthsoul tabard">
 		<attribute key="weight" value="14500" />
-		<attribute key="armor" value="18" />
+		<attribute key="armor" value="16" />
 		<attribute key="skillDist" value="4" />
-		<attribute key="absorbPercentEarth" value="8" />
-		<attribute key="absorbPercentFire" value="-8" />
+		<attribute key="absorbPercentEarth" value="6" />
 		<attribute key="slotType" value="body" />
 		<attribute key="loottype" value="armor" />
 	</item>
 	<item id="25188" article="a" name="thundersoul tabard">
 		<attribute key="weight" value="14500" />
-		<attribute key="armor" value="18" />
+		<attribute key="armor" value="16" />
 		<attribute key="skillDist" value="4" />
-		<attribute key="absorbPercentEnergy" value="8" />
-		<attribute key="absorbPercentEarth" value="-8" />
+		<attribute key="absorbPercentEnergy" value="6" />
 		<attribute key="slotType" value="body" />
 		<attribute key="loottype" value="armor" />
 	</item>
 	<item id="25189" article="a" name="frostsoul tabard">
 		<attribute key="weight" value="14500" />
-		<attribute key="armor" value="18" />
+		<attribute key="armor" value="16" />
 		<attribute key="skillDist" value="4" />
-		<attribute key="absorbPercentIce" value="8" />
-		<attribute key="absorbPercentEnergy" value="-8" />
+		<attribute key="absorbPercentIce" value="6" />
 		<attribute key="slotType" value="body" />
 		<attribute key="loottype" value="armor" />
 	</item>
 	<item id="25190" article="a" name="firemind raiment">
 		<attribute key="weight" value="14500" />
-		<attribute key="armor" value="15" />
+		<attribute key="armor" value="14" />
 		<attribute key="magiclevelpoints" value="4" />
-		<attribute key="absorbPercentFire" value="8" />
-		<attribute key="absorbPercentIce" value="-8" />
+		<attribute key="absorbPercentFire" value="6" />
 		<attribute key="slotType" value="body" />
 		<attribute key="loottype" value="armor" />
 	</item>
 	<item id="25191" article="an" name="earthmind raiment">
 		<attribute key="weight" value="14500" />
-		<attribute key="armor" value="15" />
+		<attribute key="armor" value="14" />
 		<attribute key="magiclevelpoints" value="4" />
-		<attribute key="absorbPercentEarth" value="8" />
-		<attribute key="absorbPercentFire" value="-8" />
+		<attribute key="absorbPercentEarth" value="6" />
 		<attribute key="slotType" value="body" />
 		<attribute key="loottype" value="armor" />
 	</item>
 	<item id="25192" article="a" name="thundermind raiment">
 		<attribute key="weight" value="14500" />
-		<attribute key="armor" value="15" />
+		<attribute key="armor" value="14" />
 		<attribute key="magiclevelpoints" value="4" />
-		<attribute key="absorbPercentEnergy" value="8" />
-		<attribute key="absorbPercentEarth" value="-8" />
+		<attribute key="absorbPercentEnergy" value="6" />
 		<attribute key="slotType" value="body" />
 		<attribute key="loottype" value="armor" />
 	</item>
 	<item id="25193" article="a" name="frostmind raiment">
 		<attribute key="weight" value="14500" />
-		<attribute key="armor" value="15" />
+		<attribute key="armor" value="14" />
 		<attribute key="magiclevelpoints" value="4" />
-		<attribute key="absorbPercentIce" value="8" />
-		<attribute key="absorbPercentEnergy" value="-8" />
+		<attribute key="absorbPercentIce" value="6" />
 		<attribute key="slotType" value="body" />
 		<attribute key="loottype" value="armor" />
 	</item>
@@ -39523,13 +39519,13 @@
 	</item>
 	<item id="29036" article="a" name="leaf star">
 		<attribute key="weight" value="200" />
-		<attribute key="attack" value="48" />
+		<attribute key="attack" value="50" />
 		<attribute key="hitChance" value="90" />
 		<attribute key="weaponType" value="distance" />
 		<attribute key="loottype" value="distance" />
 		<attribute key="shootType" value="leafstar" />
 		<attribute key="maxHitChance" value="86" />
-		<attribute key="elementEarth" value="2" />
+		<attribute key="elementEarth" value="12" />
 		<attribute key="range" value="4" />
 	</item>
 	<item id="29037" name="swan feathers" />
@@ -39599,8 +39595,8 @@
 	</item>
 	<item id="29059" article="a" name="royal star">
 		<attribute key="weight" value="220" />
-		<attribute key="attack" value="64" />
-		<attribute key="elementFire" value="2" />
+		<attribute key="attack" value="60" />
+		<attribute key="elementFire" value="15" />
 		<attribute key="maxHitChance" value="100" />
 		<attribute key="weaponType" value="distance" />
 		<attribute key="loottype" value="distance" />
@@ -39634,8 +39630,9 @@
 		<attribute key="slotType" value="body" />
 		<attribute key="loottype" value="armor" />
 		<attribute key="speed" value="20" />
-		<attribute key="absorbPercentEarth" value="12" />
-		<attribute key="absorbPercentEnergy" value="12" />
+		<attribute key="absorbPercentEarth" value="8" />
+		<attribute key="absorbPercentEnergy" value="8" />
+		<attribute key="imbuingSlots" value="1" />
 	</item>
 	<item id="29080" article="a" name="blossom bag">
 		<attribute key="weight" value="800" />
@@ -42105,9 +42102,8 @@
 		<attribute key="loottype" value="armor" />
 		<attribute key="armor" value="17" />
 		<attribute key="skillDist" value="3" />
-		<attribute key="absorbPercentPhysical" value="4" />
+		<attribute key="absorbPercentPhysical" value="5" />
 		<attribute key="absorbPercentEnergy" value="8" />
-		<attribute key="absorbPercentIce" value="-2" />
 		<attribute key="imbuingSlots" value="2" />
 	</item>
 	<item id="30884" article="a" name="gnome legs">
@@ -49347,7 +49343,7 @@
 		<attribute key="weight" value="12300" />
 		<attribute key="armor" value="17" />
 		<attribute key="skillDist" value="2" />
-		<attribute key="absorbPercentPhysical" value="3" />
+		<attribute key="absorbPercentPhysical" value="4" />
 		<attribute key="imbuingSlots" value="2" />
 	</item>
 	<item id="37464" name="the spectral scrap of cloth">
@@ -51100,9 +51096,9 @@
 	<item id="38929" article="a" name="soulshell">
 		<attribute key="slotType" value="body" />
 		<attribute key="loottype" value="armor" />
-		<attribute key="armor" value="18" />
+		<attribute key="armor" value="17" />
 		<attribute key="skillDist" value="4"/>
-		<attribute key="absorbPercentPhysical" value="3" />
+		<attribute key="absorbPercentPhysical" value="7" />
 		<attribute key="absorbPercentFire" value="15" />
 		<attribute key="weight" value="12300" />
 		<attribute key="imbuingSlots" value="2" />
@@ -51452,11 +51448,11 @@
 	<item id="38992" article="a" name="lion plate">
 		<attribute key="slotType" value="body" />
 		<attribute key="loottype" value="armor" />
-		<attribute key="armor" value="17" />
+		<attribute key="armor" value="16" />
 		<attribute key="skillSword" value="3" />
 		<attribute key="skillAxe" value="3" />
 		<attribute key="skillClub" value="3" />
-		<attribute key="absorbPercentPhysical" value="6" />
+		<attribute key="absorbPercentPhysical" value="7" />
 		<attribute key="weight" value="15000" />
 		<attribute key="imbuingSlots" value="2" />
 	</item>

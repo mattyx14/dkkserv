@@ -12468,7 +12468,14 @@ if not equipmentsTable then
 		{
 			itemid = 2495,
 			type = "equip",
-			slot = "legs"
+			slot = "legs",
+			level = 300,
+			vocation = {
+				{"Knight", true},
+				{"Paladin", true, true},
+				{"Elite Knight"},
+				{"Royal Paladin"}
+			}
 		}, -- demon legs
 		{
 			itemid = 2495,
@@ -12478,7 +12485,12 @@ if not equipmentsTable then
 		{
 			itemid = 2494,
 			type = "equip",
-			slot = "armor"
+			slot = "armor",
+			level = 300,
+			vocation = {
+				{"Knight", true},
+				{"Elite Knight"}
+			}
 		}, -- demon armor
 		{
 			itemid = 2494,
