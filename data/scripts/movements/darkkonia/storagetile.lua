@@ -85,7 +85,7 @@ function storeTileProtection.onStepIn(creature, item, position, fromPosition)
 end
 
 storeTileProtection:type("stepin")
-for aidRange = 5500, 5600 do
-	storeTileProtection:aid(aidRange)
+for index, value in pairs(failPosition) do
+	storeTileProtection:aid(index)
 end
 storeTileProtection:register()
