@@ -61,6 +61,9 @@ class ConfigManager
 			ONLY_PREMIUM_ACCOUNT,
 			MAP_CUSTOM_ENABLED,
 			ALL_CONSOLE_LOG,
+			SAVE_INTERVAL,
+			SAVE_INTERVAL_CLEAN_MAP,
+			RATE_USE_STAGES,
 
 			LAST_BOOLEAN_CONFIG /* this must be the last one */
 		};
@@ -100,7 +103,7 @@ class ConfigManager
 			PZ_LOCKED,
 			DEFAULT_DESPAWNRANGE,
 			DEFAULT_DESPAWNRADIUS,
-			RATE_EXPERIENCE,
+			RATE_EXP,
 			RATE_SKILL,
 			RATE_LOOT,
 			RATE_MAGIC,
@@ -142,6 +145,7 @@ class ConfigManager
 			PUSH_DISTANCE_DELAY,
 			STASH_ITEMS,
 			PARTY_LIST_MAX_DISTANCE,
+			SAVE_INTERVAL_TIME,
 
 			LAST_INTEGER_CONFIG /* this must be the last one */
 		};
