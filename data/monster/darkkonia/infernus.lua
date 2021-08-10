@@ -29,21 +29,37 @@ monster.changeTarget = {
 }
 
 monster.flags = {
+	summonable = false,
 	attackable = true,
 	hostile = true,
-	summonable = false,
 	convinceable = false,
-	illusionable = false,
-	boss = false,
 	pushable = false,
+	rewardBoss = false,
+	illusionable = false,
 	canPushItems = true,
-	canPushCreatures = false,
-	staticAttackChance = 90,
+	canPushCreatures = true,
+	staticAttackChance = 70,
 	targetDistance = 1,
+	runHealth = 0,
 	healthHidden = false,
-	canWalkOnEnergy = false,
-	canWalkOnFire = false,
-	canWalkOnPoison = false
+	isBlockable = false,
+	canWalkOnEnergy = true,
+	canWalkOnFire = true,
+	canWalkOnPoison = true,
+	rewardBoss = true,
+	pet = false
+}
+
+monster.strategiesTarget = {
+	nearest = 70,
+	health = 10,
+	damage = 10,
+	random = 10,
+}
+
+monster.events = {
+	"MonsterHealFireDamage",
+	"MonsterHealHolyDamage"
 }
 
 monster.light = {
@@ -94,10 +110,6 @@ monster.defenses = {
 	armor = 40
 }
 
-monster.events = {
-	"healFireDamage"
-}
-
 monster.loot = {
 	{name = "Platinum Coin", chance = 50000},
 	{name = "Crystal Coin", chance = 50000},
@@ -134,5 +146,23 @@ monster.loot = {
 	{name = "Turquoise Tendril Lantern", chance = 500},
 	{name = "Solar Axe", chance = 50}
 }
+
+mType.onThink = function(monster, interval)
+end
+
+mType.onAppear = function(monster, creature)
+	if monster:getType():isRewardBoss() then
+		monster:setReward(true)
+	end
+end
+
+mType.onDisappear = function(monster, creature)
+end
+
+mType.onMove = function(monster, creature, fromPosition, toPosition)
+end
+
+mType.onSay = function(monster, creature, type, message)
+end
 
 mType:register(monster)
