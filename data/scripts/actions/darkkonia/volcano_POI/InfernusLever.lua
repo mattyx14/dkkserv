@@ -1,65 +1,101 @@
 local config = {
-	bossName = 'Infernus',
-	centerRoom = Position(513, 197, 9),
+	bossName = "Infernus",
+	requiredLevel = 250,
+	leverId = 9825,
+	timeToFightAgain = 20, -- In hour
+	timeToDefeatBoss = 20, -- In minutes
+	clearRoomTime = 20, -- In minutes
+	storage = Storage.HidenChest.crystallineArmor,
+	timer = Storage.AnsharaPOI.IzcandarWinterTimer,
+	daily = true,
 	value = 1,
-	range = 15, 
-	timer = Storage.AnsharaPOI.InfernusTimer,
-	BossPosition = Position(513, 197, 9),
-	newPosition = Position(513, 206, 9), -- Send Player to new Positions
+	centerRoom = Position(513, 197, 9),
+	playerPositions = {
+		Position(473, 165, 9),
+		Position(471, 165, 9),
+		Position(472, 165, 9),
+		Position(474, 165, 9),
+		Position(475, 165, 9)
+	},
+	teleportPosition = Position(513, 206, 9),
+	bossPosition = Position(513, 197, 9),
+	kickPos = Position(495, 176, 9)
 }
-
-local function clearInfernus()
-	local spectators = Game.getSpectators(config.centerRoom, false, false, 15, 15, 15, 15)
-	for i = 1, #spectators do
-		local spectator = spectators[i]
-		if spectator:isPlayer() and spectator.uid == playerId then
-			spectator:teleportTo(Position(495, 176, 9)) -- Kick Potition
-			spectator:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-			spectator:say('Time out! You were teleported out by strange forces.', TALKTYPE_MONSTER_SAY)
-		end
-
-		if spectator:isMonster() then
-			spectator:remove()
-		end
-	end
-end
 
 local infernusLever = Action()
 function infernusLever.onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	if item.itemid == 9825 then
-		if player:getPosition() ~= Position(473, 165, 9) then -- Lever Main Position
-			return true
-		end
-	end
-
-	if item.itemid == 9825 then
-		if player:getExhaustion(config.timer) > 0 then
-			player:say('You have to wait to challange this enemy again!', TALKTYPE_MONSTER_SAY)
-			return true
-		end
-
-		if roomIsOccupied(config.BossPosition, config.range, config.range) then
-			player:say('Someone is fighting against the boss! You need wait awhile.', TALKTYPE_MONSTER_SAY)
-			return true
-		end
-		clearRoom(config.BossPosition, config.range, config.range, fromPosition)
-		local monster = Game.createMonster(config.bossName, config.BossPosition, true, true)
-		if not monster then
-			return true
-		end
-
-		for x = 471, 475 do
-			local playerTile = Tile(Position(x, 165, 9)):getTopCreature()
-			if playerTile and playerTile:isPlayer() then
-				playerTile:teleportTo(config.newPosition)
-				playerTile:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-				playerTile:say('You have thirty minutes to kill and loot this boss. Otherwise you will lose that chance and will be kicked out.', TALKTYPE_MONSTER_SAY)
-				addEvent(clearInfernus, 60 * 30 * 1000, player.uid, monster.uid, config.BossPosition, config.range, config.range, fromPosition)
-				playerTile:setExhaustion(config.timer, 20 * 60 * 60)
-			end
-		end
+	if player:getStorageValue(config.storage) < config.value then
+		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "All the players need find the hidden tesuare here.")
 		return true
 	end
+
+	if item.itemid == config.leverId then
+		-- Check if the player that pulled the lever is on the correct position
+		if player:getPosition() ~= config.playerPositions[1] then
+			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You can\'t start the battle.")
+			return true
+		end
+
+		local team, participant = {}
+		for i = 1, #config.playerPositions do
+			participant = Tile(config.playerPositions[i]):getTopCreature()
+
+			-- Check there is a participant player
+			if participant and participant:isPlayer() then
+				-- Check participant level
+				if participant:getLevel() < config.requiredLevel then
+					player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "All the players need to be level ".. config.requiredLevel .." or higher.")
+					return true
+				end
+
+				-- Check participant boss timer
+				if config.daily and participant:getStorageValue(config.timer) > os.time() then
+					player:getPosition():sendMagicEffect(CONST_ME_POFF)
+					player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You or a member in your team have to wait ".. config.timeToFightAgain .."  hours to face ".. config.bossName .." again!")
+					return true
+				end
+				team[#team + 1] = participant
+			end
+		end
+
+		-- Check if a team currently inside the boss room
+		local specs, spec = Game.getSpectators(config.centerRoom, false, false, 14, 14, 13, 13)
+		for i = 1, #specs do
+			spec = specs[i]
+			if spec:isPlayer() then
+				player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "There's someone fighting with ".. config.bossName ..".")
+				return true
+			end
+			spec:remove()
+		end
+
+		-- One hour for clean the room
+		addEvent(clearRoom, config.clearRoomTime * 60 * 1000, config.centerRoom)
+		Game.createMonster(config.bossName, config.bossPosition)
+
+		-- Teleport team participants
+		for i = 1, #team do
+			team[i]:getPosition():sendMagicEffect(CONST_ME_POFF)
+			team[i]:teleportTo(config.teleportPosition)
+			team[i]:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have ".. config.timeToDefeatBoss .." minutes to kill and loot this boss. Otherwise you will lose that chance and will be kicked out.")
+			-- Assign boss timer
+			team[i]:setStorageValue(config.timer, os.time() + config.timeToFightAgain * 60 * 60) -- 20 hours
+			item:transform(config.leverId)
+			
+				addEvent(function()
+					local specs, spec = Game.getSpectators(config.centerRoom, false, false, 14, 14, 13, 13)
+						for i = 1, #specs do
+							spec = specs[i]
+							if spec:isPlayer() then
+								spec:teleportTo(config.kickPos)
+								spec:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+								spec:say("Time out! You were teleported out by strange forces.", TALKTYPE_MONSTER_SAY)
+							end
+						end
+				end, config.timeToDefeatBoss * 60 * 1000)
+		end
+	end
+	return true
 end
 
 infernusLever:aid(24882)

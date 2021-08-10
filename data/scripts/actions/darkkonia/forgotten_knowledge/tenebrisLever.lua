@@ -44,7 +44,7 @@ function forgottenTenebrisLever.onUse(player, item, fromPosition, target, toPosi
 				-- Check participant boss timer
 				if config.daily and participant:getStorageValue(config.timer) > os.time() then
 					player:getPosition():sendMagicEffect(CONST_ME_POFF)
-					player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You or a member in your team have to wait ".. config.timeToFightAgain .."  hours to face Lady Tenebris again!")
+					player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You or a member in your team have to wait ".. config.timeToFightAgain .."  hours to face ".. config.bossName .." again!")
 					return true
 				end
 				team[#team + 1] = participant
@@ -56,7 +56,7 @@ function forgottenTenebrisLever.onUse(player, item, fromPosition, target, toPosi
 		for i = 1, #specs do
 			spec = specs[i]
 			if spec:isPlayer() then
-				player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "There's someone fighting with Lady Tenebris.")
+				player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "There's someone fighting with ".. config.bossName ..".")
 				return true
 			end
 			spec:remove()
