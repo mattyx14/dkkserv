@@ -65,6 +65,7 @@ class ConfigManager
 			SAVE_INTERVAL_CLEAN_MAP,
 			STAMINA_TRAINER,
 			STAMINA_PZ,
+			RATE_USE_STAGES,
 
 			LAST_BOOLEAN_CONFIG /* this must be the last one */
 		};

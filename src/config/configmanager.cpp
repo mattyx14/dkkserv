@@ -186,6 +186,7 @@ bool ConfigManager::load()
 	boolean[SAVE_INTERVAL_CLEAN_MAP] = getGlobalBoolean(L, "saveIntervalCleanMap", false);
 	boolean[STAMINA_TRAINER] = getGlobalBoolean(L, "staminaTrainer", false);
 	boolean[STAMINA_PZ] = getGlobalBoolean(L, "staminaPz", false);
+	boolean[RATE_USE_STAGES] = getGlobalBoolean(L, "rateUseStages", true);
 
 	string[DEFAULT_PRIORITY] = getGlobalString(L, "defaultPriority", "high");
 	string[SERVER_NAME] = getGlobalString(L, "serverName", "");
