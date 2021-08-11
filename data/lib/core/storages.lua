@@ -242,7 +242,6 @@ GlobalStorage = {
 	ExpBoost = 65004,
 	XpDisplayMode = 65006,
 	CobraBastionFlask = 65012,
-	Tomes = 50506, -- Initial Imbuiment
 
 	-- DarkKonia
 	ForgottenKnowledge = {
