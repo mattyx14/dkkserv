@@ -49,6 +49,21 @@ local function removeTeleport(position)
 	end
 end
 
+local function spectatorStartCountdown(time, position)
+	local spectators = Game.getSpectators(position, false, false, 5, 5, 5, 5)
+	if #spectators > 0 then
+		for i = 1, #spectators do
+			if time > 1 then
+				spectators[i]:say("" .. time .. "", TALKTYPE_MONSTER_SAY, false, spectators[i], position)
+			else
+				spectators[i]:say("Time out!", TALKTYPE_MONSTER_SAY, false, spectators[i], position)
+				break
+			end
+		end
+	end
+	addEvent(spectatorStartCountdown, 1000, time - 1, position)
+end
+
 local killBoss = CreatureEvent("KillBoss")
 function killBoss.onKill(creature, target)
 	local targetMonster = target:getMonster()
@@ -70,6 +85,7 @@ function killBoss.onKill(creature, target)
 	targetMonster:say(bossConfig.message, TALKTYPE_MONSTER_SAY, 0, 0, position)
 
 	--remove portal after 1 min
+	addEvent(spectatorStartCountdown, 500, 1 * 60, position)
 	addEvent(removeTeleport, 1 * 60 * 1000, position)
 	return true
 end
