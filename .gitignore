@@ -389,3 +389,4 @@ vcpkg_installed
 src/cmake-build-debug
 data/world/darkkonia-house.xml
 data/world/darkkonia-spawn.xml
+otxsr.exe.manifest
