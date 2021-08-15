@@ -79,7 +79,7 @@ monster.loot = {
 	{id = 33317, chance = 10000, maxCount = 5},
 	{name = "Small Amethyst", chance = 10000, maxCount = 5},
 	{name = "Flash Arrow", chance = 10000, maxCount = 5},
-	{name = "Lightning Legs", chance = 250},
+	-- {name = "lightning legs", chance = 250},
 	{name = "Spellbook of Warding", chance = 350},
 	{name = "Ultimate Health Potion", chance = 10000, maxCount = 5},
 	{name = "Ultimate Mana Potion", chance = 10000, maxCount = 5},

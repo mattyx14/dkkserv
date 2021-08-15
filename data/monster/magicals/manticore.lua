@@ -80,10 +80,10 @@ monster.loot = {
 	{name = "royal star", chance = 1120, maxCount = 4},
 	{name = "manticore tail", chance = 8550},
 	{name = "manticore ear", chance = 6690},
-	{name = "magma legs", chance = 740},
+	-- {name = "magma legs", chance = 740},
 	{name = "magma monocle", chance = 1860},
 	{name = "magma boots", chance = 370},
-	{name = "magma coat", chance = 2970},
+	-- {name = "magma coat", chance = 2970},
 	{name = "wand of everblazing", chance = 1120},
 	{name = "wand of dragonbreath", chance = 740},
 	{name = "wand of draconia", chance = 370}

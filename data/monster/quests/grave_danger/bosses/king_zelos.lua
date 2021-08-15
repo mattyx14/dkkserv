@@ -60,7 +60,7 @@ monster.loot = {
 	{name = "yellow gem", chance = 18500},
 	{name = "giant sapphire", chance = 16800},
 	{name = "collar of green plasma", chance = 15200},
-	{name = "magma coat", chance = 15200},
+	-- {name = "magma coat", chance = 15200},
 	{name = "gold ingot", minCount = 0, maxCount = 1, chance = 18000},
 	{name = "red tome", chance = 18200},
 	{id = 26185, chance = 12000},-- ring of blue plasma

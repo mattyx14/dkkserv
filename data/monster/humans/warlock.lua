@@ -106,7 +106,7 @@ monster.loot = {
 	{name = "assassin star", chance = 3470, maxCount = 4},
 	{name = "great mana potion", chance = 4760},
 	{name = "great health potion", chance = 5190},
-	{name = "lightning robe", chance = 1000},
+	-- {name = "lightning robe", chance = 1000},
 	{name = "luminous orb", chance = 510}
 }
 

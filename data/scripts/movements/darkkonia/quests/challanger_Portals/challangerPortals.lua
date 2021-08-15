@@ -10,6 +10,11 @@ local destination = {
 		timer = Storage.MisidiaQuest.JaulTimer
 	},
 	-- [24880] = {}, -- Reserved to lavaPortal
+	[24881] = { -- Gazer
+		newPos = Position(679, 948, 11),
+		backPos = Position(712, 963, 13),
+		timer = Storage.FynnQuest.GazerTimer
+	},
 }
 
 local challangerPortals = MoveEvent()

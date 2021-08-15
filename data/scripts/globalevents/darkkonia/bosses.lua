@@ -28,6 +28,7 @@ local spawns = {
 	[27]  = {position = Position(992, 945, 7), monster = 'Donkey'}, -- Fynn
 	[28]  = {position = Position(999, 1073, 7), monster = 'Terror Bird'}, -- Fynn
 	[29]  = {position = Position(947, 896, 11), monster = 'Elf Overseer'}, -- Fynn
+	[30]  = {position = Position(951, 1045, 3), monster = 'Dharalion'}, -- Fynn
 }
 
 -- Function that is called by the global events when it reaches the time configured

@@ -96,7 +96,7 @@ monster.loot = {
 	{name = "bullseye potion", chance = 714},
 	{name = "strong health potion", chance = 14285},
 	{name = "strong mana potion", chance = 14285},
-	{name = "magma coat", chance = 714},
+	-- {name = "magma coat", chance = 714},
 	{name = "demonic finger", chance = 178}
 }
 

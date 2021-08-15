@@ -91,7 +91,7 @@ monster.loot = {
 	{name = "strong health potion", chance = 7100},
 	{name = "strong mana potion", chance = 7100},
 	{name = "magma amulet", chance = 970},
-	{name = "magma coat", chance = 140},
+	-- {name = "magma coat", chance = 140},
 	{name = "fiery heart", chance = 9380},
 	{id = 13757, chance = 940},
 	{name = "brown crystal splinter", chance = 4850},

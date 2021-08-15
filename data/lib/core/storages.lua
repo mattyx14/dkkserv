@@ -151,6 +151,9 @@ Storage = {
 		Misidia = 12520,
 			rewardMisidia = 2528,
 	},
+	FynnQuest =  {
+		GazerTimer = 10190,
+	},
 	FirstSacrifice = {
 		knightAxe = 2430,
 		heroicAxe = 7389,

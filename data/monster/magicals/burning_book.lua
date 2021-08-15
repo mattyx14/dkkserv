@@ -82,7 +82,7 @@ monster.loot = {
 	{name = "Small Amethyst", chance = 2000, maxCount = 4},
 	{id = 2419, chance = 3000},
 	{name = "Silken Bookmark", chance = 2000, maxCount = 2},
-	{name = "Magma Coat", chance = 2000},
+	-- {name = "magma coat", chance = 2000},
 	{name = "Guardian Shield", chance = 1500},
 	{name = "Soul Orb", chance = 3000, maxCount = 4},
 	{name = "Necrotic Rod", chance = 3000},

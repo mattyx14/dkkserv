@@ -80,7 +80,7 @@ monster.loot = {
 	{name = "sphinx feather", chance = 3450},
 	{name = "fire axe", chance = 2650},
 	{id = 36273, chance = 3450},
-	{name = "magma legs", chance = 1860},
+	-- {name = "magma legs", chance = 1860},
 	{name = "magma monocle", chance = 1590},
 	{name = "magma boots", chance = 2120},
 	{name = "magma amulet", chance = 7160},

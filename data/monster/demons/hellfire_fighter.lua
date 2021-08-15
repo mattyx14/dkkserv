@@ -89,8 +89,8 @@ monster.loot = {
 	{name = "fire axe", chance = 440},
 	{name = "soul orb", chance = 12150},
 	{name = "demonic essence", chance = 14500},
-	{name = "magma legs", chance = 730},
-	{name = "magma coat", chance = 470},
+	-- {name = "magma legs", chance = 730},
+	-- {name = "magma coat", chance = 470},
 	{name = "fiery heart", chance = 9570},
 	{name = "piece of hellfire armor", chance = 5060},
 	{id = 13757, chance = 670}

@@ -95,7 +95,7 @@ monster.loot = {
 	{name = "mana potion", chance = 20720, maxCount = 2},
 	{name = "magma amulet", chance = 2900},
 	{name = "magma boots", chance = 2650},
-	{name = "magma coat", chance = 430},
+	-- {name = "magma coat", chance = 430},
 	{name = "ultimate health potion", chance = 15390},
 	{name = "spellbook of mind control", chance = 450},
 	{name = "fiery heart", chance = 13510},

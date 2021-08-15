@@ -83,9 +83,9 @@ monster.loot = {
 	{name = "emerald bangle", chance = 1340},
 	{name = "lightning boots", chance = 1340},
 	{name = "diamond", chance = 1000},
-	{name = "lightning robe", chance = 1000},
+	-- {name = "lightning robe", chance = 1000},
 	{name = "elven amulet", chance = 1000},
-	{name = "lightning legs", chance = 830},
+	-- {name = "lightning legs", chance = 830},
 	{name = "shockwave amulet", chance = 500}
 }
 

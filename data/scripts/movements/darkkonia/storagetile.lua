@@ -20,7 +20,7 @@ local failPosition = {
 		missionName = "the first quest of fynn"
 	},
 	[5504] = {
-		mission = 7730,
+		mission = 2656,
 		fromPosition = Position(937, 1062, 7),
 		missionName = "require blue legs quest"
 	},
@@ -42,7 +42,7 @@ local failPosition = {
 	[5508] = {
 		mission = Storage.FirstQuest.Misidia,
 		fromPosition = Position(1066, 319, 7),
-		missionName = "the first quest of misidia"
+		missionName = "require make the first quest of misidia"
 	},
 	[5509] = {
 		mission = Storage.FirstSacrifice.noSacrifice.axeKnight,
@@ -58,6 +58,16 @@ local failPosition = {
 		mission = Storage.FirstSacrifice.noSacrifice.hammerDragon,
 		fromPosition = Position(562, 1266, 6),
 		missionName = "require make the first sacrifice dragon hammer"
+	},
+	[5512] = {
+		mission = Storage.AnnihilatorDone,
+		fromPosition = Position(864, 971, 8),
+		missionName = "require done annihilator quest"
+	},
+	[5513] = {
+		mission = Storage.AnniQuest.justiceSeekerDone,
+		fromPosition = Position(894, 984, 8),
+		missionName = "require the justice seeker quest"
 	},
 }
 
