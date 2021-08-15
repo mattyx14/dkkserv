@@ -387,3 +387,5 @@ vcpkg_installed
 
 # CLION
 src/cmake-build-debug
+data/world/darkkonia-house.xml
+data/world/darkkonia-spawn.xml
