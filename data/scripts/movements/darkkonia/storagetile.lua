@@ -65,9 +65,9 @@ local failPosition = {
 		missionName = "require done annihilator quest"
 	},
 	[5513] = {
-		mission = Storage.AnniQuest.justiceSeekerDone,
+		mission = Storage.demonHelmetQuest,
 		fromPosition = Position(894, 984, 8),
-		missionName = "require the justice seeker quest"
+		missionName = "require the demon helmet quest"
 	},
 }
 
