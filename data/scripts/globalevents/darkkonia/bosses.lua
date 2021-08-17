@@ -29,6 +29,8 @@ local spawns = {
 	[28]  = {position = Position(999, 1073, 7), monster = 'Terror Bird'}, -- Fynn
 	[29]  = {position = Position(947, 896, 11), monster = 'Elf Overseer'}, -- Fynn
 	[30]  = {position = Position(951, 1045, 3), monster = 'Dharalion'}, -- Fynn
+	[31]  = {position = Position(830, 892, 11), monster = 'Undead Cavebear'}, -- Fynn
+	[32]  = {position = Position(832, 894, 11), monster = 'Necropharus'}, -- Fynn
 }
 
 -- Function that is called by the global events when it reaches the time configured
@@ -47,5 +49,10 @@ function autoRespawnBosses.onTime(interval)
 	return true
 end
 
+autoRespawnBosses:time("00:00:00")
+autoRespawnBosses:time("04:00:00")
+autoRespawnBosses:time("08:00:00")
+autoRespawnBosses:time("12:00:00")
 autoRespawnBosses:time("16:00:00")
+autoRespawnBosses:time("20:00:00")
 autoRespawnBosses:register()

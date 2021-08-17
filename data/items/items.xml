@@ -36811,7 +36811,12 @@
 	<item id="25795" name="unknown item" />
 	<item id="25796" name="crater" />
 	<item fromid="25800" toid="25809" name="rift wall" />
-	<item fromid="25810" toid="25818" name="glowing dirt">
+	<item id="25810" name="glowing dirt">
+		<attribute key="description" value="This floor is very gluey." />
+		<attribute key="type" value="teleport" />
+		<attribute key="effect" value="teleport" />
+	</item>
+	<item fromid="25811" toid="25818" name="glowing dirt">
 		<attribute key="description" value="This floor is very gluey." />
 	</item>
 	<item fromid="25819" toid="25825" name="rift pinnacle" />
