@@ -1,4 +1,4 @@
-local config = {
+local clickTeleport = {
 	[39512] = Position(853, 1050, 10), -- Mirror Conjurer Outfit,
 	[39513] = Position(1529, 910, 1), -- Zevelon Duskbringer
 	[39514] = Position(1529, 892, 1), -- Sir Valorcrest
@@ -11,26 +11,19 @@ local config = {
 
 local itemPortal = Action()
 function itemPortal.onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	local targetPosition = config[item.actionid]
+	local targetPosition = clickTeleport[item.actionid]
 	if not targetPosition then
 		return true
 	end
 
 	player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 	player:teleportTo(targetPosition)
+	player:getPosition():sendMagicEffect(CONST_ME_FIREAREA)
 	return true
 end
 
-for actionRange = 39510, 39516 do
-	itemPortal:aid(actionRange)
-end
-
---[[ Reserverd to Dracula
-itemPortal:aid(30492)
-]]
-
-for actionRange = 39518, 39550 do
-	itemPortal:aid(actionRange)
+for index, value in pairs(clickTeleport) do
+	itemPortal:aid(index)
 end
 
 itemPortal:register()

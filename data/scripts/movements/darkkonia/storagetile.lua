@@ -91,6 +91,7 @@ function storeTileProtection.onStepIn(creature, item, position, fromPosition)
 	player:teleportTo(config.fromPosition)
 	config.fromPosition:sendMagicEffect(CONST_ME_MAGIC_BLUE)
 	player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'This area ' .. config.missionName .. '.')
+	player:getPosition():sendMagicEffect(CONST_ME_FIREAREA)
 	return true
 end
 

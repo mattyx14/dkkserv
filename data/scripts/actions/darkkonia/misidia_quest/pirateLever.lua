@@ -34,5 +34,5 @@ function pirateLever.onUse(player, item, fromPosition, target, toPosition, isHot
 	return item:transform(item.itemid == 1945 and 1946 or 1945)
 end
 
-pirateLever:uid(9010)
+pirateLever:uid(9010) -- Lever Pirates Mysidia
 pirateLever:register()
