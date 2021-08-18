@@ -239,6 +239,11 @@ Storage = {
 		InfernusTimer = 10543,
 		ritualInfernus = 10544,
 	},
+	ArusBosses = {
+		-- Fyzarus
+		FyzarusKilled = 10545,
+		FyzarusTimer = 10546,
+	},
 }
 
 GlobalStorage = {

@@ -46,5 +46,5 @@ function conjurerLever_2.onUse(player, item, fromPosition, target, toPosition, i
 	return true
 end
 
-conjurerLever_2:aid(2081)
+conjurerLever_2:aid(24875)
 conjurerLever_2:register()

@@ -55,9 +55,6 @@ local function spectatorStartCountdown(time, position)
 		for i = 1, #spectators do
 			if time > 1 then
 				spectators[i]:say("" .. time .. "", TALKTYPE_MONSTER_SAY, false, spectators[i], position)
-			else
-				spectators[i]:say("Time out!", TALKTYPE_MONSTER_SAY, false, spectators[i], position)
-				break
 			end
 		end
 	end

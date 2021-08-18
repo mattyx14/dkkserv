@@ -1,0 +1,36 @@
+Reserverd_IDS
+	Levers
+		24870 -- Fyzarus (Boss) - data/scripts/actions/darkkonia/arus_quest/fyzarusLever.lua
+		24871 -- Toxirus
+		24872 -- Fezarus
+		24873 -- Diabolic (Boss)- data/scripts/actions/...
+		24874 -- Conjurer Outfit (Sacrifice I) - data/scripts/actions/darkkonia/misidia_quest
+		24875 -- Conjurer Outfit (Sacrifice II) - data/scripts/actions/darkkonia/misidia_quest
+		24876 -- //
+		24877 -- //
+		24878 -- Tenebris (Boss)- data/scripts/actions/darkkonia/forgotten_knowledge/tenebrisLever.lua
+		24879 -- Jaul (Boss)- data/scripts/actions/darkkonia/misidia_quest/jaulLever.lua
+		24880 -- Dragon King (Boss)- data/scripts/actions/darkkonia/forgotten_knowledge/dragonLever.lua
+		24881 -- Izcandar (Boss)- data/scripts/actions/darkkonia/volcano_POI/IzcandarLever.lua
+		24882 -- Infernus "Sacrifice Items" (POI) - data/scripts/actions/darkkonia/volcano_POI/sacrificeItemsLever.lua
+		24883 -- Infernus (Boss) - data/scripts/actions/darkkonia/volcano_POI/InfernusLever.lua
+		24884 -- Izcandar "Remove Stone" (POI) - data/scripts/actions/levers_stonePortal.lua
+		24885 -- Ferumbras Tower "Wall" - data/scripts/actions/levers_stonePortal.lua
+		24886 -- Ferumbras Tower "Wall" - data/scripts/actions/levers_stonePortal.lua
+		24887 -- Vinor Swamp "Pilar" - data/scripts/actions/levers_stone.lua
+		24888 -- Vinor Swamp "Pilar" - data/scripts/actions/levers_stonePortal.lua
+		24889 -- Pirate Mysidia "Stone" - data/scripts/actions/levers_stone.lua
+		24890 -- Elevator Swich "Fynn" - data/scripts/actions/elevator_lever.lua
+		24891 -- Reserverd ArenaQuest
+		24892 -- Reserverd ArenaQuest
+		24893 -- Reserverd ArenaQuest
+		24894 -- Reserverd ArenaQuest
+		24895 -- Reserverd ArenaQuest
+		24896 -- Reserverd ArenaQuest
+		24897 -- Reserverd ArenaQuest (FinalBoss)
+		24898 -- Reserverd Annihilator I
+		24899 -- Reserverd Annihilator II
+		24900 -- Reserverd Annihilator III
+		24901 -- Reserverd Iquanus Puzzle
+		24902 -- Reserverd POI Verminor Stone
+		24903 -- Reserverd POI Verminor Throne
