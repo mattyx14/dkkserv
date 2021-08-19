@@ -34,3 +34,10 @@ Reserverd_IDS
 		24901 -- Reserverd Iquanus Puzzle
 		24902 -- Reserverd POI Verminor Stone
 		24903 -- Reserverd POI Verminor Throne
+		24904 -- Ferumbras Tower Entrace - /data/scripts/movements/darkkonia/teleportTiles.lua
+
+	Storages
+		25770 -- 
+
+	Missing Quest
+		1 -- Sohan Town // Level 80 Position door (419, 1158, 11)

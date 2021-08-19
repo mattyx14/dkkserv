@@ -97,6 +97,12 @@ Storage = {
 			Timer = 52399
 		},
 	},
+	Quest = {
+		Key = {
+			ID5001 = 5001, -- Falcon Bastion
+			ID5002 = 5002, -- Falcon Bastion
+		},
+	},
 
 	-- DarkKonia
 	-- DarkKonia Storages

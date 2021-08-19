@@ -25,7 +25,8 @@ end
 addTravelKeyword('fynn', 1000, Position(958, 1025, 6))
 addTravelKeyword('sohan', 1000, Position(336, 1128, 6))
 addTravelKeyword('jorvik', 1000, Position(974, 768, 6))
-keywordHandler:addKeyword({'travel'}, StdModule.say, {npcHandler = npcHandler, text = 'Where do you want to go? To {Fynn Castle}, {Sohan Town} and to {Jorvik Ville}?'})
+addTravelKeyword('ferumbras', 100000, Position(482, 483, 7))
+keywordHandler:addKeyword({'travel'}, StdModule.say, {npcHandler = npcHandler, text = 'Where do you want to go? To {Fynn Castle}, {Sohan Town}, {Jorvik Ville} and to {Ferumbras  Tower}?'})
 
 npcHandler:setMessage(MESSAGE_GREET, 'Welcome on board, |PLAYERNAME|. Where may I {travel} you today?')
 npcHandler:setMessage(MESSAGE_FAREWELL, 'Good bye. Recommend us if you were satisfied with our service.')
