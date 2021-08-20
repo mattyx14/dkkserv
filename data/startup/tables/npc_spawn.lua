@@ -1,3 +1,32 @@
 NpcTable = {
-	-- 
+	--[] = {name = "", position = Position()},
+	-- Fynn Castle
+	[1] = {name = "Yura", position = Position(912, 999, 7)},
+	[2] = {name = "Edson", position = Position(893, 995, 7)},
+	[3] = {name = "Gloria", position = Position(885, 996, 7)},
+	[4] = {name = "Vancer", position = Position(909, 1019, 7)},
+	[5] = {name = "Wendy", position = Position(930, 1016, 7)},
+	[6] = {name = "Dan", position = Position(969, 1006, 7)},
+	[7] = {name = "Yuna", position = Position(976, 1017, 7)},
+	[8] = {name = "Albinius", position = Position(940, 995, 7)},
+	[9] = {name = "Palacios", position = Position(948, 977, 7)},
+	[10] = {name = "Javier", position = Position(957, 1025, 6)},
+	[11] = {name = "Henrry", position = Position(880, 1005, 8)},
+	[12] = {name = "The King", position = Position(971, 932, 7)},
+	[13] = {name = "Katty", position = Position(980, 965, 8)},
+	[14] = {name = "Citizen_addon1_fynn", position = Position(978, 1049, 7)},
+	[15] = {name = "Citizen_women_addon2_fynn", position = Position(971, 952, 7)},
+	-- Anshara Desert
+	[16] = {name = "Albinius", position = Position(721, 449, 7)},
+	[17] = {name = "Katty", position = Position(700, 448, 5)},
+	[18] = {name = "Palacios", position = Position(636, 439, 4)},
+	[19] = {name = "Henrry", position = Position(728, 453, 5)},
+	[20] = {name = "Yuna", position = Position(714, 453, 4)},
+	[21] = {name = "Vancer", position = Position(728, 453, 4)},
+	[22] = {name = "Yura", position = Position(714, 453, 5)},
+	[23] = {name = "Dan", position = Position(636, 440, 5)},
+	[24] = {name = "Wendy", position = Position(684, 380, 7)},
+	[25] = {name = "Josh", position = Position(645, 360, 6)},
+	[26] = {name = "JokhHah", position = Position(626, 348, 5)},
+	-- Sohan Town
 }
