@@ -99,9 +99,18 @@ Storage = {
 	},
 	Quest = {
 		Key = {
-			ID5001 = 5001, -- Falcon Bastion
-			ID5002 = 5002, -- Falcon Bastion
+			ID1219 = 1219, -- Annihilator II Key
+			ID2088 = 2088, -- Pirate Bars Key // Fynn Castle
+			ID2088 = 2090, -- Pirate Bars Key // Misidia Settlement
+			ID5001 = 5001, -- Falcon Bastion // Misidia Settlement
+			ID5002 = 5002, -- amaged Steel Helmet // Ansara Desert
+			ID2585 = 2585, -- Conjurer Outfit Quest Key 1
+			ID2586 = 2586, -- Conjurer Outfit Quest Key 2
+			ID2587 = 2587, -- Conjurer Outfit Quest Key 3
+			ID2090 = 2590, -- Pirate Bars Key // Misidia Settlement
 		},
+		goldenKeyFynn = 3135,
+		goldenKeyMisidia = 3136,
 	},
 
 	-- DarkKonia
@@ -166,7 +175,7 @@ Storage = {
 		fireAxe = 2432,
 		-- royalAxe = royalAxeDone,
 		wyvernFang = 7408,
-		misticBlade = 7384,
+		mysticBlade = 7384,
 		brightSword = 2407,
 		-- justiceSeeker = justiceSeekerDone,
 		dragonHammer = 2434,
@@ -194,6 +203,7 @@ Storage = {
 	-- blueSet = conjurerDone,
 	demonHelmetQuest = 2493,
 	HidenChest = {
+		puppeteerOutfit = 1449,
 		suddenDeathWarlockFynn = 2222,
 		frozenStarLightFynn = 2361,
 		legionHelmet = 2480,
@@ -203,6 +213,7 @@ Storage = {
 		ceremonialMask = 2501,
 		guardianShield = 2515,
 		bonelordShield = 2518,
+		castleShield = 2535,
 		marryOutfit = 3697,
 		orientalOutfit = 8267,
 		crystalCoinSohan = 50181,
@@ -217,9 +228,9 @@ Storage = {
 		onyxFail = 7421,
 		demonHunterOutfit = 7431,
 		chaosAcolyteOutfit = 8820,
+		crystallineArmor = 8878,
 		-- deathHeraldOutfit = draculaDone,
 		-- assassinOutfit = assassinDone,
-		puppeteerOutfit = 1449,
 		magmaSet = 30492,
 		lightningSet = 30493,
 		insectoidOutfit = 14699,
@@ -227,7 +238,6 @@ Storage = {
 		hiddenCity = {
 			OreWagon = 25475,
 		},
-		crystallineArmor = 8878,
 	},
 	ForgottenKnowledgeRewards = {
 		yalahariSet = 9776,
