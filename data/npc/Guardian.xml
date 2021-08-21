@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Guardian" script="default.lua" walkinterval="2000" skull="green" floorchange="0" speechbubble="0" skull="green">
+	<health now="150" max="150"/>
+	<look type="131" head="57" body="57" legs="57" feet="57" addons="3"/>
+</npc>
