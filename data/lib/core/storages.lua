@@ -235,7 +235,7 @@ Storage = {
 		lightningSet = 30493,
 		insectoidOutfit = 14699,
 		deaplingOutfit = 15545,
-		hiddenCity = {
+		hiddenCity = { -- Acces Vaargdon Mine
 			OreWagon = 25475,
 		},
 	},
