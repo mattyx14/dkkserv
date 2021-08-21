@@ -208,4 +208,17 @@
 	<house name="Mer Jungle - House #20" houseid="220" entryx="1059" entryy="1165" entryz="7" rent="0" townid="7" size="32" />
 	<house name="Mer Jungle - House #21" houseid="221" entryx="1066" entryy="1167" entryz="7" rent="0" townid="7" size="37" />
 	<house name="Mer Jungle - House #22" houseid="222" entryx="987" entryy="1209" entryz="6" rent="0" townid="7" size="30" />
+	<house name="Vinor Swamp - House #1" houseid="223" entryx="432" entryy="868" entryz="6" rent="0" townid="8" size="60" />
+	<house name="Vinor Swamp - House #2" houseid="224" entryx="439" entryy="870" entryz="6" rent="0" townid="8" size="44" />
+	<house name="Vinor Swamp - House #3" houseid="225" entryx="439" entryy="877" entryz="6" rent="0" townid="8" size="62" />
+	<house name="Vinor Swamp - House #4" houseid="226" entryx="430" entryy="881" entryz="6" rent="0" townid="8" size="100" />
+	<house name="Vinor Swamp - House #5" houseid="227" entryx="421" entryy="881" entryz="6" rent="0" townid="8" size="176" />
+	<house name="Vinor Swamp - House #6" houseid="228" entryx="407" entryy="885" entryz="7" rent="0" townid="8" size="49" />
+	<house name="Vinor Swamp - House #7" houseid="229" entryx="399" entryy="885" entryz="7" rent="0" townid="8" size="50" />
+	<house name="Vinor Swamp - House #8" houseid="230" entryx="403" entryy="873" entryz="6" rent="0" townid="8" size="38" />
+	<house name="Vinor Swamp - House #9" houseid="231" entryx="425" entryy="893" entryz="7" rent="0" townid="8" size="56" />
+	<house name="Vinor Swamp - House #10" houseid="232" entryx="430" entryy="881" entryz="7" rent="0" townid="8" size="46" />
+	<house name="Vinor Swamp - House #11" houseid="233" entryx="436" entryy="894" entryz="7" rent="0" townid="8" size="56" />
+	<house name="Vinor Swamp - House #12" houseid="234" entryx="430" entryy="897" entryz="6" rent="0" townid="8" size="54" />
+	<house name="Vinor Swamp - House #13" houseid="235" entryx="394" entryy="882" entryz="6" rent="0" townid="8" size="136" />
 </houses>
