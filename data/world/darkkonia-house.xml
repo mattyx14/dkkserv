@@ -87,4 +87,25 @@
 	<house name="Anshara Desert - House #54" houseid="86" entryx="684" entryy="451" entryz="4" rent="0" townid="2" size="26" />
 	<house name="Anshara Desert - House #55" houseid="87" entryx="695" entryy="436" entryz="4" rent="0" townid="2" size="23" />
 	<house name="Anshara Desert - House #56" houseid="88" entryx="736" entryy="434" entryz="4" rent="0" townid="2" size="36" />
+	<house name="Sohan Town - House #1" houseid="89" entryx="362" entryy="1130" entryz="7" rent="0" townid="3" size="51" />
+	<house name="Sohan Town - House #2" houseid="90" entryx="360" entryy="1133" entryz="7" rent="0" townid="3" size="22" />
+	<house name="Sohan Town - House #3" houseid="91" entryx="355" entryy="1130" entryz="7" rent="0" townid="3" size="24" />
+	<house name="Sohan Town - House #4" houseid="92" entryx="384" entryy="1141" entryz="7" rent="0" townid="3" size="88" />
+	<house name="Sohan Town - House #5" houseid="93" entryx="381" entryy="1126" entryz="7" rent="0" townid="3" size="40" />
+	<house name="Sohan Town - House #6" houseid="94" entryx="389" entryy="1129" entryz="7" rent="0" townid="3" size="29" />
+	<house name="Sohan Town - House #7" houseid="95" entryx="404" entryy="1129" entryz="7" rent="0" townid="3" size="58" />
+	<house name="Sohan Town - House #8" houseid="96" entryx="408" entryy="1136" entryz="7" rent="0" townid="3" size="28" />
+	<house name="Sohan Town - House #9" houseid="98" entryx="424" entryy="1132" entryz="7" rent="0" townid="3" size="15" />
+	<house name="Sohan Town - House #10" houseid="99" entryx="424" entryy="1138" entryz="7" rent="0" townid="3" size="15" />
+	<house name="Sohan Town - House #11" houseid="100" entryx="422" entryy="1137" entryz="7" rent="0" townid="3" size="15" />
+	<house name="Sohan Town - House #12" houseid="101" entryx="424" entryy="1114" entryz="7" rent="0" townid="3" size="15" />
+	<house name="Sohan Town - House #13" houseid="102" entryx="419" entryy="1109" entryz="7" rent="0" townid="3" size="64" />
+	<house name="Sohan Town - House #14" houseid="103" entryx="419" entryy="1107" entryz="7" rent="0" townid="3" size="23" />
+	<house name="Sohan Town - House #15" houseid="104" entryx="424" entryy="1103" entryz="6" rent="0" townid="3" size="13" />
+	<house name="Sohan Town - House #16" houseid="105" entryx="421" entryy="1092" entryz="7" rent="0" townid="3" size="37" />
+	<house name="Sohan Town - House #17" houseid="106" entryx="425" entryy="1084" entryz="7" rent="0" townid="3" size="43" />
+	<house name="Sohan Town - House #18" houseid="107" entryx="411" entryy="1081" entryz="7" rent="0" townid="3" size="16" />
+	<house name="Sohan Town - House #19" houseid="108" entryx="406" entryy="1081" entryz="7" rent="0" townid="3" size="16" />
+	<house name="Sohan Town - House #20" houseid="109" entryx="409" entryy="1093" entryz="7" rent="0" townid="3" size="30" />
+	<house name="Sohan Town - House #21" houseid="110" entryx="402" entryy="1087" entryz="7" rent="0" townid="3" size="18" />
 </houses>
