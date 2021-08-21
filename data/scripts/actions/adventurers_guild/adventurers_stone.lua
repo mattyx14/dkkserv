@@ -6,7 +6,7 @@ local setting = {
 	{fromPos = Position(308, 1286, 6), toPos = Position(316, 1296, 6), townId = 4}, -- Samaransa
 	{fromPos = Position(373, 1400, 7), toPos = Position(381, 1412, 7), townId = 5}, -- Forgos
 	{fromPos = Position(831, 1218, 7), toPos = Position(844, 122, 7), townId = 6}, -- Agard
-	{fromPos = Position(1064, 1216, 6), toPos = Position(1085, 1238, 8), townId = 7}, -- Mer Jungle
+	{fromPos = Position(1064, 1216, 8), toPos = Position(1085, 1239, 8), townId = 7}, -- Mer Jungle
 	{fromPos = Position(414, 856, 6), toPos = Position(426, 865, 6), townId = 8}, -- Vinor
 	{fromPos = Position(1043, 680, 7), toPos = Position(1055, 691, 7), townId = 9}, -- Jorvik
 	{fromPos = Position(1104, 312, 6), toPos = Position(1111, 323, 6), townId = 10}, -- Misidia
