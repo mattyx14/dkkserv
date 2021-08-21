@@ -168,7 +168,7 @@ NpcTable = {
 	[139] = {name = "Yuna", position = Position(683, 1187, 7)}, -- Tools
 	[140] = {name = "Albinius", position = Position(698, 1163, 7)}, -- Imbuiment
 	[141] = {name = "Palacios", position = Position(660, 1195, 7)}, -- Bank
-	[142] = {name = "Omel", position = Position(656, 1215, 6)}, -- Boat
+	[142] = {name = "Olmel", position = Position(656, 1215, 6)}, -- Boat
 	[143] = {name = "Henrry", position = Position(648, 1202, 7)}, -- Gems
 	--[] = {name = "", position = Position()}, -- Promoter
 	[144] = {name = "Katty", position = Position(693, 1163, 6)}, -- Blessings
