@@ -176,4 +176,36 @@
 	<house name="Agard Town - House #34" houseid="188" entryx="854" entryy="1262" entryz="7" rent="0" townid="6" size="56" />
 	<house name="Agard Town - House #35" houseid="189" entryx="858" entryy="1271" entryz="7" rent="0" townid="6" size="81" />
 	<house name="Agard Town - House #36" houseid="190" entryx="872" entryy="1274" entryz="7" rent="0" townid="6" size="50" />
+	<house name="Mer Jungle - House #1" houseid="191" entryx="1099" entryy="1236" entryz="7" rent="0" townid="7" size="28" />
+	<house name="Mer Jungle - House #2" houseid="192" entryx="1099" entryy="1234" entryz="7" rent="0" townid="7" size="16" />
+	<house name="Mer Jungle - House #3" houseid="193" entryx="1107" entryy="1232" entryz="7" rent="0" townid="7" size="18" />
+	<house name="Mer Jungle - House #4" houseid="194" entryx="1108" entryy="1230" entryz="7" rent="0" townid="7" size="23" />
+	<house name="Mer Jungle - House #5" houseid="195" entryx="1098" entryy="1226" entryz="7" rent="0" townid="7" size="18" />
+	<house name="Mer Jungle - House #6" houseid="196" entryx="1098" entryy="1236" entryz="6" rent="0" townid="7" size="28" />
+	<house name="Mer Jungle - House #7" houseid="197" entryx="1107" entryy="1232" entryz="6" rent="0" townid="7" size="18" />
+	<house name="Mer Jungle - House #8" houseid="198" entryx="1107" entryy="1230" entryz="6" rent="0" townid="7" size="23" />
+	<house name="Mer Jungle - House #9" houseid="199" entryx="1098" entryy="1227" entryz="6" rent="0" townid="7" size="18" />
+	<house name="Mer Jungle - House #10" houseid="200" entryx="1098" entryy="1226" entryz="6" rent="0" townid="7" size="18" />
+	<house name="Mer Jungle - House #11" houseid="201" entryx="1099" entryy="1204" entryz="7" rent="0" townid="7" size="23" />
+	<house name="Mer Jungle - House #12" houseid="202" entryx="1099" entryy="1203" entryz="7" rent="0" townid="7" size="23" />
+	<house name="Mer Jungle - House #13" houseid="203" entryx="1107" entryy="1203" entryz="7" rent="0" townid="7" size="28" />
+	<house name="Mer Jungle - House #14" houseid="204" entryx="1107" entryy="1204" entryz="6" rent="0" townid="7" size="28" />
+	<house name="Mer Jungle - House #15" houseid="205" entryx="1099" entryy="1203" entryz="6" rent="0" townid="7" size="23" />
+	<house name="Mer Jungle - House #16" houseid="206" entryx="1099" entryy="1204" entryz="6" rent="0" townid="7" size="23" />
+	<house name="Mer Jungle - House #17" houseid="207" entryx="1083" entryy="1202" entryz="6" rent="0" townid="7" size="18" />
+	<house name="Mer Jungle - House #18" houseid="208" entryx="1082" entryy="1203" entryz="6" rent="0" townid="7" size="18" />
+	<house name="Mer Jungle - House #19" houseid="209" entryx="1071" entryy="1196" entryz="6" rent="0" townid="7" size="18" />
+	<house name="Mer Jungle - House #20" houseid="210" entryx="1070" entryy="1196" entryz="6" rent="0" townid="7" size="23" />
+	<house name="Mer Jungle - House #21" houseid="211" entryx="1070" entryy="1213" entryz="6" rent="0" townid="7" size="18" />
+	<house name="Mer Jungle - House #22" houseid="212" entryx="1072" entryy="1214" entryz="6" rent="0" townid="7" size="19" />
+	<house name="Mer Jungle - House #23" houseid="213" entryx="1070" entryy="1213" entryz="7" rent="0" townid="7" size="18" />
+	<house name="Mer Jungle - House #24" houseid="214" entryx="1072" entryy="1213" entryz="7" rent="0" townid="7" size="22" />
+	<house name="Mer Jungle - House #25" houseid="215" entryx="1070" entryy="1196" entryz="7" rent="0" townid="7" size="28" />
+	<house name="Mer Jungle - House #26" houseid="216" entryx="1071" entryy="1196" entryz="7" rent="0" townid="7" size="18" />
+	<house name="Mer Jungle - House #27" houseid="217" entryx="1056" entryy="1174" entryz="7" rent="0" townid="7" size="39" />
+	<house name="Mer Jungle - House #28" houseid="218" entryx="1054" entryy="1183" entryz="7" rent="0" townid="7" size="79" />
+	<house name="Mer Jungle - House #29" houseid="219" entryx="1049" entryy="1168" entryz="7" rent="0" townid="7" size="14" />
+	<house name="Mer Jungle - House #20" houseid="220" entryx="1059" entryy="1165" entryz="7" rent="0" townid="7" size="32" />
+	<house name="Mer Jungle - House #21" houseid="221" entryx="1066" entryy="1167" entryz="7" rent="0" townid="7" size="37" />
+	<house name="Mer Jungle - House #22" houseid="222" entryx="987" entryy="1209" entryz="6" rent="0" townid="7" size="30" />
 </houses>
