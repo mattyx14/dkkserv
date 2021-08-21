@@ -121,4 +121,23 @@
 	<house name="Samaransa Bay - House #11" houseid="131" entryx="297" entryy="1287" entryz="6" rent="0" townid="4" size="28" />
 	<house name="Samaransa Bay - House #12" houseid="132" entryx="322" entryy="1273" entryz="6" rent="0" townid="4" size="28" />
 	<house name="Samaransa Bay - House #13" houseid="133" entryx="326" entryy="1278" entryz="6" rent="0" townid="4" size="28" />
+	<house name="Forgos Ville - House #1" houseid="134" entryx="387" entryy="1424" entryz="7" rent="0" townid="5" size="16" />
+	<house name="Forgos Ville - House #2" houseid="135" entryx="396" entryy="1426" entryz="7" rent="0" townid="5" size="48" />
+	<house name="Forgos Ville - House #3" houseid="136" entryx="394" entryy="1433" entryz="7" rent="0" townid="5" size="16" />
+	<house name="Forgos Ville - House #4" houseid="137" entryx="396" entryy="1433" entryz="7" rent="0" townid="5" size="48" />
+	<house name="Forgos Ville - House #5" houseid="138" entryx="395" entryy="1441" entryz="7" rent="0" townid="5" size="10" />
+	<house name="Forgos Ville - House #6" houseid="139" entryx="409" entryy="1429" entryz="7" rent="0" townid="5" size="65" />
+	<house name="Forgos Ville - House #7" houseid="140" entryx="414" entryy="1422" entryz="7" rent="0" townid="5" size="21" />
+	<house name="Forgos Ville - House #8" houseid="141" entryx="421" entryy="1422" entryz="7" rent="0" townid="5" size="21" />
+	<house name="Forgos Ville - House #9" houseid="142" entryx="428" entryy="1426" entryz="7" rent="0" townid="5" size="18" />
+	<house name="Forgos Ville - House #10" houseid="143" entryx="401" entryy="1417" entryz="7" rent="0" townid="5" size="10" />
+	<house name="Forgos Ville - House #11" houseid="144" entryx="402" entryy="1417" entryz="7" rent="0" townid="5" size="10" />
+	<house name="Forgos Ville - House #12" houseid="145" entryx="401" entryy="1413" entryz="7" rent="0" townid="5" size="10" />
+	<house name="Forgos Ville - House #13" houseid="146" entryx="402" entryy="1413" entryz="7" rent="0" townid="5" size="10" />
+	<house name="Forgos Ville - House #14" houseid="147" entryx="401" entryy="1410" entryz="7" rent="0" townid="5" size="10" />
+	<house name="Forgos Ville - House #15" houseid="148" entryx="402" entryy="1410" entryz="7" rent="0" townid="5" size="10" />
+	<house name="Forgos Ville - House #16" houseid="149" entryx="402" entryy="1401" entryz="7" rent="0" townid="5" size="18" />
+	<house name="Forgos Ville - House #17" houseid="150" entryx="402" entryy="1395" entryz="7" rent="0" townid="5" size="226" />
+	<house name="Forgos Ville - House #18" houseid="151" entryx="400" entryy="1388" entryz="7" rent="0" townid="5" size="38" />
+	<house name="Forgos Ville - House #19" houseid="152" entryx="365" entryy="1418" entryz="6" rent="0" townid="5" size="16" />
 </houses>
