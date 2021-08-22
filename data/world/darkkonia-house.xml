@@ -260,4 +260,28 @@
 	<house name="Elfic Ville - House #10" houseid="272" entryx="644" entryy="1143" entryz="5" rent="0" townid="11" size="21" />
 	<house name="Elfic Ville - House #11" houseid="273" entryx="644" entryy="1115" entryz="6" rent="0" townid="11" size="20" />
 	<house name="Elfic Ville - House #12" houseid="274" entryx="644" entryy="1116" entryz="5" rent="0" townid="11" size="21" />
+	<house name="Vaargdon Mine - House #1" houseid="275" entryx="1541" entryy="694" entryz="12" rent="0" townid="12" size="36" />
+	<house name="Vaargdon Mine - House #2" houseid="276" entryx="1554" entryy="694" entryz="12" rent="0" townid="12" size="36" />
+	<house name="Vaargdon Mine - House #3" houseid="277" entryx="1537" entryy="701" entryz="12" rent="0" townid="12" size="50" />
+	<house name="Vaargdon Mine - House #4" houseid="278" entryx="1559" entryy="701" entryz="12" rent="0" townid="12" size="50" />
+	<house name="Vaargdon Mine - House #5" houseid="279" entryx="1529" entryy="705" entryz="12" rent="0" townid="12" size="50" />
+	<house name="Vaargdon Mine - House #6" houseid="280" entryx="1567" entryy="705" entryz="12" rent="0" townid="12" size="50" />
+	<house name="Vaargdon Mine - House #7" houseid="281" entryx="1529" entryy="723" entryz="12" rent="0" townid="12" size="50" />
+	<house name="Vaargdon Mine - House #8" houseid="282" entryx="1536" entryy="729" entryz="12" rent="0" townid="12" size="36" />
+	<house name="Vaargdon Mine - House #9" houseid="283" entryx="1560" entryy="729" entryz="12" rent="0" townid="12" size="36" />
+	<house name="Vaargdon Mine - House #10" houseid="284" entryx="1567" entryy="723" entryz="12" rent="0" townid="12" size="50" />
+	<house name="Vaargdon Mine - House #11" houseid="285" entryx="1570" entryy="723" entryz="12" rent="0" townid="12" size="50" />
+	<house name="Vaargdon Mine - House #12" houseid="286" entryx="1499" entryy="736" entryz="10" rent="0" townid="12" size="24" />
+	<house name="Vaargdon Mine - House #13" houseid="287" entryx="1495" entryy="728" entryz="10" rent="0" townid="12" size="24" />
+	<house name="Vaargdon Mine - House #14" houseid="288" entryx="1492" entryy="722" entryz="10" rent="0" townid="12" size="24" />
+	<house name="Vaargdon Mine - House #15" houseid="289" entryx="1485" entryy="722" entryz="10" rent="0" townid="12" size="24" />
+	<house name="Vaargdon Mine - House #16" houseid="290" entryx="1484" entryy="735" entryz="10" rent="0" townid="12" size="48" />
+	<house name="Vaargdon Mine - House #17" houseid="291" entryx="1475" entryy="728" entryz="10" rent="0" townid="12" size="32" />
+	<house name="Vaargdon Mine - House #18" houseid="292" entryx="1473" entryy="722" entryz="10" rent="0" townid="12" size="24" />
+	<house name="Vaargdon Mine - House #19" houseid="293" entryx="1473" entryy="715" entryz="10" rent="0" townid="12" size="24" />
+	<house name="Vaargdon Mine - House #20" houseid="294" entryx="1475" entryy="715" entryz="10" rent="0" townid="12" size="36" />
+	<house name="Vaargdon Mine - House #21" houseid="295" entryx="1473" entryy="734" entryz="10" rent="0" townid="12" size="20" />
+	<house name="Vaargdon Mine - House #22" houseid="296" entryx="1473" entryy="739" entryz="10" rent="0" townid="12" size="16" />
+	<house name="Vaargdon Mine - House #23" houseid="297" entryx="1473" entryy="744" entryz="10" rent="0" townid="12" size="28" />
+	<house name="Vaargdon Mine - House #24" houseid="298" entryx="1489" entryy="742" entryz="10" rent="0" townid="12" size="42" />
 </houses>
