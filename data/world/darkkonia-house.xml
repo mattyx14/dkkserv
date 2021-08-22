@@ -1,36 +1,36 @@
 <?xml version="1.0"?>
 <houses>
-	<house name="Fynn Castle - House #1" houseid="1" entryx="916" entryy="969" entryz="7" rent="300000" townid="1" size="73" />
-	<house name="Fynn Castle - House #2" houseid="2" entryx="935" entryy="969" entryz="7" rent="250000" townid="1" size="103" />
-	<house name="Fynn Castle - House #3" houseid="3" entryx="953" entryy="963" entryz="7" rent="250000" townid="1" size="67" />
-	<house name="Fynn Castle - House #4" houseid="4" entryx="964" entryy="969" entryz="7" rent="250000" townid="1" size="99" />
-	<house name="Fynn Castle - House #5" houseid="5" entryx="968" entryy="952" entryz="7" rent="200000" townid="1" size="34" />
-	<house name="Fynn Castle - House #6" houseid="6" entryx="956" entryy="952" entryz="7" rent="150000" townid="1" size="34" />
-	<house name="Fynn Castle - House #7" houseid="7" entryx="950" entryy="955" entryz="7" rent="150000" townid="1" size="55" />
-	<house name="Fynn Castle - House #8" houseid="8" entryx="933" entryy="955" entryz="7" rent="150000" townid="1" size="67" />
-	<house name="Fynn Castle - House #9" houseid="9" entryx="921" entryy="958" entryz="7" rent="250000" townid="1" size="83" />
-	<house name="Fynn Castle - House #10" houseid="10" entryx="970" entryy="978" entryz="7" rent="300000" townid="1" size="94" />
-	<house name="Fynn Castle - House #11" houseid="11" entryx="976" entryy="977" entryz="7" rent="150000" townid="1" size="54" />
-	<house name="Fynn Castle - House #12" houseid="12" entryx="991" entryy="982" entryz="7" rent="150000" townid="1" size="48" />
-	<house name="Fynn Castle - House #13" houseid="13" entryx="942" entryy="923" entryz="7" rent="350000" townid="1" size="195" />
-	<house name="Fynn Castle - House #14" houseid="14" entryx="934" entryy="929" entryz="8" rent="50000" townid="1" size="45" />
-	<house name="Fynn Castle - House #15" houseid="15" entryx="931" entryy="926" entryz="8" rent="150000" townid="1" size="27" />
-	<house name="Fynn Castle - House #16" houseid="16" entryx="933" entryy="922" entryz="8" rent="150000" townid="1" size="42" />
-	<house name="Fynn Castle - House #17" houseid="17" entryx="895" entryy="1018" entryz="7" rent="5000000" guildhall="true" townid="1" size="369" />
-	<house name="Fynn Castle - House #18" houseid="18" entryx="998" entryy="1025" entryz="7" rent="5000000" guildhall="true" townid="1" size="334" />
-	<house name="Fynn Castle - House #19" houseid="19" entryx="1015" entryy="1045" entryz="7" rent="50000" townid="1" size="43" />
-	<house name="Fynn Castle - House #20" houseid="21" entryx="1020" entryy="1042" entryz="7" rent="3500000" guildhall="true" townid="1" size="212" />
-	<house name="Fynn Castle - House #21" houseid="22" entryx="982" entryy="987" entryz="7" rent="50000" townid="1" size="10" />
-	<house name="Fynn Castle - House #23" houseid="23" entryx="991" entryy="1010" entryz="7" rent="50000" townid="1" size="14" />
-	<house name="Fynn Castle - House #24" houseid="24" entryx="986" entryy="1010" entryz="7" rent="150000" townid="1" size="22" />
-	<house name="Fynn Castle - House #25" houseid="25" entryx="1009" entryy="1003" entryz="7" rent="150000" townid="1" size="40" />
-	<house name="Fynn Castle - House #26" houseid="26" entryx="1007" entryy="1006" entryz="6" rent="50000" townid="1" size="75" />
-	<house name="Fynn Castle - House #27" houseid="27" entryx="1003" entryy="1006" entryz="6" rent="50000" townid="1" size="18" />
-	<house name="Fynn Castle - House #28" houseid="28" entryx="991" entryy="1007" entryz="6" rent="150000" townid="1" size="22" />
-	<house name="Fynn Castle - House #29" houseid="29" entryx="988" entryy="1006" entryz="5" rent="25000" townid="1" size="3" />
-	<house name="Fynn Castle - House #30" houseid="30" entryx="971" entryy="1006" entryz="6" rent="250000" townid="1" size="92" />
+	<house name="Fynn Castle - House #1" houseid="1" entryx="916" entryy="969" entryz="7" rent="0" townid="1" size="73" />
+	<house name="Fynn Castle - House #2" houseid="2" entryx="935" entryy="969" entryz="7" rent="0" townid="1" size="103" />
+	<house name="Fynn Castle - House #3" houseid="3" entryx="953" entryy="963" entryz="7" rent="0" townid="1" size="67" />
+	<house name="Fynn Castle - House #4" houseid="4" entryx="964" entryy="969" entryz="7" rent="0" townid="1" size="99" />
+	<house name="Fynn Castle - House #5" houseid="5" entryx="968" entryy="952" entryz="7" rent="0" townid="1" size="34" />
+	<house name="Fynn Castle - House #6" houseid="6" entryx="956" entryy="952" entryz="7" rent="0" townid="1" size="34" />
+	<house name="Fynn Castle - House #7" houseid="7" entryx="950" entryy="955" entryz="7" rent="0" townid="1" size="55" />
+	<house name="Fynn Castle - House #8" houseid="8" entryx="933" entryy="955" entryz="7" rent="0" townid="1" size="67" />
+	<house name="Fynn Castle - House #9" houseid="9" entryx="921" entryy="958" entryz="7" rent="0" townid="1" size="83" />
+	<house name="Fynn Castle - House #10" houseid="10" entryx="970" entryy="978" entryz="7" rent="0" townid="1" size="94" />
+	<house name="Fynn Castle - House #11" houseid="11" entryx="976" entryy="977" entryz="7" rent="0" townid="1" size="54" />
+	<house name="Fynn Castle - House #12" houseid="12" entryx="991" entryy="982" entryz="7" rent="0" townid="1" size="48" />
+	<house name="Fynn Castle - House #13" houseid="13" entryx="942" entryy="923" entryz="7" rent="0" townid="1" size="195" />
+	<house name="Fynn Castle - House #14" houseid="14" entryx="934" entryy="929" entryz="8" rent="0" townid="1" size="45" />
+	<house name="Fynn Castle - House #15" houseid="15" entryx="931" entryy="926" entryz="8" rent="0" townid="1" size="27" />
+	<house name="Fynn Castle - House #16" houseid="16" entryx="933" entryy="922" entryz="8" rent="0" townid="1" size="42" />
+	<house name="Fynn Castle - House #17" houseid="17" entryx="895" entryy="1018" entryz="7" rent="0" guildhall="true" townid="1" size="369" />
+	<house name="Fynn Castle - House #18" houseid="18" entryx="998" entryy="1025" entryz="7" rent="0" guildhall="true" townid="1" size="334" />
+	<house name="Fynn Castle - House #19" houseid="19" entryx="1015" entryy="1045" entryz="7" rent="0" townid="1" size="75" />
+	<house name="Fynn Castle - House #20" houseid="21" entryx="1020" entryy="1042" entryz="7" rent="0" guildhall="true" townid="1" size="212" />
+	<house name="Fynn Castle - House #21" houseid="22" entryx="982" entryy="987" entryz="7" rent="0" townid="1" size="10" />
+	<house name="Fynn Castle - House #23" houseid="23" entryx="991" entryy="1010" entryz="7" rent="0" townid="1" size="14" />
+	<house name="Fynn Castle - House #24" houseid="24" entryx="986" entryy="1010" entryz="7" rent="0" townid="1" size="22" />
+	<house name="Fynn Castle - House #25" houseid="25" entryx="1009" entryy="1003" entryz="7" rent="0" townid="1" size="40" />
+	<house name="Fynn Castle - House #26" houseid="26" entryx="1007" entryy="1006" entryz="6" rent="0" townid="1" size="75" />
+	<house name="Fynn Castle - House #27" houseid="27" entryx="1003" entryy="1006" entryz="6" rent="0" townid="1" size="18" />
+	<house name="Fynn Castle - House #28" houseid="28" entryx="991" entryy="1007" entryz="6" rent="0" townid="1" size="22" />
+	<house name="Fynn Castle - House #29" houseid="29" entryx="988" entryy="1006" entryz="5" rent="0" townid="1" size="3" />
+	<house name="Fynn Castle - House #30" houseid="30" entryx="971" entryy="1006" entryz="6" rent="0" townid="1" size="92" />
 	<house name="Fynn Castle - House #31" houseid="31" entryx="969" entryy="995" entryz="7" rent="0" townid="1" size="54" />
-	<house name="Fynn Castle - House #32" houseid="32" entryx="804" entryy="903" entryz="7" rent="0" townid="1" size="84" />
+	<house name="Fynn Castle - House #32" houseid="32" entryx="804" entryy="903" entryz="7" rent="0" townid="1" size="97" />
 	<house name="Anshara Desert - House #1" houseid="33" entryx="669" entryy="393" entryz="7" rent="0" townid="2" size="45" />
 	<house name="Anshara Desert - House #2" houseid="34" entryx="661" entryy="393" entryz="7" rent="0" townid="2" size="28" />
 	<house name="Anshara Desert - House #3" houseid="35" entryx="656" entryy="397" entryz="6" rent="0" townid="2" size="66" />
