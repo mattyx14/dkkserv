@@ -248,4 +248,16 @@
 	<house name="Misidia Settlement - House #25" houseid="260" entryx="1085" entryy="294" entryz="4" rent="0" townid="10" size="28" />
 	<house name="Misidia Settlement - House #26" houseid="261" entryx="1100" entryy="287" entryz="5" rent="0" guildhall="true" townid="10" size="467" />
 	<house name="Misidia Settlement - House #27" houseid="262" entryx="1108" entryy="311" entryz="4" rent="0" townid="10" size="69" />
+	<house name="Elfic Ville - House #1" houseid="263" entryx="666" entryy="1145" entryz="6" rent="0" townid="11" size="28" />
+	<house name="Elfic Ville - House #2" houseid="264" entryx="663" entryy="1127" entryz="6" rent="0" townid="11" size="14" />
+	<house name="Elfic Ville - House #3" houseid="265" entryx="659" entryy="1122" entryz="4" rent="0" townid="11" size="33" />
+	<house name="Elfic Ville - House #4" houseid="266" entryx="665" entryy="1132" entryz="5" rent="0" townid="11" size="24" />
+	<house name="Elfic Ville - House #5" houseid="267" entryx="652" entryy="1142" entryz="7" rent="0" townid="11" size="21" />
+	<house name="Elfic Ville - House #6" houseid="268" entryx="642" entryy="1136" entryz="7" rent="0" townid="11" size="96" />
+	<house name="Elfic Ville - House #7" houseid="269" entryx="647" entryy="1123" entryz="7" rent="0" townid="11" size="36" />
+	<house name="Elfic Ville - House #8" houseid="270" entryx="646" entryy="1117" entryz="7" rent="0" townid="11" size="31" />
+	<house name="Elfic Ville - House #9" houseid="271" entryx="644" entryy="1142" entryz="6" rent="0" townid="11" size="21" />
+	<house name="Elfic Ville - House #10" houseid="272" entryx="644" entryy="1143" entryz="5" rent="0" townid="11" size="21" />
+	<house name="Elfic Ville - House #11" houseid="273" entryx="644" entryy="1115" entryz="6" rent="0" townid="11" size="20" />
+	<house name="Elfic Ville - House #12" houseid="274" entryx="644" entryy="1116" entryz="5" rent="0" townid="11" size="21" />
 </houses>
