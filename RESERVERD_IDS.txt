@@ -35,6 +35,7 @@ Reserverd_IDS
 		24902 -- Reserverd POI Verminor Stone
 		24903 -- Reserverd POI Verminor Throne
 		24904 -- Ferumbras Tower Entrace - /data/scripts/movements/darkkonia/teleportTiles.lua
+		24905 -- Anshara Catacumbs
 
 	Storages
 		25770 -- 
