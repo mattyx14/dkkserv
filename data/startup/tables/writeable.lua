@@ -5,13 +5,6 @@
 -- text: text of item (book, scroll, letter, etc).
 BookDocumentTable = {
 	[1] = {
-		itemId = 1953,
-		position = {x = 755, y = 458, z = 12},
-		text = [[I found out they really like pianos..
-I hope they dont find me out, since i'm not hidden that much..
-Anyways, i continue my adventure! Damn, two of them are coming..]]
-	},
-	[2] = {
 		itemId = 1972,
 		position = {x = 1006, y = 958, z = 10},
 		text = [[And so shall the dead raise to once again walk the earth.]]
