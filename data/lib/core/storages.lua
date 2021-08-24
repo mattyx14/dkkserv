@@ -246,6 +246,9 @@ Storage = {
 		JaulTimer = 8422,
 		JaulKilled = 10139,
 	},
+	Anshara = {
+		BlackMagicianTimer = 10547,
+	},
 	AnsharaPOI = {
 		-- Izcandar
 		IzcandarWinterKilled = 10540,

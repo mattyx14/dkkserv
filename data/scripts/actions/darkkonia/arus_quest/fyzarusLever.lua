@@ -6,8 +6,9 @@ local config = {
 	timeToDefeatBoss = 20, -- In minutes
 	clearRoomTime = 20, -- In minutes
 	storage = Storage.FirstSacrifice.brightSword,
+	itemMission = "Bright Sword",
 	timer = Storage.ArusBosses.FyzarusTimer,
-	daily = true,
+	blockLever = true,
 	value = 1,
 	centerRoom = Position(905, 1112, 12),
 	playerPositions = {
@@ -25,7 +26,7 @@ local config = {
 local jaulLever = Action()
 function jaulLever.onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	if player:getStorageValue(config.storage) < config.value then
-		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "All the players need find the require complete bright sword quest.")
+		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "All the players need find the ".. config.itemMission .." quest.")
 		return true
 	end
 
@@ -49,9 +50,9 @@ function jaulLever.onUse(player, item, fromPosition, target, toPosition, isHotke
 				end
 
 				-- Check participant boss timer
-				if config.daily and participant:getStorageValue(config.timer) > os.time() then
+				if config.blockLever and participant:getStorageValue(config.timer) > os.time() then
 					player:getPosition():sendMagicEffect(CONST_ME_POFF)
-					player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You or a member in your team have to wait ".. config.timeToFightAgain .."  hours to face ".. config.bossName .." again!")
+					player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You or a member in your team have to wait ".. config.timeToFightAgain .." hours to face ".. config.bossName .." again!")
 					return true
 				end
 				team[#team + 1] = participant

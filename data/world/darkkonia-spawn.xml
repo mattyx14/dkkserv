@@ -4560,53 +4560,201 @@
 	<spawn centerx="895" centery="1082" centerz="10" radius="1">
 		<monster name="Blightwalker" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="877" centery="1097" centerz="10" radius="1">
-		<monster name="Destroyer" x="0" y="0" z="10" spawntime="60" />
+	<spawn centerx="894" centery="1096" centerz="10" radius="1">
+		<monster name="Elder Bonelord" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="892" centery="1097" centerz="10" radius="1">
-		<monster name="Destroyer" x="0" y="0" z="10" spawntime="60" />
+	<spawn centerx="892" centery="1098" centerz="10" radius="1">
+		<monster name="Dark Magician" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="903" centery="1099" centerz="10" radius="1">
-		<monster name="Destroyer" x="0" y="0" z="10" spawntime="60" />
+	<spawn centerx="877" centery="1099" centerz="10" radius="1">
+		<monster name="Warlock" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="881" centery="1100" centerz="10" radius="1">
-		<monster name="Destroyer" x="0" y="0" z="10" spawntime="60" />
+	<spawn centerx="894" centery="1100" centerz="10" radius="1">
+		<monster name="Dark Magician" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="893" centery="1100" centerz="10" radius="1">
-		<monster name="Lost Soul" x="0" y="0" z="10" spawntime="60" />
+	<spawn centerx="905" centery="1101" centerz="10" radius="1">
+		<monster name="Elder Bonelord" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="906" centery="1101" centerz="10" radius="1">
-		<monster name="Dark Torturer" x="0" y="0" z="10" spawntime="60" />
+	<spawn centerx="880" centery="1102" centerz="10" radius="1">
+		<monster name="Vile Grandmaster" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="910" centery="1101" centerz="10" radius="1">
-		<monster name="Dark Torturer" x="0" y="0" z="10" spawntime="60" />
+	<spawn centerx="910" centery="1102" centerz="10" radius="1">
+		<monster name="Elder Bonelord" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="898" centery="1102" centerz="10" radius="1">
-		<monster name="Dark Torturer" x="0" y="0" z="10" spawntime="60" />
+	<spawn centerx="885" centery="1103" centerz="10" radius="1">
+		<monster name="Warlock" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="881" centery="1103" centerz="10" radius="1">
-		<monster name="Dark Torturer" x="0" y="0" z="10" spawntime="60" />
+	<spawn centerx="896" centery="1103" centerz="10" radius="1">
+		<monster name="Vile Grandmaster" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="885" centery="1104" centerz="10" radius="1">
-		<monster name="Dark Torturer" x="0" y="0" z="10" spawntime="60" />
+	<spawn centerx="889" centery="1104" centerz="10" radius="1">
+		<monster name="Dark Magician" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="893" centery="1104" centerz="10" radius="1">
-		<monster name="Lost Soul" x="0" y="0" z="10" spawntime="60" />
+	<spawn centerx="882" centery="1105" centerz="10" radius="1">
+		<monster name="Elf Arcanist" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="900" centery="1105" centerz="10" radius="1">
-		<monster name="Lost Soul" x="0" y="0" z="10" spawntime="60" />
+	<spawn centerx="894" centery="1105" centerz="10" radius="1">
+		<monster name="Elf Arcanist" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="889" centery="1106" centerz="10" radius="1">
-		<monster name="Dark Torturer" x="0" y="0" z="10" spawntime="60" />
+	<spawn centerx="897" centery="1105" centerz="10" radius="1">
+		<monster name="Dark Magician" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="897" centery="1106" centerz="10" radius="1">
-		<monster name="Dark Torturer" x="0" y="0" z="10" spawntime="60" />
+	<spawn centerx="888" centery="1106" centerz="10" radius="1">
+		<monster name="Vile Grandmaster" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="882" centery="1107" centerz="10" radius="1">
-		<monster name="Dark Torturer" x="0" y="0" z="10" spawntime="60" />
+	<spawn centerx="903" centery="1106" centerz="10" radius="1">
+		<monster name="Warlock" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="883" centery="1107" centerz="10" radius="1">
+		<monster name="Elf Arcanist" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="891" centery="1107" centerz="10" radius="1">
+		<monster name="Elder Bonelord" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
 	<spawn centerx="893" centery="1107" centerz="10" radius="1">
-		<monster name="Destroyer" x="0" y="0" z="10" spawntime="60" />
+		<monster name="Warlock" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="897" centery="1107" centerz="10" radius="1">
+		<monster name="Elf Arcanist" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="911" centery="1148" centerz="10" radius="1">
+		<monster name="Elder Wyrm" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="854" centery="1150" centerz="10" radius="5">
+		<monster name="Warlock" x="1" y="-3" z="10" spawntime="60" />
+		<monster name="Elf Arcanist" x="-3" y="-2" z="10" spawntime="60" />
+		<monster name="Vile Grandmaster" x="5" y="0" z="10" spawntime="60" />
+		<monster name="Elder Wyrm" x="-3" y="1" z="10" spawntime="60" />
+		<monster name="Warlock" x="0" y="2" z="10" spawntime="60" />
+		<monster name="Elder Bonelord" x="1" y="5" z="10" spawntime="60" />
+		<monster name="Elder Wyrm" x="4" y="5" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="861" centery="1150" centerz="10" radius="1">
+		<monster name="Infernalist" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="881" centery="1151" centerz="10" radius="5">
+		<monster name="Elf Arcanist" x="1" y="-5" z="10" spawntime="60" />
+		<monster name="Vile Grandmaster" x="0" y="-4" z="10" spawntime="60" />
+		<monster name="Elf Arcanist" x="-1" y="-3" z="10" spawntime="60" />
+		<monster name="Vile Grandmaster" x="0" y="-2" z="10" spawntime="60" />
+		<monster name="Elder Wyrm" x="4" y="-2" z="10" spawntime="60" />
+		<monster name="Elder Wyrm" x="-4" y="1" z="10" spawntime="60" />
+		<monster name="Elf Arcanist" x="0" y="5" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="895" centery="1152" centerz="10" radius="5">
+		<monster name="Elf Arcanist" x="-2" y="-4" z="10" spawntime="60" />
+		<monster name="Elf Arcanist" x="-2" y="0" z="10" spawntime="60" />
+		<monster name="Infernalist" x="-1" y="1" z="10" spawntime="60" />
+		<monster name="Infernalist" x="-4" y="3" z="10" spawntime="60" />
+		<monster name="Vile Grandmaster" x="4" y="3" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="906" centery="1154" centerz="10" radius="5">
+		<monster name="Infernalist" x="-2" y="-4" z="10" spawntime="60" />
+		<monster name="Elder Wyrm" x="-4" y="-3" z="10" spawntime="60" />
+		<monster name="Vile Grandmaster" x="3" y="-3" z="10" spawntime="60" />
+		<monster name="Elf Arcanist" x="2" y="-2" z="10" spawntime="60" />
+		<monster name="Elf Arcanist" x="2" y="2" z="10" spawntime="60" />
+		<monster name="Infernalist" x="-3" y="3" z="10" spawntime="60" />
+		<monster name="Vile Grandmaster" x="3" y="5" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="880" centery="1158" centerz="10" radius="1">
+		<monster name="Elf Arcanist" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="882" centery="1158" centerz="10" radius="1">
+		<monster name="Elder Bonelord" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="884" centery="1158" centerz="10" radius="1">
+		<monster name="Vile Grandmaster" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="887" centery="1158" centerz="10" radius="1">
+		<monster name="Elf Arcanist" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="850" centery="1159" centerz="10" radius="1">
+		<monster name="Elder Wyrm" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="869" centery="1159" centerz="10" radius="5">
+		<monster name="Elder Bonelord" x="-4" y="-5" z="10" spawntime="60" />
+		<monster name="Elf Arcanist" x="-5" y="-4" z="10" spawntime="60" />
+		<monster name="Elder Bonelord" x="2" y="-4" z="10" spawntime="60" />
+		<monster name="Vile Grandmaster" x="3" y="-3" z="10" spawntime="60" />
+		<monster name="Elf Arcanist" x="0" y="-2" z="10" spawntime="60" />
+		<monster name="Vile Grandmaster" x="0" y="2" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="889" centery="1159" centerz="10" radius="1">
+		<monster name="Braindeath" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="893" centery="1159" centerz="10" radius="1">
+		<monster name="Elder Wyrm" x="0" y="0" z="10" spawntime="60" />
+		<monster name="Elf Arcanist" x="1" y="1" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="882" centery="1160" centerz="10" radius="1">
+		<monster name="Elder Wyrm" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="905" centery="1160" centerz="10" radius="1">
+		<monster name="Braindeath" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="907" centery="1160" centerz="10" radius="1">
+		<monster name="Elf Arcanist" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="858" centery="1161" centerz="10" radius="5">
+		<monster name="Infernalist" x="5" y="-4" z="10" spawntime="60" />
+		<monster name="Vile Grandmaster" x="0" y="-3" z="10" spawntime="60" />
+		<monster name="Elf Arcanist" x="-4" y="-2" z="10" spawntime="60" />
+		<monster name="Warlock" x="-5" y="4" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="897" centery="1161" centerz="10" radius="1">
+		<monster name="Vile Grandmaster" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="883" centery="1164" centerz="10" radius="1">
+		<monster name="Braindeath" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="889" centery="1165" centerz="10" radius="5">
+		<monster name="Infernalist" x="0" y="2" z="10" spawntime="60" />
+		<monster name="Braindeath" x="2" y="2" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="876" centery="1167" centerz="10" radius="5">
+		<monster name="Braindeath" x="-1" y="-4" z="10" spawntime="60" />
+		<monster name="Vile Grandmaster" x="5" y="-4" z="10" spawntime="60" />
+		<monster name="Infernalist" x="3" y="-3" z="10" spawntime="60" />
+		<monster name="Elf Arcanist" x="-3" y="0" z="10" spawntime="60" />
+		<monster name="Infernalist" x="-1" y="2" z="10" spawntime="60" />
+		<monster name="Infernalist" x="4" y="4" z="10" spawntime="60" />
+		<monster name="Infernalist" x="-5" y="5" z="10" spawntime="60" />
+		<monster name="Vile Grandmaster" x="0" y="5" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="911" centery="1167" centerz="10" radius="1">
+		<monster name="Braindeath" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="870" centery="1168" centerz="10" radius="1">
+		<monster name="Elf Arcanist" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="904" centery="1168" centerz="10" radius="5">
+		<monster name="Elf Arcanist" x="-1" y="-3" z="10" spawntime="60" />
+		<monster name="Infernalist" x="-2" y="4" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="897" centery="1169" centerz="10" radius="1">
+		<monster name="Elf Arcanist" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="868" centery="1171" centerz="10" radius="1">
+		<monster name="Braindeath" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="893" centery="1171" centerz="10" radius="1">
+		<monster name="Infernalist" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="861" centery="1172" centerz="10" radius="5">
+		<monster name="Warlock" x="-2" y="1" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="897" centery="1172" centerz="10" radius="1">
+		<monster name="Braindeath" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="871" centery="1173" centerz="10" radius="1">
+		<monster name="Vile Grandmaster" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="877" centery="1173" centerz="10" radius="1">
+		<monster name="Elder Wyrm" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="891" centery="1173" centerz="10" radius="1">
+		<monster name="Vile Grandmaster" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
 	<spawn centerx="821" centery="877" centerz="11" radius="1">
 		<monster name="Banshee" x="0" y="0" z="11" spawntime="60" />
@@ -5412,6 +5560,9 @@
 	<spawn centerx="941" centery="1103" centerz="11" radius="1">
 		<monster name="Priestess" x="0" y="0" z="11" spawntime="60" />
 	</spawn>
+	<spawn centerx="888" centery="1106" centerz="11" radius="1">
+		<monster name="Elder Bonelord" x="0" y="0" z="11" spawntime="60" />
+	</spawn>
 	<spawn centerx="905" centery="1106" centerz="11" radius="1">
 		<monster name="Vile Grandmaster" x="0" y="0" z="11" spawntime="60" />
 	</spawn>
@@ -5436,11 +5587,76 @@
 		<monster name="Lord knight" x="3" y="3" z="11" spawntime="60" />
 		<monster name="Vile Grandmaster" x="-1" y="4" z="11" spawntime="60" />
 	</spawn>
+	<spawn centerx="881" centery="1110" centerz="11" radius="5">
+		<monster name="Elf Arcanist" x="-4" y="-4" z="11" spawntime="60" />
+		<monster name="Dark Magician" x="5" y="-3" z="11" spawntime="60" />
+		<monster name="Warlock" x="5" y="-2" z="11" spawntime="60" />
+		<monster name="Dark Magician" x="-5" y="-1" z="11" spawntime="60" />
+		<monster name="Warlock" x="-3" y="0" z="11" spawntime="60" />
+		<monster name="Dark Magician" x="-4" y="3" z="11" spawntime="60" />
+		<monster name="Warlock" x="0" y="3" z="11" spawntime="60" />
+		<monster name="Elf Arcanist" x="3" y="4" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="888" centery="1114" centerz="11" radius="1">
+		<monster name="Elder Bonelord" x="0" y="0" z="11" spawntime="60" />
+	</spawn>
 	<spawn centerx="939" centery="1115" centerz="11" radius="1">
 		<monster name="Priestess" x="0" y="0" z="11" spawntime="60" />
 	</spawn>
 	<spawn centerx="941" centery="1115" centerz="11" radius="1">
 		<monster name="Lich" x="0" y="0" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="881" centery="1116" centerz="11" radius="1">
+		<monster name="Elf Arcanist" x="0" y="0" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="882" centery="1122" centerz="11" radius="5">
+		<monster name="Warlock" x="0" y="-4" z="11" spawntime="60" />
+		<monster name="Dragonling" x="-1" y="-1" z="11" spawntime="60" />
+		<monster name="Elf Arcanist" x="0" y="3" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="882" centery="1134" centerz="11" radius="5">
+		<monster name="Warlock" x="-1" y="-4" z="11" spawntime="60" />
+		<monster name="Elf Arcanist" x="-2" y="-3" z="11" spawntime="60" />
+		<monster name="Elder Bonelord" x="2" y="-3" z="11" spawntime="60" />
+		<monster name="Dragonling" x="2" y="-2" z="11" spawntime="60" />
+		<monster name="Elf Arcanist" x="-1" y="4" z="11" spawntime="60" />
+		<monster name="Warlock" x="0" y="5" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="881" centery="1146" centerz="11" radius="5">
+		<monster name="Warlock" x="3" y="-5" z="11" spawntime="60" />
+		<monster name="Dragonling" x="-2" y="-4" z="11" spawntime="60" />
+		<monster name="Elf Arcanist" x="2" y="-3" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="884" centery="1174" centerz="11" radius="1">
+		<monster name="Elder Wyrm" x="0" y="0" z="11" spawntime="60" />
+		<monster name="Infernalist" x="1" y="1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="880" centery="1176" centerz="11" radius="1">
+		<monster name="Infernalist" x="0" y="0" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="899" centery="1176" centerz="11" radius="1">
+		<monster name="Infernalist" x="0" y="0" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="884" centery="1179" centerz="11" radius="1">
+		<monster name="black warlock" x="0" y="0" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="890" centery="1179" centerz="11" radius="5">
+		<monster name="Elder Wyrm" x="5" y="-5" z="11" spawntime="60" />
+		<monster name="Infernalist" x="3" y="-4" z="11" spawntime="60" />
+		<monster name="Braindeath" x="1" y="-2" z="11" spawntime="60" />
+		<monster name="black warlock" x="5" y="0" z="11" spawntime="60" />
+		<monster name="Infernalist" x="-3" y="3" z="11" spawntime="60" />
+		<monster name="Infernalist" x="3" y="3" z="11" spawntime="60" />
+		<monster name="Elder Wyrm" x="5" y="4" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="879" centery="1181" centerz="11" radius="1">
+		<monster name="Infernalist" x="0" y="0" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="899" centery="1182" centerz="11" radius="1">
+		<monster name="Infernalist" x="0" y="0" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="884" centery="1183" centerz="11" radius="1">
+		<monster name="Elder Wyrm" x="0" y="0" z="11" spawntime="60" />
 	</spawn>
 	<spawn centerx="988" centery="892" centerz="12" radius="5">
 		<monster name="Warlock" x="-5" y="0" z="12" spawntime="60" />

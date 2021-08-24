@@ -1,27 +1,35 @@
 local config = {
-	bossName = "Lady Tenebris",
-	requiredLevel = 250,
+	bossName = "Black Magician",
+	requiredLevel = 150,
 	leverId = 9825,
-	timeToFightAgain = 20, -- In hour
+	timeToFightAgain = 4, -- In hour
 	timeToDefeatBoss = 20, -- In minutes
 	clearRoomTime = 20, -- In minutes
-	timer = Storage.ForgottenKnowledge.LadyTenebrisTimer,
+	storage = Storage.HidenChest.noseRing,
+	itemMission = "Nose Ring",
+	timer = Storage.Anshara.BlackMagicianTimer,
 	blockLever = true,
-	centerRoom = Position(1126, 1032, 15),
+	value = 1,
+	centerRoom = Position(890, 1179, 11),
 	playerPositions = {
-		Position(1127, 1083, 15),
-		Position(1126, 1083, 15),
-		Position(1125, 1083, 15),
-		Position(1128, 1083, 15),
-		Position(1129, 1083, 15)
+		Position(825, 1185, 10),
+		Position(826, 1185, 10),
+		Position(827, 1185, 10),
+		Position(828, 1185, 10),
+		Position(829, 1185, 10)
 	},
-	teleportPosition = Position(1126, 1040, 15),
-	bossPosition = Position(1126, 1030, 15),
-	kickPos = Position(1075, 989, 15)
+	teleportPosition = Position(877, 1178, 11),
+	bossPosition = Position(889, 1178, 11),
+	kickPos = Position(885, 1174, 10)
 }
 
-local forgottenTenebrisLever = Action()
-function forgottenTenebrisLever.onUse(player, item, fromPosition, target, toPosition, isHotkey)
+local izcandarLever = Action()
+function izcandarLever.onUse(player, item, fromPosition, target, toPosition, isHotkey)
+	if player:getStorageValue(config.storage) < config.value then
+		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "All the players need find the ".. config.itemMission .." quest.")
+		return true
+	end
+
 	if item.itemid == config.leverId then
 		-- Check if the player that pulled the lever is on the correct position
 		if player:getPosition() ~= config.playerPositions[1] then
@@ -91,5 +99,5 @@ function forgottenTenebrisLever.onUse(player, item, fromPosition, target, toPosi
 	return true
 end
 
-forgottenTenebrisLever:aid(24878)
-forgottenTenebrisLever:register()
+izcandarLever:aid(24881)
+izcandarLever:register()

@@ -66,6 +66,7 @@ LevelDoorAction = {
 			Position(485, 1181, 9), -- "Draggis" // Sohan Town
 			Position(683, 537, 8), -- "Plagues" // Anshara Desert
 			Position(231, 987, 10), Position(232, 987, 10), -- Fibula Medusas // Anshara Desert
+			Position(638, 375, 10), -- Arcane Academy // Anshara Desert
 		}
 	},
 	-- Level 90

@@ -17,6 +17,7 @@ NpcTable = {
 	[14] = {name = "Citizen_addon1_fynn", position = Position(978, 1049, 7)}, -- Custom "Citizen Addoner"
 	[15] = {name = "Citizen_women_addon2_fynn", position = Position(971, 952, 7)}, -- Custom "Citizen Addoner"
 	[96] = {name = "Kory", position = Position(1018, 988, 7)}, -- Boat
+	[163] = {name = "Kory", position = Position(1048, 1051, 7)}, -- Boat
 
 	-- Anshara Desert
 	[16] = {name = "Yura", position = Position(714, 453, 5)}, -- Potion / Rune
