@@ -1,12 +1,12 @@
 local clickTeleport = {
-	[39512] = Position(853, 1050, 10), -- Mirror Conjurer Outfit,
-	[39513] = Position(1529, 910, 1), -- Zevelon Duskbringer
-	[39514] = Position(1529, 892, 1), -- Sir Valorcrest
-	[39515] = Position(1556, 910, 1), -- Diblis the Fair
-	[39516] = Position(1556, 892, 1), -- Arachir the Ancient One
---	[39517] = Position(1542, 875, 1), -- Reserved to Dracula /actions/quest/outfits/portalDracula.lua
-	[39518] = Position(618, 376, 8), -- Enter Portal Volcano
-	[39519] = Position(627, 376, 7), -- Exit Portal Volcano
+	[24909] = Position(853, 1050, 10), -- Mirror Conjurer Outfit,
+	[24910] = Position(1529, 910, 1), -- Zevelon Duskbringer
+	[24911] = Position(1529, 892, 1), -- Sir Valorcrest
+	[24912] = Position(1556, 910, 1), -- Diblis the Fair
+	[24913] = Position(1556, 892, 1), -- Arachir the Ancient One
+	[24914] = Position(618, 376, 8), -- Enter Portal Volcano
+	[24915] = Position(627, 376, 7), -- Exit Portal Volcano
+--	[24916] = Position(1542, 875, 1), -- Reserved to Dracula /actions/quest/outfits/portalDracula.lua
 }
 
 local itemPortal = Action()

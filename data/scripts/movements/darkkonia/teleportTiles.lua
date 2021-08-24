@@ -1,5 +1,6 @@
 local positions = {
 	[24904] = Position(480, 462, 7),
+	[24906] = Position(1023, 1042, 10),
 }
 
 local oramondMovements = MoveEvent()
@@ -14,7 +15,6 @@ function oramondMovements.onStepIn(creature, item, position, fromPosition)
 	if newPosition then
 		player:teleportTo(newPosition)
 		fromPosition:sendMagicEffect(CONST_ME_TELEPORT)
-		player:say("Slrrp!", TALKTYPE_MONSTER_SAY)
 	end
 	return true
 end

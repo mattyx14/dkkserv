@@ -99,5 +99,5 @@ function izcandarLever.onUse(player, item, fromPosition, target, toPosition, isH
 	return true
 end
 
-izcandarLever:aid(24881)
+izcandarLever:aid(24908)
 izcandarLever:register()
