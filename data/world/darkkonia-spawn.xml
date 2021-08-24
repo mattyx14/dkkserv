@@ -5627,9 +5627,15 @@
 		<monster name="Dragonling" x="-2" y="-4" z="11" spawntime="60" />
 		<monster name="Elf Arcanist" x="2" y="-3" z="11" spawntime="60" />
 	</spawn>
+	<spawn centerx="877" centery="1174" centerz="11" radius="1">
+		<monster name="Elder Wyrm" x="0" y="0" z="11" spawntime="60" />
+	</spawn>
 	<spawn centerx="884" centery="1174" centerz="11" radius="1">
 		<monster name="Elder Wyrm" x="0" y="0" z="11" spawntime="60" />
 		<monster name="Infernalist" x="1" y="1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="902" centery="1174" centerz="11" radius="1">
+		<monster name="Elder Wyrm" x="0" y="0" z="11" spawntime="60" />
 	</spawn>
 	<spawn centerx="880" centery="1176" centerz="11" radius="1">
 		<monster name="Infernalist" x="0" y="0" z="11" spawntime="60" />
@@ -5655,7 +5661,13 @@
 	<spawn centerx="899" centery="1182" centerz="11" radius="1">
 		<monster name="Infernalist" x="0" y="0" z="11" spawntime="60" />
 	</spawn>
+	<spawn centerx="877" centery="1183" centerz="11" radius="1">
+		<monster name="Elder Wyrm" x="0" y="0" z="11" spawntime="60" />
+	</spawn>
 	<spawn centerx="884" centery="1183" centerz="11" radius="1">
+		<monster name="Elder Wyrm" x="0" y="0" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="902" centery="1183" centerz="11" radius="1">
 		<monster name="Elder Wyrm" x="0" y="0" z="11" spawntime="60" />
 	</spawn>
 	<spawn centerx="988" centery="892" centerz="12" radius="5">
