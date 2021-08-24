@@ -7,25 +7,16 @@ local config = {
 local conjurerLever_2 = Action()
 function conjurerLever_2.onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	item:transform(item.itemid == 1945 and 1946 or 1945)
-
 	if item.itemid ~= 1945 then
 		return true
 	end
 
 	local position = player:getPosition()
-
 	local players = {}
 	for i = 1, #config do
 		local creature = Tile(config[i].fromPosition):getTopCreature()
-		if not creature or not creature:isPlayer() then
-			player:sendCancelMessage('You need more players for make this quest.')
-			position:sendMagicEffect(CONST_ME_POFF)
-			return true
-		end
-
 		local sacrificeItem = Tile(config[i].sacrificePosition):getItemById(config[i].sacrificeId)
 		if not sacrificeItem then
-			player:sendCancelMessage(creature:getName() .. ' is missing ' .. (creature:getSex() == PLAYERSEX_FEMALE and 'her' or 'his') .. ' sacrifice on the altar.')
 			position:sendMagicEffect(CONST_ME_POFF)
 			return true
 		end

@@ -10,34 +10,34 @@ local sacrificeInfernusLever = Action()
 function sacrificeInfernusLever.onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	item:transform(item.itemid == 9825 and 9826 or 9825)
 	if item.itemid ~= 9825 then
-		local position = player:getPosition()
-		local players = {}
-		for i = 1, #config do
-			local creature = Tile(config[i].fromPosition):getTopCreature()
-			if not creature or not creature:isPlayer() then
-				player:say("The items no are on correct position.", TALKTYPE_MONSTER_SAY)
-				position:sendMagicEffect(CONST_ME_POFF)
-				return true
-			end
-
-			local sacrificeItem = Tile(config[i].sacrificePosition):getItemById(config[i].sacrificeId)
-			if not sacrificeItem then
-				position:sendMagicEffect(CONST_ME_POFF)
-				return true
-			end
-
-			players[#players + 1] = creature
-		end
-
-		for i = 1, #players do
-			players[i]:getPosition():sendMagicEffect(CONST_ME_POFF)
-			players[i]:teleportTo(config[i].toPosition)
-			config[i].toPosition:sendMagicEffect(CONST_ME_TELEPORT)
-			Game.setStorageValue(Storage.AnsharaPOI.ritualInfernus, 1)
-			return true
-		end
 		return true
 	end
+
+	local position = player:getPosition()
+	local players = {}
+	for i = 1, #config do
+		local creature = Tile(config[i].fromPosition):getTopCreature()
+		local sacrificeItem = Tile(config[i].sacrificePosition):getItemById(config[i].sacrificeId)
+		if not sacrificeItem then
+			position:sendMagicEffect(CONST_ME_POFF)
+			return true
+		end
+
+		players[#players + 1] = creature
+	end
+
+	for i = 1, #players do
+		local sacrificeItem = Tile(config[i].sacrificePosition):getItemById(config[i].sacrificeId)
+		if sacrificeItem then
+			sacrificeItem:remove()
+		end
+
+		players[i]:getPosition():sendMagicEffect(CONST_ME_POFF)
+		players[i]:teleportTo(config[i].toPosition)
+		players[i]:setStorageValue(Storage.AnsharaPOI.ritualInfernus, 1)
+		config[i].toPosition:sendMagicEffect(CONST_ME_TELEPORT)
+	end
+	return true
 end
 
 sacrificeInfernusLever:aid(24883)

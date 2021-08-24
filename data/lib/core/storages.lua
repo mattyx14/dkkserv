@@ -167,6 +167,7 @@ Storage = {
 			rewardMisidia = 2528,
 	},
 	FynnQuest =  {
+		DemonHelmetTimmer = 10548,
 		GazerTimer = 10190,
 	},
 	FirstSacrifice = {

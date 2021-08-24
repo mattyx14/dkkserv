@@ -1,15 +1,24 @@
 local destination = {
+	[24876] = { -- Demon Helmet
+		newPos = Position(1018, 1071, 10),
+		backPos = Position(1020, 1059, 10),
+		timer = Storage.FynnQuest.DemonHelmetTimmer
+	},
 	[24878] = { -- Lady Tenebris
 		newPos = Position(1127, 1080, 15),
 		backPos = Position(1095, 1080, 15),
-		timer = Storage.ForgottenKnowledge.LadyTenebrisTimer,
+		timer = Storage.ForgottenKnowledge.LadyTenebrisTimer
 	},
 	[24879] = { -- Jaul
 		newPos = Position(1133, 461, 14),
 		backPos = Position(1138, 472, 14),
 		timer = Storage.MisidiaQuest.JaulTimer
 	},
-	-- [24880] = {}, -- Reserved to lavaPortal
+	[24880] = { -- Infernus Room
+		newPos = Position(472, 168, 9),
+		backPos = Position(495, 176, 9),
+		timer = Storage.AnsharaPOI.InfernusTimer
+	},
 	[24881] = { -- Gazer
 		newPos = Position(679, 948, 11),
 		backPos = Position(712, 963, 13),

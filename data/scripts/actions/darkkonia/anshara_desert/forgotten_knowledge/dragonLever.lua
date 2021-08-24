@@ -78,5 +78,5 @@ function forgottenDragonLever.onUse(player, item, fromPosition, target, toPositi
 	end
 end
 
-forgottenDragonLever:aid(24880)
+forgottenDragonLever:aid()
 forgottenDragonLever:register()

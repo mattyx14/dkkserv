@@ -6,11 +6,14 @@ Reserverd_IDS
 		24873 -- Diabolic (Boss)- data\scripts\actions\...
 		24874 -- Conjurer Outfit (Sacrifice I) - data\scripts\actions\darkkonia\misidia_settlement\color_tombs\conjurerLever.lua
 		24875 -- Conjurer Outfit (Sacrifice II) - data\scripts\actions\darkkonia\misidia_settlement\color_tombs\conjurerLeverTwo.lua
-		24876 -- \\
+	uid	24876 -- Demon Helmet Room - data\scripts\movements\darkkonia\challanger_portals.lua
 		24877 -- \\
+	uid	24878 -- Tenebris Lever Room - data\scripts\movements\darkkonia\challanger_portals.lua
 		24878 -- Tenebris (Boss)- data\scripts\actions\darkkonia\fynn_castle\forgotten_knowledge\tenebrisLever.lua
+	uid	24879 -- Jaul Lever Room - data\scripts\movements\darkkonia\challanger_portals.lua
 		24879 -- Jaul (Boss)- data\scripts\actions\darkkonia\misidia_settlement\sunken_sanctuary\jaulLever.lua
-		24880 -- Dragon King (Boss)- data\scripts\actions\darkkonia\anshara_desert\forgotten_knowledge\dragonLever.lua
+	uid	24880 -- Infernus Room - data\scripts\movements\darkkonia\challanger_portals.lua
+	uid	24881 -- Gazer Spectre Room - data\scripts\movements\darkkonia\challanger_portals.lua
 		24881 -- Izcandar (Boss)- data\scripts\actions\darkkonia\anshara_desert\volcano_POI\IzcandarLever.lua
 		24882 -- Infernus "Sacrifice Items" (POI) - data\scripts\actions\darkkonia\anshara_desert\volcano_POI\sacrificeItemsLever.lua
 		24883 -- Infernus (Boss) - data\scripts\actions\darkkonia\anshara_desert\volcano_POI\InfernusLever.lua
@@ -47,6 +50,7 @@ Reserverd_IDS
 		24914 -- Enter Portal Volcano - data\scripts\actions\darkkonia\item_portal.lua
 		24915 -- Exit Portal Volcano - data\scripts\actions\darkkonia\item_portal.lua
 		24916 -- Reserved to Dracula - data\actions\darkkonia\vaargdon_mine\dracula\portalDracula.lua -- no complete
+		24917 -- Dragon King (Boss) - data\scripts\actions\darkkonia\anshara_desert\forgotten_knowledge\ ...  -- no complete
 
 	Storages
 		25770 -- 
