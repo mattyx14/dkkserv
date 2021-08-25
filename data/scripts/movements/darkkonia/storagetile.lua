@@ -60,7 +60,7 @@ local failPosition = {
 		missionName = "require make the first sacrifice dragon hammer"
 	},
 	[5512] = {
-		mission = Storage.AnnihilatorDone,
+		mission = Storage.demonHelmetQuest,
 		fromPosition = Position(864, 971, 8),
 		missionName = "require done annihilator quest"
 	},

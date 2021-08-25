@@ -78,13 +78,13 @@ local function delayedCastSpell(cid, var)
 end
 
 function onCastSpell(creature, var)
-	local specs, spec = Game.getSpectators(Position(32912, 31599, 14), false, false, 12, 12, 12, 12)
+	local specs, spec = Game.getSpectators(Position(1126, 1032, 15), false, false, 12, 12, 12, 12)
 	for i = 1, #specs do
 		spec = specs[i]
 		if spec:isPlayer() then
-			spec:teleportTo(Position(32912, 31599, 14))
+			spec:teleportTo(Position(1126, 1032, 15))
 		elseif spec:getName():lower() == 'lady tenebris' then
-			spec:teleportTo(Position(32912, 31599, 14))
+			spec:teleportTo(Position(1126, 1032, 15))
 			spec:setMoveLocked(true)
 		end
 	end

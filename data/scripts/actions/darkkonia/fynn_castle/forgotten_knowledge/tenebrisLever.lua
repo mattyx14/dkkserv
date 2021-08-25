@@ -65,6 +65,9 @@ function forgottenTenebrisLever.onUse(player, item, fromPosition, target, toPosi
 		-- One hour for clean the room
 		addEvent(clearRoom, config.clearRoomTime * 60 * 1000, config.centerRoom)
 		Game.createMonster(config.bossName, config.bossPosition)
+		for d = 1, 4 do
+			Game.createMonster('Shadow Tentacle', Position(math.random(1121, 1131), math.random(1028, 1036), 15), true, true)
+		end
 
 		-- Teleport team participants
 		for i = 1, #team do

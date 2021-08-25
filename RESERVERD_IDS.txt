@@ -3,7 +3,7 @@ Reserverd_IDS
 		24870 -- Fyzarus (Boss) - data\scripts\actions\darkkonia\fynn_castle\arus_quest\fyzarusLever.lua
 		24871 -- Toxirus
 		24872 -- Fezarus
-		24873 -- Diabolic (Boss)- data\scripts\actions\...
+		24873 -- Diabolic (Boss)
 		24874 -- Conjurer Outfit (Sacrifice I) - data\scripts\actions\darkkonia\misidia_settlement\color_tombs\conjurerLever.lua
 		24875 -- Conjurer Outfit (Sacrifice II) - data\scripts\actions\darkkonia\misidia_settlement\color_tombs\conjurerLeverTwo.lua
 	uid	24876 -- Demon Helmet Room - data\scripts\movements\darkkonia\challanger_portals.lua
@@ -40,20 +40,20 @@ Reserverd_IDS
 		24904 -- Ferumbras Tower Entrace - data\scripts\movements\darkkonia\teleportTiles.lua
 		24905 -- Anshara Catacumbs - data\scripts\actions\darkkonia\anshara_desert\catacumbs_anshara\portal_lever.lua
 		24906 -- Entrade Demon Helmet - data\scripts\movements\darkkonia\teleportTiles.lua
-		24907 -- Demon Helmet Lever
+		24907 -- Demon Helmet Lever - data\scripts\actions\darkkonia\fynn_castle\demon _helmet\demonLever.lua
 		24908 -- Black Magician Lever - data\scripts\actions\darkkonia\anshara_desert\arcane_academy\blackMagician_lever.lua
 		24909 -- Mirror Conjurer Outfit - data\scripts\actions\darkkonia\item_portal.lua
-		24910 -- Zevelon Duskbringer -- data\scripts\actions\darkkonia\item_portal.lua -- no complete
-		24911 -- Sir Valorcrest -- data\scripts\actions\darkkonia\item_portal.lua -- no complete
-		24912 -- Diblis the Fair -- no data\scripts\actions\darkkonia\item_portal.lua -- complete
-		24913 -- Arachir the Ancient One -- data\scripts\actions\darkkonia\item_portal.lua -- no complete
+		24910 -- Zevelon Duskbringer
+		24911 -- Sir Valorcrest
+		24912 -- Diblis the Fair
+		24913 -- Arachir the Ancient One
 		24914 -- Enter Portal Volcano - data\scripts\actions\darkkonia\item_portal.lua
 		24915 -- Exit Portal Volcano - data\scripts\actions\darkkonia\item_portal.lua
-		24916 -- Reserved to Dracula - data\actions\darkkonia\vaargdon_mine\dracula\portalDracula.lua -- no complete
-		24917 -- Dragon King (Boss) - data\scripts\actions\darkkonia\anshara_desert\forgotten_knowledge\ ...  -- no complete
+		24916 -- Reserved to Dracula
+		24917 -- Dragon King (Boss)
 
 	Storages
-		25770 -- 
+		25770 -- \\ 
 
 	Missing Quest
 		1 -- Sohan Town \\ Level 80 Position door (419, 1158, 11)
