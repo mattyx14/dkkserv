@@ -3083,7 +3083,11 @@
 		<monster name="Carrion Worm" x="-3" y="0" z="8" spawntime="60" />
 		<monster name="Skeleton" x="2" y="4" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="992" centery="1020" centerz="8" radius="5" />
+	<spawn centerx="992" centery="1020" centerz="8" radius="5">
+		<monster name="Fire Elemental" x="-2" y="2" z="8" spawntime="60" />
+		<monster name="Fire Elemental" x="1" y="3" z="8" spawntime="60" />
+		<monster name="Fire Elemental" x="3" y="5" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="832" centery="1022" centerz="8" radius="1">
 		<monster name="Wild Warrior" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
@@ -3098,7 +3102,20 @@
 	<spawn centerx="899" centery="1024" centerz="8" radius="1">
 		<monster name="Rotworm" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="976" centery="1025" centerz="8" radius="5" />
+	<spawn centerx="976" centery="1025" centerz="8" radius="5">
+		<monster name="Fire Lord" x="-4" y="-2" z="8" spawntime="60" />
+		<monster name="Fire Lord" x="-5" y="0" z="8" spawntime="60" />
+		<monster name="Fire Lord" x="2" y="2" z="8" spawntime="60" />
+		<monster name="Fire Devil" x="5" y="3" z="8" spawntime="60" />
+		<monster name="Fire Devil" x="5" y="5" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="984" centery="1025" centerz="8" radius="1">
+		<monster name="Fire Lord" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1000" centery="1025" centerz="8" radius="1">
+		<monster name="Fire Lord" x="-1" y="-1" z="8" spawntime="60" />
+		<monster name="Fire Elemental" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="832" centery="1026" centerz="8" radius="1">
 		<monster name="Blood Priest" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
@@ -3117,13 +3134,33 @@
 	<spawn centerx="868" centery="1028" centerz="8" radius="1">
 		<monster name="Bandit" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="899" centery="1030" centerz="8" radius="1">
+		<monster name="Priestess" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="848" centery="1031" centerz="8" radius="1">
 		<monster name="Bonebeast" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="996" centery="1032" centerz="8" radius="5" />
-	<spawn centerx="1010" centery="1032" centerz="8" radius="5" />
+	<spawn centerx="1018" centery="1031" centerz="8" radius="1">
+		<monster name="Grim Reaper" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="996" centery="1032" centerz="8" radius="5">
+		<monster name="Fire Elemental" x="4" y="-2" z="8" spawntime="60" />
+		<monster name="Fire Devil" x="2" y="-1" z="8" spawntime="60" />
+		<monster name="Fire Elemental" x="2" y="0" z="8" spawntime="60" />
+		<monster name="Fire Devil" x="-1" y="2" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1010" centery="1032" centerz="8" radius="5">
+		<monster name="Grim Reaper" x="-2" y="-2" z="8" spawntime="60" />
+		<monster name="Grim Reaper" x="3" y="-2" z="8" spawntime="60" />
+		<monster name="Vile Grandmaster" x="-4" y="0" z="8" spawntime="60" />
+		<monster name="Vile Grandmaster" x="3" y="0" z="8" spawntime="60" />
+		<monster name="Vile Grandmaster" x="0" y="3" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="869" centery="1034" centerz="8" radius="1">
 		<monster name="Bonebeast" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1018" centery="1034" centerz="8" radius="1">
+		<monster name="Grim Reaper" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="877" centery="1035" centerz="8" radius="6">
 		<monster name="Bandit" x="5" y="-6" z="8" spawntime="60" />
@@ -3139,11 +3176,15 @@
 		<monster name="Necromancer" x="-1" y="4" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="979" centery="1038" centerz="8" radius="5" />
+	<spawn centerx="996" centery="1038" centerz="8" radius="1">
+		<monster name="Vile Grandmaster" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="898" centery="1039" centerz="8" radius="5">
 		<monster name="Hero" x="-4" y="-3" z="8" spawntime="60" />
 		<monster name="Vicious Squire" x="1" y="-3" z="8" spawntime="60" />
 		<monster name="Vicious Squire" x="4" y="0" z="8" spawntime="60" />
 		<monster name="Hero" x="-1" y="1" z="8" spawntime="60" />
+		<monster name="Assassin" x="4" y="2" z="8" spawntime="60" />
 		<monster name="Vicious Squire" x="-3" y="4" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="838" centery="1040" centerz="8" radius="6">
@@ -3161,17 +3202,55 @@
 	<spawn centerx="867" centery="1042" centerz="8" radius="1">
 		<monster name="Bonebeast" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="962" centery="1042" centerz="8" radius="5" />
+	<spawn centerx="962" centery="1042" centerz="8" radius="5">
+		<monster name="Warlock" x="0" y="-1" z="8" spawntime="60" />
+		<monster name="Banshee" x="-3" y="0" z="8" spawntime="60" />
+		<monster name="Banshee" x="2" y="1" z="8" spawntime="60" />
+		<monster name="Warlock" x="0" y="2" z="8" spawntime="60" />
+		<monster name="Banshee" x="-1" y="3" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="873" centery="1043" centerz="8" radius="1">
 		<monster name="Bonebeast" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="992" centery="1044" centerz="8" radius="5" />
-	<spawn centerx="1010" centery="1044" centerz="8" radius="5" />
+	<spawn centerx="955" centery="1043" centerz="8" radius="1">
+		<monster name="Necromancer" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="970" centery="1043" centerz="8" radius="1">
+		<monster name="Banshee" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="889" centery="1044" centerz="8" radius="1">
+		<monster name="Priestess" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="904" centery="1044" centerz="8" radius="1">
+		<monster name="Assassin" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="929" centery="1044" centerz="8" radius="1">
+		<monster name="Demon Skeleton" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="968" centery="1044" centerz="8" radius="1">
+		<monster name="Warlock" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="992" centery="1044" centerz="8" radius="5">
+		<monster name="Vile Grandmaster" x="1" y="-5" z="8" spawntime="60" />
+		<monster name="Hero" x="3" y="-3" z="8" spawntime="60" />
+		<monster name="Hero" x="4" y="2" z="8" spawntime="60" />
+		<monster name="Hero" x="2" y="3" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1010" centery="1044" centerz="8" radius="5">
+		<monster name="Lich" x="2" y="0" z="8" spawntime="60" />
+		<monster name="Vile Grandmaster" x="0" y="2" z="8" spawntime="60" />
+		<monster name="Vile Grandmaster" x="2" y="2" z="8" spawntime="60" />
+		<monster name="Lich" x="5" y="3" z="8" spawntime="60" />
+		<monster name="Vile Grandmaster" x="4" y="5" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="876" centery="1045" centerz="8" radius="1">
 		<monster name="Blood Priest" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="901" centery="1045" centerz="8" radius="1">
 		<monster name="Demon Skeleton" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="974" centery="1045" centerz="8" radius="1">
+		<monster name="Warlock" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="868" centery="1046" centerz="8" radius="1">
 		<monster name="Blood Priest" x="0" y="0" z="8" spawntime="60" />
@@ -3189,79 +3268,224 @@
 		<monster name="Renegade Knight" x="1" y="2" z="8" spawntime="60" />
 		<monster name="Vile Grandmaster" x="-3" y="3" z="8" spawntime="60" />
 		<monster name="Hunter" x="2" y="4" z="8" spawntime="60" />
+		<monster name="Lich" x="3" y="4" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="922" centery="1046" centerz="8" radius="5">
 		<monster name="Burning Gladiator" x="2" y="-4" z="8" spawntime="60" />
 		<monster name="Vile Grandmaster" x="-2" y="-3" z="8" spawntime="60" />
 		<monster name="Vicious Squire" x="0" y="0" z="8" spawntime="60" />
+		<monster name="Priestess" x="0" y="3" z="8" spawntime="60" />
 		<monster name="Vile Grandmaster" x="0" y="5" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="949" centery="1046" centerz="8" radius="5" />
+	<spawn centerx="949" centery="1046" centerz="8" radius="5">
+		<monster name="Vile Grandmaster" x="-2" y="0" z="8" spawntime="60" />
+		<monster name="Banshee" x="1" y="0" z="8" spawntime="60" />
+		<monster name="Banshee" x="4" y="3" z="8" spawntime="60" />
+		<monster name="Necromancer" x="-3" y="4" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="968" centery="1046" centerz="8" radius="1">
+		<monster name="Banshee" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1019" centery="1047" centerz="8" radius="1">
+		<monster name="Grim Reaper" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="897" centery="1048" centerz="8" radius="1">
+		<monster name="Demon Skeleton" x="0" y="-1" z="8" spawntime="60" />
 		<monster name="Black Knight" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="903" centery="1048" centerz="8" radius="1">
 		<monster name="Black Knight" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="935" centery="1048" centerz="8" radius="5" />
-	<spawn centerx="976" centery="1051" centerz="8" radius="5" />
+	<spawn centerx="935" centery="1048" centerz="8" radius="5">
+		<monster name="Lich" x="-3" y="-5" z="8" spawntime="60" />
+		<monster name="Priestess" x="-2" y="-2" z="8" spawntime="60" />
+		<monster name="Vile Grandmaster" x="-3" y="-1" z="8" spawntime="60" />
+		<monster name="Demon Skeleton" x="-3" y="1" z="8" spawntime="60" />
+		<monster name="Demon Skeleton" x="0" y="3" z="8" spawntime="60" />
+		<monster name="Hero" x="1" y="4" z="8" spawntime="60" />
+		<monster name="Vile Grandmaster" x="-2" y="5" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="893" centery="1049" centerz="8" radius="1">
+		<monster name="Lich" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="941" centery="1050" centerz="8" radius="1">
+		<monster name="Necromancer" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="957" centery="1051" centerz="8" radius="1">
+		<monster name="Warlock" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="976" centery="1051" centerz="8" radius="5">
+		<monster name="Vile Grandmaster" x="2" y="1" z="8" spawntime="60" />
+		<monster name="Vile Grandmaster" x="-2" y="3" z="8" spawntime="60" />
+		<monster name="Hero" x="1" y="4" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="919" centery="1052" centerz="8" radius="1">
 		<monster name="Demon Skeleton" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="927" centery="1052" centerz="8" radius="1">
 		<monster name="Vicious Squire" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="964" centery="1054" centerz="8" radius="5" />
+	<spawn centerx="1007" centery="1052" centerz="8" radius="1">
+		<monster name="Lich" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1018" centery="1052" centerz="8" radius="1">
+		<monster name="Lich" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="938" centery="1054" centerz="8" radius="1">
+		<monster name="Lich" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="964" centery="1054" centerz="8" radius="5">
+		<monster name="Vile Grandmaster" x="0" y="-4" z="8" spawntime="60" />
+		<monster name="Warlock" x="2" y="-4" z="8" spawntime="60" />
+		<monster name="Vile Grandmaster" x="-3" y="-2" z="8" spawntime="60" />
+		<monster name="Lich" x="4" y="0" z="8" spawntime="60" />
+		<monster name="Lich" x="-1" y="1" z="8" spawntime="60" />
+		<monster name="Lich" x="1" y="5" z="8" spawntime="60" />
+		<monster name="Priestess" x="4" y="5" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1010" centery="1054" centerz="8" radius="1">
+		<monster name="Lich" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="944" centery="1055" centerz="8" radius="1">
+		<monster name="Necromancer" x="0" y="0" z="8" spawntime="60" />
+		<monster name="Priestess" x="1" y="1" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="916" centery="1056" centerz="8" radius="1">
 		<monster name="Demon Skeleton" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="993" centery="1056" centerz="8" radius="5" />
+	<spawn centerx="993" centery="1056" centerz="8" radius="5">
+		<monster name="Vile Grandmaster" x="3" y="-5" z="8" spawntime="60" />
+		<monster name="Hero" x="2" y="-2" z="8" spawntime="60" />
+		<monster name="Vile Grandmaster" x="2" y="1" z="8" spawntime="60" />
+		<monster name="Vile Grandmaster" x="-3" y="2" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="910" centery="1058" centerz="8" radius="5">
 		<monster name="Hunter" x="-1" y="-4" z="8" spawntime="60" />
+		<monster name="Priestess" x="1" y="-4" z="8" spawntime="60" />
 		<monster name="Renegade Knight" x="-1" y="-1" z="8" spawntime="60" />
 		<monster name="Renegade Knight" x="1" y="1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="916" centery="1058" centerz="8" radius="1">
 		<monster name="Renegade Knight" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="951" centery="1058" centerz="8" radius="5" />
+	<spawn centerx="944" centery="1058" centerz="8" radius="1">
+		<monster name="Banshee" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="951" centery="1058" centerz="8" radius="5">
+		<monster name="Banshee" x="-2" y="-3" z="8" spawntime="60" />
+		<monster name="Priestess" x="5" y="-3" z="8" spawntime="60" />
+		<monster name="Hero" x="-5" y="0" z="8" spawntime="60" />
+		<monster name="Banshee" x="3" y="0" z="8" spawntime="60" />
+		<monster name="Vile Grandmaster" x="-4" y="2" z="8" spawntime="60" />
+		<monster name="Priestess" x="2" y="3" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="922" centery="1059" centerz="8" radius="5">
+		<monster name="Lich" x="-5" y="-5" z="8" spawntime="60" />
 		<monster name="Renegade Knight" x="-2" y="-4" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="935" centery="1060" centerz="8" radius="5" />
+	<spawn centerx="935" centery="1060" centerz="8" radius="5">
+		<monster name="Necromancer" x="1" y="0" z="8" spawntime="60" />
+		<monster name="Hero" x="3" y="1" z="8" spawntime="60" />
+		<monster name="Hero" x="-2" y="2" z="8" spawntime="60" />
+		<monster name="Vile Grandmaster" x="-2" y="3" z="8" spawntime="60" />
+		<monster name="Lich" x="-4" y="4" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="957" centery="1061" centerz="8" radius="1">
+		<monster name="Vile Grandmaster" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="944" centery="1063" centerz="8" radius="1">
+		<monster name="Lich" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="903" centery="1064" centerz="8" radius="1">
 		<monster name="Wild Warrior" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="915" centery="1064" centerz="8" radius="1">
 		<monster name="Wild Warrior" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="951" centery="1064" centerz="8" radius="1">
+		<monster name="Lich" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="959" centery="1064" centerz="8" radius="1">
+		<monster name="Vile Grandmaster" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="925" centery="1065" centerz="8" radius="1">
 		<monster name="Renegade Knight" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="966" centery="1066" centerz="8" radius="5" />
+	<spawn centerx="1001" centery="1065" centerz="8" radius="1">
+		<monster name="Lich" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="903" centery="1066" centerz="8" radius="1">
+		<monster name="Lich" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="966" centery="1066" centerz="8" radius="5">
+		<monster name="Grim Reaper" x="4" y="-4" z="8" spawntime="60" />
+		<monster name="Lich" x="-3" y="-3" z="8" spawntime="60" />
+		<monster name="Banshee" x="-1" y="0" z="8" spawntime="60" />
+		<monster name="Vile Grandmaster" x="-4" y="2" z="8" spawntime="60" />
+		<monster name="Grim Reaper" x="-1" y="4" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="917" centery="1067" centerz="8" radius="1">
 		<monster name="Vicious Squire" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1000" centery="1067" centerz="8" radius="1">
+		<monster name="Lich" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="853" centery="1068" centerz="8" radius="1">
 		<monster name="Waspoid" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="920" centery="1068" centerz="8" radius="1">
+		<monster name="Lich" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="902" centery="1069" centerz="8" radius="1">
 		<monster name="Renegade Knight" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="991" centery="1069" centerz="8" radius="5" />
+	<spawn centerx="991" centery="1069" centerz="8" radius="5">
+		<monster name="Lich" x="-1" y="-5" z="8" spawntime="60" />
+		<monster name="Hero" x="2" y="-4" z="8" spawntime="60" />
+		<monster name="Hero" x="-2" y="-1" z="8" spawntime="60" />
+		<monster name="Hero" x="2" y="-1" z="8" spawntime="60" />
+		<monster name="Lich" x="-1" y="3" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="910" centery="1070" centerz="8" radius="5">
+		<monster name="Priestess" x="-2" y="-5" z="8" spawntime="60" />
 		<monster name="Renegade Knight" x="2" y="-4" z="8" spawntime="60" />
 		<monster name="Wild Warrior" x="-4" y="-3" z="8" spawntime="60" />
+		<monster name="Lich" x="2" y="-1" z="8" spawntime="60" />
 		<monster name="Renegade Knight" x="-2" y="0" z="8" spawntime="60" />
 		<monster name="Demon Skeleton" x="3" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="942" centery="1070" centerz="8" radius="5" />
-	<spawn centerx="954" centery="1070" centerz="8" radius="5" />
+	<spawn centerx="942" centery="1070" centerz="8" radius="5">
+		<monster name="Hero" x="2" y="-4" z="8" spawntime="60" />
+		<monster name="Lich" x="-3" y="0" z="8" spawntime="60" />
+		<monster name="Lich" x="-1" y="3" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="954" centery="1070" centerz="8" radius="5">
+		<monster name="Lich" x="3" y="-3" z="8" spawntime="60" />
+		<monster name="Grim Reaper" x="-3" y="-1" z="8" spawntime="60" />
+		<monster name="Lich" x="-4" y="4" z="8" spawntime="60" />
+		<monster name="Lich" x="1" y="4" z="8" spawntime="60" />
+		<monster name="Grim Reaper" x="5" y="5" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="919" centery="1071" centerz="8" radius="1">
 		<monster name="Renegade Knight" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="966" centery="1072" centerz="8" radius="1">
+		<monster name="Priestess" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="917" centery="1073" centerz="8" radius="1">
 		<monster name="Vicious Squire" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="985" centery="1073" centerz="8" radius="1">
+		<monster name="Grim Reaper" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="913" centery="1076" centerz="8" radius="1">
+		<monster name="Lich" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="947" centery="1076" centerz="8" radius="1">
+		<monster name="Vile Grandmaster" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="991" centery="1076" centerz="8" radius="1">
+		<monster name="Grim Reaper" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1018" centery="1077" centerz="8" radius="6">
 		<monster name="Quara Mantassin" x="2" y="-4" z="8" spawntime="60" />
@@ -3272,8 +3496,23 @@
 	<spawn centerx="913" centery="1078" centerz="8" radius="1">
 		<monster name="Burning Gladiator" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="966" centery="1078" centerz="8" radius="5" />
-	<spawn centerx="979" centery="1078" centerz="8" radius="5" />
+	<spawn centerx="966" centery="1078" centerz="8" radius="5">
+		<monster name="Banshee" x="-4" y="-5" z="8" spawntime="60" />
+		<monster name="Grim Reaper" x="3" y="-5" z="8" spawntime="60" />
+		<monster name="Banshee" x="3" y="-2" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="979" centery="1078" centerz="8" radius="5">
+		<monster name="Grim Reaper" x="-4" y="-5" z="8" spawntime="60" />
+		<monster name="Lich" x="-5" y="-3" z="8" spawntime="60" />
+		<monster name="Grim Reaper" x="-1" y="-3" z="8" spawntime="60" />
+		<monster name="Banshee" x="-3" y="-2" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="973" centery="1079" centerz="8" radius="1">
+		<monster name="Vile Grandmaster" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="986" centery="1079" centerz="8" radius="1">
+		<monster name="Grim Reaper" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="1035" centery="1081" centerz="8" radius="6">
 		<monster name="Quara Mantassin" x="-5" y="-3" z="8" spawntime="60" />
 		<monster name="Quara Hydromancer" x="4" y="0" z="8" spawntime="60" />
@@ -3281,8 +3520,17 @@
 	<spawn centerx="1062" centery="1081" centerz="8" radius="1">
 		<monster name="Sea Serpent" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="940" centery="1082" centerz="8" radius="5" />
-	<spawn centerx="952" centery="1082" centerz="8" radius="5" />
+	<spawn centerx="940" centery="1082" centerz="8" radius="5">
+		<monster name="Burning Gladiator" x="-1" y="-5" z="8" spawntime="60" />
+		<monster name="Burning Gladiator" x="4" y="4" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="952" centery="1082" centerz="8" radius="5">
+		<monster name="Vile Grandmaster" x="1" y="-3" z="8" spawntime="60" />
+		<monster name="Burning Gladiator" x="-4" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="974" centery="1085" centerz="8" radius="1">
+		<monster name="Banshee" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="1050" centery="1086" centerz="8" radius="6">
 		<monster name="Quara Hydromancer" x="-2" y="1" z="8" spawntime="60" />
 		<monster name="Quara Pincher" x="6" y="1" z="8" spawntime="60" />
@@ -3298,11 +3546,36 @@
 		<monster name="Quara Predator" x="-5" y="4" z="8" spawntime="60" />
 		<monster name="Quara Predator" x="3" y="4" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="973" centery="1089" centerz="8" radius="1">
+		<monster name="Vile Grandmaster" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="976" centery="1092" centerz="8" radius="1">
+		<monster name="Vile Grandmaster" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="976" centery="1095" centerz="8" radius="1">
+		<monster name="Lich" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="986" centery="1095" centerz="8" radius="1">
+		<monster name="Banshee" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="1043" centery="1095" centerz="8" radius="1">
 		<monster name="Sea Serpent" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="931" centery="1096" centerz="8" radius="1">
 		<monster name="Demon Skeleton" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="979" centery="1097" centerz="8" radius="1">
+		<monster name="Lich" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="991" centery="1097" centerz="8" radius="1">
+		<monster name="Grim Reaper" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="975" centery="1098" centerz="8" radius="1">
+		<monster name="Lich" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="982" centery="1098" centerz="8" radius="1">
+		<monster name="Banshee" x="0" y="-1" z="8" spawntime="-1623204352" />
+		<monster name="Banshee" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="927" centery="1099" centerz="8" radius="1">
 		<monster name="Ghoul" x="0" y="0" z="8" spawntime="60" />
@@ -3312,6 +3585,9 @@
 	</spawn>
 	<spawn centerx="933" centery="1100" centerz="8" radius="1">
 		<monster name="Skeleton" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="988" centery="1100" centerz="8" radius="1">
+		<monster name="Banshee" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="929" centery="1101" centerz="8" radius="1">
 		<monster name="Skeleton" x="0" y="0" z="8" spawntime="60" />
@@ -3864,6 +4140,9 @@
 	<spawn centerx="920" centery="1077" centerz="9" radius="1">
 		<monster name="Renegade Knight" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
+	<spawn centerx="990" centery="1082" centerz="9" radius="1">
+		<monster name="Necromancer" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
 	<spawn centerx="902" centery="1084" centerz="9" radius="5">
 		<monster name="Renegade Knight" x="1" y="3" z="9" spawntime="60" />
 		<monster name="Renegade Knight" x="-2" y="4" z="9" spawntime="60" />
@@ -3875,12 +4154,48 @@
 		<monster name="Lost Soul" x="-4" y="3" z="9" spawntime="60" />
 		<monster name="Renegade Knight" x="2" y="3" z="9" spawntime="60" />
 	</spawn>
+	<spawn centerx="983" centery="1084" centerz="9" radius="1">
+		<monster name="Necromancer" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="987" centery="1086" centerz="9" radius="1">
+		<monster name="Necromancer" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="991" centery="1086" centerz="9" radius="1">
+		<monster name="Grim Reaper" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
 	<spawn centerx="890" centery="1089" centerz="9" radius="5">
 		<monster name="Renegade Knight" x="3" y="-4" z="9" spawntime="60" />
 		<monster name="Lost Soul" x="2" y="-3" z="9" spawntime="60" />
 		<monster name="Vile Grandmaster" x="4" y="-2" z="9" spawntime="60" />
 		<monster name="Vile Grandmaster" x="2" y="0" z="9" spawntime="60" />
 		<monster name="Vile Grandmaster" x="4" y="4" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="983" centery="1090" centerz="9" radius="1">
+		<monster name="Grim Reaper" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="991" centery="1090" centerz="9" radius="1">
+		<monster name="Warlock" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="988" centery="1091" centerz="9" radius="1">
+		<monster name="Warlock" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="993" centery="1093" centerz="9" radius="1">
+		<monster name="Warlock" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="990" centery="1094" centerz="9" radius="1">
+		<monster name="Warlock" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="997" centery="1095" centerz="9" radius="1">
+		<monster name="Necromancer" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="997" centery="1098" centerz="9" radius="1">
+		<monster name="Grim Reaper" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="989" centery="1099" centerz="9" radius="1">
+		<monster name="Necromancer" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="991" centery="1100" centerz="9" radius="1">
+		<monster name="Grim Reaper" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="881" centery="1129" centerz="9" radius="5">
 		<monster name="Dragon Lord Hatchling" x="-4" y="-4" z="9" spawntime="60" />
@@ -4509,11 +4824,82 @@
 	<spawn centerx="943" centery="1030" centerz="10" radius="1">
 		<monster name="Blightwalker" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
+	<spawn centerx="1034" centery="1031" centerz="10" radius="1">
+		<monster name="Fire Elemental" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
 	<spawn centerx="942" centery="1032" centerz="10" radius="1">
 		<monster name="Blightwalker" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
+	<spawn centerx="1038" centery="1032" centerz="10" radius="1">
+		<monster name="Fire Devil" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1034" centery="1033" centerz="10" radius="1">
+		<monster name="Fire Devil" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1011" centery="1034" centerz="10" radius="1">
+		<monster name="Diabolic Imp" x="0" y="0" z="10" spawntime="60" />
+		<monster name="Fire Elemental" x="-1" y="1" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1036" centery="1034" centerz="10" radius="1">
+		<monster name="Fire Elemental" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1007" centery="1035" centerz="10" radius="1">
+		<monster name="Burning Gladiator" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1034" centery="1035" centerz="10" radius="1">
+		<monster name="Diabolic Imp" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1040" centery="1035" centerz="10" radius="1">
+		<monster name="Burning Gladiator" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1005" centery="1036" centerz="10" radius="1">
+		<monster name="Fire Elemental" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1013" centery="1036" centerz="10" radius="1">
+		<monster name="Fire Devil" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1029" centery="1036" centerz="10" radius="1">
+		<monster name="Banshee" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1022" centery="1037" centerz="10" radius="1">
+		<monster name="Banshee" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1034" centery="1037" centerz="10" radius="1">
+		<monster name="Banshee" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1001" centery="1038" centerz="10" radius="1">
+		<monster name="Diabolic Imp" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1017" centery="1038" centerz="10" radius="1">
+		<monster name="Fire Elemental" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1019" centery="1038" centerz="10" radius="1">
+		<monster name="Fire Lord" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1026" centery="1038" centerz="10" radius="1">
+		<monster name="Fire Elemental" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1042" centery="1038" centerz="10" radius="1">
+		<monster name="Diabolic Imp" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="992" centery="1039" centerz="10" radius="1">
+		<monster name="Diabolic Imp" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1030" centery="1039" centerz="10" radius="1">
+		<monster name="Banshee" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1026" centery="1040" centerz="10" radius="1">
+		<monster name="Fire Lord" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
 	<spawn centerx="918" centery="1041" centerz="10" radius="1">
 		<monster name="Son of Verminor" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1001" centery="1041" centerz="10" radius="1">
+		<monster name="Burning Gladiator" x="-1" y="0" z="10" spawntime="60" />
+		<monster name="Banshee" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1030" centery="1041" centerz="10" radius="1">
+		<monster name="Fire Elemental" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
 	<spawn centerx="924" centery="1042" centerz="10" radius="5">
 		<monster name="Plaguesmith" x="4" y="-4" z="10" spawntime="60" />
@@ -4524,20 +4910,123 @@
 		<monster name="Blightwalker" x="-5" y="4" z="10" spawntime="60" />
 		<monster name="Defiler" x="4" y="5" z="10" spawntime="60" />
 	</spawn>
+	<spawn centerx="1016" centery="1042" centerz="10" radius="1">
+		<monster name="Banshee" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1020" centery="1042" centerz="10" radius="1">
+		<monster name="Fire Elemental" x="-1" y="0" z="10" spawntime="60" />
+		<monster name="Fire Lord" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1026" centery="1042" centerz="10" radius="1">
+		<monster name="Banshee" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1043" centery="1042" centerz="10" radius="1">
+		<monster name="Diabolic Imp" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="989" centery="1044" centerz="10" radius="1">
+		<monster name="Fire Lord" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1023" centery="1044" centerz="10" radius="1">
+		<monster name="Fire Elemental" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1027" centery="1044" centerz="10" radius="1">
+		<monster name="Fire Lord" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
 	<spawn centerx="915" centery="1045" centerz="10" radius="1">
 		<monster name="Plaguesmith" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1041" centery="1046" centerz="10" radius="1">
+		<monster name="Fire Elemental" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
 	<spawn centerx="930" centery="1048" centerz="10" radius="1">
 		<monster name="Son of Verminor" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
+	<spawn centerx="1039" centery="1048" centerz="10" radius="1">
+		<monster name="Fire Elemental" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
 	<spawn centerx="924" centery="1050" centerz="10" radius="1">
 		<monster name="Plaguesmith" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1005" centery="1050" centerz="10" radius="1">
+		<monster name="Fire Lord" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1038" centery="1050" centerz="10" radius="1">
+		<monster name="Fire Elemental" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1017" centery="1053" centerz="10" radius="1">
+		<monster name="Fire Lord" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1022" centery="1053" centerz="10" radius="1">
+		<monster name="Burning Gladiator" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="996" centery="1055" centerz="10" radius="1">
+		<monster name="Fire Devil" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1032" centery="1055" centerz="10" radius="1">
+		<monster name="Diabolic Imp" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="989" centery="1056" centerz="10" radius="1">
+		<monster name="Fire Lord" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1003" centery="1056" centerz="10" radius="1">
+		<monster name="Fire Lord" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="994" centery="1057" centerz="10" radius="1">
+		<monster name="Banshee" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="999" centery="1057" centerz="10" radius="1">
+		<monster name="Banshee" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="992" centery="1058" centerz="10" radius="1">
+		<monster name="Fire Elemental" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1001" centery="1058" centerz="10" radius="1">
+		<monster name="Fire Elemental" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1026" centery="1058" centerz="10" radius="1">
+		<monster name="Diabolic Imp" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="985" centery="1060" centerz="10" radius="1">
+		<monster name="Diabolic Imp" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="996" centery="1060" centerz="10" radius="1">
+		<monster name="Burning Gladiator" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1008" centery="1060" centerz="10" radius="1">
+		<monster name="Diabolic Imp" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1020" centery="1061" centerz="10" radius="1">
+		<monster name="Fire Lord" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="993" centery="1062" centerz="10" radius="1">
+		<monster name="Banshee" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="998" centery="1062" centerz="10" radius="1">
+		<monster name="Banshee" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
 	<spawn centerx="899" centery="1063" centerz="10" radius="1">
 		<monster name="Plaguesmith" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
+	<spawn centerx="1022" centery="1063" centerz="10" radius="1">
+		<monster name="Burning Gladiator" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="989" centery="1064" centerz="10" radius="1">
+		<monster name="Fire Lord" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="995" centery="1064" centerz="10" radius="1">
+		<monster name="Fire Devil" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1003" centery="1064" centerz="10" radius="1">
+		<monster name="Fire Lord" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1015" centery="1064" centerz="10" radius="1">
+		<monster name="Burning Gladiator" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
 	<spawn centerx="895" centery="1065" centerz="10" radius="1">
 		<monster name="Blightwalker" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1017" centery="1065" centerz="10" radius="1">
+		<monster name="Diabolic Imp" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
 	<spawn centerx="898" centery="1067" centerz="10" radius="1">
 		<monster name="Hellhound" x="0" y="0" z="10" spawntime="60" />

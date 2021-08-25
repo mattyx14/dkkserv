@@ -17,9 +17,9 @@ monster.raceId = 35
 monster.Bestiary = {
 	class = "Demon",
 	race = BESTY_RACE_DEMON,
-	toKill = 2500,
-	FirstUnlock = 100,
-	SecondUnlock = 1000,
+	toKill = 5,
+	FirstUnlock = 1,
+	SecondUnlock = 3,
 	CharmsPoints = 50,
 	Stars = 4,
 	Occurrence = 0,
@@ -27,18 +27,18 @@ monster.Bestiary = {
 		Liberty Bay (hidden underground passage; unreachable), Razzachai, deep in Pits of Inferno \z
 		(found in every throneroom except Verminor's), deep Formorgar Mines, Demon Forge, \z
 		Alchemist Quarter, Magician Quarter, Chyllfroest, Oramond Dungeon, Abandoned Sewers."
-	}
+}
 
-monster.health = 8200
-monster.maxHealth = 8200
+monster.health = 28200
+monster.maxHealth = 28200
 monster.race = "fire"
 monster.corpse = 5995
-monster.speed = 256
+monster.speed = 0
 monster.manaCost = 0
-monster.maxSummons = 1
+monster.maxSummons = 2
 
 monster.changeTarget = {
-	interval = 4000,
+	interval = 2000,
 	chance = 20
 }
 
@@ -46,7 +46,7 @@ monster.strategiesTarget = {
 	nearest = 70,
 	health = 10,
 	damage = 10,
-	random = 10,
+	random = 50,
 }
 
 monster.flags = {
@@ -55,18 +55,18 @@ monster.flags = {
 	hostile = true,
 	convinceable = false,
 	pushable = false,
-	rewardBoss = false,
+	rewardBoss = true,
 	illusionable = false,
 	canPushItems = true,
 	canPushCreatures = true,
-	staticAttackChance = 70,
+	staticAttackChance = 98,
 	targetDistance = 1,
 	runHealth = 0,
 	healthHidden = false,
 	isBlockable = false,
 	canWalkOnEnergy = true,
 	canWalkOnFire = true,
-	canWalkOnPoison = true,
+	canWalkOnPoison = false,
 	pet = false
 }
 
@@ -76,16 +76,17 @@ monster.light = {
 }
 
 monster.summons = {
-	{name = "fire elemental", chance = 10, interval = 2000}
+	{name = "fire lord", chance = 10, interval = 2000, max = 2},
+	{name = "banshee", chance = 10, interval = 2000},
+	{name = "diabolic imp", chance = 10, interval = 2000, max = 2},
+	{name = "burning gladiator", chance = 10, interval = 2000},
 }
 
 monster.voices = {
 	interval = 5000,
 	chance = 10,
 	{text = "Your soul will be mine!", yell = false},
-	{text = "MUHAHAHAHA!", yell = false},
 	{text = "CHAMEK ATH UTHUL ARAK!", yell = false},
-	{text = "I SMELL FEEEEAAAAAR!", yell = false},
 	{text = "Your resistance is futile!", yell = false}
 }
 
@@ -123,7 +124,8 @@ monster.loot = {
 	{id = 7393, chance = 90},
 	{name = "great mana potion", chance = 22220, maxCount = 3},
 	{name = "ultimate health potion", chance = 19540, maxCount = 3},
-	{name = "great spirit potion", chance = 18510, maxCount = 3}
+	{name = "great spirit potion", chance = 18510, maxCount = 3},
+	{name = "horned helmet", chance = 100, unique = true}
 }
 
 monster.attacks = {
@@ -133,27 +135,29 @@ monster.attacks = {
 	{name ="firefield", interval = 2000, chance = 10, range = 7, radius = 1, shootEffect = CONST_ANI_FIRE, target = true},
 	{name ="combat", interval = 2000, chance = 10, type = COMBAT_LIFEDRAIN, minDamage = -300, maxDamage = -490, length = 8, spread = 3, effect = CONST_ME_PURPLEENERGY, target = false},
 	{name ="combat", interval = 2000, chance = 10, type = COMBAT_ENERGYDAMAGE, minDamage = -210, maxDamage = -300, range = 1, shootEffect = CONST_ANI_ENERGY, target = false},
-	{name ="speed", interval = 2000, chance = 15, speedChange = -700, radius = 1, effect = CONST_ME_MAGIC_RED, target = true, duration = 30000}
+	{name ="demon fireball", interval = 2000, chance = 24, minDamage = -1000, maxDamage = -1000, target = false},
+	{name ="demon death", interval = 4000, chance = 6, target = false},
+	{name ="demon paralyze", interval = 2000, chance = 12, target = false},
+	{name ="demon summon", interval = 5000, chance = 12, target = false}
 }
 
 monster.defenses = {
 	defense = 55,
 	armor = 55,
-	{name ="combat", interval = 2000, chance = 15, type = COMBAT_HEALING, minDamage = 180, maxDamage = 250, effect = CONST_ME_MAGIC_BLUE, target = false},
-	{name ="speed", interval = 2000, chance = 15, speedChange = 320, effect = CONST_ME_MAGIC_RED, target = false, duration = 5000}
+	{name ="combat", interval = 2000, chance = 15, type = COMBAT_HEALING, minDamage = 180, maxDamage = 250, effect = CONST_ME_MAGIC_BLUE, target = false}
 }
 
 monster.elements = {
-	{type = COMBAT_PHYSICALDAMAGE, percent = 30},
-	{type = COMBAT_ENERGYDAMAGE, percent = 50},
-	{type = COMBAT_EARTHDAMAGE, percent = 40},
+	{type = COMBAT_PHYSICALDAMAGE, percent = 85},
+	{type = COMBAT_ENERGYDAMAGE, percent = 85},
+	{type = COMBAT_EARTHDAMAGE, percent = 85},
 	{type = COMBAT_FIREDAMAGE, percent = 100},
 	{type = COMBAT_LIFEDRAIN, percent = 100},
-	{type = COMBAT_MANADRAIN, percent = 0},
+	{type = COMBAT_MANADRAIN, percent = 100},
 	{type = COMBAT_DROWNDAMAGE, percent = 100},
-	{type = COMBAT_ICEDAMAGE, percent = -10},
-	{type = COMBAT_HOLYDAMAGE , percent = -10},
-	{type = COMBAT_DEATHDAMAGE , percent = 30}
+	{type = COMBAT_ICEDAMAGE, percent = 85},
+	{type = COMBAT_HOLYDAMAGE , percent = 85},
+	{type = COMBAT_DEATHDAMAGE , percent = 85}
 }
 
 monster.immunities = {
@@ -162,5 +166,24 @@ monster.immunities = {
 	{type = "invisible", condition = true},
 	{type = "bleed", condition = false}
 }
+
+
+mType.onThink = function(monster, interval)
+end
+
+mType.onAppear = function(monster, creature)
+	if monster:getType():isRewardBoss() then
+		monster:setReward(true)
+	end
+end
+
+mType.onDisappear = function(monster, creature)
+end
+
+mType.onMove = function(monster, creature, fromPosition, toPosition)
+end
+
+mType.onSay = function(monster, creature, type, message)
+end
 
 mType:register(monster)

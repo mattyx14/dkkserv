@@ -1298,4 +1298,10 @@
 	<instant name="singledeathchain" words="###485" aggressive="1" needtarget="1" needlearn="1" script="monster/single_death_chain.lua"/>
 	<instant name="singleicechain" words="###486" aggressive="1" needtarget="1" needlearn="1" script="monster/single_ice_chain.lua"/>
 	<instant name="singlecloudchain" words="###487" aggressive="1" needtarget="1" needlearn="1" script="monster/single_cloud_chain.lua"/>
+
+	<!-- DarkKonia -->
+	<instant name="demon death" words="###488" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/darkkonia/demon death.lua"/>
+	<instant name="demon fireball" words="###489" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/darkkonia/demon fireball.lua"/>
+	<instant name="demon paralyze" words="###490" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/darkkonia/demon paralyze.lua"/>
+	<instant name="demon summon" words="###491" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/darkkonia/demon summon.lua"/>
 </spells>
