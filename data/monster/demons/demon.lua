@@ -39,7 +39,7 @@ monster.maxSummons = 2
 
 monster.changeTarget = {
 	interval = 2000,
-	chance = 20
+	chance = 80
 }
 
 monster.strategiesTarget = {
@@ -129,35 +129,35 @@ monster.loot = {
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -520},
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_MANADRAIN, minDamage = 0, maxDamage = -120, range = 7, target = false},
-	{name ="combat", interval = 2000, chance = 20, type = COMBAT_FIREDAMAGE, minDamage = -150, maxDamage = -250, range = 7, radius = 7, shootEffect = CONST_ANI_FIRE, effect = CONST_ME_FIREAREA, target = true},
+	{name ="melee", interval = 2000, chance = 100, minDamage = -400, maxDamage = -680},
+	{name ="combat", interval = 2000, chance = 10, type = COMBAT_MANADRAIN, minDamage = 200, maxDamage = -320, range = 7, target = false},
+	{name ="combat", interval = 2000, chance = 20, type = COMBAT_FIREDAMAGE, minDamage = -350, maxDamage = -450, range = 7, radius = 7, shootEffect = CONST_ANI_FIRE, effect = CONST_ME_FIREAREA, target = true},
 	{name ="firefield", interval = 2000, chance = 10, range = 7, radius = 1, shootEffect = CONST_ANI_FIRE, target = true},
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_LIFEDRAIN, minDamage = -300, maxDamage = -490, length = 8, spread = 3, effect = CONST_ME_PURPLEENERGY, target = false},
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_ENERGYDAMAGE, minDamage = -210, maxDamage = -300, range = 1, shootEffect = CONST_ANI_ENERGY, target = false},
-	{name ="demon fireball", interval = 2000, chance = 24, minDamage = -1000, maxDamage = -1000, target = false},
-	{name ="demon death", interval = 4000, chance = 6, target = false},
+	{name ="combat", interval = 2000, chance = 10, type = COMBAT_LIFEDRAIN, minDamage = -350, maxDamage = -590, length = 8, spread = 3, effect = CONST_ME_PURPLEENERGY, target = false},
+	{name ="combat", interval = 2000, chance = 10, type = COMBAT_ENERGYDAMAGE, minDamage = -310, maxDamage = -600, range = 1, shootEffect = CONST_ANI_ENERGY, target = false},
+	{name ="demon fireball", interval = 2000, chance = 24, minDamage = -600, maxDamage = -1000, target = false},
+	{name ="demon death", interval = 5000, chance = 20, target = false},
 	{name ="demon paralyze", interval = 2000, chance = 12, target = false},
-	{name ="demon summon", interval = 5000, chance = 12, target = false}
+	{name ="demon summon", interval = 1000, chance = 12, target = false}
 }
 
 monster.defenses = {
 	defense = 55,
 	armor = 55,
-	{name ="combat", interval = 2000, chance = 15, type = COMBAT_HEALING, minDamage = 180, maxDamage = 250, effect = CONST_ME_MAGIC_BLUE, target = false}
+	{name ="combat", interval = 2000, chance = 15, type = COMBAT_HEALING, minDamage = 600, maxDamage = 850, effect = CONST_ME_MAGIC_BLUE, target = false}
 }
 
 monster.elements = {
-	{type = COMBAT_PHYSICALDAMAGE, percent = 85},
-	{type = COMBAT_ENERGYDAMAGE, percent = 85},
-	{type = COMBAT_EARTHDAMAGE, percent = 85},
+	{type = COMBAT_PHYSICALDAMAGE, percent = 70},
+	{type = COMBAT_ENERGYDAMAGE, percent = 70},
+	{type = COMBAT_EARTHDAMAGE, percent = 70},
 	{type = COMBAT_FIREDAMAGE, percent = 100},
 	{type = COMBAT_LIFEDRAIN, percent = 100},
 	{type = COMBAT_MANADRAIN, percent = 100},
 	{type = COMBAT_DROWNDAMAGE, percent = 100},
-	{type = COMBAT_ICEDAMAGE, percent = 85},
-	{type = COMBAT_HOLYDAMAGE , percent = 85},
-	{type = COMBAT_DEATHDAMAGE , percent = 85}
+	{type = COMBAT_ICEDAMAGE, percent = 70},
+	{type = COMBAT_HOLYDAMAGE , percent = 70},
+	{type = COMBAT_DEATHDAMAGE , percent = 70}
 }
 
 monster.immunities = {
