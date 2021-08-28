@@ -1,6 +1,5 @@
 local outfits = {
 	[6096] = {6096, 'Pirate', 155, 151, 6096},
-	[2662] = {2662, 'Conjurer', 635, 634, 2662},
 	[10008] = {10008, 'Death Herald', 666, 667, 21252}, -- 10005, 10006 and 10007 is reserved storage for kill Dracula
 	[9933] = {9933, 'Assassin', 156, 152, 9933},
 	[8820] = {8820, 'Chaos Acolyte', 664, 665, 8820},
@@ -37,5 +36,5 @@ function outfitQuestSystem.onUse(player, item, fromPosition, target, toPosition,
 	return true
 end
 
-outfitQuestSystem:uid(6096, 2662, 10008, 9933, 8820, 7431, 5807, 8267, 3697, 1449, 14699, 14700)
+outfitQuestSystem:uid(6096, 10008, 9933, 8820, 7431, 5807, 8267, 3697, 1449, 14699, 14700)
 outfitQuestSystem:register()

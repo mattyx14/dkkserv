@@ -7,6 +7,7 @@ function bossesForgotten.onKill(player, creature)
 		["jaul"] = {stg = Storage.MisidiaQuest.JaulKilled, value = 1},
 		["izcandar champion of winter"] = {stg = Storage.AnsharaPOI.IzcandarWinterKilled, value = 1},
 		["infernus"] = {stg = Storage.AnsharaPOI.InfernusKilled, value = 1},
+		["zarabustor"] = {stg = Storage.OutfitQuest.ZarabustorKilled, value = 1},
 	}
 	local monsterName = creature:getName():lower()
 	local boss = bosses[monsterName]

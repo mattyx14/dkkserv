@@ -69,6 +69,11 @@ local failPosition = {
 		fromPosition = Position(894, 984, 8),
 		missionName = "require the demon helmet quest"
 	},
+	[5514] = {
+		mission = Storage.OutfitQuest.ZarabustorDone,
+		fromPosition = Position(1051, 148, 9),
+		missionName = "require complete conjurer outfit quest to use this portal"
+	},
 }
 
 

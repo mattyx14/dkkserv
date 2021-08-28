@@ -1,6 +1,6 @@
 local positions = {
-	[24904] = Position(480, 462, 7),
-	[24906] = Position(1023, 1042, 10),
+	[24904] = Position(480, 462, 7), -- Ferumbras Energy Wall
+	[24906] = Position(1023, 1042, 10), -- Demon Helmet Trap
 }
 
 local oramondMovements = MoveEvent()

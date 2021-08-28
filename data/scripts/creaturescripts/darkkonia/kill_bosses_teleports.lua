@@ -1,43 +1,47 @@
 local bosses = {
 	['demon'] = {
 		message = "Escape through the teleport quickly before it closes!",
-		teleportToPosition = Position(981, 1053, 10)
+		exitPosition = Position(981, 1053, 10),
+		teleportBoss = Position(985, 1060, 10)
 	},
 	['zarabustor'] = {
 		message = "Escape through the teleport quickly before it closes!",
-		teleportToPosition = Position(1021, 189, 7)
+		exitPosition = Position(1021, 189, 7),
+		teleportBoss = Position(853, 1046, 10)
 	},
 	['dracula'] = {
 		message = "Escape through the teleport quickly before it closes!",
-		teleportToPosition = Position(1543, 875, 5)
+		exitPosition = Position(1543, 875, 5),
 	},
 	['fezarus'] = {
 		message = "Escape through the teleport quickly before it closes!",
-		teleportToPosition = Position(737, 809, 12)
+		exitPosition = Position(737, 809, 12),
 	},
 	['fyzarus'] = {
 		message = "Escape through the teleport quickly before it closes!",
-		teleportToPosition = Position(924, 1107, 12)
+		exitPosition = Position(924, 1107, 12),
+		teleportBoss = Position(916, 1111, 12)
 	},
 	['toxirus'] = {
 		message = "Escape through the teleport quickly before it closes!",
-		teleportToPosition = Position(895, 987, 10)
+		exitPosition = Position(895, 987, 10),
 	},
 	['leaf golem grom'] = {
 		message = "Escape through the teleport quickly before it closes!",
-		teleportToPosition = Position(656, 1094, 12)
+		exitPosition = Position(656, 1094, 12),
 	},
 	['black knight'] = {
 		message = "Escape through the teleport quickly before it closes!",
-		teleportToPosition = Position(1179, 1312, 8)
+		exitPosition = Position(1179, 1312, 8),
 	},
 	['massacre'] = {
 		message = "Escape through the teleport quickly before it closes!",
-		teleportToPosition = Position(1018, 1153, 10)
+		exitPosition = Position(1018, 1153, 10),
 	},
 	['black magician'] = {
 		message = "Escape through the teleport quickly before it closes!",
-		teleportToPosition = Position(891, 1175, 11)
+		exitPosition = Position(891, 1175, 11),
+		teleportBoss = Position(889, 1179, 11)
 	},
 }
 
@@ -75,15 +79,15 @@ function killBoss.onKill(creature, target)
 
 	local position = targetMonster:getPosition()
 	position:sendMagicEffect(CONST_ME_TELEPORT)
-	local item = Game.createItem(1387, 1, position)
+	local item = Game.createItem(1387, 1, bossConfig.teleportBoss)
 	if item:isTeleport() then
-		item:setDestination(bossConfig.teleportToPosition)
+		item:setDestination(bossConfig.exitPosition)
 	end
-	targetMonster:say(bossConfig.message, TALKTYPE_MONSTER_SAY, 0, 0, position)
+	targetMonster:say(bossConfig.message, TALKTYPE_MONSTER_SAY, 0, 0, bossConfig.exitPosition)
 
 	--remove portal after 1 min
-	addEvent(spectatorStartCountdown, 500, 1 * 60, position)
-	addEvent(removeTeleport, 1 * 60 * 1000, position)
+	addEvent(spectatorStartCountdown, 500, 1 * 60, bossConfig.teleportBoss)
+	addEvent(removeTeleport, 1 * 60 * 1000, bossConfig.teleportBoss)
 	return true
 end
 killBoss:register()

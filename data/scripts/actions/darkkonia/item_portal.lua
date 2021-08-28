@@ -1,5 +1,4 @@
 local clickTeleport = {
-	[24909] = Position(853, 1050, 10), -- Mirror Conjurer Outfit,
 	[24910] = Position(1529, 910, 1), -- Zevelon Duskbringer
 	[24911] = Position(1529, 892, 1), -- Sir Valorcrest
 	[24912] = Position(1556, 910, 1), -- Diblis the Fair

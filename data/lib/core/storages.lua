@@ -83,6 +83,10 @@ Storage = {
 		},
 		-- Golden Outfit
 		GoldenOutfit = 51015,
+		-- Conjurer Outfit
+		ZarabustorKilled = 10549,
+		ZarabustorTimmer = 10550,
+		ZarabustorDone = 2662,
 	},
 	AdventurersGuild = {
 		Stone = 52130,
@@ -152,7 +156,6 @@ Storage = {
 		blessedSceptreDone = 7429,
 		royalAxeDone = 7434,
 		pirateDone = 6096,
-		conjurerDone = 2662,
 		deathHeraldDone = 10008,
 		assassinDone = 9933,
 		anniKey = 2526,

@@ -1485,9 +1485,6 @@
 		<monster name="Wild Warrior" x="-8" y="10" z="7" spawntime="60" />
 		<monster name="Wild Warrior" x="10" y="10" z="7" spawntime="60" />
 	</spawn>
-	<spawn centerx="791" centery="971" centerz="7" radius="1">
-		<monster name="Wild Warrior" x="0" y="0" z="7" spawntime="60" />
-	</spawn>
 	<spawn centerx="794" centery="971" centerz="7" radius="1">
 		<monster name="Poacher" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
@@ -4986,7 +4983,7 @@
 	<spawn centerx="1026" centery="1058" centerz="10" radius="1">
 		<monster name="Diabolic Imp" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="985" centery="1060" centerz="10" radius="1">
+	<spawn centerx="986" centery="1060" centerz="10" radius="1">
 		<monster name="Diabolic Imp" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
 	<spawn centerx="996" centery="1060" centerz="10" radius="1">
