@@ -1,45 +1,35 @@
 local bosses = {
 	['demon'] = {
-		message = "Escape through the teleport quickly before it closes!",
 		exitPosition = Position(981, 1053, 10),
 		teleportBoss = Position(985, 1060, 10)
 	},
 	['zarabustor'] = {
-		message = "Escape through the teleport quickly before it closes!",
 		exitPosition = Position(1021, 189, 7),
 		teleportBoss = Position(853, 1046, 10)
 	},
 	['dracula'] = {
-		message = "Escape through the teleport quickly before it closes!",
 		exitPosition = Position(1543, 875, 5),
 	},
 	['fezarus'] = {
-		message = "Escape through the teleport quickly before it closes!",
 		exitPosition = Position(737, 809, 12),
 	},
 	['fyzarus'] = {
-		message = "Escape through the teleport quickly before it closes!",
 		exitPosition = Position(924, 1107, 12),
 		teleportBoss = Position(916, 1111, 12)
 	},
 	['toxirus'] = {
-		message = "Escape through the teleport quickly before it closes!",
 		exitPosition = Position(895, 987, 10),
 	},
 	['leaf golem grom'] = {
-		message = "Escape through the teleport quickly before it closes!",
 		exitPosition = Position(656, 1094, 12),
 	},
 	['black knight'] = {
-		message = "Escape through the teleport quickly before it closes!",
 		exitPosition = Position(1179, 1312, 8),
 	},
 	['massacre'] = {
-		message = "Escape through the teleport quickly before it closes!",
 		exitPosition = Position(1018, 1153, 10),
 	},
 	['black magician'] = {
-		message = "Escape through the teleport quickly before it closes!",
 		exitPosition = Position(891, 1175, 11),
 		teleportBoss = Position(889, 1179, 11)
 	},
@@ -83,7 +73,7 @@ function killBoss.onKill(creature, target)
 	if item:isTeleport() then
 		item:setDestination(bossConfig.exitPosition)
 	end
-	targetMonster:say(bossConfig.message, TALKTYPE_MONSTER_SAY, 0, 0, bossConfig.exitPosition)
+	targetMonster:say('Escape through the teleport quickly before it closes!', TALKTYPE_MONSTER_SAY)
 
 	--remove portal after 1 min
 	addEvent(spectatorStartCountdown, 500, 1 * 60, bossConfig.teleportBoss)
