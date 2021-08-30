@@ -4957,52 +4957,52 @@
 		<monster name="Burning Gladiator" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
 	<spawn centerx="996" centery="1055" centerz="10" radius="1">
-		<monster name="Fire Devil" x="0" y="0" z="10" spawntime="60" />
+		<monster name="Fire Devil" x="0" y="0" z="10" spawntime="10" />
 	</spawn>
 	<spawn centerx="1032" centery="1055" centerz="10" radius="1">
 		<monster name="Diabolic Imp" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
 	<spawn centerx="989" centery="1056" centerz="10" radius="1">
-		<monster name="Fire Lord" x="0" y="0" z="10" spawntime="60" />
+		<monster name="Fire Lord" x="0" y="0" z="10" spawntime="30" />
 	</spawn>
 	<spawn centerx="1003" centery="1056" centerz="10" radius="1">
-		<monster name="Fire Lord" x="0" y="0" z="10" spawntime="60" />
+		<monster name="Fire Lord" x="0" y="0" z="10" spawntime="30" />
 	</spawn>
 	<spawn centerx="994" centery="1057" centerz="10" radius="1">
-		<monster name="Banshee" x="0" y="0" z="10" spawntime="60" />
+		<monster name="Banshee" x="0" y="0" z="10" spawntime="10" />
 	</spawn>
 	<spawn centerx="999" centery="1057" centerz="10" radius="1">
-		<monster name="Banshee" x="0" y="0" z="10" spawntime="60" />
+		<monster name="Banshee" x="0" y="0" z="10" spawntime="10" />
 	</spawn>
 	<spawn centerx="992" centery="1058" centerz="10" radius="1">
-		<monster name="Fire Elemental" x="0" y="0" z="10" spawntime="60" />
+		<monster name="Fire Elemental" x="0" y="0" z="10" spawntime="30" />
 	</spawn>
 	<spawn centerx="1001" centery="1058" centerz="10" radius="1">
-		<monster name="Fire Elemental" x="0" y="0" z="10" spawntime="60" />
+		<monster name="Fire Elemental" x="0" y="0" z="10" spawntime="30" />
 	</spawn>
 	<spawn centerx="1026" centery="1058" centerz="10" radius="1">
 		<monster name="Diabolic Imp" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
 	<spawn centerx="986" centery="1060" centerz="10" radius="1">
-		<monster name="Diabolic Imp" x="0" y="0" z="10" spawntime="60" />
+		<monster name="Diabolic Imp" x="0" y="0" z="10" spawntime="30" />
 	</spawn>
 	<spawn centerx="989" centery="1060" centerz="10" radius="1">
-		<monster name="Burning Gladiator" x="0" y="0" z="10" spawntime="60" />
+		<monster name="Burning Gladiator" x="0" y="0" z="10" spawntime="30" />
 	</spawn>
 	<spawn centerx="1005" centery="1060" centerz="10" radius="1">
-		<monster name="Burning Gladiator" x="0" y="0" z="10" spawntime="60" />
+		<monster name="Burning Gladiator" x="0" y="0" z="10" spawntime="30" />
 	</spawn>
 	<spawn centerx="1008" centery="1060" centerz="10" radius="1">
-		<monster name="Diabolic Imp" x="0" y="0" z="10" spawntime="60" />
+		<monster name="Diabolic Imp" x="0" y="0" z="10" spawntime="30" />
 	</spawn>
 	<spawn centerx="1020" centery="1061" centerz="10" radius="1">
 		<monster name="Fire Lord" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
 	<spawn centerx="993" centery="1062" centerz="10" radius="1">
-		<monster name="Banshee" x="0" y="0" z="10" spawntime="60" />
+		<monster name="Banshee" x="0" y="0" z="10" spawntime="10" />
 	</spawn>
 	<spawn centerx="998" centery="1062" centerz="10" radius="1">
-		<monster name="Banshee" x="0" y="0" z="10" spawntime="60" />
+		<monster name="Banshee" x="0" y="0" z="10" spawntime="10" />
 	</spawn>
 	<spawn centerx="899" centery="1063" centerz="10" radius="1">
 		<monster name="Plaguesmith" x="0" y="0" z="10" spawntime="60" />
@@ -5011,13 +5011,13 @@
 		<monster name="Burning Gladiator" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
 	<spawn centerx="989" centery="1064" centerz="10" radius="1">
-		<monster name="Fire Lord" x="0" y="0" z="10" spawntime="60" />
+		<monster name="Fire Lord" x="0" y="0" z="10" spawntime="30" />
 	</spawn>
 	<spawn centerx="995" centery="1064" centerz="10" radius="1">
-		<monster name="Fire Devil" x="0" y="0" z="10" spawntime="60" />
+		<monster name="Fire Devil" x="0" y="0" z="10" spawntime="10" />
 	</spawn>
 	<spawn centerx="1003" centery="1064" centerz="10" radius="1">
-		<monster name="Fire Lord" x="0" y="0" z="10" spawntime="60" />
+		<monster name="Fire Lord" x="0" y="0" z="10" spawntime="30" />
 	</spawn>
 	<spawn centerx="1015" centery="1064" centerz="10" radius="1">
 		<monster name="Burning Gladiator" x="0" y="0" z="10" spawntime="60" />
