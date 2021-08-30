@@ -2064,7 +2064,6 @@ void LuaScriptInterface::registerFunctions()
 	registerEnum(RELOAD_TYPE_NPCS)
 	registerEnum(RELOAD_TYPE_RAIDS)
 	registerEnum(RELOAD_TYPE_SCRIPTS)
-	registerEnum(RELOAD_TYPE_SPELLS)
 	registerEnum(RELOAD_TYPE_STAGES)
 
 	registerEnum(ZONE_PROTECTION)
@@ -2931,6 +2930,7 @@ void LuaScriptInterface::registerFunctions()
 
 	registerMethod("Vocation", "getId", LuaScriptInterface::luaVocationGetId);
 	registerMethod("Vocation", "getClientId", LuaScriptInterface::luaVocationGetClientId);
+	registerMethod("Vocation", "getBaseId", LuaScriptInterface::luaGetBaseId);
 	registerMethod("Vocation", "getName", LuaScriptInterface::luaVocationGetName);
 	registerMethod("Vocation", "getDescription", LuaScriptInterface::luaVocationGetDescription);
 
@@ -3329,6 +3329,8 @@ void LuaScriptInterface::registerFunctions()
 	registerMethod("Spell", "needTarget", LuaScriptInterface::luaSpellNeedTarget);
 	registerMethod("Spell", "needWeapon", LuaScriptInterface::luaSpellNeedWeapon);
 	registerMethod("Spell", "needLearn", LuaScriptInterface::luaSpellNeedLearn);
+	registerMethod("Spell", "allowOnSelf", LuaScriptInterface::luaSpellAllowOnSelf);
+	registerMethod("Spell", "setPzLocked", LuaScriptInterface::luaSpellPzLocked);
 	registerMethod("Spell", "isSelfTarget", LuaScriptInterface::luaSpellSelfTarget);
 	registerMethod("Spell", "isBlocking", LuaScriptInterface::luaSpellBlocking);
 	registerMethod("Spell", "isAggressive", LuaScriptInterface::luaSpellAggressive);
@@ -5020,7 +5022,7 @@ int LuaScriptInterface::luaGameGetBestiaryList(lua_State* L)
 		}
    } else {
 	if (isNumber(L, 2)) {
-	   std::map<uint16_t, std::string> tmplist = g_bestiary.findRaceByName("otxserver", false, getNumber<BestiaryType_t>(L, 2));
+	   std::map<uint16_t, std::string> tmplist = g_bestiary.findRaceByName("OTXSV", false, getNumber<BestiaryType_t>(L, 2));
 		for (auto itb : tmplist) {
 			if (name) {
 				pushString(L, itb.second);
@@ -13227,6 +13229,18 @@ int LuaScriptInterface::luaVocationGetClientId(lua_State* L)
 	return 1;
 }
 
+int LuaScriptInterface::luaGetBaseId(lua_State* L)
+{
+	// vocation:getBaseId()
+	Vocation* vocation = getUserdata<Vocation>(L, 1);
+	if (vocation) {
+		lua_pushnumber(L, vocation->getBaseId());
+	} else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
 int LuaScriptInterface::luaVocationGetName(lua_State* L)
 {
 	// vocation:getName()
@@ -17964,6 +17978,40 @@ int LuaScriptInterface::luaSpellAggressive(lua_State* L)
 			pushBoolean(L, spell->getAggressive());
 		} else {
 			spell->setAggressive(getBoolean(L, 2));
+			pushBoolean(L, true);
+		}
+	} else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaSpellAllowOnSelf(lua_State* L)
+{
+	// spell:allowOnSelf(bool)
+	Spell* spell = getUserdata<Spell>(L, 1);
+	if (spell) {
+		if (lua_gettop(L) == 1) {
+			pushBoolean(L, spell->getAllowOnSelf());
+		} else {
+			spell->setAllowOnSelf(getBoolean(L, 2));
+			pushBoolean(L, true);
+		}
+	} else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaSpellPzLocked(lua_State* L)
+{
+	// spell:isPzLocked(bool)
+	Spell* spell = getUserdata<Spell>(L, 1);
+	if (spell) {
+		if (lua_gettop(L) == 1) {
+			pushBoolean(L, spell->getLockedPZ());
+		} else {
+			spell->setLockedPZ(getBoolean(L, 2));
 			pushBoolean(L, true);
 		}
 	} else {

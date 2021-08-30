@@ -390,3 +390,5 @@ src/cmake-build-debug
 otxsr.exe.manifest
 data/world/map-spawn.xml
 data/world/map-house.xml
+data/world/vanilla-house.xml
+data/world/vanilla-spawn.xml
