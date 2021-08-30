@@ -27,7 +27,7 @@ local config = {
 		Position(1002, 1083, 10),
 	},
 	teleportPosition = Position(996, 1066, 10),
-	bossPosition = Position(996, 1056, 10),
+	bossPosition = Position(996, 1059, 10),
 	kickPos = Position(1021, 1061, 10)
 }
 

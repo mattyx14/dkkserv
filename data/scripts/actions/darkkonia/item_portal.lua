@@ -6,6 +6,8 @@ local clickTeleport = {
 	[24914] = Position(618, 376, 8), -- Enter Portal Volcano
 	[24915] = Position(627, 376, 7), -- Exit Portal Volcano
 --	[24916] = Position(1542, 875, 1), -- Reserved to Dracula /actions/quest/outfits/portalDracula.lua
+	[24917] = Position(911, 1203, 7), -- Hive Walls
+	[24918] = Position(911, 1206, 7), -- Hive Walls
 }
 
 local itemPortal = Action()
