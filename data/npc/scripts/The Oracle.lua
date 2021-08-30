@@ -73,7 +73,7 @@ local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
 	if npcHandler.topic[cid] == 0 then
 		if msgcontains(msg, "yes") then
-			npcHandler:say("IN WHICH TOWN DO YOU WANT TO LIVE: {CARLIN}, {THAIS}, OR {VENORE}?", cid)
+			npcHandler:say("IN WHICH TOWN DO YOU WANT TO LIVE: {FYNN}, {MISIDIA}, OR {SOHAN}?", cid)
 			npcHandler.topic[cid] = 1
 		end
 	elseif npcHandler.topic[cid] == 1 then
@@ -84,7 +84,7 @@ local function creatureSayCallback(cid, type, msg)
 			{KNIGHT}, {PALADIN}, {SORCERER}, OR {DRUID}?", cid)
 			npcHandler.topic[cid] = 2
 		else
-			npcHandler:say("IN WHICH TOWN DO YOU WANT TO LIVE: {CARLIN}, {THAIS}, OR {VENORE}?", cid)
+			npcHandler:say("IN WHICH TOWN DO YOU WANT TO LIVE: {FYNN}, {MISIDIA}, OR {SOHAN}?", cid)
 		end
 	elseif npcHandler.topic[cid] == 2 then
 		local vocationTable = config.vocations[msg:lower()]
