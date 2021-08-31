@@ -15,9 +15,6 @@
 	<spawn centerx="934" centery="1099" centerz="2" radius="1">
 		<monster name="Warlock" x="0" y="0" z="2" spawntime="60" />
 	</spawn>
-	<spawn centerx="688" centery="659" centerz="3" radius="1">
-		<npc name="Henrry" x="0" y="0" z="3" spawntime="60" direction="2" />
-	</spawn>
 	<spawn centerx="942" centery="974" centerz="3" radius="1">
 		<npc name="Citizen_women" x="0" y="0" z="3" spawntime="60" direction="2" />
 	</spawn>
@@ -60,27 +57,6 @@
 	<spawn centerx="932" centery="1098" centerz="3" radius="1">
 		<monster name="Necromancer" x="1" y="-1" z="3" spawntime="60" />
 		<monster name="Necromancer" x="0" y="1" z="3" spawntime="60" />
-	</spawn>
-	<spawn centerx="669" centery="412" centerz="4" radius="2">
-		<npc name="The King" x="0" y="0" z="4" spawntime="60" direction="2" />
-	</spawn>
-	<spawn centerx="698" centery="613" centerz="4" radius="1">
-		<npc name="Gloria" x="0" y="0" z="4" spawntime="60" direction="2" />
-	</spawn>
-	<spawn centerx="672" centery="646" centerz="4" radius="1">
-		<npc name="Dan" x="0" y="0" z="4" spawntime="60" direction="2" />
-	</spawn>
-	<spawn centerx="633" centery="650" centerz="4" radius="1">
-		<npc name="Katty" x="0" y="0" z="4" spawntime="60" direction="2" />
-	</spawn>
-	<spawn centerx="651" centery="659" centerz="4" radius="1">
-		<npc name="Yuna" x="0" y="0" z="4" spawntime="60" direction="2" />
-	</spawn>
-	<spawn centerx="688" centery="659" centerz="4" radius="1">
-		<npc name="Palacios" x="0" y="0" z="4" spawntime="60" direction="2" />
-	</spawn>
-	<spawn centerx="663" centery="663" centerz="4" radius="1">
-		<npc name="Wendy" x="0" y="0" z="4" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="888" centery="890" centerz="4" radius="1">
 		<monster name="Pirate Corsair" x="0" y="0" z="4" spawntime="60" />
@@ -639,12 +615,6 @@
 	<spawn centerx="1124" centery="350" centerz="6" radius="1">
 		<npc name="Guardian" x="0" y="0" z="6" spawntime="60" />
 	</spawn>
-	<spawn centerx="730" centery="640" centerz="6" radius="1">
-		<npc name="Edson" x="0" y="0" z="6" spawntime="60" direction="2" />
-	</spawn>
-	<spawn centerx="740" centery="640" centerz="6" radius="1">
-		<npc name="Calvin" x="0" y="0" z="6" spawntime="60" direction="2" />
-	</spawn>
 	<spawn centerx="901" centery="884" centerz="6" radius="1">
 		<monster name="Smuggler" x="0" y="0" z="6" spawntime="60" />
 	</spawn>
@@ -1137,15 +1107,6 @@
 	</spawn>
 	<spawn centerx="884" centery="1156" centerz="6" radius="1">
 		<monster name="Dragon Lord" x="0" y="0" z="6" spawntime="60" />
-	</spawn>
-	<spawn centerx="1104" centery="1231" centerz="6" radius="1">
-		<npc name="Yuna" x="0" y="0" z="6" spawntime="60" direction="2" />
-	</spawn>
-	<spawn centerx="925" centery="1488" centerz="6" radius="1">
-		<npc name="Saul" x="0" y="0" z="6" spawntime="60" />
-	</spawn>
-	<spawn centerx="1087" centery="372" centerz="7" radius="1">
-		<npc name="Katty" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="901" centery="910" centerz="7" radius="1">
 		<monster name="Pirate Marauder" x="0" y="0" z="7" spawntime="60" />
@@ -2524,18 +2485,6 @@
 	</spawn>
 	<spawn centerx="888" centery="1153" centerz="7" radius="1">
 		<monster name="Dragon Lord Hatchling" x="0" y="0" z="7" spawntime="60" />
-	</spawn>
-	<spawn centerx="1057" centery="1241" centerz="7" radius="1">
-		<npc name="Edson" x="0" y="0" z="7" spawntime="60" direction="2" />
-	</spawn>
-	<spawn centerx="302" centery="1290" centerz="7" radius="1">
-		<npc name="Vancer" x="0" y="0" z="7" spawntime="60" direction="2" />
-	</spawn>
-	<spawn centerx="936" centery="1296" centerz="7" radius="30">
-		<npc name="Cesar" x="-5" y="-20" z="7" spawntime="60" />
-	</spawn>
-	<spawn centerx="1119" centery="325" centerz="8" radius="5">
-		<npc name="Henrry" x="4" y="1" z="8" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="817" centery="836" centerz="8" radius="5">
 		<monster name="Necromancer" x="0" y="-4" z="8" spawntime="60" />

@@ -31,7 +31,7 @@ NpcTable = {
 	[24] = {name = "Palacios", position = Position(636, 439, 4)}, -- Bank
 	[25] = {name = "Josh", position = Position(645, 360, 6)}, -- Boat
 	[26] = {name = "Henrry", position = Position(728, 453, 5)}, -- Gems
-	[27] = {name = "Mony", position = Position(721, 447, 5)}, -- Promoter
+	[27] = {name = "Mony", position = Position(669, 412, 4)}, -- Promoter
 	[28] = {name = "Katty", position = Position(700, 448, 5)}, -- Blessings
 	[29] = {name = "JokhHah", position = Position(626, 348, 5)}, -- Djinn
 
