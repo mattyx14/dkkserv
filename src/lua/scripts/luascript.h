@@ -405,7 +405,7 @@ class LuaScriptInterface
 #ifndef LUAJIT_VERSION
 		static const luaL_Reg luaBitReg[7];
 #endif
-		static const luaL_Reg luaConfigManagerTable[4];
+		static const luaL_Reg luaConfigManagerTable[5];
 		static const luaL_Reg luaDatabaseTable[9];
 		static const luaL_Reg luaResultTable[6];
 		static const luaL_Reg luaSpdlogTable[5];
@@ -505,6 +505,7 @@ class LuaScriptInterface
 
 		static int luaConfigManagerGetString(lua_State* L);
 		static int luaConfigManagerGetNumber(lua_State* L);
+		static int luaConfigManagerGetFloat(lua_State* L);
 		static int luaConfigManagerGetBoolean(lua_State* L);
 
 		static int luaDatabaseExecute(lua_State* L);
@@ -1253,6 +1254,7 @@ class LuaScriptInterface
 		static int luaVocationGetMaxSoul(lua_State* L);
 		static int luaVocationGetSoulGainTicks(lua_State* L);
 
+		static int luaVocationGetBaseAttackSpeed(lua_State* L);
 		static int luaVocationGetAttackSpeed(lua_State* L);
 		static int luaVocationGetBaseSpeed(lua_State* L);
 
@@ -1443,7 +1445,7 @@ class LuaScriptInterface
 		static int luaMonsterTypeRaceid(lua_State* L);
 		static int luaMonsterTypeBestiaryclass(lua_State* L);
 		static int luaMonsterTypeBestiaryOccurrence(lua_State* L);
-		static int luaMonsterTypeBestiaryLocations(lua_State* L);		
+		static int luaMonsterTypeBestiaryLocations(lua_State* L);
 		static int luaMonsterTypeBestiaryStars(lua_State* L);
 		static int luaMonsterTypeBestiaryCharmsPoints(lua_State* L);
 		static int luaMonsterTypeBestiarySecondUnlock(lua_State* L);
