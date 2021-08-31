@@ -16,11 +16,11 @@ expFromPlayersLevelRange = 75
 dayKillsToRedSkull = 3
 weekKillsToRedSkull = 5
 monthKillsToRedSkull = 10
-redSkullDuration = 1
-blackSkullDuration = 3
-orangeSkullDuration = 7
+redSkullDuration = 3
+blackSkullDuration = 5
+orangeSkullDuration = 2
 
-onlyInvitedCanMoveHouseItems = true
+onlyInvitedCanMoveHouseItems = false
 cleanProtectionZones = false
 
 -- Connection Config
@@ -32,7 +32,7 @@ loginProtocolPort = 7171
 gameProtocolPort = 7172
 statusProtocolPort = 7171
 maxPlayers = 200
-motd = "Welcome to The DarkKonia Server!"
+motd = "Welcome to The DarkKonia Server"
 onePlayerOnlinePerAccount = true
 allowClones = false
 serverName = "DarkKonia"
@@ -58,8 +58,8 @@ gamestoreByModules = true
 onlyPremiumAccount = false
 
 -- Customs
-weatherRain = false
-thunderEffect = false
+weatherRain = true
+thunderEffect = true
 freeQuests = false
 allConsoleLog = false
 -- NOTE: saveIntervalTime in hours
@@ -87,7 +87,7 @@ deathLosePercent = -1
 -- Periods: daily/weekly/monthly/yearly/never
 housePriceEachSQM = 2000
 houseRentPeriod = "weekly"
-houseOwnedByAccount = false
+houseOwnedByAccount = true
 
 -- Item Usage
 timeBetweenActions = 200
