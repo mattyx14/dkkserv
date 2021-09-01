@@ -201,9 +201,6 @@ Storage = {
 		sixthLevelReward = 3106,
 		seventhLevelReward = 3107,
 	},
-	basicKnightSet = 16766,
-	crownSet = 2487,
-	basicHunterSet = 8891,
 	-- blueSet = conjurerDone,
 	demonHelmetQuest = 2493,
 	HidenChest = {
@@ -242,6 +239,9 @@ Storage = {
 		hiddenCity = { -- Acces Vaargdon Mine
 			OreWagon = 25475,
 		},
+		basicKnightSet = 16766,
+		crownSet = 2487,
+		basicHunterSet = 8891,
 	},
 	ForgottenKnowledgeRewards = {
 		yalahariSet = 9776,
@@ -250,7 +250,7 @@ Storage = {
 		JaulTimer = 8422,
 		JaulKilled = 10139,
 	},
-	Anshara = {
+	ElficVille = {
 		BlackMagicianTimer = 10547,
 	},
 	AnsharaPOI = {

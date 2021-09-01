@@ -34,7 +34,6 @@ LevelDoorAction = {
 		itemPos = {
 			Position(895, 1023, 8), -- Renegades // Fynn Castle
 			Position(947, 1036, 7), Position(947, 1037, 7), -- Magic Tower // Fynn Castle
-			Position(541, 1145, 11), -- Crown Set // Elfic Ville
 			Position(998, 945, 9), -- Entrace to Tenebris // Fynn Castle
 		}
 	},
@@ -66,7 +65,6 @@ LevelDoorAction = {
 			Position(485, 1181, 9), -- "Draggis" // Sohan Town
 			Position(683, 537, 8), -- "Plagues" // Anshara Desert
 			Position(231, 987, 10), Position(232, 987, 10), -- Fibula Medusas // Anshara Desert
-			Position(638, 375, 10), -- Arcane Academy // Anshara Desert
 		}
 	},
 	-- Level 90
@@ -75,8 +73,8 @@ LevelDoorAction = {
 		itemPos = {
 			Position(688, 603, 9), Position(689, 603, 9), -- Skull Staff Quest // Anshara Desert
 			Position(576, 1216, 7), -- Fire Axe Quest // Elfic Ville
-			Position(728, 1033, 10), -- Old Golden Helmet Quest // Fynn Castle
 			Position(1059, 334, 10), -- Bright Sword Quest // Misidia Settlement
+			Position(541, 1145, 11), -- Crown Set // Elfic Ville
 		}
 	},
 	-- Level 100
@@ -91,6 +89,7 @@ LevelDoorAction = {
 			Position(198, 1179, 8), -- Pharaos Quest's // Samaransa Bay
 			Position(688, 387, 9), -- Rhaa Mission 1 // Anshara Desert
 			Position(812, 1068, 9), -- Ripper Spectre // Vinor Swamp
+			Position(656, 981, 1), -- Arcane Academy // Elfic Ville
 		}
 	},
 	-- Level 200
@@ -100,6 +99,7 @@ LevelDoorAction = {
 			Position(741, 823, 11), -- Blessed Sceptre // Jorvik
 			Position(931, 1091, 11), -- Justice Seeker // Fynn
 			Position(890, 1015, 11), -- Royal Axe // Anshara Desert
+			Position(728, 1033, 10), -- Cementery // Elfic Ville
 		}
 	},
 	-- Level 300

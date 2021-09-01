@@ -24,6 +24,11 @@ local destination = {
 		backPos = Position(712, 963, 13),
 		timer = Storage.FynnQuest.GazerTimer
 	},
+	[24882] = { -- Black Magician
+		newPos = Position(821, 1186, 10),
+		backPos = Position(876, 1168, 10),
+		timer = Storage.ElficVille.BlackMagicianTimer,
+	},
 }
 
 local challangerPortals = MoveEvent()

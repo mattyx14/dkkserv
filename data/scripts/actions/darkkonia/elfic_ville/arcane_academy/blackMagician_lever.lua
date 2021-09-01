@@ -2,12 +2,12 @@ local config = {
 	bossName = "Black Magician",
 	requiredLevel = 150,
 	leverId = 9825,
-	timeToFightAgain = 4, -- In hour
+	timeToFightAgain = 20, -- In hour
 	timeToDefeatBoss = 20, -- In minutes
 	clearRoomTime = 20, -- In minutes
-	storage = Storage.HidenChest.noseRing,
-	itemMission = "Nose Ring",
-	timer = Storage.Anshara.BlackMagicianTimer,
+	storage = Storage.FirstSacrifice.knightAxe,
+	itemMission = "fire axe",
+	timer = Storage.ElficVille.BlackMagicianTimer,
 	blockLever = true,
 	value = 1,
 	centerRoom = Position(890, 1179, 11),
@@ -26,7 +26,7 @@ local config = {
 local izcandarLever = Action()
 function izcandarLever.onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	if player:getStorageValue(config.storage) < config.value then
-		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "All the players need find the ".. config.itemMission .." quest.")
+		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "All the players need find ".. config.itemMission .." quest.")
 		return true
 	end
 

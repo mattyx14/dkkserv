@@ -31,6 +31,7 @@ local spawns = {
 	[30]  = {position = Position(951, 1045, 3), monster = 'Dharalion'}, -- Fynn
 	[31]  = {position = Position(830, 892, 11), monster = 'Undead Cavebear'}, -- Fynn
 	[32]  = {position = Position(832, 894, 11), monster = 'Necropharus'}, -- Fynn
+	[33]  = {position = Position(636, 1098, 4), monster = 'Dharalion'}, -- Elfic Ville
 }
 
 -- Function that is called by the global events when it reaches the time configured
