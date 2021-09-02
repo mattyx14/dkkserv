@@ -252,6 +252,7 @@ Storage = {
 	},
 	ElficVille = {
 		BlackMagicianTimer = 10547,
+		BlackKnightKilled = 10551,
 	},
 	AnsharaPOI = {
 		-- Izcandar

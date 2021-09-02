@@ -4,14 +4,10 @@ local specialQuests = {
 }
 
 local questsExperience = {
-	[2217] = 1 -- dummy values
+	[2423] = 50000, -- Experience Quest "Clerial Mace + 50k_Exp" / Sohan Town
+	[2429] = 50000, -- Experience Quest "Barbarian Axe + 50k_Exp" / Fynn Castle
+	[7385] = 50000, -- Experience Quest "Crimson Sword + 50k_Exp" / Misidia Settlement
 }
-
-local questLog = {
-	-- 
-}
-
-local hotaQuest = {50950, 50951, 50952, 50953, 50954, 50955}
 
 local questSystem1 = Action()
 
@@ -90,10 +86,6 @@ function questSystem1.onUse(player, item, fromPosition, target, toPosition, isHo
 		player:addExperience(questsExperience[storage], true)
 	end
 
-	if questLog[storage] then
-		player:setStorageValue(questLog[storage], 1)
-	end
-
 	player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You have found ' .. result .. '.')
 	player:setStorageValue(storage, 1)
 	return true
@@ -103,5 +95,5 @@ for index, value in pairs(specialQuests) do
 	questSystem1:aid(index)
 end
 
-questSystem1:aid(2000)
+questSystem1:aid(2000, 2423, 2429, 7385)
 questSystem1:register()

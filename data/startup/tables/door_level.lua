@@ -51,6 +51,7 @@ LevelDoorAction = {
 		itemPos = {
 			Position(1107, 1195, 9), -- Cave Spiders // Mer Jugle
 			Position(1006, 984, 11), Position(1007, 984, 11), -- Ange`s and Fury`s Quest // Fynn
+			Position(541, 1145, 11), -- Crown Set // Elfic Ville
 		}
 	},
 	-- Level 80
@@ -74,7 +75,6 @@ LevelDoorAction = {
 			Position(688, 603, 9), Position(689, 603, 9), -- Skull Staff Quest // Anshara Desert
 			Position(576, 1216, 7), -- Fire Axe Quest // Elfic Ville
 			Position(1059, 334, 10), -- Bright Sword Quest // Misidia Settlement
-			Position(541, 1145, 11), -- Crown Set // Elfic Ville
 		}
 	},
 	-- Level 100

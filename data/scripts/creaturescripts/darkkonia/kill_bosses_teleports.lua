@@ -23,9 +23,6 @@ local bosses = {
 	['leaf golem grom'] = {
 		exitPosition = Position(656, 1094, 12),
 	},
-	['black knight'] = {
-		exitPosition = Position(1179, 1312, 8),
-	},
 	['massacre'] = {
 		exitPosition = Position(1018, 1153, 10),
 	},

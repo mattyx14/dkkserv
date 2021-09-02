@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Black Knight")
 local monster = {}
 
 monster.description = "a black knight"
-monster.experience = 1600
+monster.experience = 21600
 monster.outfit = {
 	lookType = 131,
 	lookHead = 95,
@@ -10,14 +10,14 @@ monster.outfit = {
 	lookLegs = 95,
 	lookFeet = 95,
 	lookAddons = 3,
-	lookMount = 0
+	lookMount = 392,
 }
 
-monster.health = 1800
-monster.maxHealth = 1800
+monster.health = 41800
+monster.maxHealth = 41800
 monster.race = "blood"
 monster.corpse = 20355
-monster.speed = 250
+monster.speed = 400
 monster.manaCost = 0
 monster.maxSummons = 0
 
@@ -27,9 +27,10 @@ monster.changeTarget = {
 }
 
 monster.strategiesTarget = {
-	nearest = 80,
+	nearest = 70,
 	health = 10,
 	damage = 10,
+	random = 10,
 }
 
 monster.flags = {
@@ -42,7 +43,7 @@ monster.flags = {
 	illusionable = false,
 	canPushItems = true,
 	canPushCreatures = true,
-	staticAttackChance = 90,
+	staticAttackChance = 70,
 	targetDistance = 1,
 	runHealth = 0,
 	healthHidden = false,
@@ -56,6 +57,12 @@ monster.flags = {
 monster.light = {
 	level = 0,
 	color = 0
+}
+
+monster.summons = {
+	{name = "hero", chance = 10, interval = 2000},
+	{name = "renegade knight", chance = 10, interval = 2000},
+	{name = "vile grandmaster", chance = 10, interval = 2000},
 }
 
 monster.voices = {
@@ -81,7 +88,6 @@ monster.loot = {
 	{name = "two handed sword", chance = 8470},
 	{name = "battle hammer", chance = 6910},
 	{name = "warrior helmet", chance = 4710},
-	-- {name = "knight axe", chance = 2630},
 	{name = "dark helmet", chance = 2430},
 	{name = "dark armor", chance = 2020},
 	{name = "knight legs", chance = 1050},
@@ -89,18 +95,26 @@ monster.loot = {
 	{name = "ruby necklace", chance = 750},
 	-- {name = "lightning legs", chance = 580},
 	{name = "boots of haste", chance = 400},
-	{name = "dragon lance", chance = 290},
-	{name = "piggy bank", chance = 120}
+	{name = "dragon lance", chance = 2290},
+	{name = "piggy bank", chance = 2120},
+	{name = "knight axe", chance = 100, unique = true},
+	{name = "war hammer", chance = 100, unique = true},
+	{name = "wyvern fang", chance = 100, unique = true}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -300},
-	{name ="combat", interval = 2000, chance = 20, type = COMBAT_PHYSICALDAMAGE, minDamage = 0, maxDamage = -200, range = 7, shootEffect = CONST_ANI_SPEAR, target = false}
+	{name ="melee", interval = 2000, chance = 100, minDamage = -400, maxDamage = -900},
+	{name ="combat", interval = 2000, chance = 20, type = COMBAT_DEATHDAMAGE, minDamage = -260, maxDamage = -310, radius = 6, effect = CONST_ME_MORTAREA, target = false},
+	{name ="combat", interval = 2000, chance = 20, type = COMBAT_PHYSICALDAMAGE, minDamage = 0, maxDamage = -200, range = 7, shootEffect = CONST_ANI_SPEAR, target = false},
+	{name ="combat", interval = 2000, chance = 5, type = COMBAT_DEATHDAMAGE, minDamage = -300, maxDamage = -800, length = 8, spread = 3, target = false},
+	{name ="combat", interval = 3000, chance = 18, type = COMBAT_PHYSICALDAMAGE, minDamage = 0, maxDamage = -150, radius = 5, effect = CONST_ME_GROUNDSHAKER, target = true},
 }
 
 monster.defenses = {
-	defense = 40,
-	armor = 40
+	defense = 50,
+	armor = 50,
+	{name ="invisible", interval = 2000, chance = 10, effect = CONST_ME_MAGIC_BLUE},
+	{name ="combat", interval = 7000, chance = 20, type = COMBAT_HEALING, minDamage = 500, maxDamage = 700, effect = CONST_ME_MAGIC_BLUE, target = false}
 }
 
 monster.elements = {
