@@ -28,7 +28,7 @@ QuestDoorAction = {
 			Position(1056, 308, 13),
 		}
 	},
-	[Storage.Rewards.firstLevelReward] = { -- First Fynnian Quest
+	[Storage.FirstQuest.rewardFynn] = { -- First Fynnian Quest
 		itemId = false,
 		itemPos = {
 			Position(1018, 897, 9),
