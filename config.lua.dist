@@ -58,8 +58,8 @@ gamestoreByModules = true
 onlyPremiumAccount = false
 
 -- Customs
-weatherRain = true
-thunderEffect = true
+weatherRain = false
+thunderEffect = false
 freeQuests = false
 allConsoleLog = false
 -- NOTE: saveIntervalTime in hours
