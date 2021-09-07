@@ -83,19 +83,19 @@ NpcTable = {
 	[68] = {name = "Katty", position = Position(377, 1410, 7)}, -- Blessings
 
 	-- Agard Town
-	[69] = {name = "Yura", position = Position(798, 1271, 7)}, -- Potion / Rune
-	[70] = {name = "Edson", position = Position(768, 1242, 7)}, -- Food
-	[71] = {name = "Gloria", position = Position(769, 1241, 6)}, -- Furniture
-	[72] = {name = "Vancer", position = Position(818, 1263, 7)}, -- Munition
-	[73] = {name = "Wendy", position = Position(799, 1272, 6)}, --Weapon
-	[74] = {name = "Dan", position = Position(811, 1274, 7)}, -- Mail
-	[75] = {name = "Yuna", position = Position(824, 1269, 7)}, -- Tools
-	[76] = {name = "Albinius", position = Position(843, 1223, 7)}, -- Imbuiment
-	[77] = {name = "Pablo", position = Position(811, 1272, 6)}, -- Bank
-	[78] = {name = "Gus", position = Position(779, 1232, 6)}, -- Boat
-	[79] = {name = "Henrry", position = Position(777, 1222, 6)}, -- Gems
-	[80] = {name = "Sammuel", position = Position(770, 1261, 7)}, -- Promoter
-	[81] = {name = "Katty", position = Position(832, 1222, 7)}, -- Blessings
+	[69] = {name = "Yura", position = Position(769, 1260, 7)}, -- Potion / Rune
+	[70] = {name = "Edson", position = Position(774, 1242, 7)}, -- Food
+	[71] = {name = "Gloria", position = Position(791, 1255, 7)}, -- Furniture
+	[72] = {name = "Vancer", position = Position(779, 1268, 7)}, -- Munition
+	[73] = {name = "Wendy", position = Position(778, 1253, 7)}, --Weapon
+	[74] = {name = "Dan", position = Position(809, 1275, 7)}, -- Mail
+	[75] = {name = "Yuna", position = Position(821, 1271, 6)}, -- Tools
+	[76] = {name = "Albinius", position = Position(835, 1223, 7)}, -- Imbuiment
+	[77] = {name = "Pablo", position = Position(808, 1283, 7)}, -- Bank
+	[78] = {name = "Gus", position = Position(777, 1224, 6)}, -- Boat
+	[79] = {name = "Henrry", position = Position(789, 1256, 6)}, -- Gems
+	[80] = {name = "Sammuel", position = Position(821, 1270, 7)}, -- Promoter
+	[81] = {name = "Katty", position = Position(822, 1280, 7)}, -- Blessings
 
 	-- Mer Jungle
 	[82] = {name = "Yura", position = Position(1088, 1236, 6)}, -- Potion / Rune
