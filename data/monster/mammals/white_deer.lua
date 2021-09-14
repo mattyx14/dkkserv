@@ -65,6 +65,10 @@ monster.flags = {
 	pet = false
 }
 
+monster.events = {
+	"WhiteDeerDeath"
+}
+
 monster.light = {
 	level = 0,
 	color = 0

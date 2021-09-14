@@ -85,8 +85,8 @@ monster.loot = {
 	{name = "Spellbook of Warding", chance = 250},
 	{name = "Wand of Inferno", chance = 250},
 	{name = "Fire Sword", chance = 250},
-	-- {name = "magma coat", chance = 350},
-	-- {name = "magma legs", chance = 250},
+	{name = "Magma Coat", chance = 350},
+	{name = "Magma Legs", chance = 250},
 	{name = "Piece of Hellfire Armor", chance = 500, maxCount = 5},
 	{id = 13757, chance = 10000, maxCount = 5}
 }

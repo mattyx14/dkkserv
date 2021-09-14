@@ -88,7 +88,7 @@ monster.loot = {
 	{name = "energy bar", chance = 93000},
 	{name = "yellow gem", chance = 46000},
 	{name = "green gem", chance = 21000},
-	-- {name = "magma coat", chance = 6000},
+	{name = "magma coat", chance = 6000},
 	{id = 7632, chance = 12000},
 	{name = "violet gem", chance = 6000},
 	{name = "magma monocle", chance = 3000},

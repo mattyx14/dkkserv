@@ -54,6 +54,10 @@ monster.flags = {
 	pet = false
 }
 
+monster.events = {
+	"GazHaragothHeal"
+}
+
 monster.light = {
 	level = 0,
 	color = 0

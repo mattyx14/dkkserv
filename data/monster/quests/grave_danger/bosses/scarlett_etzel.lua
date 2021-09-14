@@ -78,7 +78,7 @@ monster.loot = {
 	{name = "Berserk Potion", chance = 20300, maxCount = 10},
 	{name = "Blue Gem", chance = 18500, maxCount = 2},
 	{name = "Bullseye Potion", chance = 18500, maxCount = 10},
-	-- {name = "magma coat", chance = 16600},
+	{name = "Magma Coat", chance = 16600},
 	{name = "Terra Rod", chance = 1100},
 	{name = "Crystal Coin", chance = 9200},
 	{name = "Violet Gem", chance = 9000},

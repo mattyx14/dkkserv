@@ -51053,6 +51053,8 @@
 		<attribute key="hitChance" value="6"/>
 		<attribute key="attack" value="9"/>
 		<attribute key="skillDist" value="4" />
+		<attribute key="skillcriticalchance" value="10" />
+		<attribute key="skillcriticaldamage" value="10" />
 		<attribute key="absorbPercentDeath" value="7" />
 		<attribute key="weaponType" value="distance"/>
 		<attribute key="ammoType" value="bolt"/>

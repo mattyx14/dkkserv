@@ -84,7 +84,7 @@ monster.loot = {
 	{name = "strong mana potion", chance = 17450},
 	{name = "great mana potion", chance = 5450},
 	{name = "lightning pendant", chance = 730},
-	-- {name = "lightning legs", chance = 150},
+	{name = "lightning legs", chance = 150},
 	{name = "spellbook of warding", chance = 360},
 	{name = "wand of starstorm", chance = 730},
 	{id = 9809, chance = 730},

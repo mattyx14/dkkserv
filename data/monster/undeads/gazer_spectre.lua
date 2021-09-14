@@ -92,7 +92,7 @@ monster.loot = {
 	{name = "Wand of Draconia", chance = 3500},
 	{name = "Wand of Inferno", chance = 1100},
 	{id = 34722, chance = 700},
-	-- {name = "magma coat", chance = 900},
+	{name = "Magma Coat", chance = 900},
 	{name = "Prismatic Quartz", chance = 1500},
 	{name = "Small Enchanted Emerald", chance = 800},
 	{name = "Onyx Chip", chance = 770},

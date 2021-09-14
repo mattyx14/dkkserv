@@ -197,12 +197,12 @@ function Player:onLook(thing, position, distance)
 			if decayId ~= -1 then
 				description = string.format("%s\nDecays to: %d", description, decayId)
 			end
-			
+
 			local clientId = itemType:getClientId()
 			if clientId then
 				description = string.format("%s\nClient ID: %d", description, clientId)
 			end
-			
+
 		elseif thing:isCreature() then
 			local str = "%s\nHealth: %d / %d"
 			if thing:isPlayer() and thing:getMaxMana() > 0 then
@@ -817,12 +817,12 @@ end
 
 function Player:onApplyImbuement(imbuement, item, slot, protectionCharm)
 	for slot = CONST_SLOT_HEAD, CONST_SLOT_AMMO do
-    	local slotItem = self:getSlotItem(slot)
-   		if slotItem and slotItem == item then
+		local slotItem = self:getSlotItem(slot)
+		if slotItem and slotItem == item then
 			self:sendImbuementResult(MESSAGEDIALOG_IMBUEMENT_ROLL_FAILED, "You can't imbue a equipped item.")
 			self:closeImbuementWindow()
-            return true
-   		end
+			return true
+		end
 	end
 
 	for _, pid in pairs(imbuement:getItems()) do
@@ -938,7 +938,7 @@ function Player:onCombat(target, item, primaryDamage, primaryType, secondaryDama
 	if not item or not target then
 		return primaryDamage, primaryType, secondaryDamage, secondaryType
 	end
-	
+
 	if ItemType(item:getId()):getWeaponType() == WEAPON_AMMO then
 		if isInArray({ITEM_OLD_DIAMOND_ARROW, ITEM_DIAMOND_ARROW}, item:getId()) then
 			return primaryDamage, primaryType, secondaryDamage, secondaryType

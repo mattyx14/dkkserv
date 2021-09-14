@@ -79,7 +79,7 @@ monster.loot = {
 	{name = "Belted Cape", chance = 500},
 	{name = "Ultimate Health Potion", chance = 500, maxCount = 2},
 	{name = "Throwing Star", chance = 500, maxCount = 18},
-	-- {name = "knight axe", chance = 250},
+	{name = "Knight Axe", chance = 250},
 	{id = 2419, chance = 500},
 	{name = "protection amulet", chance = 250},
 	{name = "hunting spear", chance = 250},

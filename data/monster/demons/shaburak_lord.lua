@@ -95,7 +95,7 @@ monster.loot = {
 	{name = "bullseye potion", chance = 400},
 	{name = "strong health potion", chance = 7000},
 	{name = "strong mana potion", chance = 7000},
-	-- {name = "magma coat", chance = 100}
+	{name = "magma coat", chance = 100}
 }
 
 monster.attacks = {

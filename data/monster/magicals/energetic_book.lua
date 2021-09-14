@@ -89,7 +89,7 @@ monster.loot = {
 	{name = "Spellweaver's Robe", chance = 350},
 	{name = "Wand of Defiance", chance = 350},
 	{name = "Haunted Blade", chance = 550},
-	-- {name = "lightning legs", chance = 350}
+	{name = "Lightning Legs", chance = 350}
 }
 
 monster.attacks = {

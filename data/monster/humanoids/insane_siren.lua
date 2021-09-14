@@ -88,10 +88,10 @@ monster.loot = {
 	{name = "Magma Amulet", chance = 5130},
 	{name = "Wand of Inferno", chance = 4360},
 	{name = "Fire Axe", chance = 3590},
-	-- {name = "magma coat", chance = 3340},
+	{name = "Magma Coat", chance = 3340},
 	{name = "Wand of Dragonbreath", chance = 2650},
 	{name = "Sun Fruit", chance = 2570},
-	-- {name = "magma legs", chance = 1200},
+	{name = "Magma Legs", chance = 1200},
 	{name = "Magma Monocle", chance = 260}
 }
 

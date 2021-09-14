@@ -544,7 +544,7 @@ class LuaScriptInterface
 
 		// Game
 		static int luaGameCreateMonsterType(lua_State* L);
-		
+
 		static int luaGamegetEventSLoot(lua_State* L);
 		static int luaGamegetEventSSkill(lua_State* L);
 		static int luaGamegetEventSExp(lua_State* L);
@@ -818,8 +818,6 @@ class LuaScriptInterface
 		static int luaCreatureGetMaster(lua_State* L);
 		static int luaCreatureSetMaster(lua_State* L);
 
-		static int luaCreatureReload(lua_State* L);
-
 		static int luaCreatureGetLight(lua_State* L);
 		static int luaCreatureSetLight(lua_State* L);
 
@@ -888,7 +886,7 @@ class LuaScriptInterface
 
 		static int luaPlayerGetAccountType(lua_State* L);
 		static int luaPlayerSetAccountType(lua_State* L);
-		
+
 		static int luaPlayeraddBestiaryKill(lua_State* L);
 		static int luaPlayercharmExpansion(lua_State* L);
 		static int luaPlayergetCharmMonsterType(lua_State* L);
@@ -987,7 +985,7 @@ class LuaScriptInterface
 		static int luaPlayerGetStashCounter(lua_State* L);
 		static int luaPlayerOpenStash(lua_State* L);
 		static int luaPlayerSetSpecialContainersAvailable(lua_State* L);
-		
+
 		static int luaPlayerGetStamina(lua_State* L);
 		static int luaPlayerSetStamina(lua_State* L);
 

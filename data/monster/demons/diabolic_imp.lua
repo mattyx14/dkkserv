@@ -97,7 +97,7 @@ monster.loot = {
 	{id = 6300, chance = 120},
 	{name = "demonic essence", chance = 8000},
 	{name = "concentrated demonic blood", chance = 25000, maxCount = 2},
-	-- {name = "magma coat", chance = 250},
+	{name = "magma coat", chance = 250},
 	{name = "magma monocle", chance = 430}
 }
 

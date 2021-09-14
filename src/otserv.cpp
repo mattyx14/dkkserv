@@ -251,7 +251,7 @@ void mainLoader(int, char*[], ServiceManager* services) {
 
 	SPDLOG_INFO("A server developed by: {}", STATUS_SERVER_DEVELOPERS);
 	SPDLOG_INFO("Visit our forum for updates, support, and resources: "
-		"https://forums.otserv.com.br and https://github.com/mattyx14/otxserver/");
+		"https://github.com/mattyx14/otxserver/");
 
 	// check if config.lua or config.lua.dist exist
 	std::ifstream c_test("./config.lua");
