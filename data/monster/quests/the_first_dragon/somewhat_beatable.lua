@@ -50,8 +50,11 @@ monster.flags = {
 	isBlockable = false,
 	canWalkOnEnergy = false,
 	canWalkOnFire = false,
-	canWalkOnPoison = false,
-	pet = false
+	canWalkOnPoison = false
+}
+
+monster.events = {
+	"Somewhat Beatable Death"
 }
 
 monster.light = {

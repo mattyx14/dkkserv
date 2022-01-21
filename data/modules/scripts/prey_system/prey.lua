@@ -159,7 +159,10 @@ Prey.MonsterList = {
 	"Insect Swarm", "Insectoid Scout", "Insectoid Worker", "Kollos", "Lacewing Moth", "Ladybug", "Lancer Beetle",
 	"Larva", "Poison Spider", "Rotworm", "Sacred Spider", "Sandcrawler", "Scarab", "Scorpion", "Spider", "Spidris",
 	"Spidris Elite", "Spitter", "Swarmer", "Tarantula", "Terramite", "Tunnel Tyrant", "Wailing Widow", "Wasp",
-	"Waspoid", "Wiggler", "Terrified Elephant", "Burning Book"
+	"Waspoid", "Wiggler", "Terrified Elephant", "Burning Book", "Tainted Soul", "Brachiodemon", "Infernal Demon",
+	"Infernal Phantom", "Branchy Crawler", "Mould Phantom", "Rotten Golem", "Bony Sea Devil", "Capricious Phantom",
+	"Hazardous Phantom", "Turbulent Elemental", "Cloak Of Terror", "Courage Leech", "Vibrant Phantom", "Distorted Phantom",
+	"Druid's Apparition", "Knight's Apparition", "Many Faces", "Paladin's Apparition", "Sorcerer's Apparition"
 }
 
 -- Communication functions
@@ -341,6 +344,19 @@ function Player.setAutomaticBonus(self, slot)
 		self:setPreyCurrentMonster(slot, "")
 		self:setPreyTick(slot, 0)
 	end
+end
+
+function Player.getDiffBonus(self, slot)
+	local currentBonus = self:getPreyBonusType(slot)
+
+	local availableBonuses = {}
+	for bonus = CONST_BONUS_DAMAGE_BOOST, CONST_BONUS_IMPROVED_LOOT do
+		if bonus ~= currentBonus then
+			table.insert(availableBonuses, bonus)
+		end
+	end
+
+	return availableBonuses[math.random(1, #availableBonuses)]
 end
 
 function onRecvbyte(player, msg, byte)

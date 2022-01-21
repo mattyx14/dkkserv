@@ -374,6 +374,8 @@ config.lua
 *.exe
 *.otbm
 *.rar
+*.7z
+*.zip
 
 # SFTP for Sublime
 sftp-config.json

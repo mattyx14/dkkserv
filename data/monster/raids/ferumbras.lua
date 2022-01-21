@@ -50,8 +50,7 @@ monster.flags = {
 	isBlockable = false,
 	canWalkOnEnergy = false,
 	canWalkOnFire = false,
-	canWalkOnPoison = false,
-	pet = false
+	canWalkOnPoison = false
 }
 
 monster.light = {
@@ -60,7 +59,7 @@ monster.light = {
 }
 
 monster.summons = {
-	{name = "fire lord", chance = 12, interval = 3000}
+	{name = "Demon", chance = 12, interval = 3000}
 }
 
 monster.voices = {

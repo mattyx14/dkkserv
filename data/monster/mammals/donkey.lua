@@ -4,7 +4,7 @@ local monster = {}
 monster.description = "a donkey"
 monster.experience = 0
 monster.outfit = {
-	lookType = 399,
+	lookType = 387,
 	lookHead = 0,
 	lookBody = 0,
 	lookLegs = 0,
@@ -47,8 +47,7 @@ monster.flags = {
 	isBlockable = false,
 	canWalkOnEnergy = false,
 	canWalkOnFire = false,
-	canWalkOnPoison = false,
-	pet = false
+	canWalkOnPoison = false
 }
 
 monster.light = {

@@ -47,8 +47,11 @@ monster.flags = {
 	isBlockable = false,
 	canWalkOnEnergy = true,
 	canWalkOnFire = true,
-	canWalkOnPoison = true,
-	pet = false
+	canWalkOnPoison = true
+}
+
+monster.events = {
+	"Sir_Baeloc_Sir_NictrosCharge"
 }
 
 monster.light = {

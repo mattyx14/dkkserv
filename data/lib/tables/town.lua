@@ -13,4 +13,7 @@ TOWNS_LIST = {
 	Vaargdon_Mine = 12,
 	Hive_Island = 13,
 	Sunken_Sanctuary = 14,
+
+	DAWNPORT_TUTORIAL = 20,
+	DAWNPORT = 21,
 }
