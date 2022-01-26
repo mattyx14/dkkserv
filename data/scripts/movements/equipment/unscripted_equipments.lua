@@ -3513,11 +3513,7 @@ if not equipmentsTable then
 			itemid = 29079,
 			type = "equip",
 			slot = "armor",
-			level = 150,
-			vocation = {
-				{"Druid", true},
-				{"Elder Druid"}
-			}
+			level = 60
 		}, -- swan feather cloak
 		{
 			itemid = 29079,
@@ -3544,12 +3540,7 @@ if not equipmentsTable then
 		{
 			itemid = 29059,
 			type = "equip",
-			slot = "hand",
-			level = 150,
-			vocation = {
-				{"Paladin", true},
-				{"Royal Paladin"}
-			}
+			slot = "hand"
 		}, -- royal star
 		{
 			itemid = 29059,
@@ -3569,12 +3560,7 @@ if not equipmentsTable then
 		{
 			itemid = 29036,
 			type = "equip",
-			slot = "hand",
-			level = 110,
-			vocation = {
-				{"Paladin", true},
-				{"Royal Paladin"}
-			}
+			slot = "hand"
 		}, -- leaf star
 		{
 			itemid = 29036,
@@ -5237,6 +5223,16 @@ if not equipmentsTable then
 			type = "deequip",
 			slot = "necklace"
 		}, -- werewolf amulet
+		{
+            itemid = 24717,
+            type = "equip",
+            slot = "necklace"
+		}, -- enchanted werewolf amulet
+		{
+            itemid = 24717,
+            type = "deequip",
+            slot = "necklace"
+		}, -- enchanted werewolf amulet
 		{
 			itemid = 24637,
 			type = "equip",
@@ -7372,10 +7368,12 @@ if not equipmentsTable then
 			itemid = 12643,
 			type = "equip",
 			slot = "armor",
-			level = 150,
+			level = 100,
 			vocation = {
 				{"Sorcerer", true},
-				{"Master Sorcerer"}
+				{"Druid", true, true},
+				{"Master Sorcerer"},
+				{"Elder Druid"}
 			}
 		}, -- royal scale robe
 		{
@@ -10627,12 +10625,7 @@ if not equipmentsTable then
 		{
 			itemid = 7434,
 			type = "equip",
-			slot = "hand",
-			level = 150,
-			vocation = {
-				{"Knight", true},
-				{"Elite Knight"}
-			}
+			slot = "hand"
 		}, -- royal axe
 		{
 			itemid = 7434,
@@ -10682,12 +10675,7 @@ if not equipmentsTable then
 		{
 			itemid = 7429,
 			type = "equip",
-			slot = "hand",
-			level = 150,
-			vocation = {
-				{"Knight", true},
-				{"Elite Knight"}
-			}
+			slot = "hand"
 		}, -- blessed sceptre
 		{
 			itemid = 7429,
@@ -10987,12 +10975,7 @@ if not equipmentsTable then
 		{
 			itemid = 7390,
 			type = "equip",
-			slot = "hand",
-			level = 150,
-			vocation = {
-				{"Knight", true},
-				{"Elite Knight"}
-			}
+			slot = "hand"
 		}, -- the justice seeker
 		{
 			itemid = 7390,
@@ -11002,11 +10985,7 @@ if not equipmentsTable then
 		{
 			itemid = 7389,
 			type = "equip",
-			slot = "hand",
-			vocation = {
-				{"Knight", true},
-				{"Elite Knight"}
-			}
+			slot = "hand"
 		}, -- heroic axe
 		{
 			itemid = 7389,
@@ -12468,14 +12447,7 @@ if not equipmentsTable then
 		{
 			itemid = 2495,
 			type = "equip",
-			slot = "legs",
-			level = 300,
-			vocation = {
-				{"Knight", true},
-				{"Paladin", true, true},
-				{"Elite Knight"},
-				{"Royal Paladin"}
-			}
+			slot = "legs"
 		}, -- demon legs
 		{
 			itemid = 2495,
@@ -12485,12 +12457,7 @@ if not equipmentsTable then
 		{
 			itemid = 2494,
 			type = "equip",
-			slot = "armor",
-			level = 300,
-			vocation = {
-				{"Knight", true},
-				{"Elite Knight"}
-			}
+			slot = "armor"
 		}, -- demon armor
 		{
 			itemid = 2494,
@@ -12526,13 +12493,7 @@ if not equipmentsTable then
 		{
 			itemid = 2491,
 			type = "equip",
-			slot = "head",
-			vocation = {
-				{"Sorcerer", true},
-				{"Druid", true, true},
-				{"Master Sorcerer"},
-				{"Elder Druid"}
-			}
+			slot = "head"
 		}, -- crown helmet
 		{
 			itemid = 2491,
@@ -12563,6 +12524,12 @@ if not equipmentsTable then
 			itemid = 2488,
 			type = "equip",
 			slot = "legs",
+			vocation = {
+				{"Knight", true},
+				{"Paladin", true, true},
+				{"Elite Knight"},
+				{"Royal Paladin"}
+			}
 		}, -- crown legs
 		{
 			itemid = 2488,
@@ -12948,12 +12915,7 @@ if not equipmentsTable then
 		{
 			itemid = 2453,
 			type = "equip",
-			slot = "hand",
-			level = 78,
-			vocation = {
-				{"Knight", true},
-				{"Elite Knight"}
-			}
+			slot = "hand"
 		}, -- arcane staff
 		{
 			itemid = 2453,
@@ -13123,12 +13085,7 @@ if not equipmentsTable then
 		{
 			itemid = 2436,
 			type = "equip",
-			slot = "hand",
-			level = 90,
-			vocation = {
-				{"Knight", true},
-				{"Elite Knight"}
-			}
+			slot = "hand"
 		}, -- skull staff
 		{
 			itemid = 2436,
@@ -13168,12 +13125,7 @@ if not equipmentsTable then
 		{
 			itemid = 2432,
 			type = "equip",
-			slot = "hand",
-			level = 90,
-			vocation = {
-				{"Knight", true},
-				{"Elite Knight"}
-			}
+			slot = "hand"
 		}, -- fire axe
 		{
 			itemid = 2432,
@@ -13183,12 +13135,7 @@ if not equipmentsTable then
 		{
 			itemid = 2431,
 			type = "equip",
-			slot = "hand",
-			level = 200,
-			vocation = {
-				{"Knight", true},
-				{"Elite Knight"}
-			}
+			slot = "hand"
 		}, -- stonecutter axe
 		{
 			itemid = 2431,
@@ -13288,12 +13235,7 @@ if not equipmentsTable then
 		{
 			itemid = 2421,
 			type = "equip",
-			slot = "hand",
-			level = 200,
-			vocation = {
-				{"Knight", true},
-				{"Elite Knight"}
-			}
+			slot = "hand"
 		}, -- thunder hammer
 		{
 			itemid = 2421,
@@ -13433,12 +13375,7 @@ if not equipmentsTable then
 		{
 			itemid = 2407,
 			type = "equip",
-			slot = "hand",
-			level = 90,
-			vocation = {
-				{"Knight", true},
-				{"Elite Knight"}
-			}
+			slot = "hand"
 		}, -- bright sword
 		{
 			itemid = 2407,
@@ -13508,12 +13445,7 @@ if not equipmentsTable then
 		{
 			itemid = 2400,
 			type = "equip",
-			slot = "hand",
-			level = 200,
-			vocation = {
-				{"Knight", true},
-				{"Elite Knight"}
-			}
+			slot = "hand"
 		}, -- magic sword
 		{
 			itemid = 2400,
