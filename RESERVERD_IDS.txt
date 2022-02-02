@@ -50,7 +50,9 @@ Reserverd_IDS
 		24914 -- Enter Portal Volcano - data\scripts\actions\darkkonia\item_portal.lua
 		24915 -- Exit Portal Volcano - data\scripts\actions\darkkonia\item_portal.lua
 		24916 -- Reserved to Dracula
-		24917 -- Dragon King (Boss)
+		24917 -- Hive Walls
+		24918 -- Hive Walls
+		24919 -- Crown Set Access
 
 	Storages
 		25770 -- \\ 

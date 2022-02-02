@@ -9,6 +9,14 @@ We are trying to create the perfect custom OpenTibia server.
 We currently provide build instructions for the following systems:
 * [Windows Tutorial for OTX 6](https://forums.otserv.com.br/index.php?/forums/topic/169235-windowsvc2019-compilando-sources-otservbr-global/)
 
+## OpenTibia Comunity:
+With downloads, support, tutorials, Lua scripts, C++ codes, PHP codes and more ...
+* [OTLand](https://otland.net/) - [English]
+* [OTServ Brasil](https://forums.otserv.com.br/) - [Português/English]
+* [Tibia Face](http://tibiaface.com/) - [Español]
+* [Black Tibia](http://blacktibia.foroactivo.com/) - [Español]
+* [Tibiaking](http://www.tibiaking.com/forum/) - [Português]
+
 ## Special Thanks OTServBR-Global
 - our partners OTServBR-Global.
 - our crew (majesty, gpedro, eduardo dantas)
