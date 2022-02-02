@@ -90,4 +90,46 @@
 		<skill id="5" multiplier="1.1" />
 		<skill id="6" multiplier="1.1" />
 	</vocation>
+
+	<!-- WS Vocations -->
+	<vocation id="9" clientid="13" baseid="1" name="Master Sorcerer" description="a master sorcerer" allowpvp="0" magicshield="1" gaincap="10" gainhp="5" gainmana="30" gainhpticks="12000" gainhpamount="10" gainmanaticks="2000" gainmanaamount="20" manamultiplier="1.1" attackspeed="2000" basespeed="220" soulmax="200" gainsoulticks="15000" fromvoc="1">
+		<formula meleeDamage="1.0" distDamage="1.0" defense="1.0" armor="1.0" />
+		<skill id="0" multiplier="1.5" />
+		<skill id="1" multiplier="2.0" />
+		<skill id="2" multiplier="2.0" />
+		<skill id="3" multiplier="2.0" />
+		<skill id="4" multiplier="2.0" />
+		<skill id="5" multiplier="1.5" />
+		<skill id="6" multiplier="1.1" />
+	</vocation>
+	<vocation id="10" clientid="14" baseid="2" name="Elder Druid" description="an elder druid" allowpvp="0" magicshield="1" gaincap="10" gainhp="5" gainmana="30" gainhpticks="12000" gainhpamount="10" gainmanaticks="2000" gainmanaamount="20" manamultiplier="1.1" attackspeed="2000" basespeed="220" soulmax="200" gainsoulticks="15000" fromvoc="2">
+		<formula meleeDamage="1.0" distDamage="1.0" defense="1.0" armor="1.0" />
+		<skill id="0" multiplier="1.5" />
+		<skill id="1" multiplier="1.8" />
+		<skill id="2" multiplier="1.8" />
+		<skill id="3" multiplier="1.8" />
+		<skill id="4" multiplier="1.8" />
+		<skill id="5" multiplier="1.5" />
+		<skill id="6" multiplier="1.1" />
+	</vocation>
+	<vocation id="11" clientid="12" baseid="3" name="Royal Paladin" description="a royal paladin" allowpvp="0" magicshield="0" gaincap="20" gainhp="10" gainmana="15" gainhpticks="6000" gainhpamount="10" gainmanaticks="2000" gainmanaamount="20" manamultiplier="1.4" attackspeed="2000" basespeed="220" soulmax="200" gainsoulticks="15000" fromvoc="3">
+		<formula meleeDamage="1.0" distDamage="1.0" defense="1.0" armor="1.0" />
+		<skill id="0" multiplier="1.2" />
+		<skill id="1" multiplier="1.2" />
+		<skill id="2" multiplier="1.2" />
+		<skill id="3" multiplier="1.2" />
+		<skill id="4" multiplier="1.1" />
+		<skill id="5" multiplier="1.1" />
+		<skill id="6" multiplier="1.1" />
+	</vocation>
+	<vocation id="12" clientid="11" baseid="4" name="Elite Knight" description="an elite knight" allowpvp="0" magicshield="0" gaincap="25" gainhp="15" gainmana="5" gainhpticks="2000" gainhpamount="10" gainmanaticks="6000" gainmanaamount="20" manamultiplier="3.0" attackspeed="2000" basespeed="220" soulmax="200" gainsoulticks="15000" fromvoc="4">
+		<formula meleeDamage="1.0" distDamage="1.0" defense="1.0" armor="1.0" />
+		<skill id="0" multiplier="1.1" />
+		<skill id="1" multiplier="1.1" />
+		<skill id="2" multiplier="1.1" />
+		<skill id="3" multiplier="1.1" />
+		<skill id="4" multiplier="1.4" />
+		<skill id="5" multiplier="1.1" />
+		<skill id="6" multiplier="1.1" />
+	</vocation>
 </vocations>
