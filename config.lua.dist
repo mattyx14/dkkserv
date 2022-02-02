@@ -20,13 +20,13 @@ redSkullDuration = 3
 blackSkullDuration = 5
 orangeSkullDuration = 2
 
-onlyInvitedCanMoveHouseItems = false
+onlyInvitedCanMoveHouseItems = true
 cleanProtectionZones = false
 
 -- Connection Config
 -- NOTE: maxPlayers set to 0 means no limit
 -- NOTE: MaxPacketsPerSeconds if you change you will be subject to bugs by WPE, keep the default value of 25
-ip = "127.0.0.1"
+ip = "darkkonia.sytes.net"
 bindOnlyGlobalAddress = false
 loginProtocolPort = 7171
 gameProtocolPort = 7172
@@ -43,8 +43,8 @@ maxItem = 2000
 maxContainer = 100
 
 -- Version
-clientVersion = 1264
-clientVersionStr = "12.64"
+clientVersion = 1272
+clientVersionStr = "12.72"
 
 -- Depot Limit
 freeDepotLimit = 2000
@@ -75,6 +75,11 @@ staminaPz = true
 staminaOrangeDelay = 1
 staminaGreenDelay = 5
 staminaPzGain = 1
+-- Max players allowed on a dummy.
+maxAllowedOnADummy = 1
+
+-- Imbuement
+togleImbuementShrineStorage = false
 
 -- Deaths
 -- NOTE: Leave deathLosePercent as -1 if you want to use the default
@@ -124,7 +129,7 @@ maxMarketOffersAtATimePerPlayer = 100
 
 -- MySQL
 mysqlHost = "127.0.0.1"
-mysqlUser = "root"
+mysqlUser = ""
 mysqlPass = ""
 mysqlDatabase = ""
 mysqlPort = 3306
@@ -139,7 +144,7 @@ emoteSpells = false
 classicEquipmentSlots = false
 allowWalkthrough = true
 coinPacketSize = 25
-coinImagesURL = "http://127.0.0.1/images/store/"
+coinImagesURL = "https://darkkonia.sytes.net/store/"
 classicAttackSpeed = false
 showScriptsLogInConsole = false
 
@@ -159,14 +164,13 @@ serverSaveShutdown = true
 sortLootByChance = true
 
 -- Rates
--- NOTE: rateExp, rateSkill and rateMagic is used when 'rateUseStages = false' - or a fallback only
+-- NOTE: rateExp, rateSkill and rateMagic is used as a fallback only
 -- To configure rates see file data/stages.lua
-rateUseStages = true
 rateExp = 1
+rateSkill = 50
 rateLoot = 3
+rateMagic = 25
 rateSpawn = 1
-rateSkill = 1
-rateMagic = 1
 
 -- Today regeneration condition over an loop every 1 second,
 -- so values which should regenerated less then 1 second
@@ -208,7 +212,7 @@ startupDatabaseOptimization = true
 -- Status server information
 ownerName = "Mattyx14"
 ownerEmail = "darkylive@live.com.mx"
-url = "darkkonia.sytes.net"
+url = "https://darkkonia.sytes.net"
 location = "MEX"
 
 -- Sends Discord webhook notifications on startup, raids and shutdown.
