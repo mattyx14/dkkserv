@@ -19,7 +19,6 @@ local setting = {
 local adventurersStone = Action()
 
 function adventurersStone.onUse(player, item, fromPosition, target, toPosition, isHotkey)
-
 	local playerPos, isInTemple, temple, townId = player:getPosition(), false
 	for i = 1, #setting do
 		temple = setting[i]

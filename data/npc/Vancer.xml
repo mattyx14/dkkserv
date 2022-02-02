@@ -8,8 +8,8 @@
 		<parameter key="module_shop" value="1" />
 		<parameter key="shop_sellable" value="
 			royal star, 29059, 75;
-			assassin stars, 7368, 50;
-			leaf star, 29036, 40;
+			assassin stars, 7368, 60;
+			leaf star, 29036, 50;
 			badger boots, 24742, 7500;
 			fur armor, 24741, 5000;
 			crossbow, 2455, 150;
@@ -25,7 +25,13 @@
 			wolf trophy, 7394, 1000;
 			behemoth trophy, 7396, 20000;
 			demon trophy, 7393, 40000;
-			dragon lord trophy, 7399, 10000;" />
+			dragon lord trophy, 7399, 10000;
+			wood cape, 2664, 5000;
+			cyclops trophy, 7398, 500
+			minotaur trophy, 7401, 500;
+			bullseye potion, 7443, 500;
+			ring of blue plasma, 26185, 8000;
+			collar of blue plasma, 26198, 6000;" />
 		<parameter key="shop_buyable" value="
 			arrow, 2544, 3;
 			bolt, 2543, 4;
@@ -47,6 +53,6 @@
 			tarsal arrow, 15648, 6;
 			throwing knife, 2410, 25;
 			throwing star, 2399, 42;
-			vortex bolt, 15649, 6" />
+			vortex bolt, 15649, 6;" />
 	</parameters>
 </npc>

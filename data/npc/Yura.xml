@@ -64,14 +64,6 @@
 			spellweavers rob,11355,12000;
 			spirit cloak,8870,350;
 			zaoan robe,11356,12000;
-
-			collar of blue plasma, 26198, 6000;
-			collar of green plasma, 26199, 6000;
-			collar of red plasma, 26200, 6000;
-			ring of blue plasma, 26185, 8000;
-			ring of green plasma, 26187, 8000;
-			ring of red plasma, 26189, 8000;
-
 			empty potion flask,7634,10;
 			empty potion flask,7635,15;
 			empty small potion flask,7636,5;
@@ -95,6 +87,23 @@
 			snakebite rod, 2182, 100;
 			springsprout rod, 8912, 3600;
 			terra rod, 2181, 2000;
-			underworld rod, 8910, 4400;" />
+			underworld rod, 8910, 4400;
+			life crystal, 2177, 75;
+			mind stone, 2178, 150;
+			spellbook of enlightenment, 8900, 3500;
+			spellbook of warding, 8901, 7500;
+			spellbook of mind control, 8902, 12000;
+			spellbook of lost souls, 8903, 17500;
+			spellwand, 7735, 299;
+			wooden spellbook, 29004, 12000;
+			summer dress, 8874, 1500;
+			star herb, 2800, 15;
+			panpipes, 2074, 150;
+			powder herb, 2803, 10;
+			witch broom, 10569, 60;
+			wooden hammer, 2556, 15;
+			mastermind potion, 7440, 500;
+			ring of green plasma, 26187, 8000;
+			collar of green plasma, 26199, 6000;" />
 	</parameters>
 </npc>
