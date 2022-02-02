@@ -62,12 +62,8 @@ weatherRain = false
 thunderEffect = false
 freeQuests = false
 allConsoleLog = false
--- NOTE: saveIntervalTime in hours
-saveInterval = false
-saveIntervalCleanMap = false
-saveIntervalTime = 1
 -- Stamina in Trainers
-staminaTrainer = false
+staminaTrainer = true
 staminaTrainerDelay = 5
 staminaTrainerGain = 1
 -- Stamina in PZ
@@ -79,7 +75,7 @@ staminaPzGain = 1
 maxAllowedOnADummy = 1
 
 -- Imbuement
-togleImbuementShrineStorage = false
+togleImbuementShrineStorage = true
 
 -- Deaths
 -- NOTE: Leave deathLosePercent as -1 if you want to use the default
@@ -90,7 +86,7 @@ deathLosePercent = -1
 -- Houses
 -- NOTE: set housePriceEachSQM to -1 to disable the ingame buy house functionality
 -- Periods: daily/weekly/monthly/yearly/never
-housePriceEachSQM = 2000
+housePriceEachSQM = 5000
 houseRentPeriod = "weekly"
 houseOwnedByAccount = true
 
@@ -213,7 +209,7 @@ startupDatabaseOptimization = true
 ownerName = "Mattyx14"
 ownerEmail = "darkylive@live.com.mx"
 url = "https://darkkonia.sytes.net"
-location = "MEX"
+location = "USA"
 
 -- Sends Discord webhook notifications on startup, raids and shutdown.
 -- The URL layout is https://discord.com/api/webhooks/:id/:token
