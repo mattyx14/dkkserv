@@ -328,7 +328,6 @@ end
 keywordHandler:addKeyword({'addon'}, StdModule.say, {npcHandler = npcHandler, text = 'I can forge the finest {weapons} for knights and warriors. They may wear them proudly and visible to everyone.'})
 keywordHandler:addKeyword({'weapons'}, StdModule.say, {npcHandler = npcHandler, text = 'Would you rather be interested in a {knight\'s sword} or in a {warrior\'s sword} or a {task}?'})
 
-npcHandler:setMessage(MESSAGE_GREET, 'Hello there.')
 npcHandler:setMessage(MESSAGE_FAREWELL, 'Good bye.')
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
