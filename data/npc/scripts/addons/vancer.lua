@@ -15,6 +15,12 @@ local function creatureSayCallback(cid, type, msg)
 		return false
 	end
 	local player = Player(cid)
+	local vocationId = player:getVocation():getBaseId()
+	local items = {
+		[3] = 40397,
+		[7] = 40397,
+	}
+
 	if msgcontains(msg, "addon") or msgcontains(msg, "outfit") then
 		if player:getStorageValue(Storage.OutfitQuest.HunterHatAddon) < 1 then
 			npcHandler:say("Oh, my winged tiara? Those are traditionally awarded after having completed a difficult {task} for our guild, only to female aspirants though. Male warriors will receive a hooded cloak.", cid)
@@ -45,6 +51,24 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("Ah, have you brought one piece of royal steel, draconian steel and hell steel each?", cid)
 			npcHandler.topic[cid] = 7
 		end
+	elseif msgcontains(msg, 'first quiver') then
+		if isInArray({3, 7}, vocationId) then
+			if player:getStorageValue(3052) == -1 then
+				selfSay('So you ask me for a {' .. ItemType(items[vocationId]):getName() .. '} to begin your advanture?, {OK}', cid)
+				npcHandler.topic[cid] = 8
+			else
+				selfSay('What? I have already gave you one {' .. ItemType(items[vocationId]):getName() .. '}!', cid)
+			end
+		else
+			selfSay('Sorry, you aren\'t a paladin.', cid)
+		end
+	elseif msgcontains(msg, 'ok') then
+		if npcHandler.topic[cid] == 8 then
+			player:addItem(items[vocationId], 1)
+			player:setStorageValue(3052, 1)
+			selfSay('Here you are young adept, take care yourself.', cid)
+		end
+		npcHandler.topic[cid] = 0
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 2 then
 			npcHandler:say({

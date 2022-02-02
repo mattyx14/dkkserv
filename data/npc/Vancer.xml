@@ -3,7 +3,7 @@
 	<health now="100" max="100" />
 	<look type="684" head="57" body="59" legs="40" feet="76" addons="1" />
 	<parameters>
-		<parameter key="message_greet" value="Hello |PLAYERNAME|. I sell munitions. Say {trade}. And have other {jobs}." />
+		<parameter key="message_greet" value="Hello |PLAYERNAME|. I sell munitions. Say {trade}. And have other {jobs}. And if you need your {first quiver} you can ask me." />
 		<parameter key="message_decline" value="Is |TOTALCOST| gold coins too much for you? Get out of here!" />
 		<parameter key="module_shop" value="1" />
 		<parameter key="shop_sellable" value="

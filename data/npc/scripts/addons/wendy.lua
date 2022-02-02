@@ -16,6 +16,20 @@ local function creatureSayCallback(cid, type, msg)
 	end
 
 	local player = Player(cid)
+	local vocationId = player:getVocation():getBaseId()
+	local club = {
+		[4] = 2439,
+		[8] = 2439
+	}
+	local sword = {
+		[4] = 8602,
+		[8] = 8602
+	}
+	local axe = {
+		[4] = 8601,
+		[8] = 8601
+	}
+
 	if msgcontains(msg, 'knight\'s sword') then
 		if player:hasOutfit(player:getSex() == PLAYERSEX_FEMALE and 139 or 131, 1) then
 			npcHandler:say('You already have this outfit!', cid)
@@ -213,8 +227,7 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler.topic[cid] = 0
 	end
 
-	if msgcontains(msg, 'adorn')
-			or msgcontains(msg, 'outfit') then
+	if msgcontains(msg, 'adorn') or msgcontains(msg, 'outfit') then
 		local addonProgress = player:getStorageValue(Storage.OutfitQuest.Knight.AddonHelmet)
 		if addonProgress == 5 then
 			player:setStorageValue(Storage.OutfitQuest.Knight.MissionHelmet, 6)
@@ -239,6 +252,76 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say('Sorry, but without the permission of Gregor I cannot help you with this matter.', cid)
 		end
 	end
+
+	if msgcontains(msg, 'first club') then
+		if isInArray({4, 8}, vocationId) then
+			if player:getStorageValue(3055) == -1 then
+				selfSay('So you ask me for a {' .. ItemType(club[vocationId]):getName() .. '} to begin your advanture with it {club}?', cid)
+				npcHandler.topic[cid] = 8
+			else
+				selfSay('What? I have already gave you one {' .. ItemType(club[vocationId]):getName() .. '}!', cid)
+			end
+		else
+			selfSay('Sorry, you aren\'t a knight.', cid)
+		end
+		elseif msgcontains(msg, 'club') then
+			if npcHandler.topic[cid] == 8 then
+				player:addItem(club[vocationId], 1)
+				player:setStorageValue(3055, 1)
+				selfSay('Here you are young adept, take care yourself.', cid)
+			end
+			npcHandler.topic[cid] = 0
+	elseif msgcontains(msg, 'no') and npcHandler.topic[cid] == 1 then
+		selfSay('Ok then.', cid)
+		npcHandler.topic[cid] = 0
+	end
+
+	if msgcontains(msg, 'first sword') then
+		if isInArray({4, 8}, vocationId) then
+			if player:getStorageValue(3056) == -1 then
+				selfSay('So you ask me for a {' .. ItemType(sword[vocationId]):getName() .. '} to begin your advanture with it {sword}?', cid)
+				npcHandler.topic[cid] = 9
+			else
+				selfSay('What? I have already gave you one {' .. ItemType(sword[vocationId]):getName() .. '}!', cid)
+			end
+		else
+			selfSay('Sorry, you aren\'t a knight.', cid)
+		end
+		elseif msgcontains(msg, 'sword') then
+			if npcHandler.topic[cid] == 9 then
+				player:addItem(sword[vocationId], 1)
+				player:setStorageValue(3056, 1)
+				selfSay('Here you are young adept, take care yourself.', cid)
+			end
+			npcHandler.topic[cid] = 0
+	elseif msgcontains(msg, 'no') and npcHandler.topic[cid] == 1 then
+		selfSay('Ok then.', cid)
+		npcHandler.topic[cid] = 0
+	end
+
+	if msgcontains(msg, 'first axe') then
+		if isInArray({4, 8}, vocationId) then
+			if player:getStorageValue(3057) == -1 then
+				selfSay('So you ask me for a {' .. ItemType(axe[vocationId]):getName() .. '} to begin your advanture with it {axe}?', cid)
+				npcHandler.topic[cid] = 10
+			else
+				selfSay('What? I have already gave you one {' .. ItemType(axe[vocationId]):getName() .. '}!', cid)
+			end
+		else
+			selfSay('Sorry, you aren\'t a knight.', cid)
+		end
+		elseif msgcontains(msg, 'axe') then
+			if npcHandler.topic[cid] == 10 then
+				player:addItem(axe[vocationId], 1)
+				player:setStorageValue(3057, 1)
+				selfSay('Here you are young adept, take care yourself.', cid)
+			end
+			npcHandler.topic[cid] = 0
+	elseif msgcontains(msg, 'no') and npcHandler.topic[cid] == 1 then
+		selfSay('Ok then.', cid)
+		npcHandler.topic[cid] = 0
+	end
+
 	return true
 end
 

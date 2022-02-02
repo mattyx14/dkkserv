@@ -2278,8 +2278,8 @@
 		<monster name="Pooka" x="-9" y="10" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="880" centery="985" centerz="7" radius="3">
-		<monster name="Boogy" x="-1" y="-1" z="7" spawntime="60" />
-		<monster name="Pixie" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Boogy" x="-1" y="-1" z="7" spawntime="120" />
+		<monster name="Pixie" x="0" y="0" z="7" spawntime="120" />
 	</spawn>
 	<spawn centerx="971" centery="985" centerz="7" radius="1">
 		<npc name="Citizen_women" x="1" y="-1" z="7" spawntime="60" direction="2" />
@@ -4255,6 +4255,9 @@
 	<spawn centerx="896" centery="1138" centerz="7" radius="1">
 		<monster name="Dragon Hatchling" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
+	<spawn centerx="732" centery="1139" centerz="7" radius="1">
+		<monster name="Faun" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
 	<spawn centerx="906" centery="1139" centerz="7" radius="1">
 		<monster name="Wyvern" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
@@ -4303,6 +4306,9 @@
 	<spawn centerx="636" centery="1145" centerz="7" radius="1">
 		<monster name="Wasp" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
+	<spawn centerx="726" centery="1146" centerz="7" radius="1">
+		<monster name="Dark Faun" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
 	<spawn centerx="541" centery="1147" centerz="7" radius="1">
 		<monster name="Fire Elemental" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
@@ -4317,6 +4323,12 @@
 	</spawn>
 	<spawn centerx="918" centery="1147" centerz="7" radius="1">
 		<monster name="Dragon Lord Hatchling" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="740" centery="1148" centerz="7" radius="5">
+		<monster name="Elf" x="-3" y="-5" z="7" spawntime="60" />
+		<monster name="Elf" x="3" y="-4" z="7" spawntime="60" />
+		<monster name="Elf Scout" x="1" y="1" z="7" spawntime="60" />
+		<monster name="Elf" x="2" y="3" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="542" centery="1149" centerz="7" radius="1">
 		<monster name="Fire Elemental" x="0" y="0" z="7" spawntime="60" />
@@ -4342,6 +4354,9 @@
 	<spawn centerx="634" centery="1150" centerz="7" radius="1">
 		<monster name="Wasp" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
+	<spawn centerx="747" centery="1150" centerz="7" radius="1">
+		<monster name="Faun" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
 	<spawn centerx="881" centery="1150" centerz="7" radius="1">
 		<monster name="Dragon Lord Hatchling" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
@@ -4356,6 +4371,12 @@
 	</spawn>
 	<spawn centerx="677" centery="1152" centerz="7" radius="1">
 		<monster name="Wasp" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="727" centery="1152" centerz="7" radius="5">
+		<monster name="Elf Scout" x="2" y="-4" z="7" spawntime="60" />
+		<monster name="Elf Scout" x="-2" y="-1" z="7" spawntime="60" />
+		<monster name="Elf" x="5" y="0" z="7" spawntime="60" />
+		<monster name="Elf" x="4" y="4" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="550" centery="1153" centerz="7" radius="1">
 		<monster name="Firestarter" x="0" y="0" z="7" spawntime="60" />
@@ -4375,6 +4396,9 @@
 	<spawn centerx="655" centery="1154" centerz="7" radius="1">
 		<monster name="Elf" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
+	<spawn centerx="748" centery="1154" centerz="7" radius="1">
+		<monster name="Dark Faun" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
 	<spawn centerx="677" centery="1155" centerz="7" radius="1">
 		<monster name="Wasp" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
@@ -4383,6 +4407,9 @@
 	</spawn>
 	<spawn centerx="570" centery="1157" centerz="7" radius="1">
 		<monster name="Swan Maiden" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="711" centery="1157" centerz="7" radius="1">
+		<monster name="Dark Faun" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="574" centery="1158" centerz="7" radius="1">
 		<monster name="Pooka" x="0" y="0" z="7" spawntime="60" />
@@ -4393,6 +4420,9 @@
 	<spawn centerx="547" centery="1159" centerz="7" radius="1">
 		<monster name="Fire Elemental" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
+	<spawn centerx="730" centery="1159" centerz="7" radius="1">
+		<monster name="Faun" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
 	<spawn centerx="544" centery="1160" centerz="7" radius="1">
 		<monster name="Firestarter" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
@@ -4401,6 +4431,11 @@
 	</spawn>
 	<spawn centerx="689" centery="1160" centerz="7" radius="1">
 		<monster name="Wasp" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="745" centery="1160" centerz="7" radius="5">
+		<monster name="Elf Scout" x="3" y="-2" z="7" spawntime="60" />
+		<monster name="Elf Scout" x="0" y="2" z="7" spawntime="60" />
+		<monster name="Elf Scout" x="3" y="3" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="590" centery="1162" centerz="7" radius="1">
 		<monster name="Swan Maiden" x="0" y="0" z="7" spawntime="60" />
@@ -4417,6 +4452,9 @@
 	<spawn centerx="541" centery="1163" centerz="7" radius="1">
 		<monster name="Firestarter" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
+	<spawn centerx="738" centery="1163" centerz="7" radius="1">
+		<monster name="Dark Faun" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
 	<spawn centerx="574" centery="1164" centerz="7" radius="1">
 		<monster name="Pooka" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
@@ -4431,6 +4469,9 @@
 	</spawn>
 	<spawn centerx="565" centery="1165" centerz="7" radius="1">
 		<monster name="Swan Maiden" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="744" centery="1166" centerz="7" radius="1">
+		<monster name="Faun" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="560" centery="1167" centerz="7" radius="1">
 		<monster name="Nymph" x="0" y="0" z="7" spawntime="60" />
@@ -4471,6 +4512,9 @@
 	<spawn centerx="688" centery="1170" centerz="7" radius="1">
 		<monster name="Elf" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
+	<spawn centerx="754" centery="1170" centerz="7" radius="1">
+		<monster name="Dark Faun" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
 	<spawn centerx="567" centery="1171" centerz="7" radius="1">
 		<monster name="Swan Maiden" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
@@ -4488,6 +4532,10 @@
 	</spawn>
 	<spawn centerx="658" centery="1174" centerz="7" radius="1">
 		<monster name="Rabbit" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="748" centery="1174" centerz="7" radius="5">
+		<monster name="Elf Scout" x="1" y="0" z="7" spawntime="60" />
+		<monster name="Dark Faun" x="-2" y="3" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="589" centery="1175" centerz="7" radius="1">
 		<monster name="Swan Maiden" x="0" y="0" z="7" spawntime="60" />

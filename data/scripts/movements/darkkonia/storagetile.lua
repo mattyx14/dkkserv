@@ -101,12 +101,14 @@ local TileSettings = {
 		teleport = Position(728, 1031, 10),
 		missionName = "require complete conjurer outfit quest to use this portal"
 	},
+--[[
 	[5517] = { -- Right Vortex / Old Entrace to raid Morgaroth
 		minLevel = 250,
 		mission = Storage.AnniQuest.AnnihiMission.Done,
 		teleport = Position(728, 1031, 10),
 		missionName = "require complete conjurer outfit quest to use this portal"
 	},
+]]
 }
 
 

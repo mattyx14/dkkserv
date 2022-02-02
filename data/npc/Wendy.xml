@@ -4,7 +4,7 @@
 	<look type="139" head="132" body="79" legs="97" feet="132" addons="3"/>
 	<parameters>
 		<parameter key="module_shop" value="1"/>
-		<parameter key="message_greet" value="Hello |PLAYERNAME|. I buy swords, clubs, axes, helmets, boots, legs, shields and armors."/>
+		<parameter key="message_greet" value="Hello |PLAYERNAME|. I buy swords, clubs, axes, helmets, boots, legs, shields and armors. And if you need your {first club} or your {first sword} or your {first axe} you can ask me."/>
 		<parameter key="module_shop" value="1" />
 		<parameter key="shop_buyable" value="
 			flask of rust remover,9930,100,1;" />
@@ -199,7 +199,6 @@
 			crystal ring, 6093, 250;
 			crystal sword, 7449, 600;
 			crystalline armor, 8878, 16000;
-			daramian mace, 2439, 110;
 			daramian waraxe, 2440, 1000;
 			dark shield, 2521, 400;
 			death ring, 6300, 1000;
