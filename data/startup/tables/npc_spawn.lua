@@ -2,18 +2,18 @@ NpcTable = {
 	--[] = {name = "", position = Position()},
 	-- Fynn Castle
 	[1] = {name = "Yura", position = Position(912, 999, 7)}, -- Potion / Rune
-	[2] = {name = "Edson", position = Position(893, 995, 7)}, -- Food
-	[3] = {name = "Gloria", position = Position(885, 996, 7)}, -- Furniture
-	[4] = {name = "Vancer", position = Position(909, 1019, 7)}, -- Munition
-	[5] = {name = "Wendy", position = Position(930, 1016, 7)}, -- Weapon
-	[6] = {name = "Dan", position = Position(969, 1006, 7)}, -- Mail
+	[2] = {name = "Edson", position = Position(894, 995, 7)}, -- Food
+	[3] = {name = "Gloria", position = Position(885, 997, 7)}, -- Furniture
+	[4] = {name = "Vancer", position = Position(907, 1020, 7)}, -- Munition
+	[5] = {name = "Wendy", position = Position(930, 1017, 7)}, -- Weapon
+	[6] = {name = "Dan", position = Position(968, 1006, 7)}, -- Mail
 	[7] = {name = "Yuna", position = Position(976, 1017, 7)}, -- Tools
 	[8] = {name = "Albinius", position = Position(940, 995, 7)}, -- Imbuiment
 	[9] = {name = "Pablo", position = Position(948, 977, 7)}, -- Bank
 	[10] = {name = "Javier", position = Position(957, 1025, 6)}, -- Boat
 	[11] = {name = "Henrry", position = Position(880, 1005, 8)}, -- Gems
 	[12] = {name = "The King", position = Position(971, 932, 7)}, -- Promoter
-	[13] = {name = "Katty", position = Position(980, 965, 8)}, -- Blessings
+	[13] = {name = "Katty", position = Position(979, 965, 8)}, -- Blessings
 	[14] = {name = "Citizen_addon1_fynn", position = Position(978, 1049, 7)}, -- Custom "Citizen Addoner"
 	[15] = {name = "Citizen_women_addon2_fynn", position = Position(971, 952, 7)}, -- Custom "Citizen Addoner"
 	[96] = {name = "Kory", position = Position(1018, 988, 7)}, -- Boat
