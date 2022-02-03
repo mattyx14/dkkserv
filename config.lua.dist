@@ -1,5 +1,5 @@
 -- Combat settings
--- NOTE: valid values for worldType are: "pvp", "no-pvp" and "pvp-enforced"
+-- NOTE: valid values for worldType are: "pvp", "no-pvp" and "pvp-enforced" 
 worldType = "pvp"
 hotkeyAimbotEnabled = true
 protectionLevel = 0
