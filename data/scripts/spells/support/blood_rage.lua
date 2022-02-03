@@ -1,7 +1,7 @@
 local condition = Condition(CONDITION_ATTRIBUTES)
 condition:setParameter(CONDITION_PARAM_SUBID, 5)
 condition:setParameter(CONDITION_PARAM_TICKS, 10000)
-condition:setParameter(CONDITION_PARAM_SKILL_MELEEPERCENT, 135)
+condition:setParameter(CONDITION_PARAM_SKILL_MELEE, 40)
 condition:setParameter(CONDITION_PARAM_BUFF_DAMAGERECEIVED, 115)
 condition:setParameter(CONDITION_PARAM_DISABLE_DEFENSE, true)
 condition:setParameter(CONDITION_PARAM_BUFF_SPELL, true)
