@@ -36,10 +36,10 @@ function creatureSayCallback(cid, type, msg)
 		[6] = 2182
 	}
 
-	if msgcontains(msg, 'first wand') or msgcontains(msg, 'first rod') then
+	if msgcontains(msg, 'first rod') or msgcontains(msg, 'first wand') then
 		if isInArray({1, 2, 5, 6}, vocationId) then
 			if player:getStorageValue(3050) == -1 then
-				selfSay('I\'ll give you one a {' .. ItemType(items[vocationId]):getName() .. '} to begin your advanture with it {'.. ItemType(items[vocationId]):getName() ..'}, {yes}? ', cid)
+				selfSay('So you ask me for a {' .. ItemType(items[vocationId]):getName() .. '} to begin your advanture?', cid)
 				npcHandler.topic[cid] = 1
 			else
 				selfSay('What? I have already gave you one {' .. ItemType(items[vocationId]):getName() .. '}!', cid)
@@ -47,7 +47,7 @@ function creatureSayCallback(cid, type, msg)
 		else
 			selfSay('Sorry, you aren\'t a druid either a sorcerer.', cid)
 		end
-	elseif msgcontains(msg, 'wand of vortex') or msgcontains(msg, 'snakebite rod') or msgcontains(msg, 'yes') then
+	elseif msgcontains(msg, 'yes') then
 		if npcHandler.topic[cid] == 1 then
 			player:addItem(items[vocationId], 1)
 			player:setStorageValue(3050, 1)

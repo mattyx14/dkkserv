@@ -256,7 +256,7 @@ local function creatureSayCallback(cid, type, msg)
 	if msgcontains(msg, 'first club') then
 		if isInArray({4, 8}, vocationId) then
 			if player:getStorageValue(3055) == -1 then
-				selfSay('So you ask me for a {' .. ItemType(club[vocationId]):getName() .. '} to begin your advanture with it {'.. ItemType(items[vocationId]):getName() ..'}, {yes}? ', cid)
+				selfSay('So you ask me for a {' .. ItemType(club[vocationId]):getName() .. '} to begin your advanture with it {club}?', cid)
 				npcHandler.topic[cid] = 8
 			else
 				selfSay('What? I have already gave you one {' .. ItemType(club[vocationId]):getName() .. '}!', cid)
@@ -264,7 +264,7 @@ local function creatureSayCallback(cid, type, msg)
 		else
 			selfSay('Sorry, you aren\'t a knight.', cid)
 		end
-		elseif msgcontains(msg, 'daramian mace') or msgcontains(msg, 'yes') then
+		elseif msgcontains(msg, 'club') then
 			if npcHandler.topic[cid] == 8 then
 				player:addItem(club[vocationId], 1)
 				player:setStorageValue(3055, 1)
@@ -279,7 +279,7 @@ local function creatureSayCallback(cid, type, msg)
 	if msgcontains(msg, 'first sword') then
 		if isInArray({4, 8}, vocationId) then
 			if player:getStorageValue(3056) == -1 then
-				selfSay('So you ask me for a {' .. ItemType(sword[vocationId]):getName() .. '} to begin your advanture with it {'.. ItemType(items[vocationId]):getName() ..'}, {yes}? ', cid)
+				selfSay('So you ask me for a {' .. ItemType(sword[vocationId]):getName() .. '} to begin your advanture with it {sword}?', cid)
 				npcHandler.topic[cid] = 9
 			else
 				selfSay('What? I have already gave you one {' .. ItemType(sword[vocationId]):getName() .. '}!', cid)
@@ -287,7 +287,7 @@ local function creatureSayCallback(cid, type, msg)
 		else
 			selfSay('Sorry, you aren\'t a knight.', cid)
 		end
-		elseif msgcontains(msg, 'jagged sword') or msgcontains(msg, 'yes') then
+		elseif msgcontains(msg, 'sword') then
 			if npcHandler.topic[cid] == 9 then
 				player:addItem(sword[vocationId], 1)
 				player:setStorageValue(3056, 1)
@@ -302,7 +302,7 @@ local function creatureSayCallback(cid, type, msg)
 	if msgcontains(msg, 'first axe') then
 		if isInArray({4, 8}, vocationId) then
 			if player:getStorageValue(3057) == -1 then
-				selfSay('So you ask me for a {' .. ItemType(axe[vocationId]):getName() .. '} to begin your advanture with it {'.. ItemType(items[vocationId]):getName() ..'}, {yes}? ', cid)
+				selfSay('So you ask me for a {' .. ItemType(axe[vocationId]):getName() .. '} to begin your advanture with it {axe}?', cid)
 				npcHandler.topic[cid] = 10
 			else
 				selfSay('What? I have already gave you one {' .. ItemType(axe[vocationId]):getName() .. '}!', cid)
@@ -310,7 +310,7 @@ local function creatureSayCallback(cid, type, msg)
 		else
 			selfSay('Sorry, you aren\'t a knight.', cid)
 		end
-		elseif msgcontains(msg, 'steel axe') or msgcontains(msg, 'yes') then
+		elseif msgcontains(msg, 'axe') then
 			if npcHandler.topic[cid] == 10 then
 				player:addItem(axe[vocationId], 1)
 				player:setStorageValue(3057, 1)
