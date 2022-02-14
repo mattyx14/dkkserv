@@ -19,7 +19,7 @@ function firstSacrificeDH.onStepIn(creature, item, position, fromPosition)
     end
 
     local sacrificeId, sacrifice = Tile(flame.sacrificePosition):getThing(1).itemid, true
-    if not isInArray({2434}, sacrificeId) then
+    if not isInArray({3322}, sacrificeId) then
         sacrifice = false
     end
 
@@ -33,7 +33,7 @@ function firstSacrificeDH.onStepIn(creature, item, position, fromPosition)
     local dragonHammer = Tile(flame.sacrificePosition):getItemById(sacrificeId)
     if dragonHammer then
         dragonHammer:remove()
-		player:setStorageValue(Storage.FirstSacrifice.noSacrifice.hammerDragon, 1)
+		player:setStorageValue(DarkKonia.FirstSacrifice.noSacrifice.hammerDragon, 1)
     end
 
     player:teleportTo(flame.destination)

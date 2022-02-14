@@ -1,14 +1,14 @@
 local config = {
-	{fromPosition = Position(1046, 181, 9), toPosition = Position(1232, 287, 8), sacrificePosition = Position(1046, 182, 9), sacrificeId = 2746},
-	{fromPosition = Position(1051, 181, 9), toPosition = Position(1172, 345, 8), sacrificePosition = Position(1051, 182, 9), sacrificeId = 2744},
-	{fromPosition = Position(1056, 181, 9), toPosition = Position(1237, 407, 8), sacrificePosition = Position(1056, 182, 9), sacrificeId = 2745},
+	{fromPosition = Position(1046, 181, 9), toPosition = Position(1232, 287, 8), sacrificePosition = Position(1046, 182, 9), sacrificeId = 3660},
+	{fromPosition = Position(1051, 181, 9), toPosition = Position(1172, 345, 8), sacrificePosition = Position(1051, 182, 9), sacrificeId = 3658},
+	{fromPosition = Position(1056, 181, 9), toPosition = Position(1237, 407, 8), sacrificePosition = Position(1056, 182, 9), sacrificeId = 3659},
 	{fromPosition = Position(1051, 139, 9), toPosition = Position(1051, 148, 9), sacrificePosition = Position(1050, 137, 9), sacrificeId = 6560},
 }
 
 local conjurerLever_1 = Action()
 function conjurerLever_1.onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	item:transform(item.itemid == 1945 and 1946 or 1945)
-	if item.itemid ~= 1945 then
+	item:transform(item.itemid == 2772 and 2773 or 2772)
+	if item.itemid ~= 2772 then
 		return true
 	end
 

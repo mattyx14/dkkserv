@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<npc name="Sammuel" script="promotion.lua" walkinterval="2000" skull="green" floorchange="0">
-	<health now="150" max="150"/>
-	<look type="268" head="114" body="0" legs="95" feet="114" addons="3"/>
-	<parameters>
-		<parameter key="message_greet" value="Hello |PLAYERNAME|. I {promote} to you ..."/>
-	</parameters>
-</npc>

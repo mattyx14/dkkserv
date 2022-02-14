@@ -25,20 +25,20 @@ local config = {
 
 local annihi = Action()
 function annihi.onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	if player:getStorageValue(Storage.VampireQuest.draculaDone) == 1 and
-		player:getStorageValue(Storage.Missions.DjinnMission.Done) == 1 and
-		player:getStorageValue(Storage.AnniQuest.justiceSeekerDone) == 1 and
-		player:getStorageValue(Storage.AnniQuest.blessedSceptreDone) == 1 and
-		player:getStorageValue(Storage.AnniQuest.royalAxeDone) == 1 and
-		player:getStorageValue(Storage.AnniQuest.pirateDone) == 1 and
-		player:getStorageValue(Storage.AnniQuest.conjurerDone) == 1 and
-		player:getStorageValue(Storage.AnniQuest.deathHeraldDone) == 1 and
-		player:getStorageValue(Storage.AnniQuest.assassinDone) == 1 then
+	if player:getStorageValue(DarkKonia.VampireQuest.draculaDone) == 1 and
+		player:getStorageValue(DarkKonia.Missions.DjinnMission.Done) == 1 and
+		player:getStorageValue(DarkKonia.AnniQuest.justiceSeekerDone) == 1 and
+		player:getStorageValue(DarkKonia.AnniQuest.blessedSceptreDone) == 1 and
+		player:getStorageValue(DarkKonia.AnniQuest.royalAxeDone) == 1 and
+		player:getStorageValue(DarkKonia.AnniQuest.pirateDone) == 1 and
+		player:getStorageValue(DarkKonia.AnniQuest.conjurerDone) == 1 and
+		player:getStorageValue(DarkKonia.AnniQuest.deathHeraldDone) == 1 and
+		player:getStorageValue(DarkKonia.AnniQuest.assassinDone) == 1 then
 		player:sendTextMessage(MESSAGE_STATUS_SMALL, Game.getReturnMessage(RETURNVALUE_NOTPOSSIBLE))
 		return false
 	end
 
-	if item.itemid == 1946 then
+	if item.itemid == 2773 then
 		local storePlayers, playerTile = {}
 
 		for i = 1, #config.playerPositions do
@@ -81,7 +81,7 @@ function annihi.onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		end
 	end
 
-	item:transform(item.itemid == 1946 and 1945 or 1946)
+	item:transform(item.itemid == 2773 and 2772 or 2773)
 	return true
 end
 

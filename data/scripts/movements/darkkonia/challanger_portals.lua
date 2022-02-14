@@ -2,7 +2,7 @@ local destination = {
 	[24876] = { -- Demon Helmet
 		newPos = Position(1018, 1071, 10),
 		backPos = Position(1020, 1059, 10),
-		timer = Storage.FynnQuest.DemonHelmetTimmer
+		timer = DarkKonia.FynnQuest.DemonHelmetTimmer
 	},
 	[24878] = { -- Lady Tenebris
 		newPos = Position(1127, 1080, 15),
@@ -12,22 +12,22 @@ local destination = {
 	[24879] = { -- Jaul
 		newPos = Position(1133, 461, 14),
 		backPos = Position(1138, 472, 14),
-		timer = Storage.MisidiaQuest.JaulTimer
+		timer = DarkKonia.MisidiaQuest.JaulTimer
 	},
 	[24880] = { -- Infernus Room
 		newPos = Position(472, 168, 9),
 		backPos = Position(495, 176, 9),
-		timer = Storage.AnsharaPOI.InfernusTimer
+		timer = DarkKonia.AnsharaPOI.InfernusTimer
 	},
 	[24881] = { -- Gazer
 		newPos = Position(679, 948, 11),
 		backPos = Position(712, 963, 13),
-		timer = Storage.FynnQuest.GazerTimer
+		timer = DarkKonia.FynnQuest.GazerTimer
 	},
 	[24882] = { -- Black Magician
 		newPos = Position(821, 1186, 10),
 		backPos = Position(876, 1168, 10),
-		timer = Storage.ElficVille.BlackMagicianTimer,
+		timer = DarkKonia.ElficVille.BlackMagicianTimer,
 	},
 }
 

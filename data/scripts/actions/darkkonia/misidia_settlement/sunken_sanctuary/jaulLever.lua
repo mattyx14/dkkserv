@@ -1,13 +1,13 @@
 local config = {
 	bossName = "Jaul",
 	requiredLevel = 250,
-	leverId = 9825,
+	leverId = 8911,
 	timeToFightAgain = 20, -- In hour
 	timeToDefeatBoss = 20, -- In minutes
 	clearRoomTime = 20, -- In minutes
-	storage = Storage.HidenChest.deaplingOutfit,
+	storage = DarkKonia.HidenChest.deaplingOutfit,
 	itemMission = "Depth Galea",
-	timer = Storage.MisidiaQuest.JaulTimer,
+	timer = DarkKonia.MisidiaQuest.JaulTimer,
 	blockLever = true,
 	value = 1,
 	centerRoom = Position(1143, 558, 15),

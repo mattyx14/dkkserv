@@ -5,7 +5,7 @@
 -- text: text of item (book, scroll, letter, etc).
 BookDocumentTable = {
 	[1] = {
-		itemId = 1972,
+		itemId = 2838,
 		position = {x = 1006, y = 958, z = 10},
 		text = [[And so shall the dead raise to once again walk the earth.]]
 	},
@@ -13,12 +13,12 @@ BookDocumentTable = {
 
 SignTable = {
 	[1] = {
-		itemId = 1441,
+		itemId = 2024,
 		itemPos = {x = 655, y = 315, z = 7},
 		text = "PUB"
 	},
 	[2] = {
-		itemId = 1818,
+		itemId = 2605,
 		itemPos = {x = 668, y = 343, z = 7},
 		text = [[Welcome to Kaer Morhen Stronghold.]]
 	},

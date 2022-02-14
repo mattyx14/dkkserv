@@ -15,5 +15,5 @@ function citizen.onStepIn(creature, item, position, fromPosition)
 end
 
 citizen:type("stepin")
-citizen:id(1387, 1397)
+citizen:id(775, 1949, 1959)
 citizen:register()

@@ -1,15 +1,14 @@
 local rewards = {
 	[SKILL_LEVEL] = {
-		{lvl = 30, items = {{2160, 15}}, storage = Storage.Rewards.firstLevelReward},
-		{lvl = 50, items = {{2160, 30}}, storage = Storage.Rewards.secondLevelReward},
-		{lvl = 80, items = {{2160, 50}}, storage = Storage.Rewards.thirdLevelReward},
-		{lvl = 110, items = {{2160, 80}}, storage = Storage.Rewards.fourthLevelReward},
+		{lvl = 30, items = {{3043, 2}}, storage = DarkKonia.Rewards.firstLevelReward},
+		{lvl = 50, items = {{3043, 3}}, storage = DarkKonia.Rewards.secondLevelReward},
+		{lvl = 80, items = {{3043, 5}}, storage = DarkKonia.Rewards.thirdLevelReward},
+		{lvl = 110, items = {{3043, 7}}, storage = DarkKonia.Rewards.fourthLevelReward},
 		-- {lvl = 60, items = {{16101, 1}}, storage = 3103}, -- Premium Scrolls
 	},
 --[[
 	[SKILL_SWORD] = {
-		{lvl = 150, items = {{2160, 2}, {2148, 1}}, storage = 54776},
-		{lvl = 160, items = {{2365, 2}}, storage = 54777}
+		{lvl = 150, items = {{3043, 2}, {2148, 1}}, storage = 54776},
 	},
 	[SKILL_MAGLEVEL] = {
 		{lvl = 100, items = {{2365, 2}}, storage = 54778},

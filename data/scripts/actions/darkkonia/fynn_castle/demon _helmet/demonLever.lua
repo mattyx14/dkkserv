@@ -1,11 +1,11 @@
 local config = {
 	bossName = "Demon",
 	requiredLevel = 200,
-	leverId = 9825,
+	leverId = 8911,
 	timeToFightAgain = 20, -- In hour
 	timeToDefeatBoss = 20, -- In minutes
 	clearRoomTime = 20, -- In minutes
-	timer = Storage.FynnQuest.DemonHelmetTimmer,
+	timer = DarkKonia.FynnQuest.DemonHelmetTimmer,
 	blockLever = true,
 	value = 1,
 	centerRoom = Position(996, 1060, 10),

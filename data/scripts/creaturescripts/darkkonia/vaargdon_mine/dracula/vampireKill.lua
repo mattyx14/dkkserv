@@ -1,8 +1,8 @@
 local vampireBoss = {
-	['zevelon duskbringer'] = {cStorage = Storage.VampireQuest.BossStorageDusk, cGlobalStorage = Storage.VampireQuest.zevelonDuskbringer},
-	['sir valorcrest'] = {cStorage = Storage.VampireQuest.BossStorageVarlor, cGlobalStorage = Storage.VampireQuest.sirValorcrest},
-	['diblis the fair'] = {cStorage = Storage.VampireQuest.BossStorageFair, cGlobalStorage = Storage.VampireQuest.diblisTheFair},
-	['arachir the ancient one'] = {cStorage = Storage.VampireQuest.BossStorageOne, cGlobalStorage = Storage.VampireQuest.arachirTheAncientOne},
+	['zevelon duskbringer'] = {cStorage = DarkKonia.VampireQuest.BossStorageDusk, cGlobalStorage = DarkKonia.VampireQuest.zevelonDuskbringer},
+	['sir valorcrest'] = {cStorage = DarkKonia.VampireQuest.BossStorageVarlor, cGlobalStorage = DarkKonia.VampireQuest.sirValorcrest},
+	['diblis the fair'] = {cStorage = DarkKonia.VampireQuest.BossStorageFair, cGlobalStorage = DarkKonia.VampireQuest.diblisTheFair},
+	['arachir the ancient one'] = {cStorage = DarkKonia.VampireQuest.BossStorageOne, cGlobalStorage = DarkKonia.VampireQuest.arachirTheAncientOne},
 }
 
 local vampireKillBosses = CreatureEvent("vampireKillBosses")

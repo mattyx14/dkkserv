@@ -19,7 +19,7 @@ function firstSacrificeKA.onStepIn(creature, item, position, fromPosition)
     end
 
     local sacrificeId, sacrifice = Tile(flame.sacrificePosition):getThing(1).itemid, true
-    if not isInArray({2430}, sacrificeId) then
+    if not isInArray({3318}, sacrificeId) then
         sacrifice = false
     end
 
@@ -33,7 +33,7 @@ function firstSacrificeKA.onStepIn(creature, item, position, fromPosition)
     local knightAxe = Tile(flame.sacrificePosition):getItemById(sacrificeId)
     if knightAxe then
         knightAxe:remove()
-		player:setStorageValue(Storage.FirstSacrifice.noSacrifice.axeKnight, 1)
+		player:setStorageValue(DarkKonia.FirstSacrifice.noSacrifice.axeKnight, 1)
     end
 
     player:teleportTo(flame.destination)

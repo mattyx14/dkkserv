@@ -2,7 +2,7 @@ local config = {
 	BossPosition = Position(382, 356, 9),
 	SoulPosition = Position(381, 357, 11),
 	centerRoom = Position(382, 357, 9),
-	storage = Storage.demonHelmetQuest,
+	storage = DarkKonia.demonHelmetQuest,
 	value = 1,
 	range = 17, 
 	timer = Storage.ForgottenKnowledge.DragonkingTimer,
@@ -34,13 +34,13 @@ end
 
 local forgottenDragonLever = Action()
 function forgottenDragonLever.onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	if item.itemid == 9825 then
+	if item.itemid == 8911 then
 		if player:getPosition() ~= Position(608, 387, 8) then -- Lever Main Position
 			return true
 		end
 	end
 
-	if item.itemid == 9825 then
+	if item.itemid == 8911 then
 		if player:getStorageValue(config.storage) < config.value then
 			player:say('You don\'t have permission to use this lever require Demon Helmet Quest.', TALKTYPE_MONSTER_SAY)
 			return true

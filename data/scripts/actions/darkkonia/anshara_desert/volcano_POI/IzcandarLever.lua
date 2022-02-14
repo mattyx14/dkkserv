@@ -1,13 +1,13 @@
 local config = {
 	bossName = "Izcandar Champion of Winter",
 	requiredLevel = 250,
-	leverId = 9825,
+	leverId = 8911,
 	timeToFightAgain = 20, -- In hour
 	timeToDefeatBoss = 20, -- In minutes
 	clearRoomTime = 20, -- In minutes
-	storage = Storage.HidenChest.crystallineArmor,
+	storage = DarkKonia.HidenChest.crystallineArmor,
 	itemMission = "Crystalline Armor",
-	timer = Storage.AnsharaPOI.IzcandarWinterTimer,
+	timer = DarkKonia.AnsharaPOI.IzcandarWinterTimer,
 	blockLever = true,
 	value = 1,
 	centerRoom = Position(440, 263, 9),

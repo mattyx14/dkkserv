@@ -6,8 +6,8 @@ local config = {
 
 local conjurerLever_2 = Action()
 function conjurerLever_2.onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	item:transform(item.itemid == 1945 and 1946 or 1945)
-	if item.itemid ~= 1945 then
+	item:transform(item.itemid == 2772 and 2773 or 2772)
+	if item.itemid ~= 2772 then
 		return true
 	end
 

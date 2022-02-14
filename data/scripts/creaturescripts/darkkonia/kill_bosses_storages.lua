@@ -4,11 +4,11 @@ function bossesForgotten.onKill(player, creature)
 	if not creature:isMonster() or creature:getMaster() then return true end
 	local bosses = {
 		["lady tenebris"] = {stg = Storage.ForgottenKnowledge.LadyTenebrisKilled, value = 1},
-		["jaul"] = {stg = Storage.MisidiaQuest.JaulKilled, value = 1},
-		["izcandar champion of winter"] = {stg = Storage.AnsharaPOI.IzcandarWinterKilled, value = 1},
-		["infernus"] = {stg = Storage.AnsharaPOI.InfernusKilled, value = 1},
-		["zarabustor"] = {stg = Storage.OutfitQuest.ZarabustorKilled, value = 1},
-		["black knight"] = {stg = Storage.ElficVille.BlackKnightKilled, value = 1},
+		["jaul"] = {stg = DarkKonia.MisidiaQuest.JaulKilled, value = 1},
+		["izcandar champion of winter"] = {stg = DarkKonia.AnsharaPOI.IzcandarWinterKilled, value = 1},
+		["infernus"] = {stg = DarkKonia.AnsharaPOI.InfernusKilled, value = 1},
+		["zarabustor"] = {stg = DarkKonia.OutfitQuest.ZarabustorKilled, value = 1},
+		["black knight"] = {stg = DarkKonia.ElficVille.BlackKnightKilled, value = 1},
 	}
 	local monsterName = creature:getName():lower()
 	local boss = bosses[monsterName]

@@ -1,0 +1,228 @@
+<?xml version="1.0"?>
+<npcs>
+	<npc centerx="1089" centery="309" centerz="2" radius="1">
+		<npc name="Guardian" x="0" y="0" z="2" spawntime="60" />
+	</npc>
+	<npc centerx="1096" centery="310" centerz="2" radius="1">
+		<npc name="Guardian" x="0" y="0" z="2" spawntime="60" />
+	</npc>
+	<npc centerx="1089" centery="318" centerz="2" radius="1">
+		<npc name="Guardian" x="0" y="0" z="2" spawntime="60" />
+	</npc>
+	<npc centerx="1096" centery="318" centerz="2" radius="1">
+		<npc name="Guardian" x="0" y="0" z="2" spawntime="60" />
+	</npc>
+	<npc centerx="942" centery="974" centerz="3" radius="1">
+		<npc name="Citizen_women" x="0" y="0" z="3" spawntime="60" direction="2" />
+	</npc>
+	<npc centerx="927" centery="980" centerz="3" radius="1">
+		<npc name="Citizen" x="0" y="0" z="3" spawntime="60" direction="2" />
+	</npc>
+	<npc centerx="992" centery="1003" centerz="3" radius="1">
+		<npc name="Guardian" x="0" y="0" z="3" spawntime="60" />
+	</npc>
+	<npc centerx="989" centery="1006" centerz="3" radius="1">
+		<npc name="Guardian" x="0" y="0" z="3" spawntime="60" />
+	</npc>
+	<npc centerx="945" centery="976" centerz="4" radius="1">
+		<npc name="Citizen_women" x="0" y="0" z="4" spawntime="60" direction="2" />
+	</npc>
+	<npc centerx="932" centery="979" centerz="4" radius="1">
+		<npc name="Citizen" x="0" y="0" z="4" spawntime="60" />
+	</npc>
+	<npc centerx="989" centery="1002" centerz="4" radius="1">
+		<npc name="Citizen_women" x="0" y="1" z="4" spawntime="60" direction="2" />
+	</npc>
+	<npc centerx="432" centery="1117" centerz="4" radius="1">
+		<npc name="Guardian" x="0" y="0" z="4" spawntime="60" />
+	</npc>
+	<npc centerx="432" centery="1129" centerz="4" radius="1">
+		<npc name="Guardian" x="0" y="0" z="4" spawntime="60" />
+	</npc>
+	<npc centerx="412" centery="1144" centerz="4" radius="1">
+		<npc name="Guardian" x="0" y="0" z="4" spawntime="60" />
+	</npc>
+	<npc centerx="432" centery="1144" centerz="4" radius="1">
+		<npc name="Guardian" x="0" y="0" z="4" spawntime="60" />
+	</npc>
+	<npc centerx="378" centery="1153" centerz="4" radius="1">
+		<npc name="Guardian" x="0" y="0" z="4" spawntime="60" />
+	</npc>
+	<npc centerx="394" centery="1153" centerz="4" radius="1">
+		<npc name="Guardian" x="0" y="0" z="4" spawntime="60" />
+	</npc>
+	<npc centerx="412" centery="1153" centerz="4" radius="1">
+		<npc name="Guardian" x="0" y="0" z="4" spawntime="60" />
+	</npc>
+	<npc centerx="1123" centery="326" centerz="5" radius="1">
+		<npc name="Guardian" x="0" y="0" z="5" spawntime="60" />
+	</npc>
+	<npc centerx="1127" centery="337" centerz="5" radius="1">
+		<npc name="Guardian" x="0" y="0" z="5" spawntime="60" />
+	</npc>
+	<npc centerx="1121" centery="355" centerz="5" radius="1">
+		<npc name="Guardian" x="0" y="0" z="5" spawntime="60" />
+	</npc>
+	<npc centerx="1118" centery="359" centerz="5" radius="1">
+		<npc name="Guardian" x="0" y="0" z="5" spawntime="60" />
+	</npc>
+	<npc centerx="944" centery="977" centerz="5" radius="1">
+		<npc name="Citizen" x="0" y="0" z="5" spawntime="60" direction="2" />
+	</npc>
+	<npc centerx="931" centery="980" centerz="5" radius="1">
+		<npc name="Citizen_women" x="0" y="0" z="5" spawntime="60" direction="2" />
+	</npc>
+	<npc centerx="991" centery="1006" centerz="5" radius="1">
+		<npc name="Citizen" x="0" y="0" z="5" spawntime="60" direction="2" />
+	</npc>
+	<npc centerx="1019" centery="1013" centerz="5" radius="1">
+		<npc name="Guardian" x="0" y="0" z="5" spawntime="60" />
+	</npc>
+	<npc centerx="1022" centery="1015" centerz="5" radius="1">
+		<npc name="Guardian" x="0" y="0" z="5" spawntime="60" />
+	</npc>
+	<npc centerx="1020" centery="1037" centerz="5" radius="1">
+		<npc name="Guardian" x="0" y="0" z="5" spawntime="60" />
+	</npc>
+	<npc centerx="1023" centery="1038" centerz="5" radius="1">
+		<npc name="Guardian" x="0" y="0" z="5" spawntime="60" />
+	</npc>
+	<npc centerx="432" centery="1078" centerz="5" radius="1">
+		<npc name="Guardian" x="0" y="0" z="5" spawntime="60" />
+	</npc>
+	<npc centerx="432" centery="1093" centerz="5" radius="1">
+		<npc name="Guardian" x="0" y="0" z="5" spawntime="60" />
+	</npc>
+	<npc centerx="330" centery="1315" centerz="5" radius="1">
+		<npc name="Guardian" x="0" y="0" z="5" spawntime="60" />
+	</npc>
+	<npc centerx="1127" centery="346" centerz="6" radius="1">
+		<npc name="Guardian" x="0" y="0" z="6" spawntime="60" />
+	</npc>
+	<npc centerx="1124" centery="350" centerz="6" radius="1">
+		<npc name="Guardian" x="0" y="0" z="6" spawntime="60" />
+	</npc>
+	<npc centerx="929" centery="982" centerz="6" radius="1">
+		<npc name="Citizen_women" x="0" y="0" z="6" spawntime="60" direction="2" />
+	</npc>
+	<npc centerx="972" centery="1005" centerz="6" radius="1">
+		<npc name="Citizen" x="0" y="0" z="6" spawntime="60" direction="2" />
+	</npc>
+	<npc centerx="432" centery="1082" centerz="6" radius="1">
+		<npc name="Guardian" x="0" y="0" z="6" spawntime="60" />
+	</npc>
+	<npc centerx="432" centery="1089" centerz="6" radius="1">
+		<npc name="Guardian" x="0" y="0" z="6" spawntime="60" />
+	</npc>
+	<npc centerx="432" centery="1098" centerz="6" radius="1">
+		<npc name="Guardian" x="0" y="0" z="6" spawntime="60" />
+	</npc>
+	<npc centerx="432" centery="1105" centerz="6" radius="1">
+		<npc name="Guardian" x="0" y="0" z="6" spawntime="60" />
+	</npc>
+	<npc centerx="377" centery="1110" centerz="6" radius="1">
+		<npc name="Citizen_women" x="0" y="0" z="6" spawntime="60" />
+	</npc>
+	<npc centerx="432" centery="1112" centerz="6" radius="1">
+		<npc name="Guardian" x="0" y="0" z="6" spawntime="60" />
+	</npc>
+	<npc centerx="432" centery="1134" centerz="6" radius="1">
+		<npc name="Guardian" x="0" y="0" z="6" spawntime="60" />
+	</npc>
+	<npc centerx="432" centery="1140" centerz="6" radius="1">
+		<npc name="Guardian" x="0" y="0" z="6" spawntime="60" />
+	</npc>
+	<npc centerx="418" centery="1144" centerz="6" radius="1">
+		<npc name="Guardian" x="0" y="0" z="6" spawntime="60" />
+	</npc>
+	<npc centerx="426" centery="1144" centerz="6" radius="1">
+		<npc name="Guardian" x="0" y="0" z="6" spawntime="60" />
+	</npc>
+	<npc centerx="385" centery="1153" centerz="6" radius="1">
+		<npc name="Guardian" x="0" y="0" z="6" spawntime="60" />
+	</npc>
+	<npc centerx="403" centery="1153" centerz="6" radius="1">
+		<npc name="Guardian" x="0" y="0" z="6" spawntime="60" />
+	</npc>
+	<npc centerx="1003" centery="938" centerz="7" radius="1">
+		<npc name="Citizen" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</npc>
+	<npc centerx="938" centery="958" centerz="7" radius="1">
+		<npc name="Citizen" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</npc>
+	<npc centerx="989" centery="968" centerz="7" radius="1">
+		<npc name="Citizen_women" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</npc>
+	<npc centerx="984" centery="972" centerz="7" radius="1">
+		<npc name="Citizen" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</npc>
+	<npc centerx="909" centery="976" centerz="7" radius="1">
+		<npc name="Citizen" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</npc>
+	<npc centerx="926" centery="980" centerz="7" radius="1">
+		<npc name="Citizen" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</npc>
+	<npc centerx="971" centery="985" centerz="7" radius="1">
+		<npc name="Citizen_women" x="1" y="-1" z="7" spawntime="60" direction="2" />
+	</npc>
+	<npc centerx="941" centery="988" centerz="7" radius="1">
+		<npc name="Citizen_women" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</npc>
+	<npc centerx="992" centery="989" centerz="7" radius="1">
+		<npc name="Citizen_women" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</npc>
+	<npc centerx="903" centery="993" centerz="7" radius="1">
+		<npc name="A Bearded Woman" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="881" centery="1005" centerz="7" radius="1">
+		<npc name="Citizen_women" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</npc>
+	<npc centerx="961" centery="1009" centerz="7" radius="1">
+		<npc name="Citizen" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</npc>
+	<npc centerx="907" centery="1012" centerz="7" radius="1">
+		<npc name="Citizen" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</npc>
+	<npc centerx="373" centery="1085" centerz="7" radius="1">
+		<npc name="Citizen" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="335" centery="1089" centerz="7" radius="1">
+		<npc name="Citizen_women" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="347" centery="1090" centerz="7" radius="1">
+		<npc name="Citizen" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="317" centery="1099" centerz="7" radius="1">
+		<npc name="Citizen_women" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="342" centery="1103" centerz="7" radius="1">
+		<npc name="Citizen_women" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="394" centery="1105" centerz="7" radius="1">
+		<npc name="Citizen_women" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="353" centery="1106" centerz="7" radius="1">
+		<npc name="Citizen" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="367" centery="1106" centerz="7" radius="1">
+		<npc name="Citizen" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="423" centery="1117" centerz="7" radius="1">
+		<npc name="Citizen" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="407" centery="1118" centerz="7" radius="1">
+		<npc name="Citizen_women" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="404" centery="1122" centerz="7" radius="1">
+		<npc name="Citizen" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="387" centery="1124" centerz="7" radius="1">
+		<npc name="Citizen_women" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="384" centery="1133" centerz="7" radius="1">
+		<npc name="Citizen" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+	<npc centerx="418" centery="1134" centerz="7" radius="1">
+		<npc name="Citizen" x="0" y="0" z="7" spawntime="60" />
+	</npc>
+</npcs>

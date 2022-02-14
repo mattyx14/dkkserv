@@ -1,13 +1,13 @@
 local config = {
 	bossName = "Fyzarus",
 	requiredLevel = 180,
-	leverId = 9825,
+	leverId = 8911,
 	timeToFightAgain = 4, -- In hour
 	timeToDefeatBoss = 20, -- In minutes
 	clearRoomTime = 20, -- In minutes
-	storage = Storage.FirstSacrifice.brightSword,
+	storage = DarkKonia.FirstSacrifice.brightSword,
 	itemMission = "Bright Sword",
-	timer = Storage.ArusBosses.FyzarusTimer,
+	timer = DarkKonia.ArusBosses.FyzarusTimer,
 	blockLever = true,
 	value = 1,
 	centerRoom = Position(905, 1112, 12),

@@ -1,11 +1,11 @@
 local config = {
 	bossName = "Infernus",
 	requiredLevel = 250,
-	leverId = 9825,
+	leverId = 8911,
 	timeToFightAgain = 20, -- In hour
 	timeToDefeatBoss = 20, -- In minutes
 	clearRoomTime = 20, -- In minutes
-	timer = Storage.AnsharaPOI.IzcandarWinterTimer,
+	timer = DarkKonia.AnsharaPOI.IzcandarWinterTimer,
 	blockLever = true,
 	value = 1,
 	centerRoom = Position(513, 197, 9),

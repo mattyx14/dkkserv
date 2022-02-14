@@ -1,6 +1,6 @@
 local configStones = {
 	[24887] = { -- Vinor Swamp "Pilar" Swamplair Armor
-		rockID = 8539,
+		rockID = 7709,
 		stonePosition = Position(247, 819, 13),
 	},
 	-- 24888 // Vinor Swamp "Pilar" Swamplair Armor
@@ -15,7 +15,7 @@ function serverLevers.onUse(player, item, fromPosition, target, toPosition, isHo
 		return true
 	end
 
-	if item.itemid == 1945 then
+	if item.itemid == 2772 then
 		local tile = p.stonePosition:getTile()
 		if tile then
 			local stone = tile:getItemById(p.rockID)
@@ -23,10 +23,10 @@ function serverLevers.onUse(player, item, fromPosition, target, toPosition, isHo
 				stone:remove()
 			end
 		end
-	elseif item.itemid == 1946 then
+	elseif item.itemid == 2773 then
 		Game.createItem(p.rockID, 1, p.stonePosition)
 	end
-	return item:transform(item.itemid == 1945 and 1946 or 1945)
+	return item:transform(item.itemid == 2772 and 2773 or 2772)
 end
 
 for index, value in pairs(configStones) do

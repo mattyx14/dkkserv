@@ -12,10 +12,10 @@ function portalDracula.onUse(player, item, fromPosition, target, toPosition, isH
 	end
 
 	if targetPosition and
-		player:getStorageValue(Storage.VampireQuest.BossStorageDusk) == 1 and
-		player:getStorageValue(Storage.VampireQuest.BossStorageVarlor) == 1 and
-		player:getStorageValue(Storage.VampireQuest.BossStorageFair) == 1 and
-		player:getStorageValue(Storage.VampireQuest.BossStorageOne) == 1 then
+		player:getStorageValue(DarkKonia.VampireQuest.BossStorageDusk) == 1 and
+		player:getStorageValue(DarkKonia.VampireQuest.BossStorageVarlor) == 1 and
+		player:getStorageValue(DarkKonia.VampireQuest.BossStorageFair) == 1 and
+		player:getStorageValue(DarkKonia.VampireQuest.BossStorageOne) == 1 then
 		player:teleportTo(targetPosition.toPosition)
 		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 		return true

@@ -1,6 +1,6 @@
 local config = {
-	[50220] = Position(1548, 977, 4),
-	[50221] = Position(1540, 987, 3)
+	[50220] = Position(1546, 976, 4),
+	[50221] = Position(1539, 989, 3)
 }
 
 local vengothTeleports = MoveEvent()

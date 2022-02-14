@@ -33,7 +33,7 @@ function firstSacrificeWF.onStepIn(creature, item, position, fromPosition)
     local wyvernFang = Tile(flame.sacrificePosition):getItemById(sacrificeId)
     if wyvernFang then
         wyvernFang:remove()
-		player:setStorageValue(Storage.FirstSacrifice.noSacrifice.fangWyvern, 1)
+		player:setStorageValue(DarkKonia.FirstSacrifice.noSacrifice.fangWyvern, 1)
     end
 
     player:teleportTo(flame.destination)

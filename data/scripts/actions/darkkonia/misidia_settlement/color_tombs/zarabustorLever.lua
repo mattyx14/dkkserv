@@ -1,11 +1,11 @@
 local config = {
 	bossName = "Zarabustor",
 	requiredLevel = 150,
-	leverId = 1851,
+	leverId = 2638,
 	timeToFightAgain = 20, -- In hour
 	timeToDefeatBoss = 20, -- In minutes
 	clearRoomTime = 20, -- In minutes
-	timer = Storage.OutfitQuest.ZarabustorTimmer,
+	timer = StoraDarkKoniage.OutfitQuest.ZarabustorTimmer,
 	blockLever = true,
 	value = 1,
 	centerRoom = Position(853, 1046, 10),

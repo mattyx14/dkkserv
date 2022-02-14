@@ -14,10 +14,10 @@ function oreWagons.onUse(player, item, fromPosition, target, toPosition, isHotke
 		return true
 	end
 
-	if player:getStorageValue(Storage.HidenChest.hiddenCity.OreWagon) == 1 then
+	if player:getStorageValue(DarkKonia.HidenChest.hiddenCity.OreWagon) == 1 then
 		player:teleportTo(targetPosition)
 		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-	elseif player:getStorageValue(Storage.HidenChest.hiddenCity.OreWagon) < 1 then
+	elseif player:getStorageValue(DarkKonia.HidenChest.hiddenCity.OreWagon) < 1 then
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You don't know how to use this yet. Need find to secret letter.")
 	end
 	return

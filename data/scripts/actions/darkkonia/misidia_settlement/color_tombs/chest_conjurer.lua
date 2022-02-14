@@ -1,16 +1,16 @@
 local outfits = {
-	[2662] = {2662, 'Conjurer', 635, 634},
+	[3573] = {3573, 'Conjurer', 635, 634},
 }
 
 local conjurerReward = Action()
 function conjurerReward.onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local outfit = outfits[item.uid]
-	if player:getStorageValue(Storage.OutfitQuest.ZarabustorKilled) < 1 then
+	if player:getStorageValue(DarkKonia.OutfitQuest.ZarabustorKilled) < 1 then
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You need to kill Zarabustor to take this quest.")
 		return true
 	end
 
-	if player:getStorageValue(2662) == 1 then
+	if player:getStorageValue(3573) == 1 then
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "The chest is empty.")
 		return true
 	end
@@ -31,13 +31,13 @@ function conjurerReward.onUse(player, item, fromPosition, target, toPosition, is
 		end
 	end
 
-	player:addItem(2656, 1)
-	player:addItem(2662, 1)
-	player:addItem(7730, 1)
+	player:addItem(3567, 1)
+	player:addItem(3573, 1)
+	player:addItem(645, 1)
 	player:setStorageValue(outfit[1], 1)
 	player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You found a blue set.")
 	return true
 end
 
-conjurerReward:uid(2662)
+conjurerReward:uid(3573)
 conjurerReward:register()

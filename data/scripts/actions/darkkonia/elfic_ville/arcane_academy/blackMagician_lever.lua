@@ -1,13 +1,13 @@
 local config = {
 	bossName = "Black Magician",
 	requiredLevel = 150,
-	leverId = 9825,
+	leverId = 8911,
 	timeToFightAgain = 20, -- In hour
 	timeToDefeatBoss = 20, -- In minutes
 	clearRoomTime = 20, -- In minutes
-	storage = Storage.FirstSacrifice.knightAxe,
+	storage = DarkKonia.FirstSacrifice.knightAxe,
 	itemMission = "fire axe",
-	timer = Storage.ElficVille.BlackMagicianTimer,
+	timer = DarkKonia.ElficVille.BlackMagicianTimer,
 	blockLever = true,
 	value = 1,
 	centerRoom = Position(890, 1179, 11),

@@ -19,5 +19,5 @@ function changeGold.onUse(player, item, fromPosition, target, toPosition, isHotk
 	return true
 end
 
-changeGold:id(2148, 2152, 2160)
+changeGold:id(3031, 3035, 3043)
 changeGold:register()

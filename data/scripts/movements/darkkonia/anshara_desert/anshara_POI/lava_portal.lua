@@ -1,5 +1,5 @@
 local destination = {
-	[24880] = {position = Position(495, 172, 9), storage = Storage.AnsharaPOI.ritualInfernus}
+	[24880] = {position = Position(495, 172, 9), storage = DarkKonia.AnsharaPOI.ritualInfernus}
 }
 
 local lavaPortalVolano = MoveEvent()

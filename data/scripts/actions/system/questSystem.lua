@@ -1,6 +1,6 @@
 local specialQuests = {
-	[2001] = Storage.Missions.DjinnMission.Done,
-	[2002] = Storage.AnniQuest.AnnihiMission.Done,
+	[2001] = DarkKonia.Missions.DjinnMission.Done,
+	[2002] = DarkKonia.AnniQuest.AnnihiMission.Done,
 }
 
 local questsExperience = {

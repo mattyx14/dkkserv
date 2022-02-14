@@ -1,9 +1,9 @@
 local buyPrem = TalkAction("!buypremium")
 
 local config = {
-	days = 10,
+	days = 3,
 	maxDays = 30,
-	price = 1000000
+	price = 250000
 }
 
 function buyPrem.onSay(player, words, param)

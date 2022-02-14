@@ -27,7 +27,7 @@ if not Quests then
 				},
 				[3] = {
 					name = "Bane of the deep",
-					storageId = Storage.MisidiaQuest.JaulKilled,
+					storageId = DarkKonia.MisidiaQuest.JaulKilled,
 					missionId = 10362,
 					startValue = 0,
 					endValue = 1522018605,

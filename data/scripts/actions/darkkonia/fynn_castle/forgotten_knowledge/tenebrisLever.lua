@@ -1,7 +1,7 @@
 local config = {
 	bossName = "Lady Tenebris",
 	requiredLevel = 250,
-	leverId = 9825,
+	leverId = 8911,
 	timeToFightAgain = 20, -- In hour
 	timeToDefeatBoss = 20, -- In minutes
 	clearRoomTime = 20, -- In minutes
