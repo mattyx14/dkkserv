@@ -1,13 +1,13 @@
 local serverstartup = GlobalEvent("serverstartup")
 function serverstartup.onStartup()
 	Spdlog.info("Loading map attributes")
-	-- Npc table
-	loadLuaNpcs(NpcTable)
-
+	Spdlog.info("Loaded ".. Game.getNpcCount() .." npcs and spawned ".. Game.getMonsterCount() .." monsters")
+	Spdlog.info("Loaded ".. #Game.getTowns() .. " towns with ".. #Game.getHouses() .." houses in total")
 	-- Sign table
 	loadLuaMapSign(SignTable)
 	Spdlog.info("Loaded " .. (#SignTable) .. " signs in the map")
-
+	-- Npc table
+	loadLuaNpcs(NpcTable)
 	-- Book/Document table
 	loadLuaMapBookDocument(BookDocumentTable)
 
@@ -29,7 +29,7 @@ function serverstartup.onStartup()
 	loadLuaMapAction(ItemAction)
 	-- loadLuaMapUnique(ItemUnique)
 	-- Item daily reward table
-	loadLuaMapAction(DailyRewardAction)
+	-- This is temporary disabled > loadLuaMapAction(DailyRewardAction)
 	-- Item unmoveable table
 	loadLuaMapAction(ItemUnmoveableAction)
 	-- Lever table
@@ -122,8 +122,5 @@ function serverstartup.onStartup()
 
 	-- Hireling System
 	HirelingsInit()
-
-	-- Load otservbr-custom map (data/world/custom/otservbr-custom.otbm)
-	loadCustomMap()
 end
 serverstartup:register()

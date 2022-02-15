@@ -7,7 +7,7 @@ local destination = {
 	[24878] = { -- Lady Tenebris
 		newPos = Position(1127, 1080, 15),
 		backPos = Position(1095, 1080, 15),
-		timer = Storage.ForgottenKnowledge.LadyTenebrisTimer
+		timer = DarkKonia.ForgottenKnowledge.LadyTenebrisTimer
 	},
 	[24879] = { -- Jaul
 		newPos = Position(1133, 461, 14),

@@ -1,5 +1,5 @@
 -- Combat settings
--- NOTE: valid values for worldType are: "pvp", "no-pvp" and "pvp-enforced" 
+-- NOTE: valid values for worldType are: "pvp", "no-pvp" and "pvp-enforced"
 worldType = "pvp"
 hotkeyAimbotEnabled = true
 protectionLevel = 0
@@ -43,8 +43,8 @@ maxItem = 2000
 maxContainer = 100
 
 -- Version
-clientVersion = 1272
-clientVersionStr = "12.72"
+clientVersion = 1285
+clientVersionStr = "12.85"
 
 -- Depot Limit
 freeDepotLimit = 2000
@@ -60,8 +60,8 @@ onlyPremiumAccount = false
 -- Customs
 weatherRain = false
 thunderEffect = false
-freeQuests = false
 allConsoleLog = false
+
 -- Stamina in Trainers
 staminaTrainer = true
 staminaTrainerDelay = 5
@@ -74,8 +74,26 @@ staminaPzGain = 1
 -- Max players allowed on a dummy.
 maxAllowedOnADummy = 1
 
+-- Save interval per time
+-- NOTE: togleSaveInterval: true = enable the save interval, false = disable the save interval
+-- NOTE: saveIntervalType: "minute", "second" or "hour"
+-- NOTE: togleSaveIntervalCleanMap: true = enable the clean map, false = disable the clean map
+-- NOTE: saveIntervalTime: time based on what was set in "saveIntervalType"
+togleSaveInterval = true
+saveIntervalType = "minute"
+togleSaveIntervalCleanMap = false
+saveIntervalTime = 15
+
 -- Imbuement
 togleImbuementShrineStorage = true
+
+-- Free quests
+-- Add quest access to player when logging in
+-- NOTE: Only quests that are in the "freequests.lua" script table will work
+-- toggleFreeQuest = enable/disable the system
+-- freeQuestStage = if you add more quests to the table, change this value to run freeQuest again
+toggleFreeQuest = false
+freeQuestStage = 1
 
 -- Deaths
 -- NOTE: Leave deathLosePercent as -1 if you want to use the default
@@ -86,7 +104,7 @@ deathLosePercent = -1
 -- Houses
 -- NOTE: set housePriceEachSQM to -1 to disable the ingame buy house functionality
 -- Periods: daily/weekly/monthly/yearly/never
-housePriceEachSQM = 5000
+housePriceEachSQM = 10000
 houseRentPeriod = "weekly"
 houseOwnedByAccount = true
 
@@ -94,14 +112,18 @@ houseOwnedByAccount = true
 timeBetweenActions = 200
 timeBetweenExActions = 1000
 
--- Push Delay
+-- Push
+-- NOTE: pushDelay: interval for every push
+-- NOTE: pushDistanceDelay: delay for every distance push
+-- NOTE: pushWhenAttacking: true = enable the push during attack, false = disable the push during attack
 pushDelay = 1000
 pushDistanceDelay = 1500
+pushWhenAttacking = false
 
 -- Map
 -- NOTE: set mapName WITHOUT .otbm at the end
 -- NOTE: unzip the map world.rar
-mapName = "darkkonia"
+mapName = "darkkonia_ID"
 mapAuthor = "Mattyx14"
 
 -- Party List limitations
@@ -111,11 +133,9 @@ partyListMaxDistance = 30
 
 -- Custom Map
 -- NOTE: mapCustomEnabled: true = activate the map, false = disable the map
+toggleMapCustom = false
 mapCustomName = ""
-mapCustomFile = ""
-mapCustomSpawn = ""
 mapCustomAuthor = ""
-mapCustomEnabled = false
 
 -- Market
 marketOfferDuration = 30 * 24 * 60 * 60
@@ -130,6 +150,7 @@ mysqlPass = ""
 mysqlDatabase = ""
 mysqlPort = 3306
 mysqlSock = ""
+passwordType = "sha1"
 
 -- Misc.
 allowChangeOutfit = true
@@ -169,8 +190,7 @@ rateMagic = 25
 rateSpawn = 1
 
 -- Today regeneration condition over an loop every 1 second,
--- so values which should regenerated less then 1 second
--- won't will work
+-- So values which should regenerated less then 1 second or won't will work
 rateHealthRegen = 1.5
 rateHealthRegenSpeed = 1.5
 rateManaRegen = 1.5

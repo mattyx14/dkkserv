@@ -5,7 +5,7 @@ local config = {
 	storage = DarkKonia.demonHelmetQuest,
 	value = 1,
 	range = 17, 
-	timer = Storage.ForgottenKnowledge.DragonkingTimer,
+	timer = DarkKonia.ForgottenKnowledge.DragonkingTimer,
 	newPosition = Position(382, 357, 9), -- Send Player to new Positions
 }
 

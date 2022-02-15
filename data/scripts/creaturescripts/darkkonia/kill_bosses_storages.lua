@@ -3,7 +3,7 @@ function bossesForgotten.onKill(player, creature)
 	if not player:isPlayer() then return true end
 	if not creature:isMonster() or creature:getMaster() then return true end
 	local bosses = {
-		["lady tenebris"] = {stg = Storage.ForgottenKnowledge.LadyTenebrisKilled, value = 1},
+		["lady tenebris"] = {stg = DarkKonia.ForgottenKnowledge.LadyTenebrisKilled, value = 1},
 		["jaul"] = {stg = DarkKonia.MisidiaQuest.JaulKilled, value = 1},
 		["izcandar champion of winter"] = {stg = DarkKonia.AnsharaPOI.IzcandarWinterKilled, value = 1},
 		["infernus"] = {stg = DarkKonia.AnsharaPOI.InfernusKilled, value = 1},
