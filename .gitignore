@@ -368,10 +368,12 @@ TODO
 ## CUSTOM
 # Files
 config.lua
+client_assertions.txt
 # Extensions
 *.ini
 *.otb
 *.exe
+*.manifest
 *.otbm
 *.rar
 *.7z
@@ -381,6 +383,8 @@ config.lua
 sftp-config.json
 
 # Binaries
+canary
+canary.old
 otxsr
 otxsr.old
 
@@ -396,4 +400,3 @@ data/world/vanilla-house.xml
 data/world/vanilla-spawn.xml
 data/world/otservbr-house.xml
 data/world/otservbr-spawn.xml
-data/world/world.zip
