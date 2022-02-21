@@ -95,16 +95,18 @@ local function creatureSayCallback(npc, creature, type, message)
 	return true
 end
 
-keywordHandler:addKeyword({'magic'}, StdModule.say, {npcHandler = npcHandler, text = "I'm selling rods and wands. If you like to see my offers, ask me for a {trade}."})
+keywordHandler:addKeyword({'mystical'}, StdModule.say, {npcHandler = npcHandler, text = "Or do you want to look at {runes}, {potions}, {magic weapons} or {spellbooks}?."})
+keywordHandler:addKeyword({'magic weapons'}, StdModule.say, {npcHandler = npcHandler, text = "I'm selling rods and wands. If you like to see my offers, ask me for a {trade}."})
 keywordHandler:addKeyword({'runes'}, StdModule.say, {npcHandler = npcHandler, text = "I'm selling runes. If you like to see my offers, ask me for a {trade}."})
 keywordHandler:addKeyword({'potions'}, StdModule.say, {npcHandler = npcHandler, text = "I'm selling potions. If you like to see my offers, ask me for a {trade}."})
 keywordHandler:addKeyword({'spellbooks'}, StdModule.say, {npcHandler = npcHandler, text = "I'm also buy powerful spellbooks. If you like to see my offers, ask me for a {trade}."})
+keywordHandler:addKeyword({'free rod and wand'}, StdModule.say, {npcHandler = npcHandler, text = "If need {first rod} or {first wand} only ask me."})
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
-npcHandler:setMessage(MESSAGE_GREET, "Hi there |PLAYERNAME|, and welcome to the {magic} store.")
+npcHandler:setMessage(MESSAGE_GREET, "Hi there |PLAYERNAME|, and welcome to the {mystical} store. Or need your {free rod and wand}.")
 npcHandler:setMessage(MESSAGE_FAREWELL, "See you, |PLAYERNAME|.")
 npcHandler:setMessage(MESSAGE_WALKAWAY, "See you, |PLAYERNAME|.")
-npcHandler:setMessage(MESSAGE_SENDTRADE, "Of course, just browse through my wares. Or do you want to look only at {runes}, {potions}, {wands} or {spellbooks}?")
+npcHandler:setMessage(MESSAGE_SENDTRADE, "Of course, just browse through my wares.")
 npcHandler:addModule(FocusModule:new())
 
 npcConfig.shop = {
