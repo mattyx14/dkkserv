@@ -149,8 +149,7 @@ function loadLuaNpcs(tablename)
 			end
 		end
 	end
-	Spdlog.info("Loaded ".. (#NpcTable) .." npcs and spawned ".. Game.getMonsterCount() .." monsters")
-	Spdlog.info("Loaded ".. #Game.getTowns() .. " towns with ".. #Game.getHouses() .." houses in total")
+	Spdlog.info("Loaded ".. (#NpcTable) .." npcs and spawned with tables.")
 end
 
 -- Functions that cannot be used in reload command, so they have been moved here

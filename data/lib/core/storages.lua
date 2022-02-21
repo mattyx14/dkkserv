@@ -238,6 +238,8 @@ DarkKonia = {
 		goldenKeyMisidia = 3136,
 	},
 	OutfitQuest = {
+		DefaultStart = 50960,
+		Ref = 50961,
 		-- Citizen Addons Quest
 		Citizen = {
 			-- Mission storages for temporary questlog entries

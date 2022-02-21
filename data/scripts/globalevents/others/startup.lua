@@ -1,7 +1,7 @@
 local serverstartup = GlobalEvent("serverstartup")
 function serverstartup.onStartup()
 	Spdlog.info("Loading map attributes")
-	Spdlog.info("Loaded ".. Game.getNpcCount() .." npcs and spawned ".. Game.getMonsterCount() .." monsters")
+	Spdlog.info("Loaded ".. Game.getNpcCount() .." npcs and spawned with map editor and ".. Game.getMonsterCount() .." monsters")
 	Spdlog.info("Loaded ".. #Game.getTowns() .. " towns with ".. #Game.getHouses() .." houses in total")
 	-- Sign table
 	loadLuaMapSign(SignTable)

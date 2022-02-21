@@ -44,7 +44,7 @@ SignTable = {
 		text = [[Need find to Mystic Blade Quest.]]
 	},
 	[7] = {
-		itemId = 5360,
+		itemId = 5359,
 		itemPos = {x = 704, y = 513, z = 8},
 		text = [[Twyroch.
 A giant Swamp Plague is resting down here.]]
