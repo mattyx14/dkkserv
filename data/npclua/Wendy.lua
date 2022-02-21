@@ -57,9 +57,359 @@ npcType.onCloseChannel = function(npc, creature)
 end
 
 keywordHandler:addKeyword({'smithy'}, StdModule.say, {npcHandler = npcHandler, text = "I am a trader. I don't buy everything, though. And not from everyone, for that matter, ask me for a {trade}."})
+keywordHandler:addKeyword({'first weapons'}, StdModule.say, {npcHandler = npcHandler, text = "If need {first club}, {first sword} or {first axe}."})
+
+local club = {
+	[VOCATION.BASE_ID.KNIGHT] = 3327,
+}
+local sword = {
+	[VOCATION.BASE_ID.KNIGHT] = 7774,
+}
+local axe = {
+	[VOCATION.BASE_ID.KNIGHT] = 7773,
+}
+
+local function creatureSayCallback(npc, creature, type, message)
+	local player = Player(creature)
+	local playerId = player:getId()
+
+	if not npcHandler:checkInteraction(npc, creature) then
+		return false
+	end
+
+	local itemIdClub = club[player:getVocation():getBaseId()]
+	local itemIdSword = sword[player:getVocation():getBaseId()]
+	local itemIdAxe = axe[player:getVocation():getBaseId()]
+
+	if MsgContains(message, 'knight\'s sword') then
+		if player:hasOutfit(player:getSex() == PLAYERSEX_FEMALE and 139 or 131, 1) then
+			npcHandler:say('You already have this outfit!', npc, creature)
+			return true
+		end
+
+		if player:getStorageValue(DarkKonia.OutfitQuest.Knight.AddonSword) < 1 then
+			player:setStorageValue(DarkKonia.OutfitQuest.Knight.AddonSword, 1)
+			npcHandler:say('Great! Simply bring me 100 Iron Ore and one Crude Iron and I will happily {forge} it for you.', npc, creature)
+		elseif player:getStorageValue(DarkKonia.OutfitQuest.Knight.AddonSword) == 1 and npcHandler:getTopic(playerId) == 1 then
+			if player:getItemCount(5892) > 0 and player:getItemCount(5880) > 99 then
+				player:removeItem(5892, 1)
+				player:removeItem(5880, 100)
+				player:addOutfitAddon(131, 1)
+				player:addOutfitAddon(139, 1)
+				player:setStorageValue(DarkKonia.OutfitQuest.Knight.AddonSword, 2)
+				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
+				npcHandler:say('Alright! As a matter of fact, I have one in store. Here you go!', npc, creature)
+			else
+				npcHandler:say('You do not have all the required items.', npc, creature)
+			end
+			npcHandler:setTopic(playerId, 0)
+		end
+	elseif MsgContains(message, 'warrior\'s sword') then
+		if player:hasOutfit(player:getSex() == PLAYERSEX_FEMALE and 142 or 134, 2) then
+			npcHandler:say('You already have this outfit!', npc, creature)
+			return true
+		end
+
+		if player:getStorageValue(DarkKonia.OutfitQuest.WarriorSwordAddon) < 1 then
+			player:setStorageValue(DarkKonia.OutfitQuest.WarriorSwordAddon, 1)
+			npcHandler:say('Great! Simply bring me 100 iron ore and one royal steel and I will happily {forge} it for you.', npc, creature)
+		elseif player:getStorageValue(DarkKonia.OutfitQuest.WarriorSwordAddon) == 1 and npcHandler:getTopic(playerId) == 1 then
+			if player:getItemCount(5887) > 0 and player:getItemCount(5880) > 99 then
+				player:removeItem(5887, 1)
+				player:removeItem(5880, 100)
+				player:addOutfitAddon(134, 2)
+				player:addOutfitAddon(142, 2)
+				player:setStorageValue(DarkKonia.OutfitQuest.WarriorSwordAddon, 2)
+				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
+				player:addAchievementProgress('Wild Warrior', 2)
+				npcHandler:say('Alright! As a matter of fact, I have one in store. Here you go!', npc, creature)
+			else
+				npcHandler:say('You do not have all the required items.', npc, creature)
+			end
+			npcHandler:setTopic(playerId, 0)
+		end
+	elseif MsgContains(message, 'forge') then
+		npcHandler:say('What would you like me to forge for you? A {knight\'s sword} or a {warrior\'s sword}?', npc, creature)
+		npcHandler:setTopic(playerId, 1)
+	end
+
+	local addonProgress = player:getStorageValue(DarkKonia.OutfitQuest.Knight.AddonHelmet)
+	if MsgContains(message, "task") then
+		if not player:isPremium() then
+			npcHandler:say("Sorry, but our tasks are only for premium warriors.", npc, creature)
+			return true
+		end
+
+		if addonProgress < 1 then
+			npcHandler:say("You mean you would like to prove that you deserve to wear such a helmet?", npc, creature)
+			npcHandler:setTopic(playerId, 1)
+		elseif addonProgress == 1 then
+			npcHandler:say("Your current task is to bring me 100 perfect behemoth fangs, |PLAYERNAME|.", npc, creature)
+		elseif addonProgress == 2 then
+			npcHandler:say("Your current task is to retrieve the helmet of Ramsay the Reckless from Banuta, |PLAYERNAME|.", npc, creature)
+		elseif addonProgress == 3 then
+			npcHandler:say("Your current task is to obtain a flask of warrior's sweat, |PLAYERNAME|.", npc, creature)
+		elseif addonProgress == 4 then
+			npcHandler:say("Your current task is to bring me royal steel, |PLAYERNAME|.", npc, creature)
+		elseif addonProgress == 5 then
+			npcHandler:say("Please talk to Sam and tell him I sent you. \z
+				I'm sure he will be glad to refine your helmet, |PLAYERNAME|.", npc, creature)
+		else
+			npcHandler:say("You've already completed the task and can consider yourself a mighty warrior, |PLAYERNAME|.", npc, creature)
+		end
+
+	elseif MsgContains(message, "behemoth fang") then
+		if addonProgress == 1 then
+			npcHandler:say("Have you really managed to fulfil the task and brought me 100 perfect behemoth fangs?", npc, creature)
+			npcHandler:setTopic(playerId, 3)
+		else
+			npcHandler:say("You're not serious asking that, are you? They come from behemoths, of course. \z
+				Unless there are behemoth rabbits. Duh.", npc, creature)
+		end
+
+	elseif MsgContains(message, "ramsay") then
+		if addonProgress == 2 then
+			npcHandler:say("Did you recover the helmet of Ramsay the Reckless?", npc, creature)
+			npcHandler:setTopic(playerId, 4)
+		else
+			npcHandler:say("These pesky apes steal everything they can get their dirty hands on.", npc, creature)
+		end
+
+	elseif MsgContains(message, "sweat") then
+		if addonProgress == 3 then
+			npcHandler:say("Were you able to get hold of a flask with pure warrior's sweat?", npc, creature)
+			npcHandler:setTopic(playerId, 5)
+		else
+			npcHandler:say("Warrior's sweat can be magically extracted from headgear worn by a true warrior, \z
+				but only in small amounts. Djinns are said to be good at magical extractions.", npc, creature)
+		end
+
+	elseif MsgContains(message, "royal steel") then
+		if addonProgress == 4 then
+			npcHandler:say("Ah, have you brought the royal steel?", npc, creature)
+			npcHandler:setTopic(playerId, 6)
+		else
+			npcHandler:say("Royal steel can only be refined by very skilled smiths.", npc, creature)
+		end
+
+	elseif npcHandler:getTopic(playerId) == 1 then
+		if MsgContains(message, "yes") then
+			npcHandler:say(
+				{
+					"Well then, listen closely. First, you will have to prove that you are a fierce and \z
+						restless warrior by bringing me 100 perfect behemoth fangs. ...",
+					"Secondly, please retrieve a helmet for us which has been lost a long time ago. \z
+						The famous Ramsay the Reckless wore it when exploring an ape settlement. ...",
+					"Third, we need a new flask of warrior's sweat. We've run out of it recently, \z
+						but we need a small amount for the show battles in our arena. ...",
+					"Lastly, I will have our smith refine your helmet if you bring me royal steel, an especially noble metal. ...",
+					"Did you understand everything I told you and are willing to handle this task?"
+				},
+			npc, creature, 100)
+			npcHandler:setTopic(playerId, 2)
+		elseif MsgContains(message, "no") then
+			npcHandler:say("Bah. Then you will have to wait for the day these helmets are sold in shops, \z
+				but that will not happen before hell freezes over.", npc, creature)
+			npcHandler:setTopic(playerId, 0)
+		end
+
+	elseif npcHandler:getTopic(playerId) == 2 then
+		if MsgContains(message, "yes") then
+			player:setStorageValue(DarkKonia.OutfitQuest.Ref, math.max(0, player:getStorageValue(DarkKonia.OutfitQuest.Ref)) + 1)
+			player:setStorageValue(DarkKonia.OutfitQuest.Knight.AddonHelmet, 1)
+			player:setStorageValue(DarkKonia.OutfitQuest.Knight.MissionHelmet, 1)
+			npcHandler:say("Alright then. Come back to me once you have collected 100 perfect behemoth fangs.", npc, creature)
+			npcHandler:setTopic(playerId, 0)
+		elseif MsgContains(message, "no") then
+			npcHandler:say("Would you like me to repeat the task requirements then?", npc, creature)
+			npcHandler:setTopic(playerId, 1)
+		end
+
+	elseif npcHandler:getTopic(playerId) == 3 then
+		if MsgContains(message, "yes") then
+			if not player:removeItem(5893, 100) then
+				npcHandler:say("Lying is not exactly honourable, |PLAYERNAME|. Shame on you.", npc, creature)
+				return true
+			end
+
+			player:setStorageValue(DarkKonia.OutfitQuest.Knight.AddonHelmet, 2)
+			player:setStorageValue(DarkKonia.OutfitQuest.Knight.MissionHelmet, 2)
+			player:setStorageValue(DarkKonia.OutfitQuest.Knight.RamsaysHelmetDoor, 1)
+			npcHandler:say("I'm deeply impressed, brave Knight |PLAYERNAME|. I expected nothing less from you. \z
+				Now, please retrieve Ramsay's helmet.", npc, creature)
+		elseif MsgContains(message, "no") then
+			npcHandler:say("There is no need to rush anyway.", npc, creature)
+		end
+		npcHandler:setTopic(playerId, 0)
+
+	elseif npcHandler:getTopic(playerId) == 4 then
+		if MsgContains(message, "yes") then
+			if not player:removeItem(3351, 1) then
+				npcHandler:say("Lying is not exactly honourable, |PLAYERNAME|. Shame on you.", npc, creature)
+				return true
+			end
+
+			player:setStorageValue(DarkKonia.OutfitQuest.Knight.AddonHelmet, 3)
+			player:setStorageValue(DarkKonia.OutfitQuest.Knight.MissionHelmet, 3)
+			npcHandler:say("Good work, brave Knight |PLAYERNAME|! Even though it is damaged, \z
+				it has a lot of sentimental value. Now, please bring me warrior's sweat.", npc, creature)
+		elseif MsgContains(message, "no") then
+			npcHandler:say("There is no need to rush anyway.", npc, creature)
+		end
+		npcHandler:setTopic(playerId, 0)
+
+	elseif npcHandler:getTopic(playerId) == 5 then
+		if MsgContains(message, "yes") then
+			if not player:removeItem(5885, 1) then
+				npcHandler:say("Lying is not exactly honourable, |PLAYERNAME|. Shame on you.", npc, creature)
+				return true
+			end
+
+			player:setStorageValue(DarkKonia.OutfitQuest.Knight.AddonHelmet, 4)
+			player:setStorageValue(DarkKonia.OutfitQuest.Knight.MissionHelmet, 4)
+			npcHandler:say("Now that is a pleasant surprise, brave Knight |PLAYERNAME|! \z
+				There is only one task left now: Obtain royal steel to have your helmet refined.", npc, creature)
+		elseif MsgContains(message, "no") then
+			npcHandler:say("There is no need to rush anyway.", npc, creature)
+		end
+		npcHandler:setTopic(playerId, 0)
+
+	elseif npcHandler:getTopic(playerId) == 6 then
+		if MsgContains(message, "yes") then
+			if not player:removeItem(5887, 1) then
+				npcHandler:say("Lying is not exactly honourable, |PLAYERNAME|. Shame on you.", npc, creature)
+				return true
+			end
+
+			player:setStorageValue(DarkKonia.OutfitQuest.Knight.AddonHelmet, 5)
+			player:setStorageValue(DarkKonia.OutfitQuest.Knight.MissionHelmet, 5)
+			npcHandler:say("You truly deserve to wear an adorned helmet, brave Knight |PLAYERNAME|. \z
+				Please talk to Sam and tell him I sent you. I'm sure he will be glad to refine your helmet.", npc, creature)
+		elseif MsgContains(message, "no") then
+			npcHandler:say("There is no need to rush anyway.", npc, creature)
+		end
+		npcHandler:setTopic(playerId, 0)
+	end
+
+	if MsgContains(message, 'adorn')
+			or MsgContains(message, 'outfit')
+			or MsgContains(message, 'addon') then
+		local addonProgress = player:getStorageValue(DarkKonia.OutfitQuest.Knight.AddonHelmet)
+		if addonProgress == 5 then
+			player:setStorageValue(DarkKonia.OutfitQuest.Knight.MissionHelmet, 6)
+			player:setStorageValue(DarkKonia.OutfitQuest.Knight.AddonHelmet, 6)
+			player:setStorageValue(DarkKonia.OutfitQuest.Knight.AddonHelmetTimer, os.time() + 7200)
+			npcHandler:say('Oh, I see. It will be my pleasure to adorn your helmet. Please give me some time to finish it.', npc, creature)
+		elseif addonProgress == 6 then
+			if player:getStorageValue(DarkKonia.OutfitQuest.Knight.AddonHelmetTimer) < os.time() then
+				player:setStorageValue(DarkKonia.OutfitQuest.Knight.MissionHelmet, 0)
+				player:setStorageValue(DarkKonia.OutfitQuest.Knight.AddonHelmet, 7)
+				player:setStorageValue(DarkKonia.OutfitQuest.Ref, math.min(0, player:getStorageValue(DarkKonia.OutfitQuest.Ref) - 1))
+				player:addOutfitAddon(131, 2)
+				player:addOutfitAddon(139, 2)
+				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
+				npcHandler:say('Just in time, |PLAYERNAME|. Your helmet is finished, I hope you like it.', npc, creature)
+			else
+				npcHandler:say('Please have some patience, |PLAYERNAME|. Forging is hard work!', npc, creature)
+			end
+		elseif addonProgress == 7 then
+			npcHandler:say('I think it\'s one of my masterpieces.', npc, creature)
+		else
+			npcHandler:say('Sorry, I cannot help you with this matter.', npc, creature)
+		end
+	end
+
+	if MsgContains(message, 'first club') then
+		if player:isKnight() then
+			if player:getStorageValue(3055) == -1 then
+				npcHandler:say('So you ask me for a {' .. ItemType(itemIdClub):getName() .. '} to begin your advanture with it {'.. ItemType(itemIdClub):getName() ..'}, {yes}? ', npc, creature)
+				npcHandler:setTopic(playerId, 8)
+			else
+				npcHandler:say('What? I have already gave you one {' .. ItemType(itemIdClub):getName() .. '}!', npc, creature)
+			end
+		else
+			npcHandler:say('Sorry, you aren\'t a knight.', npc, creature)
+		end
+		elseif MsgContains(message, 'daramian mace') or MsgContains(message, 'yes') then
+			if npcHandler:getTopic(playerId) == 8 then
+				player:addItem(itemIdClub, 1)
+				player:setStorageValue(3055, 1)
+				npcHandler:say('Here you are young adept, take care yourself.', npc, creature)
+			end
+			npcHandler:setTopic(playerId, 0)
+	elseif MsgContains(message, 'no') and npcHandler:getTopic(playerId) == 1 then
+		npcHandler:say('Ok then.', npc, creature)
+		npcHandler:setTopic(playerId, 0)
+	end
+
+	if MsgContains(message, 'first sword') then
+		if player:isKnight() then
+			if player:getStorageValue(3056) == -1 then
+				npcHandler:say('So you ask me for a {' .. ItemType(itemIdSword):getName() .. '} to begin your advanture with it {'.. ItemType(itemIdSword):getName() ..'}, {yes}? ', npc, creature)
+				npcHandler:setTopic(playerId, 9)
+			else
+				npcHandler:say('What? I have already gave you one {' .. ItemType(itemIdSword):getName() .. '}!', npc, creature)
+			end
+		else
+			npcHandler:say('Sorry, you aren\'t a knight.', npc, creature)
+		end
+		elseif MsgContains(message, 'jagged sword') or MsgContains(message, 'yes') then
+			if npcHandler:getTopic(playerId) == 9 then
+				player:addItem(itemIdSword, 1)
+				player:setStorageValue(3056, 1)
+				npcHandler:say('Here you are young adept, take care yourself.', npc, creature)
+			end
+			npcHandler:setTopic(playerId, 0)
+	elseif MsgContains(message, 'no') and npcHandler:getTopic(playerId) == 1 then
+		npcHandler:say('Ok then.', npc, creature)
+		npcHandler:setTopic(playerId, 0)
+	end
+
+	if MsgContains(message, 'first axe') then
+		if player:isKnight() then
+			if player:getStorageValue(3057) == -1 then
+				npcHandler:say('So you ask me for a {' .. ItemType(itemIdAxe):getName() .. '} to begin your advanture with it {'.. ItemType(itemIdAxe):getName() ..'}, {yes}? ', npc, creature)
+				npcHandler:setTopic(playerId, 10)
+			else
+				npcHandler:say('What? I have already gave you one {' .. ItemType(itemIdAxe):getName() .. '}!', npc, creature)
+			end
+		else
+			npcHandler:say('Sorry, you aren\'t a knight.', npc, creature)
+		end
+		elseif MsgContains(message, 'steel axe') or MsgContains(message, 'yes') then
+			if npcHandler:getTopic(playerId) == 10 then
+				player:addItem(itemIdAxe, 1)
+				player:setStorageValue(3057, 1)
+				npcHandler:say('Here you are young adept, take care yourself.', npc, creature)
+			end
+			npcHandler:setTopic(playerId, 0)
+	elseif MsgContains(message, 'no') and npcHandler:getTopic(playerId) == 1 then
+		npcHandler:say('Ok then.', npc, creature)
+		npcHandler:setTopic(playerId, 0)
+	end
+	return true
+end
+
+keywordHandler:addKeyword(
+	{'addon'},
+	StdModule.say,
+	{
+		npcHandler = npcHandler,
+		text = 'I can forge the finest {weapons} for knights and warriors. \
+		They may wear them proudly and visible to everyone.'
+	}
+)
+keywordHandler:addKeyword(
+	{'weapons'},
+	StdModule.say,
+	{
+		npcHandler = npcHandler,
+		text = "Would you rather be interested in a {knight's sword} or in a {warrior's sword}?"
+	}
+)
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
-npcHandler:setMessage(MESSAGE_GREET, "Ah, a customer! Be greeted, |PLAYERNAME|! Welcome to my {smithy}.")
+npcHandler:setMessage(MESSAGE_GREET, "Ah, a customer! Be greeted, |PLAYERNAME|! Welcome to my {smithy} or do you need {first weapons} for knights.")
 npcHandler:setMessage(MESSAGE_FAREWELL, "Farewell, |PLAYERNAME|, may the winds guide your way.")
 npcHandler:setMessage(MESSAGE_WALKAWAY, "Come back soon!")
 npcHandler:setMessage(MESSAGE_SENDTRADE, "Take all the time you need to decide what you want!")

@@ -56,7 +56,7 @@ npcType.onCloseChannel = function(npc, creature)
 	npcHandler:onCloseChannel(npc, creature)
 end
 
-local items = {
+local RodWand = {
 	[VOCATION.BASE_ID.SORCERER] = 3074, 
 	[VOCATION.BASE_ID.DRUID] = 3066
 }
@@ -69,21 +69,21 @@ local function creatureSayCallback(npc, creature, type, message)
 		return false
 	end
 
-	local itemId = items[player:getVocation():getBaseId()]
+	local itemIdRodWand = RodWand[player:getVocation():getBaseId()]
 	if MsgContains(message, 'first rod') or MsgContains(message, 'first wand') then
 		if player:isMage() then
 			if player:getStorageValue(Storage.firstMageWeapon) == -1 then
-				npcHandler:say('So you ask me for a {' .. ItemType(itemId):getName() .. '} to begin your adventure?', npc, creature)
+				npcHandler:say('So you ask me for a {' .. ItemType(itemIdRodWand):getName() .. '} to begin your adventure?', npc, creature)
 				npcHandler:setTopic(playerId, 1)
 			else
-				npcHandler:say('What? I have already gave you one {' .. ItemType(itemId):getName() .. '}!', npc, creature)
+				npcHandler:say('What? I have already gave you one {' .. ItemType(itemIdRodWand):getName() .. '}!', npc, creature)
 			end
 		else
 			npcHandler:say('Sorry, you aren\'t a druid either a sorcerer.', npc, creature)
 		end
 	elseif MsgContains(message, 'yes') then
 		if npcHandler:getTopic(playerId) == 1 then
-			player:addItem(itemId, 1)
+			player:addItem(itemIdRodWand, 1)
 			npcHandler:say('Here you are young adept, take care yourself.', npc, creature)
 			player:setStorageValue(Storage.firstMageWeapon, 1)
 		end
@@ -95,13 +95,16 @@ local function creatureSayCallback(npc, creature, type, message)
 	return true
 end
 
-keywordHandler:addKeyword({'magic'}, StdModule.say, {npcHandler = npcHandler, text = "I'm selling runes, wands and rods. I also buy powerful spellbooks. If you like to see my offers, ask me for a {trade}."})
+keywordHandler:addKeyword({'magic'}, StdModule.say, {npcHandler = npcHandler, text = "I'm selling rods and wands. If you like to see my offers, ask me for a {trade}."})
+keywordHandler:addKeyword({'runes'}, StdModule.say, {npcHandler = npcHandler, text = "I'm selling runes. If you like to see my offers, ask me for a {trade}."})
+keywordHandler:addKeyword({'potions'}, StdModule.say, {npcHandler = npcHandler, text = "I'm selling potions. If you like to see my offers, ask me for a {trade}."})
+keywordHandler:addKeyword({'spellbooks'}, StdModule.say, {npcHandler = npcHandler, text = "I'm also buy powerful spellbooks. If you like to see my offers, ask me for a {trade}."})
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:setMessage(MESSAGE_GREET, "Hi there |PLAYERNAME|, and welcome to the {magic} store.")
 npcHandler:setMessage(MESSAGE_FAREWELL, "See you, |PLAYERNAME|.")
 npcHandler:setMessage(MESSAGE_WALKAWAY, "See you, |PLAYERNAME|.")
-npcHandler:setMessage(MESSAGE_SENDTRADE, "Of course, just browse through my wares. Or do you want to look only at {runes} or {wands}?")
+npcHandler:setMessage(MESSAGE_SENDTRADE, "Of course, just browse through my wares. Or do you want to look only at {runes}, {potions}, {wands} or {spellbooks}?")
 npcHandler:addModule(FocusModule:new())
 
 npcConfig.shop = {
