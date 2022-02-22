@@ -13,10 +13,10 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 35
+monster.raceId = 2000
 monster.Bestiary = {
-	class = "Demon",
-	race = BESTY_RACE_DEMON,
+	class = "DarkKonia",
+	race = BESTY_RACE_DARKKONIA,
 	toKill = 2500,
 	FirstUnlock = 100,
 	SecondUnlock = 1000,
@@ -74,20 +74,10 @@ monster.light = {
 }
 
 monster.summon = {
-	maxSummons = 1,
+	maxSummons = 2,
 	summons = {
-		{name = "fire elemental", chance = 10, interval = 2000, count = 1}
+		{name = "fire elemental", chance = 10, interval = 2000, count = 2}
 	}
-}
-
-monster.voices = {
-	interval = 5000,
-	chance = 10,
-	{text = "Your soul will be mine!", yell = false},
-	{text = "MUHAHAHAHA!", yell = false},
-	{text = "CHAMEK ATH UTHUL ARAK!", yell = false},
-	{text = "I SMELL FEEEEAAAAAR!", yell = false},
-	{text = "Your resistance is futile!", yell = false}
 }
 
 monster.loot = {

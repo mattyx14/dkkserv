@@ -436,9 +436,10 @@ enum BestiaryType_t : uint8_t {
 	BESTY_RACE_SLIME = 18,
 	BESTY_RACE_UNDEAD = 19,
 	BESTY_RACE_VERMIN = 20,
+	BESTY_RACE_DARKKONIA = 21,
 
 	BESTY_RACE_FIRST = BESTY_RACE_AMPHIBIC,
-	BESTY_RACE_LAST = BESTY_RACE_VERMIN,
+	BESTY_RACE_LAST = BESTY_RACE_DARKKONIA,
 };
 
 enum MonstersEvent_t : uint8_t {
@@ -729,7 +730,7 @@ struct ShopInfo {
 
 using MarketOfferList = std::list<MarketOffer>;
 using HistoryMarketOfferList = std::list<HistoryMarketOffer>;
-using ShopInfoMap = std::unordered_map<uint16_t, ShopInfo>;
+using ShopInfoMap = std::unordered_map<std::string, ShopInfo>;
 using StashItemList = std::map<uint16_t, uint32_t>;
 
 struct Familiar {
