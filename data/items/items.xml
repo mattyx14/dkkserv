@@ -16417,7 +16417,10 @@
 		<attribute key="floorchange" value="north"/>
 	</item>
 	<item id="7549" article="a" name="ramp"/>
-	<item fromid="7550" toid="7555" article="a" name="tunnel entrance"/>
+	<item id="7550" article="a" name="tunnel entrance">
+		<attribute key="floorchange" value="down"/>
+	</item>
+	<item fromid="7551" toid="7555" article="a" name="tunnel entrance"/>
 	<item fromid="7556" toid="7557" article="a" name="bone">
 		<attribute key="weight" value="950"/>
 	</item>
