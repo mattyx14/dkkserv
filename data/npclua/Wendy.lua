@@ -321,8 +321,8 @@ local function creatureSayCallback(npc, creature, type, message)
 
 	if MsgContains(message, 'first club') then
 		if player:isKnight() then
-			if player:getStorageValue(3055) == -1 then
-				npcHandler:say('So you ask me for a {' .. ItemType(itemIdClub):getName() .. '} to begin your advanture with it {'.. ItemType(itemIdClub):getName() ..'}, {yes}? ', npc, creature)
+			if player:getStorageValue(DarkKonia.FirstQuest.FirstWeapon) == -1 then
+				npcHandler:say('You ask me you begin your adventure with the {'.. ItemType(itemIdClub):getName() ..'}? ', npc, creature)
 				npcHandler:setTopic(playerId, 8)
 			else
 				npcHandler:say('What? I have already gave you one {' .. ItemType(itemIdClub):getName() .. '}!', npc, creature)
@@ -330,22 +330,22 @@ local function creatureSayCallback(npc, creature, type, message)
 		else
 			npcHandler:say('Sorry, you aren\'t a knight.', npc, creature)
 		end
-		elseif MsgContains(message, 'daramian mace') or MsgContains(message, 'yes') then
+		elseif MsgContains(message, 'yes') then
 			if npcHandler:getTopic(playerId) == 8 then
 				player:addItem(itemIdClub, 1)
-				player:setStorageValue(3055, 1)
+				player:setStorageValue(DarkKonia.FirstQuest.FirstWeapon, 1)
 				npcHandler:say('Here you are young adept, take care yourself.', npc, creature)
 			end
 			npcHandler:setTopic(playerId, 0)
-	elseif MsgContains(message, 'no') and npcHandler:getTopic(playerId) == 1 then
+	elseif MsgContains(message, 'no') then
 		npcHandler:say('Ok then.', npc, creature)
 		npcHandler:setTopic(playerId, 0)
 	end
 
 	if MsgContains(message, 'first sword') then
 		if player:isKnight() then
-			if player:getStorageValue(3056) == -1 then
-				npcHandler:say('So you ask me for a {' .. ItemType(itemIdSword):getName() .. '} to begin your advanture with it {'.. ItemType(itemIdSword):getName() ..'}, {yes}? ', npc, creature)
+			if player:getStorageValue(DarkKonia.FirstQuest.FirstWeapon) == -1 then
+				npcHandler:say('You ask me you begin your adventure with the {'.. ItemType(itemIdSword):getName() ..'}? ', npc, creature)
 				npcHandler:setTopic(playerId, 9)
 			else
 				npcHandler:say('What? I have already gave you one {' .. ItemType(itemIdSword):getName() .. '}!', npc, creature)
@@ -353,22 +353,22 @@ local function creatureSayCallback(npc, creature, type, message)
 		else
 			npcHandler:say('Sorry, you aren\'t a knight.', npc, creature)
 		end
-		elseif MsgContains(message, 'jagged sword') or MsgContains(message, 'yes') then
+		elseif MsgContains(message, 'yes') then
 			if npcHandler:getTopic(playerId) == 9 then
 				player:addItem(itemIdSword, 1)
-				player:setStorageValue(3056, 1)
+				player:setStorageValue(DarkKonia.FirstQuest.FirstWeapon, 1)
 				npcHandler:say('Here you are young adept, take care yourself.', npc, creature)
 			end
 			npcHandler:setTopic(playerId, 0)
-	elseif MsgContains(message, 'no') and npcHandler:getTopic(playerId) == 1 then
+	elseif MsgContains(message, 'no') then
 		npcHandler:say('Ok then.', npc, creature)
 		npcHandler:setTopic(playerId, 0)
 	end
 
 	if MsgContains(message, 'first axe') then
 		if player:isKnight() then
-			if player:getStorageValue(3057) == -1 then
-				npcHandler:say('So you ask me for a {' .. ItemType(itemIdAxe):getName() .. '} to begin your advanture with it {'.. ItemType(itemIdAxe):getName() ..'}, {yes}? ', npc, creature)
+			if player:getStorageValue(DarkKonia.FirstQuest.FirstWeapon) == -1 then
+				npcHandler:say('You ask me you begin your adventure with the {'.. ItemType(itemIdAxe):getName() ..'}? ', npc, creature)
 				npcHandler:setTopic(playerId, 10)
 			else
 				npcHandler:say('What? I have already gave you one {' .. ItemType(itemIdAxe):getName() .. '}!', npc, creature)
@@ -376,14 +376,14 @@ local function creatureSayCallback(npc, creature, type, message)
 		else
 			npcHandler:say('Sorry, you aren\'t a knight.', npc, creature)
 		end
-		elseif MsgContains(message, 'steel axe') or MsgContains(message, 'yes') then
+		elseif MsgContains(message, 'yes') then
 			if npcHandler:getTopic(playerId) == 10 then
 				player:addItem(itemIdAxe, 1)
-				player:setStorageValue(3057, 1)
+				player:setStorageValue(DarkKonia.FirstQuest.FirstWeapon, 1)
 				npcHandler:say('Here you are young adept, take care yourself.', npc, creature)
 			end
 			npcHandler:setTopic(playerId, 0)
-	elseif MsgContains(message, 'no') and npcHandler:getTopic(playerId) == 1 then
+	elseif MsgContains(message, 'no') then
 		npcHandler:say('Ok then.', npc, creature)
 		npcHandler:setTopic(playerId, 0)
 	end

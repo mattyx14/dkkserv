@@ -163,8 +163,8 @@ local function creatureSayCallback(npc, creature, type, message)
 		end
 	elseif MsgContains(message, 'first quiver') then
 		if player:isPaladin() then
-			if player:getStorageValue(3052) == -1 then
-				npcHandler:say('So you ask me for a {' .. ItemType(itemIdQuiver):getName() .. '} to begin your advanture with it {'.. ItemType(itemIdQuiver):getName() ..'}, {yes}? ', npc, creature)
+			if player:getStorageValue(DarkKonia.FirstQuest.FirstWeapon) == -1 then
+				npcHandler:say('You ask me you begin your adventure with the {'.. ItemType(itemIdQuiver):getName() ..'}, ok? ', npc, creature)
 				npcHandler:setTopic(playerId, 8)
 			else
 				npcHandler:say('What? I have already gave you one {' .. ItemType(itemIdQuiver):getName() .. '}!', npc, creature)
@@ -172,10 +172,10 @@ local function creatureSayCallback(npc, creature, type, message)
 		else
 			npcHandler:say('Sorry, you aren\'t a paladin.', npc, creature)
 		end
-	elseif MsgContains(message, 'quiver') or MsgContains(message, 'yes') then
+	elseif MsgContains(message, 'quiver') then
 		if npcHandler:getTopic(playerId) == 8 then
 			player:addItem(itemIdQuiver, 1)
-			player:setStorageValue(3052, 1)
+			player:setStorageValue(DarkKonia.FirstQuest.FirstWeapon, 1)
 			npcHandler:say('Here you are young adept, take care yourself.', npc, creature)
 		end
 		npcHandler:setTopic(playerId, 0)

@@ -61,224 +61,226 @@ GlobalStorage = {
 
 -- DarkKonia Storages
 DarkKonia = {
-	NpcSpawn = 30028,
-	DefaultStartQuest = 15700,
-	AnnihilatorDone = 2215,
-	demonHelmetQuest = 2493,
+	-- Star 30100
+	NpcSpawn = 30100,
+	DefaultStartQuest = 30101,
+	AnnihilatorDone = 30102,
+	demonHelmetQuest = 30103,
 	ForgottenKnowledge = {
-		GirlPicture = 10140, -- Fynn = 26400
-		SilverKey = 10141, -- Fynn
-		LadyTenebrisTimer = 10168, -- Fynn
-		LadyTenebrisKilled = 10150, -- Fynn
+		GirlPicture = 30104, -- Fynn = 26400
+		SilverKey = 30105, -- Fynn
+		LadyTenebrisTimer = 30106, -- Fynn
+		LadyTenebrisKilled = 30107, -- Fynn
 		ForgottenKnowledgeRewards = {
-			yalahariSet = 9776,
+			yalahariSet = 30108,
 		},
-		DragonkingTimer = 10169, -- Anshara
-		DragonkingKilled = 10156, -- Anshara
+		DragonkingTimer = 30109, -- Anshara
+		DragonkingKilled = 30110, -- Anshara
 
 		-- Internal Usage
-		Tomes = 10167,
+		Tomes = 30111,
 	},
 	DemonOak = {
-		Done = 1010,
-		Progress = 1013,
-		Squares = 1014,
+		Done = 30112,
+		Progress = 30113,
+		Squares = 30114,
 
-		AxeBlowsBird = 8288,
-		AxeBlowsLeft = 8289,
-		AxeBlowsRight = 8290,
-		AxeBlowsFace = 8291
+		AxeBlowsBird = 30115,
+		AxeBlowsLeft = 30116,
+		AxeBlowsRight = 30117,
+		AxeBlowsFace = 30118
 	},
 	Missions = {
 		DjinnMission = {
-			Lamp1 = 2062,
-			Lamp2 = 2063,
-			Done = 24073
+			Lamp1 = 30119,
+			Lamp2 = 30120,
+			Done = 30121
 		},
 	},
 	VampireQuest = {
-		zevelonDuskbringer = 8568,
-			BossStorageDusk = 10001,
-		sirValorcrest = 8569,
-			BossStorageVarlor = 10002,
-		diblisTheFair = 8570,
-			BossStorageFair = 10003,
-		arachirTheAncientOne = 8571,
-			BossStorageOne = 10004,
+		zevelonDuskbringer = 30122,
+			BossStorageDusk = 30123,
+		sirValorcrest = 30124,
+			BossStorageVarlor = 30125,
+		diblisTheFair = 30126,
+			BossStorageFair = 30127,
+		arachirTheAncientOne = 30128,
+			BossStorageOne = 30129,
 
-		draculaDone = 10009,
-		draculaStone = 50058
+		draculaDone = 30130,
+		draculaStone = 30131
 	},
 	AnniQuest = {
-		justiceSeekerDone = 7390,
-		blessedSceptreDone = 7429,
-		royalAxeDone = 7434,
-		pirateDone = 6096,
-		deathHeraldDone = 10008,
-		assassinDone = 9933,
-		anniKey = 2526,
+		justiceSeekerDone = 30132,
+		blessedSceptreDone = 30133,
+		royalAxeDone = 30134,
+		pirateDone = 30135,
+		deathHeraldDone = 30136,
+		assassinDone = 30137,
+		anniKey = 30138,
 		AnnihiMission = {
-			Done = 24074
+			Done = 30139
 		},
 	},
 	FirstQuest = {
-		Fynn = 12519,
-			rewardFynn = 2527,
-		Misidia = 12520,
-			rewardMisidia = 2528,
+		FirstWeapon = 30140,
+		Fynn = 30141,
+			rewardFynn = 30142,
+		Misidia = 30143,
+			rewardMisidia = 30144,
 	},
 	FynnQuest =  {
-		DemonHelmetTimmer = 10548,
-		GazerTimer = 10190,
+		DemonHelmetTimmer = 30145,
+		GazerTimer = 30146,
 	},
 	FirstSacrifice = {
-		knightAxe = 2430,
-		heroicAxe = 7389,
-		fireAxe = 2432,
+		knightAxe = 30147,
+		heroicAxe = 30148,
+		fireAxe = 30149,
 		-- royalAxe = royalAxeDone,
-		wyvernFang = 7408,
-		mysticBlade = 7384,
-		brightSword = 2407,
+		wyvernFang = 30150,
+		mysticBlade = 30151,
+		brightSword = 30152,
 		-- justiceSeeker = justiceSeekerDone,
-		dragonHammer = 2434,
-		amberStaff = 7426,
-		skullStaff = 2436,
+		dragonHammer = 30153,
+		amberStaff = 30154,
+		skullStaff = 30155,
 		--blessedSceptre = blessedSceptreDone,
 		noSacrifice = {
-			fangWyvern = 800,
-			axeKnight = 801,
-			hammerDragon = 802,
+			fangWyvern = 30156,
+			axeKnight = 30157,
+			hammerDragon = 30158,
 		}
 	},
 	Rewards = {
-		firstLevelReward = 3101,
-		secondLevelReward = 3102,
-		thirdLevelReward = 3103,
-		fourthLevelReward = 3104,
-		fivthLevelReward = 3105,
-		sixthLevelReward = 3106,
-		seventhLevelReward = 3107,
+		firstLevelReward = 30159,
+		secondLevelReward = 30160,
+		thirdLevelReward = 30161,
+		fourthLevelReward = 30162,
+		fivthLevelReward = 30163,
+		sixthLevelReward = 30164,
+		seventhLevelReward = 30165,
 	},
 	HidenChest = {
-		puppeteerOutfit = 1449,
-		suddenDeathWarlockFynn = 2222,
-		frozenStarLightFynn = 2361,
-		legionHelmet = 2480,
-		eagleShield = 2538,
-		nobleArmor = 2486,
-		dragonScaleMail = 2492,
-		ceremonialMask = 2501,
-		guardianShield = 2515,
-		bonelordShield = 2518,
-		castleShield = 2535,
-		marryOutfit = 3697,
-		orientalOutfit = 8267,
-		crystalCoinSohan = 50181,
-		menssageInABotte = 5802,
-		soulStone = 5809,
-		minoLeathers = 5878,
-		ironOres = 5888,
-		pawsAndCombs = 5902,
-		coralComb = 5945,
-		noseRing = 6107,
-		blackSteelSword = 7406,
-		onyxFail = 7421,
-		demonHunterOutfit = 7431,
-		chaosAcolyteOutfit = 8820,
-		crystallineArmor = 8878,
+		puppeteerOutfit = 30166,
+		suddenDeathWarlockFynn = 30167,
+		frozenStarLightFynn = 30168,
+		legionHelmet = 30169,
+		eagleShield = 30170,
+		nobleArmor = 30171,
+		dragonScaleMail = 30172,
+		ceremonialMask = 30173,
+		guardianShield = 30174,
+		bonelordShield = 30175,
+		castleShield = 30176,
+		marryOutfit = 30177,
+		orientalOutfit = 30178,
+		crystalCoinSohan = 30179,
+		menssageInABotte = 30180,
+		soulStone = 30181,
+		minoLeathers = 30182,
+		ironOres = 30183,
+		pawsAndCombs = 30184,
+		coralComb = 30185,
+		noseRing = 30186,
+		blackSteelSword = 30187,
+		onyxFail = 30188,
+		demonHunterOutfit = 30189,
+		chaosAcolyteOutfit = 30190,
+		crystallineArmor = 30191,
 		-- deathHeraldOutfit = draculaDone,
 		-- assassinOutfit = assassinDone,
-		magmaSet = 30492,
-		lightningSet = 30493,
-		insectoidOutfit = 14699,
-		deaplingOutfit = 15545,
+		magmaSet = 30192,
+		lightningSet = 30193,
+		insectoidOutfit = 30194,
+		deaplingOutfit = 30195,
 		hiddenCity = { -- Acces Vaargdon Mine
-			OreWagon = 25475,
+			OreWagon = 30196,
 		},
-		basicKnightSet = 16766,
-		crownSet = 2487,
-		basicHunterSet = 8891,
+		basicKnightSet = 30197,
+		crownSet = 30198,
+		basicHunterSet = 30199,
 	},
 	MisidiaQuest = {
-		DeaplingJaulTimer = 566110,
-		JaulTimer = 8422,
-		JaulKilled = 10139,
+		DeaplingJaulTimer = 30200,
+		JaulTimer = 30201,
+		JaulKilled = 30202,
 	},
 	ElficVille = {
-		BlackMagicianTimer = 10547,
-		BlackKnightKilled = 10551,
+		BlackMagicianTimer = 30203,
+		BlackKnightKilled = 30204,
 	},
 	AnsharaPOI = {
 		-- Izcandar
-		IzcandarWinterKilled = 10540,
-		IzcandarWinterTimer = 10541,
+		IzcandarWinterKilled = 30205,
+		IzcandarWinterTimer = 30206,
 		-- Infernus
-		InfernusKilled = 10542,
-		InfernusTimer = 10543,
-		ritualInfernus = 10544,
+		InfernusKilled = 30207,
+		InfernusTimer = 30208,
+		ritualInfernus = 30209,
 	},
 	ArusBosses = {
 		-- Fyzarus
-		FyzarusKilled = 10545,
-		FyzarusTimer = 10546,
+		FyzarusKilled = 30210,
+		FyzarusTimer = 30211,
 	},
 	Quest = {
 		Key = {
-			ID1219 = 1219, -- Annihilator II Key
-			ID2088 = 2088, -- Pirate Bars Key // Fynn Castle
-			ID2088 = 2090, -- Pirate Bars Key // Misidia Settlement
-			ID5001 = 5001, -- Falcon Bastion // Misidia Settlement
-			ID5002 = 5002, -- amaged Steel Helmet // Ansara Desert
-			ID2585 = 2585, -- Conjurer Outfit Quest Key 1
-			ID2586 = 2586, -- Conjurer Outfit Quest Key 2
-			ID2587 = 2587, -- Conjurer Outfit Quest Key 3
-			ID2090 = 2590, -- Pirate Bars Key // Misidia Settlement
+			ID1219 = 30212, -- Annihilator II Key
+			ID2088 = 30213, -- Pirate Bars Key // Fynn Castle
+			ID2088 = 30214, -- Pirate Bars Key // Misidia Settlement
+			ID5001 = 30215, -- Falcon Bastion // Misidia Settlement
+			ID5002 = 30216, -- amaged Steel Helmet // Ansara Desert
+			ID2585 = 30217, -- Conjurer Outfit Quest Key 1
+			ID2586 = 30218, -- Conjurer Outfit Quest Key 2
+			ID2587 = 30219, -- Conjurer Outfit Quest Key 3
+			ID2090 = 30220, -- Pirate Bars Key // Misidia Settlement
 		},
-		goldenKeyFynn = 3135,
-		goldenKeyMisidia = 3136,
+		goldenKeyFynn = 30221,
+		goldenKeyMisidia = 30222,
 	},
 	OutfitQuest = {
-		DefaultStart = 50960,
-		Ref = 50961,
+		DefaultStart = 30223,
+		Ref = 30224,
 		-- Citizen Addons Quest
 		Citizen = {
 			-- Mission storages for temporary questlog entries
-			MissionHat = 12009,
-			AddonHat = 12011,
-			MissionBackpack = 12008,
-			AddonBackpack = 12012,
-			AddonBackpackTimer = 12017
+			MissionHat = 30225,
+			AddonHat = 30226,
+			MissionBackpack = 30227,
+			AddonBackpack = 30228,
+			AddonBackpackTimer = 30229
 		},
 		-- Hunter Addons Quest
-		HunterHatAddon = 12053,
+		HunterHatAddon = 30230,
 		Hunter = {
-			AddonGlove = 12054,
-			AddonHat = 12055
+			AddonGlove = 30231,
+			AddonHat = 30232
 		},
 		-- Knight Addons Quest
 		Knight = {
-			AddonSword = 12153,
-			MissionHelmet = 12154,
-			AddonHelmet = 12155,
-			AddonHelmetTimer = 12156,
-			RamsaysHelmetDoor = 12160
+			AddonSword = 30233,
+			MissionHelmet = 30234,
+			AddonHelmet = 30235,
+			AddonHelmetTimer = 30236,
+			RamsaysHelmetDoor = 30237
 		},
 		-- Warrior-outfit Quest
-		WarriorShoulderAddon = 12067,
-		WarriorSwordAddon = 12068,
-		WarriorShoulderTimer = 12071,
+		WarriorShoulderAddon = 30238,
+		WarriorSwordAddon = 30239,
+		WarriorShoulderTimer = 30240,
 		-- Mage/Summoner-outfit Quest
 		MageSummoner = {
-			AddonWand = 12061,
-			AddonBelt = 12062,
-			MissionHatCloak = 12063,
-			AddonHatCloak = 12064,
-			AddonWandTimer = 12072
+			AddonWand = 30241,
+			AddonBelt = 30242,
+			MissionHatCloak = 30243,
+			AddonHatCloak = 30244,
+			AddonWandTimer = 30245
 		},
 		-- Conjurer Outfit
-		ZarabustorKilled = 10549,
-		ZarabustorTimmer = 10550,
-		ZarabustorDone = 2662,
+		ZarabustorKilled = 30246,
+		ZarabustorTimmer = 30247,
+		ZarabustorDone = 30248,
 	},
 }
 

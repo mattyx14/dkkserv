@@ -72,8 +72,8 @@ local function creatureSayCallback(npc, creature, type, message)
 	local itemIdRodWand = RodWand[player:getVocation():getBaseId()]
 	if MsgContains(message, 'first rod') or MsgContains(message, 'first wand') then
 		if player:isMage() then
-			if player:getStorageValue(Storage.firstMageWeapon) == -1 then
-				npcHandler:say('So you ask me for a {' .. ItemType(itemIdRodWand):getName() .. '} to begin your adventure?', npc, creature)
+			if player:getStorageValue(DarkKonia.FirstQuest.FirstWeapon) == -1 then
+				npcHandler:say('You ask me you begin your adventure with the {' .. ItemType(itemIdRodWand):getName() .. '}, ok?', npc, creature)
 				npcHandler:setTopic(playerId, 1)
 			else
 				npcHandler:say('What? I have already gave you one {' .. ItemType(itemIdRodWand):getName() .. '}!', npc, creature)
@@ -85,7 +85,7 @@ local function creatureSayCallback(npc, creature, type, message)
 		if npcHandler:getTopic(playerId) == 1 then
 			player:addItem(itemIdRodWand, 1)
 			npcHandler:say('Here you are young adept, take care yourself.', npc, creature)
-			player:setStorageValue(Storage.firstMageWeapon, 1)
+			player:setStorageValue(DarkKonia.FirstQuest.FirstWeapon, 1)
 		end
 		npcHandler:setTopic(playerId, 0)
 	elseif MsgContains(message, 'no') and npcHandler:getTopic(playerId) == 1 then
