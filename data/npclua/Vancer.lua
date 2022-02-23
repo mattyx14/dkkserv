@@ -172,7 +172,7 @@ local function creatureSayCallback(npc, creature, type, message)
 		else
 			npcHandler:say('Sorry, you aren\'t a paladin.', npc, creature)
 		end
-	elseif MsgContains(message, 'quiver') then
+	elseif MsgContains(message, 'yes') then
 		if npcHandler:getTopic(playerId) == 8 then
 			player:addItem(itemIdQuiver, 1)
 			player:setStorageValue(DarkKonia.FirstQuest.FirstWeapon, 1)
