@@ -161,7 +161,15 @@ local function creatureSayCallback(npc, creature, type, message)
 				npcHandler:say("You don't have it...", npc, creature)
 			end
 		end
-	elseif MsgContains(message, 'first quiver') then
+	elseif MsgContains(message, "no") then
+		if npcHandler:getTopic(playerId) > 1 then
+			npcHandler:say("Then no.", npc, creature)
+			npcHandler:setTopic(playerId, 0)
+		end
+		return true
+	end
+
+	if MsgContains(message, 'first quiver') then
 		if player:isPaladin() then
 			if player:getStorageValue(DarkKonia.FirstQuest.FirstWeapon) == -1 then
 				npcHandler:say('You ask me you begin your adventure with the {'.. ItemType(itemIdQuiver):getName() ..'}, ok? ', npc, creature)
@@ -179,11 +187,9 @@ local function creatureSayCallback(npc, creature, type, message)
 			npcHandler:say('Here you are young adept, take care yourself.', npc, creature)
 		end
 		npcHandler:setTopic(playerId, 0)
-	elseif MsgContains(message, "no") then
-		if npcHandler.topic[cid] > 1 then
-			npcHandler:say("Then no.", npc, creature)
-			npcHandler:setTopic(playerId, 0)
-		end
+	elseif MsgContains(message, "no") and npcHandler:getTopic(playerId) == 8 then
+		npcHandler:say("Ok then.", npc, creature)
+		npcHandler:setTopic(playerId, 0)
 	end
 	return true
 end

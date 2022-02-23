@@ -129,7 +129,7 @@ local function creatureSayCallback(npc, creature, type, message)
 			npcHandler:setTopic(playerId, 0)
 		end
 	elseif MsgContains(message, 'forge') then
-		npcHandler:say('What would you like me to forge for you? A {knight\'s sword} or a {warrior\'s sword}?', npc, creature)
+		npcHandler:say("What would you like me to forge for you? A {knight's sword} or a {warrior's sword}?", npc, creature)
 		npcHandler:setTopic(playerId, 1)
 	end
 
@@ -317,6 +317,11 @@ local function creatureSayCallback(npc, creature, type, message)
 		else
 			npcHandler:say('Sorry, I cannot help you with this matter.', npc, creature)
 		end
+	elseif MsgContains(message, "no") then
+		if npcHandler:getTopic(playerId) == 1 then
+			npcHandler:say("Then no.", npc, creature)
+		end
+		npcHandler:setTopic(playerId, 0)
 	end
 
 	if MsgContains(message, 'first club') then
@@ -330,15 +335,15 @@ local function creatureSayCallback(npc, creature, type, message)
 		else
 			npcHandler:say('Sorry, you aren\'t a knight.', npc, creature)
 		end
-		elseif MsgContains(message, 'yes') then
-			if npcHandler:getTopic(playerId) == 8 then
-				player:addItem(itemIdClub, 1)
-				player:setStorageValue(DarkKonia.FirstQuest.FirstWeapon, 1)
-				npcHandler:say('Here you are young adept, take care yourself.', npc, creature)
-			end
-			npcHandler:setTopic(playerId, 0)
-	elseif MsgContains(message, 'no') then
-		npcHandler:say('Ok then.', npc, creature)
+	elseif MsgContains(message, 'yes') then
+		if npcHandler:getTopic(playerId) == 8 then
+			player:addItem(itemIdClub, 1)
+			player:setStorageValue(DarkKonia.FirstQuest.FirstWeapon, 1)
+			npcHandler:say('Here you are young adept, take care yourself.', npc, creature)
+		end
+		npcHandler:setTopic(playerId, 0)
+	elseif MsgContains(message, "no") and npcHandler:getTopic(playerId) == 8 then
+		npcHandler:say("Ok then.", npc, creature)
 		npcHandler:setTopic(playerId, 0)
 	end
 
@@ -353,15 +358,15 @@ local function creatureSayCallback(npc, creature, type, message)
 		else
 			npcHandler:say('Sorry, you aren\'t a knight.', npc, creature)
 		end
-		elseif MsgContains(message, 'yes') then
-			if npcHandler:getTopic(playerId) == 9 then
-				player:addItem(itemIdSword, 1)
-				player:setStorageValue(DarkKonia.FirstQuest.FirstWeapon, 1)
-				npcHandler:say('Here you are young adept, take care yourself.', npc, creature)
-			end
-			npcHandler:setTopic(playerId, 0)
-	elseif MsgContains(message, 'no') then
-		npcHandler:say('Ok then.', npc, creature)
+	elseif MsgContains(message, 'yes') then
+		if npcHandler:getTopic(playerId) == 9 then
+			player:addItem(itemIdSword, 1)
+			player:setStorageValue(DarkKonia.FirstQuest.FirstWeapon, 1)
+			npcHandler:say('Here you are young adept, take care yourself.', npc, creature)
+		end
+		npcHandler:setTopic(playerId, 0)
+	elseif MsgContains(message, "no") and npcHandler:getTopic(playerId) == 9 then
+		npcHandler:say("Ok then.", npc, creature)
 		npcHandler:setTopic(playerId, 0)
 	end
 
@@ -376,15 +381,15 @@ local function creatureSayCallback(npc, creature, type, message)
 		else
 			npcHandler:say('Sorry, you aren\'t a knight.', npc, creature)
 		end
-		elseif MsgContains(message, 'yes') then
-			if npcHandler:getTopic(playerId) == 10 then
-				player:addItem(itemIdAxe, 1)
-				player:setStorageValue(DarkKonia.FirstQuest.FirstWeapon, 1)
-				npcHandler:say('Here you are young adept, take care yourself.', npc, creature)
-			end
-			npcHandler:setTopic(playerId, 0)
-	elseif MsgContains(message, 'no') then
-		npcHandler:say('Ok then.', npc, creature)
+	elseif MsgContains(message, 'yes') then
+		if npcHandler:getTopic(playerId) == 10 then
+			player:addItem(itemIdAxe, 1)
+			player:setStorageValue(DarkKonia.FirstQuest.FirstWeapon, 1)
+			npcHandler:say('Here you are young adept, take care yourself.', npc, creature)
+		end
+		npcHandler:setTopic(playerId, 0)
+	elseif MsgContains(message, "no") and npcHandler:getTopic(playerId) == 10 then
+		npcHandler:say("Ok then.", npc, creature)
 		npcHandler:setTopic(playerId, 0)
 	end
 	return true
