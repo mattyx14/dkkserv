@@ -4,14 +4,14 @@ local specialQuests = {
 }
 
 local questsExperience = {
-	[2423] = 50000, -- Experience Quest "Clerial Mace + 50k_Exp" / Sohan Town
-	[2429] = 50000, -- Experience Quest "Barbarian Axe + 50k_Exp" / Fynn Castle
-	[7385] = 50000, -- Experience Quest "Crimson Sword + 50k_Exp" / Misidia Settlement
+	[2423] = 5000, -- Experience Quest "Clerial Mace + 5k_Exp" / Sohan Town
+	[2429] = 5000, -- Experience Quest "Barbarian Axe + 5k_Exp" / Fynn Castle
+	[7385] = 5000, -- Experience Quest "Crimson Sword + 5k_Exp" / Misidia Settlement
 }
 
-local questSystem1 = Action()
+local questSystem = Action()
 
-function questSystem1.onUse(player, item, fromPosition, target, toPosition, isHotkey)
+function questSystem.onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local storage = specialQuests[item.actionid]
 	if not storage then
 		storage = item.uid
@@ -65,7 +65,7 @@ function questSystem1.onUse(player, item, fromPosition, target, toPosition, isHo
 		for i = 1, size do
 			local tmp = items[i]
 			if reward:addItemEx(tmp) ~= RETURNVALUE_NOERROR then
-				Spdlog.warn("[questSystem1.onUse] - Could not add quest reward to container")
+				Spdlog.warn("[questSystem.onUse] - Could not add quest reward to container")
 			end
 		end
 		local ret = ItemType(reward.itemid)
@@ -92,8 +92,8 @@ function questSystem1.onUse(player, item, fromPosition, target, toPosition, isHo
 end
 
 for index, value in pairs(specialQuests) do
-	questSystem1:aid(index)
+	questSystem:aid(index)
 end
 
-questSystem1:aid(2000, 2423, 2429, 7385)
-questSystem1:register()
+questSystem:aid(2000, 2423, 2429, 7385)
+questSystem:register()

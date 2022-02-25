@@ -128,5 +128,5 @@ function demonOak.onUse(player, item, fromPosition, target, toPosition, isHotkey
 	return true
 end
 
-demonOak:id(8293)
+demonOak:id(919)
 demonOak:register()

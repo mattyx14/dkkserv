@@ -69,6 +69,7 @@ DarkKonia = {
 	ForgottenKnowledge = {
 		GirlPicture = 30104, -- Fynn = 26400
 		SilverKey = 30105, -- Fynn
+		GhostSilverLantern = 30252, -- Fynn
 		LadyTenebrisTimer = 30106, -- Fynn
 		LadyTenebrisKilled = 30107, -- Fynn
 		ForgottenKnowledgeRewards = {
@@ -94,7 +95,9 @@ DarkKonia = {
 		DjinnMission = {
 			Lamp1 = 30119,
 			Lamp2 = 30120,
-			Done = 30121
+			Done = 30121,
+			-- lichStaff = DarkKonia.Missions.DjinnMission.Done (uid:30258) = 30121,
+			-- assassinDagger = DarkKonia.Missions.DjinnMission.Done (uid:30259) = 30121,
 		},
 	},
 	VampireQuest = {
@@ -119,7 +122,10 @@ DarkKonia = {
 		assassinDone = 30137,
 		anniKey = 30138,
 		AnnihiMission = {
-			Done = 30139
+			Done = 30139,
+			-- magicSword = DarkKonia.Missions.AnnihiMission.Done (uid:30260) = 30139,
+			-- thunderHammer = DarkKonia.Missions.AnnihiMission.Done (uid:30261) = 30139,
+			-- stoncutterAxe = DarkKonia.Missions.AnnihiMission.Done (uid:30262) = 30139,
 		},
 	},
 	FirstQuest = {
@@ -188,8 +194,6 @@ DarkKonia = {
 		demonHunterOutfit = 30189,
 		chaosAcolyteOutfit = 30190,
 		crystallineArmor = 30191,
-		-- deathHeraldOutfit = draculaDone,
-		-- assassinOutfit = assassinDone,
 		magmaSet = 30192,
 		lightningSet = 30193,
 		insectoidOutfit = 30194,
@@ -200,6 +204,16 @@ DarkKonia = {
 		basicKnightSet = 30197,
 		crownSet = 30198,
 		basicHunterSet = 30199,
+		blueSetReward = 30250,
+		SD_UH_Reward = 30251,
+		shieldOfHonour = 30253,
+		SD_Reward = 30254,
+		steelHelmet = 30255,
+		ElaneCrossbow = 30256,
+		swamPlairArmor = 30257,
+		clericalMace = 30263,
+		barbarianAxe = 30264,
+		crimsonSword = 30265,
 	},
 	MisidiaQuest = {
 		DeaplingJaulTimer = 30200,
@@ -281,6 +295,7 @@ DarkKonia = {
 		ZarabustorKilled = 30246,
 		ZarabustorTimmer = 30247,
 		ZarabustorDone = 30248,
+		ZarabustorReward = 30249,
 	},
 }
 

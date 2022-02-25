@@ -1,5 +1,5 @@
 local outfits = {
-	[3573] = {3573, 'Conjurer', 635, 634},
+	[30249] = {DarkKonia.OutfitQuest.ZarabustorReward, 'Conjurer', 635, 634},
 }
 
 local conjurerReward = Action()
@@ -10,7 +10,7 @@ function conjurerReward.onUse(player, item, fromPosition, target, toPosition, is
 		return true
 	end
 
-	if player:getStorageValue(3573) == 1 then
+	if player:getStorageValue(outfit[1]) == 1 then
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "The chest is empty.")
 		return true
 	end
@@ -30,14 +30,8 @@ function conjurerReward.onUse(player, item, fromPosition, target, toPosition, is
 			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You already have the " .. outfit[2] .. " outfit.")
 		end
 	end
-
-	player:addItem(3567, 1)
-	player:addItem(3573, 1)
-	player:addItem(645, 1)
-	player:setStorageValue(outfit[1], 1)
-	player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You found a blue set.")
 	return true
 end
 
-conjurerReward:uid(3573)
+conjurerReward:uid(30249)
 conjurerReward:register()

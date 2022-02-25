@@ -21,5 +21,7 @@ function vengothTeleports.onStepIn(creature, item, position, fromPosition)
 end
 
 vengothTeleports:type("stepin")
-vengothTeleports:aid(50220, 50221)
+for index, value in pairs(config) do
+	vengothTeleports:aid(index)
+end
 vengothTeleports:register()

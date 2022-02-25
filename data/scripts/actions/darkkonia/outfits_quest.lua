@@ -1,15 +1,13 @@
 local outfits = {
-	[6096] = {6096, 'Pirate', 155, 151, 6096},
-	[10008] = {10008, 'Death Herald', 666, 667, 18935}, -- 10005, 10006 and 10007 is reserved storage for kill Dracula
-	[9933] = {9933, 'Assassin', 156, 152, 9019},
-	[8820] = {8820, 'Chaos Acolyte', 664, 665, 8191},
-	[14700] = {14700, 'Deepling', 464, 463, 13995},
-	[7431] = {7431, 'Demonhunter', 288, 289, 7431},
-	[5807] = {5807, 'Brotherhood', 279, 278, 5807},
-	[8267] = {8267, 'Oriental', 150, 146, 7533},
-	[3697] = {3697, 'Marry', 329, 328, 3004},
-	[1449] = {1449, 'Puppeteer', 696, 697, 3408},
-	[14699] = {14699, 'Insectoid', 466, 465, 14246},
+	[30135] = {DarkKonia.AnniQuest.pirateDone, 'Pirate', 155, 151, 6096},
+	[30136] = {DarkKonia.AnniQuest.deathHeraldDone, 'Death Herald', 666, 667, 18935}, -- 10005, 10006 and 10007 is reserved storage for kill Dracula
+	[30178] = {DarkKonia.HidenChest.orientalOutfit, 'Oriental', 150, 146, 7533},
+	[30177] = {DarkKonia.HidenChest.marryOutfit, 'Marry', 329, 328, 3004},
+	[30189] = {DarkKonia.HidenChest.demonHunterOutfit, 'Demonhunter', 288, 289, 7431},
+	[30190] = {DarkKonia.HidenChest.chaosAcolyteOutfit, 'Chaos Acolyte', 664, 665, 8191},
+	[30194] = {DarkKonia.HidenChest.insectoidOutfit, 'Insectoid', 466, 465, 14246},
+	[30195] = {DarkKonia.HidenChest.deaplingOutfit, 'Deepling', 464, 463, 13995},
+	-- [30249] = {DarkKonia.OutfitQuest.ZarabustorReward, 'Conjurer', 635, 634}, -- /data/scripts/actions/darkkonia/misidia_settlement/color_tombs/chest_conjurer.lua
 }
 
 local outfitQuestSystem = Action()
@@ -36,5 +34,7 @@ function outfitQuestSystem.onUse(player, item, fromPosition, target, toPosition,
 	return true
 end
 
-outfitQuestSystem:uid(6096, 10008, 9933, 8820, 7431, 5807, 8267, 3697, 1449, 14699, 14700)
+for index, value in pairs(outfits) do
+	outfitQuestSystem:uid(index)
+end
 outfitQuestSystem:register()

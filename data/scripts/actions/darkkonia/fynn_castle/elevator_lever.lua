@@ -1,11 +1,11 @@
-local configElevator = {
+local elevator = {
 	-- [ACTION_ID] = Teleport Position
 	[24890] = Position(993, 1002, 5),
 }
 
 local elevatorLever = Action()
 function elevatorLever.onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	local targetPosition = configElevator[item.actionid]
+	local targetPosition = elevator[item.actionid]
 	if not targetPosition then
 		return true
 	end
@@ -28,7 +28,7 @@ function elevatorLever.onUse(player, item, fromPosition, target, toPosition, isH
 	return true
 end
 
-for index, value in pairs(configElevator) do
+for index, value in pairs(elevator) do
 	elevatorLever:aid(index)
 end
 elevatorLever:register()

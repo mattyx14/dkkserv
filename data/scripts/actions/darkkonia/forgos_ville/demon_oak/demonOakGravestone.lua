@@ -7,5 +7,5 @@ function demonOakGrave.onUse(player, item, fromPosition, target, toPosition, isH
 	end
 end
 
-demonOakGrave:uid(9009)
+demonOakGrave:uid(1001)
 demonOakGrave:register()
