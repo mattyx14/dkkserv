@@ -54,4 +54,9 @@ A giant Swamp Plague is resting down here.]]
 		itemPos = {x = 1018, y = 896, z = 9},
 		text = [[Need First Fynnian Quest.]]
 	},
+	[9] = {
+		itemId = 6121,
+		itemPos = {x = 900, y = 987, z = 9},
+		text = "Need find to Mystic Blade Quest."
+	},
 }
