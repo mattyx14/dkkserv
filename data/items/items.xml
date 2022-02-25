@@ -422,21 +422,21 @@
 	</item>
 	<item id="286" article="a" name="dead cat">
 		<attribute key="containerSize" value="5"/>
-		<attribute key="decayTo" value="7638"/>
+		<attribute key="decayTo" value="287"/>
 		<attribute key="duration" value="10"/>
 		<attribute key="corpseType" value="blood"/>
 		<attribute key="fluidsource" value="blood"/>
 	</item>
 	<item id="287" article="a" name="dead cat">
 		<attribute key="containerSize" value="5"/>
-		<attribute key="decayTo" value="7639"/>
+		<attribute key="decayTo" value="288"/>
 		<attribute key="duration" value="300"/>
 		<attribute key="corpseType" value="blood"/>
 		<attribute key="fluidsource" value="blood"/>
 	</item>
 	<item id="288" article="a" name="dead cat">
 		<attribute key="containerSize" value="5"/>
-		<attribute key="decayTo" value="7640"/>
+		<attribute key="decayTo" value="289"/>
 		<attribute key="duration" value="300"/>
 		<attribute key="corpseType" value="blood"/>
 	</item>
