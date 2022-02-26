@@ -2,7 +2,7 @@ local TileSettings = {
 	[5500] = { -- Mystic Flame block Royal Axe Access
 		minLevel = 200,
 		mission = DarkKonia.FirstSacrifice.fireAxe,
-		teleport = Position(890, 1021, 11),
+		teleport = Position(898, 1035, 11),
 		missionName = "require fixe axe quest"
 	},
 	[5501] = { -- Mystic Flame block Justice Seeker Access
@@ -100,9 +100,8 @@ local TileSettings = {
 		mission = DarkKonia.OutfitQuest.ZarabustorDone,
 		teleport = Position(728, 1031, 10),
 		missionName = "require complete conjurer outfit quest to use this portal"
-	}
+	},
 }
-
 
 local storeTileProtection = MoveEvent()
 function storeTileProtection.onStepIn(creature, item, position, fromPosition)

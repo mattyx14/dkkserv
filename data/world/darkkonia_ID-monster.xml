@@ -2115,10 +2115,6 @@
 		<monster name="Twisted Pooka" x="-10" y="10" z="7" spawntime="60" />
 		<monster name="Pooka" x="-9" y="10" z="7" spawntime="60" />
 	</monster>
-	<monster centerx="880" centery="985" centerz="7" radius="3">
-		<monster name="Boogy" x="-1" y="-1" z="7" spawntime="120" />
-		<monster name="Pixie" x="0" y="0" z="7" spawntime="120" />
-	</monster>
 	<monster centerx="992" centery="985" centerz="7" radius="1">
 		<monster name="Dog" x="0" y="0" z="7" spawntime="60" />
 	</monster>
@@ -5315,11 +5311,17 @@
 	<monster centerx="910" centery="1040" centerz="8" radius="1">
 		<monster name="Vile Grandmaster" x="0" y="0" z="8" spawntime="60" />
 	</monster>
+	<monster centerx="912" centery="1040" centerz="8" radius="1">
+		<monster name="Behemoth" x="0" y="0" z="8" spawntime="60" />
+	</monster>
 	<monster centerx="889" centery="1041" centerz="8" radius="1">
 		<monster name="Demon Skeleton" x="0" y="0" z="8" spawntime="60" />
 	</monster>
 	<monster centerx="867" centery="1042" centerz="8" radius="1">
 		<monster name="Bonebeast" x="0" y="0" z="8" spawntime="60" />
+	</monster>
+	<monster centerx="930" centery="1042" centerz="8" radius="1">
+		<monster name="Destroyer" x="0" y="0" z="8" spawntime="60" />
 	</monster>
 	<monster centerx="962" centery="1042" centerz="8" radius="5">
 		<monster name="Warlock" x="0" y="-1" z="8" spawntime="60" />
@@ -5390,11 +5392,14 @@
 		<monster name="Lich" x="3" y="4" z="8" spawntime="60" />
 	</monster>
 	<monster centerx="922" centery="1046" centerz="8" radius="5">
+		<monster name="Destroyer" x="0" y="-4" z="8" spawntime="60" />
 		<monster name="Burning Gladiator" x="2" y="-4" z="8" spawntime="60" />
 		<monster name="Vile Grandmaster" x="-2" y="-3" z="8" spawntime="60" />
 		<monster name="Vicious Squire" x="0" y="0" z="8" spawntime="60" />
+		<monster name="Destroyer" x="-2" y="2" z="8" spawntime="60" />
 		<monster name="Priestess" x="0" y="3" z="8" spawntime="60" />
 		<monster name="Vile Grandmaster" x="0" y="5" z="8" spawntime="60" />
+		<monster name="Behemoth" x="2" y="5" z="8" spawntime="60" />
 	</monster>
 	<monster centerx="949" centery="1046" centerz="8" radius="5">
 		<monster name="Vile Grandmaster" x="-2" y="0" z="8" spawntime="60" />
@@ -5404,6 +5409,9 @@
 	</monster>
 	<monster centerx="968" centery="1046" centerz="8" radius="1">
 		<monster name="Banshee" x="0" y="0" z="8" spawntime="60" />
+	</monster>
+	<monster centerx="929" centery="1047" centerz="8" radius="1">
+		<monster name="Behemoth" x="0" y="0" z="8" spawntime="60" />
 	</monster>
 	<monster centerx="1019" centery="1047" centerz="8" radius="1">
 		<monster name="Grim Reaper" x="0" y="0" z="8" spawntime="60" />
@@ -5501,6 +5509,7 @@
 	<monster centerx="922" centery="1059" centerz="8" radius="5">
 		<monster name="Lich" x="-5" y="-5" z="8" spawntime="60" />
 		<monster name="Renegade Knight" x="-2" y="-4" z="8" spawntime="60" />
+		<monster name="Destroyer" x="-3" y="0" z="8" spawntime="60" />
 	</monster>
 	<monster centerx="935" centery="1060" centerz="8" radius="5">
 		<monster name="Necromancer" x="1" y="0" z="8" spawntime="60" />
@@ -5593,6 +5602,9 @@
 	</monster>
 	<monster centerx="917" centery="1073" centerz="8" radius="1">
 		<monster name="Vicious Squire" x="0" y="0" z="8" spawntime="60" />
+	</monster>
+	<monster centerx="919" centery="1073" centerz="8" radius="1">
+		<monster name="Behemoth" x="0" y="0" z="8" spawntime="60" />
 	</monster>
 	<monster centerx="985" centery="1073" centerz="8" radius="1">
 		<monster name="Grim Reaper" x="0" y="0" z="8" spawntime="60" />
@@ -6431,14 +6443,20 @@
 	<monster centerx="916" centery="1023" centerz="9" radius="5">
 		<monster name="Son Of Verminor" x="-4" y="-3" z="9" spawntime="60" />
 		<monster name="Plaguesmith" x="1" y="-3" z="9" spawntime="60" />
+		<monster name="Behemoth" x="-2" y="-2" z="9" spawntime="60" />
+		<monster name="Destroyer" x="-2" y="2" z="9" spawntime="60" />
 		<monster name="Slime" x="3" y="2" z="9" spawntime="60" />
 		<monster name="Plaguesmith" x="-4" y="4" z="9" spawntime="60" />
+		<monster name="Behemoth" x="1" y="4" z="9" spawntime="60" />
 	</monster>
 	<monster centerx="946" centery="1024" centerz="9" radius="5">
 		<monster name="Defiler" x="1" y="-5" z="9" spawntime="60" />
 		<monster name="Plaguesmith" x="-4" y="-4" z="9" spawntime="60" />
+		<monster name="Behemoth" x="1" y="-3" z="9" spawntime="60" />
 		<monster name="Slime" x="-3" y="-1" z="9" spawntime="60" />
+		<monster name="Destroyer" x="1" y="-1" z="9" spawntime="60" />
 		<monster name="Plaguesmith" x="1" y="4" z="9" spawntime="60" />
+		<monster name="Behemoth" x="-5" y="5" z="9" spawntime="60" />
 	</monster>
 	<monster centerx="730" centery="1025" centerz="9" radius="1">
 		<monster name="Lich" x="0" y="0" z="9" spawntime="60" />
@@ -6475,6 +6493,7 @@
 	</monster>
 	<monster centerx="934" centery="1030" centerz="9" radius="5">
 		<monster name="Son Of Verminor" x="4" y="-2" z="9" spawntime="60" />
+		<monster name="Behemoth" x="-4" y="4" z="9" spawntime="60" />
 		<monster name="Plaguesmith" x="-1" y="4" z="9" spawntime="60" />
 	</monster>
 	<monster centerx="916" centery="1031" centerz="9" radius="1">
@@ -6482,6 +6501,7 @@
 	</monster>
 	<monster centerx="922" centery="1034" centerz="9" radius="5">
 		<monster name="Plaguesmith" x="4" y="-3" z="9" spawntime="60" />
+		<monster name="Destroyer" x="1" y="-2" z="9" spawntime="60" />
 		<monster name="Plaguesmith" x="4" y="1" z="9" spawntime="60" />
 		<monster name="Defiler" x="-2" y="3" z="9" spawntime="60" />
 	</monster>
@@ -6495,8 +6515,14 @@
 	<monster centerx="946" centery="1035" centerz="9" radius="1">
 		<monster name="Plaguesmith" x="0" y="0" z="9" spawntime="60" />
 	</monster>
+	<monster centerx="938" centery="1037" centerz="9" radius="1">
+		<monster name="Destroyer" x="0" y="0" z="9" spawntime="60" />
+	</monster>
 	<monster centerx="944" centery="1037" centerz="9" radius="1">
 		<monster name="Lost Soul" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="889" centery="1040" centerz="9" radius="1">
+		<monster name="Behemoth" x="0" y="0" z="9" spawntime="60" />
 	</monster>
 	<monster centerx="894" centery="1041" centerz="9" radius="1">
 		<monster name="Son Of Verminor" x="0" y="0" z="9" spawntime="60" />
@@ -6508,10 +6534,14 @@
 	<monster centerx="925" centery="1042" centerz="9" radius="1">
 		<monster name="Hero" x="0" y="0" z="9" spawntime="60" />
 	</monster>
+	<monster centerx="893" centery="1043" centerz="9" radius="1">
+		<monster name="Destroyer" x="0" y="0" z="9" spawntime="60" />
+	</monster>
 	<monster centerx="932" centery="1043" centerz="9" radius="5">
 		<monster name="Plaguesmith" x="2" y="-4" z="9" spawntime="60" />
 		<monster name="Vile Grandmaster" x="3" y="-3" z="9" spawntime="60" />
 		<monster name="Vile Grandmaster" x="-2" y="0" z="9" spawntime="60" />
+		<monster name="Behemoth" x="5" y="0" z="9" spawntime="60" />
 		<monster name="Vile Grandmaster" x="5" y="5" z="9" spawntime="60" />
 	</monster>
 	<monster centerx="945" centery="1043" centerz="9" radius="5">
@@ -6519,6 +6549,7 @@
 		<monster name="Hero" x="-4" y="-3" z="9" spawntime="60" />
 		<monster name="Lost Soul" x="-1" y="-3" z="9" spawntime="60" />
 		<monster name="Vile Grandmaster" x="0" y="0" z="9" spawntime="60" />
+		<monster name="Behemoth" x="-4" y="1" z="9" spawntime="60" />
 		<monster name="Plaguesmith" x="2" y="1" z="9" spawntime="60" />
 		<monster name="Hero" x="-2" y="3" z="9" spawntime="60" />
 	</monster>
@@ -6536,8 +6567,12 @@
 	</monster>
 	<monster centerx="909" centery="1047" centerz="9" radius="5">
 		<monster name="Plaguesmith" x="2" y="-4" z="9" spawntime="60" />
+		<monster name="Behemoth" x="-1" y="-2" z="9" spawntime="60" />
 		<monster name="Plaguesmith" x="-2" y="1" z="9" spawntime="60" />
 		<monster name="Blightwalker" x="5" y="3" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="938" centery="1047" centerz="9" radius="1">
+		<monster name="Destroyer" x="0" y="0" z="9" spawntime="60" />
 	</monster>
 	<monster centerx="891" centery="1048" centerz="9" radius="1">
 		<monster name="Blightwalker" x="0" y="0" z="9" spawntime="60" />
@@ -6547,6 +6582,12 @@
 	</monster>
 	<monster centerx="903" centery="1049" centerz="9" radius="1">
 		<monster name="Blightwalker" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="897" centery="1051" centerz="9" radius="1">
+		<monster name="Destroyer" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="917" centery="1051" centerz="9" radius="1">
+		<monster name="Behemoth" x="0" y="0" z="9" spawntime="60" />
 	</monster>
 	<monster centerx="923" centery="1051" centerz="9" radius="5">
 		<monster name="Plaguesmith" x="-4" y="-3" z="9" spawntime="60" />
@@ -6562,6 +6603,7 @@
 	</monster>
 	<monster centerx="904" centery="1055" centerz="9" radius="1">
 		<monster name="Blightwalker" x="0" y="0" z="9" spawntime="60" />
+		<monster name="Behemoth" x="-1" y="1" z="9" spawntime="60" />
 	</monster>
 	<monster centerx="940" centery="1055" centerz="9" radius="5">
 		<monster name="Plaguesmith" x="1" y="-5" z="9" spawntime="60" />
@@ -6598,11 +6640,17 @@
 		<monster name="Blightwalker" x="0" y="0" z="9" spawntime="60" />
 	</monster>
 	<monster centerx="937" centery="1067" centerz="9" radius="5">
-		<monster name="Hero" x="3" y="-4" z="9" spawntime="60" />
+		<monster name="Behemoth" x="3" y="-4" z="9" spawntime="60" />
 		<monster name="Hero" x="-3" y="-3" z="9" spawntime="60" />
 		<monster name="Hero" x="1" y="-2" z="9" spawntime="60" />
-		<monster name="Hero" x="-2" y="0" z="9" spawntime="60" />
+		<monster name="Behemoth" x="-2" y="0" z="9" spawntime="60" />
 		<monster name="Hero" x="-4" y="3" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="902" centery="1069" centerz="9" radius="1">
+		<monster name="Behemoth" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="924" centery="1069" centerz="9" radius="1">
+		<monster name="Behemoth" x="0" y="0" z="9" spawntime="60" />
 	</monster>
 	<monster centerx="902" centery="1071" centerz="9" radius="1">
 		<monster name="Blightwalker" x="0" y="0" z="9" spawntime="60" />
@@ -6623,11 +6671,15 @@
 	<monster centerx="990" centery="1082" centerz="9" radius="1">
 		<monster name="Necromancer" x="0" y="0" z="9" spawntime="60" />
 	</monster>
+	<monster centerx="891" centery="1083" centerz="9" radius="1">
+		<monster name="Behemoth" x="0" y="0" z="9" spawntime="60" />
+	</monster>
 	<monster centerx="902" centery="1084" centerz="9" radius="5">
 		<monster name="Renegade Knight" x="1" y="3" z="9" spawntime="60" />
 		<monster name="Renegade Knight" x="-2" y="4" z="9" spawntime="60" />
 	</monster>
 	<monster centerx="915" centery="1084" centerz="9" radius="5">
+		<monster name="Behemoth" x="1" y="-5" z="9" spawntime="60" />
 		<monster name="Vile Grandmaster" x="4" y="-3" z="9" spawntime="60" />
 		<monster name="Renegade Knight" x="2" y="0" z="9" spawntime="60" />
 		<monster name="Vile Grandmaster" x="-3" y="2" z="9" spawntime="60" />
@@ -6636,6 +6688,9 @@
 	</monster>
 	<monster centerx="983" centery="1084" centerz="9" radius="1">
 		<monster name="Necromancer" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="908" centery="1086" centerz="9" radius="1">
+		<monster name="Behemoth" x="0" y="0" z="9" spawntime="60" />
 	</monster>
 	<monster centerx="987" centery="1086" centerz="9" radius="1">
 		<monster name="Necromancer" x="0" y="0" z="9" spawntime="60" />
@@ -6647,7 +6702,7 @@
 		<monster name="Renegade Knight" x="3" y="-4" z="9" spawntime="60" />
 		<monster name="Lost Soul" x="2" y="-3" z="9" spawntime="60" />
 		<monster name="Vile Grandmaster" x="4" y="-2" z="9" spawntime="60" />
-		<monster name="Vile Grandmaster" x="2" y="0" z="9" spawntime="60" />
+		<monster name="Behemoth" x="2" y="0" z="9" spawntime="60" />
 		<monster name="Vile Grandmaster" x="4" y="4" z="9" spawntime="60" />
 	</monster>
 	<monster centerx="983" centery="1090" centerz="9" radius="1">
@@ -7616,6 +7671,11 @@
 		<monster name="Plaguesmith" x="5" y="2" z="10" spawntime="60" />
 		<monster name="Plaguesmith" x="0" y="4" z="10" spawntime="60" />
 	</monster>
+	<monster centerx="913" centery="1022" centerz="10" radius="5">
+		<monster name="Destroyer" x="0" y="-4" z="10" spawntime="60" />
+		<monster name="Plaguesmith" x="-3" y="0" z="10" spawntime="60" />
+		<monster name="Plaguesmith" x="-1" y="5" z="10" spawntime="60" />
+	</monster>
 	<monster centerx="814" centery="1025" centerz="10" radius="1">
 		<monster name="Renegade Knight" x="0" y="0" z="10" spawntime="60" />
 	</monster>
@@ -7647,6 +7707,15 @@
 	<monster centerx="831" centery="1027" centerz="10" radius="1">
 		<monster name="Hero" x="0" y="0" z="10" spawntime="60" />
 	</monster>
+	<monster centerx="899" centery="1028" centerz="10" radius="5">
+		<monster name="Behemoth" x="-2" y="-1" z="10" spawntime="60" />
+		<monster name="Plaguesmith" x="3" y="1" z="10" spawntime="60" />
+		<monster name="Blightwalker" x="2" y="2" z="10" spawntime="60" />
+		<monster name="Plaguesmith" x="-2" y="5" z="10" spawntime="60" />
+	</monster>
+	<monster centerx="905" centery="1028" centerz="10" radius="1">
+		<monster name="Behemoth" x="0" y="0" z="10" spawntime="60" />
+	</monster>
 	<monster centerx="942" centery="1028" centerz="10" radius="1">
 		<monster name="Blightwalker" x="0" y="0" z="10" spawntime="60" />
 	</monster>
@@ -7656,8 +7725,14 @@
 	<monster centerx="823" centery="1029" centerz="10" radius="1">
 		<monster name="Renegade Knight" x="0" y="0" z="10" spawntime="60" />
 	</monster>
+	<monster centerx="909" centery="1029" centerz="10" radius="1">
+		<monster name="Blightwalker" x="0" y="0" z="10" spawntime="60" />
+	</monster>
 	<monster centerx="728" centery="1030" centerz="10" radius="1">
 		<monster name="Lich" x="0" y="0" z="10" spawntime="60" />
+	</monster>
+	<monster centerx="886" centery="1030" centerz="10" radius="1">
+		<monster name="Blightwalker" x="0" y="0" z="10" spawntime="60" />
 	</monster>
 	<monster centerx="926" centery="1030" centerz="10" radius="5">
 		<monster name="Plaguesmith" x="-2" y="-3" z="10" spawntime="60" />
@@ -7681,6 +7756,12 @@
 	<monster centerx="1038" centery="1032" centerz="10" radius="1">
 		<monster name="Fire Devil" x="0" y="0" z="10" spawntime="60" />
 	</monster>
+	<monster centerx="887" centery="1033" centerz="10" radius="1">
+		<monster name="Plaguesmith" x="0" y="0" z="10" spawntime="60" />
+	</monster>
+	<monster centerx="890" centery="1033" centerz="10" radius="1">
+		<monster name="Destroyer" x="0" y="0" z="10" spawntime="60" />
+	</monster>
 	<monster centerx="1034" centery="1033" centerz="10" radius="1">
 		<monster name="Fire Devil" x="0" y="0" z="10" spawntime="60" />
 	</monster>
@@ -7690,6 +7771,9 @@
 	</monster>
 	<monster centerx="1036" centery="1034" centerz="10" radius="1">
 		<monster name="Fire Elemental" x="0" y="0" z="10" spawntime="60" />
+	</monster>
+	<monster centerx="897" centery="1035" centerz="10" radius="1">
+		<monster name="Behemoth" x="0" y="0" z="10" spawntime="60" />
 	</monster>
 	<monster centerx="1007" centery="1035" centerz="10" radius="1">
 		<monster name="Burning Gladiator" x="0" y="0" z="10" spawntime="60" />
@@ -7738,6 +7822,14 @@
 	</monster>
 	<monster centerx="1030" centery="1039" centerz="10" radius="1">
 		<monster name="Banshee" x="0" y="0" z="10" spawntime="60" />
+	</monster>
+	<monster centerx="891" centery="1040" centerz="10" radius="5">
+		<monster name="Plaguesmith" x="-3" y="-3" z="10" spawntime="60" />
+		<monster name="Behemoth" x="2" y="-3" z="10" spawntime="60" />
+		<monster name="Plaguesmith" x="3" y="-1" z="10" spawntime="60" />
+		<monster name="Blightwalker" x="-2" y="1" z="10" spawntime="60" />
+		<monster name="Behemoth" x="1" y="3" z="10" spawntime="60" />
+		<monster name="Plaguesmith" x="3" y="5" z="10" spawntime="60" />
 	</monster>
 	<monster centerx="1026" centery="1040" centerz="10" radius="1">
 		<monster name="Fire Lord" x="0" y="0" z="10" spawntime="60" />
@@ -7794,6 +7886,9 @@
 	</monster>
 	<monster centerx="1039" centery="1048" centerz="10" radius="1">
 		<monster name="Fire Elemental" x="0" y="0" z="10" spawntime="60" />
+	</monster>
+	<monster centerx="895" centery="1049" centerz="10" radius="1">
+		<monster name="Blightwalker" x="0" y="0" z="10" spawntime="60" />
 	</monster>
 	<monster centerx="924" centery="1050" centerz="10" radius="1">
 		<monster name="Plaguesmith" x="0" y="0" z="10" spawntime="60" />
@@ -8855,6 +8950,12 @@
 		<monster name="Hellfire Fighter" x="-2" y="3" z="11" spawntime="60" />
 		<monster name="Massive Fire Elemental" x="5" y="5" z="11" spawntime="60" />
 	</monster>
+	<monster centerx="901" centery="1033" centerz="11" radius="5">
+		<monster name="Destroyer" x="-1" y="-2" z="11" spawntime="60" />
+		<monster name="Destroyer" x="-3" y="-1" z="11" spawntime="60" />
+		<monster name="Blightwalker" x="3" y="0" z="11" spawntime="60" />
+		<monster name="Blightwalker" x="1" y="1" z="11" spawntime="60" />
+	</monster>
 	<monster centerx="1119" centery="1033" centerz="11" radius="1">
 		<monster name="Fire Elemental" x="0" y="0" z="11" spawntime="60" />
 	</monster>
@@ -8875,6 +8976,12 @@
 		<monster name="Fire Elemental" x="-1" y="1" z="11" spawntime="60" />
 		<monster name="Hellfire Fighter" x="5" y="1" z="11" spawntime="60" />
 		<monster name="Massive Fire Elemental" x="2" y="2" z="11" spawntime="60" />
+	</monster>
+	<monster centerx="912" centery="1034" centerz="11" radius="5">
+		<monster name="Blightwalker" x="1" y="-2" z="11" spawntime="60" />
+		<monster name="Plaguesmith" x="-4" y="-1" z="11" spawntime="60" />
+		<monster name="Blightwalker" x="-1" y="1" z="11" spawntime="60" />
+		<monster name="Plaguesmith" x="4" y="2" z="11" spawntime="60" />
 	</monster>
 	<monster centerx="1156" centery="1035" centerz="11" radius="5">
 		<monster name="Hellfire Fighter" x="0" y="-5" z="11" spawntime="60" />
@@ -8996,17 +9103,17 @@
 	</monster>
 	<monster centerx="917" centery="1097" centerz="11" radius="5">
 		<monster name="Lost Soul" x="5" y="-4" z="11" spawntime="60" />
-		<monster name="Lord knight" x="3" y="-1" z="11" spawntime="60" />
+		<monster name="Lord Knight" x="3" y="-1" z="11" spawntime="60" />
 		<monster name="Vile Grandmaster" x="-1" y="1" z="11" spawntime="60" />
 		<monster name="Vile Grandmaster" x="-3" y="3" z="11" spawntime="60" />
 		<monster name="Priestess" x="4" y="4" z="11" spawntime="60" />
-		<monster name="Lord knight" x="0" y="5" z="11" spawntime="60" />
+		<monster name="Lord Knight" x="0" y="5" z="11" spawntime="60" />
 	</monster>
 	<monster centerx="929" centery="1097" centerz="11" radius="5">
 		<monster name="Lost Soul" x="-1" y="-4" z="11" spawntime="60" />
 		<monster name="Priestess" x="2" y="-2" z="11" spawntime="60" />
 		<monster name="Lost Soul" x="-3" y="3" z="11" spawntime="60" />
-		<monster name="Lord knight" x="-3" y="5" z="11" spawntime="60" />
+		<monster name="Lord Knight" x="-3" y="5" z="11" spawntime="60" />
 	</monster>
 	<monster centerx="910" centery="1099" centerz="11" radius="1">
 		<monster name="Vile Grandmaster" x="0" y="0" z="11" spawntime="60" />
@@ -9030,21 +9137,21 @@
 		<monster name="Vile Grandmaster" x="2" y="-3" z="11" spawntime="60" />
 		<monster name="Priestess" x="-4" y="0" z="11" spawntime="60" />
 		<monster name="Lost Soul" x="2" y="1" z="11" spawntime="60" />
-		<monster name="Lord knight" x="-2" y="2" z="11" spawntime="60" />
+		<monster name="Lord Knight" x="-2" y="2" z="11" spawntime="60" />
 		<monster name="Priestess" x="5" y="4" z="11" spawntime="60" />
 	</monster>
 	<monster centerx="923" centery="1109" centerz="11" radius="5">
 		<monster name="Lich" x="-4" y="-4" z="11" spawntime="60" />
 		<monster name="Vile Grandmaster" x="3" y="-4" z="11" spawntime="60" />
-		<monster name="Lord knight" x="-1" y="-3" z="11" spawntime="60" />
+		<monster name="Lord Knight" x="-1" y="-3" z="11" spawntime="60" />
 		<monster name="Vile Grandmaster" x="-1" y="2" z="11" spawntime="60" />
 		<monster name="Priestess" x="1" y="3" z="11" spawntime="60" />
 	</monster>
 	<monster centerx="936" centery="1109" centerz="11" radius="5">
 		<monster name="Lost Soul" x="5" y="-2" z="11" spawntime="60" />
 		<monster name="Vile Grandmaster" x="-5" y="0" z="11" spawntime="60" />
-		<monster name="Lord knight" x="-4" y="2" z="11" spawntime="60" />
-		<monster name="Lord knight" x="3" y="3" z="11" spawntime="60" />
+		<monster name="Lord Knight" x="-4" y="2" z="11" spawntime="60" />
+		<monster name="Lord Knight" x="3" y="3" z="11" spawntime="60" />
 		<monster name="Vile Grandmaster" x="-1" y="4" z="11" spawntime="60" />
 	</monster>
 	<monster centerx="881" centery="1110" centerz="11" radius="5">
@@ -9654,10 +9761,10 @@
 	</monster>
 	<monster centerx="924" centery="1121" centerz="13" radius="5">
 		<monster name="Vile Grandmaster" x="-1" y="-5" z="13" spawntime="60" />
-		<monster name="Lord knight" x="-3" y="-3" z="13" spawntime="60" />
+		<monster name="Lord Knight" x="-3" y="-3" z="13" spawntime="60" />
 		<monster name="Vile Grandmaster" x="5" y="-3" z="13" spawntime="60" />
-		<monster name="Lord knight" x="3" y="-1" z="13" spawntime="60" />
-		<monster name="Lord knight" x="-2" y="3" z="13" spawntime="60" />
+		<monster name="Lord Knight" x="3" y="-1" z="13" spawntime="60" />
+		<monster name="Lord Knight" x="-2" y="3" z="13" spawntime="60" />
 		<monster name="Vile Grandmaster" x="1" y="5" z="13" spawntime="60" />
 	</monster>
 	<monster centerx="912" centery="1122" centerz="13" radius="5">
@@ -9665,7 +9772,7 @@
 		<monster name="Priestess" x="-1" y="-3" z="13" spawntime="60" />
 		<monster name="Vile Grandmaster" x="4" y="-2" z="13" spawntime="60" />
 		<monster name="Vile Grandmaster" x="-3" y="0" z="13" spawntime="60" />
-		<monster name="Lord knight" x="1" y="1" z="13" spawntime="60" />
+		<monster name="Lord Knight" x="1" y="1" z="13" spawntime="60" />
 		<monster name="Priestess" x="-1" y="5" z="13" spawntime="60" />
 	</monster>
 	<monster centerx="555" centery="1198" centerz="13" radius="5">
