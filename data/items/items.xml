@@ -8,18 +8,18 @@
 	<item id="5" name="lemonade" />
 	<item id="6" name="milk" />
 	<item id="7" name="manafluid" />
-	<item id="8" name="lifefluid" />
-	<item id="9" name="oil" />
-	<item id="10" name="urine" />
-	<item id="11" name="coconut milk" />
-	<item id="12" name="wine" />
-	<item id="13" name="mud" />
-	<item id="14" name="fruit juice" />
-	<item id="15" name="lava" />
-	<item id="16" name="rum" />
-	<item id="17" name="swamp" />
-	<item id="18" name="tea" />
-	<item id="19" name="mead" />
+	<item id="10" name="lifefluid" />
+	<item id="11" name="oil" />
+	<item id="13" name="urine" />
+	<item id="14" name="coconut milk" />
+	<item id="15" name="wine" />
+	<item id="19" name="mud" />
+	<item id="21" name="fruit juice" />
+	<item id="26" name="lava" />
+	<item id="27" name="rum" />
+	<item id="28" name="swamp" />
+	<item id="35" name="tea" />
+	<item id="43" name="mead" />
 
 	<item id="100" name="void"/>
 	<item id="101" name="earth"/>
@@ -2755,14 +2755,18 @@
 	<item id="2001" article="an" name="unlit campfire"/>
 	<item fromid="2002" toid="2003" article="a" name="campfire"/>
 	<item fromid="2004" toid="2011" article="a" name="large cauldron"/>
-	<item fromid="2012" toid="2017" article="a" name="sign"/>
+	<item fromid="2012" toid="2017" article="a" name="sign">
+		<attribute key="allowDistRead" value="true" />
+	</item>
 	<item id="2018" article="a" name="dragon flag"/>
 	<item id="2019" article="a" name="castle flag"/>
 	<item id="2020" article="a" name="flag of Tibia"/>
 	<item fromid="2021" toid="2022" article="a" name="street sign">
 		<attribute key="allowdistread" value="1"/>
 	</item>
-	<item fromid="2023" toid="2024" article="a" name="sign"/>
+	<item fromid="2023" toid="2024" article="a" name="sign">
+		<attribute key="allowdistread" value="1"/>
+	</item>
 	<item id="2025" article="a" name="statue">
 		<attribute key="rotateto" value="2059"/>
 	</item>
@@ -5266,11 +5270,11 @@
 	</item>
 	<item id="3145" name="trashed wooden bars">
 		<attribute key="duration" value="120"/>
-		<attribute key="decayTo" value="3799"/>
+		<attribute key="decayTo" value="2295"/>
 	</item>
 	<item id="3146" name="trashed wooden bars">
 		<attribute key="duration" value="120"/>
-		<attribute key="decayTo" value="3798"/>
+		<attribute key="decayTo" value="2296"/>
 	</item>
 	<item id="3147" article="a" name="blank rune">
 		<attribute key="type" value="rune"/>
@@ -32177,6 +32181,7 @@
 		<attribute key="weight" value="6200"/>
 	</item>
 	<item id="19250" article="a" name="reward chest">
+		<attribute key="type" value="rewardchest" />
 		<attribute key="description" value="This chest contains your rewards earned in battles."/>
 		<attribute key="moveable" value="0"/>
 		<attribute key="allowpickUpAble" value="0"/>
@@ -37533,6 +37538,9 @@
 	<item id="23140" name="crater"/>
 	<item fromid="23141" toid="23143" name="RESERVED SPRITE"/>
 	<item fromid="23144" toid="23153" name="rift wall"/>
+	<item id="23154" name="glowing dirt">
+		<attribute key="type" value="teleport"/>
+	</item>
 	<item fromid="23154" toid="23162" name="glowing dirt">
 		<attribute key="description" value="This floor is very gluey."/>
 	</item>
@@ -47344,7 +47352,6 @@
 	<item id="30401" name="amulet of theurgy">
 		<attribute key="slotType" value="necklace"/>
 		<attribute key="weight" value="500"/>
-		<attribute key="upgradeclassification" value="4"/>
 	</item>
 	<item id="30402" name="enchanted theurgic amulet">
 		<attribute key="slotType" value="necklace"/>
@@ -47385,7 +47392,9 @@
 	<item fromid="30446" toid="30447" article="a" name="veined stone"/>
 	<item fromid="30448" toid="30449" article="a" name="ruddy obelisk"/>
 	<item fromid="30450" toid="30451" article="a" name="pile of ruddy ashlars"/>
-	<item fromid="30452" toid="30453" article="an" name="ancient sepulchre"/>
+	<item fromid="30452" toid="30453" article="an" name="ancient sepulchre">
+		<attribute key="floorchange" value="down"/>
+	</item>
 	<item fromid="30454" toid="30469" article="a" name="sphinx statue"/>
 	<item id="30613" article="a" name="cobra statue"/>
 	<item fromid="30614" toid="30615" article="a" name="unknown item"/>
