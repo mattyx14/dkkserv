@@ -13440,7 +13440,9 @@
 		<attribute key="description" value="It apparently belonged to someone called Dragha, the apprentice of a voodoomaster"/>
 		<attribute key="weight" value="5800"/>
 	</item>
-	<item fromid="6121" toid="6122" article="a" name="note pinned on the wall"/>
+	<item fromid="6121" toid="6122" article="a" name="note pinned on the wall">
+		<attribute key="allowdistread" value="1"/>
+	</item>
 	<item id="6123" article="a" name="piano"/>
 	<item id="6124" article="a" name="damaged logbook">
 		<attribute key="description" value="It must be the one which the explorer society requested"/>

@@ -56,7 +56,7 @@ A giant Swamp Plague is resting down here.]]
 	},
 	[9] = {
 		itemId = 6121,
-		itemPos = {x = 900, y = 987, z = 9},
-		text = "Need find to Mystic Blade Quest."
+		itemPos = {x = 900, y = 987, z = 7},
+		text = [[Need find to Mystic Blade Quest.]]
 	},
 }
