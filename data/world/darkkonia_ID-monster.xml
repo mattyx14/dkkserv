@@ -1223,10 +1223,6 @@
 	<monster centerx="761" centery="1060" centerz="6" radius="1">
 		<monster name="Wyvern" x="0" y="0" z="6" spawntime="60" />
 	</monster>
-	<monster centerx="804" centery="1062" centerz="6" radius="5">
-		<monster name="Wyvern" x="-4" y="-3" z="6" spawntime="60" />
-		<monster name="Wyvern" x="2" y="5" z="6" spawntime="60" />
-	</monster>
 	<monster centerx="833" centery="1062" centerz="6" radius="1">
 		<monster name="Wyvern" x="0" y="0" z="6" spawntime="60" />
 	</monster>
@@ -1251,7 +1247,9 @@
 	<monster centerx="843" centery="1066" centerz="6" radius="1">
 		<monster name="Wyvern" x="0" y="0" z="6" spawntime="60" />
 	</monster>
-	<monster centerx="806" centery="1067" centerz="6" radius="1" />
+	<monster centerx="806" centery="1067" centerz="6" radius="1">
+		<monster name="Wyvern" x="0" y="0" z="6" spawntime="60" />
+	</monster>
 	<monster centerx="838" centery="1067" centerz="6" radius="1">
 		<monster name="Wyvern" x="0" y="0" z="6" spawntime="60" />
 	</monster>
@@ -1261,7 +1259,6 @@
 	<monster centerx="810" centery="1069" centerz="6" radius="1">
 		<monster name="Wyvern" x="0" y="0" z="6" spawntime="60" />
 	</monster>
-	<monster centerx="818" centery="1069" centerz="6" radius="5" />
 	<monster centerx="831" centery="1070" centerz="6" radius="1">
 		<monster name="Wyvern" x="0" y="0" z="6" spawntime="60" />
 	</monster>
@@ -1353,7 +1350,6 @@
 		<monster name="Boogy" x="-3" y="1" z="6" spawntime="60" />
 		<monster name="Pooka" x="-2" y="1" z="6" spawntime="60" />
 	</monster>
-	<monster centerx="923" centery="1112" centerz="6" radius="5" />
 	<monster centerx="910" centery="1115" centerz="6" radius="5">
 		<monster name="Dragon Lord" x="2" y="-3" z="6" spawntime="60" />
 		<monster name="Wyvern" x="-3" y="0" z="6" spawntime="60" />
@@ -2431,7 +2427,6 @@
 	<monster centerx="1015" centery="1014" centerz="7" radius="1">
 		<monster name="Rabbit" x="0" y="0" z="7" spawntime="60" />
 	</monster>
-	<monster centerx="681" centery="1015" centerz="7" radius="5" />
 	<monster centerx="836" centery="1015" centerz="7" radius="1">
 		<monster name="Wyvern" x="0" y="0" z="7" spawntime="60" />
 	</monster>
@@ -2464,7 +2459,6 @@
 	<monster centerx="1030" centery="1019" centerz="7" radius="1">
 		<monster name="Rabbit" x="0" y="0" z="7" spawntime="60" />
 	</monster>
-	<monster centerx="781" centery="1020" centerz="7" radius="5" />
 	<monster centerx="836" centery="1020" centerz="7" radius="1">
 		<monster name="Wyrm" x="0" y="0" z="7" spawntime="60" />
 	</monster>
@@ -2483,7 +2477,6 @@
 	<monster centerx="1024" centery="1023" centerz="7" radius="1">
 		<monster name="Skeleton" x="0" y="0" z="7" spawntime="60" />
 	</monster>
-	<monster centerx="610" centery="1024" centerz="7" radius="5" />
 	<monster centerx="658" centery="1024" centerz="7" radius="11">
 		<monster name="Tarantula" x="0" y="-7" z="7" spawntime="60" />
 		<monster name="Snake" x="4" y="-3" z="7" spawntime="60" />
@@ -2527,7 +2520,6 @@
 	<monster centerx="767" centery="1027" centerz="7" radius="1">
 		<monster name="Hunter" x="0" y="0" z="7" spawntime="60" />
 	</monster>
-	<monster centerx="712" centery="1029" centerz="7" radius="5" />
 	<monster centerx="896" centery="1029" centerz="7" radius="1">
 		<monster name="Butterfly" x="0" y="0" z="7" spawntime="60" />
 	</monster>
@@ -5290,7 +5282,6 @@
 		<monster name="Blood Priest" x="3" y="2" z="8" spawntime="60" />
 		<monster name="Necromancer" x="-1" y="4" z="8" spawntime="60" />
 	</monster>
-	<monster centerx="979" centery="1038" centerz="8" radius="5" />
 	<monster centerx="996" centery="1038" centerz="8" radius="1">
 		<monster name="Vile Grandmaster" x="0" y="0" z="8" spawntime="60" />
 	</monster>
@@ -8366,7 +8357,6 @@
 	<monster centerx="823" centery="892" centerz="11" radius="1">
 		<monster name="Necromancer" x="0" y="0" z="11" spawntime="60" />
 	</monster>
-	<monster centerx="832" centery="892" centerz="11" radius="1" />
 	<monster centerx="818" centery="894" centerz="11" radius="1">
 		<monster name="Banshee" x="0" y="0" z="11" spawntime="60" />
 	</monster>
@@ -8883,7 +8873,6 @@
 		<monster name="Vile Grandmaster" x="-5" y="3" z="11" spawntime="60" />
 		<monster name="Grim Reaper" x="2" y="3" z="11" spawntime="60" />
 	</monster>
-	<monster centerx="806" centery="1027" centerz="11" radius="1" />
 	<monster centerx="810" centery="1027" centerz="11" radius="1">
 		<monster name="Undead Gladiator" x="0" y="0" z="11" spawntime="60" />
 	</monster>
@@ -9349,13 +9338,13 @@
 		<monster name="Dwarf Guard" x="0" y="0" z="11" spawntime="60" />
 	</monster>
 	<monster centerx="884" centery="1179" centerz="11" radius="1">
-		<monster name="black warlock" x="0" y="0" z="11" spawntime="60" />
+		<monster name="Black Warlock" x="0" y="0" z="11" spawntime="60" />
 	</monster>
 	<monster centerx="890" centery="1179" centerz="11" radius="5">
 		<monster name="Elder Wyrm" x="5" y="-5" z="11" spawntime="60" />
 		<monster name="Infernalist" x="3" y="-4" z="11" spawntime="60" />
 		<monster name="Braindeath" x="1" y="-2" z="11" spawntime="60" />
-		<monster name="black warlock" x="5" y="0" z="11" spawntime="60" />
+		<monster name="Black Warlock" x="5" y="0" z="11" spawntime="60" />
 		<monster name="Infernalist" x="-3" y="3" z="11" spawntime="60" />
 		<monster name="Infernalist" x="3" y="3" z="11" spawntime="60" />
 		<monster name="Elder Wyrm" x="5" y="4" z="11" spawntime="60" />
