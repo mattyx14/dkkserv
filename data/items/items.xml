@@ -37541,7 +37541,7 @@
 	<item id="23154" name="glowing dirt">
 		<attribute key="type" value="teleport"/>
 	</item>
-	<item fromid="23154" toid="23162" name="glowing dirt">
+	<item fromid="23155" toid="23162" name="glowing dirt">
 		<attribute key="description" value="This floor is very gluey."/>
 	</item>
 	<item fromid="23163" toid="23169" name="rift pinnacle"/>
