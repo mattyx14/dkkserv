@@ -10105,7 +10105,6 @@
 		<monster name="Dark Torturer" x="1" y="2" z="15" spawntime="60" />
 		<monster name="Spectre" x="-2" y="4" z="15" spawntime="60" />
 	</monster>
-	<monster centerx="1007" centery="1010" centerz="15" radius="2" />
 	<monster centerx="1028" centery="1013" centerz="15" radius="5">
 		<monster name="Spectre" x="-3" y="-2" z="15" spawntime="60" />
 		<monster name="Grimeleech" x="0" y="-2" z="15" spawntime="60" />

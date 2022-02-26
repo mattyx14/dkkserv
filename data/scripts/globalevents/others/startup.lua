@@ -46,8 +46,6 @@ function serverstartup.onStartup()
 	-- loadLuaMapUnique(TileUnique)
 	-- Tile pick table
 	loadLuaMapAction(TilePickAction)
-	-- Create new item on map
-	-- CreateMapItem(CreateItemOnMap)
 
 	Spdlog.info("Loaded all actions and uniques in the map")
 
