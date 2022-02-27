@@ -60,15 +60,15 @@ npcHandler:addModule(FocusModule:new())
 
 npcConfig.shop = {
 	{ itemName = "amulet of loss", clientId = 3057, buy = 50000, sell = 45000 },
-	{ itemName = "blessed wooden stake", clientId = 5942, sell = 100000 },
-	{ itemName = "ceremonial ankh", clientId = 6561, sell = 5000 },
+	{ itemName = "blessed wooden stake", clientId = 5942, buy = 100000 },
+	{ itemName = "ceremonial ankh", clientId = 6561, buy = 5000 },
 
 	-- Charms Blessings
-	{ itemName = "phoenix charm", clientId = 10341, sell = 30000 },
-	{ itemName = "unity charm", clientId = 10342, sell = 30000 },
-	{ itemName = "spiritual charm", clientId = 10343, sell = 30000 },
-	{ itemName = "twin sun charm", clientId = 10344, sell = 30000 },
-	{ itemName = "solitude charm", clientId = 10345, sell = 30000 },
+	{ itemName = "phoenix charm", clientId = 10341, buy = 30000 },
+	{ itemName = "unity charm", clientId = 10342, buy = 30000 },
+	{ itemName = "spiritual charm", clientId = 10343, buy = 30000 },
+	{ itemName = "twin sun charm", clientId = 10344, buy = 30000 },
+	{ itemName = "solitude charm", clientId = 10345, buy = 30000 },
 }
 -- On buy npc shop message
 npcType.onBuyItem = function(npc, player, itemId, subType, amount, inBackpacks, name, totalCost)

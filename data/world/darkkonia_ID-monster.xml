@@ -5093,9 +5093,7 @@
 	</monster>
 	<monster centerx="964" centery="1003" centerz="8" radius="2">
 		<monster name="Rotworm" x="0" y="-1" z="8" spawntime="60" />
-		<monster name="Rotworm" x="-1" y="0" z="8" spawntime="60" />
 		<monster name="Rotworm" x="1" y="0" z="8" spawntime="60" />
-		<monster name="Rotworm" x="0" y="1" z="8" spawntime="60" />
 	</monster>
 	<monster centerx="923" centery="1004" centerz="8" radius="3">
 		<monster name="Cave Rat" x="0" y="-1" z="8" spawntime="60" />
