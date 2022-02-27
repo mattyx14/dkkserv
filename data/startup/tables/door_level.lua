@@ -85,7 +85,6 @@ LevelDoorAction = {
 			Position(841, 1606, 10), -- Old Quaras // Iquanus Sanctuary
 			Position(324, 808, 12), -- Swamplair Armor Quest // Vinor Swamp
 			Position(675, 1309, 9), -- Entrace Infernus Quest // Elfic Ville
-			Position(966, 1044, 8), -- Demon Helmet Quest // Fynn Castle
 			Position(198, 1179, 8), -- Pharaos Quest's // Samaransa Bay
 			Position(688, 387, 9), -- Rhaa Mission 1 // Anshara Desert
 			Position(812, 1068, 9), -- Ripper Spectre // Vinor Swamp
@@ -100,6 +99,7 @@ LevelDoorAction = {
 			Position(931, 1091, 11), -- Justice Seeker // Fynn
 			Position(890, 1015, 11), -- Royal Axe // Anshara Desert
 			Position(728, 1033, 10), -- Cementery // Elfic Ville
+			Position(966, 1044, 8), -- Demon Helmet Quest // Fynn Castle
 		}
 	},
 	-- Level 300

@@ -9483,7 +9483,6 @@
 		<monster name="Anger" x="0" y="0" z="12" spawntime="60" />
 	</monster>
 	<monster centerx="894" centery="940" centerz="12" radius="1">
-		<monster name="Elder Wyrm" x="-1" y="0" z="12" spawntime="60" />
 		<monster name="Grim Reaper" x="0" y="0" z="12" spawntime="60" />
 	</monster>
 	<monster centerx="908" centery="940" centerz="12" radius="1">
@@ -9493,6 +9492,7 @@
 		<monster name="Energy Elemental" x="0" y="0" z="12" spawntime="60" />
 	</monster>
 	<monster centerx="900" centery="941" centerz="12" radius="5">
+		<monster name="Elder Wyrm" x="-3" y="-5" z="12" spawntime="60" />
 		<monster name="Energy Elemental" x="5" y="-5" z="12" spawntime="60" />
 		<monster name="Warlock" x="4" y="-4" z="12" spawntime="60" />
 		<monster name="Warlock" x="-4" y="-3" z="12" spawntime="60" />
