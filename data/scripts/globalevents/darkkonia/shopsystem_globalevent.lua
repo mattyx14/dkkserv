@@ -1,11 +1,8 @@
-local globalevent = GlobalEvent("ShopSystemGlobal")
+local shopEvent = GlobalEvent("ShopSystemGlobal")
 
-function globalevent.onThink(interval)
+function shopEvent.onThink(interval)
 	local shopTypes = {1,5,7}
-	-- If game support mount orders
-	if Game.getClientVersion().min >= 870 then
-		table.insert(shopTypes, 6);
-	end
+	table.insert(shopTypes, 6);
 	local orderQuery = db.storeQuery([[
 		SELECT
 			MIN(`po`.`player_id`) AS `player_id`,
@@ -159,5 +156,5 @@ function globalevent.onThink(interval)
 	return true
 end
 
-globalevent:interval(30000)
-globalevent:register()
+shopEvent:interval(30000)
+shopEvent:register()
