@@ -1,6 +1,6 @@
 local globalevent = GlobalEvent("ShopSystemGlobal")
 
-function globalevent.onThink(...)
+function globalevent.onThink(interval)
 	local shopTypes = {1,5,7}
 	-- If game support mount orders
 	if Game.getClientVersion().min >= 870 then
