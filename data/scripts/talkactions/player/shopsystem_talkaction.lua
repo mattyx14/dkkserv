@@ -1,6 +1,6 @@
-local talkaction = TalkAction("!shop")
+local shopTalkAction = TalkAction("!shop")
 
-function talkaction.onSay(player)
+function shopTalkAction.onSay(player, words, param)
 	local storage = 54073 -- Make sure to select non-used storage. This is used to prevent SQL load attacks.
 	local cooldown = 15 -- in seconds.
 
@@ -76,18 +76,16 @@ function talkaction.onSay(player)
 					end
 				end
 
-				if Game.getClientVersion().min >= 870 then
-					-- ORDER TYPE 6 (Mounts)
-					if q_type == 6 then
-						served = true
-						-- Make sure player don't already have this outfit and addon
-						if not player:hasMount(q_itemid) then
-							db.query("DELETE FROM `znote_shop_orders` WHERE `id` = " .. q_id .. ";")
-							player:addMount(q_itemid)
-							player:sendTextMessage(MESSAGE_INFO_DESCR, "Congratulations! You have received a new mount!")
-						else
-							player:sendTextMessage(MESSAGE_STATUS_WARNING, "You already have this mount!")
-						end
+				-- ORDER TYPE 6 (Mounts)
+				if q_type == 6 then
+					served = true
+					-- Make sure player don't already have this outfit and addon
+					if not player:hasMount(q_itemid) then
+						db.query("DELETE FROM `znote_shop_orders` WHERE `id` = " .. q_id .. ";")
+						player:addMount(q_itemid)
+						player:sendTextMessage(MESSAGE_INFO_DESCR, "Congratulations! You have received a new mount!")
+					else
+						player:sendTextMessage(MESSAGE_STATUS_WARNING, "You already have this mount!")
 					end
 				end
 
@@ -134,4 +132,4 @@ function talkaction.onSay(player)
 	return false
 end
 
-talkaction:register()
+shopTalkAction:register()
