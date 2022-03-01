@@ -81,8 +81,6 @@ monster.loot = {
 	{name = "yellow gem", chance = 1030},
 	{id = 3097, chance = 4660}, -- Dwarven ring
 	{name = "knight legs", chance = 1910},
-	{name = "crown armor", chance = 370},
-	{name = "crown helmet", chance = 890},
 	{name = "iron ore", chance = 15000},
 	{name = "magic sulphur", chance = 3000},
 	{name = "titan axe", chance = 2600},

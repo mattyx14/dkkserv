@@ -92,7 +92,6 @@ monster.loot = {
 	{name = "Blue Gem", chance = 10340},
 	{name = "Huge Chunk of Crude Iron", chance = 17240},
 	{id = 23529, chance = 3450},
-	{name = "Skull Staff", chance = 13790},
 	{name = "Energized Limb", chance = 3450},
 	{name = "Purple Tendril Lantern", chance = 1500}
 }

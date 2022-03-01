@@ -88,7 +88,6 @@ monster.loot = {
 	{id = 3098, chance = 20000}, -- Ring of healing
 	{id = 3030, chance = 7360, maxCount = 10},
 	{id = 281, chance = 28540},
-	{name = "Skull Staff", chance = 13790},
 	{name = "Grasshopper Legs", chance = 13790},
 	{name = "Huge Chunk of Crude Iron", chance = 10000, maxCount = 2},
 	{id = 7404, chance = 430},

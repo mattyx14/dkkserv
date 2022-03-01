@@ -86,7 +86,6 @@ monster.loot = {
 	{id = 3275, chance = 1333},
 	{id = 3071, chance = 1800},
 	{id = 5920, chance = 100000},
-	{id = 3322, chance = 600},
 	{id = 5877, chance = 100000},
 	{id = 3416, chance = 500},
 	{id = 7430, chance = 650}

@@ -81,8 +81,6 @@ monster.loot = {
 	{id= 3039, chance = 1180},
 	{name = "wand of inferno", chance = 2950},
 	{name = "fire sword", chance = 1710},
-	{name = "fire axe", chance = 1560},
-	{name = "crown shield", chance = 1180},
 	{name = "iron ore", chance = 11570},
 	{name = "white piece of cloth", chance = 4810},
 	{name = "red piece of cloth", chance = 3530},

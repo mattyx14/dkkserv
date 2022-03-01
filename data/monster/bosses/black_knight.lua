@@ -79,7 +79,6 @@ monster.loot = {
 	{name = "two handed sword", chance = 8470},
 	{name = "battle hammer", chance = 6910},
 	{name = "warrior helmet", chance = 4710},
-	{name = "knight axe", chance = 2630},
 	{name = "dark helmet", chance = 2430},
 	{name = "dark armor", chance = 2020},
 	{name = "knight legs", chance = 1050},

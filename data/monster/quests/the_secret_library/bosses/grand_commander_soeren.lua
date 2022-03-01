@@ -65,7 +65,6 @@ monster.loot = {
 	{name = "Great Health Potion", chance = 50000, maxCount = 3},--done
 	{name = "Small Ruby", chance = 12700, maxCount = 3},--done
 	{name = "Onyx Arrow", chance = 30000, maxCount = 3},--done
-	{name = "Golden Armor", chance = 1000},
 	{name = "Green Gem", chance = 1300},--done
 	{name = "Damaged Armor Plates", chance = 1800, maxCount = 3},--done
 	{name = "Falcon Crest", chance = 400, maxCount = 3},--done

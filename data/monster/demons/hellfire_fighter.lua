@@ -84,7 +84,6 @@ monster.loot = {
 	{name = "burnt scroll", chance = 50000},
 	{name = "blank rune", chance = 30000, maxCount = 2},
 	{name = "fire sword", chance = 4140},
-	{name = "fire axe", chance = 440},
 	{name = "soul orb", chance = 12150},
 	{name = "demonic essence", chance = 14500},
 	{name = "magma legs", chance = 730},

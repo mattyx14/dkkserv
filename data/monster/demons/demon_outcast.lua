@@ -101,8 +101,6 @@ monster.loot = {
 	{name = "ice rapier", chance = 660},
 	{name = "devil helmet", chance = 910},
 	{name = "crusader helmet", chance = 740},
-	{name = "crown shield", chance = 740},
-	{name = "demon shield", chance = 170},
 	{name = "fire mushroom", chance = 20600, maxCount = 6},
 	{id = 5906, chance = 1000},
 	{name = "assassin star", chance = 8340, maxCount = 10},

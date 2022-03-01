@@ -86,7 +86,6 @@ monster.loot = {
 	{id = 23529, chance = 5000},-- ring of blue plasma
 	{id = 23533, chance = 5000},-- ring of red plasma
 	{id = 23531, chance = 5000},-- ring of green plasma
-	{name = "skull staff", chance = 7000},
 	{name = "yellow gem", chance = 8500},
 	{name = "young lich worm", chance = 5500},
 	{name = "bear skin", chance = 1600},

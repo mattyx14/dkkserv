@@ -95,7 +95,6 @@ monster.loot = {
 	{name = "Violet Gem", chance = 1060},
 	{name = "Damaged Armor Plates", chance = 990},
 	{name = "Green Gem", chance = 880},
-	{name = "Golden Armor", chance = 840},
 	{name = "Mastermind Shield", chance = 620},
 	{name = "Heavy Mace", chance = 460},
 	{id = 3481, chance = 370},

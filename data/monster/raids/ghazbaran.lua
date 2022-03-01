@@ -95,7 +95,6 @@ monster.loot = {
 	{name = "gold ring", chance = 20000},
 	{id = 3098, chance = 20000}, -- Ring of healing
 	{name = "twin axe", chance = 11111},
-	{name = "golden armor", chance = 8333},
 	{name = "magic plate armor", chance = 8333},
 	{name = "demon shield", chance = 12500},
 	{name = "golden boots", chance = 8333},

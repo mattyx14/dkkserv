@@ -81,7 +81,6 @@ monster.loot = {
 	{name = "gold coin", chance = 50000, maxCount = 80},
 	{name = "gold coin", chance = 50000, maxCount = 60},
 	{name = "might ring", chance = 1000},
-	{name = "crown armor", chance = 80000},
 	{name = "great mana potion", chance = 1500}
 }
 

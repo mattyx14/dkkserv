@@ -78,7 +78,6 @@ monster.loot = {
 	{name = "burnt Scroll", chance = 10000, maxCount = 5},
 	{name = "Glowing Rune", chance = 10000, maxCount = 5},
 	{name = "Small Diamond", chance = 10000, maxCount = 5},
-	{name = "Fire Axe", chance = 250},
 	{name = "Soul Orb", chance = 260, maxCount = 5},
 	{name = "Spellbook of Warding", chance = 250},
 	{name = "Wand of Inferno", chance = 250},

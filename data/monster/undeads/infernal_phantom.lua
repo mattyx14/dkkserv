@@ -83,7 +83,6 @@ monster.loot = {
 	{name = "terra rod", chance = 21920},
 	{name = "ultimate health potion", chance = 32220, maxCount = 7},
 	{name = "hailstorm rod", chance = 71920},
-	{name = "fire axe", chance = 18920},
 	{name = "titan axe", chance = 18920},
 	{name = "chaos mace", chance = 12920},
 	{name = "glorious axe", chance = 22920},

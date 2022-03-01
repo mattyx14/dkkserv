@@ -83,7 +83,6 @@ monster.loot = {
 	{id = 3049, chance = 450}, -- Stealth ring
 	{name = "gold ring", chance = 10},
 	{name = "halberd", chance = 3003},
-	{name = "golden armor", chance = 10},
 	{name = "green mushroom", chance = 1450},
 	{name = "health potion", chance = 4930},
 	{name = "mana potion", chance = 4950},

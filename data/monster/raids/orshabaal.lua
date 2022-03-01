@@ -60,7 +60,7 @@ monster.light = {
 monster.summon = {
 	maxSummons = 4,
 	summons = {
-		{name = "demon", chance = 10, interval = 1000, count = 4}
+		{name = "Fire Lord", chance = 10, interval = 1000, count = 4}
 	}
 }
 
@@ -103,8 +103,6 @@ monster.loot = {
 	{name = "giant sword", chance = 25000},
 	{name = "silver dagger", chance = 6666},
 	{name = "golden sickle", chance = 6666},
-	{name = "fire axe", chance = 12500},
-	{name = "dragon hammer", chance = 6666},
 	{name = "devil helmet", chance = 33333},
 	{name = "golden legs", chance = 12500},
 	{name = "magic plate armor", chance = 6666},

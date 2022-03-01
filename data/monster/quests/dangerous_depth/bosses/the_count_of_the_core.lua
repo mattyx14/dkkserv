@@ -84,7 +84,6 @@ monster.loot = {
 	{name = "Crystal Coin", chance = 10000},
 	{name = "Crystalline Armor", chance = 5000},
 	{name = "Dragon Necklace", chance = 10000},
-	{name = "Fire Axe", chance = 10000},
 	{name = "Fire Sword", chance = 10000},
 	{id = 281, chance = 10000},
 	{name = "Giant Sword", chance = 10000},

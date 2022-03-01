@@ -83,7 +83,6 @@ monster.loot = {
 	{id= 3039, chance = 1500},
 	{id = 3052, chance = 1500}, -- Life ring
 	{name = "burning heart", chance = 100000},
-	{name = "fire axe", chance = 750},
 	{name = "phoenix shield", chance = 300},
 	{name = "great health potion", chance = 1500}
 }

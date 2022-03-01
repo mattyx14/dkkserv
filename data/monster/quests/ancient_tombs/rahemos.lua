@@ -59,7 +59,7 @@ monster.light = {
 monster.summon = {
 	maxSummons = 1,
 	summons = {
-		{name = "Demon", chance = 12, interval = 1000, count = 1}
+		{name = "Fire Lord", chance = 12, interval = 1000, count = 1}
 	}
 }
 
@@ -103,7 +103,7 @@ monster.defenses = {
 	defense = 35,
 	armor = 30,
 	{name ="combat", interval = 1000, chance = 20, type = COMBAT_HEALING, minDamage = 200, maxDamage = 500, effect = CONST_ME_MAGIC_BLUE, target = false},
-	{name ="outfit", interval = 1000, chance = 5, effect = CONST_ME_MAGIC_BLUE, target = false, duration = 4000, outfitMonster = "demon"}
+	{name ="outfit", interval = 1000, chance = 5, effect = CONST_ME_MAGIC_BLUE, target = false, duration = 4000, outfitMonster = "Fire Lord"}
 }
 
 monster.elements = {

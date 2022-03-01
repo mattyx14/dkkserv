@@ -76,9 +76,7 @@ monster.loot = {
 	{id = 3007, chance = 15500}, -- crystal ring
 	{name = "demon shield", chance = 15500},
 	{name = "devil helmet", chance = 11000},
-	{name = "dragon hammer", chance = 34500},
 	{id = 3051, chance = 13500}, -- Energy ring
-	{name = "fire axe", chance = 17000},
 	{name = "giant sword", chance = 12500},
 	{name = "platinum coin", chance = 69900, maxCount = 100},
 	{name = "platinum coin", chance = 68800, maxCount = 100},
@@ -95,7 +93,6 @@ monster.loot = {
 	{name = "purple tome", chance = 12600},
 	{name = "ring of the sky", chance = 13500},
 	{name = "silver dagger", chance = 15500},
-	{name = "skull staff", chance = 25000},
 	{name = "talon", chance = 14000, maxCount = 27},
 	{name = "teddy bear", chance = 10500},
 	{name = "thunder hammer", chance = 3500},

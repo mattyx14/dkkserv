@@ -98,13 +98,10 @@ monster.loot = {
 	{name = "guardian shield", chance = 1430},
 	{name = "buckle", chance = 1900},
 	{name = "clay lump", chance = 710},
-	{name = "knight axe", chance = 950},
 	{name = "terra boots", chance = 240},
 	{name = "suspicious device", chance = 250},
 	{name = "tower shield", chance = 240},
 	{name = "terra legs", chance = 240},
-	{name = "fire axe", chance = 710},
-	{name = "skull staff", chance = 480},
 	{name = "spiked squelcher", chance = 240}
 }
 

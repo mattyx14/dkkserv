@@ -80,7 +80,6 @@ monster.loot = {
 	{name = "gold coin", chance = 50000, maxCount = 99},
 	{id = 3035, chance = 100000, maxCount = 7},
 	{name = "fire sword", chance = 3280},
-	{name = "fire axe", chance = 2150},
 	{name = "great mana potion", chance = 14800, maxCount = 2},
 	{name = "magma legs", chance = 790},
 	{name = "magma coat", chance = 790},

@@ -79,7 +79,6 @@ monster.loot = {
 	{name = "gold coin", chance = 50000, maxCount = 100},
 	{name = "gold coin", chance = 50000, maxCount = 71},
 	{name = "boots of haste", chance = 120},
-	{name = "skull staff", chance = 180},
 	{name = "mystic turban", chance = 2170},
 	{name = "white piece of cloth", chance = 3040},
 	{name = "red piece of cloth", chance = 640},

@@ -75,7 +75,6 @@ monster.loot = {
 	{name = "gold ingot", chance = 22480},
 	{name = "crystal coin", chance = 24890, maxCount = 2},
 	{id = 281, chance = 21580},
-	{name = "skull staff", chance = 19850},
 	{name = "magic sulphur", chance = 25480},
 	{name = "percht queen's frozen heart", chance = 26800},
 	{name = "percht skull", chance = 25842},

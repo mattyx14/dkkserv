@@ -83,13 +83,11 @@ monster.loot = {
 	{name = "platinum coin", chance = 90540, maxCount = 32},
 	{name = "ultimate health potion", chance = 32220, maxCount = 7},
 	{id = 33936, chance = 35560}, -- Hand
-	{name = "skull staff", chance = 65560},
 	{name = "epee", chance = 75560},
 	{name = "crystal mace", chance = 25560},
 	{name = "noble axe", chance = 8560},
 	{name = "spellbook of mind control", chance = 9000},
 	{id = 33937, chance = 7500}, -- Head
-	{name = "fire axe", chance = 13500},
 	{name = "royal helmet", chance = 15500},
 	{name = "mastermind shield", chance = 9500},
 	{name = "assassin dagger", chance = 8500},

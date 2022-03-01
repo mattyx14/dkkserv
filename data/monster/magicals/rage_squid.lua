@@ -96,11 +96,9 @@ monster.loot = {
 	{name = "demonrage sword", chance = 400},
 	{id = 7393, chance = 390},
 	{name = "giant sword", chance = 250},
-	{name = "demon shield", chance = 250},
 	{name = "magic plate armor", chance = 150},
 	{name = "platinum amulet", chance = 350},
-	{name = "wand of everblazing", chance = 300},
-	{name = "fire axe", chance = 500}
+	{name = "wand of everblazing", chance = 300}
 }
 
 monster.attacks = {

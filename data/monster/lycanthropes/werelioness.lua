@@ -87,7 +87,6 @@ monster.loot = {
 	{name = "Doublet", chance = 1500},
 	{name = "Ivory Carving", chance = 1500},
 	{name = "Magma Legs", chance = 500},
-	{name = "Crown Helmet", chance = 500},
 	{name = "White Silk Flower", chance = 200},
 	{name = "Lion Figurine", chance = 100}
 }

@@ -97,7 +97,6 @@ monster.loot = {
 	{name = "wand of voodoo", chance = 4940},
 	{id= 3039, chance = 4730},
 	{name = "ice rapier", chance = 4730},
-	{name = "fire axe", chance = 3520},
 	{name = "might ring", chance = 2250},
 	{name = "giant sword", chance = 1880},
 	{id = 3049, chance = 1790}, -- Stealth ring

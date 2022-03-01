@@ -79,7 +79,6 @@ monster.loot = {
 	{name = "Bullseye Potion", chance = 25000, maxCount = 10},
 	{name = "Pomegranate", chance = 8000},
 	{name = "Crystal Coin", chance = 7700, maxCount = 2},
-	{name = "Skull Staff", chance = 7650},
 	{name = "Chaos Mace", chance = 2200},
 	{name = "Gold Ingot", chance = 2800},
 	{id = 23543, chance = 2500}, -- Collar of green plasma

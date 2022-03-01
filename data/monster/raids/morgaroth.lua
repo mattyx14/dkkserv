@@ -60,7 +60,7 @@ monster.light = {
 monster.summon = {
 	maxSummons = 6,
 	summons = {
-		{name = "Demon", chance = 33, interval = 4000, count = 6}
+		{name = "Fire Lord", chance = 33, interval = 4000, count = 6}
 	}
 }
 
@@ -122,7 +122,6 @@ monster.loot = {
 	{name = "thunder hammer", chance = 9000},
 	{name = "small diamond", chance = 4500, maxCount = 5},
 	{id = 3007, chance = 4500},
-	{name = "fire axe", chance = 4500},
 	{name = "great health potion", chance = 4500},
 	{name = "mastermind shield", chance = 4500},
 	{name = "dragon robe", chance = 4500},

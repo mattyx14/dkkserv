@@ -83,7 +83,6 @@ monster.loot = {
 	{name = "Great Spirit Potion", chance = 50000, maxCount = 3},
 	{name = "Ultimate Health Potion", chance = 50000},
 	{name = "Essence of a Bad Dream", chance = 17000},
-	{name = "Knight Axe", chance = 14000},
 	{name = "Mino Shield", chance = 12000},
 	{name = "Terra Boots", chance = 7000},
 	{name = "Terra Hood", chance = 6400},

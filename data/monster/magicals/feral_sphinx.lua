@@ -76,7 +76,6 @@ monster.loot = {
 	{name = "platinum coin", chance = 100000, maxCount = 3},
 	{name = "wand of draconia", chance = 4770},
 	{name = "sphinx feather", chance = 3450},
-	{name = "fire axe", chance = 2650},
 	{id = 31438, chance = 3450},
 	{name = "magma legs", chance = 1860},
 	{name = "magma monocle", chance = 1590},

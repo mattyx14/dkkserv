@@ -89,8 +89,7 @@ monster.loot = {
 	{name = "Serpent Sword", chance = 1950},
 	{name = "Hexagonal Ruby", chance = 800},
 	{name = "Assassin Dagger", chance = 970},
-	{name = "Spike Sword", chance = 530},
-	{name = "Wyvern Fang", chance = 120}
+	{name = "Spike Sword", chance = 530}
 }
 
 monster.attacks = {

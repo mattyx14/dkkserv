@@ -69,7 +69,6 @@ monster.loot = {
 	{name = "platinum coin", chance = 29840, maxCount = 57},
 	{name = "lightning legs", chance = 8723},
 	{name = "yellow gem", chance = 29460},
-	{name = "demon shield", chance = 2270},
 	{name = "shockwave amulet", chance = 15100},
 	{name = "witch hat", chance = 9510},
 	{name = "mysterious remains", chance = 100000},

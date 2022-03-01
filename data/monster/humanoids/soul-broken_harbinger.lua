@@ -85,7 +85,6 @@ monster.loot = {
 	{name = "Glacier Shoes", chance = 3770},
 	{name = "Ice Rapier", chance = 3770},
 	{name = "Spellbook of Mind Control", chance = 2400},
-	{name = "Crown Shield", chance = 1710},
 	{name = "Wood Cape", chance = 1710},
 	{id = 23529, chance = 1370},
 	{name = "Tower Shield", chance = 680},

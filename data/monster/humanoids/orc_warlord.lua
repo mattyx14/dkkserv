@@ -87,7 +87,6 @@ monster.loot = {
 	{name = "throwing star", chance = 13920, maxCount = 18},
 	{id = 3307, chance = 3450},
 	{name = "orcish axe", chance = 5400},
-	{name = "dragon hammer", chance = 320},
 	{name = "plate armor", chance = 5210},
 	{name = "brass armor", chance = 740},
 	{name = "dark helmet", chance = 1260},

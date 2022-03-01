@@ -111,7 +111,6 @@ monster.loot = {
 	{name = "giant sword", chance = 1980},
 	{name = "ice rapier", chance = 1550},
 	{name = "golden sickle", chance = 1440},
-	{name = "fire axe", chance = 4030},
 	{name = "devil helmet", chance = 1180},
 	{name = "golden legs", chance = 440},
 	{name = "magic plate armor", chance = 130},

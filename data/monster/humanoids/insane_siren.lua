@@ -85,7 +85,6 @@ monster.loot = {
 	{name = "Holy Orchid", chance = 5650},
 	{name = "Magma Amulet", chance = 5130},
 	{name = "Wand of Inferno", chance = 4360},
-	{name = "Fire Axe", chance = 3590},
 	{name = "Magma Coat", chance = 3340},
 	{name = "Wand of Dragonbreath", chance = 2650},
 	{name = "Sun Fruit", chance = 2570},

@@ -71,7 +71,6 @@ monster.loot = {
 	{name = "Small Sapphire", chance = 48000, maxCount = 3},
 	{name = "Stone Skin Amulet", chance = 54000},
 	{id = 31369, chance = 6500},
-	{name = "Fire Axe", chance = 34000},
 	{id = 31557, chance = 520}
 }
 

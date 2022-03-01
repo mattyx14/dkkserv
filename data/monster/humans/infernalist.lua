@@ -89,7 +89,6 @@ monster.loot = {
 	{name = "gold coin", chance = 56500, maxCount = 100},
 	{name = "gold coin", chance = 40000, maxCount = 47},
 	{id = 3051, chance = 1800}, -- Energy ring
-	{name = "skull staff", chance = 6500},
 	{name = "magic sulphur", chance = 600},
 	{name = "red piece of cloth", chance = 1420},
 	{name = "great mana potion", chance = 19700},

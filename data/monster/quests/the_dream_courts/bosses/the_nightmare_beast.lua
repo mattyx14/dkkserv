@@ -81,7 +81,6 @@ monster.loot = {
 	{name = "mastermind potion", chance = 17990, maxCount = 10},
 	{name = "green gem", chance = 17270},
 	{name = "crystal coin", chance = 17270},
-	{name = "skull staff", chance = 16550},
 	{name = "bullseye potion", chance = 13670, maxCount = 10},
 	{name = "ice shield", chance = 13670},
 	{name = "chaos mace", chance = 13670},
