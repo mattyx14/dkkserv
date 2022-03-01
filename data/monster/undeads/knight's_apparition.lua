@@ -85,7 +85,7 @@ monster.loot = {
 	{name = "ultimate health potion", chance = 71920, maxCount = 5},
 	{name = "violet gem", chance = 44560},
 	{name = "giant sword", chance = 25920},
-	{name = "crystal mace", chance = 22920}
+	{name = "crystal mace", chance = 22920},
 	{name = "jade hammer", chance = 15920}
 }
 
