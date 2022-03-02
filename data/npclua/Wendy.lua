@@ -327,7 +327,7 @@ local function creatureSayCallback(npc, creature, type, message)
 	if MsgContains(message, 'first club') then
 		if player:isKnight() then
 			if player:getStorageValue(DarkKonia.FirstQuest.FirstWeaponClub) == -1 then
-				npcHandler:say('You ask me you begin your adventure with the {'.. ItemType(itemIdClub):getName() ..'}? ', npc, creature)
+				npcHandler:say('You ask me you begin your adventure with the {'.. ItemType(itemIdClub):getName() ..'}, repeat the name ok... ', npc, creature)
 				npcHandler:setTopic(playerId, 8)
 			else
 				npcHandler:say('What? I have already gave you one {' .. ItemType(itemIdClub):getName() .. '}!', npc, creature)
@@ -335,7 +335,7 @@ local function creatureSayCallback(npc, creature, type, message)
 		else
 			npcHandler:say('Sorry, you aren\'t a knight.', npc, creature)
 		end
-	elseif MsgContains(message, 'yes') then
+	elseif MsgContains(message, 'daramian mace') then
 		if npcHandler:getTopic(playerId) == 8 then
 			player:addItem(itemIdClub, 1)
 			player:setStorageValue(DarkKonia.FirstQuest.FirstWeaponClub, 1)
@@ -350,7 +350,7 @@ local function creatureSayCallback(npc, creature, type, message)
 	if MsgContains(message, 'first sword') then
 		if player:isKnight() then
 			if player:getStorageValue(DarkKonia.FirstQuest.FirstWeaponSword) == -1 then
-				npcHandler:say('You ask me you begin your adventure with the {'.. ItemType(itemIdSword):getName() ..'}? ', npc, creature)
+				npcHandler:say('You ask me you begin your adventure with the {'.. ItemType(itemIdSword):getName() ..'}, repeat the name ok... ', npc, creature)
 				npcHandler:setTopic(playerId, 9)
 			else
 				npcHandler:say('What? I have already gave you one {' .. ItemType(itemIdSword):getName() .. '}!', npc, creature)
@@ -358,7 +358,7 @@ local function creatureSayCallback(npc, creature, type, message)
 		else
 			npcHandler:say('Sorry, you aren\'t a knight.', npc, creature)
 		end
-	elseif MsgContains(message, 'yes') then
+	elseif MsgContains(message, 'jagged sword') then
 		if npcHandler:getTopic(playerId) == 9 then
 			player:addItem(itemIdSword, 1)
 			player:setStorageValue(DarkKonia.FirstQuest.FirstWeaponSword, 1)
@@ -373,7 +373,7 @@ local function creatureSayCallback(npc, creature, type, message)
 	if MsgContains(message, 'first axe') then
 		if player:isKnight() then
 			if player:getStorageValue(DarkKonia.FirstQuest.FirstWeaponAxe) == -1 then
-				npcHandler:say('You ask me you begin your adventure with the {'.. ItemType(itemIdAxe):getName() ..'}? ', npc, creature)
+				npcHandler:say('You ask me you begin your adventure with the {'.. ItemType(itemIdAxe):getName() ..'}, repeat the name ok... ', npc, creature)
 				npcHandler:setTopic(playerId, 10)
 			else
 				npcHandler:say('What? I have already gave you one {' .. ItemType(itemIdAxe):getName() .. '}!', npc, creature)
@@ -381,7 +381,7 @@ local function creatureSayCallback(npc, creature, type, message)
 		else
 			npcHandler:say('Sorry, you aren\'t a knight.', npc, creature)
 		end
-	elseif MsgContains(message, 'yes') then
+	elseif MsgContains(message, 'steel axe') then
 		if npcHandler:getTopic(playerId) == 10 then
 			player:addItem(itemIdAxe, 1)
 			player:setStorageValue(DarkKonia.FirstQuest.FirstWeaponAxe, 1)
