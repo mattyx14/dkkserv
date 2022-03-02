@@ -1,7 +1,7 @@
 local questSystemOld = Action()
 
 function questSystemOld.onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	if item.uid <= 1250 or item.uid >= 41560 then
+	if item.uid <= 100 or item.uid >= 41560 then
 		return false
 	end
 
