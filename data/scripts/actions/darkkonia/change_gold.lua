@@ -6,6 +6,10 @@ local config = {
 
 local changeGold = Action()
 function changeGold.onUse(player, item, fromPosition, target, toPosition, isHotkey)
+	if item:getActionId() == NOT_MOVEABLE_ACTION then
+		return false
+	end
+
 	local coin = config[item:getId()]
 	if coin.changeTo and item.type == 100 then
 		item:remove()
