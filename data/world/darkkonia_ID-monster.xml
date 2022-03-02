@@ -4830,11 +4830,17 @@
 	<monster centerx="950" centery="895" centerz="8" radius="1">
 		<monster name="Elf" x="0" y="0" z="8" spawntime="60" />
 	</monster>
+	<monster centerx="1024" centery="895" centerz="8" radius="1">
+		<monster name="Braindeath" x="0" y="0" z="8" spawntime="60" />
+	</monster>
 	<monster centerx="952" centery="899" centerz="8" radius="1">
 		<monster name="Skeleton" x="0" y="0" z="8" spawntime="60" />
 	</monster>
 	<monster centerx="965" centery="899" centerz="8" radius="1">
 		<monster name="Elf" x="0" y="0" z="8" spawntime="60" />
+	</monster>
+	<monster centerx="1022" centery="900" centerz="8" radius="1">
+		<monster name="Braindeath" x="0" y="0" z="8" spawntime="60" />
 	</monster>
 	<monster centerx="819" centery="901" centerz="8" radius="5">
 		<monster name="Demon Skeleton" x="-3" y="-4" z="8" spawntime="60" />
@@ -4850,6 +4856,9 @@
 		<monster name="Demon Skeleton" x="1" y="-2" z="8" spawntime="60" />
 		<monster name="Skeleton" x="-1" y="4" z="8" spawntime="60" />
 		<monster name="Skeleton" x="2" y="4" z="8" spawntime="60" />
+	</monster>
+	<monster centerx="1012" centery="911" centerz="8" radius="1">
+		<monster name="Braindeath" x="0" y="0" z="8" spawntime="60" />
 	</monster>
 	<monster centerx="970" centery="915" centerz="8" radius="1">
 		<monster name="Slime" x="0" y="0" z="8" spawntime="60" />
@@ -4867,6 +4876,9 @@
 	</monster>
 	<monster centerx="966" centery="921" centerz="8" radius="1">
 		<monster name="Slime" x="0" y="0" z="8" spawntime="60" />
+	</monster>
+	<monster centerx="1022" centery="922" centerz="8" radius="1">
+		<monster name="Braindeath" x="0" y="0" z="8" spawntime="60" />
 	</monster>
 	<monster centerx="805" centery="923" centerz="8" radius="1">
 		<monster name="Tarantula" x="0" y="0" z="8" spawntime="60" />
@@ -6395,11 +6407,171 @@
 	<monster centerx="661" centery="1225" centerz="8" radius="1">
 		<monster name="Dark Faun" x="0" y="0" z="8" spawntime="60" />
 	</monster>
+	<monster centerx="630" centery="1280" centerz="8" radius="1">
+		<monster name="Wyrm" x="0" y="0" z="8" spawntime="60" />
+	</monster>
+	<monster centerx="628" centery="1283" centerz="8" radius="1">
+		<monster name="Wyvern" x="0" y="0" z="8" spawntime="60" />
+	</monster>
+	<monster centerx="632" centery="1291" centerz="8" radius="5">
+		<monster name="Wyrm" x="-2" y="-2" z="8" spawntime="60" />
+		<monster name="Wyrm" x="2" y="4" z="8" spawntime="60" />
+	</monster>
+	<monster centerx="1048" centery="811" centerz="9" radius="1">
+		<monster name="Hellspawn" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="1053" centery="814" centerz="9" radius="1">
+		<monster name="Diabolic Imp" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="1043" centery="815" centerz="9" radius="1">
+		<monster name="Hellspawn" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="1044" centery="821" centerz="9" radius="1">
+		<monster name="Diabolic Imp" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="1049" centery="824" centerz="9" radius="1">
+		<monster name="Diabolic Imp" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="1051" centery="828" centerz="9" radius="1">
+		<monster name="Dragon Lord" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="1055" centery="832" centerz="9" radius="1">
+		<monster name="Diabolic Imp" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="1055" centery="837" centerz="9" radius="1">
+		<monster name="Dragon Lord" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="1054" centery="841" centerz="9" radius="1">
+		<monster name="Dragon Lord" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="1038" centery="842" centerz="9" radius="1">
+		<monster name="Fury" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="1022" centery="843" centerz="9" radius="1">
+		<monster name="Fury" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="1050" centery="843" centerz="9" radius="1">
+		<monster name="Dragon Lord Hatchling" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="1032" centery="847" centerz="9" radius="1">
+		<monster name="Hellspawn" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="1038" centery="847" centerz="9" radius="1">
+		<monster name="Destroyer" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="996" centery="849" centerz="9" radius="1">
+		<monster name="Hellspawn" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="1011" centery="849" centerz="9" radius="1">
+		<monster name="Hellspawn" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="1041" centery="849" centerz="9" radius="1">
+		<monster name="Hellspawn" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="1046" centery="849" centerz="9" radius="1">
+		<monster name="Dragon Lord Hatchling" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="999" centery="850" centerz="9" radius="1">
+		<monster name="Hellspawn" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="1019" centery="850" centerz="9" radius="1">
+		<monster name="Hellspawn" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="1023" centery="850" centerz="9" radius="1">
+		<monster name="Destroyer" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="1041" centery="851" centerz="9" radius="1">
+		<monster name="Hellspawn" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="998" centery="853" centerz="9" radius="1">
+		<monster name="Dragon" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="1002" centery="853" centerz="9" radius="1">
+		<monster name="Hellspawn" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="1016" centery="853" centerz="9" radius="1">
+		<monster name="Destroyer" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="1020" centery="853" centerz="9" radius="1">
+		<monster name="Dragon Lord" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="1028" centery="853" centerz="9" radius="1">
+		<monster name="Destroyer" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="1044" centery="853" centerz="9" radius="1">
+		<monster name="Dragon" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="1008" centery="854" centerz="9" radius="1">
+		<monster name="Hellspawn" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="1004" centery="855" centerz="9" radius="1">
+		<monster name="Dragon Lord" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="1033" centery="856" centerz="9" radius="1">
+		<monster name="Hellspawn" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="1020" centery="857" centerz="9" radius="1">
+		<monster name="Hellspawn" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="1044" centery="858" centerz="9" radius="1">
+		<monster name="Dragon Lord" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="1038" centery="859" centerz="9" radius="1">
+		<monster name="Dragon" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="999" centery="860" centerz="9" radius="1">
+		<monster name="Hellspawn" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="1021" centery="860" centerz="9" radius="1">
+		<monster name="Destroyer" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="1002" centery="861" centerz="9" radius="1">
+		<monster name="Hellspawn" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="1047" centery="861" centerz="9" radius="1">
+		<monster name="Fury" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="1026" centery="862" centerz="9" radius="1">
+		<monster name="Destroyer" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="1026" centery="866" centerz="9" radius="1">
+		<monster name="Destroyer" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="1045" centery="869" centerz="9" radius="1">
+		<monster name="Dragon" x="0" y="0" z="9" spawntime="60" />
+	</monster>
 	<monster centerx="812" centery="873" centerz="9" radius="5">
 		<monster name="Necromancer" x="5" y="-4" z="9" spawntime="60" />
 		<monster name="Vampire Bride" x="-1" y="-1" z="9" spawntime="60" />
 		<monster name="Vampire" x="2" y="0" z="9" spawntime="60" />
 		<monster name="Vampire" x="0" y="3" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="1021" centery="873" centerz="9" radius="1">
+		<monster name="Destroyer" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="1025" centery="873" centerz="9" radius="1">
+		<monster name="Fury" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="1047" centery="873" centerz="9" radius="1">
+		<monster name="Dragon" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="1014" centery="875" centerz="9" radius="1">
+		<monster name="Destroyer" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="1023" centery="876" centerz="9" radius="1">
+		<monster name="Hellspawn" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="1040" centery="877" centerz="9" radius="1">
+		<monster name="Dragon Lord" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="1015" centery="878" centerz="9" radius="1">
+		<monster name="Hellspawn" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="1043" centery="878" centerz="9" radius="1">
+		<monster name="Hellspawn" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="1045" centery="879" centerz="9" radius="1">
+		<monster name="Dragon Lord" x="0" y="0" z="9" spawntime="60" />
 	</monster>
 	<monster centerx="815" centery="887" centerz="9" radius="5">
 		<monster name="Witch" x="-3" y="-4" z="9" spawntime="60" />
@@ -6428,11 +6600,38 @@
 	<monster centerx="933" centery="900" centerz="9" radius="1">
 		<monster name="Bonelord" x="0" y="0" z="9" spawntime="60" />
 	</monster>
+	<monster centerx="1009" centery="900" centerz="9" radius="1">
+		<monster name="Vampire" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="1017" centery="900" centerz="9" radius="5">
+		<monster name="Braindeath" x="-1" y="-4" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="1011" centery="901" centerz="9" radius="1">
+		<monster name="Nightmare" x="0" y="0" z="9" spawntime="60" />
+	</monster>
 	<monster centerx="926" centery="903" centerz="9" radius="1">
 		<monster name="Elf" x="0" y="0" z="9" spawntime="60" />
 	</monster>
 	<monster centerx="937" centery="904" centerz="9" radius="1">
 		<monster name="Slime" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="1005" centery="912" centerz="9" radius="5">
+		<monster name="Nightmare" x="-2" y="-2" z="9" spawntime="60" />
+		<monster name="Vampire Viscount" x="-3" y="3" z="9" spawntime="60" />
+		<monster name="Braindeath" x="4" y="4" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="1026" centery="913" centerz="9" radius="5">
+		<monster name="Elder Bonelord" x="1" y="-5" z="9" spawntime="60" />
+		<monster name="Vampire Viscount" x="-1" y="4" z="9" spawntime="60" />
+		<monster name="Nightmare" x="4" y="4" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="1015" centery="914" centerz="9" radius="5">
+		<monster name="Braindeath" x="-3" y="-5" z="9" spawntime="60" />
+		<monster name="Braindeath" x="1" y="-4" z="9" spawntime="60" />
+		<monster name="Vampire" x="2" y="-1" z="9" spawntime="60" />
+		<monster name="Nightmare" x="5" y="-1" z="9" spawntime="60" />
+		<monster name="Nightmare" x="4" y="3" z="9" spawntime="60" />
+		<monster name="Elder Bonelord" x="-2" y="4" z="9" spawntime="60" />
 	</monster>
 	<monster centerx="806" centery="915" centerz="9" radius="1">
 		<monster name="Tarantula" x="0" y="0" z="9" spawntime="60" />
@@ -6442,6 +6641,12 @@
 	</monster>
 	<monster centerx="805" centery="917" centerz="9" radius="1">
 		<monster name="Poison Spider" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="1016" centery="921" centerz="9" radius="1">
+		<monster name="Vampire" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="1021" centery="921" centerz="9" radius="1">
+		<monster name="Vampire" x="0" y="0" z="9" spawntime="60" />
 	</monster>
 	<monster centerx="798" centery="924" centerz="9" radius="1">
 		<monster name="Poison Spider" x="0" y="0" z="9" spawntime="60" />
@@ -7433,13 +7638,74 @@
 	<monster centerx="587" centery="1246" centerz="9" radius="1">
 		<monster name="Dwarf Soldier" x="0" y="0" z="9" spawntime="60" />
 	</monster>
+	<monster centerx="618" centery="1287" centerz="9" radius="1">
+		<monster name="Wyrm" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="644" centery="1288" centerz="9" radius="5">
+		<monster name="Elder Wyrm" x="-2" y="-1" z="9" spawntime="60" />
+		<monster name="Elder Wyrm" x="3" y="1" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="652" centery="1288" centerz="9" radius="1">
+		<monster name="Wyrm" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="636" centery="1289" centerz="9" radius="1">
+		<monster name="Wyrm" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="626" centery="1291" centerz="9" radius="5">
+		<monster name="Wyrm" x="-3" y="-4" z="9" spawntime="60" />
+		<monster name="Elder Wyrm" x="3" y="-2" z="9" spawntime="60" />
+		<monster name="Elder Wyrm" x="-1" y="2" z="9" spawntime="60" />
+		<monster name="Wyrm" x="-2" y="3" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="635" centery="1292" centerz="9" radius="1">
+		<monster name="Elder Wyrm" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="634" centery="1296" centerz="9" radius="1">
+		<monster name="Wyrm" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="638" centery="1304" centerz="9" radius="5">
+		<monster name="Elder Wyrm" x="0" y="-2" z="9" spawntime="60" />
+		<monster name="Wyrm" x="2" y="-1" z="9" spawntime="60" />
+		<monster name="Elder Wyrm" x="-3" y="2" z="9" spawntime="60" />
+		<monster name="Elder Wyrm" x="4" y="3" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="629" centery="1310" centerz="9" radius="1">
+		<monster name="Elder Wyrm" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="633" centery="1311" centerz="9" radius="1">
+		<monster name="Wyrm" x="0" y="0" z="9" spawntime="60" />
+	</monster>
+	<monster centerx="1001" centery="843" centerz="10" radius="1">
+		<monster name="Hellhound" x="0" y="0" z="10" spawntime="60" />
+	</monster>
+	<monster centerx="999" centery="846" centerz="10" radius="1">
+		<monster name="Hellhound" x="0" y="0" z="10" spawntime="60" />
+	</monster>
+	<monster centerx="1028" centery="850" centerz="10" radius="1">
+		<monster name="Hellspawn" x="0" y="0" z="10" spawntime="60" />
+	</monster>
+	<monster centerx="1028" centery="852" centerz="10" radius="1">
+		<monster name="Hellhound" x="0" y="0" z="10" spawntime="60" />
+	</monster>
 	<monster centerx="817" centery="870" centerz="10" radius="5">
 		<monster name="Vampire Viscount" x="1" y="1" z="10" spawntime="60" />
 		<monster name="Vampire Bride" x="1" y="4" z="10" spawntime="60" />
 	</monster>
+	<monster centerx="1016" centery="875" centerz="10" radius="1">
+		<monster name="Fury" x="0" y="0" z="10" spawntime="60" />
+	</monster>
 	<monster centerx="820" centery="876" centerz="10" radius="1">
 		<monster name="Necromancer" x="0" y="0" z="10" spawntime="60" />
 		<monster name="Vampire Viscount" x="-1" y="1" z="10" spawntime="60" />
+	</monster>
+	<monster centerx="1013" centery="878" centerz="10" radius="1">
+		<monster name="Fury" x="0" y="0" z="10" spawntime="60" />
+	</monster>
+	<monster centerx="1043" centery="878" centerz="10" radius="1">
+		<monster name="Hellspawn" x="0" y="0" z="10" spawntime="60" />
+	</monster>
+	<monster centerx="1045" centery="880" centerz="10" radius="1">
+		<monster name="Hellhound" x="0" y="0" z="10" spawntime="60" />
 	</monster>
 	<monster centerx="822" centery="882" centerz="10" radius="5">
 		<monster name="Vampire Bride" x="0" y="-1" z="10" spawntime="60" />
@@ -8544,8 +8810,20 @@
 	<monster centerx="592" centery="1247" centerz="10" radius="1">
 		<monster name="Destroyer" x="0" y="0" z="10" spawntime="60" />
 	</monster>
+	<monster centerx="1017" centery="872" centerz="11" radius="1">
+		<monster name="Fury" x="0" y="0" z="11" spawntime="60" />
+	</monster>
+	<monster centerx="1029" centery="876" centerz="11" radius="1">
+		<monster name="Fire Lord" x="0" y="0" z="11" spawntime="60" />
+	</monster>
+	<monster centerx="1036" centery="876" centerz="11" radius="1">
+		<monster name="Hellhound" x="0" y="0" z="11" spawntime="60" />
+	</monster>
 	<monster centerx="821" centery="877" centerz="11" radius="1">
 		<monster name="Banshee" x="0" y="0" z="11" spawntime="60" />
+	</monster>
+	<monster centerx="1019" centery="878" centerz="11" radius="1">
+		<monster name="Fury" x="0" y="0" z="11" spawntime="60" />
 	</monster>
 	<monster centerx="814" centery="879" centerz="11" radius="1">
 		<monster name="Necromancer" x="0" y="0" z="11" spawntime="60" />
@@ -9629,6 +9907,18 @@
 	</monster>
 	<monster centerx="579" centery="1194" centerz="11" radius="1">
 		<monster name="Enslaved Dwarf" x="0" y="0" z="11" spawntime="60" />
+	</monster>
+	<monster centerx="1064" centery="865" centerz="12" radius="1">
+		<monster name="Hellfire Fighter" x="0" y="0" z="12" spawntime="60" />
+	</monster>
+	<monster centerx="1055" centery="871" centerz="12" radius="1">
+		<monster name="Hellflayer" x="0" y="0" z="12" spawntime="60" />
+	</monster>
+	<monster centerx="1044" centery="877" centerz="12" radius="1">
+		<monster name="Hellfire Fighter" x="0" y="0" z="12" spawntime="60" />
+	</monster>
+	<monster centerx="1051" centery="878" centerz="12" radius="1">
+		<monster name="Hellfire Fighter" x="0" y="0" z="12" spawntime="60" />
 	</monster>
 	<monster centerx="988" centery="892" centerz="12" radius="5">
 		<monster name="Warlock" x="-5" y="0" z="12" spawntime="60" />
