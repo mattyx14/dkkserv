@@ -130,6 +130,9 @@ DarkKonia = {
 	},
 	FirstQuest = {
 		FirstWeapon = 30140,
+		FirstWeaponClub = 30140,
+		FirstWeaponSword = 30140,
+		FirstWeaponAxe = 30140,
 		Fynn = 30141,
 			rewardFynn = 30142,
 		Misidia = 30143,
