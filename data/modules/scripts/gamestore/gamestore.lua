@@ -95,7 +95,7 @@ GameStore.Categories = {
         {
           icons = { "Savanna_Ostrich.png" },
           name = "Savanna Ostrich",
-          price = 500,
+          price = 250,
           id = 168,
           description = "{character}\n{speedboost}\n\n<i>These birds have a strong maternal instinct since their fledglings are completely dependent on their parents for protection. Do not expect them to abandon their brood only because they are carrying you around. In fact, if you were to separate them from their chick, the Savanna Ostrich, Coral Rhea and Eventide Nandu would turn into vicious beings, so don't even try it!</i>",
           type = GameStore.OfferTypes.OFFER_TYPE_MOUNT,
@@ -103,7 +103,7 @@ GameStore.Categories = {
         {			
           icons = { "Coral_Rhea.png" },
           name = "Coral Rhea",
-          price = 500,
+          price = 250,
           id = 169,
           description = "{character}\n{speedboost}\n\n<i>These birds have a strong maternal instinct since their fledglings are completely dependent on their parents for protection. Do not expect them to abandon their brood only because they are carrying you around. In fact, if you were to separate them from their chick, the Savanna Ostrich, Coral Rhea and Eventide Nandu would turn into vicious beings, so don't even try it!</i>",
           type = GameStore.OfferTypes.OFFER_TYPE_MOUNT,
@@ -111,7 +111,7 @@ GameStore.Categories = {
         {			
           icons = { "Eventide_Nandu.png" },
           name = "Eventide Nandu",
-          price = 500,
+          price = 250,
           id = 170,
           description = "{character}\n{speedboost}\n\n<i>These birds have a strong maternal instinct since their fledglings are completely dependent on their parents for protection. Do not expect them to abandon their brood only because they are carrying you around. In fact, if you were to separate them from their chick, the Savanna Ostrich, Coral Rhea and Eventide Nandu would turn into vicious beings, so don't even try it!</i>",
           type = GameStore.OfferTypes.OFFER_TYPE_MOUNT,
@@ -119,7 +119,7 @@ GameStore.Categories = {
         {
           icons = { "Void_Watcher.png" },
           name = "Void Watcher",
-          price = 870,
+          price = 250,
           id = 179,
           description = "{character}\n{speedboost}\n\n<i>If you are looking for a vigilant and faithful companion, look no further! Glide through every realm and stare into the darkest abyss on the back of a Void Watcher. They already know everything about you anyway for they have been watching you from the shadows!</i>",
           type = GameStore.OfferTypes.OFFER_TYPE_MOUNT,
@@ -128,7 +128,7 @@ GameStore.Categories = {
         {
           icons = { "Rune_Watcher.png" },
           name = "Rune Watcher",
-          price = 870,
+          price = 250,
           id = 180,
           description = "{character}\n{speedboost}\n\n<i>If you are looking for a vigilant and faithful companion, look no further! Glide through every realm and stare into the darkest abyss on the back of a Rune Watcher. They already know everything about you anyway for they have been watching you from the shadows!</i>",
           type = GameStore.OfferTypes.OFFER_TYPE_MOUNT,
@@ -137,7 +137,7 @@ GameStore.Categories = {
         {
           icons = { "Rift_Watcher.png" },
           name = "Rift Watcher",
-          price = 870,
+          price = 250,
           id = 181,
           description = "{character}\n{speedboost}\n\n<i>If you are looking for a vigilant and faithful companion, look no further! Glide through every realm and stare into the darkest abyss on the back of a Rift Watcher. They already know everything about you anyway for they have been watching you from the shadows!</i>",
           type = GameStore.OfferTypes.OFFER_TYPE_MOUNT,
@@ -156,7 +156,7 @@ GameStore.Categories = {
         {
           icons = { "Outfit_Retro_Citizen_Male.png", "Outfit_Retro_Citizen_Female.png" },
           name = "Retro Citizen",
-          price = 870,
+          price = 250,
           sexId = {female = 975,male = 974},
           description = "{character}\n{info} colours can be changed using the Outfit dialog\n\n<i>Do you still remember your first stroll through the streets of Thais? For old times' sake, walk the paths of Nostalgia as a Retro Citizen!</i>",
           type = GameStore.OfferTypes.OFFER_TYPE_OUTFIT,
@@ -164,7 +164,7 @@ GameStore.Categories = {
         {
           icons = { "Outfit_Retro_Hunter_Male.png", "Outfit_Retro_Hunter_Female.png" },
           name = "Retro Hunter",
-          price = 870,
+          price = 250,
           sexId = {female = 973,male = 972},
           description = "{character}\n{info} colours can be changed using the Outfit dialog\n\n<i>Whenever you pick up your bow and spears, you walk down memory lane and think of your early days? Treat yourself with the fashionable Retro Hunter outfit and hunt some good old monsters from your childhood.</i>",
           type = GameStore.OfferTypes.OFFER_TYPE_OUTFIT,
@@ -172,7 +172,7 @@ GameStore.Categories = {
         {
           icons = { "Outfit_Retro_Knight_Male.png", "Outfit_Retro_Knight_Female.png" },
           name = "Retro Knight",
-          price = 870,
+          price = 250,
           sexId = {female = 971,male = 970},
           description = "{character}\n{info} colours can be changed using the Outfit dialog\n\n<i>Who needs a fancy looking sword with bling-bling and ornaments? Back in the days, we survived without such unnecessary accessories! Time to show those younkers what a Retro Knight is made of.</i>",
           type = GameStore.OfferTypes.OFFER_TYPE_OUTFIT,
@@ -180,7 +180,7 @@ GameStore.Categories = {
         {
           icons = { "Outfit_Retro_Mage_Male.png", "Outfit_Retro_Mage_Female.png" },
           name = "Retro Wizzard",
-          price = 870,
+          price = 250,
           sexId = {female = 969, male = 968},
           description = "{character}\n{info} colours can be changed using the Outfit dialog\n\n<i>Dress up as a Retro Mage and you will always cut a fine figure on the battleground while eliminating your enemies with your magical powers the old-fashioned way.</i>",
           type = GameStore.OfferTypes.OFFER_TYPE_OUTFIT,
@@ -188,7 +188,7 @@ GameStore.Categories = {
         {
           icons = { "Outfit_Retro_Nobleman_Male.png", "Outfit_Retro_Nobleman_Female.png" },
           name = "Retro Noblewoman",
-          price = 870,
+          price = 250,
           sexId = { female = 967, male = 966},
           description = "{character}\n{info} colours can be changed using the Outfit dialog\n\n<i>King Tibianus has invited you to a summer ball and you have nothing to wear for this special event? Do not worry, the Retro Noble(wo)man outfit makes you a real eye catcher on every festive occasion.</i>",
           type = GameStore.OfferTypes.OFFER_TYPE_OUTFIT,
@@ -196,7 +196,7 @@ GameStore.Categories = {
         {
           icons = { "Outfit_Retro_Summoner_Male.png", "Outfit_Retro_Summoner_Female.png" },
           name = "Retro Summoner",
-          price = 870,
+          price = 250,
           sexId = {female = 965, male = 964},
           description = "{character}\n{info} colours can be changed using the Outfit dialog\n\n<i>While the Retro Mage usually throws runes and mighty spells directly at the enemies, the Retro Summoner outfit might be the better choice for Tibians that prefer to send mighty summons to the battlefield to keep their enemies at distance.</i>",
           type = GameStore.OfferTypes.OFFER_TYPE_OUTFIT,
@@ -204,7 +204,7 @@ GameStore.Categories = {
         {
           icons = { "Outfit_Retro_Warrior_Male.png", "Outfit_Retro_Warrior_Female.png" },
           name = "Retro Warrior",
-          price = 870,
+          price = 250,
           sexId = {female = 963, male = 962},
           description = "{character}\n{info} colours can be changed using the Outfit dialog\n\n<i>You are fearless and strong as a behemoth but have problems finding the right outfit for your adventures? The Retro Warrior outfit is a must-have for all fashion-conscious old-school Tibians out there.</i>",
           type = GameStore.OfferTypes.OFFER_TYPE_OUTFIT,
@@ -221,7 +221,7 @@ GameStore.Categories = {
         {
           icons = { "XP_Boost.png" },
           name = "XP Boost",
-          price = 30,
+          price = 15,
           id = 65010,
           description = "<i>Purchase a boost that increases the experience points your character gains from hunting by 50%!</i>\n\n{character}\n{info} lasts for 1 hour hunting time\n{info} paused if stamina falls under 14 hours\n{info} can be purchased up to 5 times between 2 server saves\n{info} price increases with every purchase\n{info} cannot be purchased if an XP boost is already active",
           type = GameStore.OfferTypes.OFFER_TYPE_EXPBOOST,			
@@ -248,7 +248,7 @@ GameStore.Categories = {
         {
           icons = { "Name_Change.png" },
           name = "Character Name Change",
-          price = 250,
+          price = 50,
           id = 65002,
           description = "<i>Tired of your current character name? Purchase a new one!</i>\n\n{character}\n{info} relog required after purchase to finalise the name change",
           type = GameStore.OfferTypes.OFFER_TYPE_NAMECHANGE,
@@ -256,7 +256,7 @@ GameStore.Categories = {
         {
           icons = { "Sex_Change.png" },
           name = "Character Sex Change",
-          price = 120,
+          price = 50,
           id = 65003,
           description = "<i>Turns your female character into a male one - or vice versa.</i>\n\n{character}\n{activated}\n{info} you will keep all outfits you have purchased or earned in quest",
           type = GameStore.OfferTypes.OFFER_TYPE_SEXCHANGE,
@@ -274,7 +274,7 @@ GameStore.Categories = {
         {
           icons = { "Gold_Pouch.png" },
           name = "Gold Pouch",
-          price = 900,
+          price = 250,
           itemtype = 23721,
           count = 1,
           description = "<i>Carries as many gold, platinum or crystal coins as your capacity allows, however, no other items.</i>\n\n{character}\n{storeinbox}\n{once}\n{useicon} use it to open it\n{info} always placed on the first position of your Store inbox",
@@ -283,7 +283,7 @@ GameStore.Categories = {
         {                
           icons = { "Charm_Expansion_Offer.png" },
           name = "Charm Expansion",
-          price = 450,
+          price = 250,
           id = 65005,
           description = "<i>Assign as many of your unlocked Charms as you like and get a 25% discount whenever you are removing a Charm from a creature!</i>\n\n{character}\n{once}",
           type = GameStore.OfferTypes.OFFER_TYPE_CHARMS,
@@ -291,7 +291,7 @@ GameStore.Categories = {
         {
           icons = { "Permanent_Prey_Slot.png" },
           name = "Permanent Prey Slot",
-          price = 900,
+          price = 250,
           id = 65008,
           description = "<i>Get an additional prey slot to activate additional prey!</i>\n\n{character}\n{info} maximum amount that can be owned by character: 3\n{info} added directly to Prey dialog",
           type = GameStore.OfferTypes.OFFER_TYPE_PREYSLOT,
@@ -299,7 +299,7 @@ GameStore.Categories = {
         {
           icons = { "Prey_Bonus_Reroll.png" },
           name = "Prey Wildcard",
-          price = 50,
+          price = 30,
           id = 1,
           count = 5,
           description = "<i>Use Prey Wildcards to reroll the bonus of an active prey, to lock your active prey or to select a prey of your choice.</i>\n\n{character}\n{info} added directly to Prey dialog\n{info} maximum amount that can be owned by character: 50",
@@ -308,7 +308,7 @@ GameStore.Categories = {
         {
           icons = { "Prey_Bonus_Reroll.png" },
           name = "Prey Wildcard",
-          price = 200,
+          price = 60,
           count = 20,
           description = "<i>Use Prey Wildcards to reroll the bonus of an active prey, to lock your active prey or to select a prey of your choice.</i>\n\n{character}\n{info} added directly to Prey dialog\n{info} maximum amount that can be owned by character: 50",
           type = GameStore.OfferTypes.OFFER_TYPE_PREYBONUS,
