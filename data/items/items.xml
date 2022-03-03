@@ -1076,11 +1076,20 @@
 	</item>
 	<!-- DEPRECATED START -->
 	<item id="679" article="an" name="icy spike sword">
-		<attribute key="elementice" value="4"/>
-		<attribute key="attack" value="20"/>
-		<attribute key="extradef" value="2"/>
-		<attribute key="defense" value="21"/>
+		<attribute key="weaponType" value="sword"/>
+		<attribute key="elementice" value="37"/>
+		<attribute key="skillsword" value="2"/>
+		<attribute key="attack" value="10"/>
+		<attribute key="extradef" value="3"/>
+		<attribute key="defense" value="25"/>
 		<attribute key="weight" value="5000"/>
+		<attribute key="upgradeclassification" value="3"/>
+		<attribute key="imbuementslot" value="2">
+			<attribute key="life leech" value="3"/>
+			<attribute key="mana leech" value="3"/>
+			<attribute key="critical hit" value="3"/>
+			<attribute key="skillboost sword" value="3"/>
+		</attribute>
 	</item>
 	<item id="680" article="an" name="icy relic sword">
 		<attribute key="elementice" value="8"/>
@@ -1109,11 +1118,20 @@
 		<attribute key="weight" value="8200"/>
 	</item>
 	<item id="684" article="an" name="icy barbarian axe">
-		<attribute key="elementice" value="5"/>
-		<attribute key="attack" value="23"/>
-		<attribute key="extradef" value="1"/>
-		<attribute key="defense" value="18"/>
+		<attribute key="weaponType" value="axe"/>
+		<attribute key="elementice" value="38"/>
+		<attribute key="skillaxe" value="2"/>
+		<attribute key="attack" value="9"/>
+		<attribute key="extradef" value="3"/>
+		<attribute key="defense" value="20"/>
 		<attribute key="weight" value="5100"/>
+		<attribute key="upgradeclassification" value="3"/>
+		<attribute key="imbuementslot" value="2">
+			<attribute key="life leech" value="3"/>
+			<attribute key="mana leech" value="3"/>
+			<attribute key="critical hit" value="3"/>
+			<attribute key="skillboost axe" value="3"/>
+		</attribute>
 	</item>
 	<item id="685" article="an" name="icy knight axe">
 		<attribute key="elementice" value="6"/>
@@ -1142,11 +1160,20 @@
 		<attribute key="weight" value="6150"/>
 	</item>
 	<item id="689" article="an" name="icy clerical mace">
-		<attribute key="elementice" value="5"/>
-		<attribute key="attack" value="23"/>
-		<attribute key="extradef" value="1"/>
-		<attribute key="defense" value="15"/>
+		<attribute key="weaponType" value="club"/>
+		<attribute key="elementice" value="40"/>
+		<attribute key="skillclub" value="2"/>
+		<attribute key="attack" value="8"/>
+		<attribute key="extradef" value="3"/>
+		<attribute key="defense" value="20"/>
 		<attribute key="weight" value="5800"/>
+		<attribute key="upgradeclassification" value="3"/>
+		<attribute key="imbuementslot" value="2">
+			<attribute key="life leech" value="3"/>
+			<attribute key="mana leech" value="3"/>
+			<attribute key="critical hit" value="3"/>
+			<attribute key="skillboost club" value="3"/>
+		</attribute>
 	</item>
 	<item id="690" article="an" name="icy crystal mace">
 		<attribute key="elementice" value="7"/>
@@ -17379,13 +17406,19 @@
 	<item id="8077" article="a" name="rainbow shield">
 		<attribute key="description" value="Strange elemental magic flows over this shield"/>
 		<attribute key="weaponType" value="shield"/>
-		<attribute key="defense" value="30"/>
+		<attribute key="skillshield" value="5"/>
+		<attribute key="speed" value="30"/>
+		<attribute key="manaticks" value="3000"/>
+		<attribute key="managain" value="25"/>
+		<attribute key="healthticks" value="3000"/>
+		<attribute key="healthgain" value="15"/>
+		<attribute key="defense" value="36"/>
 		<attribute key="weight" value="6900"/>
 	</item>
 	<item id="8078" article="a" name="fiery rainbow shield">
 		<attribute key="description" value="It has been temporarily imbued with fire magic and boosts your shielding skill"/>
 		<attribute key="weaponType" value="shield"/>
-		<attribute key="skillshield" value="3"/>
+		<attribute key="skillshield" value="7"/>
 		<attribute key="duration" value="1200"/>
 		<attribute key="decayTo" value="8905"/>
 		<attribute key="defense" value="36"/>
@@ -17396,13 +17429,13 @@
 		<attribute key="weaponType" value="shield"/>
 		<attribute key="duration" value="1200"/>
 		<attribute key="decayTo" value="8905"/>
-		<attribute key="defense" value="39"/>
+		<attribute key="defense" value="40"/>
 		<attribute key="weight" value="6900"/>
 	</item>
 	<item id="8080" article="a" name="sparking rainbow shield">
 		<attribute key="description" value="It has been temporarily imbued with energy magic and increases your speed"/>
 		<attribute key="weaponType" value="shield"/>
-		<attribute key="speed" value="20"/>
+		<attribute key="speed" value="35"/>
 		<attribute key="duration" value="1200"/>
 		<attribute key="decayTo" value="8905"/>
 		<attribute key="defense" value="36"/>
@@ -17412,9 +17445,9 @@
 		<attribute key="description" value="It has been temporarily imbued with earth magic and boosts your regeneration"/>
 		<attribute key="weaponType" value="shield"/>
 		<attribute key="manaticks" value="3000"/>
-		<attribute key="managain" value="4"/>
+		<attribute key="managain" value="40"/>
 		<attribute key="healthticks" value="3000"/>
-		<attribute key="healthgain" value="1"/>
+		<attribute key="healthgain" value="20"/>
 		<attribute key="duration" value="1200"/>
 		<attribute key="decayTo" value="8905"/>
 		<attribute key="defense" value="37"/>
@@ -32259,9 +32292,9 @@
 		<attribute key="slotType" value="two-handed"/>
 		<attribute key="ammotype" value="arrow"/>
 		<attribute key="showAttributes" value="1"/>
-		<attribute key="hitchance" value="4"/>
+		<attribute key="hitchance" value="7"/>
 		<attribute key="range" value="6"/>
-		<attribute key="attack" value="1"/>
+		<attribute key="attack" value="6"/>
 		<attribute key="weight" value="4200"/>
 		<attribute key="upgradeclassification" value="2"/>
 		<attribute key="imbuementslot" value="3">
@@ -40202,6 +40235,13 @@
 		<attribute key="armor" value="12"/>
 		<attribute key="weight" value="400"/>
 		<attribute key="upgradeclassification" value="2"/>
+		<attribute key="imbuementslot" value="1">
+			<attribute key="life leech" value="3"/>
+			<attribute key="elemental protection death" value="2"/>
+			<attribute key="elemental protection fire" value="2"/>
+			<attribute key="elemental protection ice" value="2"/>
+			<attribute key="elemental protection holy" value="2"/>
+		</attribute>
 	</item>
 	<item id="25780" article="a" name="blossom bag">
 		<attribute key="slotType" value="backpack"/>

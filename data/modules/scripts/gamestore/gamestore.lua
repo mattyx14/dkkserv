@@ -33,6 +33,68 @@ GameStore.Categories = {
         }
       },
  },
+-- DarkKonia Products   
+ {
+   icons = { "Category_Extras.png" },
+   name = "Extras",
+   rookgaard = true,
+	 subclasses = {"DarkKonia Products"},
+ }, 
+-- Products  
+  {   
+   icons = { "Category_ExerciseWeapons.png" },
+   name = "DarkKonia Products",
+   parent = "Server Extras",
+   rookgaard = true,
+   state = GameStore.States.STATE_NONE,
+   offers = {
+        {
+          icons = { "Icy_Clerical_Mace.png" },
+          name = "Icy Clerical Mace",
+          price = 100,
+          itemtype = 689,
+          count = 1, 
+          description = "<i>DarkKonia Products",
+          type = GameStore.OfferTypes.OFFER_TYPE_ITEM,
+        },
+        {
+          icons = { "Icy_Barbarian_Axe.png" },
+          name = "Icy Barbarian Axe",
+          price = 100,
+          itemtype = 784,
+          count = 1, 
+          description = "<i>DarkKonia Products",
+          type = GameStore.OfferTypes.OFFER_TYPE_ITEM,
+        },
+        {
+          icons = { "Icy_Spike_Sword.png" },
+          name = "Icy Spike Sword",
+          price = 100,
+          itemtype = 794,
+          count = 1, 
+          description = "<i>DarkKonia Products",
+          type = GameStore.OfferTypes.OFFER_TYPE_ITEM,
+        },
+        {
+          icons = { "Rainbow_Shield.png" },
+          name = "Rainbow Shield",
+          price = 100,
+          itemtype = 8077,
+          count = 1, 
+          description = "<i>DarkKonia Products",
+          type = GameStore.OfferTypes.OFFER_TYPE_ITEM,
+        },
+        {
+          icons = { "Icicle_Bow.png" },
+          name = "Icicle Bow",
+          price = 100,
+          itemtype = 19362,
+          count = 1, 
+          description = "<i>DarkKonia Products",
+          type = GameStore.OfferTypes.OFFER_TYPE_ITEM,
+        },
+	},
+ },
  {
    icons = { "Category_Consumables.png" },
    name = "Consumables",
@@ -274,7 +336,7 @@ GameStore.Categories = {
         {
           icons = { "Gold_Pouch.png" },
           name = "Gold Pouch",
-          price = 250,
+          price = 50,
           itemtype = 23721,
           count = 1,
           description = "<i>Carries as many gold, platinum or crystal coins as your capacity allows, however, no other items.</i>\n\n{character}\n{storeinbox}\n{once}\n{useicon} use it to open it\n{info} always placed on the first position of your Store inbox",
@@ -283,7 +345,7 @@ GameStore.Categories = {
         {                
           icons = { "Charm_Expansion_Offer.png" },
           name = "Charm Expansion",
-          price = 250,
+          price = 100,
           id = 65005,
           description = "<i>Assign as many of your unlocked Charms as you like and get a 25% discount whenever you are removing a Charm from a creature!</i>\n\n{character}\n{once}",
           type = GameStore.OfferTypes.OFFER_TYPE_CHARMS,
@@ -291,7 +353,7 @@ GameStore.Categories = {
         {
           icons = { "Permanent_Prey_Slot.png" },
           name = "Permanent Prey Slot",
-          price = 250,
+          price = 100,
           id = 65008,
           description = "<i>Get an additional prey slot to activate additional prey!</i>\n\n{character}\n{info} maximum amount that can be owned by character: 3\n{info} added directly to Prey dialog",
           type = GameStore.OfferTypes.OFFER_TYPE_PREYSLOT,
