@@ -151,6 +151,7 @@ npcConfig.shop = {
 	{ itemName = "lasting exercise rod", clientId = 35289, buy = 7560000, count = 14400 },
 	{ itemName = "lasting exercise wand", clientId = 35290, buy = 7560000, count = 14400 },
 	{ itemName = "light magic missile rune", clientId = 3174, buy = 4 },
+	{ itemName = "magic shield potion", clientId = 35563, buy = 250 },
 	{ itemName = "magic wall rune", clientId = 3180, buy = 116 },
 	{ itemName = "mana potion", clientId = 268, buy = 56 },
 	{ itemName = "moonlight rod", clientId = 3070, buy = 1000 },
