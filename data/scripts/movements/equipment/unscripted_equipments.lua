@@ -4133,13 +4133,23 @@ local items = {
 		-- icy clerical mace replica
 		itemid = 25940,
 		type = "equip",
-		slot = "hand"
+		slot = "hand",
+		level = 250,
+		vocation = {
+			{"Knight", true},
+			{"Elite Knight"}
+		}
 	},
 	{
 		-- icy clerical mace replica
 		itemid = 25940,
 		type = "deequip",
-		slot = "hand"
+		slot = "hand",
+		level = 250,
+		vocation = {
+			{"Knight", true},
+			{"Elite Knight"}
+		}
 	},
 	{
 		-- icy war axe replica
@@ -4193,13 +4203,23 @@ local items = {
 		-- icy barbarian axe replica
 		itemid = 25935,
 		type = "equip",
-		slot = "hand"
+		slot = "hand",
+		level = 250,
+		vocation = {
+			{"Knight", true},
+			{"Elite Knight"}
+		}
 	},
 	{
 		-- icy barbarian axe replica
 		itemid = 25935,
 		type = "deequip",
-		slot = "hand"
+		slot = "hand",
+		level = 250,
+		vocation = {
+			{"Knight", true},
+			{"Elite Knight"}
+		}
 	},
 	{
 		-- icy dragon slayer replica
@@ -4253,13 +4273,23 @@ local items = {
 		-- icy spike sword replica
 		itemid = 25930,
 		type = "equip",
-		slot = "hand"
+		slot = "hand",
+		level = 250,
+		vocation = {
+			{"Knight", true},
+			{"Elite Knight"}
+		}
 	},
 	{
 		-- icy spike sword replica
 		itemid = 25930,
 		type = "deequip",
-		slot = "hand"
+		slot = "hand",
+		level = 250,
+		vocation = {
+			{"Knight", true},
+			{"Elite Knight"}
+		}
 	},
 	{
 		-- fiery war hammer replica
@@ -12076,23 +12106,13 @@ local items = {
 		-- icy clerical mace
 		itemid = 689,
 		type = "equip",
-		slot = "hand",
-		level = 250,
-		vocation = {
-			{"Knight", true},
-			{"Elite Knight"}
-		}
+		slot = "hand"
 	},
 	{
 		-- icy clerical mace
 		itemid = 689,
 		type = "deequip",
-		slot = "hand",
-		level = 250,
-		vocation = {
-			{"Knight", true},
-			{"Elite Knight"}
-		}
+		slot = "hand"
 	},
 	{
 		-- icy war axe
@@ -12146,23 +12166,13 @@ local items = {
 		-- icy barbarian axe
 		itemid = 684,
 		type = "equip",
-		slot = "hand",
-		level = 250,
-		vocation = {
-			{"Knight", true},
-			{"Elite Knight"}
-		}
+		slot = "hand"
 	},
 	{
 		-- icy barbarian axe
 		itemid = 684,
 		type = "deequip",
-		slot = "hand",
-		level = 250,
-		vocation = {
-			{"Knight", true},
-			{"Elite Knight"}
-		}
+		slot = "hand"
 	},
 	{
 		-- icy dragon slayer
@@ -12216,23 +12226,13 @@ local items = {
 		-- icy spike sword
 		itemid = 679,
 		type = "equip",
-		slot = "hand",
-		level = 250,
-		vocation = {
-			{"Knight", true},
-			{"Elite Knight"}
-		}
+		slot = "hand"
 	},
 	{
 		-- icy spike sword
 		itemid = 679,
 		type = "deequip",
-		slot = "hand",
-		level = 250,
-		vocation = {
-			{"Knight", true},
-			{"Elite Knight"}
-		}
+		slot = "hand"
 	},
 	{
 		-- fiery war hammer

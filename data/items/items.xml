@@ -40779,12 +40779,21 @@
 		<attribute key="weight" value="8500"/>
 		<attribute key="upgradeclassification" value="1"/>
 	</item>
-	<item id="25930" article="an" name="icy spike sword replica">
+	<item id="25930" article="an" name="icy spike sword">
 		<attribute key="weaponType" value="sword"/>
-		<attribute key="attack" value="5"/>
-		<attribute key="defense" value="5"/>
+		<attribute key="elementice" value="37"/>
+		<attribute key="skillsword" value="2"/>
+		<attribute key="attack" value="10"/>
+		<attribute key="extradef" value="3"/>
+		<attribute key="defense" value="25"/>
 		<attribute key="weight" value="5000"/>
-		<attribute key="upgradeclassification" value="1"/>
+		<attribute key="upgradeclassification" value="3"/>
+		<attribute key="imbuementslot" value="2">
+			<attribute key="life leech" value="3"/>
+			<attribute key="mana leech" value="3"/>
+			<attribute key="critical hit" value="3"/>
+			<attribute key="skillboost sword" value="3"/>
+		</attribute>
 	</item>
 	<item id="25931" article="an" name="icy relic sword replica">
 		<attribute key="weaponType" value="sword"/>
@@ -40814,12 +40823,21 @@
 		<attribute key="weight" value="8200"/>
 		<attribute key="upgradeclassification" value="1"/>
 	</item>
-	<item id="25935" article="an" name="icy barbarian axe replica">
+	<item id="25935" article="an" name="icy barbarian axe">
 		<attribute key="weaponType" value="axe"/>
-		<attribute key="attack" value="5"/>
-		<attribute key="defense" value="5"/>
+		<attribute key="elementice" value="38"/>
+		<attribute key="skillaxe" value="2"/>
+		<attribute key="attack" value="9"/>
+		<attribute key="extradef" value="3"/>
+		<attribute key="defense" value="20"/>
 		<attribute key="weight" value="5100"/>
-		<attribute key="upgradeclassification" value="1"/>
+		<attribute key="upgradeclassification" value="3"/>
+		<attribute key="imbuementslot" value="2">
+			<attribute key="life leech" value="3"/>
+			<attribute key="mana leech" value="3"/>
+			<attribute key="critical hit" value="3"/>
+			<attribute key="skillboost axe" value="3"/>
+		</attribute>
 	</item>
 	<item id="25936" article="an" name="icy knight axe replica">
 		<attribute key="weaponType" value="axe"/>
@@ -40849,12 +40867,21 @@
 		<attribute key="weight" value="6150"/>
 		<attribute key="upgradeclassification" value="1"/>
 	</item>
-	<item id="25940" article="an" name="icy clerical mace replica">
+	<item id="25940" article="an" name="icy clerical mace">
 		<attribute key="weaponType" value="club"/>
-		<attribute key="attack" value="5"/>
-		<attribute key="defense" value="5"/>
+		<attribute key="elementice" value="40"/>
+		<attribute key="skillclub" value="2"/>
+		<attribute key="attack" value="8"/>
+		<attribute key="extradef" value="3"/>
+		<attribute key="defense" value="15"/>
 		<attribute key="weight" value="5800"/>
-		<attribute key="upgradeclassification" value="1"/>
+		<attribute key="upgradeclassification" value="3"/>
+		<attribute key="imbuementslot" value="2">
+			<attribute key="life leech" value="3"/>
+			<attribute key="mana leech" value="3"/>
+			<attribute key="critical hit" value="3"/>
+			<attribute key="skillboost club" value="3"/>
+		</attribute>
 	</item>
 	<item id="25941" article="an" name="icy crystal mace replica">
 		<attribute key="weaponType" value="club"/>
