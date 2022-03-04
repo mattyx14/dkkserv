@@ -99,7 +99,7 @@ GameStore.Categories = {
           price = 100,
           itemtype = 25779,
           count = 1, 
-          description = "<i>DarkKonia Products</i>\n\nDescriptions:\n\n&#8226; Arm:12, protection energy +12%, earth +12%\n\n&#8226; Speed +10\n\n&#8226; Imbuements Slots: 3\n\n\n\n{usablebyallicon} only usable by Druids and Sorcerers level 250+",
+          description = "<i>DarkKonia Products</i>\n\nDescriptions:\n\n&#8226; Arm:12, protection energy +12%, earth +12%\n\n&#8226; Speed +10\n\n&#8226; Imbuements Slots: 1\n\n\n\n{usablebyallicon} only usable by Druids and Sorcerers level 250+",
           type = GameStore.OfferTypes.OFFER_TYPE_ITEM,
         },
 	},
@@ -141,7 +141,7 @@ GameStore.Categories = {
         {
           icons = { "Death_Redemption.png" },
           name = "Death Redemption",
-          price = 260,
+          price = 65,
           blessid = 10,
           count = 1,
           description = "<i>Reduces the penalty of your character's most recent death.</i>\n\n{character}\n{info} can only be used for the most recent death and only within 24 hours after this death",
