@@ -14484,8 +14484,11 @@
 	<item id="6569" article="a" name="candy" plural="candies">
 		<attribute key="weight" value="5"/>
 	</item>
-	<item fromid="6570" toid="6571" article="a" name="surprise bag">
-		<attribute key="weight" value="1000"/>
+	<item id="6570" article="a" name="ImbuidKit Vampirims">
+		<attribute key="weight" value="5"/>
+	</item>
+	<item id="6571" article="a" name="ImbuidKit Strike">
+		<attribute key="weight" value="5"/>
 	</item>
 	<item id="6572" article="a" name="party trumpet">
 		<attribute key="weight" value="50"/>
@@ -18492,7 +18495,7 @@
 	<item fromid="8838" toid="8843" article="a" name="tree"/>
 	<item fromid="8844" toid="8851" article="a" name="roof"/>
 	<item id="8852" article="a" name="strange apparatus"/>
-	<item id="8853" article="a" name="suspicious surprise bag">
+	<item id="8853" article="a" name="ImbuidKit Void">
 		<attribute key="description" value="It's from an undead jester, so open at own risk"/>
 		<attribute key="weight" value="800"/>
 	</item>
