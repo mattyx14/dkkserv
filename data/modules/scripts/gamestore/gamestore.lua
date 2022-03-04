@@ -115,15 +115,15 @@ GameStore.Categories = {
    offers = {
         {
           name = "Crystal Coins",
-          price = 60,
+          price = 85,
           itemtype = 3043,
           count = 100, 
           description = "<i>DarkKonia Products</i>\n\nDescriptions:\n\n&#8226; Valuable Crystal Coins x100",
-          type = GameStore.OfferTypes.OFFER_TYPE_ITEM,
+          type = GameStore.OfferTypes.OFFER_TYPE_STACKABLE,
         },
         {
           name = "ImbuidKit Vampirims",
-          price = 50,
+          price = 65,
           itemtype = 6570,
           count = 1, 
           description = "<i>DarkKonia Products</i>\n\nDescriptions:\n\n&#8226; Container Vampirims ImbuidKit",
@@ -131,7 +131,7 @@ GameStore.Categories = {
         },
         {
           name = "ImbuidKit Strike",
-          price = 50,
+          price = 65,
           itemtype = 6571,
           count = 1, 
           description = "<i>DarkKonia Products</i>\n\nDescriptions:\n\n&#8226; Container Strike ImbuidKit",
@@ -139,7 +139,7 @@ GameStore.Categories = {
         },
         {
           name = "ImbuidKit Void",
-          price = 50,
+          price = 65,
           itemtype = 8853,
           count = 1, 
           description = "<i>DarkKonia Products</i>\n\nDescriptions:\n\n&#8226; Container Void ImbuidKit",
