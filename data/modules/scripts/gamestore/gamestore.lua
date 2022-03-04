@@ -104,6 +104,7 @@ GameStore.Categories = {
           type = GameStore.OfferTypes.OFFER_TYPE_ITEM,
         },
 	},
+ },
 -- Products  
   {   
    icons = { "Category_ExerciseWeapons.png" },
