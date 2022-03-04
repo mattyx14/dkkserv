@@ -18496,8 +18496,7 @@
 	<item fromid="8844" toid="8851" article="a" name="roof"/>
 	<item id="8852" article="a" name="strange apparatus"/>
 	<item id="8853" article="a" name="ImbuidKit Void">
-		<attribute key="description" value="It's from an undead jester, so open at own risk"/>
-		<attribute key="weight" value="800"/>
+		<attribute key="weight" value="5"/>
 	</item>
 	<item fromid="8854" toid="8855" article="a" name="street lamp"/>
 	<item fromid="8856" toid="8857" article="a" name="wall lamp"/>
