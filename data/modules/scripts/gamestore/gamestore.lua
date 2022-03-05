@@ -126,7 +126,7 @@ GameStore.Categories = {
           price = 65,
           itemtype = 6570,
           count = 1, 
-          description = "<i>DarkKonia Products</i>\n\nDescriptions:\n\n&#8226; Container Vampirims ImbuidKit",
+          description = "<i>DarkKonia Products</i>\n\nDescriptions:\n\n&#8226; Container Vampirims ImbuidKit Powerful",
           type = GameStore.OfferTypes.OFFER_TYPE_ITEM,
         },
         {
@@ -134,7 +134,7 @@ GameStore.Categories = {
           price = 65,
           itemtype = 6571,
           count = 1, 
-          description = "<i>DarkKonia Products</i>\n\nDescriptions:\n\n&#8226; Container Strike ImbuidKit",
+          description = "<i>DarkKonia Products</i>\n\nDescriptions:\n\n&#8226; Container Strike ImbuidKit Powerful",
           type = GameStore.OfferTypes.OFFER_TYPE_ITEM,
         },
         {
@@ -142,7 +142,7 @@ GameStore.Categories = {
           price = 65,
           itemtype = 8853,
           count = 1, 
-          description = "<i>DarkKonia Products</i>\n\nDescriptions:\n\n&#8226; Container Void ImbuidKit",
+          description = "<i>DarkKonia Products</i>\n\nDescriptions:\n\n&#8226; Container Void ImbuidKit Powerful",
           type = GameStore.OfferTypes.OFFER_TYPE_ITEM,
         },
 	},

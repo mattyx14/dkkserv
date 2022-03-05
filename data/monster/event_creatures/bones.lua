@@ -76,8 +76,6 @@ monster.loot = {
 	{name = "soul orb", chance = 10000},
 	{id = 6299, chance = 4000},
 	{name = "demonic essence", chance = 1538},
-	{id = 6570, chance = 5538, maxCount = 3},
-	{id = 6571, chance = 1538},
 	{name = "dragonbone staff", chance = 50000}
 }
 

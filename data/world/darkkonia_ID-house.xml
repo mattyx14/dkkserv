@@ -228,8 +228,8 @@
 	<house name="Misidia Settlement - House #5" houseid="240" entryx="1087" entryy="298" entryz="7" rent="0" townid="10" size="14" />
 	<house name="Misidia Settlement - House #6" houseid="241" entryx="1085" entryy="302" entryz="7" rent="0" townid="10" size="23" />
 	<house name="Misidia Settlement - House #7" houseid="242" entryx="1106" entryy="328" entryz="7" rent="0" townid="10" size="40" />
-	<house name="Misidia Settlement - House #8" houseid="243" entryx="1110" entryy="343" entryz="7" rent="0" townid="10" size="65" />
-	<house name="Misidia Settlement - House #9" houseid="244" entryx="1099" entryy="343" entryz="7" rent="0" townid="10" size="65" />
+	<house name="Misidia Settlement - House #8" houseid="243" entryx="1110" entryy="343" entryz="7" rent="0" townid="10" size="86" />
+	<house name="Misidia Settlement - House #9" houseid="244" entryx="1099" entryy="343" entryz="7" rent="0" townid="10" size="85" />
 	<house name="Misidia Settlement - House #10" houseid="245" entryx="1089" entryy="343" entryz="7" rent="0" townid="10" size="77" />
 	<house name="Misidia Settlement - House #11" houseid="246" entryx="1085" entryy="341" entryz="7" rent="0" guildhall="true" townid="10" size="216" />
 	<house name="Misidia Settlement - House #12" houseid="247" entryx="1069" entryy="327" entryz="7" rent="0" townid="10" size="43" />

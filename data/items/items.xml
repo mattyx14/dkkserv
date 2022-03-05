@@ -2801,10 +2801,10 @@
 	<item id="2027" article="a" name="hero statue"/>
 	<item id="2028" article="a" name="monument"/>
 	<item id="2029" article="a" name="minotaur statue">
-		<attribute key="rotateto" value="1462"/>
+		<attribute key="rotateto" value="2045"/>
 	</item>
 	<item id="2030" article="a" name="goblin statue">
-		<attribute key="rotateto" value="1465"/>
+		<attribute key="rotateto" value="2048"/>
 	</item>
 	<item id="2031" article="an" name="angel statue"/>
 	<item id="2032" article="a" name="dwarven statue"/>
