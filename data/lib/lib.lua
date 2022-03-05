@@ -15,3 +15,7 @@ dofile('data/lib/others/others.lua')
 
 -- Quests library
 dofile('data/lib/quests/quest.lua')
+
+-- Dolls System
+dofile('data/lib/others/addon_doll_lib.lua')
+dofile('data/lib/others/mount_doll_lib.lua')

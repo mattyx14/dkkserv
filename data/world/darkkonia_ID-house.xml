@@ -248,6 +248,7 @@
 	<house name="Misidia Settlement - House #25" houseid="260" entryx="1085" entryy="294" entryz="4" rent="0" townid="10" size="28" />
 	<house name="Misidia Settlement - House #26" houseid="261" entryx="1100" entryy="287" entryz="5" rent="0" guildhall="true" townid="10" size="467" />
 	<house name="Misidia Settlement - House #27" houseid="262" entryx="1108" entryy="311" entryz="4" rent="0" townid="10" size="69" />
+	<!--
 	<house name="Elfic Ville - House #1" houseid="263" entryx="666" entryy="1145" entryz="6" rent="0" townid="11" size="28" />
 	<house name="Elfic Ville - House #2" houseid="264" entryx="663" entryy="1127" entryz="6" rent="0" townid="11" size="14" />
 	<house name="Elfic Ville - House #3" houseid="265" entryx="659" entryy="1122" entryz="4" rent="0" townid="11" size="33" />
@@ -260,6 +261,7 @@
 	<house name="Elfic Ville - House #10" houseid="272" entryx="644" entryy="1143" entryz="5" rent="0" townid="11" size="21" />
 	<house name="Elfic Ville - House #11" houseid="273" entryx="644" entryy="1115" entryz="6" rent="0" townid="11" size="20" />
 	<house name="Elfic Ville - House #12" houseid="274" entryx="644" entryy="1116" entryz="5" rent="0" townid="11" size="21" />
+	-->
 	<house name="Vaargdon Mine - House #1" houseid="275" entryx="1541" entryy="694" entryz="12" rent="0" townid="12" size="36" />
 	<house name="Vaargdon Mine - House #2" houseid="276" entryx="1554" entryy="694" entryz="12" rent="0" townid="12" size="36" />
 	<house name="Vaargdon Mine - House #3" houseid="277" entryx="1537" entryy="701" entryz="12" rent="0" townid="12" size="50" />
