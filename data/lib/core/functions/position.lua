@@ -1,4 +1,3 @@
--- Functions from The Forgotten Server
 Position.directionOffset = {
 	[DIRECTION_NORTH] = {x = 0, y = -1},
 	[DIRECTION_EAST] = {x = 1, y = 0},
@@ -48,7 +47,6 @@ function Position:moveUpstairs()
 	return self
 end
 
--- Functions from OTServBR-Global
 function Position:isInRange(from, to)
 	-- No matter what corner from and to is, we want to make
 	-- life easier by calculating north-west and south-east
@@ -223,17 +221,17 @@ local position = {
 }
 
 -- Checks position 1
-if Position(position[1]):hasItem(2129) then
+if Position(position[1]):hasItem(1498) then
 	return true
 end
 
 -- Checks position 2
-if Position(position[2]):hasItem(2130) then
+if Position(position[2]):hasItem(1499) then
 	return true
 end
 
 -- Check two positions
-if Position(position[1]):hasItem(2129) and Position(position[2]):hasItem(2130) then
+if Position(position[1]):hasItem(1498) and Position(position[2]):hasItem(1499) then
 	return true
 end
 ]]
@@ -260,8 +258,8 @@ teleportTo: is where you will teleport the player (it is only necessary to put t
 function Position.hasCreatureInArea(fromPosition, toPosition, removeCreatures, removePlayer, teleportTo)
 	for positionX = fromPosition.x, toPosition.x do
 		for positionY = fromPosition.y, toPosition.y do
-        	for positionZ = fromPosition.z, toPosition.z do
-		        local room = {x = positionX, y = positionY, z= positionZ}
+			for positionZ = fromPosition.z, toPosition.z do
+				local room = {x = positionX, y = positionY, z= positionZ}
 				local tile = Tile(room)
 				if tile then
 					local creatures = tile:getCreatures()

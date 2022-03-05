@@ -95,7 +95,6 @@ function Player.addManaSpent(...)
 	return ret
 end
 
--- Functions From OTServBR-Global
 function Player.allowMovement(self, allow)
 	return self:setStorageValue(STORAGE.blockMovementStorage, allow and -1 or 1)
 end
@@ -128,23 +127,14 @@ function Player.depositMoney(self, amount)
 end
 
 function Player.transferMoneyTo(self, target, amount)
-	if not target then
-		return false
-	end
-
-	-- See if you can afford this transfer
 	local balance = self:getBankBalance()
 	if amount > balance then
 		return false
 	end
 
-	-- See if player is online
 	local targetPlayer = Player(target)
 	if targetPlayer then
-		local town = targetPlayer:getTown()
-		if town and town:getId() ~= TOWNS_LIST.DAWNPORT or town:getId() ~= TOWNS_LIST.DAWNPORT_TUTORIAL then -- Blocking transfer to Dawnport
-			targetPlayer:setBankBalance(targetPlayer:getBankBalance() + amount)
-		end
+		targetPlayer:setBankBalance(targetPlayer:getBankBalance() + amount)
 	else
 		if not playerExists(target) then
 			return false
@@ -152,13 +142,6 @@ function Player.transferMoneyTo(self, target, amount)
 
 		local query_town = db.storeQuery('SELECT `town_id` FROM `players` WHERE `name` = ' .. db.escapeString(target) ..' LIMIT 1;')
 		if query_town ~= false then
-			local town = result.getDataInt(query_town, "town_id")
-			if town then
-				local town_id = Town(town) and Town(town):getId()
-				if town_id and town_id  == TOWNS_LIST.DAWNPORT or town_id == TOWNS_LIST.DAWNPORT_TUTORIAL then -- Blocking transfer to Dawnport
-					return false
-				end
-			end
 			result.free(consulta)
 			db.query("UPDATE `players` SET `balance` = `balance` + '" .. amount .. "' WHERE `name` = " .. db.escapeString(target))
 		end
@@ -224,6 +207,16 @@ function Player.hasAllowMovement(self)
 	return self:getStorageValue(STORAGE.blockMovementStorage) ~= 1
 end
 
+function Player.hasRookgaardShield(self)
+	-- Wooden Shield, Studded Shield, Brass Shield, Plate Shield, Copper Shield
+	return self:getItemCount(2512) > 0
+		or self:getItemCount(2526) > 0
+		or self:getItemCount(2511) > 0
+		or self:getItemCount(2510) > 0
+		or self:getItemCount(2530) > 0
+end
+
+
 function Player.isSorcerer(self)
 	return table.contains({VOCATION.ID.SORCERER, VOCATION.ID.MASTER_SORCERER}, self:getVocation():getId())
 end
@@ -254,7 +247,7 @@ function Player.getAccountStorage(self, accountId, key, forceUpdate)
 
 	local query = db.storeQuery("SELECT `key`, MAX(`value`) as value FROM `player_storage` WHERE `player_id` IN (SELECT `id` FROM `players` WHERE `account_id` = ".. accountId ..") AND `key` = ".. key .." GROUP BY `key` LIMIT 1;")
 	if query ~= false then
-		local value = result.getDataInt(query, "value")
+		local value = result.getNumber(query, "value")
 		ACCOUNT_STORAGES[accountId] = value
 		result.free(query)
 		return value
@@ -310,33 +303,4 @@ function Player.sendWeatherEffect(self, groundEffect, fallEffect, thunderEffect)
             end
         end
     end
-end
-
-function Player.sellItem(self, itemid, count, cost)
-	if self:removeItem(itemid, count) then
-		if not self:addMoney(cost) then
-			return error('Could not add money to ' .. self:getName() .. '(' .. cost .. 'gp)')
-		end
-		return true
-	end
-	return false
-end
-
-function Player.buyItemContainer(self, containerid, itemid, count, cost, charges)
-	if not self:removeMoney(cost) then
-		Spdlog.error("[doPlayerBuyItemContainer] - Player ".. self:getName() .." do not have money or money is invalid")
-		return false
-	end
-
-	for i = 1, count do
-		local container = Game.createItem(containerid, 1)
-		for x = 1, ItemType(containerid):getCapacity() do
-			container:addItem(itemid, charges)
-		end
-
-		if self:addItemEx(container, true) ~= RETURNVALUE_NOERROR then
-			return false
-		end
-	end
-	return true
 end
