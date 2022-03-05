@@ -1,4 +1,3 @@
--- Create functions revscriptsys
 function createFunctions(class)
 	local exclude = {[2] = {"is"}, [3] = {"get", "set", "add", "can"}, [4] = {"need"}}
 	local temp = {}
@@ -26,7 +25,6 @@ function createFunctions(class)
 	end
 end
 
--- Creature index
 do
 	local function CreatureIndex(self, key)
 		local methods = getmetatable(self)
@@ -54,7 +52,6 @@ do
 	rawgetmetatable("Npc").__index = CreatureIndex
 end
 
--- Item index
 do
 	local function ItemIndex(self, key)
 		local methods = getmetatable(self)
@@ -74,7 +71,6 @@ do
 	rawgetmetatable("Teleport").__index = ItemIndex
 end
 
--- Action revscriptsys
 do
 	local function ActionNewIndex(self, key, value)
 		if key == "onUse" then
@@ -86,7 +82,6 @@ do
 	rawgetmetatable("Action").__newindex = ActionNewIndex
 end
 
--- TalkAction revscriptsys
 do
 	local function TalkActionNewIndex(self, key, value)
 		if key == "onSay" then
@@ -98,7 +93,6 @@ do
 	rawgetmetatable("TalkAction").__newindex = TalkActionNewIndex
 end
 
--- CreatureEvent revscriptsys
 do
 	local function CreatureEventNewIndex(self, key, value)
 		if key == "onLogin" then
@@ -155,7 +149,6 @@ do
 	rawgetmetatable("CreatureEvent").__newindex = CreatureEventNewIndex
 end
 
--- MoveEvent revscriptsys
 do
 	local function MoveEventNewIndex(self, key, value)
 		if key == "onEquip" then
@@ -188,7 +181,6 @@ do
 	rawgetmetatable("MoveEvent").__newindex = MoveEventNewIndex
 end
 
--- GlobalEvent revscriptsys
 do
 	local function GlobalEventNewIndex(self, key, value)
 		if key == "onThink" then
@@ -219,7 +211,6 @@ do
 	rawgetmetatable("GlobalEvent").__newindex = GlobalEventNewIndex
 end
 
--- Weapons revscriptsys
 do
 	local function WeaponNewIndex(self, key, value)
 		if key == "onUseWeapon" then
@@ -231,7 +222,6 @@ do
 	rawgetmetatable("Weapon").__newindex = WeaponNewIndex
 end
 
--- Spells revscriptsys
 do
 	local function SpellNewIndex(self, key, value)
 		if key == "onCastSpell" then
@@ -243,7 +233,6 @@ do
 	rawgetmetatable("Spell").__newindex = SpellNewIndex
 end
 
--- Monsters revscriptsys
 do
 	local function MonsterTypeNewIndex(self, key, value)
 		if key == "onThink" then
@@ -272,7 +261,6 @@ do
 	rawgetmetatable("MonsterType").__newindex = MonsterTypeNewIndex
 end
 
--- Npcs revscriptsys
 do
 	local function NpcTypeNewIndex(self, key, value)
 		if key == "onThink" then
