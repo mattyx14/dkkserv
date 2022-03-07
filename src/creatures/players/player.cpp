@@ -2516,14 +2516,6 @@ void Player::death(Creature* lastHitCreature)
 			magLevelPercent = 0;
 		}
 
-		//Level loss
-		uint64_t expLoss = static_cast<uint64_t>(experience * deathLossPercent);
-		g_events->eventPlayerOnLoseExperience(this, expLoss);
-
-		sendTextMessage(MESSAGE_EVENT_ADVANCE, "You are dead.");
-		std::ostringstream lostExp;
-		lostExp << "You lost " << expLoss << " experience.";
-
 		//Skill loss
 		for (uint8_t i = SKILL_FIRST; i <= SKILL_LAST; ++i) { //for each skill
 			uint64_t sumSkillTries = 0;
@@ -2552,7 +2544,9 @@ void Player::death(Creature* lastHitCreature)
 			skills[i].percent = Player::getPercentLevel(skills[i].tries, vocation->getReqSkillTries(i, skills[i].level));
 		}
 
-		sendTextMessage(MESSAGE_EVENT_ADVANCE, lostExp.str());
+		//Level loss
+		uint64_t expLoss = static_cast<uint64_t>(experience * deathLossPercent);
+		g_events->eventPlayerOnLoseExperience(this, expLoss);
 
 		if (expLoss != 0) {
 			uint32_t oldLevel = level;
