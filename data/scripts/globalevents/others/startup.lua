@@ -116,26 +116,31 @@ function serverstartup.onStartup()
 	end
 
 	do -- Event Schedule rates
-		local lootRate = Game.getEventSLoot()
+		local lootRate = EventsScheduler.getEventSSkill()
 		if lootRate ~= 100 then
 			SCHEDULE_LOOT_RATE = lootRate
 		end
 	
-		local expRate = Game.getEventSExp()
+		local expRate = EventsScheduler.getEventSExp()
 		if expRate ~= 100 then
 			SCHEDULE_EXP_RATE = expRate
 		end
 	
-		local skillRate = Game.getEventSSkill()
+		local skillRate = EventsScheduler.getEventSSkill()
 		if skillRate ~= 100 then
 			SCHEDULE_SKILL_RATE = skillRate
+		end
+
+		local spawnRate = EventsScheduler.getSpawnMonsterSchedule()
+		if spawnRate ~= 100 then
+			SCHEDULE_SPAWN_RATE = spawnRate
 		end
 	end
 
 	-- Client XP Display Mode
 	-- 0 = ignore exp rate /stage
 	-- 1 = include exp rate / stage
-	Game.setStorageValue(GlobalStorage.XpDisplayMode, 0)
+	Game.setStorageValue(GlobalStorage.XpDisplayMode, 1)
 
 	-- Hireling System
 	HirelingsInit()
