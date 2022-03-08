@@ -5588,7 +5588,12 @@
 		<monster name="Minotaur Cult Zealot" x="3" y="-1" z="8" spawntime="60" />
 		<monster name="Minotaur Cult Zealot" x="-3" y="3" z="8" spawntime="60" />
 	</monster>
-	<monster centerx="1066" centery="196" centerz="8" radius="5" />
+	<monster centerx="1066" centery="196" centerz="8" radius="5">
+		<monster name="Minotaur Cult Follower" x="-1" y="-2" z="8" spawntime="60" />
+		<monster name="Minotaur Cult Prophet" x="0" y="0" z="8" spawntime="60" />
+		<monster name="Minotaur Cult Follower" x="3" y="2" z="8" spawntime="60" />
+		<monster name="Minotaur Cult Follower" x="-3" y="4" z="8" spawntime="60" />
+	</monster>
 	<monster centerx="1207" centery="197" centerz="8" radius="1">
 		<monster name="Enlightened Of The Cult" x="0" y="0" z="8" spawntime="60" />
 	</monster>
@@ -6164,6 +6169,9 @@
 		<monster name="Valkyrie" x="1" y="-1" z="8" spawntime="60" />
 		<monster name="Amazon" x="-3" y="0" z="8" spawntime="60" />
 	</monster>
+	<monster centerx="840" centery="967" centerz="8" radius="1">
+		<monster name="Rat" x="0" y="0" z="8" spawntime="60" />
+	</monster>
 	<monster centerx="865" centery="967" centerz="8" radius="5">
 		<monster name="Fire Elemental" x="-1" y="-4" z="8" spawntime="60" />
 		<monster name="Demon Skeleton" x="0" y="2" z="8" spawntime="60" />
@@ -6269,6 +6277,9 @@
 	</monster>
 	<monster centerx="924" centery="979" centerz="8" radius="1">
 		<monster name="Skeleton" x="0" y="0" z="8" spawntime="60" />
+	</monster>
+	<monster centerx="839" centery="980" centerz="8" radius="1">
+		<monster name="Rat" x="0" y="0" z="8" spawntime="60" />
 	</monster>
 	<monster centerx="896" centery="980" centerz="8" radius="5">
 		<monster name="Fire Elemental" x="1" y="-4" z="8" spawntime="60" />

@@ -162,17 +162,19 @@ function Player:onLook(thing, position, distance)
 
 			local itemType = thing:getType()
 
-			local transformEquipId = itemType:getTransformEquipId()
-			local transformDeEquipId = itemType:getTransformDeEquipId()
-			if transformEquipId ~= 0 then
-				description = string.format("%s\nTransforms to: %d (onEquip)", description, transformEquipId)
-			elseif transformDeEquipId ~= 0 then
-				description = string.format("%s\nTransforms to: %d (onDeEquip)", description, transformDeEquipId)
-			end
+			if itemType then
+				local transformEquipId = itemType:getTransformEquipId()
+				local transformDeEquipId = itemType:getTransformDeEquipId()
+				if transformEquipId ~= 0 then
+					description = string.format("%s\nTransforms to: %d (onEquip)", description, transformEquipId)
+				elseif transformDeEquipId ~= 0 then
+					description = string.format("%s\nTransforms to: %d (onDeEquip)", 	description, transformDeEquipId)
+				end
 
-			local decayId = itemType:getDecayId()
-			if decayId ~= -1 then
-				description = string.format("%s\nDecays to: %d", description, decayId)
+				local decayId = itemType:getDecayId()
+				if decayId ~= -1 then
+					description = string.format("%s\nDecays to: %d", description, decayId)
+				end
 			end
 
 			local clientId = itemType:getId()
@@ -188,9 +190,10 @@ function Player:onLook(thing, position, distance)
 			description = string.format(str, description, thing:getHealth(), thing:getMaxHealth()) .. "."
 		end
 
+		local position = thing:getPosition()
 		description = string.format(
-		"%s\nPosition: %d, %d, %d",
-		description, position.x, position.y, position.z
+			"%s\nPosition: %d, %d, %d",
+			description, position.x, position.y, position.z
 		)
 
 		if thing:isCreature() then
@@ -221,9 +224,8 @@ function Player:onLookInBattleList(creature, distance)
 
 		local position = creature:getPosition()
 		description = string.format(
-		"%s\nPosition: %d, %d, %d",
-		description, position.x, position.y, position.z
-
+			"%s\nPosition: %d, %d, %d",
+			description, position.x, position.y, position.z
 		)
 
 		if creature:isPlayer() then
@@ -393,7 +395,7 @@ function Player:onMoveItem(item, count, fromPosition, toPosition, fromCylinder, 
 
 		if moveItem then
 			local parent = item:getParent()
-			if parent:getSize() == parent:getCapacity() then
+			if parent:isContainer() and parent:getSize() == parent:getCapacity() then
 				self:sendTextMessage(MESSAGE_FAILURE, Game.getReturnMessage(RETURNVALUE_CONTAINERNOTENOUGHROOM))
 				return false
 			else
@@ -461,7 +463,7 @@ function Player:onMoveCreature(creature, fromPosition, toPosition)
 	local player = creature:getPlayer()
 	if player and onExerciseTraining[player:getId()] and self:getGroup():hasFlag(PlayerFlag_CanPushAllCreatures) == false then
 		self:sendCancelMessage(RETURNVALUE_NOTPOSSIBLE)
-	return false
+		return false
 	end
 	return true
 end
@@ -571,12 +573,20 @@ soulCondition:setTicks(4 * 60 * 1000)
 soulCondition:setParameter(CONDITION_PARAM_SOULGAIN, 1)
 
 local function useStamina(player)
+	if not player then
+		return false
+	end
+
 	local staminaMinutes = player:getStamina()
 	if staminaMinutes == 0 then
 		return
 	end
 
 	local playerId = player:getId()
+	if not playerId then
+		return false
+	end
+
 	local currentTime = os.time()
 	local timePassed = currentTime - nextUseStaminaTime[playerId]
 	if timePassed <= 0 then
@@ -597,13 +607,21 @@ local function useStamina(player)
 	player:setStamina(staminaMinutes)
 end
 
-local function useStaminaXp(player)
+local function useStaminaXpBoost(player)
+	if not player then
+		return false
+	end
+
 	local staminaMinutes = player:getExpBoostStamina() / 60
 	if staminaMinutes == 0 then
 		return
 	end
 
 	local playerId = player:getId()
+	if not playerId then
+		return false
+	end
+
 	local currentTime = os.time()
 	local timePassed = currentTime - nextUseXpStamina[playerId]
 	if timePassed <= 0 then
@@ -624,8 +642,8 @@ local function useStaminaXp(player)
 	player:setExpBoostStamina(staminaMinutes * 60)
 end
 
-function Player:onGainExperience(source, exp, rawExp)
-	if not source or source:isPlayer() then
+function Player:onGainExperience(target, exp, rawExp)
+	if not target or target:isPlayer() then
 		return exp
 	end
 
@@ -642,7 +660,7 @@ function Player:onGainExperience(source, exp, rawExp)
 	-- Prey Bonus
 	local preyBonus = 0
 	for slot = CONST_PREY_SLOT_FIRST, CONST_PREY_SLOT_THIRD do
-		if (self:getPreyCurrentMonster(slot) == source:getName()
+		if (self:getPreyCurrentMonster(slot) == target:getName()
 		and self:getPreyBonusType(slot) == CONST_BONUS_XP_BONUS) then
 			preyBonus = self:getPreyBonusValue(slot)
 		end
@@ -652,7 +670,7 @@ function Player:onGainExperience(source, exp, rawExp)
 	end
 
 	-- Store Bonus
-	useStaminaXp(self) -- Use store boost stamina
+	useStaminaXpBoost(self) -- Use store boost stamina
 
 	local Boost = self:getExpBoostStamina()
 	local stillHasBoost = Boost > 0
@@ -665,23 +683,24 @@ function Player:onGainExperience(source, exp, rawExp)
 	if configManager.getBoolean(configKeys.STAMINA_SYSTEM) then
 		useStamina(self)
 		local staminaMinutes = self:getStamina()
-		if staminaMinutes > 2340 and self:isPremium() then
-			staminaBoost = 1.5
-		elseif staminaMinutes <= 840 then
-			staminaBoost = 0.5 --TODO destroy loot of people with 840- stamina
-		end
+			if staminaMinutes > 2340 and self:isPremium() then
+				staminaBoost = 1.5
+			elseif staminaMinutes <= 840 then
+				staminaBoost = 0.5 --TODO destroy loot of people with 840- stamina
+			end
 		self:setStaminaXpBoost(staminaBoost * 100)
 	end
 
 	-- Boosted creature
-	if source:getName():lower() == (Game.getBoostedCreature()):lower() then
+	if target:getName():lower() == (Game.getBoostedCreature()):lower() then
 		exp = exp * 2
 	end
 
 	-- Event scheduler
 	if SCHEDULE_EXP_RATE ~= 100 then
-		self:setStaminaXpBoost(staminaBoost * 100)
+		expStage = math.max(0, (expStage * SCHEDULE_EXP_RATE)/100)
 	end
+
 	return (exp / 100 * ((expStage * 100 + storeXpBoostAmount + preyBonus) * staminaBoost))
 end
 

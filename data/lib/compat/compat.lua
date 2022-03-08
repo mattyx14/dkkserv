@@ -731,6 +731,14 @@ function getTilePzInfo(position)
 	return t:hasFlag(TILESTATE_PROTECTIONZONE)
 end
 
+function getTileNoPzZoneInfo(position)
+	local t = Tile(position)
+	if t == nil then
+		return false
+	end
+	return t:hasFlag(TILESTATE_NOPVPZONE)
+end
+
 function getTileInfo(position)
 	local t = Tile(position)
 	if t == nil then
