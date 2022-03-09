@@ -6217,6 +6217,9 @@
 		<monster name="Fire Devil" x="4" y="4" z="8" spawntime="60" />
 		<monster name="Fire Elemental" x="0" y="6" z="8" spawntime="60" />
 	</monster>
+	<monster centerx="832" centery="970" centerz="8" radius="1">
+		<monster name="Rat" x="0" y="0" z="8" spawntime="60" />
+	</monster>
 	<monster centerx="882" centery="970" centerz="8" radius="1">
 		<monster name="Slime" x="0" y="0" z="8" spawntime="60" />
 	</monster>
@@ -6346,6 +6349,9 @@
 	</monster>
 	<monster centerx="714" centery="988" centerz="8" radius="1">
 		<monster name="Crypt Shambler" x="0" y="0" z="8" spawntime="60" />
+	</monster>
+	<monster centerx="834" centery="988" centerz="8" radius="1">
+		<monster name="Rat" x="0" y="0" z="8" spawntime="60" />
 	</monster>
 	<monster centerx="897" centery="988" centerz="8" radius="3">
 		<monster name="Bonelord" x="-2" y="-1" z="8" spawntime="60" />

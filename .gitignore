@@ -402,3 +402,4 @@ data/world/otservbr-house.xml
 data/world/otservbr-spawn.xml
 data/world/darkkonia-spawn.xml
 data/world/darkkonia-house.xml
+data/monster/empty.lua
