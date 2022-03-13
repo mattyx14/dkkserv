@@ -67,6 +67,15 @@ QuestDoorAction = {
 		itemId = false,
 		itemPos = {
 			Position(1130, 224, 7),
+			Position(893, 937, 6),
+		}
+	},
+	[DarkKonia.FirstSacrifice.firstTip] = { -- First Sacrifice
+		itemId = false,
+		itemPos = {
+			Position(804, 916, 9),
+			Position(1153, 323, 6),
+			Position(1174, 202, 7),
 		}
 	},
 }

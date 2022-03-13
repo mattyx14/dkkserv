@@ -44,7 +44,7 @@ KeyDoorAction = {
 	[DarkKonia.Quest.Key.ID2090] = { -- Pirate Bars Key Boss
 		itemId = false,
 		itemPos = {
-			Position(910, 891, 5),
+			Position(1150, 83, 11),
 		}
 	},
 	[DarkKonia.Quest.goldenKeyFynn] = { -- Golden Key of Fynn
