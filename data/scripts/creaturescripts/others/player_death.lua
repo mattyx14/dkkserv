@@ -3,9 +3,11 @@ local deathListEnabled = true
 local playerDeath = CreatureEvent("PlayerDeath")
 function playerDeath.onDeath(player, corpse, killer, mostDamageKiller, unjustified, mostDamageUnjustified)
 	local playerId = player:getId()
-	if nextUseStaminaTime[playerId] ~= nil then
+	if nextUseStaminaTime[playerId] then
 		nextUseStaminaTime[playerId] = nil
 	end
+
+	nextUseStaminaTime[playerId] = 1
 
 	player:sendTextMessage(MESSAGE_BEYOND_LAST, 'You are dead.')
 
