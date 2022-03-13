@@ -20,8 +20,9 @@ if not Quests then
 					storageId = DarkKonia.ForgottenKnowledge.LadyTenebrisKilled,
 					missionId = 10361,
 					startValue = 0,
-					endValue = 1522018605,
+					endValue = 1,
 					states = {
+						[0] = "You need defeated the rogue Lady Tenebris.",
 						[1] = "You defeated the rogue Lady Tenebris."
 					}
 				},
@@ -30,9 +31,151 @@ if not Quests then
 					storageId = DarkKonia.MisidiaQuest.JaulKilled,
 					missionId = 10362,
 					startValue = 0,
-					endValue = 1522018605,
+					endValue = 1,
 					states = {
+						[0] = "You need defeated the terrifying Jaul.",
 						[1] = "You defeated the terrifying Jaul."
+					}
+				},
+			}
+		},
+		[2] = {
+			name = "Pirate treasure hunt",
+			startStorageId = DarkKonia.Quest.Javierkeys,
+			startStorageValue = 1,
+			missions = {
+				[1] = {
+					name = "Javier's lost key",
+					storageId = DarkKonia.Quest.Key.ID2088,
+					missionId = 10363,
+					startValue = 0,
+					endValue = 1,
+					states = {
+						[0] = "Find Javier's lost key.",
+						[1] = "You have found Javier key."
+					}
+				},
+				[2] = {
+					name = "The hidden key of the pirate ghost",
+					storageId = DarkKonia.Quest.Key.ID2089,
+					missionId = 10364,
+					startValue = 0,
+					endValue = 1,
+					states = {
+						[0] = "The key is lost in the pirate fortress of Fynn Castle.",
+						[1] = "You have found the key of the pirate ghost."
+					}
+				},
+				[3] = {
+					name = "The prisoner's key",
+					storageId = DarkKonia.Quest.Key.ID2090,
+					missionId = 10365,
+					startValue = 0,
+					endValue = 1,
+					states = {
+						[0] = "It will be required to access the island of the treasure.",
+						[1] = "You have found the prisoner's key."
+					}
+				},
+				[4] = {
+					name = "Terror of the seas",
+					storageId = DarkKonia.OutfitQuest.KrakenKilled,
+					missionId = 10366,
+					startValue = 0,
+					endValue = 1,
+					states = {
+						[0] = "You need defeated the terror of the seas The Kraken.",
+						[1] = "You defeated the terror of the seas The Kraken."
+					}
+				},
+			}
+		},
+		[3] = {
+			name = "First mission from Fynn Castle",
+			startStorageId = DarkKonia.FirstQuest.Fynn,
+			startStorageValue = 1,
+			missions = {
+				[1] = {
+					name = "The mysterious key of Misidia Settlemente",
+					storageId = DarkKonia.FirstQuest.Fynn,
+					missionId = 10367,
+					startValue = 0,
+					endValue = 1,
+					description = "You have found a mysterious treasure. Must find the treasure of the castle."
+				},
+				[2] = {
+					name = "The treasure of the castle",
+					storageId = DarkKonia.FirstQuest.rewardFynn,
+					missionId = 10368,
+					startValue = 0,
+					endValue = 1,
+					states = {
+						[1] = "With the key #30221 you will have access through the ship to travel to Misidia Settlement."
+					}
+				},
+			}
+		},
+		[4] = {
+			name = "First mission from Misidia Settlement",
+			startStorageId = DarkKonia.FirstQuest.Misidia,
+			startStorageValue = 1,
+			missions = {
+				[1] = {
+					name = "The mysterious key of Fynn Castle",
+					storageId = DarkKonia.FirstQuest.Misidia,
+					missionId = 10369,
+					startValue = 0,
+					endValue = 1,
+					description = "You have found a mysterious treasure. Must find the treasure of the tower."
+				},
+				[2] = {
+					name = "The treasure of the tower",
+					storageId = DarkKonia.FirstQuest.rewardMisidia,
+					missionId = 10370,
+					startValue = 0,
+					endValue = 1,
+					states = {
+						[1] = "With the key #30222 you will have access through the ship to travel to Fynn Castle."
+					}
+				},
+			}
+		},
+		[5] = {
+			name = "First Sacrifice Quest",
+			startStorageId = DarkKonia.FirstSacrifice.firstTip,
+			startStorageValue = 1,
+			missions = {
+				[1] = {
+					name = "First Sacrifice the Wyvern Fang",
+					storageId = DarkKonia.FirstSacrifice.wyvernFang,
+					missionId = 10371,
+					startValue = 0,
+					endValue = 1,
+					states = {
+						[0] = "You must sacrifice priceless wyvern fang. At one of the sacred altars.",
+						[1] = "With your sacrifice you have obtained an invaluable amber staff that will be required in another mission."
+					}
+				},
+				[2] = {
+					name = "First Sacrifice the Knight Axe",
+					storageId = DarkKonia.FirstSacrifice.knightAxe,
+					missionId = 10372,
+					startValue = 0,
+					endValue = 1,
+					states = {
+						[0] = "You must sacrifice priceless knight axe. At one of the sacred altars.",
+						[1] = "With your sacrifice you have obtained an invaluable mystic blade that will be required in another mission."
+					}
+				},
+				[3] = {
+					name = "First Sacrifice the Dragon Hammer",
+					storageId = DarkKonia.FirstSacrifice.dragonHammer,
+					missionId = 10373,
+					startValue = 0,
+					endValue = 1,
+					states = {
+						[0] = "You must sacrifice priceless dragon hammer. At one of the sacred altars.",
+						[1] = "With your sacrifice you have obtained an invaluable heroic axe that will be required in another mission."
 					}
 				},
 			}

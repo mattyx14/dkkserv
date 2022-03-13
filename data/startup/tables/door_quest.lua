@@ -63,6 +63,12 @@ QuestDoorAction = {
 			Position(594, 461, 5),
 		}
 	},
+	[DarkKonia.Quest.Javierkeys] = { -- Pirate Fortress
+		itemId = false,
+		itemPos = {
+			Position(1130, 224, 7),
+		}
+	},
 }
 
 QuestDoorUnique = {

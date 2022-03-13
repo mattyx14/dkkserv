@@ -56,6 +56,8 @@ npcType.onCloseChannel = function(npc, creature)
 	npcHandler:onCloseChannel(npc, creature)
 end
 
+keywordHandler:addKeyword({'mission'}, StdModule.say, {npcHandler = npcHandler, text = "There is a complicated mission regarding the {first sacrifice} of weapons."})
+
 local RodWand = {
 	[VOCATION.BASE_ID.SORCERER] = 3074, 
 	[VOCATION.BASE_ID.DRUID] = 3066
@@ -72,25 +74,52 @@ local function creatureSayCallback(npc, creature, type, message)
 	local itemIdRodWand = RodWand[player:getVocation():getBaseId()]
 	if MsgContains(message, 'first rod') or MsgContains(message, 'first wand') then
 		if player:isMage() then
-			if player:getStorageValue(DarkKonia.FirstQuest.FirstWeapon) == -1 then
-				npcHandler:say('You ask me you begin your adventure with the {' .. ItemType(itemIdRodWand):getName() .. '}, ok?', npc, creature)
-				npcHandler:setTopic(playerId, 1)
-			else
-				npcHandler:say('What? I have already gave you one {' .. ItemType(itemIdRodWand):getName() .. '}!', npc, creature)
-			end
+			npcHandler:say('You ask me you begin your adventure with the {'.. ItemType(itemIdRodWand):getName() ..'}?', npc, creature)
+			npcHandler:setTopic(playerId, 1)
 		else
-			npcHandler:say('Sorry, you aren\'t a druid either a sorcerer.', npc, creature)
+			npcHandler:say("This service is only for mage's", npc, creature)
 		end
-	elseif MsgContains(message, 'yes') then
-		if npcHandler:getTopic(playerId) == 1 then
-			player:addItem(itemIdRodWand, 1)
-			npcHandler:say('Here you are young adept, take care yourself.', npc, creature)
-			player:setStorageValue(DarkKonia.FirstQuest.FirstWeapon, 1)
+	end
+	if MsgContains(message, "yes") and npcHandler:getTopic(playerId) == 1 then
+		if (player:getStorageValue(DarkKonia.FirstQuest.FirstWeapon) == 1) then
+			npcHandler:say('What? I have already gave you one {' .. ItemType(itemIdRodWand):getName() .. '}!', npc, creature)
+			npcHandler:removeInteraction(npc, creature)
+		else
+			if player:isMage() then
+				npcHandler:say('Here you are young adept, take care yourself.', npc, creature)
+				player:setStorageValue(DarkKonia.FirstQuest.FirstWeapon, 1)
+				player:addItem(itemIdRodWand, 1)
+			else
+				npcHandler:say('Sorry, you aren\'t a mage.', npc, creature)
+			end
 		end
-		npcHandler:setTopic(playerId, 0)
-	elseif MsgContains(message, 'no') and npcHandler:getTopic(playerId) == 1 then
-		npcHandler:say('Ok then.', npc, creature)
-		npcHandler:setTopic(playerId, 0)
+	elseif  MsgContains(message, "no") and npcHandler:getTopic(playerId) == 1 then
+		npcHandler:say("Ok then.", npc, creature)
+		npcHandler:removeInteraction(npc, creature)
+	end
+
+	if MsgContains(message, 'first sacrifice') then
+		npcHandler:say({
+			"The first sacrifice tries to find 3 weapons which are not obtainable through loot only for missions or unique quests and it \z
+			is very difficult to find them and it is also very easy to fail the mission since if that happens the weapon will not be able to \z
+			get it again. Do you want to participate in it?"
+		}, npc, creature)
+		npcHandler:setTopic(playerId, 2)
+	end
+	if MsgContains(message, "yes") and npcHandler:getTopic(playerId) == 2 then
+		if (player:getStorageValue(DarkKonia.FirstSacrifice.firstTip) == 1) then
+			npcHandler:say('You already know about this consult your Quest Log.', npc, creature)
+			npcHandler:setTopic(playerId, 0)
+		else
+			npcHandler:say('I will also give you information about your first sacrifice you can check it in your Quest Log.', npc, creature)
+			player:setStorageValue(DarkKonia.FirstSacrifice.firstTip, 1)
+			player:setStorageValue(DarkKonia.FirstSacrifice.wyvernFang, 0)
+			player:setStorageValue(DarkKonia.FirstSacrifice.knightAxe, 0)
+			player:setStorageValue(DarkKonia.FirstSacrifice.dragonHammer, 0)
+		end
+	elseif  MsgContains(message, "no") and npcHandler:getTopic(playerId) == 2 then
+		npcHandler:say('I understand. Return to me if you change your mind, my child.', npc, creature)
+		npcHandler:removeInteraction(npc, creature)
 	end
 	return true
 end
@@ -103,7 +132,7 @@ keywordHandler:addKeyword({'spellbooks'}, StdModule.say, {npcHandler = npcHandle
 keywordHandler:addKeyword({'free rod and wand'}, StdModule.say, {npcHandler = npcHandler, text = "If need {first rod} or {first wand} only ask me."})
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
-npcHandler:setMessage(MESSAGE_GREET, "Hi there |PLAYERNAME|, and welcome to the {mystical} store. Or need your {free rod and wand}.")
+npcHandler:setMessage(MESSAGE_GREET, "Hi there |PLAYERNAME|, and welcome to the {mystical} store. Or need your {free rod and wand}. Or you can also participate in a great {mission}.")
 npcHandler:setMessage(MESSAGE_FAREWELL, "See you, |PLAYERNAME|.")
 npcHandler:setMessage(MESSAGE_WALKAWAY, "See you, |PLAYERNAME|.")
 npcHandler:setMessage(MESSAGE_SENDTRADE, "Of course, just browse through my wares.")

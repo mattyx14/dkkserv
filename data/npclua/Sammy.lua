@@ -1,4 +1,4 @@
-local internalNpcName = "Javier"
+local internalNpcName = "Sammy"
 local npcType = Game.createNpcType(internalNpcName)
 local npcConfig = {}
 
@@ -12,10 +12,10 @@ npcConfig.walkRadius = 2
 
 npcConfig.outfit = {
 	lookType = 151,
-	lookHead = 114,
-	lookBody = 159,
-	lookLegs = 144,
-	lookFeet = 124,
+	lookHead = 130,
+	lookBody = 15,
+	lookLegs = 14,
+	lookFeet = 75,
 	lookAddons = 2
 }
 
@@ -26,7 +26,7 @@ npcConfig.flags = {
 npcConfig.voices = {
 	interval = 15000,
 	chance = 50,
-	{text = 'Passages to Anshara Desert, Sohan Town, Misidia Settlement and to Elfic Ville.'}
+	{text = 'Passages to Anshara Desert, Sohan Town, Fynn Castle and to Elfic Ville.'}
 }
 
 local keywordHandler = KeywordHandler:new()
@@ -56,44 +56,6 @@ npcType.onCloseChannel = function(npc, creature)
 	npcHandler:onCloseChannel(npc, creature)
 end
 
-keywordHandler:addKeyword({'keys'}, StdModule.say, {npcHandler = npcHandler, text = "Some evil pirates stole my keys and I need to know if you can support me in this {mission} to find them."})
-
-local function creatureSayCallback(npc, creature, type, message)
-	local player = Player(creature)
-	local playerId = player:getId()
-
-	if not npcHandler:checkInteraction(npc, creature) then
-		return false
-	end
-
-	if MsgContains(message, 'mission') then
-		npcHandler:say({"Thank you very much... You can help me?"}, npc, creature)
-		npcHandler:setTopic(playerId, 1)
-	end
-	if MsgContains(message, "yes") and npcHandler:getTopic(playerId) == 1 then
-		if (player:getStorageValue(DarkKonia.Quest.Javierkeys) == 1) then
-			npcHandler:say("Don't ask about silly missions.", npc, creature)
-			npcHandler:removeInteraction(npc, creature)
-		else
-			player:setStorageValue(DarkKonia.Quest.Javierkeys, 1)
-			player:setStorageValue(DarkKonia.Quest.Key.ID2088, 0)
-			player:setStorageValue(DarkKonia.Quest.Key.ID2089, 0)
-			player:setStorageValue(DarkKonia.Quest.Key.ID2090, 0)
-			player:setStorageValue(DarkKonia.OutfitQuest.KrakenKilled, 0)
-			npcHandler:say({
-				'Indeed, I could use some help. The evil pirates of Misidia have convinced an alchemist from Elfic Ville to supply them with a substance called Fafnar\'s Fire ...',
-				'It can burn even on water and is a threat to us all. I need you to travel to Elfic Ville and pretend to the alchemist and you are the one whom the other pirates sent to get the fire ...',
-				'When she asks for a payment, tell her \'Your continued existence is payment enough\'. That should enrage any member of the Elfic Ville academy enough to refuse any further deals with the pirates.',
-			}, npc, creature)
-		end
-	elseif  MsgContains(message, "no") and npcHandler:getTopic(playerId) == 1 then
-		npcHandler:say("Ok then.", npc, creature)
-		npcHandler:removeInteraction(npc, creature)
-	end
-
-	return true
-end
-
 -- Travel
 local function addTravelKeyword(keyword, cost, destination, action, condition)
 	if condition then
@@ -112,9 +74,9 @@ addTravelKeyword('sohan', 5000, Position(336, 1128, 6))
 ]]
 
 addTravelKeyword('elfic', 1000, Position(657, 1216, 6))
-addTravelKeyword('misidia', 10000, Position(1059, 313, 6), nil,
+addTravelKeyword('fynn', 10000, Position(958, 1025, 6), nil,
 function(player)
-	return player:getStorageValue(DarkKonia.FirstQuest.rewardFynn) ~= 1
+	return player:getStorageValue(DarkKonia.FirstQuest.rewardMisidia) ~= 1
 end)
 
 -- Kick
@@ -130,12 +92,12 @@ keywordHandler:addKeyword({'company'}, StdModule.say, {npcHandler = npcHandler, 
 keywordHandler:addKeyword({'world'}, StdModule.say, {npcHandler = npcHandler, text = 'The DarkKonia Line connects all seaside towns of world.'})
 keywordHandler:addKeyword({'good'}, StdModule.say, {npcHandler = npcHandler, text = 'We can transport everything you want.'})
 keywordHandler:addKeyword({'passenger'}, StdModule.say, {npcHandler = npcHandler, text = 'We would like to welcome you on board.'})
-keywordHandler:addKeyword({'trip'}, StdModule.say, {npcHandler = npcHandler, text = 'Where do you want to go? To {Anshara Desert}, {Sohan Town}, {Misidia Settlement} and to {Elfic Ville}?'})
-keywordHandler:addKeyword({'route'}, StdModule.say, {npcHandler = npcHandler, text = 'Where do you want to go? To {Anshara Desert}, {Sohan Town}, {Misidia Settlement} and to {Elfic Ville}?'})
-keywordHandler:addKeyword({'passage'}, StdModule.say, {npcHandler = npcHandler, text = 'Where do you want to go? To {Anshara Desert}, {Sohan Town}, {Misidia Settlement} and to {Elfic Ville}?'})
-keywordHandler:addKeyword({'destination'}, StdModule.say, {npcHandler = npcHandler, text = 'Where do you want to go? To {Anshara Desert}, {Sohan Town}, {Misidia Settlement} and to {Elfic Ville}?'})
-keywordHandler:addKeyword({'sail'}, StdModule.say, {npcHandler = npcHandler, text = 'Where do you want to go? To {Anshara Desert}, {Sohan Town}, {Misidia Settlement} and to {Elfic Ville}?'})
-keywordHandler:addKeyword({'go'}, StdModule.say, {npcHandler = npcHandler, text = 'Where do you want to go? To {Anshara Desert}, {Sohan Town}, {Misidia Settlement} and to {Elfic Ville}?'})
+keywordHandler:addKeyword({'trip'}, StdModule.say, {npcHandler = npcHandler, text = 'Where do you want to go? To {Anshara Desert}, {Sohan Town}, {Fynn Castle} and to {Elfic Ville}?'})
+keywordHandler:addKeyword({'route'}, StdModule.say, {npcHandler = npcHandler, text = 'Where do you want to go? To {Anshara Desert}, {Sohan Town}, {Fynn Castle} and to {Elfic Ville}?'})
+keywordHandler:addKeyword({'passage'}, StdModule.say, {npcHandler = npcHandler, text = 'Where do you want to go? To {Anshara Desert}, {Sohan Town}, {Fynn Castle} and to {Elfic Ville}?'})
+keywordHandler:addKeyword({'destination'}, StdModule.say, {npcHandler = npcHandler, text = 'Where do you want to go? To {Anshara Desert}, {Sohan Town}, {Fynn Castle} and to {Elfic Ville}?'})
+keywordHandler:addKeyword({'sail'}, StdModule.say, {npcHandler = npcHandler, text = 'Where do you want to go? To {Anshara Desert}, {Sohan Town}, {Fynn Castle} and to {Elfic Ville}?'})
+keywordHandler:addKeyword({'go'}, StdModule.say, {npcHandler = npcHandler, text = 'Where do you want to go? To {Anshara Desert}, {Sohan Town}, {Fynn Castle} and to {Elfic Ville}?'})
 
 -- Block route
 keywordHandler:addKeyword({'anshara'}, StdModule.say, {npcHandler = npcHandler, text = 'This area {Anshara Desert} is not completed not have access ...'})

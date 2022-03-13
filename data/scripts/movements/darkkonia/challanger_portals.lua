@@ -29,6 +29,11 @@ local destination = {
 		backPos = Position(876, 1168, 10),
 		timer = DarkKonia.ElficVille.BlackMagicianTimer,
 	},
+	[24926] = { -- Kraken Portal
+		newPos = Position(1131, 81, 12),
+		backPos = Position(1155, 90, 12),
+		timer = DarkKonia.OutfitQuest.KrakenTimer,
+	},
 }
 
 local challangerPortals = MoveEvent()

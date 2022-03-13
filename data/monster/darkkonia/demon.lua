@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Demon")
 local monster = {}
 
 monster.description = "a demon"
-monster.experience = 6000
+monster.experience = 406000
 monster.outfit = {
 	lookType = 35,
 	lookHead = 0,
@@ -29,11 +29,11 @@ monster.Bestiary = {
 		Alchemist Quarter, Magician Quarter, Chyllfroest, Oramond Dungeon, Abandoned Sewers."
 	}
 
-monster.health = 8200
-monster.maxHealth = 8200
+monster.health = 350000
+monster.maxHealth = 350000
 monster.race = "fire"
 monster.corpse = 5995
-monster.speed = 256
+monster.speed = 0
 monster.manaCost = 0
 
 monster.changeTarget = {
@@ -84,9 +84,7 @@ monster.voices = {
 	interval = 5000,
 	chance = 10,
 	{text = "Your soul will be mine!", yell = false},
-	{text = "MUHAHAHAHA!", yell = false},
 	{text = "CHAMEK ATH UTHUL ARAK!", yell = false},
-	{text = "I SMELL FEEEEAAAAAR!", yell = false},
 	{text = "Your resistance is futile!", yell = false}
 }
 
@@ -127,13 +125,17 @@ monster.loot = {
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -520},
+	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -6000},
 	{name ="combat", interval = 2000, chance = 10, type = COMBAT_MANADRAIN, minDamage = 0, maxDamage = -120, range = 7, target = false},
-	{name ="combat", interval = 2000, chance = 20, type = COMBAT_FIREDAMAGE, minDamage = -150, maxDamage = -250, range = 7, radius = 7, shootEffect = CONST_ANI_FIRE, effect = CONST_ME_FIREAREA, target = true},
+	{name ="combat", interval = 2000, chance = 20, type = COMBAT_FIREDAMAGE, minDamage = -100, maxDamage = -1000, range = 7, radius = 7, shootEffect = CONST_ANI_FIRE, effect = CONST_ME_FIREAREA, target = true},
 	{name ="firefield", interval = 2000, chance = 10, range = 7, radius = 1, shootEffect = CONST_ANI_FIRE, target = true},
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_LIFEDRAIN, minDamage = -300, maxDamage = -490, length = 8, spread = 0, effect = CONST_ME_PURPLEENERGY, target = false},
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_ENERGYDAMAGE, minDamage = -210, maxDamage = -300, range = 1, shootEffect = CONST_ANI_ENERGY, target = false},
-	{name ="speed", interval = 2000, chance = 15, speedChange = -700, radius = 1, effect = CONST_ME_MAGIC_RED, target = true, duration = 30000}
+	{name ="combat", interval = 2000, chance = 10, type = COMBAT_LIFEDRAIN, minDamage = -700, maxDamage = -1200, length = 8, spread = 0, effect = CONST_ME_PURPLEENERGY, target = false},
+	{name ="combat", interval = 2000, chance = 10, type = COMBAT_ENERGYDAMAGE, minDamage = -2000, maxDamage = -6000, range = 1, shootEffect = CONST_ANI_ENERGY, target = false},
+	{name ="combat", interval = 2000, chance = 14, type = COMBAT_FIREDAMAGE, minDamage = -1600, maxDamage = -3400, length = 8, spread = 3, effect = CONST_ME_FIREAREA, target = false},
+	{name ="speed", interval = 2000, chance = 15, speedChange = -700, radius = 1, effect = CONST_ME_MAGIC_RED, target = true, duration = 30000},
+	{name ="demon fireball", interval = 2000, chance = 24, minDamage = -1000, maxDamage = -1000, target = false},
+	{name ="demon death", interval = 15000, chance = 10, target = false},
+	{name ="demon paralyze", interval = 2000, chance = 12, target = false}
 }
 
 monster.defenses = {

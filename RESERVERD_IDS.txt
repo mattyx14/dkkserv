@@ -53,9 +53,79 @@ Reserverd_IDS
 		24917 -- Hive Walls
 		24918 -- Hive Walls
 		24919 -- Crown Set Access
+		24920 -- Litter Moth Quest
+		24921 -- Dragon on Castle Shield
+		24922 -- Cults Room
+		24923 -- Cults Room Back
+		24924 -- Pirate Kraken Ship Lever
+		24925 -- dangerousWaters
+	uid	24926 -- Kraken kickTimer
 
 	Storages
 		25770 -- \\ 
 
 	Missing Quest
 		1 -- Sohan Town \\ Level 80 Position door (419, 1158, 11)
+
+UPDATE accounts SET premdays=0;
+UPDATE accounts SET premdays = premdays + 7
+
+UPDATE `players` SET `redskull`=0;
+UPDATE `players` SET `skull`=0;
+UPDATE `players` SET `skulltime`=0;
+UPDATE `killers` SET `unjustified` = 0 WHERE `id` IN (SELECT `kill_id` FROM `player_killers` WHERE `player_id` = 1);
+UPDATE `players` SET `blessings`=31;
+UPDATE `players` SET `blessings`=0;
+UPDATE `players` SET `pvp_blessing`=1;
+UPDATE `players` SET `pvp_blessing`=0;
+UPDATE players SET loss_experience = 100, loss_mana = 100, loss_skills = 100, loss_containers = 100, loss_items = 100;
+UPDATE players SET posx = 671, posy = 824, posz = 4;
+UPDATE players SET posx = 941, posy = 1002, posz = 7 WHERE level > 6
+UPDATE players SET posx = 199, posy = 895, posz = 7 WHERE level > 100;
+UPDATE players SET posx = 312, posy = 1291, posz = 6 WHERE level > 150;
+UPDATE players SET posx = 719, posy = 404, posz = 7 WHERE level > 200;
+UPDATE players SET loss_experience = 5, loss_mana = 5, loss_skils = 5 WHERE level > 249
+
+---
+Configurables
+UPDATE players SET posx = 942, posy = 997, posz = 7, town_id = 1, lookbody = 0, lookfeet = 0, lookhead = 0, looklegs = 0, looktype = 0, lookaddons = 0, lookmount = 0, balance = 0;
+UPDATE players SET level = 10, experience = 9300, health = 200, healthmax = 200, mana = 100, manamax = 100, cap = 600;
+
+DELETE FROM player_items WHERE player_id NOT IN (SELECT id FROM players);
+UPDATE accounts SET premdays = premdays + 3 WHERE premdays > 0;
+
+UPDATE `players` SET `vocation` = `vocation` - 16 WHERE `vocation` >= 17 AND `vocation` <= 20;
+UPDATE `players` SET `vocation` = `vocation` - 12 WHERE `vocation` >= 13 AND `vocation` <= 16;
+UPDATE `players` SET `vocation` = `vocation` - 8 WHERE `vocation` >= 9 AND `vocation` <= 12;
+UPDATE `players` SET `vocation` = `vocation` - 4 WHERE `vocation` >= 5 AND `vocation` <= 8;
+
+-- DELETE PLAYERS INACTIVOS
+DELETE FROM players WHERE level < 50 AND lastlogin < UNIX_TIMESTAMP() - 20*24*60*60
+DELETE FROM accounts WHERE id NOT IN (SELECT account_id FROM players);
+DELETE FROM player_items WHERE player_id NOT IN (SELECT id FROM players);
+DELETE FROM player_skills WHERE player_id NOT IN (SELECT id FROM players);
+DELETE FROM player_deaths WHERE player_id NOT IN (SELECT id FROM players);
+DELETE FROM player_storage WHERE player_id NOT IN (SELECT id FROM players);
+DELETE FROM player_viplist WHERE player_id NOT IN (SELECT id FROM players);
+DELETE FROM player_depotitems WHERE player_id NOT IN (SELECT id FROM players);
+DELETE FROM houses WHERE owner NOT IN (SELECT id FROM players);
+DELETE FROM guilds WHERE ownerid NOT IN (SELECT id FROM players);
+DELETE FROM guild_invites WHERE player_id NOT IN (SELECT id FROM players);
+
+DELETE FROM player_depotitems, player_items, tile_items WHERE itemtype = 2160;
+
+--DELETE POTIONS--
+DELETE FROM `player_items` WHERE `itemtype` IN ();
+DELETE FROM `player_depotitems` WHERE `itemtype` IN ();
+
+--DELETE VIALS--
+DELETE FROM `player_items` WHERE `itemtype` IN ();
+DELETE FROM `player_depotitems` WHERE `itemtype` IN ();
+
+--DIEGO COMMANDS
+Quita premium a todos los players
+UPDATE `accounts` SET premdays = 0, lastday = 0;
+
+Limpia toda las players deaths (no skulls)
+DELETE FROM `player_deaths`, `killers`, `player_killers`, `environment_killers`;
+

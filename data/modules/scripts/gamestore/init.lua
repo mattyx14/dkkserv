@@ -739,7 +739,7 @@ function sendShowStoreOffers(playerId, category, redirectId)
 
 				if (off.state) then
 					if (off.state == GameStore.States.STATE_SALE) then
-						local daySub = off.validUntil - os.sdate("*t").day
+						local daySub = off.validUntil - os.date("*t").day
 						if (daySub >= 0) then
 							msg:addByte(off.state)
 							msg:addU32(os.time() + daySub * 86400)
@@ -1411,7 +1411,11 @@ function GameStore.processOutfitPurchase(player, offerSexIdTable, addon)
 end
 
 function GameStore.processMountPurchase(player, offerId)
-	player:addMount(offerId)
+	if player:hasMount(offerId) then
+		return error({code = 0, message = "You already own this mount."})
+	else
+		player:addMount(offerId)
+	end
 end
 
 function GameStore.processNameChangePurchase(player, offerId, productType, newName, offerName, offerPrice)

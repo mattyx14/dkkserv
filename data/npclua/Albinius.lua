@@ -104,6 +104,8 @@ local function creatureSayCallback(npc, creature, type, message)
 				player:removeItem(23986, 5)
 				npcHandler:say('Thank you very much for your contribution, child. Your first step in the ways of the {Shapers} has been taken.', npc, creature)
 				player:setStorageValue(DarkKonia.ForgottenKnowledge.Tomes, 1)
+				player:setStorageValue(DarkKonia.ForgottenKnowledge.LadyTenebrisKilled, 0)
+				player:setStorageValue(DarkKonia.MisidiaQuest.JaulKilled, 0)
 			else
 				npcHandler:say('You need 5 heavy old tome.', npc, creature)
 			end

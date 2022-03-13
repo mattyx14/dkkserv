@@ -32,7 +32,7 @@ function spell.onCastSpell(creature, var)
 end
 
 spell:name("demon paralyze")
-spell:words("###502")
+spell:words("###2003")
 spell:isAggressive(true)
 spell:blockWalls(true)
 spell:needLearn(true)

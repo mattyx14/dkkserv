@@ -16,4 +16,7 @@ NpcTable = {
 	[13] = {name = "Olmel", position = Position(656, 1215, 6)}, -- Boat
 	[14] = {name = "Henrry", position = Position(648, 1202, 7)}, -- Gems
 	[15] = {name = "Katty", position = Position(693, 1163, 6)}, -- Blessings
+
+	-- Misidia Settlement
+	[16] = {name = "Sammy", position = Position(1059, 311, 6)}, -- Boat
 }

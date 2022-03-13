@@ -1,5 +1,4 @@
 local outfits = {
-	[30135] = {DarkKonia.AnniQuest.pirateDone, 'Pirate', 155, 151, 6096},
 	[30136] = {DarkKonia.AnniQuest.deathHeraldDone, 'Death Herald', 666, 667, 18935}, -- 10005, 10006 and 10007 is reserved storage for kill Dracula
 	[30178] = {DarkKonia.HidenChest.orientalOutfit, 'Oriental', 150, 146, 7533},
 	[30177] = {DarkKonia.HidenChest.marryOutfit, 'Marry', 329, 328, 3004},

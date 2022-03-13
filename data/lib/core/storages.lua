@@ -1,3 +1,5 @@
+-- Last: 30275
+
 Storage = {
 	-- General storages
 	isTraining = 30000,
@@ -143,6 +145,7 @@ DarkKonia = {
 		GazerTimer = 30146,
 	},
 	FirstSacrifice = {
+		firstTip = 30274,
 		knightAxe = 30147,
 		heroicAxe = 30148,
 		fireAxe = 30149,
@@ -244,17 +247,18 @@ DarkKonia = {
 	Quest = {
 		Key = {
 			ID1219 = 30212, -- Annihilator II Key
-			ID2088 = 30213, -- Pirate Bars Key // Fynn Castle
-			ID2088 = 30214, -- Pirate Bars Key // Misidia Settlement
+			ID2088 = 30213, -- Pirate Ghost Key // Fynn Castle
+			ID2089 = 30214, -- Pirate Bars Key // Fynn Settlement
 			ID5001 = 30215, -- Falcon Bastion // Misidia Settlement
 			ID5002 = 30216, -- amaged Steel Helmet // Ansara Desert
 			ID2585 = 30217, -- Conjurer Outfit Quest Key 1
 			ID2586 = 30218, -- Conjurer Outfit Quest Key 2
 			ID2587 = 30219, -- Conjurer Outfit Quest Key 3
-			ID2090 = 30220, -- Pirate Bars Key // Misidia Settlement
+			ID2090 = 30220, -- Pirate Bars Key Boss // Misidia Settlement
 		},
 		goldenKeyFynn = 30221,
 		goldenKeyMisidia = 30222,
+		Javierkeys = 30275,
 	},
 	OutfitQuest = {
 		DefaultStart = 30223,
@@ -299,6 +303,11 @@ DarkKonia = {
 		ZarabustorTimmer = 30247,
 		ZarabustorDone = 30248,
 		ZarabustorReward = 30249,
+		-- Pirate Outfit
+		KrakenKilled = 30270,
+		KrakenTimmer = 30271,
+		KrakenDone = 30272,
+		KrakenReward = 30273
 	},
 }
 

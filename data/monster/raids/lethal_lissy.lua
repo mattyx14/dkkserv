@@ -79,7 +79,6 @@ monster.loot = {
 	{name = "plate armor", chance = 56250},
 	{name = "knight armor", chance = 12500},
 	{name = "very old piece of paper", chance = 25000},
-	{id = 6100, chance = 100000}
 }
 
 monster.attacks = {

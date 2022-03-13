@@ -58,6 +58,7 @@ end
 
 keywordHandler:addKeyword({'smithy'}, StdModule.say, {npcHandler = npcHandler, text = "I am a trader. I don't buy everything, though. And not from everyone, for that matter, ask me for a {trade}."})
 keywordHandler:addKeyword({'first weapons'}, StdModule.say, {npcHandler = npcHandler, text = "If need {first club}, {first sword} or {first axe}."})
+keywordHandler:addKeyword({'mission'}, StdModule.say, {npcHandler = npcHandler, text = "There is a complicated mission regarding the {first sacrifice} of weapons."})
 
 local club = {
 	[VOCATION.BASE_ID.KNIGHT] = 3327,
@@ -81,7 +82,7 @@ local function creatureSayCallback(npc, creature, type, message)
 	local itemIdSword = sword[player:getVocation():getBaseId()]
 	local itemIdAxe = axe[player:getVocation():getBaseId()]
 
-	if MsgContains(message, 'knight\'s sword') then
+	if MsgContains(message, "knight's sword") then
 		if player:hasOutfit(player:getSex() == PLAYERSEX_FEMALE and 139 or 131, 1) then
 			npcHandler:say('You already have this outfit!', npc, creature)
 			return true
@@ -104,7 +105,7 @@ local function creatureSayCallback(npc, creature, type, message)
 			end
 			npcHandler:setTopic(playerId, 0)
 		end
-	elseif MsgContains(message, 'warrior\'s sword') then
+	elseif MsgContains(message, "warrior's sword") then
 		if player:hasOutfit(player:getSex() == PLAYERSEX_FEMALE and 142 or 134, 2) then
 			npcHandler:say('You already have this outfit!', npc, creature)
 			return true
@@ -142,7 +143,7 @@ local function creatureSayCallback(npc, creature, type, message)
 
 		if addonProgress < 1 then
 			npcHandler:say("You mean you would like to prove that you deserve to wear such a helmet?", npc, creature)
-			npcHandler:setTopic(playerId, 1)
+			npcHandler:setTopic(playerId, 2)
 		elseif addonProgress == 1 then
 			npcHandler:say("Your current task is to bring me 100 perfect behemoth fangs, |PLAYERNAME|.", npc, creature)
 		elseif addonProgress == 2 then
@@ -161,7 +162,7 @@ local function creatureSayCallback(npc, creature, type, message)
 	elseif MsgContains(message, "behemoth fang") then
 		if addonProgress == 1 then
 			npcHandler:say("Have you really managed to fulfil the task and brought me 100 perfect behemoth fangs?", npc, creature)
-			npcHandler:setTopic(playerId, 3)
+			npcHandler:setTopic(playerId, 4)
 		else
 			npcHandler:say("You're not serious asking that, are you? They come from behemoths, of course. \z
 				Unless there are behemoth rabbits. Duh.", npc, creature)
@@ -170,7 +171,7 @@ local function creatureSayCallback(npc, creature, type, message)
 	elseif MsgContains(message, "ramsay") then
 		if addonProgress == 2 then
 			npcHandler:say("Did you recover the helmet of Ramsay the Reckless?", npc, creature)
-			npcHandler:setTopic(playerId, 4)
+			npcHandler:setTopic(playerId, 5)
 		else
 			npcHandler:say("These pesky apes steal everything they can get their dirty hands on.", npc, creature)
 		end
@@ -178,7 +179,7 @@ local function creatureSayCallback(npc, creature, type, message)
 	elseif MsgContains(message, "sweat") then
 		if addonProgress == 3 then
 			npcHandler:say("Were you able to get hold of a flask with pure warrior's sweat?", npc, creature)
-			npcHandler:setTopic(playerId, 5)
+			npcHandler:setTopic(playerId, 6)
 		else
 			npcHandler:say("Warrior's sweat can be magically extracted from headgear worn by a true warrior, \z
 				but only in small amounts. Djinns are said to be good at magical extractions.", npc, creature)
@@ -187,7 +188,7 @@ local function creatureSayCallback(npc, creature, type, message)
 	elseif MsgContains(message, "royal steel") then
 		if addonProgress == 4 then
 			npcHandler:say("Ah, have you brought the royal steel?", npc, creature)
-			npcHandler:setTopic(playerId, 6)
+			npcHandler:setTopic(playerId, 7)
 		else
 			npcHandler:say("Royal steel can only be refined by very skilled smiths.", npc, creature)
 		end
@@ -206,7 +207,7 @@ local function creatureSayCallback(npc, creature, type, message)
 					"Did you understand everything I told you and are willing to handle this task?"
 				},
 			npc, creature, 100)
-			npcHandler:setTopic(playerId, 2)
+			npcHandler:setTopic(playerId, 3)
 		elseif MsgContains(message, "no") then
 			npcHandler:say("Bah. Then you will have to wait for the day these helmets are sold in shops, \z
 				but that will not happen before hell freezes over.", npc, creature)
@@ -222,10 +223,10 @@ local function creatureSayCallback(npc, creature, type, message)
 			npcHandler:setTopic(playerId, 0)
 		elseif MsgContains(message, "no") then
 			npcHandler:say("Would you like me to repeat the task requirements then?", npc, creature)
-			npcHandler:setTopic(playerId, 1)
+			npcHandler:setTopic(playerId, 2)
 		end
 
-	elseif npcHandler:getTopic(playerId) == 3 then
+	elseif npcHandler:getTopic(playerId) == 4 then
 		if MsgContains(message, "yes") then
 			if not player:removeItem(5893, 100) then
 				npcHandler:say("Lying is not exactly honourable, |PLAYERNAME|. Shame on you.", npc, creature)
@@ -242,7 +243,7 @@ local function creatureSayCallback(npc, creature, type, message)
 		end
 		npcHandler:setTopic(playerId, 0)
 
-	elseif npcHandler:getTopic(playerId) == 4 then
+	elseif npcHandler:getTopic(playerId) == 5 then
 		if MsgContains(message, "yes") then
 			if not player:removeItem(3351, 1) then
 				npcHandler:say("Lying is not exactly honourable, |PLAYERNAME|. Shame on you.", npc, creature)
@@ -258,7 +259,7 @@ local function creatureSayCallback(npc, creature, type, message)
 		end
 		npcHandler:setTopic(playerId, 0)
 
-	elseif npcHandler:getTopic(playerId) == 5 then
+	elseif npcHandler:getTopic(playerId) == 6 then
 		if MsgContains(message, "yes") then
 			if not player:removeItem(5885, 1) then
 				npcHandler:say("Lying is not exactly honourable, |PLAYERNAME|. Shame on you.", npc, creature)
@@ -274,7 +275,7 @@ local function creatureSayCallback(npc, creature, type, message)
 		end
 		npcHandler:setTopic(playerId, 0)
 
-	elseif npcHandler:getTopic(playerId) == 6 then
+	elseif npcHandler:getTopic(playerId) == 7 then
 		if MsgContains(message, "yes") then
 			if not player:removeItem(5887, 1) then
 				npcHandler:say("Lying is not exactly honourable, |PLAYERNAME|. Shame on you.", npc, creature)
@@ -317,80 +318,111 @@ local function creatureSayCallback(npc, creature, type, message)
 		else
 			npcHandler:say('Sorry, I cannot help you with this matter.', npc, creature)
 		end
+
 	elseif MsgContains(message, "no") then
-		if npcHandler:getTopic(playerId) == 1 then
-			npcHandler:say("Then no.", npc, creature)
-		end
-		npcHandler:setTopic(playerId, 0)
+		npcHandler:removeInteraction(npc, creature)
 	end
 
 	if MsgContains(message, 'first club') then
 		if player:isKnight() then
-			if player:getStorageValue(DarkKonia.FirstQuest.FirstWeaponClub) == -1 then
-				npcHandler:say('You ask me you begin your adventure with the {'.. ItemType(itemIdClub):getName() ..'}, repeat the name ok... ', npc, creature)
-				npcHandler:setTopic(playerId, 8)
-			else
-				npcHandler:say('What? I have already gave you one {' .. ItemType(itemIdClub):getName() .. '}!', npc, creature)
-			end
+			npcHandler:say('You ask me you begin your adventure with the {'.. ItemType(itemIdClub):getName() ..'}?', npc, creature)
+			npcHandler:setTopic(playerId, 8)
 		else
-			npcHandler:say('Sorry, you aren\'t a knight.', npc, creature)
+			npcHandler:say('This service is only for knights', npc, creature)
 		end
-	elseif MsgContains(message, 'daramian mace') then
-		if npcHandler:getTopic(playerId) == 8 then
-			player:addItem(itemIdClub, 1)
-			player:setStorageValue(DarkKonia.FirstQuest.FirstWeaponClub, 1)
-			npcHandler:say('Here you are young adept, take care yourself.', npc, creature)
+	end
+	if MsgContains(message, "yes") and npcHandler:getTopic(playerId) == 8 then
+		if (player:getStorageValue(DarkKonia.FirstQuest.FirstWeaponClub) == 1) then
+			npcHandler:say('What? I have already gave you one {' .. ItemType(itemIdClub):getName() .. '}!', npc, creature)
+			npcHandler:removeInteraction(npc, creature)
+		else
+			if player:isKnight() then
+				npcHandler:say('Here you are young adept, take care yourself.', npc, creature)
+				player:setStorageValue(DarkKonia.FirstQuest.FirstWeaponClub, 1)
+				player:addItem(itemIdClub, 1)
+			else
+				npcHandler:say('Sorry, you aren\'t a knight.', npc, creature)
+			end
 		end
-		npcHandler:setTopic(playerId, 0)
-	elseif MsgContains(message, "no") and npcHandler:getTopic(playerId) == 8 then
+	elseif  MsgContains(message, "no") and npcHandler:getTopic(playerId) == 8 then
 		npcHandler:say("Ok then.", npc, creature)
-		npcHandler:setTopic(playerId, 0)
+		npcHandler:removeInteraction(npc, creature)
 	end
 
 	if MsgContains(message, 'first sword') then
 		if player:isKnight() then
-			if player:getStorageValue(DarkKonia.FirstQuest.FirstWeaponSword) == -1 then
-				npcHandler:say('You ask me you begin your adventure with the {'.. ItemType(itemIdSword):getName() ..'}, repeat the name ok... ', npc, creature)
-				npcHandler:setTopic(playerId, 9)
-			else
-				npcHandler:say('What? I have already gave you one {' .. ItemType(itemIdSword):getName() .. '}!', npc, creature)
-			end
+			npcHandler:say('You ask me you begin your adventure with the {'.. ItemType(itemIdSword):getName() ..'}?', npc, creature)
+			npcHandler:setTopic(playerId, 9)
 		else
-			npcHandler:say('Sorry, you aren\'t a knight.', npc, creature)
+			npcHandler:say('This service is only for knights', npc, creature)
 		end
-	elseif MsgContains(message, 'jagged sword') then
-		if npcHandler:getTopic(playerId) == 9 then
-			player:addItem(itemIdSword, 1)
-			player:setStorageValue(DarkKonia.FirstQuest.FirstWeaponSword, 1)
-			npcHandler:say('Here you are young adept, take care yourself.', npc, creature)
+	end
+	if MsgContains(message, "yes") and npcHandler:getTopic(playerId) == 9 then
+		if (player:getStorageValue(DarkKonia.FirstQuest.FirstWeaponSword) == 1) then
+			npcHandler:say('What? I have already gave you one {' .. ItemType(itemIdSword):getName() .. '}!', npc, creature)
+			npcHandler:removeInteraction(npc, creature)
+		else
+			if player:isKnight() then
+				npcHandler:say('Here you are young adept, take care yourself.', npc, creature)
+				player:setStorageValue(DarkKonia.FirstQuest.FirstWeaponSword, 1)
+				player:addItem(itemIdSword, 1)
+			else
+				npcHandler:say('Sorry, you aren\'t a knight.', npc, creature)
+			end
 		end
-		npcHandler:setTopic(playerId, 0)
-	elseif MsgContains(message, "no") and npcHandler:getTopic(playerId) == 9 then
+	elseif  MsgContains(message, "no") and npcHandler:getTopic(playerId) == 9 then
 		npcHandler:say("Ok then.", npc, creature)
-		npcHandler:setTopic(playerId, 0)
+		npcHandler:removeInteraction(npc, creature)
 	end
 
 	if MsgContains(message, 'first axe') then
 		if player:isKnight() then
-			if player:getStorageValue(DarkKonia.FirstQuest.FirstWeaponAxe) == -1 then
-				npcHandler:say('You ask me you begin your adventure with the {'.. ItemType(itemIdAxe):getName() ..'}, repeat the name ok... ', npc, creature)
-				npcHandler:setTopic(playerId, 10)
-			else
-				npcHandler:say('What? I have already gave you one {' .. ItemType(itemIdAxe):getName() .. '}!', npc, creature)
-			end
+			npcHandler:say('You ask me you begin your adventure with the {'.. ItemType(itemIdAxe):getName() ..'}?', npc, creature)
+			npcHandler:setTopic(playerId, 10)
 		else
-			npcHandler:say('Sorry, you aren\'t a knight.', npc, creature)
+			npcHandler:say('This service is only for knights', npc, creature)
 		end
-	elseif MsgContains(message, 'steel axe') then
-		if npcHandler:getTopic(playerId) == 10 then
-			player:addItem(itemIdAxe, 1)
-			player:setStorageValue(DarkKonia.FirstQuest.FirstWeaponAxe, 1)
-			npcHandler:say('Here you are young adept, take care yourself.', npc, creature)
+	end
+	if MsgContains(message, "yes") and npcHandler:getTopic(playerId) == 10 then
+		if (player:getStorageValue(DarkKonia.FirstQuest.FirstWeaponAxe) == 1) then
+			npcHandler:say('What? I have already gave you one {' .. ItemType(itemIdAxe):getName() .. '}!', npc, creature)
+			npcHandler:removeInteraction(npc, creature)
+		else
+			if player:isKnight() then
+				npcHandler:say('Here you are young adept, take care yourself.', npc, creature)
+				player:setStorageValue(DarkKonia.FirstQuest.FirstWeaponAxe, 1)
+				player:addItem(itemIdAxe, 1)
+			else
+				npcHandler:say('Sorry, you aren\'t a knight.', npc, creature)
+			end
 		end
-		npcHandler:setTopic(playerId, 0)
-	elseif MsgContains(message, "no") and npcHandler:getTopic(playerId) == 10 then
+	elseif  MsgContains(message, "no") and npcHandler:getTopic(playerId) == 10 then
 		npcHandler:say("Ok then.", npc, creature)
-		npcHandler:setTopic(playerId, 0)
+		npcHandler:removeInteraction(npc, creature)
+	end
+
+	if MsgContains(message, 'first sacrifice') then
+		npcHandler:say({
+			"The first sacrifice tries to find 3 weapons which are not obtainable through loot only for missions or unique quests and it \z
+			is very difficult to find them and it is also very easy to fail the mission since if that happens the weapon will not be able to \z
+			get it again. Do you want to participate in it?"
+		}, npc, creature)
+		npcHandler:setTopic(playerId, 11)
+	end
+	if MsgContains(message, "yes") and npcHandler:getTopic(playerId) == 11 then
+		if (player:getStorageValue(DarkKonia.FirstSacrifice.firstTip) == 1) then
+			npcHandler:say('You already know about this consult your Quest Log.', npc, creature)
+			npcHandler:setTopic(playerId, 0)
+		else
+			npcHandler:say('I will also give you information about your first sacrifice you can check it in your Quest Log.', npc, creature)
+			player:setStorageValue(DarkKonia.FirstSacrifice.firstTip, 1)
+			player:setStorageValue(DarkKonia.FirstSacrifice.wyvernFang, 0)
+			player:setStorageValue(DarkKonia.FirstSacrifice.knightAxe, 0)
+			player:setStorageValue(DarkKonia.FirstSacrifice.dragonHammer, 0)
+		end
+	elseif  MsgContains(message, "no") and npcHandler:getTopic(playerId) == 11 then
+		npcHandler:say('I understand. Return to me if you change your mind, my child.', npc, creature)
+		npcHandler:removeInteraction(npc, creature)
 	end
 	return true
 end
@@ -414,7 +446,7 @@ keywordHandler:addKeyword(
 )
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
-npcHandler:setMessage(MESSAGE_GREET, "Ah, a customer! Be greeted, |PLAYERNAME|! Welcome to my {smithy} or do you need {first weapons} for knights.")
+npcHandler:setMessage(MESSAGE_GREET, "Ah, a customer! Be greeted, |PLAYERNAME|! Welcome to my {smithy} or do you need {first weapons} for knights. Or you can also participate in a great {mission}.")
 npcHandler:setMessage(MESSAGE_FAREWELL, "Farewell, |PLAYERNAME|, may the winds guide your way.")
 npcHandler:setMessage(MESSAGE_WALKAWAY, "Come back soon!")
 npcHandler:setMessage(MESSAGE_SENDTRADE, "Take all the time you need to decide what you want!")

@@ -72,6 +72,9 @@
 	<npc centerx="1127" centery="337" centerz="5" radius="1">
 		<npc name="Guardian" x="0" y="0" z="5" spawntime="60" />
 	</npc>
+	<npc centerx="1089" centery="350" centerz="5" radius="1">
+		<npc name="Gloria" x="0" y="1" z="5" spawntime="60" />
+	</npc>
 	<npc centerx="1121" centery="355" centerz="5" radius="1">
 		<npc name="Guardian" x="0" y="0" z="5" spawntime="60" />
 	</npc>
@@ -114,17 +117,17 @@
 	<npc centerx="1108" centery="334" centerz="6" radius="1">
 		<npc name="Henrry" x="0" y="0" z="6" spawntime="60" />
 	</npc>
+	<npc centerx="1059" centery="340" centerz="6" radius="1">
+		<npc name="Vancer" x="0" y="-1" z="6" spawntime="60" />
+	</npc>
 	<npc centerx="1127" centery="346" centerz="6" radius="1">
 		<npc name="Guardian" x="0" y="0" z="6" spawntime="60" />
 	</npc>
 	<npc centerx="1124" centery="350" centerz="6" radius="1">
 		<npc name="Guardian" x="0" y="0" z="6" spawntime="60" />
 	</npc>
-	<npc centerx="1089" centery="351" centerz="6" radius="1">
-		<npc name="Gloria" x="0" y="0" z="6" spawntime="60" />
-	</npc>
 	<npc centerx="1071" centery="356" centerz="6" radius="1">
-		<npc name="Vancer" x="0" y="0" z="6" spawntime="60" />
+		<npc name="Wendy" x="0" y="1" z="6" spawntime="60" />
 	</npc>
 	<npc centerx="929" centery="982" centerz="6" radius="1">
 		<npc name="Villager Woman" x="0" y="0" z="6" spawntime="60" direction="2" />
@@ -176,9 +179,6 @@
 	</npc>
 	<npc centerx="1061" centery="340" centerz="7" radius="1">
 		<npc name="Yuna" x="0" y="0" z="7" spawntime="60" />
-	</npc>
-	<npc centerx="1071" centery="356" centerz="7" radius="1">
-		<npc name="Wendy" x="0" y="0" z="7" spawntime="60" />
 	</npc>
 	<npc centerx="971" centery="932" centerz="7" radius="1">
 		<npc name="The King" x="0" y="0" z="7" spawntime="60" />

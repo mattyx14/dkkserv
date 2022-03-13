@@ -76,12 +76,12 @@ local spell = Spell("instant")
 
 function spell.onCastSpell(creature, var)
 	creature:say("I SMELL FEEEEAAAAAR!", TALKTYPE_ORANGE_2)
-	addEvent(delayedCastSpell, 8000, creature:getId(), var)
+	addEvent(delayedCastSpell, 9000, creature:getId(), var)
 	return true
 end
 
 spell:name("demon death")
-spell:words("###500")
+spell:words("###2001")
 spell:isAggressive(true)
 spell:blockWalls(true)
 spell:needLearn(true)

@@ -1,38 +1,36 @@
 local config = {
-	bossName = "Demon",
+	bossName = "Kraken Head",
 	requiredLevel = 200,
-	leverId = 8911,
+	leverId = 5670,
 	timeToFightAgain = 20, -- In hour
 	timeToDefeatBoss = 20, -- In minutes
 	clearRoomTime = 20, -- In minutes
-	timer = DarkKonia.FynnQuest.DemonHelmetTimmer,
+	timer = DarkKonia.OutfitQuest.KrakenTimmer,
 	blockLever = true,
 	value = 1,
-	centerRoom = Position(996, 1060, 10),
+	centerRoom = Position(1054, 30, 12),
 	playerPositions = {
-		Position(1001, 1079, 10),
-		Position(1000, 1079, 10),
-		Position(1002, 1079, 10),
-		Position(1000, 1080, 10),
-		Position(1001, 1080, 10),
-		Position(1002, 1080, 10),
-		Position(1000, 1081, 10),
-		Position(1001, 1081, 10),
-		Position(1002, 1081, 10),
-		Position(1000, 1082, 10),
-		Position(1001, 1082, 10),
-		Position(1002, 1082, 10),
-		Position(1000, 1083, 10),
-		Position(1001, 1083, 10),
-		Position(1002, 1083, 10),
+		Position(1129, 67, 12),
+		Position(1127, 67, 12),
+		Position(1128, 67, 12),
+		Position(1130, 67, 12),
+		Position(1131, 67, 12),
 	},
-	teleportPosition = Position(996, 1066, 10),
-	bossPosition = Position(996, 1059, 10),
-	kickPos = Position(1021, 1061, 10)
+	teleportPosition = Position(1044, 33, 12),
+	bossPosition = Position(1052, 30, 12),
+	kickPos = Position(1081, 95, 7)
 }
 
-local demonHelmet = Action()
-function demonHelmet.onUse(player, item, fromPosition, target, toPosition, isHotkey)
+local monsters = {
+	{tentacle = 'tentacle 1', pos = Position(1046, 26, 12)},
+	{tentacle = 'tentacle 2', pos = Position(1053, 25, 12)},
+	{tentacle = 'tentacle 3', pos = Position(1058, 30, 12)},
+	{tentacle = 'tentacle 4', pos = Position(1051, 33, 12)},
+	{tentacle = 'tentacle 5', pos = Position(1055, 34, 12)}
+}
+
+local theKrakenLever = Action()
+function theKrakenLever.onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	if item.itemid == config.leverId then
 		-- Check if the player that pulled the lever is on the correct position
 		if player:getPosition() ~= config.playerPositions[1] then
@@ -76,6 +74,9 @@ function demonHelmet.onUse(player, item, fromPosition, target, toPosition, isHot
 		-- One hour for clean the room
 		addEvent(clearRoom, config.clearRoomTime * 60 * 1000, config.centerRoom)
 		Game.createMonster(config.bossName, config.bossPosition)
+		for n = 1, #monsters do
+			Game.createMonster(monsters[n].tentacle, monsters[n].pos, true, true)
+		end
 
 		-- Teleport team participants
 		for i = 1, #team do
@@ -93,7 +94,7 @@ function demonHelmet.onUse(player, item, fromPosition, target, toPosition, isHot
 							if spec:isPlayer() then
 								spec:teleportTo(config.kickPos)
 								spec:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-								spec:say("Time out! You were teleported out by strange forces.", TALKTYPE_MONSTER_SAY)
+								spec:say("Time is over! You were defeated by The Kraken you were forced to leave.", TALKTYPE_MONSTER_SAY)
 							end
 						end
 				end, config.timeToDefeatBoss * 60 * 1000)
@@ -102,5 +103,5 @@ function demonHelmet.onUse(player, item, fromPosition, target, toPosition, isHot
 	return true
 end
 
-demonHelmet:aid(24907)
-demonHelmet:register()
+theKrakenLever:aid(24924)
+theKrakenLever:register()

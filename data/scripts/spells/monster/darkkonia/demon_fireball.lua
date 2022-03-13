@@ -30,7 +30,7 @@ creature:say("CHAMEK ATH UTHUL ARAK!", TALKTYPE_ORANGE_1)
 end
 
 spell:name("demon fireball")
-spell:words("###501")
+spell:words("###2002")
 spell:isAggressive(true)
 spell:blockWalls(true)
 spell:needLearn(true)

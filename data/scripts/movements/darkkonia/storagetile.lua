@@ -48,7 +48,7 @@ local TileSettings = {
 		failPosition = Position(940, 1076, 8)
 	},
 	[5508] = { -- Energy Stairs on Misidia Settlement (Access boat to Fynn Castle)
-		minLevelRequired = 80,
+		minLevelRequired = 30,
 		missionRequired = DarkKonia.FirstQuest.Misidia,
 		text = "require make the first quest of misidia",
 		failPosition = Position(1066, 319, 7)

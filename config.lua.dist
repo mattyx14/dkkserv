@@ -188,7 +188,7 @@ sortLootByChance = true
 -- NOTE: rateExp, rateSkill and rateMagic is used as a fallback only
 -- To configure rates see file data/stages.lua
 rateLoot = 2
-rateSpawn = 1
+rateSpawn = 2
 
 -- Today regeneration condition over an loop every 1 second,
 -- So values which should regenerated less then 1 second or won't will work

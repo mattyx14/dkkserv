@@ -18,6 +18,7 @@ function loginEvents.onLogin(player)
 		"KillBoss",
 		"vampireKillBosses",
 		"BossesForgotten",
+		"TentacleDeath",
 	}
 
 	for i = 1, #events do

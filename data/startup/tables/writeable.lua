@@ -59,4 +59,14 @@ A giant Swamp Plague is resting down here.]]
 		itemPos = {x = 900, y = 987, z = 7},
 		text = [[Need find to Mystic Blade Quest.]]
 	},
+	[10] = {
+		itemId = 6122,
+		itemPos = {x = 1062, y = 342, z = 10},
+		text = [[Need complete - First mission from Fynn Castle and the key #30221.]]
+	},
+	[11] = {
+		itemId = 6121,
+		itemPos = {x = 1054, y = 311, z = 13},
+		text = [[Need complete - Castle Shield Quest.]]
+	},
 }

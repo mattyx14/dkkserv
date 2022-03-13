@@ -29,7 +29,7 @@ return true
 end
 
 spell:name("demon summon")
-spell:words("###503")
+spell:words("###2004")
 spell:blockWalls(true)
 spell:needLearn(true)
 spell:register()

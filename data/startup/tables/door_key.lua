@@ -29,16 +29,22 @@ KeyDoorAction = {
 			Position(865, 1112, 10),
 		}
 	},
-	[DarkKonia.Quest.Key.ID2088] = { -- Pirate Bars Key // Fynn Castle
+	[DarkKonia.Quest.Key.ID2088] = { -- Pirate Ghost Key // Fynn Castle
+		itemId = false,
+		itemPos = {
+			Position(904, 897, 3),
+		}
+	},
+	[DarkKonia.Quest.Key.ID2089] = { -- Pirate Bars Key // Fynn Castle
 		itemId = false,
 		itemPos = {
 			Position(910, 891, 5),
 		}
 	},
-	[DarkKonia.Quest.Key.ID2090] = { -- Pirate Bars Key // Misidia Settlement
+	[DarkKonia.Quest.Key.ID2090] = { -- Pirate Bars Key Boss
 		itemId = false,
 		itemPos = {
-			Position(1150, 83, 11),
+			Position(910, 891, 5),
 		}
 	},
 	[DarkKonia.Quest.goldenKeyFynn] = { -- Golden Key of Fynn
