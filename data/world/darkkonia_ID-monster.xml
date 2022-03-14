@@ -12491,6 +12491,39 @@
 	<monster centerx="570" centery="1508" centerz="11" radius="1">
 		<monster name="Mutated Bat" x="0" y="0" z="11" spawntime="60" />
 	</monster>
+	<monster centerx="1057" centery="25" centerz="12" radius="1">
+		<monster name="Skeleton Elite Warrior" x="0" y="0" z="12" spawntime="60" />
+	</monster>
+	<monster centerx="1050" centery="26" centerz="12" radius="1">
+		<monster name="Quara Pincher" x="0" y="0" z="12" spawntime="60" />
+	</monster>
+	<monster centerx="1045" centery="27" centerz="12" radius="1">
+		<monster name="Quara Hydromancer" x="0" y="0" z="12" spawntime="60" />
+	</monster>
+	<monster centerx="1061" centery="27" centerz="12" radius="1">
+		<monster name="Quara Pincher" x="0" y="0" z="12" spawntime="60" />
+	</monster>
+	<monster centerx="1049" centery="29" centerz="12" radius="1">
+		<monster name="Quara Predator" x="0" y="0" z="12" spawntime="60" />
+	</monster>
+	<monster centerx="1058" centery="29" centerz="12" radius="1">
+		<monster name="Quara Predator" x="0" y="0" z="12" spawntime="60" />
+	</monster>
+	<monster centerx="1046" centery="32" centerz="12" radius="1">
+		<monster name="Quara Predator" x="0" y="0" z="12" spawntime="60" />
+	</monster>
+	<monster centerx="1057" centery="33" centerz="12" radius="1">
+		<monster name="Quara Predator" x="0" y="0" z="12" spawntime="60" />
+	</monster>
+	<monster centerx="1053" centery="34" centerz="12" radius="1">
+		<monster name="Skeleton Elite Warrior" x="0" y="0" z="12" spawntime="60" />
+	</monster>
+	<monster centerx="1062" centery="34" centerz="12" radius="1">
+		<monster name="Quara Hydromancer" x="0" y="0" z="12" spawntime="60" />
+	</monster>
+	<monster centerx="1048" centery="35" centerz="12" radius="1">
+		<monster name="Quara Hydromancer" x="0" y="0" z="12" spawntime="60" />
+	</monster>
 	<monster centerx="1160" centery="80" centerz="12" radius="1">
 		<monster name="Pirate Marauder" x="0" y="0" z="12" spawntime="60" />
 	</monster>

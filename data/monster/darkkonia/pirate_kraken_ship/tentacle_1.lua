@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Tentacle 1")
 local monster = {}
 
 monster.description = "tentacle 1"
-monster.experience = 0
+monster.experience = 840
 monster.outfit = {
 	lookTypeEx = 2187
 }

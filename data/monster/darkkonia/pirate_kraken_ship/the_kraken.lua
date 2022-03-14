@@ -83,11 +83,11 @@ monster.loot = {
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = -0, maxDamage = -700},
-	{name ="combat", interval = 2000, chance = 20, type = COMBAT_ENERGYDAMAGE, minDamage = -160, maxDamage = -250, range = 6, shootEffect = CONST_ANI_ENERGYBALL, target = true},
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_DROWNDAMAGE, minDamage = -150, maxDamage = -180, radius = 8, effect = CONST_ME_WATERSPLASH, target = false},
-	{name ="condition", type = CONDITION_DROWN, interval = 2000, chance = 10, minDamage = -180, maxDamage = -300, radius = 8, effect = CONST_ME_WATERSPLASH, target = false},
-	{name ="kraken summon", interval = 15000, chance = 14, target = false},
+	{name ="melee", interval = 2000, chance = 100, minDamage = -200, maxDamage = -700},
+	{name ="combat", interval = 2000, chance = 20, type = COMBAT_ENERGYDAMAGE, minDamage = -460, maxDamage = -850, range = 6, shootEffect = CONST_ANI_ENERGYBALL, target = true},
+	{name ="combat", interval = 2000, chance = 10, type = COMBAT_DROWNDAMAGE, minDamage = -350, maxDamage = -980, radius = 8, effect = CONST_ME_WATERSPLASH, target = false},
+	{name ="condition", type = CONDITION_DROWN, interval = 2000, chance = 10, minDamage = -480, maxDamage = -1300, radius = 8, effect = CONST_ME_WATERSPLASH, target = false},
+	{name ="kraken summon", interval = 10, chance = 14, target = false},
 }
 
 monster.defenses = {

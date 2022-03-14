@@ -9,6 +9,7 @@ function bossesForgotten.onKill(player, creature)
 		["infernus"] = {stg = DarkKonia.AnsharaPOI.InfernusKilled, value = 1},
 		["zarabustor"] = {stg = DarkKonia.OutfitQuest.ZarabustorKilled, value = 1},
 		["black knight"] = {stg = DarkKonia.ElficVille.BlackKnightKilled, value = 1},
+		["kraken head"] = {stg = DarkKonia.OutfitQuest.KrakenKilled, value = 1},
 	}
 	local monsterName = creature:getName():lower()
 	local boss = bosses[monsterName]

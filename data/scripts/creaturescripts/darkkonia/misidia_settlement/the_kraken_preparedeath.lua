@@ -40,7 +40,7 @@ function theKrakenPrepareDeath.onPrepareDeath(creature, lastHitKiller, mostDamag
 			creature:addHealth(450000, true)
 			tentacle:setMaxHealth(30000)
 			creature:say('The Kraken has hidden', TALKTYPE_MONSTER_SAY)
-			addEvent(revertTheKraken, 20 * 1000, creature:getId(), tentacle:getId())
+			addEvent(revertTheKraken, 30 * 1000, creature:getId(), tentacle:getId())
 			return true
 		end
 	end
