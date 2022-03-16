@@ -41,7 +41,7 @@ QuestDoorAction = {
 			Position(1056, 308, 13),
 		}
 	},
-	[DarkKonia.FirstSacrifice.mysticBlade] = { -- Djinn Special Doors "Mystic Blade"
+	[DarkKonia.SecondSacrifice.mysticBlade] = { -- Djinn Special Doors "Mystic Blade"
 		itemId = false,
 		itemPos = {
 			Position(899, 987, 7),
@@ -49,14 +49,14 @@ QuestDoorAction = {
 			Position(591, 461, 6),
 		}
 	},
-	[DarkKonia.FirstSacrifice.heroicAxe] = { -- Djinn Special Doors "Heroic Axe"
+	[DarkKonia.SecondSacrifice.heroicAxe] = { -- Djinn Special Doors "Heroic Axe"
 		itemId = false,
 		itemPos = {
 			Position(605, 425, 5),
 			Position(591, 454, 6),
 		}
 	},
-	[DarkKonia.FirstSacrifice.amberStaff] = { -- Djinn Special Doors "Amber Staff"
+	[DarkKonia.SecondSacrifice.amberStaff] = { -- Djinn Special Doors "Amber Staff"
 		itemId = false,
 		itemPos = {
 			Position(608, 425, 5),
@@ -76,6 +76,12 @@ QuestDoorAction = {
 			Position(804, 916, 9),
 			Position(1153, 323, 6),
 			Position(1174, 202, 7),
+		}
+	},
+	[DarkKonia.OutfitQuest.KrakenKilled] = { -- Falcon Tower
+		itemId = false,
+		itemPos = {
+			Position(784, 1176, 5),
 		}
 	},
 }

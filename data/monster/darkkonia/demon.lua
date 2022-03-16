@@ -74,9 +74,9 @@ monster.light = {
 }
 
 monster.summon = {
-	maxSummons = 1,
+	maxSummons = 2,
 	summons = {
-		{name = "fire elemental", chance = 10, interval = 2000, count = 1}
+		{name = "fire lord", chance = 10, interval = 2000, count = 2}
 	}
 }
 

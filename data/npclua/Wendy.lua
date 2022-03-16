@@ -411,7 +411,10 @@ local function creatureSayCallback(npc, creature, type, message)
 	end
 	if MsgContains(message, "yes") and npcHandler:getTopic(playerId) == 11 then
 		if (player:getStorageValue(DarkKonia.FirstSacrifice.firstTip) == 1) then
-			npcHandler:say('You already know about this consult your Quest Log.', npc, creature)
+			npcHandler:say({
+				"You already know about this consult your Quest Log."
+				"Come back to report the mission when you have {second stage} it."
+			}, npc, creature)
 			npcHandler:setTopic(playerId, 0)
 		else
 			npcHandler:say('I will also give you information about your first sacrifice you can check it in your Quest Log.', npc, creature)
@@ -421,6 +424,37 @@ local function creatureSayCallback(npc, creature, type, message)
 			player:setStorageValue(DarkKonia.FirstSacrifice.dragonHammer, 0)
 		end
 	elseif  MsgContains(message, "no") and npcHandler:getTopic(playerId) == 11 then
+		npcHandler:say('I understand. Return to me if you change your mind, my child.', npc, creature)
+		npcHandler:removeInteraction(npc, creature)
+	end
+
+	if MsgContains(message, "second stage") and (
+			player:getStorageValue(DarkKonia.FirstSacrifice.wyvernFang) == 1 and
+			player:getStorageValue(DarkKonia.FirstSacrifice.knightAxe) == 1 and
+			player:getStorageValue(DarkKonia.FirstSacrifice.dragonHammer) == 1
+		) then
+		npcHandler:say({
+			"You managed to complete the mission of the first sacrifice."
+			"Now you must find where to sacrifice what you found to find the following weapons. Ok?"
+		}, npc, creature)
+		npcHandler:setTopic(playerId, 12)
+	end
+	if MsgContains(message, "yes") and npcHandler:getTopic(playerId) == 12 then
+		if (player:getStorageValue(DarkKonia.SecondSacrifice.secondTip) == 1) then
+			npcHandler:say({
+				"You already know about this consult your Quest Log."
+				"Come back to report the mission when you have completed it."
+				"To advance to the {third stage}."
+			}, npc, creature)
+			npcHandler:setTopic(playerId, 0)
+		else
+			npcHandler:say('I will also give you information about your second sacrifice you can check it in your Quest Log.', npc, creature)
+			player:setStorageValue(DarkKonia.SecondSacrifice.secondTip, 1)
+			player:setStorageValue(DarkKonia.SecondSacrifice.heroicAxe, 0)
+			player:setStorageValue(DarkKonia.SecondSacrifice.mysticBlade, 0)
+			player:setStorageValue(DarkKonia.SecondSacrifice.amberStaff, 0)
+		end
+	elseif  MsgContains(message, "no") and npcHandler:getTopic(playerId) == 12 then
 		npcHandler:say('I understand. Return to me if you change your mind, my child.', npc, creature)
 		npcHandler:removeInteraction(npc, creature)
 	end

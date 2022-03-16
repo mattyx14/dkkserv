@@ -5851,7 +5851,7 @@
 	<monster centerx="784" centery="1178" centerz="7" radius="5">
 		<monster name="Lord Knight" x="-2" y="-4" z="7" spawntime="60" />
 		<monster name="Lord Knight" x="3" y="-2" z="7" spawntime="60" />
-		<monster name="Falcon Knight" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Falcon Knight" x="-1" y="-1" z="7" spawntime="60" />
 		<monster name="Lord Knight" x="-4" y="2" z="7" spawntime="60" />
 	</monster>
 	<monster centerx="593" centery="1179" centerz="7" radius="1">

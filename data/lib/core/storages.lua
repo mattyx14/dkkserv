@@ -1,4 +1,5 @@
--- Last: 30275
+-- Last: 
+-- thirdTip = 30277
 
 Storage = {
 	-- General storages
@@ -147,22 +148,28 @@ DarkKonia = {
 	FirstSacrifice = {
 		firstTip = 30274,
 		knightAxe = 30147,
-		heroicAxe = 30148,
-		fireAxe = 30149,
 		-- royalAxe = royalAxeDone,
 		wyvernFang = 30150,
-		mysticBlade = 30151,
-		brightSword = 30152,
 		-- justiceSeeker = justiceSeekerDone,
 		dragonHammer = 30153,
-		amberStaff = 30154,
-		skullStaff = 30155,
 		--blessedSceptre = blessedSceptreDone,
 		noSacrifice = {
 			fangWyvern = 30156,
 			axeKnight = 30157,
 			hammerDragon = 30158,
 		}
+	},
+	SecondSacrifice = {
+		secondTip = 30276,
+		heroicAxe = 30148,
+		mysticBlade = 30151,
+		amberStaff = 30154,
+	},
+	ThirdSacrifice = {
+		thirdTip = 30277,
+		fireAxe = 30149,
+		brightSword = 30152,
+		skullStaff = 30155,
 	},
 	Rewards = {
 		firstLevelReward = 30159,

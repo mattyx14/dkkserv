@@ -180,6 +180,46 @@ if not Quests then
 				},
 			}
 		},
+		[6] = {
+			name = "Second Sacrifice Quest",
+			startStorageId = DarkKonia.SecondSacrifice.secondTip,
+			startStorageValue = 1,
+			missions = {
+				[1] = {
+					name = "Second Sacrifice the Mystic Blade",
+					storageId = DarkKonia.SecondSacrifice.mysticBlade,
+					missionId = 10374,
+					startValue = 0,
+					endValue = 1,
+					states = {
+						[0] = "You must sacrifice priceless mystic blade. At one of the sacred altars.",
+						[1] = "With your sacrifice you have obtained an invaluable skull staff that will be required in another mission."
+					}
+				},
+				[2] = {
+					name = "Second Sacrifice the Heroic Axe",
+					storageId = DarkKonia.SecondSacrifice.heroicAxe,
+					missionId = 10375,
+					startValue = 0,
+					endValue = 1,
+					states = {
+						[0] = "You must sacrifice priceless heroic axe. At one of the sacred altars.",
+						[1] = "With your sacrifice you have obtained an invaluable bright sword that will be required in another mission."
+					}
+				},
+				[3] = {
+					name = "Second Sacrifice the Amber Staff",
+					storageId = DarkKonia.SecondSacrifice.amberStaff,
+					missionId = 10376,
+					startValue = 0,
+					endValue = 1,
+					states = {
+						[0] = "You must sacrifice priceless amber staff. At one of the sacred altars.",
+						[1] = "With your sacrifice you have obtained an invaluable fire axe that will be required in another mission."
+					}
+				},
+			}
+		},
 	}
 end
 

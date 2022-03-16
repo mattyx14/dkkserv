@@ -71,7 +71,7 @@
 		<attribute key="item" value="9661" count="25" />
 		<attribute key="item" value="21801" count="10" />
 	</imbuement>
-	<imbuement name="Frost" base="3" subgroup=" (Ice)" category="0" iconid="19" premium="1" storage="50496">
+	<imbuement name="Frost" base="3" subgroup=" (Ice)" category="0" iconid="19" premium="1" storage="30270">
 		<attribute key="description" value="Converts 50% of the physical damage to ice damage." />
 		<attribute key="effect" type="damage" combat="ice" value="50" />
 		<attribute key="item" value="9661" count="25" />
@@ -107,7 +107,7 @@
 		<attribute key="item" value="11484" count="25" />
 		<attribute key="item" value="9647" count="20" />
 	</imbuement>
-	<imbuement name="Reap" base="3" subgroup=" (Death)" category="0" iconid="4" premium="1" storage="50488">
+	<imbuement name="Reap" base="3" subgroup=" (Death)" category="0" iconid="4" premium="1" storage="30107">
 		<attribute key="description" value="Converts 50% of the physical damage to death damage." />
 		<attribute key="effect" type="damage" combat="death" value="50" />
 		<attribute key="item" value="11484" count="25" />
@@ -126,7 +126,7 @@
 		<attribute key="item" value="9685" count="25" />
 		<attribute key="item" value="9633" count="15" />
 	</imbuement>
-	<imbuement name="Vampirism" base="3" category="1" iconid="46" premium="1" storage="50488">
+	<imbuement name="Vampirism" base="3" category="1" iconid="46" premium="1" storage="30270">
 		<attribute key="description" value="Converts 25% of damage to HP with a chance of 100%." />
 		<attribute key="effect" type="skill" value="lifeleech" bonus="25" chance="100" />
 		<attribute key="item" value="9685" count="25" />
@@ -145,7 +145,7 @@
 		<attribute key="item" value="11492" count="25" />
 		<attribute key="item" value="20200" count="25" />
 	</imbuement>
-	<imbuement name="Void" base="3" category="2" iconid="49" premium="1" storage="50494">
+	<imbuement name="Void" base="3" category="2" iconid="49" premium="1" storage="30107">
 		<attribute key="description" value="Converts 8% of damage to MP with a chance of 100%." />
 		<attribute key="effect" type="skill" value="manaleech" bonus="8" chance="100" />
 		<attribute key="item" value="11492" count="25" />
@@ -183,7 +183,7 @@
 		<attribute key="item" value="11466" count="25" />
 		<attribute key="item" value="22007" count="20" />
 	</imbuement>
-	<imbuement name="Lich Shroud" base="3" category="4" iconid="25" premium="1" storage="50488">
+	<imbuement name="Lich Shroud" base="3" category="4" iconid="25" premium="1" storage="30107">
 		<attribute key="description" value="Reduces death damage by 10%." />
 		<attribute key="effect" type="reduction" combat="death" value="10" />
 		<attribute key="item" value="11466" count="25" />
@@ -237,7 +237,7 @@
 		<attribute key="item" value="10295" count="25" />
 		<attribute key="item" value="10307" count="15" />
 	</imbuement>
-	<imbuement name="Quara Scale" base="3" category="7" iconid="40" premium="1" storage="50496">
+	<imbuement name="Quara Scale" base="3" category="7" iconid="40" premium="1" storage="30270">
 		<attribute key="description" value="Reduces ice damage by 15%." />
 		<attribute key="effect" type="reduction" combat="ice" value="15" />
 		<attribute key="item" value="10295" count="25" />
