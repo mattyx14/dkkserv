@@ -309,6 +309,12 @@ npcConfig.shop = {
 	{ itemName = "sniper gloves", clientId = 5875, sell = 2000 },
 	{ itemName = "spectral bolt", clientId = 35902, buy = 70 },
 	{ itemName = "viper star", clientId = 7366, buy = 30 },
+	{ itemName = "composite hornbow", clientId = 8027, sell = 25000 },
+	{ itemName = "crystal crossbow", clientId = 16163, sell = 35000 },
+	{ itemName = "elvish bow", clientId = 7438, sell = 2000 },
+	{ itemName = "mycological bow", clientId = 16164, sell = 35000 },
+	{ itemName = "rift bow", clientId = 22866, sell = 45000 },
+	{ itemName = "rift crossbow", clientId = 22867, sell = 45000 },
 }
 
 -- On buy npc shop message
