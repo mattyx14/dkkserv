@@ -22,25 +22,6 @@ QuestDoorAction = {
 			Position(964, 1078, 10),
 		}
 	},
-	[DarkKonia.HidenChest.castleShield] = { -- Require Castle Shield Quest
-		itemId = false,
-		itemPos = {
-			Position(1056, 308, 13),
-		}
-	},
-	[DarkKonia.FirstQuest.rewardFynn] = { -- First Fynnian Quest
-		itemId = false,
-		itemPos = {
-			Position(1018, 897, 9),
-			Position(972, 1028, 7),
-		}
-	},
-	[DarkKonia.HidenChest.castleShield] = { -- Require Castle Shield Quest
-		itemId = false,
-		itemPos = {
-			Position(1056, 308, 13),
-		}
-	},
 	[DarkKonia.SecondSacrifice.mysticBlade] = { -- Djinn Special Doors "Mystic Blade"
 		itemId = false,
 		itemPos = {
@@ -82,6 +63,21 @@ QuestDoorAction = {
 		itemId = false,
 		itemPos = {
 			Position(784, 1176, 5),
+		}
+	},
+	[DarkKonia.SecondSacrifice.secondTip] = { -- Second Sacrifice Mission Quest Star
+		itemId = false,
+		itemPos = {
+			Position(972, 1028, 7),
+			Position(972, 946, 8),
+			Position(579, 1260, 6),
+		}
+	},
+	[DarkKonia.ThirdSacrifice.thirdTip] = { -- Third Sacrifice Mission Quest Star
+		itemId = false,
+		itemPos = {
+			Position(1056, 308, 13),
+			Position(576, 1216, 7),
 		}
 	},
 }

@@ -1,5 +1,5 @@
 -- Last: 
--- thirdTip = 30277
+-- ToxirusTimer = 30281
 
 Storage = {
 	-- General storages
@@ -250,6 +250,12 @@ DarkKonia = {
 		-- Fyzarus
 		FyzarusKilled = 30210,
 		FyzarusTimer = 30211,
+
+		FerazusKilled = 30278,
+		FezarusTimer = 30279,
+
+		ToxirusKilled = 30280,
+		ToxirusTimer = 30281,
 	},
 	Quest = {
 		Key = {

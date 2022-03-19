@@ -220,6 +220,46 @@ if not Quests then
 				},
 			}
 		},
+		[7] = {
+			name = "Third Sacrifice Quest",
+			startStorageId = DarkKonia.ThirdSacrifice.thirdTip,
+			startStorageValue = 1,
+			missions = {
+				[1] = {
+					name = "Third Sacrifice the Bright Sword",
+					storageId = DarkKonia.ThirdSacrifice.brightSword,
+					missionId = 10377,
+					startValue = 0,
+					endValue = 1,
+					states = {
+						[0] = "You must find bright sword that is guarded by powerful dragons.",
+						[1] = "By carrying this weapon you can fight with Fyzarus the guardian of weapons of destruction."
+					}
+				},
+				[2] = {
+					name = "Third Sacrifice the Fire Axe",
+					storageId = DarkKonia.ThirdSacrifice.fireAxe,
+					missionId = 10378,
+					startValue = 0,
+					endValue = 1,
+					states = {
+						[0] = "You should find fire axe which is guarded by powerful demons.",
+						[1] = "By carrying this weapon you can fight with Toxirus the guardian of weapons of destruction."
+					}
+				},
+				[3] = {
+					name = "Third Sacrifice the Skull Staff",
+					storageId = DarkKonia.ThirdSacrifice.skullStaff,
+					missionId = 10379,
+					startValue = 0,
+					endValue = 1,
+					states = {
+						[0] = "You should find fire ax which is guarded by powerful wizards.",
+						[1] = "By carrying this weapon you can fight with Fezarus the guardian of weapons of destruction."
+					}
+				},
+			}
+		},
 	}
 end
 

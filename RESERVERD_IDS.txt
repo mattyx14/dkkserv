@@ -60,6 +60,10 @@ Reserverd_IDS
 		24924 -- Pirate Kraken Ship Lever
 		24925 -- dangerousWaters
 	uid	24926 -- Kraken kickTimer
+		24927 -- Eagle Shield
+	uid	24928 -- Fyzarus Reward
+	uid	24929 -- Fezarus Reward
+	uid	24930 -- Toxirus Reward
 
 	Storages
 		25770 -- \\ 

@@ -23,8 +23,8 @@ local config = {
 	kickPos = Position(936, 1096, 11)
 }
 
-local jaulLever = Action()
-function jaulLever.onUse(player, item, fromPosition, target, toPosition, isHotkey)
+local fyzarus = Action()
+function fyzarus.onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	if player:getStorageValue(config.storage) < config.value then
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "All the players need find the ".. config.itemMission .." quest.")
 		return true
@@ -99,5 +99,5 @@ function jaulLever.onUse(player, item, fromPosition, target, toPosition, isHotke
 	return true
 end
 
-jaulLever:aid(24870)
-jaulLever:register()
+fyzarus:aid(24870)
+fyzarus:register()

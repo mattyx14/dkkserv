@@ -458,6 +458,70 @@ local function creatureSayCallback(npc, creature, type, message)
 		npcHandler:say('I understand. Return to me if you change your mind, my child.', npc, creature)
 		npcHandler:removeInteraction(npc, creature)
 	end
+
+	if MsgContains(message, "third stage") and (
+			player:getStorageValue(DarkKonia.SecondSacrifice.mysticBlade) == 1 and
+			player:getStorageValue(DarkKonia.SecondSacrifice.heroicAxe) == 1 and
+			player:getStorageValue(DarkKonia.SecondSacrifice.amberStaff) == 1
+		) then
+		npcHandler:say({
+			"You managed to complete the mission of the second sacrifice.",
+			"Now you must find where to sacrifice what you found to find the following weapons. Ok?"
+		}, npc, creature)
+		npcHandler:setTopic(playerId, 13)
+	end
+	if MsgContains(message, "yes") and npcHandler:getTopic(playerId) == 13 then
+		if (player:getStorageValue(DarkKonia.ThirdSacrifice.thirdTip) == 1) then
+			npcHandler:say({
+				"You already know about this consult your Quest Log.",
+				"Come back to report the mission when you have completed it.",
+				"To advance to the {final mission}."
+			}, npc, creature)
+			npcHandler:setTopic(playerId, 0)
+		else
+			npcHandler:say('I will also give you information about your third sacrifice you can check it in your Quest Log.', npc, creature)
+			player:setStorageValue(DarkKonia.ThirdSacrifice.thirdTip, 1)
+			player:setStorageValue(DarkKonia.ThirdSacrifice.brightSword, 0)
+			player:setStorageValue(DarkKonia.ThirdSacrifice.fireAxe, 0)
+			player:setStorageValue(DarkKonia.ThirdSacrifice.skullStaff, 0)
+		end
+	elseif  MsgContains(message, "no") and npcHandler:getTopic(playerId) == 13 then
+		npcHandler:say('I understand. Return to me if you change your mind, my child.', npc, creature)
+		npcHandler:removeInteraction(npc, creature)
+	end
+
+	if MsgContains(message, "final mission") and (
+			player:getStorageValue(DarkKonia.ThirdSacrifice.brightSword) == 1 and
+			player:getStorageValue(DarkKonia.ThirdSacrifice.fireAxe) == 1 and
+			player:getStorageValue(DarkKonia.ThirdSacrifice.skullStaff) == 1
+		) then
+		npcHandler:say({
+			"You managed to complete the mission of the third sacrifice.",
+			"You must prepare to face the three powerful guardians of destruction.",
+			"His powers have no comparison be very careful and I wish you good luck .....",
+			"Are you ready for this?"
+		}, npc, creature)
+		npcHandler:setTopic(playerId, 14)
+	end
+	if MsgContains(message, "yes") and npcHandler:getTopic(playerId) == 14 then
+		if (player:getStorageValue(DarkKonia.SecondSacrifice.secondTip) == 1) then
+			npcHandler:say({
+				"You already know about this consult your Quest Log.",
+				"Come back to report the mission when you have completed it.",
+				"To advance to the {final mission}."
+			}, npc, creature)
+			npcHandler:setTopic(playerId, 0)
+		else
+			npcHandler:say('I will also give you information about your third sacrifice you can check it in your Quest Log.', npc, creature)
+			player:setStorageValue(DarkKonia.SecondSacrifice.secondTip, 1)
+			player:setStorageValue(DarkKonia.SecondSacrifice.heroicAxe, 0)
+			player:setStorageValue(DarkKonia.SecondSacrifice.mysticBlade, 0)
+			player:setStorageValue(DarkKonia.SecondSacrifice.amberStaff, 0)
+		end
+	elseif  MsgContains(message, "no") and npcHandler:getTopic(playerId) == 14 then
+		npcHandler:say('I understand. Return to me if you change your mind, my child.', npc, creature)
+		npcHandler:removeInteraction(npc, creature)
+	end
 	return true
 end
 

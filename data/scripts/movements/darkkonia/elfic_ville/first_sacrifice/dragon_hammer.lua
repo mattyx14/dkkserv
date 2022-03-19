@@ -2,7 +2,7 @@ local config = {
     [9008] = {
 		sacrificePosition = Position(569, 1254, 6),
 		pushPosition = Position(562, 1266, 6),
-		destination = Position(631, 1248, 6)
+		destination = Position(635, 1275, 6)
 	}
 }
 
