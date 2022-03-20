@@ -141,12 +141,12 @@ if not Quests then
 			}
 		},
 		[5] = {
-			name = "First Sacrifice Quest",
+			name = "First Sacrifice Quest (Stage 1)",
 			startStorageId = DarkKonia.FirstSacrifice.firstTip,
 			startStorageValue = 1,
 			missions = {
 				[1] = {
-					name = "First Sacrifice the Wyvern Fang",
+					name = "First Sacrifice - The Wyvern Fang",
 					storageId = DarkKonia.FirstSacrifice.wyvernFang,
 					missionId = 10371,
 					startValue = 0,
@@ -157,7 +157,7 @@ if not Quests then
 					}
 				},
 				[2] = {
-					name = "First Sacrifice the Knight Axe",
+					name = "First Sacrifice - The Knight Axe",
 					storageId = DarkKonia.FirstSacrifice.knightAxe,
 					missionId = 10372,
 					startValue = 0,
@@ -168,7 +168,7 @@ if not Quests then
 					}
 				},
 				[3] = {
-					name = "First Sacrifice the Dragon Hammer",
+					name = "First Sacrifice - The Dragon Hammer",
 					storageId = DarkKonia.FirstSacrifice.dragonHammer,
 					missionId = 10373,
 					startValue = 0,
@@ -181,12 +181,12 @@ if not Quests then
 			}
 		},
 		[6] = {
-			name = "Second Sacrifice Quest",
+			name = "First Sacrifice Quest (Stage 2)",
 			startStorageId = DarkKonia.SecondSacrifice.secondTip,
 			startStorageValue = 1,
 			missions = {
 				[1] = {
-					name = "Second Sacrifice the Mystic Blade",
+					name = "First Sacrifice - The Mystic Blade",
 					storageId = DarkKonia.SecondSacrifice.mysticBlade,
 					missionId = 10374,
 					startValue = 0,
@@ -197,7 +197,7 @@ if not Quests then
 					}
 				},
 				[2] = {
-					name = "Second Sacrifice the Heroic Axe",
+					name = "First Sacrifice - The Heroic Axe",
 					storageId = DarkKonia.SecondSacrifice.heroicAxe,
 					missionId = 10375,
 					startValue = 0,
@@ -208,7 +208,7 @@ if not Quests then
 					}
 				},
 				[3] = {
-					name = "Second Sacrifice the Amber Staff",
+					name = "First Sacrifice - The Amber Staff",
 					storageId = DarkKonia.SecondSacrifice.amberStaff,
 					missionId = 10376,
 					startValue = 0,
@@ -221,41 +221,92 @@ if not Quests then
 			}
 		},
 		[7] = {
-			name = "Third Sacrifice Quest",
+			name = "First Sacrifice Quest (Stage 3)",
 			startStorageId = DarkKonia.ThirdSacrifice.thirdTip,
 			startStorageValue = 1,
 			missions = {
 				[1] = {
-					name = "Third Sacrifice the Bright Sword",
+					name = "First Sacrifice - The Bright Sword",
 					storageId = DarkKonia.ThirdSacrifice.brightSword,
 					missionId = 10377,
 					startValue = 0,
 					endValue = 1,
 					states = {
 						[0] = "You must find bright sword that is guarded by powerful dragons.",
-						[1] = "By carrying this weapon you can fight with Fyzarus the guardian of weapons of destruction."
+						[1] = "You can fight with Fyzarus the guardian of weapons of destruction."
 					}
 				},
 				[2] = {
-					name = "Third Sacrifice the Fire Axe",
+					name = "First Sacrifice - The Fire Axe",
 					storageId = DarkKonia.ThirdSacrifice.fireAxe,
 					missionId = 10378,
 					startValue = 0,
 					endValue = 1,
 					states = {
 						[0] = "You should find fire axe which is guarded by powerful demons.",
-						[1] = "By carrying this weapon you can fight with Toxirus the guardian of weapons of destruction."
+						[1] = "You can fight with Toxirus the guardian of weapons of destruction."
 					}
 				},
 				[3] = {
-					name = "Third Sacrifice the Skull Staff",
+					name = "First Sacrifice - The Skull Staff",
 					storageId = DarkKonia.ThirdSacrifice.skullStaff,
 					missionId = 10379,
 					startValue = 0,
 					endValue = 1,
 					states = {
 						[0] = "You should find fire ax which is guarded by powerful wizards.",
-						[1] = "By carrying this weapon you can fight with Fezarus the guardian of weapons of destruction."
+						[1] = "You can fight with Fezarus the guardian of weapons of destruction."
+					}
+				},
+			}
+		},
+		[8] = {
+			name = "First Sacrice Quest (Final)",
+			startStorageId = DarkKonia.FirstQuest.finalTip,
+			startStorageValue = 1,
+			missions = {
+				[1] = {
+					name = "Rewards for complete task",
+					storageId = DarkKonia.FirstQuest.RewardSacrifice,
+					missionId = 10380,
+					startValue = 0,
+					endValue = 1,
+					states = {
+						[0] = "Once you complete the tasks you can claim a set of weapons for yourself how reward with Wendy.",
+						[1] = "You have already claimed your reward now you can fight against the guardians of destruction."
+					}
+				},
+				[2] = {
+					name = "The flaming fortress of destruction",
+					storageId = DarkKonia.ArusBosses.FyzarusKilled,
+					missionId = 10381,
+					startValue = 0,
+					endValue = 1,
+					states = {
+						[0] = "Once defeated you can claim your reward randomly every 15 days.",
+						[1] = "You defeated the guardian of destruction now you can claim his treasure."
+					}
+				},
+				[3] = {
+					name = "The freezing fortress of destruction",
+					storageId = DarkKonia.ArusBosses.FerazusKilled,
+					missionId = 10382,
+					startValue = 0,
+					endValue = 1,
+					states = {
+						[0] = "Once defeated you can claim your reward randomly every 15 days.",
+						[1] = "You defeated the guardian of destruction now you can claim his treasure."
+					}
+				},
+				[4] = {
+					name = "The swampy Fortress of Destruction",
+					storageId = DarkKonia.ArusBosses.ToxirusKilled,
+					missionId = 10383,
+					startValue = 0,
+					endValue = 1,
+					states = {
+						[0] = "Once defeated you can claim your reward randomly every 15 days.",
+						[1] = "You defeated the guardian of destruction now you can claim his treasure."
 					}
 				},
 			}

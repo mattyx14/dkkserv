@@ -69,6 +69,10 @@ local sword = {
 local axe = {
 	[VOCATION.BASE_ID.KNIGHT] = 7773,
 }
+local rewardSacrificeMG = {
+	[VOCATION.BASE_ID.DRUID] = 35521, -- jungle rod
+	[VOCATION.BASE_ID.SORCERER] = 35522, -- jungle wand
+}
 
 local function creatureSayCallback(npc, creature, type, message)
 	local player = Player(creature)
@@ -81,6 +85,7 @@ local function creatureSayCallback(npc, creature, type, message)
 	local itemIdClub = club[player:getVocation():getBaseId()]
 	local itemIdSword = sword[player:getVocation():getBaseId()]
 	local itemIdAxe = axe[player:getVocation():getBaseId()]
+	local rewardMG = rewardSacrificeMG[player:getVocation():getBaseId()]
 
 	if MsgContains(message, "knight's sword") then
 		if player:hasOutfit(player:getSex() == PLAYERSEX_FEMALE and 139 or 131, 1) then
@@ -484,6 +489,7 @@ local function creatureSayCallback(npc, creature, type, message)
 			player:setStorageValue(DarkKonia.ThirdSacrifice.brightSword, 0)
 			player:setStorageValue(DarkKonia.ThirdSacrifice.fireAxe, 0)
 			player:setStorageValue(DarkKonia.ThirdSacrifice.skullStaff, 0)
+			player:setStorageValue(DarkKonia.FirstQuest.RewardSacrifice, 0)
 		end
 	elseif  MsgContains(message, "no") and npcHandler:getTopic(playerId) == 13 then
 		npcHandler:say('I understand. Return to me if you change your mind, my child.', npc, creature)
@@ -493,7 +499,8 @@ local function creatureSayCallback(npc, creature, type, message)
 	if MsgContains(message, "final mission") and (
 			player:getStorageValue(DarkKonia.ThirdSacrifice.brightSword) == 1 and
 			player:getStorageValue(DarkKonia.ThirdSacrifice.fireAxe) == 1 and
-			player:getStorageValue(DarkKonia.ThirdSacrifice.skullStaff) == 1
+			player:getStorageValue(DarkKonia.ThirdSacrifice.skullStaff) == 1 and
+			player:getStorageValue(DarkKonia.FirstQuest.RewardSacrifice) == 1
 		) then
 		npcHandler:say({
 			"You managed to complete the mission of the third sacrifice.",
@@ -504,7 +511,7 @@ local function creatureSayCallback(npc, creature, type, message)
 		npcHandler:setTopic(playerId, 14)
 	end
 	if MsgContains(message, "yes") and npcHandler:getTopic(playerId) == 14 then
-		if (player:getStorageValue(DarkKonia.SecondSacrifice.secondTip) == 1) then
+		if (player:getStorageValue(DarkKonia.FirstQuest.finalTip) == 1) then
 			npcHandler:say({
 				"You already know about this consult your Quest Log.",
 				"Come back to report the mission when you have completed it.",
@@ -512,14 +519,72 @@ local function creatureSayCallback(npc, creature, type, message)
 			}, npc, creature)
 			npcHandler:setTopic(playerId, 0)
 		else
-			npcHandler:say('I will also give you information about your third sacrifice you can check it in your Quest Log.', npc, creature)
-			player:setStorageValue(DarkKonia.SecondSacrifice.secondTip, 1)
-			player:setStorageValue(DarkKonia.SecondSacrifice.heroicAxe, 0)
-			player:setStorageValue(DarkKonia.SecondSacrifice.mysticBlade, 0)
-			player:setStorageValue(DarkKonia.SecondSacrifice.amberStaff, 0)
+			npcHandler:say('I will also give you information about your {final mission} you can check it in your Quest Log.', npc, creature)
+			player:setStorageValue(DarkKonia.FirstQuest.finalTip, 1)
+			player:setStorageValue(DarkKonia.ArusBosses.FyzarusKilled, 0)
+			player:setStorageValue(DarkKonia.ArusBosses.FerazusKilled, 0)
+			player:setStorageValue(DarkKonia.ArusBosses.ToxirusKilled, 0)
 		end
 	elseif  MsgContains(message, "no") and npcHandler:getTopic(playerId) == 14 then
 		npcHandler:say('I understand. Return to me if you change your mind, my child.', npc, creature)
+		npcHandler:removeInteraction(npc, creature)
+	end
+
+	if MsgContains(message, 'reward') and (
+			player:getStorageValue(DarkKonia.ThirdSacrifice.brightSword) == 1 and
+			player:getStorageValue(DarkKonia.ThirdSacrifice.fireAxe) == 1 and
+			player:getStorageValue(DarkKonia.ThirdSacrifice.skullStaff) == 1
+		) then
+		npcHandler:say('You ask me you begin your adventure with the reward?', npc, creature)
+		npcHandler:setTopic(playerId, 15)
+	end
+	if MsgContains(message, "yes") and npcHandler:getTopic(playerId) == 15 then
+		if (player:getStorageValue(DarkKonia.FirstQuest.RewardSacrifice) == 1) then
+			npcHandler:say('What? I have already gave you one reward!', npc, creature)
+			npcHandler:removeInteraction(npc, creature)
+		else
+			if player:isKnight() and (
+				player:getItemCount(3320) > 0 and player:getItemCount(3324) > 0 and player:getItemCount(3295) > 0
+			) then
+				player:removeItem(3320, 1)
+				player:removeItem(3324, 1)
+				player:removeItem(3295, 1)
+				npcHandler:say('Here you are young adept, take care yourself.', npc, creature)
+				player:setStorageValue(DarkKonia.FirstQuest.RewardSacrifice, 1)
+				player:addItem(8102, 1) -- emerald sword
+				player:addItem(7435, 1) -- impaler
+				player:addItem(3309, 1) -- thunder hammer
+			else
+				npcHandler:say('Sorry, you must carry the three objects you have found', npc, creature)
+			end
+			if player:isPaladin() and (
+				player:getItemCount(3320) > 0 and player:getItemCount(3324) > 0 and player:getItemCount(3295) > 0
+			) then
+				player:removeItem(3320, 1)
+				player:removeItem(3324, 1)
+				player:removeItem(3295, 1)
+				npcHandler:say('Here you are young adept, take care yourself.', npc, creature)
+				player:setStorageValue(DarkKonia.FirstQuest.RewardSacrifice, 1)
+				player:addItem(8023, 1) -- royal crossbow
+				player:addItem(8026, 1) -- warsinger bow
+			else
+				npcHandler:say('Sorry, you must carry the three objects you have found', npc, creature)
+			end
+			if player:isMage() and (
+				player:getItemCount(3320) > 0 and player:getItemCount(3324) > 0 and player:getItemCount(3295) > 0
+			) then
+				player:removeItem(3320, 1)
+				player:removeItem(3324, 1)
+				player:removeItem(3295, 1)
+				npcHandler:say('Here you are young adept, take care yourself.', npc, creature)
+				player:setStorageValue(DarkKonia.FirstQuest.RewardSacrifice, 1)
+				player:addItem(rewardMG, 1) -- jungle rod/wand
+			else
+				npcHandler:say('Sorry, you must carry the three objects you have found', npc, creature)
+			end
+		end
+	elseif  MsgContains(message, "no") and npcHandler:getTopic(playerId) == 15 then
+		npcHandler:say("Ok then.", npc, creature)
 		npcHandler:removeInteraction(npc, creature)
 	end
 	return true

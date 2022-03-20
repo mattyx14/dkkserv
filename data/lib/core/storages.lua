@@ -1,5 +1,5 @@
 -- Last: 
--- ToxirusTimer = 30281
+-- finalTip = 30283
 
 Storage = {
 	-- General storages
@@ -140,6 +140,8 @@ DarkKonia = {
 			rewardFynn = 30142,
 		Misidia = 30143,
 			rewardMisidia = 30144,
+		RewardSacrifice = 30282,
+		finalTip = 30283,
 	},
 	FynnQuest =  {
 		DemonHelmetTimmer = 30145,
