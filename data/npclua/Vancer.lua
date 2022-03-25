@@ -56,9 +56,40 @@ npcType.onCloseChannel = function(npc, creature)
 	npcHandler:onCloseChannel(npc, creature)
 end
 
-keywordHandler:addKeyword({'ammunition container'}, StdModule.say, {npcHandler = npcHandler, text = "If need {first quiver}, only ask me."})
+keywordHandler:addKeyword({'ammunition container'}, StdModule.say, {npcHandler = npcHandler, text = "If need {first quiver}?."})
 keywordHandler:addKeyword({'distance'}, StdModule.say, {npcHandler = npcHandler, text = "Selling distance weapons and ammunition. Special offers only available here, have a look, for that matter, ask me for a {trade}"})
 keywordHandler:addKeyword({'mission'}, StdModule.say, {npcHandler = npcHandler, text = "There is a complicated mission regarding the {first sacrifice} of weapons."})
+
+keywordHandler:addSpellKeyword({"divine", "caldera", "plus"},
+	{
+		npcHandler = npcHandler,
+		spellName = "Divine Caldera Plus",
+		price = 1000000,
+		level = 200,
+		vocation = VOCATION.BASE_ID.PALADIN
+	}
+, nil,
+function(player)
+	return player:getStorageValue(DarkKonia.FirstQuest.finalTip) ~= 1
+end)
+keywordHandler:addSpellKeyword({"divine", "missile", "plus"},
+	{
+		npcHandler = npcHandler,
+		spellName = "Divine Missile Plus",
+		price = 1000000,
+		level = 200,
+		vocation = VOCATION.BASE_ID.PALADIN
+	}
+, nil,
+function(player)
+	return player:getStorageValue(DarkKonia.FirstQuest.finalTip) ~= 1
+end)
+keywordHandler:addKeyword({"spells"}, StdModule.say,
+	{
+		npcHandler = npcHandler,
+		text = {"In this category I have '{Divine Caldera Plus}' as well as ... '{Divine Missile Plus}'."}
+	}
+)
 
 local quiver = {
 	[VOCATION.BASE_ID.PALADIN] = 35562,
@@ -262,9 +293,15 @@ keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, text
 keywordHandler:addKeyword({'paladins'}, StdModule.say, {npcHandler = npcHandler, text = "Paladins are great warriors and magicians. Besides that we are excellent missile fighters. Many people in DarkKonia want to join us."})
 keywordHandler:addKeyword({'warriors'}, StdModule.say, {npcHandler = npcHandler, text = "Of course, we aren't as strong as knights, but no druid or sorcerer will ever defeat a paladin with a sword."})
 keywordHandler:addKeyword({'magicians'}, StdModule.say, {npcHandler = npcHandler, text = "There are many magic spells and runes paladins can use."})
-keywordHandler:addKeyword({'missile'}, StdModule.say, {npcHandler = npcHandler, text = "Paladins are the best missile fighters in DarkKonia!"})
 
-npcHandler:setMessage(MESSAGE_GREET, "Greetings and Banor be with you, |PLAYERNAME|! May I interest you in a {trade} for distance weapons, or your {ammunition container} for paladins. Or you can also participate in a great {mission}.")
+npcHandler:setMessage(MESSAGE_GREET, {
+	"Greetings and Banor be with you, |PLAYERNAME|!!",
+	"Welcome to my armory :)",
+	"You are also interested in a {distance} weapons.",
+	"I can also help you with the {ammunition container} for the paladin for you, the first is free.",
+	"Or maybe you want to participate in a great {mission} that I have for you.",
+	"Lastly, I can also sell you some powerful {spells}, but for this you need to complete the {mission} in which I want you to participate."
+})
 npcHandler:setMessage(MESSAGE_FAREWELL, "Farewell, |PLAYERNAME|, may the winds guide your way.")
 npcHandler:setMessage(MESSAGE_WALKAWAY, "Come back soon!")
 npcHandler:setMessage(MESSAGE_SENDTRADE, "Of course, just browse through my wares. If you're only interested in {distance} equipment, let me know.")

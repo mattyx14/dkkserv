@@ -60,6 +60,49 @@ keywordHandler:addKeyword({'smithy'}, StdModule.say, {npcHandler = npcHandler, t
 keywordHandler:addKeyword({'first weapons'}, StdModule.say, {npcHandler = npcHandler, text = "If need {first club}, {first sword} or {first axe}."})
 keywordHandler:addKeyword({'mission'}, StdModule.say, {npcHandler = npcHandler, text = "There is a complicated mission regarding the {first sacrifice} of weapons."})
 
+keywordHandler:addSpellKeyword({"annihilation"},
+	{
+		npcHandler = npcHandler,
+		spellName = "Annihilation",
+		price = 1000000,
+		level = 200,
+		vocation = VOCATION.BASE_ID.KNIGHT
+	}
+, nil,
+function(player)
+	return player:getStorageValue(DarkKonia.FirstQuest.finalTip) ~= 1
+end)
+keywordHandler:addSpellKeyword({"fierce", "berserk", "plus"},
+	{
+		npcHandler = npcHandler,
+		spellName = "Fierce Berserk Plus",
+		price = 1000000,
+		level = 200,
+		vocation = VOCATION.BASE_ID.KNIGHT
+	}
+, nil,
+function(player)
+	return player:getStorageValue(DarkKonia.FirstQuest.finalTip) ~= 1
+end)
+keywordHandler:addSpellKeyword({"front", "sweep", "plus"},
+	{
+		npcHandler = npcHandler,
+		spellName = "Front Sweep Plus",
+		price = 1000000,
+		level = 200,
+		vocation = VOCATION.BASE_ID.KNIGHT
+	}
+, nil,
+function(player)
+	return player:getStorageValue(DarkKonia.FirstQuest.finalTip) ~= 1
+end)
+keywordHandler:addKeyword({"spells"}, StdModule.say,
+	{
+		npcHandler = npcHandler,
+		text = {"In this category I have '{Fierce Berserk Plus}' as well as ... '{Front Sweep Plus}' and '{Annihilation}'"}
+	}
+)
+
 local club = {
 	[VOCATION.BASE_ID.KNIGHT] = 3327,
 }
@@ -609,7 +652,12 @@ keywordHandler:addKeyword(
 )
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
-npcHandler:setMessage(MESSAGE_GREET, "Ah, a customer! Be greeted, |PLAYERNAME|! Welcome to my {smithy} or do you need {first weapons} for knights. Or you can also participate in a great {mission}.")
+npcHandler:setMessage(MESSAGE_GREET, {
+	"Ah, a customer! Be greeted, |PLAYERNAME|! Welcome to my {smithy} ...",
+	"I can also help you with the {first weapons} for the knights for you.",
+	"Or maybe you want to participate in a great {mission} that I have for you.",
+	"Lastly, I can also sell you some powerful {spells}, but for this you need to complete the {mission} in which I want you to participate."
+})
 npcHandler:setMessage(MESSAGE_FAREWELL, "Farewell, |PLAYERNAME|, may the winds guide your way.")
 npcHandler:setMessage(MESSAGE_WALKAWAY, "Come back soon!")
 npcHandler:setMessage(MESSAGE_SENDTRADE, "Take all the time you need to decide what you want!")

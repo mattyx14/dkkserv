@@ -3028,11 +3028,23 @@
 	<monster centerx="1057" centery="350" centerz="7" radius="1">
 		<monster name="Rabbit" x="0" y="0" z="7" spawntime="60" />
 	</monster>
+	<monster centerx="1095" centery="358" centerz="7" radius="1">
+		<monster name="Butterfly" x="0" y="0" z="7" spawntime="60" />
+	</monster>
 	<monster centerx="1067" centery="360" centerz="7" radius="1">
 		<monster name="Rat" x="0" y="0" z="7" spawntime="60" />
 	</monster>
 	<monster centerx="1072" centery="361" centerz="7" radius="1">
 		<monster name="Rat" x="0" y="0" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1105" centery="361" centerz="7" radius="1">
+		<monster name="Butterfly" x="0" y="0" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1087" centery="362" centerz="7" radius="1">
+		<monster name="Butterfly" x="0" y="0" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1095" centery="374" centerz="7" radius="1">
+		<monster name="Butterfly" x="0" y="0" z="7" spawntime="60" />
 	</monster>
 	<monster centerx="901" centery="910" centerz="7" radius="1">
 		<monster name="Pirate Marauder" x="0" y="0" z="7" spawntime="60" />
@@ -13333,6 +13345,7 @@
 		<monster name="Crazed Summer Rearguard" x="4" y="-2" z="13" spawntime="60" />
 		<monster name="Crazed Summer Rearguard" x="2" y="0" z="13" spawntime="60" />
 		<monster name="Crazed Summer Vanguard" x="5" y="1" z="13" spawntime="60" />
+		<monster name="Crazed Summer Rearguard" x="-1" y="2" z="13" spawntime="60" />
 		<monster name="Crazed Summer Vanguard" x="3" y="3" z="13" spawntime="60" />
 	</monster>
 	<monster centerx="606" centery="1198" centerz="13" radius="1">
@@ -13360,9 +13373,13 @@
 	<monster centerx="603" centery="1201" centerz="13" radius="1">
 		<monster name="Crazed Summer Rearguard" x="0" y="0" z="13" spawntime="60" />
 	</monster>
+	<monster centerx="563" centery="1202" centerz="13" radius="1">
+		<monster name="Crazed Summer Rearguard" x="0" y="0" z="13" spawntime="60" />
+	</monster>
 	<monster centerx="577" centery="1204" centerz="13" radius="5">
 		<monster name="Crazed Summer Vanguard" x="0" y="-4" z="13" spawntime="60" />
 		<monster name="Crazed Summer Rearguard" x="-2" y="-3" z="13" spawntime="60" />
+		<monster name="Crazed Summer Rearguard" x="4" y="-3" z="13" spawntime="60" />
 		<monster name="Crazed Summer Rearguard" x="0" y="0" z="13" spawntime="60" />
 		<monster name="Crazed Summer Rearguard" x="-2" y="3" z="13" spawntime="60" />
 		<monster name="Crazed Summer Rearguard" x="4" y="3" z="13" spawntime="60" />
@@ -13385,6 +13402,9 @@
 		<monster name="Thanatursus" x="4" y="4" z="13" spawntime="60" />
 	</monster>
 	<monster centerx="617" centery="1206" centerz="13" radius="1">
+		<monster name="Crazed Summer Rearguard" x="0" y="0" z="13" spawntime="60" />
+	</monster>
+	<monster centerx="558" centery="1208" centerz="13" radius="1">
 		<monster name="Crazed Summer Rearguard" x="0" y="0" z="13" spawntime="60" />
 	</monster>
 	<monster centerx="558" centery="1211" centerz="13" radius="1">
@@ -13426,6 +13446,7 @@
 		<monster name="Crazed Summer Vanguard" x="-2" y="-4" z="13" spawntime="60" />
 		<monster name="Crazed Summer Vanguard" x="3" y="-4" z="13" spawntime="60" />
 		<monster name="Crazed Summer Vanguard" x="-5" y="1" z="13" spawntime="60" />
+		<monster name="Crazed Summer Rearguard" x="-3" y="4" z="13" spawntime="60" />
 		<monster name="Thanatursus" x="4" y="4" z="13" spawntime="60" />
 		<monster name="Crazed Summer Vanguard" x="-1" y="5" z="13" spawntime="60" />
 		<monster name="Crazed Summer Vanguard" x="2" y="5" z="13" spawntime="60" />
@@ -13469,7 +13490,9 @@
 		<monster name="Thanatursus" x="0" y="0" z="13" spawntime="60" />
 	</monster>
 	<monster centerx="582" centery="1235" centerz="13" radius="5">
+		<monster name="Crazed Summer Rearguard" x="-1" y="-5" z="13" spawntime="60" />
 		<monster name="Crazed Summer Rearguard" x="-2" y="-4" z="13" spawntime="60" />
+		<monster name="Crazed Summer Rearguard" x="0" y="-1" z="13" spawntime="60" />
 		<monster name="Crazed Summer Rearguard" x="2" y="2" z="13" spawntime="60" />
 	</monster>
 	<monster centerx="609" centery="1235" centerz="13" radius="5">

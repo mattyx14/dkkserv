@@ -1,19 +1,19 @@
 local TileSettings = {
 	[5500] = { -- Mystic Flame block Royal Axe Access
 		minLevelRequired = 200,
-		missionRequired = DarkKonia.FirstSacrifice.fireAxe,
+		missionRequired = DarkKonia.ThirdSacrifice.fireAxe,
 		text = "require fixe axe quest",
 		failPosition = Position(898, 1035, 11)
 	},
 	[5501] = { -- Mystic Flame block Justice Seeker Access
 		minLevelRequired = 200,
-		missionRequired = DarkKonia.FirstSacrifice.brightSword,
+		missionRequired = DarkKonia.ThirdSacrifice.brightSword,
 		text = "require bright sword quest",
 		failPosition = Position(931, 1084, 11)
 	},
 	[5502] = { -- Mystic Flame block Blessed Sceptre Access
 		minLevelRequired = 200,
-		missionRequired = DarkKonia.FirstSacrifice.skullStaff,
+		missionRequired = DarkKonia.ThirdSacrifice.skullStaff,
 		text = "require skull staff quest",
 		failPosition = Position(724, 821, 12)
 	},

@@ -58,6 +58,88 @@ end
 
 keywordHandler:addKeyword({'mission'}, StdModule.say, {npcHandler = npcHandler, text = "There is a complicated mission regarding the {first sacrifice} of weapons."})
 
+keywordHandler:addSpellKeyword({"terra", "wave", "plus"},
+	{
+		npcHandler = npcHandler,
+		spellName = "Terra Wave Plus",
+		price = 1000000,
+		level = 200,
+		vocation = VOCATION.BASE_ID.DRUID
+	}
+, nil,
+function(player)
+	return player:getStorageValue(DarkKonia.FirstQuest.finalTip) ~= 1
+end)
+keywordHandler:addSpellKeyword({"ultimate", "ice", "strike", "plus"},
+	{
+		npcHandler = npcHandler,
+		spellName = "Ultimate Ice Strike plus",
+		price = 1000000,
+		level = 200,
+		vocation = VOCATION.BASE_ID.DRUID
+	}
+, nil,
+function(player)
+	return player:getStorageValue(DarkKonia.FirstQuest.finalTip) ~= 1
+end)
+keywordHandler:addSpellKeyword({"wrath of", "nature", "plus"},
+	{
+		npcHandler = npcHandler,
+		spellName = "Wrath of Nature Plus",
+		price = 1000000,
+		level = 200,
+		vocation = VOCATION.BASE_ID.DRUID
+	}
+, nil,
+function(player)
+	return player:getStorageValue(DarkKonia.FirstQuest.finalTip) ~= 1
+end)
+keywordHandler:addSpellKeyword({"rage of", "the skies", "plus"},
+	{
+		npcHandler = npcHandler,
+		spellName = "Rage of the Skies Plus",
+		price = 1000000,
+		level = 200,
+		vocation = VOCATION.BASE_ID.SOCERER
+	}
+, nil,
+function(player)
+	return player:getStorageValue(DarkKonia.FirstQuest.finalTip) ~= 1
+end)
+keywordHandler:addSpellKeyword({"fire", "wave", "plus"},
+	{
+		npcHandler = npcHandler,
+		spellName = "Fire Wave Plus",
+		price = 1000000,
+		level = 200,
+		vocation = VOCATION.BASE_ID.SOCERER
+	}
+, nil,
+function(player)
+	return player:getStorageValue(DarkKonia.FirstQuest.finalTip) ~= 1
+end)
+keywordHandler:addSpellKeyword({"ultimate", "flame", "strike", "plus"},
+	{
+		npcHandler = npcHandler,
+		spellName = "Ultimate Flame Strike Plus",
+		price = 1000000,
+		level = 200,
+		vocation = VOCATION.BASE_ID.SOCERER
+	}
+, nil,
+function(player)
+	return player:getStorageValue(DarkKonia.FirstQuest.finalTip) ~= 1
+end)
+keywordHandler:addKeyword({"spells"}, StdModule.say,
+	{
+		npcHandler = npcHandler,
+		text = {
+			"In this category I have for druids '{Terra Wave Plus}' as well as ... '{Ultimate Ice Strike plus}' and '{Wrath of Nature Plus}'. \z
+			And for sorcerers '{Rage of the Skies Plus}', '{Fire Wave Plus}', '{Ultimate Flame Strike Plus}'."
+		}
+	}
+)
+
 local RodWand = {
 	[VOCATION.BASE_ID.SORCERER] = 3074, 
 	[VOCATION.BASE_ID.DRUID] = 3066
@@ -132,7 +214,12 @@ keywordHandler:addKeyword({'spellbooks'}, StdModule.say, {npcHandler = npcHandle
 keywordHandler:addKeyword({'free rod and wand'}, StdModule.say, {npcHandler = npcHandler, text = "If need {first rod} or {first wand} only ask me."})
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
-npcHandler:setMessage(MESSAGE_GREET, "Hi there |PLAYERNAME|, and welcome to the {mystical} store. Or need your {free rod and wand}. Or you can also participate in a great {mission}.")
+npcHandler:setMessage(MESSAGE_GREET, {
+	"Hi there |PLAYERNAME|, and welcome to the {mystical} store.",
+	"I can also help you with the {free rod and wand} for the mages for you, the first is free.",
+	"Or maybe you want to participate in a great {mission} that I have for you.",
+	"Lastly, I can also sell you some powerful {spells}, but for this you need to complete the {mission} in which I want you to participate."
+})
 npcHandler:setMessage(MESSAGE_FAREWELL, "See you, |PLAYERNAME|.")
 npcHandler:setMessage(MESSAGE_WALKAWAY, "See you, |PLAYERNAME|.")
 npcHandler:setMessage(MESSAGE_SENDTRADE, "Of course, just browse through my wares.")
