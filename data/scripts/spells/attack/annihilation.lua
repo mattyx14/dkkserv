@@ -7,7 +7,7 @@ combat:setParameter(COMBAT_PARAM_USECHARGES, 1)
 
 function onGetFormulaValues(player, skill, attack, factor)
 	local skillTotal = skill * attack
-	local levelTotal = player:getLevel() / 5
+	local levelTotal = player:getLevel() / 3.8
 	return -(((skillTotal * 0.17) + 13) + (levelTotal)) * 1.28, -(((skillTotal * 0.20) + 34) + (levelTotal)) * 1.28 -- TODO : Use New Real Formula instead of an %
 end
 
@@ -23,7 +23,7 @@ spell:group("attack")
 spell:id(62)
 spell:name("Annihilation")
 spell:words("exori gran ico")
-spell:level(110)
+spell:level(200)
 spell:mana(300)
 spell:isPremium(true)
 spell:range(1)
@@ -33,5 +33,5 @@ spell:needWeapon(true)
 spell:cooldown(30 * 1000)
 spell:groupCooldown(4 * 1000)
 spell:needLearn(false)
-spell:vocation("knight;true", "elite knight;true")
+spell:vocation("elite knight;true")
 spell:register()
