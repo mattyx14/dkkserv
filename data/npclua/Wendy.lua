@@ -669,8 +669,8 @@ npcConfig.shop = {
 	{ itemName = "prismatic armor", clientId = 16110, buy = 250000, sell = 20000, storageKey = DarkKonia.SecondSacrifice.secondTip, storageValue = 1},
 	{ itemName = "prismatic shield", clientId = 16116, buy = 250000, sell = 20000, storageKey = DarkKonia.SecondSacrifice.secondTip, storageValue = 1},
 	{ itemName = "crystalline sword", clientId = 16160, buy = 250000, sell = 20000, storageKey = DarkKonia.SecondSacrifice.secondTip, storageValue = 1},
+	{ itemName = "crystalline axe", clientId = 16161, buy = 250000, sell = 20000, storageKey = DarkKonia.SecondSacrifice.secondTip, storageValue = 1},
 	{ itemName = "mycological mace", clientId = 16162, buy = 250000, sell = 20000, storageKey = DarkKonia.SecondSacrifice.secondTip, storageValue = 1},
-	{ itemName = "royal axe", clientId = 7434, buy = 250000, sell = 20000, storageKey = DarkKonia.SecondSacrifice.secondTip, storageValue = 1},
 
 	-- Great Items
 	{ itemName = "abyss hammer", clientId = 7414, sell = 20000 },

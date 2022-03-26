@@ -7635,7 +7635,7 @@
 		<attribute key="armor" value="1"/>
 		<attribute key="weight" value="200"/>
 	</item>
-	<item id="3573" article="a" name="magician hat">
+	<item id="3573" article="a" name="blue hat">
 		<attribute key="slotType" value="head"/>
 		<attribute key="armor" value="1"/>
 		<attribute key="weight" value="750"/>
@@ -18168,22 +18168,34 @@
 	</item>
 	<item id="8862" article="a" name="yalahari armor">
 		<attribute key="slotType" value="body"/>
-		<attribute key="absorbpercentdeath" value="3"/>
+		<attribute key="absorbpercentdeath" value="4"/>
+		<attribute key="absorbpercentphysical" value="5"/>
 		<attribute key="armor" value="16"/>
 		<attribute key="weight" value="7000"/>
 		<attribute key="upgradeclassification" value="2"/>
+		<attribute key="imbuementslot" value="1">
+			<attribute key="life leech" value="3"/>
+			<attribute key="elemental protection earth" value="3"/>
+			<attribute key="elemental protection fire" value="3"/>
+			<attribute key="elemental protection ice" value="3"/>
+			<attribute key="elemental protection energy" value="3"/>
+			<attribute key="elemental protection holy" value="3"/>
+		</attribute>
 	</item>
 	<item id="8863" article="a" name="yalahari leg piece">
 		<attribute key="slotType" value="legs"/>
 		<attribute key="absorbpercentdeath" value="5"/>
-		<attribute key="skilldist" value="2"/>
+		<attribute key="absorbpercentphysical" value="4"/>
+		<attribute key="skilldist" value="3"/>
 		<attribute key="armor" value="8"/>
 		<attribute key="weight" value="6500"/>
 	</item>
 	<item id="8864" article="a" name="yalahari mask">
 		<attribute key="slotType" value="head"/>
-		<attribute key="magicpoints" value="2"/>
-		<attribute key="armor" value="5"/>
+		<attribute key="magicpoints" value="3"/>
+		<attribute key="absorbpercentice" value="5"/>
+		<attribute key="absorbpercentfire" value="5"/>
+		<attribute key="armor" value="7"/>
 		<attribute key="weight" value="3500"/>
 		<attribute key="upgradeclassification" value="2"/>
 		<attribute key="imbuementslot" value="1">
@@ -27276,6 +27288,7 @@
 		<attribute key="attack" value="47"/>
 		<attribute key="extradef" value="1"/>
 		<attribute key="defense" value="34"/>
+		<attribute key="skillsword" value="1"/>
 		<attribute key="weight" value="4800"/>
 		<attribute key="upgradeclassification" value="2"/>
 	</item>
@@ -27283,18 +27296,11 @@
 		<attribute key="description" value="Even in the light of day, the stars seem to reflect in each facet of this crystalline axe"/>
 		<attribute key="weaponType" value="axe"/>
 		<attribute key="skillaxe" value="1"/>
-		<attribute key="attack" value="51"/>
+		<attribute key="attack" value="47"/>
 		<attribute key="extradef" value="3"/>
 		<attribute key="defense" value="29"/>
 		<attribute key="weight" value="7600"/>
 		<attribute key="upgradeclassification" value="2"/>
-		<attribute key="imbuementslot" value="1">
-			<attribute key="elemental damage" value="3"/>
-			<attribute key="life leech" value="3"/>
-			<attribute key="mana leech" value="3"/>
-			<attribute key="critical hit" value="3"/>
-			<attribute key="skillboost axe" value="3"/>
-		</attribute>
 	</item>
 	<item id="16162" article="a" name="mycological mace">
 		<attribute key="weaponType" value="club"/>

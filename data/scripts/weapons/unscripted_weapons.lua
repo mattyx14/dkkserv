@@ -1470,7 +1470,7 @@ local weapons = {
 		itemid = 25700,
 		type = WEAPON_WAND,
 		wandType = "energy",
-		level = 80,
+		level = 110,
 		mana = 18,
 		damage = {63, 77},
 		vocation = {
@@ -2436,22 +2436,34 @@ local weapons = {
 		-- mycological mace
 		itemid = 16162,
 		type = WEAPON_CLUB,
-		level = 120,
-		unproperly = true
+		level = 75,
+		unproperly = true,
+		vocation = {
+			{"Knight", true},
+			{"Elite Knight"}
+		}
 	},
 	{
 		-- crystalline axe
 		itemid = 16161,
 		type = WEAPON_AXE,
-		level = 120,
-		unproperly = true
+		level = 75,
+		unproperly = true,
+		vocation = {
+			{"Knight", true},
+			{"Elite Knight"}
+		}
 	},
 	{
 		-- crystalline sword
 		itemid = 16160,
 		type = WEAPON_SWORD,
-		level = 62,
-		unproperly = true
+		level = 75,
+		unproperly = true,
+		vocation = {
+			{"Knight", true},
+			{"Elite Knight"}
+		}
 	},
 	{
 		-- envenomed arrow
@@ -3807,7 +3819,11 @@ local weapons = {
 		itemid = 7434,
 		type = WEAPON_AXE,
 		level = 75,
-		unproperly = true
+		unproperly = true,
+		vocation = {
+			{"Knight", true},
+			{"Elite Knight"}
+		}
 	},
 	{
 		-- ravenwing

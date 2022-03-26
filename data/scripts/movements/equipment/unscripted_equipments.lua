@@ -4568,7 +4568,7 @@ local items = {
 		itemid = 25700,
 		type = "equip",
 		slot = "hand",
-		level = 80,
+		level = 110,
 		vocation = {
 			{"Sorcerer", true},
 			{"Druid", true, true},
@@ -4581,7 +4581,7 @@ local items = {
 		itemid = 25700,
 		type = "deequip",
 		slot = "hand",
-		level = 80
+		level = 110
 	},
 	{
 		-- wooden spellbook
@@ -7689,37 +7689,55 @@ local items = {
 		-- mycological mace
 		itemid = 16162,
 		type = "equip",
-		slot = "hand"
+		slot = "hand",
+		level = 75,
+		vocation = {
+			{"Knight", true},
+			{"Elite Knight"}
+		}
 	},
 	{
 		-- mycological mace
 		itemid = 16162,
 		type = "deequip",
-		slot = "hand"
+		slot = "hand",
+		level = 75,
 	},
 	{
 		-- crystalline axe
 		itemid = 16161,
 		type = "equip",
-		slot = "hand"
+		slot = "hand",
+		level = 75,
+		vocation = {
+			{"Knight", true},
+			{"Elite Knight"}
+		}
 	},
 	{
 		-- crystalline axe
 		itemid = 16161,
 		type = "deequip",
-		slot = "hand"
+		slot = "hand",
+		level = 75
 	},
 	{
 		-- crystalline sword
 		itemid = 16160,
 		type = "equip",
-		slot = "hand"
+		slot = "hand",
+		level = 75,
+		vocation = {
+			{"Knight", true},
+			{"Elite Knight"}
+		}
 	},
 	{
 		-- crystalline sword
 		itemid = 16160,
 		type = "deequip",
-		slot = "hand"
+		slot = "hand",
+		level = 75
 	},
 	{
 		-- envenomed arrow
@@ -9980,7 +9998,7 @@ local items = {
 		itemid = 8864,
 		type = "equip",
 		slot = "head",
-		level = 80,
+		level = 250,
 		vocation = {
 			{"Sorcerer", true},
 			{"Druid", true, true},
@@ -9993,14 +10011,14 @@ local items = {
 		itemid = 8864,
 		type = "deequip",
 		slot = "head",
-		level = 80
+		level = 250
 	},
 	{
 		-- yalahari leg piece
 		itemid = 8863,
 		type = "equip",
 		slot = "legs",
-		level = 80,
+		level = 250,
 		vocation = {
 			{"Paladin", true},
 			{"Royal Paladin"}
@@ -10011,14 +10029,14 @@ local items = {
 		itemid = 8863,
 		type = "deequip",
 		slot = "legs",
-		level = 80
+		level = 250
 	},
 	{
 		-- yalahari armor
 		itemid = 8862,
 		type = "equip",
 		slot = "armor",
-		level = 80,
+		level = 250,
 		vocation = {
 			{"Knight", true},
 			{"Elite Knight"}
@@ -10029,7 +10047,7 @@ local items = {
 		itemid = 8862,
 		type = "deequip",
 		slot = "armor",
-		level = 80
+		level = 250
 	},
 	{
 		-- brocade bag
@@ -12715,13 +12733,19 @@ local items = {
 		-- royal axe
 		itemid = 7434,
 		type = "equip",
-		slot = "hand"
+		slot = "hand",
+		level = 75,
+		vocation = {
+			{"Knight", true},
+			{"Elite Knight"}
+		}
 	},
 	{
 		-- royal axe
 		itemid = 7434,
 		type = "deequip",
-		slot = "hand"
+		slot = "hand",
+		level = 75
 	},
 	{
 		-- ravenwing
