@@ -94,14 +94,12 @@ monster.loot = {
 	{name = "small topaz", chance = 16500, maxCount = 3},
 	{name = "shiny stone", chance = 13700},
 	{name = "sulphurous stone", chance = 20700},
-	{name = "wand of defiance", chance = 1300},
 	{name = "green crystal shard", chance = 8000},
 	{name = "blue crystal splinter", chance = 16000, maxCount = 2},
 	{name = "cyan crystal fragment", chance = 13000},
 	{name = "pulverized ore", chance = 20500},
 	{name = "vein of ore", chance = 15000},
-	{name = "prismatic bolt", chance = 15500, maxCount = 5},
-	{name = "crystal crossbow", chance = 300}
+	{name = "prismatic bolt", chance = 15500, maxCount = 5}
 }
 
 monster.attacks = {

@@ -57,6 +57,7 @@ npcType.onCloseChannel = function(npc, creature)
 end
 
 keywordHandler:addKeyword({'mission'}, StdModule.say, {npcHandler = npcHandler, text = "There is a complicated mission regarding the {first sacrifice} of weapons."})
+keywordHandler:addKeyword({'stage 1'}, StdModule.say, {npcHandler = npcHandler, text = "There is a complicated mission regarding the {first sacrifice} of weapons."})
 
 keywordHandler:addSpellKeyword({"terra", "wave", "plus"},
 	{
@@ -218,7 +219,8 @@ npcHandler:setMessage(MESSAGE_GREET, {
 	"Hi there |PLAYERNAME|, and welcome to the {mystical} store.",
 	"I can also help you with the {free rod and wand} for the mages for you, the first is free.",
 	"Or maybe you want to participate in a great {mission} that I have for you.",
-	"Lastly, I can also sell you some powerful {spells}, but for this you need to complete the {mission} in which I want you to participate."
+	"Lastly, I can also sell you some powerful {spells}, but for this you need to complete the {mission} in which I want you to participate.",
+	"Go with Wendy she is in charge of the complete mission I only give you access to {stage 1}."
 })
 npcHandler:setMessage(MESSAGE_FAREWELL, "See you, |PLAYERNAME|.")
 npcHandler:setMessage(MESSAGE_WALKAWAY, "See you, |PLAYERNAME|.")
@@ -226,6 +228,17 @@ npcHandler:setMessage(MESSAGE_SENDTRADE, "Of course, just browse through my ware
 npcHandler:addModule(FocusModule:new())
 
 npcConfig.shop = {
+	-- Gill Items and others
+	{ itemName = "gill gugel", clientId = 16104, buy = 250000, sell = 20000, storageKey = DarkKonia.SecondSacrifice.secondTip, storageValue = 1},
+	{ itemName = "gill coat", clientId = 16105, buy = 250000, sell = 20000, storageKey = DarkKonia.SecondSacrifice.secondTip, storageValue = 1},
+	{ itemName = "gill legs", clientId = 16106, buy = 250000, sell = 20000, storageKey = DarkKonia.SecondSacrifice.secondTip, storageValue = 1},
+	{ itemName = "muck rod", clientId = 16117, buy = 50000, sell = 6000, storageKey = DarkKonia.SecondSacrifice.secondTip, storageValue = 1},
+	{ itemName = "glacial rod", clientId = 16118, buy = 75000, sell = 65000, storageKey = DarkKonia.SecondSacrifice.secondTip, storageValue = 1},
+	{ itemName = "wand of defiance", clientId = 16096, buy = 75000, sell = 6500, storageKey = DarkKonia.SecondSacrifice.secondTip, storageValue = 1},
+	{ itemName = "wand of everblazing", clientId = 16115, buy = 50000, sell = 6000, storageKey = DarkKonia.SecondSacrifice.secondTip, storageValue = 1},
+	{ itemName = "gill necklace", clientId = 16108, buy = 70000, storageKey = DarkKonia.SecondSacrifice.secondTip, storageValue = 1},
+
+	-- Magic Items
 	{ itemName = "animate dead rune", clientId = 3203, buy = 375 },
 	{ itemName = "avalanche rune", clientId = 3161, buy = 57 },
 	{ itemName = "blue rose", clientId = 3659, sell = 200 },
@@ -305,10 +318,8 @@ npcConfig.shop = {
 	{ itemName = "vial", clientId = 2874, sell = 5 },
 	{ itemName = "wand of cosmic energy", clientId = 3073, buy = 10000, sell = 2000 },
 	{ itemName = "wand of decay", clientId = 3072, buy = 5000, sell = 1000 },
-	{ itemName = "wand of defiance", clientId = 16096, sell = 6500 },
 	{ itemName = "wand of draconia", clientId = 8093, buy = 7500, sell = 1500 },
 	{ itemName = "wand of dragonbreath", clientId = 3075, buy = 1000, sell = 200 },
-	{ itemName = "wand of everblazing", clientId = 16115, sell = 6000 },
 	{ itemName = "wand of inferno", clientId = 3071, buy = 15000, sell = 3000 },
 	{ itemName = "wand of starstorm", clientId = 8092, buy = 18000, sell = 3600 },
 	{ itemName = "wand of voodoo", clientId = 8094, buy = 22000, sell = 4400 },

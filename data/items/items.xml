@@ -899,6 +899,12 @@
 	</item>
 	<item id="645" name="blue legs">
 		<attribute key="slotType" value="legs"/>
+		<attribute key="showAttributes" value="1"/>
+		<attribute key="absorbpercentice" value="3"/>
+		<attribute key="absorbpercentpoison" value="3"/>
+		<attribute key="absorbpercentfire" value="3"/>
+		<attribute key="absorbpercentenergy" value="3"/>
+		<attribute key="magicpoints" value="2"/>
 		<attribute key="armor" value="8"/>
 		<attribute key="weight" value="1800"/>
 	</item>
@@ -961,107 +967,6 @@
 		<attribute key="duration" value="60"/>
 		<attribute key="decayTo" value="0"/>
 	</item>
-	<!-- DEPRECATED START -->
-	<item id="660" article="a" name="fiery spike sword">
-		<attribute key="elementfire" value="4"/>
-		<attribute key="attack" value="20"/>
-		<attribute key="extradef" value="2"/>
-		<attribute key="defense" value="21"/>
-		<attribute key="weight" value="5000"/>
-	</item>
-	<item id="661" article="a" name="fiery relic sword">
-		<attribute key="elementfire" value="8"/>
-		<attribute key="attack" value="34"/>
-		<attribute key="extradef" value="1"/>
-		<attribute key="defense" value="24"/>
-		<attribute key="weight" value="4800"/>
-	</item>
-	<item id="662" article="a" name="fiery mystic blade">
-		<attribute key="elementfire" value="8"/>
-		<attribute key="attack" value="36"/>
-		<attribute key="extradef" value="2"/>
-		<attribute key="defense" value="25"/>
-		<attribute key="weight" value="3500"/>
-	</item>
-	<item id="663" article="a" name="fiery blacksteel sword">
-		<attribute key="elementfire" value="7"/>
-		<attribute key="attack" value="35"/>
-		<attribute key="defense" value="22"/>
-		<attribute key="weight" value="5900"/>
-	</item>
-	<item id="664" article="a" name="fiery dragon slayer">
-		<attribute key="elementfire" value="9"/>
-		<attribute key="attack" value="35"/>
-		<attribute key="defense" value="28"/>
-		<attribute key="weight" value="8200"/>
-	</item>
-	<item id="665" article="a" name="fiery barbarian axe">
-		<attribute key="elementfire" value="5"/>
-		<attribute key="attack" value="23"/>
-		<attribute key="extradef" value="1"/>
-		<attribute key="defense" value="18"/>
-		<attribute key="weight" value="5100"/>
-	</item>
-	<item id="666" article="a" name="fiery knight axe">
-		<attribute key="elementfire" value="6"/>
-		<attribute key="attack" value="27"/>
-		<attribute key="extradef" value="1"/>
-		<attribute key="defense" value="21"/>
-		<attribute key="weight" value="5900"/>
-	</item>
-	<item id="667" article="a" name="fiery heroic axe">
-		<attribute key="elementfire" value="9"/>
-		<attribute key="attack" value="35"/>
-		<attribute key="extradef" value="1"/>
-		<attribute key="defense" value="24"/>
-		<attribute key="weight" value="6100"/>
-	</item>
-	<item id="668" article="a" name="fiery headchopper">
-		<attribute key="elementfire" value="8"/>
-		<attribute key="attack" value="34"/>
-		<attribute key="defense" value="20"/>
-		<attribute key="weight" value="4500"/>
-	</item>
-	<item id="669" article="a" name="fiery war axe">
-		<attribute key="elementfire" value="9"/>
-		<attribute key="attack" value="39"/>
-		<attribute key="defense" value="10"/>
-		<attribute key="weight" value="6150"/>
-	</item>
-	<item id="670" article="a" name="fiery clerical mace">
-		<attribute key="elementfire" value="5"/>
-		<attribute key="attack" value="23"/>
-		<attribute key="extradef" value="1"/>
-		<attribute key="defense" value="15"/>
-		<attribute key="weight" value="5800"/>
-	</item>
-	<item id="671" article="a" name="fiery crystal mace">
-		<attribute key="elementfire" value="7"/>
-		<attribute key="attack" value="31"/>
-		<attribute key="extradef" value="1"/>
-		<attribute key="defense" value="16"/>
-		<attribute key="weight" value="8000"/>
-	</item>
-	<item id="672" article="a" name="fiery cranial basher">
-		<attribute key="elementfire" value="8"/>
-		<attribute key="attack" value="36"/>
-		<attribute key="extradef" value="-2"/>
-		<attribute key="defense" value="20"/>
-		<attribute key="weight" value="7800"/>
-	</item>
-	<item id="673" article="a" name="fiery orcish maul">
-		<attribute key="elementfire" value="7"/>
-		<attribute key="attack" value="35"/>
-		<attribute key="defense" value="18"/>
-		<attribute key="weight" value="5400"/>
-	</item>
-	<item id="674" article="a" name="fiery war hammer">
-		<attribute key="elementfire" value="9"/>
-		<attribute key="attack" value="36"/>
-		<attribute key="defense" value="10"/>
-		<attribute key="weight" value="8500"/>
-	</item>
-	<!-- DEPRECATED END -->
 	<item id="675" article="a" name="small enchanted sapphire">
 		<attribute key="weight" value="10"/>
 	</item>
@@ -1074,134 +979,6 @@
 	<item id="678" article="a" name="small enchanted amethyst">
 		<attribute key="weight" value="10"/>
 	</item>
-	<!-- DEPRECATED START -->
-	<item id="679" article="an" name="icy spike sword">
-		<attribute key="weaponType" value="sword"/>
-		<attribute key="elementice" value="37"/>
-		<attribute key="skillsword" value="2"/>
-		<attribute key="attack" value="10"/>
-		<attribute key="extradef" value="3"/>
-		<attribute key="defense" value="25"/>
-		<attribute key="weight" value="5000"/>
-		<attribute key="upgradeclassification" value="3"/>
-		<attribute key="imbuementslot" value="2">
-			<attribute key="life leech" value="3"/>
-			<attribute key="mana leech" value="3"/>
-			<attribute key="critical hit" value="3"/>
-			<attribute key="skillboost sword" value="3"/>
-		</attribute>
-	</item>
-	<item id="680" article="an" name="icy relic sword">
-		<attribute key="elementice" value="8"/>
-		<attribute key="attack" value="34"/>
-		<attribute key="extradef" value="1"/>
-		<attribute key="defense" value="24"/>
-		<attribute key="weight" value="4800"/>
-	</item>
-	<item id="681" article="an" name="icy mystic blade">
-		<attribute key="elementice" value="8"/>
-		<attribute key="attack" value="36"/>
-		<attribute key="extradef" value="2"/>
-		<attribute key="defense" value="25"/>
-		<attribute key="weight" value="3500"/>
-	</item>
-	<item id="682" article="an" name="icy blacksteel sword">
-		<attribute key="elementice" value="7"/>
-		<attribute key="attack" value="35"/>
-		<attribute key="defense" value="22"/>
-		<attribute key="weight" value="5900"/>
-	</item>
-	<item id="683" article="an" name="icy dragon slayer">
-		<attribute key="elementice" value="9"/>
-		<attribute key="attack" value="35"/>
-		<attribute key="defense" value="28"/>
-		<attribute key="weight" value="8200"/>
-	</item>
-	<item id="684" article="an" name="icy barbarian axe">
-		<attribute key="weaponType" value="axe"/>
-		<attribute key="elementice" value="38"/>
-		<attribute key="skillaxe" value="2"/>
-		<attribute key="attack" value="9"/>
-		<attribute key="extradef" value="3"/>
-		<attribute key="defense" value="20"/>
-		<attribute key="weight" value="5100"/>
-		<attribute key="upgradeclassification" value="3"/>
-		<attribute key="imbuementslot" value="2">
-			<attribute key="life leech" value="3"/>
-			<attribute key="mana leech" value="3"/>
-			<attribute key="critical hit" value="3"/>
-			<attribute key="skillboost axe" value="3"/>
-		</attribute>
-	</item>
-	<item id="685" article="an" name="icy knight axe">
-		<attribute key="elementice" value="6"/>
-		<attribute key="attack" value="27"/>
-		<attribute key="extradef" value="1"/>
-		<attribute key="defense" value="21"/>
-		<attribute key="weight" value="5900"/>
-	</item>
-	<item id="686" article="an" name="icy heroic axe">
-		<attribute key="elementice" value="9"/>
-		<attribute key="attack" value="35"/>
-		<attribute key="extradef" value="1"/>
-		<attribute key="defense" value="24"/>
-		<attribute key="weight" value="6100"/>
-	</item>
-	<item id="687" article="an" name="icy headchopper">
-		<attribute key="elementice" value="8"/>
-		<attribute key="attack" value="34"/>
-		<attribute key="defense" value="20"/>
-		<attribute key="weight" value="4500"/>
-	</item>
-	<item id="688" article="an" name="icy war axe">
-		<attribute key="elementice" value="9"/>
-		<attribute key="attack" value="39"/>
-		<attribute key="defense" value="10"/>
-		<attribute key="weight" value="6150"/>
-	</item>
-	<item id="689" article="an" name="icy clerical mace">
-		<attribute key="weaponType" value="club"/>
-		<attribute key="elementice" value="40"/>
-		<attribute key="skillclub" value="2"/>
-		<attribute key="attack" value="8"/>
-		<attribute key="extradef" value="3"/>
-		<attribute key="defense" value="20"/>
-		<attribute key="weight" value="5800"/>
-		<attribute key="upgradeclassification" value="3"/>
-		<attribute key="imbuementslot" value="2">
-			<attribute key="life leech" value="3"/>
-			<attribute key="mana leech" value="3"/>
-			<attribute key="critical hit" value="3"/>
-			<attribute key="skillboost club" value="3"/>
-		</attribute>
-	</item>
-	<item id="690" article="an" name="icy crystal mace">
-		<attribute key="elementice" value="7"/>
-		<attribute key="attack" value="31"/>
-		<attribute key="extradef" value="1"/>
-		<attribute key="defense" value="16"/>
-		<attribute key="weight" value="8000"/>
-	</item>
-	<item id="691" article="an" name="icy cranial basher">
-		<attribute key="elementice" value="8"/>
-		<attribute key="attack" value="36"/>
-		<attribute key="extradef" value="-2"/>
-		<attribute key="defense" value="20"/>
-		<attribute key="weight" value="7800"/>
-	</item>
-	<item id="692" article="an" name="icy orcish maul">
-		<attribute key="elementice" value="7"/>
-		<attribute key="attack" value="35"/>
-		<attribute key="defense" value="18"/>
-		<attribute key="weight" value="5400"/>
-	</item>
-	<item id="693" article="an" name="icy war hammer">
-		<attribute key="elementice" value="9"/>
-		<attribute key="attack" value="36"/>
-		<attribute key="defense" value="10"/>
-		<attribute key="weight" value="8500"/>
-	</item>
-	<!-- DEPRECATED END -->
 	<item id="694" article="a" name="bed">
 		<attribute key="type" value="bed"/>
 		<attribute key="partnerdirection" value="south"/>
@@ -1556,209 +1333,8 @@
 		<attribute key="description" value="You feel drawn to the mesmerizing light."/>
 	</item>
 	<item fromid="776" toid="778" article="an" name="archway"/>
-	<!-- DEPRECATED ||| START-->
-	<item id="779" article="an" name="earth spike sword">
-		<attribute key="elementearth" value="4"/>
-		<attribute key="attack" value="20"/>
-		<attribute key="extradef" value="2"/>
-		<attribute key="defense" value="21"/>
-		<attribute key="weight" value="5000"/>
-	</item>
-	<item id="780" article="an" name="earth relic sword">
-		<attribute key="elementearth" value="8"/>
-		<attribute key="attack" value="34"/>
-		<attribute key="extradef" value="1"/>
-		<attribute key="defense" value="24"/>
-		<attribute key="weight" value="4800"/>
-	</item>
-	<item id="781" article="an" name="earth mystic blade">
-		<attribute key="elementearth" value="8"/>
-		<attribute key="attack" value="36"/>
-		<attribute key="extradef" value="2"/>
-		<attribute key="defense" value="25"/>
-		<attribute key="weight" value="3500"/>
-	</item>
-	<item id="782" article="an" name="earth blacksteel sword">
-		<attribute key="elementearth" value="7"/>
-		<attribute key="attack" value="35"/>
-		<attribute key="defense" value="22"/>
-		<attribute key="weight" value="5900"/>
-	</item>
-	<item id="783" article="an" name="earth dragon slayer">
-		<attribute key="elementearth" value="9"/>
-		<attribute key="attack" value="35"/>
-		<attribute key="defense" value="28"/>
-		<attribute key="weight" value="8200"/>
-	</item>
-	<item id="784" article="an" name="earth barbarian axe">
-		<attribute key="elementearth" value="5"/>
-		<attribute key="attack" value="23"/>
-		<attribute key="extradef" value="1"/>
-		<attribute key="defense" value="18"/>
-		<attribute key="weight" value="5100"/>
-	</item>
-	<item id="785" article="an" name="earth knight axe">
-		<attribute key="elementearth" value="6"/>
-		<attribute key="attack" value="27"/>
-		<attribute key="extradef" value="1"/>
-		<attribute key="defense" value="21"/>
-		<attribute key="weight" value="5900"/>
-	</item>
-	<item id="786" article="an" name="earth heroic axe">
-		<attribute key="elementearth" value="9"/>
-		<attribute key="attack" value="35"/>
-		<attribute key="extradef" value="1"/>
-		<attribute key="defense" value="24"/>
-		<attribute key="weight" value="6100"/>
-	</item>
-	<item id="787" article="an" name="earth headchopper">
-		<attribute key="elementearth" value="8"/>
-		<attribute key="attack" value="34"/>
-		<attribute key="defense" value="20"/>
-		<attribute key="weight" value="4500"/>
-	</item>
-	<item id="788" article="an" name="earth war axe">
-		<attribute key="elementearth" value="9"/>
-		<attribute key="attack" value="39"/>
-		<attribute key="defense" value="10"/>
-		<attribute key="weight" value="6150"/>
-	</item>
-	<item id="789" article="an" name="earth clerical mace">
-		<attribute key="elementearth" value="5"/>
-		<attribute key="attack" value="23"/>
-		<attribute key="extradef" value="1"/>
-		<attribute key="defense" value="15"/>
-		<attribute key="weight" value="5800"/>
-	</item>
-	<item id="790" article="an" name="earth crystal mace">
-		<attribute key="elementearth" value="7"/>
-		<attribute key="attack" value="31"/>
-		<attribute key="extradef" value="1"/>
-		<attribute key="defense" value="16"/>
-		<attribute key="weight" value="8000"/>
-	</item>
-	<item id="791" article="an" name="earth cranial basher">
-		<attribute key="elementearth" value="8"/>
-		<attribute key="attack" value="36"/>
-		<attribute key="extradef" value="-2"/>
-		<attribute key="defense" value="20"/>
-		<attribute key="weight" value="7800"/>
-	</item>
-	<item id="792" article="an" name="earth orcish maul">
-		<attribute key="elementearth" value="7"/>
-		<attribute key="attack" value="35"/>
-		<attribute key="defense" value="18"/>
-		<attribute key="weight" value="5400"/>
-	</item>
-	<item id="793" article="an" name="earth war hammer">
-		<attribute key="elementearth" value="9"/>
-		<attribute key="attack" value="36"/>
-		<attribute key="defense" value="10"/>
-		<attribute key="weight" value="8500"/>
-	</item>
-	<item id="794" article="an" name="energy spike sword">
-		<attribute key="attack" value="24"/>
-		<attribute key="extradef" value="2"/>
-		<attribute key="defense" value="21"/>
-		<attribute key="weight" value="5000"/>
-	</item>
-	<item id="795" article="an" name="energy relic sword">
-		<attribute key="elementenergy" value="8"/>
-		<attribute key="attack" value="34"/>
-		<attribute key="extradef" value="1"/>
-		<attribute key="defense" value="24"/>
-		<attribute key="weight" value="4800"/>
-	</item>
-	<item id="796" article="an" name="energy mystic blade">
-		<attribute key="elementenergy" value="8"/>
-		<attribute key="attack" value="36"/>
-		<attribute key="extradef" value="2"/>
-		<attribute key="defense" value="25"/>
-		<attribute key="weight" value="3500"/>
-	</item>
-	<item id="797" article="an" name="energy blacksteel sword">
-		<attribute key="elementenergy" value="7"/>
-		<attribute key="attack" value="35"/>
-		<attribute key="defense" value="22"/>
-		<attribute key="weight" value="5900"/>
-	</item>
-	<item id="798" article="an" name="energy dragon slayer">
-		<attribute key="elementenergy" value="9"/>
-		<attribute key="attack" value="35"/>
-		<attribute key="defense" value="28"/>
-		<attribute key="weight" value="8200"/>
-	</item>
-	<!-- DEPRECATED END -->
 	<item id="799" name="snow"/>
 	<item id="800" name="ice"/>
-	<!-- DEPRECATED START -->
-	<item id="801" article="an" name="energy barbarian axe">
-		<attribute key="elementenergy" value="5"/>
-		<attribute key="attack" value="23"/>
-		<attribute key="extradef" value="1"/>
-		<attribute key="defense" value="18"/>
-		<attribute key="weight" value="5100"/>
-	</item>
-	<item id="802" article="an" name="energy knight axe">
-		<attribute key="elementenergy" value="6"/>
-		<attribute key="attack" value="27"/>
-		<attribute key="extradef" value="1"/>
-		<attribute key="defense" value="21"/>
-		<attribute key="weight" value="5900"/>
-	</item>
-	<item id="803" article="an" name="energy heroic axe">
-		<attribute key="elementenergy" value="9"/>
-		<attribute key="attack" value="35"/>
-		<attribute key="extradef" value="1"/>
-		<attribute key="defense" value="24"/>
-		<attribute key="weight" value="6100"/>
-	</item>
-	<item id="804" article="an" name="energy headchopper">
-		<attribute key="elementenergy" value="8"/>
-		<attribute key="attack" value="34"/>
-		<attribute key="defense" value="20"/>
-		<attribute key="weight" value="4500"/>
-	</item>
-	<item id="805" article="an" name="energy war axe">
-		<attribute key="elementenergy" value="9"/>
-		<attribute key="attack" value="39"/>
-		<attribute key="defense" value="10"/>
-		<attribute key="weight" value="6150"/>
-	</item>
-	<item id="806" article="an" name="energy clerical mace">
-		<attribute key="elementenergy" value="5"/>
-		<attribute key="attack" value="23"/>
-		<attribute key="extradef" value="1"/>
-		<attribute key="defense" value="15"/>
-		<attribute key="weight" value="5800"/>
-	</item>
-	<item id="807" article="an" name="energy crystal mace">
-		<attribute key="elementenergy" value="7"/>
-		<attribute key="attack" value="31"/>
-		<attribute key="extradef" value="1"/>
-		<attribute key="defense" value="16"/>
-		<attribute key="weight" value="8000"/>
-	</item>
-	<item id="808" article="an" name="energy cranial basher">
-		<attribute key="elementenergy" value="8"/>
-		<attribute key="attack" value="36"/>
-		<attribute key="extradef" value="-2"/>
-		<attribute key="defense" value="20"/>
-		<attribute key="weight" value="7800"/>
-	</item>
-	<item id="809" article="an" name="energy orcish maul">
-		<attribute key="elementenergy" value="7"/>
-		<attribute key="attack" value="35"/>
-		<attribute key="defense" value="18"/>
-		<attribute key="weight" value="5400"/>
-	</item>
-	<item id="810" article="an" name="energy war hammer">
-		<attribute key="elementenergy" value="9"/>
-		<attribute key="attack" value="36"/>
-		<attribute key="defense" value="10"/>
-		<attribute key="weight" value="8500"/>
-	</item>
-	<!-- DEPRECATED ||| END-->
 	<item id="811" article="a" name="terra mantle">
 		<attribute key="slotType" value="body"/>
 		<attribute key="absorbpercentpoison" value="8"/>
@@ -5951,10 +5527,21 @@
 		<attribute key="description" value="It's the magic Cyclopmania Sword"/>
 		<attribute key="weaponType" value="sword"/>
 		<attribute key="slotType" value="two-handed"/>
-		<attribute key="attack" value="55"/>
-		<attribute key="defense" value="40"/>
+		<attribute key="loottype" value="sword"/>
+		<attribute key="criticalhitdamage" value="16"/>
+		<attribute key="criticalhitchance" value="16"/>
+		<attribute key="skillsword" value="5"/>
+		<attribute key="attack" value="67"/>
+		<attribute key="defense" value="35"/>
 		<attribute key="weight" value="4300"/>
 		<attribute key="upgradeclassification" value="4"/>
+		<attribute key="imbuementslot" value="3">
+			<attribute key="elemental damage" value="3"/>
+			<attribute key="life leech" value="3"/>
+			<attribute key="mana leech" value="3"/>
+			<attribute key="critical hit" value="3"/>
+			<attribute key="skillboost sword" value="3"/>
+		</attribute>
 	</item>
 	<item id="3279" article="a" name="war hammer">
 		<attribute key="weaponType" value="club"/>
@@ -6122,10 +5709,22 @@
 		<attribute key="description" value="Strong powers flow in this magic sword"/>
 		<attribute key="weaponType" value="sword"/>
 		<attribute key="slotType" value="two-handed"/>
-		<attribute key="attack" value="53"/>
-		<attribute key="defense" value="38"/>
+		<attribute key="loottype" value="sword"/>
+		<attribute key="elementholy" value="51"/>
+		<attribute key="criticalhitdamage" value="15"/>
+		<attribute key="criticalhitchance" value="15"/>
+		<attribute key="skillsword" value="5"/>
+		<attribute key="attack" value="11"/>
+		<attribute key="defense" value="45"/>
 		<attribute key="weight" value="6400"/>
 		<attribute key="upgradeclassification" value="4"/>
+		<attribute key="imbuementslot" value="3">
+			<attribute key="elemental damage" value="3"/>
+			<attribute key="life leech" value="3"/>
+			<attribute key="mana leech" value="3"/>
+			<attribute key="critical hit" value="3"/>
+			<attribute key="skillboost sword" value="3"/>
+		</attribute>
 	</item>
 	<item id="3297" article="a" name="serpent sword">
 		<attribute key="weaponType" value="sword"/>
@@ -7996,6 +7595,12 @@
 		<attribute key="slotType" value="body"/>
 		<attribute key="armor" value="11"/>
 		<attribute key="weight" value="2200"/>
+		<attribute key="showAttributes" value="1"/>
+		<attribute key="absorbpercentice" value="2"/>
+		<attribute key="absorbpercentpoison" value="2"/>
+		<attribute key="absorbpercentfire" value="2"/>
+		<attribute key="absorbpercentenergy" value="2"/>
+		<attribute key="magicpoints" value="2"/>
 		<attribute key="upgradeclassification" value="2"/>
 		<attribute key="imbuementslot" value="2">
 			<attribute key="life leech" value="3"/>
@@ -8034,6 +7639,12 @@
 		<attribute key="slotType" value="head"/>
 		<attribute key="armor" value="1"/>
 		<attribute key="weight" value="750"/>
+		<attribute key="showAttributes" value="1"/>
+		<attribute key="absorbpercentice" value="1"/>
+		<attribute key="absorbpercentpoison" value="1"/>
+		<attribute key="absorbpercentfire" value="1"/>
+		<attribute key="absorbpercentenergy" value="1"/>
+		<attribute key="magicpoints" value="1"/>
 		<attribute key="upgradeclassification" value="3"/>
 		<attribute key="imbuementslot" value="2">
 			<attribute key="mana leech" value="3"/>
@@ -16109,13 +15720,6 @@
 		<attribute key="defense" value="25"/>
 		<attribute key="weight" value="9200"/>
 		<attribute key="upgradeclassification" value="2"/>
-		<attribute key="imbuementslot" value="2">
-			<attribute key="elemental damage" value="3"/>
-			<attribute key="life leech" value="3"/>
-			<attribute key="mana leech" value="3"/>
-			<attribute key="critical hit" value="3"/>
-			<attribute key="skillboost axe" value="3"/>
-		</attribute>
 	</item>
 	<item id="7435" article="an" name="impaler">
 		<attribute key="weaponType" value="axe"/>
@@ -16216,11 +15820,23 @@
 	</item>
 	<item id="7450" article="a" name="hammer of prophecy">
 		<attribute key="weaponType" value="club"/>
+		<attribute key="loottype" value="club"/>
 		<attribute key="slotType" value="two-handed"/>
-		<attribute key="attack" value="52"/>
-		<attribute key="defense" value="35"/>
+		<attribute key="elementice" value="55"/>
+		<attribute key="criticalhitdamage" value="15"/>
+		<attribute key="criticalhitchance" value="15"/>
+		<attribute key="skillclub" value="5"/>
+		<attribute key="attack" value="6"/>
+		<attribute key="extradef" value="3"/>
+		<attribute key="defense" value="30"/>
 		<attribute key="weight" value="11000"/>
 		<attribute key="upgradeclassification" value="4"/>
+		<attribute key="imbuementslot" value="2">
+			<attribute key="life leech" value="3"/>
+			<attribute key="mana leech" value="3"/>
+			<attribute key="critical hit" value="3"/>
+			<attribute key="skillboost club" value="3"/>
+		</attribute>
 	</item>
 	<item id="7451" article="a" name="shadow sceptre">
 		<attribute key="weaponType" value="club"/>
@@ -17590,12 +17206,17 @@
 	</item>
 	<item id="8097" article="a" name="solar axe">
 		<attribute key="weaponType" value="axe"/>
-		<attribute key="attack" value="52"/>
-		<attribute key="extradef" value="3"/>
-		<attribute key="defense" value="29"/>
+		<attribute key="slotType" value="two-handed"/>
+		<attribute key="loottype" value="axe"/>
+		<attribute key="elementfire" value="62"/>
+		<attribute key="criticalhitdamage" value="15"/>
+		<attribute key="criticalhitchance" value="15"/>
+		<attribute key="skillaxe" value="5"/>
+		<attribute key="attack" value="3"/>
+		<attribute key="defense" value="25"/>
 		<attribute key="weight" value="11000"/>
 		<attribute key="upgradeclassification" value="4"/>
-		<attribute key="imbuementslot" value="1">
+		<attribute key="imbuementslot" value="3">
 			<attribute key="elemental damage" value="3"/>
 			<attribute key="life leech" value="3"/>
 			<attribute key="mana leech" value="3"/>
@@ -27678,18 +27299,11 @@
 	<item id="16162" article="a" name="mycological mace">
 		<attribute key="weaponType" value="club"/>
 		<attribute key="skillclub" value="1"/>
-		<attribute key="attack" value="50"/>
+		<attribute key="attack" value="47"/>
 		<attribute key="extradef" value="3"/>
 		<attribute key="defense" value="31"/>
 		<attribute key="weight" value="5900"/>
 		<attribute key="upgradeclassification" value="2"/>
-		<attribute key="imbuementslot" value="1">
-			<attribute key="elemental damage" value="3"/>
-			<attribute key="life leech" value="3"/>
-			<attribute key="mana leech" value="3"/>
-			<attribute key="critical hit" value="3"/>
-			<attribute key="skillboost club" value="3"/>
-		</attribute>
 	</item>
 	<item id="16163" article="a" name="crystal crossbow">
 		<attribute key="weaponType" value="distance"/>
@@ -32390,8 +32004,8 @@
 	<item id="19366" name="icy culottes">
 		<attribute key="slotType" value="legs"/>
 		<attribute key="showAttributes" value="1"/>
-		<attribute key="absorbpercentice" value="8"/>
-		<attribute key="armor" value="8"/>
+		<attribute key="absorbpercentice" value="15"/>
+		<attribute key="armor" value="9"/>
 		<attribute key="weight" value="1500"/>
 	</item>
 	<item fromid="19367" toid="19368" name="RESERVED SPRITE"/>
@@ -32447,11 +32061,22 @@
 	<item id="19391" article="a" name="furious frock">
 		<attribute key="slotType" value="body"/>
 		<attribute key="showAttributes" value="1"/>
-		<attribute key="absorbpercentfire" value="5"/>
-		<attribute key="magicpoints" value="2"/>
-		<attribute key="armor" value="12"/>
-		<attribute key="weight" value="3400"/>
+		<attribute key="absorbpercentfire" value="15"/>
+		<attribute key="slotType" value="body"/>
+		<attribute key="loottype" value="armor"/>
+		<attribute key="absorbpercentdeath" value="10"/>
+		<attribute key="magicpoints" value="4"/>
+		<attribute key="armor" value="16"/>
+		<attribute key="weight" value="2400"/>
 		<attribute key="upgradeclassification" value="4"/>
+		<attribute key="imbuementslot" value="2">
+			<attribute key="life leech" value="3"/>
+			<attribute key="elemental protection death" value="3"/>
+			<attribute key="elemental protection earth" value="3"/>
+			<attribute key="elemental protection ice" value="3"/>
+			<attribute key="elemental protection energy" value="3"/>
+			<attribute key="elemental protection holy" value="3"/>
+		</attribute>
 	</item>
 	<item id="19392" article="an" name="aligned opticording sphere">
 		<attribute key="description" value="This strange box holds a dark sphere.	The sphere has been adjusted and its key mechanism aligned"/>
@@ -40844,7 +40469,7 @@
 	</item>
 	<item id="25930" article="an" name="icy spike sword">
 		<attribute key="weaponType" value="sword"/>
-		<attribute key="elementice" value="37"/>
+		<attribute key="elementice" value="36"/>
 		<attribute key="skillsword" value="2"/>
 		<attribute key="attack" value="10"/>
 		<attribute key="extradef" value="3"/>
@@ -40890,7 +40515,7 @@
 		<attribute key="weaponType" value="axe"/>
 		<attribute key="elementice" value="38"/>
 		<attribute key="skillaxe" value="2"/>
-		<attribute key="attack" value="9"/>
+		<attribute key="attack" value="8"/>
 		<attribute key="extradef" value="3"/>
 		<attribute key="defense" value="20"/>
 		<attribute key="weight" value="5100"/>
@@ -40934,7 +40559,7 @@
 		<attribute key="weaponType" value="club"/>
 		<attribute key="elementice" value="40"/>
 		<attribute key="skillclub" value="2"/>
-		<attribute key="attack" value="8"/>
+		<attribute key="attack" value="6"/>
 		<attribute key="extradef" value="3"/>
 		<attribute key="defense" value="15"/>
 		<attribute key="weight" value="5800"/>
@@ -53774,6 +53399,7 @@
 		<attribute key="weight" value="3700"/>
 		<attribute key="upgradeclassification" value="4"/>
 		<attribute key="imbuementslot" value="2">
+			<attribute key="life leech" value="3"/>
 			<attribute key="mana leech" value="3"/>
 			<attribute key="critical hit" value="3"/>
 			<attribute key="skillboost magic level" value="3"/>
@@ -53789,6 +53415,7 @@
 		<attribute key="weight" value="3200"/>
 		<attribute key="upgradeclassification" value="4"/>
 		<attribute key="imbuementslot" value="2">
+			<attribute key="life leech" value="3"/>
 			<attribute key="mana leech" value="3"/>
 			<attribute key="critical hit" value="3"/>
 			<attribute key="skillboost magic level" value="3"/>

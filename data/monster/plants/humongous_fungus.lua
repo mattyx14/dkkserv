@@ -96,7 +96,6 @@ monster.loot = {
 	{name = "angelic axe", chance = 1420},
 	{name = "terra legs", chance = 1160},
 	{name = "terra mantle", chance = 870},
-	{name = "muck rod", chance = 640},
 	{name = "mushroom backpack", chance = 20},
 	{name = "mycological bow", chance = 140}
 }

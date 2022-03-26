@@ -94,7 +94,6 @@ monster.loot = {
 	{name = "Sickle", chance = 1100},
 	{name = "Titan Axe", chance = 1100},
 	{name = "Wand of Cosmic Energy", chance = 400},
-	{name = "Wand of Defiance", chance = 400},
 	{name = "Warrior's Axe", chance = 400},
 	{name = "Warrior's Shield", chance = 400}
 }

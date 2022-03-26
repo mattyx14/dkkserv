@@ -93,8 +93,7 @@ monster.loot = {
 	{id = 23542, chance = 1590},-- collar of blue plasma
 	{name = "wood cape", chance = 30000},
 	{name = "small diamond", chance = 800},
-	{name = "yellow gem", chance = 640},
-	{name = "crystal crossbow", chance = 600}
+	{name = "yellow gem", chance = 640}
 }
 
 monster.attacks = {

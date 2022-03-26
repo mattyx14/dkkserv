@@ -59,6 +59,7 @@ end
 keywordHandler:addKeyword({'ammunition container'}, StdModule.say, {npcHandler = npcHandler, text = "If need {first quiver}?."})
 keywordHandler:addKeyword({'distance'}, StdModule.say, {npcHandler = npcHandler, text = "Selling distance weapons and ammunition. Special offers only available here, have a look, for that matter, ask me for a {trade}"})
 keywordHandler:addKeyword({'mission'}, StdModule.say, {npcHandler = npcHandler, text = "There is a complicated mission regarding the {first sacrifice} of weapons."})
+keywordHandler:addKeyword({'stage 1'}, StdModule.say, {npcHandler = npcHandler, text = "There is a complicated mission regarding the {first sacrifice} of weapons."})
 
 keywordHandler:addSpellKeyword({"divine", "caldera", "plus"},
 	{
@@ -300,7 +301,8 @@ npcHandler:setMessage(MESSAGE_GREET, {
 	"You are also interested in a {distance} weapons.",
 	"I can also help you with the {ammunition container} for the paladin for you, the first is free.",
 	"Or maybe you want to participate in a great {mission} that I have for you.",
-	"Lastly, I can also sell you some powerful {spells}, but for this you need to complete the {mission} in which I want you to participate."
+	"Lastly, I can also sell you some powerful {spells}, but for this you need to complete the {mission} in which I want you to participate.",
+	"Go with Wendy she is in charge of the complete mission I only give you access to {stage 1}."
 })
 npcHandler:setMessage(MESSAGE_FAREWELL, "Farewell, |PLAYERNAME|, may the winds guide your way.")
 npcHandler:setMessage(MESSAGE_WALKAWAY, "Come back soon!")
@@ -310,6 +312,14 @@ npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())
 
 npcConfig.shop = {
+	-- Prismatic Items and others
+	{ itemName = "prismatic armor", clientId = 16110, buy = 250000, sell = 20000, storageKey = DarkKonia.SecondSacrifice.secondTip, storageValue = 1},
+	{ itemName = "prismatic legs", clientId = 16111, buy = 250000, sell = 20000, storageKey = DarkKonia.SecondSacrifice.secondTip, storageValue = 1},
+	{ itemName = "prismatic boots", clientId = 16112, buy = 250000, sell = 20000, storageKey = DarkKonia.SecondSacrifice.secondTip, storageValue = 1},
+	{ itemName = "crystal crossbow", clientId = 16163, buy = 250000, sell = 20000, storageKey = DarkKonia.SecondSacrifice.secondTip, storageValue = 1},
+	{ itemName = "crude umbral bow", clientId = 20082, buy = 250000, sell = 20000, storageKey = DarkKonia.SecondSacrifice.secondTip, storageValue = 1},
+
+	-- Ammunitions
 	{ itemName = "arrow", clientId = 3447, buy = 3 },
 	{ itemName = "assassin star", clientId = 7368, buy = 100 },
 	{ itemName = "blue quiver", clientId = 35848, buy = 400 },

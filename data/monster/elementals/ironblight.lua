@@ -97,7 +97,6 @@ monster.loot = {
 	{name = "war crystal", chance = 21230},
 	{name = "shiny stone", chance = 15230},
 	{name = "jade hat", chance = 210},
-	{name = "glacial rod", chance = 960},
 	{name = "green crystal shard", chance = 5720},
 	{name = "brown crystal splinter", chance = 12610, maxCount = 2},
 	{name = "red crystal fragment", chance = 10540},

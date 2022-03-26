@@ -100,7 +100,6 @@ monster.loot = {
 	{name = "terra amulet", chance = 2000},
 	{name = "mushroom backpack", chance = 20},
 	{name = "mushroom pie", chance = 14500, maxCount = 3},
-	{name = "muck rod", chance = 590},
 	{name = "hideous chunk", chance = 14285},
 	{name = "envenomed arrow", chance = 14500, maxCount = 15},
 	{name = "mycological bow", chance = 60}

@@ -1205,6 +1205,9 @@
 	<monster centerx="1194" centery="175" centerz="6" radius="1">
 		<monster name="Acolyte Of The Cult" x="0" y="0" z="6" spawntime="60" />
 	</monster>
+	<monster centerx="1197" centery="175" centerz="6" radius="1">
+		<monster name="Adept Of The Cult" x="0" y="0" z="6" spawntime="60" />
+	</monster>
 	<monster centerx="1199" centery="175" centerz="6" radius="1">
 		<monster name="Adept Of The Cult" x="0" y="0" z="6" spawntime="60" />
 	</monster>
@@ -1213,6 +1216,9 @@
 	</monster>
 	<monster centerx="1213" centery="179" centerz="6" radius="1">
 		<monster name="Acolyte Of The Cult" x="0" y="0" z="6" spawntime="60" />
+	</monster>
+	<monster centerx="1219" centery="179" centerz="6" radius="1">
+		<monster name="Adept Of The Cult" x="0" y="0" z="6" spawntime="60" />
 	</monster>
 	<monster centerx="1190" centery="180" centerz="6" radius="1">
 		<monster name="Acolyte Of The Cult" x="0" y="0" z="6" spawntime="60" />
@@ -1241,6 +1247,9 @@
 	<monster centerx="1194" centery="188" centerz="6" radius="1">
 		<monster name="Novice Of The Cult" x="0" y="0" z="6" spawntime="60" />
 	</monster>
+	<monster centerx="1197" centery="188" centerz="6" radius="1">
+		<monster name="Adept Of The Cult" x="0" y="0" z="6" spawntime="60" />
+	</monster>
 	<monster centerx="1221" centery="188" centerz="6" radius="1">
 		<monster name="Adept Of The Cult" x="0" y="0" z="6" spawntime="60" />
 	</monster>
@@ -1252,6 +1261,9 @@
 	</monster>
 	<monster centerx="1205" centery="190" centerz="6" radius="1">
 		<monster name="Enlightened Of The Cult" x="0" y="0" z="6" spawntime="60" />
+	</monster>
+	<monster centerx="1216" centery="193" centerz="6" radius="1">
+		<monster name="Adept Of The Cult" x="0" y="0" z="6" spawntime="60" />
 	</monster>
 	<monster centerx="1200" centery="194" centerz="6" radius="1">
 		<monster name="Adept Of The Cult" x="0" y="0" z="6" spawntime="60" />
@@ -1273,6 +1285,9 @@
 	</monster>
 	<monster centerx="1200" centery="204" centerz="6" radius="1">
 		<monster name="Stone Golem" x="0" y="0" z="6" spawntime="60" />
+	</monster>
+	<monster centerx="1215" centery="204" centerz="6" radius="1">
+		<monster name="Acolyte Of The Cult" x="0" y="0" z="6" spawntime="60" />
 	</monster>
 	<monster centerx="1197" centery="208" centerz="6" radius="1">
 		<monster name="Stone Golem" x="0" y="0" z="6" spawntime="60" />
@@ -2402,6 +2417,9 @@
 	<monster centerx="1217" centery="166" centerz="7" radius="1">
 		<monster name="Adept Of The Cult" x="0" y="0" z="7" spawntime="60" />
 	</monster>
+	<monster centerx="1222" centery="166" centerz="7" radius="1">
+		<monster name="Adept Of The Cult" x="0" y="0" z="7" spawntime="60" />
+	</monster>
 	<monster centerx="1182" centery="167" centerz="7" radius="1">
 		<monster name="Blood Crab" x="0" y="0" z="7" spawntime="60" />
 	</monster>
@@ -2444,6 +2462,9 @@
 	<monster centerx="1193" centery="175" centerz="7" radius="1">
 		<monster name="Adept Of The Cult" x="0" y="0" z="7" spawntime="60" />
 	</monster>
+	<monster centerx="1202" centery="175" centerz="7" radius="1">
+		<monster name="Adept Of The Cult" x="0" y="0" z="7" spawntime="60" />
+	</monster>
 	<monster centerx="1216" centery="175" centerz="7" radius="1">
 		<monster name="Novice Of The Cult" x="0" y="0" z="7" spawntime="60" />
 	</monster>
@@ -2452,6 +2473,9 @@
 	</monster>
 	<monster centerx="1197" centery="178" centerz="7" radius="1">
 		<monster name="Novice Of The Cult" x="0" y="0" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1215" centery="178" centerz="7" radius="1">
+		<monster name="Adept Of The Cult" x="0" y="0" z="7" spawntime="60" />
 	</monster>
 	<monster centerx="1205" centery="179" centerz="7" radius="1">
 		<monster name="Novice Of The Cult" x="0" y="0" z="7" spawntime="60" />
@@ -2477,6 +2501,9 @@
 	<monster centerx="1201" centery="181" centerz="7" radius="1">
 		<monster name="Novice Of The Cult" x="0" y="0" z="7" spawntime="60" />
 	</monster>
+	<monster centerx="1213" centery="181" centerz="7" radius="1">
+		<monster name="Adept Of The Cult" x="0" y="0" z="7" spawntime="60" />
+	</monster>
 	<monster centerx="1223" centery="181" centerz="7" radius="1">
 		<monster name="Rat" x="0" y="0" z="7" spawntime="60" />
 	</monster>
@@ -2489,11 +2516,17 @@
 	<monster centerx="1115" centery="183" centerz="7" radius="1">
 		<monster name="Seagull" x="0" y="0" z="7" spawntime="60" />
 	</monster>
+	<monster centerx="1189" centery="183" centerz="7" radius="1">
+		<monster name="Adept Of The Cult" x="0" y="0" z="7" spawntime="60" />
+	</monster>
 	<monster centerx="1021" centery="184" centerz="7" radius="1">
 		<monster name="Butterfly" x="0" y="0" z="7" spawntime="60" />
 	</monster>
 	<monster centerx="1196" centery="184" centerz="7" radius="1">
 		<monster name="Novice Of The Cult" x="0" y="0" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1210" centery="184" centerz="7" radius="1">
+		<monster name="Adept Of The Cult" x="0" y="0" z="7" spawntime="60" />
 	</monster>
 	<monster centerx="1216" centery="184" centerz="7" radius="1">
 		<monster name="Novice Of The Cult" x="0" y="0" z="7" spawntime="60" />
@@ -2523,6 +2556,9 @@
 		<monster name="Butterfly" x="0" y="0" z="7" spawntime="60" />
 	</monster>
 	<monster centerx="1191" centery="187" centerz="7" radius="1">
+		<monster name="Adept Of The Cult" x="0" y="0" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="1214" centery="187" centerz="7" radius="1">
 		<monster name="Adept Of The Cult" x="0" y="0" z="7" spawntime="60" />
 	</monster>
 	<monster centerx="1217" centery="187" centerz="7" radius="1">

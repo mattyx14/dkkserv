@@ -593,10 +593,10 @@ local function creatureSayCallback(npc, creature, type, message)
 				player:removeItem(3324, 1)
 				player:removeItem(3295, 1)
 				npcHandler:say('Here you are young adept, take care yourself.', npc, creature)
-				player:setStorageValue(DarkKonia.FirstQuest.RewardSacrifice, 1)
 				player:addItem(8102, 1) -- emerald sword
 				player:addItem(7435, 1) -- impaler
 				player:addItem(3309, 1) -- thunder hammer
+				player:setStorageValue(DarkKonia.FirstQuest.RewardSacrifice, 1)
 			else
 				npcHandler:say('Sorry, you must carry the three objects you have found', npc, creature)
 			end
@@ -607,9 +607,9 @@ local function creatureSayCallback(npc, creature, type, message)
 				player:removeItem(3324, 1)
 				player:removeItem(3295, 1)
 				npcHandler:say('Here you are young adept, take care yourself.', npc, creature)
-				player:setStorageValue(DarkKonia.FirstQuest.RewardSacrifice, 1)
 				player:addItem(8023, 1) -- royal crossbow
 				player:addItem(8026, 1) -- warsinger bow
+				player:setStorageValue(DarkKonia.FirstQuest.RewardSacrifice, 1)
 			else
 				npcHandler:say('Sorry, you must carry the three objects you have found', npc, creature)
 			end
@@ -620,8 +620,8 @@ local function creatureSayCallback(npc, creature, type, message)
 				player:removeItem(3324, 1)
 				player:removeItem(3295, 1)
 				npcHandler:say('Here you are young adept, take care yourself.', npc, creature)
-				player:setStorageValue(DarkKonia.FirstQuest.RewardSacrifice, 1)
 				player:addItem(rewardMG, 1) -- jungle rod/wand
+				player:setStorageValue(DarkKonia.FirstQuest.RewardSacrifice, 1)
 			else
 				npcHandler:say('Sorry, you must carry the three objects you have found', npc, creature)
 			end
@@ -664,6 +664,14 @@ npcHandler:setMessage(MESSAGE_SENDTRADE, "Take all the time you need to decide w
 npcHandler:addModule(FocusModule:new())
 
 npcConfig.shop = {
+	-- Prismatic Items and others
+	{ itemName = "prismatic helmet", clientId = 16109, buy = 250000, sell = 20000, storageKey = DarkKonia.SecondSacrifice.secondTip, storageValue = 1},
+	{ itemName = "prismatic armor", clientId = 16110, buy = 250000, sell = 20000, storageKey = DarkKonia.SecondSacrifice.secondTip, storageValue = 1},
+	{ itemName = "prismatic shield", clientId = 16116, buy = 250000, sell = 20000, storageKey = DarkKonia.SecondSacrifice.secondTip, storageValue = 1},
+	{ itemName = "crystalline sword", clientId = 16160, buy = 250000, sell = 20000, storageKey = DarkKonia.SecondSacrifice.secondTip, storageValue = 1},
+	{ itemName = "mycological mace", clientId = 16162, buy = 250000, sell = 20000, storageKey = DarkKonia.SecondSacrifice.secondTip, storageValue = 1},
+	{ itemName = "royal axe", clientId = 7434, buy = 250000, sell = 20000, storageKey = DarkKonia.SecondSacrifice.secondTip, storageValue = 1},
+
 	-- Great Items
 	{ itemName = "abyss hammer", clientId = 7414, sell = 20000 },
 	{ itemName = "albino plate", clientId = 19358, sell = 1500 },
@@ -823,81 +831,71 @@ npcConfig.shop = {
 	{ itemName = "wyvern fang", clientId = 7408, sell = 1500 },
 
 	-- Simple Items
-	{ itemName = "axe", clientId = 3274, buy = 20, sell = 7 },
-	{ itemName = "barbarian axe", clientId = 3317, buy = 590, sell = 185 },
-	{ itemName = "battle axe", clientId = 3266, buy = 235, sell = 80 },
-	{ itemName = "battle hammer", clientId = 3305, buy = 350, sell = 120 },
+	{ itemName = "axe", clientId = 3274, sell = 7 },
+	{ itemName = "barbarian axe", clientId = 3317, sell = 185 },
+	{ itemName = "battle axe", clientId = 3266, sell = 80 },
+	{ itemName = "battle hammer", clientId = 3305, sell = 120 },
 	{ itemName = "battle shield", clientId = 3413, sell = 95 },
 	{ itemName = "bone club", clientId = 3337, sell = 5 },
-	{ itemName = "bone sword", clientId = 3338, buy = 75, sell = 20 },
-	{ itemName = "brass armor", clientId = 3359, buy = 450, sell = 150 },
-	{ itemName = "brass helmet", clientId = 3354, buy = 120, sell = 30 },
-	{ itemName = "brass legs", clientId = 3372, buy = 195, sell = 49 },
-	{ itemName = "brass shield", clientId = 3411, buy = 65, sell = 25 },
-	{ itemName = "carlin sword", clientId = 3283, buy = 473, sell = 118 },
-	{ itemName = "chain armor", clientId = 3358, buy = 200, sell = 70 },
-	{ itemName = "chain helmet", clientId = 3352, buy = 52, sell = 17 },
-	{ itemName = "chain legs", clientId = 3558, buy = 80, sell = 25 },
-	{ itemName = "clerical mace", clientId = 3311, buy = 540, sell = 170 },
-	{ itemName = "club", clientId = 3270, buy = 5, sell = 1 },
-	{ itemName = "coat", clientId = 3562, buy = 8, sell = 1 },
+	{ itemName = "bone sword", clientId = 3338, sell = 20 },
+	{ itemName = "brass armor", clientId = 3359, sell = 150 },
+	{ itemName = "brass helmet", clientId = 3354, sell = 30 },
+	{ itemName = "brass legs", clientId = 3372, sell = 49 },
+	{ itemName = "brass shield", clientId = 3411, sell = 25 },
+	{ itemName = "carlin sword", clientId = 3283, sell = 118 },
+	{ itemName = "chain armor", clientId = 3358, sell = 70 },
+	{ itemName = "chain helmet", clientId = 3352, sell = 17 },
+	{ itemName = "chain legs", clientId = 3558, sell = 25 },
+	{ itemName = "clerical mace", clientId = 3311, sell = 170 },
+	{ itemName = "club", clientId = 3270, sell = 1 },
+	{ itemName = "coat", clientId = 3562, sell = 1 },
 	{ itemName = "copper shield", clientId = 3430, sell = 50 },
-	{ itemName = "crimson sword", clientId = 7385, buy = 610 },
-	{ itemName = "crowbar", clientId = 3304, buy = 260, sell = 50 },
-	{ itemName = "dagger", clientId = 3267, buy = 5, sell = 2 },
+	{ itemName = "crowbar", clientId = 3304, sell = 50 },
+	{ itemName = "dagger", clientId = 3267, sell = 2 },
 	{ itemName = "double axe", clientId = 3275, sell = 260 },
-	{ itemName = "doublet", clientId = 3379, buy = 16, sell = 3 },
+	{ itemName = "doublet", clientId = 3379, sell = 3 },
 	{ itemName = "durable exercise axe", clientId = 35280, buy = 945000, count = 1800 },
 	{ itemName = "durable exercise club", clientId = 35281, buy = 945000, count = 1800 },
 	{ itemName = "durable exercise sword", clientId = 35279, buy = 945000, count = 1800 },
-	{ itemName = "dwarven shield", clientId = 3425, buy = 500, sell = 100 },
+	{ itemName = "dwarven shield", clientId = 3425, sell = 100 },
 	{ itemName = "exercise axe", clientId = 28553, buy = 262500, count = 500 },
 	{ itemName = "exercise club", clientId = 28554, buy = 262500, count = 500 },
 	{ itemName = "exercise sword", clientId = 28552, buy = 262500, count = 500 },
 	{ itemName = "halberd", clientId = 3269, sell = 400 },
-	{ itemName = "hand axe", clientId = 3268, buy = 8, sell = 4 },
+	{ itemName = "hand axe", clientId = 3268, sell = 4 },
 	{ itemName = "hatchet", clientId = 3276, sell = 25 },
-	{ itemName = "iron helmet", clientId = 3353, buy = 390, sell = 150 },
-	{ itemName = "jacket", clientId = 3561, buy = 12, sell = 1 },
+	{ itemName = "iron helmet", clientId = 3353, sell = 150 },
+	{ itemName = "jacket", clientId = 3561, sell = 1 },
 	{ itemName = "katana", clientId = 3300, sell = 35 },
 	{ itemName = "lasting exercise axe", clientId = 35286, buy = 7560000, count = 14400 },
 	{ itemName = "lasting exercise club", clientId = 35287, buy = 7560000, count = 14400 },
 	{ itemName = "lasting exercise sword", clientId = 35285, buy = 7560000, count = 14400 },
-	{ itemName = "leather armor", clientId = 3361, buy = 35, sell = 12 },
-	{ itemName = "leather boots", clientId = 3552, buy = 10, sell = 2 },
-	{ itemName = "leather helmet", clientId = 3355, buy = 12, sell = 4 },
-	{ itemName = "leather legs", clientId = 3559, buy = 10, sell = 9 },
+	{ itemName = "leather armor", clientId = 3361, sell = 12 },
+	{ itemName = "leather boots", clientId = 3552, sell = 2 },
+	{ itemName = "leather helmet", clientId = 3355, sell = 4 },
+	{ itemName = "leather legs", clientId = 3559, sell = 9 },
 	{ itemName = "legion helmet", clientId = 3374, sell = 22 },
-	{ itemName = "longsword", clientId = 3285, buy = 160, sell = 51 },
-	{ itemName = "mace", clientId = 3286, buy = 90, sell = 30 },
-	{ itemName = "morning star", clientId = 3282, buy = 430, sell = 100 },
+	{ itemName = "longsword", clientId = 3285, sell = 51 },
+	{ itemName = "mace", clientId = 3286, sell = 30 },
+	{ itemName = "morning star", clientId = 3282, sell = 100 },
 	{ itemName = "orcish axe", clientId = 3316, sell = 350 },
-	{ itemName = "plate armor", clientId = 3357, buy = 1200, sell = 400 },
+	{ itemName = "plate armor", clientId = 3357, sell = 400 },
 	{ itemName = "plate legs", clientId = 3557, sell = 115 },
-	{ itemName = "plate shield", clientId = 3410, buy = 125, sell = 45 },
-	{ itemName = "rapier", clientId = 3272, buy = 15, sell = 5 },
-	{ itemName = "sabre", clientId = 3273, buy = 35, sell = 12 },
-	{ itemName = "scale armor", clientId = 3377, buy = 260, sell = 75 },
-	{ itemName = "short sword", clientId = 3294, buy = 26, sell = 10 },
-	{ itemName = "sickle", clientId = 3293, buy = 7 },
+	{ itemName = "plate shield", clientId = 3410, sell = 45 },
+	{ itemName = "rapier", clientId = 3272, sell = 5 },
+	{ itemName = "sabre", clientId = 3273, sell = 12 },
+	{ itemName = "scale armor", clientId = 3377, sell = 75 },
+	{ itemName = "short sword", clientId = 3294, sell = 10 },
 	{ itemName = "small axe", clientId = 3462, sell = 5 },
-	{ itemName = "soldier helmet", clientId = 3375, buy = 110, sell = 16 },
-	{ itemName = "steel helmet", clientId = 3351, buy = 580, sell = 293 },
-	{ itemName = "steel shield", clientId = 3409, buy = 240, sell = 80 },
-	{ itemName = "studded armor", clientId = 3378, buy = 90, sell = 25 },
-	{ itemName = "studded helmet", clientId = 3376, buy = 63 },
-	{ itemName = "studded legs", clientId = 3362, buy = 50 },
-	{ itemName = "studded shield", clientId = 3426, buy = 50 },
-	{ itemName = "sword", clientId = 3264, buy = 85 },
-	{ itemName = "two handed sword", clientId = 3265, buy = 950 },
-	{ itemName = "viking helmet", clientId = 3367, buy = 265 },
-	{ itemName = "viking shield", clientId = 3431, buy = 260 },
-	{ itemName = "wooden shield", clientId = 3412, buy = 15 },
+	{ itemName = "soldier helmet", clientId = 3375, sell = 16 },
+	{ itemName = "steel helmet", clientId = 3351, sell = 293 },
+	{ itemName = "steel shield", clientId = 3409, sell = 80 },
+	{ itemName = "studded armor", clientId = 3378, sell = 25 },
 
 	-- Medium List Items
 	{ itemName = "angelic axe", clientId = 7436, sell = 5000 },
 	{ itemName = "blue robe", clientId = 3567, sell = 10000 },
-	{ itemName = "bonelord shield", clientId = 3418, buy = 7000, sell = 1200 },
+	{ itemName = "bonelord shield", clientId = 3418, sell = 1200 },
 	{ itemName = "boots of haste", clientId = 3079, sell = 30000 },
 	{ itemName = "broadsword", clientId = 3301, sell = 500 },
 	{ itemName = "butcher's axe", clientId = 7412, sell = 18000 },
@@ -913,20 +911,20 @@ npcConfig.shop = {
 	{ itemName = "glorious axe", clientId = 7454, sell = 3000 },
 	{ itemName = "guardian shield", clientId = 3415, sell = 2000 },
 	{ itemName = "ice rapier", clientId = 3284, sell = 1000 },
-	{ itemName = "noble armor", clientId = 3380, buy = 8000, sell = 900 },
-	{ itemName = "obsidian lance", clientId = 3313, buy = 3000, sell = 500 },
+	{ itemName = "noble armor", clientId = 3380, sell = 900 },
+	{ itemName = "obsidian lance", clientId = 3313, sell = 500 },
 	{ itemName = "phoenix shield", clientId = 3439, sell = 16000 },
 	{ itemName = "queen's sceptre", clientId = 7410, sell = 20000 },
 	{ itemName = "royal helmet", clientId = 3392, sell = 30000 },
 	{ itemName = "shadow sceptre", clientId = 7451, sell = 10000 },
-	{ itemName = "spike sword", clientId = 3271, buy = 8000, sell = 1000 },
+	{ itemName = "spike sword", clientId = 3271, sell = 1000 },
 	{ itemName = "thaian sword", clientId = 7391, sell = 16000 },
-	{ itemName = "war hammer", clientId = 3279, buy = 10000, sell = 1200 },
-	{ itemName = "ancient shield", clientId = 3432, buy = 5000, sell = 900 },
+	{ itemName = "war hammer", clientId = 3279, sell = 1200 },
+	{ itemName = "ancient shield", clientId = 3432, sell = 900 },
 	{ itemName = "black shield", clientId = 3429, sell = 800 },
 	{ itemName = "bonebreaker", clientId = 7428, sell = 10000 },
-	{ itemName = "dark armor", clientId = 3383, buy = 1500, sell = 400 },
-	{ itemName = "dark helmet", clientId = 3384, buy = 1000, sell = 250 },
+	{ itemName = "dark armor", clientId = 3383, sell = 400 },
+	{ itemName = "dark helmet", clientId = 3384, sell = 250 },
 	{ itemName = "dragon hammer", clientId = 3322, sell = 2000 },
 	{ itemName = "dreaded cleaver", clientId = 7419, sell = 15000 },
 	{ itemName = "giant sword", clientId = 3281, sell = 17000 },
@@ -939,7 +937,7 @@ npcConfig.shop = {
 	{ itemName = "ornamented axe", clientId = 7411, sell = 20000 },
 	{ itemName = "poison dagger", clientId = 3299, sell = 50 },
 	{ itemName = "scimitar", clientId = 3307, sell = 150 },
-	{ itemName = "serpent sword", clientId = 3297, buy = 6000, sell = 900 },
+	{ itemName = "serpent sword", clientId = 3297, sell = 900 },
 	{ itemName = "skull staff", clientId = 3324, sell = 6000 },
 	{ itemName = "strange helmet", clientId = 3373, sell = 500 },
 	{ itemName = "titan axe", clientId = 7413, sell = 4000 },

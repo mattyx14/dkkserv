@@ -119,7 +119,6 @@ monster.loot = {
 	{name = "orb", chance = 9000},
 	{name = "strange symbol", chance = 9000},
 	{name = "steel boots", chance = 9000},
-	{name = "thunder hammer", chance = 9000},
 	{name = "small diamond", chance = 4500, maxCount = 5},
 	{id = 3007, chance = 4500},
 	{name = "great health potion", chance = 4500},

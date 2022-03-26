@@ -7296,7 +7296,7 @@ local items = {
 		itemid = 19391,
 		type = "equip",
 		slot = "armor",
-		level = 130,
+		level = 350,
 		vocation = {
 			{"Sorcerer", true},
 			{"Druid", true, true},
@@ -7309,7 +7309,7 @@ local items = {
 		itemid = 19391,
 		type = "deequip",
 		slot = "armor",
-		level = 130
+		level = 350
 	},
 	{
 		-- vampire silk slippers
@@ -7352,6 +7352,7 @@ local items = {
 		itemid = 19366,
 		type = "equip",
 		slot = "legs",
+		level = 350,
 		vocation = {
 			{"Sorcerer", true},
 			{"Druid", true, true},
@@ -12418,13 +12419,21 @@ local items = {
 		-- blue legs
 		itemid = 645,
 		type = "equip",
-		slot = "legs"
+		slot = "legs",
+		level = 150,
+		vocation = {
+			{"Sorcerer", true},
+			{"Druid", true, true},
+			{"Master Sorcerer"},
+			{"Elder Druid"}
+		}
 	},
 	{
 		-- blue legs
 		itemid = 645,
 		type = "deequip",
-		slot = "legs"
+		slot = "legs",
+		level = 150
 	},
 	{
 		-- suspicious signet ring
@@ -13994,13 +14003,21 @@ local items = {
 		-- magician hat
 		itemid = 3573,
 		type = "equip",
-		slot = "head"
+		slot = "head",
+		level = 150,
+		vocation = {
+			{"Sorcerer", true},
+			{"Druid", true, true},
+			{"Master Sorcerer"},
+			{"Elder Druid"}
+		}
 	},
 	{
 		-- magician hat
 		itemid = 3573,
 		type = "deequip",
-		slot = "head"
+		slot = "head",
+		level = 150
 	},
 	{
 		-- scarf
@@ -14070,13 +14087,21 @@ local items = {
 		-- blue robe
 		itemid = 3567,
 		type = "equip",
-		slot = "armor"
+		slot = "armor",
+		level = 150,
+		vocation = {
+			{"Sorcerer", true},
+			{"Druid", true, true},
+			{"Master Sorcerer"},
+			{"Elder Druid"}
+		}
 	},
 	{
 		-- blue robe
 		itemid = 3567,
 		type = "deequip",
-		slot = "armor"
+		slot = "armor",
+		level = 150
 	},
 	{
 		-- red robe

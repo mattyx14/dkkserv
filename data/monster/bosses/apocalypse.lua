@@ -95,7 +95,6 @@ monster.loot = {
 	{name = "silver dagger", chance = 15500},
 	{name = "talon", chance = 14000, maxCount = 27},
 	{name = "teddy bear", chance = 10500},
-	{name = "thunder hammer", chance = 3500},
 	{id = 3002, chance = 5100}, -- voodoo doll
 	{name = "white pearl", chance = 12500, maxCount = 35}
 }

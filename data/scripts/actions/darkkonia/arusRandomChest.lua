@@ -4,7 +4,7 @@ local rewards = {
 		bossName = 'Fyzarus',
 		items = {
 			{rand = true, itemId = {27449, 27452, 27458}},
-			{itemId = 3043, count = 50},
+			{itemId = 3043, count = 25},
 		}
 	},
 	[24929] = {
@@ -12,7 +12,7 @@ local rewards = {
 		bossName = 'Fezarus',
 		items = {
 			{rand = true, itemId = {27451, 27454, 27455, 27456}},
-			{itemId = 3043, count = 50},
+			{itemId = 3043, count = 25},
 		}
 	},
 	[24930] = {
@@ -20,7 +20,7 @@ local rewards = {
 		bossName = 'Toxirus',
 		items = {
 			{rand = true, itemId = {27450, 27453, 27457}},
-			{itemId = 3043, count = 50},
+			{itemId = 3043, count = 25},
 		}
 	},
 }

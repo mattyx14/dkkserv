@@ -58,6 +58,11 @@ npcType.onCloseChannel = function(npc, creature)
 end
 
 npcConfig.shop = {
+	-- Prismatic Items
+	{ itemName = "prismatic necklace", clientId = 16113, buy = 50000, count = 750 , storageKey = DarkKonia.SecondSacrifice.secondTip, storageValue = 1},
+	{ itemName = "prismatic ring", clientId = 16114, buy = 70000, storageKey = DarkKonia.SecondSacrifice.secondTip, storageValue = 1},
+
+	-- Enchanged Tools
 	{ itemName = "obsidian knife", clientId = 5908, sell = 100000 },
 
 	-- Tools
