@@ -270,7 +270,7 @@ npcHandler:setMessage(MESSAGE_GREET, {
 	"You are also interested in a {distance} weapons.",
 	"I can also help you with the {ammunition container} for the paladin for you, the first is free.",
 	"Or maybe you want to participate in a great {mission} that I have for you.",
-	"Lastly, I can also sell you some powerful {spells}, but for this you need to complete the {mission} in which I want you to participate.",
+	"Lastly, I can also you some powerful spells, but for this you need to complete the {mission} in which I want you to participate.",
 	"Go with Wendy she is in charge of the complete mission I only give you access to {stage 1}."
 })
 npcHandler:setMessage(MESSAGE_FAREWELL, "Farewell, |PLAYERNAME|, may the winds guide your way.")

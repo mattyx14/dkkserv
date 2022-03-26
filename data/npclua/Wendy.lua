@@ -632,7 +632,7 @@ npcHandler:setMessage(MESSAGE_GREET, {
 	"Ah, a customer! Be greeted, |PLAYERNAME|! Welcome to my {smithy} ...",
 	"I can also help you with the {first weapons} for the knights for you.",
 	"Or maybe you want to participate in a great {mission} that I have for you.",
-	"Lastly, I can also sell you some powerful {spells}, but for this you need to complete the {mission} in which I want you to participate."
+	"Lastly, I can also you some powerful spells, but for this you need to complete the {mission} in which I want you to participate."
 })
 npcHandler:setMessage(MESSAGE_FAREWELL, "Farewell, |PLAYERNAME|, may the winds guide your way.")
 npcHandler:setMessage(MESSAGE_WALKAWAY, "Come back soon!")
