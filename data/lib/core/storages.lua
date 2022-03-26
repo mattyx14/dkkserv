@@ -1,5 +1,5 @@
 -- Last: 
--- finalTip = 30283
+-- DemonTimmer = 30284
 
 Storage = {
 	-- General storages
@@ -68,7 +68,10 @@ DarkKonia = {
 	NpcSpawn = 30100,
 	DefaultStartQuest = 30101,
 	AnnihilatorDone = 30102,
-	demonHelmetQuest = 30103,
+	DemonHelmetQuest = {
+		DemonTimmer = 30284,
+		DemonKilled = 30103,
+	},
 	ForgottenKnowledge = {
 		GirlPicture = 30104, -- Fynn = 26400
 		SilverKey = 30105, -- Fynn
@@ -144,7 +147,6 @@ DarkKonia = {
 		finalTip = 30283,
 	},
 	FynnQuest =  {
-		DemonHelmetTimmer = 30145,
 		GazerTimer = 30146,
 	},
 	FirstSacrifice = {

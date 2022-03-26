@@ -1,39 +1,30 @@
 local bosses = {
 	['demon'] = {
-		exitPosition = Position(981, 1053, 10),
-		teleportBoss = Position(985, 1060, 10)
+		teleportTo = Position(982, 1060, 10),
+		createTeleport = Position(987, 1060, 10)
 	},
 	['zarabustor'] = {
-		exitPosition = Position(1021, 189, 7),
-		teleportBoss = Position(853, 1046, 10)
-	},
-	['dracula'] = {
-		exitPosition = Position(1543, 875, 5),
+		teleportTo = Position(1021, 189, 7),
+		createTeleport = Position(853, 1046, 10)
 	},
 	['fezarus'] = {
-		exitPosition = Position(737, 809, 12),
+		teleportTo = Position(737, 809, 12),
 	},
 	['fyzarus'] = {
-		exitPosition = Position(924, 1107, 12),
-		teleportBoss = Position(916, 1111, 12)
+		teleportTo = Position(924, 1107, 12),
+		createTeleport = Position(916, 1111, 12)
 	},
 	['toxirus'] = {
-		exitPosition = Position(895, 987, 10),
-	},
-	['leaf golem grom'] = {
-		exitPosition = Position(656, 1094, 12),
-	},
-	['massacre'] = {
-		exitPosition = Position(1018, 1153, 10),
+		teleportTo = Position(895, 987, 10),
 	},
 	['black magician'] = {
-		exitPosition = Position(891, 1175, 11),
-		teleportBoss = Position(889, 1179, 11)
+		teleportTo = Position(891, 1175, 11),
+		createTeleport = Position(889, 1179, 11)
 	},
 }
 
 local function removeTeleport(position)
-	local teleportItem = Tile(position):getItemById(1387)
+	local teleportItem = Tile(position):getItemById(37000)
 	if teleportItem then
 		teleportItem:remove()
 		position:sendMagicEffect(CONST_ME_POFF)
@@ -66,15 +57,15 @@ function killBoss.onKill(creature, target)
 
 	local position = targetMonster:getPosition()
 	position:sendMagicEffect(CONST_ME_TELEPORT)
-	local item = Game.createItem(1387, 1, bossConfig.teleportBoss)
+	local item = Game.createItem(37000, 1, bossConfig.createTeleport)
 	if item:isTeleport() then
-		item:setDestination(bossConfig.exitPosition)
+		item:setDestination(bossConfig.teleportTo)
 	end
 	targetMonster:say('Escape through the teleport quickly before it closes!', TALKTYPE_MONSTER_SAY)
 
 	--remove portal after 1 min
-	addEvent(spectatorStartCountdown, 500, 1 * 60, bossConfig.teleportBoss)
-	addEvent(removeTeleport, 1 * 60 * 1000, bossConfig.teleportBoss)
+	addEvent(spectatorStartCountdown, 500, 1 * 60, bossConfig.createTeleport)
+	addEvent(removeTeleport, 1 * 60 * 1000, bossConfig.createTeleport)
 	return true
 end
 killBoss:register()

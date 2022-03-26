@@ -2414,7 +2414,7 @@ local weapons = {
 		-- mycological bow
 		itemid = 16164,
 		type = WEAPON_DISTANCE,
-		level = 105,
+		level = 75,
 		unproperly = true,
 		vocation = {
 			{"Paladin", true},
@@ -2868,8 +2868,12 @@ local weapons = {
 		-- emerald sword
 		itemid = 8102,
 		type = WEAPON_SWORD,
-		level = 100,
-		unproperly = true
+		level = 150,
+		unproperly = true,
+		vocation = {
+			{"Knight", true},
+			{"Elite Knight"}
+		}
 	},
 	{
 		-- the stomper
@@ -3047,7 +3051,7 @@ local weapons = {
 		-- warsinger bow
 		itemid = 8026,
 		type = WEAPON_DISTANCE,
-		level = 80,
+		level = 150,
 		unproperly = true,
 		vocation = {
 			{"Paladin", true},
@@ -3080,7 +3084,7 @@ local weapons = {
 		-- royal crossbow
 		itemid = 8023,
 		type = WEAPON_DISTANCE,
-		level = 130,
+		level = 150,
 		unproperly = true,
 		vocation = {
 			{"Paladin", true},
@@ -3811,8 +3815,12 @@ local weapons = {
 		-- impaler
 		itemid = 7435,
 		type = WEAPON_AXE,
-		level = 85,
-		unproperly = true
+		level = 150,
+		unproperly = true,
+		vocation = {
+			{"Knight", true},
+			{"Elite Knight"}
+		}
 	},
 	{
 		-- royal axe
@@ -4604,8 +4612,12 @@ local weapons = {
 		-- thunder hammer
 		itemid = 3309,
 		type = WEAPON_CLUB,
-		level = 85,
-		unproperly = true
+		level = 150,
+		unproperly = true,
+		vocation = {
+			{"Knight", true},
+			{"Elite Knight"}
+		}
 	},
 	{
 		-- machete

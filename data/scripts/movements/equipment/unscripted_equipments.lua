@@ -5632,14 +5632,18 @@ local items = {
 		itemid = 22757,
 		type = "equip",
 		slot = "head",
-		level = 150
+		level = 250,
+		vocation = {
+			{"Paladin", true},
+			{"Royal Paladin"}
+		}
 	},
 	{
 		-- shroud of despair
 		itemid = 22757,
 		type = "deequip",
 		slot = "head",
-		level = 150
+		level = 250
 	},
 	{
 		-- treader of torment
@@ -5677,13 +5681,21 @@ local items = {
 		-- visage of the end days
 		itemid = 22754,
 		type = "equip",
-		slot = "head"
+		slot = "head",
+		level = 250,
+		vocation = {
+			{"Sorcerer", true},
+			{"Druid", true, true},
+			{"Master Sorcerer"},
+			{"Elder Druid"}
+		}
 	},
 	{
 		-- visage of the end days
 		itemid = 22754,
 		type = "deequip",
-		slot = "head"
+		slot = "head",
+		level = 250
 	},
 	{
 		-- ancient amulet
@@ -7665,13 +7677,19 @@ local items = {
 		-- mycological bow
 		itemid = 16164,
 		type = "equip",
-		slot = "hand"
+		slot = "hand",
+		level = 75,
+		vocation = {
+			{"Paladin", true},
+			{"Royal Paladin"}
+		}
 	},
 	{
 		-- mycological bow
 		itemid = 16164,
 		type = "deequip",
-		slot = "hand"
+		slot = "hand",
+		level = 75
 	},
 	{
 		-- crystal crossbow
@@ -10125,13 +10143,19 @@ local items = {
 		-- emerald sword
 		itemid = 8102,
 		type = "equip",
-		slot = "hand"
+		slot = "hand",
+		level = 150,
+		vocation = {
+			{"Knight", true},
+			{"Elite Knight"}
+		}
 	},
 	{
 		-- emerald sword
 		itemid = 8102,
 		type = "deequip",
-		slot = "hand"
+		slot = "hand",
+		level = 150
 	},
 	{
 		-- the stomper
@@ -11119,13 +11143,19 @@ local items = {
 		-- royal crossbow
 		itemid = 8023,
 		type = "equip",
-		slot = "hand"
+		slot = "hand",
+		level = 150,
+		vocation = {
+			{"Paladin", true},
+			{"Royal Paladin"}
+		}
 	},
 	{
 		-- royal crossbow
 		itemid = 8023,
 		type = "deequip",
-		slot = "hand"
+		slot = "hand",
+		level = 150
 	},
 	{
 		-- chain bolter
@@ -12721,13 +12751,19 @@ local items = {
 		-- impaler
 		itemid = 7435,
 		type = "equip",
-		slot = "hand"
+		slot = "hand",
+		level = 150,
+		vocation = {
+			{"Knight", true},
+			{"Elite Knight"}
+		}
 	},
 	{
 		-- impaler
 		itemid = 7435,
 		type = "deequip",
-		slot = "hand"
+		slot = "hand",
+		level = 150
 	},
 	{
 		-- royal axe
@@ -14931,13 +14967,19 @@ local items = {
 		-- horned helmet
 		itemid = 3390,
 		type = "equip",
-		slot = "head"
+		slot = "head",
+		level = 500,
+		vocation = {
+			{"Knight", true},
+			{"Elite Knight"}
+		}
 	},
 	{
 		-- horned helmet
 		itemid = 3390,
 		type = "deequip",
-		slot = "head"
+		slot = "head",
+		level = 500
 	},
 	{
 		-- demon legs
@@ -14967,13 +15009,19 @@ local items = {
 		-- demon helmet
 		itemid = 3387,
 		type = "equip",
-		slot = "head"
+		slot = "head",
+		level = 250,
+		vocation = {
+			{"Knight", true},
+			{"Elite Knight"}
+		}
 	},
 	{
 		-- demon helmet
 		itemid = 3387,
 		type = "deequip",
-		slot = "head"
+		slot = "head",
+		level = 250
 	},
 	{
 		-- dragon scale mail
@@ -15225,13 +15273,19 @@ local items = {
 		-- winged helmet
 		itemid = 3368,
 		type = "equip",
-		slot = "head"
+		slot = "head",
+		level = 500,
+		vocation = {
+			{"Paladin", true},
+			{"Royal Paladin"}
+		}
 	},
 	{
 		-- winged helmet
 		itemid = 3368,
 		type = "deequip",
-		slot = "head"
+		slot = "head",
+		level = 500
 	},
 	{
 		-- viking helmet
@@ -15267,13 +15321,15 @@ local items = {
 		-- golden helmet
 		itemid = 3365,
 		type = "equip",
-		slot = "head"
+		slot = "head",
+		level = 500,
 	},
 	{
 		-- golden helmet
 		itemid = 3365,
 		type = "deequip",
-		slot = "head"
+		slot = "head",
+		level = 500
 	},
 	{
 		-- golden legs
@@ -15879,13 +15935,19 @@ local items = {
 		-- thunder hammer
 		itemid = 3309,
 		type = "equip",
-		slot = "hand"
+		slot = "hand",
+		level = 150,
+		vocation = {
+			{"Knight", true},
+			{"Elite Knight"}
+		}
 	},
 	{
 		-- thunder hammer
 		itemid = 3309,
 		type = "deequip",
-		slot = "hand"
+		slot = "hand",
+		level = 150
 	},
 	{
 		-- machete

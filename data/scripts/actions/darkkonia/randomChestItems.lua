@@ -23,6 +23,14 @@ local rewards = {
 			{itemId = 3043, count = 25},
 		}
 	},
+	[24931] = {
+		storage = DarkKonia.DemonHelmetQuest.DemonKilled,
+		bossName = 'Demon',
+		items = {
+			{rand = true, itemId = {3387, 22754, 22757}},
+			{itemId = 3043, count = 50},
+		}
+	},
 }
 
 local bossesRewardRand = Action()
@@ -68,6 +76,6 @@ function bossesRewardRand.onUse(player, item, fromPosition, target, toPosition, 
 	return true
 end
 
-bossesRewardRand:uid(24928, 24929, 24930)
+bossesRewardRand:uid(24928, 24929, 24930, 24931)
 bossesRewardRand:register()
 

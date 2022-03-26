@@ -6432,16 +6432,21 @@
 	<item id="3365" article="a" name="golden helmet">
 		<attribute key="description" value="It's the famous Helmet of the Stars"/>
 		<attribute key="slotType" value="head"/>
+		<attribute key="showAttributes" value="1"/>
+		<attribute key="absorbpercentphysical" value="7"/>
+		<attribute key="absorbpercentice" value="7"/>
+		<attribute key="absorbpercentpoison" value="7"/>
+		<attribute key="absorbpercentfire" value="7"/>
+		<attribute key="absorbpercentenergy" value="7"/>
+		<attribute key="skillclub" value="6"/>
+		<attribute key="skillaxe" value="6"/>
+		<attribute key="skillsword" value="6"/>
+		<attribute key="magicpoints" value="2"/>
 		<attribute key="armor" value="12"/>
 		<attribute key="weight" value="3200"/>
 		<attribute key="upgradeclassification" value="4"/>
-		<attribute key="imbuementslot" value="2">
+		<attribute key="imbuementslot" value="1">
 			<attribute key="mana leech" value="3"/>
-			<attribute key="skillboost axe" value="3"/>
-			<attribute key="skillboost sword" value="3"/>
-			<attribute key="skillboost club" value="3"/>
-			<attribute key="skillboost shielding" value="3"/>
-			<attribute key="skillboost distance" value="3"/>
 		</attribute>
 	</item>
 	<item id="3366" article="a" name="magic plate armor">
@@ -6470,7 +6475,15 @@
 		<attribute key="slotType" value="head"/>
 		<attribute key="armor" value="10"/>
 		<attribute key="weight" value="1200"/>
+		<attribute key="showAttributes" value="1"/>
+		<attribute key="absorbpercentholy" value="7"/>
+		<attribute key="absorbpercentdeath" value="11"/>
+		<attribute key="speed" value="45"/>
 		<attribute key="upgradeclassification" value="4"/>
+		<attribute key="imbuementslot" value="2">
+			<attribute key="mana leech" value="3"/>
+			<attribute key="skillboost distance" value="3"/>
+		</attribute>
 	</item>
 	<item id="3369" article="a" name="warrior helmet">
 		<attribute key="slotType" value="head"/>
@@ -6633,8 +6646,9 @@
 		<attribute key="description" value="You hear an evil whispering from inside"/>
 		<attribute key="slotType" value="head"/>
 		<attribute key="armor" value="10"/>
+		<attribute key="absorbpercentphysical" value="7"/>
 		<attribute key="weight" value="2950"/>
-		<attribute key="upgradeclassification" value="2"/>
+		<attribute key="upgradeclassification" value="4"/>
 		<attribute key="imbuementslot" value="2">
 			<attribute key="mana leech" value="3"/>
 			<attribute key="skillboost axe" value="3"/>
@@ -6666,9 +6680,17 @@
 	</item>
 	<item id="3390" article="a" name="horned helmet">
 		<attribute key="slotType" value="head"/>
+		<attribute key="showAttributes" value="1"/>
+		<attribute key="absorbpercentphysical" value="7"/>
+		<attribute key="skillclub" value="7"/>
+		<attribute key="skillaxe" value="7"/>
+		<attribute key="skillsword" value="7"/>
 		<attribute key="armor" value="11"/>
 		<attribute key="weight" value="5100"/>
 		<attribute key="upgradeclassification" value="4"/>
+		<attribute key="imbuementslot" value="1">
+			<attribute key="mana leech" value="3"/>
+		</attribute>
 	</item>
 	<item id="3391" article="a" name="crusader helmet">
 		<attribute key="slotType" value="head"/>
@@ -16642,9 +16664,9 @@
 		<attribute key="weaponType" value="distance"/>
 		<attribute key="slotType" value="two-handed"/>
 		<attribute key="ammotype" value="bolt"/>
-		<attribute key="hitchance" value="3"/>
+		<attribute key="hitchance" value="4"/>
 		<attribute key="range" value="6"/>
-		<attribute key="attack" value="5"/>
+		<attribute key="attack" value="6"/>
 		<attribute key="weight" value="12000"/>
 		<attribute key="upgradeclassification" value="3"/>
 		<attribute key="imbuementslot" value="3">
@@ -16694,7 +16716,7 @@
 		<attribute key="ammotype" value="arrow"/>
 		<attribute key="hitchance" value="5"/>
 		<attribute key="range" value="7"/>
-		<attribute key="attack" value="3"/>
+		<attribute key="attack" value="5"/>
 		<attribute key="weight" value="4500"/>
 		<attribute key="upgradeclassification" value="3"/>
 		<attribute key="imbuementslot" value="3">
@@ -22798,7 +22820,7 @@
 	</item>
 	<item id="11689" article="an" name="elite draken helmet">
 		<attribute key="slotType" value="head"/>
-		<attribute key="absorbpercentdeath" value="3"/>
+		<attribute key="absorbpercentdeath" value="5"/>
 		<attribute key="skilldist" value="1"/>
 		<attribute key="armor" value="9"/>
 		<attribute key="weight" value="4300"/>
@@ -26990,7 +27012,7 @@
 	<item id="16104" article="a" name="gill gugel">
 		<attribute key="slotType" value="head"/>
 		<attribute key="absorbpercentpoison" value="6"/>
-		<attribute key="absorbpercentfire" value="-6"/>
+		<attribute key="absorbpercentfire" value="-3"/>
 		<attribute key="magicpoints" value="2"/>
 		<attribute key="armor" value="5"/>
 		<attribute key="weight" value="900"/>
@@ -26999,7 +27021,7 @@
 	<item id="16105" article="a" name="gill coat">
 		<attribute key="slotType" value="body"/>
 		<attribute key="absorbpercentpoison" value="10"/>
-		<attribute key="absorbpercentfire" value="-10"/>
+		<attribute key="absorbpercentfire" value="-5"/>
 		<attribute key="magicpoints" value="1"/>
 		<attribute key="armor" value="12"/>
 		<attribute key="weight" value="1900"/>
@@ -27008,7 +27030,7 @@
 	<item id="16106" article="a" name="gill legs">
 		<attribute key="slotType" value="legs"/>
 		<attribute key="absorbpercentpoison" value="8"/>
-		<attribute key="absorbpercentfire" value="-8"/>
+		<attribute key="absorbpercentfire" value="-4"/>
 		<attribute key="magicpoints" value="1"/>
 		<attribute key="armor" value="7"/>
 		<attribute key="weight" value="2800"/>
@@ -27121,7 +27143,7 @@
 		<attribute key="upgradeclassification" value="2"/>
 	</item>
 	<item id="16118" article="a" name="glacial rod">
-		<attribute key="description" value="Hurls the icy essence of the Svargrond glaciers"/>
+		<attribute key="description" value="Hurls the icy essence of the Jorvik glaciers"/>
 		<attribute key="weaponType" value="wand"/>
 		<attribute key="shootType" value="smallice"/>
 		<attribute key="magicpoints" value="1"/>
@@ -27293,7 +27315,6 @@
 		<attribute key="upgradeclassification" value="2"/>
 	</item>
 	<item id="16161" article="a" name="crystalline axe">
-		<attribute key="description" value="Even in the light of day, the stars seem to reflect in each facet of this crystalline axe"/>
 		<attribute key="weaponType" value="axe"/>
 		<attribute key="skillaxe" value="1"/>
 		<attribute key="attack" value="47"/>
@@ -34633,12 +34654,11 @@
 		<attribute key="decayTo" value="0"/>
 	</item>
 	<!-- lonely snake and sacred snake corpse -->
-	<item id="21477" name="lava">
+	<item fromid="21477" toid="21499" article="a" name="lava">
 		<attribute key="type" value="trashholder"/>
 		<attribute key="effect" value="fire"/>
 		<attribute key="ignoreblocking" value="1"/>
 	</item>
-	<item fromid="21478" toid="21499" article="a" name="lava"/>
 	<item id="21500" article="a" name="water vortex">
 		<attribute key="description" value="It draws you nearer."/>
 	</item>
@@ -36843,17 +36863,20 @@
 	</item>
 	<item id="22750" article="a" name="grille"/>
 	<item id="22754" article="a" name="visage of the end days">
+		<attribute key="description" value="You hear an evil whispering from inside"/>
 		<attribute key="slotType" value="head"/>
 		<attribute key="armor" value="10"/>
 		<attribute key="weight" value="3800"/>
+		<attribute key="absorbpercentdeath" value="9"/>
 		<attribute key="upgradeclassification" value="4"/>
+		<attribute key="magicpoints" value="4"/>
 		<attribute key="imbuementslot" value="2">
 			<attribute key="mana leech" value="3"/>
-			<attribute key="skillboost axe" value="3"/>
-			<attribute key="skillboost sword" value="3"/>
-			<attribute key="skillboost club" value="3"/>
-			<attribute key="skillboost shielding" value="3"/>
-			<attribute key="skillboost distance" value="3"/>
+			<attribute key="elemental protection death" value="3"/>
+			<attribute key="elemental protection earth" value="3"/>
+			<attribute key="elemental protection fire" value="3"/>
+			<attribute key="elemental protection ice" value="3"/>
+			<attribute key="elemental protection energy" value="3"/>
 		</attribute>
 	</item>
 	<item id="22755" article="a" name="book of lies">
@@ -36880,10 +36903,16 @@
 		</attribute>
 	</item>
 	<item id="22757" article="a" name="shroud of despair">
+		<attribute key="description" value="You hear an evil whispering from inside"/>
 		<attribute key="slotType" value="head"/>
-		<attribute key="armor" value="7"/>
+		<attribute key="armor" value="10"/>
 		<attribute key="weight" value="3400"/>
+		<attribute key="absorbpercentdeath" value="9"/>
 		<attribute key="upgradeclassification" value="4"/>
+		<attribute key="imbuementslot" value="2">
+			<attribute key="mana leech" value="3"/>
+			<attribute key="skillboost distance" value="3"/>
+		</attribute>
 	</item>
 	<item id="22758" article="a" name="death gaze">
 		<attribute key="weaponType" value="shield"/>
@@ -41966,7 +41995,7 @@
 	</item>
 	<item id="27449" article="a" name="blade of destruction">
 		<attribute key="weaponType" value="sword"/>
-		<attribute key="attack" value="50"/>
+		<attribute key="attack" value="51"/>
 		<attribute key="defense" value="33"/>
 		<attribute key="weight" value="5000"/>
 		<attribute key="upgradeclassification" value="2"/>
@@ -41981,7 +42010,7 @@
 	<item id="27450" article="a" name="slayer of destruction">
 		<attribute key="weaponType" value="sword"/>
 		<attribute key="slotType" value="two-handed"/>
-		<attribute key="attack" value="52"/>
+		<attribute key="attack" value="53"/>
 		<attribute key="defense" value="32"/>
 		<attribute key="weight" value="7000"/>
 		<attribute key="upgradeclassification" value="2"/>
@@ -41995,7 +42024,7 @@
 	</item>
 	<item id="27451" article="an" name="axe of destruction">
 		<attribute key="weaponType" value="axe"/>
-		<attribute key="attack" value="51"/>
+		<attribute key="attack" value="52"/>
 		<attribute key="defense" value="31"/>
 		<attribute key="weight" value="5000"/>
 		<attribute key="upgradeclassification" value="2"/>
@@ -42010,7 +42039,7 @@
 	<item id="27452" article="a" name="chopper of destruction">
 		<attribute key="weaponType" value="axe"/>
 		<attribute key="slotType" value="two-handed"/>
-		<attribute key="attack" value="52"/>
+		<attribute key="attack" value="55"/>
 		<attribute key="defense" value="32"/>
 		<attribute key="weight" value="7000"/>
 		<attribute key="upgradeclassification" value="2"/>
@@ -42024,7 +42053,7 @@
 	</item>
 	<item id="27453" article="a" name="mace of destruction">
 		<attribute key="weaponType" value="club"/>
-		<attribute key="attack" value="50"/>
+		<attribute key="attack" value="52"/>
 		<attribute key="defense" value="30"/>
 		<attribute key="weight" value="5000"/>
 		<attribute key="upgradeclassification" value="2"/>
@@ -42039,7 +42068,7 @@
 	<item id="27454" article="a" name="hammer of destruction">
 		<attribute key="weaponType" value="club"/>
 		<attribute key="slotType" value="two-handed"/>
-		<attribute key="attack" value="53"/>
+		<attribute key="attack" value="54"/>
 		<attribute key="defense" value="30"/>
 		<attribute key="weight" value="7000"/>
 		<attribute key="upgradeclassification" value="2"/>
@@ -42055,9 +42084,9 @@
 		<attribute key="weaponType" value="distance"/>
 		<attribute key="slotType" value="two-handed"/>
 		<attribute key="ammotype" value="arrow"/>
-		<attribute key="hitchance" value="6"/>
-		<attribute key="range" value="6"/>
-		<attribute key="attack" value="6"/>
+		<attribute key="hitchance" value="7"/>
+		<attribute key="range" value="7"/>
+		<attribute key="attack" value="7"/>
 		<attribute key="weight" value="5500"/>
 		<attribute key="upgradeclassification" value="2"/>
 		<attribute key="imbuementslot" value="3">
@@ -42072,9 +42101,9 @@
 		<attribute key="weaponType" value="distance"/>
 		<attribute key="slotType" value="two-handed"/>
 		<attribute key="ammotype" value="bolt"/>
-		<attribute key="hitchance" value="6"/>
-		<attribute key="range" value="5"/>
-		<attribute key="attack" value="6"/>
+		<attribute key="hitchance" value="8"/>
+		<attribute key="range" value="6"/>
+		<attribute key="attack" value="8"/>
 		<attribute key="weight" value="6500"/>
 		<attribute key="upgradeclassification" value="2"/>
 		<attribute key="imbuementslot" value="3">
@@ -44127,8 +44156,8 @@
 	<item id="28714" article="a" name="falcon circlet">
 		<attribute key="slotType" value="head"/>
 		<attribute key="absorbpercentfire" value="9"/>
-		<attribute key="magicpoints" value="2"/>
-		<attribute key="armor" value="8"/>
+		<attribute key="magicpoints" value="6"/>
+		<attribute key="armor" value="9"/>
 		<attribute key="weight" value="1300"/>
 		<attribute key="upgradeclassification" value="4"/>
 		<attribute key="imbuementslot" value="2">
@@ -44138,7 +44167,7 @@
 	</item>
 	<item id="28715" article="a" name="falcon coif">
 		<attribute key="slotType" value="head"/>
-		<attribute key="absorbpercentphysical" value="3"/>
+		<attribute key="absorbpercentphysical" value="5"/>
 		<attribute key="absorbpercentfire" value="10"/>
 		<attribute key="skillshield" value="2"/>
 		<attribute key="skilldist" value="2"/>
@@ -44189,11 +44218,11 @@
 		<attribute key="weaponType" value="distance"/>
 		<attribute key="slotType" value="two-handed"/>
 		<attribute key="ammotype" value="arrow"/>
-		<attribute key="absorbpercentfire" value="5"/>
-		<attribute key="skilldist" value="2"/>
-		<attribute key="hitchance" value="5"/>
-		<attribute key="range" value="6"/>
-		<attribute key="attack" value="7"/>
+		<attribute key="absorbpercentfire" value="7"/>
+		<attribute key="skilldist" value="5"/>
+		<attribute key="hitchance" value="7"/>
+		<attribute key="range" value="7"/>
+		<attribute key="attack" value="9"/>
 		<attribute key="weight" value="3500"/>
 		<attribute key="upgradeclassification" value="4"/>
 		<attribute key="imbuementslot" value="3">
@@ -44269,7 +44298,7 @@
 		<attribute key="slotType" value="two-handed"/>
 		<attribute key="absorbpercentpoison" value="10"/>
 		<attribute key="skillsword" value="4"/>
-		<attribute key="attack" value="56"/>
+		<attribute key="attack" value="57"/>
 		<attribute key="defense" value="34"/>
 		<attribute key="weight" value="8200"/>
 		<attribute key="upgradeclassification" value="4"/>
@@ -44284,7 +44313,7 @@
 	<item id="28724" article="a" name="falcon battleaxe">
 		<attribute key="weaponType" value="axe"/>
 		<attribute key="slotType" value="two-handed"/>
-		<attribute key="elementenergy" value="47"/>
+		<attribute key="elementenergy" value="48"/>
 		<attribute key="absorbpercentenergy" value="12"/>
 		<attribute key="skillaxe" value="4"/>
 		<attribute key="attack" value="10"/>
@@ -44300,10 +44329,10 @@
 	</item>
 	<item id="28725" article="a" name="falcon mace">
 		<attribute key="weaponType" value="club"/>
-		<attribute key="elementenergy" value="41"/>
+		<attribute key="elementenergy" value="44"/>
 		<attribute key="absorbpercentenergy" value="7"/>
 		<attribute key="skillclub" value="3"/>
-		<attribute key="attack" value="11"/>
+		<attribute key="attack" value="12"/>
 		<attribute key="extradef" value="3"/>
 		<attribute key="defense" value="33"/>
 		<attribute key="weight" value="6800"/>
@@ -47059,7 +47088,7 @@
 	<item id="30397" article="a" name="cobra hood">
 		<attribute key="slotType" value="head"/>
 		<attribute key="showAttributes" value="1"/>
-		<attribute key="absorbpercentphysical" value="5"/>
+		<attribute key="absorbpercentphysical" value="6"/>
 		<attribute key="skillclub" value="1"/>
 		<attribute key="skillaxe" value="1"/>
 		<attribute key="skillsword" value="1"/>

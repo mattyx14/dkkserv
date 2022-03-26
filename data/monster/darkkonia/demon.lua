@@ -23,11 +23,8 @@ monster.Bestiary = {
 	CharmsPoints = 50,
 	Stars = 4,
 	Occurrence = 0,
-	Locations = "Hero Cave, Ferumbras' Citadel, Goroma, Ghostlands (Warlock area; unreachable), \z
-		Liberty Bay (hidden underground passage; unreachable), Razzachai, deep in Pits of Inferno \z
-		(found in every throneroom except Verminor's), deep Formorgar Mines, Demon Forge, \z
-		Alchemist Quarter, Magician Quarter, Chyllfroest, Oramond Dungeon, Abandoned Sewers."
-	}
+	Locations = "Fynn Castle Dungeons"
+}
 
 monster.health = 350000
 monster.maxHealth = 350000
@@ -54,7 +51,7 @@ monster.flags = {
 	hostile = true,
 	convinceable = false,
 	pushable = false,
-	rewardBoss = false,
+	rewardBoss = true,
 	illusionable = false,
 	canPushItems = true,
 	canPushCreatures = true,
@@ -74,9 +71,9 @@ monster.light = {
 }
 
 monster.summon = {
-	maxSummons = 2,
+	maxSummons = 5,
 	summons = {
-		{name = "fire lord", chance = 10, interval = 2000, count = 2}
+		{name = "fire lord", chance = 10, interval = 2000, count = 5}
 	}
 }
 
@@ -91,7 +88,7 @@ monster.voices = {
 monster.loot = {
 	{name = "purple tome", chance = 1180},
 	{name = "gold coin", chance = 60000, maxCount = 100},
-	{name = "gold coin", chance = 60000, maxCount = 100},
+	{name = "crystal coin", chance = 2500, maxCount = 15},
 	{name = "small emerald", chance = 9690, maxCount = 5},
 	{name = "small amethyst", chance = 7250, maxCount = 5},
 	{name = "small ruby", chance = 7430, maxCount = 5},
@@ -121,7 +118,11 @@ monster.loot = {
 	{id = 7393, chance = 90},
 	{name = "great mana potion", chance = 22220, maxCount = 3},
 	{name = "ultimate health potion", chance = 19540, maxCount = 3},
-	{name = "great spirit potion", chance = 18510, maxCount = 3}
+	{name = "great spirit potion", chance = 18510, maxCount = 3},
+	{name = "demon helmet", chance = 100, unique = true},
+	{name = "visage of the end days", chance = 100, unique = true},
+	{name = "shroud of despair", chance = 100, unique = true},
+	{name = "demon legs", chance = 100, unique = true}
 }
 
 monster.attacks = {
@@ -133,9 +134,9 @@ monster.attacks = {
 	{name ="combat", interval = 2000, chance = 10, type = COMBAT_ENERGYDAMAGE, minDamage = -2000, maxDamage = -6000, range = 1, shootEffect = CONST_ANI_ENERGY, target = false},
 	{name ="combat", interval = 2000, chance = 14, type = COMBAT_FIREDAMAGE, minDamage = -1600, maxDamage = -3400, length = 8, spread = 3, effect = CONST_ME_FIREAREA, target = false},
 	{name ="speed", interval = 2000, chance = 15, speedChange = -700, radius = 1, effect = CONST_ME_MAGIC_RED, target = true, duration = 30000},
-	{name ="demon fireball", interval = 2000, chance = 24, minDamage = -1000, maxDamage = -1000, target = false},
-	{name ="demon death", interval = 15000, chance = 10, target = false},
-	{name ="demon paralyze", interval = 2000, chance = 12, target = false}
+	{name ="demon fireball", interval = 2000, chance = 24, minDamage = -1000, maxDamage = -1000, target = true},
+	{name ="demon death", interval = 15000, chance = 10, target = true},
+	{name ="demon paralyze", interval = 2000, chance = 12, target = true}
 }
 
 monster.defenses = {
@@ -164,5 +165,23 @@ monster.immunities = {
 	{type = "invisible", condition = true},
 	{type = "bleed", condition = false}
 }
+
+mType.onThink = function(monster, interval)
+end
+
+mType.onAppear = function(monster, creature)
+	if monster:getType():isRewardBoss() then
+		monster:setReward(true)
+	end
+end
+
+mType.onDisappear = function(monster, creature)
+end
+
+mType.onMove = function(monster, creature, fromPosition, toPosition)
+end
+
+mType.onSay = function(monster, creature, type, message)
+end
 
 mType:register(monster)
