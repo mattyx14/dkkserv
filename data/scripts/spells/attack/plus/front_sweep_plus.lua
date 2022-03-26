@@ -20,8 +20,8 @@ function spell.onCastSpell(creature, var)
 end
 
 spell:group("attack")
-spell:id(59)
-spell:name("Front Sweep Plus")
+--spell:id(59)
+spell:name("FrontSweepPlus")
 spell:words("exori min +")
 spell:level(200)
 spell:mana(200)

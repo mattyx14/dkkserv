@@ -18,8 +18,8 @@ function spell.onCastSpell(creature, var)
 end
 
 spell:group("attack", "focus")
-spell:id(119)
-spell:name("Rage of the Skies Plus")
+--spell:id(119)
+spell:name("RageoftheSkiesPlus")
 spell:words("exevo gran mas vis +")
 spell:level(200)
 spell:mana(600)

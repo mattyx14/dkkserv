@@ -18,8 +18,8 @@ function spell.onCastSpell(creature, var)
 end
 
 spell:group("attack")
-spell:id(124)
-spell:name("Divine Caldera Plus")
+--spell:id(124)
+spell:name("DivineCalderaPlus")
 spell:words("exevo mas san +")
 spell:level(200)
 spell:mana(160)

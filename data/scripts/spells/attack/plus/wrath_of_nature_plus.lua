@@ -18,8 +18,8 @@ function spell.onCastSpell(creature, var)
 end
 
 spell:group("attack", "focus")
-spell:id(56)
-spell:name("Wrath of Nature Plus")
+--spell:id(56)
+spell:name("WrathofNaturePlus")
 spell:words("exevo gran mas tera +")
 spell:level(200)
 spell:mana(700)

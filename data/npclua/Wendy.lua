@@ -554,8 +554,8 @@ local function creatureSayCallback(npc, creature, type, message)
 				player:addItem(7435, 1) -- impaler
 				player:addItem(3309, 1) -- thunder hammer
 				player:learnSpell(Annihilation)
-				player:learnSpell(Fierce Berserk Plus)
-				player:learnSpell(Front Sweep Plus)
+				player:learnSpell(FierceBerserkPlus)
+				player:learnSpell(FrontSweepPlus)
 				npcHandler:say("Has also learned the following spells {Annihilation}, {Fierce Berserk Plus} and {Front Sweep Plus}. Just add a space and a {+}.", npc, creature)
 				player:setStorageValue(DarkKonia.FirstQuest.RewardSacrifice, 1)
 			else
@@ -570,8 +570,8 @@ local function creatureSayCallback(npc, creature, type, message)
 				npcHandler:say('Here you are young adept, take care yourself.', npc, creature)
 				player:addItem(8023, 1) -- royal crossbow
 				player:addItem(8026, 1) -- warsinger bow
-				player:learnSpell(Divine Caldera Plus)
-				player:learnSpell(Divine Missile Plus)
+				player:learnSpell(DivineCalderaPlus)
+				player:learnSpell(DivineMissilePlus)
 				npcHandler:say("Has also learned the following spells {Divine Caldera Plus}, and {Divine Missile Plus}. Just add a space and a {+}.", npc, creature)
 				player:setStorageValue(DarkKonia.FirstQuest.RewardSacrifice, 1)
 			else
@@ -585,16 +585,16 @@ local function creatureSayCallback(npc, creature, type, message)
 				player:removeItem(3295, 1)
 				npcHandler:say('Here you are young adept, take care yourself.', npc, creature)
 				player:addItem(rewardMG, 1) -- jungle rod/wand
-				if player:isSorcerer()
-					player:learnSpell(Rage of the Skies Plus)
-					player:learnSpell(Ultimate Flame Strike Plus)
-					player:learnSpell(Fire Wave Plus)
+				if player:isSorcerer() then
+					player:learnSpell(RageoftheSkiesPlus)
+					player:learnSpell(UltimateFlameStrikePlus)
+					player:learnSpell(FireWavePlus)
 					npcHandler:say("Has also learned the following spells {Rage of the Skies Plus}, {Ultimate Flame Strike Plus} and {Fire Wave Plus}. Just add a space and a {+}.", npc, creature)
 				end
-				if player:isDruid()
-					player:learnSpell(Wrath of Nature Plus)
-					player:learnSpell(Ultimate Ice Strike Plus)
-					player:learnSpell(Terra Wave Plus)
+				if player:isDruid() then
+					player:learnSpell(WrathofNaturePlus)
+					player:learnSpell(UltimateIceStrikePlus)
+					player:learnSpell(TerraWavePlus)
 					npcHandler:say("Has also learned the following spells {Wrath of Nature Plus}, {Ultimate Ice Strike Plus} and {Terra Wave Plus}. Just add a space and a {+}.", npc, creature)
 				end
 				player:setStorageValue(DarkKonia.FirstQuest.RewardSacrifice, 1)

@@ -17,8 +17,8 @@ function spell.onCastSpell(creature, var)
 end
 
 spell:group("attack")
-spell:id(122)
-spell:name("Divine Missile Plus")
+--spell:id(122)
+spell:name("DivineMissilePlus")
 spell:words("exori san +")
 spell:level(200)
 spell:mana(20)

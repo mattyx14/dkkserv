@@ -24,8 +24,8 @@ function spell.onCastSpell(creature, var)
 end
 
 spell:group("attack")
-spell:id(105)
-spell:name("Fierce Berserk Plus")
+--spell:id(105)
+spell:name("FierceBerserkPlus")
 spell:words("exori gran +")
 spell:level(200)
 spell:mana(340)

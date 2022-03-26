@@ -18,8 +18,8 @@ function spell.onCastSpell(creature, var)
 end
 
 spell:group("attack", "ultimatestrikes")
-spell:id(156)
-spell:name("Ultimate Ice Strike Plus")
+--spell:id(156)
+spell:name("UltimateIceStrikePlus")
 spell:words("exori max frigo +")
 spell:level(200)
 spell:mana(100)

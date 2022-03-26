@@ -18,8 +18,8 @@ function spell.onCastSpell(creature, var)
 end
 
 spell:group("attack")
-spell:id(120)
-spell:name("Terra Wave Plus")
+--spell:id(120)
+spell:name("TerraWavePlus")
 spell:words("exevo tera hur +")
 spell:level(200)
 spell:mana(170)

@@ -19,8 +19,8 @@ function spell.onCastSpell(creature, var)
 end
 
 spell:group("attack")
-spell:id(19)
-spell:name("Fire Wave Plus")
+--spell:id(19)
+spell:name("FireWavePlus")
 spell:words("exevo flam hur +")
 spell:level(200)
 spell:mana(25)
