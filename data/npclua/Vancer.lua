@@ -61,37 +61,6 @@ keywordHandler:addKeyword({'distance'}, StdModule.say, {npcHandler = npcHandler,
 keywordHandler:addKeyword({'mission'}, StdModule.say, {npcHandler = npcHandler, text = "There is a complicated mission regarding the {first sacrifice} of weapons."})
 keywordHandler:addKeyword({'stage 1'}, StdModule.say, {npcHandler = npcHandler, text = "There is a complicated mission regarding the {first sacrifice} of weapons."})
 
-keywordHandler:addSpellKeyword({"divine", "caldera", "plus"},
-	{
-		npcHandler = npcHandler,
-		spellName = "Divine Caldera Plus",
-		price = 1000000,
-		level = 200,
-		vocation = VOCATION.BASE_ID.PALADIN
-	}
-, nil,
-function(player)
-	return player:getStorageValue(DarkKonia.FirstQuest.finalTip) ~= 1
-end)
-keywordHandler:addSpellKeyword({"divine", "missile", "plus"},
-	{
-		npcHandler = npcHandler,
-		spellName = "Divine Missile Plus",
-		price = 1000000,
-		level = 200,
-		vocation = VOCATION.BASE_ID.PALADIN
-	}
-, nil,
-function(player)
-	return player:getStorageValue(DarkKonia.FirstQuest.finalTip) ~= 1
-end)
-keywordHandler:addKeyword({"spells"}, StdModule.say,
-	{
-		npcHandler = npcHandler,
-		text = {"In this category I have '{Divine Caldera Plus}' as well as ... '{Divine Missile Plus}'."}
-	}
-)
-
 local quiver = {
 	[VOCATION.BASE_ID.PALADIN] = 35562,
 }

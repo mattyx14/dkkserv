@@ -60,49 +60,6 @@ keywordHandler:addKeyword({'smithy'}, StdModule.say, {npcHandler = npcHandler, t
 keywordHandler:addKeyword({'first weapons'}, StdModule.say, {npcHandler = npcHandler, text = "If need {first club}, {first sword} or {first axe}."})
 keywordHandler:addKeyword({'mission'}, StdModule.say, {npcHandler = npcHandler, text = "There is a complicated mission regarding the {first sacrifice} of weapons."})
 
-keywordHandler:addSpellKeyword({"annihilation"},
-	{
-		npcHandler = npcHandler,
-		spellName = "Annihilation",
-		price = 1000000,
-		level = 200,
-		vocation = VOCATION.BASE_ID.KNIGHT
-	}
-, nil,
-function(player)
-	return player:getStorageValue(DarkKonia.FirstQuest.finalTip) ~= 1
-end)
-keywordHandler:addSpellKeyword({"fierce", "berserk", "plus"},
-	{
-		npcHandler = npcHandler,
-		spellName = "Fierce Berserk Plus",
-		price = 1000000,
-		level = 200,
-		vocation = VOCATION.BASE_ID.KNIGHT
-	}
-, nil,
-function(player)
-	return player:getStorageValue(DarkKonia.FirstQuest.finalTip) ~= 1
-end)
-keywordHandler:addSpellKeyword({"front", "sweep", "plus"},
-	{
-		npcHandler = npcHandler,
-		spellName = "Front Sweep Plus",
-		price = 1000000,
-		level = 200,
-		vocation = VOCATION.BASE_ID.KNIGHT
-	}
-, nil,
-function(player)
-	return player:getStorageValue(DarkKonia.FirstQuest.finalTip) ~= 1
-end)
-keywordHandler:addKeyword({"spells"}, StdModule.say,
-	{
-		npcHandler = npcHandler,
-		text = {"In this category I have '{Fierce Berserk Plus}' as well as ... '{Front Sweep Plus}' and '{Annihilation}'"}
-	}
-)
-
 local club = {
 	[VOCATION.BASE_ID.KNIGHT] = 3327,
 }
@@ -596,6 +553,10 @@ local function creatureSayCallback(npc, creature, type, message)
 				player:addItem(8102, 1) -- emerald sword
 				player:addItem(7435, 1) -- impaler
 				player:addItem(3309, 1) -- thunder hammer
+				player:learnSpell(Annihilation)
+				player:learnSpell(Fierce Berserk Plus)
+				player:learnSpell(Front Sweep Plus)
+				npcHandler:say("Has also learned the following spells {Annihilation}, {Fierce Berserk Plus} and {Front Sweep Plus}. Just add a space and a {+}.", npc, creature)
 				player:setStorageValue(DarkKonia.FirstQuest.RewardSacrifice, 1)
 			else
 				npcHandler:say('Sorry, you must carry the three objects you have found', npc, creature)
@@ -609,6 +570,9 @@ local function creatureSayCallback(npc, creature, type, message)
 				npcHandler:say('Here you are young adept, take care yourself.', npc, creature)
 				player:addItem(8023, 1) -- royal crossbow
 				player:addItem(8026, 1) -- warsinger bow
+				player:learnSpell(Divine Caldera Plus)
+				player:learnSpell(Divine Missile Plus)
+				npcHandler:say("Has also learned the following spells {Divine Caldera Plus}, and {Divine Missile Plus}. Just add a space and a {+}.", npc, creature)
 				player:setStorageValue(DarkKonia.FirstQuest.RewardSacrifice, 1)
 			else
 				npcHandler:say('Sorry, you must carry the three objects you have found', npc, creature)
@@ -621,6 +585,18 @@ local function creatureSayCallback(npc, creature, type, message)
 				player:removeItem(3295, 1)
 				npcHandler:say('Here you are young adept, take care yourself.', npc, creature)
 				player:addItem(rewardMG, 1) -- jungle rod/wand
+				if player:isSorcerer()
+					player:learnSpell(Rage of the Skies Plus)
+					player:learnSpell(Ultimate Flame Strike Plus)
+					player:learnSpell(Fire Wave Plus)
+					npcHandler:say("Has also learned the following spells {Rage of the Skies Plus}, {Ultimate Flame Strike Plus} and {Fire Wave Plus}. Just add a space and a {+}.", npc, creature)
+				end
+				if player:isDruid()
+					player:learnSpell(Wrath of Nature Plus)
+					player:learnSpell(Ultimate Ice Strike Plus)
+					player:learnSpell(Terra Wave Plus)
+					npcHandler:say("Has also learned the following spells {Wrath of Nature Plus}, {Ultimate Ice Strike Plus} and {Terra Wave Plus}. Just add a space and a {+}.", npc, creature)
+				end
 				player:setStorageValue(DarkKonia.FirstQuest.RewardSacrifice, 1)
 			else
 				npcHandler:say('Sorry, you must carry the three objects you have found', npc, creature)

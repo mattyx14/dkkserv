@@ -19,7 +19,7 @@ end
 
 spell:group("attack", "ultimatestrikes")
 spell:id(156)
-spell:name("Ultimate Ice Strike plus")
+spell:name("Ultimate Ice Strike Plus")
 spell:words("exori max frigo +")
 spell:level(200)
 spell:mana(100)

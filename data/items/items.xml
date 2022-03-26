@@ -2663,7 +2663,9 @@
 	<item fromid="2181" toid="2183" article="a" name="fence"/>
 	<item fromid="2184" toid="2185" name="bars"/>
 	<item id="2186" name="RESERVED SPRITE"/>
-	<item id="2187" name="nothing special"/>
+	<item id="2187" name="nothing special">
+		<attribute key="blockProjectile" value="1"/>
+	</item>
 	<item id="2188" article="a" name="sandstone pillar"/>
 	<item id="2189" article="a" name="sandstone statue"/>
 	<item id="2190" article="an" name="oriental pillar"/>
