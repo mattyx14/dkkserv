@@ -1,7 +1,7 @@
 local rewards = {
 	[SKILL_LEVEL] = {
 		{lvl = 30, items = {{3043, 2}}, storage = DarkKonia.Rewards.firstLevelReward},
-		{lvl = 50, items = {{3043, 3}}, storage = DarkKonia.Rewards.secondLevelReward},
+		{lvl = 50, items = {{3043, 3}, {14758, 1}}, storage = DarkKonia.Rewards.secondLevelReward},
 		{lvl = 80, items = {{3043, 5}}, storage = DarkKonia.Rewards.thirdLevelReward},
 		{lvl = 110, items = {{3043, 7}}, storage = DarkKonia.Rewards.fourthLevelReward},
 		-- {lvl = 60, items = {{16101, 1}}, storage = 3103}, -- Premium Scrolls
