@@ -1,50 +1,3 @@
--- Global virtual tables
-Daily_Bonus = {
-	stamina = {},
-	soul = {}
-}
-
-function string.diff(self)
-	local format = {
-		{'day', self / 60 / 60 / 24},
-		{'hour', self / 60 / 60 % 24},
-		{'minute', self / 60 % 60},
-		{'second', self % 60}
-	}
-
-	local out = {}
-	for k, t in ipairs(format) do
-		local v = math.floor(t[2])
-		if(v > 0) then
-			table.insert(out, (k < #format and (#out > 0 and ', ' or '') or ' and ') .. v .. ' ' .. t[1] .. (v ~= 1 and 's' or ''))
-		end
-	end
-	local ret = table.concat(out)
-	if ret:len() < 16 and ret:find('second') then
-		local a, b = ret:find(' and ')
-		ret = ret:sub(b+1)
-	end
-	return ret
-end
-
-function Game.getLastServerSave()
-	return retrieveGlobalStorage(DailyReward.storages.lastServerSave)
-end
-
-function updateGlobalStorage(key, value)
-	db.query("INSERT INTO `global_storage` (`key`, `value`) VALUES (".. key ..", ".. value ..") ON DUPLICATE KEY UPDATE `value` = ".. value)
-end
-
-function retrieveGlobalStorage(key)
-	local resultId = db.storeQuery("SELECT `value` FROM `global_storage` WHERE `key` = " .. key)
-	if resultId ~= false then
-		local val = result.getNumber(resultId, "value")
-		result.free(resultId)
-		return val
-	end
-	return 1
-end
-
 function Player.getCollectionTokens(self)
 	return math.max(self:getStorageValue(DailyReward.storages.collectionTokens), 0)
 end
@@ -93,63 +46,6 @@ function Player.isRestingAreaBonusActive(self)
 		return false
 	end
 end
-
-local function regenStamina(id, delay)
-	local staminaEvent = Daily_Bonus.stamina[id]
-	local player = Player(id)
-	if not player then
-		stopEvent(staminaEvent)
-		Daily_Bonus.stamina[id] = nil
-		return false
-	end
-	if player:getTile():hasFlag(TILESTATE_PROTECTIONZONE) then
-		local actualStamina = player:getStamina()
-		if actualStamina > 2340 and actualStamina < 2520 then
-			delay = 6 * 60 * 1000 -- Bonus stamina
-		end
-		if actualStamina < 2520 then
-			player:setStamina(actualStamina + 1)
-			player:sendTextMessage(MESSAGE_FAILURE, "One minute of stamina has been refilled.")
-		end
-	end
-	stopEvent(staminaEvent)
-	Daily_Bonus.stamina[id] = addEvent(regenStamina, delay, id, delay)
-	return true
-end
-
-local function regenSoul(id, delay)
-	local soulEvent = Daily_Bonus.soul[id]
-	local maxsoul = 0
-	local player = Player(id)
-	if not player then
-		stopEvent(soulEvent)
-		Daily_Bonus.soul[id] = nil
-		return false
-	end
-	if player:getTile():hasFlag(TILESTATE_PROTECTIONZONE) then
-		if player:isPremium() then
-			maxsoul = 200
-		else
-			maxsoul = 100
-		end
-		if player:getSoul() < maxsoul then
-			player:addSoul(1)
-			player:sendTextMessage(MESSAGE_FAILURE, "One soul point has been restored.")
-		end
-	end
-	stopEvent(soulEvent)
-	Daily_Bonus.soul[id] = addEvent(regenSoul, delay, id, delay)
-	return true
-end
-
-local DAILY_REWARD_HP_REGENERATION = 2
-local DAILY_REWARD_MP_REGENERATION = 3
-local DAILY_REWARD_STAMINA_REGENERATION = 4
-local DAILY_REWARD_DOUBLE_HP_REGENERATION = 5
-local DAILY_REWARD_DOUBLE_MP_REGENERATION = 6
-local DAILY_REWARD_SOUL_REGENERATION = 7
-local DAILY_REWARD_FIRST = 2
-local DAILY_REWARD_LAST = 7
 
 function Player.getActiveDailyRewardBonusesName(self)
 	local msg = ""
@@ -209,7 +105,7 @@ function Player.loadDailyRewardBonuses(self)
 			if self:getStamina() > 2340 and self:getStamina() <= 2520 then
 				delay = 6
 			end
-			Daily_Bonus.stamina[self:getId()] = addEvent(regenStamina, delay * 60 * 1000, self:getId(), delay * 60 * 1000)
+			Daily_Bonus.stamina[self:getId()] = addEvent(RegenStamina, delay * 60 * 1000, self:getId(), delay * 60 * 1000)
 		end
 	end
 	-- Soul regeneration
@@ -217,7 +113,7 @@ function Player.loadDailyRewardBonuses(self)
 		local soulEvent = Daily_Bonus.soul[self:getId()]
 		if not soulEvent then
 			local delay = self:getVocation():getSoulGainTicks()
-			Daily_Bonus.soul[self:getId()] = addEvent(regenSoul, delay, self:getId(), delay)
+			Daily_Bonus.soul[self:getId()] = addEvent(RegenSoul, delay, self:getId(), delay)
 		end
 	end
 	Spdlog.debug(string.format("Player: %s, streak level: %d, active bonuses: %s",

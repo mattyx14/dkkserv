@@ -5,7 +5,6 @@ function loginEvents.onLogin(player)
 		--Others
 		"AdvanceSave",
 		"BestiaryOnKill",
-		"BossParticipation",
 		"DropLoot",
 		"PlayerDeath",
 		"PreyLootBonusKill",

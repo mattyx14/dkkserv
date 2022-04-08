@@ -1,56 +1,40 @@
-if not globalBosses then
-	globalBosses = {}
-end
-
 function Monster.setReward(self, enable)
 	if enable then
 		if not self:getType():isRewardBoss() then
 			error("Rewards can only be enabled to rewards bosses.")
 			return false
 		end
-		globalBosses[self:getId()] = {}
+		GlobalBosses[self:getId()] = {}
 		self:registerEvent("BossDeath")
 		self:registerEvent("BossThink")
 	else
-		globalBosses[self:getId()] = nil
+		GlobalBosses[self:getId()] = nil
 		self:unregisterEvent("BossDeath")
 		self:unregisterEvent("BossThink")
 	end
 	return true
 end
 
-local function pushValues(buffer, sep, ...)
-	local argv = {...}
-	local argc = #argv
-	for k, v in ipairs(argv) do
-		table.insert(buffer, v)
-		if k < argc and sep then
-			table.insert(buffer, sep)
-		end
+-- For use of: data\events\scripts\monster.lua
+function Monster:registerReward()
+	local mType = self:getType()
+	if mType:isRewardBoss() then
+		corpse:registerReward()
+		return
 	end
 end
 
-function Player.getRewardChest(self, autocreate)
-	return self:getDepotChest(99, autocreate)
-end
-
-function Player.inBossFight(self)
-	if not next(globalBosses) then
-		return false
+function Monster:setRewardBoss()
+	if self:getType():isRewardBoss() then
+		self:setReward(true)
 	end
-	local playerGuid = self:getGuid()
-
-	for _, info in pairs(globalBosses) do
-		local stats = info[playerGuid]
-		if stats and stats.active then
-			return stats
-		end
-	end
-	return false
 end
 
 function MonsterType.createLootItem(self, lootBlock, chance, lootTable)
-	local lootTable, itemCount = lootTable or {}, 0
+	if lootTable == nil then
+		lootTable = {}
+	end
+	local itemCount = 0
 	local randvalue = math.random(0, 100000) / (getConfigInfo("rateLoot") * chance)
 	if randvalue < lootBlock.chance then
 		if (ItemType(lootBlock.itemId):isStackable()) then
@@ -98,7 +82,7 @@ function MonsterType.getBossReward(self, lootFactor, topScore)
 			local lootBlock = loot[i]
 			if lootBlock then
 				if lootBlock.unique and not topScore then
-					--continue
+					return
 				else
 					self:createLootItem(lootBlock, lootFactor, result)
 				end

@@ -3,11 +3,8 @@ function Monster:onDropLoot(corpse)
 		return
 	end
 
-	local mType = self:getType()
-	if mType:isRewardBoss() then
-		corpse:registerReward()
-		return
-	end
+	-- Register reward function from reward boss lib
+	self:registerReward()
 
 	local player = Player(corpse:getCorpseOwner())
 	local mType = self:getType()
@@ -58,19 +55,6 @@ function Monster:onDropLoot(corpse)
 end
 
 function Monster:onSpawn(position)
-	if self:getType():isRewardBoss() then
-		self:setReward(true)
-	end
-
-	if not self:getType():canSpawn(position) then
-		self:remove()
-	else
-		local spec = Game.getSpectators(position, false, false)
-		for _, pid in pairs(spec) do
-			local monster = Monster(pid)
-			if monster and not monster:getType():canSpawn(position) then
-				monster:remove()
-			end
-		end
-	end
+	-- Register reward function from reward boss lib
+	self:setRewardBoss()
 end
