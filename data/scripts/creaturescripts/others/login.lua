@@ -33,7 +33,6 @@ function login.onLogin(player)
 		player:sendTextMessage(MESSAGE_LOGIN, string.format("Your last visit in ".. SERVER_NAME ..": %s.", os.date("%d. %b %Y %X", player:getLastLoginSaved())))
 	end
 	local playerId = player:getId()
-	DailyReward.init(playerId)
 
 	player:loadSpecialStorage()
 
