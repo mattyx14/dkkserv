@@ -66,7 +66,7 @@ function ExerciseEvent(playerId, tilePosition, weaponId, dummyId)
 	end
 
 	local playerPosition = player:getPosition()
-	if not playerPosition:isProtectionZoneTile() and not playerPosition:getTileNoPzZoneInfo() then
+	if not playerPosition:isProtectionZoneTile() and not getTileNoPzZoneInfo(playerPosition) then
 		player:sendTextMessage(MESSAGE_FAILURE, "You are no longer in a protection zone, the training has stopped.")
 		LeaveTraining(playerId)
 		return false

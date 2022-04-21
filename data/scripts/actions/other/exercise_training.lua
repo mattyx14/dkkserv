@@ -17,7 +17,7 @@ function exerciseTraining.onUse(player, item, fromPosition, target, toPosition, 
 			return true
 		end
 
-		if not playerPos:isProtectionZoneTile() and not playerPos:getTileNoPzZoneInfo() then
+		if not playerPos:isProtectionZoneTile() and not getTileNoPzZoneInfo(playerPos) then
 			player:sendTextMessage(MESSAGE_FAILURE, "You need to be in a protection zone.")
 			return true
 		end
