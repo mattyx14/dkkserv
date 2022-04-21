@@ -17080,26 +17080,22 @@
 		<attribute key="skillshield" value="5"/>
 		<attribute key="speed" value="30"/>
 		<attribute key="manaticks" value="3000"/>
-		<attribute key="managain" value="25"/>
+		<attribute key="managain" value="30"/>
 		<attribute key="healthticks" value="3000"/>
-		<attribute key="healthgain" value="15"/>
-		<attribute key="defense" value="36"/>
+		<attribute key="healthgain" value="20"/>
+		<attribute key="defense" value="38"/>
 		<attribute key="weight" value="6900"/>
 	</item>
 	<item id="8078" article="a" name="fiery rainbow shield">
 		<attribute key="description" value="It has been temporarily imbued with fire magic and boosts your shielding skill"/>
 		<attribute key="weaponType" value="shield"/>
 		<attribute key="skillshield" value="7"/>
-		<attribute key="duration" value="1200"/>
-		<attribute key="decayTo" value="8077"/>
 		<attribute key="defense" value="36"/>
 		<attribute key="weight" value="6900"/>
 	</item>
 	<item id="8079" article="an" name="icy rainbow shield">
 		<attribute key="description" value="It has been temporarily imbued with ice magic and has a greatly increased shielding value"/>
 		<attribute key="weaponType" value="shield"/>
-		<attribute key="duration" value="1200"/>
-		<attribute key="decayTo" value="8077"/>
 		<attribute key="defense" value="40"/>
 		<attribute key="weight" value="6900"/>
 	</item>
@@ -17107,8 +17103,6 @@
 		<attribute key="description" value="It has been temporarily imbued with energy magic and increases your speed"/>
 		<attribute key="weaponType" value="shield"/>
 		<attribute key="speed" value="35"/>
-		<attribute key="duration" value="1200"/>
-		<attribute key="decayTo" value="8077"/>
 		<attribute key="defense" value="36"/>
 		<attribute key="weight" value="6900"/>
 	</item>
@@ -17118,9 +17112,7 @@
 		<attribute key="manaticks" value="3000"/>
 		<attribute key="managain" value="40"/>
 		<attribute key="healthticks" value="3000"/>
-		<attribute key="healthgain" value="20"/>
-		<attribute key="duration" value="1200"/>
-		<attribute key="decayTo" value="8077"/>
+		<attribute key="healthgain" value="25"/>
 		<attribute key="defense" value="37"/>
 		<attribute key="weight" value="6900"/>
 	</item>
@@ -44169,7 +44161,7 @@
 	</item>
 	<item id="28715" article="a" name="falcon coif">
 		<attribute key="slotType" value="head"/>
-		<attribute key="absorbpercentphysical" value="5"/>
+		<attribute key="absorbpercentphysical" value="8"/>
 		<attribute key="absorbpercentfire" value="10"/>
 		<attribute key="skillshield" value="2"/>
 		<attribute key="skilldist" value="2"/>
@@ -48545,8 +48537,8 @@
 	</item>
 	<item id="31577" article="a" name="terra helmet">
 		<attribute key="slotType" value="head"/>
-		<attribute key="absorbpercentphysical" value="5"/>
-		<attribute key="absorbpercentpoison" value="5"/>
+		<attribute key="absorbpercentphysical" value="7"/>
+		<attribute key="absorbpercentpoison" value="8"/>
 		<attribute key="skillclub" value="2"/>
 		<attribute key="skillaxe" value="2"/>
 		<attribute key="skillsword" value="2"/>

@@ -7022,6 +7022,9 @@
 	<monster centerx="921" centery="964" centerz="8" radius="1">
 		<monster name="Carrion Worm" x="0" y="0" z="8" spawntime="60" />
 	</monster>
+	<monster centerx="794" centery="965" centerz="8" radius="1">
+		<monster name="Cave Rat" x="0" y="0" z="8" spawntime="60" />
+	</monster>
 	<monster centerx="819" centery="965" centerz="8" radius="1">
 		<monster name="Training Monk" x="-1" y="-1" z="8" spawntime="60" />
 		<monster name="Training Monk" x="-1" y="1" z="8" spawntime="60" />
@@ -7074,6 +7077,12 @@
 		<monster name="Cave Rat" x="0" y="0" z="8" spawntime="60" />
 	</monster>
 	<monster centerx="950" centery="967" centerz="8" radius="1">
+		<monster name="Cave Rat" x="0" y="0" z="8" spawntime="60" />
+	</monster>
+	<monster centerx="800" centery="968" centerz="8" radius="1">
+		<monster name="Cave Rat" x="0" y="0" z="8" spawntime="60" />
+	</monster>
+	<monster centerx="806" centery="969" centerz="8" radius="1">
 		<monster name="Cave Rat" x="0" y="0" z="8" spawntime="60" />
 	</monster>
 	<monster centerx="819" centery="969" centerz="8" radius="1">
@@ -7141,6 +7150,9 @@
 	<monster centerx="975" centery="976" centerz="8" radius="1">
 		<monster name="Fire Elemental" x="0" y="0" z="8" spawntime="60" />
 	</monster>
+	<monster centerx="795" centery="977" centerz="8" radius="1">
+		<monster name="Cave Rat" x="0" y="0" z="8" spawntime="60" />
+	</monster>
 	<monster centerx="819" centery="977" centerz="8" radius="1">
 		<monster name="Training Monk" x="-1" y="-1" z="8" spawntime="60" />
 		<monster name="Training Monk" x="-1" y="1" z="8" spawntime="60" />
@@ -7185,6 +7197,9 @@
 	</monster>
 	<monster centerx="887" centery="982" centerz="8" radius="1">
 		<monster name="Instable Sparkion" x="0" y="0" z="8" spawntime="60" />
+	</monster>
+	<monster centerx="801" centery="983" centerz="8" radius="1">
+		<monster name="Rat" x="0" y="0" z="8" spawntime="60" />
 	</monster>
 	<monster centerx="912" centery="983" centerz="8" radius="1">
 		<monster name="Bonelord" x="0" y="0" z="8" spawntime="60" />

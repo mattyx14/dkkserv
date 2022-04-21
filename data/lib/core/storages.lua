@@ -1,5 +1,5 @@
 -- Last: 
--- DemonTimmer = 30284
+-- thirdReward = 30287
 
 Storage = {
 	-- General storages
@@ -326,6 +326,9 @@ DarkKonia = {
 		KrakenDone = 30272,
 		KrakenReward = 30273
 	},
+	firstReward = 30285,
+	secondReward = 30286,
+	thirdReward = 30287,
 }
 
 -- Values extraction function
