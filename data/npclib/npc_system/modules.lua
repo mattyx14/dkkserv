@@ -198,8 +198,6 @@ if Modules == nil then
 			cost = 0
 		end
 
-		local playerPosition = player:getPosition()
-
 		if parameters.premium and not player:isPremium() then
 			npcHandler:say("I'm sorry, but you need a premium account in order to travel onboard our ships.", npc, player)
 		elseif parameters.level and player:getLevel() < parameters.level then
@@ -210,11 +208,11 @@ if Modules == nil then
 			npcHandler:say("You don't have enough money.", npc, player)
 		elseif os.time() < player:getStorageValue(Storage.NpcExhaust) then
 			npcHandler:say('Sorry, but you need to wait three seconds before travel again.', player)
-			playerPosition:sendMagicEffect(CONST_ME_POFF)
+			player:getPosition():sendMagicEffect(CONST_ME_POFF)
 		else
 			npcHandler:removeInteraction(npc, player)
 			npcHandler:say(parameters.text or "Set the sails!", npc, player)
-			playerPosition:sendMagicEffect(CONST_ME_TELEPORT)
+			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 
 			local destination = parameters.destination
 			if type(destination) == 'function' then
@@ -222,11 +220,11 @@ if Modules == nil then
 			end
 
 			player:teleportTo(destination)
-			playerPosition:sendMagicEffect(CONST_ME_TELEPORT)
+			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 
-			player:setStorageValue(NpcExhaust, 3 + os.time())
+			setPlayerStorageValue(player, Storage.NpcExhaust, 3 + os.time())
 			player:teleportTo(destination)
-			playerPosition:sendMagicEffect(CONST_ME_TELEPORT)
+			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 		end
 
 		npcHandler:resetNpc(player)

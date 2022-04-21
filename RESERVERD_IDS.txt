@@ -64,6 +64,7 @@ Reserverd_IDS
 	uid	24928 -- Fyzarus Reward
 	uid	24929 -- Fezarus Reward
 	uid	24930 -- Toxirus Reward
+	uid 24931 -- Demon Reward
 
 	Storages
 		25770 -- \\ 
