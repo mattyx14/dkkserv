@@ -64,7 +64,11 @@ allConsoleLog = false
 -- stashMoving = true, stow an container inside your stash
 -- the non-stackable items will be moved to the selected depot chest(I - XVIII).
 stashMoving = true
-depotChest = 4
+depotChest = 1
+autoLoot = false
+-- autoBank = true, the dropped coins from monsters will be automatically 
+-- deposited to your bank account.
+autoBank = false
 
 -- Stamina in Trainers
 staminaTrainer = true
@@ -153,7 +157,7 @@ mysqlUser = ""
 mysqlPass = ""
 mysqlDatabase = ""
 mysqlPort = 3306
-mysqlSock = ""
+mysqlSock = "/var/run/mysqld/mysqld.sock"
 passwordType = "sha1"
 
 -- Misc.
@@ -187,7 +191,7 @@ sortLootByChance = true
 -- Rates
 -- NOTE: rateExp, rateSkill and rateMagic is used as a fallback only
 -- To configure rates see file data/stages.lua
-rateLoot = 2
+rateLoot = 3.5
 rateSpawn = 2
 
 -- Today regeneration condition over an loop every 1 second,
