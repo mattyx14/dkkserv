@@ -1,5 +1,5 @@
 -- Last: 
--- thirdReward = 30287
+-- spellbookofMindControl = 30289
 
 Storage = {
 	-- General storages
@@ -231,6 +231,8 @@ DarkKonia = {
 		clericalMace = 30263,
 		barbarianAxe = 30264,
 		crimsonSword = 30265,
+		spellbookofMindControl = 30288,
+		damagedExcalibur = 30289,
 	},
 	MisidiaQuest = {
 		DeaplingJaulTimer = 30200,

@@ -5707,7 +5707,7 @@
 			<attribute key="skillboost sword" value="3"/>
 		</attribute>
 	</item>
-	<item id="3296" article="a" name="warlord sword">
+	<item id="3296" article="the" name="Excalibur">
 		<attribute key="description" value="Strong powers flow in this magic sword"/>
 		<attribute key="weaponType" value="sword"/>
 		<attribute key="slotType" value="two-handed"/>
@@ -15842,7 +15842,8 @@
 		<attribute key="weight" value="6900"/>
 		<attribute key="upgradeclassification" value="1"/>
 	</item>
-	<item id="7450" article="a" name="hammer of prophecy">
+	<item id="7450" article="the" name="Shahur">
+		<attribute key="description" value="The one that crushes thousands"/>
 		<attribute key="weaponType" value="club"/>
 		<attribute key="loottype" value="club"/>
 		<attribute key="slotType" value="two-handed"/>
@@ -17220,7 +17221,8 @@
 			<attribute key="skillboost axe" value="3"/>
 		</attribute>
 	</item>
-	<item id="8097" article="a" name="solar axe">
+	<item id="8097" article="the" name="Solar Axe">
+		<attribute key="description" value="Red Crescent of the Green Dragon"/>
 		<attribute key="weaponType" value="axe"/>
 		<attribute key="slotType" value="two-handed"/>
 		<attribute key="loottype" value="axe"/>

@@ -885,7 +885,7 @@ npcConfig.shop = {
 	{ itemName = "fire axe", clientId = 3320, sell = 8000 },
 	{ itemName = "fire sword", clientId = 3280, sell = 4000 },
 	{ itemName = "glorious axe", clientId = 7454, sell = 3000 },
-	{ itemName = "guardian shield", clientId = 3415, sell = 2000 },
+	{ itemName = "guardian shield", clientId = 3415, sell = 200 },
 	{ itemName = "ice rapier", clientId = 3284, sell = 1000 },
 	{ itemName = "noble armor", clientId = 3380, sell = 900 },
 	{ itemName = "obsidian lance", clientId = 3313, sell = 500 },

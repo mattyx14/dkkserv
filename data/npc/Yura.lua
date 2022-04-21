@@ -213,7 +213,7 @@ npcConfig.shop = {
 	{ itemName = "sling herb", clientId = 3738, sell = 10 },
 	{ itemName = "snakebite rod", clientId = 3066, buy = 500, sell = 100 },
 	{ itemName = "soulfire rune", clientId = 3195, buy = 46 },
-	{ itemName = "spellbook of enlightenment", clientId = 8072, sell = 4000 },
+	{ itemName = "spellbook of enlightenment", clientId = 8072, sell = 400 },
 	{ itemName = "spellbook of lost souls", clientId = 8075, sell = 19000 },
 	{ itemName = "spellbook of mind control", clientId = 8074, sell = 13000 },
 	{ itemName = "spellbook of warding", clientId = 8073, sell = 8000 },
