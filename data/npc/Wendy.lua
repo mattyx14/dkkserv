@@ -480,7 +480,7 @@ local function creatureSayCallback(npc, creature, type, message)
 			npcHandler:say({
 				"You already know about this consult your Quest Log.",
 				"Come back to report the mission when you have completed it.",
-				"To advance to the {final mission}."
+				"To advance to the {final stage}."
 			}, npc, creature)
 			npcHandler:setTopic(playerId, 0)
 		else
@@ -496,7 +496,7 @@ local function creatureSayCallback(npc, creature, type, message)
 		npcHandler:removeInteraction(npc, creature)
 	end
 
-	if MsgContains(message, "final mission") and (
+	if MsgContains(message, "final stage") and (
 			player:getStorageValue(DarkKonia.ThirdSacrifice.brightSword) == 1 and
 			player:getStorageValue(DarkKonia.ThirdSacrifice.fireAxe) == 1 and
 			player:getStorageValue(DarkKonia.ThirdSacrifice.skullStaff) == 1 and
@@ -515,11 +515,11 @@ local function creatureSayCallback(npc, creature, type, message)
 			npcHandler:say({
 				"You already know about this consult your Quest Log.",
 				"Come back to report the mission when you have completed it.",
-				"To advance to the {final mission}."
+				"To advance to the {final stage}. And claim the {reward}."
 			}, npc, creature)
 			npcHandler:setTopic(playerId, 0)
 		else
-			npcHandler:say('I will also give you information about your {final mission} you can check it in your Quest Log.', npc, creature)
+			npcHandler:say('I will also give you information about your {final stage} you can check it in your Quest Log.', npc, creature)
 			player:setStorageValue(DarkKonia.FirstQuest.finalTip, 1)
 			player:setStorageValue(DarkKonia.ArusBosses.FyzarusKilled, 0)
 			player:setStorageValue(DarkKonia.ArusBosses.FerazusKilled, 0)

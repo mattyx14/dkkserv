@@ -180,6 +180,7 @@ serverSaveNotifyDuration = 5
 serverSaveCleanMap = true
 serverSaveClose = true
 serverSaveShutdown = true
+serverSaveTime = "23:55:00"
 
 -- Sort loot by chance, most rare items drop first
 -- it is good to be setted when you have a higher

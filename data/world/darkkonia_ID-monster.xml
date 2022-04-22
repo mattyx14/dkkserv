@@ -7415,6 +7415,7 @@
 	</monster>
 	<monster centerx="841" centery="1012" centerz="8" radius="6">
 		<monster name="Bonebeast" x="6" y="-1" z="8" spawntime="60" />
+		<monster name="Warlock" x="4" y="0" z="8" spawntime="60" />
 		<monster name="Wild Warrior" x="-5" y="4" z="8" spawntime="60" />
 		<monster name="Blood Priest" x="-1" y="4" z="8" spawntime="60" />
 		<monster name="Vicious Squire" x="4" y="4" z="8" spawntime="60" />
@@ -7447,9 +7448,13 @@
 		<monster name="Vicious Squire" x="-1" y="5" z="8" spawntime="60" />
 		<monster name="Vile Grandmaster" x="3" y="5" z="8" spawntime="60" />
 	</monster>
+	<monster centerx="862" centery="1020" centerz="8" radius="1">
+		<monster name="Warlock" x="0" y="0" z="8" spawntime="60" />
+	</monster>
 	<monster centerx="872" centery="1020" centerz="8" radius="6">
 		<monster name="Necromancer" x="-1" y="-3" z="8" spawntime="60" />
 		<monster name="Bonebeast" x="-1" y="-2" z="8" spawntime="60" />
+		<monster name="Warlock" x="3" y="0" z="8" spawntime="60" />
 		<monster name="Wild Warrior" x="4" y="0" z="8" spawntime="60" />
 		<monster name="Vicious Squire" x="0" y="4" z="8" spawntime="60" />
 		<monster name="Warlock" x="2" y="5" z="8" spawntime="60" />
@@ -7535,6 +7540,9 @@
 		<monster name="Vile Grandmaster" x="-4" y="0" z="8" spawntime="60" />
 		<monster name="Vile Grandmaster" x="3" y="0" z="8" spawntime="60" />
 		<monster name="Vile Grandmaster" x="0" y="3" z="8" spawntime="60" />
+	</monster>
+	<monster centerx="849" centery="1034" centerz="8" radius="1">
+		<monster name="Warlock" x="0" y="0" z="8" spawntime="60" />
 	</monster>
 	<monster centerx="869" centery="1034" centerz="8" radius="1">
 		<monster name="Bonebeast" x="0" y="0" z="8" spawntime="60" />

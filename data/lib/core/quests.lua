@@ -261,7 +261,7 @@ if not Quests then
 			}
 		},
 		[8] = {
-			name = "First Sacrice Quest (Final)",
+			name = "First Sacrifice Quest (Stage Final)",
 			startStorageId = DarkKonia.FirstQuest.finalTip,
 			startStorageValue = 1,
 			missions = {
@@ -299,7 +299,7 @@ if not Quests then
 					}
 				},
 				[4] = {
-					name = "The swampy Fortress of Destruction",
+					name = "The swampy fortress of Destruction",
 					storageId = DarkKonia.ArusBosses.ToxirusKilled,
 					missionId = 10383,
 					startValue = 0,

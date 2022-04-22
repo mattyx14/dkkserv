@@ -41995,7 +41995,7 @@
 		<attribute key="defense" value="33"/>
 		<attribute key="weight" value="5000"/>
 		<attribute key="upgradeclassification" value="2"/>
-		<attribute key="imbuementslot" value="3">
+		<attribute key="imbuementslot" value="2">
 			<attribute key="elemental damage" value="3"/>
 			<attribute key="life leech" value="3"/>
 			<attribute key="mana leech" value="3"/>
@@ -42024,7 +42024,7 @@
 		<attribute key="defense" value="31"/>
 		<attribute key="weight" value="5000"/>
 		<attribute key="upgradeclassification" value="2"/>
-		<attribute key="imbuementslot" value="3">
+		<attribute key="imbuementslot" value="2">
 			<attribute key="elemental damage" value="3"/>
 			<attribute key="life leech" value="3"/>
 			<attribute key="mana leech" value="3"/>
@@ -42053,7 +42053,7 @@
 		<attribute key="defense" value="30"/>
 		<attribute key="weight" value="5000"/>
 		<attribute key="upgradeclassification" value="2"/>
-		<attribute key="imbuementslot" value="3">
+		<attribute key="imbuementslot" value="2">
 			<attribute key="elemental damage" value="3"/>
 			<attribute key="life leech" value="3"/>
 			<attribute key="mana leech" value="3"/>
