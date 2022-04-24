@@ -5,7 +5,7 @@ local config = {
 	timeToFightAgain = 20, -- In hour
 	timeToDefeatBoss = 20, -- In minutes
 	clearRoomTime = 20, -- In minutes
-	storage = DarkKonia.FirstSacrifice.knightAxe,
+	storage = DarkKonia.ThirdSacrifice.fireAxe,
 	itemMission = "fire axe",
 	timer = DarkKonia.ElficVille.BlackMagicianTimer,
 	blockLever = true,
@@ -19,12 +19,12 @@ local config = {
 		Position(829, 1185, 10)
 	},
 	teleportPosition = Position(877, 1178, 11),
-	bossPosition = Position(889, 1178, 11),
+	bossPosition = Position(889, 1177, 11),
 	kickPos = Position(885, 1174, 10)
 }
 
-local izcandarLever = Action()
-function izcandarLever.onUse(player, item, fromPosition, target, toPosition, isHotkey)
+local blackMagicianLever = Action()
+function blackMagicianLever.onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	if player:getStorageValue(config.storage) < config.value then
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "All the players need find ".. config.itemMission .." quest.")
 		return true
@@ -99,5 +99,5 @@ function izcandarLever.onUse(player, item, fromPosition, target, toPosition, isH
 	return true
 end
 
-izcandarLever:aid(24908)
-izcandarLever:register()
+blackMagicianLever:aid(24908)
+blackMagicianLever:register()

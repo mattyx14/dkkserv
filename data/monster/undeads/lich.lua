@@ -103,8 +103,6 @@ monster.loot = {
 	{id = 3098, chance = 1540}, -- Ring of healing
 	{name = "strange helmet", chance = 740},
 	{name = "ancient shield", chance = 2422},
-	{name = "castle shield", chance = 350},
-	{name = "blue robe", chance = 150},
 	{name = "strong mana potion", chance = 7500},
 	{name = "lightning boots", chance = 200},
 	{name = "small topaz", chance = 2430, maxCount = 3},

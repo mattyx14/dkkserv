@@ -96,7 +96,6 @@ monster.loot = {
 	{name = "platinum amulet", chance = 200},
 	{name = "wand of inferno", chance = 180},
 	{name = "protection amulet", chance = 790},
-	{name = "blue robe", chance = 40},
 	{name = "jewelled backpack", chance = 100},
 	{name = "pirate voodoo doll", chance = 430},
 	{id = 6090, chance = 490},

@@ -82,7 +82,6 @@ monster.loot = {
 	{name = "Axe", chance = 14000},
 	{name = "Ice Rapier", chance = 12000},
 	{name = "Glorious Axe", chance = 6100},
-	{name = "Blue Robe", chance = 4600},
 	{name = "Two Handed Sword", chance = 13000},
 	{name = "Fur Armor", chance = 5400},
 	{id = 281, chance = 3200},

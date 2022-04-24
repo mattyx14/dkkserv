@@ -81,7 +81,7 @@ monster.loot = {
 	{id = 6099, chance = 1000, unique = true}, -- Brutus Bloodbeard's hat
 	{id = 6100, chance = 1000, unique = true}, -- Lethal Lissy's shirt
 	{id = 6101, chance = 1000, unique = true}, -- Ron the Ripper's sabre
-	{id = 6102, chance = 1000, unique = true}, -- Deadeye Devious' eye patch
+	{id = 6102, chance = 1000, unique = true} -- Deadeye Devious' eye patch
 }
 
 monster.attacks = {

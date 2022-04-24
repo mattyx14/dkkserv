@@ -8,8 +8,10 @@ local clickTeleport = {
 --	[24916] = Position(1542, 875, 1), -- Reserved to Dracula /actions/quest/outfits/portalDracula.lua
 	[24917] = Position(911, 1203, 7), -- Hive Walls
 	[24918] = Position(911, 1206, 7), -- Hive Walls
-	[24922] = Position(1240, 162, 1), -- Cult Tower
+	[24919] = Position(545, 1144, 8), -- Crown Set Access
+	[24923] = Position(1240, 161, 2), -- Cult Tower Back
 	[24927] = Position(780, 1174, 3), -- Dragon on Castle Shield
+	[24935] = Position(1240, 162, 1), -- Cult Tower
 }
 
 local itemPortal = Action()

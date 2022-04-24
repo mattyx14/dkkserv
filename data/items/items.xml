@@ -10477,6 +10477,7 @@
 	<item fromid="4773" toid="4784" name="grass"/>
 	<item fromid="4785" toid="4808" name="dirt"/>
 	<item fromid="4809" toid="4814" name="shallow water">
+		<attribute key="type" value="trashholder"/>
 		<attribute key="fluidsource" value="water"/>
 		<attribute key="effect" value="bluebubble"/>
 		<attribute key="ignoreblocking" value="1"/>

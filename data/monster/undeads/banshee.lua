@@ -100,7 +100,6 @@ monster.loot = {
 	{id = 3260, chance = 910},
 	{name = "poison dagger", chance = 1350},
 	{name = "red robe", chance = 150},
-	{name = "blue robe", chance = 700},
 	{name = "simple dress", chance = 6050},
 	{name = "strong mana potion", chance = 680},
 	{name = "terra mantle", chance = 340},

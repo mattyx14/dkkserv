@@ -503,6 +503,7 @@ local function creatureSayCallback(npc, creature, type, message)
 			player:getStorageValue(DarkKonia.FirstQuest.RewardSacrifice) == 1
 		) then
 		npcHandler:say({
+			"For star final stage you require claim the {reward}.",
 			"You managed to complete the mission of the third sacrifice.",
 			"You must prepare to face the three powerful guardians of destruction.",
 			"His powers have no comparison be very careful and I wish you good luck .....",
@@ -515,7 +516,7 @@ local function creatureSayCallback(npc, creature, type, message)
 			npcHandler:say({
 				"You already know about this consult your Quest Log.",
 				"Come back to report the mission when you have completed it.",
-				"To advance to the {final stage}. And claim the {reward}."
+				"To advance to the {final stage}."
 			}, npc, creature)
 			npcHandler:setTopic(playerId, 0)
 		else

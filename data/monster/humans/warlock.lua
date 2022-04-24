@@ -97,7 +97,6 @@ monster.loot = {
 	{name = "stone skin amulet", chance = 330},
 	{name = "poison dagger", chance = 7600},
 	{id = 3509, chance = 1000},
-	{name = "blue robe", chance = 1410},
 	{name = "cherry", chance = 19000, maxCount = 4},
 	{name = "bread", chance = 9000},
 	{name = "dark mushroom", chance = 3000},

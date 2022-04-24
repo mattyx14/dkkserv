@@ -51,6 +51,12 @@ QuestDoorAction = {
 			Position(893, 937, 6),
 		}
 	},
+	[DarkKonia.Quest.Key.ID2088] = { -- Pirate Fortress "Javier Key"
+		itemId = false,
+		itemPos = {
+			Position(893, 937, 6),
+		}
+	},
 	[DarkKonia.FirstSacrifice.firstTip] = { -- First Sacrifice
 		itemId = false,
 		itemPos = {
@@ -78,6 +84,7 @@ QuestDoorAction = {
 		itemPos = {
 			Position(1056, 308, 13),
 			Position(576, 1216, 7),
+			Position(998, 944, 9),
 		}
 	},
 }

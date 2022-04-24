@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Exotic Bat")
 local monster = {}
 
 monster.description = "a exotic bat"
-monster.experience = 1200
+monster.experience = 1900
 monster.outfit = {
 	lookType = 1373,
 	lookHead = 0,
@@ -43,22 +43,22 @@ monster.strategiesTarget = {
 }
 
 monster.flags = {
-	summonable = true,
+	summonable = false,
 	attackable = true,
 	hostile = true,
-	convinceable = true,
-	pushable = true,
+	convinceable = false,
+	pushable = false,
 	rewardBoss = false,
-	illusionable = true,
-	canPushItems = false,
-	canPushCreatures = false,
+	illusionable = false,
+	canPushItems = true,
+	canPushCreatures = true,
 	staticAttackChance = 90,
 	targetDistance = 1,
-	runHealth = 10,
+	runHealth = 0,
 	healthHidden = false,
 	isBlockable = false,
 	canWalkOnEnergy = true,
-	canWalkOnFire = false,
+	canWalkOnFire = true,
 	canWalkOnPoison = true
 }
 
@@ -83,7 +83,7 @@ monster.loot = {
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -100},
+	{name ="melee", interval = 2000, chance = 100, minDamage = 150, maxDamage = -450},
 	{name ="combat", interval = 2000, chance = 15, type = COMBAT_EARTHDAMAGE, minDamage = -80, maxDamage = -150, length = 5, spread = 2, effect = CONST_ME_GREEN_RINGS, target = false},
 	{name ="combat", interval = 2000, chance = 10, type = COMBAT_PHYSICALDAMAGE, minDamage = -60, maxDamage = -150, range = 7, radius = 3, effect = CONST_ME_YELLOW_RINGS, target = true}
 }

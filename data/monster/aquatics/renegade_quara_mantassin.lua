@@ -86,7 +86,6 @@ monster.loot = {
 	{name = "strange helmet", chance = 1320},
 	{name = "two handed sword", chance = 820},
 	{name = "fish fin", chance = 740},
-	{name = "blue robe", chance = 660},
 	{id = 3051, chance = 580} -- Energy ring
 }
 
