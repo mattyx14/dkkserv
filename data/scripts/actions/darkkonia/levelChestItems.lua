@@ -5,7 +5,7 @@ local rewards = {
 		specialStorage = DarkKonia.firstReward,
 		items = {
 			{rand = true, itemId = {10200, 10201}},
-			{itemId = 3043, count = 15},
+			{itemId = 3043, count = 25},
 		}
 	},
 	[24933] = {
@@ -14,7 +14,7 @@ local rewards = {
 		specialStorage = DarkKonia.secondReward,
 		items = {
 			{rand = true, itemId = {8078, 8079, 8080, 8081}},
-			{itemId = 3043, count = 15},
+			{itemId = 3043, count = 50},
 		}
 	},
 	[24934] = {
@@ -22,8 +22,8 @@ local rewards = {
 		text = 'third',
 		specialStorage = DarkKonia.thirdReward,
 		items = {
-			{rand = true, itemId = {31617, 32618, 27457}},
-			{itemId = 3043, count = 15},
+			{rand = true, itemId = {13997, 31617, 32619}},
+			{itemId = 3043, count = 100},
 		}
 	}
 }

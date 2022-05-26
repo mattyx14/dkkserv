@@ -1,48 +1,40 @@
-local function ServerSave()
-	if configManager.getBoolean(configKeys.SERVER_SAVE_CLEAN_MAP) then
+local function serverSave(interval)
+	if configManager.getBoolean(configKeys.TOGGLE_SAVE_INTERVAL_CLEAN_MAP) then
 		cleanMap()
 	end
-	if configManager.getBoolean(configKeys.SERVER_SAVE_CLOSE) then
-		Game.setGameState(GAME_STATE_CLOSED)
-	end
-	if configManager.getBoolean(configKeys.SERVER_SAVE_SHUTDOWN) then
-		Game.setGameState(GAME_STATE_SHUTDOWN)
-	end
-	-- Updating daily reward next server save
-	UpdateDailyRewardGlobalStorage(DailyReward.storages.lastServerSave, os.time())
-	-- Reset gamestore exp boost count.
-	db.query('UPDATE `player_storage` SET `value` = 0 WHERE `player_storage`.`key` = 51052')
-end
 
-local function ServerSaveWarning(time)
-	-- minus one minutes
-	local remaningTime = tonumber(time) - 60000
-	if configManager.getBoolean(configKeys.SERVER_SAVE_NOTIFY_MESSAGE) then
-		local message = "Server is saving game in " .. (remaningTime/60000) .." minute(s). Please logout."
-		Webhook.send("Server save", message, WEBHOOK_COLOR_WARNING)
-		Game.broadcastMessage(message, MESSAGE_GAME_HIGHLIGHT)
-	end
-	-- if greater than one minute, schedule another warning
-	-- else the next event will be the server save
-	if remaningTime > 60000 then
-		addEvent(ServerSaveWarning, 60000, remaningTime)
+	saveServer()
+	local message = "Server save complete. Next save in %d %ss!"
+	local messageSingle = "Server save complete. Next save in %d %s!"
+	Webhook.send("Server save", message, WEBHOOK_COLOR_WARNING)
+	if SAVE_INTERVAL_CONFIG_TIME > 1 then
+		Game.broadcastMessage(string.format(message, SAVE_INTERVAL_CONFIG_TIME, SAVE_INTERVAL_TYPE), MESSAGE_GAME_HIGHLIGHT)
+		Spdlog.info(string.format(message, SAVE_INTERVAL_CONFIG_TIME, SAVE_INTERVAL_TYPE))
 	else
-		addEvent(ServerSave, 60000)
+		Game.broadcastMessage(string.format(messageSingle, SAVE_INTERVAL_CONFIG_TIME, SAVE_INTERVAL_TYPE), MESSAGE_GAME_HIGHLIGHT)
+		Spdlog.info(string.format(messageSingle, SAVE_INTERVAL_CONFIG_TIME, SAVE_INTERVAL_TYPE))
 	end
 end
 
--- Function that is called by the global events when it reaches the time configured
--- interval is the time between the event start and the the effective save, it will send an notify message every minute
-local serversave = GlobalEvent("serversave")
-function serversave.onTime(interval)
-	local remaningTime = configManager.getNumber(configKeys.SERVER_SAVE_NOTIFY_DURATION) * 60000
-	if configManager.getBoolean(configKeys.SERVER_SAVE_NOTIFY_MESSAGE) then
-		local message = "Server is saving game in " .. (remaningTime/60000) .." minute(s). Please logout."
-		Webhook.send("Server save", message, WEBHOOK_COLOR_WARNING)
+local save = GlobalEvent("save")
+
+function save.onTime(interval)
+	local remaningTime = 60 * 1000
+	if configManager.getBoolean(configKeys.TOGGLE_SAVE_INTERVAL) then
+		local message = "The server will save all accounts within " .. (remaningTime/1000) .." seconds. \z
+		You might lag or freeze for 5 seconds, please find a safe place."
 		Game.broadcastMessage(message, MESSAGE_GAME_HIGHLIGHT)
+		Spdlog.info(string.format(message, SAVE_INTERVAL_CONFIG_TIME, SAVE_INTERVAL_TYPE))
+		addEvent(serverSave, remaningTime, interval)
+		return true
 	end
-	addEvent(ServerSaveWarning, 60000, remaningTime)	-- Schedule next event in 1 minute(60000)
-	return not configManager.getBoolean(configKeys.SERVER_SAVE_SHUTDOWN)
+	return not configManager.getBoolean(configKeys.TOGGLE_SAVE_INTERVAL)
 end
-serversave:time(configManager.getString(configKeys.SERVER_SAVE_TIME))
-serversave:register()
+
+if SAVE_INTERVAL_TIME ~= 0 then
+	save:interval(SAVE_INTERVAL_CONFIG_TIME * SAVE_INTERVAL_TIME)
+else
+	return Spdlog.error(string.format("[save.onTime] - Save interval type '%s' is not valid, use 'second', 'minute' or 'hour'", SAVE_INTERVAL_TYPE))
+end
+
+save:register()

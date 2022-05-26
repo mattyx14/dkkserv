@@ -148,7 +148,7 @@ function Player:onLook(thing, position, distance)
 
 	if self:getGroup():getAccess() then
 		if thing:isItem() then
-			description = string.format("%s\nClient ID: %d", description, thing:getId())
+			description = string.format("%s\nItem ID: %d", description, thing:getId())
 
 			local actionId = thing:getActionId()
 			if actionId ~= 0 then
@@ -176,7 +176,6 @@ function Player:onLook(thing, position, distance)
 					description = string.format("%s\nDecays to: %d", description, decayId)
 				end
 			end
-
 		elseif thing:isCreature() then
 			local str = "%s\nHealth: %d / %d"
 			if thing:isPlayer() and thing:getMaxMana() > 0 then
@@ -598,9 +597,11 @@ local function useStamina(player)
 			staminaMinutes = 0
 		end
 		nextUseStaminaTime[playerId] = currentTime + 120
+		player:removePreyStamina(120)
 	else
 		staminaMinutes = staminaMinutes - 1
 		nextUseStaminaTime[playerId] = currentTime + 60
+		player:removePreyStamina(60)
 	end
 	player:setStamina(staminaMinutes)
 end
@@ -653,18 +654,11 @@ function Player:onGainExperience(target, exp, rawExp)
 	end
 
 	-- Experience Stage Multiplier
-	local expStage = getRateFromTable(experienceStages, self:getLevel(), configManager.getNumber(configKeys.RATE_EXP))
+	local expStage = getRateFromTable(experienceStages, self:getLevel(), configManager.getNumber(configKeys.RATE_EXPERIENCE))
 
-	-- Prey Bonus
-	local preyBonus = 0
-	for slot = CONST_PREY_SLOT_FIRST, CONST_PREY_SLOT_THIRD do
-		if (self:getPreyCurrentMonster(slot) == target:getName()
-		and self:getPreyBonusType(slot) == CONST_BONUS_XP_BONUS) then
-			preyBonus = self:getPreyBonusValue(slot)
-		end
-		if (self:getPreyTimeLeft(slot) / 60) > 0 then
-			preyTimeLeft(self, slot) -- slot consumption, outside of the mosnter check
-		end
+	-- Event scheduler
+	if SCHEDULE_EXP_RATE ~= 100 then
+		expStage = math.max(0, (expStage * SCHEDULE_EXP_RATE)/100)
 	end
 
 	-- Store Bonus
@@ -694,12 +688,15 @@ function Player:onGainExperience(target, exp, rawExp)
 		exp = exp * 2
 	end
 
-	-- Event scheduler
-	if SCHEDULE_EXP_RATE ~= 100 then
-		expStage = math.max(0, (expStage * SCHEDULE_EXP_RATE)/100)
+	-- Prey system
+	if configManager.getBoolean(configKeys.PREY_ENABLED) then
+		local monsterType = target:getType()
+		if monsterType and monsterType:raceId() > 0 then
+			exp = math.ceil((exp * self:getPreyExperiencePercentage(monsterType:raceId())) / 100)
+		end
 	end
 
-	return (exp / 100 * ((expStage * 100 + storeXpBoostAmount + preyBonus) * staminaBoost))
+	return math.max((exp * expStage + (exp * (storeXpBoostAmount/100))) * staminaBoost)
 end
 
 function Player:onLoseExperience(exp)
