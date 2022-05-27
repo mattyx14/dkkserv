@@ -251,7 +251,7 @@ function parseTransferCoins(playerId, msg)
 		return addPlayerEvent(sendStoreError, 350, playerId, GameStore.StoreErrors.STORE_ERROR_TRANSFER, "We couldn't find that player.")
 	end
 
-	local accountId = result.getNumber(resultId, "account_id")
+	local accountId = result.getDataInt(resultId, "account_id")
 	if accountId == player:getAccountId() then
 		return addPlayerEvent(sendStoreError, 350, playerId, GameStore.StoreErrors.STORE_ERROR_TRANSFER, "You cannot transfer coin to a character in the same account.")
 	end
@@ -390,8 +390,8 @@ function parseBuyStoreOffer(playerId, msg)
 		elseif offer.type == GameStore.OfferTypes.OFFER_TYPE_NAMECHANGE     then local newName = msg:getString(); GameStore.processNameChangePurchase(player, offer.id, productType, newName, offer.name, offerPrice)
 		elseif offer.type == GameStore.OfferTypes.OFFER_TYPE_SEXCHANGE      then GameStore.processSexChangePurchase(player)
 		elseif offer.type == GameStore.OfferTypes.OFFER_TYPE_EXPBOOST       then GameStore.processExpBoostPuchase(player)
-		elseif offer.type == GameStore.OfferTypes.OFFER_TYPE_PREYSLOT       then GameStore.processPreySlotPurchase(player)
-		elseif offer.type == GameStore.OfferTypes.OFFER_TYPE_HUNTINGSLOT    then GameStore.processPreyHuntingSlotPurchase(player)
+		elseif offer.type == GameStore.OfferTypes.OFFER_TYPE_PREYSLOT       then GameStore.processPreyThirdSlot(player)
+		elseif offer.type == GameStore.OfferTypes.OFFER_TYPE_HUNTINGSLOT    then GameStore.processTaskHuntingThirdSlot(player)
 		elseif offer.type == GameStore.OfferTypes.OFFER_TYPE_PREYBONUS      then GameStore.processPreyBonusReroll(player, offer.count)
 		elseif offer.type == GameStore.OfferTypes.OFFER_TYPE_TEMPLE         then GameStore.processTempleTeleportPurchase(player)
 		elseif offer.type == GameStore.OfferTypes.OFFER_TYPE_CHARGES        then GameStore.processChargesPurchase(player, offer.itemtype, offer.name, offer.charges)
@@ -587,7 +587,7 @@ function Player.canBuyOffer(self, offer)
 				disabledReason = "You already have maximum of reward tokens."
 			end
 		elseif offer.type == GameStore.OfferTypes.OFFER_TYPE_PREYBONUS then
-			if self:getPreyBonusRerolls() >= 50 then
+			if self:getPreyCards() >= 50 then
 				disabled = 1
 				disabledReason = "You already have maximum of prey wildcards."
 			end
@@ -596,8 +596,13 @@ function Player.canBuyOffer(self, offer)
 				disabled = 1
 				disabledReason = "You already have charm expansion."
 			end
+		elseif offer.type == GameStore.OfferTypes.OFFER_TYPE_HUNTINGSLOT then
+			if self:taskHuntingThirdSlot() then
+				disabled = 1
+				disabledReason = "You already have 3 slots released."
+			end
 		elseif offer.type == GameStore.OfferTypes.OFFER_TYPE_PREYSLOT then
-			if self:getStorageValue(Prey.Config.StoreSlotStorage) == 1 then
+			if self:preyThirdSlot() then
 				disabled = 1
 				disabledReason = "You already have 3 slots released."
 			end
@@ -768,7 +773,7 @@ function sendShowStoreOffers(playerId, category, redirectId)
 
 				tryOnType = 1
 			elseif type == GameStore.ConverType.SHOW_ITEM then
-				msg:addU16(ItemType(offer.itemtype):getClientId())
+				msg:addU16(offer.itemtype)
 			elseif type == GameStore.ConverType.SHOW_OUTFIT then
 				msg:addU16(player:getSex() == PLAYERSEX_FEMALE and offer.sexId.female or offer.sexId.male)
 				local outfit = player:getOutfit()
@@ -1048,7 +1053,7 @@ GameStore.retrieveHistoryTotalPages = function (accountId)
 		return 0
 	end
 
-	local totalPages = result.getNumber(resultId, "total")
+	local totalPages = result.getDataInt(resultId, "total")
 	result.free(resultId)
 	return totalPages
 end
@@ -1061,10 +1066,10 @@ GameStore.retrieveHistoryEntries = function(accountId, currentPage, entriesPerPa
 	if resultId ~= false then
 		repeat
 			local entry = {
-				mode = result.getNumber(resultId, "mode"),
+				mode = result.getDataInt(resultId, "mode"),
 				description = result.getDataString(resultId, "description"),
-				amount = result.getNumber(resultId, "coin_amount"),
-				time = result.getNumber(resultId, "time"),
+				amount = result.getDataInt(resultId, "coin_amount"),
+				time = result.getDataInt(resultId, "time"),
 			}
 			table.insert(entries, entry)
 		until not result.next(resultId)
@@ -1458,33 +1463,25 @@ function GameStore.processExpBoostPuchase(player)
 	player:setStorageValue(GameStore.Storages.expBoostCount, expBoostCount + 1)
 end
 
-function GameStore.processPreySlotPurchase(player)
-	if player:getStorageValue(Prey.Config.StoreSlotStorage) < 1 then
-		player:setStorageValue(Prey.Config.StoreSlotStorage, 1)
-		player:setPreyUnlocked(CONST_PREY_SLOT_THIRD, 2)
-		player:setPreyState(CONST_PREY_SLOT_THIRD, 1)
-
-		-- Update Prey Data
-		for slot = CONST_PREY_SLOT_FIRST, CONST_PREY_SLOT_THIRD do
-			player:sendPreyData(slot)
-		end
+function GameStore.processPreyThirdSlot(player)
+	if player:preyThirdSlot() then
+		return error({code = 1, message = "You already have unlocked all prey slots."})
 	end
+	player:preyThirdSlot(true)
 end
 
-function GameStore.processPreyHuntingSlotPurchase(player)
-	if player:getStorageValue(CONST_HUNTING_STORAGE) < 1 then
-		player:setStorageValue(CONST_HUNTING_STORAGE, 1)
-
-		-- Update Prey Data
-		player:sendPreyHuntingData(CONST_PREY_SLOT_THIRD)
+function GameStore.processTaskHuntingThirdSlot(player)
+	if player:taskHuntingThirdSlot() then
+		return error({code = 1, message = "You already have unlocked all task hunting slots."})
 	end
+	player:taskHuntingThirdSlot(true)
 end
 
 function GameStore.processPreyBonusReroll(player, offerCount)
-	if player:getPreyBonusRerolls() + offerCount >= 51 then
+	if player:getPreyCards() + offerCount >= 51 then
 		return error({code = 1, message = "You cannot own more than 50 prey wildcards."})
 	end
-	player:setPreyBonusRerolls(player:getPreyBonusRerolls() + offerCount)
+	player:addPreyCards(offerCount)
 end
 
 function GameStore.processTempleTeleportPurchase(player)
@@ -1578,7 +1575,7 @@ end
 function Player.getCoinsBalance(self)
 	resultId = db.storeQuery("SELECT `coins` FROM `accounts` WHERE `id` = " .. self:getAccountId())
 	if not resultId then return 0 end
-	return result.getNumber(resultId, "coins")
+	return result.getDataInt(resultId, "coins")
 end
 
 function Player.setCoinsBalance(self, coins)
@@ -1695,7 +1692,7 @@ function sendHomePage(playerId)
 			local mount = Mount(offer.id)
 			msg:addU16(mount:getClientId())
 		elseif type == GameStore.ConverType.SHOW_ITEM then
-			msg:addU16(ItemType(offer.itemtype):getClientId())
+			msg:addU16(offer.itemtype)
 		elseif type == GameStore.ConverType.SHOW_OUTFIT then
 			msg:addU16(player:getSex() == PLAYERSEX_FEMALE and offer.sexId.female or offer.sexId.male)
 			local outfit = player:getOutfit()

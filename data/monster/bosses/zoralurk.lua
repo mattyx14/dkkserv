@@ -60,7 +60,7 @@ monster.light = {
 monster.summon = {
 	maxSummons = 2,
 	summons = {
-		{name = "Fire Lord", chance = 50, interval = 4000, count = 2}
+		{name = "demon", chance = 50, interval = 4000, count = 2}
 	}
 }
 
@@ -79,8 +79,9 @@ monster.loot = {
 	{name = "giant sword", chance = 60000},
 	{name = "bright sword", chance = 20000},
 	{name = "bright sword", chance = 20000},
+	{name = "warlord sword", chance = 6000},
 	{name = "patched boots", chance = 7000},
-	{id = 3123, chance = 16000}
+	{id = 3123, chance = 16000} -- worn leather boots
 }
 
 monster.attacks = {

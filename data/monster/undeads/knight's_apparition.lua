@@ -53,7 +53,7 @@ monster.flags = {
 	pushable = false,
 	rewardBoss = false,
 	illusionable = false,
-	canPushItems = false,
+	canPushItems = true,
 	canPushCreatures = false,
 	staticAttackChance = 90,
 	targetDistance = 1,
@@ -86,6 +86,7 @@ monster.loot = {
 	{name = "violet gem", chance = 44560},
 	{name = "giant sword", chance = 25920},
 	{name = "crystal mace", chance = 22920},
+	{name = "crown shield", chance = 18920},
 	{name = "jade hammer", chance = 15920}
 }
 
@@ -113,7 +114,7 @@ monster.elements = {
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
 	{type = COMBAT_ICEDAMAGE, percent = 10},
-	{type = COMBAT_HOLYDAMAGE , percent = 40},
+	{type = COMBAT_HOLYDAMAGE , percent = 0},
 	{type = COMBAT_DEATHDAMAGE , percent = -20}
 }
 

@@ -46,13 +46,13 @@ monster.strategiesTarget = {
 }
 
 monster.flags = {
-	summonable = true,
+	summonable = false,
 	attackable = true,
 	hostile = true,
 	convinceable = true,
 	pushable = false,
 	rewardBoss = false,
-	illusionable = true,
+	illusionable = false,
 	canPushItems = true,
 	canPushCreatures = false,
 	staticAttackChance = 80,
@@ -80,7 +80,7 @@ monster.voices = {
 }
 
 monster.loot = {
-	{id = 2914, chance = 8280},
+	{id = 2914, chance = 8280}, -- lamp
 	{name = "gold coin", chance = 55310, maxCount = 12},
 	{name = "battle axe", chance = 5910},
 	{name = "halberd", chance = 6740},

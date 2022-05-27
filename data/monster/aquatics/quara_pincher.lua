@@ -86,6 +86,7 @@ monster.loot = {
 	{name = "shrimp", chance = 5245, maxCount = 5},
 	{name = "fish fin", chance = 1600},
 	{name = "warrior helmet", chance = 1460},
+	{name = "crown armor", chance = 280},
 	{name = "glacier robe", chance = 120},
 	{name = "giant shrimp", chance = 40}
 }
@@ -101,7 +102,7 @@ monster.defenses = {
 }
 
 monster.elements = {
-	{type = COMBAT_PHYSICALDAMAGE, percent = 10},
+	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
 	{type = COMBAT_ENERGYDAMAGE, percent = -25},
 	{type = COMBAT_EARTHDAMAGE, percent = -10},
 	{type = COMBAT_FIREDAMAGE, percent = 100},

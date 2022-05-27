@@ -82,11 +82,12 @@ monster.loot = {
 	{name = "gold coin", chance = 100000, maxCount = 100},
 	{name = "gold coin", chance = 100000, maxCount = 95},
 	{name = "platinum coin", chance = 100000, maxCount = 10},
-	{id= 3039, chance = 6110},
+	{id= 3039, chance = 6110}, -- red gem
 	{name = "blue gem", chance = 830},
 	{name = "giant sword", chance = 620},
 	{name = "hammer of wrath", chance = 70},
 	{name = "knight legs", chance = 830},
+	{name = "crown armor", chance = 310},
 	{name = "crusader helmet", chance = 410},
 	{name = "steel boots", chance = 100},
 	{name = "iron ore", chance = 14490},
@@ -99,13 +100,17 @@ monster.loot = {
 	{name = "crystal of balance", chance = 2690},
 	{name = "crystal of power", chance = 720},
 	{name = "shiny stone", chance = 11280},
+	{name = "wand of defiance", chance = 2000},
+	{name = "glacial rod", chance = 1240},
 	{name = "blue crystal shard", chance = 6520},
 	{name = "blue crystal splinter", chance = 7970, maxCount = 2},
 	{name = "cyan crystal fragment", chance = 8070},
 	{name = "pulverized ore", chance = 15110},
 	{name = "cliff strider claw", chance = 15630},
 	{name = "vein of ore", chance = 18000, maxCount = 2},
-	{name = "prismatic bolt", chance = 9090, maxCount = 8}
+	{name = "prismatic bolt", chance = 9090, maxCount = 8},
+	{name = "crystalline sword", chance = 620},
+	{name = "crystal crossbow", chance = 830}
 }
 
 monster.attacks = {
@@ -123,16 +128,16 @@ monster.defenses = {
 }
 
 monster.elements = {
-	{type = COMBAT_PHYSICALDAMAGE, percent = 1},
+	{type = COMBAT_PHYSICALDAMAGE, percent = 10},
 	{type = COMBAT_ENERGYDAMAGE, percent = 100},
 	{type = COMBAT_EARTHDAMAGE, percent = 100},
-	{type = COMBAT_FIREDAMAGE, percent = 1},
+	{type = COMBAT_FIREDAMAGE, percent = 20},
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
 	{type = COMBAT_ICEDAMAGE, percent = 20},
 	{type = COMBAT_HOLYDAMAGE , percent = 0},
-	{type = COMBAT_DEATHDAMAGE , percent = 40}
+	{type = COMBAT_DEATHDAMAGE , percent = 35}
 }
 
 monster.immunities = {

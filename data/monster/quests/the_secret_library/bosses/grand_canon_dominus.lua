@@ -64,9 +64,10 @@ monster.loot = {
 	{name = "great health potion", chance = 100000, maxCount = 3},
 	{name = "assassin star", chance = 100000, maxCount = 2},
 	{name = "small amethyst", chance = 100000, maxCount = 2},
+	{name = "golden armor", chance = 1700},
 	{name = "mastermind shield", chance = 1100},
 	{name = "patch of fine cloth", chance = 1000},
-	{id= 3039, chance = 1800},
+	{id= 3039, chance = 1800}, -- red gem
 	{name = "violet gem", chance = 1850},
 	{name = "falcon bow", chance = 180},
 	{name = "falcon wand", chance = 180},

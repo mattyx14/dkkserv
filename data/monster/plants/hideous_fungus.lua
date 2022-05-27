@@ -100,6 +100,7 @@ monster.loot = {
 	{name = "terra amulet", chance = 2000},
 	{name = "mushroom backpack", chance = 20},
 	{name = "mushroom pie", chance = 14500, maxCount = 3},
+	{name = "muck rod", chance = 590},
 	{name = "hideous chunk", chance = 14285},
 	{name = "envenomed arrow", chance = 14500, maxCount = 15},
 	{name = "mycological bow", chance = 60}
@@ -132,7 +133,7 @@ monster.elements = {
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
 	{type = COMBAT_ICEDAMAGE, percent = 15},
 	{type = COMBAT_HOLYDAMAGE , percent = 5},
-	{type = COMBAT_DEATHDAMAGE , percent = 1}
+	{type = COMBAT_DEATHDAMAGE , percent = 35}
 }
 
 monster.immunities = {

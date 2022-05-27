@@ -98,11 +98,14 @@ monster.loot = {
 	{name = "platinum coin", chance = 19720},
 	{name = "yellow gem", chance = 690},
 	{name = "platinum amulet", chance = 450},
-	{id = 3059, chance = 10000},
+	{id = 3059, chance = 10000}, -- spellbook
 	{name = "mind stone", chance = 350},
-	{id = 3098, chance = 1540}, -- Ring of healing
+	{id = 3098, chance = 1540}, -- ring of healing
+	{name = "skull staff", chance = 550},
 	{name = "strange helmet", chance = 740},
 	{name = "ancient shield", chance = 2422},
+	{name = "castle shield", chance = 350},
+	{name = "blue robe", chance = 150},
 	{name = "strong mana potion", chance = 7500},
 	{name = "lightning boots", chance = 200},
 	{name = "small topaz", chance = 2430, maxCount = 3},
@@ -134,7 +137,7 @@ monster.elements = {
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
 	{type = COMBAT_ICEDAMAGE, percent = 0},
-	{type = COMBAT_HOLYDAMAGE , percent = -10},
+	{type = COMBAT_HOLYDAMAGE , percent = -20},
 	{type = COMBAT_DEATHDAMAGE , percent = 100}
 }
 

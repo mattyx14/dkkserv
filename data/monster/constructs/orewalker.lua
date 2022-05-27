@@ -79,8 +79,10 @@ monster.loot = {
 	{name = "gold coin", chance = 50000, maxCount = 98},
 	{name = "platinum coin", chance = 100000, maxCount = 10},
 	{name = "yellow gem", chance = 1030},
-	{id = 3097, chance = 4660}, -- Dwarven ring
+	{id = 3097, chance = 4660}, -- dwarven ring
 	{name = "knight legs", chance = 1910},
+	{name = "crown armor", chance = 370},
+	{name = "crown helmet", chance = 890},
 	{name = "iron ore", chance = 15000},
 	{name = "magic sulphur", chance = 3000},
 	{name = "titan axe", chance = 2600},
@@ -94,12 +96,14 @@ monster.loot = {
 	{name = "small topaz", chance = 16500, maxCount = 3},
 	{name = "shiny stone", chance = 13700},
 	{name = "sulphurous stone", chance = 20700},
+	{name = "wand of defiance", chance = 1300},
 	{name = "green crystal shard", chance = 8000},
 	{name = "blue crystal splinter", chance = 16000, maxCount = 2},
 	{name = "cyan crystal fragment", chance = 13000},
 	{name = "pulverized ore", chance = 20500},
 	{name = "vein of ore", chance = 15000},
-	{name = "prismatic bolt", chance = 15500, maxCount = 5}
+	{name = "prismatic bolt", chance = 15500, maxCount = 5},
+	{name = "crystal crossbow", chance = 300}
 }
 
 monster.attacks = {
@@ -118,7 +122,7 @@ monster.defenses = {
 }
 
 monster.elements = {
-	{type = COMBAT_PHYSICALDAMAGE, percent = 5},
+	{type = COMBAT_PHYSICALDAMAGE, percent = 25},
 	{type = COMBAT_ENERGYDAMAGE, percent = -5},
 	{type = COMBAT_EARTHDAMAGE, percent = 100},
 	{type = COMBAT_FIREDAMAGE, percent = 65},
@@ -127,7 +131,7 @@ monster.elements = {
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
 	{type = COMBAT_ICEDAMAGE, percent = 5},
 	{type = COMBAT_HOLYDAMAGE , percent = 0},
-	{type = COMBAT_DEATHDAMAGE , percent = 15}
+	{type = COMBAT_DEATHDAMAGE , percent = 25}
 }
 
 monster.immunities = {

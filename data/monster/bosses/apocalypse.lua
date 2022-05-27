@@ -67,7 +67,7 @@ monster.voices = {
 }
 
 monster.loot = {
-	{id = 3025, chance = 13500}, -- Ancient amulet
+	{id = 3025, chance = 13500}, -- ancient amulet
 	{id = 3116, chance = 19000}, -- big bone
 	{name = "black pearl", chance = 15000, maxCount = 35},
 	{name = "boots of haste", chance = 14000},
@@ -76,7 +76,9 @@ monster.loot = {
 	{id = 3007, chance = 15500}, -- crystal ring
 	{name = "demon shield", chance = 15500},
 	{name = "devil helmet", chance = 11000},
-	{id = 3051, chance = 13500}, -- Energy ring
+	{name = "dragon hammer", chance = 34500},
+	{id = 3051, chance = 13500}, -- energy ring
+	{name = "fire axe", chance = 17000},
 	{name = "giant sword", chance = 12500},
 	{name = "platinum coin", chance = 69900, maxCount = 100},
 	{name = "platinum coin", chance = 68800, maxCount = 100},
@@ -93,8 +95,10 @@ monster.loot = {
 	{name = "purple tome", chance = 12600},
 	{name = "ring of the sky", chance = 13500},
 	{name = "silver dagger", chance = 15500},
+	{name = "skull staff", chance = 25000},
 	{name = "talon", chance = 14000, maxCount = 27},
 	{name = "teddy bear", chance = 10500},
+	{name = "thunder hammer", chance = 3500},
 	{id = 3002, chance = 5100}, -- voodoo doll
 	{name = "white pearl", chance = 12500, maxCount = 35}
 }

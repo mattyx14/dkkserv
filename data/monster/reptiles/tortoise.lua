@@ -44,13 +44,13 @@ monster.strategiesTarget = {
 }
 
 monster.flags = {
-	summonable = true,
+	summonable = false,
 	attackable = true,
 	hostile = true,
 	convinceable = true,
-	pushable = true,
+	pushable = false,
 	rewardBoss = false,
-	illusionable = false,
+	illusionable = true,
 	canPushItems = true,
 	canPushCreatures = false,
 	staticAttackChance = 90,
@@ -77,7 +77,7 @@ monster.loot = {
 	{name = "gold coin", chance = 59000, maxCount = 30},
 	{name = "battle hammer", chance = 730},
 	{name = "plate shield", chance = 2850},
-	{id = 3578, chance = 4600},
+	{id = 3578, chance = 4600}, -- fish
 	{name = "tortoise egg", chance = 770, maxCount = 2},
 	{name = "turtle shell", chance = 1300},
 	{name = "tortoise shield", chance = 200}
@@ -93,7 +93,7 @@ monster.defenses = {
 }
 
 monster.elements = {
-	{type = COMBAT_PHYSICALDAMAGE, percent = 35},
+	{type = COMBAT_PHYSICALDAMAGE, percent = 20},
 	{type = COMBAT_ENERGYDAMAGE, percent = 0},
 	{type = COMBAT_EARTHDAMAGE, percent = 20},
 	{type = COMBAT_FIREDAMAGE, percent = -10},

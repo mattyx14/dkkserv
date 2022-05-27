@@ -85,6 +85,7 @@ monster.loot = {
 	{name = "great spirit potion", chance = 2010},
 	{name = "ultimate health potion", chance = 750},
 	{name = "belted cape", chance = 580},
+	{name = "paladin armor", chance = 140},
 	{name = "springsprout rod", chance = 1020},
 	{name = "boggy dreads", chance = 9870}
 }
@@ -104,7 +105,7 @@ monster.defenses = {
 }
 
 monster.elements = {
-	{type = COMBAT_PHYSICALDAMAGE, percent = -20},
+	{type = COMBAT_PHYSICALDAMAGE, percent = -5},
 	{type = COMBAT_ENERGYDAMAGE, percent = -10},
 	{type = COMBAT_EARTHDAMAGE, percent = 30},
 	{type = COMBAT_FIREDAMAGE, percent = 85},

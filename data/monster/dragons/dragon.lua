@@ -92,11 +92,12 @@ monster.loot = {
 	{name = "longsword", chance = 4000},
 	{name = "serpent sword", chance = 420},
 	{name = "broadsword", chance = 1950},
+	{name = "dragon hammer", chance = 560},
 	{name = "crossbow", chance = 10000},
 	{name = "steel helmet", chance = 3000},
 	{name = "steel shield", chance = 15000},
 	{name = "dragon shield", chance = 320},
-	{id = 3449, chance = 8060, maxCount = 10}, -- Burst arrow
+	{id = 3449, chance = 8060, maxCount = 10}, -- burst arrow
 	{name = "plate legs", chance = 2000},
 	{name = "dragon ham", chance = 65500, maxCount = 3},
 	{name = "green dragon leather", chance = 1005},

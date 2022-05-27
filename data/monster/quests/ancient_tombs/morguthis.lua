@@ -75,12 +75,13 @@ monster.voices = {
 }
 
 monster.loot = {
-	{id = 3019, chance = 500},
+	{id = 3019, chance = 500}, -- demonbone amulet
 	{name = "black pearl", chance = 7000},
 	{name = "gold coin", chance = 50000, maxCount = 80},
 	{name = "gold coin", chance = 50000, maxCount = 73},
 	{name = "stone skin amulet", chance = 7000},
 	{name = "sword hilt", chance = 100000},
+	{name = "knight axe", chance = 7000},
 	{name = "ravager's axe", chance = 300},
 	{name = "steel boots", chance = 500},
 	{name = "assassin star", chance = 500, maxCount = 3},

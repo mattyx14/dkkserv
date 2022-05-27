@@ -43,13 +43,13 @@ monster.strategiesTarget = {
 }
 
 monster.flags = {
-	summonable = true,
+	summonable = false,
 	attackable = true,
 	hostile = true,
 	convinceable = true,
 	pushable = true,
 	rewardBoss = false,
-	illusionable = true,
+	illusionable = false,
 	canPushItems = false,
 	canPushCreatures = false,
 	staticAttackChance = 90,
@@ -79,7 +79,7 @@ monster.voices = {
 
 monster.loot = {
 	{name = "gold coin", chance = 50110, maxCount = 30},
-	{id = 3093, chance = 740}, -- Club ring
+	{id = 3093, chance = 740}, -- club ring
 	{name = "studded legs", chance = 5220},
 	{name = "leather legs", chance = 15330}
 }

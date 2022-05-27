@@ -13,7 +13,7 @@ local dolls = {
 		"Never say 'oops'. Always say 'Ah, interesting!'",
 		"Five steps east, fourteen steps south, two steps north and seventeen steps west!"
 	},
-	[5791] = {
+	[6566] = {
 		"Fchhhhhh!",
 		"Zchhhhhh!",
 		"Grooaaaaar*cough*",

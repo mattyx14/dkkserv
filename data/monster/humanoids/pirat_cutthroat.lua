@@ -50,7 +50,7 @@ monster.flags = {
 	pushable = false,
 	rewardBoss = false,
 	illusionable = false,
-	canPushItems = false,
+	canPushItems = true,
 	canPushCreatures = false,
 	staticAttackChance = 90,
 	targetDistance = 1,
@@ -75,6 +75,7 @@ monster.voices = {
 monster.loot = {
 	{name = "great health potion", chance = 44810, maxCount = 4},
 	{name = "ice rapier", chance = 25950},
+	{name = "knight axe", chance = 12500},
 	{name = "crystal sword", chance = 19420},
 	{name = "pirate coin", chance = 17810, maxCount = 10},
 	{name = "crowbar", chance = 7810},

@@ -19,12 +19,3 @@ dofile('data/lib/quests/quest.lua')
 -- Dolls System
 dofile('data/lib/others/addon_doll_lib.lua')
 dofile('data/lib/others/mount_doll_lib.lua')
-
--- Daily reward library
-dofile('data/lib/daily_reward/daily_reward.lua')
-dofile('data/lib/daily_reward/player.lua')
-
--- Reward boss library
-dofile('data/lib/reward_boss/reward_boss.lua')
-dofile('data/lib/reward_boss/player.lua')
-dofile('data/lib/reward_boss/monster.lua')

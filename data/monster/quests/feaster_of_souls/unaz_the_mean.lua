@@ -36,7 +36,7 @@ monster.flags = {
 	convinceable = false,
 	pushable = false,
 	rewardBoss = true,
-	illusionable = false,
+	illusionable = true,
 	canPushItems = true,
 	canPushCreatures = true,
 	staticAttackChance = 90,
@@ -67,10 +67,11 @@ monster.loot = {
 	{name = "diamond", chance = 8300},
 	{name = "machete", chance = 8300},
 	{name = "pair of nightmare boots", chance = 8300},
+	{name = "skull staff", chance = 8300},
 	{name = "warrior's axe", chance = 8300},
 	{name = "death toll", chance = 150},
 	{name = "silver hand mirror", chance = 150},
-	{id= 3039, chance = 150, maxCount = 2}
+	{id= 3039, chance = 150, maxCount = 2} -- red gem
 }
 
 monster.attacks = {

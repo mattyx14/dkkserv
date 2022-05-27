@@ -148,7 +148,7 @@ function Player:onLook(thing, position, distance)
 
 	if self:getGroup():getAccess() then
 		if thing:isItem() then
-			description = string.format("%s\nItem ID: %d", description, thing:getId())
+			description = string.format("%s\nClient ID: %d", description, thing:getId())
 
 			local actionId = thing:getActionId()
 			if actionId ~= 0 then
@@ -162,20 +162,19 @@ function Player:onLook(thing, position, distance)
 
 			local itemType = thing:getType()
 
-			if itemType then
-				local transformEquipId = itemType:getTransformEquipId()
-				local transformDeEquipId = itemType:getTransformDeEquipId()
-				if transformEquipId ~= 0 then
-					description = string.format("%s\nTransforms to: %d (onEquip)", description, transformEquipId)
-				elseif transformDeEquipId ~= 0 then
-					description = string.format("%s\nTransforms to: %d (onDeEquip)", 	description, transformDeEquipId)
-				end
-
-				local decayId = itemType:getDecayId()
-				if decayId ~= -1 then
-					description = string.format("%s\nDecays to: %d", description, decayId)
-				end
+			local transformEquipId = itemType:getTransformEquipId()
+			local transformDeEquipId = itemType:getTransformDeEquipId()
+			if transformEquipId ~= 0 then
+				description = string.format("%s\nTransforms to: %d (onEquip)", description, transformEquipId)
+			elseif transformDeEquipId ~= 0 then
+				description = string.format("%s\nTransforms to: %d (onDeEquip)", description, transformDeEquipId)
 			end
+
+			local decayId = itemType:getDecayId()
+			if decayId ~= -1 then
+				description = string.format("%s\nDecays to: %d", description, decayId)
+			end
+
 		elseif thing:isCreature() then
 			local str = "%s\nHealth: %d / %d"
 			if thing:isPlayer() and thing:getMaxMana() > 0 then
@@ -184,10 +183,9 @@ function Player:onLook(thing, position, distance)
 			description = string.format(str, description, thing:getHealth(), thing:getMaxHealth()) .. "."
 		end
 
-		local position = thing:getPosition()
 		description = string.format(
-			"%s\nPosition: %d, %d, %d",
-			description, position.x, position.y, position.z
+		"%s\nPosition: %d, %d, %d",
+		description, position.x, position.y, position.z
 		)
 
 		if thing:isCreature() then
@@ -218,8 +216,9 @@ function Player:onLookInBattleList(creature, distance)
 
 		local position = creature:getPosition()
 		description = string.format(
-			"%s\nPosition: %d, %d, %d",
-			description, position.x, position.y, position.z
+		"%s\nPosition: %d, %d, %d",
+		description, position.x, position.y, position.z
+
 		)
 
 		if creature:isPlayer() then
@@ -377,7 +376,7 @@ function Player:onMoveItem(item, count, fromPosition, toPosition, fromCylinder, 
 		local itemType, moveItem = ItemType(item:getId())
 		if bit.band(itemType:getSlotPosition(), SLOTP_TWO_HAND) ~= 0 and toPosition.y == CONST_SLOT_LEFT then
 			moveItem = self:getSlotItem(CONST_SLOT_RIGHT)
-			if moveItem and itemType:getWeaponType() == WEAPON_DISTANCE and ItemType(moveItem:getId()):getWeaponType() == WEAPON_QUIVER then
+			if moveItem and itemType:getWeaponType() == WEAPON_DISTANCE and ItemType(moveItem:getId()):isQuiver() then
 				return true
 			end
 		elseif itemType:getWeaponType() == WEAPON_SHIELD and toPosition.y == CONST_SLOT_RIGHT then
@@ -389,7 +388,7 @@ function Player:onMoveItem(item, count, fromPosition, toPosition, fromCylinder, 
 
 		if moveItem then
 			local parent = item:getParent()
-			if parent:isContainer() and parent:getSize() == parent:getCapacity() then
+			if parent:getSize() == parent:getCapacity() then
 				self:sendTextMessage(MESSAGE_FAILURE, Game.getReturnMessage(RETURNVALUE_CONTAINERNOTENOUGHROOM))
 				return false
 			else
@@ -446,9 +445,6 @@ function Player:onMoveItem(item, count, fromPosition, toPosition, fromCylinder, 
 	if not antiPush(self, item, count, fromPosition, toPosition, fromCylinder, toCylinder) then
 		return false
 	end
-
-	-- Execute event function from reward boss lib
-	self:executeRewardEvents(item, toPosition)
 
 	return true
 end
@@ -570,20 +566,12 @@ soulCondition:setTicks(4 * 60 * 1000)
 soulCondition:setParameter(CONDITION_PARAM_SOULGAIN, 1)
 
 local function useStamina(player)
-	if not player then
-		return false
-	end
-
 	local staminaMinutes = player:getStamina()
 	if staminaMinutes == 0 then
 		return
 	end
 
 	local playerId = player:getId()
-	if not playerId then
-		return false
-	end
-
 	local currentTime = os.time()
 	local timePassed = currentTime - nextUseStaminaTime[playerId]
 	if timePassed <= 0 then
@@ -606,21 +594,13 @@ local function useStamina(player)
 	player:setStamina(staminaMinutes)
 end
 
-local function useStaminaXpBoost(player)
-	if not player then
-		return false
-	end
-
+local function useStaminaXp(player)
 	local staminaMinutes = player:getExpBoostStamina() / 60
 	if staminaMinutes == 0 then
 		return
 	end
 
 	local playerId = player:getId()
-	if not playerId then
-		return false
-	end
-
 	local currentTime = os.time()
 	local timePassed = currentTime - nextUseXpStamina[playerId]
 	if timePassed <= 0 then
@@ -641,8 +621,8 @@ local function useStaminaXpBoost(player)
 	player:setExpBoostStamina(staminaMinutes * 60)
 end
 
-function Player:onGainExperience(target, exp, rawExp)
-	if not target or target:isPlayer() then
+function Player:onGainExperience(source, exp, rawExp)
+	if not source or source:isPlayer() then
 		return exp
 	end
 
@@ -654,15 +634,25 @@ function Player:onGainExperience(target, exp, rawExp)
 	end
 
 	-- Experience Stage Multiplier
-	local expStage = getRateFromTable(experienceStages, self:getLevel(), configManager.getNumber(configKeys.RATE_EXPERIENCE))
+	local expStage = getRateFromTable(experienceStages, self:getLevel(), configManager.getNumber(configKeys.RATE_EXP))
+	exp = exp * expStage
+	baseExp = rawExp * expStage
+	if Game.getStorageValue(GlobalStorage.XpDisplayMode) > 0 then
+		displayRate = expStage
+	else
+		displayRate = 1
+	end
 
-	-- Event scheduler
-	if SCHEDULE_EXP_RATE ~= 100 then
-		expStage = math.max(0, (expStage * SCHEDULE_EXP_RATE)/100)
+	-- Prey system
+	if configManager.getBoolean(configKeys.PREY_ENABLED) then
+		local monsterType = source:getType()
+		if monsterType and monsterType:raceId() > 0 then
+			exp = math.ceil((exp * self:getPreyExperiencePercentage(monsterType:raceId())) / 100)
+		end
 	end
 
 	-- Store Bonus
-	useStaminaXpBoost(self) -- Use store boost stamina
+	useStaminaXp(self) -- Use store boost stamina
 
 	local Boost = self:getExpBoostStamina()
 	local stillHasBoost = Boost > 0
@@ -670,33 +660,36 @@ function Player:onGainExperience(target, exp, rawExp)
 
 	self:setStoreXpBoost(storeXpBoostAmount)
 
+	if (storeXpBoostAmount > 0) then
+		exp = exp + (baseExp * (storeXpBoostAmount/100)) -- Exp Boost
+	end
+
 	-- Stamina Bonus
-	local staminaBoost = 1
 	if configManager.getBoolean(configKeys.STAMINA_SYSTEM) then
 		useStamina(self)
 		local staminaMinutes = self:getStamina()
-			if staminaMinutes > 2340 and self:isPremium() then
-				staminaBoost = 1.5
-			elseif staminaMinutes <= 840 then
-				staminaBoost = 0.5 --TODO destroy loot of people with 840- stamina
-			end
-		self:setStaminaXpBoost(staminaBoost * 100)
-	end
-
-	-- Boosted creature
-	if target:getName():lower() == (Game.getBoostedCreature()):lower() then
-		exp = exp * 2
-	end
-
-	-- Prey system
-	if configManager.getBoolean(configKeys.PREY_ENABLED) then
-		local monsterType = target:getType()
-		if monsterType and monsterType:raceId() > 0 then
-			exp = math.ceil((exp * self:getPreyExperiencePercentage(monsterType:raceId())) / 100)
+		if staminaMinutes > 2340 and self:isPremium() then
+			exp = exp * 1.5
+			self:setStaminaXpBoost(150)
+		elseif staminaMinutes <= 840 then
+			exp = exp * 0.5 --TODO destroy loot of people with 840- stamina
+			self:setStaminaXpBoost(50)
+		else
+			self:setStaminaXpBoost(100)
 		end
 	end
 
-	return math.max((exp * expStage + (exp * (storeXpBoostAmount/100))) * staminaBoost)
+	-- Boosted creature
+	if source:getName():lower() == (Game.getBoostedCreature()):lower() then
+		exp = exp * 2
+	end
+
+	-- Event scheduler
+	if SCHEDULE_EXP_RATE ~= 100 then
+		exp = (exp * SCHEDULE_EXP_RATE)/100
+	end
+	self:setBaseXpGain(displayRate * 100)
+	return exp
 end
 
 function Player:onLoseExperience(exp)
@@ -709,23 +702,18 @@ function Player:onGainSkillTries(skill, tries)
 	end
 
 	-- Event scheduler skill rate
-	local STAGES_DEFAULT = skillsStages or nil
-	local SKILL_DEFAULT = self:getSkillLevel(skill)
-	local RATE_DEFAULT = configManager.getNumber(configKeys.RATE_SKILL)
-
-	if(skill == SKILL_MAGLEVEL) then -- Magic Level
-		STAGES_DEFAULT = magicLevelStages or nil
-		SKILL_DEFAULT = self:getBaseMagicLevel()
-		RATE_DEFAULT = configManager.getNumber(configKeys.RATE_MAGIC)
-	end
-
-	skillOrMagicRate = getRateFromTable(STAGES_DEFAULT, SKILL_DEFAULT, RATE_DEFAULT)
-
 	if SCHEDULE_SKILL_RATE ~= 100 then
-		skillOrMagicRate = math.max(0, (skillOrMagicRate * SCHEDULE_SKILL_RATE) / 100)
+		tries = (tries * SCHEDULE_SKILL_RATE)/100
 	end
 
-	return tries / 100 * (skillOrMagicRate * 100)
+	local skillRate = configManager.getNumber(configKeys.RATE_SKILL)
+	local magicRate = configManager.getNumber(configKeys.RATE_MAGIC)
+
+	if(skill == SKILL_MAGLEVEL) then -- Magic getLevel
+		return tries * getRateFromTable(magicLevelStages, self:getBaseMagicLevel(), magicRate)
+	end
+
+	return tries * getRateFromTable(skillsStages, self:getSkillLevel(skill), skillRate)
 end
 
 function Player:onRemoveCount(item)

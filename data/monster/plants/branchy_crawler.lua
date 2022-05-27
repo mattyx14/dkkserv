@@ -53,7 +53,7 @@ monster.flags = {
 	pushable = false,
 	rewardBoss = false,
 	illusionable = false,
-	canPushItems = false,
+	canPushItems = true,
 	canPushCreatures = false,
 	staticAttackChance = 90,
 	targetDistance = 1,
@@ -84,14 +84,16 @@ monster.loot = {
 	{name = "gold ingot", chance = 65560},
 	{name = "terra legs", chance = 25560},
 	{name = "violet gem", chance = 60000},
-	{id = 33982, chance = 35560}, -- Crawler's essence
+	{id = 33982, chance = 35560}, -- crawler's essence
 	{name = "green gem", chance = 70000},
 	{name = "blue gem", chance = 55000},
 	{name = "hammer of wrath", chance = 13500},
 	{name = "ruthless axe", chance = 17500},
 	{name = "nightmare blade", chance = 9500},
 	{name = "twiceslicer", chance = 7500},
-	{id = 34109, chance = 50} -- Bag you desire
+	{name = "crystal crossbow", chance = 6500},
+	{name = "crystalline sword", chance = 7500},
+	{id = 34109, chance = 50} -- bag you desire
 }
 
 monster.attacks = {

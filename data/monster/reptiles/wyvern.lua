@@ -84,6 +84,7 @@ monster.loot = {
 	{name = "wand of inferno", chance = 810},
 	{name = "power bolt", chance = 3400, maxCount = 2},
 	{name = "dragon ham", chance = 60500, maxCount = 3},
+	{name = "wyvern fang", chance = 410},
 	{name = "strong health potion", chance = 2500},
 	{name = "wyvern talisman", chance = 12300}
 }

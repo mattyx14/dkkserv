@@ -79,6 +79,7 @@ monster.loot = {
 	{name = "gold coin", chance = 100000, maxCount = 130},
 	{name = "necrotic rod", chance = 3000},
 	{name = "boots of haste", chance = 210},
+	{name = "skull staff", chance = 130},
 	{name = "mystic turban", chance = 790},
 	{name = "white piece of cloth", chance = 840},
 	{name = "red piece of cloth", chance = 500},
@@ -86,7 +87,7 @@ monster.loot = {
 	{name = "strong mana potion", chance = 5590},
 	{name = "spellbook of enlightenment", chance = 790},
 	{name = "book of necromantic rituals", chance = 9340},
-	{id= 3039, chance = 710},
+	{id= 3039, chance = 710}, -- red gem
 	{name = "lancet", chance = 10680},
 	{name = "horoscope", chance = 7950},
 	{name = "blood tincture in a vial", chance = 15460},
@@ -111,15 +112,15 @@ monster.defenses = {
 
 monster.elements = {
 	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
-	{type = COMBAT_ENERGYDAMAGE, percent = 5},
+	{type = COMBAT_ENERGYDAMAGE, percent = 20},
 	{type = COMBAT_EARTHDAMAGE, percent = 100},
 	{type = COMBAT_FIREDAMAGE, percent = -10},
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 100},
-	{type = COMBAT_ICEDAMAGE, percent = 5},
-	{type = COMBAT_HOLYDAMAGE , percent = -5},
-	{type = COMBAT_DEATHDAMAGE , percent = 5}
+	{type = COMBAT_ICEDAMAGE, percent = 10},
+	{type = COMBAT_HOLYDAMAGE , percent = -10},
+	{type = COMBAT_DEATHDAMAGE , percent = 50}
 }
 
 monster.immunities = {

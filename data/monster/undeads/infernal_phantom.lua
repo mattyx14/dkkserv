@@ -53,7 +53,7 @@ monster.flags = {
 	pushable = false,
 	rewardBoss = false,
 	illusionable = false,
-	canPushItems = false,
+	canPushItems = true,
 	canPushCreatures = false,
 	staticAttackChance = 90,
 	targetDistance = 4,
@@ -83,6 +83,7 @@ monster.loot = {
 	{name = "terra rod", chance = 21920},
 	{name = "ultimate health potion", chance = 32220, maxCount = 7},
 	{name = "hailstorm rod", chance = 71920},
+	{name = "fire axe", chance = 18920},
 	{name = "titan axe", chance = 18920},
 	{name = "chaos mace", chance = 12920},
 	{name = "glorious axe", chance = 22920},
@@ -91,9 +92,9 @@ monster.loot = {
 	{name = "wand of starstorm", chance = 36920},
 	{name = "wand of voodoo", chance = 24920},
 	{name = "warrior's axe", chance = 17920},
-	{id = 34139, chance = 11560}, -- Infernal hearth
-	{id = 34146, chance = 7560}, -- Infernal robe
-	{id = 34109, chance = 50} -- Bag you desire
+	{id = 34139, chance = 11560}, -- infernal heart
+	{id = 34146, chance = 7560}, -- infernal robe
+	{id = 34109, chance = 50} -- bag you desire
 }
 
 monster.attacks = {

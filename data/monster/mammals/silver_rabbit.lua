@@ -49,7 +49,7 @@ monster.flags = {
 	convinceable = true,
 	pushable = false,
 	rewardBoss = false,
-	illusionable = false,
+	illusionable = true,
 	canPushItems = false,
 	canPushCreatures = false,
 	staticAttackChance = 70,
@@ -74,7 +74,7 @@ monster.voices = {
 
 monster.loot = {
 	{name = "meat", chance = 86170, maxCount = 2},
-	{id = 3595, chance = 11150},
+	{id = 3595, chance = 11150}, -- carrot
 	{name = "silky fur", chance = 28670}
 }
 

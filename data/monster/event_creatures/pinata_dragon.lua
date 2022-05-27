@@ -31,9 +31,9 @@ monster.flags = {
 	attackable = true,
 	hostile = true,
 	convinceable = false,
-	pushable = true,
+	pushable = false,
 	rewardBoss = false,
-	illusionable = true,
+	illusionable = false,
 	canPushItems = false,
 	canPushCreatures = false,
 	staticAttackChance = 90,
@@ -54,7 +54,7 @@ monster.light = {
 monster.summon = {
 	maxSummons = 3,
 	summons = {
-		{name = "Fire Lord", chance = 7, interval = 2000, count = 3}
+		{name = "Demon", chance = 7, interval = 2000, count = 3}
 	}
 }
 

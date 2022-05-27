@@ -36,11 +36,7 @@ local reloadTypes = {
 	["stages"] = RELOAD_TYPE_STAGES,
 
 	["global"] = RELOAD_TYPE_GLOBAL,
-	["libs"] = RELOAD_TYPE_GLOBAL,
-
-	["stages"] = RELOAD_TYPE_STAGES,
-
-	["imbuements"] = RELOAD_TYPE_IMBUEMENTS
+	["libs"] = RELOAD_TYPE_GLOBAL
 }
 
 local reload = TalkAction("/reload")

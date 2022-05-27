@@ -80,6 +80,7 @@ monster.loot = {
 	{name = "small emerald", chance = 11000, maxCount = 2},
 	{name = "small amethyst", chance = 12000, maxCount = 3},
 	{name = "platinum coin", chance = 100000, maxCount = 9},
+	{name = "blue robe", chance = 1500},
 	{name = "great mana potion", chance = 40000, maxCount = 2},
 	{name = "ultimate health potion", chance = 18000},
 	{name = "small topaz", chance = 16000, maxCount = 2},
@@ -108,16 +109,16 @@ monster.defenses = {
 }
 
 monster.elements = {
-	{type = COMBAT_PHYSICALDAMAGE, percent = 10},
-	{type = COMBAT_ENERGYDAMAGE, percent = 5},
+	{type = COMBAT_PHYSICALDAMAGE, percent = 15},
+	{type = COMBAT_ENERGYDAMAGE, percent = 10},
 	{type = COMBAT_EARTHDAMAGE, percent = 100},
-	{type = COMBAT_FIREDAMAGE, percent = 5},
+	{type = COMBAT_FIREDAMAGE, percent = 35},
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
-	{type = COMBAT_ICEDAMAGE, percent = 5},
+	{type = COMBAT_ICEDAMAGE, percent = 20},
 	{type = COMBAT_HOLYDAMAGE , percent = -10},
-	{type = COMBAT_DEATHDAMAGE , percent = 5}
+	{type = COMBAT_DEATHDAMAGE , percent = 55}
 }
 
 monster.immunities = {

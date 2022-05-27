@@ -84,12 +84,13 @@ monster.loot = {
 	{name = "gold coin", chance = 32300, maxCount = 100},
 	{name = "gold coin", chance = 32300, maxCount = 100},
 	{name = "gold coin", chance = 32300, maxCount = 39},
-	{id = 3051, chance = 590}, -- Energy ring
-	{id = 3052, chance = 6250}, -- Life ring
+	{id = 3051, chance = 590}, -- energy ring
+	{id = 3052, chance = 6250}, -- life ring
 	{name = "life crystal", chance = 800},
 	{name = "snakebite rod", chance = 930},
 	{name = "warrior helmet", chance = 560},
 	{name = "strange helmet", chance = 670},
+	{name = "crown armor", chance = 510},
 	{name = "royal helmet", chance = 140},
 	{name = "tower shield", chance = 920},
 	{name = "power bolt", chance = 6200},

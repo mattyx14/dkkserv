@@ -51,13 +51,13 @@ monster.respawnType = {
 }
 
 monster.flags = {
-	summonable = true,
+	summonable = false,
 	attackable = true,
 	hostile = true,
-	convinceable = true,
+	convinceable = false,
 	pushable = false,
 	rewardBoss = false,
-	illusionable = true,
+	illusionable = false,
 	canPushItems = true,
 	canPushCreatures = false,
 	staticAttackChance = 90,
@@ -101,7 +101,7 @@ monster.loot = {
 	{name = "rainbow quartz", chance = 1086, maxCount = 4},
 	{name = "small stone", chance = 492, maxCount = 3},
 	{name = "wood cape", chance = 492},
-	{id = 5792, chance = 80},
+	{id = 5792, chance = 80}, -- die
 	{name = "mandrake", chance = 50}
 }
 

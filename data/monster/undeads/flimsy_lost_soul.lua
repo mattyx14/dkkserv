@@ -49,7 +49,7 @@ monster.flags = {
 	convinceable = false,
 	pushable = false,
 	rewardBoss = false,
-	illusionable = false,
+	illusionable = true,
 	canPushItems = true,
 	canPushCreatures = true,
 	staticAttackChance = 90,
@@ -84,6 +84,7 @@ monster.loot = {
 	{name = "necklace of the deep", chance = 1760},
 	{name = "cursed bone", chance = 1570},
 	{name = "wand of starstorm", chance = 1520},
+	{name = "glacial rod", chance = 960},
 	{name = "wand of voodoo", chance = 330}
 }
 

@@ -77,19 +77,20 @@ monster.voices = {
 
 monster.loot = {
 	{name = "platinum coin", chance = 100000, maxCount = 5},
-	{name = "Great Spirit Potion", chance = 30910, maxCount = 2},
-	{name = "Two Handed Sword", chance = 16500},
-	{name = "Terra Rod", chance = 4780},
-	{name = "Silver Brooch", chance = 15190},
-	{name = "Emerald Bangle", chance = 14740},
-	{name = "Twin Hooks", chance = 1170},
-	{name = "Springsprout Rod", chance = 1210},
-	{id = 30083, chance = 1890},
-	{name = "Coral Brooch", chance = 1330},
-	{name = "Serpent Sword", chance = 1950},
-	{name = "Hexagonal Ruby", chance = 800},
-	{name = "Assassin Dagger", chance = 970},
-	{name = "Spike Sword", chance = 530}
+	{name = "great spirit potion", chance = 30910, maxCount = 2},
+	{name = "two handed sword", chance = 16500},
+	{name = "terra rod", chance = 4780},
+	{name = "silver brooch", chance = 15190},
+	{name = "emerald bangle", chance = 14740},
+	{name = "twin hooks", chance = 1170},
+	{name = "springsprout rod", chance = 1210},
+	{id = 30083, chance = 1890}, -- green ectoplasm
+	{name = "coral brooch", chance = 1330},
+	{name = "serpent sword", chance = 1950},
+	{name = "hexagonal ruby", chance = 800},
+	{name = "assassin dagger", chance = 970},
+	{name = "spike sword", chance = 530},
+	{name = "wyvern fang", chance = 120}
 }
 
 monster.attacks = {
@@ -110,14 +111,14 @@ monster.reflects = {
 }
 
 monster.elements = {
-	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
-	{type = COMBAT_ENERGYDAMAGE, percent = 20},
-	{type = COMBAT_EARTHDAMAGE, percent = 100},
-	{type = COMBAT_FIREDAMAGE, percent = -10},
+	{type = COMBAT_PHYSICALDAMAGE, percent = 70},
+	{type = COMBAT_ENERGYDAMAGE, percent = -10},
+	{type = COMBAT_EARTHDAMAGE, percent = 20},
+	{type = COMBAT_FIREDAMAGE, percent = -20},
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
-	{type = COMBAT_ICEDAMAGE, percent = 20},
+	{type = COMBAT_ICEDAMAGE, percent = 0},
 	{type = COMBAT_HOLYDAMAGE , percent = 0},
 	{type = COMBAT_DEATHDAMAGE , percent = 0}
 }

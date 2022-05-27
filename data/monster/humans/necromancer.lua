@@ -88,6 +88,7 @@ monster.loot = {
 	{name = "gold coin", chance = 30050, maxCount = 90},
 	{name = "boots of haste", chance = 210},
 	{name = "clerical mace", chance = 390},
+	{name = "skull staff", chance = 100},
 	{name = "poison arrow", chance = 15000, maxCount = 5},
 	{name = "mystic turban", chance = 500},
 	{name = "green mushroom", chance = 1470},
@@ -118,7 +119,7 @@ monster.elements = {
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 100},
-	{type = COMBAT_ICEDAMAGE, percent = 0},
+	{type = COMBAT_ICEDAMAGE, percent = 10},
 	{type = COMBAT_HOLYDAMAGE , percent = -5},
 	{type = COMBAT_DEATHDAMAGE , percent = 50}
 }

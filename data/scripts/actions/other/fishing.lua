@@ -107,4 +107,3 @@ end
 fishing:id(3483)
 fishing:allowFarUse(true)
 fishing:register()
-

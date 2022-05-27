@@ -80,10 +80,10 @@ monster.voices = {
 }
 
 monster.loot = {
-	{id = 2815, chance = 45000},
-	{id = 2949, chance = 1640},
+	{id = 2815, chance = 45000}, -- scroll
+	{id = 2949, chance = 1640}, -- lyre
 	{name = "piggy bank", chance = 80},
-	{id = 3003, chance = 2190},
+	{id = 3003, chance = 2190}, -- rope
 	{name = "wedding ring", chance = 4910},
 	{name = "gold coin", chance = 59500, maxCount = 100},
 	{name = "might ring", chance = 470},
@@ -91,6 +91,10 @@ monster.loot = {
 	{name = "war hammer", chance = 870},
 	{name = "fire sword", chance = 550},
 	{name = "bow", chance = 13300},
+	{name = "crown armor", chance = 490},
+	{name = "crown legs", chance = 660},
+	{name = "crown helmet", chance = 450},
+	{name = "crown shield", chance = 280},
 	{name = "arrow", chance = 26000, maxCount = 13},
 	{name = "green tunic", chance = 8000},
 	{name = "scarf", chance = 1110},
@@ -116,7 +120,7 @@ monster.defenses = {
 }
 
 monster.elements = {
-	{type = COMBAT_PHYSICALDAMAGE, percent = 30},
+	{type = COMBAT_PHYSICALDAMAGE, percent = 10},
 	{type = COMBAT_ENERGYDAMAGE, percent = 40},
 	{type = COMBAT_EARTHDAMAGE, percent = 50},
 	{type = COMBAT_FIREDAMAGE, percent = 30},

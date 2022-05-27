@@ -82,6 +82,7 @@ monster.loot = {
 	{name = "gold coin", chance = 100000, maxCount = 100},
 	{name = "platinum coin", chance = 100000, maxCount = 9},
 	{name = "fire sword", chance = 1240},
+	{name = "crown shield", chance = 1700},
 	{name = "tower shield", chance = 550},
 	{name = "brown mushroom", chance = 14000, maxCount = 2},
 	{name = "beastslayer axe", chance = 4260},
@@ -91,7 +92,7 @@ monster.loot = {
 	{name = "great health potion", chance = 15000},
 	{name = "underworld rod", chance = 1800},
 	{name = "wand of starstorm", chance = 960},
-	{id = 20029, chance = 3700},
+	{id = 20029, chance = 3700}, -- broken dream
 	{name = "goosebump leather", chance = 16400},
 	{name = "pool of chitinous glue", chance = 14000}
 }
@@ -111,10 +112,10 @@ monster.defenses = {
 }
 
 monster.elements = {
-	{type = COMBAT_PHYSICALDAMAGE, percent = 10},
+	{type = COMBAT_PHYSICALDAMAGE, percent = 5},
 	{type = COMBAT_ENERGYDAMAGE, percent = 10},
-	{type = COMBAT_EARTHDAMAGE, percent = 0},
-	{type = COMBAT_FIREDAMAGE, percent = 100},
+	{type = COMBAT_EARTHDAMAGE, percent = 100},
+	{type = COMBAT_FIREDAMAGE, percent = 85},
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},

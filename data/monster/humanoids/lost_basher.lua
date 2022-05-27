@@ -52,7 +52,7 @@ monster.flags = {
 	convinceable = false,
 	pushable = false,
 	rewardBoss = false,
-	illusionable = true,
+	illusionable = false,
 	canPushItems = true,
 	canPushCreatures = true,
 	staticAttackChance = 80,
@@ -80,6 +80,7 @@ monster.loot = {
 	{name = "piggy bank", chance = 4450},
 	{name = "gold coin", chance = 60000, maxCount = 100},
 	{name = "platinum coin", chance = 70000, maxCount = 2},
+	{name = "fire axe", chance = 310},
 	{name = "war axe", chance = 120},
 	{name = "knight legs", chance = 310},
 	{name = "black shield", chance = 3710},
@@ -91,7 +92,7 @@ monster.loot = {
 	{name = "terra boots", chance = 780},
 	{name = "ultimate health potion", chance = 10250},
 	{name = "small topaz", chance = 10200},
-	{id = 12600, chance = 21130},
+	{id = 12600, chance = 21130}, -- coal
 	{name = "blue crystal shard", chance = 840},
 	{name = "lost basher's spike", chance = 17260},
 	{name = "lost basher's spike", chance = 14380},
@@ -118,15 +119,15 @@ monster.defenses = {
 
 monster.elements = {
 	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
-	{type = COMBAT_ENERGYDAMAGE, percent = 15},
+	{type = COMBAT_ENERGYDAMAGE, percent = 5},
 	{type = COMBAT_EARTHDAMAGE, percent = 100},
-	{type = COMBAT_FIREDAMAGE, percent = 40},
+	{type = COMBAT_FIREDAMAGE, percent = 25},
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
-	{type = COMBAT_ICEDAMAGE, percent = 1},
+	{type = COMBAT_ICEDAMAGE, percent = 20},
 	{type = COMBAT_HOLYDAMAGE , percent = 0},
-	{type = COMBAT_DEATHDAMAGE , percent = 1}
+	{type = COMBAT_DEATHDAMAGE , percent = 15}
 }
 
 monster.immunities = {
