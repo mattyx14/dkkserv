@@ -71,7 +71,7 @@ local DailyRewardItems = {
 
 DailyReward = {
 	testMode = false,
-	serverTimeThreshold = (24 * 60 * 60), -- Counting down 24hours from last server save
+	serverTimeThreshold = (25 * 60 * 60), -- Counting down 24hours from last server save
 
 	storages = {
 		-- Player
@@ -221,32 +221,32 @@ DailyReward.retrieveHistoryEntries = function(playerId)
 	if resultId ~= false then
 		repeat
 			local entry = {
-				description = result.getDataString(resultId, "description"),
-				timestamp = result.getDataInt(resultId, "timestamp"),
-				daystreak = result.getDataInt(resultId, "daystreak"),
+				description = Result.getDataString(resultId, "description"),
+				timestamp = Result.getDataInt(resultId, "timestamp"),
+				daystreak = Result.getDataInt(resultId, "daystreak"),
 			}
 			table.insert(entries, entry)
-		until not result.next(resultId)
-		result.free(resultId)
+		until not Result.next(resultId)
+		Result.free(resultId)
 	end
 	return entries
 end
 
-DailyReward.loadDailyReward = function(playerId, source)
+DailyReward.loadDailyReward = function(playerId, target)
 	local player = Player(playerId)
 	if not player then
 		return false
 	end
-	if source ~= 0 then
-		source = REWARD_FROM_SHRINE
+	if target ~= 0 then
+		target = REWARD_FROM_SHRINE
 	else
-		source = REWARD_FROM_PANEL
+		target = REWARD_FROM_PANEL
 	end
 
 	player:sendCollectionResource(ClientPackets.JokerResource, player:getJokerTokens())
 	player:sendCollectionResource(ClientPackets.CollectionResource, player:getCollectionTokens())
 	player:sendDailyReward()
-	player:sendOpenRewardWall(source)
+	player:sendOpenRewardWall(target)
 	player:sendDailyRewardCollectionState(DailyReward.isRewardTaken(player:getId()) and DAILY_REWARD_COLLECTED or DAILY_REWARD_NOTCOLLECTED)
 	return true
 end
@@ -266,15 +266,15 @@ DailyReward.pickedReward = function(playerId)
 	end
 
 	player:setStreakLevel(player:getStreakLevel() + 1)
-	player:setStorageValue(DailyReward.storages.avoidDouble, Game.getLastServerSave())
+	player:setStorageValue(DailyReward.storages.avoidDouble, GetDailyRewardLastServerSave())
 	player:setDailyReward(DAILY_REWARD_COLLECTED)
-	player:setNextRewardTime(Game.getLastServerSave() + DailyReward.serverTimeThreshold)
+	player:setNextRewardTime(GetDailyRewardLastServerSave() + DailyReward.serverTimeThreshold)
 	player:getPosition():sendMagicEffect(CONST_ME_FIREWORK_YELLOW)
 	return true
 end
 
-DailyReward.isShrine = function(source)
-	if source ~= 0 then
+DailyReward.isShrine = function(target)
+	if target ~= 0 then
 		return false
 	else
 		return true
@@ -302,7 +302,7 @@ DailyReward.isRewardTaken = function(playerId)
 		return false
 	end
 	local playerStorage = player:getStorageValue(DailyReward.storages.avoidDouble)
-	if playerStorage == Game.getLastServerSave() then
+	if playerStorage == GetDailyRewardLastServerSave() then
 		return true
 	end
 	return false
@@ -320,10 +320,10 @@ DailyReward.init = function(playerId)
 		player:setJokerTokens(player:getJokerTokens() + 1)
 	end
 
-	local timeMath = Game.getLastServerSave() - player:getNextRewardTime()
-	if player:getNextRewardTime() < Game.getLastServerSave() then
-		if player:getStorageValue(DailyReward.storages.notifyReset) ~= Game.getLastServerSave() then
-			player:setStorageValue(DailyReward.storages.notifyReset, Game.getLastServerSave())
+	local timeMath = GetDailyRewardLastServerSave() - player:getNextRewardTime()
+	if player:getNextRewardTime() < GetDailyRewardLastServerSave() then
+		if player:getStorageValue(DailyReward.storages.notifyReset) ~= GetDailyRewardLastServerSave() then
+			player:setStorageValue(DailyReward.storages.notifyReset, GetDailyRewardLastServerSave())
 			timeMath = math.ceil(timeMath/(DailyReward.serverTimeThreshold))
 			if player:getJokerTokens() >= timeMath then
 				player:setJokerTokens(player:getJokerTokens() - timeMath)
@@ -349,9 +349,9 @@ DailyReward.init = function(playerId)
 	player:loadDailyRewardBonuses()
 end
 
-DailyReward.processReward = function(playerId, source)
+DailyReward.processReward = function(playerId, target)
 	DailyReward.pickedReward(playerId)
-	DailyReward.loadDailyReward(playerId, source)
+	DailyReward.loadDailyReward(playerId, target)
 	local player = Player(playerId)
 	if player then
 		player:loadDailyRewardBonuses()
@@ -366,7 +366,7 @@ function Player.sendOpenRewardWall(self, shrine)
 	if DailyReward.testMode or not(DailyReward.isRewardTaken(self:getId())) then
 		msg:addU32(0)
 	else
-		msg:addU32(Game.getLastServerSave() + DailyReward.serverTimeThreshold)
+		msg:addU32(GetDailyRewardLastServerSave() + DailyReward.serverTimeThreshold)
 	end
 	msg:addByte(self:getDayStreak()) -- current reward? day = 0, day 1, ... this should be resetted to 0 every week imo
 	if DailyReward.isRewardTaken(self:getId()) then -- state (player already took reward? but just make sure noone wpe)
@@ -381,7 +381,7 @@ function Player.sendOpenRewardWall(self, shrine)
 	else
 		msg:addByte(0)
 		msg:addByte(2)
-		msg:addU32(Game.getLastServerSave() + DailyReward.serverTimeThreshold) --timeLeft to pickUp reward without loosing streak
+		msg:addU32(GetDailyRewardLastServerSave() + DailyReward.serverTimeThreshold) --timeLeft to pickUp reward without loosing streak
 		msg:addU16(self:getJokerTokens())
 	end
 	msg:addU16(self:getStreakLevel()) -- day strike
@@ -405,8 +405,8 @@ function Player.selectDailyReward(self, msg)
 		return false
 	end
 
-	local source = msg:getByte() -- 0 -> shrine / 1 -> tibia panel
-	if not DailyReward.isShrine(source) then
+	local target = msg:getByte() -- 0 -> shrine / 1 -> tibia panel
+	if not DailyReward.isShrine(target) then
 		if self:getCollectionTokens() < 1 then
 			self:sendError("You do not have enough collection tokens to proceed.")
 			return false
@@ -467,16 +467,16 @@ function Player.selectDailyReward(self, msg)
 				inbox:addItem(v.itemId, v.count) -- adding single item w/o charges
 			end
 			if k ~= columnsPicked then
-				description = description .. "" .. v.count .. "x " .. getItemName(v.itemId) .. ", "
+				description = description .. "" .. v.count .. "x " .. ItemType(v.itemId):getName() .. ", "
 			else
-				description = description .. "" .. v.count .. "x " .. getItemName(v.itemId) .. "."
+				description = description .. "" .. v.count .. "x " .. ItemType(v.itemId):getName() .. "."
 			end
 		end
 
 		-- Registering history
 		DailyReward.insertHistory(self:getGuid(), self:getDayStreak(), "Claimed reward no. \z
 			" .. self:getDayStreak() + 1 .. ". Picked items: " .. description)
-		DailyReward.processReward(playerId, source)
+		DailyReward.processReward(playerId, target)
 	end
 
 	local reward = nil
@@ -500,7 +500,7 @@ function Player.selectDailyReward(self, msg)
 		-- end
 		-- DailyReward.insertHistory(self:getGuid(), self:getDayStreak(), "Claimed reward no. \z
 			-- " .. self:getDayStreak() + 1 .. ". Picked reward: " .. description)
-		-- DailyReward.processReward(playerId, source)
+		-- DailyReward.processReward(playerId, target)
 	-- end
 
 	if (dailyTable.type == DAILY_REWARD_TYPE_XP_BOOST) then
@@ -508,14 +508,14 @@ function Player.selectDailyReward(self, msg)
 		self:setStoreXpBoost(50)
 		DailyReward.insertHistory(self:getGuid(), self:getDayStreak(), "Claimed reward no. \z
 			" .. self:getDayStreak() + 1 .. ". Picked reward: XP Bonus for " .. reward .. " minutes.")
-		DailyReward.processReward(playerId, source)
+		DailyReward.processReward(playerId, target)
 	end
 
 	if (dailyTable.type == DAILY_REWARD_TYPE_PREY_REROLL) then
 		self:addPreyCards(reward)
 		DailyReward.insertHistory(self:getGuid(), self:getDayStreak(), "Claimed reward no. \z
 			" .. self:getDayStreak() + 1 .. ". Picked reward: " .. reward .. "x Prey bonus reroll(s)")
-		DailyReward.processReward(playerId, source)
+		DailyReward.processReward(playerId, target)
 	end
 
 	return true
@@ -597,7 +597,7 @@ function Player.readDailyReward(self, msg, currentDay, state)
 			for i = 1, #rewards do
 				local itemId = rewards[i]
 				local itemType = ItemType(itemId)
-				local itemName = itemType:getArticle() .. " " .. getItemName(itemId)
+				local itemName = itemType:getArticle() .. " " .. itemType:getName()
 				local itemWeight = itemType:getWeight()
 				msg:addU16(itemId)
 				msg:addString(itemName)
