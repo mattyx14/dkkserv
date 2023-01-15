@@ -1,14 +1,14 @@
 local mType = Game.createMonsterType("Zushuka")
 local monster = {}
 
-monster.description = "zushuka"
+monster.description = "zushuka" -- (immortal) // (mortal): lookType = 149, lookHead = 86, lookBody = 10, lookLegs = 11, lookFeet = 4, lookAddons = 0, lookMount = 0
 monster.experience = 9000
 monster.outfit = {
 	lookType = 149,
-	lookHead = 86,
-	lookBody = 12,
-	lookLegs = 31,
-	lookFeet = 60,
+	lookHead = 0,
+	lookBody = 10,
+	lookLegs = 0,
+	lookFeet = 4,
 	lookAddons = 0,
 	lookMount = 0
 }
@@ -17,7 +17,7 @@ monster.health = 15000
 monster.maxHealth = 15000
 monster.race = "blood"
 monster.corpse = 18265
-monster.speed = 220
+monster.speed = 110
 monster.manaCost = 0
 
 monster.changeTarget = {

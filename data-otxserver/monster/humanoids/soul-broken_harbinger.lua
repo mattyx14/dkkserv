@@ -5,10 +5,10 @@ monster.description = "a Soul-Broken Harbinger"
 monster.experience = 5800
 monster.outfit = {
 	lookType = 1137,
-	lookHead = 124,
-	lookBody = 31,
-	lookLegs = 17,
-	lookFeet = 81,
+	lookHead = 85,
+	lookBody = 10,
+	lookLegs = 16,
+	lookFeet = 83,
 	lookAddons = 3,
 	lookMount = 0
 }
@@ -30,7 +30,7 @@ monster.health = 6300
 monster.maxHealth = 6300
 monster.race = "blood"
 monster.corpse = 30137
-monster.speed = 420
+monster.speed = 210
 monster.manaCost = 0
 
 monster.changeTarget = {

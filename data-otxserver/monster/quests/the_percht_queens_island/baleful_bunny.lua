@@ -5,10 +5,10 @@ monster.description = "an baleful bunny"
 monster.experience = 450
 monster.outfit = {
 	lookType = 1157,
-	lookHead = 95,
-	lookBody = 42,
-	lookLegs = 19,
-	lookFeet = 57,
+	lookHead = 0,
+	lookBody = 0,
+	lookLegs = 0,
+	lookFeet = 0,
 	lookAddons = 0,
 	lookMount = 0
 }
@@ -30,7 +30,7 @@ monster.health = 500
 monster.maxHealth = 500
 monster.race = "blood"
 monster.corpse = 30308
-monster.speed = 340
+monster.speed = 170
 monster.manaCost = 0
 
 monster.changeTarget = {

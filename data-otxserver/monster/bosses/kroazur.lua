@@ -5,11 +5,11 @@ monster.description = "Kroazur"
 monster.experience = 2700
 monster.outfit = {
 	lookType = 842,
-	lookHead = 19,
+	lookHead = 0,
 	lookBody = 114,
 	lookLegs = 94,
-	lookFeet = 85,
-	lookAddons = 3,
+	lookFeet = 80,
+	lookAddons = 2,
 	lookMount = 0
 }
 
@@ -17,7 +17,7 @@ monster.health = 3000
 monster.maxHealth = 3000
 monster.race = "undead"
 monster.corpse = 6324
-monster.speed = 500
+monster.speed = 250
 monster.manaCost = 0
 
 monster.changeTarget = {

@@ -5,10 +5,10 @@ monster.description = "an adventurer"
 monster.experience = 0
 monster.outfit = {
 	lookType = 129,
-	lookHead = 92,
+	lookHead = 93,
 	lookBody = 15,
-	lookLegs = 92,
-	lookFeet = 82,
+	lookLegs = 72,
+	lookFeet = 80,
 	lookAddons = 0,
 	lookMount = 0
 }
@@ -30,7 +30,7 @@ monster.health = 65
 monster.maxHealth = 65
 monster.race = "blood"
 monster.corpse = 18034
-monster.speed = 106
+monster.speed = 53
 monster.manaCost = 0
 
 monster.changeTarget = {

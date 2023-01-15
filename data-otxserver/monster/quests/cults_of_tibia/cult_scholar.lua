@@ -5,10 +5,10 @@ monster.description = "a cult scholar"
 monster.experience = 1100
 monster.outfit = {
 	lookType = 145,
-	lookHead = 0,
+	lookHead = 19,
 	lookBody = 77,
-	lookLegs = 21,
-	lookFeet = 21,
+	lookLegs = 3,
+	lookFeet = 20,
 	lookAddons = 1,
 	lookMount = 0
 }
@@ -30,7 +30,7 @@ monster.health = 1650
 monster.maxHealth = 1650
 monster.race = "blood"
 monster.corpse = 22017
-monster.speed = 260
+monster.speed = 130
 monster.manaCost = 390
 
 monster.changeTarget = {

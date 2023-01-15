@@ -4,7 +4,7 @@ local monster = {}
 monster.description = "a deathling scout"
 monster.experience = 6300
 monster.outfit = {
-	lookType = 413,
+	lookType = 1073,
 	lookHead = 0,
 	lookBody = 0,
 	lookLegs = 0,
@@ -30,7 +30,7 @@ monster.health = 7200
 monster.maxHealth = 7200
 monster.race = "blood"
 monster.corpse = 28629
-monster.speed = 310
+monster.speed = 155
 monster.manaCost = 0
 
 monster.changeTarget = {

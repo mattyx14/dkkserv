@@ -30,7 +30,7 @@ monster.health = 200
 monster.maxHealth = 200
 monster.race = "blood"
 monster.corpse = 21983
-monster.speed = 250
+monster.speed = 125
 monster.manaCost = 0
 
 monster.changeTarget = {
@@ -77,7 +77,8 @@ monster.loot = {
 	{id = 3012, chance = 2000}, -- wolf tooth chain
 	{name = "gold coin", chance = 65000, maxCount = 48},
 	{name = "meat", chance = 55000, maxCount = 2},
-	{name = "wolf paw", chance = 980}
+	{name = "wolf paw", chance = 980},
+	{id = 22007, chance = 8000} --gloom wolf fur
 }
 
 monster.attacks = {

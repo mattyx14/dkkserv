@@ -5,10 +5,10 @@ monster.description = "a green frog"
 monster.experience = 0
 monster.outfit = {
 	lookType = 224,
-	lookHead = 69,
-	lookBody = 66,
-	lookLegs = 69,
-	lookFeet = 66,
+	lookHead = 0,
+	lookBody = 0,
+	lookLegs = 0,
+	lookFeet = 0,
 	lookAddons = 0,
 	lookMount = 0
 }
@@ -30,7 +30,7 @@ monster.health = 25
 monster.maxHealth = 25
 monster.race = "venom"
 monster.corpse = 6079
-monster.speed = 320
+monster.speed = 160
 monster.manaCost = 250
 
 monster.changeTarget = {

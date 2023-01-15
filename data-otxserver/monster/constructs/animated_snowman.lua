@@ -5,10 +5,10 @@ monster.description = "an animated snowman"
 monster.experience = 400
 monster.outfit = {
 	lookType = 1159,
-	lookHead = 19,
-	lookBody = 10,
-	lookLegs = 19,
-	lookFeet = 57,
+	lookHead = 0,
+	lookBody = 0,
+	lookLegs = 0,
+	lookFeet = 0,
 	lookAddons = 0,
 	lookMount = 0
 }
@@ -30,7 +30,7 @@ monster.health = 450
 monster.maxHealth = 450
 monster.race = "venom"
 monster.corpse = 30335
-monster.speed = 230
+monster.speed = 115
 monster.manaCost = 0
 
 monster.changeTarget = {

@@ -5,10 +5,10 @@ monster.description = "mounted thorn knight"
 monster.experience = 15000
 monster.outfit = {
 	lookType = 512,
-	lookHead = 81,
-	lookBody = 121,
-	lookLegs = 121,
-	lookFeet = 121,
+	lookHead = 80,
+	lookBody = 100,
+	lookLegs = 6,
+	lookFeet = 119,
 	lookAddons = 3,
 	lookMount = 626
 }
@@ -17,7 +17,7 @@ monster.health = 100000
 monster.maxHealth = 100000
 monster.race = "blood"
 monster.corpse = 0
-monster.speed = 430
+monster.speed = 215
 monster.manaCost = 290
 
 monster.changeTarget = {

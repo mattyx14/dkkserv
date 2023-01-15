@@ -6,11 +6,11 @@ monster.description = "a nomad"
 monster.experience = 60
 monster.outfit = {
 	lookType = 150,
-	lookHead = 115,
+	lookHead = 96,
 	lookBody = 39,
-	lookLegs = 59,
-	lookFeet = 2,
-	lookAddons = 2,
+	lookLegs = 40,
+	lookFeet = 3,
+	lookAddons = 3,
 	lookMount = 0
 }
 
@@ -31,7 +31,7 @@ monster.health = 160
 monster.maxHealth = 160
 monster.race = "blood"
 monster.corpse = 18181
-monster.speed = 190
+monster.speed = 95
 monster.manaCost = 0
 
 monster.changeTarget = {

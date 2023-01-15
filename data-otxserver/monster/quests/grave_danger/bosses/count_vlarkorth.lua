@@ -5,10 +5,10 @@ monster.description = "Count Vlarkorth"
 monster.experience = 41300
 monster.outfit = {
 	lookType = 1221,
-	lookHead = 10,
-	lookBody = 19,
-	lookLegs = 19,
-	lookFeet = 19,
+	lookHead = 19,
+	lookBody = 0,
+	lookLegs = 83,
+	lookFeet = 20,
 	lookAddons = 1,
 	lookMount = 0
 }
@@ -17,7 +17,7 @@ monster.health = 50000
 monster.maxHealth = 50000
 monster.race = "venom"
 monster.corpse = 31599
-monster.speed = 250
+monster.speed = 125
 monster.manaCost = 0
 
 monster.changeTarget = {

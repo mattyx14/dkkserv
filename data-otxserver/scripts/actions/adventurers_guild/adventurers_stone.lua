@@ -1,19 +1,21 @@
 local setting = {
-	-- {fromPos = Position(32718, 31628, 7), toPos = Position(32736, 31639, 7), townId = TOWNS_LIST.AB_DENDRIEL},
-	{fromPos = Position(937, 993, 7), toPos = Position(948, 1002, 7), townId = 1}, -- Fynn
-	{fromPos = Position(694, 443, 5), toPos = Position(708, 454, 5), townId = 2}, -- Anshara
-	{fromPos = Position(336, 1093, 8), toPos = Position(340, 1098, 8), townId = 3}, -- Sohan
-	{fromPos = Position(308, 1286, 6), toPos = Position(316, 1296, 6), townId = 4}, -- Samaransa
-	{fromPos = Position(373, 1400, 7), toPos = Position(381, 1412, 7), townId = 5}, -- Forgos
-	{fromPos = Position(820, 1279, 7), toPos = Position(825, 1286, 7), townId = 6}, -- Agard
-	{fromPos = Position(1064, 1216, 8), toPos = Position(1085, 1239, 8), townId = 7}, -- Mer Jungle
-	{fromPos = Position(414, 856, 6), toPos = Position(426, 865, 6), townId = 8}, -- Vinor
-	{fromPos = Position(1043, 680, 7), toPos = Position(1055, 691, 7), townId = 9}, -- Jorvik
-	{fromPos = Position(1104, 312, 6), toPos = Position(1111, 323, 6), townId = 10}, -- Misidia
-	{fromPos = Position(691, 1158, 6), toPos = Position(702, 1169, 6), townId = 11}, -- Elfic
-	{fromPos = Position(1541, 666, 12), toPos = Position(1560, 678, 12), townId = 12}, -- Vaargdon
-	{fromPos = Position(944, 1214, 8), toPos = Position(977, 1224, 8), townId = 13}, -- Hive Island
-	{fromPos = Position(1270, 469, 14), toPos = Position(1297, 486, 14), townId = 14}, -- Sunken Sanctuary
+	{fromPos = Position(32718, 31628, 7), toPos = Position(32736, 31639, 7), townId = TOWNS_LIST.AB_DENDRIEL},
+	{fromPos = Position(32356, 31775, 7), toPos = Position(32364, 31787, 7), townId = TOWNS_LIST.CARLIN},
+	{fromPos = Position(32642, 31921, 11), toPos = Position(32656, 31929, 11), townId = TOWNS_LIST.KAZORDOON},
+	{fromPos = Position(32364, 32231, 7), toPos = Position(32374, 32243, 7), townId = TOWNS_LIST.THAIS},
+	{fromPos = Position(32953, 32072, 7), toPos = Position(32963, 32081, 7), townId = TOWNS_LIST.VENORE},
+	{fromPos = Position(33188, 32844, 8), toPos = Position(33201, 32857, 8), townId = TOWNS_LIST.ANKRAHMUN},
+	{fromPos = Position(33208, 31803, 8), toPos = Position(33225, 31819, 8), townId = TOWNS_LIST.EDRON},
+	{fromPos = Position(33018, 31514, 11), toPos = Position(33032, 31531, 11), townId = TOWNS_LIST.FARMINE},
+	{fromPos = Position(33210, 32450, 1), toPos = Position(33217, 32457, 1), townId = TOWNS_LIST.DARASHIA},
+	{fromPos = Position(32313, 32818, 7), toPos = Position(32322, 32830, 7), townId = TOWNS_LIST.LIBERTY_BAY},
+	{fromPos = Position(32590, 32740, 7), toPos = Position(32600, 32750, 7), townId = TOWNS_LIST.PORT_HOPE},
+	{fromPos = Position(32207, 31127, 7), toPos = Position(32218, 31138, 7), townId = TOWNS_LIST.SVARGROND},
+	{fromPos = Position(32785, 31274, 7), toPos = Position(32789, 31279, 7), townId = TOWNS_LIST.YALAHAR},
+	{fromPos = Position(33442, 31312, 9), toPos = Position(33454, 31326, 9), townId = TOWNS_LIST.GRAY_BEACH},
+	{fromPos = Position(33586, 31895, 6), toPos = Position(33603, 31903, 6), townId = TOWNS_LIST.RATHLETON},
+	{fromPos = Position(33510, 32360, 6), toPos = Position(33516, 32366, 6), townId = TOWNS_LIST.ROSHAMUUL},
+	{fromPos = Position(33916, 31474, 5), toPos = Position(33927, 31484, 5), townId = TOWNS_LIST.ISSAVI}
 }
 
 local adventurersStone = Action()

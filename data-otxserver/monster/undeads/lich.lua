@@ -5,10 +5,10 @@ monster.description = "a lich"
 monster.experience = 900
 monster.outfit = {
 	lookType = 99,
-	lookHead = 95,
-	lookBody = 116,
-	lookLegs = 119,
-	lookFeet = 115,
+	lookHead = 0,
+	lookBody = 0,
+	lookLegs = 0,
+	lookFeet = 0,
 	lookAddons = 0,
 	lookMount = 0
 }
@@ -32,7 +32,7 @@ monster.health = 880
 monster.maxHealth = 880
 monster.race = "undead"
 monster.corpse = 6028
-monster.speed = 210
+monster.speed = 105
 monster.manaCost = 0
 
 monster.changeTarget = {

@@ -5,7 +5,7 @@ monster.description = "a black sphinx acolyte"
 monster.experience = 7200
 monster.outfit = {
 	lookType = 1200,
-	lookHead = 114,
+	lookHead = 95,
 	lookBody = 95,
 	lookLegs = 94,
 	lookFeet = 95,
@@ -30,7 +30,7 @@ monster.health = 8100
 monster.maxHealth = 8100
 monster.race = "blood"
 monster.corpse = 31423
-monster.speed = 310
+monster.speed = 155
 monster.manaCost = 0
 
 monster.changeTarget = {

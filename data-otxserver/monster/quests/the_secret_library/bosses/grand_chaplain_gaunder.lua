@@ -6,9 +6,9 @@ monster.experience = 14000
 monster.outfit = {
 	lookType = 1071,
 	lookHead = 57,
-	lookBody = 75,
-	lookLegs = 38,
-	lookFeet = 86,
+	lookBody = 96,
+	lookLegs = 23,
+	lookFeet = 105,
 	lookAddons = 1,
 	lookMount = 0
 }
@@ -17,8 +17,12 @@ monster.health = 15000
 monster.maxHealth = 15000
 monster.race = "blood"
 monster.corpse = 28733
-monster.speed = 210
+monster.speed = 105
 monster.manaCost = 0
+
+monster.events = {
+	"GrandChaplainGaunderDeath"
+}
 
 monster.changeTarget = {
 	interval = 3000,

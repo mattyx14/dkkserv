@@ -17,7 +17,7 @@ monster.health = 22
 monster.maxHealth = 22
 monster.race = "blood"
 monster.corpse = 30159
-monster.speed = 250
+monster.speed = 125
 monster.manaCost = 0
 
 monster.changeTarget = {
@@ -107,7 +107,7 @@ monster.loot = {
 	{id = 3341, chance = 2880}, -- arcane staff
 	{name = "giant ruby", chance = 2880},
 	{name = "abyss hammer", chance = 2160},
-	{id = 30343, chance = 2160}, -- enchanted sleep shawl
+	{id = 30342, chance = 2160}, -- enchanted sleep shawl
 	{name = "unicorn figurine", chance = 1000}
 }
 

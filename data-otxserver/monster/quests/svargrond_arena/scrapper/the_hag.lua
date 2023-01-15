@@ -5,10 +5,10 @@ monster.description = "The Hag"
 monster.experience = 510
 monster.outfit = {
 	lookType = 264,
-	lookHead = 78,
-	lookBody = 97,
-	lookLegs = 95,
-	lookFeet = 95,
+	lookHead = 19,
+	lookBody = 20,
+	lookLegs = 59,
+	lookFeet = 2,
 	lookAddons = 0,
 	lookMount = 0
 }
@@ -17,7 +17,7 @@ monster.health = 935
 monster.maxHealth = 935
 monster.race = "blood"
 monster.corpse = 7349
-monster.speed = 205
+monster.speed = 102
 monster.manaCost = 0
 
 monster.changeTarget = {

@@ -5,7 +5,7 @@ monster.description = "an energuardian of tales"
 monster.experience = 11361
 monster.outfit = {
 	lookType = 1063,
-	lookHead = 66,
+	lookHead = 86,
 	lookBody = 85,
 	lookLegs = 82,
 	lookFeet = 93,
@@ -30,7 +30,7 @@ monster.health = 14000
 monster.maxHealth = 14000
 monster.race = "undead"
 monster.corpse = 28873
-monster.speed = 420
+monster.speed = 210
 monster.manaCost = 0
 
 monster.changeTarget = {

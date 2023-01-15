@@ -5,10 +5,10 @@ monster.description = "a mad scientist"
 monster.experience = 205
 monster.outfit = {
 	lookType = 133,
-	lookHead = 97,
+	lookHead = 39,
 	lookBody = 0,
-	lookLegs = 38,
-	lookFeet = 97,
+	lookLegs = 19,
+	lookFeet = 20,
 	lookAddons = 1,
 	lookMount = 0
 }
@@ -30,7 +30,7 @@ monster.health = 325
 monster.maxHealth = 325
 monster.race = "blood"
 monster.corpse = 18158
-monster.speed = 180
+monster.speed = 90
 monster.manaCost = 0
 
 monster.changeTarget = {

@@ -5,10 +5,10 @@ monster.description = "a Crazed Summer Rearguard"
 monster.experience = 4700
 monster.outfit = {
 	lookType = 1136,
-	lookHead = 1,
+	lookHead = 114,
 	lookBody = 94,
-	lookLegs = 20,
-	lookFeet = 119,
+	lookLegs = 3,
+	lookFeet = 121,
 	lookAddons = 0,
 	lookMount = 0
 }
@@ -30,7 +30,7 @@ monster.health = 5300
 monster.maxHealth = 5300
 monster.race = "blood"
 monster.corpse = 30081
-monster.speed = 400
+monster.speed = 200
 monster.manaCost = 0
 
 monster.changeTarget = {

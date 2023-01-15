@@ -5,10 +5,10 @@ monster.description = "Drume"
 monster.experience = 25000
 monster.outfit = {
 	lookType = 1317,
-	lookHead = 0,
-	lookBody = 78,
+	lookHead = 38,
+	lookBody = 76,
 	lookLegs = 57,
-	lookFeet = 57,
+	lookFeet = 114,
 	lookAddons = 2,
 	lookMount = 0
 }
@@ -17,7 +17,7 @@ monster.health = 35000
 monster.maxHealth = 35000
 monster.race = "blood"
 monster.corpse = 33973
-monster.speed = 260
+monster.speed = 130
 
 monster.faction = FACTION_LIONUSURPERS
 monster.enemyFactions = {FACTION_LION, FACTION_PLAYER}

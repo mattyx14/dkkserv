@@ -5,10 +5,10 @@ monster.description = "a Sir Baeloc"
 monster.experience = 48300
 monster.outfit = {
 	lookType = 1222,
-	lookHead = 19,
-	lookBody = 0,
-	lookLegs = 0,
-	lookFeet = 0,
+	lookHead = 57,
+	lookBody = 81,
+	lookLegs = 3,
+	lookFeet = 93,
 	lookAddons = 1,
 	lookMount = 0
 }
@@ -17,7 +17,7 @@ monster.health = 50000
 monster.maxHealth = 50000
 monster.race = "venom"
 monster.corpse = 31599
-monster.speed = 250
+monster.speed = 125
 monster.manaCost = 0
 
 monster.changeTarget = {

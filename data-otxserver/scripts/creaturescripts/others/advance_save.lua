@@ -1,10 +1,11 @@
 local config = {
 	heal = true,
 	save = true,
-	effect = true
+	effect = false
 }
 
 local advanceSave = CreatureEvent("AdvanceSave")
+
 function advanceSave.onAdvance(player, skill, oldLevel, newLevel)
 	if skill ~= SKILL_LEVEL or newLevel <= oldLevel then
 		return true
@@ -22,6 +23,13 @@ function advanceSave.onAdvance(player, skill, oldLevel, newLevel)
 	if config.save then
 		player:save()
 	end
+
+	if Game.getStorageValue(GlobalStorage.XpDisplayMode) > 0 then
+		local baseRate = player:getFinalBaseRateExperience()
+		player:setBaseXpGain(baseRate * 100)
+	end
+
 	return true
 end
+
 advanceSave:register()

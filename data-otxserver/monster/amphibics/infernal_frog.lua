@@ -5,10 +5,10 @@ monster.description = "an infernal frog"
 monster.experience = 190
 monster.outfit = {
 	lookType = 224,
-	lookHead = 69,
-	lookBody = 66,
-	lookLegs = 69,
-	lookFeet = 66,
+	lookHead = 0,
+	lookBody = 0,
+	lookLegs = 0,
+	lookFeet = 0,
 	lookAddons = 0,
 	lookMount = 0
 }
@@ -30,7 +30,7 @@ monster.health = 655
 monster.maxHealth = 655
 monster.race = "blood"
 monster.corpse = 6079
-monster.speed = 200
+monster.speed = 100
 monster.manaCost = 0
 
 monster.changeTarget = {

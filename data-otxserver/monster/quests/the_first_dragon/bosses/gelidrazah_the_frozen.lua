@@ -5,10 +5,10 @@ monster.description = "gelidrazah the frozen"
 monster.experience = 9000
 monster.outfit = {
 	lookType = 947,
-	lookHead = 57,
+	lookHead = 19,
 	lookBody = 11,
-	lookLegs = 38,
-	lookFeet = 38,
+	lookLegs = 0,
+	lookFeet = 0,
 	lookAddons = 3,
 	lookMount = 0
 }
@@ -17,7 +17,7 @@ monster.health = 10000
 monster.maxHealth = 10000
 monster.race = "blood"
 monster.corpse = 25065
-monster.speed = 350
+monster.speed = 175
 monster.manaCost = 0
 
 monster.changeTarget = {

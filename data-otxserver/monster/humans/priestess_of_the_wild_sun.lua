@@ -5,10 +5,10 @@ monster.description = "a priestess of the wild sun"
 monster.experience = 6400
 monster.outfit = {
 	lookType = 1199,
-	lookHead = 114,
+	lookHead = 95,
 	lookBody = 78,
 	lookLegs = 94,
-	lookFeet = 0,
+	lookFeet = 3,
 	lookAddons = 0,
 	lookMount = 0
 }
@@ -30,7 +30,7 @@ monster.health = 8500
 monster.maxHealth = 8500
 monster.race = "blood"
 monster.corpse = 31419
-monster.speed = 320
+monster.speed = 160
 monster.manaCost = 0
 
 monster.changeTarget = {

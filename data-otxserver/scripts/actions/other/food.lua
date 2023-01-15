@@ -2,9 +2,9 @@ local foods = {
 	[3606] = {6, 'Gulp.'}, -- egg
 	[3250] = {5, 'Crunch.'}, -- carrot
 	[3577] = {15, 'Munch.'}, -- meat
-	[21145] = {15, 'Burp.'}, -- Bottle of Glooth Wine
-	[21144] = {15, 'Slurp.'}, -- Bowl of Glooth Soup
-	[21143] = {10, 'Munch.'}, -- Bowl of Glooth Soup
+	[21145] = {15, 'Burp.'}, -- bottle of glooth wine
+	[21144] = {15, 'Slurp.'}, -- bowl of glooth soup
+	[21143] = {10, 'Munch.'}, -- bowl of glooth soup
 	[3578] = {12, 'Munch.'}, -- fish
 	[3579] = {10, 'Mmmm.'}, -- salmon
 	[23535] = {30, 'Mmmm.'}, -- energy bar
@@ -45,8 +45,9 @@ local foods = {
 	[3731] = {36, 'Munch.'}, -- fire mushroom
 	[3732] = {5, 'Munch.'}, -- green mushroom
 	[5096] = {4, 'Yum.'}, -- mango
-	[20310] = {4, 'Mmmm.'}, -- Christmas Cookie Tray
-	[6125] = {8, 'Gulp.'}, -- tortoise egg
+	[20310] = {4, 'Mmmm.'}, -- christmas cookie tray
+	[5678] = {8, 'Gulp.'}, -- tortoise egg
+	[6125] = {8, 'Gulp.'}, -- tortoise egg from nargor
 	[6277] = {10, 'Mmmm.'}, -- cake
 	[6278] = {15, 'Mmmm.'}, -- decorated cake
 	[6392] = {12, 'Mmmm.'}, -- valentine's cake
@@ -81,6 +82,7 @@ local foods = {
 	[8017] = {5, 'Munch.'}, -- beetroot
 	[8019] = {11, 'Yum.'}, -- chocolate cake
 	[8177] = {7, 'Slurp.'}, -- yummy gummy worm
+	[8194] = {0, 'Urgh.', CONST_ME_MAGIC_BLUE}, -- garlic bread
 	[8197] = {5, 'Crunch.'}, -- bulb of garlic
 	[9537] = {0, 'Your head begins to feel better.'}, -- headache pill
 	[10329] = {15, 'Yum.'}, -- rice ball
@@ -122,23 +124,24 @@ local foods = {
 }
 
 local food = Action()
-
 function food.onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local itemFood = foods[item.itemid]
+	local effect = itemFood[3]
 	if not itemFood then
 		return false
 	end
-
 	local condition = player:getCondition(CONDITION_REGENERATION, CONDITIONID_DEFAULT)
 	if condition and math.floor(condition:getTicks() / 1000 + (itemFood[1] * 12)) >= 1200 then
 		player:sendTextMessage(MESSAGE_FAILURE, "You are full.")
 		return true
 	end
-
 	player:feed(itemFood[1] * 12)
 	player:say(itemFood[2], TALKTYPE_MONSTER_SAY)
 	item:remove(1)
 	player:updateSupplyTracker(item)
+	if effect then
+		player:getPosition():sendMagicEffect(effect)
+	end
 	return true
 end
 

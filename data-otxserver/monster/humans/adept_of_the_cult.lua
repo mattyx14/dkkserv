@@ -5,10 +5,10 @@ monster.description = "an adept of the cult"
 monster.experience = 400
 monster.outfit = {
 	lookType = 194,
-	lookHead = 114,
+	lookHead = 95,
 	lookBody = 94,
 	lookLegs = 94,
-	lookFeet = 57,
+	lookFeet = 19,
 	lookAddons = 0,
 	lookMount = 0
 }
@@ -30,7 +30,7 @@ monster.health = 430
 monster.maxHealth = 430
 monster.race = "blood"
 monster.corpse = 18030
-monster.speed = 190
+monster.speed = 95
 monster.manaCost = 0
 
 monster.changeTarget = {

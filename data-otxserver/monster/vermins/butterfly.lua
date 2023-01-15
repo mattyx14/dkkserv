@@ -5,10 +5,10 @@ monster.description = "a butterfly"
 monster.experience = 0
 monster.outfit = {
 	lookType = 227,
-	lookHead = 20,
-	lookBody = 30,
-	lookLegs = 40,
-	lookFeet = 50,
+	lookHead = 0,
+	lookBody = 0,
+	lookLegs = 0,
+	lookFeet = 0,
 	lookAddons = 0,
 	lookMount = 0
 }
@@ -32,7 +32,7 @@ monster.health = 2
 monster.maxHealth = 2
 monster.race = "venom"
 monster.corpse = 4378
-monster.speed = 320
+monster.speed = 160
 monster.manaCost = 0
 
 monster.changeTarget = {

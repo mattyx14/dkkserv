@@ -5,10 +5,10 @@ monster.description = "Grand Commander Soeren"
 monster.experience = 10000
 monster.outfit = {
 	lookType = 1071,
-	lookHead = 38,
-	lookBody = 94,
-	lookLegs = 38,
-	lookFeet = 86,
+	lookHead = 57,
+	lookBody = 96,
+	lookLegs = 76,
+	lookFeet = 105,
 	lookAddons = 2,
 	lookMount = 0
 }
@@ -17,8 +17,12 @@ monster.health = 17000
 monster.maxHealth = 17000
 monster.race = "blood"
 monster.corpse = 28726
-monster.speed = 210
+monster.speed = 105
 monster.manaCost = 0
+
+monster.events = {
+	"GrandCommanderSoerenDeath"
+}
 
 monster.changeTarget = {
 	interval = 5000,

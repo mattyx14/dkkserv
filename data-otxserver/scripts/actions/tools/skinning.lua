@@ -7,7 +7,7 @@ local config = {
 		[6017] = {value = 22344, newItem = 12172, after = 4302}, -- after being killed
 
 		-- Minotaurs
-		[4272] = {value = 22344, newItem = 5878, after = 4012}, -- minotaur
+		[4011] = {value = 22344, newItem = 5878, after = 4012}, -- minotaur
 		[5969] = {value = 22344, newItem = 5878, after = 4012},	-- minotaur, after being killed
 		[4052] = {value = 22344, newItem = 5878, after = 4053}, -- minotaur archer
 		[5982] = {value = 22344, newItem = 5878, after = 4053}, -- minotaur archer, after being killed
@@ -45,11 +45,12 @@ local config = {
 		[10355] = {value = 22344, newItem = 5876, after = 10353}, -- lizard high guard, after being killed
 		[10364] = {value = 22344, newItem = 5876, after = 10365}, -- lizard zaogun
 		[10367] = {value = 22344, newItem = 5876, after = 10365}, -- lizard zaogun, after being killed
+		[10356] = {value = 22344, newItem = 5876, after = 10357}, -- lizard legionnaire
+		[10359] = {value = 22344, newItem = 5876, after = 10357}, -- lizard legionnaire, after being killed
 
 		-- Dragons
-		[4286] = {value = 22344, newItem = 5877, after = 4287},
-		[4025] = {value = 22344, newItem = 5877, after = 4287},
-		[5973] = {value = 22344, newItem = 5877, after = 4287}, -- after being killed
+		[4025] = {value = 22344, newItem = 5877, after = 4026},	-- Dragon
+		[5973] = {value = 22344, newItem = 5877, after = 4026}, -- Dragon, after being killed
 
 		-- Dragon Lords
 		[4062] = {value = 22344, newItem = 5948, after = 4063},
@@ -111,6 +112,30 @@ function skinning.onUse(player, item, fromPosition, target, toPosition, isHotkey
 			else
 				player:addItem(33780, 1)
 			end
+			return true
+			-- Wrath of the emperor quest
+		elseif target.itemid == 11339 then
+			target:transform(11331)
+			player:say("You carve a solid bowl of the chunk of wood.", TALKTYPE_MONSTER_SAY)
+			return true
+			-- An Interest In Botany Quest
+		elseif target.itemid == 10735 and player:getItemCount(11699) > 0 then
+			player:say("The plant feels cold but dry and very soft. You streak the plant gently with your knife and put a fragment in the almanach.", TALKTYPE_MONSTER_SAY)
+			player:setStorageValue(Storage.TibiaTales.AnInterestInBotany, 2)
+			return true
+		elseif target.itemid == 10697 and player:getItemCount(11699) > 0 then
+			player:say("You cut a leaf from a branch and put it in the almanach. It smells strangely sweet and awfully bitter at the same time.", TALKTYPE_MONSTER_SAY)
+			player:setStorageValue(Storage.TibiaTales.AnInterestInBotany, 3)
+			return true
+		elseif target.itemid == 8181 and player:getStorageValue(789100) <= 1 then
+			player:say("You got Neutral matter.", TALKTYPE_MONSTER_SAY)
+			player:addItem(954, 1)
+			player:setStorageValue(789100, 1)
+			return true
+		elseif target.itemid == 8182 and player:getStorageValue(789100) <= 1 then
+			player:say("You got Neutral matter.", TALKTYPE_MONSTER_SAY)
+			player:addItem(954, 1)
+			player:setStorageValue(789100, 2)
 			return true
 		end
 	end

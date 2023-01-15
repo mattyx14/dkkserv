@@ -5,7 +5,7 @@ monster.description = "a sphinx"
 monster.experience = 7500
 monster.outfit = {
 	lookType = 1188,
-	lookHead = 50,
+	lookHead = 0,
 	lookBody = 39,
 	lookLegs = 0,
 	lookFeet = 3,
@@ -30,7 +30,7 @@ monster.health = 8500
 monster.maxHealth = 8500
 monster.race = "blood"
 monster.corpse = 31386
-monster.speed = 290
+monster.speed = 145
 monster.manaCost = 0
 
 monster.changeTarget = {

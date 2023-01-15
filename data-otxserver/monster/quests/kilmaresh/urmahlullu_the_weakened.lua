@@ -5,10 +5,10 @@ monster.description = "urmahlullu the weakened"
 monster.experience = 85000
 monster.outfit = {
 	lookType = 1197,
-	lookHead = 57,
-	lookBody = 75,
-	lookLegs = 38,
-	lookFeet = 86,
+	lookHead = 0,
+	lookBody = 0,
+	lookLegs = 0,
+	lookFeet = 0,
 	lookAddons = 0,
 	lookMount = 0
 }
@@ -17,7 +17,7 @@ monster.health = 100000
 monster.maxHealth = 512000
 monster.race = "blood"
 monster.corpse = 31413
-monster.speed = 190
+monster.speed = 95
 monster.manaCost = 0
 
 monster.changeTarget = {

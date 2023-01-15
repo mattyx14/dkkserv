@@ -23,8 +23,54 @@ local fruits = {
 }
 
 local lava = {
-	--
-	-- Position(32808, 32336, 11),
+	Position(32808, 32336, 11),
+	Position(32809, 32336, 11),
+	Position(32810, 32336, 11),
+	Position(32808, 32334, 11),
+	Position(32807, 32334, 11),
+	Position(32807, 32335, 11),
+	Position(32807, 32336, 11),
+	Position(32807, 32337, 11),
+	Position(32806, 32337, 11),
+	Position(32805, 32337, 11),
+	Position(32805, 32338, 11),
+	Position(32805, 32339, 11),
+	Position(32806, 32339, 11),
+	Position(32806, 32338, 11),
+	Position(32807, 32338, 11),
+	Position(32808, 32338, 11),
+	Position(32808, 32337, 11),
+	Position(32809, 32337, 11),
+	Position(32810, 32337, 11),
+	Position(32811, 32337, 11),
+	Position(32811, 32338, 11),
+	Position(32806, 32338, 11),
+	Position(32810, 32338, 11),
+	Position(32810, 32339, 11),
+	Position(32809, 32339, 11),
+	Position(32809, 32338, 11),
+	Position(32811, 32336, 11),
+	Position(32811, 32335, 11),
+	Position(32810, 32335, 11),
+	Position(32809, 32335, 11),
+	Position(32808, 32335, 11),
+	Position(32809, 32334, 11),
+	Position(32809, 32333, 11),
+	Position(32810, 32333, 11),
+	Position(32811, 32333, 11),
+	Position(32806, 32338, 11),
+	Position(32810, 32334, 11),
+	Position(32811, 32334, 11),
+	Position(32812, 32334, 11),
+	Position(32813, 32334, 11),
+	Position(32814, 32334, 11),
+	Position(32812, 32333, 11),
+	Position(32810, 32334, 11),
+	Position(32812, 32335, 11),
+	Position(32813, 32335, 11),
+	Position(32814, 32335, 11),
+	Position(32814, 32333, 11),
+	Position(32813, 32333, 11)
 }
 
 local function revertItem(position, itemId, transformId)
@@ -95,7 +141,7 @@ local cutItems = {
 	[2452] = 3139,
 	[2524] = 3135,
 	[2904] = 3137,
-	[4995] = 3137,
+	[4995] = 4996,
 	[2997] = 3139,
 	[2998] = 3139,
 	[2999] = 3139,
@@ -229,6 +275,11 @@ function onDestroyItem(player, item, fromPosition, target, toPosition, isHotkey)
 		if itemDestroy ~= nil then
 			itemDestroy:decay()
 		end
+
+		-- Energy barrier na threatned dreams quest (feyrist)
+		if target.itemid == 25798 or target.itemid == 25800 then
+			addEvent(Game.createItem, math.random(13000, 17000), target.itemid, 1, toPosition)
+		end
 	end
 
 	toPosition:sendMagicEffect(CONST_ME_POFF)
@@ -236,71 +287,32 @@ function onDestroyItem(player, item, fromPosition, target, toPosition, isHotkey)
 end
 
 function onUseRope(player, item, fromPosition, target, toPosition, isHotkey)
-	local tile = Tile(toPosition)
-	if not tile then
+	if toPosition.x == CONTAINER_POSITION then
 		return false
 	end
 
-	local ground = tile:getGround()
-
-	if ground and table.contains(ropeSpots, ground:getId()) or tile:getItemById(14435) then
-		tile = Tile(toPosition:moveUpstairs())
-		if not tile then
-			return false
-		end
-
-		if tile:hasFlag(TILESTATE_PROTECTIONZONE) and player:isPzLocked() then
-			return true
-		end
-
-		player:teleportTo(toPosition, false)
-		return true
-	end
-
-	if table.contains(holeId, target.itemid) then
+	local tile = Tile(toPosition)
+if table.contains(holeId, target.itemid) then
 		toPosition.z = toPosition.z + 1
 		tile = Tile(toPosition)
-		if not tile then
-			return false
-		end
-
-		local thing = tile:getTopVisibleThing()
-		if not thing then
-			return true
-		end
-
-		if thing:isPlayer() then
-			if Tile(toPosition:moveUpstairs()):queryAdd(thing) ~= RETURNVALUE_NOERROR then
-				return false
+		if tile then
+			local thing = tile:getTopVisibleThing()
+			if thing:isItem() and thing:getType():isMovable() then
+				return thing:moveTo(toPosition:moveUpstairs())
+			elseif thing:isCreature() and thing:isPlayer() then
+				return thing:teleportTo(toPosition:moveUpstairs())
 			end
-
-			return thing:teleportTo(toPosition, false)
-		elseif thing:isItem() and thing:getType():isMovable() then
-			return thing:moveTo(toPosition:moveUpstairs())
 		end
 
-		return true
+		player:sendCancelMessage(RETURNVALUE_NOTPOSSIBLE)
+	else
+		return false
 	end
-
-	return false
+	return true
 end
 
 function onUseShovel(player, item, fromPosition, target, toPosition, isHotkey)
-	if table.contains(holes, target.itemid) then
-		target:transform(target.itemid + 1)
-		target:decay()
-	elseif table.contains({231, 231}, target.itemid) then
-		local rand = math.random(100)
-		if target.actionid == 100 and rand <= 20 then
-			target:transform(615)
-			target:decay()
-		elseif rand == 1 then
-			Game.createItem(3042, 1, toPosition)
-		elseif rand > 95 then
-			Game.createMonster("Scarab", toPosition)
-		end
-		toPosition:sendMagicEffect(CONST_ME_POFF)
-	elseif target.itemid == 5730 then
+	if target.itemid == 5730 then
 		if not player:removeItem(5090, 1) then
 			return false
 		end
@@ -315,60 +327,12 @@ function onUseShovel(player, item, fromPosition, target, toPosition, isHotkey)
 end
 
 function onUsePick(player, item, fromPosition, target, toPosition, isHotkey)
-	if table.contains({354, 355}, target.itemid) and target.actionid == 101 then
+	if target.itemid == 372 then
 		target:transform(394)
 		target:decay()
-		toPosition:sendMagicEffect(CONST_ME_POFF)
-	elseif target.itemid == 10310 then
-		-- shiny stone refining
-		local chance = math.random(1, 100)
-		if chance == 1 then
-			player:addItem(3043, 1) -- 1% chance of getting crystal coin
-		elseif chance <= 6 then
-			player:addItem(3031, 1) -- 5% chance of getting gold coin
-		elseif chance <= 51 then
-			player:addItem(3035, 1) -- 45% chance of getting platinum coin
-		else
-			player:addItem(3028, 1) -- 49% chance of getting small diamond
-		end
-		target:getPosition():sendMagicEffect(CONST_ME_BLOCKHIT)
-		target:remove(1)
-	elseif target.itemid == 10310 then
-		target:remove(1)
-		toPosition:sendMagicEffect(CONST_ME_POFF)
-		player:addItem(3035, 10)
-	elseif target.itemid == 7200 then
-		target:transform(7236)
-		target:decay()
-		toPosition:sendMagicEffect(CONST_ME_HITAREA)
-	elseif target.itemid == 593 then
-		target:transform(594)
-		target:decay()
-		toPosition:sendMagicEffect(CONST_ME_HITAREA)
-	elseif target.itemid == 6298 and target.actionid > 0 then
-		target:transform(615)
-		target:decay()
-		toPosition:sendMagicEffect(CONST_ME_HITAREA)
-	elseif target.itemid == 21341 then
-		target:transform(21342)
-		target:decay()
-		toPosition:sendMagicEffect(CONST_ME_HITAREA)
-	elseif target.itemid == 606 then
-		target:transform(615)
-		target:decay()
-		toPosition:sendMagicEffect(CONST_ME_HITAREA)
-	elseif target.itemid == 608 then
-		target:transform(609)
-		target:decay()
-		toPosition:sendMagicEffect(CONST_ME_HITAREA)
-	elseif target.itemid == 867 then
-		target:transform(868)
-		target:decay()
-		toPosition:sendMagicEffect(CONST_ME_HITAREA)
 	else
 		return false
 	end
-
 	return true
 end
 
@@ -422,7 +386,6 @@ function onUseKitchenKnife(player, item, fromPosition, target, toPosition, isHot
 	if not table.contains({3469, 9594, 9598}, item.itemid) then
 		return false
 	end
-
 	if table.contains(fruits, target.itemid) and player:removeItem(6277, 1) then
 		target:remove(1)
 		player:addItem(6278, 1)

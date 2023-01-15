@@ -7,8 +7,8 @@ monster.outfit = {
 	lookType = 541,
 	lookHead = 95,
 	lookBody = 113,
-	lookLegs = 21,
-	lookFeet = 21,
+	lookLegs = 3,
+	lookFeet = 3,
 	lookAddons = 1,
 	lookMount = 0
 }
@@ -30,7 +30,7 @@ monster.health = 10000
 monster.maxHealth = 10000
 monster.race = "blood"
 monster.corpse = 31646
-monster.speed = 290
+monster.speed = 145
 monster.manaCost = 0
 
 monster.changeTarget = {

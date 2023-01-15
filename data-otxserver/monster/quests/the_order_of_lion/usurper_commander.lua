@@ -21,7 +21,7 @@ monster.health = 15200
 monster.maxHealth = 15200
 monster.race = "blood"
 monster.corpse = 0
-monster.speed = 250
+monster.speed = 125
 
 monster.faction = FACTION_LIONUSURPERS
 monster.enemyFactions = {FACTION_LION, FACTION_PLAYER}
@@ -125,7 +125,7 @@ mType.onAppear = function(monster, creature)
 	for i=1, 5 do
 		sum = Game.createMonster(monster:getType():getSummonList()[math.random(1, #monster:getType():getSummonList())].name, monster:getPosition(), true)
 		if sum then
-			monster:addSummon(sum)
+			monster:setSummon(sum)
 			sum:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 			sum:setStorageValue(Storage.TheOrderOfTheLion.Drume.Commander, 1)
 		end

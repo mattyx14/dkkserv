@@ -5,7 +5,7 @@ monster.description = "a spectre"
 monster.experience = 2100
 monster.outfit = {
 	lookType = 235,
-	lookHead = 20,
+	lookHead = 0,
 	lookBody = 0,
 	lookLegs = 0,
 	lookFeet = 0,
@@ -31,7 +31,7 @@ monster.health = 1350
 monster.maxHealth = 1350
 monster.race = "undead"
 monster.corpse = 6347
-monster.speed = 280
+monster.speed = 140
 monster.manaCost = 0
 
 monster.changeTarget = {

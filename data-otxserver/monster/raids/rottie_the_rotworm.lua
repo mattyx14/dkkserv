@@ -5,10 +5,10 @@ monster.description = "Rottie The Rotworm"
 monster.experience = 40
 monster.outfit = {
 	lookType = 26,
-	lookHead = 20,
-	lookBody = 30,
-	lookLegs = 40,
-	lookFeet = 50,
+	lookHead = 0,
+	lookBody = 0,
+	lookLegs = 0,
+	lookFeet = 0,
 	lookAddons = 0,
 	lookMount = 0
 }
@@ -17,7 +17,7 @@ monster.health = 65
 monster.maxHealth = 65
 monster.race = "blood"
 monster.corpse = 5967
-monster.speed = 180
+monster.speed = 90
 monster.manaCost = 0
 
 monster.changeTarget = {

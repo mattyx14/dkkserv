@@ -5,10 +5,10 @@ monster.description = "Koshei the Deathless"
 monster.experience = 0
 monster.outfit = {
 	lookType = 99,
-	lookHead = 95,
-	lookBody = 116,
-	lookLegs = 119,
-	lookFeet = 115,
+	lookHead = 0,
+	lookBody = 0,
+	lookLegs = 0,
+	lookFeet = 0,
 	lookAddons = 0,
 	lookMount = 0
 }
@@ -17,7 +17,7 @@ monster.health = 1200
 monster.maxHealth = 1200
 monster.race = "undead"
 monster.corpse = 7538
-monster.speed = 390
+monster.speed = 195
 monster.manaCost = 0
 
 monster.changeTarget = {

@@ -5,11 +5,11 @@ monster.description = "a true midnight asura"
 monster.experience = 7313
 monster.outfit = {
 	lookType = 1068,
-	lookHead = 72,
-	lookBody = 95,
-	lookLegs = 72,
+	lookHead = 0,
+	lookBody = 76,
+	lookLegs = 53,
 	lookFeet = 0,
-	lookAddons = 0,
+	lookAddons = 1,
 	lookMount = 0
 }
 
@@ -30,7 +30,7 @@ monster.health = 9000
 monster.maxHealth = 9000
 monster.race = "blood"
 monster.corpse = 28617
-monster.speed = 340
+monster.speed = 170
 monster.manaCost = 0
 
 monster.changeTarget = {

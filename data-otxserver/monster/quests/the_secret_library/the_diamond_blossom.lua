@@ -5,7 +5,7 @@ monster.description = "the diamond blossom"
 monster.experience = 10000
 monster.outfit = {
 	lookType = 1068,
-	lookHead = 85,
+	lookHead = 9,
 	lookBody = 0,
 	lookLegs = 86,
 	lookFeet = 79,
@@ -17,7 +17,7 @@ monster.health = 25000
 monster.maxHealth = 25000
 monster.race = "undead"
 monster.corpse = 28802
-monster.speed = 350
+monster.speed = 175
 monster.manaCost = 0
 
 monster.changeTarget = {

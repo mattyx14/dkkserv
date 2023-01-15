@@ -4,7 +4,7 @@ local monster = {}
 monster.description = "Horestis"
 monster.experience = 3500
 monster.outfit = {
-	lookType = 88,
+	lookType = 91,
 	lookHead = 0,
 	lookBody = 0,
 	lookLegs = 0,
@@ -17,7 +17,7 @@ monster.health = 6000
 monster.maxHealth = 6000
 monster.race = "undead"
 monster.corpse = 6031
-monster.speed = 340
+monster.speed = 170
 monster.manaCost = 0
 
 monster.changeTarget = {

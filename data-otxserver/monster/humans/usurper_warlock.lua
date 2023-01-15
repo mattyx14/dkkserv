@@ -6,9 +6,9 @@ monster.experience = 7000
 monster.outfit = {
 	lookType = 1316,
 	lookHead = 57,
-	lookBody = 38,
+	lookBody = 2,
 	lookLegs = 21,
-	lookFeet = 21,
+	lookFeet = 95,
 	lookAddons = 0,
 	lookMount = 0
 }
@@ -30,7 +30,7 @@ monster.health = 7500
 monster.maxHealth = 7500
 monster.race = "blood"
 monster.corpse = 34184
-monster.speed = 330
+monster.speed = 165
 
 monster.faction = FACTION_LIONUSURPERS
 monster.enemyFactions = {FACTION_LION, FACTION_PLAYER}

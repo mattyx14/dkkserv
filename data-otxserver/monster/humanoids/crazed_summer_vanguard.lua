@@ -4,11 +4,11 @@ local monster = {}
 monster.description = "a Crazed Summer Vanguard"
 monster.experience = 5000
 monster.outfit = {
-	lookType = 1136,
-	lookHead = 20,
-	lookBody = 94,
-	lookLegs = 20,
-	lookFeet = 81,
+	lookType = 1137,
+	lookHead = 114,
+	lookBody = 93,
+	lookLegs = 3,
+	lookFeet = 83,
 	lookAddons = 1,
 	lookMount = 0
 }
@@ -30,7 +30,7 @@ monster.health = 5500
 monster.maxHealth = 5500
 monster.race = "blood"
 monster.corpse = 30077
-monster.speed = 390
+monster.speed = 195
 monster.manaCost = 0
 
 monster.changeTarget = {

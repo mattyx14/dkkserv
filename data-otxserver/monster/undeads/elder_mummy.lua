@@ -5,10 +5,10 @@ monster.description = "an elder mummy"
 monster.experience = 560
 monster.outfit = {
 	lookType = 65,
-	lookHead = 20,
-	lookBody = 30,
-	lookLegs = 40,
-	lookFeet = 50,
+	lookHead = 0,
+	lookBody = 0,
+	lookLegs = 0,
+	lookFeet = 0,
 	lookAddons = 0,
 	lookMount = 0
 }
@@ -30,7 +30,7 @@ monster.health = 850
 monster.maxHealth = 850
 monster.race = "undead"
 monster.corpse = 6004
-monster.speed = 170
+monster.speed = 85
 monster.manaCost = 0
 
 monster.changeTarget = {

@@ -4,7 +4,7 @@ local monster = {}
 monster.description = "Thalas"
 monster.experience = 2950
 monster.outfit = {
-	lookType = 90,
+	lookType = 89,
 	lookHead = 0,
 	lookBody = 0,
 	lookLegs = 0,
@@ -17,7 +17,7 @@ monster.health = 4100
 monster.maxHealth = 4100
 monster.race = "undead"
 monster.corpse = 6025
-monster.speed = 320
+monster.speed = 210
 monster.manaCost = 0
 
 monster.changeTarget = {

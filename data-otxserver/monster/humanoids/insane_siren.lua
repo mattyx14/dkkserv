@@ -4,11 +4,11 @@ local monster = {}
 monster.description = "an insane siren"
 monster.experience = 6000
 monster.outfit = {
-	lookType = 1137,
-	lookHead = 94,
+	lookType = 1136,
+	lookHead = 72,
 	lookBody = 94,
 	lookLegs = 79,
-	lookFeet = 20,
+	lookFeet = 4,
 	lookAddons = 3,
 	lookMount = 0
 }
@@ -30,7 +30,7 @@ monster.health = 6500
 monster.maxHealth = 6500
 monster.race = "blood"
 monster.corpse = 30133
-monster.speed = 420
+monster.speed = 210
 monster.manaCost = 0
 
 monster.changeTarget = {

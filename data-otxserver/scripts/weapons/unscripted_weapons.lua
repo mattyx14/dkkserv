@@ -1,9 +1,84 @@
 local weapons = {
 	{
+		-- naga rod
+		itemId = 39163,
+		type = WEAPON_WAND,
+		wandType = "ice",
+		level = 250,
+		mana = 22,
+		damage = {90, 110},
+		unproperly = true,
+		vocation = {
+			{"Druid", true},
+			{"Elder Druid"}
+		}
+	},
+	{
+		-- naga wand
+		itemId = 39162,
+		type = WEAPON_WAND,
+		wandType = "energy",
+		level = 250,
+		mana = 21,
+		damage = {90, 120},
+		unproperly = true,
+		vocation = {
+			{"Sorcerer", true},
+			{"Master Sorcerer"}
+		}
+	},
+	{
+		-- naga crossbow
+		itemId = 39159,
+		type = WEAPON_DISTANCE,
+		level = 300,
+		unproperly = true,
+		vocation = {
+			{"Paladin", true},
+			{"Royal Paladin"}
+		}
+	},
+	{
+		-- naga club
+		itemId = 39157,
+		type = WEAPON_CLUB,
+		level = 300,
+		unproperly = true,
+		vocation = {
+			{"Knight", true},
+			{"Elite Knight"}
+		}
+	},
+	{
+		-- naga axe
+		itemId = 39156,
+		type = WEAPON_AXE,
+		level = 300,
+		unproperly = true,
+		vocation = {
+			{"Knight", true},
+			{"Elite Knight"}
+		}
+	},
+	{
+		-- naga sword
+		itemId = 39155,
+		type = WEAPON_SWORD,
+		level = 300,
+		unproperly = true,
+		vocation = {
+			{"Knight", true},
+			{"Elite Knight"}
+		}
+	},
+	{
 		-- gilded eldritch rod
 		itemId = 36675,
 		type = WEAPON_WAND,
+		wandType = "ice",
 		level = 250,
+		mana = 22,
+		damage = {85, 105},
 		unproperly = true,
 		vocation = {
 			{"Druid", true},
@@ -14,7 +89,10 @@ local weapons = {
 		-- eldritch rod
 		itemId = 36674,
 		type = WEAPON_WAND,
+		wandType = "ice",
 		level = 250,
+		mana = 22,
+		damage = {85, 105},
 		unproperly = true,
 		vocation = {
 			{"Druid", true},
@@ -25,7 +103,10 @@ local weapons = {
 		-- gilded eldritch wand
 		itemId = 36669,
 		type = WEAPON_WAND,
+		wandType = "fire",
 		level = 250,
+		mana = 22,
+		damage = {85, 105},
 		unproperly = true,
 		vocation = {
 			{"Sorcerer", true},
@@ -36,7 +117,10 @@ local weapons = {
 		-- eldritch wand
 		itemId = 36668,
 		type = WEAPON_WAND,
+		wandType = "fire",
 		level = 250,
+		mana = 22,
+		damage = {85, 105},
 		unproperly = true,
 		vocation = {
 			{"Sorcerer", true},

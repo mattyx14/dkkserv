@@ -5,11 +5,11 @@ monster.description = "King Zelos"
 monster.experience = 251300
 monster.outfit = {
 	lookType = 1224,
-	lookHead = 10,
-	lookBody = 19,
-	lookLegs = 19,
-	lookFeet = 19,
-	lookAddons = 1,
+	lookHead = 0,
+	lookBody = 0,
+	lookLegs = 0,
+	lookFeet = 0,
+	lookAddons = 0,
 	lookMount = 0
 }
 
@@ -17,7 +17,7 @@ monster.health = 125000
 monster.maxHealth = monster.health
 monster.race = "venom"
 monster.corpse = 31611
-monster.speed = 425
+monster.speed = 212
 
 monster.changeTarget = {
 	interval = 4000,

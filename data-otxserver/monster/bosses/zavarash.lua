@@ -5,10 +5,10 @@ monster.description = "Zavarash"
 monster.experience = 21000
 monster.outfit = {
 	lookType = 12,
-	lookHead = 19,
-	lookBody = 0,
-	lookLegs = 77,
-	lookFeet = 79,
+	lookHead = 0,
+	lookBody = 15,
+	lookLegs = 57,
+	lookFeet = 85,
 	lookAddons = 0,
 	lookMount = 0
 }
@@ -17,7 +17,7 @@ monster.health = 35000
 monster.maxHealth = 35000
 monster.race = "blood"
 monster.corpse = 6068
-monster.speed = 440
+monster.speed = 220
 monster.manaCost = 0
 
 monster.changeTarget = {

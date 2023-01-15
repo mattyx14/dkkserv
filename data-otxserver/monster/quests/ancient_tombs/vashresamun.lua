@@ -4,7 +4,7 @@ local monster = {}
 monster.description = "Vashresamun"
 monster.experience = 2950
 monster.outfit = {
-	lookType = 90,
+	lookType = 85,
 	lookHead = 0,
 	lookBody = 0,
 	lookLegs = 0,
@@ -17,7 +17,7 @@ monster.health = 4000
 monster.maxHealth = 4000
 monster.race = "undead"
 monster.corpse = 6025
-monster.speed = 340
+monster.speed = 170
 monster.manaCost = 0
 
 monster.changeTarget = {

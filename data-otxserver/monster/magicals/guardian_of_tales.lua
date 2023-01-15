@@ -6,7 +6,7 @@ monster.experience = 9204
 monster.outfit = {
 	lookType = 1063,
 	lookHead = 92,
-	lookBody = 54,
+	lookBody = 52,
 	lookLegs = 0,
 	lookFeet = 79,
 	lookAddons = 3,
@@ -30,7 +30,7 @@ monster.health = 15000
 monster.maxHealth = 15000
 monster.race = "ink"
 monster.corpse = 28770
-monster.speed = 420
+monster.speed = 210
 monster.manaCost = 0
 
 monster.changeTarget = {

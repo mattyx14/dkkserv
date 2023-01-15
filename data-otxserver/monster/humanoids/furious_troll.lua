@@ -4,7 +4,7 @@ local monster = {}
 monster.description = "a furious troll"
 monster.experience = 185
 monster.outfit = {
-	lookType = 15,
+	lookType = 281,
 	lookHead = 0,
 	lookBody = 0,
 	lookLegs = 0,
@@ -30,7 +30,7 @@ monster.health = 245
 monster.maxHealth = 245
 monster.race = "blood"
 monster.corpse = 5960
-monster.speed = 180
+monster.speed = 90
 monster.manaCost = 0
 
 monster.changeTarget = {

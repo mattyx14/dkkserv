@@ -5,10 +5,10 @@ monster.description = "a ghoulish hyaena"
 monster.experience = 195
 monster.outfit = {
 	lookType = 94,
-	lookHead = 20,
-	lookBody = 30,
-	lookLegs = 40,
-	lookFeet = 50,
+	lookHead = 0,
+	lookBody = 0,
+	lookLegs = 0,
+	lookFeet = 0,
 	lookAddons = 0,
 	lookMount = 0
 }
@@ -30,7 +30,7 @@ monster.health = 400
 monster.maxHealth = 400
 monster.race = "blood"
 monster.corpse = 6026
-monster.speed = 200
+monster.speed = 102
 monster.manaCost = 275
 
 monster.changeTarget = {

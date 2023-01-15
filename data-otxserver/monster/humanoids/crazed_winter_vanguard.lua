@@ -4,11 +4,11 @@ local monster = {}
 monster.description = "a Crazed Winter Vanguard"
 monster.experience = 5400
 monster.outfit = {
-	lookType = 1136,
-	lookHead = 0,
-	lookBody = 123,
-	lookLegs = 28,
-	lookFeet = 20,
+	lookType = 1137,
+	lookHead = 8,
+	lookBody = 67,
+	lookLegs = 8,
+	lookFeet = 1,
 	lookAddons = 1,
 	lookMount = 0
 }
@@ -30,7 +30,7 @@ monster.health = 5800
 monster.maxHealth = 5800
 monster.race = "blood"
 monster.corpse = 30122
-monster.speed = 380
+monster.speed = 190
 monster.manaCost = 0
 
 monster.changeTarget = {

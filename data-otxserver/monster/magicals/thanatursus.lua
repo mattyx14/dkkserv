@@ -5,7 +5,7 @@ monster.description = "a Thanatursus"
 monster.experience = 6300
 monster.outfit = {
 	lookType = 1134,
-	lookHead = 19,
+	lookHead = 0,
 	lookBody = 0,
 	lookLegs = 0,
 	lookFeet = 0,
@@ -30,7 +30,7 @@ monster.health = 7200
 monster.maxHealth = 7200
 monster.race = "blood"
 monster.corpse = 30069
-monster.speed = 400
+monster.speed = 200
 monster.manaCost = 0
 
 monster.changeTarget = {

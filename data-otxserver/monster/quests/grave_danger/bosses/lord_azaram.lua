@@ -5,10 +5,10 @@ monster.description = "a Lord Azaram"
 monster.experience = 41950
 monster.outfit = {
 	lookType = 1223,
-	lookHead = 0,
-	lookBody = 38,
+	lookHead = 19,
+	lookBody = 2,
 	lookLegs = 94,
-	lookFeet = 82,
+	lookFeet = 81,
 	lookAddons = 3,
 	lookMount = 0
 }
@@ -17,7 +17,7 @@ monster.health = 50000
 monster.maxHealth = 50000
 monster.race = "venom"
 monster.corpse = 31599
-monster.speed = 250
+monster.speed = 125
 monster.manaCost = 0
 
 monster.changeTarget = {

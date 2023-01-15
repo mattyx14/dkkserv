@@ -4,7 +4,7 @@ local monster = {}
 monster.description = "Lord of the Elements"
 monster.experience = 8000
 monster.outfit = {
-	lookType = 290,
+	lookType = 243,
 	lookHead = 0,
 	lookBody = 0,
 	lookLegs = 0,
@@ -17,7 +17,7 @@ monster.health = 8000
 monster.maxHealth = 8000
 monster.race = "undead"
 monster.corpse = 8181
-monster.speed = 370
+monster.speed = 185
 monster.manaCost = 0
 
 monster.changeTarget = {

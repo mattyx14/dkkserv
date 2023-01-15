@@ -6,10 +6,10 @@ monster.description = "Feroxa"
 monster.experience = 0
 monster.outfit = {
 	lookType = 731,
-	lookHead = 57,
-	lookBody = 76,
-	lookLegs = 77,
-	lookFeet = 57,
+	lookHead = 0,
+	lookBody = 0,
+	lookLegs = 0,
+	lookFeet = 0,
 	lookAddons = 0,
 	lookMount = 0
 }
@@ -18,7 +18,7 @@ monster.health = 150000
 monster.maxHealth = 150000
 monster.race = "blood"
 monster.corpse = 22089
-monster.speed = 350
+monster.speed = 175
 monster.manaCost = 0
 
 monster.changeTarget = {

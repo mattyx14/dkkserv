@@ -4,7 +4,7 @@ local monster = {}
 monster.description = "a terrorsleep"
 monster.experience = 6900
 monster.outfit = {
-	lookType = 593,
+	lookType = 587,
 	lookHead = 0,
 	lookBody = 0,
 	lookLegs = 0,
@@ -30,7 +30,7 @@ monster.health = 7200
 monster.maxHealth = 7200
 monster.race = "blood"
 monster.corpse = 20163
-monster.speed = 360
+monster.speed = 180
 monster.manaCost = 0
 
 monster.changeTarget = {

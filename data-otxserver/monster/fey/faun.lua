@@ -5,10 +5,10 @@ monster.description = "a faun"
 monster.experience = 800
 monster.outfit = {
 	lookType = 980,
-	lookHead = 81,
-	lookBody = 115,
-	lookLegs = 114,
-	lookFeet = 81,
+	lookHead = 61,
+	lookBody = 96,
+	lookLegs = 95,
+	lookFeet = 62,
 	lookAddons = 0,
 	lookMount = 0
 }
@@ -30,7 +30,7 @@ monster.health = 900
 monster.maxHealth = 900
 monster.race = "blood"
 monster.corpse = 25815
-monster.speed = 210
+monster.speed = 105
 monster.manaCost = 450
 
 monster.changeTarget = {

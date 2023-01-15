@@ -5,7 +5,7 @@ monster.description = "a twisted shaper"
 monster.experience = 1750
 monster.outfit = {
 	lookType = 932,
-	lookHead = 68,
+	lookHead = 105,
 	lookBody = 0,
 	lookLegs = 0,
 	lookFeet = 94,
@@ -30,7 +30,7 @@ monster.health = 2500
 monster.maxHealth = 2500
 monster.race = "blood"
 monster.corpse = 25068
-monster.speed = 280
+monster.speed = 140
 monster.manaCost = 0
 
 monster.changeTarget = {

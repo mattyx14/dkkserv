@@ -3,7 +3,3 @@
 TeleportAction = {
 	-- 
 }
-
-TeleportUnique = {
-	-- 
-}

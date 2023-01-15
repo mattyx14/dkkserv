@@ -5,10 +5,10 @@ monster.description = "a crypt defiler"
 monster.experience = 70
 monster.outfit = {
 	lookType = 146,
-	lookHead = 115,
-	lookBody = 115,
-	lookLegs = 61,
-	lookFeet = 96,
+	lookHead = 62,
+	lookBody = 132,
+	lookLegs = 42,
+	lookFeet = 75,
 	lookAddons = 3,
 	lookMount = 0
 }
@@ -30,7 +30,7 @@ monster.health = 185
 monster.maxHealth = 185
 monster.race = "blood"
 monster.corpse = 18078
-monster.speed = 190
+monster.speed = 95
 monster.manaCost = 0
 
 monster.changeTarget = {

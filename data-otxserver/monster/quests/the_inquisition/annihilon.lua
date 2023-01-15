@@ -5,10 +5,10 @@ monster.description = "Annihilon"
 monster.experience = 15000
 monster.outfit = {
 	lookType = 12,
-	lookHead = 19,
-	lookBody = 104,
-	lookLegs = 96,
-	lookFeet = 96,
+	lookHead = 3,
+	lookBody = 9,
+	lookLegs = 77,
+	lookFeet = 77,
 	lookAddons = 0,
 	lookMount = 0
 }
@@ -17,7 +17,7 @@ monster.health = 46500
 monster.maxHealth = 46500
 monster.race = "fire"
 monster.corpse = 6068
-monster.speed = 132
+monster.speed = 66
 monster.manaCost = 0
 
 monster.changeTarget = {

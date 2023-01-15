@@ -4,7 +4,7 @@ local monster = {}
 monster.description = "The Ravager"
 monster.experience = 14980
 monster.outfit = {
-	lookType = 87,
+	lookType = 91,
 	lookHead = 0,
 	lookBody = 0,
 	lookLegs = 0,
@@ -17,7 +17,7 @@ monster.health = 53500
 monster.maxHealth = 53500
 monster.race = "undead"
 monster.corpse = 6031
-monster.speed = 340
+monster.speed = 170
 monster.manaCost = 0
 
 monster.changeTarget = {

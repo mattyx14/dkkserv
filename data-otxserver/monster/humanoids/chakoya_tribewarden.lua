@@ -4,7 +4,7 @@ local monster = {}
 monster.description = "a chakoya tribewarden"
 monster.experience = 40
 monster.outfit = {
-	lookType = 259,
+	lookType = 249,
 	lookHead = 0,
 	lookBody = 0,
 	lookLegs = 0,
@@ -30,7 +30,7 @@ monster.health = 68
 monster.maxHealth = 68
 monster.race = "blood"
 monster.corpse = 7320
-monster.speed = 124
+monster.speed = 62
 monster.manaCost = 305
 
 monster.changeTarget = {

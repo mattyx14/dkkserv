@@ -5,7 +5,7 @@ monster.description = "Robby The Reckless"
 monster.experience = 110
 monster.outfit = {
 	lookType = 129,
-	lookHead = 76,
+	lookHead = 96,
 	lookBody = 132,
 	lookLegs = 118,
 	lookFeet = 114,
@@ -17,7 +17,7 @@ monster.health = 155
 monster.maxHealth = 155
 monster.race = "blood"
 monster.corpse = 18217
-monster.speed = 220
+monster.speed = 110
 monster.manaCost = 0
 
 monster.changeTarget = {

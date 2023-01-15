@@ -30,7 +30,7 @@ monster.health = 700
 monster.maxHealth = 700
 monster.race = "blood"
 monster.corpse = 25827
-monster.speed = 230
+monster.speed = 115
 monster.manaCost = 450
 
 monster.changeTarget = {
@@ -94,6 +94,8 @@ monster.loot = {
 	{name = "fairy wings", chance = 30100},
 	{name = "orange mushroom", chance = 5155},
 	{name = "shimmering beetles", chance = 591},
+	{name = "prismatic quartz", chance = 2500},
+	{name = "crystal of focus", chance = 60},
 	{name = "small enchanted ruby", chance = 3400, maxCount = 2}
 }
 

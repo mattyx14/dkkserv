@@ -5,10 +5,10 @@ monster.description = "a zamulosh"
 monster.experience = 50000
 monster.outfit = {
 	lookType = 862,
-	lookHead = 17,
+	lookHead = 16,
 	lookBody = 12,
 	lookLegs = 73,
-	lookFeet = 92,
+	lookFeet = 55,
 	lookAddons = 0,
 	lookMount = 0
 }
@@ -17,7 +17,7 @@ monster.health = 20000
 monster.maxHealth = 20000
 monster.race = "blood"
 monster.corpse = 2127
-monster.speed = 235
+monster.speed = 117
 monster.manaCost = 200
 
 monster.changeTarget = {

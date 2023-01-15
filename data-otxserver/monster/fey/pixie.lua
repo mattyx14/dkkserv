@@ -30,7 +30,7 @@ monster.health = 770
 monster.maxHealth = 770
 monster.race = "blood"
 monster.corpse = 25811
-monster.speed = 240
+monster.speed = 120
 monster.manaCost = 450
 
 monster.changeTarget = {
@@ -81,7 +81,6 @@ monster.voices = {
 
 monster.loot = {
 	{name = "gold coin", chance = 30000, maxCount = 90},
-	{name = "rainbow quartz", chance = 1086, maxCount = 5},
 	{name = "butterfly ring", chance = 492},
 	{name = "wooden spellbook", chance = 92},
 	{name = "dream blossom staff", chance = 92},

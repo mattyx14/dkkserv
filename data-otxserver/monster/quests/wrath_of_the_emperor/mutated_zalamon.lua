@@ -4,7 +4,7 @@ local monster = {}
 monster.description = "Mutated Zalamon"
 monster.experience = 10980
 monster.outfit = {
-	lookType = 356,
+	lookType = 357,
 	lookHead = 0,
 	lookBody = 0,
 	lookLegs = 0,
@@ -17,7 +17,7 @@ monster.health = 155000
 monster.maxHealth = 155000
 monster.race = "venom"
 monster.corpse = 11429
-monster.speed = 238
+monster.speed = 119
 monster.manaCost = 0
 
 monster.changeTarget = {

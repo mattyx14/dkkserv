@@ -5,10 +5,10 @@ monster.description = "a Burster Spectre"
 monster.experience = 6000
 monster.outfit = {
 	lookType = 1122,
-	lookHead = 7,
-	lookBody = 19,
+	lookHead = 9,
+	lookBody = 10,
 	lookLegs = 86,
-	lookFeet = 19,
+	lookFeet = 79,
 	lookAddons = 0,
 	lookMount = 0
 }
@@ -30,7 +30,7 @@ monster.health = 6500
 monster.maxHealth = 6500
 monster.race = "blood"
 monster.corpse = 30163
-monster.speed = 400
+monster.speed = 200
 monster.manaCost = 0
 
 monster.changeTarget = {

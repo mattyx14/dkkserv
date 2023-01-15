@@ -5,10 +5,10 @@ monster.description = "Earl Osam"
 monster.experience = 44200
 monster.outfit = {
 	lookType = 1223,
-	lookHead = 95,
-	lookBody = 38,
-	lookLegs = 60,
-	lookFeet = 76,
+	lookHead = 113,
+	lookBody = 0,
+	lookLegs = 79,
+	lookFeet = 95,
 	lookAddons = 0,
 	lookMount = 0
 }
@@ -17,7 +17,7 @@ monster.health = 50000
 monster.maxHealth = 50000
 monster.race = "venom"
 monster.corpse = 31599
-monster.speed = 250
+monster.speed = 125
 monster.manaCost = 0
 
 monster.changeTarget = {

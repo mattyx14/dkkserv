@@ -5,10 +5,10 @@ monster.description = "Golgordan"
 monster.experience = 10000
 monster.outfit = {
 	lookType = 12,
-	lookHead = 108,
-	lookBody = 100,
-	lookLegs = 105,
-	lookFeet = 114,
+	lookHead = 52,
+	lookBody = 99,
+	lookLegs = 52,
+	lookFeet = 91,
 	lookAddons = 0,
 	lookMount = 0
 }
@@ -17,7 +17,7 @@ monster.health = 40000
 monster.maxHealth = 40000
 monster.race = "fire"
 monster.corpse = 7893
-monster.speed = 390
+monster.speed = 195
 monster.manaCost = 0
 
 monster.changeTarget = {

@@ -4,7 +4,7 @@ local monster = {}
 monster.description = "Ashmunrah"
 monster.experience = 3100
 monster.outfit = {
-	lookType = 87,
+	lookType = 91,
 	lookHead = 0,
 	lookBody = 0,
 	lookLegs = 0,
@@ -17,7 +17,7 @@ monster.health = 5000
 monster.maxHealth = 5000
 monster.race = "undead"
 monster.corpse = 6031
-monster.speed = 430
+monster.speed = 215
 monster.manaCost = 0
 
 monster.changeTarget = {

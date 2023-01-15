@@ -5,10 +5,10 @@ monster.description = "Ghulosh"
 monster.experience = 100000
 monster.outfit = {
 	lookType = 1062,
-	lookHead = 79,
-	lookBody = 94,
+	lookHead = 78,
+	lookBody = 113,
 	lookLegs = 94,
-	lookFeet = 94,
+	lookFeet = 18,
 	lookAddons = 3,
 	lookMount = 0
 }
@@ -17,7 +17,7 @@ monster.health = 300000
 monster.maxHealth = 300000
 monster.race = "blood"
 monster.corpse = 26133
-monster.speed = 100
+monster.speed = 50
 monster.manaCost = 0
 
 monster.changeTarget = {

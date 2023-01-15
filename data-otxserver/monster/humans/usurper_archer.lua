@@ -5,10 +5,10 @@ monster.description = "a usurper archer"
 monster.experience = 6800
 monster.outfit = {
 	lookType = 1316,
-	lookHead = 57,
+	lookHead = 76,
 	lookBody = 57,
-	lookLegs = 57,
-	lookFeet = 57,
+	lookLegs = 76,
+	lookFeet = 95,
 	lookAddons = 2,
 	lookMount = 0
 }
@@ -30,7 +30,7 @@ monster.health = 7300
 monster.maxHealth = 7300
 monster.race = "blood"
 monster.corpse = 33981
-monster.speed = 250
+monster.speed = 125
 
 monster.faction = FACTION_LIONUSURPERS
 monster.enemyFactions = {FACTION_LION, FACTION_PLAYER}

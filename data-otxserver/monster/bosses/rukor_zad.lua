@@ -5,7 +5,7 @@ monster.description = "Rukor Zad"
 monster.experience = 380
 monster.outfit = {
 	lookType = 152,
-	lookHead = 114,
+	lookHead = 95,
 	lookBody = 95,
 	lookLegs = 95,
 	lookFeet = 95,
@@ -17,7 +17,7 @@ monster.health = 380
 monster.maxHealth = 380
 monster.race = "blood"
 monster.corpse = 18297
-monster.speed = 215
+monster.speed = 107
 monster.manaCost = 0
 
 monster.changeTarget = {

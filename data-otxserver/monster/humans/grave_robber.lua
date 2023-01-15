@@ -5,10 +5,10 @@ monster.description = "a grave robber"
 monster.experience = 65
 monster.outfit = {
 	lookType = 146,
-	lookHead = 114,
+	lookHead = 57,
 	lookBody = 95,
-	lookLegs = 76,
-	lookFeet = 38,
+	lookLegs = 57,
+	lookFeet = 19,
 	lookAddons = 3,
 	lookMount = 0
 }
@@ -30,7 +30,7 @@ monster.health = 165
 monster.maxHealth = 165
 monster.race = "blood"
 monster.corpse = 18130
-monster.speed = 190
+monster.speed = 95
 monster.manaCost = 435
 
 monster.changeTarget = {

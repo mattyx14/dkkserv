@@ -4,7 +4,7 @@ local monster = {}
 monster.description = "the Horned Fox"
 monster.experience = 300
 monster.outfit = {
-	lookType = 29,
+	lookType = 202,
 	lookHead = 0,
 	lookBody = 0,
 	lookLegs = 0,
@@ -17,7 +17,7 @@ monster.health = 265
 monster.maxHealth = 265
 monster.race = "blood"
 monster.corpse = 5983
-monster.speed = 210
+monster.speed = 105
 monster.manaCost = 0
 
 monster.changeTarget = {

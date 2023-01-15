@@ -4,11 +4,11 @@ local monster = {}
 monster.description = "a ripper spectre"
 monster.experience = 3500
 monster.outfit = {
-	lookType = 1119,
-	lookHead = 101,
-	lookBody = 39,
+	lookType = 1122,
+	lookHead = 81,
+	lookBody = 78,
 	lookLegs = 61,
-	lookFeet = 39,
+	lookFeet = 94,
 	lookAddons = 0,
 	lookMount = 0
 }
@@ -30,7 +30,7 @@ monster.health = 3800
 monster.maxHealth = 3800
 monster.race = "blood"
 monster.corpse = 30026
-monster.speed = 380
+monster.speed = 190
 monster.manaCost = 0
 
 monster.changeTarget = {

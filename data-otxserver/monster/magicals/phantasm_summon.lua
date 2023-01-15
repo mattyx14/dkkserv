@@ -5,7 +5,7 @@ monster.description = "a phantasm"
 monster.experience = 4400
 monster.outfit = {
 	lookType = 241,
-	lookHead = 20,
+	lookHead = 0,
 	lookBody = 0,
 	lookLegs = 0,
 	lookFeet = 0,
@@ -17,7 +17,7 @@ monster.health = 3950
 monster.maxHealth = 3950
 monster.race = "undead"
 monster.corpse = 6343
-monster.speed = 340
+monster.speed = 170
 monster.manaCost = 0
 
 monster.changeTarget = {

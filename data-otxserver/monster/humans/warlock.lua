@@ -5,10 +5,10 @@ monster.description = "a warlock"
 monster.experience = 4000
 monster.outfit = {
 	lookType = 130,
-	lookHead = 19,
-	lookBody = 71,
+	lookHead = 0,
+	lookBody = 52,
 	lookLegs = 128,
-	lookFeet = 128,
+	lookFeet = 95,
 	lookAddons = 1,
 	lookMount = 0
 }
@@ -31,7 +31,7 @@ monster.health = 3500
 monster.maxHealth = 3500
 monster.race = "blood"
 monster.corpse = 18246
-monster.speed = 230
+monster.speed = 115
 monster.manaCost = 0
 
 monster.changeTarget = {

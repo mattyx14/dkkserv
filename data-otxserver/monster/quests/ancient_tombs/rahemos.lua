@@ -4,7 +4,7 @@ local monster = {}
 monster.description = "Rahemos"
 monster.experience = 3100
 monster.outfit = {
-	lookType = 87,
+	lookType = 88,
 	lookHead = 0,
 	lookBody = 0,
 	lookLegs = 0,
@@ -17,7 +17,7 @@ monster.health = 3700
 monster.maxHealth = 3700
 monster.race = "undead"
 monster.corpse = 6031
-monster.speed = 320
+monster.speed = 220
 monster.manaCost = 0
 
 monster.changeTarget = {

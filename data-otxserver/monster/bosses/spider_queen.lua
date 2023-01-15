@@ -17,7 +17,7 @@ monster.health = 10000
 monster.maxHealth = 10000
 monster.race = "venom"
 monster.corpse = 6060
-monster.speed = 280
+monster.speed = 140
 monster.manaCost = 0
 
 monster.changeTarget = {
@@ -63,10 +63,6 @@ monster.voices = {
 }
 
 monster.loot = {
-}
-
-monster.attacks = {
-	{name = "spider queen wrap", interval = 5000, chance = 100, target = true, range = 1}
 }
 
 monster.defenses = {

@@ -5,10 +5,10 @@ monster.description = "a brain squid"
 monster.experience = 17672
 monster.outfit = {
 	lookType = 1059,
-	lookHead = 97,
-	lookBody = 18,
-	lookLegs = 61,
-	lookFeet = 85,
+	lookHead = 17,
+	lookBody = 41,
+	lookLegs = 77,
+	lookFeet = 57,
 	lookAddons = 0,
 	lookMount = 0
 }
@@ -30,7 +30,7 @@ monster.health = 18000
 monster.maxHealth = 18000
 monster.race = "undead"
 monster.corpse = 28582
-monster.speed = 430
+monster.speed = 215
 monster.manaCost = 0
 
 monster.changeTarget = {

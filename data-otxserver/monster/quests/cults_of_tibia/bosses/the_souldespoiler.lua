@@ -5,10 +5,10 @@ monster.description = "The Souldespoiler"
 monster.experience = 0
 monster.outfit = {
 	lookType = 875,
-	lookHead = 11,
-	lookBody = 0,
-	lookLegs = 94,
-	lookFeet = 95,
+	lookHead = 0,
+	lookBody = 3,
+	lookLegs = 77,
+	lookFeet = 81,
 	lookAddons = 0,
 	lookMount = 0
 }
@@ -17,7 +17,7 @@ monster.health = 50000
 monster.maxHealth = 50000
 monster.race = "blood"
 monster.corpse = 23564
-monster.speed = 250
+monster.speed = 125
 monster.manaCost = 0
 
 monster.changeTarget = {

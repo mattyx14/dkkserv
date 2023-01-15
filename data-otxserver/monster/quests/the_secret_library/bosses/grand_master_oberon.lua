@@ -1,4 +1,4 @@
-dofile("data/monster/quests/the_secret_library/bosses/grand_master_oberon_functions.lua")
+dofile(DATA_DIRECTORY .. "/monster/quests/the_secret_library/bosses/grand_master_oberon_functions.lua")
 
 local mType = Game.createMonsterType("Grand Master Oberon")
 local monster = {}
@@ -7,10 +7,10 @@ monster.description = "Grand Master Oberon"
 monster.experience = 20000
 monster.outfit = {
 	lookType = 1072,
-	lookHead = 57,
-	lookBody = 75,
-	lookLegs = 38,
-	lookFeet = 86,
+	lookHead = 21,
+	lookBody = 96,
+	lookLegs = 21,
+	lookFeet = 105,
 	lookAddons = 1,
 	lookMount = 0
 }
@@ -19,7 +19,7 @@ monster.health = 30000
 monster.maxHealth = 30000
 monster.race = "blood"
 monster.corpse = 28625
-monster.speed = 230
+monster.speed = 115
 monster.manaCost = 0
 
 monster.changeTarget = {

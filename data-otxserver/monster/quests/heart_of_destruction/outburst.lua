@@ -6,9 +6,9 @@ monster.experience = 50000
 monster.outfit = {
 	lookType = 876,
 	lookHead = 79,
-	lookBody = 0,
+	lookBody = 3,
 	lookLegs = 94,
-	lookFeet = 0,
+	lookFeet = 3,
 	lookAddons = 3,
 	lookMount = 0
 }
@@ -17,7 +17,7 @@ monster.health = 290000
 monster.maxHealth = 290000
 monster.race = "venom"
 monster.corpse = 23564
-monster.speed = 500
+monster.speed = 250
 monster.manaCost = 0
 
 monster.changeTarget = {

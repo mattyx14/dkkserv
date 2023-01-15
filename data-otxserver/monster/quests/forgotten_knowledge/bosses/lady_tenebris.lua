@@ -5,7 +5,7 @@ monster.description = "Lady Tenebris"
 monster.experience = 50000
 monster.outfit = {
 	lookType = 433,
-	lookHead = 57,
+	lookHead = 76,
 	lookBody = 95,
 	lookLegs = 38,
 	lookFeet = 94,
@@ -17,7 +17,7 @@ monster.health = 150000
 monster.maxHealth = 150000
 monster.race = "blood"
 monster.corpse = 6560
-monster.speed = 370
+monster.speed = 185
 monster.manaCost = 0
 
 monster.changeTarget = {

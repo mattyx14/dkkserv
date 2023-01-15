@@ -5,10 +5,10 @@ monster.description = "Achad"
 monster.experience = 70
 monster.outfit = {
 	lookType = 146,
-	lookHead = 93,
+	lookHead = 95,
 	lookBody = 93,
-	lookLegs = 57,
-	lookFeet = 97,
+	lookLegs = 38,
+	lookFeet = 59,
 	lookAddons = 3,
 	lookMount = 0
 }
@@ -17,7 +17,7 @@ monster.health = 185
 monster.maxHealth = 185
 monster.race = "blood"
 monster.corpse = 7349
-monster.speed = 185
+monster.speed = 88
 monster.manaCost = 0
 
 monster.changeTarget = {

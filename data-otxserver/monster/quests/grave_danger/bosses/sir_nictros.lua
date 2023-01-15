@@ -5,11 +5,11 @@ monster.description = "a Sir Nictros"
 monster.experience = 6300
 monster.outfit = {
 	lookType = 1222,
-	lookHead = 19,
-	lookBody = 0,
+	lookHead = 101,
+	lookBody = 79,
 	lookLegs = 0,
 	lookFeet = 0,
-	lookAddons = 3,
+	lookAddons = 2,
 	lookMount = 0
 }
 
@@ -17,7 +17,7 @@ monster.health = 50000
 monster.maxHealth = 50000
 monster.race = "venom"
 monster.corpse = 31599
-monster.speed = 250
+monster.speed = 125
 monster.manaCost = 0
 
 monster.changeTarget = {
@@ -50,7 +50,7 @@ monster.flags = {
 }
 
 monster.events = {
-	"Sir_Baeloc_Sir_NictrosCharge"
+	-- "Sir_Baeloc_Sir_NictrosCharge"
 }
 
 monster.light = {

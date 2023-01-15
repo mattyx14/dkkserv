@@ -5,10 +5,10 @@ monster.description = "a poacher"
 monster.experience = 70
 monster.outfit = {
 	lookType = 129,
-	lookHead = 115,
-	lookBody = 119,
-	lookLegs = 119,
-	lookFeet = 115,
+	lookHead = 60,
+	lookBody = 118,
+	lookLegs = 118,
+	lookFeet = 116,
 	lookAddons = 1,
 	lookMount = 0
 }
@@ -31,7 +31,7 @@ monster.health = 90
 monster.maxHealth = 90
 monster.race = "blood"
 monster.corpse = 18206
-monster.speed = 198
+monster.speed = 99
 monster.manaCost = 530
 
 monster.changeTarget = {
