@@ -15,5 +15,5 @@ dofile(DATA_DIRECTORY.. '/lib/others/load.lua')
 dofile(DATA_DIRECTORY.. '/lib/quests/quest.lua')
 
 -- Dolls System
-dofile('DATA_DIRECTORY.. /lib/others/addon_doll_lib.lua')
-dofile('DATA_DIRECTORY.. /lib/others/mount_doll_lib.lua')
+dofile(DATA_DIRECTORY.. '/lib/others/addon_doll_lib.lua')
+dofile(DATA_DIRECTORY.. '/lib/others/mount_doll_lib.lua')
