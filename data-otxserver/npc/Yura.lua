@@ -143,7 +143,7 @@ npcHandler:setMessage(MESSAGE_GREET, {
 npcHandler:setMessage(MESSAGE_FAREWELL, "See you, |PLAYERNAME|.")
 npcHandler:setMessage(MESSAGE_WALKAWAY, "See you, |PLAYERNAME|.")
 npcHandler:setMessage(MESSAGE_SENDTRADE, "Of course, just browse through my wares.")
-npcHandler:addModule(FocusModule:new())
+npcHandler:addModule(FocusModule:new(), npcConfig.name, true, true, true)
 
 npcConfig.shop = {
 	-- Gill Items and others
