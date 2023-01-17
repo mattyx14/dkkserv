@@ -405,5 +405,3 @@ data/world/otservbr-spawn.xml
 data/world/darkkonia-spawn.xml
 data/world/darkkonia-house.xml
 data/monster/empty.lua
-data/world/otservbr-monster.xml
-data/world/otservbr-npc.xml
