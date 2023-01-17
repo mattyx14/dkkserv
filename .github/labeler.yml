@@ -1,0 +1,16 @@
+---
+"Area: Source":
+  - any: ['src/**/*']
+
+"Area: Datapack Core":
+  - any: ['data/**/*']
+
+"Area: Datapack Global":
+  - any: ['data-otxserver/**/*', '!data-otxserver/world/*']
+
+"Area: Map Global":
+  - any: ['data-otxserver/world/*']
+
+"Area: Docker":
+  - any: ['docker/**/*']
+  
