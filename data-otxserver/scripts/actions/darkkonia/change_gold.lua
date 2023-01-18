@@ -14,14 +14,13 @@ function changeGold.onUse(player, item, fromPosition, target, toPosition, isHotk
 	if coin.changeTo and item.type == 100 then
 		item:remove()
 		player:addItem(coin.changeTo, 1)
+		return true
 	elseif coin.changeBack then
 		item:remove(1)
 		player:addItem(coin.changeBack, 100)
-	else
-		return false
+		return true
 	end
-	return true
+	return false
 end
-
 changeGold:id(3031, 3035, 3043)
 changeGold:register()
