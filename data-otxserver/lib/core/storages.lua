@@ -150,6 +150,14 @@ Storage = {
 		Edala = 52122,
 		EdalaTimer = 52123
 	},
+	GraveDanger = {
+		-- Reserved storage from 52310 - 52339
+		Questline = 52310,
+		CobraBastion = {
+			Questline = 52311,
+			ScarlettTimer = 52312
+		}
+	},
 	KillingInTheNameOf = {
 		-- Reserved storage from 51610 - 51629
 		LugriNecromancers = 51610,
