@@ -183,7 +183,7 @@ function loadLuaNpcs(tablename)
 			local spawn = Game.createNpc(value.name, value.position)
 			if spawn then
 				spawn:setMasterPos(value.position)
-				Game.setStorageValue(DarkKonia.NpcSpawn, 1)
+				Game.setStorageValue(Storage.NpcSpawn, 1)
 			end
 		end
 	end
