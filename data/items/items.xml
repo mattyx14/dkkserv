@@ -6318,7 +6318,6 @@
 		<attribute key="armor" value="10"/>
 		<attribute key="absorbpercentphysical" value="7"/>
 		<attribute key="weight" value="2950"/>
-		<attribute key="upgradeclassification" value="4"/>
 		<attribute key="imbuementslot" value="2">
 			<attribute key="mana leech" value="3"/>
 			<attribute key="skillboost axe" value="3"/>
