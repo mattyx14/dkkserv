@@ -4170,7 +4170,7 @@
 	<monster centerx="624" centery="1036" centerz="7" radius="5">
 		<monster name="Elf Scout" x="1" y="-4" z="7" spawntime="60" />
 		<monster name="Elf Scout" x="-4" y="-2" z="7" spawntime="60" />
-		<monster name="Elf Scout" x="-3" y="-2" z="7" spawntime="-1063291136" />
+		<monster name="Elf Scout" x="-3" y="-2" z="7" spawntime="60" />
 		<monster name="Elf" x="-1" y="0" z="7" spawntime="60" />
 		<monster name="Elf Scout" x="0" y="1" z="7" spawntime="60" />
 		<monster name="Elf" x="-2" y="4" z="7" spawntime="60" />
@@ -4640,7 +4640,7 @@
 	</monster>
 	<monster centerx="644" centery="1070" centerz="7" radius="1">
 		<monster name="Elf" x="0" y="0" z="7" spawntime="60" />
-		<monster name="Elf" x="0" y="1" z="7" spawntime="-1063291648" />
+		<monster name="Elf" x="0" y="1" z="7" spawntime="60" />
 	</monster>
 	<monster centerx="699" centery="1070" centerz="7" radius="1">
 		<monster name="Snake" x="0" y="0" z="7" spawntime="60" />
@@ -8194,7 +8194,7 @@
 		<monster name="Lich" x="0" y="0" z="8" spawntime="60" />
 	</monster>
 	<monster centerx="982" centery="1098" centerz="8" radius="1">
-		<monster name="Banshee" x="0" y="-1" z="8" spawntime="-1623204352" />
+		<monster name="Banshee" x="0" y="-1" z="8" spawntime="60" />
 		<monster name="Banshee" x="0" y="0" z="8" spawntime="60" />
 	</monster>
 	<monster centerx="927" centery="1099" centerz="8" radius="1">
@@ -8315,7 +8315,7 @@
 		<monster name="Firestarter" x="0" y="0" z="8" spawntime="60" />
 	</monster>
 	<monster centerx="543" centery="1147" centerz="8" radius="1">
-		<monster name="Firestarter" x="0" y="-1" z="8" spawntime="-1063287552" />
+		<monster name="Firestarter" x="0" y="-1" z="8" spawntime="60" />
 		<monster name="Firestarter" x="0" y="0" z="8" spawntime="60" />
 	</monster>
 	<monster centerx="721" centery="1147" centerz="8" radius="1">
@@ -9651,7 +9651,7 @@
 	</monster>
 	<monster centerx="866" centery="1141" centerz="9" radius="1">
 		<monster name="Fire Elemental" x="0" y="0" z="9" spawntime="60" />
-		<monster name="Fire Elemental" x="1" y="1" z="9" spawntime="-1920916480" />
+		<monster name="Fire Elemental" x="1" y="1" z="9" spawntime="60" />
 	</monster>
 	<monster centerx="881" centery="1141" centerz="9" radius="5">
 		<monster name="Dragon Lord" x="2" y="2" z="9" spawntime="60" />
@@ -9952,7 +9952,7 @@
 		<monster name="Dwarf Miner" x="0" y="0" z="9" spawntime="60" />
 	</monster>
 	<monster centerx="593" centery="1189" centerz="9" radius="1">
-		<monster name="Dwarf Soldier" x="0" y="-1" z="9" spawntime="-1063292160" />
+		<monster name="Dwarf Soldier" x="0" y="-1" z="9" spawntime="60" />
 		<monster name="Dwarf Soldier" x="0" y="0" z="9" spawntime="60" />
 	</monster>
 	<monster centerx="636" centery="1189" centerz="9" radius="1">
@@ -9999,7 +9999,7 @@
 	</monster>
 	<monster centerx="572" centery="1215" centerz="9" radius="1">
 		<monster name="Dwarf Guard" x="0" y="0" z="9" spawntime="60" />
-		<monster name="Dwarf Guard" x="1" y="0" z="9" spawntime="-1063292160" />
+		<monster name="Dwarf Guard" x="1" y="0" z="9" spawntime="60" />
 	</monster>
 	<monster centerx="575" centery="1215" centerz="9" radius="1">
 		<monster name="Dwarf Guard" x="0" y="0" z="9" spawntime="60" />
