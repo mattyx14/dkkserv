@@ -1,39 +1,37 @@
 /**
  * Canary - A free and open-source MMORPG server emulator
- * Copyright (©) 2019-2022 OpenTibiaBR <opentibiabr@outlook.com>
+ * Copyright (©) 2019-2024 OpenTibiaBR <opentibiabr@outlook.com>
  * Repository: https://github.com/opentibiabr/canary
  * License: https://github.com/opentibiabr/canary/blob/main/LICENSE
  * Contributors: https://github.com/opentibiabr/canary/graphs/contributors
- * Website: https://docs.opentibiabr.org/
-*/
+ * Website: https://docs.opentibiabr.com/
+ */
 
-#ifndef SRC_ITEMS_ITEMS_CLASSIFICATION_HPP_
-#define SRC_ITEMS_ITEMS_CLASSIFICATION_HPP_
+#pragma once
 
-// Classification class for forging system and market.
-class ItemClassification
-{
- public:
-	ItemClassification() = default;
-	explicit ItemClassification(uint8_t id) :
-		id(id) {}
-	virtual ~ItemClassification() = default;
-
-	void addTier(uint8_t tierId, uint64_t tierPrice)
-	{
-		for (auto [tier, price] : tiers) {
-			if (tier == tierId) {
-				price = tierPrice;
-				return;
-			}
-		}
-
-		tiers.push_back(std::pair<uint8_t, uint64_t>({ tierId, tierPrice }));
-	}
-
-	uint8_t id;
-	// uint8_t = tier, uint64_t = price
-	std::vector<std::pair<uint8_t, uint64_t>> tiers;
+struct TierInfo {
+	uint8_t corePrice = 0;
+	uint64_t regularPrice = 0;
+	uint64_t convergenceFusionPrice = 0;
+	uint64_t convergenceTransferPrice = 0;
 };
 
-#endif  // SRC_ITEMS_ITEMS_CLASSIFICATION_HPP_
+// Classification class for forging system and market.
+class ItemClassification final {
+public:
+	ItemClassification() = default;
+	explicit ItemClassification(uint8_t id) :
+		id(id) { }
+	virtual ~ItemClassification() = default;
+
+	void addTier(uint8_t tierId, uint8_t corePrice, uint64_t regularPrice, uint64_t convergenceFusionPrice, uint64_t convergenceTransferPrice) {
+		auto &table = tiers[tierId];
+		table.corePrice = corePrice;
+		table.regularPrice = regularPrice;
+		table.convergenceFusionPrice = convergenceFusionPrice;
+		table.convergenceTransferPrice = convergenceTransferPrice;
+	}
+
+	uint8_t id {};
+	std::map<uint8_t, TierInfo> tiers {};
+};

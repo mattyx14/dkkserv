@@ -1,36 +1,15 @@
 /**
  * Canary - A free and open-source MMORPG server emulator
- * Copyright (©) 2019-2022 OpenTibiaBR <opentibiabr@outlook.com>
+ * Copyright (©) 2019-2024 OpenTibiaBR <opentibiabr@outlook.com>
  * Repository: https://github.com/opentibiabr/canary
  * License: https://github.com/opentibiabr/canary/blob/main/LICENSE
  * Contributors: https://github.com/opentibiabr/canary/graphs/contributors
- * Website: https://docs.opentibiabr.org/
-*/
+ * Website: https://docs.opentibiabr.com/
+ */
 
-#ifndef SRC_GAME_GAME_DEFINITIONS_HPP_
-#define SRC_GAME_GAME_DEFINITIONS_HPP_
-
-#include "movement/position.h"
+#pragma once
 
 // Enums
-enum Offer_t {
-	DISABLED=0,
-	ITEM=1,
-	STACKABLE_ITEM=2,
-	OUTFIT=3,
-	OUTFIT_ADDON=4,
-	MOUNT=5,
-	NAMECHANGE=6,
-	SEXCHANGE=7,
-	PROMOTION=8,
-	PREMIUM_TIME,
-	TELEPORT,
-	BLESSING,
-	BOOST_XP, //not using yet
-	BOOST_STAMINA, //not using yet
-	WRAP_ITEM
-};
-
 enum StackPosType_t {
 	STACKPOS_MOVE,
 	STACKPOS_LOOK,
@@ -66,10 +45,16 @@ enum Faction_t {
 	FACTION_PLAYER = 1,
 	FACTION_LION = 2,
 	FACTION_LIONUSURPERS = 3,
-	FACTION_LAST = FACTION_LIONUSURPERS,
+	FACTION_MARID = 4,
+	FACTION_EFREET = 5,
+	FACTION_DEEPLING = 6,
+	FACTION_DEATHLING = 7,
+	FACTION_ANUMA = 8,
+	FACTION_FAFNAR = 9,
+	FACTION_LAST = FACTION_FAFNAR,
 };
 
-enum LightState_t {
+enum LightState_t : uint8_t {
 	LIGHT_STATE_DAY,
 	LIGHT_STATE_NIGHT,
 	LIGHT_STATE_SUNSET,
@@ -99,16 +84,22 @@ enum CyclopediaCharacterInfo_RecentKillStatus_t : uint8_t {
 	CYCLOPEDIA_CHARACTERINFO_RECENTKILLSTATUS_ARENA = 4
 };
 
-enum HighscoreCategories_t : uint8_t {
-	HIGHSCORE_CATEGORY_EXPERIENCE = 0,
-	HIGHSCORE_CATEGORY_FIST_FIGHTING,
-	HIGHSCORE_CATEGORY_CLUB_FIGHTING,
-	HIGHSCORE_CATEGORY_SWORD_FIGHTING,
-	HIGHSCORE_CATEGORY_AXE_FIGHTING,
-	HIGHSCORE_CATEGORY_DISTANCE_FIGHTING,
-	HIGHSCORE_CATEGORY_SHIELDING,
-	HIGHSCORE_CATEGORY_FISHING,
-	HIGHSCORE_CATEGORY_MAGIC_LEVEL
+enum class HighscoreCategories_t : uint8_t {
+	EXPERIENCE = 0,
+	FIST_FIGHTING = 1,
+	CLUB_FIGHTING = 2,
+	SWORD_FIGHTING = 3,
+	AXE_FIGHTING = 4,
+	DISTANCE_FIGHTING = 5,
+	SHIELDING = 6,
+	FISHING = 7,
+	MAGIC_LEVEL = 8,
+	LOYALTY_POINTS = 9,
+	ACHIEVEMENTS = 10,
+	CHARMS = 11,
+	DROME = 12,
+	GOSHNAR = 13,
+	BOSS_POINTS = 14,
 };
 
 enum HighscoreType_t : uint8_t {
@@ -117,26 +108,8 @@ enum HighscoreType_t : uint8_t {
 };
 
 enum Webhook_Colors_t : uint32_t {
-	WEBHOOK_COLOR_ONLINE = 0x00FF00,
-	WEBHOOK_COLOR_OFFLINE = 0xFF0000,
-	WEBHOOK_COLOR_WARNING = 0xFFFF00,
-	WEBHOOK_COLOR_RAID = 0x0000FF
+	WEBHOOK_COLOR_GREEN = 0x00FF00,
+	WEBHOOK_COLOR_RED = 0xFF0000,
+	WEBHOOK_COLOR_YELLOW = 0xFFFF00,
+	WEBHOOK_COLOR_BLUE = 0x0000FF
 };
-
-struct ModalWindow {
-	std::list<std::pair<std::string, uint8_t>> buttons, choices;
-	std::string title, message;
-	uint32_t id;
-	uint8_t defaultEnterButton, defaultEscapeButton;
-	bool priority;
-
-	ModalWindow(uint32_t newId, std::string newTitle, std::string newMessage) :
-                    title(std::move(newTitle)),
-                    message(std::move(newMessage)),
-                    id(newId),
-                    defaultEnterButton(0xFF),
-                    defaultEscapeButton(0xFF),
-					priority(false) {}
-};
-
-#endif  // SRC_GAME_GAME_DEFINITIONS_HPP_

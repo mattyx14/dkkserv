@@ -1,63 +1,36 @@
 /**
  * Canary - A free and open-source MMORPG server emulator
- * Copyright (©) 2019-2022 OpenTibiaBR <opentibiabr@outlook.com>
+ * Copyright (©) 2019-2024 OpenTibiaBR <opentibiabr@outlook.com>
  * Repository: https://github.com/opentibiabr/canary
  * License: https://github.com/opentibiabr/canary/blob/main/LICENSE
  * Contributors: https://github.com/opentibiabr/canary/graphs/contributors
- * Website: https://docs.opentibiabr.org/
-*/
+ * Website: https://docs.opentibiabr.com/
+ */
 
-#ifndef SRC_LUA_FUNCTIONS_CREATURES_COMBAT_CONDITION_FUNCTIONS_HPP_
-#define SRC_LUA_FUNCTIONS_CREATURES_COMBAT_CONDITION_FUNCTIONS_HPP_
+#pragma once
 
-#include "lua/scripts/luascript.h"
+class ConditionFunctions {
+public:
+	static void init(lua_State* L);
 
-class ConditionFunctions final : LuaScriptInterface {
-	public:
-			static void init(lua_State* L) {
-				registerClass(L, "Condition", "", ConditionFunctions::luaConditionCreate);
-				registerMetaMethod(L, "Condition", "__eq", ConditionFunctions::luaUserdataCompare);
-				registerMetaMethod(L, "Condition", "__gc", ConditionFunctions::luaConditionDelete);
-				registerMethod(L, "Condition", "delete", ConditionFunctions::luaConditionDelete);
+private:
+	static int luaConditionCreate(lua_State* L);
+	static int luaConditionDelete(lua_State* L);
 
-				registerMethod(L, "Condition", "getId", ConditionFunctions::luaConditionGetId);
-				registerMethod(L, "Condition", "getSubId", ConditionFunctions::luaConditionGetSubId);
-				registerMethod(L, "Condition", "getType", ConditionFunctions::luaConditionGetType);
-				registerMethod(L, "Condition", "getIcons", ConditionFunctions::luaConditionGetIcons);
-				registerMethod(L, "Condition", "getEndTime", ConditionFunctions::luaConditionGetEndTime);
+	static int luaConditionGetId(lua_State* L);
+	static int luaConditionGetSubId(lua_State* L);
+	static int luaConditionGetType(lua_State* L);
+	static int luaConditionGetIcons(lua_State* L);
+	static int luaConditionGetEndTime(lua_State* L);
 
-				registerMethod(L, "Condition", "clone", ConditionFunctions::luaConditionClone);
+	static int luaConditionClone(lua_State* L);
 
-				registerMethod(L, "Condition", "getTicks", ConditionFunctions::luaConditionGetTicks);
-				registerMethod(L, "Condition", "setTicks", ConditionFunctions::luaConditionSetTicks);
+	static int luaConditionGetTicks(lua_State* L);
+	static int luaConditionSetTicks(lua_State* L);
 
-				registerMethod(L, "Condition", "setParameter", ConditionFunctions::luaConditionSetParameter);
-				registerMethod(L, "Condition", "setFormula", ConditionFunctions::luaConditionSetFormula);
-				registerMethod(L, "Condition", "setOutfit", ConditionFunctions::luaConditionSetOutfit);
+	static int luaConditionSetParameter(lua_State* L);
+	static int luaConditionSetFormula(lua_State* L);
+	static int luaConditionSetOutfit(lua_State* L);
 
-				registerMethod(L, "Condition", "addDamage", ConditionFunctions::luaConditionAddDamage);
-		}
-
-	private:
-		static int luaConditionCreate(lua_State* L);
-		static int luaConditionDelete(lua_State* L);
-
-		static int luaConditionGetId(lua_State* L);
-		static int luaConditionGetSubId(lua_State* L);
-		static int luaConditionGetType(lua_State* L);
-		static int luaConditionGetIcons(lua_State* L);
-		static int luaConditionGetEndTime(lua_State* L);
-
-		static int luaConditionClone(lua_State* L);
-
-		static int luaConditionGetTicks(lua_State* L);
-		static int luaConditionSetTicks(lua_State* L);
-
-		static int luaConditionSetParameter(lua_State* L);
-		static int luaConditionSetFormula(lua_State* L);
-		static int luaConditionSetOutfit(lua_State* L);
-
-		static int luaConditionAddDamage(lua_State* L);
+	static int luaConditionAddDamage(lua_State* L);
 };
-
-#endif  // SRC_LUA_FUNCTIONS_CREATURES_COMBAT_CONDITION_FUNCTIONS_HPP_

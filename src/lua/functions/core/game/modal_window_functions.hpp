@@ -1,77 +1,42 @@
 /**
  * Canary - A free and open-source MMORPG server emulator
- * Copyright (©) 2019-2022 OpenTibiaBR <opentibiabr@outlook.com>
+ * Copyright (©) 2019-2024 OpenTibiaBR <opentibiabr@outlook.com>
  * Repository: https://github.com/opentibiabr/canary
  * License: https://github.com/opentibiabr/canary/blob/main/LICENSE
  * Contributors: https://github.com/opentibiabr/canary/graphs/contributors
- * Website: https://docs.opentibiabr.org/
-*/
+ * Website: https://docs.opentibiabr.com/
+ */
 
-#ifndef SRC_LUA_FUNCTIONS_CORE_GAME_MODAL_WINDOW_FUNCTIONS_HPP_
-#define SRC_LUA_FUNCTIONS_CORE_GAME_MODAL_WINDOW_FUNCTIONS_HPP_
+#pragma once
 
-#include "lua/scripts/luascript.h"
+class ModalWindowFunctions {
+public:
+	static void init(lua_State* L);
 
-class ModalWindowFunctions final : LuaScriptInterface {
-	public:
-			static void init(lua_State* L) {
-				registerClass(L, "ModalWindow", "", ModalWindowFunctions::luaModalWindowCreate);
-				registerMetaMethod(L, "ModalWindow", "__eq", ModalWindowFunctions::luaUserdataCompare);
-				registerMetaMethod(L, "ModalWindow", "__gc", ModalWindowFunctions::luaModalWindowDelete);
-				registerMethod(L, "ModalWindow", "delete", ModalWindowFunctions::luaModalWindowDelete);
+private:
+	static int luaModalWindowCreate(lua_State* L);
 
-				registerMethod(L, "ModalWindow", "getId", ModalWindowFunctions::luaModalWindowGetId);
-				registerMethod(L, "ModalWindow", "getTitle", ModalWindowFunctions::luaModalWindowGetTitle);
-				registerMethod(L, "ModalWindow", "getMessage", ModalWindowFunctions::luaModalWindowGetMessage);
+	static int luaModalWindowGetId(lua_State* L);
+	static int luaModalWindowGetTitle(lua_State* L);
+	static int luaModalWindowGetMessage(lua_State* L);
 
-				registerMethod(L, "ModalWindow", "setTitle", ModalWindowFunctions::luaModalWindowSetTitle);
-				registerMethod(L, "ModalWindow", "setMessage", ModalWindowFunctions::luaModalWindowSetMessage);
+	static int luaModalWindowSetTitle(lua_State* L);
+	static int luaModalWindowSetMessage(lua_State* L);
 
-				registerMethod(L, "ModalWindow", "getButtonCount", ModalWindowFunctions::luaModalWindowGetButtonCount);
-				registerMethod(L, "ModalWindow", "getChoiceCount", ModalWindowFunctions::luaModalWindowGetChoiceCount);
+	static int luaModalWindowGetButtonCount(lua_State* L);
+	static int luaModalWindowGetChoiceCount(lua_State* L);
 
-				registerMethod(L, "ModalWindow", "addButton", ModalWindowFunctions::luaModalWindowAddButton);
-				registerMethod(L, "ModalWindow", "addChoice", ModalWindowFunctions::luaModalWindowAddChoice);
+	static int luaModalWindowAddButton(lua_State* L);
+	static int luaModalWindowAddChoice(lua_State* L);
 
-				registerMethod(L, "ModalWindow", "getDefaultEnterButton", ModalWindowFunctions::luaModalWindowGetDefaultEnterButton);
-				registerMethod(L, "ModalWindow", "setDefaultEnterButton", ModalWindowFunctions::luaModalWindowSetDefaultEnterButton);
+	static int luaModalWindowGetDefaultEnterButton(lua_State* L);
+	static int luaModalWindowSetDefaultEnterButton(lua_State* L);
 
-				registerMethod(L, "ModalWindow", "getDefaultEscapeButton", ModalWindowFunctions::luaModalWindowGetDefaultEscapeButton);
-				registerMethod(L, "ModalWindow", "setDefaultEscapeButton", ModalWindowFunctions::luaModalWindowSetDefaultEscapeButton);
+	static int luaModalWindowGetDefaultEscapeButton(lua_State* L);
+	static int luaModalWindowSetDefaultEscapeButton(lua_State* L);
 
-				registerMethod(L, "ModalWindow", "hasPriority", ModalWindowFunctions::luaModalWindowHasPriority);
-				registerMethod(L, "ModalWindow", "setPriority", ModalWindowFunctions::luaModalWindowSetPriority);
+	static int luaModalWindowHasPriority(lua_State* L);
+	static int luaModalWindowSetPriority(lua_State* L);
 
-				registerMethod(L, "ModalWindow", "sendToPlayer", ModalWindowFunctions::luaModalWindowSendToPlayer);
-		}
-
-	private:
-			static int luaModalWindowCreate(lua_State* L);
-			static int luaModalWindowDelete(lua_State* L);
-
-			static int luaModalWindowGetId(lua_State* L);
-			static int luaModalWindowGetTitle(lua_State* L);
-			static int luaModalWindowGetMessage(lua_State* L);
-
-			static int luaModalWindowSetTitle(lua_State* L);
-			static int luaModalWindowSetMessage(lua_State* L);
-
-			static int luaModalWindowGetButtonCount(lua_State* L);
-			static int luaModalWindowGetChoiceCount(lua_State* L);
-
-			static int luaModalWindowAddButton(lua_State* L);
-			static int luaModalWindowAddChoice(lua_State* L);
-
-			static int luaModalWindowGetDefaultEnterButton(lua_State* L);
-			static int luaModalWindowSetDefaultEnterButton(lua_State* L);
-
-			static int luaModalWindowGetDefaultEscapeButton(lua_State* L);
-			static int luaModalWindowSetDefaultEscapeButton(lua_State* L);
-
-			static int luaModalWindowHasPriority(lua_State* L);
-			static int luaModalWindowSetPriority(lua_State* L);
-
-			static int luaModalWindowSendToPlayer(lua_State* L);
+	static int luaModalWindowSendToPlayer(lua_State* L);
 };
-
-#endif  // SRC_LUA_FUNCTIONS_CORE_GAME_MODAL_WINDOW_FUNCTIONS_HPP_

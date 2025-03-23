@@ -1,26 +1,39 @@
 /**
  * Canary - A free and open-source MMORPG server emulator
- * Copyright (©) 2019-2022 OpenTibiaBR <opentibiabr@outlook.com>
+ * Copyright (©) 2019-2024 OpenTibiaBR <opentibiabr@outlook.com>
  * Repository: https://github.com/opentibiabr/canary
  * License: https://github.com/opentibiabr/canary/blob/main/LICENSE
  * Contributors: https://github.com/opentibiabr/canary/graphs/contributors
- * Website: https://docs.opentibiabr.org/
-*/
+ * Website: https://docs.opentibiabr.com/
+ */
 
-#include "pch.hpp"
-
-#include "creatures/players/grouping/groups.h"
-#include "game/game.h"
 #include "lua/functions/creatures/player/group_functions.hpp"
+
+#include "creatures/players/grouping/groups.hpp"
+#include "game/game.hpp"
+#include "lua/functions/lua_functions_loader.hpp"
+
+void GroupFunctions::init(lua_State* L) {
+	Lua::registerSharedClass(L, "Group", "", GroupFunctions::luaGroupCreate);
+	Lua::registerMetaMethod(L, "Group", "__eq", Lua::luaUserdataCompare);
+
+	Lua::registerMethod(L, "Group", "getId", GroupFunctions::luaGroupGetId);
+	Lua::registerMethod(L, "Group", "getName", GroupFunctions::luaGroupGetName);
+	Lua::registerMethod(L, "Group", "getFlags", GroupFunctions::luaGroupGetFlags);
+	Lua::registerMethod(L, "Group", "getAccess", GroupFunctions::luaGroupGetAccess);
+	Lua::registerMethod(L, "Group", "getMaxDepotItems", GroupFunctions::luaGroupGetMaxDepotItems);
+	Lua::registerMethod(L, "Group", "getMaxVipEntries", GroupFunctions::luaGroupGetMaxVipEntries);
+	Lua::registerMethod(L, "Group", "hasFlag", GroupFunctions::luaGroupHasFlag);
+}
 
 int GroupFunctions::luaGroupCreate(lua_State* L) {
 	// Group(id)
-	uint32_t id = getNumber<uint32_t>(L, 2);
+	const uint32_t id = Lua::getNumber<uint32_t>(L, 2);
 
-	Group* group = g_game().groups.getGroup(id);
+	const auto &group = g_game().groups.getGroup(id);
 	if (group) {
-		pushUserdata<Group>(L, group);
-		setMetatable(L, -1, "Group");
+		Lua::pushUserdata<Group>(L, group);
+		Lua::setMetatable(L, -1, "Group");
 	} else {
 		lua_pushnil(L);
 	}
@@ -29,7 +42,7 @@ int GroupFunctions::luaGroupCreate(lua_State* L) {
 
 int GroupFunctions::luaGroupGetId(lua_State* L) {
 	// group:getId()
-	Group* group = getUserdata<Group>(L, 1);
+	const auto &group = Lua::getUserdataShared<Group>(L, 1, "Group");
 	if (group) {
 		lua_pushnumber(L, group->id);
 	} else {
@@ -40,9 +53,9 @@ int GroupFunctions::luaGroupGetId(lua_State* L) {
 
 int GroupFunctions::luaGroupGetName(lua_State* L) {
 	// group:getName()
-	Group* group = getUserdata<Group>(L, 1);
+	const auto &group = Lua::getUserdataShared<Group>(L, 1, "Group");
 	if (group) {
-		pushString(L, group->name);
+		Lua::pushString(L, group->name);
 	} else {
 		lua_pushnil(L);
 	}
@@ -51,7 +64,7 @@ int GroupFunctions::luaGroupGetName(lua_State* L) {
 
 int GroupFunctions::luaGroupGetFlags(lua_State* L) {
 	// group:getFlags()
-	Group* group = getUserdata<Group>(L, 1);
+	const auto &group = Lua::getUserdataShared<Group>(L, 1, "Group");
 	if (group) {
 		std::bitset<magic_enum::enum_integer(PlayerFlags_t::FlagLast)> flags;
 		for (uint8_t i = 0; i < magic_enum::enum_integer(PlayerFlags_t::FlagLast); ++i) {
@@ -68,9 +81,9 @@ int GroupFunctions::luaGroupGetFlags(lua_State* L) {
 
 int GroupFunctions::luaGroupGetAccess(lua_State* L) {
 	// group:getAccess()
-	Group* group = getUserdata<Group>(L, 1);
+	const auto &group = Lua::getUserdataShared<Group>(L, 1, "Group");
 	if (group) {
-		pushBoolean(L, group->access);
+		Lua::pushBoolean(L, group->access);
 	} else {
 		lua_pushnil(L);
 	}
@@ -79,7 +92,7 @@ int GroupFunctions::luaGroupGetAccess(lua_State* L) {
 
 int GroupFunctions::luaGroupGetMaxDepotItems(lua_State* L) {
 	// group:getMaxDepotItems()
-	Group* group = getUserdata<Group>(L, 1);
+	const auto &group = Lua::getUserdataShared<Group>(L, 1, "Group");
 	if (group) {
 		lua_pushnumber(L, group->maxDepotItems);
 	} else {
@@ -90,7 +103,7 @@ int GroupFunctions::luaGroupGetMaxDepotItems(lua_State* L) {
 
 int GroupFunctions::luaGroupGetMaxVipEntries(lua_State* L) {
 	// group:getMaxVipEntries()
-	Group* group = getUserdata<Group>(L, 1);
+	const auto &group = Lua::getUserdataShared<Group>(L, 1, "Group");
 	if (group) {
 		lua_pushnumber(L, group->maxVipEntries);
 	} else {
@@ -101,10 +114,10 @@ int GroupFunctions::luaGroupGetMaxVipEntries(lua_State* L) {
 
 int GroupFunctions::luaGroupHasFlag(lua_State* L) {
 	// group:hasFlag(flag)
-	Group* group = getUserdata<Group>(L, 1);
+	const auto &group = Lua::getUserdataShared<Group>(L, 1, "Group");
 	if (group) {
-		auto flag = static_cast<PlayerFlags_t>(getNumber<int>(L, 2));
-		pushBoolean(L, group->flags[Groups::getFlagNumber(flag)]);
+		const auto flag = static_cast<PlayerFlags_t>(Lua::getNumber<int>(L, 2));
+		Lua::pushBoolean(L, group->flags[Groups::getFlagNumber(flag)]);
 	} else {
 		lua_pushnil(L);
 	}

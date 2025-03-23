@@ -1,34 +1,33 @@
 /**
  * Canary - A free and open-source MMORPG server emulator
- * Copyright (©) 2019-2022 OpenTibiaBR <opentibiabr@outlook.com>
+ * Copyright (©) 2019-2024 OpenTibiaBR <opentibiabr@outlook.com>
  * Repository: https://github.com/opentibiabr/canary
  * License: https://github.com/opentibiabr/canary/blob/main/LICENSE
  * Contributors: https://github.com/opentibiabr/canary/graphs/contributors
- * Website: https://docs.opentibiabr.org/
-*/
+ * Website: https://docs.opentibiabr.com/
+ */
 
-#include "pch.hpp"
+#include "items/containers/depot/depotchest.hpp"
 
-#include "items/containers/depot/depotchest.h"
-#include "utils/tools.h"
+#include "utils/tools.hpp"
 
 DepotChest::DepotChest(uint16_t type) :
-	Container(type)
-{
+	Container(type) {
 	maxDepotItems = 2000;
 	maxSize = 32;
 	pagination = true;
 }
 
-ReturnValue DepotChest::queryAdd(int32_t index, const Thing& thing, uint32_t count,
-		uint32_t flags, Creature* actor/* = nullptr*/) const
-{
-	const Item* item = thing.getItem();
+ReturnValue DepotChest::queryAdd(int32_t index, const std::shared_ptr<Thing> &thing, uint32_t count, uint32_t flags, const std::shared_ptr<Creature> &actor /* = nullptr*/) {
+	const auto &item = thing->getItem();
 	if (item == nullptr) {
 		return RETURNVALUE_NOTPOSSIBLE;
 	}
+	if (actor && item->hasOwner() && !item->isOwner(actor)) {
+		return RETURNVALUE_ITEMISNOTYOURS;
+	}
 
-	bool skipLimit = hasBitSet(FLAG_NOLIMIT, flags);
+	const bool skipLimit = hasBitSet(FLAG_NOLIMIT, flags);
 	if (!skipLimit) {
 		int32_t addCount = 0;
 
@@ -36,20 +35,19 @@ ReturnValue DepotChest::queryAdd(int32_t index, const Thing& thing, uint32_t cou
 			addCount = 1;
 		}
 
-		if (item->getTopParent() != this) {
-			if (const Container* container = item->getContainer()) {
+		if (item->getTopParent().get() != this) {
+			if (const std::shared_ptr<Container> &container = item->getContainer()) {
 				addCount = container->getItemHoldingCount() + 1;
 			} else {
 				addCount = 1;
 			}
 		}
 
-		if (Cylinder* localParent = getRealParent()) {
+		if (const std::shared_ptr<Cylinder> &localParent = getRealParent()) {
 			if (localParent->getContainer()->getItemHoldingCount() + addCount > maxDepotItems) {
 				return RETURNVALUE_DEPOTISFULL;
 			}
-		}
-		else if (getItemHoldingCount() + addCount > maxDepotItems) {
+		} else if (getItemHoldingCount() + addCount > maxDepotItems) {
 			return RETURNVALUE_DEPOTISFULL;
 		}
 	}
@@ -57,26 +55,24 @@ ReturnValue DepotChest::queryAdd(int32_t index, const Thing& thing, uint32_t cou
 	return Container::queryAdd(index, thing, count, flags, actor);
 }
 
-void DepotChest::postAddNotification(Thing* thing, const Cylinder* oldParent, int32_t index, CylinderLink_t)
-{
-	Cylinder* localParent = getParent();
+void DepotChest::postAddNotification(const std::shared_ptr<Thing> &thing, const std::shared_ptr<Cylinder> &oldParent, int32_t index, CylinderLink_t) {
+	const std::shared_ptr<Cylinder> &localParent = getParent();
 	if (localParent != nullptr) {
 		localParent->postAddNotification(thing, oldParent, index, LINK_PARENT);
 	}
 }
 
-void DepotChest::postRemoveNotification(Thing* thing, const Cylinder* newParent, int32_t index, CylinderLink_t)
-{
-	Cylinder* localParent = getParent();
+void DepotChest::postRemoveNotification(const std::shared_ptr<Thing> &thing, const std::shared_ptr<Cylinder> &newParent, int32_t index, CylinderLink_t) {
+	const std::shared_ptr<Cylinder> &localParent = getParent();
 	if (localParent != nullptr) {
 		localParent->postRemoveNotification(thing, newParent, index, LINK_PARENT);
 	}
 }
 
-Cylinder* DepotChest::getParent() const
-{
-	if (parent && parent->getParent()) {
-		return parent->getParent()->getParent();
+std::shared_ptr<Cylinder> DepotChest::getParent() {
+	const auto &parentLocked = m_parent.lock();
+	if (parentLocked && parentLocked->getParent()) {
+		return parentLocked->getParent()->getParent();
 	}
 	return nullptr;
 }

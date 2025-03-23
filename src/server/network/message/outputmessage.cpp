@@ -1,31 +1,36 @@
 /**
  * Canary - A free and open-source MMORPG server emulator
- * Copyright (©) 2019-2022 OpenTibiaBR <opentibiabr@outlook.com>
+ * Copyright (©) 2019-2024 OpenTibiaBR <opentibiabr@outlook.com>
  * Repository: https://github.com/opentibiabr/canary
  * License: https://github.com/opentibiabr/canary/blob/main/LICENSE
  * Contributors: https://github.com/opentibiabr/canary/graphs/contributors
- * Website: https://docs.opentibiabr.org/
-*/
+ * Website: https://docs.opentibiabr.com/
+ */
 
-#include "pch.hpp"
+#include "server/network/message/outputmessage.hpp"
 
-#include "outputmessage.h"
-#include "server/network/protocol/protocol.h"
-#include "game/scheduling/scheduler.h"
+#include "lib/di/container.hpp"
+#include "server/network/protocol/protocol.hpp"
+#include "game/scheduling/dispatcher.hpp"
+#include "utils/lockfree.hpp"
 
-const std::chrono::milliseconds OUTPUTMESSAGE_AUTOSEND_DELAY {10};
+constexpr uint16_t OUTPUTMESSAGE_FREE_LIST_CAPACITY = 2048;
+constexpr std::chrono::milliseconds OUTPUTMESSAGE_AUTOSEND_DELAY { 10 };
 
-void OutputMessagePool::scheduleSendAll()
-{
-	auto function = std::bind_front(&OutputMessagePool::sendAll, this);
-	g_scheduler().addEvent(createSchedulerTask(OUTPUTMESSAGE_AUTOSEND_DELAY.count(), function));
+OutputMessagePool &OutputMessagePool::getInstance() {
+	return inject<OutputMessagePool>();
 }
 
-void OutputMessagePool::sendAll()
-{
-	//dispatcher thread
-	for (auto& protocol : bufferedProtocols) {
-		auto& msg = protocol->getCurrentBuffer();
+void OutputMessagePool::scheduleSendAll() {
+	g_dispatcher().scheduleEvent(
+		OUTPUTMESSAGE_AUTOSEND_DELAY.count(), [this] { sendAll(); }, "OutputMessagePool::sendAll"
+	);
+}
+
+void OutputMessagePool::sendAll() {
+	// dispatcher thread
+	for (const auto &protocol : bufferedProtocols) {
+		auto &msg = protocol->getCurrentBuffer();
 		if (msg) {
 			protocol->send(std::move(msg));
 		}
@@ -36,26 +41,23 @@ void OutputMessagePool::sendAll()
 	}
 }
 
-void OutputMessagePool::addProtocolToAutosend(Protocol_ptr protocol)
-{
-	//dispatcher thread
+void OutputMessagePool::addProtocolToAutosend(const Protocol_ptr &protocol) {
+	// dispatcher thread
 	if (bufferedProtocols.empty()) {
 		scheduleSendAll();
 	}
 	bufferedProtocols.emplace_back(protocol);
 }
 
-void OutputMessagePool::removeProtocolFromAutosend(const Protocol_ptr& protocol)
-{
-	//dispatcher thread
-	auto it = std::ranges::find(bufferedProtocols.begin(), bufferedProtocols.end(), protocol);
+void OutputMessagePool::removeProtocolFromAutosend(const Protocol_ptr &protocol) {
+	// dispatcher thread
+	const auto it = std::ranges::find(bufferedProtocols, protocol);
 	if (it != bufferedProtocols.end()) {
 		*it = bufferedProtocols.back();
 		bufferedProtocols.pop_back();
 	}
 }
 
-OutputMessage_ptr OutputMessagePool::getOutputMessage()
-{
-	return std::make_shared<OutputMessage>();
+OutputMessage_ptr OutputMessagePool::getOutputMessage() {
+	return std::allocate_shared<OutputMessage>(LockfreePoolingAllocator<OutputMessage, OUTPUTMESSAGE_FREE_LIST_CAPACITY>());
 }

@@ -1,18 +1,13 @@
 /**
  * Canary - A free and open-source MMORPG server emulator
- * Copyright (©) 2019-2022 OpenTibiaBR <opentibiabr@outlook.com>
+ * Copyright (©) 2019-2024 OpenTibiaBR <opentibiabr@outlook.com>
  * Repository: https://github.com/opentibiabr/canary
  * License: https://github.com/opentibiabr/canary/blob/main/LICENSE
  * Contributors: https://github.com/opentibiabr/canary/graphs/contributors
- * Website: https://docs.opentibiabr.org/
-*/
+ * Website: https://docs.opentibiabr.com/
+ */
 
-#ifndef SRC_GAME_FUNCTIONS_GAME_RELOAD_HPP_
-#define SRC_GAME_FUNCTIONS_GAME_RELOAD_HPP_
-
-#include "game/game.h"
-
-class Game;
+#pragma once
 
 enum class Reload_t : uint8_t {
 	RELOAD_TYPE_NONE,
@@ -20,53 +15,56 @@ enum class Reload_t : uint8_t {
 	RELOAD_TYPE_CHAT,
 	RELOAD_TYPE_CONFIG,
 	RELOAD_TYPE_EVENTS,
-	RELOAD_TYPE_CORE,
-	RELOAD_TYPE_IMBUEMENTS,
-	RELOAD_TYPE_ITEMS,
 	RELOAD_TYPE_MODULES,
-	RELOAD_TYPE_MONSTERS,
+	RELOAD_TYPE_OUTFITS,
 	RELOAD_TYPE_MOUNTS,
+	RELOAD_TYPE_FAMILIARS,
+	RELOAD_TYPE_IMBUEMENTS,
+	RELOAD_TYPE_VOCATIONS,
+	RELOAD_TYPE_CORE,
+	RELOAD_TYPE_GROUPS,
+	RELOAD_TYPE_SCRIPTS,
+	RELOAD_TYPE_ITEMS,
+	RELOAD_TYPE_MONSTERS,
 	RELOAD_TYPE_NPCS,
 	RELOAD_TYPE_RAIDS,
-	RELOAD_TYPE_SCRIPTS,
-	RELOAD_TYPE_TALKACTION,
-	RELOAD_TYPE_GROUPS,
 
 	// Every is last
 	RELOAD_TYPE_LAST
 };
 
-class GameReload : public Game
-{
+class GameReload {
 public:
 	GameReload();
 	~GameReload();
 
 	// non-copyable
-	GameReload(const GameReload&) = delete;
-	GameReload &operator = (const GameReload&) = delete;
+	GameReload(const GameReload &) = delete;
+	GameReload &operator=(const GameReload &) = delete;
 
-	bool init(Reload_t reloadType) const;
-	uint8_t getReloadNumber(Reload_t reloadTypes) const;
+	static GameReload &getInstance();
+
+	static bool init(Reload_t reloadType);
+	static uint8_t getReloadNumber(Reload_t reloadTypes);
 
 private:
-	bool reloadAll() const;
-	bool reloadChat() const;
-	bool reloadConfig() const;
-	bool reloadEvents() const;
-	bool reloadCore() const;
-	bool reloadImbuements() const;
-	bool reloadItems() const;
-	bool reloadModules() const;
-	bool reloadMonsters() const;
-	bool reloadMounts() const;
-	bool reloadNpcs() const;
-	bool reloadRaids() const;
-	bool reloadScripts() const;
-	bool reloadTalkaction() const;
-	bool reloadGroups() const;
+	static bool reloadAll();
+	static bool reloadChat();
+	static bool reloadConfig();
+	static bool reloadEvents();
+	static bool reloadModules();
+	static bool reloadOutfits();
+	static bool reloadMounts();
+	static bool reloadFamiliars();
+	static bool reloadImbuements();
+	static bool reloadVocations();
+	static bool reloadCore();
+	static bool reloadGroups();
+	static bool reloadScripts();
+	static bool reloadItems();
+	static bool reloadMonsters();
+	static bool reloadNpcs();
+	static bool reloadRaids();
 };
 
-const inline GameReload g_gameReload;
-
-#endif  // SRC_GAME_FUNCTIONS_GAME_RELOAD_HPP_
+constexpr auto g_gameReload = GameReload::getInstance;

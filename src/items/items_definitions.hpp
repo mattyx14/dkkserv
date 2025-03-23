@@ -1,14 +1,13 @@
 /**
  * Canary - A free and open-source MMORPG server emulator
- * Copyright (©) 2019-2022 OpenTibiaBR <opentibiabr@outlook.com>
+ * Copyright (©) 2019-2024 OpenTibiaBR <opentibiabr@outlook.com>
  * Repository: https://github.com/opentibiabr/canary
  * License: https://github.com/opentibiabr/canary/blob/main/LICENSE
  * Contributors: https://github.com/opentibiabr/canary/graphs/contributors
- * Website: https://docs.opentibiabr.org/
-*/
+ * Website: https://docs.opentibiabr.com/
+ */
 
-#ifndef SRC_ITEMS_ITEMS_DEFINITIONS_HPP_
-#define SRC_ITEMS_ITEMS_DEFINITIONS_HPP_
+#pragma once
 
 class Imbuement;
 
@@ -20,7 +19,7 @@ enum ItemProperty {
 	CONST_PROP_BLOCKPATH,
 	CONST_PROP_ISVERTICAL,
 	CONST_PROP_ISHORIZONTAL,
-	CONST_PROP_MOVEABLE,
+	CONST_PROP_MOVABLE,
 	CONST_PROP_IMMOVABLEBLOCKSOLID,
 	CONST_PROP_IMMOVABLEBLOCKPATH,
 	CONST_PROP_IMMOVABLENOFIELDBLOCKPATH,
@@ -34,8 +33,11 @@ enum Attr_ReadValue {
 	ATTR_READ_END,
 };
 
-enum ReturnValue {
+enum ReturnValue : uint16_t {
 	RETURNVALUE_NOERROR,
+	RETURNVALUE_NOTBOUGHTINSTORE,
+	RETURNVALUE_ITEMCANNOTBEMOVEDTHERE,
+	RETURNVALUE_ITEMCANNOTBEMOVEDPOUCH,
 	RETURNVALUE_NOTPOSSIBLE,
 	RETURNVALUE_NOTENOUGHROOM,
 	RETURNVALUE_PLAYERISPZLOCKED,
@@ -44,7 +46,7 @@ enum ReturnValue {
 	RETURNVALUE_THEREISNOWAY,
 	RETURNVALUE_DESTINATIONOUTOFREACH,
 	RETURNVALUE_CREATUREBLOCK,
-	RETURNVALUE_NOTMOVEABLE,
+	RETURNVALUE_NOTMOVABLE,
 	RETURNVALUE_DROPTWOHANDEDITEM,
 	RETURNVALUE_BOTHHANDSNEEDTOBEFREE,
 	RETURNVALUE_CANONLYUSEONEWEAPON,
@@ -61,6 +63,7 @@ enum ReturnValue {
 	RETURNVALUE_CANNOTPICKUP,
 	RETURNVALUE_THISISIMPOSSIBLE,
 	RETURNVALUE_DEPOTISFULL,
+	RETURNVALUE_CONTAINERISFULL,
 	RETURNVALUE_CREATUREDOESNOTEXIST,
 	RETURNVALUE_CANNOTUSETHISOBJECT,
 	RETURNVALUE_PLAYERWITHTHISNAMEISNOTONLINE,
@@ -117,7 +120,10 @@ enum ReturnValue {
 	RETURNVALUE_NOTENOUGHSHIELDLEVEL,
 	RETURNVALUE_NOTENOUGHFISHLEVEL,
 	RETURNVALUE_REWARDCHESTISEMPTY,
-	RETURNVALUE_CONTACTADMINISTRATOR
+	RETURNVALUE_REWARDCONTAINERISEMPTY,
+	RETURNVALUE_CONTACTADMINISTRATOR,
+	RETURNVALUE_ITEMISNOTYOURS,
+	RETURNVALUE_ITEMUNTRADEABLE,
 };
 
 enum ItemGroup_t {
@@ -134,34 +140,35 @@ enum ItemGroup_t {
 enum ItemTypes_t {
 	ITEM_TYPE_NONE,
 
-	// Odered to make the cast from protobuf::itemCategory to ItemTypes_t easier.
+	// Ordered to make the cast from protobuf::itemCategory to ItemTypes_t easier.
 	// Do not edit it from Start-End
 	// Start
-	ITEM_TYPE_ARMOR,
-	ITEM_TYPE_AMULET,
-	ITEM_TYPE_BOOTS,
-	ITEM_TYPE_CONTAINER,
-	ITEM_TYPE_DECORATION,
-	ITEM_TYPE_FOOD,
-	ITEM_TYPE_HELMET,
-	ITEM_TYPE_LEGS,
-	ITEM_TYPE_OTHER,
-	ITEM_TYPE_POTION,
-	ITEM_TYPE_RING,
-	ITEM_TYPE_RUNE,
-	ITEM_TYPE_SHIELD,
-	ITEM_TYPE_TOOLS,
-	ITEM_TYPE_VALUABLE,
-	ITEM_TYPE_AMMO,
-	ITEM_TYPE_AXE,
-	ITEM_TYPE_CLUB,
-	ITEM_TYPE_DISTANCE,
-	ITEM_TYPE_SWORD,
-	ITEM_TYPE_WAND,
-	ITEM_TYPE_PREMIUMSCROLL,
-	ITEM_TYPE_TIBIACOIN,
-	ITEM_TYPE_CREATUREPRODUCT,
-	ITEM_TYPE_QUIVER,
+	ITEM_TYPE_ARMOR = 1,
+	ITEM_TYPE_AMULET = 2,
+	ITEM_TYPE_BOOTS = 3,
+	ITEM_TYPE_CONTAINER = 4,
+	ITEM_TYPE_DECORATION = 5,
+	ITEM_TYPE_FOOD = 6,
+	ITEM_TYPE_HELMET = 7,
+	ITEM_TYPE_LEGS = 8,
+	ITEM_TYPE_OTHER = 9,
+	ITEM_TYPE_POTION = 10,
+	ITEM_TYPE_RING = 11,
+	ITEM_TYPE_RUNE = 12,
+	ITEM_TYPE_SHIELD = 13,
+	ITEM_TYPE_TOOLS = 14,
+	ITEM_TYPE_VALUABLE = 15,
+	ITEM_TYPE_AMMO = 16,
+	ITEM_TYPE_AXE = 17,
+	ITEM_TYPE_CLUB = 18,
+	ITEM_TYPE_DISTANCE = 19,
+	ITEM_TYPE_SWORD = 20,
+	ITEM_TYPE_WAND = 21,
+	ITEM_TYPE_PREMIUMSCROLL = 22,
+	ITEM_TYPE_TIBIACOIN = 23,
+	ITEM_TYPE_CREATUREPRODUCT = 24,
+	ITEM_TYPE_QUIVER = 25,
+	ITEM_TYPE_SOULCORES = 26,
 	// End
 
 	ITEM_TYPE_DEPOT,
@@ -179,6 +186,10 @@ enum ItemTypes_t {
 	ITEM_TYPE_GOLD,
 	ITEM_TYPE_UNASSIGNED,
 
+	// Other types
+	ITEM_TYPE_LADDER,
+	ITEM_TYPE_DUMMY,
+
 	ITEM_TYPE_LAST,
 };
 
@@ -187,16 +198,10 @@ enum TradeEvents_t {
 	ON_TRADE_CANCEL,
 };
 
-enum ItemDecayState_t : uint8_t {
-	DECAYING_FALSE = 0,
-	DECAYING_TRUE,
-	DECAYING_PENDING,
-	DECAYING_STOPPING,
-};
-
 enum AttrTypes_t {
-	//ATTR_DESCRIPTION = 1,
-	//ATTR_EXT_FILE = 2,
+	// ATTR_NONE = 0 (last enum)
+	ATTR_STORE = 1,
+	// ATTR_EXT_FILE = 2,
 	ATTR_TILE_FLAGS = 3,
 	ATTR_ACTION_ID = 4,
 	ATTR_UNIQUE_ID = 5,
@@ -205,9 +210,9 @@ enum AttrTypes_t {
 	ATTR_TELE_DEST = 8,
 	ATTR_ITEM = 9,
 	ATTR_DEPOT_ID = 10,
-	//ATTR_EXT_SPAWN_FILE = 11,
+	// ATTR_EXT_SPAWN_FILE = 11,
 	ATTR_RUNE_CHARGES = 12,
-	//ATTR_EXT_HOUSE_FILE = 13,
+	// ATTR_EXT_HOUSE_FILE = 13,
 	ATTR_HOUSEDOORID = 14,
 	ATTR_COUNT = 15,
 	ATTR_DURATION = 16,
@@ -231,10 +236,17 @@ enum AttrTypes_t {
 	ATTR_SPECIAL = 34,
 	ATTR_IMBUEMENT_SLOT = 35,
 	ATTR_OPENCONTAINER = 36,
-	ATTR_CUSTOM_ATTRIBUTES = 37,
+	ATTR_CUSTOM_ATTRIBUTES = 37, // Deprecated (override by ATTR_CUSTOM)
 	ATTR_QUICKLOOTCONTAINER = 38,
-	ATTR_IMBUEMENT_TYPE = 39,
-	ATTR_TIER = 40
+	ATTR_AMOUNT = 39,
+	ATTR_TIER = 40,
+	ATTR_CUSTOM = 41,
+	ATTR_STORE_INBOX_CATEGORY = 42,
+	ATTR_OWNER = 43,
+	ATTR_OBTAINCONTAINER = 44,
+
+	// Always the last
+	ATTR_NONE = 0
 };
 
 enum ImbuementTypes_t : int64_t {
@@ -259,6 +271,142 @@ enum ImbuementTypes_t : int64_t {
 	IMBUEMENT_INCREASE_CAPACITY = 17
 };
 
+enum class Augment_t : uint8_t {
+	None,
+	Base,
+	PowerfulImpact,
+	StrongImpact,
+	IncreasedDamage,
+	Cooldown,
+	CriticalExtraDamage,
+	LifeLeech,
+	ManaLeech
+};
+
+enum class ContainerCategory_t : uint8_t {
+	All,
+	Ammunition,
+	AmuletsAndNecklaces,
+	Animals,
+	Annelids,
+	Arachnids,
+	Armors,
+	ArtificialTiles,
+	AstralShapers,
+	AttackRunes,
+	AxeWeapons,
+	Bats,
+	Bears,
+	Birds,
+	BlessingCharms,
+	Blobs,
+	Books,
+	Boots,
+	Bushes,
+	Cactuses,
+	Canines,
+	Casks,
+	Closets,
+	ClothingAccessories,
+	ClubWeapons,
+	Coffins,
+	Constructions,
+	Containers,
+	ContestPrizes,
+	CreatureProducts,
+	Decoration,
+	Demons,
+	DistanceWeapons,
+	DocumentsAndPapers,
+	DollsAndBears,
+	Doors,
+	Dragons,
+	Dreamhaunters,
+	Dropdowns,
+	EnchantedItems,
+	EventCreatures,
+	ExerciseWeapons,
+	FansiteItems,
+	Ferns,
+	Fields,
+	Flags,
+	FloorDecorations,
+	FloraAndMinerals,
+	Flowers,
+	FluidContainers,
+	Food,
+	Furniture,
+	GameTokens,
+	Ghosts,
+	Glires,
+	Grass,
+	HealingRunes,
+	Helmets,
+	HiveBorn,
+	Illumination,
+	Keys,
+	KitchenTools,
+	Ladders,
+	Legs,
+	LightSources,
+	Liquids,
+	MachinesObjects,
+	Machines,
+	MagicalItems,
+	Metals,
+	Mollusks,
+	Mushrooms,
+	MusicalInstruments,
+	NaturalProducts,
+	NaturalTiles,
+	OtherItems,
+	Outlaws,
+	PaintingEquipment,
+	PartyItems,
+	Pillars,
+	PlantsAndHerbs,
+	Plants,
+	Portals,
+	QuestItems,
+	QuestObjects,
+	Quivers,
+	Refuse,
+	Remains,
+	Rings,
+	Rocks,
+	Rods,
+	Rubbish,
+	Shields,
+	ShrinesAndAltars,
+	Signs,
+	Skeletons,
+	Spellbooks,
+	Stairs,
+	Statues,
+	SupportRunes,
+	SwordWeapons,
+	Tables,
+	TamingItems,
+	Teleporters,
+	ToolsObjects,
+	Tools,
+	TortureInstruments,
+	TournamentRewards,
+	TrainingWeapons,
+	Transportation,
+	Traps,
+	Trees,
+	Trophies,
+	UndeadHumanoids,
+	Ungulates,
+	Utilities,
+	Valuables,
+	WallHangings,
+	Walls,
+	Wands,
+	Windows
+};
+
 enum SlotPositionBits : uint32_t {
 	SLOTP_WHEREEVER = 0xFFFFFFFF,
 	SLOTP_HEAD = 1 << 0,
@@ -274,43 +422,6 @@ enum SlotPositionBits : uint32_t {
 	SLOTP_DEPOT = 1 << 10,
 	SLOTP_TWO_HAND = 1 << 11,
 	SLOTP_HAND = (SLOTP_LEFT | SLOTP_RIGHT)
-};
-
-enum ItemAttrTypes : uint32_t {
-	ITEM_ATTRIBUTE_NONE,
-
-	ITEM_ATTRIBUTE_ACTIONID = 1 << 0,
-	ITEM_ATTRIBUTE_UNIQUEID = 1 << 1,
-	ITEM_ATTRIBUTE_DESCRIPTION = 1 << 2,
-	ITEM_ATTRIBUTE_TEXT = 1 << 3,
-	ITEM_ATTRIBUTE_DATE = 1 << 4,
-	ITEM_ATTRIBUTE_WRITER = 1 << 5,
-	ITEM_ATTRIBUTE_NAME = 1 << 6,
-	ITEM_ATTRIBUTE_ARTICLE = 1 << 7,
-	ITEM_ATTRIBUTE_PLURALNAME = 1 << 8,
-	ITEM_ATTRIBUTE_WEIGHT = 1 << 9,
-	ITEM_ATTRIBUTE_ATTACK = 1 << 10,
-	ITEM_ATTRIBUTE_DEFENSE = 1 << 11,
-	ITEM_ATTRIBUTE_EXTRADEFENSE = 1 << 12,
-	ITEM_ATTRIBUTE_ARMOR = 1 << 13,
-	ITEM_ATTRIBUTE_HITCHANCE = 1 << 14,
-	ITEM_ATTRIBUTE_SHOOTRANGE = 1 << 15,
-	ITEM_ATTRIBUTE_OWNER = 1 << 16,
-	ITEM_ATTRIBUTE_DURATION = 1 << 17,
-	ITEM_ATTRIBUTE_DECAYSTATE = 1 << 18,
-	ITEM_ATTRIBUTE_CORPSEOWNER = 1 << 19,
-	ITEM_ATTRIBUTE_CHARGES = 1 << 20,
-	ITEM_ATTRIBUTE_FLUIDTYPE = 1 << 21,
-	ITEM_ATTRIBUTE_DOORID = 1 << 22,
-	ITEM_ATTRIBUTE_SPECIAL = 1 << 23,
-	ITEM_ATTRIBUTE_IMBUEMENT_SLOT = 1 << 24,
-	ITEM_ATTRIBUTE_OPENCONTAINER = 1 << 25,
-	ITEM_ATTRIBUTE_QUICKLOOTCONTAINER = 1 << 26,
-	ITEM_ATTRIBUTE_DURATION_TIMESTAMP = 1 << 27,
-	ITEM_ATTRIBUTE_IMBUEMENT_TYPE = 1 << 28,
-	ITEM_ATTRIBUTE_TIER = 1 << 29,
-
-	ITEM_ATTRIBUTE_CUSTOM = 1U << 31
 };
 
 enum TileFlags_t : uint32_t {
@@ -340,17 +451,16 @@ enum TileFlags_t : uint32_t {
 	TILESTATE_IMMOVABLENOFIELDBLOCKPATH = 1 << 21,
 	TILESTATE_NOFIELDBLOCKPATH = 1 << 22,
 	TILESTATE_SUPPORTS_HANGABLE = 1 << 23,
+	TILESTATE_MOVABLE = 1 << 24,
+	TILESTATE_ISHORIZONTAL = 1 << 25,
+	TILESTATE_ISVERTICAL = 1 << 26,
+	TILESTATE_BLOCKPROJECTILE = 1 << 27,
+	TILESTATE_HASHEIGHT = 1 << 28,
 
-	TILESTATE_FLOORCHANGE = TILESTATE_FLOORCHANGE_DOWN |
-                            TILESTATE_FLOORCHANGE_NORTH |
-                            TILESTATE_FLOORCHANGE_SOUTH |
-                            TILESTATE_FLOORCHANGE_EAST |
-                            TILESTATE_FLOORCHANGE_WEST |
-                            TILESTATE_FLOORCHANGE_SOUTH_ALT |
-                            TILESTATE_FLOORCHANGE_EAST_ALT,
+	TILESTATE_FLOORCHANGE = TILESTATE_FLOORCHANGE_DOWN | TILESTATE_FLOORCHANGE_NORTH | TILESTATE_FLOORCHANGE_SOUTH | TILESTATE_FLOORCHANGE_EAST | TILESTATE_FLOORCHANGE_WEST | TILESTATE_FLOORCHANGE_SOUTH_ALT | TILESTATE_FLOORCHANGE_EAST_ALT,
 };
 
-enum ZoneType_t {
+enum ZoneType_t : uint8_t {
 	ZONE_PROTECTION,
 	ZONE_NOPVP,
 	ZONE_PVP,
@@ -359,14 +469,14 @@ enum ZoneType_t {
 };
 
 enum CylinderFlags_t {
-	FLAG_NOLIMIT = 1 << 0, //Bypass limits like capacity/container limits, blocking items/creatures etc.
-	FLAG_IGNOREBLOCKITEM = 1 << 1, //Bypass movable blocking item checks
-	FLAG_IGNOREBLOCKCREATURE = 1 << 2, //Bypass creature checks
-	FLAG_CHILDISOWNER = 1 << 3, //Used by containers to query capacity of the carrier (player)
-	FLAG_PATHFINDING = 1 << 4, //An additional check is done for floor changing/teleport items
-	FLAG_IGNOREFIELDDAMAGE = 1 << 5, //Bypass field damage checks
-	FLAG_IGNORENOTMOVEABLE = 1 << 6, //Bypass check for mobility
-	FLAG_IGNOREAUTOSTACK = 1 << 7, //queryDestination will not try to stack items together
+	FLAG_NOLIMIT = 1 << 0, // Bypass limits like capacity/container limits, blocking items/creatures etc.
+	FLAG_IGNOREBLOCKITEM = 1 << 1, // Bypass movable blocking item checks
+	FLAG_IGNOREBLOCKCREATURE = 1 << 2, // Bypass creature checks
+	FLAG_CHILDISOWNER = 1 << 3, // Used by containers to query capacity of the carrier (player)
+	FLAG_PATHFINDING = 1 << 4, // An additional check is done for floor changing/teleport items
+	FLAG_IGNOREFIELDDAMAGE = 1 << 5, // Bypass field damage checks
+	FLAG_IGNORENOTMOVABLE = 1 << 6, // Bypass check for mobility
+	FLAG_IGNOREAUTOSTACK = 1 << 7, // queryDestination will not try to stack items together
 };
 
 enum CylinderLink_t {
@@ -390,7 +500,7 @@ enum ItemParseAttributes_t {
 	ITEM_PARSE_WRAPCONTAINER,
 	ITEM_PARSE_IMBUEMENT,
 	ITEM_PARSE_WRAPABLETO,
-	ITEM_PARSE_MOVEABLE,
+	ITEM_PARSE_MOVABLE,
 	ITEM_PARSE_BLOCKPROJECTILE,
 	ITEM_PARSE_PICKUPABLE,
 	ITEM_PARSE_FLOORCHANGE,
@@ -442,8 +552,8 @@ enum ItemParseAttributes_t {
 	ITEM_PARSE_MAXHITPOINTSPERCENT,
 	ITEM_PARSE_MAXMANAPOINTS,
 	ITEM_PARSE_MAXMANAPOINTSPERCENT,
-	ITEM_PARSE_MAGICPOINTS,
-	ITEM_PARSE_MAGICPOINTSPERCENT,
+	ITEM_PARSE_MAGICLEVELPOINTS,
+	ITEM_PARSE_MAGICLEVELPOINTSPERCENT,
 	ITEM_PARSE_FIELDABSORBPERCENTENERGY,
 	ITEM_PARSE_FIELDABSORBPERCENTFIRE,
 	ITEM_PARSE_FIELDABSORBPERCENTPOISON,
@@ -476,7 +586,9 @@ enum ItemParseAttributes_t {
 	ITEM_PARSE_LEVELDOOR,
 	ITEM_PARSE_MALETRANSFORMTO,
 	ITEM_PARSE_FEMALETRANSFORMTO,
-	ITEM_PARSE_TRANSFORMTO,
+	ITEM_PARSE_BEDPART,
+	ITEM_PARSE_BEDPARTOF,
+	ITEM_PARSE_TRANSFORMONUSE,
 	ITEM_PARSE_DESTROYTO,
 	ITEM_PARSE_ELEMENTICE,
 	ITEM_PARSE_ELEMENTEARTH,
@@ -487,11 +599,39 @@ enum ItemParseAttributes_t {
 	ITEM_PARSE_WALKSTACK,
 	ITEM_PARSE_BLOCK_SOLID,
 	ITEM_PARSE_ALLOWDISTREAD,
+	ITEM_PARSE_STACKSIZE,
+	// 12.72 modifiers
+	ITEM_PARSE_DEATHMAGICLEVELPOINTS,
+	ITEM_PARSE_ENERGYMAGICLEVELPOINTS,
+	ITEM_PARSE_EARTHMAGICLEVELPOINTS,
+	ITEM_PARSE_FIREMAGICLEVELPOINTS,
+	ITEM_PARSE_ICEMAGICLEVELPOINTS,
+	ITEM_PARSE_HEALINGMAGICLEVELPOINTS,
+	ITEM_PARSE_HOLYMAGICLEVELPOINTS,
+	ITEM_PARSE_PHYSICALMAGICLEVELPOINTS,
+	ITEM_PARSE_MAGICSHIELDCAPACITYPERCENT,
+	ITEM_PARSE_MAGICSHIELDCAPACITYFLAT,
+	ITEM_PARSE_PERFECTSHOTDAMAGE,
+	ITEM_PARSE_PERFECTSHOTRANGE,
+	ITEM_PARSE_CLEAVEPERCENT,
+	ITEM_PARSE_REFLECTPERCENTALL,
+	ITEM_PARSE_REFLECTDAMAGE,
+	ITEM_PARSE_PRIMARYTYPE,
+	ITEM_PARSE_USEDBYGUESTS,
+	ITEM_PARSE_SCRIPT,
+	ITEM_PARSE_AUGMENT,
 };
 
 struct ImbuementInfo {
-	Imbuement *imbuement;
-	int32_t duration = 0;
+	Imbuement* imbuement {};
+	uint32_t duration = 0;
 };
 
-#endif  // SRC_ITEMS_ITEMS_DEFINITIONS_HPP_
+struct AugmentInfo {
+	AugmentInfo(std::string spellName, Augment_t type, int32_t value) :
+		spellName(std::move(spellName)), type(type), value(value) { }
+
+	std::string spellName {};
+	Augment_t type;
+	int32_t value {};
+};

@@ -1,24 +1,21 @@
 /**
  * Canary - A free and open-source MMORPG server emulator
- * Copyright (©) 2019-2022 OpenTibiaBR <opentibiabr@outlook.com>
+ * Copyright (©) 2019-2024 OpenTibiaBR <opentibiabr@outlook.com>
  * Repository: https://github.com/opentibiabr/canary
  * License: https://github.com/opentibiabr/canary/blob/main/LICENSE
  * Contributors: https://github.com/opentibiabr/canary/graphs/contributors
- * Website: https://docs.opentibiabr.org/
-*/
+ * Website: https://docs.opentibiabr.com/
+ */
 
-#ifndef SRC_UTILS_CONST_H_
-#define SRC_UTILS_CONST_H_
+#pragma once
 
-const uint32_t MAX_LOOTCHANCE = 100000;
-const uint32_t MAX_STATICWALK = 100;
+static constexpr uint32_t MAX_LOOTCHANCE = 100000;
+static constexpr uint32_t MAX_STATICWALK = 100;
 
 static constexpr size_t NETWORKMESSAGE_PLAYERNAME_MAXLENGTH = 30;
 static constexpr int32_t NETWORKMESSAGE_MAXSIZE = 65500;
 
-// QT clients probably have bigger input buffer because of exiva options
-// But for now we don't support exiva options
-static constexpr int32_t INPUTMESSAGE_MAXSIZE = 2048;
+static constexpr int32_t INPUTMESSAGE_MAXSIZE = 4096;
 
 static constexpr int32_t CHANNEL_GUILD = 0x00;
 static constexpr int32_t CHANNEL_PARTY = 0x01;
@@ -28,10 +25,18 @@ static constexpr int32_t CHANNEL_PRIVATE = 0xFFFF;
 static constexpr int32_t EVENT_IMBUEMENT_INTERVAL = 1000;
 static constexpr uint8_t IMBUEMENT_MAX_TIER = 3;
 
-static constexpr int32_t STORAGEVALUE_PROMOTION = 30018;
-static constexpr int32_t STORAGEVALUE_EMOTE = 30019;
-static constexpr int32_t STORAGEVALUE_DAILYREWARD = 14898;
+static constexpr int32_t STORAGEVALUE_EMOTE = 30008;
+static constexpr int32_t STORAGEVALUE_PODIUM = 30020;
 static constexpr int32_t STORAGEVALUE_BESTIARYKILLCOUNT = 61305000; // Can get up to 2000 storages!
+
+// Hazard system storage
+static constexpr int32_t STORAGEVALUE_HAZARDCOUNT = 112550;
+
+// Wheel of destiny
+static constexpr int32_t STORAGEVALUE_GIFT_OF_LIFE_COOLDOWN_WOD = 43200;
+
+constexpr double SCALING_BASE = 10.0;
+
 // Reserved player storage key ranges;
 // [10000000 - 20000000];
 static constexpr int32_t PSTRG_RESERVED_RANGE_START = 10000000;
@@ -43,12 +48,27 @@ static constexpr int32_t PSTRG_OUTFITS_RANGE_SIZE = 500;
 static constexpr int32_t PSTRG_MOUNTS_RANGE_START = (PSTRG_RESERVED_RANGE_START + 2001);
 static constexpr int32_t PSTRG_MOUNTS_RANGE_SIZE = 10;
 static constexpr int32_t PSTRG_MOUNTS_CURRENTMOUNT = (PSTRG_MOUNTS_RANGE_START + 10);
+//[2012 - 2022];
+static constexpr int32_t PSTRG_WING_RANGE_START = (PSTRG_RESERVED_RANGE_START + 2012);
+static constexpr int32_t PSTRG_WING_RANGE_SIZE = 10;
+static constexpr int32_t PSTRG_WING_CURRENTWING = (PSTRG_WING_RANGE_START + 10);
+//[2023 - 2033];
+static constexpr int32_t PSTRG_EFFECT_RANGE_START = (PSTRG_RESERVED_RANGE_START + 2023);
+static constexpr int32_t PSTRG_EFFECT_RANGE_SIZE = 10;
+static constexpr int32_t PSTRG_EFFECT_CURRENTEFFECT = (PSTRG_EFFECT_RANGE_START + 10);
+//[2034 - 2044];
+static constexpr int32_t PSTRG_AURA_RANGE_START = (PSTRG_RESERVED_RANGE_START + 2034);
+static constexpr int32_t PSTRG_AURA_RANGE_SIZE = 10;
+static constexpr int32_t PSTRG_AURA_CURRENTAURA = (PSTRG_AURA_RANGE_START + 10);
+//[2045 - 2055];
+static constexpr int32_t PSTRG_SHADER_RANGE_START = (PSTRG_RESERVED_RANGE_START + 2045);
+static constexpr int32_t PSTRG_SHADER_RANGE_SIZE = 10;
+static constexpr int32_t PSTRG_SHADER_CURRENTSHADER = (PSTRG_SHADER_RANGE_START + 10);
 // [3000 - 3500];
 static constexpr int32_t PSTRG_FAMILIARS_RANGE_START = (PSTRG_RESERVED_RANGE_START + 3000);
 static constexpr int32_t PSTRG_FAMILIARS_RANGE_SIZE = 500;
 
-#define IS_IN_KEYRANGE(key, range) \
-    (key >= PSTRG_##range##_START && \
-    ((key - PSTRG_##range##_START) <= PSTRG_##range##_SIZE))
+static constexpr int32_t IMMOVABLE_ACTION_ID = 100;
 
-#endif  // SRC_UTILS_CONST_H_
+#define IS_IN_KEYRANGE(key, range) \
+	(key >= PSTRG_##range##_START && ((key - PSTRG_##range##_START) <= PSTRG_##range##_SIZE))

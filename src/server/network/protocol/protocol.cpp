@@ -1,28 +1,27 @@
 /**
  * Canary - A free and open-source MMORPG server emulator
- * Copyright (©) 2019-2022 OpenTibiaBR <opentibiabr@outlook.com>
+ * Copyright (©) 2019-2024 OpenTibiaBR <opentibiabr@outlook.com>
  * Repository: https://github.com/opentibiabr/canary
  * License: https://github.com/opentibiabr/canary/blob/main/LICENSE
  * Contributors: https://github.com/opentibiabr/canary/graphs/contributors
- * Website: https://docs.opentibiabr.org/
-*/
+ * Website: https://docs.opentibiabr.com/
+ */
 
-#include "pch.hpp"
+#include "server/network/protocol/protocol.hpp"
 
-#include "server/network/protocol/protocol.h"
-#include "server/network/message/outputmessage.h"
-#include "security/rsa.h"
-#include "game/scheduling/tasks.h"
+#include "config/configmanager.hpp"
+#include "server/network/connection/connection.hpp"
+#include "server/network/message/outputmessage.hpp"
+#include "security/rsa.hpp"
+#include "game/scheduling/dispatcher.hpp"
+#include "utils/tools.hpp"
 
-Protocol::~Protocol() = default;
+Protocol::Protocol(const Connection_ptr &initConnection) :
+	connectionPtr(initConnection) { }
 
-void Protocol::onSendMessage(const OutputMessage_ptr& msg)
-{
+void Protocol::onSendMessage(const OutputMessage_ptr &msg) {
 	if (!rawMessages) {
-		uint32_t sendMessageChecksum = 0;
-		if (compreesionEnabled && msg->getLength() >= 128 && compression(*msg)) {
-			sendMessageChecksum = (1U << 31);
-		}
+		const uint32_t sendMessageChecksum = msg->getLength() >= 128 && compression(*msg) ? (1U << 31) : 0;
 
 		msg->writeMessageLength();
 
@@ -44,30 +43,30 @@ void Protocol::onSendMessage(const OutputMessage_ptr& msg)
 	}
 }
 
-bool Protocol::sendRecvMessageCallback(NetworkMessage& msg)
-{
+bool Protocol::sendRecvMessageCallback(NetworkMessage &msg) {
 	if (encryptionEnabled && !XTEA_decrypt(msg)) {
-		SPDLOG_ERROR("[Protocol::onRecvMessage] - XTEA_decrypt Failed");
+		g_logger().error("[Protocol::onRecvMessage] - XTEA_decrypt Failed");
 		return false;
 	}
 
-	auto protocolWeak = std::weak_ptr<Protocol>(shared_from_this());
-	std::function<void (void)> callback = [protocolWeak, &msg]() {
-		if (auto protocol = protocolWeak.lock()) {
-			if (auto protocolConnection = protocol->getConnection()) {
-				protocol->parsePacket(msg);
-				protocolConnection->resumeWork();
+	g_dispatcher().addEvent(
+		[&msg, protocolWeak = std::weak_ptr<Protocol>(shared_from_this())]() {
+			if (const auto &protocol = protocolWeak.lock()) {
+				if (const auto &protocolConnection = protocol->getConnection()) {
+					protocol->parsePacket(msg);
+					protocolConnection->resumeWork();
+				}
 			}
-		}
-	};
-	g_dispatcher().addTask(createTask(callback));
+		},
+		__FUNCTION__
+	);
+
 	return true;
 }
 
-bool Protocol::onRecvMessage(NetworkMessage& msg)
-{
+bool Protocol::onRecvMessage(NetworkMessage &msg) {
 	if (checksumMethod != CHECKSUM_METHOD_NONE) {
-		uint32_t recvChecksum = msg.get<uint32_t>();
+		const auto recvChecksum = msg.get<uint32_t>();
 		if (checksumMethod == CHECKSUM_METHOD_SEQUENCE) {
 			if (recvChecksum == 0) {
 				// checksum 0 indicate that the packet should be connection ping - 0x1C packet header
@@ -75,8 +74,7 @@ bool Protocol::onRecvMessage(NetworkMessage& msg)
 				return false;
 			}
 
-			uint32_t checksum;
-			checksum = ++clientSequenceNumber;
+			const uint32_t checksum = ++clientSequenceNumber;
 			if (clientSequenceNumber >= 0x7FFFFFFF) {
 				clientSequenceNumber = 0;
 			}
@@ -87,9 +85,8 @@ bool Protocol::onRecvMessage(NetworkMessage& msg)
 			}
 		} else {
 			uint32_t checksum;
-			if (int32_t len = msg.getLength() - msg.getBufferPosition();
-			len > 0)
-			{
+			if (const int32_t len = msg.getLength() - msg.getBufferPosition();
+			    len > 0) {
 				checksum = adlerChecksum(msg.getBuffer() + msg.getBufferPosition(), len);
 			} else {
 				checksum = 0;
@@ -105,9 +102,8 @@ bool Protocol::onRecvMessage(NetworkMessage& msg)
 	return sendRecvMessageCallback(msg);
 }
 
-OutputMessage_ptr Protocol::getOutputBuffer(int32_t size)
-{
-	//dispatcher thread
+OutputMessage_ptr Protocol::getOutputBuffer(int32_t size) {
+	// dispatcher thread
 	if (!outputBuffer) {
 		outputBuffer = OutputMessagePool::getOutputMessage();
 	} else if ((outputBuffer->getLength() + size) > MAX_PROTOCOL_BODY_LENGTH) {
@@ -117,74 +113,104 @@ OutputMessage_ptr Protocol::getOutputBuffer(int32_t size)
 	return outputBuffer;
 }
 
-void Protocol::XTEA_encrypt(OutputMessage& msg) const
-{
-	const uint32_t delta = 0x61C88647;
-
-	// The message must be a multiple of 8
-	size_t paddingBytes = msg.getLength() & 7;
-	if (paddingBytes != 0) {
-		msg.addPaddingBytes(8 - paddingBytes);
+void Protocol::send(OutputMessage_ptr msg) const {
+	if (auto connection = getConnection()) {
+		connection->send(msg);
 	}
+}
 
-	uint8_t* buffer = msg.getOutputBuffer();
-	auto messageLength = static_cast<int32_t>(msg.getLength());
-	int32_t readPos = 0;
-	const std::array<uint32_t, 4> newKey = {key[0], key[1], key[2], key[3]};
-	// TODO: refactor this for not use c-style
-	uint32_t precachedControlSum[32][2];
-	uint32_t sum = 0;
-	for (int32_t i = 0; i < 32; ++i) {
-		precachedControlSum[i][0] = (sum + newKey[sum & 3]);
-		sum -= delta;
-		precachedControlSum[i][1] = (sum + newKey[(sum >> 11) & 3]);
+void Protocol::disconnect() const {
+	if (const auto connection = getConnection()) {
+		connection->close();
 	}
-	while (readPos < messageLength) {
-		std::array<uint32_t, 2> vData = {};
-		memcpy(vData.data(), buffer + readPos, 8);
-		for (int32_t i = 0; i < 32; ++i) {
-			vData[0] += ((vData[1] << 4 ^ vData[1] >> 5) + vData[1]) ^ precachedControlSum[i][0];
-			vData[1] += ((vData[0] << 4 ^ vData[0] >> 5) + vData[0]) ^ precachedControlSum[i][1];
+}
+
+void Protocol::XTEA_transform(uint8_t* buffer, size_t messageLength, bool encrypt) const {
+	constexpr uint32_t delta = 0x61C88647;
+	size_t readPos = 0;
+	const std::array<uint32_t, 4> newKey = key;
+
+	std::array<std::array<uint32_t, 2>, 32> precachedControlSum;
+	uint32_t sum = encrypt ? 0 : 0xC6EF3720;
+
+	// Precompute control sums
+	if (encrypt) {
+		for (size_t i = 0; i < 32; ++i) {
+			precachedControlSum[i][0] = sum + newKey[sum & 3];
+			sum -= delta;
+			precachedControlSum[i][1] = sum + newKey[(sum >> 11) & 3];
 		}
-		memcpy(buffer + readPos, vData.data(), 8);
+	} else {
+		for (size_t i = 0; i < 32; ++i) {
+			precachedControlSum[i][0] = sum + newKey[(sum >> 11) & 3];
+			sum += delta;
+			precachedControlSum[i][1] = sum + newKey[sum & 3];
+		}
+	}
+
+	while (readPos < messageLength) {
+		std::array<uint8_t, 8> tempBuffer;
+		std::ranges::copy_n(buffer + readPos, 8, tempBuffer.begin());
+
+		// Convert bytes to uint32_t considering little-endian order
+		std::array<uint8_t, 4> bytes0;
+		std::array<uint8_t, 4> bytes1;
+		std::copy_n(tempBuffer.begin(), 4, bytes0.begin());
+		std::copy_n(tempBuffer.begin() + 4, 4, bytes1.begin());
+
+		uint32_t vData0 = std::bit_cast<uint32_t>(bytes0);
+		uint32_t vData1 = std::bit_cast<uint32_t>(bytes1);
+
+		if (encrypt) {
+			for (size_t i = 0; i < 32; ++i) {
+				vData0 += ((vData1 << 4 ^ vData1 >> 5) + vData1) ^ precachedControlSum[i][0];
+				vData1 += ((vData0 << 4 ^ vData0 >> 5) + vData0) ^ precachedControlSum[i][1];
+			}
+		} else {
+			for (size_t i = 0; i < 32; ++i) {
+				vData1 -= ((vData0 << 4 ^ vData0 >> 5) + vData0) ^ precachedControlSum[i][0];
+				vData0 -= ((vData1 << 4 ^ vData1 >> 5) + vData1) ^ precachedControlSum[i][1];
+			}
+		}
+
+		// Convert vData back to bytes
+		bytes0 = std::bit_cast<std::array<uint8_t, 4>>(vData0);
+		bytes1 = std::bit_cast<std::array<uint8_t, 4>>(vData1);
+
+		// Copy transformed bytes back to buffer
+		std::copy_n(bytes0.begin(), 4, buffer + readPos);
+		std::copy_n(bytes1.begin(), 4, buffer + readPos + 4);
+
 		readPos += 8;
 	}
 }
 
-bool Protocol::XTEA_decrypt(NetworkMessage& msg) const
-{
+void Protocol::XTEA_encrypt(OutputMessage &outputMessage) const {
+	// Ensure the message length is a multiple of 8
+	size_t paddingBytes = outputMessage.getLength() % 8;
+	if (paddingBytes != 0) {
+		outputMessage.addPaddingBytes(8 - paddingBytes);
+	}
+
+	uint8_t* buffer = outputMessage.getOutputBuffer();
+	size_t messageLength = outputMessage.getLength();
+
+	XTEA_transform(buffer, messageLength, true);
+}
+
+bool Protocol::XTEA_decrypt(NetworkMessage &msg) const {
 	uint16_t msgLength = msg.getLength() - (checksumMethod == CHECKSUM_METHOD_NONE ? 2 : 6);
-	if ((msgLength & 7) != 0) {
+	if ((msgLength % 8) != 0) {
 		return false;
 	}
 
-	const uint32_t delta = 0x61C88647;
-
 	uint8_t* buffer = msg.getBuffer() + msg.getBufferPosition();
-	auto messageLength = static_cast<int32_t>(msgLength);
-	int32_t readPos = 0;
-	const std::array<uint32_t, 4> newKey = {key[0], key[1], key[2], key[3]};
-	// TODO: refactor this for not use c-style
-	uint32_t precachedControlSum[32][2];
-	uint32_t sum = 0xC6EF3720;
-	for (int32_t i = 0; i < 32; ++i) {
-		precachedControlSum[i][0] = (sum + newKey[(sum >> 11) & 3]);
-		sum += delta;
-		precachedControlSum[i][1] = (sum + newKey[sum & 3]);
-	}
-	while (readPos < messageLength) {
-		std::array<uint32_t, 2> vData = {};
-		memcpy(vData.data(), buffer + readPos, 8);
-		for (int32_t i = 0; i < 32; ++i) {
-			vData[1] -= ((vData[0] << 4 ^ vData[0] >> 5) + vData[0]) ^ precachedControlSum[i][0];
-			vData[0] -= ((vData[1] << 4 ^ vData[1] >> 5) + vData[1]) ^ precachedControlSum[i][1];
-		}
-		memcpy(buffer + readPos, vData.data(), 8);
-		readPos += 8;
-	}
+	size_t messageLength = msgLength;
+
+	XTEA_transform(buffer, messageLength, false);
 
 	uint16_t innerLength = msg.get<uint16_t>();
-	if (innerLength > msgLength - 2) {
+	if (std::cmp_greater(innerLength, msgLength - 2)) {
 		return false;
 	}
 
@@ -192,73 +218,87 @@ bool Protocol::XTEA_decrypt(NetworkMessage& msg) const
 	return true;
 }
 
-bool Protocol::RSA_decrypt(NetworkMessage& msg)
-{
+bool Protocol::RSA_decrypt(NetworkMessage &msg) {
 	if ((msg.getLength() - msg.getBufferPosition()) < 128) {
 		return false;
 	}
 
-	auto charData = static_cast<char*>(static_cast<void*>(msg.getBuffer()));
+	const auto charData = static_cast<char*>(static_cast<void*>(msg.getBuffer()));
 	// Does not break strict aliasing
 	g_RSA().decrypt(charData + msg.getBufferPosition());
 	return (msg.getByte() == 0);
 }
 
-uint32_t Protocol::getIP() const
-{
-	if (auto protocolConnection = getConnection()) {
+bool Protocol::isConnectionExpired() const {
+	return connectionPtr.expired();
+}
+
+Connection_ptr Protocol::getConnection() const {
+	return connectionPtr.lock();
+}
+
+uint32_t Protocol::getIP() const {
+	if (const auto protocolConnection = getConnection()) {
 		return protocolConnection->getIP();
 	}
 
 	return 0;
 }
 
-void Protocol::enableCompression()
-{
-	if (!compreesionEnabled) {
-		int32_t compressionLevel = g_configManager().getNumber(COMPRESSION_LEVEL);
-		if (compressionLevel != 0) {
-			defStream.reset(new z_stream);
-			defStream->zalloc = Z_NULL;
-			defStream->zfree = Z_NULL;
-			defStream->opaque = Z_NULL;
-			if (deflateInit2(defStream.get(), compressionLevel, Z_DEFLATED, -15, 9, Z_DEFAULT_STRATEGY) != Z_OK) {
-				defStream.reset();
-				SPDLOG_ERROR("[Protocol::enableCompression()] - Zlib deflateInit2 error: {}", (defStream->msg ? defStream->msg : " unknown error"));
-			} else {
-				compreesionEnabled = true;
-			}
-		}
+bool Protocol::compression(OutputMessage &outputMessage) const {
+	if (checksumMethod != CHECKSUM_METHOD_SEQUENCE) {
+		return false;
 	}
-}
 
-bool Protocol::compression(OutputMessage& msg) const
-{
-	auto outputMessageSize = msg.getLength();
+	static thread_local auto compress_ptr = std::make_unique<ZStream>();
+	static const auto &compress = compress_ptr;
+
+	if (!compress->stream) {
+		return false;
+	}
+
+	const auto outputMessageSize = outputMessage.getLength();
 	if (outputMessageSize > NETWORKMESSAGE_MAXSIZE) {
-		SPDLOG_ERROR("[NetworkMessage::compression] - Exceded NetworkMessage max size: {}, actually size: {}", NETWORKMESSAGE_MAXSIZE, outputMessageSize);
+		g_logger().error("[NetworkMessage::compression] - Exceded NetworkMessage max size: {}, actually size: {}", NETWORKMESSAGE_MAXSIZE, outputMessageSize);
 		return false;
 	}
 
-	static thread_local std::array<char, NETWORKMESSAGE_MAXSIZE> defBuffer;
-	defStream->next_in = msg.getOutputBuffer();
-	defStream->avail_in = outputMessageSize;
-	defStream->next_out = (Bytef*)defBuffer.data();
-	defStream->avail_out = NETWORKMESSAGE_MAXSIZE;
+	compress->stream->next_in = outputMessage.getOutputBuffer();
+	compress->stream->avail_in = outputMessageSize;
+	compress->stream->next_out = reinterpret_cast<Bytef*>(compress->buffer.data());
+	compress->stream->avail_out = NETWORKMESSAGE_MAXSIZE;
 
-	if (int32_t ret = deflate(defStream.get(), Z_FINISH);
-	ret != Z_OK && ret != Z_STREAM_END)
-	{
+	const int32_t ret = deflate(compress->stream.get(), Z_FINISH);
+	if (ret != Z_OK && ret != Z_STREAM_END) {
 		return false;
 	}
-	auto totalSize = static_cast<uint32_t>(defStream->total_out);
-	deflateReset(defStream.get());
+
+	const auto totalSize = compress->stream->total_out;
+	deflateReset(compress->stream.get());
+
 	if (totalSize == 0) {
 		return false;
 	}
 
-	msg.reset();
-	auto charData = static_cast<char*>(static_cast<void*>(defBuffer.data()));
-	msg.addBytes(charData, static_cast<size_t>(totalSize));
+	outputMessage.reset();
+	outputMessage.addBytes(compress->buffer.data(), totalSize);
+
 	return true;
+}
+
+Protocol::ZStream::ZStream() noexcept {
+	const int32_t compressionLevel = g_configManager().getNumber(COMPRESSION_LEVEL);
+	if (compressionLevel <= 0) {
+		return;
+	}
+
+	stream = std::make_unique<z_stream>();
+	stream->zalloc = nullptr;
+	stream->zfree = nullptr;
+	stream->opaque = nullptr;
+
+	if (deflateInit2(stream.get(), compressionLevel, Z_DEFLATED, -15, 9, Z_DEFAULT_STRATEGY) != Z_OK) {
+		stream.reset();
+		g_logger().error("[Protocol::enableCompression()] - Zlib deflateInit2 error: {}", (stream->msg ? stream->msg : " unknown error"));
+	}
 }

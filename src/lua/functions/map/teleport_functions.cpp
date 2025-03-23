@@ -1,27 +1,35 @@
 /**
  * Canary - A free and open-source MMORPG server emulator
- * Copyright (©) 2019-2022 OpenTibiaBR <opentibiabr@outlook.com>
+ * Copyright (©) 2019-2024 OpenTibiaBR <opentibiabr@outlook.com>
  * Repository: https://github.com/opentibiabr/canary
  * License: https://github.com/opentibiabr/canary/blob/main/LICENSE
  * Contributors: https://github.com/opentibiabr/canary/graphs/contributors
- * Website: https://docs.opentibiabr.org/
-*/
+ * Website: https://docs.opentibiabr.com/
+ */
 
-#include "pch.hpp"
-
-#include "game/movement/teleport.h"
-#include "items/item.h"
 #include "lua/functions/map/teleport_functions.hpp"
+
+#include "game/movement/teleport.hpp"
+#include "items/item.hpp"
+#include "lua/functions/lua_functions_loader.hpp"
+
+void TeleportFunctions::init(lua_State* L) {
+	Lua::registerSharedClass(L, "Teleport", "Item", TeleportFunctions::luaTeleportCreate);
+	Lua::registerMetaMethod(L, "Teleport", "__eq", Lua::luaUserdataCompare);
+
+	Lua::registerMethod(L, "Teleport", "getDestination", TeleportFunctions::luaTeleportGetDestination);
+	Lua::registerMethod(L, "Teleport", "setDestination", TeleportFunctions::luaTeleportSetDestination);
+}
 
 // Teleport
 int TeleportFunctions::luaTeleportCreate(lua_State* L) {
 	// Teleport(uid)
-	uint32_t id = getNumber<uint32_t>(L, 2);
+	const uint32_t id = Lua::getNumber<uint32_t>(L, 2);
 
-	Item* item = getScriptEnv()->getItemByUID(id);
+	const auto &item = Lua::getScriptEnv()->getItemByUID(id);
 	if (item && item->getTeleport()) {
-		pushUserdata(L, item);
-		setMetatable(L, -1, "Teleport");
+		Lua::pushUserdata(L, item);
+		Lua::setMetatable(L, -1, "Teleport");
 	} else {
 		lua_pushnil(L);
 	}
@@ -30,9 +38,9 @@ int TeleportFunctions::luaTeleportCreate(lua_State* L) {
 
 int TeleportFunctions::luaTeleportGetDestination(lua_State* L) {
 	// teleport:getDestination()
-	Teleport* teleport = getUserdata<Teleport>(L, 1);
+	const auto &teleport = Lua::getUserdataShared<Teleport>(L, 1, "Teleport");
 	if (teleport) {
-		pushPosition(L, teleport->getDestPos());
+		Lua::pushPosition(L, teleport->getDestPos());
 	} else {
 		lua_pushnil(L);
 	}
@@ -41,10 +49,10 @@ int TeleportFunctions::luaTeleportGetDestination(lua_State* L) {
 
 int TeleportFunctions::luaTeleportSetDestination(lua_State* L) {
 	// teleport:setDestination(position)
-	Teleport* teleport = getUserdata<Teleport>(L, 1);
+	const auto &teleport = Lua::getUserdataShared<Teleport>(L, 1, "Teleport");
 	if (teleport) {
-		teleport->setDestPos(getPosition(L, 2));
-		pushBoolean(L, true);
+		teleport->setDestPos(Lua::getPosition(L, 2));
+		Lua::pushBoolean(L, true);
 	} else {
 		lua_pushnil(L);
 	}

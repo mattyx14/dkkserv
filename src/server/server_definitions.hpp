@@ -1,23 +1,24 @@
 /**
  * Canary - A free and open-source MMORPG server emulator
- * Copyright (©) 2019-2022 OpenTibiaBR <opentibiabr@outlook.com>
+ * Copyright (©) 2019-2024 OpenTibiaBR <opentibiabr@outlook.com>
  * Repository: https://github.com/opentibiabr/canary
  * License: https://github.com/opentibiabr/canary/blob/main/LICENSE
  * Contributors: https://github.com/opentibiabr/canary/graphs/contributors
- * Website: https://docs.opentibiabr.org/
-*/
+ * Website: https://docs.opentibiabr.com/
+ */
 
-#ifndef SRC_SERVER_SERVER_DEFINITIONS_HPP_
-#define SRC_SERVER_SERVER_DEFINITIONS_HPP_
+#pragma once
+
+#include "utils/const.hpp"
 
 // Enums
 // Connection and networkmessage.
-enum {FORCE_CLOSE = true};
-enum {HEADER_LENGTH = 2};
-enum {CHECKSUM_LENGTH = 4};
-enum {XTEA_MULTIPLE = 8};
-enum {MAX_BODY_LENGTH = NETWORKMESSAGE_MAXSIZE - HEADER_LENGTH - CHECKSUM_LENGTH - XTEA_MULTIPLE};
-enum {MAX_PROTOCOL_BODY_LENGTH = MAX_BODY_LENGTH - 10};
+enum { FORCE_CLOSE = true };
+enum { HEADER_LENGTH = 2 };
+enum { CHECKSUM_LENGTH = 4 };
+enum { XTEA_MULTIPLE = 8 };
+enum { MAX_BODY_LENGTH = NETWORKMESSAGE_MAXSIZE - HEADER_LENGTH - CHECKSUM_LENGTH - XTEA_MULTIPLE };
+enum { MAX_PROTOCOL_BODY_LENGTH = MAX_BODY_LENGTH - 10 };
 
 enum ConnectionState_t : uint8_t {
 	CONNECTION_STATE_OPEN,
@@ -54,14 +55,21 @@ enum SessionEndInformations : uint8_t {
 	SESSION_END_UNK3,
 };
 
-enum Resource_t : uint8_t{
+enum Resource_t : uint8_t {
 	RESOURCE_BANK = 0x00,
-	RESOURCE_INVENTORY = 0x01,
+	RESOURCE_INVENTORY_MONEY = 0x01,
+	RESOURCE_INVENTORY_CURRENCY_CUSTOM = 0x02,
 	RESOURCE_PREY_CARDS = 0x0A,
 	RESOURCE_TASK_HUNTING = 0x32,
 	RESOURCE_FORGE_DUST = 0x46,
 	RESOURCE_FORGE_SLIVER = 0x47,
-	RESOURCE_FORGE_CORES = 0x48
+	RESOURCE_FORGE_CORES = 0x48,
+	RESOURCE_LESSER_GEMS = 0x51,
+	RESOURCE_REGULAR_GEMS = 0x52,
+	RESOURCE_GREATER_GEMS = 0x53,
+	RESOURCE_LESSER_FRAGMENT = 0x54,
+	RESOURCE_GREATER_FRAGMENT = 0x55,
+	RESOURCE_WHEEL_OF_DESTINY = 0x56
 };
 
 enum InspectObjectTypes : uint8_t {
@@ -78,7 +86,7 @@ enum CyclopediaCharacterInfo_OutfitType_t : uint8_t {
 };
 
 enum MagicEffectsType_t : uint8_t {
-	//ends magic effect loop
+	// ends magic effect loop
 	MAGIC_EFFECTS_END_LOOP = 0,
 	// needs uint8_t delta after type to adjust position
 	MAGIC_EFFECTS_DELTA = 1,
@@ -90,6 +98,10 @@ enum MagicEffectsType_t : uint8_t {
 	MAGIC_EFFECTS_CREATE_DISTANCEEFFECT = 4,
 	// needs uint8_t and deltaX(int8_t), deltaY(int8_t) after type
 	MAGIC_EFFECTS_CREATE_DISTANCEEFFECT_REVERSED = 5,
+	// needs uint16_t after type
+	MAGIC_EFFECTS_CREATE_SOUND_MAIN_EFFECT = 6,
+	// needs uint8_t and uint16_t after type
+	MAGIC_EFFECTS_CREATE_SOUND_SECONDARY_EFFECT = 7,
 };
 
 enum ImpactAnalyzerAndTracker_t : uint8_t {
@@ -105,26 +117,15 @@ enum Supply_Stash_Actions_t : uint8_t {
 	SUPPLY_STASH_ACTION_WITHDRAW = 3
 };
 
-// Structs
-struct HighscoreCategory {
-	HighscoreCategory(const char* name, uint8_t id) :
-        name(name),
-        id(id) {}
-
-	const char* name;
-	uint8_t id;
-};
-
 struct HighscoreCharacter {
-	HighscoreCharacter(std::string name, uint64_t points,
-                       uint32_t id, uint32_t rank,
-                       uint16_t level, uint8_t vocation) :
-        name(std::move(name)),
-        points(points),
-        id(id),
-        rank(rank),
-        level(level),
-        vocation(vocation) {}
+	HighscoreCharacter(std::string name, uint64_t points, uint32_t id, uint32_t rank, uint16_t level, uint8_t vocation, std::string loyaltyTitle) :
+		name(std::move(name)),
+		points(points),
+		id(id),
+		rank(rank),
+		level(level),
+		vocation(vocation),
+		loyaltyTitle(std::move(loyaltyTitle)) { }
 
 	std::string name;
 	uint64_t points;
@@ -132,6 +133,5 @@ struct HighscoreCharacter {
 	uint32_t rank;
 	uint16_t level;
 	uint8_t vocation;
+	std::string loyaltyTitle;
 };
-
-#endif  // SRC_SERVER_SERVER_DEFINITIONS_HPP_

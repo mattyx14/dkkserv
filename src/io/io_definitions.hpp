@@ -1,14 +1,13 @@
 /**
  * Canary - A free and open-source MMORPG server emulator
- * Copyright (©) 2019-2022 OpenTibiaBR <opentibiabr@outlook.com>
+ * Copyright (©) 2019-2024 OpenTibiaBR <opentibiabr@outlook.com>
  * Repository: https://github.com/opentibiabr/canary
  * License: https://github.com/opentibiabr/canary/blob/main/LICENSE
  * Contributors: https://github.com/opentibiabr/canary/graphs/contributors
- * Website: https://docs.opentibiabr.org/
-*/
+ * Website: https://docs.opentibiabr.com/
+ */
 
-#ifndef SRC_IO_IO_DEFINITIONS_HPP_
-#define SRC_IO_IO_DEFINITIONS_HPP_
+#pragma once
 
 // Enums
 enum FILELOADER_ERRORS {
@@ -46,7 +45,8 @@ enum OTBM_AttrTypes_t {
 	OTBM_ATTR_SLEEPERGUID = 20,
 	OTBM_ATTR_SLEEPSTART = 21,
 	OTBM_ATTR_CHARGES = 22,
-	OTBM_ATTR_EXT_SPAWN_NPC_FILE = 23
+	OTBM_ATTR_EXT_SPAWN_NPC_FILE = 23,
+	OTBM_ATTR_EXT_ZONE_FILE = 24,
 };
 
 enum OTBM_NodeTypes_t {
@@ -66,6 +66,7 @@ enum OTBM_NodeTypes_t {
 	OTBM_HOUSETILE = 14,
 	OTBM_WAYPOINTS = 15,
 	OTBM_WAYPOINT = 16,
+	OTBM_TILE_ZONE = 19
 };
 
 enum OTBM_TileFlag_t : uint32_t {
@@ -89,5 +90,3 @@ struct MarketStatistics {
 	uint64_t totalPrice;
 	uint64_t lowestPrice;
 };
-
-#endif  // SRC_IO_IO_DEFINITIONS_HPP_

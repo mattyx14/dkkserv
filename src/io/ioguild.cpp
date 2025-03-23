@@ -1,26 +1,24 @@
 /**
  * Canary - A free and open-source MMORPG server emulator
- * Copyright (©) 2019-2022 OpenTibiaBR <opentibiabr@outlook.com>
+ * Copyright (©) 2019-2024 OpenTibiaBR <opentibiabr@outlook.com>
  * Repository: https://github.com/opentibiabr/canary
  * License: https://github.com/opentibiabr/canary/blob/main/LICENSE
  * Contributors: https://github.com/opentibiabr/canary/graphs/contributors
- * Website: https://docs.opentibiabr.org/
-*/
+ * Website: https://docs.opentibiabr.com/
+ */
 
-#include "pch.hpp"
+#include "io/ioguild.hpp"
 
-#include "database/database.h"
-#include "creatures/players/grouping/guild.h"
-#include "io/ioguild.h"
+#include "database/database.hpp"
+#include "creatures/players/grouping/guild.hpp"
 
-Guild* IOGuild::loadGuild(uint32_t guildId)
-{
-	Database& db = Database::getInstance();
+std::shared_ptr<Guild> IOGuild::loadGuild(uint32_t guildId) {
+	Database &db = Database::getInstance();
 	std::ostringstream query;
 	query << "SELECT `name`, `balance` FROM `guilds` WHERE `id` = " << guildId;
 	if (DBResult_ptr result = db.storeQuery(query.str())) {
-		Guild* guild = new Guild(guildId, result->getString("name"));
-    guild->setBankBalance(result->getNumber<uint64_t>("balance"));
+		const auto guild = std::make_shared<Guild>(guildId, result->getString("name"));
+		guild->setBankBalance(result->getNumber<uint64_t>("balance"));
 		query.str(std::string());
 		query << "SELECT `id`, `name`, `level` FROM `guild_ranks` WHERE `guild_id` = " << guildId;
 
@@ -34,20 +32,20 @@ Guild* IOGuild::loadGuild(uint32_t guildId)
 	return nullptr;
 }
 
-void IOGuild::saveGuild(Guild* guild) {
-  if (!guild)
-    return;
-  Database& db = Database::getInstance();
-  std::ostringstream updateQuery;
-  updateQuery << "UPDATE `guilds` SET ";
-  updateQuery << "`balance` = " << guild->getBankBalance();
-  updateQuery << " WHERE `id` = " << guild->getId();
-  db.executeQuery(updateQuery.str());
+void IOGuild::saveGuild(const std::shared_ptr<Guild> &guild) {
+	if (!guild) {
+		return;
+	}
+	Database &db = Database::getInstance();
+	std::ostringstream updateQuery;
+	updateQuery << "UPDATE `guilds` SET ";
+	updateQuery << "`balance` = " << guild->getBankBalance();
+	updateQuery << " WHERE `id` = " << guild->getId();
+	db.executeQuery(updateQuery.str());
 }
 
-uint32_t IOGuild::getGuildIdByName(const std::string& name)
-{
-	Database& db = Database::getInstance();
+uint32_t IOGuild::getGuildIdByName(const std::string &name) {
+	Database &db = Database::getInstance();
 
 	std::ostringstream query;
 	query << "SELECT `id` FROM `guilds` WHERE `name` = " << db.escapeString(name);
@@ -59,10 +57,9 @@ uint32_t IOGuild::getGuildIdByName(const std::string& name)
 	return result->getNumber<uint32_t>("id");
 }
 
-void IOGuild::getWarList(uint32_t guildId, GuildWarVector& guildWarVector)
-{
+void IOGuild::getWarList(uint32_t guildId, GuildWarVector &guildWarVector) {
 	std::ostringstream query;
-	query << "SELECT `guild1`, `guild2` FROM `guild_wars` WHERE (`guild1` = " << guildId << " OR `guild2` = " << guildId << ") AND `ended` = 0 AND `status` = 1";
+	query << "SELECT `guild1`, `guild2` FROM `guild_wars` WHERE (`guild1` = " << guildId << " OR `guild2` = " << guildId << ") AND `status` = 1";
 
 	DBResult_ptr result = Database::getInstance().storeQuery(query.str());
 	if (!result) {
@@ -70,7 +67,7 @@ void IOGuild::getWarList(uint32_t guildId, GuildWarVector& guildWarVector)
 	}
 
 	do {
-		uint32_t guild1 = result->getNumber<uint32_t>("guild1");
+		auto guild1 = result->getNumber<uint32_t>("guild1");
 		if (guildId != guild1) {
 			guildWarVector.push_back(guild1);
 		} else {

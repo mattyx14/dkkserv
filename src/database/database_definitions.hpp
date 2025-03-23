@@ -1,14 +1,13 @@
 /**
  * Canary - A free and open-source MMORPG server emulator
- * Copyright (©) 2019-2022 OpenTibiaBR <opentibiabr@outlook.com>
+ * Copyright (©) 2019-2024 OpenTibiaBR <opentibiabr@outlook.com>
  * Repository: https://github.com/opentibiabr/canary
  * License: https://github.com/opentibiabr/canary/blob/main/LICENSE
  * Contributors: https://github.com/opentibiabr/canary/graphs/contributors
- * Website: https://docs.opentibiabr.org/
-*/
+ * Website: https://docs.opentibiabr.com/
+ */
 
-#ifndef SRC_DATABASE_DATABASE_DEFINITIONS_HPP_
-#define SRC_DATABASE_DATABASE_DEFINITIONS_HPP_
+#pragma once
 
 // Enum
 enum TransactionStates_t {
@@ -16,5 +15,3 @@ enum TransactionStates_t {
 	STATE_START,
 	STATE_COMMIT,
 };
-
-#endif  // SRC_DATABASE_DATABASE_DEFINITIONS_HPP_

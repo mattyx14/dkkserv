@@ -1,17 +1,27 @@
 /**
  * Canary - A free and open-source MMORPG server emulator
- * Copyright (©) 2019-2022 OpenTibiaBR <opentibiabr@outlook.com>
+ * Copyright (©) 2019-2024 OpenTibiaBR <opentibiabr@outlook.com>
  * Repository: https://github.com/opentibiabr/canary
  * License: https://github.com/opentibiabr/canary/blob/main/LICENSE
  * Contributors: https://github.com/opentibiabr/canary/graphs/contributors
- * Website: https://docs.opentibiabr.org/
-*/
+ * Website: https://docs.opentibiabr.com/
+ */
 
-#ifndef SRC_CREATURES_CREATURES_DEFINITIONS_HPP_
-#define SRC_CREATURES_CREATURES_DEFINITIONS_HPP_
+#pragma once
+
+#ifndef USE_PRECOMPILED_HEADERS
+	#include <string>
+	#include <utility>
+	#include <vector>
+	#include <map>
+	#include <list>
+	#include <utility>
+	#include <cstdint>
+	#include <memory>
+	#include <cmath>
+#endif
 
 // Enum
-
 enum SkillsId_t {
 	SKILLVALUE_LEVEL = 0,
 	SKILLVALUE_TRIES = 1,
@@ -57,49 +67,83 @@ enum ConditionAttr_t {
 	CONDITIONATTR_ISBUFF,
 	CONDITIONATTR_SUBID,
 	CONDITIONATTR_MANASHIELD,
+	CONDITIONATTR_ADDSOUND,
+	CONDITIONATTR_TICKSOUND,
+	CONDITIONATTR_ABSORBS,
+	CONDITIONATTR_INCREASES,
+	CONDITIONATTR_CHARM_CHANCE_MODIFIER,
+	CONDITIONATTR_PERSISTENT,
 
-	//reserved for serialization
+	// reserved for serialization
 	CONDITIONATTR_END = 254,
 };
 
-enum ConditionType_t {
-	CONDITION_NONE,
+enum ConditionType_t : uint8_t {
+	CONDITION_NONE = 0,
 
-	CONDITION_POISON = 1 << 0,
-	CONDITION_FIRE = 1 << 1,
-	CONDITION_ENERGY = 1 << 2,
-	CONDITION_BLEEDING = 1 << 3,
-	CONDITION_HASTE = 1 << 4,
-	CONDITION_PARALYZE = 1 << 5,
-	CONDITION_OUTFIT = 1 << 6,
-	CONDITION_INVISIBLE = 1 << 7,
-	CONDITION_LIGHT = 1 << 8,
-	CONDITION_MANASHIELD = 1 << 9,
-	CONDITION_INFIGHT = 1 << 10,
-	CONDITION_DRUNK = 1 << 11,
-	CONDITION_EXHAUST = 1 << 12, // unused
-	CONDITION_REGENERATION = 1 << 13,
-	CONDITION_SOUL = 1 << 14,
-	CONDITION_DROWN = 1 << 15,
-	CONDITION_MUTED = 1 << 16,
-	CONDITION_CHANNELMUTEDTICKS = 1 << 17,
-	CONDITION_YELLTICKS = 1 << 18,
-	CONDITION_ATTRIBUTES = 1 << 19,
-	CONDITION_FREEZING = 1 << 20,
-	CONDITION_DAZZLED = 1 << 21,
-	CONDITION_CURSED = 1 << 22,
-	CONDITION_EXHAUST_COMBAT = 1 << 23, // unused
-	CONDITION_EXHAUST_HEAL = 1 << 24, // unused
-	CONDITION_PACIFIED = 1 << 25,
-	CONDITION_SPELLCOOLDOWN = 1 << 26,
-	CONDITION_SPELLGROUPCOOLDOWN = 1 << 27,
-	CONDITION_ROOTED = 1 << 28,
+	CONDITION_POISON = 1,
+	CONDITION_FIRE = 2,
+	CONDITION_ENERGY = 3,
+	CONDITION_BLEEDING = 4,
+	CONDITION_HASTE = 5,
+	CONDITION_PARALYZE = 6,
+	CONDITION_OUTFIT = 7,
+	CONDITION_INVISIBLE = 8,
+	CONDITION_LIGHT = 9,
+	CONDITION_MANASHIELD = 10,
+	CONDITION_INFIGHT = 11,
+	CONDITION_DRUNK = 12,
+	CONDITION_EXHAUST = 13, // unused
+	CONDITION_REGENERATION = 14,
+	CONDITION_SOUL = 15,
+	CONDITION_DROWN = 16,
+	CONDITION_MUTED = 17,
+	CONDITION_CHANNELMUTEDTICKS = 18,
+	CONDITION_YELLTICKS = 19,
+	CONDITION_ATTRIBUTES = 20,
+	CONDITION_FREEZING = 21,
+	CONDITION_DAZZLED = 22,
+	CONDITION_CURSED = 23,
+	CONDITION_EXHAUST_COMBAT = 24, // unused
+	CONDITION_EXHAUST_HEAL = 25,
+	CONDITION_PACIFIED = 26,
+	CONDITION_SPELLCOOLDOWN = 27,
+	CONDITION_SPELLGROUPCOOLDOWN = 28,
+	CONDITION_ROOTED = 29,
+	CONDITION_FEARED = 30,
+	CONDITION_LESSERHEX = 31,
+	CONDITION_INTENSEHEX = 32,
+	CONDITION_GREATERHEX = 33,
+	CONDITION_BAKRAGORE = 34,
+	CONDITION_GOSHNARTAINT = 35,
+	CONDITION_POWERLESS = 36,
+
+	// Need the last ever
+	CONDITION_COUNT
 };
+
+// constexpr definiting suppressible conditions
+constexpr bool IsConditionSuppressible(ConditionType_t condition) {
+	constexpr std::array suppressibleConditions = {
+		CONDITION_POISON,
+		CONDITION_FIRE,
+		CONDITION_ENERGY,
+		CONDITION_BLEEDING,
+		CONDITION_PARALYZE,
+		CONDITION_DROWN,
+		CONDITION_FREEZING,
+		CONDITION_CURSED,
+	};
+
+	return std::ranges::any_of(suppressibleConditions, [condition](const auto &suppressibleCondition) {
+		return condition == suppressibleCondition;
+	});
+}
 
 enum ConditionParam_t {
 	CONDITION_PARAM_OWNER = 1,
 	CONDITION_PARAM_TICKS = 2,
-	//CONDITION_PARAM_OUTFIT = 3,
+	// CONDITION_PARAM_OUTFIT = 3,
 	CONDITION_PARAM_HEALTHGAIN = 4,
 	CONDITION_PARAM_HEALTHTICKS = 5,
 	CONDITION_PARAM_MANAGAIN = 6,
@@ -154,6 +198,32 @@ enum ConditionParam_t {
 	CONDITION_PARAM_MANASHIELD = 55,
 	CONDITION_PARAM_BUFF_DAMAGEDEALT = 56,
 	CONDITION_PARAM_BUFF_DAMAGERECEIVED = 57,
+	CONDITION_PARAM_SOUND_TICK = 58,
+	CONDITION_PARAM_SOUND_ADD = 59,
+	CONDITION_PARAM_CASTER_POSITION = 60,
+	CONDITION_PARAM_DRAIN_BODY = 61,
+	CONDITION_PARAM_ABSORB_PHYSICALPERCENT = 62,
+	CONDITION_PARAM_ABSORB_FIREPERCENT = 63,
+	CONDITION_PARAM_ABSORB_ENERGYPERCENT = 64,
+	CONDITION_PARAM_ABSORB_ICEPERCENT = 65,
+	CONDITION_PARAM_ABSORB_EARTHPERCENT = 66,
+	CONDITION_PARAM_ABSORB_DEATHPERCENT = 67,
+	CONDITION_PARAM_ABSORB_HOLYPERCENT = 68,
+	CONDITION_PARAM_ABSORB_LIFEDRAINPERCENT = 69,
+	CONDITION_PARAM_ABSORB_MANADRAINPERCENT = 70,
+	CONDITION_PARAM_ABSORB_DROWNPERCENT = 71,
+	CONDITION_PARAM_INCREASE_PHYSICALPERCENT = 72,
+	CONDITION_PARAM_INCREASE_FIREPERCENT = 73,
+	CONDITION_PARAM_INCREASE_ENERGYPERCENT = 74,
+	CONDITION_PARAM_INCREASE_ICEPERCENT = 75,
+	CONDITION_PARAM_INCREASE_EARTHPERCENT = 76,
+	CONDITION_PARAM_INCREASE_DEATHPERCENT = 77,
+	CONDITION_PARAM_INCREASE_HOLYPERCENT = 78,
+	CONDITION_PARAM_INCREASE_LIFEDRAINPERCENT = 79,
+	CONDITION_PARAM_INCREASE_MANADRAINPERCENT = 80,
+	CONDITION_PARAM_INCREASE_DROWNPERCENT = 81,
+	CONDITION_PARAM_CHARM_CHANCE_MODIFIER = 82,
+	CONDITION_PARAM_BUFF_HEALINGRECEIVED = 83,
 };
 
 enum stats_t {
@@ -170,9 +240,10 @@ enum stats_t {
 enum buffs_t {
 	BUFF_DAMAGEDEALT,
 	BUFF_DAMAGERECEIVED,
+	BUFF_HEALINGRECEIVED,
 
 	BUFF_FIRST = BUFF_DAMAGEDEALT,
-	BUFF_LAST = BUFF_DAMAGERECEIVED,
+	BUFF_LAST = BUFF_HEALINGRECEIVED,
 };
 
 enum formulaType_t {
@@ -193,6 +264,9 @@ enum CombatParam_t {
 	COMBAT_PARAM_AGGRESSIVE,
 	COMBAT_PARAM_DISPEL,
 	COMBAT_PARAM_USECHARGES,
+	COMBAT_PARAM_CASTSOUND,
+	COMBAT_PARAM_IMPACTSOUND,
+	COMBAT_PARAM_CHAIN_EFFECT,
 };
 
 enum CombatOrigin {
@@ -208,6 +282,8 @@ enum CallBackParam_t {
 	CALLBACK_PARAM_SKILLVALUE,
 	CALLBACK_PARAM_TARGETTILE,
 	CALLBACK_PARAM_TARGETCREATURE,
+	CALLBACK_PARAM_CHAINVALUE,
+	CALLBACK_PARAM_CHAINPICKER,
 };
 
 enum charm_t {
@@ -223,6 +299,7 @@ enum SpeechBubble_t {
 	SPEECHBUBBLE_TRADE = 2,
 	SPEECHBUBBLE_QUEST = 3,
 	SPEECHBUBBLE_QUESTTRADER = 4,
+	SPEECHBUBBLE_HIRELING = 7,
 };
 
 enum MarketAction_t {
@@ -234,6 +311,8 @@ enum MarketRequest_t {
 	MARKETREQUEST_OWN_HISTORY = 1,
 	MARKETREQUEST_OWN_OFFERS = 2,
 	MARKETREQUEST_ITEM_BROWSE = 3,
+	MARKETREQUEST_OWN_OFFERS_OLD = 0xFFFE,
+	MARKETREQUEST_OWN_HISTORY_OLD = 0xFFFF,
 };
 
 enum MarketOfferState_t {
@@ -243,40 +322,6 @@ enum MarketOfferState_t {
 	OFFERSTATE_ACCEPTED = 3,
 
 	OFFERSTATE_ACCEPTEDEX = 255,
-};
-
-enum ObjectCategory_t {
-	OBJECTCATEGORY_NONE = 0,
-	OBJECTCATEGORY_ARMORS = 1,
-	OBJECTCATEGORY_NECKLACES = 2,
-	OBJECTCATEGORY_BOOTS = 3,
-	OBJECTCATEGORY_CONTAINERS = 4,
-	OBJECTCATEGORY_DECORATION = 5,
-	OBJECTCATEGORY_FOOD = 6,
-	OBJECTCATEGORY_HELMETS = 7,
-	OBJECTCATEGORY_LEGS = 8,
-	OBJECTCATEGORY_OTHERS = 9,
-	OBJECTCATEGORY_POTIONS = 10,
-	OBJECTCATEGORY_RINGS = 11,
-	OBJECTCATEGORY_RUNES = 12,
-	OBJECTCATEGORY_SHIELDS = 13,
-	OBJECTCATEGORY_TOOLS = 14,
-	OBJECTCATEGORY_VALUABLES = 15,
-	OBJECTCATEGORY_AMMO = 16,
-	OBJECTCATEGORY_AXES = 17,
-	OBJECTCATEGORY_CLUBS = 18,
-	OBJECTCATEGORY_DISTANCEWEAPONS = 19,
-	OBJECTCATEGORY_SWORDS = 20,
-	OBJECTCATEGORY_WANDS = 21,
-	OBJECTCATEGORY_PREMIUMSCROLLS = 22, // not used in quickloot
-	OBJECTCATEGORY_TIBIACOINS = 23, // not used in quickloot
-	OBJECTCATEGORY_CREATUREPRODUCTS = 24,
-	OBJECTCATEGORY_STASHRETRIEVE = 27,
-	OBJECTCATEGORY_GOLD = 30,
-	OBJECTCATEGORY_DEFAULT = 31, // unassigned loot
-
-	OBJECTCATEGORY_FIRST = OBJECTCATEGORY_ARMORS,
-	OBJECTCATEGORY_LAST = OBJECTCATEGORY_DEFAULT,
 };
 
 enum RespawnPeriod_t {
@@ -348,6 +393,17 @@ enum PlayerSex_t : uint8_t {
 	PLAYERSEX_MALE = 1,
 
 	PLAYERSEX_LAST = PLAYERSEX_MALE
+};
+
+enum PlayerPronoun_t : uint8_t {
+	PLAYERPRONOUN_UNSET = 0,
+	PLAYERPRONOUN_THEY = 1,
+	PLAYERPRONOUN_SHE = 2,
+	PLAYERPRONOUN_HE = 3,
+	PLAYERPRONOUN_ZE = 4,
+	PLAYERPRONOUN_NAME = 5,
+
+	PLAYERPRONOUN_LAST = PLAYERPRONOUN_NAME
 };
 
 enum skills_t : int8_t {
@@ -435,12 +491,14 @@ enum BestiaryType_t : uint8_t {
 };
 
 enum MonstersEvent_t : uint8_t {
-	MONSTERS_EVENT_NONE = 0,
-	MONSTERS_EVENT_THINK = 1,
-	MONSTERS_EVENT_APPEAR = 2,
-	MONSTERS_EVENT_DISAPPEAR = 3,
-	MONSTERS_EVENT_MOVE = 4,
-	MONSTERS_EVENT_SAY = 5,
+	MONSTERS_EVENT_NONE,
+	MONSTERS_EVENT_THINK,
+	MONSTERS_EVENT_APPEAR,
+	MONSTERS_EVENT_DISAPPEAR,
+	MONSTERS_EVENT_MOVE,
+	MONSTERS_EVENT_SAY,
+	MONSTERS_EVENT_ATTACKED_BY_PLAYER,
+	MONSTERS_EVENT_ON_SPAWN,
 };
 
 enum NpcsEvent_t : uint8_t {
@@ -481,6 +539,141 @@ enum class ForgeClassifications_t : uint8_t {
 	FORGE_FIENDISH_MONSTER = 2,
 };
 
+enum class GameFeature_t : uint8_t {
+	ProtocolChecksum = 1,
+	AccountNames = 2,
+	ChallengeOnLogin = 3,
+	PenalityOnDeath = 4,
+	NameOnNpcTrade = 5,
+	DoubleFreeCapacity = 6,
+	DoubleExperience = 7,
+	TotalCapacity = 8,
+	SkillsBase = 9,
+	PlayerRegenerationTime = 10,
+	ChannelPlayerList = 11,
+	PlayerMounts = 12,
+	EnvironmentEffect = 13,
+	CreatureEmblems = 14,
+	ItemAnimationPhase = 15,
+	MagicEffectU16 = 16,
+	PlayerMarket = 17,
+	SpritesU32 = 18,
+	TileAddThingWithStackpos = 19,
+	OfflineTrainingTime = 20,
+	PurseSlot = 21,
+	FormatCreatureName = 22,
+	SpellList = 23,
+	ClientPing = 24,
+	ExtendedClientPing = 25,
+	DoubleHealth = 28,
+	DoubleSkills = 29,
+	ChangeMapAwareRange = 30,
+	MapMovePosition = 31,
+	AttackSeq = 32,
+	BlueNpcNameColor = 33,
+	DiagonalAnimatedText = 34,
+	LoginPending = 35,
+	NewSpeedLaw = 36,
+	ForceFirstAutoWalkStep = 37,
+	MinimapRemove = 38,
+	DoubleShopSellAmount = 39,
+	ContainerPagination = 40,
+	ThingMarks = 41,
+	LooktypeU16 = 42,
+	PlayerStamina = 43,
+	PlayerAddons = 44,
+	MessageStatements = 45,
+	MessageLevel = 46,
+	NewFluids = 47,
+	PlayerStateU16 = 48,
+	NewOutfitProtocol = 49,
+	PVPMode = 50,
+	WritableDate = 51,
+	AdditionalVipInfo = 52,
+	BaseSkillU16 = 53,
+	CreatureIcons = 54,
+	HideNpcNames = 55,
+	SpritesAlphaChannel = 56,
+	PremiumExpiration = 57,
+	BrowseField = 58,
+	EnhancedAnimations = 59,
+	OGLInformation = 60,
+	MessageSizeCheck = 61,
+	PreviewState = 62,
+	LoginPacketEncryption = 63,
+	ClientVersion = 64,
+	ContentRevision = 65,
+	ExperienceBonus = 66,
+	Authenticator = 67,
+	UnjustifiedPoints = 68,
+	SessionKey = 69,
+	DeathType = 70,
+	IdleAnimations = 71,
+	KeepUnawareTiles = 72,
+	IngameStore = 73,
+	IngameStoreHighlights = 74,
+	IngameStoreServiceType = 75,
+	AdditionalSkills = 76,
+	DistanceEffectU16 = 77,
+	Prey = 78,
+	DoubleMagicLevel = 79,
+
+	ExtendedOpcode = 80,
+	MinimapLimitedToSingleFloor = 81,
+	SendWorldName = 82,
+
+	DoubleLevel = 83,
+	DoubleSoul = 84,
+	DoublePlayerGoodsMoney = 85,
+	CreatureWalkthrough = 86,
+	DoubleTradeMoney = 87,
+	SequencedPackets = 88,
+	Tibia12Protocol = 89,
+
+	// 90-99 otclientv8 features
+	NewWalking = 90,
+	SlowerManualWalking = 91,
+
+	ItemTooltip = 93,
+
+	Bot = 95,
+	BiggerMapCache = 96,
+	ForceLight = 97,
+	NoDebug = 98,
+	BotProtection = 99,
+
+	// Custom features for customer
+	FasterAnimations = 101,
+	CenteredOutfits = 102,
+	SendIdentifiers = 103,
+	WingsAndAura = 104,
+	PlayerStateU32 = 105,
+	OutfitShaders = 106,
+
+	// advanced features
+	PacketSizeU32 = 110,
+	PacketCompression = 111,
+	OldInformationBar = 112,
+	HealthInfoBackground = 113,
+	WingOffset = 114,
+	AuraFrontAndBack = 115,
+
+	MapDrawGroundFirst = 116,
+	MapIgnoreCorpseCorrection = 117,
+	DontCacheFiles = 118,
+	BigAurasCenter = 119,
+	NewUpdateWalk = 120,
+	NewCreatureStacking = 121,
+	CreaturesMana = 122,
+	QuickLootFlags = 123,
+	DontMergeAnimatedText = 124,
+	MissionId = 125,
+	ItemCustomAttributes = 126,
+	AnimatedTextCustomFont = 127,
+
+	LastGameFeature = 130
+};
+
 enum OperatingSystem_t : uint8_t {
 	CLIENTOS_NONE = 0,
 
@@ -494,6 +687,15 @@ enum OperatingSystem_t : uint8_t {
 	CLIENTOS_OTCLIENT_LINUX = 10,
 	CLIENTOS_OTCLIENT_WINDOWS = 11,
 	CLIENTOS_OTCLIENT_MAC = 12,
+	// by default OTCv8 uses CLIENTOS_WINDOWS for backward compatibility
+	// for correct value enable g_game.enableFeature(GameExtendedOpcode)
+	// in modules/game_features/features.lua
+	CLIENTOS_OTCLIENTV8_LINUX = 20,
+	CLIENTOS_OTCLIENTV8_WINDOWS = 21,
+	CLIENTOS_OTCLIENTV8_MAC = 22,
+	CLIENTOS_OTCLIENTV8_ANDROID = 23,
+	CLIENTOS_OTCLIENTV8_IOS = 24,
+	CLIENTOS_OTCLIENTV8_WEB = 25,
 };
 
 enum SpellGroup_t : uint8_t {
@@ -506,6 +708,8 @@ enum SpellGroup_t : uint8_t {
 	SPELLGROUP_CRIPPLING = 6,
 	SPELLGROUP_FOCUS = 7,
 	SPELLGROUP_ULTIMATESTRIKES = 8,
+	SPELLGROUP_BURSTS_OF_NATURE = 9,
+	SPELLGROUP_GREAT_BEAMS = 10,
 };
 
 enum ChannelEvent_t : uint8_t {
@@ -515,11 +719,11 @@ enum ChannelEvent_t : uint8_t {
 	CHANNELEVENT_EXCLUDE = 3,
 };
 
-enum VipStatus_t : uint8_t {
-	VIPSTATUS_OFFLINE = 0,
-	VIPSTATUS_ONLINE = 1,
-	VIPSTATUS_PENDING = 2,
-	VIPSTATUS_TRAINING = 3
+enum class VipStatus_t : uint8_t {
+	Offline = 0,
+	Online = 1,
+	Pending = 2,
+	Training = 3
 };
 
 enum Vocation_t : uint16_t {
@@ -532,7 +736,13 @@ enum Vocation_t : uint16_t {
 	VOCATION_ELDER_DRUID = 6,
 	VOCATION_ROYAL_PALADIN = 7,
 	VOCATION_ELITE_KNIGHT = 8,
-	VOCATION_LAST = VOCATION_ELITE_KNIGHT
+	VOCATION_LAST = VOCATION_ELITE_KNIGHT,
+
+	// Cip tibia client ids
+	VOCATION_KNIGHT_CIP = 1,
+	VOCATION_PALADIN_CIP = 2,
+	VOCATION_SORCERER_CIP = 3,
+	VOCATION_DRUID_CIP = 4
 };
 
 enum FightMode_t : uint8_t {
@@ -556,23 +766,26 @@ enum TradeState_t : uint8_t {
 	TRADE_TRANSFER,
 };
 
-enum CombatType_t : uint16_t {
-	COMBAT_NONE = 0,
+enum CombatType_t : uint8_t {
+	COMBAT_PHYSICALDAMAGE = 0,
+	COMBAT_ENERGYDAMAGE = 1,
+	COMBAT_EARTHDAMAGE = 2,
+	COMBAT_FIREDAMAGE = 3,
+	COMBAT_UNDEFINEDDAMAGE = 4,
+	COMBAT_LIFEDRAIN = 5,
+	COMBAT_MANADRAIN = 6,
+	COMBAT_HEALING = 7,
+	COMBAT_DROWNDAMAGE = 8,
+	COMBAT_ICEDAMAGE = 9,
+	COMBAT_HOLYDAMAGE = 10,
+	COMBAT_DEATHDAMAGE = 11,
+	COMBAT_AGONYDAMAGE = 12,
+	COMBAT_NEUTRALDAMAGE = 13,
 
-	COMBAT_PHYSICALDAMAGE = 1 << 0,
-	COMBAT_ENERGYDAMAGE = 1 << 1,
-	COMBAT_EARTHDAMAGE = 1 << 2,
-	COMBAT_FIREDAMAGE = 1 << 3,
-	COMBAT_UNDEFINEDDAMAGE = 1 << 4,
-	COMBAT_LIFEDRAIN = 1 << 5,
-	COMBAT_MANADRAIN = 1 << 6,
-	COMBAT_HEALING = 1 << 7,
-	COMBAT_DROWNDAMAGE = 1 << 8,
-	COMBAT_ICEDAMAGE = 1 << 9,
-	COMBAT_HOLYDAMAGE = 1 << 10,
-	COMBAT_DEATHDAMAGE = 1 << 11,
+	COMBAT_COUNT = 14,
 
-	COMBAT_COUNT = 12
+	// Server read only
+	COMBAT_NONE = 255
 };
 
 enum PlayerAsyncOngoingTaskFlags : uint64_t {
@@ -586,42 +799,639 @@ enum PartyAnalyzer_t : uint8_t {
 	LEADER_PRICE = 1
 };
 
+enum SoundEffect_t : uint16_t {
+	SILENCE = 0,
+	HUMAN_CLOSE_ATK_FIST = 1,
+	MONSTER_CLOSE_ATK_FIST = 2,
+	MELEE_ATK_SWORD = 3,
+	MELEE_ATK_CLUB = 4,
+	MELEE_ATK_AXE = 5,
+	DIST_ATK_BOW = 6,
+	DIST_ATK_CROSSBOW = 7,
+	DIST_ATK_THROW = 8,
+	MAGICAL_RANGE_ATK = 9,
+	SPELL_OR_RUNE = 10, // Only secondary
+	OTHER = 11, // Only secondary
+	PHYSICAL_RANGE_MISS = 12,
+	DIST_ATK_BOW_SHOT = 13,
+	DIST_ATK_CROSSBOW_SHOT = 14,
+	DIST_ATK_THROW_SHOT = 15,
+	DIST_ATK_ROD_SHOT = 16,
+	DIST_ATK_WAND_SHOT = 17,
+	BURST_ARROW_EFFECT = 18,
+	DIAMOND_ARROW_EFFECT = 19,
+	NO_DAMAGE = 20,
+	MONSTER_MELEE_ATK_FIST = 100,
+	MONSTER_MELEE_ATK_CLAW = 101,
+	MONSTER_MELEE_ATK_BITE = 102,
+	MONSTER_MELEE_ATK_RIP = 103,
+	MONSTER_MELEE_ATK_ACID = 104,
+	MONSTER_MELEE_ATK_MAGIC = 105,
+	MONSTER_MELEE_ATK_ETHEREAL = 106,
+	MONSTER_MELEE_ATK_CONSTRUCT = 107,
+	SPELL_LIGHT_HEALING = 1001,
+	SPELL_INTENSE_HEALING = 1002,
+	SPELL_ULTIMATE_HEALING = 1003,
+	SPELL_INTENSE_HEALING_RUNE = 1004,
+	SPELL_ULTIMATE_HEALING_RUNE = 1005,
+	SPELL_HASTE = 1006,
+	SPELL_LIGHT_MAGIC_MISSILE_RUNE = 1007,
+	SPELL_HEAVY_MAGIC_MISSILE_RUNE = 1008,
+	SPELL_SUMMON_CREATURE = 1009,
+	SPELL_LIGHT = 1010,
+	SPELL_GREAT_LIGHT = 1011,
+	SPELL_CONVINCE_CREATURE_RUNE = 1012,
+	SPELL_ENERGY_WAVE = 1013,
+	SPELL_CHAMELEON_RUNE = 1014,
+	SPELL_FIREBALL_RUNE = 1015,
+	SPELL_GREAT_FIREBALL_RUNE = 1016,
+	SPELL_FIRE_BOMB_RUNE = 1017,
+	SPELL_EXPLOSION_RUNE = 1018,
+	SPELL_FIRE_WAVE = 1019,
+	SPELL_FIND_PERSON = 1020,
+	SPELL_SUDDENDEATH_RUNE = 1021,
+	SPELL_ENERGY_BEAM = 1022,
+	SPELL_GREAT_ENERGY_BEAM = 1023,
+	SPELL_HELL_SCORE = 1024,
+	SPELL_FIRE_FIELD_RUNE = 1025,
+	SPELL_POISON_FIELD_RUNE = 1026,
+	SPELL_ENERGY_FIELD_RUNE = 1027,
+	SPELL_FIRE_WALL_RUNE = 1028,
+	SPELL_CURE_POISON = 1029,
+	SPELL_DESTROY_FIELD_RUNE = 1030,
+	SPELL_CURE_POISON_RUNE = 1031,
+	SPELL_POISON_WALL_RUNE = 1032,
+	SPELL_ENERGY_WALL_RUNE = 1033,
+	SPELL_SALVATION = 1036,
+	SPELL_CREATURE_ILLUSION = 1038,
+	SPELL_STRONG_HASTE = 1039,
+	SPELL_FOOD = 1042,
+	SPELL_STRONG_ICE_WAVE = 1043,
+	SPELL_MAGIC_SHIELD = 1044,
+	SPELL_INVISIBLE = 1045,
+	SPELL_CONJURE_EXPLOSIVE_ARROW = 1049,
+	SPELL_SOUL_FIRE_RUNE = 1050,
+	SPELL_CONJURE_ARROW = 1051,
+	SPELL_PARALYSE_RUNE = 1054,
+	SPELL_ENERGY_BOMB_RUNE = 1055,
+	SPELL_WRATH_OF_NATURE = 1056,
+	SPELL_STRONG_ETHEREAL_SPEAR = 1057,
+	SPELL_FRONT_SWEEP = 1059,
+	SPELL_BRUTAL_STRIKE = 1061,
+	SPELL_ANNIHILATION = 1062,
+	SPELL_INVITE_GUESTS = 1071,
+	SPELL_INVITE_SUBOWNERS = 1072,
+	SPELL_KICK_GUEST = 1073,
+	SPELL_EDIT_DOOR = 1074,
+	SPELL_ULTIMATE_LIGHT = 1075,
+	SPELL_MAGIC_ROPE = 1076,
+	SPELL_STALAGMITE_RUNE = 1077,
+	SPELL_DISINTEGRATE_RUNE = 1078,
+	SPELL_BERSERK = 1080,
+	SPELL_LEVITATE = 1081,
+	SPELL_MASS_HEALING = 1082,
+	SPELL_ANIMATE_DEAD_RUNE = 1083,
+	SPELL_HEAL_FRIEND = 1084,
+	SPELL_UNDEAD_LEGION = 1085,
+	SPELL_MAGIC_WALL_RUNE = 1086,
+	SPELL_DEATH_STRIKE = 1087,
+	SPELL_ENERGY_STRIKE = 1088,
+	SPELL_FLAME_STRIKE = 1089,
+	SPELL_CANCEL_INVISIBILITY = 1090,
+	SPELL_POISON_BOMB_RUNE = 1091,
+	SPELL_CONJURE_WAND_OF_DARKNESS = 1092,
+	SPELL_CHALLENGE = 1093,
+	SPELL_WILD_GROWTH_RUNE = 1094,
+	SPELL_FIERCE_BERSERK = 1105,
+	SPELL_GROUNDSHAKER = 1106,
+	SPELL_WHIRLWIND_THROW = 1107,
+	SPELL_ENCHANT_SPEAR = 1110,
+	SPELL_ETHEREAL_SPEAR = 1111,
+	SPELL_ICE_STRIKE = 1112,
+	SPELL_TERRA_STRIKE = 1113,
+	SPELL_ICICLE_RUNE = 1114,
+	SPELL_AVALANCHE_RUNE = 1115,
+	SPELL_STONE_SHOWER_RUNE = 1116,
+	SPELL_THUNDERSTORM_RUNE = 1117,
+	SPELL_ETERNAL_WINTER = 1118,
+	SPELL_RAGE_OF_THE_SKIES = 1119,
+	SPELL_TERRA_WAVE = 1120,
+	SPELL_ICE_WAVE = 1121,
+	SPELL_DIVINE_MISSILE = 1122,
+	SPELL_WOUND_CLEANSING = 1123,
+	SPELL_DIVINE_CALDERA = 1124,
+	SPELL_DIVINE_HEALING = 1125,
+	SPELL_TRAIN_PARTY = 1126,
+	SPELL_PROTECT_PARTY = 1127,
+	SPELL_HEAL_PARTY = 1128,
+	SPELL_ENCHANT_PARTY = 1129,
+	SPELL_HOLY_MISSILE_RUNE = 1130,
+	SPELL_CHARGE = 1131,
+	SPELL_PROTECTOR = 1132,
+	SPELL_BLOOD_RAGE = 1133,
+	SPELL_SWIFT_FOOT = 1134,
+	SPELL_SHARPSHOOTER = 1135,
+	SPELL_IGNITE = 1138,
+	SPELL_CURSE = 1139,
+	SPELL_ELECTRIFY = 1140,
+	SPELL_INFLICT_WOUND = 1141,
+	SPELL_ENVENOM = 1142,
+	SPELL_HOLY_FLASH = 1143,
+	SPELL_CURE_BLEEDING = 1144,
+	SPELL_CURE_BURNING = 1145,
+	SPELL_CURE_ELECTRIFICATION = 1146,
+	SPELL_CURE_CURSE = 1147,
+	SPELL_PHYSICAL_STRIKE = 1148,
+	SPELL_LIGHTNING = 1149,
+	SPELL_STRONG_FLAME_STRIKE = 1150,
+	SPELL_STRONG_ENERGY_STRIKE = 1151,
+	SPELL_STRONG_ICE_STRIKE = 1152,
+	SPELL_STRONG_TERRA_STRIKE = 1153,
+	SPELL_ULTIMATE_FLAME_STRIKE = 1154,
+	SPELL_ULTIMATE_ENERGY_STRIKE = 1155,
+	SPELL_ULTIMATE_ICE_STRIKE = 1156,
+	SPELL_ULTIMATE_TERRA_STRIKE = 1157,
+	SPELL_INTENSE_WOUND_CLEANSING = 1158,
+	SPELL_RECOVERY = 1159,
+	SPELL_INTENSE_RECOVERY = 1160,
+	SPELL_PRACTISE_HEALING = 1166,
+	SPELL_PRACTISE_FIRE_WAVE = 1167,
+	SPELL_PRACTISE_MAGIC_MISSILE_RUNE = 1168,
+	SPELL_APPRENT_ICES_STRIKE = 1169,
+	SPELL_MUD_ATTACK = 1172,
+	SPELL_CHILL_OUT = 1173,
+	SPELL_MAGIC_PATCH = 1174,
+	SPELL_BRUISE_BANE = 1175,
+	SPELL_ARROW_CALL = 1176,
+	SPELL_BUZZ = 1177,
+	SPELL_SCORCH = 1178,
+	SPELL_LIGHTEST_MISSILE_RUNE = 1179,
+	SPELL_LIGHT_STONE_SHOWER_RUNE = 1180,
+	SPELL_SUMMON_KNIGHT_FAMILIAR = 1194,
+	SPELL_SUMMON_PALADIN_FAMILIAR = 1195,
+	SPELL_SUMMON_SORCERER_FAMILIAR = 1196,
+	SPELL_SUMMON_DRUID_FAMILIAR = 1197,
+	SPELL_CHIVALROUS_CHALLENGE = 1237,
+	SPELL_DIVINE_DAZZLE = 1238,
+	SPELL_FAIR_WOUND_CLEANSING = 1239,
+	SPELL_GREAT_FIRE_WAVE = 1240,
+	SPELL_RESTORATION = 1241,
+	SPELL_NATURES_EMBRACE = 1242,
+	SPELL_EXPOSE_WEAKNESS = 1243,
+	SPELL_SAP_STRENGTH = 1244,
+	SPELL_CANCEL_MAGIC_SHIELD = 1245,
+	MONSTER_SPELL_SINGLE_TARGET_FIRE = 2002,
+	MONSTER_SPELL_SINGLE_TARGET_ENERGY = 2003,
+	MONSTER_SPELL_SINGLE_TARGET_EARTH = 2004,
+	MONSTER_SPELL_SINGLE_TARGET_ICE = 2005,
+	MONSTER_SPELL_SINGLE_TARGET_DEATH = 2006,
+	MONSTER_SPELL_SINGLE_TARGET_HOLY = 2007,
+	MONSTER_SPELL_SINGLE_TARGET_HIT = 2008,
+	MONSTER_SPELL_SINGLE_TARGET_LIFEDRAIN = 2009,
+	MONSTER_SPELL_SINGLE_TARGET_MANADRAIN = 2010,
+	MONSTER_SPELL_SINGLE_TARGET_DROWNING = 2011,
+	MONSTER_SPELL_SINGLE_TARGET_BLEEDING = 2012,
+	MONSTER_SPELL_SINGLE_TARGET_HEALING = 2013,
+	MONSTER_SPELL_SMALL_AREA_FIRE = 2015,
+	MONSTER_SPELL_SMALL_AREA_ENERGY = 2016,
+	MONSTER_SPELL_SMALL_AREA_EARTH = 2017,
+	MONSTER_SPELL_SMALL_AREA_ICE = 2018,
+	MONSTER_SPELL_SMALL_AREA_DEATH = 2019,
+	MONSTER_SPELL_SMALL_AREA_HOLY = 2020,
+	MONSTER_SPELL_SMALL_AREA_HIT = 2021,
+	MONSTER_SPELL_SMALL_AREA_LIFEDRAIN = 2022,
+	MONSTER_SPELL_SMALL_AREA_MANADRAIN = 2023,
+	MONSTER_SPELL_SMALL_AREA_DROWNING = 2024,
+	MONSTER_SPELL_SMALL_AREA_BLEEDING = 2025,
+	MONSTER_SPELL_SMALL_AREA_HEALING = 2026,
+	MONSTER_SPELL_LARGE_AREA_FIRE = 2028,
+	MONSTER_SPELL_LARGE_AREA_ENERGY = 2029,
+	MONSTER_SPELL_LARGE_AREA_EARTH = 2030,
+	MONSTER_SPELL_LARGE_AREA_ICE = 2031,
+	MONSTER_SPELL_LARGE_AREA_DEATH = 2032,
+	MONSTER_SPELL_LARGE_AREA_HOLY = 2033,
+	MONSTER_SPELL_LARGE_AREA_HIT = 2034,
+	MONSTER_SPELL_LARGE_AREA_LIFEDRAIN = 2035,
+	MONSTER_SPELL_LARGE_AREA_MANADRAIN = 2036,
+	MONSTER_SPELL_LARGE_AREA_DROWNING = 2037,
+	MONSTER_SPELL_LARGE_AREA_BLEEDING = 2038,
+	MONSTER_SPELL_LARGE_AREA_HEALING = 2039,
+	MONSTER_SPELL_WAVE_FIRE = 2041,
+	MONSTER_SPELL_WAVE_ENERGY = 2042,
+	MONSTER_SPELL_WAVE_EARTH = 2043,
+	MONSTER_SPELL_WAVE_ICE = 2044,
+	MONSTER_SPELL_WAVE_DEATH = 2045,
+	MONSTER_SPELL_WAVE_HOLY = 2046,
+	MONSTER_SPELL_WAVE_HIT = 2047,
+	MONSTER_SPELL_WAVE_LIFEDRAIN = 2048,
+	MONSTER_SPELL_WAVE_MANADRAIN = 2049,
+	MONSTER_SPELL_WAVE_DROWNING = 2050,
+	MONSTER_SPELL_WAVE_BLEEDING = 2051,
+	MONSTER_SPELL_WAVE_HEALING = 2052,
+	MONSTER_SPELL_DELETEFIELD = 2054,
+	MONSTER_SPELL_CHALLENGE = 2055,
+	MONSTER_SPELL_SPEED = 2056,
+	MONSTER_SPELL_DRUNKEN = 2057,
+	MONSTER_SPELL_STRENGTH = 2058,
+	MONSTER_SPELL_OUTFIT = 2059,
+	MONSTER_SPELL_SUMMON = 2060,
+	MONSTER_SPELL_MAGICLEVEL = 2061,
+	MONSTER_SPELL_TELEPORT = 2062,
+	MONSTER_SPELL_HEX = 2063,
+	MONSTER_SPELL_SUPER_DRUNKEN = 2064,
+	MONSTER_SPELL_ROOT = 2065,
+	MONSTER_SPELL_FEAR = 2066,
+	MONSTER_SPELL_HIGHRISK_TELEPORT = 2067,
+	MONSTER_SPELL_MINION = 2068,
+	MONSTER_SPELL_AGONY = 2069, // No sound ingame
+	AMPHIBIC_BARK = 2500,
+	AQUATIC_BEAST_BARK = 2501,
+	AQUATIC_CRITTER_BARK = 2502,
+	AQUATIC_DEEPLING_BARK = 2503,
+	AQUATIC_QUARA_BARK = 2504,
+	BIRD_BARK = 2505,
+	CONSTRUCT_BARK = 2506,
+	DEMON_BARK = 2507,
+	DRAGON_BARK = 2508,
+	ELEMENTAL_EARTH_BARK = 2509,
+	ELEMENTAL_ENERGY_BARK = 2510,
+	ELEMENTAL_FIRE_BARK = 2511,
+	ELEMENTAL_WATER_BARK = 2512,
+	EXTRA_DIMENSIONAL_BEAST_BARK = 2513,
+	EXTRA_DIMENSIONAL_ENERGY_BARK = 2514,
+	EXTRA_DIMENSIONAL_HORROR_BARK = 2515,
+	FEY_BARK = 2516,
+	GIANT_BARK = 2517,
+	HUMAN_FEMALE_BARK = 2518,
+	HUMAN_MALE_BARK = 2519,
+	HUMANOID_GOBLIN_BARK = 2520,
+	HUMANOID_ORC_BARK = 2521,
+	LYCANTHROPE_BARK = 2522,
+	MAGICAL_ENERGY_BARK = 2523,
+	MAGICAL_HORROR_BARK = 2524,
+	MAMMAL_BEAR_BARK = 2525,
+	MAMMAL_CRITTER_BARK = 2526,
+	MAMMAL_DOG_BARK = 2527,
+	MAMMAL_ELEPHANT_BARK = 2528,
+	MAMMAL_FERAL_BARK = 2529,
+	MAMMAL_HORSE_BARK = 2530,
+	MAMMAL_MAMMOTH_BARK = 2531, // No sound ingame
+	MONSTER_BARK = 2532,
+	PHANTOM_BARK = 2533,
+	PLANT_BARK = 2534,
+	REPTILE_LARGE_BARK = 2535,
+	REPTILE_SMALL_BARK = 2536,
+	SLIME_BARK = 2537,
+	UNDEAD_BARK = 2538,
+	VERMIN_CRITTER_BARK = 2539,
+	VERMIN_INSECT_BARK = 2540,
+	VERMIN_ROTWORM_BARK = 2541,
+	HUMAN_SAGE_BARK = 2542, //  No sound ingame
+	HUMAN_CRONE_BARK = 2543, // No sound ingame
+	APE_BARK = 2544, // No sound ingame
+	AMPHIBIC_DEATH = 2600,
+	AQUATIC_BEAST_DEATH = 2601,
+	AQUATIC_CRITTER_DEATH = 2602,
+	AQUATIC_DEEPLING_DEATH = 2603,
+	AQUATIC_QUARA_DEATH = 2604,
+	BIRD_DEATH = 2605,
+	CONSTRUCT_DEATH = 2606,
+	DEMON_DEATH = 2607,
+	DRAGON_DEATH = 2608,
+	ELEMENTAL_EARTH_DEATH = 2609,
+	ELEMENTAL_ENERGY_DEATH = 2610,
+	ELEMENTAL_FIRE_DEATH = 2611,
+	ELEMENTAL_WATER_DEATH = 2612,
+	EXTRA_DIMENSIONAL_BEAST_DEATH = 2613,
+	EXTRA_DIMENSIONAL_ENERGY_DEATH = 2614,
+	EXTRA_DIMENSIONAL_HORROR_DEATH = 2615,
+	FEY_DEATH = 2616,
+	GIANT_DEATH = 2617,
+	HUMAN_FEMALE_DEATH = 2618,
+	HUMAN_MALE_DEATH = 2619,
+	HUMANOID_GOBLIN_DEATH = 2620,
+	HUMANOID_ORC_DEATH = 2621,
+	LYCANTHROPE_DEATH = 2622,
+	MAGICAL_ENERGY_DEATH = 2623,
+	MAGICAL_HORROR_DEATH = 2624,
+	MAMMAL_BEAR_DEATH = 2625,
+	MAMMAL_CRITTER_DEATH = 2626,
+	MAMMAL_DOG_DEATH = 2627,
+	MAMMAL_ELEPHANT_DEATH = 2628,
+	MAMMAL_FERAL_DEATH = 2629,
+	MAMMAL_HORSE_DEATH = 2630,
+	MAMMAL_MAMMOTH_DEATH = 2631, // No sound ingame
+	MONSTER_DEATH = 2632,
+	PHANTOM_DEATH = 2633,
+	PLANT_DEATH = 2634,
+	REPTILE_LARGE_DEATH = 2635,
+	REPTILE_SMALL_DEATH = 2636,
+	SLIME_DEATH = 2637,
+	UNDEAD_DEATH = 2638,
+	VERMIN_CRITTER_DEATH = 2639,
+	VERMIN_INSECT_DEATH = 2640,
+	VERMIN_ROTWORM_DEATH = 2641,
+	HUMAN_SAGE_DEATH = 2642,
+	HUMAN_CRONE_DEATH = 2643,
+	APE_DEATH = 2644,
+	UNKNOWN_CREATURE_DEATH_1 = 2645,
+	UNKNOWN_CREATURE_DEATH_2 = 2646,
+	UNKNOWN_CREATURE_DEATH_3 = 2647,
+	UNKNOWN_CREATURE_DEATH_4 = 2648,
+	ACTION_HEAVY_METAL_LOUD = 2649,
+	ENV_INSECTS_BIRDS = 2651,
+	ENV_WIND_1 = 2652,
+	ENV_WIND_CLOSE = 2653,
+	ENV_WATER_DEPTH_BOAT_SURFACE = 2654,
+	ENV_METALIC_SPACE = 2655,
+	ENV_FROGS_INSECTS_WOODS = 2656,
+	ENV_WATER_DEPTH = 2657,
+	ENV_SEA_WAVE = 2658,
+	ENV_WIND_2 = 2659,
+	ENV_WIND_3 = 2660,
+	ENV_MONKEYS = 2661,
+	ENV_STORM_COMING = 2662,
+	ACTION_HITTING_WOOD = 2663,
+	ENV_WOOD_STICK_SMASH = 2664,
+	ENV_THICK_BLOB_LIQUID_1 = 2665,
+	ENV_LITTLE_BIRTS_FLOREST = 2666,
+	ENV_THICK_BLOCK_LIQUID_CLOSE = 2667,
+	ACTION_METAL_CHAINS_MOVING = 2668,
+	ENV_CRICKET_1 = 2669,
+	ENV_CRICKET_2 = 2670,
+	ENV_CRICKET_3 = 2671,
+	ENV_CICADA_1 = 2672,
+	ENV_STONES_FALLING = 2673,
+	ACTION_OPEN_DOOR = 2674,
+	ACTION_CLOSE_DOOR = 2675,
+	ENV_OWL = 2676,
+	ENV_ELETRONIC_DEVICE = 2678,
+	ENV_REPTILE_NOISE = 2679,
+	ENV_FORGE_METAL_1 = 2680,
+	ENV_FROG = 2681,
+	ACTION_WOOD_OBJECT_USING = 2682,
+	ACTION_METAL_OBJECT_HIT = 2683,
+	ACTION_NAIL_HIT = 2684,
+	ENV_BELL_RING = 2685,
+	ENV_HOT_METAL_ON_WATER = 2686,
+	ENV_WATER_SMOKE = 2687,
+	ENV_WOLF_HOWL = 2688,
+	ENV_WOOD_CRACKLE_CLOSE = 2689,
+	ENV_LAUGHT = 2690,
+	ENV_WIND_MOVING_LEAF = 2691,
+	ENV_WIND_MOVING_FEW_LEAF = 2692,
+	ACTION_PORTAL_CAST = 2693,
+	ACTION_FIRE_MAGIC_CAST = 2694,
+	ENV_TRAPDOOR_OPEN = 2695,
+	ENV_NAIL_FALLING = 2696,
+	ENV_LIGHT_BLOB_LIQUID = 2697,
+	ENV_LION_ROAR = 2698,
+	ENV_MOVING_OBJECT_BUTTON_TRIGGER = 2699,
+	ENV_SNAKE_1 = 2700,
+	ENV_HUMAN_SCREEN_1 = 2701,
+	ENV_HUMAN_SCREEN_2 = 2702,
+	ENV_SEAGUL_1 = 2703,
+	ENV_FAST_FOOTSTEPS = 2704,
+	ENV_SLOW_FOOTSTEPS = 2705,
+	ENV_THICK_BLOB_LIQUID_2 = 2706,
+	ENV_MOVING_LEAF = 2707,
+	ENV_WOOD_CRACKLE_1 = 2708,
+	ACTION_OBJECT_FALLING_DEPTH = 2709,
+	ACTION_BUTTON_TRIGGER = 2710,
+	ENV_HEAVEN_DARK_REVERB = 2711,
+	ENV_WIND_4 = 2712,
+	ENV_INSECT_1 = 2713,
+	ENV_FLUTE_SONG = 2714,
+	ENV_INSECTS_BIRDS_DEATH = 2715,
+	ENV_INSECT_CREATURE_DEATH = 2716,
+	ENV_LOW_ROAR = 2717,
+	ENV_SINISTER_BURPH = 2718,
+	ENV_CROWD_SCREEN = 2719,
+	ENV_BIRDS_FLYING = 2720,
+	ENV_CROWD_VOICES_1 = 2721,
+	ENV_BIRD_CUCO = 2722,
+	ENV_RAVINE = 2723,
+	ENV_RAVINE_METALIC = 2724,
+	ENV_STICKS_LEAF_STEP = 2725,
+	ACTION_DISPEL_MAGIC_1 = 2726,
+	ACTION_DISPEL_MAGIC_2 = 2727,
+	ENV_CROWD_VOICES_2 = 2728,
+	ENV_CROWD_VOICES_3 = 2729,
+	ENV_CROWD_VOICES_4 = 2730,
+	ACTION_METAL_OBJECT_FALL = 2731,
+	ENV_HOURSE_STEPS = 2732,
+	ENV_DRUMES_SINISTER_REVERB = 2733,
+	ACTION_WOOD_PIECES_FALL = 2734,
+	ACTION_KNIFE_CUT_FLESH = 2735,
+	ENV_CROWD_VOICES_5 = 2736,
+	ENV_CICADA_2 = 2738,
+	ENV_FLYES = 2739,
+	ENV_NOISE_WATER = 2740,
+	ENV_PIG_SOUND_1 = 2741,
+	ENV_PIG_SOUND_2 = 2742,
+	ENV_SHEEP_SOUND_1 = 2743,
+	ENV_SHEEP_SOUND_2 = 2744,
+	ENV_FIRE = 2745,
+	ENV_NOISE_SNOW = 2746,
+	ENV_FIRE_PLACE = 2747,
+	ENV_WATERFALL = 2748,
+	ENV_WATER_SOURCE = 2749,
+	ACTION_HAMMER_HITING_NAILS_1 = 2750,
+	ACTION_HAMMER_HITING_NAILS_2 = 2751,
+	ENV_QUICK_STEPS = 2752,
+	ENV_HEAVY_OBJECT_FALL = 2753,
+	ACTION_HITING_FORGE = 2754,
+	ENV_WOOD_CRACKLE_2 = 2755,
+	ACTION_WOOD_HIT = 2756,
+	MUSIC_CUT_BIRDS = 2757,
+	MUSIC_CUT_LITTLE_BIRDS = 2758,
+	MUSIC_CUT_INSECTS_1 = 2759,
+	MUSIC_CUT_INSECTS_2 = 2760,
+	MUSIC_CUT_INSECTS_3 = 2761,
+	MUSIC_CUT_FLUTE_WEST = 2762,
+	MUSIC_CUT_CROWS_VOICES = 2763,
+	MUSIC_CUT_WIND_WATER = 2764,
+	MUSIC_CUT_THICK_BLOCK_DEPTH = 2765,
+	ENV_CAMEL = 2766,
+	UNKNOWN_CREATURE_DEATH_5 = 2767,
+	ENV_CHICKEN_1 = 2768,
+	ENV_CHICKEN_2 = 2769,
+	ENV_THRILLER_METALLIC = 2770,
+	ACTION_NOTIFICATION = 2771,
+	ACTION_LEVEL_ACHIEVEMENT = 2772,
+	ACTION_SCREENSHOT = 2773,
+	ACTION_CLICK_ON = 2774,
+	ACTION_CLICK_OFF = 2775,
+	ACTION_DRUMS = 2776,
+	ACTION_XYLOPHONE_SLOW_DRUM = 2777,
+	ACTION_HARP_1 = 2778,
+	ACTION_HARP_2 = 2779,
+	ACTION_MOVING_WOOD = 2780,
+	ACTION_CRATE_BREAK_MAGIC_DUST = 2781,
+	ACTION_BELL_RING = 2783,
+	ACTION_SELECT_OBJECT = 2785,
+	ITEM_MOVE_BACKPACK = 2786,
+	ITEM_USE_POTION = 2787,
+	ITEM_MOVE_NECKLACES = 2788,
+	ITEM_MOVE_ARMORS = 2789,
+	ITEM_MOVE_METALIC = 2790,
+	ITEM_MOVE_DISTANCE = 2791,
+	ITEM_MOVE_WOOD = 2792,
+	ITEM_MOVE_STACKABLE = 2793,
+	ITEM_MOVE_DEFAULT = 2794,
+	ITEM_MOVE_LEGS = 2795,
+	ITEM_MOVE_HELMETS = 2796,
+	ITEM_MOVE_QUIVERS = 2797,
+	ITEM_MOVE_RINGS = 2798,
+	ENV_FROG_OR_LIQUID = 2799,
+	ACTION_WOOD_OBJECT_HIT_STORE = 2800,
+	ITEM_MOVE_BOOTS = 2801,
+	ACTION_SWORD_DRAWN = 2802,
+	ACTION_EAT = 2803,
+	ACTION_STORE_BIG_OBJECT = 2804,
+	ACTION_STORE_WOOD_OBJECT = 2805,
+	ACTION_VIP_LOGOUT = 2806,
+	ACTION_VIP_LOGIN = 2807,
+	ENV_CAT_1 = 2808,
+	ENV_INSECT_2 = 2809,
+	ENV_SEAGUL_2 = 2810,
+	ENV_LIQUID_SPILL = 2811,
+	ENV_COW_MOO_1 = 2813,
+	ENV_COW_MOO_2 = 2814,
+	ENV_CAT_2 = 2815,
+	ACTION_REAWRD_FEY = 2816,
+	ACTION_REWARD_GUITAR_1 = 2817,
+	ACTION_REWARD_GUITAR_2 = 2818,
+	ENV_WOODS_WATER_SOURCE = 2819,
+	ENV_HYENA = 2820,
+	UNKNOWN_CREATURE_DEATH_6 = 2821,
+	ENV_COW_MOO_3 = 2822,
+	UNKNOWN_CREATURE_DEATH_7 = 2823,
+	ENV_METALIC_SPACE_ALIEN = 2824,
+	ACTION_AIR_STRIKE = 2825,
+	ENV_WATER = 2828,
+	ENV_SNAKE_2 = 2829,
+	GOD_SPELL_KILL_ALL_MONSTERS = 10001 // No sound ingame
+};
+
+enum class SourceEffect_t : uint8_t {
+	GLOBAL = 0,
+	OWN = 1,
+	OTHERS = 2,
+	CREATURES = 3
+};
+
+enum class CreatureIconCategory_t {
+	Quests,
+	Modifications,
+};
+
+enum class CreatureIconModifications_t {
+	None,
+	HigherDamageReceived,
+	LowerDamageDealt,
+	TurnedMelee,
+	Influenced,
+	Fiendish,
+	ReducedHealth,
+	ReducedHealthExclamation,
+};
+
+enum class CreatureIconQuests_t {
+	None,
+	WhiteCross,
+	RedCross,
+	RedBall,
+	GreenBall,
+	RedGreenBall,
+	GreenShield,
+	YellowShield,
+	BlueShield,
+	PurpleShield,
+	RedShield,
+	Dove,
+	Energy,
+	Earth,
+	Water,
+	Fire,
+	Ice,
+	ArrowUp,
+	ArrowDown,
+	ExclamationMark,
+	QuestionMark,
+	CancelMark,
+	Hazard,
+	BrownSkull,
+	BloodDrop,
+};
+
+struct CreatureIcon {
+	CreatureIcon() = default;
+
+	explicit constexpr CreatureIcon(CreatureIconModifications_t modification, uint16_t count = 0) :
+		category(CreatureIconCategory_t::Modifications), modification(modification), count(count) { }
+
+	explicit constexpr CreatureIcon(CreatureIconQuests_t quest, uint16_t count = 0) :
+		category(CreatureIconCategory_t::Quests), quest(quest), count(count) { }
+
+	CreatureIconCategory_t category {};
+	CreatureIconModifications_t modification = CreatureIconModifications_t::None;
+	CreatureIconQuests_t quest = CreatureIconQuests_t::None;
+	uint16_t count = 0;
+
+	bool operator==(const CreatureIcon &other) const = default;
+
+	bool isNone() const {
+		return modification == CreatureIconModifications_t::None && quest == CreatureIconQuests_t::None;
+	}
+
+	bool isSet() const {
+		return !isNone();
+	}
+
+	uint8_t serialize() const {
+		if (category == CreatureIconCategory_t::Modifications) {
+			return static_cast<uint8_t>(modification);
+		} else if (category == CreatureIconCategory_t::Quests) {
+			return static_cast<uint8_t>(quest);
+		}
+		return 0;
+	}
+};
+
 // Structs
 struct Position;
 
 struct VIPEntry {
-	VIPEntry(uint32_t initGuid, std::string initName, std::string initDescription,
-             uint32_t initIcon, bool initNotify) :
-                guid(initGuid),
-                name(std::move(initName)),
-                description(std::move(initDescription)),
-                icon(initIcon),
-                notify(initNotify) {}
+	VIPEntry(uint32_t initGuid, std::string initName, std::string initDescription, uint32_t initIcon, bool initNotify) :
+		guid(initGuid),
+		name(std::move(initName)),
+		description(std::move(initDescription)),
+		icon(initIcon),
+		notify(initNotify) { }
 
-	uint32_t guid;
+	uint32_t guid = 0;
 	std::string name;
 	std::string description;
-	uint32_t icon;
-	bool notify;
+	uint32_t icon = 0;
+	bool notify = false;
 };
 
-struct OutfitEntry {
-	constexpr OutfitEntry(uint16_t initLookType, uint8_t initAddons) :
-                         lookType(initLookType), addons(initAddons) {}
+struct VIPGroupEntry {
+	VIPGroupEntry(uint8_t initId, std::string initName, bool initCustomizable) :
+		id(initId),
+		name(std::move(initName)),
+		customizable(initCustomizable) { }
 
-	uint16_t lookType;
-	uint8_t addons;
-};
-
-struct FamiliarEntry {
-	constexpr explicit FamiliarEntry(uint16_t initLookType) : lookType(initLookType) {}
-	uint16_t lookType;
+	uint8_t id = 0;
+	std::string name;
+	bool customizable = false;
 };
 
 struct Skill {
 	uint64_t tries = 0;
 	uint16_t level = 10;
-	double_t percent = 0;
+	double percent = 0;
 };
 
 struct Kill {
@@ -630,7 +1440,7 @@ struct Kill {
 	bool unavenged;
 
 	Kill(uint32_t _target, time_t _time, bool _unavenged) :
-        target(_target), time(_time), unavenged(_unavenged) {}
+		target(_target), time(_time), unavenged(_unavenged) { }
 };
 
 struct IntervalInfo {
@@ -651,8 +1461,8 @@ struct FindPathParams {
 
 struct RecentDeathEntry {
 	RecentDeathEntry(std::string cause, uint32_t timestamp) :
-        cause(std::move(cause)),
-        timestamp(timestamp) {}
+		cause(std::move(cause)),
+		timestamp(timestamp) { }
 
 	std::string cause;
 	uint32_t timestamp;
@@ -660,9 +1470,9 @@ struct RecentDeathEntry {
 
 struct RecentPvPKillEntry {
 	RecentPvPKillEntry(std::string description, uint32_t timestamp, uint8_t status) :
-        description(std::move(description)),
-        timestamp(timestamp),
-        status(status) {}
+		description(std::move(description)),
+		timestamp(timestamp),
+		status(status) { }
 
 	std::string description;
 	uint32_t timestamp;
@@ -681,27 +1491,27 @@ struct MarketOffer {
 
 struct MarketOfferEx {
 	MarketOfferEx() = default;
-	MarketOfferEx(MarketOfferEx&& other) :
-        id(other.id),
-        playerId(other.playerId),
-        timestamp(other.timestamp),
-        price(other.price),
-        amount(other.amount),
-        counter(other.counter),
-        itemId(other.itemId),
-        type(other.type),
-        tier(other.tier),
-        playerName(std::move(other.playerName)) {}
+	MarketOfferEx(MarketOfferEx &&other) noexcept :
+		id(other.id),
+		playerId(other.playerId),
+		timestamp(other.timestamp),
+		price(other.price),
+		amount(other.amount),
+		counter(other.counter),
+		itemId(other.itemId),
+		type(other.type),
+		tier(other.tier),
+		playerName(std::move(other.playerName)) { }
 
-	uint32_t id;
-	uint32_t playerId;
-	uint32_t timestamp;
-	uint64_t price;
-	uint16_t amount;
-	uint16_t counter;
-	uint16_t itemId;
-	MarketAction_t type;
-	uint8_t tier;
+	uint32_t id {};
+	uint32_t playerId {};
+	uint32_t timestamp {};
+	uint64_t price {};
+	uint16_t amount {};
+	uint16_t counter {};
+	uint16_t itemId {};
+	MarketAction_t type {};
+	uint8_t tier {};
 	std::string playerName;
 };
 
@@ -720,65 +1530,61 @@ using StashItemList = std::map<uint16_t, uint32_t>;
 
 using ItemsTierCountList = std::map<uint16_t, std::map<uint8_t, uint32_t>>;
 /*
-	> ItemsTierCountList structure:
-	|- [itemID]
-		|- [itemTier]
-			|- Count
-		| ...
-	| ...
+    > ItemsTierCountList structure:
+    |- [itemID]
+        |- [itemTier]
+            |- Count
+        | ...
+    | ...
 */
 
-struct Familiar {
-	Familiar(std::string initName, uint16_t initLookType,
-             bool initPremium, bool initUnlocked, std::string initType) :
-                name(initName), lookType(initLookType),
-                premium(initPremium), unlocked(initUnlocked),
-                type(initType) {}
-
-	std::string name;
-	uint16_t lookType;
-	bool premium;
-	bool unlocked;
-	std::string type;
-};
-
 struct ProtocolFamiliars {
-	ProtocolFamiliars(const std::string& initName, uint16_t initLookType) :
-		name(initName), lookType(initLookType) {}
+	ProtocolFamiliars(const std::string &initName, uint16_t initLookType) :
+		name(initName), lookType(initLookType) { }
 
-	const std::string& name;
+	const std::string &name;
 	uint16_t lookType;
 };
 
 struct LightInfo {
 	uint8_t level = 0;
-	uint8_t color = 0;
+	uint8_t color = 215;
 	constexpr LightInfo() = default;
-	constexpr LightInfo(uint8_t newLevel, uint8_t newColor) : level(newLevel), color(newColor) {}
+	constexpr LightInfo(uint8_t newLevel, uint8_t newColor) :
+		level(newLevel), color(newColor) { }
 };
 
 struct CombatDamage {
 	struct {
-		CombatType_t type;
-		int32_t value;
+		CombatType_t type = COMBAT_NONE;
+		int32_t value = 0;
 	} primary, secondary;
 
-	CombatOrigin origin;
-	bool critical;
-	int affected;
-	bool extension;
+	CombatOrigin origin = ORIGIN_NONE;
+	bool critical = false;
+	int affected = 1;
+	bool extension = false;
 	std::string exString;
-	bool fatal;
+	bool fatal = false;
 
-	CombatDamage() {
-		origin = ORIGIN_NONE;
-		primary.type = secondary.type = COMBAT_NONE;
-		primary.value = secondary.value = 0;
-		critical = false;
-		affected = 1;
-		extension = false;
-		exString = "";
-		fatal = false;
+	int32_t criticalDamage = 0;
+	int32_t criticalChance = 0;
+	int32_t damageMultiplier = 0;
+	int32_t damageReductionMultiplier = 0;
+	int32_t healingMultiplier = 0;
+	int32_t manaLeech = 0;
+	int32_t manaLeechChance = 0;
+	int32_t lifeLeech = 0;
+	int32_t lifeLeechChance = 0;
+	int32_t healingLink = 0;
+
+	std::string instantSpellName;
+	std::string runeSpellName;
+
+	CombatDamage() = default;
+
+	bool isEmpty() const {
+		return primary.type == COMBAT_NONE && primary.value == 0 && secondary.type == COMBAT_NONE && secondary.value == 0 && origin == ORIGIN_NONE && critical == false && affected == 1 && extension == false && exString.empty() && fatal == false && criticalDamage == 0 && criticalChance == 0 && damageMultiplier == 0 && damageReductionMultiplier == 0 && healingMultiplier == 0 && manaLeech == 0 && manaLeechChance == 0 && lifeLeech == 0 && lifeLeechChance == 0 && healingLink == 0 && instantSpellName.empty() && runeSpellName.empty();
 	}
 };
 
@@ -787,15 +1593,13 @@ struct RespawnType {
 	bool underground;
 };
 
-struct LootBlock;
-
 struct LootBlock {
 	uint16_t id;
 	uint32_t countmax;
 	uint32_t countmin;
 	uint32_t chance;
 
-	//optional
+	// optional
 	int32_t subType;
 	int32_t actionId;
 	std::string text;
@@ -829,27 +1633,23 @@ struct LootBlock {
 };
 
 struct ShopBlock {
-	uint16_t itemId;
+	uint16_t itemId {};
 	std::string itemName;
-	int32_t itemSubType;
-	uint32_t itemBuyPrice;
-	uint32_t itemSellPrice;
-	int32_t itemStorageKey;
-	int32_t itemStorageValue;
+	int32_t itemSubType {};
+	uint32_t itemBuyPrice {};
+	uint32_t itemSellPrice {};
+	int32_t itemStorageKey {};
+	int32_t itemStorageValue {};
 
 	std::vector<ShopBlock> childShop;
-	ShopBlock() {
-		itemId = 0;
-		itemName = "";
-		itemSubType = 0;
-		itemBuyPrice = 0;
-		itemSellPrice = 0;
-		itemStorageKey = 0;
-		itemStorageValue = 0;
-	}
+	ShopBlock() = default;
 
-	explicit ShopBlock(uint16_t newItemId, int32_t newSubType = 0, uint32_t newBuyPrice = 0, uint32_t newSellPrice = 0, int32_t newStorageKey = 0, int32_t newStorageValue = 0, std::string newName = "")
-		: itemId(newItemId), itemSubType(newSubType), itemBuyPrice(newBuyPrice), itemSellPrice(newSellPrice), itemStorageKey(newStorageKey), itemStorageValue(newStorageValue), itemName(std::move(newName)) {}
+	explicit ShopBlock(uint16_t newItemId, std::string newName = "", int32_t newSubType = 0, uint32_t newBuyPrice = 0, uint32_t newSellPrice = 0, int32_t newStorageKey = 0, int32_t newStorageValue = 0) :
+		itemId(newItemId), itemName(std::move(newName)), itemSubType(newSubType), itemBuyPrice(newBuyPrice), itemSellPrice(newSellPrice), itemStorageKey(newStorageKey), itemStorageValue(newStorageValue) { }
+
+	bool operator==(const ShopBlock &other) const {
+		return itemId == other.itemId && itemName == other.itemName && itemSubType == other.itemSubType && itemBuyPrice == other.itemBuyPrice && itemSellPrice == other.itemSellPrice && itemStorageKey == other.itemStorageKey && itemStorageValue == other.itemStorageValue && childShop == other.childShop;
+	}
 };
 
 struct summonBlock_t {
@@ -874,6 +1674,10 @@ struct Outfit_t {
 	uint8_t lookMountLegs = 0;
 	uint8_t lookMountFeet = 0;
 	uint16_t lookFamiliarsType = 0;
+	uint16_t lookWing = 0;
+	uint16_t lookAura = 0;
+	uint16_t lookEffect = 0;
+	uint16_t lookShader = 0;
 };
 
 struct voiceBlock_t {
@@ -883,8 +1687,8 @@ struct voiceBlock_t {
 
 struct PartyAnalyzer {
 	PartyAnalyzer(uint32_t playerId, std::string playerName) :
-                id(playerId),
-                name(std::move(playerName)) {}
+		id(playerId),
+		name(std::move(playerName)) { }
 
 	uint32_t id;
 
@@ -898,5 +1702,3 @@ struct PartyAnalyzer {
 	std::map<uint16_t, uint64_t> lootMap; // [itemID] = amount
 	std::map<uint16_t, uint64_t> supplyMap; // [itemID] = amount
 };
-
-#endif  // SRC_CREATURES_CREATURES_DEFINITIONS_HPP_

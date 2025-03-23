@@ -2,16 +2,16 @@
 
 OT_DB_HOST="${OT_DB_HOST:-127.0.0.1}"
 OT_DB_PORT="${OT_DB_PORT:-3306}"
-OT_DB_USER="${OT_DB_USER:-canary}"
-OT_DB_PASSWORD="${OT_DB_PASSWORD:-canary}"
-OT_DB_DATABASE="${OT_DB_DATABASE:-canary}"
+OT_DB_USER="${OT_DB_USER:-otxserver}"
+OT_DB_PASSWORD="${OT_DB_PASSWORD:-otxserver}"
+OT_DB_DATABASE="${OT_DB_DATABASE:-otxserver}"
 OT_SERVER_IP="${OT_SERVER_IP:-127.0.0.1}"
 OT_SERVER_LOGIN_PORT="${OT_SERVER_LOGIN_PORT:-7171}"
 OT_SERVER_GAME_PORT="${OT_SERVER_GAME_PORT:-7172}"
 OT_SERVER_STATUS_PORT="${OT_SERVER_STATUS_PORT:-7171}"
 OT_SERVER_TEST_ACCOUNTS="${OT_SERVER_TEST_ACCOUNTS:-false}"
-OT_SERVER_DATA="${OT_SERVER_DATA:-data-canary}"
-OT_SERVER_MAP="${OT_SERVER_MAP:-https://github.com/opentibiabr/otservbr-global/releases/download/v1.5.0/otservbr.otbm}"
+OT_SERVER_DATA="${OT_SERVER_DATA:-data-otxserver}"
+OT_SERVER_MAP="${OT_SERVER_MAP:-https://github.com/opentibiabr/canary/releases/download/v3.1.0/otservbr.otbm}"
 
 echo ""
 echo "===== Print Variables ====="
@@ -90,7 +90,7 @@ echo ""
 if [[ $(mysql -u "$OT_DB_USER" -p"$OT_DB_PASSWORD" -h "$OT_DB_HOST" -e 'SHOW TABLES LIKE "server_config"' -D "$OT_DB_DATABASE") ]]; then
 	echo "Table server_config exists so we don't need to import"
 else
-	echo "Import Canary-Server Schema"
+	echo "Import otxserver-Server Schema"
 	mysql -u "$OT_DB_USER" -p"$OT_DB_PASSWORD" -h "$OT_DB_HOST" --port="$OT_DB_PORT" -D "$OT_DB_DATABASE" <schema.sql
 
 	echo ""
@@ -99,8 +99,8 @@ else
 
 	if [ "$OT_SERVER_TEST_ACCOUNTS" = "true" ]; then
 		echo "Creating Test Accounts..."
-		mysql -u "$OT_DB_USER" -p"$OT_DB_PASSWORD" -h "$OT_DB_HOST" --port="$OT_DB_PORT" -D "$OT_DB_DATABASE" </canary/01-test_account.sql
-		mysql -u "$OT_DB_USER" -p"$OT_DB_PASSWORD" -h "$OT_DB_HOST" --port="$OT_DB_PORT" -D "$OT_DB_DATABASE" </canary/02-test_account_players.sql
+		mysql -u "$OT_DB_USER" -p"$OT_DB_PASSWORD" -h "$OT_DB_HOST" --port="$OT_DB_PORT" -D "$OT_DB_DATABASE" </otxserver/01-test_account.sql
+		mysql -u "$OT_DB_USER" -p"$OT_DB_PASSWORD" -h "$OT_DB_HOST" --port="$OT_DB_PORT" -D "$OT_DB_DATABASE" </otxserver/02-test_account_players.sql
 	else
 		echo "Skip Test Account creation!"
 	fi
@@ -170,4 +170,4 @@ echo "===== Start Server ====="
 echo ""
 
 ulimit -c unlimited
-exec canary
+exec otxserver

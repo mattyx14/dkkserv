@@ -1,31 +1,34 @@
 /**
  * Canary - A free and open-source MMORPG server emulator
- * Copyright (©) 2019-2022 OpenTibiaBR <opentibiabr@outlook.com>
+ * Copyright (©) 2019-2024 OpenTibiaBR <opentibiabr@outlook.com>
  * Repository: https://github.com/opentibiabr/canary
  * License: https://github.com/opentibiabr/canary/blob/main/LICENSE
  * Contributors: https://github.com/opentibiabr/canary/graphs/contributors
- * Website: https://docs.opentibiabr.org/
-*/
+ * Website: https://docs.opentibiabr.com/
+ */
 
-#include "pch.hpp"
+#include "server/network/protocol/protocolstatus.hpp"
 
+#include "config/configmanager.hpp"
 #include "core.hpp"
+#include "creatures/players/player.hpp"
+#include "game/game.hpp"
+#include "game/scheduling/dispatcher.hpp"
+#include "server/network/message/outputmessage.hpp"
 
-#include "server/network/protocol/protocolstatus.h"
-#include "game/game.h"
-#include "game/scheduling/tasks.h"
-#include "server/network/message/outputmessage.h"
+std::string ProtocolStatus::SERVER_NAME = "OTX Server";
+std::string ProtocolStatus::SERVER_VERSION = "6";
+std::string ProtocolStatus::SERVER_DEVELOPERS = "OpenTibiaBR Organization. Based on: Canary (3.5). And data edited by: Mattyx14";
 
 std::map<uint32_t, int64_t> ProtocolStatus::ipConnectMap;
-const uint64_t ProtocolStatus::start = OTSYS_TIME();
+const uint64_t ProtocolStatus::start = OTSYS_TIME(true);
 
-void ProtocolStatus::onRecvFirstMessage(NetworkMessage& msg)
-{
-	uint32_t ip = getIP();
+void ProtocolStatus::onRecvFirstMessage(NetworkMessage &msg) {
+	const uint32_t ip = getIP();
 	if (ip != 0x0100007F) {
-		std::string ipStr = convertIPToString(ip);
+		const std::string ipStr = convertIPToString(ip);
 		if (ipStr != g_configManager().getString(IP)) {
-			std::map<uint32_t, int64_t>::const_iterator it = ipConnectMap.find(ip);
+			const auto it = ipConnectMap.find(ip);
 			if (it != ipConnectMap.end() && (OTSYS_TIME() < (it->second + g_configManager().getNumber(STATUSQUERY_TIMEOUT)))) {
 				disconnect();
 				return;
@@ -36,27 +39,34 @@ void ProtocolStatus::onRecvFirstMessage(NetworkMessage& msg)
 	ipConnectMap[ip] = OTSYS_TIME();
 
 	switch (msg.getByte()) {
-		//XML info protocol
+		// XML info protocol
 		case 0xFF: {
 			if (msg.getString(4) == "info") {
-				g_dispatcher().addTask(createTask(std::bind(
-                                     &ProtocolStatus::sendStatusString,
-                                     std::static_pointer_cast<
-                                     ProtocolStatus>(shared_from_this()))));
+				g_dispatcher().addEvent(
+					[self = std::static_pointer_cast<ProtocolStatus>(shared_from_this())] {
+						self->sendStatusString();
+					},
+					__FUNCTION__
+				);
 				return;
 			}
 			break;
 		}
 
-		//Another ServerInfo protocol
+		// Another ServerInfo protocol
 		case 0x01: {
-			uint16_t requestedInfo = msg.get<uint16_t>(); // only a Byte is necessary, though we could add new info here
+			auto requestedInfo = msg.get<uint16_t>(); // only a Byte is necessary, though we could add new info here
 			std::string characterName;
 			if (requestedInfo & REQUEST_PLAYER_STATUS_INFO) {
 				characterName = msg.getString();
 			}
-			g_dispatcher().addTask(createTask(std::bind(&ProtocolStatus::sendInfo, std::static_pointer_cast<ProtocolStatus>(shared_from_this()),
-                                  requestedInfo, characterName)));
+			g_dispatcher().addEvent(
+				[self = std::static_pointer_cast<ProtocolStatus>(shared_from_this()), requestedInfo, characterName] {
+					self->sendInfo(requestedInfo, characterName);
+				},
+				__FUNCTION__
+			);
+
 			return;
 		}
 
@@ -66,9 +76,8 @@ void ProtocolStatus::onRecvFirstMessage(NetworkMessage& msg)
 	disconnect();
 }
 
-void ProtocolStatus::sendStatusString()
-{
-	auto output = OutputMessagePool::getOutputMessage();
+void ProtocolStatus::sendStatusString() {
+	const auto output = OutputMessagePool::getOutputMessage();
 
 	setRawMessages(true);
 
@@ -81,15 +90,15 @@ void ProtocolStatus::sendStatusString()
 	tsqp.append_attribute("version") = "1.0";
 
 	pugi::xml_node serverinfo = tsqp.append_child("serverinfo");
-	uint64_t uptime = (OTSYS_TIME() - ProtocolStatus::start) / 1000;
+	const uint64_t uptime = (OTSYS_TIME() - ProtocolStatus::start) / 1000;
 	serverinfo.append_attribute("uptime") = std::to_string(uptime).c_str();
 	serverinfo.append_attribute("ip") = g_configManager().getString(IP).c_str();
-	serverinfo.append_attribute("servername") = g_configManager().getString(SERVER_NAME).c_str();
+	serverinfo.append_attribute("servername") = g_configManager().getString(ConfigKey_t::SERVER_NAME).c_str();
 	serverinfo.append_attribute("port") = std::to_string(g_configManager().getNumber(LOGIN_PORT)).c_str();
 	serverinfo.append_attribute("location") = g_configManager().getString(LOCATION).c_str();
 	serverinfo.append_attribute("url") = g_configManager().getString(URL).c_str();
-	serverinfo.append_attribute("server") = STATUS_SERVER_NAME;
-	serverinfo.append_attribute("version") = STATUS_SERVER_VERSION;
+	serverinfo.append_attribute("server") = ProtocolStatus::SERVER_NAME.c_str();
+	serverinfo.append_attribute("version") = ProtocolStatus::SERVER_VERSION.c_str();
 	serverinfo.append_attribute("client") = fmt::format("{}.{}", CLIENT_VERSION_UPPER, CLIENT_VERSION_LOWER).c_str();
 
 	pugi::xml_node owner = tsqp.append_child("owner");
@@ -99,7 +108,7 @@ void ProtocolStatus::sendStatusString()
 	pugi::xml_node players = tsqp.append_child("players");
 	uint32_t real = 0;
 	std::map<uint32_t, uint32_t> listIP;
-	for (const auto& [key, player] : g_game().getPlayers()) {
+	for (const auto &[key, player] : g_game().getPlayers()) {
 		if (player->getIP() != 0) {
 			auto ip = listIP.find(player->getIP());
 			if (ip != listIP.end()) {
@@ -140,24 +149,23 @@ void ProtocolStatus::sendStatusString()
 	map.append_attribute("height") = std::to_string(mapHeight).c_str();
 
 	pugi::xml_node motd = tsqp.append_child("motd");
-	motd.text() = g_configManager().getString(MOTD).c_str();
+	motd.text() = g_configManager().getString(SERVER_MOTD).c_str();
 
 	std::ostringstream ss;
 	doc.save(ss, "", pugi::format_raw);
 
-	std::string data = ss.str();
+	const std::string data = ss.str();
 	output->addBytes(data.c_str(), data.size());
 	send(output);
 	disconnect();
 }
 
-void ProtocolStatus::sendInfo(uint16_t requestedInfo, const std::string& characterName)
-{
-	auto output = OutputMessagePool::getOutputMessage();
+void ProtocolStatus::sendInfo(uint16_t requestedInfo, const std::string &characterName) const {
+	const auto output = OutputMessagePool::getOutputMessage();
 
 	if (requestedInfo & REQUEST_BASIC_SERVER_INFO) {
 		output->addByte(0x10);
-		output->addString(g_configManager().getString(SERVER_NAME));
+		output->addString(g_configManager().getString(ConfigKey_t::SERVER_NAME));
 		output->addString(g_configManager().getString(IP));
 		output->addString(std::to_string(g_configManager().getNumber(LOGIN_PORT)));
 	}
@@ -170,7 +178,7 @@ void ProtocolStatus::sendInfo(uint16_t requestedInfo, const std::string& charact
 
 	if (requestedInfo & REQUEST_MISC_SERVER_INFO) {
 		output->addByte(0x12);
-		output->addString(g_configManager().getString(MOTD));
+		output->addString(g_configManager().getString(SERVER_MOTD));
 		output->addString(g_configManager().getString(LOCATION));
 		output->addString(g_configManager().getString(URL));
 		output->add<uint64_t>((OTSYS_TIME() - ProtocolStatus::start) / 1000);
@@ -196,9 +204,9 @@ void ProtocolStatus::sendInfo(uint16_t requestedInfo, const std::string& charact
 	if (requestedInfo & REQUEST_EXT_PLAYERS_INFO) {
 		output->addByte(0x21); // players info - online players list
 
-		const auto& players = g_game().getPlayers();
+		const auto players = g_game().getPlayers();
 		output->add<uint32_t>(players.size());
-		for (const auto& it : players) {
+		for (const auto &it : players) {
 			output->addString(it.second->getName());
 			output->add<uint32_t>(it.second->getLevel());
 		}
@@ -215,8 +223,8 @@ void ProtocolStatus::sendInfo(uint16_t requestedInfo, const std::string& charact
 
 	if (requestedInfo & REQUEST_SERVER_SOFTWARE_INFO) {
 		output->addByte(0x23); // server software info
-		output->addString(STATUS_SERVER_NAME);
-		output->addString(STATUS_SERVER_VERSION);
+		output->addString(ProtocolStatus::SERVER_NAME);
+		output->addString(ProtocolStatus::SERVER_VERSION);
 		output->addString(fmt::format("{}.{}", CLIENT_VERSION_UPPER, CLIENT_VERSION_LOWER));
 	}
 	send(output);

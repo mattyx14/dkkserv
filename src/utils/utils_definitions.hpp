@@ -1,45 +1,13 @@
 /**
  * Canary - A free and open-source MMORPG server emulator
- * Copyright (©) 2019-2022 OpenTibiaBR <opentibiabr@outlook.com>
+ * Copyright (©) 2019-2024 OpenTibiaBR <opentibiabr@outlook.com>
  * Repository: https://github.com/opentibiabr/canary
  * License: https://github.com/opentibiabr/canary/blob/main/LICENSE
  * Contributors: https://github.com/opentibiabr/canary/graphs/contributors
- * Website: https://docs.opentibiabr.org/
-*/
+ * Website: https://docs.opentibiabr.com/
+ */
 
-#ifndef SRC_UTILS_UTILS_DEFINITIONS_HPP_
-#define SRC_UTILS_UTILS_DEFINITIONS_HPP_
-
-// Enums
-enum Icons_t {
-	ICON_POISON = 1 << 0,
-	ICON_BURN = 1 << 1,
-	ICON_ENERGY =  1 << 2,
-	ICON_DRUNK = 1 << 3,
-	ICON_MANASHIELD = 1 << 4,
-	ICON_PARALYZE = 1 << 5,
-	ICON_HASTE = 1 << 6,
-	ICON_SWORDS = 1 << 7,
-	ICON_DROWNING = 1 << 8,
-	ICON_FREEZING = 1 << 9,
-	ICON_DAZZLED = 1 << 10,
-	ICON_CURSED = 1 << 11,
-	ICON_PARTY_BUFF = 1 << 12,
-	ICON_REDSWORDS = 1 << 13,
-	ICON_PIGEON = 1 << 14,
-	ICON_BLEEDING = 1 << 15,
-	ICON_LESSERHEX = 1 << 16,
-	ICON_INTENSEHEX = 1 << 17,
-	ICON_GREATERHEX = 1 << 18,
-	ICON_ROOTED = 1 << 19,
-	ICON_FEARED = 1 << 20,
-	ICON_GOSHNAR1 = 1 << 21,
-	ICON_GOSHNAR2 = 1 << 22,
-	ICON_GOSHNAR3 = 1 << 23,
-	ICON_GOSHNAR4 = 1 << 24,
-	ICON_GOSHNAR5 = 1 << 25,
-	ICON_NEWMANASHIELD = 1 << 26,
-};
+#pragma once
 
 enum WieldInfo_t {
 	WIELDINFO_NONE = 0,
@@ -49,39 +17,7 @@ enum WieldInfo_t {
 	WIELDINFO_PREMIUM = 1 << 3,
 };
 
-enum CreatureIcon_t {
-	CREATUREICON_NONE = 0,
-	CREATUREICON_HIGHERRECEIVEDDAMAGE = 1,
-	CREATUREICON_LOWERDEALTDAMAGE = 2,
-	CREATUREICON_TURNEDMELEE = 3,
-	CREATUREICON_GREENBALL = 4,
-	CREATUREICON_REDBALL = 5,
-	CREATUREICON_GREENSHIELD = 6,
-	CREATUREICON_YELLOWSHIELD = 7,
-	CREATUREICON_BLUESHIELD = 8,
-	CREATUREICON_PURPLESHIELD = 9,
-	CREATUREICON_REDSHIELD = 10,
-	CREATUREICON_PIGEON = 11,
-	CREATUREICON_PURPLESTAR = 12,
-	CREATUREICON_POISONDROP = 13,
-	CREATUREICON_WATERDROP = 14,
-	CREATUREICON_FIREDROP = 15,
-	CREATUREICON_ICEFLOWER = 16,
-	CREATUREICON_ARROWUP = 17,
-	CREATUREICON_ARROWDOWN = 18,
-	CREATUREICON_EXCLAMATIONMARK = 19,
-	CREATUREICON_QUESTIONMARK = 20,
-	CREATUREICON_CANCELMARK = 21
-};
-
-enum ThreadState {
-	THREAD_STATE_RUNNING,
-	THREAD_STATE_CLOSING,
-	THREAD_STATE_TERMINATED,
-};
-
-enum SpawnType_t
-{
+enum SpawnType_t : uint8_t {
 	RESPAWN_IN_ALL = 0,
 	RESPAWN_IN_DAY = 1,
 	RESPAWN_IN_NIGHT = 2,
@@ -100,10 +36,12 @@ enum Cipbia_Elementals_t : uint8_t {
 	CIPBIA_ELEMENTAL_HEALING = 7,
 	CIPBIA_ELEMENTAL_DROWN = 8,
 	CIPBIA_ELEMENTAL_LIFEDRAIN = 9,
-	CIPBIA_ELEMENTAL_UNDEFINED = 10
+	CIPBIA_ELEMENTAL_MANADRAIN = 10,
+	CIPBIA_ELEMENTAL_AGONY = 11,
+	CIPBIA_ELEMENTAL_UNDEFINED = 12,
 };
 
-enum MagicEffectClasses : uint8_t {
+enum MagicEffectClasses : uint16_t {
 	CONST_ME_NONE,
 
 	CONST_ME_DRAWBLOOD = 1,
@@ -248,7 +186,8 @@ enum MagicEffectClasses : uint8_t {
 	CONST_ME_FATAL = 230,
 	CONST_ME_DODGE = 231,
 	CONST_ME_HOURGLASS = 232,
-	// 233-234 are empty
+	CONST_ME_DAZZLING = 233,
+	CONST_ME_SPARKLING = 234,
 	CONST_ME_FERUMBRAS_1 = 235,
 	CONST_ME_GAZHARAGOTH = 236,
 	CONST_ME_MAD_MAGE = 237,
@@ -256,7 +195,30 @@ enum MagicEffectClasses : uint8_t {
 	CONST_ME_DEVOVORGA = 239,
 	CONST_ME_FERUMBRAS_2 = 240,
 
-	CONST_ME_LAST = CONST_ME_DIVINE_DAZZLE,
+	CONST_ME_WHITE_SMOKE = 241,
+	CONST_ME_WHITE_SMOKES = 242,
+	CONST_ME_WATER_DROP = 243,
+	CONST_ME_AVATAR_APPEAR = 244,
+	CONST_ME_DIVINE_GRENADE = 245, // Permanent
+	CONST_ME_DIVINE_EMPOWERMENT = 246, // Permanent
+	CONST_ME_WATER_FLOATING_THRASH = 247,
+
+	CONST_ME_AGONY = 249,
+
+	CONST_ME_LOOT_HIGHLIGHT = 252,
+
+	// 13.40
+	CONST_ME_MELTING_CREAM = 263,
+	CONST_ME_REAPER = 264,
+	CONST_ME_POWERFUL_HEARTS = 265,
+	CONST_ME_CREAM = 266,
+	CONST_ME_GENTLE_BUBBLE = 267,
+	CONST_ME_STARBURST = 268,
+	CONST_ME_SIURP = 269,
+	CONST_ME_CACAO = 270,
+	CONST_ME_CANDY_FLOSS = 271,
+
+	CONST_ME_LAST
 };
 
 enum ShootType_t : uint8_t {
@@ -321,7 +283,11 @@ enum ShootType_t : uint8_t {
 	CONST_ANI_SPECTRALBOLT = 58,
 	CONST_ANI_ROYALSTAR = 59,
 
-	CONST_ANI_LAST = CONST_ANI_ROYALSTAR,
+	// 13.40
+	CONST_ANI_CANDYCANE = 61,
+	CONST_ANI_CHERRYBOMB = 62,
+
+	CONST_ANI_LAST = CONST_ANI_CHERRYBOMB,
 
 	// for internal use, don't send to client
 	CONST_ANI_WEAPONTYPE = 0xFE, // 254
@@ -341,22 +307,24 @@ enum SpeakClasses : uint8_t {
 	TALKTYPE_NPC_UNKOWN = 11, /* no effect (?)*/
 	TALKTYPE_PRIVATE_PN = 12,
 	TALKTYPE_BROADCAST = 13,
-	TALKTYPE_CHANNEL_R1 = 14, //red - #c text
+	TALKTYPE_CHANNEL_R1 = 14, // red - #c text
 	TALKTYPE_PRIVATE_RED_FROM = 15, //@name@text
 	TALKTYPE_PRIVATE_RED_TO = 16, //@name@text
 	TALKTYPE_MONSTER_SAY = 36,
 	TALKTYPE_MONSTER_YELL = 37,
 
-	TALKTYPE_CHANNEL_R2 = 0xFF, //#d
+	TALKTYPE_MONSTER_LAST_OLDPROTOCOL = 38, /* Dont forget about the CHANNEL_R2*/
+	TALKTYPE_CHANNEL_R2 = 0xFF // #d
 };
 
 enum MessageClasses : uint8_t {
 	MESSAGE_NONE = 0, /* None */
 
-	MESSAGE_GAMEMASTER_CONSOLE = 13, /* Red message in the console*/ /* TALKTYPE_BROADCAST */
+	MESSAGE_GAMEMASTER_CONSOLE = 13,
+	/* Red message in the console*/ /* TALKTYPE_BROADCAST */
 
 	MESSAGE_LOGIN = 17, /* White message at the bottom of the game window and in the console*/
-	MESSAGE_ADMINISTRADOR = 18, /* Red message in game window and in the console*/
+	MESSAGE_ADMINISTRATOR = 18, /* Red message in game window and in the console*/
 	MESSAGE_EVENT_ADVANCE = 19, /* White message in game window and in the console*/
 	MESSAGE_GAME_HIGHLIGHT = 20, /* Red message in game window and in the console*/
 	MESSAGE_FAILURE = 21, /* White message at the bottom of the game window"*/
@@ -374,6 +342,8 @@ enum MessageClasses : uint8_t {
 	MESSAGE_GUILD = 33, /* White message in channel (+ channelId)*/
 	MESSAGE_PARTY_MANAGEMENT = 34, /* Green message in game window and in the console*/
 	MESSAGE_PARTY = 35, /* White message on the console*/
+
+	MESSAGE_LAST_OLDPROTOCOL = 37, /* Last Message on old protocol*/
 
 	MESSAGE_REPORT = 38, /* White message on the game window and in the console*/
 	MESSAGE_HOTKEY_PRESSED = 39, /* Green message in game window and in the console*/
@@ -393,23 +363,25 @@ enum Fluids_t : uint8_t {
 	FLUID_NONE = 0, /* Blue */
 	FLUID_WATER = 1, /* Blue */
 	FLUID_WINE = 2, /* Purple */
-	FLUID_BEER = 3, /* Brown */
-	FLUID_MUD = 4, /* Brown */
+	FLUID_BEER = 3, /* Orange */
+	FLUID_MUD = 4, /* Orange */
 	FLUID_BLOOD = 5, /* Red */
 	FLUID_SLIME = 6, /* Green */
-	FLUID_OIL = 7, /* Brown */
+	FLUID_OIL = 7, /* Orange */
 	FLUID_URINE = 8, /* Yellow */
 	FLUID_MILK = 9, /* White */
 	FLUID_MANA = 10, /* Purple */
 	FLUID_LIFE = 11, /* Red */
 	FLUID_LEMONADE = 12, /* Yellow */
-	FLUID_RUM = 13, /* Brown */
+	FLUID_RUM = 13, /* Orange */
 	FLUID_FRUITJUICE = 14, /* Yellow */
 	FLUID_COCONUTMILK = 15, /* White */
-	FLUID_MEAD = 16, /* Brown */
-	FLUID_TEA = 17, /* Brown */
-	FLUID_INK = 18 /* Black */
-	// 12.85 last fluid is 18, 19+ is a loop from 0 to 18 over and over again
+	FLUID_MEAD = 16, /* Orange */
+	FLUID_TEA = 17, /* Orange */
+	FLUID_INK = 18, /* Black */
+	FLUID_CANDY = 19, /* Red with white pieces */
+	FLUID_CHOCOLATE = 20, /* Brown */
+	// 13.40 last fluid is 20, 21+ is a loop from 0 to 20 over and over again
 };
 
 enum SquareColor_t : uint8_t {
@@ -420,8 +392,11 @@ enum TextColor_t : uint8_t {
 	TEXTCOLOR_BLUE = 5,
 	TEXTCOLOR_LIGHTGREEN = 30,
 	TEXTCOLOR_LIGHTBLUE = 35,
+	TEXTCOLOR_DARKBROWN = 78,
+	TEXTCOLOR_DARKGREY = 86,
 	TEXTCOLOR_MAYABLUE = 95,
 	TEXTCOLOR_DARKRED = 108,
+	TEXTCOLOR_NEUTRALDAMAGE = 109,
 	TEXTCOLOR_LIGHTGREY = 129,
 	TEXTCOLOR_SKYBLUE = 143,
 	TEXTCOLOR_PURPLE = 154,
@@ -429,6 +404,7 @@ enum TextColor_t : uint8_t {
 	TEXTCOLOR_RED = 180,
 	TEXTCOLOR_PASTELRED = 194,
 	TEXTCOLOR_ORANGE = 198,
+	TEXTCOLOR_LIGHTPURPLE = 199,
 	TEXTCOLOR_YELLOW = 210,
 	TEXTCOLOR_WHITE_EXP = 215,
 	TEXTCOLOR_NONE = 255,
@@ -443,6 +419,7 @@ enum WeaponType_t : uint8_t {
 	WEAPON_DISTANCE,
 	WEAPON_WAND,
 	WEAPON_AMMO,
+	WEAPON_MISSILE,
 };
 
 enum Ammo_t : uint8_t {
@@ -512,9 +489,9 @@ enum NameEval_t : uint8_t {
 	INVALID_CHARACTER
 };
 
-enum item_t : uint16_t {
+enum ItemID_t : uint16_t {
 	ITEM_BROWSEFIELD = 470, // for internal use
-	ITEM_SUPPLY_STASH_INDEX = 1, //for internal use
+	ITEM_SUPPLY_STASH_INDEX = 1, // for internal use
 	ITEM_DEPOT_NULL = 22796, // for internal use - Actual Item ID: 168
 	ITEM_DECORATION_KIT = 23398, // For internal use (wrap item)
 	ITEM_DOCUMENT_RO = 2834, // Read-only
@@ -614,7 +591,7 @@ enum item_t : uint16_t {
 	ITEM_SPIRIT_CASK_START = 25899,
 	ITEM_SPIRIT_CASK_END = 25902,
 
-	ITEM_KEG_START = 25903, //kegs ids are contiguous in item.otb
+	ITEM_KEG_START = 25903, // kegs ids are contiguous in item.otb
 	ITEM_KEG_END = 25914,
 
 	// Walkable sea
@@ -655,23 +632,24 @@ enum item_t : uint16_t {
 	ITEM_PRISMATIC_RING = 16114,
 	ITEM_PRISMATIC_RING_ACTIVATED = 16264,
 
+	HIRELING_LAMP = 29432,
+
 	ITEM_FORGE_SLIVER = 37109,
 	ITEM_FORGE_CORE = 37110,
-	ITEM_EXALTATION_CHEST = 37561
-};
+	ITEM_EXALTATION_CHEST = 37561,
+	ITEM_PODIUM_OF_RENOWN1 = 35973,
+	ITEM_PODIUM_OF_RENOWN2 = 35974,
+	ITEM_PODIUM_OF_VIGOUR = 38707,
+	ITEM_PRIMAL_POD = 39176,
+	ITEM_DIVINE_EMPOWERMENT = 40450,
 
-// A map which contains items that, when on creating, should be transformed to the default type.
-const phmap::flat_hash_map<item_t, item_t> ItemTransformationMap = {
-	{ITEM_SWORD_RING_ACTIVATED, ITEM_SWORD_RING},
-	{ITEM_CLUB_RING_ACTIVATED, ITEM_CLUB_RING},
-	{ITEM_DWARVEN_RING_ACTIVATED, ITEM_DWARVEN_RING},
-	{ITEM_RING_HEALING_ACTIVATED, ITEM_RING_HEALING},
-	{ITEM_STEALTH_RING_ACTIVATED, ITEM_STEALTH_RING},
-	{ITEM_TIME_RING_ACTIVATED, ITEM_TIME_RING},
-	{ITEM_PAIR_SOFT_BOOTS_ACTIVATED, ITEM_PAIR_SOFT_BOOTS},
-	{ITEM_DEATH_RING_ACTIVATED, ITEM_DEATH_RING},
-	{ITEM_PRISMATIC_RING_ACTIVATED, ITEM_PRISMATIC_RING},
-	{ITEM_OLD_DIAMOND_ARROW, ITEM_DIAMOND_ARROW},
+	ITEM_BATHTUB_FILLED = 26077,
+	ITEM_BATHTUB_FILLED_NOTMOVABLE = 26100,
+
+	ITEM_LESSER_FRAGMENT = 46625,
+	ITEM_GREATER_FRAGMENT = 46626,
+
+	ITEM_NONE = 0
 };
 
 enum class PlayerFlags_t : uint8_t {
@@ -720,26 +698,62 @@ enum class PlayerFlags_t : uint8_t {
 	FlagLast
 };
 
-enum Blessings_t : uint8_t {
-	TWIST_OF_FATE = 1,
-	WISDOM_OF_SOLITUDE = 2,
-	SPARK_OF_THE_PHOENIX = 3,
-	FIRE_OF_THE_SUNS = 4,
-	SPIRITUAL_SHIELDING = 5,
-	EMBRACE_OF_TIBIA = 6,
-	BLOOD_OF_THE_MOUNTAIN = 7,
-	HEARTH_OF_THE_MOUNTAIN = 8,
+enum BedItemPart_t : uint8_t {
+	BED_NONE_PART,
+	BED_PILLOW_PART,
+	BED_BLANKET_PART,
 };
 
-const phmap::flat_hash_map<Blessings_t, std::string> BlessingNames = {
-	{TWIST_OF_FATE, "Twist of Fate"},
-	{WISDOM_OF_SOLITUDE, "The Wisdom of Solitude"},
-	{SPARK_OF_THE_PHOENIX, "The Spark of the Phoenix"},
-	{FIRE_OF_THE_SUNS, "The Fire of the Suns"},
-	{SPIRITUAL_SHIELDING, "The Spiritual Shielding"},
-	{EMBRACE_OF_TIBIA, "The Embrace of Tibia"},
-	{BLOOD_OF_THE_MOUNTAIN, "Blood of the Mountain"},
-	{HEARTH_OF_THE_MOUNTAIN, "Heart of the Mountain"},
+enum class AttrSubId_t {
+	None,
+	TrainParty,
+	ProtectParty,
+	EnchantParty,
+	JeanPierreMagic,
+	JeanPierreMelee,
+	JeanPierreDistance,
+	JeanPierreDefense,
+	JeanPierreFishing,
+	BloodRageProtector,
+	Sharpshooter,
 };
 
-#endif  // SRC_UTILS_UTILS_DEFINITIONS_HPP_
+enum Concoction_t : uint16_t {
+	KooldownAid = 36723,
+	StaminaExtension = 36725,
+	StrikeEnhancement = 36724,
+	CharmUpgrade = 36726,
+	WealthDuplex = 36727,
+	BestiaryBetterment = 36728,
+	FireResilience = 36729,
+	IceResilience = 36730,
+	EarthResilience = 36731,
+	EnergyResilience = 36732,
+	HolyResilience = 36733,
+	DeathResilience = 36734,
+	PhysicalResilience = 36735,
+	FireAmplification = 36736,
+	IceAmplification = 36737,
+	EarthAmplification = 36738,
+	EnergyAmplification = 36739,
+	HolyAmplification = 36740,
+	DeathAmplification = 36741,
+	PhysicalAmplification = 36742,
+};
+
+enum Screenshot_t : uint8_t {
+	SCREENSHOT_TYPE_NONE = 0,
+	SCREENSHOT_TYPE_ACHIEVEMENT = 1,
+	SCREENSHOT_TYPE_BESTIARYENTRYCOMPLETED = 2,
+	SCREENSHOT_TYPE_BESTIARYENTRYUNLOCKED = 3,
+	SCREENSHOT_TYPE_BOSSDEFEATED = 4,
+	SCREENSHOT_TYPE_DEATHPVE = 5,
+	SCREENSHOT_TYPE_DEATHPVP = 6,
+	SCREENSHOT_TYPE_LEVELUP = 7,
+	SCREENSHOT_TYPE_PLAYERKILLASSIST = 8,
+	SCREENSHOT_TYPE_PLAYERKILL = 9,
+	SCREENSHOT_TYPE_PLAYERATTACKING = 10,
+	SCREENSHOT_TYPE_TREASUREFOUND = 11,
+	SCREENSHOT_TYPE_SKILLUP = 12,
+	SCREENSHOT_TYPE_GIFTOFLIFE = 13,
+};

@@ -31,7 +31,12 @@ bld/
 [Oo]bj/
 [Ll]og/
 build/
-vcxproj/
+vcproj/
+!vcproj/canary.sln
+!vcproj/canary.vcxproj
+!vcproj/settings.props
+!vcproj/otxserver.sln
+!vcproj/otxserver.vcxproj
 
 # Visual Studio 2015/2017 cache/options directory
 .vs/
@@ -362,7 +367,6 @@ settings.json
 c_cpp_properties.json
 .history
 tasks.json
-TODO
 
 # CLion (JetBrains)
 .idea/
@@ -370,7 +374,9 @@ TODO
 ## CUSTOM
 # Files
 config.lua
+config_canary.lua
 client_assertions.txt
+.env
 # Extensions
 *.ini
 *.otb
@@ -378,8 +384,10 @@ client_assertions.txt
 *.manifest
 *.otbm
 *.rar
-*.7z
-*.zip
+*-house.xml
+*-monster.xml
+*-npc.xml
+monster_count.txt
 
 # SFTP for Sublime
 sftp-config.json
@@ -387,21 +395,14 @@ sftp-config.json
 # Binaries
 canary
 canary.old
-otxsr
-otxsr.old
+otxserver
+otxserver.old
 
 # VCPKG
 vcpkg_installed
 
+# DB Backups
+database_backup
+
 # CLION
-src/cmake-build-debug
-otxsr.exe.manifest
-data/world/map-spawn.xml
-data/world/map-house.xml
-data/world/vanilla-house.xml
-data/world/vanilla-spawn.xml
-data/world/otservbr-house.xml
-data/world/otservbr-spawn.xml
-data/world/darkkonia-spawn.xml
-data/world/darkkonia-house.xml
-data/monster/empty.lua
+cmake-build-*

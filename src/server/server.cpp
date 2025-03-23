@@ -1,75 +1,76 @@
 /**
  * Canary - A free and open-source MMORPG server emulator
- * Copyright (©) 2019-2022 OpenTibiaBR <opentibiabr@outlook.com>
+ * Copyright (©) 2019-2024 OpenTibiaBR <opentibiabr@outlook.com>
  * Repository: https://github.com/opentibiabr/canary
  * License: https://github.com/opentibiabr/canary/blob/main/LICENSE
  * Contributors: https://github.com/opentibiabr/canary/graphs/contributors
- * Website: https://docs.opentibiabr.org/
-*/
+ * Website: https://docs.opentibiabr.com/
+ */
 
-#include "pch.hpp"
+#include "server/server.hpp"
 
-#include "server/network/message/outputmessage.h"
-#include "server/server.h"
-#include "config/configmanager.h"
-#include "game/scheduling/scheduler.h"
-#include "creatures/players/management/ban.h"
+#include "server/network/message/outputmessage.hpp"
+#include "config/configmanager.hpp"
+#include "game/scheduling/dispatcher.hpp"
+#include "creatures/players/management/ban.hpp"
 
-Ban g_bans;
-
-ServiceManager::~ServiceManager()
-{
-	stop();
+ServiceManager::~ServiceManager() {
+	try {
+		stop();
+	} catch (std::exception &exception) {
+		g_logger().error("{} - Catch exception error: {}", __FUNCTION__, exception.what());
+	}
 }
 
-void ServiceManager::die()
-{
+void ServiceManager::die() {
 	io_service.stop();
 }
 
-void ServiceManager::run()
-{
+void ServiceManager::run() {
+	if (running) {
+		g_logger().error("ServiceManager is already running!", __FUNCTION__);
+		return;
+	}
+
 	assert(!running);
 	running = true;
 	io_service.run();
 }
 
-void ServiceManager::stop()
-{
+void ServiceManager::stop() {
 	if (!running) {
 		return;
 	}
 
 	running = false;
 
-	for (auto& servicePortIt : acceptors) {
+	for (auto &servicePortIt : acceptors) {
 		try {
-			io_service.post(std::bind_front(&ServicePort::onStopServer, servicePortIt.second));
-		} catch (const std::system_error& e) {
-			SPDLOG_WARN("[ServiceManager::stop] - Network error: {}", e.what());
+			io_service.post([servicePort = servicePortIt.second] { servicePort->onStopServer(); });
+		} catch (const std::system_error &e) {
+			g_logger().warn("[ServiceManager::stop] - Network error: {}", e.what());
 		}
 	}
 
 	acceptors.clear();
 
 	death_timer.expires_from_now(std::chrono::seconds(3));
-	death_timer.async_wait(std::bind(&ServiceManager::die, this));
+	death_timer.async_wait([this](const std::error_code &err) {
+		die();
+	});
 }
 
-ServicePort::~ServicePort()
-{
+ServicePort::~ServicePort() {
 	close();
 }
 
-bool ServicePort::is_single_socket() const
-{
+bool ServicePort::is_single_socket() const {
 	return !services.empty() && services.front()->is_single_socket();
 }
 
-std::string ServicePort::get_protocol_names() const
-{
+std::string ServicePort::get_protocol_names() const {
 	if (services.empty()) {
-		return std::string();
+		return {};
 	}
 
 	std::string str = services.front()->get_protocol_name();
@@ -81,30 +82,28 @@ std::string ServicePort::get_protocol_names() const
 	return str;
 }
 
-void ServicePort::accept()
-{
+void ServicePort::accept() {
 	if (!acceptor) {
 		return;
 	}
 
 	auto connection = ConnectionManager::getInstance().createConnection(io_service, shared_from_this());
-	acceptor->async_accept(connection->getSocket(), std::bind(&ServicePort::onAccept, shared_from_this(), connection, std::placeholders::_1));
+	acceptor->async_accept(connection->getSocket(), [self = shared_from_this(), connection](const std::error_code &error) { self->onAccept(connection, error); });
 }
 
-void ServicePort::onAccept(Connection_ptr connection, const std::error_code& error)
-{
+void ServicePort::onAccept(const Connection_ptr &connection, const std::error_code &error) {
 	if (!error) {
 		if (services.empty()) {
 			return;
 		}
 
-		auto remote_ip = connection->getIP();
-		if (remote_ip != 0 && g_bans.acceptConnection(remote_ip)) {
-			Service_ptr service = services.front();
+		const auto remote_ip = connection->getIP();
+		if (remote_ip != 0 && inject<Ban>().acceptConnection(remote_ip)) {
+			const Service_ptr service = services.front();
 			if (service->is_single_socket()) {
 				connection->accept(service->make_protocol(connection));
 			} else {
-				connection->accept();
+				connection->acceptInternal();
 			}
 		} else {
 			connection->close(FORCE_CLOSE);
@@ -115,18 +114,16 @@ void ServicePort::onAccept(Connection_ptr connection, const std::error_code& err
 		if (!pendingStart) {
 			close();
 			pendingStart = true;
-			g_scheduler().addEvent(createSchedulerTask(15000,
-                                std::bind_front(&ServicePort::openAcceptor,
-                                std::weak_ptr<ServicePort>(shared_from_this()),
-                                serverPort)));
+			g_dispatcher().scheduleEvent(
+				15000, [self = shared_from_this(), serverPort = serverPort] { ServicePort::openAcceptor(std::weak_ptr<ServicePort>(self), serverPort); }, "ServicePort::openAcceptor"
+			);
 		}
 	}
 }
 
-Protocol_ptr ServicePort::make_protocol(bool checksummed, NetworkMessage& msg, const Connection_ptr& connection) const
-{
-	uint8_t protocolID = msg.getByte();
-	for (auto& service : services) {
+Protocol_ptr ServicePort::make_protocol(bool checksummed, NetworkMessage &msg, const Connection_ptr &connection) const {
+	const uint8_t protocolID = msg.getByte();
+	for (auto &service : services) {
 		if (protocolID != service->get_protocol_identifier()) {
 			continue;
 		}
@@ -138,20 +135,17 @@ Protocol_ptr ServicePort::make_protocol(bool checksummed, NetworkMessage& msg, c
 	return nullptr;
 }
 
-void ServicePort::onStopServer()
-{
+void ServicePort::onStopServer() const {
 	close();
 }
 
-void ServicePort::openAcceptor(std::weak_ptr<ServicePort> weak_service, uint16_t port)
-{
-	if (auto service = weak_service.lock()) {
+void ServicePort::openAcceptor(const std::weak_ptr<ServicePort> &weak_service, uint16_t port) {
+	if (const auto service = weak_service.lock()) {
 		service->open(port);
 	}
 }
 
-void ServicePort::open(uint16_t port)
-{
+void ServicePort::open(uint16_t port) {
 	close();
 
 	serverPort = port;
@@ -159,45 +153,37 @@ void ServicePort::open(uint16_t port)
 
 	try {
 		if (g_configManager().getBoolean(BIND_ONLY_GLOBAL_ADDRESS)) {
-														acceptor.reset(new asio::ip::tcp::acceptor(io_service,
-														asio::ip::tcp::endpoint(
-					asio::ip::address(
-						asio::ip::address_v4::from_string(
-                           g_configManager().getString(IP))), serverPort)));
+			acceptor = std::make_unique<asio::ip::tcp::acceptor>(io_service, asio::ip::tcp::endpoint(asio::ip::address(asio::ip::address_v4::from_string(g_configManager().getString(IP))), serverPort));
 		} else {
-			acceptor.reset(new asio::ip::tcp::acceptor(io_service,
-				asio::ip::tcp::endpoint(
-					asio::ip::address(
-						asio::ip::address_v4(INADDR_ANY)), serverPort)));
+			acceptor = std::make_unique<asio::ip::tcp::acceptor>(io_service, asio::ip::tcp::endpoint(asio::ip::address(asio::ip::address_v4(INADDR_ANY)), serverPort));
 		}
 
 		acceptor->set_option(asio::ip::tcp::no_delay(true));
 
 		accept();
-	}
-	catch (const std::system_error& e) {
-		SPDLOG_WARN("[ServicePort::open] - Error code: {}", e.what());
+	} catch (const std::system_error &e) {
+		g_logger().warn("[ServicePort::open] - Error code: {}", e.what());
 
 		pendingStart = true;
-		g_scheduler().addEvent(createSchedulerTask(15000,
-                            std::bind_front(&ServicePort::openAcceptor, std::weak_ptr<ServicePort>(shared_from_this()), port)));
+		g_dispatcher().scheduleEvent(
+			15000,
+			[self = shared_from_this(), port] { ServicePort::openAcceptor(std::weak_ptr<ServicePort>(self), port); }, "ServicePort::openAcceptor"
+		);
 	}
 }
 
-void ServicePort::close()
-{
+void ServicePort::close() const {
 	if (acceptor && acceptor->is_open()) {
 		std::error_code error;
 		acceptor->close(error);
 	}
 }
 
-bool ServicePort::add_service(const Service_ptr& new_svc)
-{
-	if (std::ranges::any_of(services, [](const Service_ptr& svc) {return svc->is_single_socket();})) {
+bool ServicePort::add_service(const Service_ptr &new_svc) {
+	if (std::ranges::any_of(services, [](const Service_ptr &svc) { return svc->is_single_socket(); })) {
 		return false;
 	}
 
-	services.push_back(new_svc);
+	services.emplace_back(new_svc);
 	return true;
 }

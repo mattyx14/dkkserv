@@ -1,18 +1,20 @@
 /**
  * Canary - A free and open-source MMORPG server emulator
- * Copyright (©) 2019-2022 OpenTibiaBR <opentibiabr@outlook.com>
+ * Copyright (©) 2019-2024 OpenTibiaBR <opentibiabr@outlook.com>
  * Repository: https://github.com/opentibiabr/canary
  * License: https://github.com/opentibiabr/canary/blob/main/LICENSE
  * Contributors: https://github.com/opentibiabr/canary/graphs/contributors
- * Website: https://docs.opentibiabr.org/
-*/
+ * Website: https://docs.opentibiabr.com/
+ */
 
-#ifndef SRC_LUA_SCRIPTS_LUA_ENVIRONMENT_HPP_
-#define SRC_LUA_SCRIPTS_LUA_ENVIRONMENT_HPP_
+#pragma once
 
-#include "creatures/combat/combat.h"
+#include "creatures/combat/combat.hpp"
 #include "declarations.hpp"
-#include "lua/scripts/luascript.h"
+#include "lua/scripts/luascript.hpp"
+#include "items/weapons/weapons.hpp"
+
+#include "lua/global/lua_timer_event_descr.hpp"
 
 class AreaCombat;
 class Combat;
@@ -20,55 +22,51 @@ class Cylinder;
 class Game;
 class GlobalFunctions;
 
-class LuaEnvironment: public LuaScriptInterface {
-	public:
-		LuaEnvironment();
-		~LuaEnvironment();
+class LuaEnvironment final : public LuaScriptInterface {
+public:
+	static bool shuttingDown;
 
-		// non-copyable
-		LuaEnvironment(const LuaEnvironment &) = delete;
-		LuaEnvironment & operator = (const LuaEnvironment &) = delete;
+	LuaEnvironment();
+	~LuaEnvironment() override;
 
-		bool initState() override;
-		bool reInitState();
-		bool closeState() override;
+	lua_State* getLuaState() override;
 
-		LuaScriptInterface * getTestInterface();
+	// non-copyable
+	LuaEnvironment(const LuaEnvironment &) = delete;
+	LuaEnvironment &operator=(const LuaEnvironment &) = delete;
 
-		Combat * getCombatObject(uint32_t id) const;
-		Combat * createCombatObject(LuaScriptInterface * interface);
-		void clearCombatObjects(LuaScriptInterface * interface);
+	static LuaEnvironment &getInstance();
 
-		AreaCombat * getAreaObject(uint32_t id) const;
-		uint32_t createAreaObject(LuaScriptInterface * interface);
-		void clearAreaObjects(LuaScriptInterface * interface);
+	bool initState() override;
+	bool reInitState() override;
+	bool closeState() override;
 
-	private:
-		void executeTimerEvent(uint32_t eventIndex);
+	LuaScriptInterface* getTestInterface();
 
-		phmap::flat_hash_map < uint32_t,
-		LuaTimerEventDesc > timerEvents;
-		phmap::flat_hash_map < uint32_t,
-		Combat * > combatMap;
-		phmap::flat_hash_map < uint32_t,
-		AreaCombat * > areaMap;
+	const std::unique_ptr<AreaCombat> &getAreaObject(uint32_t id) const;
+	uint32_t createAreaObject(LuaScriptInterface* interface);
+	void clearAreaObjects(LuaScriptInterface* interface);
+	static bool isShuttingDown() {
+		return shuttingDown;
+	}
 
-		phmap::flat_hash_map < LuaScriptInterface * ,
-		std::vector < uint32_t >> combatIdMap;
-		phmap::flat_hash_map < LuaScriptInterface * ,
-		std::vector < uint32_t >> areaIdMap;
+	void collectGarbage() const;
 
-		LuaScriptInterface * testInterface = nullptr;
+private:
+	void executeTimerEvent(uint32_t eventIndex);
 
-		uint32_t lastEventTimerId = 1;
-		uint32_t lastCombatId = 0;
-		uint32_t lastAreaId = 0;
+	std::unordered_map<uint32_t, LuaTimerEventDesc> timerEvents;
+	uint32_t lastEventTimerId = 1;
 
-		friend class LuaScriptInterface;
-				friend class GlobalFunctions;
-		friend class CombatSpell;
+	phmap::flat_hash_map<uint32_t, std::unique_ptr<AreaCombat>> areaMap;
+	phmap::flat_hash_map<LuaScriptInterface*, std::vector<uint32_t>> areaIdMap;
+	uint32_t lastAreaId = 0;
+
+	LuaScriptInterface* testInterface = nullptr;
+
+	friend class LuaScriptInterface;
+	friend class GlobalFunctions;
+	friend class CombatSpell;
 };
 
-inline LuaEnvironment g_luaEnvironment;
-
-#endif  // SRC_LUA_SCRIPTS_LUA_ENVIRONMENT_HPP_
+constexpr auto g_luaEnvironment = LuaEnvironment::getInstance;
