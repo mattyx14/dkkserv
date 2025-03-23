@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Naga Archer")
 local monster = {}
 
 monster.description = "a naga archer"
-monster.experience = 5520
+monster.experience = 5150
 monster.outfit = {
 	lookType = 1537,
 	lookHead = 55,
@@ -10,7 +10,7 @@ monster.outfit = {
 	lookLegs = 0,
 	lookFeet = 78,
 	lookAddons = 3,
-	lookMount = 0
+	lookMount = 0,
 }
 
 monster.raceId = 2260
@@ -22,22 +22,20 @@ monster.Bestiary = {
 	SecondUnlock = 1000,
 	CharmsPoints = 50,
 	Stars = 4,
-	Occurrence = 1,
-	Locations = "Temple of the Moon Goddess."
+	Occurrence = 0,
+	Locations = "Temple of the Moon Goddess.",
 }
 
-
-monster.health = 4460
-monster.maxHealth = 4460
+monster.health = 4640
+monster.maxHealth = 4640
 monster.race = "blood"
 monster.corpse = 39225
 monster.speed = 182
 monster.manaCost = 0
 
-
 monster.changeTarget = {
 	interval = 4000,
-	chance = 10
+	chance = 10,
 }
 
 monster.strategiesTarget = {
@@ -55,73 +53,76 @@ monster.flags = {
 	canPushItems = true,
 	canPushCreatures = true,
 	staticAttackChance = 90,
-	targetDistance = 4,
+	targetDistance = 3,
 	runHealth = 0,
 	healthHidden = false,
 	isBlockable = false,
 	canWalkOnEnergy = true,
 	canWalkOnFire = true,
-	canWalkOnPoison = true
+	canWalkOnPoison = true,
 }
 
 monster.light = {
 	level = 0,
-	color = 0
+	color = 0,
 }
 
 monster.voices = {
 	interval = 5000,
 	chance = 10,
-	{text = "The Moon Goddess is ashamed of you!", yell = false},
+	{ text = "Intruder! Don't violate this sanctuary!", yell = false },
 }
 
 monster.loot = {
-	{name = "platinum coin", chance = 100000, maxCount = 13},
-	{name = "naga armring", chance = 7730},
-	{name = "hunting spear", chance = 3090},
-	{name = "silver brooch", chance = 1120},
-	{name = "crystal crossbow", chance = 430},
-	{name = "gemmed figurine", chance = 170},
-	{name = "naga archer scales", chance = 15640},
-	{name = "blue crystal shard", chance = 1980},
-	{name = "ornate crossbow", chance = 430},
-	{name = "elvish bow", chance = 430},
-	{name = "bullseye potion", chance = 90},
-	{name = "naga earring", chance = 13830},
-	{name = "crossbow", chance = 3260},
-	{name = "bow", chance = 1720},
-	{name = "emerald bangle", chance = 430},
+	{ name = "platinum coin", chance = 100000, maxCount = 17 },
+	{ name = "naga archer scales", chance = 15050, maxCount = 3 },
+	{ name = "naga earring", chance = 12850, maxCount = 3 },
+	{ name = "naga armring", chance = 5960, maxCount = 3 },
+	{ id = 3007, chance = 5330 }, -- crystal ring
+	{ name = "hunting spear", chance = 3760 },
+	{ name = "crossbow", chance = 3130 },
+	{ name = "blue crystal shard", chance = 1880 },
+	{ name = "bow", chance = 1570 },
+	{ name = "elvish bow", chance = 750 },
+	{ name = "ornate crossbow", chance = 630 },
+	{ name = "crystal crossbow", chance = 420 },
+	{ id = 7441, chance = 630 }, -- ice cube
+	{ name = "emerald bangle", chance = 930 },
+	{ name = "silver brooch", chance = 310 },
 }
 
 monster.attacks = {
-    {name ="combat", interval = 2000, chance = 100, minDamage = -300, maxDamage = -600, shootEffect = CONST_ANI_EXPLOSION, effect = CONST_ME_PURPLEENERGY, target = true},
-    {name ="nagadeath", interval = 6000, chance = 39, target = false, minDamage = -1000, maxDamage = -2200},
-    {name ="nagadeathattack", interval = 3000, chance = 68, target = true, minDamage = -400, maxDamage = -600},
+	{ name = "combat", interval = 2000, chance = 50, type = COMBAT_PHYSICALDAMAGE, minDamage = -95, maxDamage = -390, shootEffect = CONST_ANI_EXPLOSION, effect = CONST_ME_PURPLEENERGY, range = 6, target = true }, -- basic_attack
+	{ name = "nagadeathattack", interval = 2500, chance = 20, minDamage = -430, maxDamage = -505, range = 6, target = true }, -- death_strike
+	{ name = "nagadeath", interval = 3000, chance = 20, minDamage = -380, maxDamage = -470, target = false }, -- short_death_wave
+	{ name = "death chain", interval = 3500, chance = 20, minDamage = -460, maxDamage = -520, range = 6, target = true }, -- death_chain
+	{ name = "combat", interval = 4000, chance = 20, type = COMBAT_PHYSICALDAMAGE, minDamage = -85, maxDamage = -190, shootEffect = CONST_ANI_EXPLOSION, effect = CONST_ME_PURPLEENERGY, range = 6, target = true }, -- explosion_strike
 }
 
 monster.defenses = {
 	defense = 110,
-	armor = 120,
+	armor = 63,
+	mitigation = 1.74,
 }
 
 monster.elements = {
-	{type = COMBAT_PHYSICALDAMAGE, percent = 10},
-	{type = COMBAT_ENERGYDAMAGE, percent = 10},
-	{type = COMBAT_EARTHDAMAGE, percent = 15},
-	{type = COMBAT_FIREDAMAGE, percent = -20},
-	{type = COMBAT_LIFEDRAIN, percent = 0},
-	{type = COMBAT_MANADRAIN, percent = 0},
-	{type = COMBAT_DROWNDAMAGE, percent = 0},
-	{type = COMBAT_ICEDAMAGE, percent = -20},
-	{type = COMBAT_HOLYDAMAGE , percent = 20},
-	{type = COMBAT_DEATHDAMAGE , percent = -10}
+	{ type = COMBAT_PHYSICALDAMAGE, percent = -10 },
+	{ type = COMBAT_ENERGYDAMAGE, percent = -10 },
+	{ type = COMBAT_EARTHDAMAGE, percent = -15 },
+	{ type = COMBAT_FIREDAMAGE, percent = 20 },
+	{ type = COMBAT_LIFEDRAIN, percent = 0 },
+	{ type = COMBAT_MANADRAIN, percent = 0 },
+	{ type = COMBAT_DROWNDAMAGE, percent = 0 },
+	{ type = COMBAT_ICEDAMAGE, percent = 20 },
+	{ type = COMBAT_HOLYDAMAGE, percent = -20 },
+	{ type = COMBAT_DEATHDAMAGE, percent = 10 },
 }
 
 monster.immunities = {
-	{type = "paralyze", condition = false},
-	{type = "outfit", condition = false},
-	{type = "invisible", condition = true},
-	{type = "bleed", condition = false}
+	{ type = "paralyze", condition = true },
+	{ type = "outfit", condition = false },
+	{ type = "invisible", condition = true },
+	{ type = "bleed", condition = false },
 }
 
 mType:register(monster)

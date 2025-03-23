@@ -7,11 +7,11 @@ function spell.onCastSpell(creature, var)
 			return
 		end
 		Game.createMonster("Energy Pulse", creature:getPosition(), true, true)
-		creature:say("The fully charged generator explodes in a blast!", TALKTYPE_ORANGE_2)
+		creature:say("The fully charged generator explodes in a blast!", TALKTYPE_MONSTER_YELL)
 		creature:remove()
 		return true
 	end, 14000, creature:getId())
-return true
+	return true
 end
 
 spell:name("glooth-generator summon")

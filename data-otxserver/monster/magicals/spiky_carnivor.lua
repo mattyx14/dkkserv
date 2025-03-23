@@ -1,7 +1,7 @@
 local mType = Game.createMonsterType("Spiky Carnivor")
 local monster = {}
 
-monster.description = "a Spiky Carnivor"
+monster.description = "a spiky carnivor"
 monster.experience = 1650
 monster.outfit = {
 	lookType = 1139,
@@ -10,7 +10,7 @@ monster.outfit = {
 	lookLegs = 23,
 	lookFeet = 86,
 	lookAddons = 1,
-	lookMount = 0
+	lookMount = 0,
 }
 
 monster.raceId = 1722
@@ -23,8 +23,8 @@ monster.Bestiary = {
 	CharmsPoints = 50,
 	Stars = 4,
 	Occurrence = 0,
-	Locations = "Carnivora's Rocks."
-	}
+	Locations = "Carnivora's Rocks.",
+}
 
 monster.health = 2800
 monster.maxHealth = 2800
@@ -35,7 +35,7 @@ monster.manaCost = 0
 
 monster.changeTarget = {
 	interval = 4000,
-	chance = 10
+	chance = 10,
 }
 
 monster.strategiesTarget = {
@@ -62,12 +62,12 @@ monster.flags = {
 	isBlockable = false,
 	canWalkOnEnergy = true,
 	canWalkOnFire = false,
-	canWalkOnPoison = true
+	canWalkOnPoison = true,
 }
 
 monster.light = {
-	level = 0,
-	color = 0
+	level = 4,
+	color = 32,
 }
 
 monster.voices = {
@@ -76,59 +76,60 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "platinum coin", chance = 100000, maxCount = 6},
-	{name = "green glass plate", chance = 12000, maxCount = 17},
-	{name = "blue crystal splinter", chance = 11500},
-	{name = "brown crystal splinter", chance = 11000},
-	{name = "dark armor", chance = 10000},
-	{name = "guardian shield", chance = 9000},
-	{name = "rainbow quartz", chance = 8500},
-	{name = "blue robe", chance = 8000},
-	{name = "glacier amulet", chance = 7500},
-	{name = "lightning pendant", chance = 2200},
-	{name = "prismatic quartz", chance = 6500},
-	{name = "talon", chance = 6000},
-	{name = "terra amulet", chance = 5500},
-	{name = "warrior helmet", chance = 4000},
-	{name = "shockwave amulet", chance = 2550},
-	{name = "terra mantle", chance = 4050},
-	{name = "buckle", chance = 250},
-	{name = "doublet", chance = 250}
+	{ name = "platinum coin", chance = 66230, maxCount = 6 },
+	{ name = "dark armor", chance = 13870 },
+	{ name = "green glass plate", chance = 10490, maxCount = 2 },
+	{ name = "blue crystal splinter", chance = 7590 },
+	{ name = "brown crystal splinter", chance = 7330 },
+	{ name = "guardian shield", chance = 5010 },
+	{ name = "warrior helmet", chance = 2980 },
+	{ name = "rainbow quartz", chance = 2540, maxCount = 2 },
+	{ name = "talon", chance = 2000 },
+	{ name = "glacier amulet", chance = 1920 },
+	{ name = "terra amulet", chance = 1920 },
+	{ name = "blue robe", chance = 1670 },
+	{ name = "prismatic quartz", chance = 1380 },
+	{ name = "lightning pendant", chance = 1270 },
+	{ name = "doublet", chance = 360 },
+	{ name = "terra mantle", chance = 330 },
+	{ name = "buckle", chance = 180 },
+	{ name = "shockwave amulet", chance = 150 },
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = -200, maxDamage = -400},
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_PHYSICALDAMAGE, minDamage = -230, maxDamage = -380, radius = 4, effect = CONST_ME_GROUNDSHAKER, target = false}
+	{ name = "melee", interval = 2000, chance = 100, minDamage = -200, maxDamage = -400 },
+	{ name = "combat", interval = 2000, chance = 10, type = COMBAT_PHYSICALDAMAGE, minDamage = -230, maxDamage = -380, radius = 4, effect = CONST_ME_GROUNDSHAKER, target = false },
 }
 
 monster.defenses = {
 	defense = 20,
 	armor = 71,
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_HEALING, minDamage = 150, maxDamage = 200, effect = CONST_ME_MAGIC_BLUE, target = false}
+	mitigation = 1.94,
+	{ name = "combat", interval = 2000, chance = 10, type = COMBAT_HEALING, minDamage = 150, maxDamage = 200, effect = CONST_ME_MAGIC_BLUE, target = false },
 }
 
 monster.reflects = {
-	{type = COMBAT_PHYSICALDAMAGE, percent = 50}
+	{ type = COMBAT_PHYSICALDAMAGE, percent = 50 },
 }
 
 monster.elements = {
-	{type = COMBAT_PHYSICALDAMAGE, percent = 40},
-	{type = COMBAT_ENERGYDAMAGE, percent = 0},
-	{type = COMBAT_EARTHDAMAGE, percent = 0},
-	{type = COMBAT_FIREDAMAGE, percent = -30},
-	{type = COMBAT_LIFEDRAIN, percent = 0},
-	{type = COMBAT_MANADRAIN, percent = 0},
-	{type = COMBAT_DROWNDAMAGE, percent = 0},
-	{type = COMBAT_ICEDAMAGE, percent = 0},
-	{type = COMBAT_HOLYDAMAGE , percent = 0},
-	{type = COMBAT_DEATHDAMAGE , percent = 0}
+	{ type = COMBAT_PHYSICALDAMAGE, percent = 40 },
+	{ type = COMBAT_ENERGYDAMAGE, percent = 0 },
+	{ type = COMBAT_EARTHDAMAGE, percent = 0 },
+	{ type = COMBAT_FIREDAMAGE, percent = -30 },
+	{ type = COMBAT_LIFEDRAIN, percent = 0 },
+	{ type = COMBAT_MANADRAIN, percent = 0 },
+	{ type = COMBAT_DROWNDAMAGE, percent = 0 },
+	{ type = COMBAT_ICEDAMAGE, percent = 0 },
+	{ type = COMBAT_HOLYDAMAGE, percent = 0 },
+	{ type = COMBAT_DEATHDAMAGE, percent = 0 },
 }
 
 monster.immunities = {
-	{type = "paralyze", condition = true},
-	{type = "outfit", condition = false},
-	{type = "invisible", condition = true},
-	{type = "bleed", condition = false}
+	{ type = "paralyze", condition = true },
+	{ type = "outfit", condition = false },
+	{ type = "invisible", condition = true },
+	{ type = "bleed", condition = false },
 }
 
 mType:register(monster)

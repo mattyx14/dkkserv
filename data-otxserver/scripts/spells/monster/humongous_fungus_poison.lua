@@ -2,7 +2,7 @@ local combat = {}
 
 for i = 25, 30 do
 	combat[i] = Combat()
-	combat[i]:setParameter(COMBAT_PARAM_TYPE, COMBAT_POISONDAMAGE)
+	combat[i]:setParameter(COMBAT_PARAM_TYPE, COMBAT_EARTHDAMAGE)
 	combat[i]:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_GREEN_RINGS)
 
 	local condition = Condition(CONDITION_POISON)
@@ -14,13 +14,13 @@ for i = 25, 30 do
 	condition:addDamage(10, 4000, -i + 4)
 
 	arr = {
-		{0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0},
-		{0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0},
-		{0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0},
-		{0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0},
-		{0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0},
-		{0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0},
-		{0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0}
+		{ 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0 },
+		{ 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0 },
+		{ 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0 },
+		{ 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0 },
+		{ 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0 },
+		{ 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0 },
+		{ 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0 },
 	}
 
 	local area = createCombatArea(arr)

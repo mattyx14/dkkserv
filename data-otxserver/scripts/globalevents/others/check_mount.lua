@@ -1,4 +1,4 @@
-local mountIds = {22, 25, 26}
+local mountIds = { 22, 25, 26 }
 
 local rentedMounts = GlobalEvent("rentedmounts")
 function rentedMounts.onThink(interval)
@@ -10,12 +10,12 @@ function rentedMounts.onThink(interval)
 	local player, outfit
 	for i = 1, #players do
 		player = players[i]
-		if player:getStorageValue(Storage.RentedHorseTimer) < 1 or player:getStorageValue(Storage.RentedHorseTimer) >= os.time() then
+		if player:getStorageValue(Storage.Quest.U9_1.HorseStationWorldChange.Timer) < 1 or player:getStorageValue(Storage.Quest.U9_1.HorseStationWorldChange.Timer) >= os.time() then
 			break
 		end
 
 		outfit = player:getOutfit()
-		if isInArray(mountIds, outfit.lookMount) then
+		if table.contains(mountIds, outfit.lookMount) then
 			outfit.lookMount = nil
 			player:setOutfit(outfit)
 		end
@@ -24,8 +24,8 @@ function rentedMounts.onThink(interval)
 			player:removeMount(mountIds[m])
 		end
 
-		player:setStorageValue(Storage.RentedHorseTimer, -1)
-		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'Your contract with your horse expired and it returned back to the horse station.')
+		player:setStorageValue(Storage.Quest.U9_1.HorseStationWorldChange.Timer, -1)
+		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Your contract with your horse expired and it returned back to the horse station.")
 	end
 	return true
 end

@@ -12,7 +12,7 @@ function CreateMapItem(tablename)
 			end
 		end
 	end
-	Spdlog.info("Created all items in the map")
+	logger.debug("Created all items in the map")
 end
 
 -- These functions load the action/unique tables on the map
@@ -26,15 +26,15 @@ function loadLuaMapAction(tablename)
 			if tile then
 				-- Checks that you have no items created
 				if not value.itemId == false and tile:getItemCountById(value.itemId) == 0 then
-					Spdlog.warn("[loadLuaMapAction] - Wrong item id found")
-					Spdlog.warn(string.format("Action id: %d, item id: %d", index, value.itemId))
-					break
+					logger.error("[loadLuaMapAction] - Wrong item id {} found", value.itemId)
+					logger.warn("Action id: {}, position {}", index, tile:getPosition():toString())
+					goto continue
 				end
 
 				if value.itemId ~= false and tile:getItemCountById(value.itemId) > 0 then
 					item = tile:getItemById(value.itemId)
 				end
-				
+
 				-- If he found the item, add the action id.
 				if item and value.itemId ~= false then
 					item:setAttribute(ITEM_ATTRIBUTE_ACTIONID, index)
@@ -49,6 +49,7 @@ function loadLuaMapAction(tablename)
 					tile:getGround():setAttribute(ITEM_ATTRIBUTE_ACTIONID, index)
 				end
 			end
+			::continue::
 		end
 	end
 end
@@ -62,14 +63,14 @@ function loadLuaMapUnique(tablename)
 		if tile then
 			-- Checks that you have no items created
 			if not value.itemId == false and tile:getItemCountById(value.itemId) == 0 then
-				Spdlog.warn("[loadLuaMapUnique] - Wrong item id found")
-				Spdlog.warn("Unique id: ".. index ..", item id: ".. value.itemId .."")
-				break
+				logger.error("[loadLuaMapUnique] - Wrong item id {} found", value.itemId)
+				logger.warn("Unique id: {}, position {}", index, tile:getPosition():toString())
+				goto continue
 			end
 			if tile:getItemCountById(value.itemId) < 1 or value.itemId == false then
-				Spdlog.warn("[loadLuaMapUnique] - Wrong item id found")
-				Spdlog.warn("Unique id: ".. index ..", item id: wrong")
-				break
+				logger.warn("[loadLuaMapUnique] - Wrong item id {} found", value.itemId)
+				logger.warn("Unique id: {}, position {}, item id: wrong", index, tile:getPosition():toString())
+				goto continue
 			end
 			item = tile:getItemById(value.itemId)
 			-- If he found the item, add the unique id
@@ -77,6 +78,8 @@ function loadLuaMapUnique(tablename)
 				item:setAttribute(ITEM_ATTRIBUTE_UNIQUEID, index)
 			end
 		end
+
+		::continue::
 	end
 end
 
@@ -89,9 +92,9 @@ function loadLuaMapSign(tablename)
 		if tile then
 			-- Checks that you have no items created
 			if tile:getItemCountById(value.itemId) == 0 then
-				Spdlog.warn("[loadLuaMapSign] - Wrong item id found")
-				Spdlog.warn("Sign id: ".. index ..", item id: ".. value.itemId .."")
-				break
+				logger.error("[loadLuaMapSign] - Wrong item id {} found", value.itemId)
+				logger.warn("Sign id: {}, position {}, item id: wrong", index, tile:getPosition():toString())
+				goto continue
 			end
 			if tile:getItemCountById(value.itemId) == 1 then
 				item = tile:getItemById(value.itemId)
@@ -101,12 +104,13 @@ function loadLuaMapSign(tablename)
 				item:setAttribute(ITEM_ATTRIBUTE_TEXT, value.text)
 			end
 		end
+		::continue::
 	end
 end
 
 function loadLuaMapBookDocument(tablename)
 	-- Index 1: total valid, index 2: total loaded
-	local totals = {0, 0}
+	local totals = { 0, 0 }
 	for index, value in ipairs(tablename) do
 		local tile = Tile(value.position)
 		-- Check position (some items dont have a know position yet defined, lets ignore them)
@@ -136,23 +140,24 @@ function loadLuaMapBookDocument(tablename)
 						item:setAttribute(ITEM_ATTRIBUTE_TEXT, value.text)
 						totals[2] = totals[2] + 1
 					else
-						Spdlog.warn("[loadLuaMapBookDocument] - Item not found! Index: ".. index ..", itemId: ".. value.itemId.."")
-						break
+						logger.warn("[loadLuaMapBookDocument] - Item not found! Index: {}, itemId: {}", index, value.itemId)
+						goto continue
 					end
 				else
-					Spdlog.warn("[loadLuaMapBookDocument] - Container not found! Index: ".. index ..", containerId: ".. value.containerId.."")
-					break
+					logger.warn("[loadLuaMapBookDocument] - Container not found! Index: {}, containerId: {}", index, value.containerId)
+					goto continue
 				end
 			else
-				Spdlog.warn("[loadLuaMapBookDocument] - Tile not found! Index: ".. index ..", position: x: ".. value.position.x.." y: ".. value.position.y .." z: ".. value.position.z .."")
-				break
+				logger.warn("[loadLuaMapBookDocument] - Tile not found! Index: {}, position: x: {} y: {} z: {}", index, value.position.x, value.position.y, value.position.z)
+				goto continue
 			end
 		end
+		::continue::
 	end
 	if totals[1] == totals[2] then
-		Spdlog.info("Loaded ".. totals[2] .." books and documents in the map")
+		logger.debug("Loaded {} books and documents in the map", totals[2])
 	else
-		Spdlog.info("Loaded ".. totals[2] .." of ".. totals[1] .." books and documents in the map")
+		logger.debug("Loaded {} of {} books and documents in the map", totals[2], totals[1])
 	end
 end
 
@@ -164,7 +169,7 @@ function updateKeysStorage(tablename)
 		return true
 	end
 
-	Spdlog.info("Updating quest keys storages...")
+	logger.info("Updating quest keys storages...")
 	if oldUpdate < 1 then
 		oldUpdate = 1
 	end
@@ -174,18 +179,5 @@ function updateKeysStorage(tablename)
 		end
 	end
 	setGlobalStorage(GlobalStorage.KeysUpdate, newUpdate)
-	Spdlog.info("Storage Keys Updated")
-end
-
-function loadLuaNpcs(tablename)
-	for index, value in pairs(tablename) do
-		if value.name and value.position then
-			local spawn = Game.createNpc(value.name, value.position)
-			if spawn then
-				spawn:setMasterPos(value.position)
-				Game.setStorageValue(Storage.NpcSpawn, 1)
-			end
-		end
-	end
-	Spdlog.info("Loaded ".. (#NpcTable) .." npcs and spawned with tables.")
+	logger.info("Storage Keys Updated")
 end

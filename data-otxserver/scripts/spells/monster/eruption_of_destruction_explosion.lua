@@ -2,24 +2,24 @@ local vocation = {
 	VOCATION.BASE_ID.SORCERER,
 	VOCATION.BASE_ID.DRUID,
 	VOCATION.BASE_ID.PALADIN,
-	VOCATION.BASE_ID.KNIGHT
+	VOCATION.BASE_ID.KNIGHT,
 }
 
 local area = {
-	{0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0},
-	{0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0},
-	{0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0},
-	{0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0},
-	{0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0},
-	{0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0},
-	{1, 1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 1},
-	{0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0},
-	{0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0},
-	{0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0},
-	{0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0},
-	{0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0},
-	{0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0},
-	}
+	{ 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0 },
+	{ 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0 },
+	{ 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0 },
+	{ 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0 },
+	{ 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 },
+	{ 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 },
+	{ 1, 1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 1 },
+	{ 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 },
+	{ 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 },
+	{ 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0 },
+	{ 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0 },
+	{ 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0 },
+	{ 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0 },
+}
 
 local createArea = createCombatArea(area)
 
@@ -28,31 +28,33 @@ combat:setArea(createArea)
 
 function onTargetTile(creature, pos)
 	local creatureTable = {}
-	local n, i = Tile({x=pos.x, y=pos.y, z=pos.z}).creatures, 1
+	local n, i = Tile({ x = pos.x, y = pos.y, z = pos.z }).creatures, 1
 	if n ~= 0 then
-		local v = getThingfromPos({x=pos.x, y=pos.y, z=pos.z, stackpos=i}).uid
+		local v = getThingfromPos({ x = pos.x, y = pos.y, z = pos.z, stackpos = i }).uid
 		while v ~= 0 do
-			if isCreature(v) == true then
+			local creatureFromPos = Creature(v)
+			if creatureFromPos then
 				table.insert(creatureTable, v)
 				if n == #creatureTable then
 					break
 				end
 			end
 			i = i + 1
-			v = getThingfromPos({x=pos.x, y=pos.y, z=pos.z, stackpos=i}).uid
+			v = getThingfromPos({ x = pos.x, y = pos.y, z = pos.z, stackpos = i }).uid
 		end
 	end
 	if #creatureTable ~= nil and #creatureTable > 0 then
+		local min = 4000
+		local max = 6000
 		for r = 1, #creatureTable do
 			if creatureTable[r] ~= creature then
-				local min = 4000
-				local max = 6000
-				local player = Player(creatureTable[r])
-
-				if isPlayer(creatureTable[r]) == true and table.contains(vocation, player:getVocation():getBaseId()) then
-					doTargetCombatHealth(creature, creatureTable[r], COMBAT_FIREDAMAGE, -min, -max, CONST_ME_NONE)
-				elseif isMonster(creatureTable[r]) == true then
-					doTargetCombatHealth(creature, creatureTable[r], COMBAT_FIREDAMAGE, -min, -max, CONST_ME_NONE)
+				local creatureInTable = Creature(creatureTable[r])
+				if creatureInTable then
+					if creatureInTable:isPlayer() == true and table.contains(vocation, creatureInTable:getVocation():getBaseId()) then
+						doTargetCombatHealth(creature, creatureTable[r], COMBAT_FIREDAMAGE, -min, -max, CONST_ME_NONE)
+					elseif creatureInTable:isMonster() == true then
+						doTargetCombatHealth(creature, creatureTable[r], COMBAT_FIREDAMAGE, -min, -max, CONST_ME_NONE)
+					end
 				end
 			end
 		end
@@ -65,14 +67,14 @@ end
 combat:setCallback(CALLBACK_PARAM_TARGETTILE, "onTargetTile")
 
 local function delayedCastSpell(cid, var)
-    local creature = Creature(cid)
+	local creature = Creature(cid)
 	if not creature then
 		return
 	end
 	if creature:getHealth() >= 1 then
 		local master = creature:getMaster()
 		master:addHealth(math.random(20000, 30000), true, true)
-		Game.createMonster('demon', creature:getPosition(), true, true)
+		Game.createMonster("demon", creature:getPosition(), true, true)
 		return combat:execute(creature, positionToVariant(creature:getPosition()))
 	end
 	return
@@ -81,8 +83,8 @@ end
 local spell = Spell("instant")
 
 function spell.onCastSpell(creature, var)
-    addEvent(delayedCastSpell, 7000, creature:getId(), var)
-    return true
+	addEvent(delayedCastSpell, 7000, creature:getId(), var)
+	return true
 end
 
 spell:name("eruption of destruction explosion")

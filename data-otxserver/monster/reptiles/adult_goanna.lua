@@ -10,7 +10,7 @@ monster.outfit = {
 	lookLegs = 0,
 	lookFeet = 0,
 	lookAddons = 0,
-	lookMount = 0
+	lookMount = 0,
 }
 
 monster.raceId = 1818
@@ -23,8 +23,8 @@ monster.Bestiary = {
 	CharmsPoints = 50,
 	Stars = 4,
 	Occurrence = 0,
-	Locations = "Kilmaresh Central Steppe, Kilmaresh Southern Steppe, Green Belt."
-	}
+	Locations = "Kilmaresh Central Steppe, Kilmaresh Southern Steppe, Green Belt.",
+}
 
 monster.health = 8300
 monster.maxHealth = 8300
@@ -35,7 +35,7 @@ monster.manaCost = 0
 
 monster.changeTarget = {
 	interval = 4000,
-	chance = 10
+	chance = 10,
 }
 
 monster.strategiesTarget = {
@@ -59,12 +59,12 @@ monster.flags = {
 	isBlockable = false,
 	canWalkOnEnergy = false,
 	canWalkOnFire = false,
-	canWalkOnPoison = false
+	canWalkOnPoison = false,
 }
 
 monster.light = {
 	level = 0,
-	color = 0
+	color = 0,
 }
 
 monster.voices = {
@@ -73,55 +73,70 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "platinum coin", chance = 100000, maxCount = 3},
-	{name = "envenomed arrow", chance = 55360, maxCount = 8},
-	{name = "earth arrow", chance = 16800, maxCount = 29},
-	{name = "terra rod", chance = 11000},
-	{name = "goanna meat", chance = 12140},
-	{name = "goanna claw", chance = 4290},
-	{name = "lizard heart", chance = 1400},
-	{name = "red goanna scale", chance = 10000},
-	{name = "fur armor", chance = 3200},
-	{name = "serpent sword", chance = 3600},
-	{name = "terra amulet", chance = 4650},
-	{name = "terra hood", chance = 7100},
-	{name = "wood cape", chance = 1800},
-	{name = "scared frog", chance = 2100},
-	{name = "sacred tree amulet", chance = 2500},
-	{name = "small tortoise", chance = 1800}
+	{ name = "platinum coin", chance = 100000, maxCount = 3 },
+	{ name = "envenomed arrow", chance = 60120, maxCount = 8 },
+	{ name = "earth arrow", chance = 13180, maxCount = 30 },
+	{ name = "emerald bangle", chance = 12240 },
+	{ name = "goanna meat", chance = 11650 },
+	{ name = "small enchanted emerald", chance = 10030 },
+	{ name = "green crystal splinter", chance = 9100 },
+	{ name = "terra rod", chance = 8250 },
+	{ name = "red goanna scale", chance = 7910 },
+	{ name = "blue crystal shard", chance = 7820 },
+	{ name = "small sapphire", chance = 6890, maxCount = 2 },
+	{ name = "terra hood", chance = 6630 },
+	{ name = "goanna claw", chance = 6210 },
+	{ name = "terra amulet", chance = 6040 },
+	{ name = "yellow gem", chance = 4250 },
+	{ name = "silver brooch", chance = 4000 },
+	{ name = "green gem", chance = 3150 },
+	{ name = "serpent sword", chance = 2810 },
+	{ name = "scared frog", chance = 2720 },
+	{ name = "opal", chance = 2640, maxCount = 2 },
+	{ name = "onyx chip", chance = 2640 },
+	{ name = "gemmed figurine", chance = 1530 },
+	{ name = "small amethyst", chance = 1360 },
+	{ name = "fur armor", chance = 1360 },
+	{ name = "wood cape", chance = 1280 },
+	{ name = "white pearl", chance = 1280 },
+	{ name = "small tortoise", chance = 1190 },
+	{ name = "sacred tree amulet", chance = 1020 },
+	{ name = "coral brooch", chance = 770 },
+	{ name = "lizard heart", chance = 770 },
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -350, condition = {type = CONDITION_POISON, totalDamage = 19, interval = 4000}},
-	{name ="wave t", interval = 2000, chance = 10, minDamage = -250, maxDamage = -380, target = false},
-	{name ="combat", interval = 2000, chance = 12, type = COMBAT_EARTHDAMAGE, minDamage = -450, maxDamage = -550, range = 3, radius = 1, shootEffect = CONST_ANI_EARTH, effect = CONST_ME_EXPLOSIONHIT, target = true},
-	{name ="combat", interval = 2000, chance = 15, type = COMBAT_EARTHDAMAGE, minDamage = -210, maxDamage = -300, radius = 5, effect = CONST_ME_GROUNDSHAKER, target = false}
+	{ name = "melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -400, condition = { type = CONDITION_POISON, totalDamage = 200, interval = 4000 } },
+	{ name = "combat", interval = 2500, chance = 30, type = COMBAT_EARTHDAMAGE, minDamage = -300, maxDamage = -600, range = 3, shootEffect = CONST_ANI_EARTH, effect = CONST_ME_HITBYPOISON, target = true },
+	{ name = "combat", interval = 3000, chance = 30, type = COMBAT_EARTHDAMAGE, minDamage = -300, maxDamage = -380, radius = 2, effect = CONST_ME_GROUNDSHAKER, target = false },
+	{ name = "combat", interval = 3600, chance = 40, type = COMBAT_EARTHDAMAGE, minDamage = -300, maxDamage = -390, length = 8, spread = 3, effect = CONST_ME_GREEN_RINGS, target = false },
 }
 
 monster.defenses = {
 	defense = 84,
 	armor = 84,
-	{name ="speed", interval = 2000, chance = 5, speedChange = 500, effect = CONST_ME_MAGIC_RED, target = false, duration = 5000}
+	mitigation = 2.6,
+	{ name = "speed", interval = 2000, chance = 15, speedChange = 420, effect = CONST_ME_MAGIC_RED, target = false, duration = 5000 },
 }
 
 monster.elements = {
-	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
-	{type = COMBAT_ENERGYDAMAGE, percent = -10},
-	{type = COMBAT_EARTHDAMAGE, percent = 25},
-	{type = COMBAT_FIREDAMAGE, percent = 0},
-	{type = COMBAT_LIFEDRAIN, percent = 0},
-	{type = COMBAT_MANADRAIN, percent = 0},
-	{type = COMBAT_DROWNDAMAGE, percent = 0},
-	{type = COMBAT_ICEDAMAGE, percent = 0},
-	{type = COMBAT_HOLYDAMAGE , percent = 0},
-	{type = COMBAT_DEATHDAMAGE , percent = 0}
+	{ type = COMBAT_PHYSICALDAMAGE, percent = 0 },
+	{ type = COMBAT_ENERGYDAMAGE, percent = -10 },
+	{ type = COMBAT_EARTHDAMAGE, percent = 25 },
+	{ type = COMBAT_FIREDAMAGE, percent = 0 },
+	{ type = COMBAT_LIFEDRAIN, percent = 0 },
+	{ type = COMBAT_MANADRAIN, percent = 0 },
+	{ type = COMBAT_DROWNDAMAGE, percent = 0 },
+	{ type = COMBAT_ICEDAMAGE, percent = 0 },
+	{ type = COMBAT_HOLYDAMAGE, percent = 0 },
+	{ type = COMBAT_DEATHDAMAGE, percent = 0 },
 }
 
 monster.immunities = {
-	{type = "paralyze", condition = true},
-	{type = "outfit", condition = false},
-	{type = "invisible", condition = true},
-	{type = "bleed", condition = false}
+	{ type = "paralyze", condition = true },
+	{ type = "outfit", condition = false },
+	{ type = "invisible", condition = true },
+	{ type = "bleed", condition = false },
 }
 
 mType:register(monster)
