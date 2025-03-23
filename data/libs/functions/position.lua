@@ -1,13 +1,13 @@
 -- Functions from The Forgotten Server
 Position.directionOffset = {
-	[DIRECTION_NORTH] = {x = 0, y = -1},
-	[DIRECTION_EAST] = {x = 1, y = 0},
-	[DIRECTION_SOUTH] = {x = 0, y = 1},
-	[DIRECTION_WEST] = {x = -1, y = 0},
-	[DIRECTION_SOUTHWEST] = {x = -1, y = 1},
-	[DIRECTION_SOUTHEAST] = {x = 1, y = 1},
-	[DIRECTION_NORTHWEST] = {x = -1, y = -1},
-	[DIRECTION_NORTHEAST] = {x = 1, y = -1}
+	[DIRECTION_NORTH] = { x = 0, y = -1 },
+	[DIRECTION_EAST] = { x = 1, y = 0 },
+	[DIRECTION_SOUTH] = { x = 0, y = 1 },
+	[DIRECTION_WEST] = { x = -1, y = 0 },
+	[DIRECTION_SOUTHWEST] = { x = -1, y = 1 },
+	[DIRECTION_SOUTHEAST] = { x = 1, y = 1 },
+	[DIRECTION_NORTHWEST] = { x = -1, y = -1 },
+	[DIRECTION_NORTHEAST] = { x = 1, y = -1 },
 }
 
 function Position:getNextPosition(direction, steps)
@@ -20,7 +20,7 @@ function Position:getNextPosition(direction, steps)
 end
 
 function Position:moveUpstairs()
-	local swap = function (lhs, rhs)
+	local swap = function(lhs, rhs)
 		lhs.x, rhs.x = rhs.x, lhs.x
 		lhs.y, rhs.y = rhs.y, lhs.y
 		lhs.z, rhs.z = rhs.z, lhs.z
@@ -36,7 +36,8 @@ function Position:moveUpstairs()
 				direction = DIRECTION_WEST
 			end
 
-			local position = self + Position.directionOffset[direction]
+			local position = Position(self)
+			position:getNextPosition(direction)
 			toTile = Tile(position)
 			if toTile and toTile:isWalkable(false, false, false, false, true) then
 				swap(self, position)
@@ -48,7 +49,6 @@ function Position:moveUpstairs()
 	return self
 end
 
--- Functions from OTServBR-Global
 function Position:isInRange(from, to)
 	-- No matter what corner from and to is, we want to make
 	-- life easier by calculating north-west and south-east
@@ -56,25 +56,23 @@ function Position:isInRange(from, to)
 		nW = {
 			x = (from.x < to.x and from.x or to.x),
 			y = (from.y < to.y and from.y or to.y),
-			z = (from.z < to.z and from.z or to.z)
+			z = (from.z < to.z and from.z or to.z),
 		},
 		sE = {
 			x = (to.x > from.x and to.x or from.x),
 			y = (to.y > from.y and to.y or from.y),
-			z = (to.z > from.z and to.z or from.z)
-		}
+			z = (to.z > from.z and to.z or from.z),
+		},
 	}
 
-	if  self.x >= zone.nW.x and self.x <= zone.sE.x
-	and self.y >= zone.nW.y and self.y <= zone.sE.y
-	and self.z >= zone.nW.z and self.z <= zone.sE.z then
+	if self.x >= zone.nW.x and self.x <= zone.sE.x and self.y >= zone.nW.y and self.y <= zone.sE.y and self.z >= zone.nW.z and self.z <= zone.sE.z then
 		return true
 	end
 	return false
 end
 
 function Position:moveDownstairs()
-	local swap = function (lhs, rhs)
+	local swap = function(lhs, rhs)
 		lhs.x, rhs.x = rhs.x, lhs.x
 		lhs.y, rhs.y = rhs.y, lhs.y
 		lhs.z, rhs.z = rhs.z, lhs.z
@@ -84,7 +82,9 @@ function Position:moveDownstairs()
 
 	local defaultPosition = self + Position.directionOffset[DIRECTION_SOUTH]
 	local tile = Tile(defaultPosition)
-	if not tile then return false end
+	if not tile then
+		return false
+	end
 
 	if not tile:isWalkable(false, false, false, false, true) then
 		for direction = DIRECTION_NORTH, DIRECTION_NORTHEAST do
@@ -94,7 +94,9 @@ function Position:moveDownstairs()
 
 			local position = self + Position.directionOffset[direction]
 			local newTile = Tile(position)
-			if not newTile then return false end
+			if not newTile then
+				return false
+			end
 
 			if newTile:isWalkable(false, false, false, false, true) then
 				swap(self, position)
@@ -124,24 +126,8 @@ function Position:compare(position)
 	return self.x == position.x and self.y == position.y and self.z == position.z
 end
 
-function Position.hasPlayer(centerPosition, rangeX, rangeY)
-	local spectators = Game.getSpectators(centerPosition, false, true, rangeX, rangeX, rangeY, rangeY)
-	if #spectators ~= 0 then
-		return true
-	end
-	return false
-end
-
 function Position.removeMonster(centerPosition, rangeX, rangeY)
-	local spectators = Game.getSpectators(centerPosition, false, false, rangeX, rangeX, rangeY, rangeY)
-	local spectators,
-	spectator = Game.getSpectators(centerPosition, false, false, rangeX, rangeX, rangeY, rangeY)
-	for i = 1, #spectators do
-		spectator = spectators[i]
-		if spectator:isMonster() then
-			spectator:remove()
-		end
-	end
+	clearRoom(centerPosition, false, false)
 end
 
 function Position.getFreePosition(from, to)
@@ -155,7 +141,6 @@ function Position.getFreePosition(from, to)
 		end
 
 		local tile = Tile(result)
-
 	until tile and tile:isWalkable(false, false, false, false, true)
 	return result
 end
@@ -172,31 +157,30 @@ function Position.getFreeSand()
 		end
 
 		local tile = Tile(result)
-
 	until tile and tile:isWalkable(false, false, false, false, true) and tile:getGround():getName() == "grey sand"
 	return result
 end
 
 function Position.getDirectionTo(pos1, pos2)
 	local dir = DIRECTION_NORTH
-	if (pos1.x > pos2.x) then
+	if pos1.x > pos2.x then
 		dir = DIRECTION_WEST
-		if(pos1.y > pos2.y) then
+		if pos1.y > pos2.y then
 			dir = DIRECTION_NORTHWEST
-		elseif(pos1.y < pos2.y) then
+		elseif pos1.y < pos2.y then
 			dir = DIRECTION_SOUTHWEST
 		end
-	elseif (pos1.x < pos2.x) then
+	elseif pos1.x < pos2.x then
 		dir = DIRECTION_EAST
-		if(pos1.y > pos2.y) then
+		if pos1.y > pos2.y then
 			dir = DIRECTION_NORTHEAST
-		elseif(pos1.y < pos2.y) then
+		elseif pos1.y < pos2.y then
 			dir = DIRECTION_SOUTHEAST
 		end
 	else
-		if (pos1.y > pos2.y) then
+		if pos1.y > pos2.y then
 			dir = DIRECTION_NORTH
-		elseif(pos1.y < pos2.y) then
+		elseif pos1.y < pos2.y then
 			dir = DIRECTION_SOUTH
 		end
 	end
@@ -260,21 +244,21 @@ teleportTo: is where you will teleport the player (it is only necessary to put t
 function Position.hasCreatureInArea(fromPosition, toPosition, removeCreatures, removePlayer, teleportTo)
 	for positionX = fromPosition.x, toPosition.x do
 		for positionY = fromPosition.y, toPosition.y do
-        	for positionZ = fromPosition.z, toPosition.z do
-		        local room = {x = positionX, y = positionY, z= positionZ}
+			for positionZ = fromPosition.z, toPosition.z do
+				local room = { x = positionX, y = positionY, z = positionZ }
 				local tile = Tile(room)
 				if tile then
 					local creatures = tile:getCreatures()
 					if creatures and #creatures > 0 then
-						for _, creature in pairs(creatures) do
-							if removeCreatures == true then
-								if removePlayer == true then
-									if isPlayer(creature) then
+						for _, creatureUid in pairs(creatures) do
+							if removeCreatures then
+								local creature = Creature(creatureUid)
+								if creature then
+									if removePlayer and creature:isPlayer() then
 										creature:teleportTo(teleportTo)
+									elseif creature:isMonster() then
+										creature:remove()
 									end
-								end
-								if isMonster(creature) then
-									creature:remove()
 								end
 							end
 						end
@@ -318,7 +302,9 @@ function Position:transformItem(itemId, itemTransform, effect)
 	local thing = Tile(self):getItemById(itemId)
 	if thing then
 		thing:transform(itemTransform)
-		Position(self):sendMagicEffect(effect)
+		if effect then
+			Position(self):sendMagicEffect(effect)
+		end
 	end
 end
 
@@ -387,4 +373,21 @@ function Position:isProtectionZoneTile()
 		return false
 	end
 	return tile:hasFlag(TILESTATE_PROTECTIONZONE)
+end
+
+--- Calculates and returns a position based on a specified range.
+-- This method determines which position (self or the other) is returned based on the provided range.
+-- If the distance between self and the other position is greater than the specified range,
+-- it returns the self position. Otherwise, it returns the other position.
+-- @param self The position object calling the method.
+-- @param otherPosition Position The other position to compare with.
+-- @param range number The range to compare the distance against.
+-- @return Position The position within the specified range (either self or otherPosition).
+function Position.getWithinRange(self, otherPosition, range)
+	local distance = math.max(math.abs(self.x - otherPosition.x), math.abs(self.y - otherPosition.y))
+	if distance > range then
+		return self
+	end
+
+	return otherPosition
 end

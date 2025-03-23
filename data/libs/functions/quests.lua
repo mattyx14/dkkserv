@@ -1,7 +1,4 @@
-if not Quests then
-	Quests = {
-	}
-end
+dofile(DATA_DIRECTORY .. "/lib/core/quests.lua")
 
 if not LastQuestlogUpdate then
 	LastQuestlogUpdate = {}
@@ -13,7 +10,7 @@ end
 
 -- Text functions
 
-function evaluateText(value, player)
+local function evaluateText(value, player)
 	if type(value) == "function" then
 		return tostring(value(player))
 	end
@@ -65,7 +62,7 @@ function Player.resetTrackedMissions(self, missions)
 					missionId = missionId,
 					questName = questName,
 					missionName = self:getMissionName(questId, missionIndex),
-					missionDesc = self:getMissionDescription(questId, missionIndex)
+					missionDesc = self:getMissionDescription(questId, missionIndex),
 				}
 				table.insert(PlayerTrackedMissionsData[self:getId()], data)
 				if #PlayerTrackedMissionsData[self:getId()] >= maxAllowed then
@@ -127,7 +124,7 @@ function Player.getMissionsData(self, storage)
 						local data = {
 							missionId = mission.missionId,
 							missionName = self:getMissionName(questId, missionId),
-							missionDesc = self:getMissionDescription(questId, missionId)
+							missionDesc = self:getMissionDescription(questId, missionId),
 						}
 						missions[#missions + 1] = data
 					end
@@ -300,7 +297,7 @@ function Player.sendQuestLog(self)
 	for questId = 1, #Quests do
 		if self:questIsStarted(questId) then
 			msg:addU16(questId)
-			msg:addString(Quests[questId].name .. (self:questIsCompleted(questId) and " (completed)" or ""))
+			msg:addString(Quests[questId].name .. (self:questIsCompleted(questId) and " (completed)" or ""), "Player.sendQuestLog")
 			msg:addByte(self:questIsCompleted(questId))
 		end
 	end
@@ -319,9 +316,11 @@ function Player.sendQuestLine(self, questId)
 		if missions then
 			for missionId = 1, #missions do
 				if self:missionIsStarted(questId, missionId) then
-					msg:addU16(self:getMissionId(questId, missionId))
-					msg:addString(self:getMissionName(questId, missionId))
-					msg:addString(self:getMissionDescription(questId, missionId))
+					if self:getClient().version >= 1200 then
+						msg:addU16(self:getMissionId(questId, missionId))
+					end
+					msg:addString(self:getMissionName(questId, missionId), "Player.sendQuestLine - self:getMissionName(questId, missionId)")
+					msg:addString(self:getMissionDescription(questId, missionId), "Player.sendQuestLine - self:getMissionDescription(questId, missionId)")
 				end
 			end
 		end
@@ -339,9 +338,9 @@ function Player.sendTrackedQuests(self, remainingQuests, missions)
 	msg:addByte(#missions)
 	for _, mission in ipairs(missions) do
 		msg:addU16(mission.missionId)
-		msg:addString(mission.questName)
-		msg:addString(mission.missionName)
-		msg:addString(mission.missionDesc)
+		msg:addString(mission.questName, "Player.sendTrackedQuests - mission.questName")
+		msg:addString(mission.missionName, "Player.sendTrackedQuests - mission.missionName")
+		msg:addString(mission.missionDesc, "Player.sendTrackedQuests - mission.missionDesc")
 	end
 	msg:sendToPlayer(self)
 	msg:delete()
@@ -352,8 +351,8 @@ function Player.sendUpdateTrackedQuest(self, mission)
 	msg:addByte(0xD0)
 	msg:addByte(0x00)
 	msg:addU16(mission.missionId)
-	msg:addString(mission.missionName)
-	msg:addString(mission.missionDesc)
+	msg:addString(mission.missionName, "Player.sendUpdateTrackedQuest - mission.missionName")
+	msg:addString(mission.missionDesc, "Player.sendUpdateTrackedQuest - mission.missionDesc")
 	msg:sendToPlayer(self)
 	msg:delete()
 end
@@ -362,9 +361,9 @@ function Player.updateStorage(self, key, value, oldValue, currentFrameTime)
 	local playerId = self:getId()
 	if LastQuestlogUpdate[playerId] ~= currentFrameTime and Game.isQuestStorage(key, value, oldValue) then
 		LastQuestlogUpdate[playerId] = currentFrameTime
-        if value ~= oldValue then
-            self:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Your questlog has been updated.")
-        end
+		if value ~= oldValue then
+			self:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Your questlog has been updated.")
+		end
 	end
 	local missions = self:getMissionsData(key)
 	for i = 1, #missions do
@@ -376,8 +375,7 @@ function Player.updateStorage(self, key, value, oldValue, currentFrameTime)
 end
 
 local function sendPrint(questId, index)
-	Spdlog.warn(string.format("[sendPrint] - Quest id:[%d] mission:[%d]",
-		questId, index))
+	logger.warn("[sendPrint] - Quest id:[{}]] mission:[{}]", questId, index)
 end
 
 for questId = 1, #Quests do
@@ -386,23 +384,23 @@ for questId = 1, #Quests do
 		for index, value in ipairs(quest.missions) do
 			if index then
 				if not value.name then
-					Spdlog.warn("Quest.load: Wrong mission name found")
+					logger.error("Quest.load: Wrong mission name found")
 					sendPrint(questId, index)
 				end
 				if not value.storageId then
-					Spdlog.warn("Quest.load: Wrong mission storage found")
+					logger.error("Quest.load: Wrong mission storage found")
 					sendPrint(questId, index)
 				end
 				if not value.missionId then
-					Spdlog.warn("Quest.load: Wrong mission id found")
+					logger.error("Quest.load: Wrong mission id found")
 					sendPrint(questId, index)
 				end
 				if not value.startValue then
-					Spdlog.warn("Quest.load: Wrong mission start value found")
+					logger.error("Quest.load: Wrong mission start value found")
 					sendPrint(questId, index)
 				end
 				if not value.endValue then
-					Spdlog.warn("Quest.load: Wrong mission end value found")
+					logger.error("Quest.load: Wrong mission end value found")
 					sendPrint(questId, index)
 				end
 			end

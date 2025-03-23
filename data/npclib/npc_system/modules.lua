@@ -2,14 +2,14 @@
 
 if Modules == nil then
 	-- default words for greeting and ungreeting the npc. Should be a table containing all such words.
-	FOCUS_GREETWORDS = {"hi", "hello"}
-	FOCUS_FAREWELLWORDS = {"bye", "farewell"}
+	FOCUS_GREETWORDS = { "hi", "hello" }
+	FOCUS_FAREWELLWORDS = { "bye", "farewell" }
 
-	FOCUS_TRADE_MESSAGE = {"trade", "offers"}
+	FOCUS_TRADE_MESSAGE = { "trade", "offers" }
 
 	-- The word for accepting/declining an offer. CAN ONLY CONTAIN ONE FIELD! Should be a table with a single string value.
-	SHOP_YESWORD = {"yes"}
-	SHOP_NOWORD = {"no"}
+	SHOP_YESWORD = { "yes" }
+	SHOP_NOWORD = { "no" }
 
 	StdModule = {}
 
@@ -46,33 +46,38 @@ if Modules == nil then
 			return false
 		end
 
-		local cost, costMessage = parameters.cost, '%d gold'
+		local cost, costMessage = (IsTravelFree() and 0) or parameters.cost, "%d gold"
 		if cost and cost > 0 then
 			if parameters.discount then
 				cost = cost - StdModule.travelDiscount(npc, player, parameters.discount)
 			end
 
-			costMessage = cost > 0 and string.format(costMessage, cost) or 'free'
+			costMessage = cost > 0 and string.format(costMessage, cost) or "free"
 		else
-			costMessage = 'free'
+			costMessage = "free"
 		end
 
 		local parseInfo = {
 			[TAG_PLAYERNAME] = player:getName(),
 			[TAG_TIME] = getFormattedWorldTime(),
-			[TAG_BLESSCOST] = Blessings.getBlessingsCost(player:getLevel()),
-			[TAG_PVPBLESSCOST] = Blessings.getPvpBlessingCost(player:getLevel()),
-			[TAG_TRAVELCOST] = costMessage
+			[TAG_BLESSCOST] = Blessings.getBlessingCost(player:getLevel(), false, (npc:getName() == "Kais" or npc:getName() == "Nomad") and true),
+			[TAG_PVPBLESSCOST] = Blessings.getPvpBlessingCost(player:getLevel(), false),
+			[TAG_TRAVELCOST] = costMessage,
 		}
+		if parameters.replacements then
+			for k, v in pairs(parameters.replacements) do
+				parseInfo[k] = v
+			end
+		end
 		if parameters.text then
-			npcHandler:say(npcHandler:parseMessage(parameters.text, parseInfo), npc, player)
+			npcHandler:say(npcHandler:parseMessage(parameters.text, parseInfo, player, message), npc, player)
 		end
 
 		if parameters.ungreet then
 			npcHandler:resetNpc(player)
 			npcHandler:removeInteraction(npc, player)
 		elseif parameters.reset then
-			parseInfo = {[TAG_PLAYERNAME] = Player(player):getName()}
+			parseInfo = { [TAG_PLAYERNAME] = Player(player):getName() }
 			npcHandler:say(npcHandler:parseMessage(parameters.text or parameters.message, parseInfo), npc, player)
 			if parameters.reset then
 				npcHandler:resetNpc(player)
@@ -96,17 +101,17 @@ if Modules == nil then
 
 		if player:isPremium() or not parameters.premium then
 			local promotion = player:getVocation():getPromotion()
-			if player:getStorageValue(STORAGEVALUE_PROMOTION) == 1 then
+			local hasPromotion = player:kv():get("promoted")
+			if not promotion or hasPromotion then
 				npcHandler:say("You are already promoted!", npc, player)
 			elseif player:getLevel() < parameters.level then
-				npcHandler:say(string.format("I am sorry, but I can only promote you once you have reached level %d.",
-                               parameters.level), npc, player)
+				npcHandler:say(string.format("I am sorry, but I can only promote you once you have reached level %d.", parameters.level), npc, player)
 			elseif not player:removeMoneyBank(parameters.cost) then
 				npcHandler:say("You do not have enough money!", npc, player)
 			else
 				npcHandler:say(parameters.text, npc, player)
 				player:setVocation(promotion)
-				player:setStorageValue(STORAGEVALUE_PROMOTION, 1)
+				player:kv():set("promoted", true)
 			end
 		else
 			npcHandler:say("You need a premium account in order to get promoted.", npc, player)
@@ -131,15 +136,13 @@ if Modules == nil then
 			elseif not player:canLearnSpell(parameters.spellName) then
 				npcHandler:say("You cannot learn this spell.", npc, player)
 			elseif not player:removeMoneyBank(parameters.price) then
-				npcHandler:say(string.format("You do not have enough money, this spell costs %s gold.",
-                               parameters.price), npc, player)
+				npcHandler:say(string.format("You do not have enough money, this spell costs %s gold.", parameters.price), npc, player)
 			else
 				npcHandler:say(string.format("You have learned '%s'.", parameters.spellName), npc, player)
 				player:learnSpell(parameters.spellName)
 			end
 		else
-			npcHandler:say(string.format("You need a premium account in order to buy '%s'.",
-                           parameters.spellName), npc, player)
+			npcHandler:say(string.format("You need a premium account in order to buy '%s'.", parameters.spellName), npc, player)
 		end
 
 		npcHandler:resetNpc(player)
@@ -157,17 +160,20 @@ if Modules == nil then
 		end
 
 		local parseInfo = {
-			[TAG_BLESSCOST] = Blessings.getBlessingsCost(player:getLevel()),
-			[TAG_PVPBLESSCOST] = Blessings.getPvpBlessingCost(player:getLevel())
+			[TAG_BLESSCOST] = Blessings.getBlessingCost(player:getLevel(), false, (npc:getName() == "Kais" or npc:getName() == "Nomad") and true),
+			[TAG_PVPBLESSCOST] = Blessings.getPvpBlessingCost(player:getLevel(), false),
 		}
 		if player:hasBlessing(parameters.bless) then
 			npcHandler:say("You already possess this blessing.", npc, player)
 		elseif parameters.bless == 1 and #player:getBlessings() == 0 and not player:getItemById(3057, true) then
-			npcHandler:say("You don't have any of the other blessings nor an amulet of loss, \z
+			npcHandler:say(
+				"You don't have any of the other blessings nor an amulet of loss, \z
                            so it wouldn't make sense to bestow this protection on you now. \z
-                           Remember that it can only protect you from the loss of those!", npc, player)
-		elseif not player:removeMoneyBank(type(parameters.cost) == "string"
-		and npcHandler:parseMessage(parameters.cost, parseInfo) or parameters.cost) then
+                           Remember that it can only protect you from the loss of those!",
+				npc,
+				player
+			)
+		elseif not player:removeMoneyBank(type(parameters.cost) == "string" and tonumber(npcHandler:parseMessage(parameters.cost, parseInfo)) or parameters.cost) then
 			npcHandler:say("Oh. You do not have enough money.", npc, player)
 		end
 
@@ -185,7 +191,7 @@ if Modules == nil then
 			return false
 		end
 
-		local cost = parameters.cost
+		local cost = (IsTravelFree() and 0) or parameters.cost
 		if cost and cost > 0 then
 			if parameters.discount then
 				cost = cost - StdModule.travelDiscount(npc, player, parameters.discount)
@@ -208,25 +214,25 @@ if Modules == nil then
 			npcHandler:say("First get rid of those blood stains! You are not going to ruin my vehicle!", npc, player)
 		elseif not player:removeMoneyBank(cost) then
 			npcHandler:say("You don't have enough money.", npc, player)
-		elseif os.time() < player:getStorageValue(Storage.NpcExhaust) then
-			npcHandler:say('Sorry, but you need to wait three seconds before travel again.', player)
-			playerPosition:sendMagicEffect(CONST_ME_POFF)
 		else
-			npcHandler:removeInteraction(npc, player)
-			npcHandler:say(parameters.text or "Set the sails!", npc, player)
-			playerPosition:sendMagicEffect(CONST_ME_TELEPORT)
+			local hasExhaustion = player:kv():get("npc-exhaustion") or 0
+			if hasExhaustion > os.time() then
+				npcHandler:say("Sorry, but you need to wait three seconds before travel again.", player)
+				playerPosition:sendMagicEffect(CONST_ME_POFF)
+			else
+				npcHandler:removeInteraction(npc, player)
+				npcHandler:say(parameters.text or "Set the sails!", npc, player)
 
-			local destination = parameters.destination
-			if type(destination) == 'function' then
-				destination = destination(player)
+				local destination = parameters.destination
+				if type(destination) == "function" then
+					destination = destination(player)
+				end
+
+				player:kv():set("npc-exhaustion", os.time() + 3) -- 3 seconds
+				player:teleportTo(destination)
+				playerPosition:sendMagicEffect(CONST_ME_TELEPORT)
+				player:addAchievementProgress("Ship's Kobold", 1250)
 			end
-
-			player:teleportTo(destination)
-			playerPosition:sendMagicEffect(CONST_ME_TELEPORT)
-
-			player:setStorageValue(NpcExhaust, 3 + os.time())
-			player:teleportTo(destination)
-			playerPosition:sendMagicEffect(CONST_ME_TELEPORT)
 		end
 
 		npcHandler:resetNpc(player)
@@ -239,7 +245,7 @@ if Modules == nil then
 		farewellWords = nil,
 		greetCallback = nil,
 		farewellCallback = nil,
-		tradeCallback = nil
+		tradeCallback = nil,
 	}
 
 	-- Creates a new instance of FocusModule without an associated NpcHandler.
@@ -261,7 +267,7 @@ if Modules == nil then
 			local obj = {}
 			obj[#obj + 1] = word
 			obj.callback = FOCUS_GREETWORDS.callback or FocusModule.messageMatcher
-			handler.keywordHandler:addKeyword(obj, FocusModule.onGreet, {module = self})
+			handler.keywordHandler:addKeyword(obj, FocusModule.onGreet, { module = self })
 		end
 
 		if farewellCallback == false then
@@ -271,7 +277,7 @@ if Modules == nil then
 			local obj = {}
 			obj[#obj + 1] = word
 			obj.callback = FOCUS_FAREWELLWORDS.callback or FocusModule.messageMatcher
-			handler.keywordHandler:addKeyword(obj, FocusModule.onFarewell, {module = self})
+			handler.keywordHandler:addKeyword(obj, FocusModule.onFarewell, { module = self })
 		end
 
 		if tradeCallback == false then
@@ -281,7 +287,7 @@ if Modules == nil then
 			local obj = {}
 			obj[#obj + 1] = word
 			obj.callback = FOCUS_TRADE_MESSAGE.callback or FocusModule.messageMatcher
-			handler.keywordHandler:addKeyword(obj, FocusModule.onTradeRequest, {module = self})
+			handler.keywordHandler:addKeyword(obj, FocusModule.onTradeRequest, { module = self })
 		end
 		return true
 	end
@@ -292,8 +298,7 @@ if Modules == nil then
 			self.greetWords = {}
 		end
 
-
-		if type(message) == 'string' then
+		if type(message) == "string" then
 			table.insert(self.greetWords, message)
 		else
 			for i = 1, #message do
@@ -308,7 +313,7 @@ if Modules == nil then
 			self.farewellWords = {}
 		end
 
-		if type(message) == 'string' then
+		if type(message) == "string" then
 			table.insert(self.farewellWords, message)
 		else
 			for i = 1, #message do
@@ -354,9 +359,7 @@ if Modules == nil then
 	function FocusModule.messageMatcher(keywords, message)
 		for i, word in pairs(keywords) do
 			if type(word) == "string" then
-				if string.find(message, word)
-				and not string.find(message, "[%w+]" .. word)
-				and not string.find(message, word .. "[%w+]") then
+				if string.find(message, word) and not string.find(message, "[%w+]" .. word) and not string.find(message, word .. "[%w+]") then
 					return true
 				end
 			end
@@ -365,7 +368,7 @@ if Modules == nil then
 	end
 
 	KeywordModule = {
-		npcHandler = nil
+		npcHandler = nil,
 	}
 
 	function KeywordModule:new()
@@ -393,15 +396,12 @@ if Modules == nil then
 	end
 
 	function KeywordModule:addKeyword(keywords, reply)
-		self.npcHandler.keywordHandler:addKeyword(
-			keywords, StdModule.say,
-			{
-				npcHandler = self.npcHandler,
-				onlyFocus = true,
-				text = reply,
-				reset = true
-			}
-		)
+		self.npcHandler.keywordHandler:addKeyword(keywords, StdModule.say, {
+			npcHandler = self.npcHandler,
+			onlyFocus = true,
+			text = reply,
+			reset = true,
+		})
 	end
 
 	TravelModule = {
@@ -420,8 +420,8 @@ if Modules == nil then
 
 	function TravelModule:init(handler)
 		self.npcHandler = handler
-		self.yesNode = KeywordNode:new(SHOP_YESWORD, TravelModule.onConfirm, {module = self})
-		self.noNode = KeywordNode:new(SHOP_NOWORD, TravelModule.onDecline, {module = self})
+		self.yesNode = KeywordNode:new(SHOP_YESWORD, TravelModule.onConfirm, { module = self })
+		self.noNode = KeywordNode:new(SHOP_NOWORD, TravelModule.onDecline, { module = self })
 		self.destinations = {}
 		return true
 	end
@@ -451,18 +451,21 @@ if Modules == nil then
 				elseif i == 6 then
 					premium = temp == "true"
 				else
-					Spdlog.warn(string.format("[TravelModule:parseDestinations] - Npc: %s] \z
-                                Unknown parameter found in travel destination parameter. temp[%d], destination[%s]",
-                                npc:getName(), temp, destination))
+					logger.warn(
+						"[TravelModule:parseDestinations] - Npc: {}] \z
+                                Unknown parameter found in travel destination parameter. temp[{}], destination[{}]",
+						npc:getName(),
+						temp,
+						destination
+					)
 				end
 				i = i + 1
 			end
 
 			if name and x and y and z and cost then
-				self:addDestination(name, {x=x, y=y, z=z}, cost, premium)
+				self:addDestination(name, { x = x, y = y, z = z }, cost, premium)
 			else
-				Spdlog.warn("[TravelModule:parseDestinations] - Npc: %S] Parameter(s) missing for travel destination:",
-                            npc:getName(), name, x, y, z, cost, premium)
+				logger.warn("[TravelModule:parseDestinations] - Npc: {}] Parameter(s) missing for travel destination: x = {}, y = {}, z = {}", npc:getName(), x, y, z)
 			end
 		end
 	end
@@ -474,7 +477,7 @@ if Modules == nil then
 			cost = price,
 			destination = position,
 			premium = premium,
-			module = self
+			module = self,
 		}
 		local keywords = {}
 		keywords[#keywords + 1] = name
@@ -486,8 +489,8 @@ if Modules == nil then
 		node:addChildKeywordNode(self.yesNode)
 		node:addChildKeywordNode(self.noNode)
 
-		self.npcHandler.keywordHandler:addKeyword({'yes'}, TravelModule.onConfirm, {module = self})
-		self.npcHandler.keywordHandler:addKeyword({'no'}, TravelModule.onDecline, {module = self})
+		self.npcHandler.keywordHandler:addKeyword({ "yes" }, TravelModule.onConfirm, { module = self })
+		self.npcHandler.keywordHandler:addKeyword({ "no" }, TravelModule.onDecline, { module = self })
 	end
 
 	-- TODO(Eduardo): Need fix this function, is not ok
@@ -497,10 +500,9 @@ if Modules == nil then
 			return false
 		end
 
-		local cost = parameters.cost
+		local cost = (IsTravelFree() and 0) or parameters.cost
 
-		module.npcHandler:say(string.format("Do you want to travel to '%s' for '%d' gold coins?",
-                              keywords[1], cost), npc, player)
+		module.npcHandler:say(string.format("Do you want to travel to '%s' for '%d' gold coins?", keywords[1], cost), npc, player)
 		return true
 	end
 
@@ -512,7 +514,7 @@ if Modules == nil then
 
 		local npcHandler = module.npcHandler
 
-		local cost = parameters.cost
+		local cost = (IsTravelFree() and 0) or parameters.cost
 		local destination = parameters.destination
 		local premium = parameters.premium
 
@@ -546,7 +548,7 @@ if Modules == nil then
 			return false
 		end
 		local parseInfo = {
-			[TAG_PLAYERNAME] = Player(player):getName()
+			[TAG_PLAYERNAME] = Player(player):getName(),
 		}
 		local msg = module.npcHandler:parseMessage(module.npcHandler:getMessage(MESSAGE_DECLINE), parseInfo)
 		module.npcHandler:say(msg, npc, player)

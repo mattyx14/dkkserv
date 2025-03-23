@@ -205,4 +205,30 @@
 	<mount id="203" clientid="1578" name="Parade Horse" speed="10" premium="no" type="store" />
 	<mount id="204" clientid="1579" name="Jousting Horse" speed="10" premium="no" type="store" />
 	<mount id="205" clientid="1580" name="Tourney Horse" speed="10" premium="no" type="store" />
+	<mount id="206" clientid="1599" name="Mutated Abomination" speed="10" premium="no" type="quest" />
+	<mount id="207" clientid="1608" name="Tangerine Flecked Koi" speed="10" premium="no" type="store" />
+	<mount id="208" clientid="1609" name="Brass Speckled Koi" speed="10" premium="no" type="store" />
+	<mount id="209" clientid="1610" name="Ink Spotted Koi" speed="10" premium="no" type="store" />
+	<mount id="210" clientid="1615" name="Frostbringer" speed="10" premium="no" type="store" />
+	<mount id="211" clientid="1616" name="Winterstride" speed="10" premium="no" type="store" />
+	<mount id="212" clientid="1617" name="Icebreacher" speed="10" premium="no" type="store" />
+	<mount id="213" clientid="1672" name="Boisterous Bull" speed="10" premium="no" type="store" />
+	<mount id="214" clientid="1673" name="Surly Steer" speed="10" premium="no" type="store" />
+	<mount id="215" clientid="1674" name="Obstinate Ox" speed="10" premium="no" type="store" />
+	<mount id="216" clientid="1677" name="Darkfire Devourer" speed="10" premium="no" type="store" />
+	<mount id="217" clientid="1682" name="Spirit of Purity" speed="10" premium="no" type="store" />
+	<mount id="218" clientid="1632" name="Foxmouse" speed="10" premium="no" type="store" />
+	<mount id="219" clientid="1685" name="Doom Skull" speed="10" premium="no" type="store" />
+	<mount id="220" clientid="1686" name="Magma Skull" speed="10" premium="no" type="store" />
+	<mount id="221" clientid="1687" name="Corpsefire Skull" speed="10" premium="no" type="store" />
+	<mount id="222" clientid="1721" name="Mystic Jaguar" speed="10" premium="yes" type="quest" />
+	<mount id="223" clientid="1724" name="Gorgon Hydra" speed="10" premium="no" type="store" />
+	<mount id="224" clientid="1727" name="Dawnbringer Pegasus" speed="10" premium="no" type="store" />
+	<mount id="225" clientid="1728" name="Wrathfire Pegasus" speed="10" premium="no" type="store" />
+	<mount id="226" clientid="1729" name="Skybreaker Pegasus" speed="10" premium="no" type="store" />
+	<mount id="227" clientid="1730" name="Pegasus" speed="10" premium="no" type="quest" />
+	<mount id="228" clientid="1742" name="Glacier Wyrm" speed="10" premium="no" type="store" />
+	<mount id="229" clientid="1743" name="Bog Tyrant" speed="10" premium="no" type="store" />
+	<mount id="230" clientid="1744" name="Crimson Fang" speed="10" premium="no" type="store" />
+	<mount id="231" clientid="1778" name="Bumblebee" speed="10" premium="no" type="store" />
 </mounts>

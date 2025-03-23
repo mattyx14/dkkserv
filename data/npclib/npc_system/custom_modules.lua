@@ -1,6 +1,6 @@
 -- Custom Modules, created to help us in this datapack
 local travelDiscounts = {
-	-- ["postman"] = {price = 10, storage = Storage.Quest.ExampleQuest, value = 1}
+	["postman"] = { price = 10, storage = Storage.Quest.ExampleQuest, value = 1 },
 }
 
 function StdModule.travelDiscount(npc, player, discounts)
@@ -26,7 +26,7 @@ end
 function StdModule.kick(npc, player, message, keywords, parameters, node)
 	local npcHandler = parameters.npcHandler
 	if npcHandler == nil then
-		Spdlog.error("StdModule.travel called without any npcHandler instance.")
+		logger.error("StdModule.travel called without any npcHandler instance.")
 	end
 
 	if not npcHandler:checkInteraction(npc, player) then
@@ -82,6 +82,13 @@ function KeywordHandler:addGreetKeyword(keys, parameters, condition, action)
 	return self:addKeyword(localKeys, GreetModule.greet, parameters, condition, action)
 end
 
+-- Function adapted to be able to create a single call to the NPC and per function
+function KeywordHandler:addCustomGreetKeyword(keys, callbackFunction, parameters, condition, action)
+	local localKeys = keys
+	localKeys.callback = FocusModule.messageMatcherDefault
+	return self:addKeyword(localKeys, callbackFunction, parameters, condition, action)
+end
+
 -- Adds a keyword which acts as a farewell word
 function KeywordHandler:addFarewellKeyword(keys, parameters, condition, action)
 	local localKeys = keys
@@ -94,47 +101,32 @@ function KeywordHandler:addSpellKeyword(keys, parameters)
 	local localKeys = keys
 	localKeys.callback = FocusModule.messageMatcherDefault
 
-	local npcHandler, spellName, price, vocationId = parameters.npcHandler,
-          parameters.spellName, parameters.price, parameters.vocation
+	local npcHandler, spellName, price, vocationId = parameters.npcHandler, parameters.spellName, parameters.price, parameters.vocation
 
-	local spellKeyword = self:addKeyword(
-		localKeys,
-		StdModule.say,
-		{
-			npcHandler = npcHandler,
-			text = string.format("Do you want to learn the spell '%s' for %s?\z ",
-                                spellName, price > 0 and price .. ' gold' or 'free')
-		},
-		function(player)
-			-- This will register for all client id vocations
-			local vocationClientId = player:getVocation():getBaseId()
-			if type(vocationId) == "table" then
-				return table.contains(vocationId, vocationClientId)
-			else
-				return vocationId == vocationClientId
-			end
+	local spellKeyword = self:addKeyword(localKeys, StdModule.say, {
+		npcHandler = npcHandler,
+		text = string.format("Do you want to learn the spell '%s' for %s?\z ", spellName, price > 0 and price .. " gold" or "free"),
+	}, function(player)
+		-- This will register for all client id vocations
+		local vocationClientId = player:getVocation():getBaseId()
+		if type(vocationId) == "table" then
+			return table.contains(vocationId, vocationClientId)
+		else
+			return vocationId == vocationClientId
 		end
-	)
+	end)
 
-	spellKeyword:addChildKeyword(
-		{"yes"},
-		StdModule.learnSpell,
-		{
-			npcHandler = npcHandler,
-			spellName = spellName,
-			level = parameters.level,
-			price = price
-		}
-	)
-	spellKeyword:addChildKeyword(
-		{"no"},
-		StdModule.say,
-		{
-			npcHandler = npcHandler,
-			text = "Maybe next time.",
-			reset = true
-		}
-	)
+	spellKeyword:addChildKeyword({ "yes" }, StdModule.learnSpell, {
+		npcHandler = npcHandler,
+		spellName = spellName,
+		level = parameters.level,
+		price = price,
+	})
+	spellKeyword:addChildKeyword({ "no" }, StdModule.say, {
+		npcHandler = npcHandler,
+		text = "Maybe next time.",
+		reset = true,
+	})
 end
 
 local hints = {
@@ -152,16 +144,16 @@ local hints = {
                health points anymore, eat something.",
 	[6] = "Always eat as much food as possible. This way, you'll regenerate health points for a longer period of time.",
 	[7] = "After you have killed a monster, you have 10 seconds in which the corpse \z
-                is not moveable and no one else but you can loot it.",
+                is not movable and no one else but you can loot it.",
 	[8] = "Be careful when you approach three or more monsters because you only can block the attacks of two. \z
                 In such a situation even a few rats can do severe damage or even kill you.",
 	[9] = "There are many ways to gather food. Many creatures drop food but you can also pick blueberries or bake \z
                 your own bread. If you have a fishing rod and worms in your inventory, you can also try to catch a fish.",
 	[10] = {
-				"Baking bread is rather complex. First of all you need a scythe to harvest wheat. \z
+		"Baking bread is rather complex. First of all you need a scythe to harvest wheat. \z
                     Then you use the wheat with a millstone to get flour. ...",
-				"This can be be used on water to get dough, which can be used on an oven to bake bread. \z
-                    Use milk instead of water to get cake dough."
+		"This can be be used on water to get dough, which can be used on an oven to bake bread. \z
+                    Use milk instead of water to get cake dough.",
 	},
 	[11] = "Dying hurts! Better run away than risk your life. \z
                 You are going to lose experience and skill points when you die.",
@@ -194,5 +186,5 @@ local hints = {
                 having to fear negative consequences.",
 	[27] = "The leader of a party has the option to distribute gathered experience among all players in the party. \z
                 If you are the leader, right-click on yourself and select 'Enable Shared Experience'.",
-	[28] = "There is nothing more I can tell you. If you are still in need of some {hints}, I can repeat them for you."
+	[28] = "There is nothing more I can tell you. If you are still in need of some {hints}, I can repeat them for you.",
 }
