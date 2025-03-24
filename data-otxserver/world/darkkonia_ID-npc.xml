@@ -138,6 +138,9 @@
 	<npc centerx="972" centery="1005" centerz="6" radius="1">
 		<npc name="Villager Man" x="0" y="0" z="6" spawntime="60" direction="2" />
 	</npc>
+	<npc centerx="997" centery="1006" centerz="6" radius="1">
+		<npc name="Villager Man" x="0" y="0" z="6" spawntime="60" />
+	</npc>
 	<npc centerx="432" centery="1082" centerz="6" radius="1">
 		<npc name="Guardian" x="0" y="0" z="6" spawntime="60" />
 	</npc>
@@ -210,7 +213,7 @@
 	<npc centerx="941" centery="988" centerz="7" radius="1">
 		<npc name="Villager Woman" x="0" y="0" z="7" spawntime="60" direction="2" />
 	</npc>
-	<npc centerx="992" centery="989" centerz="7" radius="1">
+	<npc centerx="991" centery="990" centerz="7" radius="1">
 		<npc name="Villager Woman" x="0" y="0" z="7" spawntime="60" direction="2" />
 	</npc>
 	<npc centerx="903" centery="993" centerz="7" radius="1">
@@ -237,8 +240,8 @@
 	<npc centerx="907" centery="1012" centerz="7" radius="1">
 		<npc name="Villager Man" x="0" y="0" z="7" spawntime="60" direction="2" />
 	</npc>
-	<npc centerx="930" centery="1017" centerz="7" radius="1">
-		<npc name="Wendy" x="0" y="0" z="7" spawntime="60" />
+	<npc centerx="930" centery="1016" centerz="7" radius="1">
+		<npc name="Wendy" x="0" y="1" z="7" spawntime="60" />
 	</npc>
 	<npc centerx="976" centery="1017" centerz="7" radius="1">
 		<npc name="Yuna" x="0" y="0" z="7" spawntime="60" />
