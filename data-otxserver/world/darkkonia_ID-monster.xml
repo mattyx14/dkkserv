@@ -6,7 +6,7 @@
 		<monster name="Diabolic Imp" x="2" y="-1" z="1" spawntime="60" direction="1" />
 		<monster name="Serpent Spawn" x="4" y="1" z="1" spawntime="60" direction="1" />
 		<monster name="Diabolic Imp" x="-3" y="2" z="1" spawntime="60" direction="1" />
-		<monster name="Enlightened Of The Cult" x="0" y="4" z="1" spawntime="60" direction="1" />
+		<monster name="Enlightened of the Cult" x="0" y="4" z="1" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="658" centery="986" centerz="1" radius="5">
 		<monster name="Elf Arcanist" x="-3" y="-5" z="1" spawntime="60" direction="1" />
@@ -16,9 +16,9 @@
 		<monster name="Elf Arcanist" x="1" y="3" z="1" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1240" centery="162" centerz="2" radius="5">
-		<monster name="Enlightened Of The Cult" x="3" y="-3" z="2" spawntime="60" direction="1" />
-		<monster name="Enlightened Of The Cult" x="-3" y="-1" z="2" spawntime="60" direction="1" />
-		<monster name="Enlightened Of The Cult" x="1" y="4" z="2" spawntime="60" direction="1" />
+		<monster name="Enlightened of the Cult" x="3" y="-3" z="2" spawntime="60" direction="1" />
+		<monster name="Enlightened of the Cult" x="-3" y="-1" z="2" spawntime="60" direction="1" />
+		<monster name="Enlightened of the Cult" x="1" y="4" z="2" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="658" centery="985" centerz="2" radius="5">
 		<monster name="Infernalist" x="1" y="-3" z="2" spawntime="60" direction="1" />
@@ -59,7 +59,7 @@
 		<monster name="Lich" x="-2" y="-2" z="3" spawntime="60" direction="1" />
 		<monster name="Serpent Spawn" x="2" y="-1" z="3" spawntime="60" direction="1" />
 		<monster name="Serpent Spawn" x="-3" y="2" z="3" spawntime="60" direction="1" />
-		<monster name="Enlightened Of The Cult" x="2" y="2" z="3" spawntime="60" direction="1" />
+		<monster name="Enlightened of the Cult" x="2" y="2" z="3" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1176" centery="202" centerz="3" radius="1">
 		<monster name="Behemoth" x="0" y="0" z="3" spawntime="60" direction="1" />
@@ -204,7 +204,7 @@
 		<monster name="Pirate Marauder" x="0" y="0" z="4" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1240" centery="162" centerz="4" radius="5">
-		<monster name="Enlightened Of The Cult" x="-3" y="-3" z="4" spawntime="60" direction="1" />
+		<monster name="Enlightened of the Cult" x="-3" y="-3" z="4" spawntime="60" direction="1" />
 		<monster name="Fire Elemental" x="3" y="-2" z="4" spawntime="60" direction="1" />
 		<monster name="Serpent Spawn" x="0" y="-1" z="4" spawntime="60" direction="1" />
 		<monster name="Fire Elemental" x="-4" y="0" z="4" spawntime="60" direction="1" />
@@ -1194,10 +1194,10 @@
 		<monster name="Pirate Cutthroat" x="0" y="0" z="6" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1240" centery="162" centerz="6" radius="5">
-		<monster name="Enlightened Of The Cult" x="3" y="-3" z="6" spawntime="60" direction="1" />
+		<monster name="Enlightened of the Cult" x="3" y="-3" z="6" spawntime="60" direction="1" />
 		<monster name="Stone Golem" x="-3" y="-2" z="6" spawntime="60" direction="1" />
 		<monster name="Lich" x="1" y="-1" z="6" spawntime="60" direction="1" />
-		<monster name="Enlightened Of The Cult" x="-2" y="2" z="6" spawntime="60" direction="1" />
+		<monster name="Enlightened of the Cult" x="-2" y="2" z="6" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1125" centery="166" centerz="6" radius="1">
 		<monster name="Pirat Cutthroat" x="0" y="0" z="6" spawntime="60" direction="1" />
@@ -1212,73 +1212,73 @@
 		<monster name="Pirat Cutthroat" x="0" y="0" z="6" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1194" centery="175" centerz="6" radius="1">
-		<monster name="Acolyte Of The Cult" x="0" y="0" z="6" spawntime="60" direction="1" />
+		<monster name="Acolyte of the Cult" x="0" y="0" z="6" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1197" centery="175" centerz="6" radius="1">
-		<monster name="Adept Of The Cult" x="0" y="0" z="6" spawntime="60" direction="1" />
+		<monster name="Adept of the Cult" x="0" y="0" z="6" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1199" centery="175" centerz="6" radius="1">
-		<monster name="Adept Of The Cult" x="0" y="0" z="6" spawntime="60" direction="1" />
+		<monster name="Adept of the Cult" x="0" y="0" z="6" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1221" centery="177" centerz="6" radius="1">
-		<monster name="Acolyte Of The Cult" x="0" y="0" z="6" spawntime="60" direction="1" />
+		<monster name="Acolyte of the Cult" x="0" y="0" z="6" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1213" centery="179" centerz="6" radius="1">
-		<monster name="Acolyte Of The Cult" x="0" y="0" z="6" spawntime="60" direction="1" />
+		<monster name="Acolyte of the Cult" x="0" y="0" z="6" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1219" centery="179" centerz="6" radius="1">
-		<monster name="Adept Of The Cult" x="0" y="0" z="6" spawntime="60" direction="1" />
+		<monster name="Adept of the Cult" x="0" y="0" z="6" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1190" centery="180" centerz="6" radius="1">
-		<monster name="Acolyte Of The Cult" x="0" y="0" z="6" spawntime="60" direction="1" />
+		<monster name="Acolyte of the Cult" x="0" y="0" z="6" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1195" centery="181" centerz="6" radius="1">
-		<monster name="Novice Of The Cult" x="0" y="0" z="6" spawntime="60" direction="1" />
+		<monster name="Novice of the Cult" x="0" y="0" z="6" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1215" centery="182" centerz="6" radius="1">
-		<monster name="Enlightened Of The Cult" x="0" y="0" z="6" spawntime="60" direction="1" />
+		<monster name="Enlightened of the Cult" x="0" y="0" z="6" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1222" centery="182" centerz="6" radius="1">
-		<monster name="Acolyte Of The Cult" x="0" y="0" z="6" spawntime="60" direction="1" />
+		<monster name="Acolyte of the Cult" x="0" y="0" z="6" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1213" centery="184" centerz="6" radius="1">
-		<monster name="Adept Of The Cult" x="0" y="0" z="6" spawntime="60" direction="1" />
+		<monster name="Adept of the Cult" x="0" y="0" z="6" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1194" centery="185" centerz="6" radius="1">
-		<monster name="Acolyte Of The Cult" x="0" y="0" z="6" spawntime="60" direction="1" />
+		<monster name="Acolyte of the Cult" x="0" y="0" z="6" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1206" centery="186" centerz="6" radius="1">
-		<monster name="Adept Of The Cult" x="0" y="0" z="6" spawntime="60" direction="1" />
+		<monster name="Adept of the Cult" x="0" y="0" z="6" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1219" centery="186" centerz="6" radius="1">
-		<monster name="Acolyte Of The Cult" x="0" y="0" z="6" spawntime="60" direction="1" />
+		<monster name="Acolyte of the Cult" x="0" y="0" z="6" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1194" centery="188" centerz="6" radius="1">
-		<monster name="Novice Of The Cult" x="0" y="0" z="6" spawntime="60" direction="1" />
+		<monster name="Novice of the Cult" x="0" y="0" z="6" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1197" centery="188" centerz="6" radius="1">
-		<monster name="Adept Of The Cult" x="0" y="0" z="6" spawntime="60" direction="1" />
+		<monster name="Adept of the Cult" x="0" y="0" z="6" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1221" centery="188" centerz="6" radius="1">
-		<monster name="Adept Of The Cult" x="0" y="0" z="6" spawntime="60" direction="1" />
+		<monster name="Adept of the Cult" x="0" y="0" z="6" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1215" centery="189" centerz="6" radius="1">
-		<monster name="Adept Of The Cult" x="0" y="0" z="6" spawntime="60" direction="1" />
+		<monster name="Adept of the Cult" x="0" y="0" z="6" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1202" centery="190" centerz="6" radius="1">
-		<monster name="Adept Of The Cult" x="0" y="0" z="6" spawntime="60" direction="1" />
+		<monster name="Adept of the Cult" x="0" y="0" z="6" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1205" centery="190" centerz="6" radius="1">
-		<monster name="Enlightened Of The Cult" x="0" y="0" z="6" spawntime="60" direction="1" />
+		<monster name="Enlightened of the Cult" x="0" y="0" z="6" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1216" centery="193" centerz="6" radius="1">
-		<monster name="Adept Of The Cult" x="0" y="0" z="6" spawntime="60" direction="1" />
+		<monster name="Adept of the Cult" x="0" y="0" z="6" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1200" centery="194" centerz="6" radius="1">
-		<monster name="Adept Of The Cult" x="0" y="0" z="6" spawntime="60" direction="1" />
+		<monster name="Adept of the Cult" x="0" y="0" z="6" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1204" centery="194" centerz="6" radius="1">
-		<monster name="Acolyte Of The Cult" x="0" y="0" z="6" spawntime="60" direction="1" />
+		<monster name="Acolyte of the Cult" x="0" y="0" z="6" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1116" centery="199" centerz="6" radius="1">
 		<monster name="Seagull" x="0" y="0" z="6" spawntime="60" direction="1" />
@@ -1287,7 +1287,7 @@
 		<monster name="Seagull" x="0" y="0" z="6" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1204" centery="202" centerz="6" radius="1">
-		<monster name="Acolyte Of The Cult" x="0" y="0" z="6" spawntime="60" direction="1" />
+		<monster name="Acolyte of the Cult" x="0" y="0" z="6" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1176" centery="203" centerz="6" radius="1">
 		<monster name="Vicious Squire" x="0" y="0" z="6" spawntime="60" direction="1" />
@@ -1299,7 +1299,7 @@
 		<monster name="Stone Golem" x="0" y="0" z="6" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1215" centery="204" centerz="6" radius="1">
-		<monster name="Acolyte Of The Cult" x="0" y="0" z="6" spawntime="60" direction="1" />
+		<monster name="Acolyte of the Cult" x="0" y="0" z="6" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1160" centery="207" centerz="6" radius="1">
 		<monster name="Vile Grandmaster" x="0" y="0" z="6" spawntime="60" direction="1" />
@@ -2409,13 +2409,13 @@
 		<monster name="Rabbit" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1242" centery="160" centerz="7" radius="1">
-		<monster name="Enlightened Of The Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
+		<monster name="Enlightened of the Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1186" centery="161" centerz="7" radius="1">
 		<monster name="Blood Crab" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1237" centery="161" centerz="7" radius="1">
-		<monster name="Enlightened Of The Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
+		<monster name="Enlightened of the Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1196" centery="162" centerz="7" radius="1">
 		<monster name="Crab" x="0" y="0" z="7" spawntime="60" direction="1" />
@@ -2430,28 +2430,28 @@
 		<monster name="Blood Crab" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1240" centery="164" centerz="7" radius="1">
-		<monster name="Enlightened Of The Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
+		<monster name="Enlightened of the Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1124" centery="166" centerz="7" radius="1">
 		<monster name="Pirate Cutthroat" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1217" centery="166" centerz="7" radius="1">
-		<monster name="Adept Of The Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
+		<monster name="Adept of the Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1222" centery="166" centerz="7" radius="1">
-		<monster name="Adept Of The Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
+		<monster name="Adept of the Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1182" centery="167" centerz="7" radius="1">
 		<monster name="Blood Crab" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1225" centery="169" centerz="7" radius="1">
-		<monster name="Adept Of The Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
+		<monster name="Adept of the Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1111" centery="170" centerz="7" radius="1">
 		<monster name="Pirate Cutthroat" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1217" centery="170" centerz="7" radius="1">
-		<monster name="Adept Of The Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
+		<monster name="Adept of the Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1232" centery="170" centerz="7" radius="1">
 		<monster name="Rabbit" x="0" y="0" z="7" spawntime="60" direction="1" />
@@ -2469,43 +2469,43 @@
 		<monster name="Rat" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1198" centery="174" centerz="7" radius="1">
-		<monster name="Novice Of The Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
+		<monster name="Novice of the Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1206" centery="174" centerz="7" radius="1">
-		<monster name="Novice Of The Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
+		<monster name="Novice of the Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1213" centery="174" centerz="7" radius="1">
-		<monster name="Novice Of The Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
+		<monster name="Novice of the Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1238" centery="174" centerz="7" radius="1">
 		<monster name="Rabbit" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1193" centery="175" centerz="7" radius="1">
-		<monster name="Adept Of The Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
+		<monster name="Adept of the Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1202" centery="175" centerz="7" radius="1">
-		<monster name="Adept Of The Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
+		<monster name="Adept of the Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1216" centery="175" centerz="7" radius="1">
-		<monster name="Novice Of The Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
+		<monster name="Novice of the Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1012" centery="178" centerz="7" radius="1">
 		<monster name="Butterfly" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1197" centery="178" centerz="7" radius="1">
-		<monster name="Novice Of The Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
+		<monster name="Novice of the Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1215" centery="178" centerz="7" radius="1">
-		<monster name="Adept Of The Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
+		<monster name="Adept of the Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1205" centery="179" centerz="7" radius="1">
-		<monster name="Novice Of The Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
+		<monster name="Novice of the Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1211" centery="179" centerz="7" radius="1">
-		<monster name="Novice Of The Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
+		<monster name="Novice of the Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1219" centery="179" centerz="7" radius="1">
-		<monster name="Adept Of The Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
+		<monster name="Adept of the Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1037" centery="180" centerz="7" radius="1">
 		<monster name="Hunter" x="0" y="0" z="7" spawntime="60" direction="1" />
@@ -2514,16 +2514,16 @@
 		<monster name="Pirate Cutthroat" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1190" centery="181" centerz="7" radius="1">
-		<monster name="Adept Of The Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
+		<monster name="Adept of the Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1195" centery="181" centerz="7" radius="1">
-		<monster name="Novice Of The Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
+		<monster name="Novice of the Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1201" centery="181" centerz="7" radius="1">
-		<monster name="Novice Of The Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
+		<monster name="Novice of the Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1213" centery="181" centerz="7" radius="1">
-		<monster name="Adept Of The Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
+		<monster name="Adept of the Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1223" centery="181" centerz="7" radius="1">
 		<monster name="Rat" x="0" y="0" z="7" spawntime="60" direction="1" />
@@ -2538,19 +2538,19 @@
 		<monster name="Seagull" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1189" centery="183" centerz="7" radius="1">
-		<monster name="Adept Of The Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
+		<monster name="Adept of the Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1021" centery="184" centerz="7" radius="1">
 		<monster name="Butterfly" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1196" centery="184" centerz="7" radius="1">
-		<monster name="Novice Of The Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
+		<monster name="Novice of the Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1210" centery="184" centerz="7" radius="1">
-		<monster name="Adept Of The Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
+		<monster name="Adept of the Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1216" centery="184" centerz="7" radius="1">
-		<monster name="Novice Of The Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
+		<monster name="Novice of the Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1041" centery="185" centerz="7" radius="1">
 		<monster name="Hunter" x="0" y="0" z="7" spawntime="60" direction="1" />
@@ -2559,7 +2559,7 @@
 		<monster name="Smuggler" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1221" centery="185" centerz="7" radius="1">
-		<monster name="Acolyte Of The Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
+		<monster name="Acolyte of the Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1047" centery="186" centerz="7" radius="1">
 		<monster name="Smuggler" x="0" y="0" z="7" spawntime="60" direction="1" />
@@ -2568,7 +2568,7 @@
 		<monster name="Pirate Cutthroat" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1205" centery="186" centerz="7" radius="1">
-		<monster name="Novice Of The Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
+		<monster name="Novice of the Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1018" centery="187" centerz="7" radius="1">
 		<monster name="Butterfly" x="0" y="0" z="7" spawntime="60" direction="1" />
@@ -2577,19 +2577,19 @@
 		<monster name="Butterfly" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1191" centery="187" centerz="7" radius="1">
-		<monster name="Adept Of The Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
+		<monster name="Adept of the Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1214" centery="187" centerz="7" radius="1">
-		<monster name="Adept Of The Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
+		<monster name="Adept of the Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1217" centery="187" centerz="7" radius="1">
-		<monster name="Novice Of The Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
+		<monster name="Novice of the Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1114" centery="188" centerz="7" radius="1">
 		<monster name="Pirate Marauder" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1208" centery="188" centerz="7" radius="1">
-		<monster name="Novice Of The Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
+		<monster name="Novice of the Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1220" centery="188" centerz="7" radius="1">
 		<monster name="Skeleton" x="0" y="0" z="7" spawntime="60" direction="1" />
@@ -2613,10 +2613,10 @@
 		<monster name="Seagull" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1205" centery="191" centerz="7" radius="1">
-		<monster name="Novice Of The Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
+		<monster name="Novice of the Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1211" centery="191" centerz="7" radius="1">
-		<monster name="Novice Of The Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
+		<monster name="Novice of the Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1217" centery="191" centerz="7" radius="1">
 		<monster name="Skeleton" x="0" y="0" z="7" spawntime="60" direction="1" />
@@ -2628,10 +2628,10 @@
 		<monster name="Butterfly" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1189" centery="192" centerz="7" radius="1">
-		<monster name="Novice Of The Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
+		<monster name="Novice of the Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1202" centery="192" centerz="7" radius="1">
-		<monster name="Acolyte Of The Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
+		<monster name="Acolyte of the Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1045" centery="193" centerz="7" radius="1">
 		<monster name="Wolf" x="0" y="0" z="7" spawntime="60" direction="1" />
@@ -2640,7 +2640,7 @@
 		<monster name="Bandit" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1200" centery="193" centerz="7" radius="1">
-		<monster name="Acolyte Of The Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
+		<monster name="Acolyte of the Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1216" centery="193" centerz="7" radius="1">
 		<monster name="Skeleton" x="0" y="0" z="7" spawntime="60" direction="1" />
@@ -2667,7 +2667,7 @@
 		<monster name="Seagull" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1209" centery="196" centerz="7" radius="1">
-		<monster name="Novice Of The Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
+		<monster name="Novice of the Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1213" centery="196" centerz="7" radius="1">
 		<monster name="Skeleton" x="0" y="0" z="7" spawntime="60" direction="1" />
@@ -2682,10 +2682,10 @@
 		<monster name="Seagull" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1196" centery="199" centerz="7" radius="1">
-		<monster name="Novice Of The Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
+		<monster name="Novice of the Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1211" centery="199" centerz="7" radius="1">
-		<monster name="Novice Of The Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
+		<monster name="Novice of the Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1207" centery="200" centerz="7" radius="1">
 		<monster name="Skeleton" x="0" y="0" z="7" spawntime="60" direction="1" />
@@ -2716,13 +2716,13 @@
 		<monster name="Bandit" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1208" centery="208" centerz="7" radius="1">
-		<monster name="Novice Of The Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
+		<monster name="Novice of the Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1172" centery="209" centerz="7" radius="1">
 		<monster name="Snake" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1215" centery="210" centerz="7" radius="1">
-		<monster name="Novice Of The Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
+		<monster name="Novice of the Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1031" centery="211" centerz="7" radius="1">
 		<monster name="Wolf" x="0" y="0" z="7" spawntime="60" direction="1" />
@@ -2750,7 +2750,7 @@
 		<monster name="Smuggler" x="-3" y="1" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1215" centery="214" centerz="7" radius="1">
-		<monster name="Novice Of The Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
+		<monster name="Novice of the Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1111" centery="215" centerz="7" radius="1">
 		<monster name="Smuggler" x="0" y="0" z="7" spawntime="60" direction="1" />
@@ -2771,7 +2771,7 @@
 		<monster name="Skeleton" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1208" centery="218" centerz="7" radius="1">
-		<monster name="Novice Of The Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
+		<monster name="Novice of the Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1217" centery="218" centerz="7" radius="1">
 		<monster name="Bonelord" x="0" y="0" z="7" spawntime="60" direction="1" />
@@ -3024,7 +3024,7 @@
 		<monster name="Earth Elemental" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1052" centery="273" centerz="7" radius="1">
-		<monster name="Adept Of The Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
+		<monster name="Adept of the Cult" x="0" y="0" z="7" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1115" centery="274" centerz="7" radius="1">
 		<monster name="Deer" x="0" y="0" z="7" spawntime="60" direction="1" />
@@ -5180,7 +5180,7 @@
 	</monster>
 	<monster centerx="792" centery="1101" centerz="7" radius="1">
 		<monster name="Tarantula" x="0" y="0" z="7" spawntime="60" direction="1" />
-		<monster name="Tarantula" x="1" y="0" z="7" spawntime="762196992" />
+		<monster name="Tarantula" x="1" y="0" z="7" spawntime="13312" />
 	</monster>
 	<monster centerx="585" centery="1102" centerz="7" radius="1">
 		<monster name="Rabbit" x="0" y="0" z="7" spawntime="60" direction="1" />
@@ -6299,7 +6299,7 @@
 		<monster name="Minotaur Cult Zealot" x="0" y="0" z="8" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1242" centery="171" centerz="8" radius="1">
-		<monster name="Acolyte Of Darkness" x="0" y="0" z="8" spawntime="60" direction="1" />
+		<monster name="Acolyte of Darkness" x="0" y="0" z="8" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1023" centery="172" centerz="8" radius="5">
 		<monster name="Minotaur Cult Follower" x="4" y="-2" z="8" spawntime="60" direction="1" />
@@ -6317,7 +6317,7 @@
 		<monster name="Minotaur Cult Prophet" x="1" y="4" z="8" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1239" centery="176" centerz="8" radius="1">
-		<monster name="Adept Of The Cult" x="0" y="0" z="8" spawntime="60" direction="1" />
+		<monster name="Adept of the Cult" x="0" y="0" z="8" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1243" centery="176" centerz="8" radius="1">
 		<monster name="Rat" x="0" y="0" z="8" spawntime="60" direction="1" />
@@ -6356,19 +6356,19 @@
 		<monster name="Minotaur Cult Zealot" x="5" y="2" z="8" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1235" centery="185" centerz="8" radius="1">
-		<monster name="Enlightened Of The Cult" x="0" y="0" z="8" spawntime="60" direction="1" />
+		<monster name="Enlightened of the Cult" x="0" y="0" z="8" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1214" centery="186" centerz="8" radius="1">
 		<monster name="Monk" x="0" y="0" z="8" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1217" centery="186" centerz="8" radius="1">
-		<monster name="Adept Of The Cult" x="0" y="0" z="8" spawntime="60" direction="1" />
+		<monster name="Adept of the Cult" x="0" y="0" z="8" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1221" centery="186" centerz="8" radius="1">
-		<monster name="Acolyte Of The Cult" x="0" y="0" z="8" spawntime="60" direction="1" />
+		<monster name="Acolyte of the Cult" x="0" y="0" z="8" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1225" centery="186" centerz="8" radius="1">
-		<monster name="Adept Of The Cult" x="0" y="0" z="8" spawntime="60" direction="1" />
+		<monster name="Adept of the Cult" x="0" y="0" z="8" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1219" centery="187" centerz="8" radius="1">
 		<monster name="Rat" x="0" y="0" z="8" spawntime="60" direction="1" />
@@ -6388,10 +6388,10 @@
 		<monster name="Minotaur Amazon" x="4" y="-1" z="8" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1196" centery="193" centerz="8" radius="1">
-		<monster name="Enlightened Of The Cult" x="0" y="0" z="8" spawntime="60" direction="1" />
+		<monster name="Enlightened of the Cult" x="0" y="0" z="8" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1202" centery="194" centerz="8" radius="1">
-		<monster name="Enlightened Of The Cult" x="0" y="0" z="8" spawntime="60" direction="1" />
+		<monster name="Enlightened of the Cult" x="0" y="0" z="8" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1206" centery="194" centerz="8" radius="1">
 		<monster name="Fire Elemental" x="0" y="0" z="8" spawntime="60" direction="1" />
@@ -6407,10 +6407,10 @@
 		<monster name="Minotaur Cult Follower" x="-3" y="4" z="8" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1207" centery="197" centerz="8" radius="1">
-		<monster name="Enlightened Of The Cult" x="0" y="0" z="8" spawntime="60" direction="1" />
+		<monster name="Enlightened of the Cult" x="0" y="0" z="8" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1197" centery="199" centerz="8" radius="1">
-		<monster name="Enlightened Of The Cult" x="0" y="0" z="8" spawntime="60" direction="1" />
+		<monster name="Enlightened of the Cult" x="0" y="0" z="8" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1201" centery="201" centerz="8" radius="1">
 		<monster name="Stone Golem" x="0" y="0" z="8" spawntime="60" direction="1" />
@@ -6422,7 +6422,7 @@
 		<monster name="Stone Golem" x="0" y="0" z="8" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1203" centery="202" centerz="8" radius="1">
-		<monster name="Enlightened Of The Cult" x="0" y="0" z="8" spawntime="60" direction="1" />
+		<monster name="Enlightened of the Cult" x="0" y="0" z="8" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1019" centery="203" centerz="8" radius="5">
 		<monster name="Minotaur Cult Follower" x="-1" y="-2" z="8" spawntime="60" direction="1" />
@@ -6726,7 +6726,7 @@
 		<monster name="Salamander" x="0" y="0" z="8" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1017" centery="322" centerz="8" radius="1">
-		<monster name="Fire Devil" x="0" y="0" z="8" spawntime="2006443776" />
+		<monster name="Fire Devil" x="0" y="0" z="8" spawntime="59136" />
 	</monster>
 	<monster centerx="1102" centery="322" centerz="8" radius="1">
 		<monster name="Spider" x="0" y="0" z="8" spawntime="60" direction="1" />
@@ -6817,7 +6817,7 @@
 		<monster name="Bat" x="0" y="0" z="8" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1115" centery="359" centerz="8" radius="1">
-		<monster name="Rottie The Rotworm" x="0" y="0" z="8" spawntime="60" direction="1" />
+		<monster name="Rottie the Rotworm" x="0" y="0" z="8" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1097" centery="360" centerz="8" radius="1">
 		<monster name="Smuggler" x="0" y="0" z="8" spawntime="60" direction="1" />
@@ -9299,7 +9299,7 @@
 		<monster name="Vampire" x="0" y="0" z="9" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="916" centery="1023" centerz="9" radius="5">
-		<monster name="Son Of Verminor" x="-4" y="-3" z="9" spawntime="60" direction="1" />
+		<monster name="Son of Verminor" x="-4" y="-3" z="9" spawntime="60" direction="1" />
 		<monster name="Plaguesmith" x="1" y="-3" z="9" spawntime="60" direction="1" />
 		<monster name="Behemoth" x="-2" y="-2" z="9" spawntime="60" direction="1" />
 		<monster name="Destroyer" x="-2" y="2" z="9" spawntime="60" direction="1" />
@@ -9356,7 +9356,7 @@
 		<monster name="Blood Priest" x="0" y="0" z="9" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="934" centery="1030" centerz="9" radius="5">
-		<monster name="Son Of Verminor" x="4" y="-2" z="9" spawntime="60" direction="1" />
+		<monster name="Son of Verminor" x="4" y="-2" z="9" spawntime="60" direction="1" />
 		<monster name="Behemoth" x="-4" y="4" z="9" spawntime="60" direction="1" />
 		<monster name="Plaguesmith" x="-1" y="4" z="9" spawntime="60" direction="1" />
 	</monster>
@@ -9389,7 +9389,7 @@
 		<monster name="Behemoth" x="0" y="0" z="9" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="894" centery="1041" centerz="9" radius="1">
-		<monster name="Son Of Verminor" x="0" y="0" z="9" spawntime="60" direction="1" />
+		<monster name="Son of Verminor" x="0" y="0" z="9" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="919" centery="1042" centerz="9" radius="1">
 		<monster name="Demon Skeleton" x="0" y="0" z="9" spawntime="60" direction="1" />
@@ -9418,7 +9418,7 @@
 		<monster name="Hero" x="-2" y="3" z="9" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="890" centery="1044" centerz="9" radius="1">
-		<monster name="Son Of Verminor" x="0" y="0" z="9" spawntime="60" direction="1" />
+		<monster name="Son of Verminor" x="0" y="0" z="9" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="922" centery="1044" centerz="9" radius="1">
 		<monster name="Demon Skeleton" x="0" y="0" z="9" spawntime="60" direction="1" />
@@ -10583,7 +10583,7 @@
 		<monster name="Renegade Knight" x="0" y="0" z="10" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1030" centery="979" centerz="10" radius="1">
-		<monster name="Priestess Of The Wild Sun" x="0" y="0" z="10" spawntime="60" direction="1" />
+		<monster name="Priestess of the Wild Sun" x="0" y="0" z="10" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="968" centery="982" centerz="10" radius="1">
 		<monster name="Warlock" x="0" y="0" z="10" spawntime="60" direction="1" />
@@ -10884,7 +10884,7 @@
 	<monster centerx="926" centery="1030" centerz="10" radius="5">
 		<monster name="Plaguesmith" x="-2" y="-3" z="10" spawntime="60" direction="1" />
 		<monster name="Defiler" x="0" y="-2" z="10" spawntime="60" direction="1" />
-		<monster name="Son Of Verminor" x="4" y="1" z="10" spawntime="60" direction="1" />
+		<monster name="Son of Verminor" x="4" y="1" z="10" spawntime="60" direction="1" />
 		<monster name="Blightwalker" x="-1" y="3" z="10" spawntime="60" direction="1" />
 		<monster name="Plaguesmith" x="2" y="4" z="10" spawntime="60" direction="1" />
 	</monster>
@@ -10982,7 +10982,7 @@
 		<monster name="Fire Lord" x="0" y="0" z="10" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="918" centery="1041" centerz="10" radius="1">
-		<monster name="Son Of Verminor" x="0" y="0" z="10" spawntime="60" direction="1" />
+		<monster name="Son of Verminor" x="0" y="0" z="10" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1001" centery="1041" centerz="10" radius="1">
 		<monster name="Burning Gladiator" x="-1" y="0" z="10" spawntime="60" direction="1" />
@@ -11029,7 +11029,7 @@
 		<monster name="Fire Elemental" x="0" y="0" z="10" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="930" centery="1048" centerz="10" radius="1">
-		<monster name="Son Of Verminor" x="0" y="0" z="10" spawntime="60" direction="1" />
+		<monster name="Son of Verminor" x="0" y="0" z="10" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1039" centery="1048" centerz="10" radius="1">
 		<monster name="Fire Elemental" x="0" y="0" z="10" spawntime="60" direction="1" />
@@ -11956,7 +11956,7 @@
 	<monster centerx="941" centery="953" centerz="11" radius="1">
 		<monster name="Anger" x="0" y="-1" z="11" spawntime="60" direction="1" />
 		<monster name="Necromancer" x="0" y="0" z="11" spawntime="60" direction="1" />
-		<monster name="Necromancer" x="0" y="1" z="11" spawntime="371239936" />
+		<monster name="Necromancer" x="0" y="1" z="11" spawntime="44032" />
 	</monster>
 	<monster centerx="802" centery="954" centerz="11" radius="1">
 		<monster name="Fire Devil" x="0" y="0" z="11" spawntime="60" direction="1" />
@@ -12107,7 +12107,7 @@
 		<monster name="Black Sphinx Acolyte" x="-4" y="-3" z="11" spawntime="60" direction="1" />
 		<monster name="Burning Gladiator" x="4" y="-3" z="11" spawntime="60" direction="1" />
 		<monster name="Renegade Knight" x="0" y="0" z="11" spawntime="60" direction="1" />
-		<monster name="Priestess Of The Wild Sun" x="-3" y="3" z="11" spawntime="60" direction="1" />
+		<monster name="Priestess of the Wild Sun" x="-3" y="3" z="11" spawntime="60" direction="1" />
 		<monster name="Black Sphinx Acolyte" x="5" y="3" z="11" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1002" centery="985" centerz="11" radius="1">
@@ -12180,7 +12180,7 @@
 		<monster name="Massive Fire Elemental" x="0" y="0" z="11" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1031" centery="1005" centerz="11" radius="5">
-		<monster name="Priestess Of The Wild Sun" x="-4" y="-5" z="11" spawntime="60" direction="1" />
+		<monster name="Priestess of the Wild Sun" x="-4" y="-5" z="11" spawntime="60" direction="1" />
 		<monster name="Burning Gladiator" x="0" y="-4" z="11" spawntime="60" direction="1" />
 		<monster name="Burning Gladiator" x="4" y="0" z="11" spawntime="60" direction="1" />
 		<monster name="Burning Gladiator" x="-4" y="1" z="11" spawntime="60" direction="1" />
@@ -12262,11 +12262,11 @@
 		<monster name="Warlock" x="0" y="0" z="11" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1030" centery="1026" centerz="11" radius="5">
-		<monster name="Priestess Of The Wild Sun" x="0" y="-5" z="11" spawntime="60" direction="1" />
+		<monster name="Priestess of the Wild Sun" x="0" y="-5" z="11" spawntime="60" direction="1" />
 		<monster name="Burning Gladiator" x="-4" y="-2" z="11" spawntime="60" direction="1" />
 		<monster name="Burning Gladiator" x="5" y="-1" z="11" spawntime="60" direction="1" />
 		<monster name="Grim Reaper" x="0" y="0" z="11" spawntime="60" direction="1" />
-		<monster name="Priestess Of The Wild Sun" x="-4" y="3" z="11" spawntime="60" direction="1" />
+		<monster name="Priestess of the Wild Sun" x="-4" y="3" z="11" spawntime="60" direction="1" />
 		<monster name="Burning Gladiator" x="4" y="4" z="11" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1046" centery="1026" centerz="11" radius="5">
@@ -13029,7 +13029,7 @@
 		<monster name="Pirate Ghost" x="0" y="0" z="12" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1158" centery="84" centerz="12" radius="1">
-		<monster name="Ron The Ripper" x="0" y="0" z="12" spawntime="60" direction="1" />
+		<monster name="Ron the Ripper" x="0" y="0" z="12" spawntime="60" direction="1" />
 	</monster>
 	<monster centerx="1171" centery="84" centerz="12" radius="1">
 		<monster name="Lethal Lissy" x="0" y="0" z="12" spawntime="60" direction="1" />
