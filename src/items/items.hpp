@@ -203,6 +203,9 @@ public:
 	bool isLegs() const {
 		return slotPosition & SLOTP_LEGS;
 	}
+	bool isBoots() const {
+		return slotPosition & SLOTP_FEET;
+	}
 	bool isRanged() const {
 		return weaponType == WEAPON_DISTANCE && weaponType != WEAPON_NONE;
 	}
@@ -351,7 +354,7 @@ public:
 	bool wrapable = false;
 	bool wrapContainer = false;
 	bool multiUse = false;
-	bool movable = false;
+	bool movable = true;
 	bool canReadText = false;
 	bool canWriteText = false;
 	bool isVertical = false;
@@ -386,6 +389,7 @@ public:
 	void clear();
 
 	void loadFromProtobuf();
+	bool loadFromDat();
 
 	const ItemType &operator[](size_t id) const {
 		return getItemType(id);
