@@ -34,8 +34,8 @@ function playerLoginGlobal.onLogin(player)
 	end
 
 	-- Boosted
-	player:sendTextMessage(MESSAGE_BOOSTED_CREATURE, string.format("Today's boosted creature: %s.\nBoosted creatures yield more experience points, carry more loot than usual, and respawn at a faster rate.", Game.getBoostedCreature()))
-	player:sendTextMessage(MESSAGE_BOOSTED_CREATURE, string.format("Today's boosted boss: %s.\nBoosted bosses contain more loot and count more kills for your Bosstiary.", Game.getBoostedBoss()))
+	player:sendTextMessage(MESSAGE_BOOSTED_CREATURE, string.format("Today's boosted creature: %s.", Game.getBoostedCreature()))
+	player:sendTextMessage(MESSAGE_BOOSTED_CREATURE, string.format("Today's boosted boss: %s.", Game.getBoostedBoss()))
 
 	-- Rewards
 	local rewards = #player:getRewardList()
@@ -119,6 +119,11 @@ function playerLoginGlobal.onLogin(player)
 		end
 	end
 
+	-- Set Ghost Mode
+	if player:getGroup():getId() >= GROUP_TYPE_GAMEMASTER then
+		player:setGhostMode(true)
+	end
+
 	-- Resets
 	if _G.OnExerciseTraining[player:getId()] then
 		stopEvent(_G.OnExerciseTraining[player:getId()].event)
@@ -144,8 +149,8 @@ function playerLoginGlobal.onLogin(player)
 
 	-- Change support outfit to a normal outfit to open customize character without crashes
 	local playerOutfit = player:getOutfit()
-	if table.contains({ 75, 266, 302 }, playerOutfit.lookType) then
-		playerOutfit.lookType = 136
+	if table.contains({ 75, 266, 302 }, playerOutfit.lookType) and not player:getGroup():getAccess() then
+		playerOutfit.lookType = player:getSex() == PLAYERSEX_FEMALE and 136 or 128
 		playerOutfit.lookAddons = 0
 		player:setOutfit(playerOutfit)
 	end
@@ -155,6 +160,14 @@ function playerLoginGlobal.onLogin(player)
 	player:registerEvent("DropLoot")
 	player:registerEvent("BossParticipation")
 	player:registerEvent("UpdatePlayerOnAdvancedLevel")
+
+	if vocation and vocation:getBaseId() == VOCATION.BASE_ID.MONK then
+		local kv = player:kv()
+		if (kv:get("monk-basic-atk-bonus") or 0) < 10 then
+			logger.info("Setting monk basic attack bonus 10 for player: {}.", player:getName())
+			kv:set("monk-basic-atk-bonus", 10)
+		end
+	end
 	return true
 end
 
